@@ -1,0 +1,12 @@
+# GIMP 'Drop Shadow' settings
+
+(time 0)
+(x 0)
+(y 0)
+(radius 10)
+(grow-shape diamond)
+(grow-radius 15)
+(color (color-rgba 0 0 0 1))
+(opacity 0.5)
+
+# end of 'Drop Shadow' settings
