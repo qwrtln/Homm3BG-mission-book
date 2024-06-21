@@ -1,0 +1,77 @@
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+
+env:
+  PO4A_VERSION: "0.72"
+  PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
+  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
+  ARTIFACT_RETENTION_DAYS: 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: en
+            luaengine: false
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Generate translations for ${{ matrix.language }}
+        if: ${{ matrix.language != 'en' }}
+        run: |
+          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
+          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
+          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
+          tar -xf ${PO4A_DIR}.tar.gz
+          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
+          ./${PO4A_DIR}/po4a -v --no-update po4a.cfg
+
+      - name: Compile rule book
+        uses: xu-cheng/latex-action@v3
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_use_lualatex: ${{ matrix.luaengine }}
+          latexmk_shell_escape: true
+          pre_compile: export HOMM3_GITHUB_BUILD=1
+          root_file: main_${{ matrix.language }}.tex
+
+      - name: Install ghostscript
+        run: |
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+          tar -xvf gs_10.03.0_amd64_snap.tgz
+          sudo snap install ./gs_10.03.0_amd64_snap/gs_10.03.0_amd64.snap --devmode
+
+      - name: Optimize PDF
+        run: |
+          du -sh main_${{ matrix.language }}.pdf
+          tools/optimize.sh ${{ matrix.language }}
+          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
+          du -sh main_${{ matrix.language }}.pdf
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: main_${{ matrix.language }}
+          path: main_${{ matrix.language }}.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Publish ${{ matrix.language }} in artifacts repository
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ matrix.language }}
+          publish_dir: ./${{ matrix.language }}
+          force_orphan: true
