@@ -72,7 +72,7 @@ jobs:
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish ${{ matrix.language }} in artifacts repository
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
