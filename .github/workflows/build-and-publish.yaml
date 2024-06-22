@@ -66,6 +66,9 @@ jobs:
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
+      - name: check key
+        run: echo ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }} | wc -c
+
       - name: Publish ${{ matrix.language }} in artifacts repository
         # if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
