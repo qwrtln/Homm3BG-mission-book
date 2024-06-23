@@ -48,7 +48,7 @@ download_base_file() {
   local language="$1"
   local printable="$2"
   local type=$(file_type "$printable")
-  local url="https://raw.githubusercontent.com/qwrtln/Homm3BG-build-artifacts/${language}/${type}_${language}.pdf"
+  local url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${language}/${type}_${language}.pdf"
   local output_file=$(base_file_path "$language" "$printable")
 
   mkdir -p "$cache_dir"

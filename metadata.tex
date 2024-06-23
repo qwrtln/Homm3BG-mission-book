@@ -42,6 +42,9 @@
 \usepackage[most]{tcolorbox}
 \usepackage{catchfile}
 \usepackage{xstring}
+\usepackage{soul}
+\usepackage{xifthen}
+\usepackage[para, symbol, perpage]{footmisc}
 \newtcolorbox{scaledfigure}[1][]{height fill, space to=\myspace,#1}
 \hypersetup{
   colorlinks=true,
@@ -94,6 +97,12 @@
 
 \def\repourl{https://github.com/Heegu-sama/Homm3BG}
 \def\bggthreadurl{https://boardgamegeek.com/thread/3235221/rule-book-rewrite-project}
+
+\newcommand{\svg}[2][]{%
+  \ifthenelse{\equal{#1}{}}%
+  {\includesvg[height=10px]{\svgs/\detokenize{#2}.svg}}%
+  {\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}%
+}%
 
 \renewcommand{\labelitemi}{\includegraphics[width=0.7em, valign=c]{\layout/listdot.png}}
 
@@ -150,6 +159,41 @@
 }
 %End of create section heading.
 
+% Four mandatory params
+% - lines of campaign name (1-2 according to the name length)
+% - campaign name
+% - scenario name
+% - icon
+%
+% TODO: possibly replace the whole \addsection with this
+\newcommand{\addscenariosection}[4]{
+  \sodef\sotitle{}{0.2em}{0.6em}{1.2em}
+  \def\oneliner{\equal{#1}{1}}
+
+  \vspace*{-5em}
+  \hspace*{-1.3em}
+  \makebox[0pt][l]{
+  \raisebox{-\totalheight}[0pt][7pt]{
+    \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
+    \begin{tikzpicture}
+      \draw (0, 0) node[inner sep=0, yscale=\yscale] {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
+      \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#4}};
+    \end{tikzpicture}
+    }
+  }
+  \begin{fullwidth}[leftmargin=0.16\textwidth]
+    \begin{center}
+      \vspace{-22pt}
+      \sectionheadertext{\small{\sotitle{#2}}}
+      \vspace{-12pt}
+      \sectionheadertext{#3}
+      \ifthenelse{\oneliner}{}{\vspace{14pt}}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#3}
+    \end{center}
+  \end{fullwidth}
+  \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{2.75em}}
+}
+
 % Apply language-specific subsection spacings if defined
 \ifdefined\subsectionspacing
   \subsectionspacing{}
@@ -193,6 +237,57 @@
         \draw [shade, blur shadow={shadow opacity=15}] (current bounding box.north west) rectangle (current bounding box.south east);
       \end{scope}
     \end{pgfonlayer}
+  \end{tikzpicture}
+}
+
+% Create Heroes-styled framed canvas for a table. Accepts three arguments:
+% 1) [Optional] Drop shadow description. Use [] as the first arg to delete it.
+% 2) Height specified in verses (lines of text)
+% 3) Table contents like title and tabularx environment
+\newcommand{\hommtable}[3][shade, blur shadow={shadow opacity=15}]{
+  \begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background.jpg}}};
+    \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
+    \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
+    \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
+    \node at (current bounding box.center) {
+      \begin{varwidth}{0.95\linewidth}
+      \notefont{
+        \bgroup
+        \color{arylideyellow}
+        \hypersetup{linkcolor=amber}
+        \setlength{\tabcolsep}{0.3em}
+        #3
+        \egroup
+      }
+      \end{varwidth}
+    };
+    \begin{pgfonlayer}{background}
+      \begin{scope}[blend mode=multiply]
+        \draw [#1] (current bounding box.north west) rectangle (current bounding box.south east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}
+}
+% End of Heroes-styled canvas definition.
+
+\definecolor{darkcellborder}{HTML}{634831}
+\definecolor{darkcellbg}{HTML}{20160C}
+
+\newcommand{\darkcell}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=darkcellbg, fill opacity=0.5, draw=darkcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\textbf{#2}};
+  \end{tikzpicture}
+}
+
+\definecolor{lightcellborder}{HTML}{77543e}
+\definecolor{lightcellbg}{HTML}{20160C}
+
+\newcommand{\lightcell}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\color{white}#2};
   \end{tikzpicture}
 }
 
@@ -290,5 +385,7 @@
 \end{multicols*}
 
 \clearpage
+
+\include{sections/sentinels.tex}
 
 \end{document}
