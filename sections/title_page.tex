@@ -13,3 +13,11 @@
     \includegraphics[width=0.6\paperwidth]{\layout/cover_subtitle.png}
   };
 \end{tikzpicture}
+
+% Render phantom SVGs before their use in tabular env
+\phantom{
+    \svg[0.1]{bronze}
+    \svg[0.1]{silver}
+    \svg[0.1]{golden}
+    \svg[0.1]{azure}
+}
