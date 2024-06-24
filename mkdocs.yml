@@ -1,3 +1,11 @@
-site_name: Mission Book Docs
+site_name: Fan-Made Mission Book Docs
 theme:
   name: material
+  palette:
+    primary: blue grey
+  logo: assets/logo.png
+repo_url: https://github.com/qwrtln/Homm3BG-mission-book
+repo_name: Fan-Made Mission Book
+nav:
+  - Home: index.md
+  - LaTeX Setup: latex.md
