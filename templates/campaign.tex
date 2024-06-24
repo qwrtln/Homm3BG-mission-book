@@ -1,5 +1,5 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Cooperative scenario}{...}{\images/title.png}
+\addscenariosection{1}{Campaign name}{Scenario name}{\images/title.png}
 
 \begin{multicols*}{2}
 
@@ -7,15 +7,15 @@
 
 \textbf{Source:} ...
 
-\textit{... 1-2 two paragraphs to set the story ...}
-
 \subsection*{\MakeUppercase{Scenario length}}
 
 This scenario plays out over ... rounds.
 
 \subsection*{\MakeUppercase{Player setup}}
 
-\textbf{Player count:} ...
+\textbf{Faction:} ...
+
+\textbf{Faction Hero:} ...
 
 \textbf{Starting Resources:} \svg{gold} \svg{building_materials} \svg{valuables}
 
@@ -25,13 +25,24 @@ This scenario plays out over ... rounds.
 
 \textbf{Town Buildings:} ...
 
-\textbf{Map Tile Pool:} ...
-
 \textbf{Bonus:} Choose one of the following options: 
-
 \begin{itemize}
     \item ...
 \end{itemize}
+
+\subsection*{\MakeUppercase{AI hero setup}}
+
+\textbf{Faction:} ...
+
+\textbf{Enemy Army:} ...
+
+\textbf{Enemy Deck:} ...
+
+\textbf{Enemy Spell Deck:} ...
+
+\textbf{Enemy Skills:} ...
+
+\textbf{Special:} ...
 
 \subsection*{\MakeUppercase{Map setup}}
 
@@ -45,6 +56,18 @@ Take the following Map tiles and set them up as shown in the scenario map layout
 \textbf{Y × Far Map tile (II-III)}
 
 \textbf{Z × Near Map tile (IV-V)}
+
+\subsection*{\MakeUppercase{Heroes placement}}
+
+... describe how your and enemy heroes will be placed ...
+
+\subsection*{\MakeUppercase{Additional rules}}
+
+During this ``... faction ...'' campaign scenario, the following rules apply:
+
+\begin{itemize}
+    \item ...
+\end{itemize}
 
 \subsection*{\MakeUppercase{Win/lose conditions}}
 
@@ -69,36 +92,24 @@ Take the following Map tiles and set them up as shown in the scenario map layout
 
 \newpage
 
-\subsection*{\MakeUppercase{Additional scenario rules}}
-
-\begin{itemize}
-    \item ...
-\end{itemize}
-
-% Uncomment if you need a table to define unit strengths or other parameters of the game
-% \hommtable[]{12}{
-%   \centering
-%   \medskip
-%   \textbf{... title ...}\\
-%   \bigskip
-
-%   \newcommand{\bronze}[0]{\svg[12]{bronze}}
-%   \newcommand{\silver}[0]{\svg[12]{silver}}
-%   \newcommand{\golden}[0]{\svg[12]{golden}}
-%   \newcommand{\azure}[0]{\svg[12]{azure}}
-
-%   \begin{tabularx}{\linewidth}{p{0.15\linewidth}XXXX} & \darkcell{Column 1 name} & \darkcell{Column 2 name}\\
-%     \darkcell[1.4]{Row 1 name} 
-%         & \lightcell[1.4]{\bronze \silver \golden \azure}
-%         & \lightcell[1.4]{... other stuff ...} \\
-%         \darkcell[1.4]{Row 1 name} 
-%         & \lightcell[1.4]{\bronze \silver \golden \azure}
-%         & \lightcell[1.4]{... other stuff ...} \\
-%   \end{tabularx}
-% }
+% NOTE: The last page of scenario preparation should use 
+% multicols instead of multicols* to create space for map.
+% \begin{multicols}{2}
+% ... your content that overflows to the second page ...
+% \end{multicols}
 
 % Uncomment and link a map image
 % \vspace{3em}
 % \begin{center}
-%   \includegraphics[width=0.6\paperwidth]{\_assets/maps/your_map.png}
+%   \includegraphics[width=0.6\paperwidth]{\_assets/maps/sentinels.png}
 % \end{center}
+
+\newpage
+
+\begin{multicols*}{2}
+
+\subsection*{\MakeUppercase{The story}}
+
+... put your immersive story here ...
+
+\end{multicols*}
