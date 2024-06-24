@@ -159,6 +159,27 @@
 }
 %End of create section heading.
 
+
+% Add title page for scenario type
+\newcommand{\addscenariogroup}[2]{
+  \thispagestyle{empty}
+  \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+  \AddToHookNext{shipout/background}{%
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}%
+  }
+  \begin{tikzpicture}[remember picture, overlay, inner sep=10pt]
+    \node(cover)[anchor=center] at (current page.center) {
+      \includegraphics[height=\paperheight, keepaspectratio]{#2}
+    };
+    \node(title)[minimum width = \paperwidth, anchor=center] at (current page.center) {
+      \fontfamily{ptm}\selectfont{
+        \Huge\bfseries\filcenter\MakeUppercase{#1}
+      }
+    };
+  \end{tikzpicture}
+}
+
+
 % Four mandatory params
 % - lines of campaign name (1-2 according to the name length)
 % - campaign name
@@ -188,7 +209,7 @@
       \vspace{-12pt}
       \sectionheadertext{#3}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#3}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{} {} {} {} {}#3}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{2.75em}}
@@ -386,6 +407,8 @@
 
 \clearpage
 
-\include{sections/sentinels.tex}
+\include{coops/main.tex}
+
+\include{campaigns/main.tex}
 
 \end{document}
