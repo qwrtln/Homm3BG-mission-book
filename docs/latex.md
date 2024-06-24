@@ -1,13 +1,26 @@
 # LaTeX Setup
 
-To contribue a scenario, you need the following as a minimum:
+In order to contribute, you'll need a [LaTeX](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape ang git.
+Please read the instructions for your operating system.
 
-- [**MiKTeX**](https://miktex.org/) for Windows, [**MacTeX**](https://www.tug.org/mactex/) for MacOS, [**TeX Live**](https://www.tug.org/texlive/) for Linux (required) to build the PDF file from LaTeX files
-- [**Inkscape**](https://inkscape.org/) to render glyphs in the document (while installing on Windows, make sure to tick `Add Inkscape to the System Path` option)
+## Windows
+
+Download and install the following:
+- [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows
+- [**Inkscape**](https://inkscape.org/) - while installing on Windows, make sure to tick `Add Inkscape to the System Path` option
 - [**git**](https://git-scm.com/) to commit files to the repository
 
-Once you have all the software installed, continue reading.
+## MacOS
 
-### Clone the repository
+You can install everything using Homebrew:
+
+```bash
+brew install mactex inkscape poppler po4a
+```
+
+## Linux
+
+Install a `texlive` distribution, `inkscape`, and `pdftoppm` using your package manager.
+If you're not on Ubuntu, you could also install `po4a`.
 
 
