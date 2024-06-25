@@ -95,8 +95,7 @@
 \def\tables{\_assets/tables}
 \def\qr{\_assets/qr-codes}
 
-\def\repourl{https://github.com/Heegu-sama/Homm3BG}
-\def\bggthreadurl{https://boardgamegeek.com/thread/3235221/rule-book-rewrite-project}
+\def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
 
 \newcommand{\svg}[2][]{%
   \ifthenelse{\equal{#1}{}}%
@@ -370,7 +369,10 @@
 
   \intro{}
 
-  \bigbreak\authorsquote
+  \bigbreak
+
+  \includesvg[width=0.4\linewidth]{\qr/github.svg}\\
+  \qrgithub
 \end{center}
 
 \iftoggle{printable}{
