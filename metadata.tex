@@ -95,8 +95,7 @@
 \def\tables{\_assets/tables}
 \def\qr{\_assets/qr-codes}
 
-\def\repourl{https://github.com/Heegu-sama/Homm3BG}
-\def\bggthreadurl{https://boardgamegeek.com/thread/3235221/rule-book-rewrite-project}
+\def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
 
 \newcommand{\svg}[2][]{%
   \ifthenelse{\equal{#1}{}}%
@@ -159,6 +158,27 @@
 }
 %End of create section heading.
 
+
+% Add title page for scenario type
+\newcommand{\addscenariogroup}[2]{
+  \thispagestyle{empty}
+  \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+  \AddToHookNext{shipout/background}{%
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}%
+  }
+  \begin{tikzpicture}[remember picture, overlay, inner sep=10pt]
+    \node(cover)[anchor=center] at (current page.center) {
+      \includegraphics[height=\paperheight, keepaspectratio]{#2}
+    };
+    \node(title)[minimum width = \paperwidth, anchor=center] at (current page.center) {
+      \fontfamily{ptm}\selectfont{
+        \Huge\bfseries\filcenter\MakeUppercase{#1}
+      }
+    };
+  \end{tikzpicture}
+}
+
+
 % Four mandatory params
 % - lines of campaign name (1-2 according to the name length)
 % - campaign name
@@ -188,7 +208,7 @@
       \vspace{-12pt}
       \sectionheadertext{#3}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#3}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{} {} {} {} {}#3}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{2.75em}}
@@ -349,23 +369,11 @@
 
   \intro{}
 
-  \bigbreak\authorsquote
-\end{center}
-
-\iftoggle{printable}{
   \bigbreak
 
-  \begin{multicols}{2}
-  \centering
-  \includegraphics[width=0.8\linewidth]{\qr/github.png}\\
+  \includegraphics[width=0.4\linewidth]{\qr/github.png} \\
   \qrgithub
-
-  \columnbreak
-
-  \includegraphics[width=0.8\linewidth]{\qr/bgg.png}\\
-  \qrbgg
-  \end{multicols}
-}{}
+\end{center}
 
 \begin{tikzpicture}[remember picture, overlay]
   \node(cover)[anchor=center, yshift=12em] at (current page.south) {
@@ -386,7 +394,9 @@
 
 \clearpage
 
-\include{sections/sentinels.tex}
+\include{coops/main.tex}
+
+\include{campaigns/main.tex}
 
 \include{sections/Titans_stronghold.tex}
 \end{document}
