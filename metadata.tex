@@ -1,10 +1,10 @@
 % Set page size and margins
 \usepackage[
   a4paper,
-  top=2.43cm,
+  top=2cm,
   bottom=3cm,
-  left=1.5cm,
-  right=1.5cm,
+  left=2cm,
+  right=2cm,
   marginparwidth=1.75cm,
   footskip=2.05cm,
 ]{geometry}
@@ -103,11 +103,7 @@
   {\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}%
 }%
 
-\renewcommand{\labelitemi}{
-  \begin{tikzpicture}
-    \node (listdot) [circle, blur shadow={fill=camel, shadow yshift=0pt, shadow xshift=0pt, shadow blur radius=1.2pt, shadow blur steps=10}, inner sep=-1.5] {\includegraphics[width=0.7em, valign=c]{\layout/listdot.png}};
-  \end{tikzpicture}
-}
+\renewcommand{\labelitemi}{\includegraphics[width=0.7em, valign=c]{\layout/listdot.png}}
 
 % Colors
 \definecolor{amber}{rgb}{1.0, 0.49, 0.0}
@@ -116,7 +112,8 @@
 \definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
 \definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
 \definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
-\definecolor{camel}{rgb}{0.76, 0.6, 0.42}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{darkcerulean}{rgb}{0.03, 0.27, 0.49}
 
 % Command to frame images
 \newcommand\framedimage[2][]{%
@@ -183,33 +180,6 @@
   \end{tikzpicture}
 }
 
-\newcommand\addheadershadow[2][]{
-    % #1: Optional aditional tikz options
-    % #2: Name of the node to "decorate"
-    \begin{pgfonlayer}{background}
-        \path[
-           rounded corners=1pt,
-           blur shadow={shadow xshift=0pt,
-           shadow yshift=0pt,
-           shadow blur steps=10,
-           shadow blur radius=6pt}, #1]
-            ($(#2.north west)+( 0.6pt,0)$) --
-            ($(#2.south west)+( 0.6pt,0)$) --
-            ($(#2.south east)+(-0.6pt,0)$) --
-            ($(#2.north east)+(-0.6pt,0)$) --
-        cycle;
-        \path[rounded corners,
-           blur shadow={shadow xshift=0pt,
-           shadow yshift=0pt,
-           shadow blur steps=10,
-           shadow blur radius=6pt}, #1]
-            ($(#2.north west)+(-1.3pt,-3pt)$) --
-            ($(#2.south west)+(-1.3pt, 3pt)$) --
-            ($(#2.south east)+( 1.3pt, 3pt)$) --
-            ($(#2.north east)+( 1.3pt,-3pt)$) --
-            cycle;
-    \end{pgfonlayer}
-}
 
 % Four mandatory params
 % - lines of campaign name (1-2 according to the name length)
@@ -228,13 +198,12 @@
   \raisebox{-\totalheight}[0pt][7pt]{
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
     \begin{tikzpicture}
-      \draw (0, 0) node[inner sep=0, yscale=\yscale] (header) {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
+      \draw (0, 0) node[inner sep=0, yscale=\yscale] {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
       \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#4}};
-      \addheadershadow{header}
     \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.2\textwidth]
+  \begin{fullwidth}[leftmargin=0.16\textwidth]
     \begin{center}
       \vspace{-22pt}
       \sectionheadertext{\small{\sotitle{#2}}}
@@ -428,6 +397,8 @@
 \clearpage
 
 \include{coops/main.tex}
+
+\include{clash/main.tex}
 
 \include{campaigns/main.tex}
 
