@@ -59,17 +59,17 @@ jobs:
           mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
           du -sh main_${{ matrix.language }}.pdf
 
-      - name: Move file
-        run: |
-          mkdir ${{ matrix.language }}
-          mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
-
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
         with:
           name: main_${{ matrix.language }}
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Move file
+        run: |
+          mkdir ${{ matrix.language }}
+          mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
 
       - name: Publish ${{ matrix.language }} in artifacts repository
         if: github.event_name != 'pull_request'
