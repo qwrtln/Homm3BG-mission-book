@@ -33,14 +33,12 @@ Take the following Map tiles and set them up as shown in the scenario map layout
 \textbf{\MakeUppercase{Note:}} Before placing the Near tiles, separate them into 2 piles (with and without an Obelisk). Put them alternately, so that the tiles with an Obelisk are not placed adjacent to each other.
 \subsection*{\MakeUppercase{Starting Resources}}
 Each player starts with the following resources:
-\begin{center}
-    \textbf{13 ×} \svg{gold}   \textbf{2 ×}   \svg{building_materials}   \textbf{1 ×} \svg{valuables}
-\end{center}
+
+{\centering\hfill \textbf{13 ×} \svg{gold} \hfill \textbf{2 ×} \svg{building_materials} \hfill \textbf{1 ×} \svg{valuables}\hfill}
 \subsection*{\MakeUppercase{Setting a Player's\\Income}}
 Set the income on the income tracker to:
-\begin{center}
-    \textbf{“10”} \svg{gold}   \textbf{“0”}   \svg{building_materials}   \textbf{“0”} \svg{valuables}
-\end{center}
+
+{\centering\hfill\textbf{“10”} \svg{gold} \hfill \textbf{“0”} \svg{building_materials} \hfill \textbf{“0”} \svg{valuables}\hfill}
 \subsection*{\MakeUppercase{Starting Buildings}}
 Each player starts the game with these buildings:
 \begin{itemize}
@@ -103,18 +101,11 @@ If the Grail is not obtained at least once by the end of the 13th round, the gam
 If the Grail token has been obtained, the players gain additional time – until the end of the 16th round – to bring the Grail to their faction Town. Otherwise, all players lose the scenario.
 \subsection*{\MakeUppercase{Timed Event}}
 At the beginning of the 6th, 9th, and 12th rounds, remove all Black cubes from all Water Wheels and Windmills on the map. Additionally, all players possessing the title of “\textcolor{cyan}{Grail Knight}” gain \svg{morale_positive}. Finally, any players who do not possess a title gain 2 \svg{morale_negative}.
-\begin{tikzpicture}
+\begin{tikzpicture}[overlay]
     \centering
-    \includegraphics[width=1\linewidth]{\_assets/maps/bloody-grail-2p.png}
+    \node at (-3.5, -5) {\includegraphics[scale=0.45]{\_assets/maps/bloody-grail-2p.png}};
+    \node at (-3.5, -10) {\footnotesize{\textbf{\MakeUppercase{2-PLAYER SCENARIO}}}};
+    \node at (4, -13.5) {\includegraphics[scale=0.45]{\_assets/maps/bloody-grail-4p.png}};
+    \node at (4, -21) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SCENARIO}}}};
 \end{tikzpicture}
 \end{multicols*}
-
-
-
-
-
-%\begin{minipage}{0.4\paperwidth}
-%\centering
-%\includegraphics[width=0.2\paperwidth]{\_assets/maps/bloody-grail-4p.png}
-%    \captionof{figure}{4-PLAYER SCENARIO}
-%\end{minipage}
