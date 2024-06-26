@@ -7,8 +7,6 @@
 
 \textbf{Source:} ...
 
-\subsection*{\MakeUppercase{The Story}}
-
 \textit{... 1-2 two paragraphs to set the story ...}
 
 \subsection*{\MakeUppercase{Scenario Length}}
@@ -19,9 +17,11 @@ This scenario is played over ... rounds.
 
 \textbf{Player count:} ...
 
-\textbf{Starting Resources:} \svg{gold} \svg{building_materials} \svg{valuables}
+\textbf{Starting Resources:}\par
+{\centering\hfill \textbf{X ×} \svg{gold} \hfill \textbf{Y ×} \svg{building_materials} \hfill \textbf{Z ×} \svg{valuables}\hfill}
 
-\textbf{Starting Income:} \svg{gold} \svg{building_materials} \svg{valuables}
+\textbf{Starting Income:}\par
+{\centering\hfill\textbf{``X''} \svg{gold} \hfill \textbf{``Y''} \svg{building_materials} \hfill \textbf{``Z''} \svg{valuables}\hfill}
 
 \textbf{Starting Units:}
 \begin{itemize}
@@ -35,7 +35,7 @@ This scenario is played over ... rounds.
 
 \textbf{Map Tile Pool:} ...
 
-\textbf{Bonus:} Choose one of the following options: 
+\textbf{Bonus:} Choose one of the following options:
 
 \begin{itemize}
     \item ...
@@ -54,17 +54,11 @@ Take the following Map tiles and set them up as shown in the scenario map layout
 
 \textbf{Z × Near Map tile (IV-V)}
 
-\subsection*{\MakeUppercase{Win/lose conditions}}
+\subsection*{\MakeUppercase{Victory Conditions}}
+...
 
-\textbf{Win:}
-\begin{itemize}
-    \item ...
-\end{itemize}
-
-\textbf{Lose:}
-\begin{itemize}
-    \item ...
-\end{itemize}
+\subsection*{\MakeUppercase{Defeat Conditions}}
+...
 
 \subsection*{\MakeUppercase{Timed events}}
 
@@ -73,15 +67,15 @@ Take the following Map tiles and set them up as shown in the scenario map layout
     \item ...
 \end{itemize}
 
-\end{multicols*}
-
-\newpage
+\begin{multicols*}{2}
 
 \subsection*{\MakeUppercase{Additional scenario rules}}
 
 \begin{itemize}
     \item ...
 \end{itemize}
+
+\end{multicols*}
 
 % Uncomment if you need a table to define unit strengths or other parameters of the game
 % \hommtable[]{12}{
@@ -96,10 +90,10 @@ Take the following Map tiles and set them up as shown in the scenario map layout
 %   \newcommand{\azure}[0]{\svg[12]{azure}}
 
 %   \begin{tabularx}{\linewidth}{p{0.15\linewidth}XXXX} & \darkcell{Column 1 name} & \darkcell{Column 2 name}\\
-%     \darkcell[1.4]{Row 1 name} 
+%     \darkcell[1.4]{Row 1 name}
 %         & \lightcell[1.4]{\bronze \silver \golden \azure}
 %         & \lightcell[1.4]{... other stuff ...} \\
-%         \darkcell[1.4]{Row 1 name} 
+%         \darkcell[1.4]{Row 1 name}
 %         & \lightcell[1.4]{\bronze \silver \golden \azure}
 %         & \lightcell[1.4]{... other stuff ...} \\
 %   \end{tabularx}
