@@ -425,9 +425,10 @@
   \qrgithub
 \end{center}
 
+\thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  \node(cover)[anchor=center, yshift=12em] at (current page.south) {
-    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\art/castle_bottom.png}
+  \node(cover)[anchor=center, yshift=9em] at (current page.south) {
+    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
     \thispagestyle{empty}
   };
 \end{tikzpicture}
@@ -451,5 +452,7 @@
 \include{campaigns/main.tex}
 
 \include{sections/credits.tex}
+
+\include{sections/back_cover.tex}
 
 \end{document}
