@@ -425,10 +425,13 @@
   \qrgithub
 \end{center}
 
+\AddToHookNext{shipout/background}{
+  \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+}
+\thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  \node(cover)[anchor=center, yshift=12em] at (current page.south) {
-    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\art/castle_bottom.png}
-    \thispagestyle{empty}
+  \node(cover)[anchor=center, yshift=9em] at (current page.south) {
+    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
   };
 \end{tikzpicture}
 
@@ -438,7 +441,7 @@
 \tableofcontents
 \vspace*{\fill}
 \columnbreak
-\vspace*{\fill}
+\vspace{-3em}
 \includegraphics[width=\linewidth]{\art/mummy.jpg}
 \end{multicols*}
 
@@ -449,5 +452,9 @@
 \include{clash/main.tex}
 
 \include{campaigns/main.tex}
+
+\include{sections/credits.tex}
+
+\include{sections/back_cover.tex}
 
 \end{document}
