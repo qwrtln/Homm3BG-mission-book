@@ -425,11 +425,13 @@
   \qrgithub
 \end{center}
 
+\AddToHookNext{shipout/background}{
+  \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
   \node(cover)[anchor=center, yshift=9em] at (current page.south) {
     \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
-    \thispagestyle{empty}
   };
 \end{tikzpicture}
 
