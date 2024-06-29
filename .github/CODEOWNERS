@@ -1,6 +1,16 @@
 * @qwrtln
 /.github/ @qwrtln
+/assets/ @qwrtln @Re4XN @tomaas-zeman
+/campaigns/ @Re4XN @tomaas-zeman @qwrtln
 /clash/ @Re4XN @tomaas-zeman @qwrtln
 /coops/ @Re4XN @tomaas-zeman @qwrtln
-/campaigns/ @Re4XN @tomaas-zeman @qwrtln
 /templates/ @tomaas-zeman @qwrtln
+README.md @qwrtln
+main_en.tex @qwrtln @tomaas-zeman
+metadata.tex @qwrtln
+po4a.cfg @qwrtln @tomaas-zeman
+
+# Polish
+**/pl.po @qwrtln
+/translations/assets/pl/ @qwrtln
+main_pl.tex @qwrtln
