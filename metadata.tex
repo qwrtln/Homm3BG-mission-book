@@ -129,11 +129,12 @@
 \definecolor{amber}{rgb}{1.0, 0.49, 0.0}
 \definecolor{antiquewhite}{rgb}{0.98, 0.92, 0.84}
 \definecolor{arylideyellow}{rgb}{0.96, 0.89, 0.58}
+\definecolor{bistre}{rgb}{0.24, 0.17, 0.12}
 \definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
-\definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
-\definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
-\definecolor{darkcerulean}{rgb}{0.03, 0.27, 0.49}
 \definecolor{camel}{rgb}{0.76, 0.6, 0.42}
+\definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
+\definecolor{darkcerulean}{rgb}{0.03, 0.27, 0.49}
+\definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
 
 % Command to frame images
 \newcommand\framedimage[2][]{%
@@ -192,9 +193,12 @@
     \node(cover)[anchor=center] at (current page.center) {
       \includegraphics[height=\paperheight, keepaspectratio]{#2}
     };
+    \node(heading)[anchor=center] at (current page.center) {
+      \includegraphics[width=\linewidth, keepaspectratio]{\layout/grouping_heading.png}
+    };
     \node(title)[minimum width = \paperwidth, anchor=center] at (current page.center) {
       \fontfamily{ptm}\selectfont{
-        \Huge\bfseries\filcenter\MakeUppercase{#1}
+        \color{bistre} \Huge\bfseries\filcenter\MakeUppercase{#1}
       }
     };
   \end{tikzpicture}
