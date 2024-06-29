@@ -2,7 +2,7 @@
 
 > 🏗️ THIS IS A WORK IN PROGRESS 🚧
 
-Click in the table to download the most recent builds in the chosen language:
+Click on the table to download the most recent builds in the chosen language:
 
 <table>
     <thead>
@@ -33,27 +33,27 @@ Click in the table to download the most recent builds in the chosen language:
 
 ### 💡 What Is This?
 
-This project aims to collect high-quality fan-made custom scenarios, and put them in a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
+This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
 
 ### 🤔 Why?
 
-Many scenarios are scaterred around different places.
+Many scenarios are scattered across different platforms.
 They also have inconsistent formatting.
-It's all easily fixed, if everything is put into a single booklet.
+This can be easily fixed by compiling everything into a single booklet.
 
 ### 🛠️ How?
 
 This is a communal effort.
-This repository serves as a means to version the scenarios, and for the community to contribute changes.
+This repository serves as a means to version the scenarios and for the community to contribute changes.
 
 ### 💪 Contributing
 
 #### 🗺️ Scenarios
 
-Please open an issue if you'd like to add a scenario, or call out to us on [Archon Studio's Discord](https://discord.gg/wd8U5X68EU).
-We prefer battle-tested and community-vetted ones.
+Please open an issue if you'd like to add a scenario, or reach out to us on [Archon Studio's Discord](https://discord.gg/wd8U5X68EU).
+We prefer battle-tested and community-vetted scenarios.
 
 #### 💻 Code
 
-Do you have an idea how to improve the LaTeX code, document layout or design, GitHub workflows?
-Great, please reach out, we'd love to hear from you.
+Do you have an idea on how to improve the LaTeX code, document layout or design, or GitHub workflows?
+Great! Please reach out. We'd love to hear from you.
