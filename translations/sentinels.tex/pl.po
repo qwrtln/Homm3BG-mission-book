@@ -291,6 +291,12 @@ msgid ""
 "\\vspace{-0.5em}\n"
 "\n"
 msgstr ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-1.5em}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:93
