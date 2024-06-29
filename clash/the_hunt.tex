@@ -8,35 +8,44 @@
 \pagebreak
 
 \begin{minipage}{0.3\textwidth}
-  \framedimage[0.95\linewidth]{\art/crystal_dragon.jpg}
+  \framedimage[0.95\linewidth]{\art/azure_dragon.jpg}
 \end{minipage}
 \begin{minipage}{0.7\textwidth}
-  \textbf{\MakeUppercase{Boss: Crystal Dragon}}
+  \textbf{\MakeUppercase{Boss: Azure Dragon}}
 
-  \textit{Composed entirely of red crystal and brought to life through magical means, the Crystal Dragon is semi-transparent, illuminated from within by its magical heart.
-    Often used as a training tool for aspiring dragon slayers, many wizards also create these creatures to harvest the crystals they shed.
+  \medskip
+
+  \textit{Little is known of the Azure Dragon.
+    It is both rare and mighty, thus few have seen it, and fewer still have survived its attacks.
+    This powerful creature is not much bigger than most dragons, but is said to be capable of enduring prolonged physical attack.
+    It is said those standing face-to-face with an Azure Dragon tend to freeze from pure fear.
   }
 
-  \textbf{Fighting the Crystal Dragon:}
+  \medskip
+
+  \textbf{Fighting the Azure Dragon:}
   \begin{enumerate}
-    \item Place the Crystal Dragon miniature/card on the battlefield. Ignore its ability.
-    \item Place two Gold Golems and two Diamond Golems on the battlefield.
+    \item Place the Azure Dragon miniature/card on the battlefield.
+      Ignore its ability.
+    \item Prepare a pile of discarded Artifacts and shuffle it.
   \end{enumerate}
+
+  \medskip
 
   \textbf{Rules:}
   \begin{itemize}
-    \item At the start of every battle round, check if any of the Golems were removed in the previous round.
-      If so, spawn one new Diamond or Gold Golem (chosen randomly) in the last row of the battlefield.
-    \item \textit{Golem Devour:} The Crystal Dragon can consume Golems to regain health.
-      During its turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume it, gaining a certain amount of health based on the type of Golem consumed:
-      \begin{itemize}
-        \item Consuming a Gold Golem: Regains 2 HP.
-        \item Consuming a Diamond Golem: Regains 4 HP.
-        \item[] \textbf{Note:} The Crystal Dragon can only consume one Golem per turn.
+    \item \textit{Hoarding Tendency:} At the start of every turn, randomly choose a card from the shuffled pile of discarded artifacts.
+      If the artifact is:
+      \begin{itemize}[leftmargin=15pt]
+        \item A weapon, the Dragon gains one Breath attack that targets three creature in a row.
+          The unit in the middle directily hit suffers full damage, while units on both sides suffer 3 \svg{damage-red} less.
+        \item A piece of armor/shield/clothing, the Dragon gains emporary 3 armor, represented with spare Faction cubes.
+          Remove them after they have absorbed damage.
+        \item A trinket, the Azure dragon roars and summons an ice storn, causing all creatures to freeze in fear.
+          This results in eveery unit moving only 1 battle tile per round, while the Azure Dragon can fly to any tile on the combat board.
       \end{itemize}
-    \item Golem Abilities: Gold and Diamond Golems do not possess any additional abilities beyond those specified on their cards.
-      They primarily serve as fodder for the Crystal Dragon's health regeneration.
-    \item The Crystal Dragon \textit{counterattacks twice} per battle round.
+    \item Azure Dragon is immune to all spells cast against it.
+    \item Buffs and enhancements cast on player's units remain effective.
   \end{itemize}
 \end{minipage}
 
@@ -60,5 +69,206 @@
   \lightcell[1.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 22} &
   \lightcell[1.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 30} &
   \lightcell[1.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 40 \\ +2 \svg{attack_yellow} \\ +2 \svg{defense_yellow}}
+  \end{tabularx}
+}
+
+\pagebreak
+
+\begin{minipage}{0.3\textwidth}
+  \framedimage[0.95\linewidth]{\art/crystal_dragon.jpg}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \textbf{\MakeUppercase{Boss: Crystal Dragon}}
+
+  \medskip
+
+  \textit{Made entirely from red crystal and brought to life through magical means, the Crystal Dragon is literally semitransparent, lit from the center by its magical heart.
+    Used frequently as a training tool for young dragon slayers, many wizards also create these creatures for the crystal they shed.
+  }
+
+  \medskip
+
+  \textbf{Fighting the Crystal Dragon:}
+  \begin{enumerate}
+    \item Place the Crystal Dragon miniature/card on the battlefield.
+      Ignore its ability.
+    \item Place two Gold Golems and two Diamond Golems on the battlefield.
+  \end{enumerate}
+
+  \medskip
+
+  \textbf{Rules:}
+  \begin{itemize}
+    \item At the start of every battle round, check if any of the Golems were removed in the previous round.
+      If so, spawn one new Diamond or Gold Golem (chosen randomly) in the last row of the battlefield.
+    \item \textit{Golem Devour:} The Crystal Dragon can consume Golems to regain health.
+      During its turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume it, removing a certain amount of \svg{damage-red} based on the type of Golem consumed:
+      \begin{itemize}
+        \item Consuming a Gold Golem: Remove 2 \svg{damage-red}.
+        \item Consuming a Diamond Golem: Rmove 4 \svg{damage-red}.
+        \item[] \textbf{Note:} The Crystal Dragon can only consume one Golem per turn.
+      \end{itemize}
+    \item Golem Abilities: Gold and Diamond Golems do not possess any additional abilities beyond those specified on their cards.
+      They primarily serve as fodder for the Crystal Dragon's health regeneration.
+    \item The Crystal Dragon \textit{counterattacks twice} per battle round.
+  \end{itemize}
+\end{minipage}
+
+\bigskip
+
+\hommtable[]{12}{
+  \centering
+  \medskip
+
+  \newcommand{\bronze}[0]{\svg[12]{bronze}}
+  \newcommand{\silver}[0]{\svg[12]{silver}}
+  \newcommand{\golden}[0]{\svg[12]{golden}}
+  \newcommand{\azure}[0]{\svg[12]{azure}}
+
+  \begin{tabularx}{\linewidth}{XXXX}
+  \darkcell{\raisebox{-.25\height}{\svg[20]{bronze}} \textbf{Easy}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{silver}} \textbf{Normal}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{golden}} \textbf{Hard}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{azure}} \textbf{Impossible}}\\
+  \lightcell[2.8]{No additional\\changes} &
+  \lightcell[2.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 22} &
+  \lightcell[2.8]{{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 26 \\ +1 Counterattack}} &
+  \lightcell[2.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 32 \\ +1 Counterattack  \\ Remove additional 2 \svg{damage-table} by consuming Golems} \\
+  \end{tabularx}
+}
+
+\pagebreak
+
+\begin{minipage}{0.3\textwidth}
+  \framedimage[0.95\linewidth]{\art/rust_dragon.jpg}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \textbf{\MakeUppercase{Boss: Rust Dragon {\scriptsize Requires Fortress Expansion}}}
+
+  \medskip
+
+  \textit{Rust Dragons are known to hunt Gorgons, and live and feed in sulfur mines.
+    With this appetite, Rust Dragons spew a concentrated acid as their primary attack.
+    This acid is capable of eating through the strongest armor, lowering the defense of its target while inflicting further damage.
+  }
+
+  \medskip
+
+  \textbf{Fighting the Rust Dragon:}
+  \begin{enumerate}
+    \item Place the Rust Dragon miniature/card on the battlefield.
+      Ignore its ability.
+    \item Prepare four spare M\&M deck cards to mark pools of acid.
+  \end{enumerate}
+
+  \medskip
+
+  \textbf{Rules:}
+  \begin{itemize}
+    \item Rust Dragon is immune to basic spells.
+    \item \textit{Corrosive Vomit:} Rust Dragon has a powerful crow control ability that allows it to spew four pools of sulfuric acid onto the bttle field \textit{at the beginning} of each combat round.
+      Use M\&M deck cards placed face down to mark their locations.
+    \item The Rust Dragon cannot place pools at the same tile as in the previous round.
+      Mark the tiles with spare Faction cubes to indicate where the pools were located.
+    \item The pools of sulfuric acid block battlefield tiles and impede movement for one round only.
+      They serve as obstacles for both players and the Dragon.
+    \item The Rust Dragon's passive ability, \textit{Corrosion}, allows it to decrease an enemy unit's armor by 2 with each attack.
+      Place a spare Faction cube on the unit's card to indicate this effect.
+      Corrosion stacks up to -4 \svg{defense}.
+  \end{itemize}
+\end{minipage}
+
+\bigskip
+
+\hommtable[]{11}{
+  \centering
+  \medskip
+
+  \newcommand{\bronze}[0]{\svg[12]{bronze}}
+  \newcommand{\silver}[0]{\svg[12]{silver}}
+  \newcommand{\golden}[0]{\svg[12]{golden}}
+  \newcommand{\azure}[0]{\svg[12]{azure}}
+
+  \begin{tabularx}{\linewidth}{XXXX}
+  \darkcell{\raisebox{-.25\height}{\svg[20]{bronze}} \textbf{Easy}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{silver}} \textbf{Normal}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{golden}} \textbf{Hard}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{azure}} \textbf{Impossible}}\\
+  \lightcell[2.5]{No additional\\changes} &
+  \lightcell[2.5]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 20} &
+  \lightcell[2.5]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 32} &
+  \lightcell[2.5]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 40 \\ +1 to corrosion armor decrease} \\
+  \end{tabularx}
+}
+
+\pagebreak
+
+\begin{minipage}{0.32\textwidth}
+  \framedimage[0.95\linewidth]{\art/faerie_dragon.jpg}
+\end{minipage}
+\begin{minipage}{0.68\textwidth}
+  \textbf{\MakeUppercase{Boss: Faerie Dragon {\scriptsize Requires Rampart Expansion}}}
+
+  \medskip
+
+  \textit{Faerie Dragons are deceptively cute, but in truth, are mischievous tricksters.
+    Little is known about these notorious troublemakers.
+    What is known is found more in storybooks than magical tomes.
+    Some say they are invisible.
+    Some say they can cast spells.
+    Some say Magic Mirror is one of their natural defensive traits.
+  }
+
+  \medskip
+
+  \textbf{Fighting the Faerie Dragon:}
+  \begin{enumerate}
+    \item Place 2 Faerie Dragon cards on the battlefield.
+      Ignore their abilities.
+    \item Place 1 Dendroid card from the silver neutral units deck onto the battlefield, and place 3 additional cards face down to represent the other 3 Dendroids.
+  \end{enumerate}
+
+  \medskip
+
+  \textbf{Rules:}
+  \begin{itemize}
+    \item Faerie Dragon is immune to basic spells.
+    \item Faerie Dragon can cast up to two different spells per battle round.
+    \item All spells ar edisplayed visibly next to the combat board:
+      \begin{enumerate}[leftmargin=15pt]
+        \item The first spell is \textit{Lightning}.
+        \item The second spell is \textit{Cure}.
+        \item For the thir spell, Faerie Dragon randomly picks an expert spell from the Spell deck, excluding Map spells.
+          If a Map spell is picked, draw another spell.
+      \end{enumerate}
+    \item \textit{Trickster:} In the first round of the battle, the first targeted Faerie Dragon is a mere mirage.
+      It inflicts damage, but disappears from the battlefield when hit by an enemy.
+    \item Dendroids' Ability: Each Dendroid holds a key to the Faerie Dragon's power.
+      After the second Dendroid dies, start removing one spell from the Faerie DRagon's spellbook, beginning from the third spell back.
+      Decrease the dragon's spell empowerment by one (starting from its maximum) upn vanquishing the 2nd, 3rd and 4th Dendroids.
+      When there are no Dendroids left, the dragon loses the abilit yto cast spells.
+  \end{itemize}
+\end{minipage}
+
+\bigskip
+
+\hommtable[]{10}{
+  \centering
+  \medskip
+
+  \newcommand{\bronze}[0]{\svg[12]{bronze}}
+  \newcommand{\silver}[0]{\svg[12]{silver}}
+  \newcommand{\golden}[0]{\svg[12]{golden}}
+  \newcommand{\azure}[0]{\svg[12]{azure}}
+
+  \begin{tabularx}{\linewidth}{XXXX}
+  \darkcell{\raisebox{-.25\height}{\svg[20]{bronze}} \textbf{Easy}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{silver}} \textbf{Normal}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{golden}} \textbf{Hard}} &
+  \darkcell{\raisebox{-.25\height}{\svg[20]{azure}} \textbf{Impossible}}\\
+  \lightcell[2.2]{No additional\\changes} &
+  \lightcell[2.2]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 18} &
+  \lightcell[2.2]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 26} &
+  \lightcell[2.2]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 32 \\ +1 Mirage} \\
   \end{tabularx}
 }
