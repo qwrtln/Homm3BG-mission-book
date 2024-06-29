@@ -47,7 +47,7 @@ msgstr ""
 #. type: Plain text
 #: sections/credits.tex:4
 msgid "\\addsection{Credits}{\\images/experience.png}"
-msgstr ""
+msgstr "\\addsection{Twórcy}{\\images/experience.png}"
 
 #. type: Plain text
 #: sections/credits.tex:6
@@ -67,6 +67,9 @@ msgid ""
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
+"Ten projekt bezwstydnie zapożycza najlepsze praktyki z \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Fanowskiej Księgi Zasad}}, w tym kod LaTeX, inżynierię na GitHubie i framework tłumaczeń.\n"
+"Sprawdź ją, jeśli jeszcze jej nie widziałeś.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:15
@@ -75,6 +78,8 @@ msgid ""
 "\\textbf{Scenario templating and LaTeX writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
+"\\textbf{Szablony scenariuszy i pisanie LaTeX-a}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:17
@@ -83,6 +88,8 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
+"\\textbf{Tłumaczenie na język polski}: Andrzej Wiącek\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:21
@@ -93,6 +100,10 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
+"\\textbf{Specjalne podziękowania}: Wszystkim z Archon Studio za stworzenie gry i odpowiadanie na nasze nieustanne pytania dotyczące zasad i innych tematów.\n"
+"Jonowi Van Caneghemowi i wszystkim zaangażowanym w rozwój oryginalnej gry wideo.\n"
+"Wszystkim, którzy wspierali projekt sugestiami, poprawkami, zasobami graficznymi i słowami otuchy na Discordzie lub BoardGameGeeku.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:23
@@ -101,6 +112,8 @@ msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
 "\n"
 msgstr ""
+"\\textbf{Grafiki zapożyczone z oficjalnego wydania zostały wykonane przez}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:29
