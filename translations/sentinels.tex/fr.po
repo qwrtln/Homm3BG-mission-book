@@ -1,0 +1,420 @@
+# French translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-06-29 16:10+0200\n"
+"PO-Revision-Date: 2024-06-29 16:10+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: coops/sentinels.tex:3
+msgid ""
+"\\addscenariosection{1}{Cooperative scenario}{Sentinels}{\\images/sentinel."
+"png}"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} silence70011\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:14
+#, no-wrap
+msgid ""
+"\\textit{There is a world beyond ours, filled with beasts and monsters, barely contained by a formation of four sacred Obelisks.\n"
+"  But the power of these stones is waning, and a breach is imminent.\n"
+"  When it happens, only you and your ally will stand between the hordes and the total devastation of these lands.\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:16
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:18
+#, no-wrap
+msgid ""
+"This scenario is played over 12 rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:22
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 2\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:25
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} recruitment cost.\n"
+"  \\item A Few \\svg{bronze} units with the \\textit{highest} recruitment cost.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:36
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:38
+#, no-wrap
+msgid ""
+"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV-V) Map tile and 1 random Far (II-III) Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:40
+#, no-wrap
+msgid ""
+"\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
+#: coops/emerald_island.tex:40
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:44
+#, no-wrap
+msgid ""
+"Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:50
+#, no-wrap
+msgid ""
+"\\textbf{2 × Starting (I) Map tile}\n"
+"\\begin{itemize}\n"
+"  \\item Starting Tiles of your chosen factions.\n"
+"  \\item Ignore their yellow borders.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:52
+#, no-wrap
+msgid ""
+"\\textbf{4 × Far (II-III) Map tile}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:57
+#, no-wrap
+msgid ""
+"\\textbf{4 × Near (IV-V) Map tile}\n"
+"\\begin{itemize}\n"
+"  \\item All Near Map tiles must have Obelisks.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
+#: coops/emerald_island.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:61
+#, no-wrap
+msgid ""
+"Defeat all invading armies.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
+#: coops/emerald_island.tex:56
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:65
+#, no-wrap
+msgid ""
+"An undefeated enemy army remains at the end of Round 12.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:67
+#, no-wrap
+msgid ""
+"One of your towns is captured, or a main hero is defeated in a battle (retreat doesn't count).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
+#: coops/emerald_island.tex:60
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:75
+#, no-wrap
+msgid ""
+"\\textbf{6$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+"  \\item Spawn an enemy army following the rules outlined below.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:80
+#, no-wrap
+msgid ""
+"\\textbf{7$^{th}$ and 8$^{th}$ Rounds:}\n"
+"\\begin{itemize}\n"
+"  \\item Spawn an enemy army following the rules outlined below.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:85
+#, no-wrap
+msgid ""
+"\\textbf{9$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Round 6.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:91
+#, no-wrap
+msgid ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-0.5em}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:93
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:99
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Players can trade resources when one of the active player's heroes visits a trading post or stands on a field adjacent to an allied hero.\n"
+"  \\item The hero who defeats an enemy army gains 2 \\svg{experience}.\n"
+"    The victorious player rolls two Treasure Dice and resolves one of them.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:101
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:119
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
+"  \\item Determine which Obelisk field by rolling 2 Attack Dice:\n"
+"  \\begin{itemize}[leftmargin=15pt]\n"
+"    \\item First die: --1 west, +1 east, 0 reroll\n"
+"    \\item Second die: --1 north, +1 south, 0 reroll\n"
+"  \\end{itemize}\n"
+"  \\item For a more balanced distribution, in Rounds 7 and 9, the enemy spawns on the opposite side from the previous round.\n"
+"    Rounds 8 and 10 are entirely random.\n"
+"  \\item If the tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
+"  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
+"  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
+"  \\item Enemy armies have 3 MPs per round.\n"
+"  \\item Enemy armies move as described in the rulebook (p. 33), but instead of capturing, they destroy everything in their path.\n"
+"    Place Black cubes on any field they pass through, treating those fields as empty from that point on.\n"
+"  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:121
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:128
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item During a battle with an enemy army, a hero can retreat whenever a friendly unit is about to activate.\n"
+"    A retreating main Hero loses all remaining MPs and is returned to an allied town or settlement of their choice, keeping all remaining units.\n"
+"  \\item Retreating secondary heroes are removed from the game, but their remaining units are kept.\n"
+"  \\item Killed enemy units do not respawn.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:130
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Boss Army}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:137
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is reinforced from a fixed pool of neutral units (reinforcement pool = number in brackets in the table below).\n"
+"  \\item At the beginning of the 2$^{nd}$ combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
+"  \\item Place the reinforcing units on the enemy base line, starting from the left with the lowest initiative (\\svg{unit_ranged} units first). If necessary, continue on the next line in the same order.\n"
+"  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 units and takes these as starting units to the next fight.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: coops/sentinels.tex:174
+msgid ""
+"\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
+"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
+"\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
+"{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
+"\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 "
+"+ 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]"
+"{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} "
+"\\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]"
+"{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} "
+"\\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} "
+"\\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
+"{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden "
+"\\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
+"\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+msgstr ""
+
+#. type: footnotetext{#2}
+#: coops/sentinels.tex:181
+msgid ""
+"Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
+"random\\label{azure}."
+msgstr ""

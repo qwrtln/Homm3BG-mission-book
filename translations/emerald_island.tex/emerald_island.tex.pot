@@ -1,0 +1,285 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-06-29 16:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
+#: coops/emerald_island.tex:40
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
+#: coops/emerald_island.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
+#: coops/emerald_island.tex:56
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
+#: coops/emerald_island.tex:60
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Invoceusse\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\svg{bronze} units of your choice.\n"
+"  \\item A Few \\svg{bronze} units of your choice.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
+#, no-wrap
+msgid ""
+"\\textbf{Additional Bonus:} None\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
+#, no-wrap
+msgid ""
+"Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: coops/emerald_island.tex:3
+msgid ""
+"\\addscenariosection{1}{Cooperative scenario}{Emerald Island}{\\images/"
+"logistics.png}"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:14
+#, no-wrap
+msgid ""
+"\\textit{Lord Markham has decided to organize a treasure hunt and you and your friends are going to take part.\n"
+"  But hurry up! Other teams are also on the trail, and one of them is almost finished!\n"
+"  And above all, beware: it seems that a creature identified as a dragon lurks on this island!}\n"
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:16
+#, no-wrap
+msgid ""
+"This scenario is played over 8 rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:20
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 1 - 4\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:}\\par\n"
+"\\resources{5}{2}{1}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:}\\par\n"
+"\\resources{10}{0}{1}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:36
+#, no-wrap
+msgid ""
+"\\textbf{Map tile Pool:} If you wish, you can distribute the II-III tiles equally to each player rather than laying them out as proposed.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:48
+#, no-wrap
+msgid ""
+"\\textbf{(1*P) Starting (I) Map tile}\n"
+"\\begin{itemize}\n"
+"  \\item Starting Tiles of your chosen factions.\n"
+"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II-III)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:50
+#, no-wrap
+msgid ""
+"\\textbf{(4*P) × Far (II-III) Map tile}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:54
+#, no-wrap
+msgid ""
+"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II-III contains one Mine or Settlement with a level III fight.)\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:58
+#, no-wrap
+msgid ""
+"There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:65
+#, no-wrap
+msgid ""
+"\\textbf{5$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Gain again the result of one field with a Black Cube.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:86
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\\begin{itemize}\n"
+"    \\item You can't build a \\svg{golden} Dwelling.\n"
+"    \\item You can give Units to another player, even outside your turn, if one of your Heroes is:\n"
+"    \\begin{itemize}\n"
+"        \\item On the same Map tile as another player's Hero.\n"
+"        \\item In another player's Town.\n"
+"        \\item Next to another player's Hero.\n"
+"    \\end{itemize}\n"
+"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your faction's Unit pool (even if another player has one or more of your Units). This includes units you've previously given to another player.\n"
+"    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+"    \\item For the last Mine/Settlement battle, add a \\svg{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item The first time you reach level IV, gain your second specialty.\n"
+"    \\item When you reach level IV, move your token on the level tracker to level III.\n"
+"    \\item Additionally, no player can:\n"
+"    \\begin{itemize}\n"
+"        \\item Attack other Heroes.\n"
+"        \\item Capture a Mine or Settlement that is already Flagged.\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:88
+#, no-wrap
+msgid ""
+"\\vspace{2em}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:102
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.2\\paperwidth]{\\_assets/maps/emerald-1.png}\n"
+"  \\captionof{figure}{1-PLAYER SCENARIO}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-2.png}\n"
+"  \\captionof{figure}{2-PLAYER SCENARIO}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-3.png}\n"
+"  \\captionof{figure}{3-PLAYER SCENARIO}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-4.png}\n"
+"  \\captionof{figure}{4-PLAYER SCENARIO}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
