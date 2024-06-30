@@ -35,6 +35,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
@@ -44,6 +46,8 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31

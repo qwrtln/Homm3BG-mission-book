@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-29 16:10+0200\n"
+"POT-Creation-Date: 2024-06-30 20:00+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 sections/credits.tex:10
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -26,7 +27,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29
+#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:}\\par\n"
@@ -36,7 +37,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40
+#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -63,7 +64,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60
+#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -102,7 +103,7 @@ msgid ""
 "  No one has ever entered and returned to tell the tale.\n"
 "  Now, there are rumors about the death of the guardians and an incredible amount of treasures, potentially including the best bow in the world.\\\\\n"
 "  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
-"  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' stronghold.\n"
+"  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
 "}\n"
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
@@ -171,6 +172,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
+#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -274,11 +276,11 @@ msgid ""
 "  \\item Remember: the center of VI-VII tile next to all I tiles is the Titans' Stronghold.\n"
 "  \\item No one can enter the Titans' Stronghold until all other VII fields are flagged by any player.\n"
 "  \\item After defeating a level VII neutral army, instead of resolving the field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
-"  \\begin{itemize}\n"
-"    \\item Another player (your choice) gains 5 gold.\n"
-"    \\item Another player (your choice) gains 2 building materials.\n"
-"    \\item Another player (your choice) gains 1 valuable.\n"
-"  \\end{itemize}\n"
+"    \\begin{itemize}[leftmargin=12pt]\n"
+"      \\item Another player (your choice) gains 5 \\svg{gold}\n"
+"      \\item Another player (your choice) gains 2 \\svg{building_materials}\n"
+"      \\item Another player (your choice) gains 1 \\svg{valuables}\n"
+"    \\end{itemize}\n"
 "  Then, flag the VII field with a faction cube.\n"
 "  (There is no bonus in solo play!)\n"
 "  \\item Ignore all yellow borders in I tiles.\n"
