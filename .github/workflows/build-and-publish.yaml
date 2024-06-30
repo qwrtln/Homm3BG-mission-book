@@ -16,11 +16,15 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
     strategy:
       fail-fast: false
       matrix:
         include:
           - language: en
+            luaengine: false
+          - language: pl
             luaengine: false
 
     steps:
@@ -66,6 +70,17 @@ jobs:
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
+      - name: Install pdfinfo
+        if: ${{ matrix.language == 'en' }}
+        run: sudo apt-get install -y poppler-utils
+
+      - name: Check number of pages
+        id: check_pages
+        if: ${{ matrix.language == 'en' }}
+        run: |
+          NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
+
       - name: Move file
         run: |
           mkdir ${{ matrix.language }}
@@ -80,3 +95,34 @@ jobs:
           publish_branch: ${{ matrix.language }}
           publish_dir: ./${{ matrix.language }}
           force_orphan: true
+
+
+  check_pages:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'pull_request'
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["pl"]
+
+    steps:
+      - name: Install pdfinfo
+        run: sudo apt-get install -y poppler-utils
+
+
+      - name: Download PDFs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "*_${{ matrix.language }}"
+
+      - name: Check number of pages in digital version
+        run: |
+          file main_${{ matrix.language }}/main_${{ matrix.language }}.pdf
+          ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
+          echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
+          if [[ ${{ needs.build.outputs.number_of_pages }} != ${ACTUAL_NUM_OF_PAGES} ]]; then
+            echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
+            exit 1
+          fi

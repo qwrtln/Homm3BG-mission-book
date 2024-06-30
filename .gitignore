@@ -17,4 +17,6 @@
 .vs
 cache
 sections/translated
+coops/translated
+clash/translated
 svg-inkscape/*
