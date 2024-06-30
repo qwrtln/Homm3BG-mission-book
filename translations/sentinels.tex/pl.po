@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-30 21:05+0200\n"
+"POT-Creation-Date: 2024-06-30 21:25+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -408,17 +408,15 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:149
+#: coops/sentinels.tex:147
 #, no-wrap
 msgid ""
-"\\vspace*{3.5em}\n"
-"\\hspace{-10em}\n"
-"\\includegraphics[width=0.6\\paperwidth]{\\_assets/maps/sentinels.png}\n"
+"\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:186
+#: coops/sentinels.tex:184
 msgid ""
 "\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
@@ -445,7 +443,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:187
+#: coops/sentinels.tex:185
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."
