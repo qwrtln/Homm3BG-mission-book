@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-29 16:13+0200\n"
+"POT-Creation-Date: 2024-06-30 21:05+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -66,6 +66,14 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43 sections/credits.tex:25
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
 "\n"
 msgstr ""
 
@@ -180,14 +188,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout.\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: clash/the_hunt.tex:43 sections/credits.tex:25
-#, no-wrap
-msgid ""
-"\\columnbreak\n"
 "\n"
 msgstr ""
 
