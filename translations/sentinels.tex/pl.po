@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-29 16:10+0200\n"
+"POT-Creation-Date: 2024-06-30 21:25+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,14 +27,15 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 sections/credits.tex:10
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:7
 #, no-wrap
 msgid ""
@@ -42,7 +43,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:9
 #, no-wrap
 msgid ""
@@ -50,7 +51,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:14
 #, no-wrap
 msgid ""
@@ -61,7 +62,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:16
 #, no-wrap
 msgid ""
@@ -69,7 +70,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:18
 #, no-wrap
 msgid ""
@@ -77,7 +78,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:20
 #, no-wrap
 msgid ""
@@ -85,7 +86,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:22
 #, no-wrap
 msgid ""
@@ -93,7 +94,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:25
 #, no-wrap
 msgid ""
@@ -103,7 +104,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29
+#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:}\\par\n"
@@ -111,7 +112,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:34
 #, no-wrap
 msgid ""
@@ -123,7 +124,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:36
 #, no-wrap
 msgid ""
@@ -131,15 +132,15 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV-V) Map tile and 1 random Far (II-III) Map tile.\n"
+"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV-V) Map tile and 1 random Far (II-III) Map tile. These tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:40
 #, no-wrap
 msgid ""
@@ -149,14 +150,14 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40
+#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:44
 #, no-wrap
 msgid ""
@@ -164,7 +165,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:50
 #, no-wrap
 msgid ""
@@ -176,7 +177,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:52
 #, no-wrap
 msgid ""
@@ -184,7 +185,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:57
 #, no-wrap
 msgid ""
@@ -204,7 +205,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:61
 #, no-wrap
 msgid ""
@@ -221,7 +222,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:65
 #, no-wrap
 msgid ""
@@ -229,7 +230,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:67
 #, no-wrap
 msgid ""
@@ -239,14 +240,14 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60
+#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:75
 #, no-wrap
 msgid ""
@@ -258,7 +259,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:80
 #, no-wrap
 msgid ""
@@ -269,7 +270,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:85
 #, no-wrap
 msgid ""
@@ -280,7 +281,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:91
 #, no-wrap
 msgid ""
@@ -299,46 +300,51 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:93
+#: coops/sentinels.tex:93 clash/the_hunt.tex:74
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:99
+#. type: multicols
+#: coops/sentinels.tex:104
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Players can trade resources when one of the active player's heroes visits a trading post or stands on a field adjacent to an allied hero.\n"
 "  \\item The hero who defeats an enemy army gains 2 \\svg{experience}.\n"
 "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
+"  \\item Additionally, no player can:\n"
+"  \\begin{itemize}\n"
+"      \\item Attack other Heroes.\n"
+"      \\item Capture a Mine or Settlement that is already Flagged.\n"
+"  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:101
+#. type: multicols
+#: coops/sentinels.tex:106
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:119
+#. type: multicols
+#: coops/sentinels.tex:124
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
-"  \\item Determine which Obelisk field by rolling 2 Attack Dice:\n"
+"  \\item Determine which Obelisk field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
 "  \\begin{itemize}[leftmargin=15pt]\n"
-"    \\item First die: --1 west, +1 east, 0 reroll\n"
-"    \\item Second die: --1 north, +1 south, 0 reroll\n"
+"    \\item +1/+1 = North, +1/-1 = East\n"
+"    \\item -1/+1 = West, -1/-1 = South\n"
 "  \\end{itemize}\n"
-"  \\item For a more balanced distribution, in Rounds 7 and 9, the enemy spawns on the opposite side from the previous round.\n"
-"    Rounds 8 and 10 are entirely random.\n"
+"  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
+"  Rounds 8 and 10 are entirely random.\n"
 "  \\item If the tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
 "  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
 "  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
@@ -350,19 +356,20 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:121
+#. type: multicols
+#: coops/sentinels.tex:126
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:128
+#. type: multicols
+#: coops/sentinels.tex:134
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
+"  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
 "  \\item During a battle with an enemy army, a hero can retreat whenever a friendly unit is about to activate.\n"
 "    A retreating main Hero loses all remaining MPs and is returned to an allied town or settlement of their choice, keeping all remaining units.\n"
 "  \\item Retreating secondary heroes are removed from the game, but their remaining units are kept.\n"
@@ -371,16 +378,16 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:130
+#. type: multicols
+#: coops/sentinels.tex:136
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: coops/sentinels.tex:137
+#. type: multicols
+#: coops/sentinels.tex:143
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -392,8 +399,24 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols*
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43 sections/credits.tex:25
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:147
+#, no-wrap
+msgid ""
+"\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}\n"
+"\n"
+msgstr ""
+
 #. type: Plain text
-#: coops/sentinels.tex:174
+#: coops/sentinels.tex:184
 msgid ""
 "\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
@@ -420,7 +443,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:181
+#: coops/sentinels.tex:185
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."
