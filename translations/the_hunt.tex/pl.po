@@ -35,6 +35,9 @@ msgid ""
 "\\resources{10}{2}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Początkowy Przychód:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
@@ -44,6 +47,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
@@ -53,6 +58,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:93 clash/the_hunt.tex:74
@@ -78,6 +85,8 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:82 clash/the_hunt.tex:83

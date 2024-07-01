@@ -25,7 +25,7 @@ Click on the table to download the most recent builds in the chosen language:
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center">10%</td>
+            <td align="center">20%</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
         </tr>
     </tbody>

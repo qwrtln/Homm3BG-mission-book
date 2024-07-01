@@ -34,6 +34,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
@@ -43,6 +45,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
@@ -52,6 +56,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
@@ -61,6 +67,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -69,6 +77,8 @@ msgid ""
 "\\textbf{Author:} Invoceusse\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Invoceusse\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
@@ -77,6 +87,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
@@ -89,6 +101,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
@@ -97,6 +115,8 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
@@ -105,6 +125,8 @@ msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
 "\n"
 msgstr ""
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text

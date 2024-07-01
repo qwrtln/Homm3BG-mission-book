@@ -111,6 +111,9 @@ msgid ""
 "\\resources{10}{2}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Początkowy Przychód:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:34
@@ -156,6 +159,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:44
@@ -204,6 +209,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:61
@@ -221,6 +228,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:65
@@ -246,6 +255,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:75
