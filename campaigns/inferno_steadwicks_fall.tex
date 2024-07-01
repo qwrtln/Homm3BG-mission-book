@@ -1,5 +1,5 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{2. Steadwick's Fall}{\images/inferno.png}
+\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{2. Steadwick's Fall}{\images/firewall.png}
 
 \begin{multicols*}{2}
 
@@ -69,6 +69,8 @@ This scenario plays out over 16 rounds.
 
 \textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\footnote{All the Charging Heroes' Enemies use the same AI and Spell decks. Reset them after each Combat.}.
 
+\vspace*{\fill}\columnbreak
+
 \subsection*{\MakeUppercase{Map setup}}
 
 Take the following Map tiles and set them up as shown in the scenario map layout:
@@ -79,7 +81,7 @@ Take the following Map tiles and set them up as shown in the scenario map layout
   \item 1 × Castle (S3)
 \end{itemize}
 
-\vspace*{\fill}\columnbreak
+% \vspace*{\fill}\columnbreak
 
 \textbf{3 × Far Map tile (II-III)}
 \begin{itemize}
@@ -134,70 +136,111 @@ You run out of time –- you have time till the end of the Round 16.
 
 \textbf{1$^{st}$ Round:}
 \begin{itemize}
-  \item Read: ``Our underlings have done well. They have managed to raise a volcano
-    and erect a fort in a sparsely populated forest just outside of Erathia's border.
-    While the Dungeon Overlords make their way underground toward the Erathian capitol,
-    you must strike at their allies, the elves of AvLee.'
+  \item Read: ``You are to be congratulated on your progress so far. 
+    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian
+    capital of Steadwick. You must capture the capital quickly!''
 \end{itemize}
 
 \textbf{2$^{nd}$ Round:}
 \begin{itemize}
-  \item 
+  \item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that
+    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its
+    garrisons before she arrives.
+    
+    You have just received a report on the progress of Queen Catherine.
+    Forces from Nighon and Eeofol are attempting to delay her march to Steadwick,
+    but doubt that they can delay her more than two or three months.''
 \end{itemize}
 
 \textbf{5$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item Read: ``You receive a report from the south. Queen Catherine's forces have been sufficiently delayed,
+    allowing you at least two months more to reach the capitol, but our own forces have suffered significant
+    losses. Do not let their sacrifice go to waste.''
 \end{itemize}
 
 \textbf{10$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item For any Enemy Settlements (F3, F10, \#F1) that have not been defeated, an additional Enemy
+    Charging Hero of that Faction appears on each Settlement at the beginning of this round.
 \end{itemize}
 
 \textbf{11$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item Read: ``You receive a report from the south. Our forces continue to throw themselves in the path of
+    Queen Catherine's armies, yet she continues to march northward. You have, at most, three or four weeks
+    before she can reach the capital.''
 \end{itemize}
 
 \textbf{13$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item Warning: ``Queen Catherine's march continues - her forces are just two weeks away. If you do not hurry,
+    we will not have time to secure the capital before her arrival.''
 \end{itemize}
 
 \textbf{15$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item Warning: ``Your scouts report sighting Queen Catherine's army seven days to the southwest. If she
+    reaches the capitol before you, all is lost.''
 \end{itemize}
 
 \textbf{16$^{th}$ Round:}
 \begin{itemize}
-  \item 
+  \item If Steadwick has not been taken, read: ``This morning, a massive army lead by Queen Catherine
+    Ironfist arrived at the Erathian capitol of Steadwick. We have no choice but to retreat our forces.
+    You have failed us... miserably.''
 \end{itemize}
 
 \textbf{When you complete the scenario:}
 \begin{itemize}
-  \item 
+  \item Read: ``Congratulations! You captured Steadwick and are victorious!''
 \end{itemize}
+
+\columnbreak
 
 \subsection*{\MakeUppercase{Additional rules}}
 
 During this ``Inferno'' campaign scenario, the following rules apply:
 
 \begin{itemize}
-    \item 
+    \item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,
+      and an Arrow Tower on their side of the Combat Board.
+    \item The difficulty level of every Combat encounter on the map increases by one till the end of the scenario
+      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).
+    \item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else
+      (including mines and settlements if possible) and go straight for the Player's Faction Town (on Map Tile S6).
+      They do not pursue the player directly, but if they happen to be on the same Map tile, they will
+      attack the player's Main Hero (not Secondary).
+    \item The Enemy Charging Heroes move after the player's turn ends.
+    \item The borders on the Castle Starting Map tile S3 cannot be crossed by any means until
+      all Enemy Settlements (F3, F10, \#F1) have been defeated.
+    \item Defeating Enemy Charging Heroes provides 2 \svg{valuables}.
+    \item Obelisks give you 1 \svg{valuables} and function as a ``Castle
+      Gate'' location (only if you have the ``Castle Gate'' built in your town).
 \end{itemize}
 
 \end{multicols*}
 
-% \begin{figure*}[!hb]
-%   \newcommand{\maplabel}[1]{}
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{\_assets/maps/inferno_devilish_plan.png}
-%   \begin{tikzpicture}[overlay]
-%     \node at (-13, 9.2) {\large{{\textbf{\textcolor{darkcandyapplered}{N8}}}}};
-%     \node at (-4, 9.3) {\large{{\textbf{\textcolor{darkcandyapplered}{N7}}}}};
-%     \node at (-11.3, 0.2) {\large{{\textbf{\textcolor{darkcandyapplered}{Inferno Map}}}}};
-%     \node at (-11.3, -0.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Tiles}}}}};
-%   \end{tikzpicture}
-% \end{figure*}
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, yshift=37em, opacity=0.3] at (current page.south) {
+    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fire_shield.png}
+  };
+  \node(map)[anchor=center] at (current page.center) {
+    \includegraphics[width=\textwidth]{\_assets/maps/inferno_steadwicks_fall.png}
+  };
+
+  \node at (3, -11.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N3}}}}};
+  \node at (4.4, -18.6) {\large{{\textbf{\textcolor{darkcandyapplered}{\#F1}}}}};
+  \node at (15, -5.2) {\large{{\textbf{\textcolor{darkcandyapplered}{F10}}}}};
+  \node at (17.3, -11.5) {\large{{\textbf{\textcolor{darkcandyapplered}{S6}}}}};
+  \node at (8.8, -18.8) {\large{{\textbf{\textcolor{darkcandyapplered}{F3}}}}};
+  \node at (15.9, -18.8) {\large{{\textbf{\textcolor{darkcandyapplered}{F2}}}}};
+  \node at (2, -4.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Steadwick}}}}};
+  \node at (2, -5.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S3}}}}};
+  \node at (7.5, -5.4) {\large{{\textbf{\textcolor{darkcandyapplered}{Rampart}}}}};
+  \node at (7.5, -6.1) {\large{{\textbf{\textcolor{darkcandyapplered}{Map Tiles}}}}};
+  \node at (12.4, -17.8) {\large{{\textbf{\textcolor{darkcandyapplered}{Necropolis}}}}};
+  \node at (12.4, -18.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Map Tiles}}}}};
+  \node at (2, -12.3) {\large{{\textbf{\textcolor{darkcandyapplered}{Castle}}}}};
+  \node at (2, -13) {\large{{\textbf{\textcolor{darkcandyapplered}{Map Tiles}}}}};
+\end{tikzpicture}
