@@ -44,7 +44,10 @@
 \usepackage{xstring}
 \usepackage{soul}
 \usepackage{xifthen}
-\usepackage[para, symbol, perpage]{footmisc}
+
+\usepackage[hang, symbol, perpage]{footmisc}
+\renewcommand{\footnotemargin}{1em}
+
 \newtcolorbox{scaledfigure}[1][]{height fill, space to=\myspace,#1}
 \hypersetup{
   colorlinks=true,
