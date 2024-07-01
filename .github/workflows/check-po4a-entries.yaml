@@ -1,0 +1,27 @@
+name: Check po4a.cfg entries
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  tablint:
+    runs-on: ubuntu-latest
+    name: Check po4a.cfg entries
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check po4a.cfg entries
+        run: |
+          ERRORS=0
+          for file in $(find . -type f -name "*tex" | grep -v 'main\|metadata\|templates')
+          do
+              if ! grep -q "${file:2}" po4a.cfg; then
+                  echo "${file:2} not found in po4a.cfg"
+                  ERRORS=1
+              fi
+          done
+          if [[ $ERRORS == 1 ]]; then
+              exit 1
+          fi
