@@ -23,6 +23,5 @@ jobs:
               fi
           done
           if [[ $ERRORS == 1 ]]; then
-              echo "Scenario(s) above are missing from the po4a.cfg file, please add them."
               exit 1
           fi
