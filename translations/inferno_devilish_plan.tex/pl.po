@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-01 16:40+0200\n"
+"POT-Creation-Date: 2024-07-01 22:27+0200\n"
 "PO-Revision-Date: 2024-07-01 16:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,7 +20,8 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:5 sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:5
+#: campaigns/inferno_steadwicks_fall.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -38,6 +39,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
 #: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:121
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -49,6 +51,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
 #: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:126
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -61,6 +64,7 @@ msgstr ""
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:134
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -72,6 +76,7 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
 #: campaigns/inferno_devilish_plan.tex:21
+#: campaigns/inferno_steadwicks_fall.tex:19
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -83,6 +88,8 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:42
 #: campaigns/inferno_devilish_plan.tex:78
+#: campaigns/inferno_steadwicks_fall.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -110,34 +117,29 @@ msgstr ""
 #. type: Plain text
 #: campaigns/inferno_devilish_plan.tex:3
 msgid ""
-"\\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{1. A "
-"Devilish Plan}{\\images/firewall.png}"
+"\\addscenariosection[subsection]{1}{Inferno Campaign -- Dungeons and Devils}"
+"{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:7
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Invoceusse\n"
+"\\textbf{Autor:} Tm335\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols*
@@ -154,45 +156,35 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:15
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario is played over 16 rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This scenario plays out over 13 rounds.\n"
 "\n"
 msgstr ""
-"Ten scenariusz rozgrywany jest w 16 rundach (15 na Niemożliwym poziomie trudności).\n"
+"Ten scenariusz rozgrywany jest w 13 rundach.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:23
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map tile Pool:} None\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:21
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
-"\\textbf{Pula Kafelków Mapy:} Brak\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:25
+#: campaigns/inferno_steadwicks_fall.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any   \n"
@@ -201,32 +193,24 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:28
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:}\\par\n"
-#| "\\resources{30}{8}{2}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:}\\par\n"
 "\\resources{15}{3}{1}\n"
 "\n"
 msgstr ""
 "\\textbf{Zasoby Początkowe:}\\par\n"
-"\\resources{30}{8}{2}\n"
+"\\resources{15}{3}{1}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:31
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:38
@@ -254,16 +238,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:51
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player setup}}\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:51
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:53
@@ -275,16 +255,11 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:55
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Armies:} \n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:60
@@ -323,10 +298,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:68
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:75
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
@@ -336,14 +309,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:76
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting Map tile (I)}\n"
 "\\begin{itemize}\n"
@@ -352,12 +318,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
-"\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:84
@@ -395,16 +355,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:102
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:99
@@ -489,14 +445,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:140
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{10$^{th}$ Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-#| "\\end{itemize}\n"
-#| "\\vspace{-0.5em}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{10$^{th}$ Round:}\n"
 "\\begin{itemize}\n"
@@ -504,12 +453,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
-"\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-"\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:145
@@ -535,19 +478,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:153
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "\n"
+#: campaigns/inferno_steadwicks_fall.tex:200
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:202
 #, no-wrap
 msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
@@ -582,6 +522,6 @@ msgid ""
 "  };\n"
 "  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
 "  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
-"  \\node at (4.2, -17.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno Map}}}}};\n"
-"  \\node at (4.2, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Tiles}}}}};"
+"  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
+"  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
 msgstr ""
