@@ -1,0 +1,659 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-07-01 19:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: campaigns/inferno_devilish_plan.tex:5
+#: campaigns/inferno_steadwicks_fall.tex:5 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:121
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:126
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
+#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:134
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:198 sections/credits.tex:25
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
+#: campaigns/inferno_devilish_plan.tex:21
+#: campaigns/inferno_steadwicks_fall.tex:19
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:42
+#: campaigns/inferno_devilish_plan.tex:78
+#: campaigns/inferno_steadwicks_fall.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:73
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:7
+#: campaigns/inferno_steadwicks_fall.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Tm335\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:17
+#: campaigns/inferno_steadwicks_fall.tex:15
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:23
+#: campaigns/inferno_steadwicks_fall.tex:21
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Inferno\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:25
+#: campaigns/inferno_steadwicks_fall.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} Choose any   \n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:33
+#: campaigns/inferno_steadwicks_fall.tex:31
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:51
+#: campaigns/inferno_steadwicks_fall.tex:51
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{AI hero setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:68
+#: campaigns/inferno_steadwicks_fall.tex:75
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_steadwicks_fall.tex:102
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:153
+#: campaigns/inferno_steadwicks_fall.tex:200
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:202
+#, no-wrap
+msgid ""
+"During this ``Inferno'' campaign scenario, the following rules apply:\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: campaigns/inferno_steadwicks_fall.tex:3
+msgid ""
+"\\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{2. "
+"Steadwick's Fall}{\\images/firewall.png}"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:13
+#, no-wrap
+msgid ""
+"\\textit{Catherine Ironfist has enlisted aid from Bracada and AvLee. \n"
+"  She knows we are close to Steadwick. We must occupy Steadwick before she arrives.\n"
+"  Once we own Erathia's capitol, not even Catherine Ironfist will wrench it from our hands.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:17
+#, no-wrap
+msgid ""
+"This scenario plays out over 16 rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:}\\par\n"
+"\\resources{15}{1}{1}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:}\\par\n"
+"\\resources{10}{2}{0}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:37
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item A Few Troglodytes\n"
+"  \\item A Few Evil Eyes\n"
+"  \\item A Pack of Familiars\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:39
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:49
+#, no-wrap
+msgid ""
+"\\textbf{Bonus:} Choose one of the following options: \n"
+"\\begin{itemize}\n"
+"  \\item Add a Pack of Harpies to your hand.\n"
+"  \\item Add a Pack of Magogs to your hand.\n"
+"  \\item Add an Ammo Cart to your hand.\n"
+"  \\item Search (4) the Spell deck.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:53
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Castle\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:55
+#, no-wrap
+msgid ""
+"\\textbf{Enemies:} General Kendal, Charging Heroes\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:57
+#, no-wrap
+msgid ""
+"\\textbf{General Kendal's Army:} A Pack of Archangels, a Pack of Champions, a Pack of Zealots, a Pack of Crusaders, a Pack of Griffins, a Balista War Machine\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:59
+#, no-wrap
+msgid ""
+"\\textbf{General Kendal's Deck:} 5 × Might card, 1 × Magic card, 3 × Skill card\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:61
+#, no-wrap
+msgid ""
+"\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell card\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:63
+#, no-wrap
+msgid ""
+"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:65
+#, no-wrap
+msgid ""
+"\\textbf{Charging Heroes' Factions:} Rampart, Tower, Castle\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:67
+#, no-wrap
+msgid ""
+"\\textbf{Charging Heroes' Armies:} Neutral Army is one level higher than your Hero level (max level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:69
+#, no-wrap
+msgid ""
+"\\textbf{Charging Heroes' Deck:} 2 × Might card, 2 × Magic card\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:71
+#, no-wrap
+msgid ""
+"\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell decks. Reset them after every Combat.}.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:77
+#, no-wrap
+msgid ""
+"Take the following Map tiles and set them up as shown in the scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:83
+#, no-wrap
+msgid ""
+"\\textbf{2 × Starting Map tile (I)}\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Inferno (S6)\n"
+"  \\item 1 × Castle (S3)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:93
+#, no-wrap
+msgid ""
+"\\textbf{3 × Far Map tile (II-III)}\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Castle (F3)\n"
+"  \\item 1 × Rampart (F10)\n"
+"  \\item 1 × Dungeon (F2)\n"
+"  \\item 1 × Tower (\\#F1)\n"
+"  \\item 1 × Rampart (choose from: F11, F12)\n"
+"  \\item 1 × Necropolis (choose from: F4, \\#F6, F7)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:100
+#, no-wrap
+msgid ""
+"\\textbf{2 × Near Map tile (IV-V)}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Castle (N3, choose from: \\#N3, N6)\n"
+"  \\item 1 × Rampart (N8)\n"
+"  \\item 1 × Necropolis (N4)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:105
+#, no-wrap
+msgid ""
+"The Enemy Hero General Kendal is represented by one Castle Faction Hero\n"
+"model and appears on the center field of the S3 Starting Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:108
+#, no-wrap
+msgid ""
+"The Castle Charging Hero is represented by one Castle Faction Hero model\n"
+"and appears on (and owns) the Settlement field of the F3 Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:111
+#, no-wrap
+msgid ""
+"The Rampart Charging Hero is represented by one Rampart Faction Hero model\n"
+"and appears on (and owns) the Settlement field of the F10 Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:114
+#, no-wrap
+msgid ""
+"The Tower Charging Hero is represented by one Tower Faction Hero model\n"
+"and appears on (and owns) the Settlement field of the \\#F1 Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:116
+#, no-wrap
+msgid ""
+"Place your Main Hero on the center field of the Inferno Starting S6 Map tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:119
+#, no-wrap
+msgid ""
+"Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice,\n"
+"on the Settlement field of the F2 Map tile. This Settlement produces no resources.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:124
+#, no-wrap
+msgid ""
+"Defeat all 3 Enemy Controlled Settlements (F3, F10, \\#F1), and capture Steadwick (S3) before\n"
+"Queen Catherine Ironfist arrives at the end of the Round 16.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:128
+#, no-wrap
+msgid ""
+"You lose one Combat encounter with your Main Hero (Surrender costs 10 gold, and does not count as a defeat).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:130
+#, no-wrap
+msgid ""
+"You lose your Faction Town on the S6 Map Tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:132
+#, no-wrap
+msgid ""
+"You run out of time –- you have time till the end of the Round 16.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:141
+#, no-wrap
+msgid ""
+"\\textbf{1$^{st}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read: ``You are to be congratulated on your progress so far. \n"
+"    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian\n"
+"    capital of Steadwick. You must capture the capital quickly!''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:147
+#, no-wrap
+msgid ""
+"\\textbf{2$^{nd}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that\n"
+"    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its\n"
+"    garrisons before she arrives.\n"
+"    \n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:152
+#, no-wrap
+msgid ""
+"    You have just received a report on the progress of Queen Catherine.\n"
+"    Forces from Nighon and Eeofol are attempting to delay her march to Steadwick,\n"
+"    but doubt that they can delay her more than two or three months.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:159
+#, no-wrap
+msgid ""
+"\\textbf{5$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read: ``You receive a report from the south. Queen Catherine's forces have been sufficiently delayed,\n"
+"    allowing you at least two months more to reach the capitol, but our own forces have suffered significant\n"
+"    losses. Do not let their sacrifice go to waste.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:165
+#, no-wrap
+msgid ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item For any Enemy Settlements (F3, F10, \\#F1) that have not been defeated, an additional Enemy\n"
+"    Charging Hero of that Faction appears on each Settlement at the beginning of this round.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:172
+#, no-wrap
+msgid ""
+"\\textbf{11$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read: ``You receive a report from the south. Our forces continue to throw themselves in the path of\n"
+"    Queen Catherine's armies, yet she continues to march northward. You have, at most, three or four weeks\n"
+"    before she can reach the capital.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:178
+#, no-wrap
+msgid ""
+"\\textbf{13$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Warning: ``Queen Catherine's march continues - her forces are just two weeks away. If you do not hurry,\n"
+"    we will not have time to secure the capital before her arrival.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:184
+#, no-wrap
+msgid ""
+"\\textbf{15$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Warning: ``Your scouts report sighting Queen Catherine's army seven days to the southwest. If she\n"
+"    reaches the capitol before you, all is lost.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:191
+#, no-wrap
+msgid ""
+"\\textbf{16$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item If Steadwick has not been taken, read: ``This morning, a massive army lead by Queen Catherine\n"
+"    Ironfist arrived at the Erathian capitol of Steadwick. We have no choice but to retreat our forces.\n"
+"    You have failed us... miserably.''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:196
+#, no-wrap
+msgid ""
+"\\textbf{When you complete the scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item Read: ``Congratulations! You captured Steadwick and are victorious!''\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:219
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"    \\item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,\n"
+"      and an Arrow Tower on their side of the Combat Board.\n"
+"    \\item The difficulty level of every Combat encounter on the map increases by one till the end of the scenario\n"
+"      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
+"    \\item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else\n"
+"      (including mines and settlements if possible) and go straight for the Player's Faction Town (on Map Tile S6).\n"
+"      They do not pursue the player directly, but if they happen to be on the same Map tile, they will\n"
+"      attack the player's Main Hero (not Secondary).\n"
+"    \\item The Enemy Charging Heroes move after the player's turn ends.\n"
+"    \\item The borders on the Castle Starting Map tile S3 cannot be crossed by any means until\n"
+"      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
+"    \\item Defeating Enemy Charging Heroes provides 2 \\svg{valuables}.\n"
+"    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle\n"
+"      Gate'' location (only if you have the ``Castle Gate'' built in your town).\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: campaigns/inferno_steadwicks_fall.tex:229
+#, no-wrap
+msgid ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.17] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_shield.png}\n"
+"  };\n"
+"  \\node(map)[anchor=center] at (current page.center) {\n"
+"    \\includegraphics[width=\\textwidth]{\\_assets/maps/inferno_steadwicks_fall.png}\n"
+"  };\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: campaigns/inferno_steadwicks_fall.tex:244
+#, no-wrap
+msgid ""
+"  \\node at (3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N3}}}}};\n"
+"  \\node at (4.4, -18.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{\\#F1}}}}};\n"
+"  \\node at (15, -5.2) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F10}}}}};\n"
+"  \\node at (17.3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S6}}}}};\n"
+"  \\node at (8.8, -18.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F3}}}}};\n"
+"  \\node at (15.9, -18.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F2}}}}};\n"
+"  \\node at (2, -4.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Steadwick}}}}};\n"
+"  \\node at (2, -5.2) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S3}}}}};\n"
+"  \\node at (7.5, -5.4) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Rampart}}}}};\n"
+"  \\node at (7.5, -6.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};\n"
+"  \\node at (12.4, -17.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Necropolis}}}}};\n"
+"  \\node at (12.4, -18.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};\n"
+"  \\node at (2, -12.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Castle}}}}};\n"
+"  \\node at (2, -13) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
+msgstr ""
