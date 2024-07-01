@@ -236,15 +236,16 @@
 }
 
 % Four mandatory params
+% - [optional] set to "subsection" or any other level if you want to have this as a subsection in TOC
 % - lines of campaign name (1-2 according to the name length)
 % - campaign name
 % - scenario name
 % - icon
 %
 % TODO: possibly replace the whole \addsection with this
-\newcommand{\addscenariosection}[4]{
+\newcommand{\addscenariosection}[5][section]{
   \sodef\sotitle{}{0.2em}{0.6em}{1.2em}
-  \def\oneliner{\equal{#1}{1}}
+  \def\oneliner{\equal{#2}{1}}
 
   \vspace*{-5em}
   \hspace*{-1.3em}
@@ -253,7 +254,7 @@
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
     \begin{tikzpicture}
       \draw (0, 0) node[inner sep=0, yscale=\yscale] (header) {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
-      \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#4}};
+      \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#5}};
       \addheadershadow{header}
     \end{tikzpicture}
     }
@@ -261,11 +262,11 @@
   \begin{fullwidth}[leftmargin=0.2\textwidth]
     \begin{center}
       \vspace{-22pt}
-      \sectionheadertext{\small{\sotitle{#2}}}
+      \sectionheadertext{\small{\sotitle{#3}}}
       \vspace{-12pt}
-      \sectionheadertext{#3}
+      \sectionheadertext{#4}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{} {} {} {} {}#3}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
