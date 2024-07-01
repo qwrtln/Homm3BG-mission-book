@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-01 19:12+0200\n"
+"POT-Creation-Date: 2024-07-01 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,8 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:5 sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:5
+#: campaigns/inferno_steadwicks_fall.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -37,6 +38,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
 #: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:121
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -46,6 +48,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
 #: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:126
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -56,6 +59,7 @@ msgstr ""
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:134
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -65,6 +69,7 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
 #: campaigns/inferno_devilish_plan.tex:21
+#: campaigns/inferno_steadwicks_fall.tex:19
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -74,6 +79,8 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:42
 #: campaigns/inferno_devilish_plan.tex:78
+#: campaigns/inferno_steadwicks_fall.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -101,12 +108,13 @@ msgstr ""
 #. type: Plain text
 #: campaigns/inferno_devilish_plan.tex:3
 msgid ""
-"\\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{1. A "
-"Devilish Plan}{\\images/firewall.png}"
+"\\addscenariosection[subsection]{1}{Inferno Campaign -- Dungeons and Devils}"
+"{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:7
+#: campaigns/inferno_steadwicks_fall.tex:7
 #, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
@@ -135,6 +143,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:17
+#: campaigns/inferno_steadwicks_fall.tex:15
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
@@ -151,6 +160,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:23
+#: campaigns/inferno_steadwicks_fall.tex:21
 #, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
@@ -159,6 +169,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:25
+#: campaigns/inferno_steadwicks_fall.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any   \n"
@@ -176,6 +187,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:33
+#: campaigns/inferno_steadwicks_fall.tex:31
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -208,6 +220,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:51
+#: campaigns/inferno_steadwicks_fall.tex:51
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
@@ -267,6 +280,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:68
+#: campaigns/inferno_steadwicks_fall.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
@@ -321,6 +335,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_steadwicks_fall.tex:102
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
@@ -443,6 +458,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:153
+#: campaigns/inferno_steadwicks_fall.tex:200
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -451,6 +467,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:202
 #, no-wrap
 msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"

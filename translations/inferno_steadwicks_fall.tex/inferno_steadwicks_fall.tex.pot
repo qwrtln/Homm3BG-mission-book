@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-01 19:22+0200\n"
+"POT-Creation-Date: 2024-07-01 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,8 +182,8 @@ msgstr ""
 #. type: Plain text
 #: campaigns/inferno_steadwicks_fall.tex:3
 msgid ""
-"\\addscenariosection{1}{Inferno Campaign -- Dungeons and Devils}{2. "
-"Steadwick's Fall}{\\images/firewall.png}"
+"\\addscenariosection[subsection]{1}{Inferno Campaign -- Dungeons and Devils}"
+"{2. Steadwick's Fall}{\\images/firewall.png}"
 msgstr ""
 
 #. type: multicols*
