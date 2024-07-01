@@ -164,19 +164,15 @@ During this ``Inferno'' campaign scenario, the following rules apply:
 
 \end{multicols*}
 
-\begin{figure*}[!hb]
-  \newcommand{\maplabel}[1]{}
-  \centering
-  \includegraphics[width=0.8\textwidth]{\_assets/maps/inferno_devilish_plan.png}
-  \begin{tikzpicture}[overlay]
-    \node at (-13, 9.2) {\large{{\textbf{\textcolor{darkcandyapplered}{N8}}}}};
-    \node at (-4, 9.3) {\large{{\textbf{\textcolor{darkcandyapplered}{N7}}}}};
-    \node at (-11.3, 0.2) {\large{{\textbf{\textcolor{darkcandyapplered}{Inferno Map}}}}};
-    \node at (-11.3, -0.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Tiles}}}}};
-  \end{tikzpicture}
-\end{figure*}
-
-\begin{center}
-  \vspace*{6em}
-  \includegraphics[width=0.6\textwidth]{\_assets/art/cerberi.png}
-\end{center}
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {
+    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fire_magic.png}
+  };
+  \node(map)[anchor=center] at (current page.center) {
+    \includegraphics[width=\textwidth]{\_assets/maps/inferno_devilish_plan.png}
+  };
+  \node at (2,-6.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N8}}}}};
+  \node at (13, -6.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N7}}}}};
+  \node at (4.2, -17.8) {\large{{\textbf{\textcolor{darkcandyapplered}{Inferno Map}}}}};
+  \node at (4.2, -18.3) {\large{{\textbf{\textcolor{darkcandyapplered}{Tiles}}}}};
+\end{tikzpicture}
