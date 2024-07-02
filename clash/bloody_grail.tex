@@ -122,11 +122,7 @@ During this scenario:
 \vspace*{\fill}
 
 \begin{center}
-  \begin{tikzpicture}[remember picture]
-    \node(bg)[anchor=center, opacity=0.3] at (current page.south) {
-      \includegraphics[width=0.5\linewidth, keepaspectratio]{\art/bless.png}
-    };
-  \end{tikzpicture}
+  \transparent{0.3}{\includegraphics[width=0.5\linewidth, keepaspectratio]{\art/bless.png}}
 \end{center}
 
 \vspace*{\fill}
