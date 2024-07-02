@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-30 21:05+0200\n"
+"POT-Creation-Date: 2024-07-03 00:09+0100\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,7 +19,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -47,6 +49,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -62,7 +67,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43 sections/credits.tex:25
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:198
+#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -158,7 +165,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:33
+#: clash/the_hunt.tex:33 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling, City Hall\n"
@@ -169,7 +176,7 @@ msgstr ""
 #: clash/the_hunt.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Far (II-III) Map tile\n"
+"\\textbf{Map tile Pool:} Each player takes 1 random Far (II--III) Map tile\n"
 "\n"
 msgstr ""
 
@@ -188,9 +195,9 @@ msgid ""
 "\\textbf{For a 2-player scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map tile\n"
-"  \\item 2 × Far (II-III) Map tile\n"
-"  \\item 2 × Near (IV-V) Map tile\n"
-"  \\item 1 × Center (VI-VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
+"  \\item 2 × Far (II--III) Map tile\n"
+"  \\item 2 × Near (IV--V) Map tile\n"
+"  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -202,9 +209,9 @@ msgid ""
 "\\textbf{For a 3-player scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Starting (I) Map tile\n"
-"  \\item 3 × Far (II-III) Map tile\n"
-"  \\item 3 × Near (IV-V) Map tile\n"
-"  \\item 1 × Center (VI-VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
+"  \\item 3 × Far (II--III) Map tile\n"
+"  \\item 3 × Near (IV--V) Map tile\n"
+"  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -223,7 +230,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"If the Dragon Boss still lives at the end of the 14th round, all players lose the scenario.\n"
+"If the Dragon Boss still lives at the end of the \\nth{14} round, all players lose the scenario.\n"
 "\n"
 msgstr ""
 
@@ -252,7 +259,7 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
-"    You can choose randomly by picking one of the four shuffled Statistic cards: \\textit{Attack} - Azure, \\textit{Defense} - Crystal, \\textit{Knowledge} - Rust, \\textit{Power} - Faerie.\n"
+"    You can choose randomly by picking one of the four shuffled Statistic cards: \\textit{Attack} -- Azure, \\textit{Defense} -- Crystal, \\textit{Knowledge} -- Rust, \\textit{Power} -- Faerie.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
