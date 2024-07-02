@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-02 09:52+0200\n"
+"POT-Creation-Date: 2024-07-02 10:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -608,13 +608,22 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols*
+#: campaigns/inferno_deal_with_the_devil.tex:203
+#, no-wrap
+msgid ""
+"\\vspace*{1em}\n"
+"\\includegraphics[width=0.4\\paperwidth, keepaspectratio]{\\art/cerberi.png}\n"
+"\n"
+msgstr ""
+
 #. type: tikzpicture
-#: campaigns/inferno_deal_with_the_devil.tex:210
+#: campaigns/inferno_deal_with_the_devil.tex:213
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, yshift=43em, opacity=0.3] at (current page.south) {\n"
-"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/cerberi.png}\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.17] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/inferno.png}\n"
 "  };\n"
 "  \\node(map)[anchor=center] at (current page.center) {\n"
 "    \\includegraphics[width=\\textwidth]{\\_assets/maps/inferno_deal_with_the_devil.png}\n"
@@ -623,7 +632,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_deal_with_the_devil.tex:224
+#: campaigns/inferno_deal_with_the_devil.tex:227
 #, no-wrap
 msgid ""
 "  \\node at (1.5, -6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S4}}}}};\n"
