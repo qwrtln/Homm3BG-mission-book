@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 00:09+0100\n"
+"POT-Creation-Date: 2024-07-03 00:19+0100\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -246,14 +246,25 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:72
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from all the Water Wheels, Windmills and Markets of Time on the map.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Rundy 4., 8. i 12.:}\n"
+"\\begin{itemize}\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka, Młyna Wodnego i Mistycznego Ogródu na mapie.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:76
@@ -388,7 +399,7 @@ msgid ""
 "turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume "
 "it, removing a certain amount of \\svg{damage-red} based on the type of "
 "Golem consumed: \\begin{itemize} \\item Consuming a Gold Golem: Remove 2 "
-"\\svg{damage-red}.  \\item Consuming a Diamond Golem: Rmove 4 \\svg{damage-"
+"\\svg{damage-red}.  \\item Consuming a Diamond Golem: Remove 4 \\svg{damage-"
 "red}.  \\item[] \\textbf{Note:} The Crystal Dragon can only consume one "
 "Golem per turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond "
 "Golems do not possess any additional abilities beyond those specified on "
