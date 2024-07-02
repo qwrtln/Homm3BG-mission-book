@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-01 22:27+0200\n"
+"POT-Creation-Date: 2024-07-02 08:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -29,7 +29,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:104
 #: campaigns/inferno_steadwicks_fall.tex:121
 #, no-wrap
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:126
 #, no-wrap
 msgid ""
@@ -50,7 +50,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:134
 #, no-wrap
 msgid ""
@@ -69,7 +69,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
 #: campaigns/inferno_steadwicks_fall.tex:19
 #, no-wrap
 msgid ""
@@ -78,8 +78,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:42
-#: campaigns/inferno_devilish_plan.tex:78
+#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
+#: campaigns/inferno_devilish_plan.tex:79
 #: campaigns/inferno_steadwicks_fall.tex:41
 #: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
@@ -89,7 +89,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:7
+#: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #, no-wrap
 msgid ""
@@ -98,7 +98,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
 #: campaigns/inferno_steadwicks_fall.tex:15
 #, no-wrap
 msgid ""
@@ -107,7 +107,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:23
+#: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:21
 #, no-wrap
 msgid ""
@@ -116,16 +116,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:25
+#: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Faction Hero:} Choose any   \n"
+"\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:33
+#: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:31
 #, no-wrap
 msgid ""
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:51
+#: campaigns/inferno_devilish_plan.tex:52
 #: campaigns/inferno_steadwicks_fall.tex:51
 #, no-wrap
 msgid ""
@@ -143,7 +143,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:68
+#: campaigns/inferno_devilish_plan.tex:69
 #: campaigns/inferno_steadwicks_fall.tex:75
 #, no-wrap
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_devilish_plan.tex:97
 #: campaigns/inferno_steadwicks_fall.tex:102
 #, no-wrap
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:153
+#: campaigns/inferno_devilish_plan.tex:154
 #: campaigns/inferno_steadwicks_fall.tex:200
 #, no-wrap
 msgid ""
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_devilish_plan.tex:156
 #: campaigns/inferno_steadwicks_fall.tex:202
 #, no-wrap
 msgid ""
@@ -198,7 +198,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:13
 #, no-wrap
 msgid ""
-"\\textit{Catherine Ironfist has enlisted aid from Bracada and AvLee. \n"
+"\\textit{Catherine Ironfist has enlisted aid from Bracada and AvLee.\n"
 "  She knows we are close to Steadwick. We must occupy Steadwick before she arrives.\n"
 "  Once we own Erathia's capitol, not even Catherine Ironfist will wrench it from our hands.}\n"
 "\n"
@@ -254,7 +254,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:49
 #, no-wrap
 msgid ""
-"\\textbf{Bonus:} Choose one of the following options: \n"
+"\\textbf{Bonus:} Choose one of the following options:\n"
 "\\begin{itemize}\n"
 "  \\item Add a Pack of Harpies to your hand.\n"
 "  \\item Add a Pack of Magogs to your hand.\n"
@@ -485,7 +485,7 @@ msgstr ""
 msgid ""
 "\\textbf{1$^{st}$ Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``You are to be congratulated on your progress so far. \n"
+"  \\item Read: ``You are to be congratulated on your progress so far.\n"
 "    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian\n"
 "    capital of Steadwick. You must capture the capital quickly!''\n"
 "\\end{itemize}\n"
@@ -501,7 +501,7 @@ msgid ""
 "  \\item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that\n"
 "    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its\n"
 "    garrisons before she arrives.\n"
-"    \n"
+"\n"
 msgstr ""
 
 #. type: multicols*
