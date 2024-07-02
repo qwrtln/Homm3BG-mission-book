@@ -186,9 +186,6 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:26
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"

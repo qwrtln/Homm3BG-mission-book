@@ -131,9 +131,6 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:23
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
