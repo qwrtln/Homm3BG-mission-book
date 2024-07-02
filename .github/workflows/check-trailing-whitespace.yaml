@@ -1,0 +1,11 @@
+name: Check Trailing Whitespace
+
+on: pull_request
+
+jobs:
+  example:
+    name: Check Trailing Whitespace
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: harupy/find-trailing-whitespace@master
