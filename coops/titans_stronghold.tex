@@ -185,7 +185,11 @@ There are undefeated units left in the Titans' Stronghold at the end of Round 16
 \vspace*{\fill}
 
 \begin{center}
-  \includegraphics[width=0.8\linewidth]{\art/magic_arrow.png}
+  \begin{tikzpicture}[remember picture]
+    \node(bg)[anchor=center, opacity=0.3] at (current page.south) {
+      \includegraphics[width=0.5\linewidth, keepaspectratio]{\art/building_materials.png}
+    };
+  \end{tikzpicture}
 \end{center}
 
 \vspace*{\fill}
