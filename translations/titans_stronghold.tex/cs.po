@@ -316,6 +316,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:105 coops/titans_stronghold.tex:111
+#: clash/bloody_grail.tex:123 clash/bloody_grail.tex:129
 #: sections/credits.tex:27 sections/credits.tex:31
 #, no-wrap
 msgid ""
@@ -377,6 +378,13 @@ msgid ""
 "& \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak "
 "Then\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ "
 "\\end{tabularx} }"
+msgstr ""
+
+#. type: center
+#: coops/titans_stronghold.tex:190
+msgid ""
+"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
+"{\\art/land_mine.png}}"
 msgstr ""
 
 #. type: minipage

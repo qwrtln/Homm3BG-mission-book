@@ -420,9 +420,9 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:184
+#: coops/sentinels.tex:186
 msgid ""
-"\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
 "\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
 "{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
@@ -447,7 +447,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:185
+#: coops/sentinels.tex:189
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."

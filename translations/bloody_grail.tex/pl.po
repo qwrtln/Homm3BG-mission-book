@@ -55,6 +55,16 @@ msgstr ""
 "\n"
 
 #. type: multicols*
+#: coops/titans_stronghold.tex:105 coops/titans_stronghold.tex:111
+#: clash/bloody_grail.tex:123 clash/bloody_grail.tex:129
+#: sections/credits.tex:27 sections/credits.tex:31
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
@@ -307,8 +317,18 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols*
+#: clash/bloody_grail.tex:127
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
 #. type: tikzpicture
-#: clash/bloody_grail.tex:130
+#: clash/bloody_grail.tex:138
 #, no-wrap
 msgid ""
 "[overlay]\n"
