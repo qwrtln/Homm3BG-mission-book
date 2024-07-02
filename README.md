@@ -18,6 +18,7 @@ Click on the table to download the most recent builds in the chosen language:
             <td align="center">🌍</td>
             <td align="center">✍️<br>Text</td>
             <td align="center">🖥️<br>Digital</td>
+            <td align="center">🖥️<br>Digital</td>
         </tr>
         <tr>
             <td>🇬🇧 English</td>
