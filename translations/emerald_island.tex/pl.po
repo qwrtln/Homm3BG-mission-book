@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-02 23:32+0100\n"
+"POT-Creation-Date: 2024-07-02 23:46+0100\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -132,6 +132,19 @@ msgstr ""
 "\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
+#. type: multicols*
+#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+#| "\n"
+msgid ""
+"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"\n"
+
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/emerald_island.tex:3
@@ -169,11 +182,16 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:20
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Player Count:} 1 - 6\n"
+#| "\n"
 msgid ""
-"\\textbf{Player Count:} 1 - 4\n"
+"\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
+"\\textbf{Liczba Graczy:} 1 - 6\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:23
@@ -205,45 +223,53 @@ msgstr ""
 #: coops/emerald_island.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} If you wish, you can distribute the II-III tiles equally to each player rather than laying them out as proposed.\n"
+"\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: coops/emerald_island.tex:42
-#, no-wrap
-msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
-"\n"
-msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
-"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:48
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{(1*P) Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item Starting Tiles of your chosen factions.\n"
-"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II-III)\n"
+"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:50
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(2*P) × Far (II-III) Map tile}\n"
+#| "\n"
 msgid ""
-"\\textbf{(4*P) × Far (II-III) Map tile}\n"
+"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
+"\\textbf{(2*G) × Daleki (II-III) Kafelek Mapy}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:54
 #, no-wrap
 msgid ""
-"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II-III contains one Mine or Settlement with a level III fight.)\n"
+"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
 "\n"
 msgstr ""
 
@@ -257,14 +283,27 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:65
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{10$^{th}$ Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+#| "\\end{itemize}\n"
+#| "\\vspace{-0.5em}\n"
+#| "\n"
 msgid ""
-"\\textbf{5$^{th}$ Round:}\n"
+"\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Gain again the result of one field with a Black Cube.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-1.5em}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:86
