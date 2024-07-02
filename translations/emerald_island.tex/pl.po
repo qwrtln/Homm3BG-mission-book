@@ -135,9 +135,6 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
 #, fuzzy, no-wrap
-#| msgid ""
-#| "Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
-#| "\n"
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
