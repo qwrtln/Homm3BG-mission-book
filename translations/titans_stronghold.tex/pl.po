@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-30 20:00+0200\n"
+"POT-Creation-Date: 2024-07-02 23:32+0100\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,7 +20,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -52,7 +54,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:104
+#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -63,7 +67,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -75,6 +81,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -147,6 +156,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:19
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -157,9 +169,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:23
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Player Count:} 1 - 6\n"
+#| "\n"
 msgid ""
-"\\textbf{Player Count:} 1 - 6\n"
+"\\textbf{Player Count:} 1 -- 6\n"
 "\n"
 msgstr ""
 "\\textbf{Liczba Graczy:} 1 - 6\n"
@@ -227,10 +242,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
-#, no-wrap
+#: coops/titans_stronghold.tex:45
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+#| "\n"
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
 "Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
@@ -238,9 +256,16 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:51
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{(1*P) Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item Starting Tiles of your chosen factions.\n"
 "  \\item Ignore their yellow borders.\n"
@@ -256,9 +281,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:53
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(2*P) × Far (II-III) Map tile}\n"
+#| "\n"
 msgid ""
-"\\textbf{(2*P) × Far (II-III) Map tile}\n"
+"$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
 "\\textbf{(2*G) × Daleki (II-III) Kafelek Mapy}\n"
@@ -266,9 +294,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:55
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(2*P) × Near (IV-V) Map tile}\n"
+#| "\n"
 msgid ""
-"\\textbf{(2*P) × Near (IV-V) Map tile}\n"
+"$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map tile}\n"
 "\n"
 msgstr ""
 "\\textbf{(2*G) × Bliski (IV-V) Kafelek Mapy}\n"
@@ -276,9 +307,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:57
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) + 1 × Center (VI-VII) Map tile}\n"
+#| "\n"
 msgid ""
-"\\textbf{(1*P) + 1 × Center (VI-VII) Map tile}\n"
+"$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map tile}\n"
 "\n"
 msgstr ""
 "\\textbf{(1*G) + 1 × Centralny (VI-VII) Kafelek Mapy}\n"
@@ -286,9 +320,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:60
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "If you don't have enough VI-VII tiles, you can use another tile near to tile I.\n"
+#| "The center of this tile is the Titans' Stronghold.\n"
+#| "\n"
 msgid ""
-"If you don't have enough VI-VII tiles, you can use another tile near to tile I.\n"
+"If you don't have enough VI--VII tiles, you can use another tile near to tile I.\n"
 "The center of this tile is the Titans' Stronghold.\n"
 "\n"
 msgstr ""
@@ -298,9 +336,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:64
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Kill all units in the Titans' Stronghold (the center of tile VI-VII next to tiles I).\n"
+#| "\n"
 msgid ""
-"Kill all units in the Titans' Stronghold (the center of tile VI-VII next to tiles I).\n"
+"Kill all units in the Titans' Stronghold (the center of tile VI--VII next to tiles I).\n"
 "\n"
 msgstr ""
 "Zabij wszystkie jednostki w Twierdzy Tytanów (centrum kafelka VI-VII obok kafelków I).\n"
@@ -318,9 +359,15 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:75
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "\\end{itemize}\n"
@@ -333,7 +380,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:77
+#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
+#: campaigns/inferno_devilish_plan.tex:79
+#: campaigns/inferno_steadwicks_fall.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -342,11 +392,38 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:103
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remember: the center of VI-VII tile next to all I tiles is the Titans' Stronghold.\n"
+#| "  \\item No one can enter the Titans' Stronghold until all other VII fields are flagged by any player.\n"
+#| "  \\item After defeating a level VII neutral army, instead of resolving the field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
+#| "    \\begin{itemize}[leftmargin=12pt]\n"
+#| "      \\item Another player (your choice) gains 5 \\svg{gold}\n"
+#| "      \\item Another player (your choice) gains 2 \\svg{building_materials}\n"
+#| "      \\item Another player (your choice) gains 1 \\svg{valuables}\n"
+#| "    \\end{itemize}\n"
+#| "  Then, flag the VII field with a faction cube.\n"
+#| "  (There is no bonus in solo play!)\n"
+#| "  \\item Ignore all yellow borders in I tiles.\n"
+#| "  \\item You can use your build token to give your resources to another player.\n"
+#| "  \\item Two players can use their build tokens to exchange artifacts and/or spells.\n"
+#| "  \\item Whenever a player visits an Obelisk, that player rolls one treasure die and one resource die, and resolves one of them.\n"
+#| "  \\item When all VII fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit cards from each of their corresponding decks to create a separate deck of Neutral Units for the Titans' Stronghold (the deck of the Titans' Stronghold is sometimes split in two because certain scenarios are otherwise impossible to implement with the cards from certain expansions).\n"
+#| "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 cards from the Titans' Stronghold deck instead of from the Neutral Unit card decks. The units are placed on the Combat board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the units they find in the Titans' Stronghold. Any Neutral Units defeated during combat in the Titans' Stronghold are returned to their respective Neutral Unit decks instead of the Titans' Stronghold deck. Any Neutral Units surviving combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold deck. If there are not enough Unit cards in this deck, draw as many Unit cards as are available and place them on the Combat board.\n"
+#| "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat round, just like Combat against non-Azure tier units.\n"
+#| "  \\item Additionally, no player can:\n"
+#| "  \\begin{itemize}\n"
+#| "    \\item Attack other Heroes.\n"
+#| "    \\item Capture a Mine or Settlement that is already controlled.\n"
+#| "  \\end{itemize}\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
-"  \\item Remember: the center of VI-VII tile next to all I tiles is the Titans' Stronghold.\n"
+"  \\item Remember: the center of VI--VII tile next to all I tiles is the Titans' Stronghold.\n"
 "  \\item No one can enter the Titans' Stronghold until all other VII fields are flagged by any player.\n"
 "  \\item After defeating a level VII neutral army, instead of resolving the field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
 "    \\begin{itemize}[leftmargin=12pt]\n"
