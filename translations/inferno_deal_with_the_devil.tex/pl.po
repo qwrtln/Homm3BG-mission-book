@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-02 10:12+0200\n"
+"POT-Creation-Date: 2024-07-03 08:52+0100\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -136,6 +136,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:26
+#: campaigns/inferno_steadwicks_fall.tex:23
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} Choose any\n"
+"\n"
+msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
+
+#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:29
 #: campaigns/inferno_deal_with_the_devil.tex:27
 #, no-wrap
@@ -262,16 +274,6 @@ msgid ""
 "\n"
 msgstr ""
 "Ten scenariusz rozgrywany jest w 13 rundach.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:24
-#, fuzzy, no-wrap
-msgid ""
-"\\textbf{Faction Hero:} Choose any   \n"
-"\n"
-msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols*
@@ -441,9 +443,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:93
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{7 × Far Map tile (II-III)}\n"
+"\\textbf{7 × Far Map tile (II--III)}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Inferno (F16, F17, F18)\n"
 "  \\item 3 × Castle (F3, \\#F4, F6)\n"
@@ -451,17 +460,36 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:98
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{1 × Near Map tile (IV-V)}\n"
+"\\textbf{1 × Near Map tile (IV--V)}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:102
@@ -523,7 +551,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:126
 #, no-wrap
 msgid ""
-"\\textbf{1$^{st}$ Round:}\n"
+"\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue\n"
 "    operation. Clan Kreelah, prepare our defenses! Protect Kleesive at all costs. We have the advantage.''\n"
@@ -535,7 +563,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:133
 #, no-wrap
 msgid ""
-"\\textbf{2$^{nd}$ Round:}\n"
+"\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
 "    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
@@ -548,7 +576,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:139
 #, no-wrap
 msgid ""
-"\\textbf{3$^{rd}$ Round:}\n"
+"\\textbf{\\nth{3} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the\n"
 "    help of local seers. They are fools to think these will help them overcome our Kreegan fortress.”\n"
@@ -567,7 +595,7 @@ msgstr ""
 #| "\\vspace{-0.5em}\n"
 #| "\n"
 msgid ""
-"\\textbf{4th$^{th}$ Round:}\n"
+"\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The first armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -584,9 +612,9 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
-"\\textbf{7$^{th}$ Round:}\n"
+"\\textbf{\\nth{7} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile. \n"
+"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile.\n"
 "  \\item The Enemy Rampart Charging Hero \\#2 appears on the center field of the S4 Starting Map tile.\n"
 "\\end{itemize}\n"
 "\n"
@@ -603,7 +631,7 @@ msgstr ""
 #| "\\vspace{-0.5em}\n"
 #| "\n"
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The second armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -618,14 +646,27 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:163
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{10$^{th}$ Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+#| "\\end{itemize}\n"
+#| "\\vspace{-0.5em}\n"
+#| "\n"
 msgid ""
-"\\textbf{12$^{th}$ Round:}\n"
+"\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Enemy Army appears on the Settlement field of the F3 tile. This army has 4 MPs per turn.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-1.5em}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:168
@@ -638,7 +679,7 @@ msgstr ""
 #| "\\vspace{-0.5em}\n"
 #| "\n"
 msgid ""
-"\\textbf{16$^{th}$ Round:}\n"
+"\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Army will attack this round. We must hold Kleesive at all costs!\n"
 "\\end{itemize}\n"

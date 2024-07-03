@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-02 10:12+0200\n"
+"POT-Creation-Date: 2024-07-03 08:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,6 +124,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:26
+#: campaigns/inferno_steadwicks_fall.tex:23
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} Choose any\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:29
 #: campaigns/inferno_deal_with_the_devil.tex:27
 #, no-wrap
@@ -234,14 +244,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "This scenario plays out over 14 rounds.\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:24
-#, no-wrap
-msgid ""
-"\\textbf{Faction Hero:} Choose any   \n"
 "\n"
 msgstr ""
 
@@ -399,7 +401,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:93
 #, no-wrap
 msgid ""
-"\\textbf{7 × Far Map tile (II-III)}\n"
+"\\textbf{7 × Far Map tile (II--III)}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Inferno (F16, F17, F18)\n"
 "  \\item 3 × Castle (F3, \\#F4, F6)\n"
@@ -412,7 +414,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:98
 #, no-wrap
 msgid ""
-"\\textbf{1 × Near Map tile (IV-V)}\n"
+"\\textbf{1 × Near Map tile (IV--V)}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
@@ -479,7 +481,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:126
 #, no-wrap
 msgid ""
-"\\textbf{1$^{st}$ Round:}\n"
+"\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue\n"
 "    operation. Clan Kreelah, prepare our defenses! Protect Kleesive at all costs. We have the advantage.''\n"
@@ -491,7 +493,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:133
 #, no-wrap
 msgid ""
-"\\textbf{2$^{nd}$ Round:}\n"
+"\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
 "    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
@@ -504,7 +506,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:139
 #, no-wrap
 msgid ""
-"\\textbf{3$^{rd}$ Round:}\n"
+"\\textbf{\\nth{3} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the\n"
 "    help of local seers. They are fools to think these will help them overcome our Kreegan fortress.”\n"
@@ -516,7 +518,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:144
 #, no-wrap
 msgid ""
-"\\textbf{4th$^{th}$ Round:}\n"
+"\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The first armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -527,9 +529,9 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
-"\\textbf{7$^{th}$ Round:}\n"
+"\\textbf{\\nth{7} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile. \n"
+"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile.\n"
 "  \\item The Enemy Rampart Charging Hero \\#2 appears on the center field of the S4 Starting Map tile.\n"
 "\\end{itemize}\n"
 "\n"
@@ -539,7 +541,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:157
 #, no-wrap
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The second armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -550,7 +552,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:163
 #, no-wrap
 msgid ""
-"\\textbf{12$^{th}$ Round:}\n"
+"\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Enemy Army appears on the Settlement field of the F3 tile. This army has 4 MPs per turn.\n"
 "\\end{itemize}\n"
@@ -561,7 +563,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:168
 #, no-wrap
 msgid ""
-"\\textbf{16$^{th}$ Round:}\n"
+"\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Army will attack this round. We must hold Kleesive at all costs!\n"
 "\\end{itemize}\n"
