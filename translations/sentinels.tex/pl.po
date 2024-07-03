@@ -119,23 +119,41 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:34
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\svg{bronze} units of your choice.\n"
+#| "  \\item A Few \\svg{bronze} units of your choice.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} recruitment cost.\n"
-"  \\item A Few \\svg{bronze} units with the \\textit{highest} recruitment cost.\n"
+"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} recruitment cost.\n"
+"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} recruitment cost.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:36
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Town Buildings:} None\n"
+#| "\n"
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Budynki Początkowe:} Brak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
@@ -491,16 +509,27 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:147
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
 #, no-wrap
 msgid ""
-"\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}\n"
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 
+#. type: tikzpicture
+#: coops/sentinels.tex:154
+#, no-wrap
+msgid ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 1.5) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+msgstr ""
+
 #. type: Plain text
-#: coops/sentinels.tex:186
+#: coops/sentinels.tex:192
 #, fuzzy
 #| msgid ""
 #| "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
@@ -548,9 +577,9 @@ msgstr ""
 #| "\\end{tabularx} }"
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
+"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
+"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
+"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
 "\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 "
 "+ 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]"
 "{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
@@ -613,7 +642,7 @@ msgstr ""
 "10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:189
+#: coops/sentinels.tex:195
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."

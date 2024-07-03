@@ -45,6 +45,7 @@
 \usepackage{xstring}
 \usepackage{soul}
 \usepackage{xifthen}
+\usepackage{xparse}
 
 \usepackage[hang, symbol, perpage]{footmisc}
 \renewcommand{\footnotemargin}{1em}
@@ -101,10 +102,12 @@
 
 \def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
 
-\newcommand{\svg}[2][]{%
-  \ifthenelse{\equal{#1}{}}%
-  {\raisebox{-.15\height}{\includesvg[height=10px]{\svgs/\detokenize{#2}.svg}}}%
-  {\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}%
+\newcommand{\svg}[2][10]{%
+  {\raisebox{-0.15\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
+}%
+
+\newcommand{\svgunit}[2][10]{%
+  {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
 
 \newcommand{\resources}[3]{%
@@ -115,9 +118,9 @@
     | >{\centering\arraybackslash}X%
     | >{\centering\arraybackslash}X | }%
    \hline%
-   #1 \raisebox{-.2\height}{\svg[15]{gold}} &
-   #2 \raisebox{-.2\height}{\svg[15]{building_materials}} &
-   #3 \raisebox{-.2\height}{\svg[15]{valuables}} \\%
+   #1 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/gold.svg}}} &
+   #2 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/building_materials.svg}}} &
+   #3 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/valuables.svg}}} \\%
    \hline%
   \end{tabularx}%
   \egroup%

@@ -92,6 +92,16 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
 "\n"
 
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/titans_stronghold.tex:3
@@ -194,12 +204,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units of your choice.\n"
-"  \\item A Few \\svg{bronze} units of your choice.\n"
+"  \\item A Pack of \\svgunit{bronze} units of your choice.\n"
+"  \\item A Few \\svgunit{bronze} units of your choice.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -242,7 +252,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:45
+#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
 #, fuzzy, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
@@ -476,16 +486,6 @@ msgstr ""
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:105 coops/titans_stronghold.tex:111
-#: clash/bloody_grail.tex:123 clash/bloody_grail.tex:129
-#: sections/credits.tex:27 sections/credits.tex:31
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
-"\n"
-msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:109

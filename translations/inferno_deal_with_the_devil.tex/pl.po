@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 08:52+0100\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -298,11 +298,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:42
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Town Buildings:} None\n"
+#| "\n"
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Budynki Początkowe:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:44

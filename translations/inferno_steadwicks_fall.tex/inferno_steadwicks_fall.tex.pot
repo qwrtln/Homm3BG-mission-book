@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-03 08:52+0100\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -262,7 +262,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:39
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling\n"
 "\n"
 msgstr ""
 

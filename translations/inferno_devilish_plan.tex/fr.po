@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 08:52+0100\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: 2024-07-01 16:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -106,7 +106,7 @@ msgstr ""
 #: clash/the_hunt.tex:33 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, City Hall\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
 "\n"
 msgstr ""
 
