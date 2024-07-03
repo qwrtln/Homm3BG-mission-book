@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 12:58+0200\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -41,6 +41,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
 #: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
 #, no-wrap
@@ -53,7 +63,7 @@ msgstr ""
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
 
@@ -132,8 +142,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few \\svg{bronze} units with the \\textit{highest} Recruitment cost\n"
-"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -273,9 +283,9 @@ msgid ""
 "    \\end{enumerate}\n"
 "    \\item \\textbf{[Sacrifice]} Remove a * faction Unit card from your Unit deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\svg{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
-"      \\item *\\svg{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
-"      \\item *\\svg{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svg{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
+"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
+"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
@@ -302,8 +312,18 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols*
+#: clash/bloody_grail.tex:127
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
 #. type: tikzpicture
-#: clash/bloody_grail.tex:130
+#: clash/bloody_grail.tex:138
 #, no-wrap
 msgid ""
 "[overlay]\n"
