@@ -144,9 +144,6 @@ msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
@@ -268,12 +265,15 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:18
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This scenario plays out over 13 rounds.\n"
+#| "\n"
 msgid ""
 "This scenario plays out over 14 rounds.\n"
 "\n"
 msgstr ""
-"Ten scenariusz rozgrywany jest w 14 rundach.\n"
+"Ten scenariusz rozgrywany jest w 13 rundach.\n"
 "\n"
 
 #. type: multicols*
@@ -298,11 +298,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:42
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Town Buildings:} None\n"
+#| "\n"
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Budynki Początkowe:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:44
@@ -314,11 +319,13 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:48
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle, Rampart\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:50
@@ -415,7 +422,14 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:86
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{3 × Starting Map tile (I)}\n"
 "\\begin{itemize}\n"
@@ -425,10 +439,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:93
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{7 × Far Map tile (II--III)}\n"
 "\\begin{itemize}\n"
@@ -438,10 +465,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:98
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{1 × Near Map tile (IV--V)}\n"
 "\\begin{itemize}\n"
@@ -449,6 +489,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:102
@@ -545,7 +591,14 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:144
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{10$^{th}$ Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+#| "\\end{itemize}\n"
+#| "\\vspace{-0.5em}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
@@ -553,6 +606,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-1.5em}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:150
@@ -568,7 +627,14 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:157
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{10$^{th}$ Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+#| "\\end{itemize}\n"
+#| "\\vspace{-0.5em}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
@@ -576,10 +642,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{10$^{th}$ Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"\\end{itemize}\n"
+"\\vspace{-1.5em}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:163
 #, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{10$^{th}$ Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+#| "\\end{itemize}\n"
+#| "\\vspace{-0.5em}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"

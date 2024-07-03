@@ -65,24 +65,31 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:13
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including LaTeX code, GitHub engineering, and translation framework.\n"
+#| "You should check it out if you haven't seen it yet.\n"
+#| "\n"
 msgid ""
 "This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including \\LaTeX{} code, GitHub engineering, and translation framework.\n"
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
-"Ten projekt bezwstydnie zapożycza najlepsze praktyki z \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Fanowskiej Księgi Zasad}}, w tym kod \\LaTeX{}, inżynierię na GitHubie i framework tłumaczeń.\n"
+"Ten projekt bezwstydnie zapożycza najlepsze praktyki z \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Fanowskiej Księgi Zasad}}, w tym kod LaTeX, inżynierię na GitHubie i framework tłumaczeń.\n"
 "Sprawdź ją, jeśli jeszcze jej nie widziałeś.\n"
 "\n"
 
 #. type: multicols*
 #: sections/credits.tex:15
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Scenario templating and LaTeX writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+#| "\n"
 msgid ""
 "\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
-"\\textbf{Szablony scenariuszy i pisanie \\LaTeX{}-a}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Szablony scenariuszy i pisanie LaTeX-a}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 
 #. type: multicols*

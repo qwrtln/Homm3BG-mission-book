@@ -66,11 +66,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Budynki Początkowe:} Brak\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -143,7 +145,14 @@ msgstr ""
 
 #. type: multicols*
 #: clash/bloody_grail.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\svg{bronze} units of your choice.\n"
+#| "  \\item A Few \\svg{bronze} units of your choice.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -152,6 +161,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:33
