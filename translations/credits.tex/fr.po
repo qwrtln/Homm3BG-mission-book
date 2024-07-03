@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 08:52+0100\n"
+"POT-Creation-Date: 2024-07-03 09:52+0100\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -66,7 +66,7 @@ msgstr ""
 #: sections/credits.tex:13
 #, no-wrap
 msgid ""
-"This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including LaTeX code, GitHub engineering, and translation framework.\n"
+"This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including \\LaTeX{} code, GitHub engineering, and translation framework.\n"
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
@@ -75,7 +75,7 @@ msgstr ""
 #: sections/credits.tex:15
 #, no-wrap
 msgid ""
-"\\textbf{Scenario templating and \\LaTeX writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
 

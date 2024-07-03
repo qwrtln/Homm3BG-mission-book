@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-03 08:52+0100\n"
+"POT-Creation-Date: 2024-07-03 09:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr ""
 #: sections/credits.tex:13
 #, no-wrap
 msgid ""
-"This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including LaTeX code, GitHub engineering, and translation framework.\n"
+"This project shamelessly borrows best practices from the \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, including \\LaTeX{} code, GitHub engineering, and translation framework.\n"
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
@@ -75,7 +75,7 @@ msgstr ""
 #: sections/credits.tex:15
 #, no-wrap
 msgid ""
-"\\textbf{Scenario templating and \\LaTeX writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
 
