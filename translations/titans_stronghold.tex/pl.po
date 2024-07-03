@@ -204,7 +204,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -215,8 +215,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
-"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Grupa \\svgunit{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svgunit{bronze} jednostek do wyboru.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -253,12 +253,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #. type: multicols*

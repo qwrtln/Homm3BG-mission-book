@@ -105,7 +105,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -116,8 +116,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
-"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Grupa \\svgunit{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svgunit{bronze} jednostek do wyboru.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -134,12 +134,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -179,15 +179,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 - 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 1 - 6\n"
+"\\textbf{Liczba Graczy:} 1 -- 4\n"
 "\n"
 
 #. type: multicols*
@@ -210,13 +207,11 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
-"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:36
@@ -228,14 +223,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:48
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
@@ -244,24 +232,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"$\\boldsymbol{G}$  Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
 "  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item Zignoruj ich żółte granice (ale nie pomiędzy Kafelkami I a Kafelkami II--III).\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(2*P) × Far (II-III) Map tile}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(2*G) × Daleki (II-III) Kafelek Mapy}\n"
+"$\\boldsymbol{4 G} \\textbf{× Daleki (II-III) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
@@ -282,14 +267,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{10$^{th}$ Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-#| "\\end{itemize}\n"
-#| "\\vspace{-0.5em}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -297,12 +275,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
-"\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-"\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
-"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:86
