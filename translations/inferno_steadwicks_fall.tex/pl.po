@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-02 08:27+0200\n"
+"POT-Creation-Date: 2024-07-03 08:52+0100\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,8 @@ msgstr ""
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_steadwicks_fall.tex:5 sections/credits.tex:10
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -33,6 +34,7 @@ msgstr ""
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
 #: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:104
 #: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -45,6 +47,7 @@ msgstr ""
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
 #: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -58,6 +61,7 @@ msgstr ""
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -68,7 +72,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:145 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:198 sections/credits.tex:25
+#: campaigns/inferno_steadwicks_fall.tex:198
+#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -79,6 +84,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
 #: campaigns/inferno_devilish_plan.tex:22
 #: campaigns/inferno_steadwicks_fall.tex:19
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -101,6 +107,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
+#: campaigns/inferno_deal_with_the_devil.tex:7
 #, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
@@ -112,6 +119,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
 #: campaigns/inferno_steadwicks_fall.tex:15
+#: campaigns/inferno_deal_with_the_devil.tex:16
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
@@ -121,6 +129,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:21
+#: campaigns/inferno_deal_with_the_devil.tex:22
 #, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
@@ -130,6 +139,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:23
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, fuzzy, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
@@ -141,6 +151,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:31
+#: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -150,6 +161,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
 #: campaigns/inferno_steadwicks_fall.tex:51
+#: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
@@ -159,6 +171,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
 #: campaigns/inferno_steadwicks_fall.tex:75
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
@@ -170,6 +183,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:97
 #: campaigns/inferno_steadwicks_fall.tex:102
+#: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
@@ -179,6 +193,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:154
 #: campaigns/inferno_steadwicks_fall.tex:200
+#: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -188,6 +203,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:156
 #: campaigns/inferno_steadwicks_fall.tex:202
+#: campaigns/inferno_deal_with_the_devil.tex:177
 #, no-wrap
 msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
@@ -372,6 +388,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:77
+#: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
@@ -392,9 +409,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:93
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{3 × Far Map tile (II-III)}\n"
+"\\textbf{3 × Far Map tile (II--III)}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Castle (F3)\n"
 "  \\item 1 × Rampart (F10)\n"
@@ -405,12 +429,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:100
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"\\textbf{2 × Near Map tile (IV-V)}\n"
+"\\textbf{2 × Near Map tile (IV--V)}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Castle (N3, choose from: \\#N3, N6)\n"
 "  \\item 1 × Rampart (N8)\n"
@@ -418,6 +455,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:105
@@ -509,7 +552,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:141
 #, no-wrap
 msgid ""
-"\\textbf{1$^{st}$ Round:}\n"
+"\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``You are to be congratulated on your progress so far.\n"
 "    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian\n"
@@ -522,7 +565,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:147
 #, no-wrap
 msgid ""
-"\\textbf{2$^{nd}$ Round:}\n"
+"\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that\n"
 "    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its\n"
@@ -545,7 +588,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:159
 #, no-wrap
 msgid ""
-"\\textbf{5$^{th}$ Round:}\n"
+"\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``You receive a report from the south. Queen Catherine's forces have been sufficiently delayed,\n"
 "    allowing you at least two months more to reach the capitol, but our own forces have suffered significant\n"
@@ -558,7 +601,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:165
 #, no-wrap
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item For any Enemy Settlements (F3, F10, \\#F1) that have not been defeated, an additional Enemy\n"
 "    Charging Hero of that Faction appears on each Settlement at the beginning of this round.\n"
@@ -570,7 +613,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:172
 #, no-wrap
 msgid ""
-"\\textbf{11$^{th}$ Round:}\n"
+"\\textbf{\\nth{11} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``You receive a report from the south. Our forces continue to throw themselves in the path of\n"
 "    Queen Catherine's armies, yet she continues to march northward. You have, at most, three or four weeks\n"
@@ -583,7 +626,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:178
 #, no-wrap
 msgid ""
-"\\textbf{13$^{th}$ Round:}\n"
+"\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Warning: ``Queen Catherine's march continues - her forces are just two weeks away. If you do not hurry,\n"
 "    we will not have time to secure the capital before her arrival.''\n"
@@ -595,7 +638,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:184
 #, no-wrap
 msgid ""
-"\\textbf{15$^{th}$ Round:}\n"
+"\\textbf{\\nth{15} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Warning: ``Your scouts report sighting Queen Catherine's army seven days to the southwest. If she\n"
 "    reaches the capitol before you, all is lost.''\n"
@@ -607,7 +650,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:191
 #, no-wrap
 msgid ""
-"\\textbf{16$^{th}$ Round:}\n"
+"\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item If Steadwick has not been taken, read: ``This morning, a massive army lead by Queen Catherine\n"
 "    Ironfist arrived at the Erathian capitol of Steadwick. We have no choice but to retreat our forces.\n"
