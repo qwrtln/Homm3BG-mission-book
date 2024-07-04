@@ -189,12 +189,12 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:33 campaigns/inferno_devilish_plan.tex:41
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, Ratusz\n"
 "\n"
 
 #. type: multicols*

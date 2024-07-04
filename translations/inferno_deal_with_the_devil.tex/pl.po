@@ -102,6 +102,9 @@ msgid ""
 "\\resources{10}{0}{0}\n"
 "\n"
 msgstr ""
+"\\textbf{Początkowy Przychód:}\\par\n"
+"\\resources{10}{0}{0}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:8
@@ -124,6 +127,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:24
@@ -134,6 +139,8 @@ msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
+"\\textbf{Frakcja:} Inferno\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:26
@@ -144,6 +151,13 @@ msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\textbf{Bohater Frakcji:} Wybierz dowolnego\n"
+"\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
@@ -169,6 +183,8 @@ msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki początkowe:}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
@@ -179,6 +195,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotiwanie Bohatera AI}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
