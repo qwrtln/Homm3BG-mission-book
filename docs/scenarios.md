@@ -37,7 +37,16 @@ Here's how you do it:
         └── assets ...
     ```
 
-2. Open Google Chrome, Dev Tools and load those tiles from `top level directory`. The [**video tutorial**](https://drive.google.com/file/d/18R71p7fx9ZyZ9Z-XjZlxAK_OKEmRNEBU/view?usp=drive_link) will guide you through the necessary steps. *Don't worry, it's a one-time setup. Next time you want to use those assets again, just open Dev Tools and high-quality map tiles should be loaded automatically.*
+2. Open Google Chrome, Dev Tools and load those tiles from `top level directory`. The video tutorial below will guide you through the necessary steps. *Don't worry, it's a one-time setup. Next time you want to use those assets again, just open Dev Tools and high-quality map tiles should be loaded automatically.*
+
+    <iframe 
+        width="100%" 
+        height="400" 
+        src="https://www.youtube.com/embed/YymgXc-JMiY?si=PjG_t4RgkWjsg1si" 
+        title="HOMM3 BG Map Generator (High Quality Map Tiles)" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
 
 3. Refresh the **map generator** page to apply the tiles.
 
