@@ -11,7 +11,7 @@ To make your life easier, there is a set of predefined [**templates**](https://g
 
 Your first scenario should start with the following line that adds a record to the table of contents:
 
-```
+```latex
 \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{} {} {} {} {}<Campaign Name Here>}
 ```
 
