@@ -609,7 +609,6 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:152
 #, no-wrap
@@ -625,7 +624,6 @@ msgstr ""
 "  \\item Przeczytaj: ,,Gratulacje! Udało ci się ukończyć swoją misję zabicia straszliwej bestii i możesz ogłosić zwycięstwo!''\n"
 "\\end{itemize}\n"
 "\n"
-
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:155
@@ -651,7 +649,6 @@ msgstr ""
 "W trakcie scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
 "\n"
 
-
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:166
 #, no-wrap
@@ -675,7 +672,6 @@ msgstr ""
 "    \\item Jeśli twój bohater odwiedzi Obelisk, możesz Przeszukać (2) talię Umiejętności, talię Artefaktów lub talię Zaklęć.\n"
 "\\end{itemize}\n"
 "\n"
-
 
 #. type: tikzpicture
 #: campaigns/inferno_devilish_plan.tex:180

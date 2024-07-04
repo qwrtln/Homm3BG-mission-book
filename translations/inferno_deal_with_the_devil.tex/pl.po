@@ -183,19 +183,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:52
 #: campaigns/inferno_steadwicks_fall.tex:51
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Przygotiwanie Bohatera AI}}\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Przygotiwanie Bohatera AI}}\n"
 "\n"
 
 #. type: multicols*
@@ -231,6 +224,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:156
@@ -241,6 +236,8 @@ msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"W trakcie scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:77
