@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-04 11:35+0200\n"
+"POT-Creation-Date: 2024-07-04 12:34+0200\n"
 "PO-Revision-Date: 2024-07-04 10:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -378,7 +378,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:77
 #, no-wrap
 msgid ""
-"\\textbf{2 × Starting Map tile (I)}\n"
+"\\textbf{2 × Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Rampart (S4)\n"
@@ -405,7 +405,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:86
 #, no-wrap
 msgid ""
-"\\textbf{3 × Far Map tile (II--III)}\n"
+"\\textbf{3 × Far (II--III) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item \\mbox{2 × Inferno (choose from: F16--F18, \\#F10)}\n"
 "  \\item 1 × Rampart (choose from: F10--F12)\n"
@@ -423,7 +423,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:91
 #, no-wrap
 msgid ""
-"\\textbf{2 × Near Map tile (IV--V)}\n"
+"\\textbf{2 × Near (IV--V) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Rampart (N7, N8)\n"
 "\\end{itemize}\n"
@@ -439,7 +439,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:96
 #, no-wrap
 msgid ""
-"\\textbf{1 × Center Map tile (VI--VII)}\n"
+"\\textbf{1 × Center (VI--VII) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Dragon Utopia Center Map tile (C1)\n"
 "\\end{itemize}\n"
