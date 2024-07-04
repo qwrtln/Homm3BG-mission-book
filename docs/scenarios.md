@@ -17,7 +17,7 @@ Your first scenario should start with the following line that adds a record to t
 
 The `\addscenariosection` has to set its default parameter to `subsection` to appear correctly in table of contents. Other game types (Clash, Alliance, Cooperative) don't need the extra parameter.
 
-```
+```latex
 \addscenariosection[subsection]{1}{Campaign name}{Scenario name}{\images/title.png}
 ```
 
