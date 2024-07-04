@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-04 10:47+0200\n"
+"POT-Creation-Date: 2024-07-04 11:35+0200\n"
 "PO-Revision-Date: 2024-07-04 10:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:104
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
 #: campaigns/inferno_steadwicks_fall.tex:121
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
@@ -54,7 +54,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:108
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
 #: campaigns/inferno_steadwicks_fall.tex:126
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -68,7 +68,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_devilish_plan.tex:115
 #: campaigns/inferno_steadwicks_fall.tex:134
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
@@ -94,7 +94,6 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
-#: campaigns/inferno_devilish_plan.tex:79
 #: campaigns/inferno_steadwicks_fall.tex:41
 #: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
@@ -152,15 +151,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:10
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols*
@@ -174,6 +170,12 @@ msgid ""
 "  The Kreegans are fierce warriors; they will relish the slaughter.}\n"
 "\n"
 msgstr ""
+"\\textit{Duża populacja elfów zamieszkuje południowo-wschodnie wybrzeże Erathii.\n"
+"  Zielone i złote smoki, rodzime dla tego regionu, wzmacniają ich siły zbrojne.\n"
+"  Zanim zdobędziemy ten region i skierujemy nasze siły do Steadwick, musimy unicestwić te smoki.\n"
+"  Nasi sojusznicy Kreeganie z Eeofol poprosili o zaszczyt wykonania tej misji.\n"
+"  Kreeganie to dzielni wojownicy; będą cieszyć się z rzezi.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
@@ -189,10 +191,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario plays out over 13 rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This scenario plays out over 13 rounds.\n"
 "\n"
@@ -259,6 +258,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Grupa Chowańców\n"
+"  \\item Garstka Magogów\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:50
@@ -272,6 +276,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Wybierz jedną z następujących opcji:\n"
+"\\begin{itemize}\n"
+"  \\item Dodaj zaklęcie ,,Pogromca'' do swojej ręki\n"
+"  \\item Dodaj Artefakt ,,Zbroja Cudów'' do swojej ręki\n"
+"  \\item Wzmocnij Magogi i zyskaj 1 \\svg{valuables}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
@@ -282,30 +293,27 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotiwanie Bohatera AI}}\n"
+"\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Rampart\n"
 "\n"
 msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\\textbf{Frakcja:} Bastion\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Armies:}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki początkowe:}\n"
+"\\textbf{Armie wroga:}\n"
 "\n"
 
 #. type: multicols*
@@ -318,6 +326,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Armia Złotych Smoków:} Grupa Złotych Smoków, Grupa Jednorożców, Grupa Drzewców, Grupa Centaurów\n"
+"  \\item \\textbf{Armia Ivora:} Garstka Elfów\\footnote{W Rundzie 9, Garstka Elfów w Armii Ivara zostaje wzmocniona do Grupy.}, Neutralna Armia na tym samym poziomie co poziom Twojego Bohatera\\footnote{Zob. str. 35, ,,Tabela Trudności Pola'' w Księdze Zasad, aby uzyskać dalsze szczegóły na temat liczby Jednostek Neutralnych, które musisz dobrać dla tej Neutralnej Armii.}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:63
@@ -326,6 +339,8 @@ msgid ""
 "\\textbf{Ivor's Deck:} 1 × Might card, 2 × Magic card, 1 × Skill card\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Ivora:} 1 × Karta Mocy, 2 × Karta Magii, 1 × Karta Umiejętności\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:65
@@ -334,6 +349,8 @@ msgid ""
 "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first ranged unit able to make a ranged attack), 1 × Magic Arrow Spell card\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Zaklęć Ivora:} 1 × Precyzja (działa na pierwszą jednostkę dystansową zdolną do wykonania ataku dystansowego), 1 × Magiczna Strzała\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:67
@@ -342,6 +359,8 @@ msgid ""
 "\\textbf{Ivor's Skill:} Archery Ability card (it always resolves its Basic effect)\n"
 "\n"
 msgstr ""
+"\\textbf{Zdolność Ivora:} Łucznictwo (zawsze wykonuj Podstawowy efekt)\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
@@ -357,14 +376,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:77
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting Map tile (I)}\n"
 "\\begin{itemize}\n"
@@ -373,23 +385,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{2 × Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item 1 × Inferno (S6)\n"
+"  \\item 1 × Bastion (S4)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:85
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:80
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:86
+#, no-wrap
 msgid ""
 "\\textbf{3 × Far Map tile (II--III)}\n"
 "\\begin{itemize}\n"
@@ -398,23 +412,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{3 × Daleki (II--III) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item \\mbox{2 × Inferno (wybierz spośród: F16--F18, \\#F10)}\n"
+"  \\item 1 × Bastion (wybierz spośród: F10--F12)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:90
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:91
+#, no-wrap
 msgid ""
 "\\textbf{2 × Near Map tile (IV--V)}\n"
 "\\begin{itemize}\n"
@@ -422,23 +429,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{2 × Bliski (IV--V) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item 2 × Bastion (N7, N8)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:95
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:96
+#, no-wrap
 msgid ""
 "\\textbf{1 × Center Map tile (VI--VII)}\n"
 "\\begin{itemize}\n"
@@ -446,15 +445,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{1 × Centralny (VI--VII) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item 1 × Centralny Kafelek ze Smoczą Utopią (C1)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:97
+#: campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:102
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
@@ -462,50 +460,63 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Ustawienie Bohaterów}}\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:100
+#: campaigns/inferno_devilish_plan.tex:101
 #, no-wrap
 msgid ""
 "The Enemy Hero is represented by one Rampart faction Hero model of your choice\n"
 "and appears in the center field of the S4 Starting Map tile.\n"
 "\n"
 msgstr ""
+"Wrogi Bohater jest reprezentowany przez dowolną figurkę Bohatera frakcji Bastion\n"
+"i pojawia się w środkowym polu Początkowego Kafelka Mapy S4.\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:102
+#: campaigns/inferno_devilish_plan.tex:103
 #, no-wrap
 msgid ""
 "Place your Hero in the center field of the Inferno Starting Map tile.\n"
 "\n"
 msgstr ""
+"Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Inferno.\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:106
+#: campaigns/inferno_devilish_plan.tex:107
 #, no-wrap
 msgid ""
 "Defeat the Enemy Hero and the Gold Dragons Armies.\n"
 "\n"
 msgstr ""
+"Pokonaj Wrogiego Bohatera i Armie Złotych Smoków.\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:110
+#: campaigns/inferno_devilish_plan.tex:111
 #, no-wrap
 msgid ""
 "You lose one Combat encounter.\n"
 "\n"
 msgstr ""
+"Przegranie jakiejkolwiek Walki.\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:112
+#: campaigns/inferno_devilish_plan.tex:113
 #, no-wrap
 msgid ""
 "You fail to defeat the Enemy Hero and the Gold Dragon Armies by the end of the Round 13.\n"
 "\n"
 msgstr ""
+"Nie udało ci się pokonać Wrogiego Bohatera i Armii Złotych Smoków do końca Rundy 13.\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:122
+#: campaigns/inferno_devilish_plan.tex:123
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -517,9 +528,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{1. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Nasi podwładni spisali się dobrze. Udało im się wznieść wulkan\n"
+"    i zbudować fort w rzadko zaludnionym lesie tuż za granicą Erathii.\n"
+"    Podczas gdy Władcy Lochów zmierzają pod ziemią w kierunku stolicy Erathii,\n"
+"    ty musisz uderzyć na ich sojuszników, elfy z AvLee.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:130
+#: campaigns/inferno_devilish_plan.tex:131
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
@@ -531,17 +550,18 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{2. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Złota Królowa Smoków jest potężnym sojusznikiem AvLee.\n"
+"    Musisz znaleźć jej legowisko i doprowadzić do jej zguby, ponieważ to znacznie osłabi\n"
+"    elfy i sprawi, że staną się mniejszym zagrożeniem dla naszych planów zniszczenia Erathii.\n"
+"    Idź teraz i spraw, abyśmy byli dumni!''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:136
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{10$^{th}$ Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-#| "\\end{itemize}\n"
-#| "\\vspace{-0.5em}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:137
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
@@ -550,23 +570,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{9. runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"  \\item Garstka Elfów z Armii Ivora zostaje Wzmocniona do Grupy Elfów.\n"
+"    Armia Ivora zyskuje również Wózek na Amunicję.\n"
 "\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:141
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{10$^{th}$ Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-#| "\\end{itemize}\n"
-#| "\\vspace{-0.5em}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:142
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
@@ -574,23 +587,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{10. runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"  \\item Miasto Fakcji Bastion, w którym znajduje się Armia Ivora, otrzymuje Wieżę Łuczników.\n"
 "\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:146
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{10$^{th}$ Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
-#| "\\end{itemize}\n"
-#| "\\vspace{-0.5em}\n"
-#| "\n"
+#: campaigns/inferno_devilish_plan.tex:147
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
@@ -598,15 +603,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{13. runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"  \\item Na koniec rundy, jeśli nie zostaną pokonani Wrogi Bohater i Armie Złotych Smoków, wszystko stracone -- przegrywasz!\n"
 "\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
 "\n"
 
+
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:151
+#: campaigns/inferno_devilish_plan.tex:152
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the scenario:}\n"
@@ -615,9 +620,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Po ukończeniu scenariusza:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Gratulacje! Udało ci się ukończyć swoją misję zabicia straszliwej bestii i możesz ogłosić zwycięstwo!''\n"
+"\\end{itemize}\n"
+"\n"
+
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:154
+#: campaigns/inferno_devilish_plan.tex:155
 #: campaigns/inferno_steadwicks_fall.tex:200
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
@@ -625,9 +636,11 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:156
+#: campaigns/inferno_devilish_plan.tex:157
 #: campaigns/inferno_steadwicks_fall.tex:202
 #: campaigns/inferno_deal_with_the_devil.tex:177
 #, no-wrap
@@ -635,9 +648,12 @@ msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"W trakcie scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"\n"
+
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:165
+#: campaigns/inferno_devilish_plan.tex:166
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -650,9 +666,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"    \\item Twój Bohater nie zdobywa doświadczenia powyżej poziomu 5.\n"
+"    \\item Wrogi Bohater nie porusza się i jedynie czeka w swoim Mieście. Zaczyna z Murami i Bramą.\n"
+"    \\item Na Kafelek N7 nie może być wejść, dopóki Ivor nie zostanie pokonany.\n"
+"    \\item W Smoczej Utopii twój bohater walczy z Armią Złotych Smoków.\n"
+"    \\item Nie możesz zbudować ,,Wrót Wymiarów''.\n"
+"    \\item Jeśli twój bohater odwiedzi Obelisk, możesz Przeszukać (2) talię Umiejętności, talię Artefaktów lub talię Zaklęć.\n"
+"\\end{itemize}\n"
+"\n"
+
 
 #. type: tikzpicture
-#: campaigns/inferno_devilish_plan.tex:179
+#: campaigns/inferno_devilish_plan.tex:180
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -667,3 +693,14 @@ msgid ""
 "  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
 "  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
 msgstr ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+"  };\n"
+"  \\node(map)[anchor=center] at (current page.center) {\n"
+"    \\includegraphics[width=\\textwidth]{\\_assets/maps/inferno_devilish_plan.png}\n"
+"  };\n"
+"  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+"  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+"  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Kafelki}}}}};\n"
+"  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferna}}}}};"
