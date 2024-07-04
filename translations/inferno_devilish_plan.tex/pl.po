@@ -589,7 +589,7 @@ msgid ""
 msgstr ""
 "\\textbf{10. runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Miasto Fakcji Bastion, w którym znajduje się Armia Ivora, otrzymuje Wieżę Łuczników.\n"
+"  \\item Miasto Fakcji Bastion, w którym znajduje się Armia Ivora, otrzymuje Wieżę Łuczniczą.\n"
 "\\end{itemize}\n"
 "\n"
 
