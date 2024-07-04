@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 17:00+0200\n"
-"PO-Revision-Date: 2024-07-01 16:40+0200\n"
+"POT-Creation-Date: 2024-07-04 10:47+0200\n"
+"PO-Revision-Date: 2024-07-04 10:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: pl\n"
@@ -134,6 +134,9 @@ msgid ""
 "{} {} {}Dungeons and Devils} \\addscenariosection[subsection]{1}{Inferno "
 "Campaign -- Dungeons and Devils}{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
+"\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
+"{} {} {}Podziemia i Diabły} \\addscenariosection[subsection]{1}{Kampania "
+"Inferna -- Podziemia i Diabły}{1. Diabelski Plan}{\\images/firewall.png}"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:8
@@ -149,12 +152,15 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:10
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
+#| "\n"
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols*
@@ -168,12 +174,6 @@ msgid ""
 "  The Kreegans are fierce warriors; they will relish the slaughter.}\n"
 "\n"
 msgstr ""
-"\\textit{Duża populacja elfów zamieszkuje południowo-wschodnie wybrzeże Erathii.\n"
-"  Zielone i złote smoki, rodzime dla tego regionu, wzmacniają ich siły zbrojne.\n"
-"  Zanim zdobędziemy ten region i skierujemy nasze siły do Steadwick, musimy unicestwić te smoki.\n"
-"  Nasi sojusznicy Kreeganie z Eeofol poprosili o zaszczyt wykonania tej misji.\n"
-"  Kreeganie to dzielni wojownicy; będą cieszyć się z rzezi.}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
@@ -189,7 +189,10 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:20
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This scenario plays out over 13 rounds.\n"
+#| "\n"
 msgid ""
 "This scenario plays out over 13 rounds.\n"
 "\n"
@@ -213,19 +216,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:23
 #: campaigns/inferno_deal_with_the_devil.tex:24
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Dodatkowy Bonus:} Brak\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Bohater Frakcji:} Wybierz dowolnego\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols*
@@ -263,11 +259,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item Grupa Chowańców\n"
-"  \\item Garstka Magogów\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:50
@@ -281,13 +272,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus:} Wybierz jedną z następujących opcji:\n"
-"\\begin{itemize}\n"
-"  \\item Dodaj zaklęcie ,,Pogromca'' do swojej ręki\n"
-"  \\item Dodaj Artefakt ,,Zbroja Cudów'' do swojej ręki\n"
-"  \\item Wzmocnij Magogów i zyskaj 1 \\svg{valuables}\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
@@ -303,22 +287,25 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:54
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Faction:} Rampart\n"
 "\n"
 msgstr ""
-"\\textbf{Frakcja:} Bastion\n"
+"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:56
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\n"
 msgid ""
 "\\textbf{Enemy Armies:}\n"
 "\n"
 msgstr ""
-"\\textbf{Armie Wroga:}\n"
+"\\textbf{Jednostki początkowe:}\n"
 "\n"
 
 #. type: multicols*
@@ -331,11 +318,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item \\textbf{Armia Złotych Smoków:} Grupa Złotych Smoków, Grupa Jednorożców, Grupa Dendroidów, Grupa Centaurów\n"
-"  \\item \\textbf{Armia Ivora:} Garstka Elfów\\footnote{W Rundzie 9, Garstka Elfów w Armii Ivara zostaje wzmocniona do Grupy.}, Neutralna Armia na tym samym poziomie co poziom Twojego Bohatera\\footnote{Zob. str. 35, ,,Tabela Trudności Pola'' w Księdze Zasad, aby uzyskać dalsze szczegóły na temat liczby Jednostek Neutralnych, które musisz dobrać dla tej Neutralnej Armii.}\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:63
@@ -344,8 +326,6 @@ msgid ""
 "\\textbf{Ivor's Deck:} 1 × Might card, 2 × Magic card, 1 × Skill card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Ivora:} 1 × Karta Mocy, 2 × Karta Magii, 1 × Karta Umiejętności\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:65
@@ -354,8 +334,6 @@ msgid ""
 "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first ranged unit able to make a ranged attack), 1 × Magic Arrow Spell card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Zaklęć Ivora:} 1 × Precyzja (działa na pierwszą jednostkę dystansową zdolną do wykonania ataku dystansowego), 1 × Magiczna Strzała\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:67
@@ -364,8 +342,6 @@ msgid ""
 "\\textbf{Ivor's Skill:} Archery Ability card (it always resolves its Basic effect)\n"
 "\n"
 msgstr ""
-"\\textbf{Zdolność Ivora:} Łucznictwo (zawsze wykonuj Podstawowy efekt)\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
@@ -381,7 +357,14 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:77
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{(1*P) Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{2 × Starting Map tile (I)}\n"
 "\\begin{itemize}\n"
@@ -390,6 +373,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki wybranych frakcji.\n"
+"  \\item Zignoruj ich żółte granice.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:85

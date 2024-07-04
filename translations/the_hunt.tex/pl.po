@@ -107,7 +107,7 @@ msgstr ""
 #. type: Plain text
 #: clash/the_hunt.tex:3
 msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
-msgstr ""
+msgstr "\\addscenariosection{1}{Tryb Starcia}{Polowanie}{\\images/slayer.png}"
 
 #. type: multicols*
 #: clash/the_hunt.tex:7
@@ -116,6 +116,8 @@ msgid ""
 "\\textbf{Author:} Mateusz ``MATMOT'' Motyka\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Mateusz ``MATMOT'' Motyka\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:9
@@ -124,6 +126,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1229888426975821926}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1229888426975821926}{Discord Archon Studio}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:13

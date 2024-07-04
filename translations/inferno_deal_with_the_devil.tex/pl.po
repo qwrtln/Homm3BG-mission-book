@@ -146,19 +146,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:23
 #: campaigns/inferno_deal_with_the_devil.tex:24
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Dodatkowy Bonus:} Brak\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Bohater Frakcji:} Wybierz dowolnego\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols*
@@ -259,15 +252,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253923753981902939/1253923753981902939}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1253923753981902939/1253923753981902939}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols*
