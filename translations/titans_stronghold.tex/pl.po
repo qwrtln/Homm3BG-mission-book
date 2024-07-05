@@ -179,15 +179,12 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:23
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 - 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1 -- 6\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 1 - 6\n"
+"\\textbf{Liczba Graczy:} 1 -- 6\n"
 "\n"
 
 #. type: multicols*
@@ -204,7 +201,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -215,8 +212,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
-"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Grupa \\svgunit{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svgunit{bronze} jednostek do wyboru.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -253,24 +250,17 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:51
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
@@ -279,7 +269,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"$\\boldsymbol{G}$ \\textbf{× Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
 "  \\item Początkowe Kafelki wybranych frakcji.\n"
 "  \\item Zignoruj ich żółte granice.\n"
@@ -288,70 +278,54 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(2*P) × Far (II-III) Map tile}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(2*G) × Daleki (II-III) Kafelek Mapy}\n"
+"$\\boldsymbol{2 G}$ \\textbf{× Daleki (II-III) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:55
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(2*P) × Near (IV-V) Map tile}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(2*G) × Bliski (IV-V) Kafelek Mapy}\n"
+"$\\boldsymbol{2 G}$ \\textbf{× Bliski (IV-V) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) + 1 × Center (VI-VII) Map tile}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) + 1 × Centralny (VI-VII) Kafelek Mapy}\n"
+"$\\boldsymbol{(G + 1)}$ \\textbf{× Centralny (VI-VII) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "If you don't have enough VI-VII tiles, you can use another tile near to tile I.\n"
-#| "The center of this tile is the Titans' Stronghold.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "If you don't have enough VI--VII tiles, you can use another tile near to tile I.\n"
 "The center of this tile is the Titans' Stronghold.\n"
 "\n"
 msgstr ""
-"Jeśli nie masz wystarczającej liczby kafelków VI-VII, możesz użyć innego kafelka blisko kafelka I.\n"
+"Jeśli nie masz wystarczającej liczby kafelków VI--VII, możesz użyć innego kafelka blisko kafelka I.\n"
 "Centrum tego kafelka to Twierdza Tytanów.\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:64
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Kill all units in the Titans' Stronghold (the center of tile VI-VII next to tiles I).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Kill all units in the Titans' Stronghold (the center of tile VI--VII next to tiles I).\n"
 "\n"
 msgstr ""
-"Zabij wszystkie jednostki w Twierdzy Tytanów (centrum kafelka VI-VII obok kafelków I).\n"
+"Zabij wszystkie jednostki w Twierdzy Tytanów (centrum kafelka VI--VII obok kafelków I).\n"
 "\n"
 
 #. type: multicols*
@@ -366,13 +340,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:75
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -399,34 +367,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:103
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remember: the center of VI-VII tile next to all I tiles is the Titans' Stronghold.\n"
-#| "  \\item No one can enter the Titans' Stronghold until all other VII fields are flagged by any player.\n"
-#| "  \\item After defeating a level VII neutral army, instead of resolving the field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
-#| "    \\begin{itemize}[leftmargin=12pt]\n"
-#| "      \\item Another player (your choice) gains 5 \\svg{gold}\n"
-#| "      \\item Another player (your choice) gains 2 \\svg{building_materials}\n"
-#| "      \\item Another player (your choice) gains 1 \\svg{valuables}\n"
-#| "    \\end{itemize}\n"
-#| "  Then, flag the VII field with a faction cube.\n"
-#| "  (There is no bonus in solo play!)\n"
-#| "  \\item Ignore all yellow borders in I tiles.\n"
-#| "  \\item You can use your build token to give your resources to another player.\n"
-#| "  \\item Two players can use their build tokens to exchange artifacts and/or spells.\n"
-#| "  \\item Whenever a player visits an Obelisk, that player rolls one treasure die and one resource die, and resolves one of them.\n"
-#| "  \\item When all VII fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit cards from each of their corresponding decks to create a separate deck of Neutral Units for the Titans' Stronghold (the deck of the Titans' Stronghold is sometimes split in two because certain scenarios are otherwise impossible to implement with the cards from certain expansions).\n"
-#| "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 cards from the Titans' Stronghold deck instead of from the Neutral Unit card decks. The units are placed on the Combat board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the units they find in the Titans' Stronghold. Any Neutral Units defeated during combat in the Titans' Stronghold are returned to their respective Neutral Unit decks instead of the Titans' Stronghold deck. Any Neutral Units surviving combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold deck. If there are not enough Unit cards in this deck, draw as many Unit cards as are available and place them on the Combat board.\n"
-#| "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat round, just like Combat against non-Azure tier units.\n"
-#| "  \\item Additionally, no player can:\n"
-#| "  \\begin{itemize}\n"
-#| "    \\item Attack other Heroes.\n"
-#| "    \\item Capture a Mine or Settlement that is already controlled.\n"
-#| "  \\end{itemize}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
@@ -457,7 +398,7 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
 "\\begin{itemize}\n"
-"  \\item Pamiętaj: centrum kafelka VI-VII obok wszystkich startowych to Twierdza Tytanów.\n"
+"  \\item Pamiętaj: centrum kafelka VI--VII obok wszystkich startowych to Twierdza Tytanów.\n"
 "  \\item Nie można wejść do Twierdzy Tytanów, dopóki wszystkie inne pola VII nie zostaną oflagowane przez dowolnego gracza.\n"
 "  \\item Po pokonaniu neutralnej armii poziomu VII, zamiast rozpatrywać pole, gracz wybiera trzykrotnie jedną opcję z poniższej listy (opcję można wybrać wielokrotnie):\n"
 "  \\begin{itemize}[leftmargin=12pt]\n"

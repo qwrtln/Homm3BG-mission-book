@@ -189,6 +189,8 @@ msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Ułóż poniższe Kafelki Mapy zgodnie z układem pokazanym na mapie scenariusza:\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:50

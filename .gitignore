@@ -16,7 +16,8 @@
 .venv
 .vs
 cache
-sections/translated
-coops/translated
+campaigns/translated
 clash/translated
+coops/translated
+sections/translated
 svg-inkscape/*

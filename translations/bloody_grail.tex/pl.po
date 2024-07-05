@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 12:58+0200\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -142,6 +142,9 @@ msgid ""
 "\\resources{10}{0}{0}\n"
 "\n"
 msgstr ""
+"\\textbf{Początkowy Przychód:}\\par\n"
+"\\resources{10}{0}{0}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:29
