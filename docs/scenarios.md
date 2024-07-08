@@ -23,35 +23,8 @@ The `\addscenariosection` has to set its default parameter to `subsection` to ap
 
 ## Maps
 
-Always use the [**map generator**](http://homm3bgmapeditor.zedero.nl/) to create your maps.
+1. Use the [**map generator**](http://homm3bgmapeditor.zedero.nl/) to create your maps.
 
-The official version uses low-quality assets however. To ensure consistency and nicer look, you have to inject curated map tiles to the tool.
+2. Always **export** the final map from the **map generator** and store it in a new file in `assets/map-files`.
 
-Here's how you do it:
-
-1. Download [**high-quality tiles**](https://drive.google.com/file/d/1d2iTxc_dUNzT3h-jSftbV1v-BxiYshtl/view?usp=drive_link) and unzip them to a new directory so that you have the following structure
-
-    ```
-    top level directory
-    └── homm3bgmapeditor.zedero.nl
-        └── assets ...
-    ```
-
-2. Open Google Chrome, Dev Tools and load those tiles from `top level directory`. The video tutorial below will guide you through the necessary steps. *Don't worry, it's a one-time setup. Next time you want to use those assets again, just open Dev Tools and high-quality map tiles should be loaded automatically.*
-
-    <iframe 
-        width="100%" 
-        height="400" 
-        src="https://www.youtube.com/embed/YymgXc-JMiY?si=PjG_t4RgkWjsg1si" 
-        title="HOMM3 BG Map Generator (High Quality Map Tiles)" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen></iframe>
-
-3. Refresh the **map generator** page to apply the tiles.
-
-4. Always **export** the final map from the **map generator** and store it in a new file in `assets/map-files`.
-
-5. Trim and resize your map to a maximum width of 2000px.
-
-**TIP:** If the **map generator** is slow, make sure that the *Network* tab in *Dev Tools* has *Disable caches* unchecked.
+3. Trim and resize your map to a maximum width of 2000px.
