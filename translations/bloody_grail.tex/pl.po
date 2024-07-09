@@ -289,6 +289,8 @@ msgid ""
 "During this scenario:\n"
 "\n"
 msgstr ""
+"Podczas tego scenariusza:\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:121
