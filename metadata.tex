@@ -9,6 +9,10 @@
   footskip=2.05cm,
 ]{geometry}
 
+% General language packages
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
 % Useful packages
 \usepackage[export]{adjustbox}
 \usepackage{amsmath}
@@ -304,7 +308,7 @@
 \definecolor{borderinyellow}{HTML}{B09E69}
 \definecolor{bordermidyellow}{HTML}{6f6749}
 % Create note box
-\providecommand{\notefont}[0]{\fontfamily{ptm}\selectfont}
+\newcommand{\notefont}[0]{\liberation\selectfont}
 \newcommand{\note}[2]{
   \begin{tikzpicture}
     \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#1\baselineskip}{\layout/table-background.jpg}}};
@@ -420,7 +424,7 @@
   }
 }{}
 
-\author{By The Community}
+\author{\authortext}
 \maketitle
 
 \begin{center}
