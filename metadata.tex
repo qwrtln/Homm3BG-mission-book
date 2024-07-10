@@ -9,6 +9,10 @@
   footskip=2.05cm,
 ]{geometry}
 
+% General language packages
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
 % Useful packages
 \usepackage[export]{adjustbox}
 \usepackage{amsmath}
@@ -160,12 +164,22 @@
 \enspace SECTION \thesection\enspace}
 {8pt}
 {\Huge\bfseries\filcenter\uppercase}
-%Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
-\providecommand{\sectionheadertext}[1]{
-  \fontfamily{ptm}\selectfont{
-    \color{antiquewhite} \section*{\MakeUppercase{#1}}
-  }
+
+\newfontfamily{\liberation}{LiberationSerif}
+[
+  Path = ./assets/fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic
+]
+
+\newcommand{\sectionheadertext}[2][antiquewhite]{
+  \color{#1}\MakeUppercase{\textbf{\liberation #2}}
 }
+
+%Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
 \newcommand{\addsection}[2]{
   \vspace*{-5em}
   \hspace*{-1em}
@@ -180,14 +194,13 @@
   \begin{fullwidth}[leftmargin=0.16\textwidth, outermargin=0.16\textwidth, innermargin=0.16\textwidth]
     \begin{center}
       \vspace*{\lang_header_adjustment}
-      \sectionheadertext{#1}
+      \section*{\sectionheadertext{#1}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
     \end{center}
   \end{fullwidth}
   \vspace{1.75em}
 }
 %End of create section heading.
-
 
 % Add title page for scenario type
 \newcommand{\addscenariogroup}[2]{
@@ -204,9 +217,7 @@
       \includegraphics[width=\linewidth, keepaspectratio]{\layout/grouping_heading.png}
     };
     \node(title)[minimum width = \paperwidth, anchor=center] at (current page.center) {
-      \fontfamily{ptm}\selectfont{
-        \color{bistre} \Huge\bfseries\filcenter\MakeUppercase{#1}
-      }
+      \huge\sectionheadertext[bistre]{#1}
     };
   \end{tikzpicture}
 }
@@ -265,9 +276,9 @@
   \begin{fullwidth}[leftmargin=0.2\textwidth]
     \begin{center}
       \vspace{-12pt}
-      \sectionheadertext{\small{\sotitle{#3}}}
+      \section*{\sectionheadertext{\small{\sotitle{#3}}}}
       \vspace{-10pt}
-      \sectionheadertext{#4}
+      \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
     \end{center}
@@ -297,7 +308,7 @@
 \definecolor{borderinyellow}{HTML}{B09E69}
 \definecolor{bordermidyellow}{HTML}{6f6749}
 % Create note box
-\providecommand{\notefont}[0]{\fontfamily{ptm}\selectfont}
+\newcommand{\notefont}[0]{\liberation\selectfont}
 \newcommand{\note}[2]{
   \begin{tikzpicture}
     \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#1\baselineskip}{\layout/table-background.jpg}}};
@@ -413,7 +424,7 @@
   }
 }{}
 
-\author{By The Community}
+\author{\authortext}
 \maketitle
 
 \begin{center}
