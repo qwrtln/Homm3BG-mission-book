@@ -23,9 +23,7 @@ jobs:
       matrix:
         include:
           - language: en
-            luaengine: false
           - language: pl
-            luaengine: false
 
     steps:
       - name: Set up repository
@@ -45,7 +43,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
-          latexmk_use_lualatex: ${{ matrix.luaengine }}
+          latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
