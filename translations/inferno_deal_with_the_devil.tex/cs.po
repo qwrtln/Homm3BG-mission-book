@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-02 10:12+0200\n"
+"POT-Creation-Date: 2024-07-04 12:36+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:104
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
 #: campaigns/inferno_steadwicks_fall.tex:121
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
@@ -41,7 +41,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:108
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
 #: campaigns/inferno_steadwicks_fall.tex:126
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -53,7 +53,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_devilish_plan.tex:115
 #: campaigns/inferno_steadwicks_fall.tex:134
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
@@ -124,6 +124,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:26
+#: campaigns/inferno_steadwicks_fall.tex:23
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} Choose any\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:29
 #: campaigns/inferno_deal_with_the_devil.tex:27
 #, no-wrap
@@ -164,7 +174,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:97
+#: campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:102
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
@@ -174,7 +184,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:154
+#: campaigns/inferno_devilish_plan.tex:155
 #: campaigns/inferno_steadwicks_fall.tex:200
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
@@ -184,7 +194,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:156
+#: campaigns/inferno_devilish_plan.tex:157
 #: campaigns/inferno_steadwicks_fall.tex:202
 #: campaigns/inferno_deal_with_the_devil.tex:177
 #, no-wrap
@@ -238,14 +248,6 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:24
-#, no-wrap
-msgid ""
-"\\textbf{Faction Hero:} Choose any   \n"
-"\n"
-msgstr ""
-
-#. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:38
 #, no-wrap
 msgid ""
@@ -269,7 +271,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
 
@@ -386,7 +388,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:86
 #, no-wrap
 msgid ""
-"\\textbf{3 × Starting Map tile (I)}\n"
+"\\textbf{3 × Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Castle (S3)\n"
@@ -399,7 +401,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:93
 #, no-wrap
 msgid ""
-"\\textbf{7 × Far Map tile (II-III)}\n"
+"\\textbf{7 × Far (II--III) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Inferno (F16, F17, F18)\n"
 "  \\item 3 × Castle (F3, \\#F4, F6)\n"
@@ -412,7 +414,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:98
 #, no-wrap
 msgid ""
-"\\textbf{1 × Near Map tile (IV-V)}\n"
+"\\textbf{1 × Near (IV--V) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
@@ -479,7 +481,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:126
 #, no-wrap
 msgid ""
-"\\textbf{1$^{st}$ Round:}\n"
+"\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue\n"
 "    operation. Clan Kreelah, prepare our defenses! Protect Kleesive at all costs. We have the advantage.''\n"
@@ -491,7 +493,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:133
 #, no-wrap
 msgid ""
-"\\textbf{2$^{nd}$ Round:}\n"
+"\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
 "    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
@@ -504,7 +506,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:139
 #, no-wrap
 msgid ""
-"\\textbf{3$^{rd}$ Round:}\n"
+"\\textbf{\\nth{3} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the\n"
 "    help of local seers. They are fools to think these will help them overcome our Kreegan fortress.”\n"
@@ -516,7 +518,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:144
 #, no-wrap
 msgid ""
-"\\textbf{4th$^{th}$ Round:}\n"
+"\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The first armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -527,9 +529,9 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
-"\\textbf{7$^{th}$ Round:}\n"
+"\\textbf{\\nth{7} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile. \n"
+"  \\item The Enemy Castle Charging Heroes \\#2 appear on both the Settlement field of the F3 tile, and the center field of S3 Starting Map tile.\n"
 "  \\item The Enemy Rampart Charging Hero \\#2 appears on the center field of the S4 Starting Map tile.\n"
 "\\end{itemize}\n"
 "\n"
@@ -539,7 +541,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:157
 #, no-wrap
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The second armies will attack this round and next round. Prepare your defenses!\n"
 "\\end{itemize}\n"
@@ -550,7 +552,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:163
 #, no-wrap
 msgid ""
-"\\textbf{12$^{th}$ Round:}\n"
+"\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Enemy Army appears on the Settlement field of the F3 tile. This army has 4 MPs per turn.\n"
 "\\end{itemize}\n"
@@ -561,7 +563,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:168
 #, no-wrap
 msgid ""
-"\\textbf{16$^{th}$ Round:}\n"
+"\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item The Final Charging Army will attack this round. We must hold Kleesive at all costs!\n"
 "\\end{itemize}\n"

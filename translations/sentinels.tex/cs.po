@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-01 16:38+0200\n"
+"POT-Creation-Date: 2024-07-10 11:52+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,7 +27,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:5 sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -117,8 +119,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} recruitment cost.\n"
-"  \\item A Few \\svg{bronze} units with the \\textit{highest} recruitment cost.\n"
+"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -127,7 +129,7 @@ msgstr ""
 #: coops/sentinels.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
 
@@ -135,7 +137,7 @@ msgstr ""
 #: coops/sentinels.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV-V) Map tile and 1 random Far (II-III) Map tile. These tiles should not contain any Obelisks.\n"
+"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV--V) Map tile and 1 random Far (II--III) Map tile. These tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
 
@@ -157,7 +159,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:70
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:71
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
@@ -170,8 +172,8 @@ msgstr ""
 msgid ""
 "\\textbf{2 × Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen factions.\n"
-"  \\item Ignore their yellow borders.\n"
+"  \\item Starting Tiles of your chosen factions\n"
+"  \\item Ignore their yellow borders\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -180,7 +182,7 @@ msgstr ""
 #: coops/sentinels.tex:52
 #, no-wrap
 msgid ""
-"\\textbf{4 × Far (II-III) Map tile}\n"
+"\\textbf{4 × Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
 
@@ -188,16 +190,18 @@ msgstr ""
 #: coops/sentinels.tex:57
 #, no-wrap
 msgid ""
-"\\textbf{4 × Near (IV-V) Map tile}\n"
+"\\textbf{4 × Near (IV--V) Map tile}\n"
 "\\begin{itemize}\n"
-"  \\item All Near Map tiles must have Obelisks.\n"
+"  \\item All Near Map tiles must have Obelisks\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -214,7 +218,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
+#: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -240,7 +246,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_devilish_plan.tex:115
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -251,7 +259,7 @@ msgstr ""
 #: coops/sentinels.tex:75
 #, no-wrap
 msgid ""
-"\\textbf{6$^{th}$ Round:}\n"
+"\\textbf{\\nth{6} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "  \\item Spawn an enemy army following the rules outlined below.\n"
@@ -263,7 +271,7 @@ msgstr ""
 #: coops/sentinels.tex:80
 #, no-wrap
 msgid ""
-"\\textbf{7$^{th}$ and 8$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Spawn an enemy army following the rules outlined below.\n"
 "\\end{itemize}\n"
@@ -274,7 +282,7 @@ msgstr ""
 #: coops/sentinels.tex:85
 #, no-wrap
 msgid ""
-"\\textbf{9$^{th}$ Round:}\n"
+"\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Repeat the Timed Events of Round 6.\n"
 "\\end{itemize}\n"
@@ -285,7 +293,7 @@ msgstr ""
 #: coops/sentinels.tex:91
 #, no-wrap
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
 "\\end{itemize}\n"
@@ -334,8 +342,8 @@ msgid ""
 "  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
 "  \\item Determine which Obelisk field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
 "  \\begin{itemize}[leftmargin=15pt]\n"
-"    \\item +1/+1 = North, +1/-1 = East\n"
-"    \\item -1/+1 = West, -1/-1 = South\n"
+"    \\item[] $+1$/$+1$ = North, $+1$/$-1$ = East\n"
+"    \\item[] $-1$/$+1$ = West, $-1$/$-1$ = South\n"
 "  \\end{itemize}\n"
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
 "  Rounds 8 and 10 are entirely random.\n"
@@ -343,7 +351,7 @@ msgid ""
 "  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
 "  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
 "  \\item Enemy armies have 3 MPs per round.\n"
-"  \\item Enemy armies move as described in the rulebook (p. 33), but instead of capturing, they destroy everything in their path.\n"
+"  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
 "    Place Black cubes on any field they pass through, treating those fields as empty from that point on.\n"
 "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
 "\\end{itemize}\n"
@@ -386,7 +394,7 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is reinforced from a fixed pool of neutral units (reinforcement pool = number in brackets in the table below).\n"
-"  \\item At the beginning of the 2$^{nd}$ combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
+"  \\item At the beginning of the \\nth{2} combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
 "  \\item Place the reinforcing units on the enemy base line, starting from the left with the lowest initiative (\\svg{unit_ranged} units first). If necessary, continue on the next line in the same order.\n"
 "  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 units and takes these as starting units to the next fight.\n"
 "\\end{itemize}\n"
@@ -394,28 +402,41 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43 sections/credits.tex:25
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:198
+#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:147
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
 #, no-wrap
 msgid ""
-"\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}\n"
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 
-#. type: Plain text
-#: coops/sentinels.tex:184
+#. type: tikzpicture
+#: coops/sentinels.tex:154
+#, no-wrap
 msgid ""
-"\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 1.5) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+msgstr ""
+
+#. type: Plain text
+#: coops/sentinels.tex:192
+msgid ""
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
+"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
+"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
+"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
 "\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 "
 "+ 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]"
 "{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
@@ -437,7 +458,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:185
+#: coops/sentinels.tex:195
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."

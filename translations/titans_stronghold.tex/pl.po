@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-06-30 20:00+0200\n"
+"POT-Creation-Date: 2024-07-10 10:39+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,7 +20,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -52,7 +54,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -63,7 +67,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
+#: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -75,6 +81,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:115
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -82,6 +91,16 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
 "\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -147,6 +166,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:19
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -159,10 +181,10 @@ msgstr ""
 #: coops/titans_stronghold.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Player Count:} 1 - 6\n"
+"\\textbf{Player Count:} 1 -- 6\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 1 - 6\n"
+"\\textbf{Liczba Graczy:} 1 -- 6\n"
 "\n"
 
 #. type: multicols*
@@ -183,15 +205,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units of your choice.\n"
-"  \\item A Few \\svg{bronze} units of your choice.\n"
+"  \\item A Pack of \\svgunit{bronze} units of your choice\n"
+"  \\item A Few \\svgunit{bronze} units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
-"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Grupa \\svgunit{bronze} jednostek do wyboru\n"
+"  \\item Garstka \\svgunit{bronze} jednostek do wyboru\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -230,24 +252,24 @@ msgstr ""
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
 #, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza (G oznacza liczbę graczy):\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:51
 #, no-wrap
 msgid ""
-"\\textbf{(1*P) Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item Starting Tiles of your chosen factions.\n"
 "  \\item Ignore their yellow borders.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"$\\boldsymbol{G}$ \\textbf{× Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
 "  \\item Początkowe Kafelki wybranych frakcji.\n"
 "  \\item Zignoruj ich żółte granice.\n"
@@ -258,41 +280,41 @@ msgstr ""
 #: coops/titans_stronghold.tex:53
 #, no-wrap
 msgid ""
-"\\textbf{(2*P) × Far (II-III) Map tile}\n"
+"$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(2*G) × Daleki (II-III) Kafelek Mapy}\n"
+"$\\boldsymbol{2 G}$ \\textbf{× Daleki (II-III) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:55
 #, no-wrap
 msgid ""
-"\\textbf{(2*P) × Near (IV-V) Map tile}\n"
+"$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(2*G) × Bliski (IV-V) Kafelek Mapy}\n"
+"$\\boldsymbol{2 G}$ \\textbf{× Bliski (IV-V) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:57
 #, no-wrap
 msgid ""
-"\\textbf{(1*P) + 1 × Center (VI-VII) Map tile}\n"
+"$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map tile}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) + 1 × Centralny (VI-VII) Kafelek Mapy}\n"
+"$\\boldsymbol{(G + 1)}$ \\textbf{× Centralny (VI-VII) Kafelek Mapy}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:60
 #, no-wrap
 msgid ""
-"If you don't have enough VI-VII tiles, you can use another tile near to tile I.\n"
+"If you don't have enough VI--VII tiles, you can use another tile near to tile I.\n"
 "The center of this tile is the Titans' Stronghold.\n"
 "\n"
 msgstr ""
-"Jeśli nie masz wystarczającej liczby kafelków VI-VII, możesz użyć innego kafelka blisko kafelka I.\n"
+"Jeśli nie masz wystarczającej liczby kafelków VI--VII, możesz użyć innego kafelka blisko kafelka I.\n"
 "Centrum tego kafelka to Twierdza Tytanów.\n"
 "\n"
 
@@ -300,10 +322,10 @@ msgstr ""
 #: coops/titans_stronghold.tex:64
 #, no-wrap
 msgid ""
-"Kill all units in the Titans' Stronghold (the center of tile VI-VII next to tiles I).\n"
+"Kill all units in the Titans' Stronghold (the center of tile VI--VII next to tiles I).\n"
 "\n"
 msgstr ""
-"Zabij wszystkie jednostki w Twierdzy Tytanów (centrum kafelka VI-VII obok kafelków I).\n"
+"Zabij wszystkie jednostki w Twierdzy Tytanów (centrum kafelka VI--VII obok kafelków I).\n"
 "\n"
 
 #. type: multicols*
@@ -320,7 +342,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:75
 #, no-wrap
 msgid ""
-"\\textbf{4$^{th}$, 8$^{th}$ and 12$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "\\end{itemize}\n"
@@ -333,7 +355,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:77
+#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:73
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -346,7 +370,7 @@ msgstr ""
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
-"  \\item Remember: the center of VI-VII tile next to all I tiles is the Titans' Stronghold.\n"
+"  \\item Remember: the center of VI--VII tile next to all I tiles is the Titans' Stronghold.\n"
 "  \\item No one can enter the Titans' Stronghold until all other VII fields are flagged by any player.\n"
 "  \\item After defeating a level VII neutral army, instead of resolving the field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
 "    \\begin{itemize}[leftmargin=12pt]\n"
@@ -373,7 +397,7 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
 "\\begin{itemize}\n"
-"  \\item Pamiętaj: centrum kafelka VI-VII obok wszystkich startowych to Twierdza Tytanów.\n"
+"  \\item Pamiętaj: centrum kafelka VI--VII obok wszystkich startowych to Twierdza Tytanów.\n"
 "  \\item Nie można wejść do Twierdzy Tytanów, dopóki wszystkie inne pola VII nie zostaną oflagowane przez dowolnego gracza.\n"
 "  \\item Po pokonaniu neutralnej armii poziomu VII, zamiast rozpatrywać pole, gracz wybiera trzykrotnie jedną opcję z poniższej listy (opcję można wybrać wielokrotnie):\n"
 "  \\begin{itemize}[leftmargin=12pt]\n"
@@ -402,15 +426,6 @@ msgstr ""
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:105 coops/titans_stronghold.tex:111
-#: sections/credits.tex:27 sections/credits.tex:31
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
-"\n"
-msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:109
@@ -508,6 +523,13 @@ msgstr ""
 "7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver "
 "11\\golden 6\\azure \\linebreak Potem\\linebreak 3\\bronze 8\\silver "
 "10\\golden 6\\azure}\\\\ \\end{tabularx} }"
+
+#. type: center
+#: coops/titans_stronghold.tex:190
+msgid ""
+"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
+"{\\art/land_mine.png}}"
+msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228

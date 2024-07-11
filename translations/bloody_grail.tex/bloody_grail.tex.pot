@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-29 16:13+0200\n"
+"POT-Creation-Date: 2024-07-03 17:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -29,9 +31,22 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 
@@ -48,7 +63,7 @@ msgstr ""
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
 
@@ -112,7 +127,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:23
+#: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32
+#: campaigns/inferno_deal_with_the_devil.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:}\\par\n"
@@ -126,8 +142,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few \\svg{bronze} units with the \\textit{highest} Recruitment cost\n"
-"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -136,7 +152,7 @@ msgstr ""
 #: clash/bloody_grail.tex:33
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 2 random Far (II-III) Map tiles, one of which must contain a Settlement\n"
+"\\textbf{Map tile Pool:} Each player takes 2 random Far (II--III) Map tiles, one of which must contain a Settlement\n"
 "\n"
 msgstr ""
 
@@ -156,9 +172,9 @@ msgid ""
 "\\textbf{For a 2-player scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map tile\n"
-"  \\item 4 × Near (IV-V) Map tile, all of which must contain an Obelisk\n"
-"  \\item 4 × Far (II-III) Map tile, 2 of which must contain a Settlement\n"
-"  \\item 1 × Center (VI-VII) Map tile, which must contain the Grail field\n"
+"  \\item 4 × Near (IV--V) Map tile, all of which must contain an Obelisk\n"
+"  \\item 4 × Far (II--III) Map tile, 2 of which must contain a Settlement\n"
+"  \\item 1 × Center (VI--VII) Map tile, which must contain the Grail field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -170,9 +186,9 @@ msgid ""
 "\\textbf{For a 4-player scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 4 × Starting (I) Map tile\n"
-"  \\item 6 × Near (IV-V) Map tile, 4 of which must contain an Obelisk\n"
-"  \\item 8 × Far (II-III) Map tile, 4 of which must contain a Settlement\n"
-"  \\item 1 × Center (VI-VII) Map tile, which must contain the Grail field\n"
+"  \\item 6 × Near (IV--V) Map tile, 4 of which must contain an Obelisk\n"
+"  \\item 8 × Far (II--III) Map tile, 4 of which must contain a Settlement\n"
+"  \\item 1 × Center (VI--VII) Map tile, which must contain the Grail field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -199,7 +215,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"If the Grail is not obtained at least once by the end of the 13th round, the game ends, and all players lose the scenario.\n"
+"If the Grail is not obtained at least once by the end of the \\nth{13} round, the game ends, and all players lose the scenario.\n"
 "\n"
 msgstr ""
 
@@ -207,7 +223,7 @@ msgstr ""
 #: clash/bloody_grail.tex:64
 #, no-wrap
 msgid ""
-"If the Grail token has been obtained, the players gain additional time (until the end of the 16th round) to bring the Grail to their faction's Town. Otherwise, all players lose the scenario.\n"
+"If the Grail token has been obtained, the players gain additional time (until the end of the \\nth{16} round) to bring the Grail to their faction's Town. Otherwise, all players lose the scenario.\n"
 "\n"
 msgstr ""
 
@@ -215,7 +231,7 @@ msgstr ""
 #: clash/bloody_grail.tex:73
 #, no-wrap
 msgid ""
-"\\textbf{6$^{th}$, 9$^{th}$ and 12$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{6}, \\nth{9} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Water Wheel and Windmill on the map.\n"
 "  \\item All players possessing the title of ``\\textcolor{darkcerulean}{Grail Knight}'' gain \\svg{morale_positive}.\n"
@@ -267,9 +283,9 @@ msgid ""
 "    \\end{enumerate}\n"
 "    \\item \\textbf{[Sacrifice]} Remove a * faction Unit card from your Unit deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\svg{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
-"      \\item *\\svg{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
-"      \\item *\\svg{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svg{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
+"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
+"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
@@ -296,14 +312,24 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols*
+#: clash/bloody_grail.tex:127
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
 #. type: tikzpicture
-#: clash/bloody_grail.tex:130
+#: clash/bloody_grail.tex:138
 #, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.45]{\\_assets/maps/bloody-grail-2p.png}};\n"
+"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-2p.png}};\n"
 "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.45]{\\_assets/maps/bloody-grail-4p.png}};\n"
+"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-4p.png}};\n"
 "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""

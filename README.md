@@ -9,7 +9,7 @@ Click on the table to download the most recent builds in the chosen language:
         <tr>
             <th>Language</th>
             <th align="center">Progress</th>
-            <th align="center">Version 0.1 🪨<br>(Stable)</th>
+            <th align="center">Version 0.2 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
         </tr>
     </thead>
@@ -22,14 +22,14 @@ Click on the table to download the most recent builds in the chosen language:
         </tr>
         <tr>
             <td>🇬🇧 English</td>
-            <td align="center">-</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.1/Heroes3_English_Fan_Made_Mission_Book_0_1.pdf">download</a></td>
+            <td align="center">—</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.2/Heroes3_English_Fan_Made_Mission_Book_0_2.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center">20%</td>
-            <td align="center">-</td>
+            <td align="center">40%</td>
+            <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
         </tr>
     </tbody>
@@ -51,6 +51,8 @@ This is a communal effort.
 This repository serves as a means to version the scenarios and for the community to contribute changes.
 
 ### 💪 Contributing
+
+https://qwrtln.github.io/Homm3BG-mission-book/
 
 #### 🗺️ Scenarios
 

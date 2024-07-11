@@ -1,5 +1,5 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Campaign name}{Scenario name}{\images/title.png}
+\addscenariosection[subsection]{1}{Campaign name}{Scenario name}{\images/title.png}
 
 \begin{multicols*}{2}
 
@@ -25,13 +25,13 @@ This scenario plays out over ... rounds.
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item A Few \svg{bronze}...
-  \item A Pack \svg{silver}...
-  \item \svg{golden}
+  \item A Few \svgunit{bronze}...
+  \item A Pack \svgunit{silver}...
+  \item \svgunit{golden}
   \item \svg{azure}
 \end{itemize}
 
-\textbf{Town Buildings:} \svg{bronze} Dwelling...
+\textbf{Town Buildings:} \svgunit{bronze} Dwelling...
 
 \textbf{Bonus:} Choose one of the following options:
 \begin{itemize}
@@ -56,14 +56,14 @@ This scenario plays out over ... rounds.
 
 Take the following Map tiles and arrange them as shown in the scenario map layout:
 
-\textbf{X × Starting Map tile (I)}
+\textbf{X × Starting (I) Map tile}
 \begin{itemize}
     \item ... additional constraints ...
 \end{itemize}
 
-\textbf{Y × Far Map tile (II-III)}
+\textbf{Y × Far (II--III) Map tile}
 
-\textbf{Z × Near Map tile (IV-V)}
+\textbf{Z × Near (IV--V) Map tile}
 
 \subsection*{\MakeUppercase{Heroes placement}}
 
@@ -77,7 +77,12 @@ Take the following Map tiles and arrange them as shown in the scenario map layou
 
 \subsection*{\MakeUppercase{Timed Events}}
 
-\textbf{X$^{th}$ Round:}
+% Unless you have a rich and non-linear story, write it under specific
+% rounds here.
+%
+% Otherwise create a new subsection "The Story" at the end and refer to it.
+
+\textbf{\nth{2} Round:}
 \begin{itemize}
   \item ...
   \item ...
@@ -85,17 +90,17 @@ Take the following Map tiles and arrange them as shown in the scenario map layou
 
 % IF THERE ARE OVERLAPPING EVENTS, FOLLOW BELOW STRUCTURE, IN CHRONOLOGICAL ORDER
 %
-% \textbf{7$^{th}$ and 8$^{th}$ Rounds:}
+% \textbf{\nth{7} and \nth{8} Rounds:}
 % \begin{itemize}
 %   \item ...
 % \end{itemize}
 %
-% \textbf{9$^{th}$ Round:}
+% \textbf{\nth{9} Round:}
 % \begin{itemize}
 %   \item Repeat Timed Events of Round 6.
 % \end{itemize}
 %
-% \textbf{10$^{th}$ Round:}
+% \textbf{\nth{10} Round:}
 % \begin{itemize}
 %   \item Repeat Timed Events of Rounds 7 and 8.
 % \end{itemize}

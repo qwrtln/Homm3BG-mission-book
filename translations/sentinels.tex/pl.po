@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-01 16:38+0200\n"
+"POT-Creation-Date: 2024-07-10 11:52+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -24,11 +24,14 @@ msgid ""
 "\\addscenariosection{1}{Cooperative scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
+"\\addscenariosection{1}{Tryb Kooperacyjny}{Strażnicy}{\\images/sentinel.png}"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:5 sections/credits.tex:10
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -42,6 +45,8 @@ msgid ""
 "\\textbf{Author:} silence70011\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} silence70011\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:9
@@ -50,6 +55,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Discord Archon Studio}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:14
@@ -61,6 +68,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Jest świat poza naszym, pełen bestii i potworów, ledwo powstrzymywany przez formację czterech świętych Obelisków.\n"
+"  Ale moc tych kamieni słabnie i wkrótce nastąpi wyłom.\n"
+"  Gdy to się stanie, tylko ty i twój sojusznik staniecie między hordami a całkowitym zniszczeniem tych ziem.\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16
@@ -69,6 +81,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:18
@@ -77,6 +91,8 @@ msgid ""
 "This scenario is played over 12 rounds.\n"
 "\n"
 msgstr ""
+"Ten scenariusz jest rozgrywany w 12 rundach.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20
@@ -85,6 +101,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:22
@@ -93,6 +111,8 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
+"\\textbf{Liczba Graczy:} 2\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:25
@@ -102,6 +122,9 @@ msgid ""
 "\\resources{10}{2}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Zasoby Początkowe:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
@@ -121,27 +144,37 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units with the \\textit{lowest} recruitment cost.\n"
-"  \\item A Few \\svg{bronze} units with the \\textit{highest} recruitment cost.\n"
+"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item Grupa \\svg{bronze} jednostek o \\textit{najniższym} koszcie rekrutacji\n"
+"  \\item Garstka \\svg{bronze} jednostek o \\textit{najwyższym} koszcie rekrutacji\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, Cytadela\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV-V) Map tile and 1 random Far (II-III) Map tile. These tiles should not contain any Obelisks.\n"
+"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV--V) Map tile and 1 random Far (II--III) Map tile. These tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
+"\\textbf{Pula Kafelków Mapy:} Każdy gracz losuje 1 Bliski (IV--V) Kafelek Mapy i 1 Daleki (II--III) Kafelek Mapy. Te kafelki nie powinny zawierać żadnych Obelisków.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:40
@@ -150,6 +183,8 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatkowy Bonus:} Przeszukaj (2) Talię Artefaktów\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
@@ -163,12 +198,14 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:70
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:71
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Ułóż poniższe Kafelki Mapy zgodnie z układem pokazanym na mapie scenariusza:\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:50
@@ -176,34 +213,49 @@ msgstr ""
 msgid ""
 "\\textbf{2 × Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen factions.\n"
-"  \\item Ignore their yellow borders.\n"
+"  \\item Starting Tiles of your chosen factions\n"
+"  \\item Ignore their yellow borders\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{2 × Początkowy (I) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Początkowe Kafelki Mapy wybrancyh Frakcji\n"
+"  \\item Zignoruj ich żółte granice\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:52
 #, no-wrap
 msgid ""
-"\\textbf{4 × Far (II-III) Map tile}\n"
+"\\textbf{4 × Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
+"\\textbf{4 × Daleki (II-III) Kafelek Mapy}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:57
 #, no-wrap
 msgid ""
-"\\textbf{4 × Near (IV-V) Map tile}\n"
+"\\textbf{4 × Near (IV--V) Map tile}\n"
 "\\begin{itemize}\n"
-"  \\item All Near Map tiles must have Obelisks.\n"
+"  \\item All Near Map tiles must have Obelisks\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Wszystkie Bliskie Kafelki muszą mieć Obelisk\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:103
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -219,10 +271,14 @@ msgid ""
 "Defeat all invading armies.\n"
 "\n"
 msgstr ""
+"Pokonaj wszystkie najeżdżające armie.\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:107
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
+#: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -238,6 +294,8 @@ msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
 "\n"
 msgstr ""
+"Niepokonana wroga armia pozostaje na końcu 12. Rundy.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:67
@@ -246,11 +304,15 @@ msgid ""
 "One of your towns is captured, or a main hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
+"Jedno z Miast zostaje zdobyte lub Bohater Główny zostaje pokonany w Walce (wycofanie się nie liczy).\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_devilish_plan.tex:115
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -263,53 +325,65 @@ msgstr ""
 #: coops/sentinels.tex:75
 #, no-wrap
 msgid ""
-"\\textbf{6$^{th}$ Round:}\n"
+"\\textbf{\\nth{6} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "  \\item Spawn an enemy army following the rules outlined below.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 6.:}\n"
+"\\begin{itemize}\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka, Młyna Wodnego i Mistycznego Ogródu na mapie.\n"
+"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:80
 #, no-wrap
 msgid ""
-"\\textbf{7$^{th}$ and 8$^{th}$ Rounds:}\n"
+"\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Spawn an enemy army following the rules outlined below.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Rundy 7. i 8.:}\n"
+"\\begin{itemize}\n"
+"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
+"\\end{itemize}\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85
 #, no-wrap
 msgid ""
-"\\textbf{9$^{th}$ Round:}\n"
+"\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Repeat the Timed Events of Round 6.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 9.:}\n"
+"\\begin{itemize}\n"
+"  \\item Powtórz wydarzenia czasowe Rundy 6.\n"
+"\\end{itemize}\n"
 
 #. type: multicols
 #: coops/sentinels.tex:91
 #, no-wrap
 msgid ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
 "\\end{itemize}\n"
 "\\vspace{-0.5em}\n"
 "\n"
 msgstr ""
-"\\textbf{10$^{th}$ Round:}\n"
+"\\textbf{Runda 10.:}\n"
 "\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"  \\item Powtórz wydarzenia czasowe Rund 7. i 8.\n"
 "\\end{itemize}\n"
-"\\vspace{-1.5em}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:93 clash/the_hunt.tex:74
@@ -318,6 +392,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:104
@@ -335,6 +411,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Gracze mogą handlować zasobami, gdy jeden z Bohaterów aktywnego gracza odwiedza punkt handlowy lub stoi na polu sąsiadującym z sojuszniczym Bohaterem.\n"
+"  \\item Bohater, który pokona wrogą armię, zdobywa 2 \\svg{experience}.\n"
+"    Zwycięski gracz rzuca dwoma Kośćmi Skarbów i rozpatruje wynik jednej z nich.\n"
+"  \\item Dodatkowo żaden gracz nie może:\n"
+"  \\begin{itemize}\n"
+"      \\item Atakować innych Bohaterów.\n"
+"      \\item Przejąć Kopalni lub Osady, która jest już Oflagowana.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:106
@@ -343,6 +430,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Pojawianie się i Ruch\\\\Wrogów}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:124
@@ -352,8 +441,8 @@ msgid ""
 "  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
 "  \\item Determine which Obelisk field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
 "  \\begin{itemize}[leftmargin=15pt]\n"
-"    \\item +1/+1 = North, +1/-1 = East\n"
-"    \\item -1/+1 = West, -1/-1 = South\n"
+"    \\item[] $+1$/$+1$ = North, $+1$/$-1$ = East\n"
+"    \\item[] $-1$/$+1$ = West, $-1$/$-1$ = South\n"
 "  \\end{itemize}\n"
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
 "  Rounds 8 and 10 are entirely random.\n"
@@ -361,12 +450,30 @@ msgid ""
 "  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
 "  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
 "  \\item Enemy armies have 3 MPs per round.\n"
-"  \\item Enemy armies move as described in the rulebook (p. 33), but instead of capturing, they destroy everything in their path.\n"
+"  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
 "    Place Black cubes on any field they pass through, treating those fields as empty from that point on.\n"
 "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Wrogie armie pojawiają się na losowym polu z Obeliskiem (użyj figurek bohaterów z frakcji, które nie biorą udziału w grze).\n"
+"  \\item Określ, na którym polu Obelisku poprzez rzut 2 Kośćmi Ataku. Zastosuj wyniki w następujący sposób (K1/K2), przerzuć każde 0:\n"
+"  \\begin{itemize}[leftmargin=15pt]\n"
+"    \\item[] $+1$/$+1$ = Północ, $+1$/$-1$ = Wschód\n"
+"    \\item[] $-1$/$+1$ = Zachód, $-1$/$-1$ = Południe\n"
+"  \\end{itemize}\n"
+"  \\item Dla bardziej zbilansowanej dystrybucji, w Rundach 7. i 9., rzuć tylko drugą Kością Ataku (K2). Dla K1, przyjmij przeciwny wynik do tego, który wypadł w poprzedniej Rundzie.\n"
+"  Rundy 8. i 10. są całkowicie losowe.\n"
+"  \\item Jeśli pole, na którym ma pojawić się wróg, nie zostało jeszcze odkryte, odwróć je i obróć według własnego uznania.\n"
+"  \\item Jeśli na polu, na którym pojawia się wróg, znajduje się Bohater, natychmiast rozpoczyna się walka.\n"
+"  \\item Wrogie armie ruszają się na końcu każdej tury, zaczynając od tury, w której się pojawiły.\n"
+"  \\item Wrogie armie mają 3 Punkty Ruchu na Rundę.\n"
+"  \\item Wrogie armie poruszają się zgodnie z opisem w Księdze Zasad (s.\\,33), ale zamiast zdobywania, niszczą wszystko na swojej drodze.\n"
+"    Umieść Czarną kostkę na każdym polu, przez które przechodzą, odtąd traktując te pola jako puste.\n"
+"  \\item Jeśli ruch armii wroga mógłby odbyć się w różnych kierunkach, gracze decydują, w którą stronę ona pójdzie.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:126
@@ -375,6 +482,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Walka z Wrogą Armią}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:134
@@ -389,6 +498,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje Punktów Ruchu.\n"
+"  \\item Podczas walki z wrogą armią Bohater może wycofać się, gdy ma zostać aktywowana dowolna jednostka jego armii.\n"
+"    Wycofujący się główny Bohater traci wszystkie pozostałe Punkty Ruchu i wraca do wybranej przez siebie sojuszniczej miasta lub osady, zachowując wszystkie pozostałe jednostki.\n"
+"  \\item Wycofujący się pomocniczy bohaterowie są usuwani z gry, ale ich pozostałe jednostki są zachowane.\n"
+"  \\item Zabite jednostki wroga nie odradzają się.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:136
@@ -397,6 +514,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Finałowa Armia}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:143
@@ -404,36 +523,58 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is reinforced from a fixed pool of neutral units (reinforcement pool = number in brackets in the table below).\n"
-"  \\item At the beginning of the 2$^{nd}$ combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
+"  \\item At the beginning of the \\nth{2} combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
 "  \\item Place the reinforcing units on the enemy base line, starting from the left with the lowest initiative (\\svg{unit_ranged} units first). If necessary, continue on the next line in the same order.\n"
 "  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 units and takes these as starting units to the next fight.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item W Rundzie 10. pojawia się Finałowa Armia. Różni się od poprzednich tym, że jest wzmocniona ustaloną pulą neutralnych jednostek (pula wzmocnień = liczba w nawiasach w tabeli poniżej).\n"
+"  \\item Na początku 2. rundy walki i w każdej kolejnej rundzie do armii dołączają 2 jednostki z potasowanej puli wzmocnień (maksymalnie do 5 jednostek), aby kontynuować walkę aż do wycofania się gracza lub zabicia każdej jednostki neutralnej z puli wzmocnień. \\textit{Jeśli liczba jednostek wroga na początku rundy wynosi 1 lub mniej, dobierz do 4 jednostek (tj. na planszy zawsze jest 4 lub 5 jednostek wroga po wzmocnieniu, jeśli są dostępne).}\n"
+"  \\item Umieść jednostki wzmacniające drugiej linii wroga, zaczynając od lewej strony od jednostek z najniższą inicjatywą (najpierw jednostki \\svg{unit_ranged}). W razie potrzeby kontynuuj na pierwszej linii w tej samej kolejności.\n"
+"  \\item Gdy gracz się wycofa, armia wroga dobiera do ,,minimum'' 4 jednostek i bierze je jako początkowe jednostki do kolejnej walki.\n"
+"\\end{itemize}\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43 sections/credits.tex:25
+#: coops/sentinels.tex:145 clash/the_hunt.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:198
+#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:147
+#. type: multicols*
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
 #, no-wrap
 msgid ""
-"\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}\n"
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 
-#. type: Plain text
-#: coops/sentinels.tex:184
+#. type: tikzpicture
+#: coops/sentinels.tex:154
+#, no-wrap
 msgid ""
-"\\hommtable[]{18}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 1.5) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 6.5) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+
+#. type: Plain text
+#: coops/sentinels.tex:192
+msgid ""
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
+"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
+"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
+"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
 "\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 "
 "+ 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]"
 "{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
@@ -453,10 +594,34 @@ msgid ""
 "\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Siła Wrogich Armii}\\\\ "
+"\\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
+"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
+"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
+"\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rundy 6 "
+"+ 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\\\ \\darkcell[1.4]"
+"{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} "
+"\\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]"
+"{Normalny} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} "
+"& \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} "
+"\\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Trudny} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & "
+"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} "
+"\\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
+"{Niemożliwy} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden "
+"\\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
+"\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:185
+#: coops/sentinels.tex:195
 msgid ""
 "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
+"Zawsze 1 jednostka Błękitnych Smoków (początkowe jednostki Finałowej Armii). "
+"Reszta jest losowa\\label{azure}."

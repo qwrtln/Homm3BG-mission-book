@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-29 16:10+0200\n"
+"POT-Creation-Date: 2024-07-10 10:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 sections/credits.tex:10
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -27,7 +30,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40
+#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -36,7 +39,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52
+#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -45,7 +50,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56
+#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
+#: campaigns/inferno_steadwicks_fall.tex:126
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -54,7 +61,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60
+#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: campaigns/inferno_devilish_plan.tex:115
+#: campaigns/inferno_steadwicks_fall.tex:134
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -71,6 +81,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:19
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -83,14 +96,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} units of your choice.\n"
-"  \\item A Few \\svg{bronze} units of your choice.\n"
+"  \\item A Pack of \\svgunit{bronze} units of your choice\n"
+"  \\item A Few \\svgunit{bronze} units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
+#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -101,7 +115,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
 #, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout (P stands for the number of players):\n"
+"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
 
@@ -144,7 +158,7 @@ msgstr ""
 #: coops/emerald_island.tex:20
 #, no-wrap
 msgid ""
-"\\textbf{Player Count:} 1 - 4\n"
+"\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
 
@@ -167,10 +181,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:34
+#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
 
@@ -178,7 +192,7 @@ msgstr ""
 #: coops/emerald_island.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} If you wish, you can distribute the II-III tiles equally to each player rather than laying them out as proposed.\n"
+"\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
 
@@ -186,10 +200,10 @@ msgstr ""
 #: coops/emerald_island.tex:48
 #, no-wrap
 msgid ""
-"\\textbf{(1*P) Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
 "  \\item Starting Tiles of your chosen factions.\n"
-"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II-III)\n"
+"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -198,7 +212,7 @@ msgstr ""
 #: coops/emerald_island.tex:50
 #, no-wrap
 msgid ""
-"\\textbf{(4*P) × Far (II-III) Map tile}\n"
+"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
 
@@ -206,7 +220,7 @@ msgstr ""
 #: coops/emerald_island.tex:54
 #, no-wrap
 msgid ""
-"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II-III contains one Mine or Settlement with a level III fight.)\n"
+"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
 "\n"
 msgstr ""
 
@@ -222,7 +236,7 @@ msgstr ""
 #: coops/emerald_island.tex:65
 #, no-wrap
 msgid ""
-"\\textbf{5$^{th}$ Round:}\n"
+"\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Gain again the result of one field with a Black Cube.\n"
 "\\end{itemize}\n"
@@ -235,7 +249,7 @@ msgstr ""
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
-"    \\item You can't build a \\svg{golden} Dwelling.\n"
+"    \\item You can't build a \\svgunit{golden} Dwelling.\n"
 "    \\item You can give Units to another player, even outside your turn, if one of your Heroes is:\n"
 "    \\begin{itemize}\n"
 "        \\item On the same Map tile as another player's Hero.\n"
@@ -244,7 +258,7 @@ msgid ""
 "    \\end{itemize}\n"
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your faction's Unit pool (even if another player has one or more of your Units). This includes units you've previously given to another player.\n"
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
-"    \\item For the last Mine/Settlement battle, add a \\svg{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "    \\item The first time you reach level IV, gain your second specialty.\n"
 "    \\item When you reach level IV, move your token on the level tracker to level III.\n"
 "    \\item Additionally, no player can:\n"

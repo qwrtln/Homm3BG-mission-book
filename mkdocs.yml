@@ -1,6 +1,8 @@
 site_name: Fan-Made Mission Book Docs
 theme:
   name: material
+  features:
+    - content.code.copy
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -28,3 +30,12 @@ repo_name: Fan-Made Mission Book
 nav:
   - Home: index.md
   - Local Setup: setup.md
+  - Writing Scenarios: scenarios.md
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
