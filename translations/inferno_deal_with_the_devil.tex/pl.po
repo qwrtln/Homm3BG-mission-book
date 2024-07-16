@@ -279,15 +279,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario plays out over 13 rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This scenario plays out over 14 rounds.\n"
 "\n"
 msgstr ""
-"Ten scenariusz rozgrywany jest w 13 rundach.\n"
+"Ten scenariusz rozgrywany jest w 14 rundach.\n"
 "\n"
 
 #. type: multicols*

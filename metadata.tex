@@ -15,7 +15,7 @@
 
 % Useful packages
 \usepackage[export]{adjustbox}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{caption}
 \usepackage[strict]{changepage}
@@ -66,6 +66,9 @@
 % Set the default spacing between paragraphs. Remove indentation.
 \usepackage[skip=6pt, indent=0pt]{parskip}
 \setstretch{1}
+
+% Default margins for itemize lists
+\setlist[itemize,enumerate,2]{leftmargin=15pt, label=$\blacktriangleright$}
 
 % Get version from env
 % \getenv{variable_name} just prints the value
