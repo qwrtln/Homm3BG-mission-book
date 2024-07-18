@@ -224,15 +224,11 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Budynki Początkowe:} Brak\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko\n"
 "\n"
 
