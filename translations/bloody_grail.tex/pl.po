@@ -71,7 +71,11 @@ msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Budynki Początkowe:} Brak\n"
+"\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
