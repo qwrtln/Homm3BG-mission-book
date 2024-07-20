@@ -254,6 +254,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:75
