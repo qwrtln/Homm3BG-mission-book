@@ -36,6 +36,9 @@ msgid ""
 "\\resources{10}{2}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Příjem:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
@@ -45,6 +48,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
@@ -67,6 +72,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:147 clash/the_hunt.tex:43

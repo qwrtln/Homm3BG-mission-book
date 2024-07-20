@@ -35,6 +35,8 @@ msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
@@ -46,6 +48,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
@@ -57,6 +61,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
