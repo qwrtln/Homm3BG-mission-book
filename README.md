@@ -32,6 +32,12 @@ Click on the table to download the most recent builds in the chosen language:
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
         </tr>
+        <tr>
+            <td>🇨🇿 Čeština</td>
+            <td align="center">10%</td>
+            <td align="center">—</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
+        </tr>
     </tbody>
 </table>
 

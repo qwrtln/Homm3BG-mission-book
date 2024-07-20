@@ -61,6 +61,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:145 clash/the_hunt.tex:43
@@ -92,6 +94,9 @@ msgid ""
 "\\resources{10}{0}{0}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Příjem:}\\par\n"
+"\\resources{10}{0}{0}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:8

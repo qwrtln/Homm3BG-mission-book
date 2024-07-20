@@ -70,6 +70,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -110,6 +112,8 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatečný Bonus:} Žádný\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
@@ -187,6 +191,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Městské Budovy:} \\svgunit{bronze} Obydlí\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:36

@@ -279,8 +279,10 @@
   }
   \begin{fullwidth}[leftmargin=0.2\textwidth]
     \begin{center}
+      \vspace{\lang_header_adjustment}
       \vspace{-12pt}
       \section*{\sectionheadertext{\small{\sotitle{#3}}}}
+      \vspace{\lang_header_adjustment}
       \vspace{-10pt}
       \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
@@ -288,6 +290,7 @@
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
+  \vspace{\lang_header_adjustment}
 }
 
 % Apply language-specific subsection spacings if defined

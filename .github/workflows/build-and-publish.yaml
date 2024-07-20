@@ -24,6 +24,7 @@ jobs:
         include:
           - language: en
           - language: pl
+          - language: cs
 
     steps:
       - name: Set up repository
@@ -102,7 +103,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["pl"]
+        language: ["pl", "cs"]
 
     steps:
       - name: Install pdfinfo
