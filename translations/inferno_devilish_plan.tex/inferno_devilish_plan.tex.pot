@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-04 12:34+0200\n"
+"POT-Creation-Date: 2024-07-21 22:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgstr ""
 msgid ""
 "\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
 "{} {} {}Dungeons and Devils} \\addscenariosection[subsection]{1}{Inferno "
-"Campaign -- Dungeons and Devils}{1. A Devilish Plan}{\\images/firewall.png}"
+"Campaign $-$ Dungeons and Devils}{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
 
 #. type: multicols*

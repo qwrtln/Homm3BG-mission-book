@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-04 12:36+0200\n"
+"POT-Creation-Date: 2024-07-21 22:25+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -71,7 +71,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43
+#: coops/sentinels.tex:147 clash/the_hunt.tex:43
 #: campaigns/inferno_steadwicks_fall.tex:198
 #: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
 #, no-wrap
@@ -254,9 +254,11 @@ msgstr ""
 #. type: Plain text
 #: campaigns/inferno_deal_with_the_devil.tex:3
 msgid ""
-"\\addscenariosection[subsection]{1}{Inferno Campaign -- Dungeons and Devils}"
+"\\addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}"
 "{3. Deal With The Devil}{\\images/firewall.png}"
 msgstr ""
+"\\addscenariosection[subsection]{1}{Kampania Inferna $-$ Podziemia i Diabły}"
+"{2. Upadek Steadwick}{\\images/firewall.png}"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:9
