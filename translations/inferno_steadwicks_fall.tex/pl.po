@@ -230,6 +230,8 @@ msgid ""
 "\\addscenariosection[subsection]{1}{Inferno Campaign -- Dungeons and Devils}"
 "{2. Steadwick's Fall}{\\images/firewall.png}"
 msgstr ""
+"\\addscenariosection[subsection]{1}{Kampania Inferna -- Podziemia i Diabły}"
+"{2. Upadek Steadwick}{\\images/firewall.png}"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:9
@@ -250,6 +252,10 @@ msgid ""
 "  Once we own Erathia's capitol, not even Catherine Ironfist will wrench it from our hands.}\n"
 "\n"
 msgstr ""
+"\\textit{Katarzyna Ironfist zyskała pomoc od Bracady i AvLee.\n"
+"  Wie, że jesteśmy blisko Steadwick. Musimy zająć Steadwick, zanim ona przybędzie.\n"
+"  Gdy będziemy posiadać stolicę Erathii, nawet Katarzyna Ironfist nie wyrwie jej z naszych rąk.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:17
@@ -296,18 +302,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Garstka Troglodytów\n"
+"  \\item Garstka Złych Oczu\n"
+"  \\item Grupa Chowańców\n"
+"\\end{itemize}\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, \\svgunit{silver} Siedlisko\n"
 "\n"
 
 #. type: multicols*
@@ -323,6 +331,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Wybierz jedną z następujących opcji:\n"
+"\\begin{itemize}\n"
+"  \\item Dodaj Grupę Harpii do swojej ręki.\n"
+"  \\item Dodaj Grupę Magogów do swojej ręki.\n"
+"  \\item Dodaj Wóz z Amunicją do swojej ręki.\n"
+"  \\item Przeszukaj (4) talię Zaklęć.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:53
@@ -331,6 +347,8 @@ msgid ""
 "\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
+"\\textbf{Frakcja:} Zamek\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:55
@@ -339,6 +357,8 @@ msgid ""
 "\\textbf{Enemies:} General Kendal, Charging Heroes\n"
 "\n"
 msgstr ""
+"\\textbf{Wrogowie:} Generał Kendal, Szarżujący Bohaterowie\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:57
@@ -347,6 +367,8 @@ msgid ""
 "\\textbf{General Kendal's Army:} A Pack of Archangels, a Pack of Champions, a Pack of Zealots, a Pack of Crusaders, a Pack of Griffins, a Balista War Machine\n"
 "\n"
 msgstr ""
+"\\textbf{Armia Generała Kendala:} Grupa Archaniołów, Grupa Czempionów, Grupa Kapłanów, Grupa Krzyżowców, Grupa Gryfów, Machina Wojenna Balista\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:59
@@ -355,6 +377,8 @@ msgid ""
 "\\textbf{General Kendal's Deck:} 5 × Might card, 1 × Magic card, 3 × Skill card\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Generała Kendala:} 5 × karta Mocy, 1 × karta Magii, 3 × karta Umiejętności\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:61
@@ -363,6 +387,8 @@ msgid ""
 "\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell card\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Zaklęć Generała Kendala:} 2 × Przyspieszenie\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:63
@@ -371,6 +397,8 @@ msgid ""
 "\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
 msgstr ""
+"\\textbf{Umiejętność Generała Kendala:} Karta Zdolności Artylerii\\footnote{Generał Kendal zawsze rozpatruje Efekt Mistrzowski Karty Zdolności Artylerii, a Balista aktywuje się za każdym razem, gdy Karta Zdolności Artylerii jest dobierana, a także na początku Rundy Walki.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:65
@@ -379,6 +407,8 @@ msgid ""
 "\\textbf{Charging Heroes' Factions:} Rampart, Tower, Castle\n"
 "\n"
 msgstr ""
+"\\textbf{Frakcje Szarżujących Bohaterów:} Bastion, Forteca, Zamek\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:67
@@ -387,6 +417,8 @@ msgid ""
 "\\textbf{Charging Heroes' Armies:} Neutral Army is one level higher than your Hero level (max level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
 "\n"
 msgstr ""
+"\\textbf{Armie Szarżujących Bohaterów:} Armia Neutralna jest o jeden poziom wyższa niż poziom Twojego Bohatera (maks. poziom VI)\\footnote{Zob. str. 35, ,,Tabela Trudności Pola'' w Księdze Zasad, aby uzyskać więcej informacji na temat liczby Jednostek Neutralnych, które musisz dobrać dla tej Armii Neutralnej.}.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:69
@@ -395,6 +427,8 @@ msgid ""
 "\\textbf{Charging Heroes' Deck:} 2 × Might card, 2 × Magic card\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Szarżujących Bohaterów:} 2 × karta Mocy, 2 × karta Magii\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:71
@@ -403,6 +437,8 @@ msgid ""
 "\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell decks. Reset them after every Combat.}.\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Zaklęć Szarżujących Bohaterów:} 2 × Spowolnienie\\footnote{Wszyscy Wrogowie Szarżujących Bohaterów korzystają z tych samych talii AI i Zaklęć. Odnów je po każdej Walce.}.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:77
@@ -412,17 +448,12 @@ msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza:\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:83
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{2 × Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 1 × Inferno (S6)\n"
-#| "  \\item 1 × Rampart (S4)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map tile}\n"
 "\\begin{itemize}\n"
@@ -434,20 +465,13 @@ msgstr ""
 "\\textbf{2 × Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
-"  \\item 1 × Bastion (S4)\n"
+"  \\item 1 × Zamek (S3)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map tile}\n"
 "\\begin{itemize}\n"
@@ -460,23 +484,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{3 × Daleki (II--III) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item 1 × Zamek (F3)\n"
+"  \\item 1 × Bastion (F10)\n"
+"  \\item 1 × Lochy (F2)\n"
+"  \\item 1 × Forteca (\\#F1)\n"
+"  \\item 1 × Bastion (wybierz z: F11, F12)\n"
+"  \\item 1 × Nekropolia (wybierz z: F4, \\#F6, F7)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:100
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{(1*P) Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map tile}\n"
 "\\begin{itemize}\n"
@@ -486,10 +507,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{(1*G) Początkowy (I) Kafelek Mapy}\n"
+"\\textbf{2 × Bliski (IV--V) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item 2 × Zamek (N3, wybierz z: \\#N3, N6)\n"
+"  \\item 1 × Bastion (N8)\n"
+"  \\item 1 × Nekropolia (N4)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -501,6 +523,9 @@ msgid ""
 "model and appears on the center field of the S3 Starting Map tile.\n"
 "\n"
 msgstr ""
+"Wrogi Bohater Generał Kendal jest reprezentowany przez figurkę Bohatera Fakcji Zamku\n"
+"i pojawia się na środkowym polu Początkowego Kafelka Mapy S3.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:108
@@ -510,6 +535,9 @@ msgid ""
 "and appears on (and owns) the Settlement field of the F3 Map tile.\n"
 "\n"
 msgstr ""
+"Szarżujący Bohater z Zamku jest reprezentowany przez figurkę Bohatera Fakcji Zamku\n"
+"i pojawia się na (i posiada) polu Osady Kafelka Mapy F3.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:111
@@ -519,6 +547,9 @@ msgid ""
 "and appears on (and owns) the Settlement field of the F10 Map tile.\n"
 "\n"
 msgstr ""
+"Szarżujący Bohater z Bastionu jest reprezentowany przez figurkę Bohatera Fakcji Bastionu\n"
+"i pojawia się na (i posiada) polu Osady Kafelka Mapy F10.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:114
@@ -528,6 +559,9 @@ msgid ""
 "and appears on (and owns) the Settlement field of the \\#F1 Map tile.\n"
 "\n"
 msgstr ""
+"Szarżujący Bohater z Fortecy jest reprezentowany przez figurkę Bohatera Fakcji Fortecy\n"
+"i pojawia się na (i posiada) polu Osady Kafelka Mapy \\#F1.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:116
@@ -536,6 +570,8 @@ msgid ""
 "Place your Main Hero on the center field of the Inferno Starting S6 Map tile.\n"
 "\n"
 msgstr ""
+"Umieść swojego Głównego Bohatera na centralnym polu Początkowego Kafelka Mapy Inferno S6.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:119
@@ -545,6 +581,9 @@ msgid ""
 "on the Settlement field of the F2 Map tile. This Settlement produces no resources.\n"
 "\n"
 msgstr ""
+"Umieść swojego Bohatera Pomocniczego, reprezentowanego przez figurkę Bohatera Frakcji Lochów\n"
+"na polu Osady Kafelka Mapy F2. Ta Osada nie produkuje żadnych zasobów.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:124
@@ -554,6 +593,9 @@ msgid ""
 "Queen Catherine Ironfist arrives at the end of the Round 16.\n"
 "\n"
 msgstr ""
+"Pokonaj wszystkie 3 Osady Kontrolowane przez Wroga (F3, F10, \\#F1) i zajmij Steadwick (S3) przed\n"
+"przybyciem Królowej Katarzyny Ironfist na koniec Rundy 16.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:128
@@ -562,6 +604,8 @@ msgid ""
 "You lose one Combat encounter with your Main Hero (Surrender costs 10 gold, and does not count as a defeat).\n"
 "\n"
 msgstr ""
+"Przegrywasz jedną walkę z Twoim Bohaterem Głównym (Poddanie się kosztuje 10 złota i nie liczy się jako porażka).\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:130
@@ -570,6 +614,8 @@ msgid ""
 "You lose your Faction Town on the S6 Map Tile.\n"
 "\n"
 msgstr ""
+"Stracisz swoje Miasto Frakcji na Kafelku Mapy S6.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:132
@@ -578,6 +624,8 @@ msgid ""
 "You run out of time –- you have time till the end of the Round 16.\n"
 "\n"
 msgstr ""
+"Braknie ci czasu – masz czas do końca Rundy 16.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:141
@@ -591,6 +639,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 1.}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Gratulacje za dotychczasowy postęp.\n"
+"    Zniszczyłeś Wschodnią Erathię i jesteś teraz w zasięgu uderzenia od stolicy Erathii\n"
+"    Steadwick. Musisz szybko ją zdobyć!''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:147
@@ -603,6 +658,12 @@ msgid ""
 "    garrisons before she arrives.\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 2.}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Nie tylko Bracada i AvLee wysłały posiłki, ale otrzymaliśmy wiadomości, że\n"
+"    Królowa Katarzyna Ironfist prowadzi znaczną armię z południa. Musimy kontrolować stolicę i jej\n"
+"    garnizony przed jej przybyciem.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:152
@@ -614,6 +675,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"    Właśnie otrzymałeś raport na temat postępów Królowej Katarzyny.\n"
+"    Siły z Nighonu i Eeofolu próbują opóźnić jej marsz do Steadwick,\n"
+"    ale wątpią, czy uda im się opóźnić jej przybycie na więcej niż dwa lub trzy miesiące.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:159
@@ -627,6 +693,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\\textbf{Runda 5.:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Otrzymujesz raport z południa. Siły Królowej Katarzyny zostały wystarczająco opóźnione,\n"
+"    co daje ci przynajmniej dwa miesiące więcej na dotarcie do stolicy, ale nasze własne siły poniosły znaczne\n"
+"    straty. Nie pozwól, aby ich ofiara poszła na marne.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:165
@@ -639,6 +713,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 10.:}\n"
+"\\begin{itemize}\n"
+"  \\item W przypadku każdej niepokonanej Osady Wroga (F3, F10, \\#F1) na początku tej rundy pojawia się dodatkowy\n"
+"    Szarżujący Bohater Wroga danej frakcji na każdej Osadzie.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:172
@@ -652,6 +732,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 11.:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Otrzymujesz raport z południa. Nasze siły nadal rzucają się na drogę armii Katarzyny,\n"
+"    ale ona nadal marszuje na północ. Masz najwyżej trzy lub cztery tygodnie, zanim dotrze do stolicy.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:178
@@ -664,6 +750,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{13. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Ostrzeżenie: ,,Marsz Katarzyny trwa -- jej siły są tylko dwa tygodnie stąd. Jeśli się nie pospieszysz,\n"
+"    nie zdążymy zabezpieczyć stolicy przed jej przybyciem.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:184
@@ -676,6 +768,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 15.:}\n"
+"\\begin{itemize}\n"
+"  \\item Ostrzeżenie: ,,Twoi zwiadowcy zgłaszają widok armii Katarzyny siedem dni na południowy zachód. Jeśli\n"
+"    dotrze do stolicy przed tobą, wszystko jest stracone.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:191
@@ -689,6 +787,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 16.:}\n"
+"\\begin{itemize}\n"
+"  \\item Jeśli Steadwick nie zostało zdobyte, przeczytaj: ,,Dziś rano ogromna armia pod dowództwem Katarzyny\n"
+"    Ironfist dotarła do erackiej stolicy Steadwick. Nie mamy innego wyboru, jak tylko wycofać nasze siły.\n"
+"    Zawiodłeś nas... okropnie.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:196
@@ -700,6 +805,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Po zakończeniu scenariusza:}\n"
+"\\begin{itemize}\n"
+"  \\item Przeczytaj: ,,Gratulacje! Zdobyłeś Steadwick i odnosisz zwycięstwo!''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:219
@@ -723,6 +833,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"    \\item General Kendal nie porusza się i czeka tylko w swojej Osadzie. Zaczyna z Murami, Bramą\n"
+"      i Wieżą Łucziczą po swojej stronie Planszy Walki.\n"
+"    \\item Poziom trudności każdej Walki na mapie wzrasta o jeden aż do końca scenariusza\n"
+"      (zobacz strona 35, ,,Tabela Trudności Pola'' w Księdze Zasad).\n"
+"    \\item Szarżujący Bohaterowie mają tylko 2 Punkty Ruchu, zamiast 3. Ignorują wszystko inne\n"
+"      (w tym kopalnie i osady, jeśli to możliwe) i zmierzają prosto do Miasta Gracza (na Kafelku Mapy S6).\n"
+"      Nie ścigają bezpośrednio gracza, ale jeśli znajdą się na tym samym Kafelku Mapy, zaatakują\n"
+"      Bohatera Głównego gracza (nie Pomocniczego).\n"
+"    \\item Szarżujący Bohaterowie poruszają się po zakończeniu tury gracza.\n"
+"    \\item Granice na Początkowym Kafelku Mapy S3 nie mogą być przekraczane w żaden sposób, dopóki\n"
+"      wszystkie Wrogie Osady (F3, F10, \\#F1) nie zostaną pokonane.\n"
+"    \\item Pokonanie Szarżujących Bohaterów przynosi 2 \\svg{valuables}.\n"
+"    \\item Obeliski dają 1 \\svg{valuables} i pełnią funkcję ,,Wrót Wymiarów'' (tylko jeśli masz zbudowe ,,Wrota Wymiarów'' w swoim Mieście).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/inferno_steadwicks_fall.tex:229
@@ -757,3 +883,17 @@ msgid ""
 "  \\node at (2, -12.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Castle}}}}};\n"
 "  \\node at (2, -13) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
 msgstr ""
+"  \\node at (3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N3}}}}};\n"
+"  \\node at (4.4, -18.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{\\#F1}}}}};\n"
+"  \\node at (15, -5.2) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F10}}}}};\n"
+"  \\node at (17.3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S6}}}}};\n"
+"  \\node at (8.8, -18.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F3}}}}};\n"
+"  \\node at (15.9, -18.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F2}}}}};\n"
+"  \\node at (2, -4.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Steadwick}}}}};\n"
+"  \\node at (2, -5.2) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S3}}}}};\n"
+"  \\node at (7.5, -5.4) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Kafelki}}}}};\n"
+"  \\node at (7.5, -6.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Bastionu}}}}};\n"
+"  \\node at (12.4, -17.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Kafelki}}}}};\n"
+"  \\node at (12.4, -18.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Nekropolii}}}}};\n"
+"  \\node at (2, -12.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Kafelki}}}}};\n"
+"  \\node at (2, -13) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Zamku}}}}};"

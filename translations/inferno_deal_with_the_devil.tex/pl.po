@@ -247,6 +247,8 @@ msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza:\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
