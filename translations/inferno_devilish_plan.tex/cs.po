@@ -119,6 +119,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
 "\n"
 msgstr ""
+"\\textbf{Budovy ve Městě:} \\svgunit{bronze} Obydlí, Radnice\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
