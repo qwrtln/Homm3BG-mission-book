@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-21 22:25+0200\n"
+"POT-Creation-Date: 2024-07-21 22:28+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -32,8 +32,8 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
 #: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:121
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: campaigns/inferno_steadwicks_fall.tex:122
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -43,8 +43,8 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
 #: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:126
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:127
+#: campaigns/inferno_deal_with_the_devil.tex:118
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -55,8 +55,8 @@ msgstr ""
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:134
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: campaigns/inferno_steadwicks_fall.tex:135
+#: campaigns/inferno_deal_with_the_devil.tex:124
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -65,8 +65,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:147 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:198
-#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
+#: campaigns/inferno_steadwicks_fall.tex:199
+#: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:25
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -76,8 +76,8 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
 #: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:19
-#: campaigns/inferno_deal_with_the_devil.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
@@ -86,8 +86,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:41
-#: campaigns/inferno_steadwicks_fall.tex:73
+#: campaigns/inferno_steadwicks_fall.tex:42
+#: campaigns/inferno_steadwicks_fall.tex:74
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -106,8 +106,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
-#: campaigns/inferno_steadwicks_fall.tex:15
-#: campaigns/inferno_deal_with_the_devil.tex:16
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
@@ -116,8 +116,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:24
-#: campaigns/inferno_steadwicks_fall.tex:21
-#: campaigns/inferno_deal_with_the_devil.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:22
+#: campaigns/inferno_deal_with_the_devil.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
@@ -126,8 +126,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:26
-#: campaigns/inferno_steadwicks_fall.tex:23
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:24
+#: campaigns/inferno_deal_with_the_devil.tex:28
 #, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
@@ -136,8 +136,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:34
-#: campaigns/inferno_steadwicks_fall.tex:31
-#: campaigns/inferno_deal_with_the_devil.tex:32
+#: campaigns/inferno_steadwicks_fall.tex:32
+#: campaigns/inferno_deal_with_the_devil.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -146,8 +146,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
-#: campaigns/inferno_steadwicks_fall.tex:51
-#: campaigns/inferno_deal_with_the_devil.tex:46
+#: campaigns/inferno_steadwicks_fall.tex:52
+#: campaigns/inferno_deal_with_the_devil.tex:50
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
@@ -156,8 +156,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
-#: campaigns/inferno_steadwicks_fall.tex:75
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_steadwicks_fall.tex:76
+#: campaigns/inferno_deal_with_the_devil.tex:81
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
@@ -166,8 +166,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:102
-#: campaigns/inferno_deal_with_the_devil.tex:100
+#: campaigns/inferno_steadwicks_fall.tex:103
+#: campaigns/inferno_deal_with_the_devil.tex:104
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
@@ -176,8 +176,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:155
-#: campaigns/inferno_steadwicks_fall.tex:200
-#: campaigns/inferno_deal_with_the_devil.tex:175
+#: campaigns/inferno_steadwicks_fall.tex:201
+#: campaigns/inferno_deal_with_the_devil.tex:179
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -186,8 +186,8 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:157
-#: campaigns/inferno_steadwicks_fall.tex:202
-#: campaigns/inferno_deal_with_the_devil.tex:177
+#: campaigns/inferno_steadwicks_fall.tex:203
+#: campaigns/inferno_deal_with_the_devil.tex:181
 #, no-wrap
 msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
@@ -211,17 +211,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:13
+#: campaigns/inferno_steadwicks_fall.tex:14
 #, no-wrap
 msgid ""
 "\\textit{Catherine Ironfist has enlisted aid from Bracada and AvLee.\n"
-"  She knows we are close to Steadwick. We must occupy Steadwick before she arrives.\n"
-"  Once we own Erathia's capitol, not even Catherine Ironfist will wrench it from our hands.}\n"
+"She knows we are close to Steadwick.\n"
+"We must occupy Steadwick before she arrives.\n"
+"Once we own Erathia's capitol, not even Catherine Ironfist will wrench it from our hands.}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:17
+#: campaigns/inferno_steadwicks_fall.tex:18
 #, no-wrap
 msgid ""
 "This scenario plays out over 16 rounds.\n"
@@ -229,7 +230,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:26
+#: campaigns/inferno_steadwicks_fall.tex:27
 #, no-wrap
 msgid ""
 "\\textbf{Starting Resources:}\\par\n"
@@ -238,7 +239,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:29
+#: campaigns/inferno_steadwicks_fall.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:}\\par\n"
@@ -247,7 +248,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:37
+#: campaigns/inferno_steadwicks_fall.tex:38
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -259,7 +260,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:39
+#: campaigns/inferno_steadwicks_fall.tex:40
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling\n"
@@ -267,7 +268,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:49
+#: campaigns/inferno_steadwicks_fall.tex:50
 #, no-wrap
 msgid ""
 "\\textbf{Bonus:} Choose one of the following options:\n"
@@ -281,7 +282,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:53
+#: campaigns/inferno_steadwicks_fall.tex:54
 #, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle\n"
@@ -289,7 +290,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:55
+#: campaigns/inferno_steadwicks_fall.tex:56
 #, no-wrap
 msgid ""
 "\\textbf{Enemies:} General Kendal, Charging Heroes\n"
@@ -297,7 +298,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:57
+#: campaigns/inferno_steadwicks_fall.tex:58
 #, no-wrap
 msgid ""
 "\\textbf{General Kendal's Army:} A Pack of Archangels, a Pack of Champions, a Pack of Zealots, a Pack of Crusaders, a Pack of Griffins, a Balista War Machine\n"
@@ -305,7 +306,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:59
+#: campaigns/inferno_steadwicks_fall.tex:60
 #, no-wrap
 msgid ""
 "\\textbf{General Kendal's Deck:} 5 × Might card, 1 × Magic card, 3 × Skill card\n"
@@ -313,7 +314,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:61
+#: campaigns/inferno_steadwicks_fall.tex:62
 #, no-wrap
 msgid ""
 "\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell card\n"
@@ -321,7 +322,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:63
+#: campaigns/inferno_steadwicks_fall.tex:64
 #, no-wrap
 msgid ""
 "\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
@@ -329,7 +330,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:66
 #, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Factions:} Rampart, Tower, Castle\n"
@@ -337,7 +338,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:67
+#: campaigns/inferno_steadwicks_fall.tex:68
 #, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Armies:} Neutral Army is one level higher than your Hero level (max level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
@@ -345,7 +346,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:69
+#: campaigns/inferno_steadwicks_fall.tex:70
 #, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Deck:} 2 × Might card, 2 × Magic card\n"
@@ -353,7 +354,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:71
+#: campaigns/inferno_steadwicks_fall.tex:72
 #, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell decks. Reset them after every Combat.}.\n"
@@ -361,8 +362,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:77
-#: campaigns/inferno_deal_with_the_devil.tex:79
+#: campaigns/inferno_steadwicks_fall.tex:78
+#: campaigns/inferno_deal_with_the_devil.tex:83
 #, no-wrap
 msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
@@ -370,7 +371,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:83
+#: campaigns/inferno_steadwicks_fall.tex:84
 #, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map tile}\n"
@@ -382,7 +383,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:93
+#: campaigns/inferno_steadwicks_fall.tex:94
 #, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map tile}\n"
@@ -398,7 +399,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:100
+#: campaigns/inferno_steadwicks_fall.tex:101
 #, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map tile}\n"
@@ -411,7 +412,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:106
 #, no-wrap
 msgid ""
 "The Enemy Hero General Kendal is represented by one Castle Faction Hero\n"
@@ -420,7 +421,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:109
 #, no-wrap
 msgid ""
 "The Castle Charging Hero is represented by one Castle Faction Hero model\n"
@@ -429,7 +430,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:111
+#: campaigns/inferno_steadwicks_fall.tex:112
 #, no-wrap
 msgid ""
 "The Rampart Charging Hero is represented by one Rampart Faction Hero model\n"
@@ -438,7 +439,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:115
 #, no-wrap
 msgid ""
 "The Tower Charging Hero is represented by one Tower Faction Hero model\n"
@@ -447,7 +448,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:117
 #, no-wrap
 msgid ""
 "Place your Main Hero on the center field of the Inferno Starting S6 Map tile.\n"
@@ -455,7 +456,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:119
+#: campaigns/inferno_steadwicks_fall.tex:120
 #, no-wrap
 msgid ""
 "Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice,\n"
@@ -464,7 +465,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:124
+#: campaigns/inferno_steadwicks_fall.tex:125
 #, no-wrap
 msgid ""
 "Defeat all 3 Enemy Controlled Settlements (F3, F10, \\#F1), and capture Steadwick (S3) before\n"
@@ -473,7 +474,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:128
+#: campaigns/inferno_steadwicks_fall.tex:129
 #, no-wrap
 msgid ""
 "You lose one Combat encounter with your Main Hero (Surrender costs 10 gold, and does not count as a defeat).\n"
@@ -481,7 +482,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:130
+#: campaigns/inferno_steadwicks_fall.tex:131
 #, no-wrap
 msgid ""
 "You lose your Faction Town on the S6 Map Tile.\n"
@@ -489,7 +490,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:132
+#: campaigns/inferno_steadwicks_fall.tex:133
 #, no-wrap
 msgid ""
 "You run out of time –- you have time till the end of the Round 16.\n"
@@ -497,7 +498,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:141
+#: campaigns/inferno_steadwicks_fall.tex:142
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -510,7 +511,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:147
+#: campaigns/inferno_steadwicks_fall.tex:148
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
@@ -522,7 +523,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:152
+#: campaigns/inferno_steadwicks_fall.tex:153
 #, no-wrap
 msgid ""
 "    You have just received a report on the progress of Queen Catherine.\n"
@@ -533,7 +534,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:159
+#: campaigns/inferno_steadwicks_fall.tex:160
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
@@ -546,7 +547,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:165
+#: campaigns/inferno_steadwicks_fall.tex:166
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -558,7 +559,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:172
+#: campaigns/inferno_steadwicks_fall.tex:173
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{11} Round:}\n"
@@ -571,7 +572,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:178
+#: campaigns/inferno_steadwicks_fall.tex:179
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
@@ -583,7 +584,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:184
+#: campaigns/inferno_steadwicks_fall.tex:185
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{15} Round:}\n"
@@ -595,7 +596,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:191
+#: campaigns/inferno_steadwicks_fall.tex:192
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
@@ -608,7 +609,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:196
+#: campaigns/inferno_steadwicks_fall.tex:197
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the scenario:}\n"
@@ -619,7 +620,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:219
+#: campaigns/inferno_steadwicks_fall.tex:220
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -642,7 +643,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:229
+#: campaigns/inferno_steadwicks_fall.tex:230
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -656,7 +657,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:244
+#: campaigns/inferno_steadwicks_fall.tex:245
 #, no-wrap
 msgid ""
 "  \\node at (3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N3}}}}};\n"
