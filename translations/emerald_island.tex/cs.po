@@ -86,6 +86,8 @@ msgid ""
 "\\textbf{Author:} Invoceusse\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Invoceusse\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
@@ -97,6 +99,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
@@ -109,6 +113,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Jednotky:}\n"
+"\\begin{itemize}\n"
+"  \\item Skupina \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item Málo \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
@@ -128,6 +138,8 @@ msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři ($H$ znamená počet hráčů):\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -136,6 +148,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
+"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Smaragdový Ostrov}"
+"{\\images/logistics.png}"
 
 #. type: multicols*
 #: coops/emerald_island.tex:9
@@ -144,6 +158,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:14
@@ -155,6 +171,11 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\textit{Lord Markham se rozhodl uspořádat honbu za pokladem a vy a vaši přátelé se jí zúčastníte.\n"
+"  Ale pospěšte si! Další týmy jsou také na stopě a jeden z nich je téměř u konce!\n"
+"  Dávajte si ale pozor: zdá se, že na tomto ostrově číhá tvor vypadající jako drak!}\n"
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:16
@@ -163,6 +184,8 @@ msgid ""
 "This scenario is played over 8 rounds.\n"
 "\n"
 msgstr ""
+"Tento scénář se hraje na 8 kol.\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:20
@@ -171,6 +194,8 @@ msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
+"\\textbf{Počet Hráčů:} 1 -- 4\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:23
@@ -180,6 +205,9 @@ msgid ""
 "\\resources{5}{2}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Suroviny:}\\par\n"
+"\\resources{5}{2}{1}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:26
@@ -189,6 +217,9 @@ msgid ""
 "\\resources{10}{0}{1}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Příjem:}\\par\n"
+"\\resources{10}{0}{1}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
@@ -207,6 +238,8 @@ msgid ""
 "\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
+"\\textbf{Dílky Mapy na ruce:} Pokud si přejete, můžete dílky II--III rozdělit rovnoměrně mezi každého hráče, místo aby byly rozmístěny podle návrhu ve scénáři.\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:48
@@ -219,6 +252,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{H}$ \\textbf{× Startovní (I) Dílek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Startovní Dílky vašich vybraných frakcí.\n"
+"  \\item Ignorujte jakékoliv žluté čáry mezi dílky I (ale ne mezi dílky I a dílky II--III)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:50
@@ -227,6 +266,8 @@ msgid ""
 "$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{4 H}$ \\textbf{× Vzdálený (II--III) Dílek Mapy}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:54
@@ -235,6 +276,8 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
 "\n"
 msgstr ""
+"Obsaďte všechny Doly a Osady. (Nezapomeňte na Důl na Stavební Materiály na dílku I. Každý dílek II--III obsahuje jeden Důl nebo Osadu s bojem na úrovni III.)\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:58
@@ -243,6 +286,8 @@ msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
 "\n"
 msgstr ""
+"Na konci 8. kola zůstanou na mapě neobsazené Doly nebo Osady.\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:65
@@ -254,6 +299,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{5. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Získejte znovu výsledek jednoho pole s Černou Kostičkou.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:86
@@ -281,6 +331,27 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\\begin{itemize}\n"
+"    \\item Nemůžete postavit \\svgunit{golden} Obydlí.\n"
+"    \\item Můžete předat Jednotky jinému hráči, dokonce i mimo svůj tah, pokud je jeden z vašich Hrdinů:\n"
+"    \\begin{itemize}\n"
+"        \\item Na stejném dílku Mapy jako Hrdina jiného hráče.\n"
+"        \\item Ve Městě jiného hráče.\n"
+"        \\item Vedle Hrdiny jiného hráče.\n"
+"    \\end{itemize}\n"
+"    \\item Pokud nemáte žádné Jednotky ve svém balíčku Jednotek (po bitvě nebo pokud si neuchováte alespoň jednu Jednotku), vraťte všechny své Jednotky do balíčku Jednotek své Frakce (i když jiný hráč má jednu nebo více vašich Jednotek). To zahrnuje i Jednotky, které jste dříve předali jinému hráči.\n"
+"    \\item Když jste ve městě jiného hráče, můžete Naverbovat nebo Posílit jejich Jednotky, buď pro daného hráče nebo pro sebe. Potřebujete k tomu povolení druhého hráče, a musí k tomu být postavena odpovídající Obydlí nebo Citadela.\n"
+"    \\item Pro poslední boj o Důl/Osadu přidejte \\svgunit{golden} Neutrální Jednotku. Pro tento boj máte neomezený počet tahů. K přeskočení tohoto boje nemůžete použít Expertní Diplomacii!\n"
+"    \\item Poprvé, když dosáhnete úrovně IV, získáte svou druhou specializaci.\n"
+"    \\item Když dosáhnete úrovně IV, přesuňte svůj žeton na počítadle úrovní na úroveň III.\n"
+"    \\item Navíc žádný hráč nemůže:\n"
+"    \\begin{itemize}\n"
+"        \\item Útočit na jiné Hrdiny.\n"
+"        \\item Zmocnit se Dolu nebo Osady, které jsou již obsazeny.\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:88
@@ -309,3 +380,17 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.2\\paperwidth]{\\_assets/maps/emerald-1.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 1 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-2.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 2 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-3.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 3 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-4.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 4 HRÁČE}\n"
+"\\end{center}\n"
+"\n"
