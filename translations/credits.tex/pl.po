@@ -98,12 +98,7 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Special thanks}: Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
-#| "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
-#| "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario map editor}.\n"
 "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
@@ -111,7 +106,8 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
-"\\textbf{Specjalne podziękowania}: Wszystkim z Archon Studio za stworzenie gry i odpowiadanie na nasze nieustanne pytania dotyczące zasad i innych tematów.\n"
+"\\textbf{Specjalne podziękowania}: Patrickowi Kerstenowi za \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{edytor map scenariuszy}.\n"
+"Wszystkim z Archon Studio za stworzenie gry i odpowiadanie na nasze nieustanne pytania dotyczące zasad i innych tematów.\n"
 "Jonowi Van Caneghemowi i wszystkim zaangażowanym w rozwój oryginalnej gry wideo.\n"
 "Wszystkim, którzy wspierali projekt sugestiami, poprawkami, zasobami graficznymi i słowami otuchy na Discordzie lub BoardGameGeeku.\n"
 "\n"
@@ -123,7 +119,7 @@ msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
 "\n"
 msgstr ""
-"\\textbf{Grafiki zapożyczone z oficjalnego wydania zostały wykonane przez}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
+"\\textbf{Grafiki zapożyczone z oficjalnego wydania wykonali}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
 "\n"
 
 #. type: multicols*
