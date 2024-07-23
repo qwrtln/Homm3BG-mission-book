@@ -108,6 +108,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative scenario}{Titans' Stronghold}{\\images/"
 "earthquake.png}"
 msgstr ""
+"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Pevnost Titánů}{\\images/"
+"earthquake.png}"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -126,6 +128,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:17
@@ -140,6 +144,14 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\textit{Před dávnými časy byla postavena mocná pevnost, aby v ní žili fantastičtí a vražední Titáni.\n"
+"  Nikdo, kdo do ní vstoupil, se už nevrátil, aby mohl příběh vyprávět.\n"
+"  Nyní kolují zvěsti o smrti strážců a neuvěřitelném množství pokladů, možná včetně nejlepšího luku na světě.\\\\\n"
+"  Pokud je tato legenda o prázdné pevnosti pravdivá, je čas na vykopávky.\\\\\n"
+"  Nejprve ale vy a vaši spojenci musíte najít klíče roztroušené po Antagarichu, abyste otevřeli bránu Pevnosti Titánů.\n"
+"}\n"
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:19
@@ -148,6 +160,8 @@ msgid ""
 "This scenario is played over 16 rounds (15 on Impossible difficulty).\n"
 "\n"
 msgstr ""
+"Tento scénář se hraje na 16 kol (15 na Nemožnou obtížnost).\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
@@ -169,6 +183,8 @@ msgid ""
 "\\textbf{Player Count:} 1 -- 6\n"
 "\n"
 msgstr ""
+"\\textbf{Počet Hráčů:} 1 -- 6\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:26
@@ -178,6 +194,9 @@ msgid ""
 "\\resources{30}{8}{2}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Suroviny:}\\par\n"
+"\\resources{30}{8}{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
@@ -204,6 +223,8 @@ msgid ""
 "\\textbf{Town Buildings:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Městské Budovy:} Žádné\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39
@@ -212,6 +233,8 @@ msgid ""
 "\\textbf{Map tile Pool:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dílky Mapy na ruce:} Žádné\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
@@ -245,6 +268,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{H}$ \\textbf{× Startovní (I) Dílek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Startovní Dílky vašich vybraných frakcí.\n"
+"  \\item Ignorujte jejich žluté okraje.\n"
+"\\end{itemize}\n"
+"\n"
+
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:53
@@ -253,6 +283,8 @@ msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map tile}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{2 H}$ \\textbf{× Vzdálený (II--III) Dílek Mapy}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:55
@@ -261,6 +293,8 @@ msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map tile}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{2 H}$ \\textbf{× Blízký (IV--V) Dílek Mapy}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:57
@@ -269,6 +303,8 @@ msgid ""
 "$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map tile}\n"
 "\n"
 msgstr ""
+"\\mbox{$\\boldsymbol{(H + 1)}$ \\textbf{× Středový (VI--VII) Dílek Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:60
@@ -278,6 +314,9 @@ msgid ""
 "The center of this tile is the Titans' Stronghold.\n"
 "\n"
 msgstr ""
+"Pokud nemáte dostatek dílků VI--VII, můžete použít jiný dílek blízko dílku I.\n"
+"Střed tohoto dílku je Pevnost Titánů.\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:64
@@ -286,6 +325,9 @@ msgid ""
 "Kill all units in the Titans' Stronghold (the center of tile VI--VII next to tiles I).\n"
 "\n"
 msgstr ""
+"Zabijte všechny jednotky v Pevnosti Titánů (střed dílku VI--VII vedle dílků I).\n"
+"\n"
+
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:68
@@ -294,6 +336,9 @@ msgid ""
 "There are undefeated units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
 "\n"
 msgstr ""
+"Na konci 16. kola (15. na Nemožné obtížnosti) zůstanou v Pevnosti Titánů neporažené jednotky.\n"
+"\n"
+
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:75
@@ -305,6 +350,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4., 8. a 12. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Odstraňte všechny Černé Kostičky ze všech Větrných Mlýnů, Vodních Kol a Mystických Zahrad na mapě.\n"
+"\\end{itemize}\n"
+"\n"
+
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
@@ -347,6 +398,33 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\\begin{itemize}\n"
+"  \\item Pamatujte: střed dílku VI--VII vedle všech dílků I je Pevnost Titánů.\n"
+"  \\item Nikdo nesmí vstoupit do Pevnosti Titánů, dokud všechny ostatní dílky VII nejsou obsazeny kterýmkoliv hráčem.\n"
+"  \\item Po poražení neutrální armády úrovně VII, místo vyřešení pole, si hráč třikrát vybere jednu možnost z následujícího seznamu (možnost může být vybrána vícekrát):\n"
+"    \\begin{itemize}\n"
+"      \\item Jiný hráč (váš výběr) získá 5\\,\\svg{gold}\n"
+"      \\item Jiný hráč (váš výběr) získá 2\\,\\svg{building_materials}\n"
+"      \\item Jiný hráč (váš výběr) získá 1\\,\\svg{valuables}\n"
+"    \\end{itemize}\n"
+"  Poté označte pole VII Kostičkou Frakce.\n"
+"  (Ve hře pro jednoho hráče není žádný bonus!)\n"
+"  \\item Ignorujte všechny žluté okraje na dílcích I.\n"
+"  \\item Svůj Stavební Žeton můžete použít k předání svých surovin jinému hráči.\n"
+"  \\item Dva hráči mohou použít své Stavební Žetony k výměně Artefaktů a/nebo Kouzel.\n"
+"  \\item Kdykoliv hráč navštíví Obelisk, hodí si jednou Kostkou Pokladu, jednou Kostkou Surovin a vyřeší jednu z nich.\n"
+"  \\item Když jsou všechny dílky VII (s výjimkou Pevnosti Titánů) obsazeny, náhodně vytáhněte a zamíchejte určený počet (viz další strana) karet Neutrálních Jednotek z odpovídajících balíčků, abyste vytvořili samostatný balíček Neutrálních Jednotek pro Pevnost Titánů (balíček Pevnosti Titánů je někdy rozdělen na dvě části, protože určité scénáře by jinak nebylo možné s kartami z určitých rozšíření implementovat).\n"
+"  \\item Kdykoliv Hrdina vstoupí do Pevnosti Titánů, vytáhne 5 karet z balíčku Pevnosti Titánů místo z balíčků karet Neutrálních Jednotek. Jednotky jsou umístěny na Desku Bojiště (viz \\uv{Rozmístění Neutrálních Jednotek} na str. 29 v základních pravidlech). Hráči se pokoušejí porazit Jednotky, které najdou v Pevnosti Titánů. Jakékoliv Neutrální Jednotky poražené během boje v Pevnosti Titánů jsou vráceny do svých příslušných balíčků Neutrálních Jednotek místo do balíčku Pevnosti Titánů. Jakékoliv Neutrální Jednotky, které přežijí boj v Pevnosti Titánů jsou zamíchány zpět do balíčku Pevnosti Titánů. Pokud v tomto balíčku není dostatek karet Jednotek, vytáhněte tolik karet Jednotek, kolik je k dispozici, a umístěte je na Desku Bojiště.\n"
+"  \\item Boj v Pevnosti Titánů nyní stojí 1 BP za prodloužení o další kolo Boje, stejně jako boj proti Jednotkám nižší než Azurové úrovně.\n"
+"  \\item Navíc žádný hráč nemůže:\n"
+"  \\begin{itemize}\n"
+"    \\item Útočit na jiné Hrdiny.\n"
+"    \\item Obsadit Důl nebo Osadu, která je již obsazena jiným hráčem.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:109
@@ -403,6 +481,8 @@ msgid ""
 "Then\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ "
 "\\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{28}{ \\centering \\medskip \\textbf{Síla Armád Pevnosti Titánů}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} \\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Lehká} & \\darkcell{Normální} & \\darkcell{Těžká} & \\darkcell{Nemožná}\\\\ \\darkcell[1.2]{1 hráč} & \\lightcell[1.2]{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 hráči} & \\lightcell[1.2]{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{3 hráči} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak Poté\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Poté\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 hráči} & \\lightcell[1.8]{10\\bronze 10\\silver 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Poté\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak Poté\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 hráčů} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak Poté\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Poté\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak Poté\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak Poté\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.7]{6 hráčů} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Poté\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak Poté\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak Poté\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Poté\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
+
 
 #. type: center
 #: coops/titans_stronghold.tex:190
@@ -414,29 +494,29 @@ msgstr ""
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{1-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 1 HRÁČE}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{2-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 2 HRÁČE}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{3-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 3 HRÁČE}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{4-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 4 HRÁČE}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{5-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 5 HRÁČŮ}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:228
 msgid "\\captionof{figure}{6-PLAYER SCENARIO}"
-msgstr ""
+msgstr "\\captionof{figure}{SCÉNÁŘ PRO 6 HRÁČŮ}"
