@@ -50,7 +50,7 @@ msgstr ""
 #. type: Plain text
 #: sections/credits.tex:4
 msgid "\\addsection{Credits}{\\images/experience.png}"
-msgstr ""
+msgstr "\\addsection{Tvůrci}{\\images/experience.png}"
 
 #. type: Plain text
 #: sections/credits.tex:6
@@ -70,6 +70,9 @@ msgid ""
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
+"Tento projekt nestoudně přebírá osvědčené postupy z \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{Projektu Revidovaných Pravidel}}, včetně \\LaTeX{} kódu, GitHub inženýrství a nástroje pro překlady.\n"
+"Pokud jste ho ještě neviděli, měli byste se na něj podívat.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:15
@@ -78,6 +81,8 @@ msgid ""
 "\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
+"\\textbf{Šablony scénářů and \\LaTeX{} kód}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:17
@@ -86,6 +91,8 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
+"\\textbf{Překlad do češtiny}: Tomáš Zeman\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:21
@@ -96,6 +103,10 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
+"\\textbf{Zvláštní poděkování}: Všem z Archon Studio za vytvoření hry a odpovídání na naše neustálé dotazy ohledně pravidel a dalších témat.\n"
+"Jon Van Caneghemovi a všem, kteří se podíleli na vývoji původní videohry.\n"
+"Všem, kteří projekt podpořili návrhy, opravami, obrazovými zdroji a slovy povzbuzení, ať už na Discordu nebo na BoardGameGeek fóru.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:23
@@ -104,6 +115,8 @@ msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
 "\n"
 msgstr ""
+"\\textbf{Grafiku vypůjčenou z oficiálního vydání vytvořili}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:29
