@@ -88,6 +88,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32

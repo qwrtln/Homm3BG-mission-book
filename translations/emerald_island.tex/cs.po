@@ -148,8 +148,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Smaragdový Ostrov}{\\images/"
-"logistics.png}"
+"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Smaragdový Ostrov}"
+"{\\images/logistics.png}"
 
 #. type: multicols*
 #: coops/emerald_island.tex:9
@@ -176,7 +176,6 @@ msgstr ""
 "  Dávajte si ale pozor: zdá se, že na tomto ostrově číhá tvor vypadající jako drak!}\n"
 "\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
 "\n"
-
 
 #. type: multicols*
 #: coops/emerald_island.tex:16
@@ -306,7 +305,6 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-
 #. type: multicols*
 #: coops/emerald_island.tex:86
 #, no-wrap
@@ -354,7 +352,6 @@ msgstr ""
 "    \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
-
 
 #. type: multicols*
 #: coops/emerald_island.tex:88

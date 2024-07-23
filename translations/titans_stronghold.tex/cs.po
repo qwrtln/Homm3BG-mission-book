@@ -116,6 +116,8 @@ msgid ""
 "\\textbf{Author:} Invoceusse\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Invoceusse\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:9
@@ -157,6 +159,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:23
@@ -186,6 +190,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Jednotky:}\n"
+"\\begin{itemize}\n"
+"  \\item Skupina \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item Málo \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:37
@@ -221,6 +231,8 @@ msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři ($H$ znamená počet hráčů):\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:51

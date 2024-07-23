@@ -88,6 +88,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
