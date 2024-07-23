@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-03 09:52+0100\n"
+"POT-Creation-Date: 2024-07-23 20:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,9 +29,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:198
-#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
+#: coops/sentinels.tex:147 clash/the_hunt.tex:43
+#: campaigns/inferno_steadwicks_fall.tex:199
+#: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -39,8 +39,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:105 coops/titans_stronghold.tex:111
-#: sections/credits.tex:27 sections/credits.tex:31
+#: coops/sentinels.tex:149 coops/titans_stronghold.tex:105
+#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
+#: clash/bloody_grail.tex:129 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -88,17 +89,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/credits.tex:21
+#: sections/credits.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Special thanks}: Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
+"\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario map editor}.\n"
+"Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
 "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: sections/credits.tex:23
+#: sections/credits.tex:24
 #, no-wrap
 msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
@@ -106,7 +108,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/credits.tex:29
+#: sections/credits.tex:30
 #, no-wrap
 msgid ""
 "\\includegraphics[width=1.3\\linewidth]{\\art/genie.png}\n"
