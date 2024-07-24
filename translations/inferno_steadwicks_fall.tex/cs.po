@@ -111,6 +111,8 @@ msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
@@ -121,6 +123,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:24
@@ -131,6 +135,8 @@ msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
+"\\textbf{Frakce:} Peklo\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:26
@@ -141,6 +147,8 @@ msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
+"\\textbf{Hrdina Frakce:} Libovolný\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:34
@@ -151,6 +159,8 @@ msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Jednotky:}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:52
@@ -161,6 +171,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:69
@@ -171,6 +183,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:98
@@ -181,6 +195,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Umístění Hrdinů}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:155
@@ -191,6 +207,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:157
@@ -201,6 +219,8 @@ msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"Během tohoto scénáře kampaně \\uv{Peklo} platí následující pravidla:\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -377,6 +397,8 @@ msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
 "\n"
 msgstr ""
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:84
