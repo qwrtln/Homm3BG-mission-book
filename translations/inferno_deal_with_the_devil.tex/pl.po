@@ -471,7 +471,7 @@ msgid ""
 "cards are not played again immediately, but instead are played as soon as the next unit is able to use them.\n"
 "\n"
 msgstr ""
-"\\\\Obie karty Artefaktów wszystkich Szarżujących Armii traktowane są jako Umiejętności i używają górnego ,,słabszego'' efektu.\n"
+"Obie karty Artefaktów wszystkich Szarżujących Armii traktowane są jako Umiejętności i używają górnego ,,słabszego'' efektu.\n"
 ",,Miecz Ognia Piekielnego'' będzie używany w atakach i kontratakach. Nie jest używany podczas atakowania Murów lub Bram\n"
 "i pozostaje aktywny na jednostce. Jeśli zostanie dobrana karta ,,Tarcza Potępionych'', jej efekt wchodzi w życie, gdy\n"
 "jakakolwiek Jednostka Szarżującej Armii otrzyma obrażenia od ataku lub kontrataku. Jeśli karta Umiejętności AI zaleca ,,powtórzenie'', karty Artefaktów\n"
@@ -555,7 +555,9 @@ msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym polu Kafelka S4.\
 msgid ""
 "Place your Hero on the center field of the S6 Inferno Starting Map tile.\n"
 "\n"
-msgstr "\\\\Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Inferno S6.\n"
+msgstr ""
+"Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Inferno S6.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:112
@@ -564,7 +566,7 @@ msgid ""
 "You cannot recruit a Secondary Hero.\n"
 "\n"
 msgstr ""
-"\\\\Nie możesz zrekrutować Bohatera Pomocniczego.\n"
+"Nie możesz zrekrutować Bohatera Pomocniczego.\n"
 "\n"
 
 #. type: multicols*
