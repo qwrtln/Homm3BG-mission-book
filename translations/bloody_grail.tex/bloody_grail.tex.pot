@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-18 11:20+0200\n"
+"POT-Creation-Date: 2024-07-28 15:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/recommendations.tex:95
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -32,8 +33,8 @@ msgstr ""
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
 #: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:134
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: campaigns/inferno_steadwicks_fall.tex:135
+#: campaigns/inferno_deal_with_the_devil.tex:124
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -43,7 +44,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:149 coops/titans_stronghold.tex:105
 #: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
-#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#: clash/bloody_grail.tex:129 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -128,7 +129,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32
-#: campaigns/inferno_deal_with_the_devil.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:}\\par\n"
