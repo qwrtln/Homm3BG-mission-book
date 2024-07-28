@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-28 18:52+0000\n"
+"POT-Creation-Date: 2024-07-28 21:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -45,9 +45,9 @@ msgstr ""
 #, no-wrap
 msgid ""
 "{2}\n"
-"We've gathered some custom rules and best practices to make your gaming experience as smooth as possible.\n"
-"Bear in mind that those are just \\textbf{opinions of the authors} of this book.\n"
-"Enjoy.\n"
+"We've compiled some custom rules and best practices to enhance your gaming experience.\n"
+"Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+"Enjoy!\n"
 "\n"
 msgstr ""
 
@@ -90,18 +90,25 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:29
+#: sections/recommendations.tex:27
 #, no-wrap
 msgid ""
-"Therefore, if you're playing a 3-player scenario consisting of 12 rounds, you can easily calculate that $3 × 12 × 5 = 180$.\n"
-"Your expected minimal play time should be around 3 hours.\n"
-"To calculate the \\textbf{upper bound} of your play time (more realistic if there are inexperienced players), simply double the result.\n"
-"So in this case that would be 6 hours.\n"
+"For example, if you're playing a 3-player scenario consisting of 12 rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
+"Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:31
+#: sections/recommendations.tex:30
+#, no-wrap
+msgid ""
+"To calculate the \\textbf{upper bound} of your play time (more realistic if there are inexperienced players), simply double the result.\n"
+"In this case, that would be 6 hours.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:32
 #, no-wrap
 msgid ""
 "\\subsection*{Magic Arrows}\n"
@@ -109,16 +116,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:34
+#: sections/recommendations.tex:35
 #, no-wrap
 msgid ""
-"Except for the Magic Arrow, every spell appears exactly twice in the spell deck.\n"
-"After players prepare their starting M\\&M decks, it is recommended to remove as many Magic Arrows from the spell deck, so that at most two of them remain.\n"
+"Except for the Magic Arrow, each spell appears exactly twice in the spell deck.\n"
+"After players prepare their starting M\\&M decks, it is recommended to remove Magic Arrows from the spell deck until no more than two remain.\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:36
+#: sections/recommendations.tex:37
 #, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
@@ -126,7 +133,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:38
+#: sections/recommendations.tex:39
 #, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
@@ -134,7 +141,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:40
+#: sections/recommendations.tex:41
 #, no-wrap
 msgid ""
 "\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
@@ -142,7 +149,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:42
+#: sections/recommendations.tex:43
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -150,25 +157,25 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:44
+#: sections/recommendations.tex:45
 #, no-wrap
 msgid ""
-"During combat with Neutral Units in clash scenarios, if a player decides to deploy their Units only on one half (left or right one) of the battle board, the player positioning the Neutral Units must follow suit.\n"
+"During combat with Neutral Units in clash scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:48
+#: sections/recommendations.tex:49
 #, no-wrap
 msgid ""
-"Placing Neutral Units far apart only makes the other player waste MPs, and that slows the game down.\n"
-"The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go the front line.\n"
+"Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
+"The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
 "See examples that follow.\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:52
+#: sections/recommendations.tex:53
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -178,7 +185,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:73
+#: sections/recommendations.tex:74
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -193,15 +200,15 @@ msgid ""
 "  \\begin{minipage}[t]{0.44\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
-"    \\caption[bad protected]{\\textit{This is not allowed, as the Necropolis player deployed their Units on the left half of the Combat Board.\n"
-"      The Peasants must start the Combat on the left side too.}}\n"
+"    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
+"      The Peasants must also start the Combat on the left side.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:93
+#: sections/recommendations.tex:94
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -210,7 +217,7 @@ msgid ""
 "  \\begin{minipage}[t]{0.44\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
-"    \\caption[exception protected]{\\textit{\\textbf{Exception:} three non-\\svg{unit_ranged} Units must go to the front line.}}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
 "  \\begin{minipage}[t]{0.44\\textwidth}\n"
@@ -223,7 +230,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:97
+#: sections/recommendations.tex:98
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -231,21 +238,28 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:105
+#: sections/recommendations.tex:100
 #, no-wrap
 msgid ""
-"The following are not custom rules, but more like recommendations on how to get the most out of your game:\n"
+"The following are not custom rules but rather recommendations to help you get the most out of your game:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:107
+#, no-wrap
+msgid ""
 "\\begin{itemize}\n"
-"  \\item When deciding which building in your town to build, especially in the early game, it is \\textit{usually} recommended to go for units, not city hall, mages guild or anything else faction-specific.\n"
-"  \\item If you struggle which spell, artifact or ability to pick, in general it's best to prioritize those that allow you to cycle through your deck.\n"
-"    This means anything that can draw cards or pick cards from your discard pile.\n"
-"  \\item Try to limit spending the movement points of your main Hero on actions that the Secondary Hero can do, like flipping the Map tiles.\n"
+"  \\item When deciding which building to construct in your town, especially in the early game, it is \\textit{usually} best to prioritize units over the city hall, mage guild, or other faction-specific buildings.\n"
+"  \\item If you're unsure which spell, artifact, or ability to choose, prioritize those that help you cycle through your deck.\n"
+"    This includes any cards that allow you to draw cards or retrieve cards from your discard pile.\n"
+"  \\item Try to avoid using your main Hero's movement points for actions that your Secondary Hero can handle, such as flipping the Map tiles, visiting Water Wheels, and so on.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:109
+#: sections/recommendations.tex:111
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
