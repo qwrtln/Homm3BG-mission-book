@@ -1,0 +1,282 @@
+# Czech translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-07-28 15:06+0200\n"
+"PO-Revision-Date: 2024-07-28 15:06+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/recommendations.tex:95
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/recommendations.tex:3
+#, fuzzy
+#| msgid "\\addsection{Credits}{\\images/experience.png}"
+msgid "\\addsection{Recommendations}{\\art/haste.png}"
+msgstr "\\addsection{Tvůrci}{\\images/experience.png}"
+
+#. type: Plain text
+#: sections/recommendations.tex:5
+msgid "\\iftoggle{printable}{}{\\bigbreak}"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"We've gathered up some custom rules and best practices to make your gaming experience as smooth as possible.\n"
+"Bear in mind that those are just \\textbf{opinions of the authors} of this book.\n"
+"Enjoy.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:12
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player setup}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Play Time}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
+
+#. type: multicols
+#: sections/recommendations.tex:14
+#, no-wrap
+msgid ""
+"You can estimate your \\textbf{minimal} play time using the following formula:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:18
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  Play Time $= \\boldsymbol{P × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:24
+#, no-wrap
+msgid ""
+"Where:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{P}$] -- number of players\n"
+"  \\item[$\\textbf{R}$] -- number of rounds\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:29
+#, no-wrap
+msgid ""
+"Therefore, if you're playing a 3-player scenario consisting of 12 rounds, you can easily calculate that $3 × 12 × 5 = 180$.\n"
+"Your expected minimal play time should be around 3 hours.\n"
+"To calculate the \\textbf{upper bound} of your play time (more realistic if there are inexperienced players), just double the result.\n"
+"So in this case that would be 6 hours.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:31
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Boss Army}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Magic Arrows}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Armáda Bosse}}\n"
+"\n"
+
+#. type: multicols
+#: sections/recommendations.tex:34
+#, no-wrap
+msgid ""
+"Except for the Magic Arrow, every spell appears exactly twice in the spell deck.\n"
+"After players prepare their starting M\\&M decks, it is recommended to remove as many Magic Arrows from the spell deck, so that at most two of them remain.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:36
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\n"
+
+#. type: multicols
+#: sections/recommendations.tex:38
+#, no-wrap
+msgid ""
+"Although rules as written state that you can remove only one card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:40
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:42
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Combat with Neutral Units}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Boj s Nepřátelskými\\\\Armádami}}\n"
+"\n"
+
+#. type: multicols
+#: sections/recommendations.tex:44
+#, no-wrap
+msgid ""
+"During combat with Neutral Units in clash sccenarios, if a player decides to deploy their Units only on one half (left or right one) of the battle board, the player positioning the Neutral Units must follow suit.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:48
+#, no-wrap
+msgid ""
+"Placing Neutral Units far apart only makes the other player waste MPs, and that slows the game down.\n"
+"The exception to this rule is when there are three Neutral \\svg{unit_ground} Units to position, as all of them must go the front line.\n"
+"See examples that follow.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:52
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.65\\linewidth]{\\art/counterstrike.png}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: figure*
+#: sections/recommendations.tex:73
+#, no-wrap
+msgid ""
+"[!h]\n"
+"  \\mbox{}%\n"
+"  \\hfill%\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill%\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{This is not allowed, as the Necropolis player deployd their Units on the left half of the Combat Board.\n"
+"      The Peasants must start the Combat on the left side too.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill%\n"
+"  \\mbox{}%"
+msgstr ""
+
+#. type: figure*
+#: sections/recommendations.tex:93
+#, no-wrap
+msgid ""
+"[!h]\n"
+"  \\mbox{}%\n"
+"  \\hfill%\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{Exception: three \\svg{unit_ground} Units must go to the front line.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill%\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green fields.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill%\n"
+"  \\mbox{}%"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:97
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{General Recommendations}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"\n"
+
+#. type: multicols
+#: sections/recommendations.tex:105
+#, no-wrap
+msgid ""
+"The following are not custom rules, but more like recommendations on how to get the most out of your game:\n"
+"\\begin{itemize}\n"
+"  \\item When deciding which building in your town to build, especially in the early game, it is \\textit{usually} recommended to go for units, not city hall, mages guild or anything else faction-specific.\n"
+"  \\item If you struggle which spell, artifact or ability to pick, in general it's best to prioritize those that allow you to cycle through your deck.\n"
+"    This means anything that can draw cards or pick cards from your discard pile.\n"
+"  \\item Try to limit spending the movement points of your main Hero on actions that the Secondary Hero can do, like flipping the Map tiles.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:109
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
