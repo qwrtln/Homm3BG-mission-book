@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 21:31+0200\n"
+"POT-Creation-Date: 2024-07-31 16:13+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,10 +33,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/recommendations.tex:3
-#, fuzzy
-#| msgid "\\addsection{Credits}{\\images/experience.png}"
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr "\\addsection{Twórcy}{\\images/experience.png}"
+msgstr "\\addsection{Zalecenia}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
@@ -53,18 +51,20 @@ msgid ""
 "Enjoy!\n"
 "\n"
 msgstr ""
+"{2}\n"
+"Zebraliśmy kilka niestandardowych zasad i najlepszych praktyk, aby usprawnić grę.\n"
+"Pamiętaj, że są to tylko \\textbf{opinie autorów} tej księgi.\n"
+"Miłej zabawy!\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:12
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\\subsection*{Czas Gry}\n"
 "\n"
 
 #. type: multicols
@@ -74,6 +74,8 @@ msgid ""
 "You can estimate your \\textbf{minimal} play time using the following formula:\n"
 "\n"
 msgstr ""
+"Możesz oszacować swój \\textbf{minimalny} czas gry, korzystając z następującego wzoru:\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:18
@@ -84,16 +86,14 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  Czas Gry $= \\boldsymbol{G × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of Familiars\n"
-#| "  \\item A Few Magogs\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Where:\n"
 "\\begin{itemize}\n"
@@ -102,9 +102,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Gdzie:\n"
 "\\begin{itemize}\n"
-"  \\item Grupa Chowańców\n"
-"  \\item Garstka Magogów\n"
+"  \\item[$\\textbf{G}$] -- liczba graczy\n"
+"  \\item[$\\textbf{R}$] -- liczba rund\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -116,6 +117,9 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
+"Dla przykładu, jeśli grasz w scenariusz dla 3 graczy składający się z 12 rund, możesz łatwo obliczyć, że $3 \\times 12 \\times 5 = 180$.\n"
+"Twój przewidywany minimalny czas gry wyniesie około 3 godzin.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:30
@@ -125,18 +129,18 @@ msgid ""
 "In this case, that would be 6 hours.\n"
 "\n"
 msgstr ""
+"Aby obliczyć \\textbf{górną granicę} czasu gry (bardziej realistyczną, jeśli są niedoświadczeni gracze), po prostu pomnóż wynik przez dwa.\n"
+"W tym przypadku będzie to 6 godzin.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Boss Army}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Magic Arrows}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Finałowa Armia}}\n"
+"\\subsection*{Magiczne Strzały}\n"
 "\n"
 
 #. type: multicols
@@ -147,18 +151,18 @@ msgid ""
 "After players prepare their starting M\\&M decks, it is recommended to remove Magic Arrows from the spell deck until no more than two remain.\n"
 "\n"
 msgstr ""
+"Z wyjątkiem Magicznej Strzały każde zaklęcie pojawia się dokładnie dwa razy w talii zaklęć.\n"
+"Po przygotowaniu początkowych talii M\\&M przez graczy, zaleca się usunięcie Magicznych Strzał z talii zaklęć, aż pozostaną nie więcej niż dwie.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\\subsection*{Punkt Handlowy}\n"
 "\n"
 
 #. type: multicols
@@ -168,6 +172,8 @@ msgid ""
 "Although rules as written state that you can remove only one card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
+"Mimo że zasady mówią, że możesz usunąć tylko jedną kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie tylu kart, ile chcesz.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:41
@@ -179,15 +185,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Walka z Wrogą Armią}}\n"
+"\\subsection*{Walka z Jednostkami Neutralnymi}\n"
 "\n"
 
 #. type: multicols
@@ -197,6 +200,8 @@ msgid ""
 "During combat with Neutral Units in clash scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
+"Podczas walki z Neutralnymi Jednostkami w trybie starcia, jeśli gracz zdecyduje się rozmieścić swoje Jednostki tylko na jednej połowie (lewej lub prawej) planszy walki, gracz rozmieszczający Neutralne Jednostki musi postąpić tak samo.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:49
@@ -207,6 +212,10 @@ msgid ""
 "See examples that follow.\n"
 "\n"
 msgstr ""
+"Rozmieszczanie Neutralnych Jednostek daleko od siebie tylko sprawia, że drugi gracz marnuje Punkty Ruchu, co spowalnia grę.\n"
+"Wyjątek od tej zasady stanowi sytuacja, gdy należy rozmieszczać trzy Neutralne \\svg{unit_ground} lub \\svg{unit_flying} Jednostki, ponieważ wszystkie muszą trafić do pierwszej linii.\n"
+"Zobacz następujące przykłady.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:53
@@ -240,6 +249,23 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutralne Jednostki są rozmieszczone prawidłowo.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Takie rozmieszczenie jest niedozwolone, ponieważ gracz Nekropolii umieścił swoje Jednostki w lewej połowie Planszy Walki.\n"
+"      Chłopi również muszą rozpocząć Walkę po lewej stronie.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: figure*
 #: sections/recommendations.tex:94
@@ -262,18 +288,31 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Wyjątek:} Trzy Jednostki niestrzelające muszą być rozmieszczone w pierwszej linii.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Dziki muszą zająć jedno z zielonych pól.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: multicols
 #: sections/recommendations.tex:98
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
+"\\subsection*{Ogólne Zalecenia}\n"
 "\n"
 
 #. type: multicols
@@ -283,19 +322,28 @@ msgid ""
 "The following are not custom rules but rather recommendations to help you get the most out of your game:\n"
 "\n"
 msgstr ""
+"Poniższe zalecenia nie są zasadami niestandardowymi, lecz mają na celu maksymalne wykorzystanie potencjału gry:\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:107
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item When deciding which building to construct in your town, especially in the early game, it is \\textit{usually} best to prioritize units over the city hall, mage guild, or other faction-specific buildings.\n"
-"  \\item If you're unsure which spell, artifact, or ability to choose, prioritize those that help you cycle through your deck.\n"
+"  \\item When deciding which building to construct in your town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other faction-specific buildings.\n"
+"  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your deck.\n"
 "    This includes any cards that allow you to draw cards or retrieve cards from your discard pile.\n"
-"  \\item Try to avoid using your main Hero's movement points for actions that your Secondary Hero can handle, such as flipping the Map tiles, visiting Water Wheels, and so on.\n"
+"  \\item Try to avoid using your Main Hero's movement points for actions that your Secondary Hero can handle, such as flipping the Map tiles, visiting Water Wheels, and so on.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Decydując, który budynek wybudować w swoim mieście, szczególnie na początku gry, \\textit{zazwyczaj} najlepiej jest priorytetowo traktować Jednostki ponad Ratusz, Cytadelę, Gildie Magów lub inne budynki specyficzne dla frakcji.\n"
+"  \\item Jeśli nie jesteś pewien, które Zaklęcie, Artefakt lub Zdolność wybrać, priorytetowo traktuj te, które pomagają w przeszukiwaniu talii.\n"
+"    Obejmuje to karty, które pozwalają ci dobierać karty lub odzyskiwać karty ze stosu kart odrzuconych.\n"
+"  \\item Staraj się unikać zużywania Punktów Ruchu Bohatera Głównego na akcje, które może wykonać Bohater Pomocniczy, takie jak obracanie Kafelków Mapy, odwiedzanie Młynów Wodnych i tym podobne.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:111
