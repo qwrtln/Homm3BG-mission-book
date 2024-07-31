@@ -1,0 +1,362 @@
+# Polish translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-07-31 22:11+0200\n"
+"PO-Revision-Date: 2024-07-31 22:11+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/recommendations.tex:96
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 clash/dragoncurse_castle.tex:21
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 2\n"
+"\n"
+msgstr ""
+"\\textbf{Liczba Graczy:} 2\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
+#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
+#: clash/dragoncurse_castle.tex:59 campaigns/inferno_devilish_plan.tex:115
+#: campaigns/inferno_steadwicks_fall.tex:135
+#: campaigns/inferno_deal_with_the_devil.tex:124
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:147 clash/the_hunt.tex:43
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_steadwicks_fall.tex:199
+#: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:39 clash/dragoncurse_castle.tex:38
+#, no-wrap
+msgid ""
+"\\textbf{Map tile Pool:} None\n"
+"\n"
+msgstr ""
+"\\textbf{Pula Kafelków Mapy:} Brak\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
+#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: clash/dragoncurse_castle.tex:40
+#, no-wrap
+msgid ""
+"\\textbf{Additional Bonus:} None\n"
+"\n"
+msgstr ""
+"\\textbf{Dodatkowy Bonus:} Brak\n"
+"\n"
+
+#. type: multicols*
+#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
+#: clash/dragoncurse_castle.tex:36
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko\n"
+"\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/dragoncurse_castle.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
+msgid ""
+"\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/frenzy."
+"png}"
+msgstr "\\addscenariosection{1}{Tryb Starcia}{Polowanie}{\\images/slayer.png}"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:7
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Tm335\n"
+#| "\n"
+msgid ""
+"\\textbf{Author:} profmamadu\n"
+"\n"
+msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:9
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+#| "\n"
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
+"\n"
+msgstr ""
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Discord Archon Studio}\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:15
+#, no-wrap
+msgid ""
+"\\textit{The majestic castle on the hill overlooks this rich province, and the local ruler is temporarily missing, leaving only his army to defend the castle walls.\n"
+"Both neighboring rulers suddenly decide that these lands are theirs by right and must be secured before the local ruler returns.\n"
+"But legend speaks of a wild dragon bound to this land.\n"
+"Will you dismiss the curse as a distraction, or can the dragon be tamed to give you the necessary edge over your opponent?\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:19
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This scenario is played over 12 rounds.\n"
+#| "\n"
+msgid ""
+"This scenario is played over a maximum of 11 rounds.\n"
+"\n"
+msgstr ""
+"Ten scenariusz jest rozgrywany w 12 rundach.\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:26
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:}\\par\n"
+#| "\\resources{15}{4}{2}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Resources:}\\par\n"
+"\\resources{20}{4}{2}\n"
+"\n"
+msgstr ""
+"\\textbf{Zasoby Początkowe:}\\par\n"
+"\\resources{15}{4}{2}\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:29
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Income:}\\par\n"
+#| "\\resources{10}{2}{1}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Income:}\\par\n"
+"\\resources{15}{2}{1}\n"
+"\n"
+msgstr ""
+"\\textbf{Początkowy Przychód:}\\par\n"
+"\\resources{10}{2}{1}\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:34
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\svgunit{bronze} units of your choice\n"
+#| "  \\item A Few \\svgunit{bronze} units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest recruitment cost\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item Grupa \\svgunit{bronze} jednostek do wyboru\n"
+"  \\item Garstka \\svgunit{bronze} jednostek do wyboru\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:49
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{For a 2-player scenario:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map tile\n"
+#| "  \\item 2 × Far (II--III) Map tile\n"
+#| "  \\item 2 × Near (IV--V) Map tile\n"
+#| "  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Starting (I) Map tile\n"
+"  \\item 2 × Far (II-III) Map tile\n"
+"  \\item 5 × Near (IV-V) Map tile\n"
+"  \\item 2 × Center (VI-VII) Map tiles, blindly choosing one with the Random Town field and the other with a Dragon Utopia field.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Dla scenariusza dwuosobowego:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 2 × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy; umieść Czarną Kostkę lub figurkę reprezentującą Smoka w centrum Kafelka\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:53
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"When the Random Town is captured for the first time, players continue playing the current round and will play \\textbf{one additional final round}.\n"
+"The player controlling the Random Town at the end of that final round is the winner.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:57
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"At the end of the \\nth{10} round, if no player controls the Random Town, both players lose the game (\\textit{the local ruler returns to the castle and regains control of the province});\n"
+"otherwise, if the Random Town was first captured in the \\nth{10} round, the game proceeds, as normal, to its additional final round (in this case, the \\nth{11} round).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:65
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black cubes from all the Water Wheels, Windmills and Mystical Gardens on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black cubes from Water Wheels and Windmills on the map.\n"
+"  \\item All Heroes gain +1 \\svg{movement}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Rundy 4., 8. i 12.:}\n"
+"\\begin{itemize}\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka, Młyna Wodnego i Mistycznego Ogrodu na mapie.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/dragoncurse_castle.tex:83
+#, no-wrap
+msgid ""
+"{2}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"During this scenario:\n"
+"\\begin{itemize}\n"
+"  \\item Whenever an Obelisk is visited for the first time, the visiting player gains 2 \\svg{building_materials}\n"
+"  \\item The Random Town is also defended by Walls and Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
+"  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
+"    \\begin{itemize}\n"
+"      \\item Place a newly recruited Secondary Hero.\n"
+"      \\item Place the Main Hero when defeated.\n"
+"      \\item Temporarily transport the army to, for 8 \\svg{gold} (when the Random Town is attacked).\n"
+"    \\end{itemize}\n"
+"  \\item The first player to visit the Dragon Utopia (after defeating the defending Azure unit(s)) draws cards from the Neutral Units \\svgunit{azure} deck until a Dragon that is not associated with any faction is drawn.\n"
+"    The player may immediately recruit that Dragon for free.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/dragoncurse_castle.tex:93
+#, no-wrap
+msgid ""
+"\\phantom{.}\n"
+"\\vfill\n"
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
+"\\end{center}\n"
+"\\vfill\n"
+"\\phantom{.}"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/dragoncurse_castle.tex:99
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[overlay]\n"
+#| "  \\centering\n"
+#| "  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+msgid ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\_assets/maps/dragoncurse-castle.png}};"
+msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
