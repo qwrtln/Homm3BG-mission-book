@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-31 22:11+0200\n"
+"POT-Creation-Date: 2024-07-31 22:28+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -567,11 +567,11 @@ msgstr ""
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:193

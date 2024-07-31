@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 21:08+0200\n"
+"POT-Creation-Date: 2024-07-31 22:28+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,10 +19,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -50,7 +50,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
 #: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
+#: clash/dragoncurse_castle.tex:59 campaigns/inferno_devilish_plan.tex:115
 #: campaigns/inferno_steadwicks_fall.tex:135
 #: campaigns/inferno_deal_with_the_devil.tex:124
 #, no-wrap
@@ -69,7 +69,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:147 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:199
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_steadwicks_fall.tex:199
 #: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -80,6 +80,7 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
 #: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: clash/dragoncurse_castle.tex:40
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -289,9 +290,9 @@ msgstr ""
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-2.png}};\n"
+"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
 "  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-3.png}};\n"
+"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
 "  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
