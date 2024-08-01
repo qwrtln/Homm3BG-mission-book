@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 15:06+0200\n"
+"POT-Creation-Date: 2024-08-01 08:14+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,10 +19,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -39,10 +39,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:122
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:120
+#: campaigns/inferno_deal_with_the_devil.tex:112
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -50,10 +50,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:127
-#: campaigns/inferno_deal_with_the_devil.tex:118
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:125
+#: campaigns/inferno_deal_with_the_devil.tex:116
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -61,11 +61,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:135
-#: campaigns/inferno_deal_with_the_devil.tex:124
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:122
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
+#: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -104,8 +104,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -113,7 +114,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
+#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
@@ -164,25 +165,24 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:23
+#: coops/emerald_island.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{5}{2}{1}\n"
+"\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:26
+#: coops/emerald_island.tex:24
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{0}{1}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
+#: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
+#: clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
@@ -190,7 +190,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:36
+#: coops/emerald_island.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
@@ -198,7 +198,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:48
+#: coops/emerald_island.tex:46
 #, no-wrap
 msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
@@ -210,7 +210,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:50
+#: coops/emerald_island.tex:48
 #, no-wrap
 msgid ""
 "$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
@@ -218,7 +218,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:54
+#: coops/emerald_island.tex:52
 #, no-wrap
 msgid ""
 "Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
@@ -226,7 +226,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:58
+#: coops/emerald_island.tex:56
 #, no-wrap
 msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
@@ -234,7 +234,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:65
+#: coops/emerald_island.tex:63
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
@@ -245,7 +245,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:86
+#: coops/emerald_island.tex:84
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -272,7 +272,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:88
+#: coops/emerald_island.tex:86
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
@@ -280,20 +280,20 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:102
+#: coops/emerald_island.tex:100
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.2\\paperwidth]{\\_assets/maps/emerald-1.png}\n"
+"  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
 "  \\captionof{figure}{1-PLAYER SCENARIO}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-2.png}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
 "  \\captionof{figure}{2-PLAYER SCENARIO}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-3.png}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
 "  \\captionof{figure}{3-PLAYER SCENARIO}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-4.png}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
 "  \\captionof{figure}{4-PLAYER SCENARIO}\n"
 "\\end{center}\n"
 "\n"

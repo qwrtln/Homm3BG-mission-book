@@ -121,22 +121,6 @@
   {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
 
-\newcommand{\resources}[3]{%
-  \bgroup%
-  \def\arraystretch{2}%
-  \begin{tabularx}{\linewidth} {%
-    | >{\centering\arraybackslash}X%
-    | >{\centering\arraybackslash}X%
-    | >{\centering\arraybackslash}X | }%
-   \hline%
-   #1 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/gold.svg}}} &
-   #2 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/building_materials.svg}}} &
-   #3 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/valuables.svg}}} \\%
-   \hline%
-  \end{tabularx}%
-  \egroup%
-}%
-
 \renewcommand{\labelitemi}{
   \begin{tikzpicture}
     \node (listdot) [circle, inner sep=-3] {\includegraphics[width=1em, valign=c]{\layout/listdot.png}};

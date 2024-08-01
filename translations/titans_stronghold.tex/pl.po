@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 15:06+0200\n"
+"POT-Creation-Date: 2024-08-01 08:03+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,10 +20,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -31,20 +31,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -54,10 +52,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:122
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:120
+#: campaigns/inferno_deal_with_the_devil.tex:112
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -67,10 +65,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:127
-#: campaigns/inferno_deal_with_the_devil.tex:118
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:125
+#: campaigns/inferno_deal_with_the_devil.tex:116
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -80,11 +78,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:135
-#: campaigns/inferno_deal_with_the_devil.tex:124
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:122
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -94,9 +92,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:149 coops/titans_stronghold.tex:105
-#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
-#: clash/bloody_grail.tex:129 sections/credits.tex:28 sections/credits.tex:32
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -189,19 +187,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:26
+#: coops/titans_stronghold.tex:25
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{30}{8}{2}\n"
+"\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:}\\par\n"
-"\\resources{30}{8}{2}\n"
+"\\textbf{Zasoby Początkowe:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
+#: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -219,7 +215,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:37
+#: coops/titans_stronghold.tex:35
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} None\n"
@@ -229,7 +225,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:39
+#: coops/titans_stronghold.tex:37 clash/dragoncurse_castle.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Map tile Pool:} None\n"
@@ -239,8 +235,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -250,7 +247,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
+#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
@@ -260,7 +257,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:51
+#: coops/titans_stronghold.tex:49
 #, no-wrap
 msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
@@ -278,7 +275,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:53
+#: coops/titans_stronghold.tex:51
 #, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map tile}\n"
@@ -288,7 +285,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:55
+#: coops/titans_stronghold.tex:53
 #, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map tile}\n"
@@ -298,7 +295,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:57
+#: coops/titans_stronghold.tex:55
 #, no-wrap
 msgid ""
 "$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map tile}\n"
@@ -308,7 +305,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:60
+#: coops/titans_stronghold.tex:58
 #, no-wrap
 msgid ""
 "If you don't have enough VI--VII tiles, you can use another tile near to tile I.\n"
@@ -320,7 +317,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:64
+#: coops/titans_stronghold.tex:62
 #, no-wrap
 msgid ""
 "Kill all units in the Titans' Stronghold (the center of tile VI--VII next to tiles I).\n"
@@ -330,7 +327,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:68
+#: coops/titans_stronghold.tex:66
 #, no-wrap
 msgid ""
 "There are undefeated units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
@@ -340,7 +337,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:75
+#: coops/titans_stronghold.tex:73
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -356,9 +353,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:77 campaigns/inferno_devilish_plan.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:42
-#: campaigns/inferno_steadwicks_fall.tex:74
+#: coops/titans_stronghold.tex:75 campaigns/inferno_devilish_plan.tex:41
+#: campaigns/inferno_steadwicks_fall.tex:40
+#: campaigns/inferno_steadwicks_fall.tex:72
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -366,7 +363,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:103
+#: coops/titans_stronghold.tex:101
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -429,7 +426,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:109
+#: coops/titans_stronghold.tex:107
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -439,7 +436,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/titans_stronghold.tex:184
+#: coops/titans_stronghold.tex:182
 msgid ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
 "Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
@@ -526,38 +523,38 @@ msgstr ""
 "10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 
 #. type: center
-#: coops/titans_stronghold.tex:190
+#: coops/titans_stronghold.tex:188
 msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{1-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 1-OSOBOWY}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{2-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 2-OSOBOWY}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{3-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 3-OSOBOWY}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{4-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 4-OSOBOWY}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{5-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 5-OSOBOWY}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:228
+#: coops/titans_stronghold.tex:226
 msgid "\\captionof{figure}{6-PLAYER SCENARIO}"
 msgstr "\\captionof{figure}{SCENARIUSZ 6-OSOBOWY}"
