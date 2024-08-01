@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 00:20+0200\n"
+"POT-Creation-Date: 2024-08-01 08:06+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -21,10 +21,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -32,10 +32,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:122
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:120
+#: campaigns/inferno_deal_with_the_devil.tex:112
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -45,10 +45,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:127
-#: campaigns/inferno_deal_with_the_devil.tex:118
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:125
+#: campaigns/inferno_deal_with_the_devil.tex:116
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -58,11 +58,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:135
-#: campaigns/inferno_deal_with_the_devil.tex:124
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:122
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -72,9 +72,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:199
-#: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:26
+#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_steadwicks_fall.tex:197
+#: campaigns/inferno_deal_with_the_devil.tex:154 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -95,16 +95,15 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32
-#: campaigns/inferno_deal_with_the_devil.tex:34
+#: coops/emerald_island.tex:24 clash/bloody_grail.tex:21
+#: campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{0}{0}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:}\\par\n"
-"\\resources{10}{0}{0}\n"
+"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -156,22 +155,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:29
-#: campaigns/inferno_deal_with_the_devil.tex:31
+#: campaigns/inferno_devilish_plan.tex:28
+#: campaigns/inferno_deal_with_the_devil.tex:30
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{15}{3}{1}\n"
+"\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:}\\par\n"
-"\\resources{15}{3}{1}\n"
+"\\textbf{Zasoby Początkowe:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:34
-#: campaigns/inferno_steadwicks_fall.tex:32
-#: campaigns/inferno_deal_with_the_devil.tex:36
+#: campaigns/inferno_devilish_plan.tex:32
+#: campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -181,9 +178,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:52
-#: campaigns/inferno_steadwicks_fall.tex:52
-#: campaigns/inferno_deal_with_the_devil.tex:50
+#: campaigns/inferno_devilish_plan.tex:50
+#: campaigns/inferno_steadwicks_fall.tex:50
+#: campaigns/inferno_deal_with_the_devil.tex:48
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI hero setup}}\n"
@@ -193,9 +190,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:69
-#: campaigns/inferno_steadwicks_fall.tex:76
-#: campaigns/inferno_deal_with_the_devil.tex:81
+#: campaigns/inferno_devilish_plan.tex:67
+#: campaigns/inferno_steadwicks_fall.tex:74
+#: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
@@ -205,9 +202,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:103
-#: campaigns/inferno_deal_with_the_devil.tex:104
+#: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_steadwicks_fall.tex:101
+#: campaigns/inferno_deal_with_the_devil.tex:102
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
@@ -217,9 +214,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:155
-#: campaigns/inferno_steadwicks_fall.tex:201
-#: campaigns/inferno_deal_with_the_devil.tex:179
+#: campaigns/inferno_devilish_plan.tex:153
+#: campaigns/inferno_steadwicks_fall.tex:199
+#: campaigns/inferno_deal_with_the_devil.tex:177
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -229,9 +226,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:157
-#: campaigns/inferno_steadwicks_fall.tex:203
-#: campaigns/inferno_deal_with_the_devil.tex:181
+#: campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:201
+#: campaigns/inferno_deal_with_the_devil.tex:179
 #, no-wrap
 msgid ""
 "During this ``Inferno'' campaign scenario, the following rules apply:\n"
@@ -241,8 +238,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:78
-#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/inferno_steadwicks_fall.tex:76
+#: campaigns/inferno_deal_with_the_devil.tex:81
 #, no-wrap
 msgid ""
 "Take the following Map tiles and set them up as shown in the scenario map layout:\n"
@@ -306,7 +303,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:42
+#: campaigns/inferno_deal_with_the_devil.tex:40
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -324,7 +321,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:44
+#: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
 "% \\vspace*{\\fill}\\columnbreak\n"
@@ -332,7 +329,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:46
+#: campaigns/inferno_deal_with_the_devil.tex:44
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, City Hall, Citadel\n"
@@ -342,7 +339,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:48
+#: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
 "\\textbf{Bonus:} Add a ``war machine'' of your choice to your hand.\n"
@@ -352,7 +349,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:52
+#: campaigns/inferno_deal_with_the_devil.tex:50
 #, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle, Rampart\n"
@@ -362,7 +359,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:54
+#: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
 "\\textbf{Rampart Charging Army \\#1:} A Few Centaurs, a Pack of Dwarves, a Pack of Elves, a Pack of Pegasi, a Few Unicorn\n"
@@ -372,7 +369,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:56
+#: campaigns/inferno_deal_with_the_devil.tex:54
 #, no-wrap
 msgid ""
 "\\textbf{Castle Charging Army \\#1:} A Pack of Marksmen, a Pack of Elves, a Few Griffins, a Pack of Zealots, a Few Champions\n"
@@ -382,7 +379,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:58
+#: campaigns/inferno_deal_with_the_devil.tex:56
 #, no-wrap
 msgid ""
 "\\textbf{Rampart Charging Army \\#2:} A Pack of Dwarves, a Pack of Elves, a Few Pegasi, a Pack of Dendroids, a Pack of Unicorns\n"
@@ -392,7 +389,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:60
+#: campaigns/inferno_deal_with_the_devil.tex:58
 #, no-wrap
 msgid ""
 "\\textbf{Castle Charging Army \\#2:} A Pack of Halberdiers, a Few Griffins, a Few Crusaders, a Pack of Zealots, a Pack of Champions\n"
@@ -402,7 +399,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:62
+#: campaigns/inferno_deal_with_the_devil.tex:60
 #, no-wrap
 msgid ""
 "\\textbf{Charging Armies \\#1 and \\#2 Deck:} 3 × Might card, 2 × Skill card\n"
@@ -412,7 +409,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:64
+#: campaigns/inferno_deal_with_the_devil.tex:62
 #, no-wrap
 msgid ""
 "\\textbf{Charging Armies \\#1 and \\#2 Skill Deck:} 1 × ``Shield of the Damned'' Artifact card, 1 × ``Sword of Hellfire'' Artifact card\n"
@@ -422,7 +419,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:66
+#: campaigns/inferno_deal_with_the_devil.tex:64
 #, no-wrap
 msgid ""
 "\\textbf{Final Charging Army:} A Pack of Griffins, a Pack of Zealots, a Pack of Champions, a Pack of Unicorns, a Few Archangels, a ``Ballista'' war machine\n"
@@ -432,7 +429,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:68
+#: campaigns/inferno_deal_with_the_devil.tex:66
 #, no-wrap
 msgid ""
 "\\textbf{Final Charging Army Deck:} 3 × Might card, 3 × Skill card\n"
@@ -442,7 +439,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:71
+#: campaigns/inferno_deal_with_the_devil.tex:69
 #, no-wrap
 msgid ""
 "\\textbf{Final Charging Army Skill/Ability Deck:} 1 × ``Shield of the Damned'' Artifact card, 1 × ``Sword of Hellfire'' Artifact card,\n"
@@ -454,7 +451,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:73
+#: campaigns/inferno_deal_with_the_devil.tex:71
 #, no-wrap
 msgid ""
 "Charging Armies \\#1 and \\#2 use the same AI deck and Skill deck. Reshuffle both decks after combat.\n"
@@ -462,7 +459,7 @@ msgid ""
 msgstr "Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii Umiejętności. Przetasuj obie talie po walce.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:79
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "Both Artifact cards of all Charging Armies are treated as Skills, and use the top ``less powerful'' effect on the card.\n"
@@ -479,7 +476,7 @@ msgstr ""
 "nie są natychmiastowo używane ponownie, lecz są używane, gdy następna jednostka będzie mogła je zastosować.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:90
+#: campaigns/inferno_deal_with_the_devil.tex:88
 #, no-wrap
 msgid ""
 "\\textbf{3 × Starting (I) Map tile}\n"
@@ -498,7 +495,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/inferno_deal_with_the_devil.tex:95
 #, no-wrap
 msgid ""
 "\\textbf{7 × Far (II--III) Map tile}\n"
@@ -517,7 +514,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:102
+#: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
 "\\textbf{1 × Near (IV--V) Map tile}\n"
@@ -532,7 +529,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:106
+#: campaigns/inferno_deal_with_the_devil.tex:104
 #, no-wrap
 msgid ""
 "The Enemy Charging Rampart Hero \\#1 starts on the center field of the S4 Starting Map tile.\n"
@@ -540,7 +537,7 @@ msgid ""
 msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym polu Kafelka S4.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:108
+#: campaigns/inferno_deal_with_the_devil.tex:106
 #, no-wrap
 msgid ""
 "The Enemy Charging Castle Hero \\#1 starts on the center field of S3 Starting Map tile.\n"
@@ -548,7 +545,7 @@ msgid ""
 msgstr "Szarżująca Armia Zamku \\#1 zaczyna na środkowym polu Kafelka S4.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: campaigns/inferno_deal_with_the_devil.tex:108
 #, no-wrap
 msgid ""
 "Place your Hero on the center field of the S6 Inferno Starting Map tile.\n"
@@ -558,7 +555,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:112
+#: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "You cannot recruit a Secondary Hero.\n"
@@ -568,7 +565,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:116
+#: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "Defend your main fortress, Kleesive, from all Charging Enemy Heros, and from the Final Charging Army.\n"
@@ -576,7 +573,7 @@ msgid ""
 msgstr "Obroń swoją główną twierdzę, Kleesive, przed wszystkimi Szarżującymi Armiami.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: campaigns/inferno_deal_with_the_devil.tex:118
 #, no-wrap
 msgid ""
 "You lose one Combat encounter with your Main Hero. Surrender is not an option.\n"
@@ -584,7 +581,7 @@ msgid ""
 msgstr "Przegrywasz jakiekolwiek starcie twoim Bohaterem Głównym. Poddanie się nie jest opcją.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:122
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.\n"
@@ -592,7 +589,7 @@ msgid ""
 msgstr "Klan Kreelah nie zdoła obronić Klessive przed Szarżującymi Bohaterami, którzy próbują uwolnić twojego jeńca, Króla Rolanda.\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:130
+#: campaigns/inferno_deal_with_the_devil.tex:128
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -610,7 +607,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:135
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
@@ -630,7 +627,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:143
+#: campaigns/inferno_deal_with_the_devil.tex:141
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{3} Round:}\n"
@@ -647,7 +644,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:148
+#: campaigns/inferno_deal_with_the_devil.tex:146
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4} Round:}\n"
@@ -663,7 +660,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:154
+#: campaigns/inferno_deal_with_the_devil.tex:152
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{7} Round:}\n"
@@ -681,7 +678,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:161
+#: campaigns/inferno_deal_with_the_devil.tex:159
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -697,7 +694,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:167
+#: campaigns/inferno_deal_with_the_devil.tex:165
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{12} Round:}\n"
@@ -713,7 +710,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:172
+#: campaigns/inferno_deal_with_the_devil.tex:170
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
@@ -729,7 +726,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:177
+#: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the scenario:}\n"
@@ -745,7 +742,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:204
+#: campaigns/inferno_deal_with_the_devil.tex:202
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -796,7 +793,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_deal_with_the_devil.tex:207
+#: campaigns/inferno_deal_with_the_devil.tex:205
 #, no-wrap
 msgid ""
 "\\vspace*{1em}\n"
@@ -805,7 +802,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_deal_with_the_devil.tex:217
+#: campaigns/inferno_deal_with_the_devil.tex:215
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -813,13 +810,13 @@ msgid ""
 "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/inferno.png}\n"
 "  };\n"
 "  \\node(map)[anchor=center] at (current page.center) {\n"
-"    \\includegraphics[width=\\textwidth]{\\_assets/maps/inferno_deal_with_the_devil.png}\n"
+"    \\includegraphics[width=\\textwidth]{\\maps/inferno_deal_with_the_devil.png}\n"
 "  };\n"
 "\n"
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_deal_with_the_devil.tex:231
+#: campaigns/inferno_deal_with_the_devil.tex:229
 #, no-wrap
 msgid ""
 "  \\node at (1.5, -6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S4}}}}};\n"

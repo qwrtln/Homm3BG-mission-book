@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-28 15:06+0200\n"
+"POT-Creation-Date: 2024-08-01 08:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -30,11 +30,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:135
-#: campaigns/inferno_deal_with_the_devil.tex:124
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:122
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -42,9 +42,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:149 coops/titans_stronghold.tex:105
-#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
-#: clash/bloody_grail.tex:129 sections/credits.tex:28 sections/credits.tex:32
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -52,8 +52,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -61,7 +62,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
+#: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
+#: clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
@@ -119,26 +121,24 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:20
+#: clash/bloody_grail.tex:19
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{13}{2}{1}\n"
+"\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32
-#: campaigns/inferno_deal_with_the_devil.tex:34
+#: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{0}{0}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:29
+#: clash/bloody_grail.tex:27
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -150,7 +150,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:33
+#: clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
 "\\textbf{Map tile Pool:} Each player takes 2 random Far (II--III) Map tiles, one of which must contain a Settlement\n"
@@ -158,7 +158,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:38
+#: clash/bloody_grail.tex:36
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -167,7 +167,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:46
+#: clash/bloody_grail.tex:44
 #, no-wrap
 msgid ""
 "\\textbf{For a 2-player scenario:}\n"
@@ -181,7 +181,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:54
+#: clash/bloody_grail.tex:52
 #, no-wrap
 msgid ""
 "\\textbf{For a 4-player scenario:}\n"
@@ -195,7 +195,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:56
+#: clash/bloody_grail.tex:54
 #, no-wrap
 msgid ""
 "\\textbf{\\MakeUppercase{Note:}} Before placing the Near tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the tiles with an Obelisk are not placed adjacent to each other.\n"
@@ -203,7 +203,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:59
+#: clash/bloody_grail.tex:57
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -212,7 +212,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:62
+#: clash/bloody_grail.tex:60
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -221,7 +221,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:64
+#: clash/bloody_grail.tex:62
 #, no-wrap
 msgid ""
 "If the Grail token has been obtained, the players gain additional time (until the end of the \\nth{16} round) to bring the Grail to their faction's Town. Otherwise, all players lose the scenario.\n"
@@ -229,7 +229,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:73
+#: clash/bloody_grail.tex:71
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{6}, \\nth{9} and \\nth{12} Rounds:}\n"
@@ -242,7 +242,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:76
+#: clash/bloody_grail.tex:74
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -251,7 +251,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:80
+#: clash/bloody_grail.tex:78
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -261,7 +261,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:82 clash/the_hunt.tex:83
+#: clash/bloody_grail.tex:80 clash/the_hunt.tex:81
 #, no-wrap
 msgid ""
 "During this scenario:\n"
@@ -269,7 +269,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:119
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -314,7 +314,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:127
+#: clash/bloody_grail.tex:125
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -324,13 +324,13 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: clash/bloody_grail.tex:138
+#: clash/bloody_grail.tex:136
 #, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-2p.png}};\n"
+"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
 "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-4p.png}};\n"
+"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
 "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""

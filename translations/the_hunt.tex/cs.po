@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-28 21:08+0200\n"
+"POT-Creation-Date: 2024-08-01 08:03+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,10 +19,10 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:95
+#: sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -30,20 +30,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Počáteční Příjem:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Počáteční Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -53,11 +51,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:135
-#: campaigns/inferno_deal_with_the_devil.tex:124
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:122
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -67,7 +65,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:93 clash/the_hunt.tex:74
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -77,9 +75,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:199
-#: campaigns/inferno_deal_with_the_devil.tex:156 sections/credits.tex:26
+#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_steadwicks_fall.tex:197
+#: campaigns/inferno_deal_with_the_devil.tex:154 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -87,8 +85,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -98,7 +97,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:82 clash/the_hunt.tex:83
+#: clash/bloody_grail.tex:80 clash/the_hunt.tex:81
 #, no-wrap
 msgid ""
 "During this scenario:\n"
@@ -172,19 +171,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:22
+#: clash/the_hunt.tex:21
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{15}{4}{2}\n"
+"\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Počáteční Suroviny:}\\par\n"
-"\\resources{15}{4}{2}\n"
+"\\textbf{Počáteční Suroviny:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:31
+#: clash/the_hunt.tex:29
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -202,7 +199,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:33 campaigns/inferno_devilish_plan.tex:41
+#: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:39
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
@@ -212,7 +209,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:35
+#: clash/the_hunt.tex:33
 #, no-wrap
 msgid ""
 "\\textbf{Map tile Pool:} Each player takes 1 random Far (II--III) Map tile\n"
@@ -222,7 +219,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:41
+#: clash/the_hunt.tex:39
 #, no-wrap
 msgid ""
 "Take the following Map tiles and arrange them as shown in the scenario map layout.\n"
@@ -232,7 +229,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:51
+#: clash/the_hunt.tex:49
 #, no-wrap
 msgid ""
 "\\textbf{For a 2-player scenario:}\n"
@@ -254,7 +251,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:59
+#: clash/the_hunt.tex:57
 #, no-wrap
 msgid ""
 "\\textbf{For a 3-player scenario:}\n"
@@ -276,7 +273,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:62
+#: clash/the_hunt.tex:60
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -288,7 +285,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:65
+#: clash/the_hunt.tex:63
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -300,7 +297,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:72
+#: clash/the_hunt.tex:70
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -316,7 +313,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:76
+#: clash/the_hunt.tex:74
 #, no-wrap
 msgid ""
 "Before the start of this scenario:\n"
@@ -326,7 +323,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:81
+#: clash/the_hunt.tex:79
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -342,7 +339,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:95
+#: clash/the_hunt.tex:93
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -372,29 +369,29 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:103
+#: clash/the_hunt.tex:101
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-2.png}};\n"
+"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
 "  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-3.png}};\n"
+"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
 "  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-2.png}};\n"
+"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
 "  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\_assets/maps/the-hunt-3.png}};\n"
+"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
 "  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 3 HRÁČE}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:149
+#: clash/the_hunt.tex:147
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -402,7 +399,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:149
+#: clash/the_hunt.tex:147
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Azure Dragon}} \\medskip \\textit{Little is "
 "known of the Azure Dragon.  It is both rare and mighty, thus few have seen "
@@ -453,7 +450,7 @@ msgstr ""
 "účinná. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:172
+#: clash/the_hunt.tex:170
 msgid ""
 "\\hommtable[]{8}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
 "{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
@@ -488,7 +485,7 @@ msgstr ""
 "\\end{tabularx} }"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:214
+#: clash/the_hunt.tex:212
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -496,7 +493,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:214
+#: clash/the_hunt.tex:212
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
 "entirely from red crystal and brought to life through magical means, the "
@@ -548,7 +545,7 @@ msgstr ""
 "za bojové kolo. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:237
+#: clash/the_hunt.tex:235
 msgid ""
 "\\hommtable[]{10}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
 "{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
@@ -583,7 +580,7 @@ msgstr ""
 "\\svg{damage-table} sežráním Golemů} \\\\ \\end{tabularx} }\\pagebreak"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:278
+#: clash/the_hunt.tex:276
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -594,7 +591,7 @@ msgstr ""
 "{\\art/rust_dragon.jpg}}"
 
 #. type: Plain text
-#: clash/the_hunt.tex:278
+#: clash/the_hunt.tex:276
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
 "Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
@@ -643,7 +640,7 @@ msgstr ""
 "do -4 \\svg{defense}. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:301
+#: clash/the_hunt.tex:299
 msgid ""
 "\\hommtable[]{9}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
 "{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
@@ -676,7 +673,7 @@ msgstr ""
 "40 \\\\ +1 ke snížení obrany z Koroze} \\\\ \\end{tabularx} }"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:350
+#: clash/the_hunt.tex:348
 msgid ""
 "{l}{0.28\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -684,7 +681,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:350
+#: clash/the_hunt.tex:348
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
 "Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
@@ -743,7 +740,7 @@ msgstr ""
 "Dendroidi, drak ztratí schopnost sesílat kouzla. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:372
+#: clash/the_hunt.tex:370
 msgid ""
 "\\hommtable[]{7}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
 "{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
