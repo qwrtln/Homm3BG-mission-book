@@ -424,7 +424,7 @@ msgstr ""
 "  \\item Jeśli Bohater z żetonem Graala rzuci zaklęcie Magiczny Portal lub użyje budynku Wrót Wymiarów frakcji Inferno, żeton Graala zostaje umieszczony na polu, na którym rzucił zaklęcie lub użył budynku.\n"
 "  \\item Żeton Graala zachowuje się jak karta Długotrwała, która nie liczy się do limitu kart na ręce i nie może być odrzucona; zapewnia następujący efekt po zagraniu: ``$\\infty$ Raz na każdą rundę walki, jeśli Bohater jest \\textcolor{darkcandyapplered}{Rycerzem Krwi}, odrzuć kartę, aby usunąć do 2 \\svg{damage-red} z twoich jednostek i przypisać je wrogim jednostkom.''\n"
 "  \\item Bohater z żetonem Graala, który posiada tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'', może zapłacić 10 \\svg{gold} lub 3 \\svg{valuables} na dowolnym polu Świątyni, aby oczyścić Graal. Umieść niebieską kostkę frakcji na żetonie Graala, aby oznaczyć ten efekt.\n"
-"  \\item Po oczyszczeniu żeton Graala zachowuje się jak karta Stała, która nie liczy się do limitu kart na ręce i nie może być odrzucona; zapewnia następujący efekt po zagraniu: ``$\\infty$ Raz na każdą rundę walki, jeśli Bohater jest \\textcolor{cobalt}{Rycerzem Graala}, odrzuć kartę, aby usunąć do 2 \\svg{damage-red} z twoich jednostek.''\n"
+"  \\item Po oczyszczeniu żeton Graala zachowuje się jak karta Długotrwała, która nie liczy się do limitu kart na ręce i nie może być odrzucona; zapewnia następujący efekt po zagraniu: ``$\\infty$ Raz na każdą rundę walki, jeśli Bohater jest \\textcolor{cobalt}{Rycerzem Graala}, odrzuć kartę, aby usunąć do 2 \\svg{damage-red} z twoich jednostek.''\n"
 "\\end{itemize}\n"
 "\n"
 
