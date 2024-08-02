@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-02 15:17+0200\n"
+"POT-Creation-Date: 2024-08-02 20:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,7 +268,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:61
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first ranged unit able to make a ranged attack), 1 × Magic Arrow Spell card\n"
+"\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first \\svg{unit_ranged} unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell card\n"
 "\n"
 msgstr ""
 
