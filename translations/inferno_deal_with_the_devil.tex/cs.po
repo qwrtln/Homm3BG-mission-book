@@ -436,7 +436,7 @@ msgid ""
 "Charging Armies \\#1 and \\#2 use the same AI deck and Skill deck. Reshuffle both decks after combat.\n"
 "\n"
 msgstr ""
-"Útočící Armády \\#1 a \\#2 používají stejný AI balíček a balíček Dovedností. Po boji oba balíčky zamíchejte.\n"
+"Útočící Armády \\#1 a \\#2 používají stejný AI balíček a balíček Schopností. Po boji oba balíčky zamíchejte.\n"
 "\n"
 
 #. type: multicols*
@@ -450,10 +450,10 @@ msgid ""
 "cards are not played again immediately, but instead are played as soon as the next unit is able to use them.\n"
 "\n"
 msgstr ""
-"Obě karty Artefaktů všech Útočících Armád jsou považovány za Dovednosti a používají \\uv{slabší} efekt uvedený na kartě.\n"
+"Obě karty Artefaktů všech Útočících Armád jsou považovány za Schopnosti a používají \\uv{slabší} efekt uvedený na kartě.\n"
 "\\uv{Meč Pekelného Ohně} bude použit při Útocích a Odvetných Útocích. Není použit při Útocích na Zdi nebo Brány,\n"
 "a zůstává v platnosti na Jednotce. \\uv{Štít Prokletých} nabývá účinku, když\n"
-"jakákoliv Jednotka Útočící Armády utrpí zranění z Útoku nebo Odvetného Útoku. Pokud karta Dovednosti AI říká \\uv{udělej to znovu}, karty Artefaktů se nevyužívají ihned znovu, ale použijí se, jakmile je další Jednotka schopna je využít.\n"
+"jakákoliv Jednotka Útočící Armády utrpí zranění z Útoku nebo Odvetného Útoku. Pokud karta Schopnosti AI říká \\uv{udělej to znovu}, karty Artefaktů se nevyužívají ihned znovu, ale použijí se, jakmile je další Jednotka schopna je využít.\n"
 "\n"
 
 #. type: multicols*

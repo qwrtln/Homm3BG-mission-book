@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-02 15:17+0200\n"
+"POT-Creation-Date: 2024-08-02 20:15+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -579,10 +579,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:123
 #, no-wrap
 msgid ""
-"You lose one Combat encounter with your Main Hero (Surrender costs 10 gold, and does not count as a defeat).\n"
+"You lose one Combat encounter with your Main Hero (Surrender costs 10 \\svg{gold}, and does not count as a defeat).\n"
 "\n"
 msgstr ""
-"Przegrywasz jedną walkę z Twoim Bohaterem Głównym (Poddanie się kosztuje 10 złota i nie liczy się jako porażka).\n"
+"Przegrywasz jedną walkę z Twoim Bohaterem Głównym (Poddanie się kosztuje 10 \\svg{gold} i nie liczy się jako porażka).\n"
 "\n"
 
 #. type: multicols*
@@ -599,10 +599,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:127
 #, no-wrap
 msgid ""
-"You run out of time –- you have time till the end of the Round 16.\n"
+"You run out of time -- you have time till the end of the Round 16.\n"
 "\n"
 msgstr ""
-"Braknie ci czasu – masz czas do końca Rundy 16.\n"
+"Braknie ci czasu -- masz czas do końca Rundy 16.\n"
 "\n"
 
 #. type: multicols*
@@ -722,7 +722,7 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Warning: ``Queen Catherine's march continues - her forces are just two weeks away. If you do not hurry,\n"
+"  \\item Warning: ``Queen Catherine's march continues -- her forces are just two weeks away. If you do not hurry,\n"
 "    we will not have time to secure the capital before her arrival.''\n"
 "\\end{itemize}\n"
 "\n"

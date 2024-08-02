@@ -362,7 +362,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:100
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
