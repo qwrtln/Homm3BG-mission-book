@@ -32,10 +32,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/recommendations.tex:3
-#, fuzzy
-#| msgid "\\addsection{Credits}{\\images/experience.png}"
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr "\\addsection{Tvůrci}{\\images/experience.png}"
+msgstr "\\addsection{Doporučení}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
@@ -55,15 +53,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:12
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\\subsection*{Herní Doba}\n"
 "\n"
 
 #. type: multicols
@@ -116,15 +111,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Boss Army}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Magic Arrows}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Armáda Bosse}}\n"
+"\\subsection*{Magické Šípy}\n"
 "\n"
 
 #. type: multicols
@@ -138,15 +130,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\\subsection*{Tržiště}\n"
 "\n"
 
 #. type: multicols
@@ -167,15 +156,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Boj s Nepřátelskými\\\\Armádami}}\n"
+"\\subsection*{Boj s Neutrálními Jednotkami}\n"
 "\n"
 
 #. type: multicols
@@ -253,15 +239,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:98
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"\\subsection*{Obecná Doporučení}\n"
 "\n"
 
 #. type: multicols
