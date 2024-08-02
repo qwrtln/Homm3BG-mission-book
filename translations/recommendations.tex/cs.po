@@ -50,6 +50,11 @@ msgid ""
 "Enjoy!\n"
 "\n"
 msgstr ""
+"{2}\n"
+"Dali jsme dohromady některá vlastní pravidla a osvědčené postupy, které zlepší váš herní zážitek.\n"
+"Mějte na paměti, že se jedná pouze o \\textbf{názory autorů} této knihy.\n"
+"Ať se líbí!\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:12
@@ -68,6 +73,8 @@ msgid ""
 "You can estimate your \\textbf{minimal} play time using the following formula:\n"
 "\n"
 msgstr ""
+"\\textbf{Minimální} herní dobu můžete odhadnout pomocí následujícího vzorce:\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:18
@@ -78,6 +85,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  Herní Doba $= \\boldsymbol{H × K × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:24
@@ -90,6 +101,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Kde:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{H}$] -- počet hráčů\n"
+"  \\item[$\\textbf{K}$] -- počet kol\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:27
@@ -99,6 +116,9 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
+"Například pokud hrajete scénář pro 3 hráče skládající se z 12 kol, můžete snadno vypočítat, že $3 \\times 12 \\times 5 = 180$.\n"
+"Vaše očekávaná minimální herní doba bude kolem 3 hodin.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:30
@@ -108,6 +128,9 @@ msgid ""
 "In this case, that would be 6 hours.\n"
 "\n"
 msgstr ""
+"Pro výpočet \\textbf{horní hranice} herní doby (reálnější, pokud jsou mezi hráči nezkušení hráči) jednoduše výsledek zdvojnásobte.\n"
+"V tomto případě by to bylo kolem 6 hodin.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:32
@@ -127,6 +150,9 @@ msgid ""
 "After players prepare their starting M\\&M decks, it is recommended to remove Magic Arrows from the spell deck until no more than two remain.\n"
 "\n"
 msgstr ""
+"Kromě Magického Šípu se každé kouzlo v Balíčku Kouzel objevuje přesně dvakrát.\n"
+"Po přípravě Startovních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:37
@@ -145,6 +171,8 @@ msgid ""
 "Although rules as written state that you can remove only one card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
+"I když pravidla říkají, že při návštěvě Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:41
@@ -171,6 +199,8 @@ msgid ""
 "During combat with Neutral Units in clash scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
+"Pokud se během boje s Neutrálními Jednotkami ve scénářích Střet hráč rozhodne umístit své Jednotky pouze na jednu polovinu (levou nebo pravou) Desky Bojiště, hráč umisťující Neutrální Jednotky musí udělat totéž.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:49
@@ -181,6 +211,10 @@ msgid ""
 "See examples that follow.\n"
 "\n"
 msgstr ""
+"Umístění Neutrálních Jednotek daleko od sebe jen přinutí druhého hráče plýtvat BP, což zpomaluje hru.\n"
+"Výjimkou z tohoto pravidla je, když je třeba umístit tři Neutrální \\svg{unit_ground} nebo \\svg{unit_flying} Jednotky, protože všechny musí jít do přední linie.\n"
+"Viz následující příklady.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:53
@@ -214,6 +248,23 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutrální Jednotky jsou správně umístěny.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Toto rozestavení není povoleno, protože hráč Nekropole umístil své Jednotky na levou polovinu Desky Bojiště.\n"
+"      Sedláci musí také začít Boj na levé straně.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: figure*
 #: sections/recommendations.tex:94
@@ -236,6 +287,22 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Výjimka:} Tři ne-\\svg{unit_ranged} Jednotky musí být umístěny v přední linii.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Kanci musí obsadit jedno ze zelených políček.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: multicols
 #: sections/recommendations.tex:98
@@ -254,6 +321,8 @@ msgid ""
 "The following are not custom rules but rather recommendations to help you get the most out of your game:\n"
 "\n"
 msgstr ""
+"Následující body nejsou vlastní pravidla, ale spíše doporučení, která vám pomohou získat z vaší hry co nejvíce:\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:107
@@ -267,6 +336,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Při rozhodování, kterou budovu postavit ve vašem městě, zejména na začátku hry, je \\textit{obvykle} nejlepší upřednostnit Jednotky před Radnicí, Citadelou, Cechem Mágů nebo jinými budovami Frakce.\n"
+"  \\item Pokud si nejste jisti, které Kouzlo, Artefakt nebo Dovednost zvolit, upřednostněte ty, které vám pomohou procházet vaším balíčkem.\n"
+"    To zahrnuje jakékoli karty, které vám umožňují dobrat karty nebo získat karty z vaší Odhazovací Hromádky.\n"
+"  \\item Snažte se vyhnout používání Bodů Pohybu vašeho Hlavního Hrdiny na akce, které může zvládnout váš Vedlejší Hrdina, jako je otáčení Dílků Mapy, návštěva Vodních Kol a podobně.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:111
