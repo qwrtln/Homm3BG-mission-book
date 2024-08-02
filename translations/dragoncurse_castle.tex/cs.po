@@ -119,38 +119,29 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/frenzy."
 "png}"
-msgstr "\\addscenariosection{1}{Střet}{Lov}{\\images/slayer.png}"
+msgstr "\\addscenariosection{1}{Střet}{Hrad Dračí Kletby}{\\images/frenzy.png}"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} profmamadu\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Invoceusse\n"
+"\\textbf{Autor:} profmamadu\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols*
@@ -164,18 +155,21 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Velkolepý hrad na kopci shlíží na tuto bohatou provincii a místní vládce je dočasně nepřítomen, zanechávaje pouze svou armádu na obranu hradních zdí.\n"
+"Oba sousední vládci náhle rozhodli, že na tato území mají právo a musí být zajištěna, než se místní vládce vrátí.\n"
+"Legenda však hovoří o divokém drakovi, který je spojen s touto zemí.\n"
+"Budeš odmítat kletbu jako pouhé rozptýlení, nebo může být drak zkrocen, aby ti poskytl potřebnou výhodu nad tvým soupeřem?\n"
+"}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario is played over 12 rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This scenario is played over a maximum of 11 rounds.\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na 12 kol.\n"
+"Tento scénář se hraje na nejvýše 11 kol.\n"
 "\n"
 
 #. type: multicols*
@@ -185,6 +179,8 @@ msgid ""
 "\\textbf{Starting Resources:} 20 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Suroviny:} 20 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:27
@@ -193,17 +189,12 @@ msgid ""
 "\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Příjem:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\svgunit{bronze} units of your choice\n"
-#| "  \\item A Few \\svgunit{bronze} units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -213,23 +204,13 @@ msgid ""
 msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item Skupina \\svgunit{bronze} Jednotek dle tvého výběru\n"
-"  \\item Málo \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item 2 × Skupinu \\svgunit{bronze} jednotek s \\textit{nejnižšími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:47
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map tile\n"
-#| "  \\item 2 × Far (II--III) Map tile\n"
-#| "  \\item 2 × Near (IV--V) Map tile\n"
-#| "  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
@@ -241,12 +222,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 2 hráče:}\n"
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 2 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo miniaturu představující Draka do středu dílku\n"
+"  \\item 2 × Vzdálený (II-III) Dílek Mapy\n"
+"  \\item 5 × Blízký (IV-V) Dílek Mapy\n"
+"  \\item 2 × Středový (VI-VII) Dílky Mapy, náhodně vyberte jeden s polem Náhodného Města a druhý s polem Dračí Utopie.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -259,6 +241,10 @@ msgid ""
 "The player controlling the Random Town at the end of that final round is the winner.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"Když je Náhodné Město poprvé dobyto, hráči pokračují ve hře aktuálního kola a potom odehrají \\textbf{jedno další závěrečné kolo}.\n"
+"Hráč, který na konci tohoto závěrečného kola ovládá Náhodné Město, je vítězem.\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:55
@@ -269,16 +255,14 @@ msgid ""
 "However, if the Random Town is first captured in the \\nth{10} round, the game proceeds as normal to its additional final round (in this case, the \\nth{11} round).\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
+"Na konci 10. kola, pokud žádný hráč neovládá Náhodné Město, oba hráči prohrávají hru (\\textit{místní vládce se vrací do hradu a znovu získává kontrolu nad provincií}).\n"
+"Pokud je ale Náhodné Město poprvé dobyto v 10. kole, hra pokračuje jako obvykle do svého dalšího závěrečného kola (v tomto případě 11. kolo).\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black cubes from all the Water Wheels, Windmills and Mystical Gardens on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -287,9 +271,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4., 8. a 12. kolo:}\n"
+"  \\textbf{4. a 8. kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Odstraňte všechny Černé Kostičky ze všech Vodních Kol, Větrných Mlýnů a Mystických Zahrad na mapě.\n"
+"  \\item Odstraňte všechny Černé Kostičky z Vodních Kol a Větrných Mlýnů na mapě.\n"
+"  \\item Všichni Hrdinové získávají +1 \\svg{movement}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -314,6 +299,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"Během tohoto scénáře:\n"
+"\\begin{itemize}\n"
+"  \\item Kdykoli je Obelisk navštíven poprvé, hráč, který jej navštíví, získává 2 \\svg{building_materials}.\n"
+"  \\item Náhodné Město je bráněno Zdmi a Bránou, když je vlastněno hráčem, ale má Střílnu pouze tehdy, pokud má hráč již Citadelu.\n"
+"  \\item Stejně jako jakékoli jiné Město, když je Náhodné Město vlastněno hráčem, je platným místem pro tohoto hráče k:\n"
+"    \\begin{itemize}\n"
+"      \\item Umístění nově naverbovaného Vedlejšího Hrdiny.\n"
+"      \\item Umístění Hlavního Hrdiny po jeho porážce.\n"
+"      \\item Dočasnému transportu armády za 8~\\svg{gold}, když je Náhodné Město napadeno.\n"
+"    \\end{itemize}\n"
+"  \\item První hráč, který navštíví Dračí Utopii (po porážce bránící jednotky Azurového draka), dobere karty z balíčku Neutrálních Jednotek \\svgunit{azure}, dokud nebude nalezen Drak, který není spojený s žádnou frakcí.\n"
+"    Hráč může okamžitě tohoto Draka zdarma Naverbovat.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:91
@@ -330,16 +331,9 @@ msgstr ""
 
 #. type: tikzpicture
 #: clash/dragoncurse_castle.tex:97
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
 "  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\maps/dragoncurse-castle.png}};"
 msgstr ""
-"[overlay]\n"
-"  \\centering\n"
-"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
