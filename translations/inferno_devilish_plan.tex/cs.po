@@ -424,7 +424,7 @@ msgid ""
 msgstr ""
 "\\textbf{1 × Středový (VI--VII) Dílek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Středový Dílek Mapy Dračí Utopie (C1)\n"
+"  \\item \\mbox{1 × Středový Dílek Mapy Dračí Utopie (C1)}\n"
 "\\end{itemize}\n"
 "\n"
 
