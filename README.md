@@ -28,13 +28,13 @@ Click on the table to download the most recent builds in the chosen language:
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center">90%</td>
+            <td align="center">99%</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.3/Heroes3_Polski_Fan_Made_Mission_Book_0_3.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
         </tr>
         <tr>
             <td>🇨🇿 Čeština</td>
-            <td align="center">60%</td>
+            <td align="center">99%</td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
         </tr>
