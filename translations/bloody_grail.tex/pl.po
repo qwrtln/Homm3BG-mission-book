@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-01 08:14+0200\n"
+"POT-Creation-Date: 2024-08-04 22:13+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#. type: multicols
+#. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/recommendations.tex:96
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -33,9 +33,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:113
-#: campaigns/inferno_steadwicks_fall.tex:133
-#: campaigns/inferno_deal_with_the_devil.tex:122
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
