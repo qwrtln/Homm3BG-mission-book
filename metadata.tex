@@ -177,7 +177,7 @@
   \makebox[0pt][l]{
   \raisebox{-\totalheight}[0pt][7pt]{
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0] (header){\makebox[\textwidth][c]{\includegraphics[width=1.06\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (0, 0) node[inner sep=0] (header){\makebox[1.01\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#2}};
       \end{tikzpicture}
     }
@@ -188,6 +188,7 @@
       \vspace{\lang_header_adjustment}
       \section*{\sectionheadertext{#1}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+      \pagetarget{#1}{}
     \end{center}
   \end{fullwidth}
   \vspace{1.75em}
@@ -261,7 +262,7 @@
   \raisebox{-\totalheight}[0pt][7pt]{
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[\textwidth][c]{\includegraphics[width=1.06\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.01\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#5}};
       \end{tikzpicture}
     }
