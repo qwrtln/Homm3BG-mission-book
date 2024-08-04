@@ -274,6 +274,7 @@
       \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
+      \pagetarget{#4}{}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
@@ -460,6 +461,8 @@
 \end{multicols*}
 
 \clearpage
+
+\include{\sections/what_to_play.tex}
 
 \include{coops/main.tex}
 
