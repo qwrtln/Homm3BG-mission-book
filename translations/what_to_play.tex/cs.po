@@ -32,10 +32,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/what_to_play.tex:3
-#, fuzzy
-#| msgid "\\addsection{Credits}{\\images/experience.png}"
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr "\\addsection{Tvůrci}{\\images/experience.png}"
+msgstr "\\addsection{Co si zahrát}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -44,18 +42,17 @@ msgid ""
 "Follow these suggestions if you're not sure which scenario is best for you.\n"
 "\n"
 msgstr ""
+"Můžete se řídit těmito návrhy, pokud si nejste jisti, který scénář je pro vás nejlepší.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Trading Post}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Cooperative Mode}\n"
 "\n"
 msgstr ""
-"\\subsection*{Tržiště}\n"
+"\\subsection*{Kooperativní Mód}\n"
 "\n"
 
 #. type: multicols
@@ -67,18 +64,19 @@ msgid ""
 "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
 "\n"
 msgstr ""
+"Pokud jste ve hře noví a chcete \\textbf{se naučit pravidla}, začněte se \\pagelink{Emerald Island}{Smaragdovým Ostrovem}.\n"
+"Pro velké dobrodružství pro \\textbf{až 6 hráčů} s epickou bitvou na konci zkuste \\pagelink{Titans' Stronghold}{Pevnost Titánů}.\n"
+"Pro takticky zaměřenou hru pro dva hráče zkuste \\pagelink{Sentinels}{Strážce}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Play Time}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Clash Mode}\n"
 "\n"
 msgstr ""
-"\\subsection*{Herní Doba}\n"
+"\\subsection*{Střet}\n"
 "\n"
 
 #. type: multicols
@@ -90,18 +88,19 @@ msgid ""
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
+"Pokud byste chtěli hrát scénář \\uv{ukořistění Grálu} pro 2 nebo 4 hráče se zajímavými zvraty, zkuste \\pagelink{Bloody Grail}{Krvavý Grál}.\n"
+"Pro vzrušující boj s bossem pro 2--3 hráče si vyberte\\pagelink{The Hunt}{Lov}.\n"
+"Pro nevyhnutelnou epickou bitvu mezi dvěma hráči s možným obléháním hrajte \\pagelink{Dragoncurse Castle}{Hrad Dračí Kletby}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Play Time}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Campaign}\n"
 "\n"
 msgstr ""
-"\\subsection*{Herní Doba}\n"
+"\\subsection*{Kampaň}\n"
 "\n"
 
 #. type: multicols
@@ -111,18 +110,17 @@ msgid ""
 "There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
+"Pokud preferujete sólo hru, tak na konci najdete 3-scenářovou kampaň frakce Peklo -- \\pagelink{1. A Devilish Plan}{Kobky a Ďáblové}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{General Recommendations}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{Obecná Doporučení}\n"
+"\\subsection*{Doporučení}\n"
 "\n"
 
 #. type: multicols
@@ -131,4 +129,6 @@ msgstr ""
 msgid ""
 "For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
 "\n"
-msgstr "\\vspace{-10em}\n"
+msgstr ""
+"Pro informace týkající se herní doby, strategie a vlastních pravidel, se podívejte na \\pagelink{Recommendations}{Doporučení} na konci této knihy.\n"
+"\n"
