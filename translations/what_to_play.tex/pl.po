@@ -33,10 +33,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/what_to_play.tex:3
-#, fuzzy
-#| msgid "\\addsection{Credits}{\\images/experience.png}"
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr "\\addsection{Twórcy}{\\images/experience.png}"
+msgstr "\\addsection{W co zagrać}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -45,18 +43,17 @@ msgid ""
 "Follow these suggestions if you're not sure which scenario is best for you.\n"
 "\n"
 msgstr ""
+"Skorzystaj z tych sugestii, jeśli nie jesteś pewien, który scenariusz jest dla ciebie najlepszy.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Trading Post}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Cooperative Mode}\n"
 "\n"
 msgstr ""
-"\\subsection*{Punkt Handlowy}\n"
+"\\subsection*{Tryb Kooperacyjny}\n"
 "\n"
 
 #. type: multicols
@@ -68,18 +65,19 @@ msgid ""
 "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
 "\n"
 msgstr ""
+"Jeśli jesteś nowicjuszem i chcesz \\textbf{opanować zasady}, zacznij od \\pagelink{Wyspa Szmaragdów}{Wyspy Szmaragdów}.\n"
+"Jeśli szukasz wielkiej przygody dla \\textbf{do 6 graczy} z epicką bitwą na końcu, wypróbuj \\pagelink{Twierdza Tytanów}{Twierdzę Tytanów}.\n"
+"Dla bardziej strategicznych zmagań dla dwóch graczy, wybierz \\pagelink{Strażnicy}{Strażników}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Play Time}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Clash Mode}\n"
 "\n"
 msgstr ""
-"\\subsection*{Czas Gry}\n"
+"\\subsection*{Tryb Starcia}\n"
 "\n"
 
 #. type: multicols
@@ -91,18 +89,19 @@ msgid ""
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
+"Jeśli szukasz scenariusza dla 2 lub 4 graczy z ciekawymi zwrotami akcji, wypróbuj \\pagelink{Krwawy Graal}{Krwawy Graal}.\n"
+"Dla ekscytującej walki z bossem dla 2-3 graczy, wybierz \\pagelink{Polowanie}{Polowanie}.\n"
+"Dla epickiej bitwy między dwoma graczami z możliwym oblężeniem zagraj w \\pagelink{Zamek Smoczej Klątwy}{Zamek Smoczej Klątwy}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Play Time}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Campaign}\n"
 "\n"
 msgstr ""
-"\\subsection*{Czas Gry}\n"
+"\\subsection*{Kampania}\n"
 "\n"
 
 #. type: multicols
@@ -112,18 +111,17 @@ msgid ""
 "There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
+"Na końcu znajduje się 3-scenariuszowa kampania Inferna \\pagelink{1. Diabelski Plan}{Podziemia i Diabły}, jeśli preferujesz grę solo.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{General Recommendations}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{Ogólne Zalecenia}\n"
+"\\subsection*{Zalecenia}\n"
 "\n"
 
 #. type: multicols
@@ -133,3 +131,5 @@ msgid ""
 "For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
 "\n"
 msgstr ""
+"Aby uzyskać informacje dotyczące czasu gry, strategii i niestandardowych zasad, zapoznaj się z \\pagelink{Zalecenia}{zaleceniami} na końcu księgi.\n"
+"\n"
