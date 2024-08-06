@@ -172,24 +172,27 @@
 
 %Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
 \newcommand{\addsection}[2]{
-  \vspace*{-5em}
-  \hspace*{-1em}
+  \vspace*{-5.72em}
+  \hspace*{-1.3em}
   \makebox[0pt][l]{
   \raisebox{-\totalheight}[0pt][7pt]{
-    \begin{tikzpicture}
-      \draw (0, 0) node[inner sep=0] {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
-      \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#2}};
-    \end{tikzpicture}
+      \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#2}};
+      \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.16\textwidth, outermargin=0.16\textwidth, innermargin=0.16\textwidth]
+  \begin{fullwidth}[leftmargin=0.2\textwidth]
     \begin{center}
-      \vspace*{\lang_header_adjustment}
+      \vspace{1em}
+      \vspace{\lang_header_adjustment}
       \section*{\sectionheadertext{#1}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+      \pagetarget{#1}{}
     \end{center}
   \end{fullwidth}
   \vspace{1.75em}
+  \vspace{\lang_header_adjustment}
 }
 %End of create section heading.
 
@@ -259,7 +262,7 @@
   \raisebox{-\totalheight}[0pt][7pt]{
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[\textwidth][c]{\includegraphics[width=1.06\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#5}};
       \end{tikzpicture}
     }
@@ -274,6 +277,7 @@
       \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
+      \pagetarget{#4}{}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
@@ -460,6 +464,8 @@
 \end{multicols*}
 
 \clearpage
+
+\include{\sections/what_to_play.tex}
 
 \include{coops/main.tex}
 
