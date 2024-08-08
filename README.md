@@ -9,7 +9,7 @@ Click on the table to download the most recent builds in the chosen language:
         <tr>
             <th>Language</th>
             <th align="center">Progress</th>
-            <th align="center">Version 0.3 🪨<br>(Stable)</th>
+            <th align="center">Version 0.4 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
         </tr>
     </thead>
@@ -23,19 +23,19 @@ Click on the table to download the most recent builds in the chosen language:
         <tr>
             <td>🇬🇧 English</td>
             <td align="center">—</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.3/Heroes3_English_Fan_Made_Mission_Book_0_3.pdf">download</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_English_Fan_Made_Mission_Book_0_4.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
             <td align="center">99%</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.3/Heroes3_Polski_Fan_Made_Mission_Book_0_3.pdf">pobierz</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Polski_Fan_Made_Mission_Book_0_4.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
         </tr>
         <tr>
             <td>🇨🇿 Čeština</td>
             <td align="center">99%</td>
-            <td align="center">—</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Cestina_Fan_Made_Mission_Book_0_4.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
         </tr>
     </tbody>
