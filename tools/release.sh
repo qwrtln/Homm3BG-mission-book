@@ -10,6 +10,7 @@ FILE_VERSION=$(echo "${VERSION}" | tr . _)
 declare -A languages=(
   ["en"]="English"
   ["pl"]="Polski"
+  ["cs"]="Cestina"
 )
 
 echo "Building release ${VERSION} for ${languages[$LANGUAGE]}..."
