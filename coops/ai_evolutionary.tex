@@ -8,10 +8,10 @@ For use this AI, choose a faction for it.\\
 
 The AI use 4 decks:
 \begin{itemize}
-    \item Unit (The units used in battle)
-    \item Ability (The Abilities the AI may know, each time an AI Hero card "Use a skill" is played: draw a card from this deck. Shuffle it only at start of battle)
-    \item Spell (The spells the AI may know, each time an AI Hero card "Cast a spell" is played: draw a card from this deck. Shuffle it only at start of battle)
-    \item AI Hero cards (The deck used by the AI, see 33 of the rulebook)
+    \item Unit. (The units used in battle.) If AI use wall and gate in battle, the gate must be facing one most higher unit's level AI.
+    \item Ability. (The Abilities the AI may know, each time an AI Hero card "Use a skill" is played: draw a card from this deck. Shuffle it only at start of battle.)
+    \item Spell. (The spells the AI may know, each time an AI Hero card "Cast a spell" is played: draw a card from this deck. Shuffle it only at start of battle.)
+    \item AI Hero cards. (The deck used by the AI, see 33 of the rulebook.)
 \end{itemize}
 
 
@@ -248,21 +248,22 @@ When AI adds spells in his deck, draw cards until you draw one of the spell in t
 With all spells if the target is immune (like Efreet for fire magic or Titan for ongoing effects) or the spell has not enough power, choose the next eligible target. If a spell has enough power only to target bronze and there is no bronze in the army, discard it. The same goes for silver, if there is no silver or bronze in this army.
 
 \begin{itemize}
-    \item With \textbf{chain lightning}, the AI chooses the first target, but the player can choose the next target if tie.
+    \item With \textbf{Chain Lightning}, the AI chooses the first target, but the player can choose the next target if tie.
     \item With \textbf{Counterstrike}, the AI can target only AI units with a black cube; if none (or not enough power) the spell is discarded.
     \item With \textbf{Fortune}, the AI rolls and chooses in order +1 then 0 then -1.
     \item With \textbf{Precision}, the AI can target only ranged AI units, if none (or not enough power) discard the spell.
-    \item With \textbf{resurrection} / \textbf{Frenzy} / \textbf{Slayer} / \textbf{Shield} / \textbf{Sorrow} / \textbf{Stone skin}, keep the card next to the battlefield with black cubes as reminder of the power of the spell, the AI cast this spell only when the conditions are right: 
+    \item With \textbf{Frenzy} / \textbf{Misfortune} / \textbf{Resurrection} / \textbf{Shield} / \textbf{Slayer} / \textbf{Sorrow} / \textbf{Stone skin}, keep the card next to the battlefield with black cubes as reminder of the power of the spell, the AI cast this spell only when the conditions are right: 
     \begin{itemize}
-        \item For \textbf{resurrection}, when AI unit is killed.
-        \item For \textbf{stone skin} / \textbf{Shield} when AI unit is attacked.
-        \item For \textbf{Slayer}, when AI unit attacked a gold unit.
         \item For \textbf{Frenzy}, when AI unit attacked a unit the spell can affect (even if this unit has already 0 shield).
-        \item For \textbf{sorrow}, when a player unit start their turn.
+        \item For \textbf{Misfortune}, when player unit attacked.
+        \item For \textbf{Resurrection}, when AI unit is killed.
+        \item For \textbf{Shield} / \textbf{Stone skin} when AI unit is attacked.
+        \item For \textbf{Slayer}, when AI unit attacked a gold unit.
+        \item For \textbf{Sorrow}, when a player unit start their turn.
     \end{itemize}
     \item With \textbf{Cure}, the AI can target only AI units with at least one damage token, if none (or not enough power) discard the spell.
     \item With \textbf{Forgetfulness}, the AI can target only ranged player units, if none (or not enough power) discard the spell. 
-    \item With \textbf{Mirth}, AI rerolls only -1 dice.
+    \item With \textbf{Mirth}, AI rerolls only -1 dice, and if play spell with only "this activation", it wait the next -1.
     \item With \textbf{Earthquake}, AI chooses gate at first, if gate are already destroyed, the player chooses which wall is destroyed.
 \end{itemize}
 
