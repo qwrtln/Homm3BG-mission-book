@@ -223,19 +223,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:150
 #: campaigns/inferno_steadwicks_fall.tex:195
 #: campaigns/inferno_deal_with_the_devil.tex:175
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "W trakcie Scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
 "\n"
 
 #. type: multicols*
@@ -601,15 +594,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:133
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{2} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
-#| "    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
-#| "    their magic is diminished on this cursed ground.''\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"

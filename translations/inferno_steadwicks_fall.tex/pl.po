@@ -201,19 +201,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:150
 #: campaigns/inferno_steadwicks_fall.tex:195
 #: campaigns/inferno_deal_with_the_devil.tex:175
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "W trakcie Scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
-"\n"
-"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
