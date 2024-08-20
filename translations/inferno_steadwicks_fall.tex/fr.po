@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-20 17:49+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,6 +27,41 @@ msgstr ""
 #, no-wrap
 msgid ""
 "{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
 
@@ -65,13 +100,13 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:193
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 
@@ -82,16 +117,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:18
-#: campaigns/inferno_steadwicks_fall.tex:16
-#: campaigns/inferno_deal_with_the_devil.tex:20
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
 
@@ -131,17 +156,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{AI hero setup}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map setup}}\n"
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
 
@@ -151,17 +166,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
-#: campaigns/inferno_deal_with_the_devil.tex:173
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Additional rules}}\n"
+"\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
 
@@ -171,7 +176,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
-"During this ``Inferno'' campaign scenario, the following rules apply:\n"
+"During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
 
@@ -206,7 +211,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:18
 #, no-wrap
 msgid ""
-"This scenario plays out over 16 rounds.\n"
+"This Scenario plays out over 16 Rounds.\n"
 "\n"
 msgstr ""
 
@@ -304,7 +309,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:60
 #, no-wrap
 msgid ""
-"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
+"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
 msgstr ""
 
@@ -320,7 +325,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:64
 #, no-wrap
 msgid ""
-"\\textbf{Charging Heroes' Armies:} Neutral Army is one level higher than your Hero level (max level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
+"\\textbf{Charging Heroes' Armies:} Neutral Army is one Level higher than your Hero Level (Max Level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
 "\n"
 msgstr ""
 
@@ -345,7 +350,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
-"Take the following Map tiles and set them up as shown in the scenario map layout:\n"
+"Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
 
@@ -353,7 +358,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:78
 #, no-wrap
 msgid ""
-"\\textbf{2 × Starting (I) Map tile}\n"
+"\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Castle (S3)\n"
@@ -365,7 +370,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:88
 #, no-wrap
 msgid ""
-"\\textbf{3 × Far (II--III) Map tile}\n"
+"\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Castle (F3)\n"
 "  \\item 1 × Rampart (F10)\n"
@@ -381,7 +386,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:95
 #, no-wrap
 msgid ""
-"\\textbf{2 × Near (IV--V) Map tile}\n"
+"\\textbf{2 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Castle (N3, choose from: \\#N3, N6)\n"
 "  \\item 1 × Rampart (N8)\n"
@@ -395,7 +400,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Enemy Hero General Kendal is represented by one Castle Faction Hero\n"
-"model and appears on the center field of the S3 Starting Map tile.\n"
+"model and appears on the center Field of the S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
 
@@ -404,7 +409,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Castle Charging Hero is represented by one Castle Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the F3 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the F3 Map Tile.\n"
 "\n"
 msgstr ""
 
@@ -413,7 +418,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Rampart Charging Hero is represented by one Rampart Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the F10 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the F10 Map Tile.\n"
 "\n"
 msgstr ""
 
@@ -422,7 +427,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Tower Charging Hero is represented by one Tower Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the \\#F1 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the \\#F1 Map Tile.\n"
 "\n"
 msgstr ""
 
@@ -430,7 +435,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:111
 #, no-wrap
 msgid ""
-"Place your Main Hero on the center field of the Inferno Starting S6 Map tile.\n"
+"Place your Main Hero on the center Field of the Inferno Starting S6 Map Tile.\n"
 "\n"
 msgstr ""
 
@@ -439,7 +444,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice,\n"
-"on the Settlement field of the F2 Map tile. This Settlement produces no resources.\n"
+"on the Settlement Field of the F2 Map Tile. This Settlement produces no resources.\n"
 "\n"
 msgstr ""
 
@@ -532,7 +537,7 @@ msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item For any Enemy Settlements (F3, F10, \\#F1) that have not been defeated, an additional Enemy\n"
-"    Charging Hero of that Faction appears on each Settlement at the beginning of this round.\n"
+"    Charging Hero of that Faction appears on each Settlement at the beginning of this Round.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -591,7 +596,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:191
 #, no-wrap
 msgid ""
-"\\textbf{When you complete the scenario:}\n"
+"\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Congratulations! You captured Steadwick and are victorious!''\n"
 "\\end{itemize}\n"
@@ -605,18 +610,18 @@ msgid ""
 "\\begin{itemize}\n"
 "    \\item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,\n"
 "      and an Arrow Tower on their side of the Combat Board.\n"
-"    \\item The difficulty level of every Combat encounter on the map increases by one till the end of the scenario\n"
+"    \\item The difficulty Level of every Combat encounter on the map increases by one till the end of the Scenario\n"
 "      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
 "    \\item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else\n"
-"      (including mines and settlements if possible) and go straight for the Player's Faction Town (on Map Tile S6).\n"
-"      They do not pursue the player directly, but if they happen to be on the same Map tile, they will\n"
+"      (including Mines and Settlements if possible) and go straight for the player's Faction Town (on Map Tile S6).\n"
+"      They do not pursue the player directly, but if they happen to be on the same Map Tile, they will\n"
 "      attack the player's Main Hero (not Secondary).\n"
-"    \\item The Enemy Charging Heroes move after the player's turn ends.\n"
-"    \\item The borders on the Castle Starting Map tile S3 cannot be crossed by any means until\n"
+"    \\item The Enemy Charging Heroes move after the player's Turn ends.\n"
+"    \\item The borders on the Castle Starting Map Tile S3 cannot be crossed by any means until\n"
 "      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
 "    \\item Defeating Enemy Charging Heroes provides 2 \\svg{valuables}.\n"
 "    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle\n"
-"      Gate'' location (only if you have the ``Castle Gate'' built in your town).\n"
+"      Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

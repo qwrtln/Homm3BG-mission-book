@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-20 17:49+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,6 +30,47 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
@@ -72,16 +113,16 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:193
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
 "\n"
 
 #. type: multicols*
@@ -94,18 +135,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Autor:} Tm335\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:18
-#: campaigns/inferno_steadwicks_fall.tex:16
-#: campaigns/inferno_deal_with_the_devil.tex:20
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario length}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
 "\n"
 
 #. type: multicols*
@@ -150,22 +179,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{AI hero setup}}\n"
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
 "\n"
 
 #. type: multicols*
@@ -174,34 +191,29 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Ustawienie Bohaterów}}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
-#: campaigns/inferno_deal_with_the_devil.tex:173
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Additional rules}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
-"\n"
-
-#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
 #: campaigns/inferno_steadwicks_fall.tex:195
 #: campaigns/inferno_deal_with_the_devil.tex:175
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
-"During this ``Inferno'' campaign scenario, the following rules apply:\n"
+"During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"W trakcie scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"W trakcie Scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"\n"
+"#-#-#-#-#  pl.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"W trakcie Scenariusza Kampanii ,,Inferno'' obowiązują następujące zasady:\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -243,10 +255,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:18
 #, no-wrap
 msgid ""
-"This scenario plays out over 16 rounds.\n"
+"This Scenario plays out over 16 Rounds.\n"
 "\n"
 msgstr ""
-"Ten scenariusz rozgrywany jest w 16 rundach.\n"
+"Ten Scenariusz rozgrywany jest w 16 Rundach.\n"
 "\n"
 
 #. type: multicols*
@@ -372,10 +384,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:60
 #, no-wrap
 msgid ""
-"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
+"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
 msgstr ""
-"\\textbf{Umiejętność Generała Kendala:} Karta Zdolności Artylerii\\footnote{Generał Kendal zawsze rozpatruje Efekt Mistrzowski Karty Zdolności Artylerii, a Balista aktywuje się za każdym razem, gdy Karta Zdolności Artylerii jest dobierana, a także na początku Rundy Walki.}\n"
+"\\textbf{Umiejętność Generała Kendala:} Karta Zdolności Artylerii\\footnote{Generał Kendal zawsze rozpatruje Efekt Mistrzowski Karty Zdolności Artylerii, a Balista Aktywuje się za każdym razem, gdy Karta Zdolności Artylerii jest dobierana, a także na początku Rundy Walki.}\n"
 "\n"
 
 #. type: multicols*
@@ -392,7 +404,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:64
 #, no-wrap
 msgid ""
-"\\textbf{Charging Heroes' Armies:} Neutral Army is one level higher than your Hero level (max level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
+"\\textbf{Charging Heroes' Armies:} Neutral Army is one Level higher than your Hero Level (Max Level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
 "\n"
 msgstr ""
 "\\textbf{Armie Szarżujących Bohaterów:} Armia Neutralna jest o jeden poziom wyższa niż poziom Twojego Bohatera (maks. poziom VI)\\footnote{Zob. str. 35, ,,Tabela Trudności Pola'' w Księdze Zasad, aby uzyskać więcej informacji na temat liczby Jednostek Neutralnych, które musisz dobrać dla tej Armii Neutralnej.}.\n"
@@ -423,17 +435,17 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
-"Take the following Map tiles and set them up as shown in the scenario map layout:\n"
+"Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza:\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:78
 #, no-wrap
 msgid ""
-"\\textbf{2 × Starting (I) Map tile}\n"
+"\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Castle (S3)\n"
@@ -451,7 +463,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:88
 #, no-wrap
 msgid ""
-"\\textbf{3 × Far (II--III) Map tile}\n"
+"\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Castle (F3)\n"
 "  \\item 1 × Rampart (F10)\n"
@@ -477,7 +489,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:95
 #, no-wrap
 msgid ""
-"\\textbf{2 × Near (IV--V) Map tile}\n"
+"\\textbf{2 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Castle (N3, choose from: \\#N3, N6)\n"
 "  \\item 1 × Rampart (N8)\n"
@@ -498,11 +510,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Enemy Hero General Kendal is represented by one Castle Faction Hero\n"
-"model and appears on the center field of the S3 Starting Map tile.\n"
+"model and appears on the center Field of the S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
 "Wrogi Bohater Generał Kendal jest reprezentowany przez figurkę Bohatera Zamku\n"
-"i pojawia się na środkowym polu Początkowego Kafelka S3.\n"
+"i pojawia się na środkowym Polu Początkowego Kafelka S3.\n"
 "\n"
 
 #. type: multicols*
@@ -510,11 +522,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Castle Charging Hero is represented by one Castle Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the F3 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the F3 Map Tile.\n"
 "\n"
 msgstr ""
 "Szarżujący Bohater z Zamku jest reprezentowany przez figurkę Bohatera Zamku\n"
-"i pojawia się na (i posiada) polu Osady Kafelka F3.\n"
+"i pojawia się na (i posiada) Polu Osady Kafelka F3.\n"
 "\n"
 
 #. type: multicols*
@@ -522,11 +534,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Rampart Charging Hero is represented by one Rampart Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the F10 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the F10 Map Tile.\n"
 "\n"
 msgstr ""
 "Szarżujący Bohater z Bastionu jest reprezentowany przez figurkę Bohatera Bastionu\n"
-"i pojawia się na (i posiada) polu Osady Kafelka F10.\n"
+"i pojawia się na (i posiada) Polu Osady Kafelka F10.\n"
 "\n"
 
 #. type: multicols*
@@ -534,21 +546,21 @@ msgstr ""
 #, no-wrap
 msgid ""
 "The Tower Charging Hero is represented by one Tower Faction Hero model\n"
-"and appears on (and owns) the Settlement field of the \\#F1 Map tile.\n"
+"and appears on (and owns) the Settlement Field of the \\#F1 Map Tile.\n"
 "\n"
 msgstr ""
 "Szarżujący Bohater z Fortecy jest reprezentowany przez figurkę Bohatera Fortecy\n"
-"i pojawia się na (i posiada) polu Osady Kafelka \\#F1.\n"
+"i pojawia się na (i posiada) Polu Osady Kafelka \\#F1.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:111
 #, no-wrap
 msgid ""
-"Place your Main Hero on the center field of the Inferno Starting S6 Map tile.\n"
+"Place your Main Hero on the center Field of the Inferno Starting S6 Map Tile.\n"
 "\n"
 msgstr ""
-"Umieść swojego Bohatera Głównego na centralnym polu Początkowego Kafelka Inferno S6.\n"
+"Umieść swojego Bohatera Głównego na centralnym Polu Początkowego Kafelka Inferno S6.\n"
 "\n"
 
 #. type: multicols*
@@ -556,11 +568,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice,\n"
-"on the Settlement field of the F2 Map tile. This Settlement produces no resources.\n"
+"on the Settlement Field of the F2 Map Tile. This Settlement produces no resources.\n"
 "\n"
 msgstr ""
 "Umieść swojego Bohatera Pomocniczego, reprezentowanego przez figurkę Bohatera Lochów\n"
-"na polu Osady Kafelka F2. Ta Osada nie produkuje żadnych zasobów.\n"
+"na Polu Osady Kafelka F2. Ta Osada nie produkuje żadnych zasobów.\n"
 "\n"
 
 #. type: multicols*
@@ -686,13 +698,13 @@ msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item For any Enemy Settlements (F3, F10, \\#F1) that have not been defeated, an additional Enemy\n"
-"    Charging Hero of that Faction appears on each Settlement at the beginning of this round.\n"
+"    Charging Hero of that Faction appears on each Settlement at the beginning of this Round.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{10. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item W przypadku każdej niepokonanej Osady Wroga (F3, F10, \\#F1) na początku tej rundy pojawia się dodatkowy\n"
+"  \\item W przypadku każdej niepokonanej Osady Wroga (F3, F10, \\#F1) na początku tej Rundy pojawia się dodatkowy\n"
 "    Szarżujący Bohater Wroga danej frakcji na każdej Osadzie.\n"
 "\\end{itemize}\n"
 "\n"
@@ -776,13 +788,13 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:191
 #, no-wrap
 msgid ""
-"\\textbf{When you complete the scenario:}\n"
+"\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Congratulations! You captured Steadwick and are victorious!''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Po zakończeniu scenariusza:}\n"
+"\\textbf{Po zakończeniu Scenariusza:}\n"
 "\\begin{itemize}\n"
 "  \\item Przeczytaj: ,,Gratulacje! Zdobyłeś Steadwick i odnosisz zwycięstwo!''\n"
 "\\end{itemize}\n"
@@ -795,28 +807,28 @@ msgid ""
 "\\begin{itemize}\n"
 "    \\item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,\n"
 "      and an Arrow Tower on their side of the Combat Board.\n"
-"    \\item The difficulty level of every Combat encounter on the map increases by one till the end of the scenario\n"
+"    \\item The difficulty Level of every Combat encounter on the map increases by one till the end of the Scenario\n"
 "      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
 "    \\item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else\n"
-"      (including mines and settlements if possible) and go straight for the Player's Faction Town (on Map Tile S6).\n"
-"      They do not pursue the player directly, but if they happen to be on the same Map tile, they will\n"
+"      (including Mines and Settlements if possible) and go straight for the player's Faction Town (on Map Tile S6).\n"
+"      They do not pursue the player directly, but if they happen to be on the same Map Tile, they will\n"
 "      attack the player's Main Hero (not Secondary).\n"
-"    \\item The Enemy Charging Heroes move after the player's turn ends.\n"
-"    \\item The borders on the Castle Starting Map tile S3 cannot be crossed by any means until\n"
+"    \\item The Enemy Charging Heroes move after the player's Turn ends.\n"
+"    \\item The borders on the Castle Starting Map Tile S3 cannot be crossed by any means until\n"
 "      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
 "    \\item Defeating Enemy Charging Heroes provides 2 \\svg{valuables}.\n"
 "    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle\n"
-"      Gate'' location (only if you have the ``Castle Gate'' built in your town).\n"
+"      Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
 "    \\item General Kendal nie porusza się i czeka tylko w swojej Osadzie. Zaczyna z Murami, Bramą\n"
 "      i Wieżą Łucziczą po swojej stronie Planszy Walki.\n"
-"    \\item Poziom trudności każdej Walki na mapie wzrasta o jeden aż do końca scenariusza\n"
+"    \\item Poziom trudności każdej Walki na mapie wzrasta o jeden aż do końca Scenariusza\n"
 "      (zobacz strona 35, ,,Tabela Trudności Pola'' w Księdze Zasad).\n"
 "    \\item Szarżujący Bohaterowie mają tylko 2 Punkty Ruchu, zamiast 3. Ignorują wszystko inne\n"
-"      (w tym kopalnie i osady, jeśli to możliwe) i zmierzają prosto do Miasta Gracza (na Kafelku Mapy S6).\n"
+"      (w tym kopalnie i osady, jeśli to możliwe) i zmierzają prosto do Miasta gracza (na Kafelku Mapy S6).\n"
 "      Nie ścigają bezpośrednio gracza, ale jeśli znajdą się na tym samym Kafelku Mapy, zaatakują\n"
 "      Bohatera Głównego gracza (nie Pomocniczego).\n"
 "    \\item Szarżujący Bohaterowie poruszają się po zakończeniu tury gracza.\n"

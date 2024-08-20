@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-20 17:49+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,8 +30,23 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -81,24 +96,13 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
 #: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} units of your choice\n"
-"  \\item A Few \\svgunit{bronze} units of your choice\n"
+"  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
+"  \\item A Few \\svgunit{bronze} Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -117,7 +121,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
 
@@ -152,7 +156,7 @@ msgstr ""
 #: coops/emerald_island.tex:16
 #, no-wrap
 msgid ""
-"This scenario is played over 8 rounds.\n"
+"This Scenario is played over 8 Rounds.\n"
 "\n"
 msgstr ""
 
@@ -193,7 +197,7 @@ msgstr ""
 #: coops/emerald_island.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
+"\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
 
@@ -201,9 +205,9 @@ msgstr ""
 #: coops/emerald_island.tex:46
 #, no-wrap
 msgid ""
-"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen factions.\n"
+"  \\item Starting Tiles of your chosen Factions.\n"
 "  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
 "\\end{itemize}\n"
 "\n"
@@ -213,7 +217,7 @@ msgstr ""
 #: coops/emerald_island.tex:48
 #, no-wrap
 msgid ""
-"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
+"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map Tile}\n"
 "\n"
 msgstr ""
 
@@ -221,7 +225,7 @@ msgstr ""
 #: coops/emerald_island.tex:52
 #, no-wrap
 msgid ""
-"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
+"Flag all Mines and Settlements. (Don't forget the Building Materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
 "\n"
 msgstr ""
 
@@ -239,7 +243,7 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Gain again the result of one field with a Black Cube.\n"
+"  \\item Gain again the result of one Field with a Black Cube.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -251,17 +255,17 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
-"    \\item You can give Units to another player, even outside your turn, if one of your Heroes is:\n"
+"    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
 "    \\begin{itemize}\n"
-"        \\item On the same Map tile as another player's Hero.\n"
+"        \\item On the same Map Tile as another player's Hero.\n"
 "        \\item In another player's Town.\n"
 "        \\item Next to another player's Hero.\n"
 "    \\end{itemize}\n"
-"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your faction's Unit pool (even if another player has one or more of your Units). This includes units you've previously given to another player.\n"
+"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
-"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "    \\item The first time you reach level IV, gain your second specialty.\n"
-"    \\item When you reach level IV, move your token on the level tracker to level III.\n"
+"    \\item When you reach level IV, move your Token on the level tracker to level III.\n"
 "    \\item Additionally, no player can:\n"
 "    \\begin{itemize}\n"
 "        \\item Attack other Heroes.\n"

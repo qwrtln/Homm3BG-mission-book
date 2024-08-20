@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:41+0200\n"
+"POT-Creation-Date: 2024-08-20 20:10+0200\n"
 "PO-Revision-Date: 2024-08-04 22:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -40,10 +40,10 @@ msgstr "\\addsection{W co zagrać}{\\images/forgetfulness.png}"
 #: sections/what_to_play.tex:7
 #, no-wrap
 msgid ""
-"Follow these suggestions if you're not sure which scenario is best for you.\n"
+"Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
-"Skorzystaj z tych sugestii, jeśli nie jesteś pewien, który scenariusz jest dla ciebie najlepszy.\n"
+"Skorzystaj z tych sugestii, jeśli nie jesteś pewien, który Scenariusz jest dla ciebie najlepszy.\n"
 "\n"
 
 #. type: multicols
@@ -84,12 +84,12 @@ msgstr ""
 #: sections/what_to_play.tex:19
 #, no-wrap
 msgid ""
-"If you'd like to play a 2- or 4-player ``capture the Grail'' scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+"If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
 "For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
-"Jeśli szukasz scenariusza dla 2 lub 4 graczy z ciekawymi zwrotami akcji, wypróbuj \\pagelink{Krwawy Graal}{Krwawy Graal}.\n"
+"Jeśli szukasz Scenariusza dla 2 lub 4 graczy z ciekawymi zwrotami akcji, wypróbuj \\pagelink{Krwawy Graal}{Krwawy Graal}.\n"
 "Dla ekscytującej walki z bossem dla 2-3 graczy, wybierz \\pagelink{Polowanie}{Polowanie}.\n"
 "Dla epickiej bitwy między dwoma graczami z możliwym oblężeniem zagraj w \\pagelink{Zamek Smoczej Klątwy}{Zamek Smoczej Klątwy}.\n"
 "\n"
@@ -108,10 +108,10 @@ msgstr ""
 #: sections/what_to_play.tex:23
 #, no-wrap
 msgid ""
-"There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+"There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
-"Na końcu znajduje się 3-scenariuszowa kampania Inferna \\pagelink{1. Diabelski Plan}{Podziemia i Diabły}, jeśli preferujesz grę solo.\n"
+"Na końcu znajduje się 3-Scenariuszowa kampania Inferna \\pagelink{1. Diabelski Plan}{Podziemia i Diabły}, jeśli preferujesz grę solo.\n"
 "\n"
 
 #. type: multicols
@@ -128,8 +128,8 @@ msgstr ""
 #: sections/what_to_play.tex:27
 #, no-wrap
 msgid ""
-"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
+"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
 "\n"
 msgstr ""
-"Aby uzyskać informacje dotyczące czasu gry, strategii i niestandardowych zasad, zapoznaj się z \\pagelink{Zalecenia}{zaleceniami} na końcu księgi.\n"
+"Aby uzyskać informacje dotyczące czasu gry, strategii i niestandardowych zasad, zapoznaj się z \\pagelink{Zalecenia}{Zaleceniami} na końcu księgi.\n"
 "\n"
