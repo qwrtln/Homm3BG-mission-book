@@ -13,20 +13,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Find wrong caps
+        shell: bash
         run: |
-          pwd
-          ls
-          ls .github
           ERRORS=0
-          echo "Reading array"
-          read -a WORDS -d EOF < words.txt
-          echo "Starting first for loop"
+          WORDS=("deck" "field" "hero" "level" "unit")
           for file in $(git grep -Il '' | grep tex$)
           do
-            echo "Checking file $file"
             for word in ${WORDS[@]}
             do
-              echo "Checking $word in $file"
               if grep -qP "\s$word" $file; then
                 echo ""
                 echo "Found $word instead of ${word^} in $file:"
@@ -38,6 +32,7 @@ jobs:
 
 
           if [[ $ERRORS == 1 ]]; then
+            echo ""
             echo "Some words are not capitalized correctly. Please fix them."
             exit 1
           fi
