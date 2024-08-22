@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 23:28+0200\n"
+"POT-Creation-Date: 2024-08-22 23:44+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -533,30 +533,30 @@ msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{1-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 1-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 1-OSOBOWY}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{2-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 2-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 2-OSOBOWY}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{3-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 3-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 3-OSOBOWY}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{4-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 4-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 4-OSOBOWY}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{5-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 5-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 5-OSOBOWY}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{6-PLAYER SCENARIO}"
-msgstr "\\captionof{figure}{SCENARIUSZ 6-OSOBOWY}"
+msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 6-OSOBOWY}}"

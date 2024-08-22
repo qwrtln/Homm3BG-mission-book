@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-22 23:28+0200\n"
+"POT-Creation-Date: 2024-08-22 23:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -309,7 +309,7 @@ msgid ""
 "    \\end{itemize}\n"
 "  Then, flag the VII Field with a Faction cube.\n"
 "  (There is no bonus in solo play!)\n"
-"  \\item Ignore all yellow borders in I Tiles.\n"
+"  \\item Ignore all yellow borders on Starting Tiles I.\n"
 "  \\item You can use your build Token to give your resources to another player.\n"
 "  \\item Two players can use their build Tokens to exchange Artifacts and/or Spells.\n"
 "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
@@ -390,30 +390,30 @@ msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{1-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{2-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{3-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{4-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{5-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
 #: coops/titans_stronghold.tex:226
-msgid "\\captionof{figure}{6-PLAYER SCENARIO}"
+msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr ""
