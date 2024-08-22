@@ -121,7 +121,6 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/titans_stronghold.tex:3
-#, msgid ""
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}{\\images/"
 "earthquake.png}"

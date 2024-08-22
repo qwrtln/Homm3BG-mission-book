@@ -151,7 +151,6 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/emerald_island.tex:3
-#, msgid ""
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
 "logistics.png}"
