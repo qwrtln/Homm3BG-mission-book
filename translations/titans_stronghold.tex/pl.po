@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-20 17:49+0200\n"
+"POT-Creation-Date: 2024-08-22 18:15+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -71,7 +71,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -84,7 +84,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -98,7 +98,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -153,7 +153,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
-"  No one has ever entered and returned to tell the tale.\n"
+"  No one has ever entered and returned to tell the Tale.\n"
 "  Now, there are rumors about the death of the guardians and an incredible amount of treasures, potentially including the best bow in the world.\\\\\n"
 "  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
 "  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
@@ -384,8 +384,8 @@ msgid ""
 "  \\item You can use your build Token to give your resources to another player.\n"
 "  \\item Two players can use their build Tokens to exchange Artifacts and/or Spells.\n"
 "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
-"  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit cards from each of their corresponding decks to create a separate deck of Neutral Units for the Titans' Stronghold (the deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the cards from certain expansions).\n"
-"  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 cards from the Titans' Stronghold deck instead of from the Neutral Unit card decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit decks instead of the Titans' Stronghold deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold deck. If there are not enough Unit cards in this deck, draw as many Unit cards as are available and place them on the Combat Board.\n"
+"  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the cards from certain expansions).\n"
+"  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 cards from the Titans' Stronghold Deck instead of from the Neutral Unit card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit cards in this Deck, draw as many Unit cards as are available and place them on the Combat Board.\n"
 "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
@@ -411,13 +411,13 @@ msgstr ""
 "  \\item Możesz użyć swojego żetonu budowy, aby przekazać swoje zasoby innemu graczowi.\n"
 "  \\item Dwóch graczy może użyć swoich żetonów budowy do wymiany artefaktów i/lub Zaklęć.\n"
 "  \\item Za każdym razem, gdy gracz odwiedza Obelisk, ten gracz rzuca jedną Kością skarbu i jedną Kością zasobu, i rozpatruje jedną z nich.\n"
-"  \\item Kiedy wszystkie Pola VII (z wyjątkiem Twierdzy Tytanów) zostaną oznaczone, losowo dobierz i wymieszaj określoną liczbę (patrz na następną stronę) kart Jednostek neutralnych z odpowiednich talii, aby utworzyć osobną talię Jednostek Neutralnych dla Twierdzy Tytanów (talia Twierdzy Tytanów może być dzielona na dwie części, ponieważ niektóre Scenariusze są w przeciwnym razie niemożliwe do wykonania z kartami z pewnych dodatków).\n"
-"  \\item Za każdym razem, gdy Bohater wchodzi do Twierdzy Tytanów, dobiera 5 kart z talii Twierdzy Tytanów zamiast z talii Kart Jednostek Neutralnych.\n"
+"  \\item Kiedy wszystkie Pola VII (z wyjątkiem Twierdzy Tytanów) zostaną oznaczone, losowo dobierz i wymieszaj określoną liczbę (patrz na następną stronę) kart Jednostek neutralnych z odpowiednich Talii, aby utworzyć osobną Talię Jednostek Neutralnych dla Twierdzy Tytanów (talia Twierdzy Tytanów może być dzielona na dwie części, ponieważ niektóre Scenariusze są w przeciwnym razie niemożliwe do wykonania z kartami z pewnych dodatków).\n"
+"  \\item Za każdym razem, gdy Bohater wchodzi do Twierdzy Tytanów, dobiera 5 kart z Talii Twierdzy Tytanów zamiast z Talii Kart Jednostek Neutralnych.\n"
 "    Jednostki są umieszczane na planszy Walki (zob. \\mbox{str. 29} w Księdze Zasad).\n"
 "    Gracze próbują pokonać Jednostki znajdujące się w Twierdzy Tytanów.\n"
-"    Wszystkie Jednostki Neutralne pokonane podczas Walki w Twierdzy Tytanów są zwracane do odpowiednich talii Jednostek Neutralnych, a nie do talii Twierdzy Tytanów.\n"
-"    Wszystkie Jednostki Neutralne, które przetrwały Walkę w Twierdzy Tytanów, są ponownie tasowane do talii Twierdzy Tytanów.\n"
-"    Jeśli w tej talii brakuje Kart Jednostek, należy dobrać tyle Kart Jednostek, ile jest dostępnych, i umieścić je na planszy Walki.\n"
+"    Wszystkie Jednostki Neutralne pokonane podczas Walki w Twierdzy Tytanów są zwracane do odpowiednich Talii Jednostek Neutralnych, a nie do Talii Twierdzy Tytanów.\n"
+"    Wszystkie Jednostki Neutralne, które przetrwały Walkę w Twierdzy Tytanów, są ponownie tasowane do Talii Twierdzy Tytanów.\n"
+"    Jeśli w tej Talii brakuje Kart Jednostek, należy dobrać tyle Kart Jednostek, ile jest dostępnych, i umieścić je na planszy Walki.\n"
 "  \\item Walka w Twierdzy Tytanów teraz kosztuje 1 PR za przedłużenie na każdą Rundę Walki, tak jak Walka przeciwko Jednostkom poziomu innego niż błękitny.\n"
 "  \\item Dodatkowo żaden gracz nie może:\n"
 "  \\begin{itemize}\n"

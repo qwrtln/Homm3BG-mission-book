@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-20 17:49+0200\n"
+"POT-Creation-Date: 2024-08-22 18:15+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -368,10 +368,15 @@ msgstr ""
 
 #. type: multicols*
 #: clash/bloody_grail.tex:78
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item Split the Artifact deck by rarity into 3 separate decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far tiles, Minor or Major Artifacts on Near tiles, and Major or Relic Artifacts on Center tiles.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Split the Artifact deck by rarity into 3 separate decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far tiles, Minor or Major Artifacts on Near tiles, and Major or Relic Artifacts on Center tiles.\n"
+"  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far tiles, Minor or Major Artifacts on Near tiles, and Major or Relic Artifacts on Center tiles.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -442,13 +447,13 @@ msgid ""
 "      \\item \\textbf{[1st Obelisk]} Roll 2 \\svg{treasure} and choose 1 to resolve; then, gain \\svg{morale_negative}.\n"
 "      \\item \\textbf{[2nd Obelisk]} Increase your \\svg{gold}, \\svg{building_materials}, or \\svg{valuables} income by 1 step.\n"
 "      \\item \\textbf{[3rd Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have a Secondary Hero, gain 3 \\svg{gold} instead. Then, choose one enemy player to discard 2 random cards from their hand.\n"
-"      \\item \\textbf{[4th Obelisk]} Remove up to 4 cards from your hand, except Statistic cards; then, search each corresponding deck for a card of your choice and put it in your hand.\n"
+"      \\item \\textbf{[4th Obelisk]} Remove up to 4 cards from your hand, except Statistic cards; then, search each corresponding Deck for a card of your choice and put it in your hand.\n"
 "    \\end{enumerate}\n"
-"    \\item \\textbf{[Sacrifice]} Remove a * Faction Unit card from your Unit deck in exchange for:\n"
+"    \\item \\textbf{[Sacrifice]} Remove a * Faction Unit card from your Unit Deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
-"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
-"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
+"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
+"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card Deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red Faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
@@ -463,7 +468,7 @@ msgid ""
 "  \\item Ignore Combat encounters on the Field with the Grail.\n"
 "  \\item Players may not Visit the Field with the Grail Token unless they have already Visited at least two Obelisks or the Grail Token has been taken by any Hero at least once.\n"
 "  \\item To obtain the Grail Token, a player’s Hero must spend 2 MPs on the Field with the Grail.\n"
-"  \\item If a player does not possess the title of ``\\textcolor{darkcandyapplered}{Blood Knight},'' they must Remove a Faction Unit card from their Unit deck immediately after obtaining the Grail Token. This effect can only occur once per player.\n"
+"  \\item If a player does not possess the title of ``\\textcolor{darkcandyapplered}{Blood Knight},'' they must Remove a Faction Unit card from their Unit Deck immediately after obtaining the Grail Token. This effect can only occur once per player.\n"
 "  \\item If another Hero defeats the Hero with the Grail Token, they also take the Grail Token.\n"
 "  \\item If a Hero with the Grail Token Surrenders, the Grail Token is placed on the hex where the Hero Surrendered.\n"
 "  \\item If a Neutral army defeats the Hero with the Grail Token, the Grail Token is placed on the Field where the Hero was defeated.\n"

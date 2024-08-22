@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-20 20:12+0200\n"
+"POT-Creation-Date: 2024-08-22 18:15+0200\n"
 "PO-Revision-Date: 2024-07-31 22:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -64,7 +64,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "      \\item Place the Main Hero when defeated.\n"
 "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
 "    \\end{itemize}\n"
-"  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws cards from the Neutral Units \\svgunit{azure} deck until a Dragon not associated with any Faction is drawn.\n"
+"  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws cards from the Neutral Units \\svgunit{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
 "    The player may immediately Recruit that Dragon for free.\n"
 "\\end{itemize}\n"
 "\n"
