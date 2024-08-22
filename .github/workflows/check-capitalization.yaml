@@ -14,15 +14,22 @@ jobs:
 
       - name: Find wrong caps
         run: |
+          pwd
+          ls
+          ls .github
           ERRORS=0
-          read -a WORDS -d EOF < .github/words.txt
+          echo "Reading array"
+          read -a WORDS -d EOF < words.txt
+          echo "Starting first for loop"
           for file in $(git grep -Il '' | grep tex$)
           do
+            echo "Checking file $file"
             for word in ${WORDS[@]}
             do
+              echo "Checking $word in $file"
               if grep -qP "\s$word" $file; then
                 echo ""
-                echo "Found $word in $file:"
+                echo "Found $word instead of ${word^} in $file:"
                 grep -nHP "\s$word" $file
                 ERRORS=1
               fi
