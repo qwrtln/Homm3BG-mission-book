@@ -7,21 +7,28 @@ on:
 jobs:
   tablint:
     runs-on: ubuntu-latest
-    name: Check tabs
+    name: Check capitalization
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Find tabs
+      - name: Find wrong caps
         run: |
           ERRORS=0
-          for f in $(git grep -Il '' | grep tex$)
+          read -a WORDS -d EOF < .github/words.txt
+          for file in $(git grep -Il '' | grep tex$)
           do
-            if grep -q -P ' unit\| field \| hero \| level' $f; then
-              grep -nHP '\t' $f
-              ERRORS=1
-            fi
+            for word in ${WORDS[@]}
+            do
+              if grep -qP "\s$word" $file; then
+                echo ""
+                echo "Found $word in $file:"
+                grep -nHP "\s$word" $file
+                ERRORS=1
+              fi
+            done
           done
+
 
           if [[ $ERRORS == 1 ]]; then
             echo "Some words are not capitalized correctly. Please fix them."
