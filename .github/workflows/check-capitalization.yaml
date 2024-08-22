@@ -22,8 +22,8 @@ jobs:
             for word in ${WORDS[@]}
             do
               if grep -qP "\s$word" $file; then
-                echo ""
-                echo "Found $word instead of ${word^} in $file:"
+                echo "---"
+                echo "Found $word instead of ${word^} in $file:" | grep -i $word --color=always
                 grep -nHP --color=always "\s$word" $file
                 ERRORS=1
               fi
@@ -32,7 +32,7 @@ jobs:
 
 
           if [[ $ERRORS == 1 ]]; then
-            echo ""
+            echo "---"
             echo "Some words are not capitalized correctly. Please fix them."
             exit 1
           fi
