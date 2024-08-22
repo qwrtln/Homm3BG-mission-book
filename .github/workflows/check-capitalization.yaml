@@ -1,0 +1,29 @@
+name: Check capitalization
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  tablint:
+    runs-on: ubuntu-latest
+    name: Check tabs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Find tabs
+        run: |
+          ERRORS=0
+          for f in $(git grep -Il '' | grep tex$)
+          do
+            if grep -q -P ' unit\| field \| hero \| level' $f; then
+              grep -nHP '\t' $f
+              ERRORS=1
+            fi
+          done
+
+          if [[ $ERRORS == 1 ]]; then
+            echo "Some words are not capitalized correctly. Please fix them."
+            exit 1
+          fi
