@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-20 17:49+0200\n"
+"POT-Creation-Date: 2024-08-22 17:05+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -75,7 +75,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -88,7 +88,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -102,7 +102,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -115,7 +115,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:91 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
+#: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
-#: campaigns/inferno_steadwicks_fall.tex:195
+#: campaigns/inferno_steadwicks_fall.tex:190
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
@@ -499,55 +499,47 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:100
+#: campaigns/inferno_steadwicks_fall.tex:99
 #, no-wrap
 msgid ""
-"The Enemy Hero General Kendal is represented by one Castle Faction Hero\n"
-"model and appears on the center Field of the S3 Starting Map Tile.\n"
+"The Enemy Hero General Kendal is represented by one Castle Faction Hero model and appears on the center Field of the S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Wrogi Bohater Generał Kendal jest reprezentowany przez figurkę Bohatera Zamku\n"
-"i pojawia się na środkowym Polu Początkowego Kafelka S3.\n"
+"Wrogi Bohater Generał Kendal jest reprezentowany przez figurkę Bohatera Zamku i pojawia się na środkowym Polu Początkowego Kafelka S3.\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:101
+#, no-wrap
+msgid ""
+"The Castle Charging Hero is represented by one Castle Faction Hero model and appears on (and owns) the Settlement of the F3 Map Tile.\n"
+"\n"
+msgstr ""
+"Szarżujący Bohater z Zamku jest reprezentowany przez figurkę Bohatera Zamku i pojawia się na (i posiada) Polu Osady Kafelka F3.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:103
 #, no-wrap
 msgid ""
-"The Castle Charging Hero is represented by one Castle Faction Hero model\n"
-"and appears on (and owns) the Settlement Field of the F3 Map Tile.\n"
+"The Rampart Charging Hero is represented by one Rampart Faction Hero model and appears on (and owns) the Settlement of the F10 Map Tile.\n"
 "\n"
 msgstr ""
-"Szarżujący Bohater z Zamku jest reprezentowany przez figurkę Bohatera Zamku\n"
-"i pojawia się na (i posiada) Polu Osady Kafelka F3.\n"
+"Szarżujący Bohater z Bastionu jest reprezentowany przez figurkę Bohatera Bastionu i pojawia się na (i posiada) Polu Osady Kafelka F10.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:106
+#: campaigns/inferno_steadwicks_fall.tex:105
 #, no-wrap
 msgid ""
-"The Rampart Charging Hero is represented by one Rampart Faction Hero model\n"
-"and appears on (and owns) the Settlement Field of the F10 Map Tile.\n"
+"The Tower Charging Hero is represented by one Tower Faction Hero model and appears on (and owns) the Settlement of the \\#F1 Map Tile.\n"
 "\n"
 msgstr ""
-"Szarżujący Bohater z Bastionu jest reprezentowany przez figurkę Bohatera Bastionu\n"
-"i pojawia się na (i posiada) Polu Osady Kafelka F10.\n"
+"Szarżujący Bohater z Fortecy jest reprezentowany przez figurkę Bohatera Fortecy i pojawia się na (i posiada) Polu Osady Kafelka \\#F1.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:109
-#, no-wrap
-msgid ""
-"The Tower Charging Hero is represented by one Tower Faction Hero model\n"
-"and appears on (and owns) the Settlement Field of the \\#F1 Map Tile.\n"
-"\n"
-msgstr ""
-"Szarżujący Bohater z Fortecy jest reprezentowany przez figurkę Bohatera Fortecy\n"
-"i pojawia się na (i posiada) Polu Osady Kafelka \\#F1.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:111
+#: campaigns/inferno_steadwicks_fall.tex:107
 #, no-wrap
 msgid ""
 "Place your Main Hero on the center Field of the Inferno Starting S6 Map Tile.\n"
@@ -557,19 +549,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:109
 #, no-wrap
 msgid ""
-"Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice,\n"
-"on the Settlement Field of the F2 Map Tile. This Settlement produces no resources.\n"
+"Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice, on the Settlement of the F2 Map Tile. This Settlement produces no resources.\n"
 "\n"
 msgstr ""
-"Umieść swojego Bohatera Pomocniczego, reprezentowanego przez figurkę Bohatera Lochów\n"
-"na Polu Osady Kafelka F2. Ta Osada nie produkuje żadnych zasobów.\n"
+"Umieść swojego Bohatera Pomocniczego, reprezentowanego przez figurkę Bohatera Lochów na Polu Osady Kafelka F2. Ta Osada nie produkuje żadnych zasobów.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:119
+#: campaigns/inferno_steadwicks_fall.tex:114
 #, no-wrap
 msgid ""
 "Defeat all 3 Enemy Controlled Settlements (F3, F10, \\#F1), and capture Steadwick (S3) before\n"
@@ -581,17 +571,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:123
+#: campaigns/inferno_steadwicks_fall.tex:118
 #, no-wrap
 msgid ""
-"You lose one Combat encounter with your Main Hero (Surrender costs 10 \\svg{gold}, and does not count as a defeat).\n"
+"You lose one Combat encounter with your Main Hero (Surrendering costs 10 \\svg{gold}, and does not count as a defeat).\n"
 "\n"
 msgstr ""
 "Przegrywasz jedną walkę z Twoim Bohaterem Głównym (Poddanie się kosztuje 10 \\svg{gold} i nie liczy się jako porażka).\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:120
 #, no-wrap
 msgid ""
 "You lose your Faction Town on the S6 Map Tile.\n"
@@ -601,7 +591,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:127
+#: campaigns/inferno_steadwicks_fall.tex:122
 #, no-wrap
 msgid ""
 "You run out of time -- you have time till the end of the Round 16.\n"
@@ -611,7 +601,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:136
+#: campaigns/inferno_steadwicks_fall.tex:131
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -631,7 +621,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:142
+#: campaigns/inferno_steadwicks_fall.tex:137
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
@@ -649,7 +639,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:147
+#: campaigns/inferno_steadwicks_fall.tex:142
 #, no-wrap
 msgid ""
 "    You have just received a report on the progress of Queen Catherine.\n"
@@ -665,7 +655,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:154
+#: campaigns/inferno_steadwicks_fall.tex:149
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
@@ -685,7 +675,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:160
+#: campaigns/inferno_steadwicks_fall.tex:155
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -703,7 +693,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:167
+#: campaigns/inferno_steadwicks_fall.tex:162
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{11} Round:}\n"
@@ -722,7 +712,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:173
+#: campaigns/inferno_steadwicks_fall.tex:168
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
@@ -740,7 +730,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:179
+#: campaigns/inferno_steadwicks_fall.tex:174
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{15} Round:}\n"
@@ -758,7 +748,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:186
+#: campaigns/inferno_steadwicks_fall.tex:181
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
@@ -778,7 +768,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:191
+#: campaigns/inferno_steadwicks_fall.tex:186
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -794,7 +784,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:212
+#: campaigns/inferno_steadwicks_fall.tex:207
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -833,7 +823,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:216
+#: campaigns/inferno_steadwicks_fall.tex:211
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -843,7 +833,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:226
+#: campaigns/inferno_steadwicks_fall.tex:221
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -857,7 +847,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:241
+#: campaigns/inferno_steadwicks_fall.tex:236
 #, no-wrap
 msgid ""
 "  \\node at (3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N3}}}}};\n"
