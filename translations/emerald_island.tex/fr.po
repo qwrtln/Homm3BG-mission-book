@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:35+0200\n"
+"POT-Creation-Date: 2024-08-22 23:28+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -197,7 +197,7 @@ msgstr ""
 #: coops/emerald_island.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
+"\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
 
@@ -208,7 +208,7 @@ msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item Starting Tiles of your chosen Factions.\n"
-"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
+"  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -225,7 +225,7 @@ msgstr ""
 #: coops/emerald_island.tex:52
 #, no-wrap
 msgid ""
-"Flag all Mines and Settlements. (Don't forget the Building Materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a Level III fight.)\n"
+"Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
 

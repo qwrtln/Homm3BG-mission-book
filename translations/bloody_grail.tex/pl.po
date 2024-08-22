@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"POT-Creation-Date: 2024-08-22 23:28+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -248,10 +248,10 @@ msgstr ""
 #: clash/bloody_grail.tex:54
 #, no-wrap
 msgid ""
-"\\textbf{\\MakeUppercase{Note:}} Before placing the Near tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the tiles with an Obelisk are not placed adjacent to each other.\n"
+"\\textbf{\\MakeUppercase{Note:}} Before placing the Near Tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the Tiles with an Obelisk are not placed adjacent to each other.\n"
 "\n"
 msgstr ""
-"\\textbf{\\MakeUppercase{Uwaga:}} Przed umieszczeniem Bliskich kafelków, podziel je na 2 stosy (z Obeliskiem i bez). Umieszczaj je naprzemiennie, aby Kafelki z Obeliskiem nie były umieszczane obok siebie.\n"
+"\\textbf{\\MakeUppercase{Uwaga:}} Przed umieszczeniem Bliskich Kafelków, podziel je na 2 stosy (z Obeliskiem i bez). Umieszczaj je naprzemiennie, aby Kafelki z Obeliskiem nie były umieszczane obok siebie.\n"
 "\n"
 
 #. type: multicols*
@@ -325,7 +325,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far tiles, Minor or Major Artifacts on Near tiles, and Major or Relic Artifacts on Center tiles.\n"
+"  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far Tiles, Minor or Major Artifacts on Near Tiles, and Major or Relic Artifacts on Center Tiles.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
