@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-20 17:49+0200\n"
+"POT-Creation-Date: 2024-08-22 18:21+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -282,7 +282,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -305,7 +305,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -342,7 +342,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -423,7 +423,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:91 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
+#: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
@@ -450,7 +450,7 @@ msgstr ""
 #| "\n"
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied hero.\n"
+"  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied Hero.\n"
 "  \\item The Hero who defeats an enemy army gains 2 \\svg{experience}.\n"
 "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
 "  \\item Additionally, no player can:\n"

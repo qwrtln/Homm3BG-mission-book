@@ -598,7 +598,6 @@ msgstr ""
 
 #. type: Plain text
 #: clash/the_hunt.tex:276
-#, msgid ""
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
 "Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
@@ -690,7 +689,6 @@ msgstr ""
 
 #. type: Plain text
 #: clash/the_hunt.tex:348
-#, msgid ""
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
 "Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
