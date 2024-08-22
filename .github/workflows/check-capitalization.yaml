@@ -23,7 +23,7 @@ jobs:
             do
               if grep -qP "\s$word" $file; then
                 echo "---"
-                echo "Found $word instead of ${word^} in $file:" | grep -i $word --color=always
+                echo "Found \"$word\" instead of \"${word^}\" in $file:" | grep -i $word --color=always
                 grep -nHP --color=always "\s$word" $file
                 ERRORS=1
               fi
