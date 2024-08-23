@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-04 22:41+0200\n"
+"POT-Creation-Date: 2024-08-20 20:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 #: sections/what_to_play.tex:7
 #, no-wrap
 msgid ""
-"Follow these suggestions if you're not sure which scenario is best for you.\n"
+"Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 #: sections/what_to_play.tex:19
 #, no-wrap
 msgid ""
-"If you'd like to play a 2- or 4-player ``capture the Grail'' scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+"If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
 "For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
@@ -91,7 +91,7 @@ msgstr ""
 #: sections/what_to_play.tex:23
 #, no-wrap
 msgid ""
-"There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+"There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
 
@@ -107,6 +107,6 @@ msgstr ""
 #: sections/what_to_play.tex:27
 #, no-wrap
 msgid ""
-"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
+"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
 "\n"
 msgstr ""
