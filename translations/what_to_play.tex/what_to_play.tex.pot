@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-08-20 20:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/what_to_play.tex:3
+msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:7
+#, no-wrap
+msgid ""
+"Follow these suggestions if you're not sure which Scenario is best for you.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:9
+#, no-wrap
+msgid ""
+"\\subsection*{Cooperative Mode}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:13
+#, no-wrap
+msgid ""
+"If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
+"For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
+"For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:15
+#, no-wrap
+msgid ""
+"\\subsection*{Clash Mode}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:19
+#, no-wrap
+msgid ""
+"If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+"For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
+"For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:21
+#, no-wrap
+msgid ""
+"\\subsection*{Campaign}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:23
+#, no-wrap
+msgid ""
+"There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:25
+#, no-wrap
+msgid ""
+"\\subsection*{Recommendations}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/what_to_play.tex:27
+#, no-wrap
+msgid ""
+"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
+"\n"
+msgstr ""

@@ -1,0 +1,135 @@
+# Polish translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-08-20 20:10+0200\n"
+"PO-Revision-Date: 2024-08-04 22:13+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/what_to_play.tex:3
+msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
+msgstr "\\addsection{W co zagrać}{\\images/forgetfulness.png}"
+
+#. type: multicols
+#: sections/what_to_play.tex:7
+#, no-wrap
+msgid ""
+"Follow these suggestions if you're not sure which Scenario is best for you.\n"
+"\n"
+msgstr ""
+"Skorzystaj z tych sugestii, jeśli nie jesteś pewien, który Scenariusz jest dla ciebie najlepszy.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:9
+#, no-wrap
+msgid ""
+"\\subsection*{Cooperative Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Tryb Kooperacyjny}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:13
+#, no-wrap
+msgid ""
+"If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
+"For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
+"For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
+"\n"
+msgstr ""
+"Jeśli jesteś nowicjuszem i chcesz \\textbf{opanować zasady}, zacznij od \\pagelink{Wyspa Szmaragdów}{Wyspy Szmaragdów}.\n"
+"Jeśli szukasz wielkiej przygody dla \\textbf{do 6 graczy} z epicką bitwą na końcu, wypróbuj \\pagelink{Twierdza Tytanów}{Twierdzę Tytanów}.\n"
+"Dla bardziej strategicznych zmagań dla dwóch graczy, wybierz \\pagelink{Strażnicy}{Strażników}.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:15
+#, no-wrap
+msgid ""
+"\\subsection*{Clash Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Tryb Starcia}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:19
+#, no-wrap
+msgid ""
+"If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+"For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
+"For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
+"\n"
+msgstr ""
+"Jeśli szukasz Scenariusza dla 2 lub 4 graczy z ciekawymi zwrotami akcji, wypróbuj \\pagelink{Krwawy Graal}{Krwawy Graal}.\n"
+"Dla ekscytującej walki z bossem dla 2-3 graczy, wybierz \\pagelink{Polowanie}{Polowanie}.\n"
+"Dla epickiej bitwy między dwoma graczami z możliwym oblężeniem zagraj w \\pagelink{Zamek Smoczej Klątwy}{Zamek Smoczej Klątwy}.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:21
+#, no-wrap
+msgid ""
+"\\subsection*{Campaign}\n"
+"\n"
+msgstr ""
+"\\subsection*{Kampania}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:23
+#, no-wrap
+msgid ""
+"There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+"\n"
+msgstr ""
+"Na końcu znajduje się 3-Scenariuszowa kampania Inferna \\pagelink{1. Diabelski Plan}{Podziemia i Diabły}, jeśli preferujesz grę solo.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:25
+#, no-wrap
+msgid ""
+"\\subsection*{Recommendations}\n"
+"\n"
+msgstr ""
+"\\subsection*{Zalecenia}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:27
+#, no-wrap
+msgid ""
+"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
+"\n"
+msgstr ""
+"Aby uzyskać informacje dotyczące czasu gry, strategii i niestandardowych zasad, zapoznaj się z \\pagelink{Zalecenia}{Zaleceniami} na końcu księgi.\n"
+"\n"

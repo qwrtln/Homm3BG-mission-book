@@ -14,3 +14,8 @@ po4a.cfg @qwrtln @tomaas-zeman
 **/pl.po @qwrtln
 /translations/assets/pl/ @qwrtln
 main_pl.tex @qwrtln
+
+# Czech
+**/cs.po @tomaas-zeman @qwrtln
+/translations/assets/cs/ @tomaas-zeman @qwrtln
+main_cs.tex @tomaas-zeman @qwrtln

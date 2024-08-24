@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-10 11:52+0200\n"
+"POT-Creation-Date: 2024-08-22 23:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,16 +20,17 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative scenario}{Sentinels}{\\images/sentinel."
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -63,8 +64,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:16
+#. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
@@ -75,20 +79,24 @@ msgstr ""
 #: coops/sentinels.tex:18
 #, no-wrap
 msgid ""
-"This scenario is played over 12 rounds.\n"
+"This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:20
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:22
+#. type: multicols*
+#: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2\n"
@@ -96,20 +104,30 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:25
+#: coops/sentinels.tex:24
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:28 coops/titans_stronghold.tex:29 clash/the_hunt.tex:25
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{2}{1}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
 
@@ -117,11 +135,7 @@ msgstr ""
 #: coops/sentinels.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} recruitment cost\n"
-"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} recruitment cost\n"
-"\\end{itemize}\n"
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
 
@@ -129,7 +143,7 @@ msgstr ""
 #: coops/sentinels.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
+"\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
 
@@ -137,21 +151,16 @@ msgstr ""
 #: coops/sentinels.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Near (IV--V) Map tile and 1 random Far (II--III) Map tile. These tiles should not contain any Obelisks.\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/sentinels.tex:40
-#, no-wrap
-msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -159,10 +168,22 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:71
+#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
 #, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:48
+#, no-wrap
+msgid ""
+"\\textbf{2 × Starting (I) Map Tile}\n"
+"\\begin{itemize}\n"
+"  \\item Starting Tiles of your chosen Factions\n"
+"  \\item Ignore their yellow borders\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
 
@@ -170,37 +191,25 @@ msgstr ""
 #: coops/sentinels.tex:50
 #, no-wrap
 msgid ""
-"\\textbf{2 × Starting (I) Map tile}\n"
-"\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen factions\n"
-"  \\item Ignore their yellow borders\n"
-"\\end{itemize}\n"
+"\\textbf{4 × Far (II--III) Map Tile}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:52
+#: coops/sentinels.tex:55
 #, no-wrap
 msgid ""
-"\\textbf{4 × Far (II--III) Map tile}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/sentinels.tex:57
-#, no-wrap
-msgid ""
-"\\textbf{4 × Near (IV--V) Map tile}\n"
+"\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item All Near Map tiles must have Obelisks\n"
+"  \\item All Near Map Tiles must have Obelisks\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -209,7 +218,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:61
+#: coops/sentinels.tex:59
 #, no-wrap
 msgid ""
 "Defeat all invading armies.\n"
@@ -217,9 +226,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:126
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -228,7 +237,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:65
+#: coops/sentinels.tex:63
 #, no-wrap
 msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
@@ -236,18 +245,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:67
+#: coops/sentinels.tex:65
 #, no-wrap
 msgid ""
-"One of your towns is captured, or a main hero is defeated in a battle (retreat doesn't count).\n"
+"One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:134
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -256,7 +265,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:75
+#: coops/sentinels.tex:73
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{6} Round:}\n"
@@ -268,7 +277,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:80
+#: coops/sentinels.tex:78
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
@@ -279,7 +288,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:85
+#: coops/sentinels.tex:83
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
@@ -290,7 +299,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:91
+#: coops/sentinels.tex:89
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -302,7 +311,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:93 clash/the_hunt.tex:74
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -310,12 +322,12 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:104
+#: coops/sentinels.tex:102
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Players can trade resources when one of the active player's heroes visits a trading post or stands on a field adjacent to an allied hero.\n"
-"  \\item The hero who defeats an enemy army gains 2 \\svg{experience}.\n"
+"  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied Hero.\n"
+"  \\item The Hero who defeats an enemy army gains 2 \\svg{experience}.\n"
 "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
@@ -327,7 +339,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:106
+#: coops/sentinels.tex:104
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
@@ -339,20 +351,22 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
-"  \\item Determine which Obelisk field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
-"  \\begin{itemize}[leftmargin=15pt]\n"
-"    \\item[] $+1$/$+1$ = North, $+1$/$-1$ = East\n"
-"    \\item[] $-1$/$+1$ = West, $-1$/$-1$ = South\n"
+"  \\item Enemy armies spawn on a random Obelisk Field (use Hero miniatures from Factions not in play).\n"
+"  \\item Determine which Obelisk Field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
+"  \\begin{itemize}\n"
+"    \\item $+1$/$+1$ = North\n"
+"    \\item $+1$/$-1$ = East\n"
+"    \\item $-1$/$+1$ = West\n"
+"    \\item $-1$/$-1$ = South\n"
 "  \\end{itemize}\n"
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
 "  Rounds 8 and 10 are entirely random.\n"
-"  \\item If the tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
-"  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
-"  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
-"  \\item Enemy armies have 3 MPs per round.\n"
+"  \\item If the Tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
+"  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
+"  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
+"  \\item Enemy armies have 3 MPs per Round.\n"
 "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
-"    Place Black cubes on any field they pass through, treating those fields as empty from that point on.\n"
+"    Place Black cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
 "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
 "\\end{itemize}\n"
 "\n"
@@ -372,10 +386,10 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
-"  \\item During a battle with an enemy army, a hero can retreat whenever a friendly unit is about to activate.\n"
-"    A retreating main Hero loses all remaining MPs and is returned to an allied town or settlement of their choice, keeping all remaining units.\n"
-"  \\item Retreating secondary heroes are removed from the game, but their remaining units are kept.\n"
-"  \\item Killed enemy units do not respawn.\n"
+"  \\item During a battle with an enemy army, a Hero can retreat whenever a friendly Unit is about to Activate.\n"
+"    A retreating Main Hero loses all remaining MPs and is returned to an allied Town or Settlement of their choice, keeping all remaining Units.\n"
+"  \\item Retreating Secondary Heroes are removed from the game, but their remaining Units are kept.\n"
+"  \\item Killed enemy Units do not respawn.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -393,18 +407,17 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is reinforced from a fixed pool of neutral units (reinforcement pool = number in brackets in the table below).\n"
-"  \\item At the beginning of the \\nth{2} combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
-"  \\item Place the reinforcing units on the enemy base line, starting from the left with the lowest initiative (\\svg{unit_ranged} units first). If necessary, continue on the next line in the same order.\n"
-"  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 units and takes these as starting units to the next fight.\n"
+"  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
+"  \\item At the beginning of the \\nth{2} Combat Round and every following Round, 2 Units Reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 Units) to continue the fight until either the player retreats or every Neutral Unit from the Reinforcement pool is killed. \\textit{If the number of enemy Units at the beginning of a Round is 1 or lower, draw up to a total of 4 Units (i.e., there are always 4 or 5 enemy Units on the Board after Reinforcing, if available).}\n"
+"  \\item Place the Reinforcing Units on the enemy base line, starting from the left with the lowest Initiative (\\svg{unit_ranged} Units first). If necessary, continue on the next line in the same order.\n"
+"  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 Units and takes these as starting Units to the next fight.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:43
-#: campaigns/inferno_steadwicks_fall.tex:198
-#: campaigns/inferno_deal_with_the_devil.tex:152 sections/credits.tex:25
+#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -412,9 +425,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
-#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
-#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -427,11 +440,11 @@ msgstr ""
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 1.5) {\\includegraphics[width=0.4\\paperwidth]{\\_assets/maps/sentinels.png}};"
+"  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:192
+#: coops/sentinels.tex:191
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
@@ -458,8 +471,8 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:195
+#: coops/sentinels.tex:194
 msgid ""
-"Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
+"Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""

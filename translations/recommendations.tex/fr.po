@@ -1,0 +1,269 @@
+# French translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"PO-Revision-Date: 2024-07-28 15:06+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/recommendations.tex:3
+msgid "\\addsection{Recommendations}{\\art/haste.png}"
+msgstr ""
+
+#. type: Plain text
+#: sections/recommendations.tex:5
+msgid "\\iftoggle{printable}{}{\\bigbreak}"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"We've compiled some custom rules and best practices to enhance your gaming experience.\n"
+"Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+"Enjoy!\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:12
+#, no-wrap
+msgid ""
+"\\subsection*{Play Time}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:14
+#, no-wrap
+msgid ""
+"You can estimate your \\textbf{minimal} play time using the following formula:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:18
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  Play Time $= \\boldsymbol{P × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:24
+#, no-wrap
+msgid ""
+"Where:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{P}$] -- number of players\n"
+"  \\item[$\\textbf{R}$] -- number of Rounds\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:27
+#, no-wrap
+msgid ""
+"For example, if you're playing a 3-player Scenario consisting of 12 Rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
+"Your expected minimal play time would be around 3 hours.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:30
+#, no-wrap
+msgid ""
+"To calculate the \\textbf{upper bound} of your play time (more realistic if there are inexperienced players), simply double the result.\n"
+"In this case, that would be 6 hours.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:32
+#, no-wrap
+msgid ""
+"\\subsection*{Magic Arrows}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:35
+#, no-wrap
+msgid ""
+"Except for the Magic Arrow, each Spell appears exactly twice in the Spell Deck.\n"
+"After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:37
+#, no-wrap
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:39
+#, no-wrap
+msgid ""
+"Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:41
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:43
+#, no-wrap
+msgid ""
+"\\subsection*{Combat with Neutral Units}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:45
+#, no-wrap
+msgid ""
+"During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:49
+#, no-wrap
+msgid ""
+"Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
+"The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
+"See examples that follow.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:53
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: figure*
+#: sections/recommendations.tex:74
+#, no-wrap
+msgid ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
+"      The Peasants must also start the Combat on the left side.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+msgstr ""
+
+#. type: figure*
+#: sections/recommendations.tex:94
+#, no-wrap
+msgid ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:98
+#, no-wrap
+msgid ""
+"\\subsection*{General Recommendations}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:100
+#, no-wrap
+msgid ""
+"The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:107
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
+"  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
+"    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
+"  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:111
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""

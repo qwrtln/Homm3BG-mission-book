@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-03 17:00+0200\n"
+"POT-Creation-Date: 2024-08-22 23:28+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,9 +20,10 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -30,10 +31,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:114
-#: campaigns/inferno_steadwicks_fall.tex:134
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -44,9 +45,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:105
-#: coops/titans_stronghold.tex:111 clash/bloody_grail.tex:123
-#: clash/bloody_grail.tex:129 sections/credits.tex:27 sections/credits.tex:31
+#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -54,8 +55,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -65,13 +67,14 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
-#, fuzzy, no-wrap
+#: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
+#: clash/dragoncurse_castle.tex:34
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -81,6 +84,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-grail."
 "png}"
 msgstr ""
+"\\addscenariosection{1}{Tryb Starcia}{Krwawy Graal}{\\images/bloody-grail."
+"png}"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:7
@@ -89,6 +94,8 @@ msgid ""
 "\\textbf{Author:} Re4XN\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Re4XN\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:9
@@ -97,6 +104,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Discord Archon Studio}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:11
@@ -105,15 +114,20 @@ msgid ""
 "\\textit{A lady clad in dark robes visits you in your dreams, offering you a golden chalice filled with blood-red wine. Waking up in a cold sweat, you decide to embark on a quest to find this unholy artifact.}\n"
 "\n"
 msgstr ""
+"\\textit{Dama odziana w ciemne szaty odwiedza cię w snach, oferując złoty kielich wypełniony krwistoczerwonym winem. Budząc się zlany zimnym potem, postanawiasz wyruszyć na wyprawę, by znaleźć ten przeklęty artefakt.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:14
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"This scenario is played over 13 rounds.\n"
+"This Scenario is played over 13 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"Ten Scenariusz rozgrywany jest w 13 Rundach.\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:17
@@ -123,177 +137,215 @@ msgid ""
 "\\textbf{Player Count:} 2 or 4\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\\textbf{Liczba Graczy:} 2 lub 4\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:20
+#: clash/bloody_grail.tex:19
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{13}{2}{1}\n"
+"\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:23 campaigns/inferno_devilish_plan.tex:32
-#: campaigns/inferno_deal_with_the_devil.tex:30
+#: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{0}{0}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:}\\par\n"
-"\\resources{10}{0}{0}\n"
+"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\svg{bronze} units of your choice.\n"
-#| "  \\item A Few \\svg{bronze} units of your choice.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: clash/bloody_grail.tex:27
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} Recruitment cost\n"
-"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} jednostek do wyboru.\n"
-"  \\item Garstka \\svg{bronze} jednostek do wyboru.\n"
+"  \\item Garstka \\svg{bronze} Jednostek o \\textit{najwyższym} koszcie Rekrutacji\n"
+"  \\item Grupa \\svg{bronze} Kednostek o \\textit{najniższym} koszcie Rekrutacji\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:33
+#: clash/bloody_grail.tex:31
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} Each player takes 2 random Far (II--III) Map tiles, one of which must contain a Settlement\n"
+"\\textbf{Map Tile Pool:} Each player takes 2 random Far (II--III) Map Tiles, one of which must contain a Settlement\n"
 "\n"
 msgstr ""
+"\\textbf{Pula Kafelków Mapy:} Każdy gracz bierze 2 losowe Dalekie (II--III) Kafelki Mapy, z których jeden musi zawierać Osadę\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:38
+#: clash/bloody_grail.tex:36
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:46
+#: clash/bloody_grail.tex:44
 #, no-wrap
 msgid ""
-"\\textbf{For a 2-player scenario:}\n"
+"\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Starting (I) Map tile\n"
-"  \\item 4 × Near (IV--V) Map tile, all of which must contain an Obelisk\n"
-"  \\item 4 × Far (II--III) Map tile, 2 of which must contain a Settlement\n"
-"  \\item 1 × Center (VI--VII) Map tile, which must contain the Grail field\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 4 × Near (IV--V) Map Tile, all of which must contain an Obelisk\n"
+"  \\item 4 × Far (II--III) Map Tile, 2 of which must contain a Settlement\n"
+"  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Dla Scenariusza dwuosobowego:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 4 × Bliski (IV--V) Kafelek Mapy, z których każdy musi zawierać Obelisk\n"
+"  \\item 4 × Daleki (II--III) Kafelek Mapy, z których 2 muszą zawierać Osadę\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać pole Graala\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: clash/bloody_grail.tex:52
+#, no-wrap
+msgid ""
+"\\textbf{For a 4-player Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item 4 × Starting (I) Map Tile\n"
+"  \\item 6 × Near (IV--V) Map Tile, 4 of which must contain an Obelisk\n"
+"  \\item 8 × Far (II--III) Map Tile, 4 of which must contain a Settlement\n"
+"  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Dla Scenariusza czetroosobowego:}\n"
+"\\begin{itemize}\n"
+"  \\item 4 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 6 × Bliski (IV--V) Kafelek Mapy, z których 4 muszą zawierać Obelisk\n"
+"  \\item 8 × Daleki (II--III) Kafelek Mapy, z których 4 muszą zawierać Osadę\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać pole Graala\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:54
 #, no-wrap
 msgid ""
-"\\textbf{For a 4-player scenario:}\n"
-"\\begin{itemize}\n"
-"  \\item 4 × Starting (I) Map tile\n"
-"  \\item 6 × Near (IV--V) Map tile, 4 of which must contain an Obelisk\n"
-"  \\item 8 × Far (II--III) Map tile, 4 of which must contain a Settlement\n"
-"  \\item 1 × Center (VI--VII) Map tile, which must contain the Grail field\n"
-"\\end{itemize}\n"
+"\\textbf{\\MakeUppercase{Note:}} Before placing the Near Tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the Tiles with an Obelisk are not placed adjacent to each other.\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: clash/bloody_grail.tex:56
-#, no-wrap
-msgid ""
-"\\textbf{\\MakeUppercase{Note:}} Before placing the Near tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the tiles with an Obelisk are not placed adjacent to each other.\n"
+"\\textbf{\\MakeUppercase{Uwaga:}} Przed umieszczeniem Bliskich Kafelków, podziel je na 2 stosy (z Obeliskiem i bez). Umieszczaj je naprzemiennie, aby Kafelki z Obeliskiem nie były umieszczane obok siebie.\n"
 "\n"
-msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:59
+#: clash/bloody_grail.tex:57
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-"To win the scenario, a Hero must obtain the Grail token and bring it to their faction Town.\n"
+"To win the Scenario, a Hero must obtain the Grail Token and bring it to their Faction Town.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
+"Zdobądź Żeton Graala i przynieść go do Miasta swojej Frakcji.\n"
+"\n"
+
+#. type: multicols*
+#: clash/bloody_grail.tex:60
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"If the Grail is not obtained at least once by the end of the \\nth{13} Round, the game ends, and all players lose the Scenario.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
+"Jeśli Graal nie zostanie zdobyty przynajmniej raz do końca 13. Rundy, gra się kończy, a wszyscy gracze przegrywają Scenariusz.\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:62
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"If the Grail is not obtained at least once by the end of the \\nth{13} round, the game ends, and all players lose the scenario.\n"
+"If the Grail Token has been obtained, the players gain additional time (until the end of the \\nth{16} Round) to bring the Grail to their Faction's Town. Otherwise, all players lose the Scenario.\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: clash/bloody_grail.tex:64
-#, no-wrap
-msgid ""
-"If the Grail token has been obtained, the players gain additional time (until the end of the \\nth{16} round) to bring the Grail to their faction's Town. Otherwise, all players lose the scenario.\n"
+"Jeśli token Graala został zdobyty, gracze zyskują dodatkowy czas (do końca 16. Rundy), aby przynieść Graal do Miasta swojej Frakcji. W przeciwnym razie wszyscy gracze przegrywają Scenariusz.\n"
 "\n"
-msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:73
+#: clash/bloody_grail.tex:71
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{6}, \\nth{9} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from every Water Wheel and Windmill on the map.\n"
-"  \\item All players possessing the title of ``\\textcolor{darkcerulean}{Grail Knight}'' gain \\svg{morale_positive}.\n"
+"  \\item All players possessing the title of ``\\textcolor{cobalt}{Grail Knight}'' gain \\svg{morale_positive}.\n"
 "  \\item All players who do not possess a title gain 2 \\svg{morale_negative}.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Rundy 6., 9. i 12.:}\n"
+"\\begin{itemize}\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka i Młyna Wodnego na mapie.\n"
+"  \\item Wszyscy gracze posiadający tytuł ``\\textcolor{cobalt}{Rycerza Graala}'' zyskują \\svg{morale_positive}.\n"
+"  \\item Wszyscy gracze, którzy nie posiadają tytułu, otrzymują 2 \\svg{morale_negative}.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:76
+#: clash/bloody_grail.tex:74
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-"Before this scenario:\n"
+"Before this Scenario:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"Przed rozpoczęciem Scenariusza:\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:80
+#: clash/bloody_grail.tex:78
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Split the Artifact deck by rarity into 3 separate decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far tiles, Minor or Major Artifacts on Near tiles, and Major or Relic Artifacts on Center tiles.\n"
+"  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far Tiles, Minor or Major Artifacts on Near Tiles, and Major or Relic Artifacts on Center Tiles.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Podziel Talię Artefaktów według rzadkości na 3 osobne Talie (Słabe, Mocne i Relikty). Gracz może zdobywać tylko Słabe Artefakty na Początkowych lub Dalekich Kafelkach, Słabe lub Mocnej Artefakty na Bliskich Kafelkach, oraz Mocne lub Relikty na Centralnych Kafelkach.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:82 clash/the_hunt.tex:83
+#: clash/bloody_grail.tex:80 clash/the_hunt.tex:81
 #, no-wrap
 msgid ""
-"During this scenario:\n"
+"During this Scenario:\n"
 "\n"
 msgstr ""
-"Podczas tego scenariusza:\n"
+"Podczas tego Scenariusza:\n"
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:121
+#: clash/bloody_grail.tex:119
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -303,42 +355,81 @@ msgid ""
 "    \\begin{enumerate}\n"
 "      \\item \\textbf{[1st Obelisk]} Roll 2 \\svg{treasure} and choose 1 to resolve; then, gain \\svg{morale_negative}.\n"
 "      \\item \\textbf{[2nd Obelisk]} Increase your \\svg{gold}, \\svg{building_materials}, or \\svg{valuables} income by 1 step.\n"
-"      \\item \\textbf{[3rd Obelisk]} You gain a Secondary Hero. Place their model on this field. If you already have a Secondary Hero, gain 3 \\svg{gold} instead. Then, choose one enemy player to discard 2 random cards from their hand.\n"
-"      \\item \\textbf{[4th Obelisk]} Remove up to 4 cards from your hand, except Statistic cards; then, search each corresponding deck for a card of your choice and put it in your hand.\n"
+"      \\item \\textbf{[3rd Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have a Secondary Hero, gain 3 \\svg{gold} instead. Then, choose one enemy player to discard 2 random cards from their hand.\n"
+"      \\item \\textbf{[4th Obelisk]} Remove up to 4 cards from your hand, except Statistic cards; then, search each corresponding Deck for a card of your choice and put it in your hand.\n"
 "    \\end{enumerate}\n"
-"    \\item \\textbf{[Sacrifice]} Remove a * faction Unit card from your Unit deck in exchange for:\n"
+"    \\item \\textbf{[Sacrifice]} Remove a * Faction Unit card from your Unit Deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact deck.\n"
-"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact deck.\n"
-"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svgunit{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
+"      \\item *\\svgunit{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
+"      \\item *\\svgunit{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic card Deck. Finally, if the Unit card was on the Pack side, \\textbf{Search (2)} the \\svgunit{azure} Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
-"  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
-"  \\item A player that chooses \\textbf{Cleanse} at an Obelisk gains the title of ``\\textcolor{darkcerulean}{Grail Knight}.'' Place a blue faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcerulean}{Grail Knight} may never choose the \\textbf{Sacrifice} option when Visiting an Obelisk.\n"
-"  \\item When a player chooses \\textbf{Sacrifice} at an Obelisk, place a number of faction cubes on the sacrificed Unit card and on the Obelisk field equivalent to the number of times the player has chosen the \\textbf{Sacrifice} option. For example, if the player is sacrificing for the second time, place 2 faction cubes on the Unit card and 2 faction cubes on the Obelisk field.\n"
-"  \\item A player who possesses the title of ``\\textcolor{darkcerulean}{Grail Knight}'' may, after Visiting an Obelisk, recruit an enemy Unit sacrificed at that Obelisk for half the cost (rounded down); if a Pack was sacrificed, the player may choose to recruit Few instead.\n"
-"  \\item If a Unit recruited at an Obelisk is defeated, Remove it.\n"
+"  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red Faction cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
+"  \\item A player that chooses \\textbf{Cleanse} at an Obelisk gains the title of ``\\textcolor{cobalt}{Grail Knight}.'' Place a blue Faction cube on their Hero portrait to mark this effect. A \\textcolor{cobalt}{Grail Knight} may never choose the \\textbf{Sacrifice} option when Visiting an Obelisk.\n"
+"  \\item When a player chooses \\textbf{Sacrifice} at an Obelisk, place a number of Faction cubes on the sacrificed Unit card and on the Obelisk Field equivalent to the number of times the player has chosen the \\textbf{Sacrifice} option. For example, if the player is sacrificing for the second time, place 2 Faction cubes on the Unit card and 2 Faction cubes on the Obelisk Field.\n"
+"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may, after Visiting an Obelisk, Recruit an enemy Unit sacrificed at that Obelisk for half the cost (rounded down); if a Pack was sacrificed, the player may choose to Recruit Few instead.\n"
+"  \\item If a Unit Recruited at an Obelisk is defeated, remove it.\n"
 "  \\item A player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' may not use the Diplomacy Ability card. If a player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' draws the Diplomacy Ability card, they may show it to the other players, then discard it and draw a new Ability card in its stead.\n"
-"  \\item A player who possesses the title of ``\\textcolor{darkcerulean}{Grail Knight}'' may not use the Diplomacy Ability card to Recruit Neutral Azure Units.\n"
+"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may not use the Diplomacy Ability card to Recruit Neutral \\svgunit{azure} Units.\n"
 "  \\item Whenever an Astrologers Proclaim or Event card that allows you to Recruit Neutral Units is drawn, ignore it and draw a new Astrologers Proclaim or Event card.\n"
-"  \\item Players can use their Deck of Might \\& Magic when paying gold to defend their faction Town.\n"
-"  \\item Ignore Combat encounters on the field with the Grail.\n"
-"  \\item Players may not Visit the field with the Grail token unless they have already Visited at least two Obelisks or the Grail token has been taken by any Hero at least once.\n"
-"  \\item To obtain the Grail token, a player’s Hero must spend 2 MPs on the field with the Grail.\n"
-"  \\item If a player does not possess the title of ``\\textcolor{darkcandyapplered}{Blood Knight},'' they must Remove a faction Unit card from their Unit deck immediately after obtaining the Grail token. This effect can only occur once per player.\n"
-"  \\item If another Hero defeats the Hero with the Grail token, they also take the Grail token.\n"
-"  \\item If a Hero with the Grail token Surrenders, the Grail token is placed on the hex where the Hero Surrendered.\n"
-"  \\item If a Neutral army defeats the Hero with the Grail token, the Grail token is placed on the field where the Hero was defeated.\n"
-"  \\item If a Hero with the Grail token casts Town Portal or uses the Inferno faction Castle Gate building, the Grail token is placed on the hex where the spell was cast or the building used.\n"
-"  \\item The Grail token behaves like a Permanent card that does not count towards your hand limit and cannot be discarded; it grants the following effect when played: ``$\\infty$ Once during each Combat, if the Hero is a \\textcolor{darkcandyapplered}{Blood Knight}, discard a card to remove up to 2 \\svg{damage-red} from your units and assign it to enemy units.''\n"
-"  \\item A Hero with the Grail token who possesses the title of ``\\textcolor{darkcerulean}{Grail Knight}'' may pay 10 \\svg{gold} or 3 \\svg{valuables} at any Temple map location to cleanse the Grail. Place a blue faction cube on the Grail token to mark this effect.\n"
-"  \\item Once cleansed, the Grail token behaves like a Permanent card that does not count towards your hand limit and cannot be discarded; it grants the following effect when played: ``$\\infty$ Once during each Combat round, if the Hero is a \\textcolor{darkcerulean}{Grail Knight}, discard a card to remove up to 2 \\svg{damage-red} from your units.''\n"
+"  \\item Players can use their Deck of Might \\& Magic when paying gold to defend their Faction Town.\n"
+"  \\item Ignore Combat encounters on the Field with the Grail.\n"
+"  \\item Players may not Visit the Field with the Grail Token unless they have already Visited at least two Obelisks or the Grail Token has been taken by any Hero at least once.\n"
+"  \\item To obtain the Grail Token, a player’s Hero must spend 2 MPs on the Field with the Grail.\n"
+"  \\item If a player does not possess the title of ``\\textcolor{darkcandyapplered}{Blood Knight},'' they must Remove a Faction Unit card from their Unit Deck immediately after obtaining the Grail Token. This effect can only occur once per player.\n"
+"  \\item If another Hero defeats the Hero with the Grail Token, they also take the Grail Token.\n"
+"  \\item If a Hero with the Grail Token Surrenders, the Grail Token is placed on the hex where the Hero Surrendered.\n"
+"  \\item If a Neutral army defeats the Hero with the Grail Token, the Grail Token is placed on the Field where the Hero was defeated.\n"
+"  \\item If a Hero with the Grail Token casts Town Portal or uses the Inferno Faction Castle Gate building, the Grail Token is placed on the hex where the Spell was cast or the building used.\n"
+"  \\item The Grail Token behaves like a Permanent card that does not count towards your hand limit and cannot be discarded; it grants the following effect when played: ``$\\infty$ Once during each Combat, if the Hero is a \\textcolor{darkcandyapplered}{Blood Knight}, discard a card to remove up to 2 \\svg{damage-red} from your Units and assign it to enemy Units.''\n"
+"  \\item A Hero with the Grail Token who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may pay 10 \\svg{gold} or 3 \\svg{valuables} at any Temple map location to cleanse the Grail. Place a blue Faction cube on the Grail Token to mark this effect.\n"
+"  \\item Once cleansed, the Grail Token behaves like a Permanent card that does not count towards your hand limit and cannot be discarded; it grants the following effect when played: ``$\\infty$ Once during each Combat Round, if the Hero is a \\textcolor{cobalt}{Grail Knight}, discard a card to remove up to 2 \\svg{damage-red} from your Units.''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Kiedy gracz odwiedza Obelisk, \\textit{musi} wybrać jeden z następujących efektów:\n"
+"  \\begin{enumerate}[leftmargin=15pt]\n"
+"    \\item \\textbf{[Oczyszczenie]} Gracz otrzymuje jedną z korzyści, w zależności od liczby odwiedzonych Obelisków:\n"
+"    \\begin{enumerate}\n"
+"      \\item \\textbf{[1. Obelisk]} Rzuć 2 \\svg{treasure} i rozpatrz 1; następnie otrzymaj \\svg{morale_negative}.\n"
+"      \\item \\textbf{[2. Obelisk]} Zwiększ swoje dochody \\svg{gold}, \\svg{building_materials}, lub \\svg{valuables} o 1 krok.\n"
+"      \\item \\textbf{[3. Obelisk]} Zyskujesz Pomocnizego Bohatera. Umieść jego figurkę na tym Polu. Jeśli już masz Pomocniczego Bohatera, zyskaj 3 \\svg{gold}. Następnie wybierz wrogiego gracza, aby odrzucił 2 losowe karty ze swojej ręki.\n"
+"      \\item \\textbf{[4. Obelisk]} Usuń do 4 kart ze swojej ręki, z wyjątkiem kart Statystyk; następnie przeszukaj każdą odpowiednią Talię i wybierz kartę, którą dodasz do swojej ręki.\n"
+"    \\end{enumerate}\n"
+"    \\item \\textbf{[Ofiara]} Usuń * kartę Jednostki Frakcji ze swojej Talii Jednostek w zamian za:\n"
+"    \\begin{enumerate}\n"
+"      \\item *\\svgunit{bronze}: Zyskaj 6 \\svg{gold}, 3 \\svg{building_materials} i 1 \\svg{valuables}. Dodatkowo, jeśli karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (4)} Talię Słabych Artefaktów.\n"
+"      \\item *\\svgunit{silver}: Zyskaj 12 \\svg{gold}, 6 \\svg{building_materials} i 2 \\svg{valuables}. Dodatkowo, jeśli karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (3)} Talię Mocnych Artefaktów.\n"
+"      \\item *\\svgunit{golden}: Zyskaj 18 \\svg{gold}, 9 \\svg{building_materials} i 3 \\svg{valuables}. Dodatkowo, \\textbf{Przeszukaj (2)} Talię Reliktów. Jeśli karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (2)} Talię Jednostek \\svgunit{azure}; możesz Zrekrutować jedną z tych Jednostek za połowę kosztu (zaokrąglonego w dół).\n"
+"    \\end{enumerate}\n"
+"  \\end{enumerate}\n"
+"  \\item Gracz, który wybierze \\textbf{Ofiarę} przy Obelisku, zyskuje tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}''. Umieść czerwoną kostkę Frakcji na portrecie swojego Bohatera, aby oznaczyć ten efekt. \\textcolor{darkcandyapplered}{Rycerz Krwi} nigdy nie może wybrać opcji \\textbf{Oczyszczenia} podczas Odwiedzania Obelisku.\n"
+"  \\item Gracz, który wybiera \\textbf{Oczyszczenie} przy Obelisku, zyskuje tytuł ,,\\textcolor{cobalt}{Rycerza Graala}''. Umieść niebieską kostkę Frakcji na portrecie swojego Bohatera, aby oznaczyć ten efekt. \\textcolor{cobalt}{Rycerz Graala} nigdy nie może wybrać opcji \\textbf{Ofiary} podczas Odwiedzania Obelisku.\n"
+"  \\item Kiedy gracz wybiera \\textbf{Ofiarę} przy Obelisku, umieść liczbę kostek Frakcji równą liczbie razy, kiedy gracz składał \\textbf{Ofiarę}, na karcie Jednostki i na polu Obelisku. Na przykład jeśli gracz składa ofiarę po raz drugi, umieść 2 kostki Frakcji na karcie Jednostki i 2 kostki Frakcji na polu Obelisku.\n"
+"  \\item Gracz posiadający tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'' może po Odwiedzeniu Obelisku Zrekrutować wrogą Jednostkę ofiarowaną przy tym Obelisku za połowę kosztu (zaokrąglonego w dół); jeśli została ofiarowany Grupa, gracz może Zrekrutować Garstkę.\n"
+"  \\item Jeśli Zrekrutowana przy Obelisku Jednostka zostanie pokonana, usuń ją z gry.\n"
+"  \\item Gracz, który nie posiada tytułu lub posiada tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}'', nie może używać karty Dyplomacji. Jeśli gracz, który nie posiada tytułu lub posiada tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}'', dobierze kartę Dyplomacji, może ją pokazać innym graczom, następnie odrzucić i wylosować nową kartę Zdolności.\n"
+"  \\item Gracz posiadający tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'' nie może używać karty Dyplomacji do rekrutacji \\svgunit{azure} Jednostek Neutralnych.\n"
+"  \\item Kiedy wylosowana zostanie karta Astrologowie Ogłaszają lub karta Wydarzenia, która pozwala na rekrutację Jednostek Neutralnych, zignoruj ją i wylosuj nową kartę Astrologowie Ogłaszają lub kartę Wydarzenia.\n"
+"  \\item Gracze mogą używać swojej Talii Mocy i Magii, gdy płacą złoto za obronę Miasta swojej Frakcji.\n"
+"  \\item Zignoruj walkę z Jednostkami Neutralnymi na polu z Graalem.\n"
+"  \\item Gracze nie mogą odwiedzać pola z Żetonem Graala, chyba że wcześniej odwiedzili co najmniej dwa Obeliski lub Żeton Graala został zdobyty przez jakiegokolwiek Bohatera przynajmniej raz.\n"
+"  \\item Aby zdobyć Żeton Graala, Bohater musi wydać 2 punkty ruchu na polu z Graalem.\n"
+"  \\item Jeśli gracz nie posiada tytułu ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}'', musi usunąć kartę Jednostki Frakcji ze swojej Talii Jednostek natychmiast po zdobyciu Żetonu Graala. Ten efekt występuje tylko raz na gracza.\n"
+"  \\item Jeśli inny Bohater pokona Bohatera z Żetonem Graala, wygrany przechwytuje Żeton.\n"
+"  \\item Jeśli Bohater z Żetonem Graala podda się, Żeton Graala zostaje umieszczony na polu, na którym Bohater się poddał.\n"
+"  \\item Jeśli neutralna armia pokona Bohatera z Żetonem Graala, Żeton Graala zostaje umieszczony na polu, na którym Bohater został pokonany.\n"
+"  \\item Jeśli Bohater z Żetonem Graala rzuci Zaklęcie Magiczny Portal lub użyje budynku Wrót Wymiarów Frakcji Inferno, Żeton Graala zostaje umieszczony na polu, na którym rzucił Zaklęcie lub użył budynku.\n"
+"  \\item Żeton Graala zachowuje się jak karta Długotrwała, która nie liczy się do limitu kart na ręce i nie może być odrzucona; zapewnia następujący efekt po zagraniu: ``$\\infty$ Raz na każdą Rundę walki, jeśli Bohater jest \\textcolor{darkcandyapplered}{Rycerzem Krwi}, odrzuć kartę, aby usunąć do 2 \\svg{damage-red} z twoich Jednostek i przypisać je wrogim Jednostkom.''\n"
+"  \\item Bohater z Żetonem Graala, który posiada tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'', może zapłacić 10 \\svg{gold} lub 3 \\svg{valuables} na dowolnym polu Świątyni, aby oczyścić Graal. Umieść niebieską kostkę Frakcji na Żetonie Graala, aby oznaczyć ten efekt.\n"
+"  \\item Po oczyszczeniu Żeton Graala zachowuje się jak karta Długotrwała, która nie liczy się do limitu kart na ręce i nie może być odrzucona; zapewnia następujący efekt po zagraniu: ``$\\infty$ Raz na każdą Rundę walki, jeśli Bohater jest \\textcolor{cobalt}{Rycerzem Graala}, odrzuć kartę, aby usunąć do 2 \\svg{damage-red} z twoich Jednostek.''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:127
+#: clash/bloody_grail.tex:125
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -348,13 +439,19 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: clash/bloody_grail.tex:138
+#: clash/bloody_grail.tex:136
 #, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-2p.png}};\n"
+"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
 "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\_assets/maps/bloody-grail-4p.png}};\n"
+"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
 "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
+"  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
+"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
+"  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 4-OSOBOWY}}}};"
