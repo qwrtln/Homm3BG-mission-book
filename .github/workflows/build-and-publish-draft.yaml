@@ -12,8 +12,6 @@ on:
       - 'draft-scenarios/**'
 
 env:
-  PO4A_VERSION: "0.72"
-  PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   ARTIFACT_RETENTION_DAYS: 1
 
@@ -34,7 +32,7 @@ jobs:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
-          pre_compile: export HOMM3_GITHUB_BUILD=1
+          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
           root_file: drafts.tex
 
       - name: Install ghostscript
