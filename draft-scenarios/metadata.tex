@@ -1,0 +1,472 @@
+% Set page size and margins
+\usepackage[
+  a4paper,
+  top=2.43cm,
+  bottom=3cm,
+  left=1.5cm,
+  right=1.5cm,
+  marginparwidth=1.75cm,
+  footskip=2.05cm,
+]{geometry}
+
+% General language packages
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+% Useful packages
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{caption}
+\usepackage[strict]{changepage}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{float}
+\usepackage{fullwidth}
+\usepackage{graphicx, trimclip}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{hyperref}
+\usepackage[noautomatic, nonewpage]{imakeidx}
+\usepackage{multicol}
+\usepackage[super]{nth}
+\usepackage{outlines}
+\usepackage{paracol}
+\usepackage[section]{placeins}
+\usepackage{setspace}
+\usepackage{stfloats}
+\usepackage{subcaption}
+\usepackage[usetransparent=false]{svg}
+\usepackage{tabularx}
+\usepackage[subfigure]{tocloft}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{transparent}
+\usepackage{verbatim}
+\usepackage{varwidth}
+\usepackage{wrapfig}
+\usepackage[most]{tcolorbox}
+\usepackage{catchfile}
+\usepackage{xstring}
+\usepackage{soul}
+\usepackage{xifthen}
+\usepackage{xparse}
+
+\usepackage{tocloft}
+\renewcommand{\cftsubsecpagefont}{\bfseries}
+
+\usepackage[hang, symbol, perpage]{footmisc}
+\renewcommand{\footnotemargin}{1em}
+
+\newtcolorbox{scaledfigure}[1][]{height fill, space to=\myspace,#1}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=goldenbrown,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdftitle={Heroes of Might \& Magic III Fan-Made Draft Scenarios},
+  pdfpagemode=UseNone,
+}
+% Set the default spacing between paragraphs. Remove indentation.
+\usepackage[skip=6pt, indent=0pt]{parskip}
+\setstretch{1}
+
+% Default margins for itemize lists
+\setlist[itemize,2]{leftmargin=15pt, label=$\triangleright$}
+\setlist[enumerate,2]{leftmargin=15pt}
+
+% Get version from env
+% \getenv{variable_name} just prints the value
+% \getenv[\macro]{variable_name} stores the value in \macro for reusability
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\value}{"|echo \$#2"}{\endlinechar=-1}%
+  \if\relax\detokenize{#1}\relax\value\else\let#1\value\fi}
+
+% Add dots to the table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+\renewcommand\cftsecdotsep{\cftdot}
+\renewcommand\cftsubsecdotsep{\cftdot}
+
+\captionsetup[figure]{labelformat=empty}
+\captionsetup[subfigure]{labelformat=empty, singlelinecheck=off, justification=centering}
+\usetikzlibrary{shadows, shadows.blur, calc, backgrounds}
+
+\setlength{\columnsep}{1cm}
+\newtoggle{printable}
+\newtoggle{noartbackground}
+\newtoggle{githubbuild}
+
+% Variables
+\def\_assets{assets}
+
+\def\art{\_assets/art}
+\def\cards{\_assets/cards}
+\def\examples{\_assets/examples}
+\def\images{\_assets/images}
+\def\layout{\_assets/layout}
+\def\maps{\_assets/maps}
+\def\skills{\_assets/skills}
+\def\spells{\_assets/spells}
+\def\svgs{\_assets/glyphs}
+\def\notes_svgs{\svgs/for-notes}
+\def\tables{\_assets/tables}
+\def\qr{\_assets/qr-codes}
+
+\def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
+
+\newcommand{\svg}[2][10]{%
+  {\raisebox{-0.15\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
+}%
+
+\newcommand{\svgunit}[2][10]{%
+  {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
+}%
+
+\renewcommand{\labelitemi}{
+  \begin{tikzpicture}
+    \node (listdot) [circle, inner sep=-3] {\includegraphics[width=1em, valign=c]{\layout/listdot.png}};
+  \end{tikzpicture}
+}
+
+% Colors
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{antiquewhite}{rgb}{0.98, 0.92, 0.84}
+\definecolor{arylideyellow}{rgb}{0.96, 0.89, 0.58}
+\definecolor{bistre}{rgb}{0.24, 0.17, 0.12}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{camel}{rgb}{0.76, 0.6, 0.42}
+\definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
+\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
+\definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
+
+% Command to frame images
+\newcommand\framedimage[2][]{%
+  \begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\makebox[#1][c]{\includegraphics[width=#1]{#2}}};
+    \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
+    \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
+    \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
+  \end{tikzpicture}}
+% End of drop frame definition
+
+\titleformat{\section}
+{\huge}
+{\filright
+\footnotesize
+\enspace SECTION \thesection\enspace}
+{8pt}
+{\Huge\bfseries\filcenter\uppercase}
+
+\newfontfamily{\liberation}{LiberationSerif}
+[
+  Path = ../assets/fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic
+]
+
+\newcommand{\sectionheadertext}[2][antiquewhite]{
+  \color{#1}\MakeUppercase{\textbf{\liberation #2}}
+}
+
+%Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
+\newcommand{\addsection}[2]{
+  \vspace*{-5.72em}
+  \hspace*{-1.3em}
+  \makebox[0pt][l]{
+  \raisebox{-\totalheight}[0pt][7pt]{
+      \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#2}};
+      \end{tikzpicture}
+    }
+  }
+  \begin{fullwidth}[leftmargin=0.21\textwidth]
+    \begin{center}
+      \vspace{1em}
+      \vspace{\lang_header_adjustment}
+      \section*{\sectionheadertext{#1}}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+      \pagetarget{#1}{}
+    \end{center}
+  \end{fullwidth}
+  \vspace{1.75em}
+  \vspace{\lang_header_adjustment}
+}
+%End of create section heading.
+
+% Add title page for Scenario type
+\newcommand{\addscenariogroup}[2]{
+  \thispagestyle{empty}
+  \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+  \AddToHookNext{shipout/background}{%
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}%
+  }
+  \begin{tikzpicture}[remember picture, overlay, inner sep=10pt]
+    \node(cover)[anchor=center] at (current page.center) {
+      \includegraphics[height=\paperheight, keepaspectratio]{#2}
+    };
+    \node(heading)[anchor=center] at (current page.center) {
+      \includegraphics[width=\linewidth, keepaspectratio]{\layout/grouping_heading.png}
+    };
+    \node(title)[minimum width = \paperwidth, anchor=center] at (current page.center) {
+      \huge\sectionheadertext[bistre]{#1}
+    };
+  \end{tikzpicture}
+}
+
+\newcommand\addheadershadow[2][]{
+    % #1: Optional aditional tikz options
+    % #2: Name of the node to "decorate"
+    \begin{pgfonlayer}{background}
+        \path[
+           rounded corners=1pt,
+           blur shadow={shadow xshift=0pt,
+           shadow yshift=0pt,
+           shadow blur steps=10,
+           shadow blur radius=6pt}, #1]
+            ($(#2.north west)+( 0.6pt,0)$) --
+            ($(#2.south west)+( 0.6pt,0)$) --
+            ($(#2.south east)+(-0.6pt,0)$) --
+            ($(#2.north east)+(-0.6pt,0)$) --
+        cycle;
+        \path[rounded corners,
+           blur shadow={shadow xshift=0pt,
+           shadow yshift=0pt,
+           shadow blur steps=10,
+           shadow blur radius=6pt}, #1]
+            ($(#2.north west)+(-1.3pt,-3pt)$) --
+            ($(#2.south west)+(-1.3pt, 3pt)$) --
+            ($(#2.south east)+( 1.3pt, 3pt)$) --
+            ($(#2.north east)+( 1.3pt,-3pt)$) --
+            cycle;
+    \end{pgfonlayer}
+}
+
+% Four mandatory params
+% - [optional] set to "subsection" or any other Level if you want to have this as a subsection in TOC
+% - Lines of Campaign Name (1-2 according to the name length)
+% - Campaign Name
+% - Scenario Name
+% - Icon
+%
+% TODO: possibly replace the whole \addsection with this
+\newcommand{\addscenariosection}[5][section]{
+  \sodef\sotitle{}{0.2em}{0.6em}{1.2em}
+  \def\oneliner{\equal{#2}{1}}
+
+  \vspace*{-5.72em}
+  \hspace*{-1.3em}
+  \makebox[0pt][l]{
+  \raisebox{-\totalheight}[0pt][7pt]{
+    \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
+      \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#5}};
+      \end{tikzpicture}
+    }
+  }
+  \begin{fullwidth}[leftmargin=0.21\textwidth]
+    \begin{center}
+      \vspace{\lang_header_adjustment}
+      \vspace{-12pt}
+      \section*{\sectionheadertext{\small{\sotitle{#3}}}}
+      \vspace{\lang_header_adjustment}
+      \vspace{-10pt}
+      \section*{\sectionheadertext{#4}}
+      \ifthenelse{\oneliner}{}{\vspace{14pt}}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
+      \pagetarget{#4}{}
+    \end{center}
+  \end{fullwidth}
+  \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
+  \vspace{\lang_header_adjustment}
+}
+
+% Apply language-specific subsection spacings if defined
+\ifdefined\subsectionspacing
+  \subsectionspacing{}
+\fi
+
+\newcommand\picdims[4][]{%
+  \setbox0=\hbox{\includegraphics[#1]{#4}}%
+  \clipbox{.5\dimexpr\wd0-#2\relax{} %
+    .5\dimexpr\ht0-#3\relax{} %
+    .5\dimexpr\wd0-#2\relax{} %
+    .5\dimexpr\ht0-#3\relax}{\includegraphics[#1]{#4}}}
+
+\tikzset{
+  thick/.style=      {line width=1.3pt},
+  very thick/.style= {line width=1.7pt},
+  ultra thick/.style={line width=2.2pt}
+}
+
+\definecolor{borderoutyellow}{HTML}{DBCA86}
+\definecolor{borderinyellow}{HTML}{B09E69}
+\definecolor{bordermidyellow}{HTML}{6f6749}
+% Create note box
+\newcommand{\notefont}[0]{\liberation\selectfont}
+\newcommand{\note}[2]{
+  \begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#1\baselineskip}{\layout/table-background.jpg}}};
+    \draw [borderoutyellow, very thick] (current bounding box.north west) rectangle (current bounding box.south east);
+    \draw [borderinyellow, thick] ([xshift=+2.8pt, yshift=-2.8pt] current bounding box.north west) rectangle ([xshift=-2.8pt, yshift=2.8pt] current bounding box.south east);
+    \node at (current bounding box.center) {
+      \begin{varwidth}{0.85\linewidth}
+      \notefont{
+        \color{arylideyellow}
+        \hypersetup{linkcolor=amber}
+        #2
+        \hypersetup{linkcolor=goldenbrown}
+      }
+      \end{varwidth}
+    };
+    \begin{pgfonlayer}{background}
+      \begin{scope}[blend mode=multiply]
+        \draw [shade, blur shadow={shadow opacity=15}] (current bounding box.north west) rectangle (current bounding box.south east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}
+}
+
+% Create Heroes-styled framed canvas for a table. Accepts three arguments:
+% 1) [Optional] Drop shadow description. Use [] as the first arg to delete it.
+% 2) Height specified in verses (lines of text)
+% 3) Table contents like title and tabularx environment
+\newcommand{\hommtable}[3][shade, blur shadow={shadow opacity=15}]{
+  \begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background.jpg}}};
+    \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
+    \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
+    \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
+    \node at (current bounding box.center) {
+      \begin{varwidth}{0.95\linewidth}
+      \notefont{
+        \bgroup
+        \color{arylideyellow}
+        \hypersetup{linkcolor=amber}
+        \setlength{\tabcolsep}{0.3em}
+        #3
+        \egroup
+      }
+      \end{varwidth}
+    };
+    \begin{pgfonlayer}{background}
+      \begin{scope}[blend mode=multiply]
+        \draw [#1] (current bounding box.north west) rectangle (current bounding box.south east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}
+}
+% End of Heroes-styled canvas definition.
+
+\definecolor{darkcellborder}{HTML}{634831}
+\definecolor{darkcellbg}{HTML}{20160C}
+
+\newcommand{\darkcell}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=darkcellbg, fill opacity=0.5, draw=darkcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\textbf{#2}};
+  \end{tikzpicture}
+}
+
+\definecolor{lightcellborder}{HTML}{77543e}
+\definecolor{lightcellbg}{HTML}{20160C}
+
+\newcommand{\lightcell}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\color{white}#2};
+  \end{tikzpicture}
+}
+
+% Commands to be used for automation generating printable version
+\newcommand{\pagetarget}[2]{\label{#1}\hypertarget{#1}{#2}}
+\newcommand{\pagelink}[2]{\hyperlink{#1}{#2}\iftoggle{printable}{ \textmd{(\pageshorthand\,\pageref{#1})}}{}}
+
+% Command for overlay circled text
+\definecolor{goblin}{HTML}{3b7c33}
+\newcommand\encircle[1]{%
+  \tikz[baseline=(X.base)]
+  \node (X) [draw=white, shape=circle, inner sep=0, fill=goblin, text=white, blur shadow={shadow blur steps=5}] {\strut \textbf{#1}};%
+}
+
+% Background
+\AddToHook{shipout/background}{%
+  \iftoggle{noartbackground}{}{
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+  }
+  \iftoggle{printable}{
+    \ifodd\value{page}
+      \put (0in,-\paperheight){\includegraphics[width=\paperwidth]{\layout/bottom-odd.png}}
+    \else
+      \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom-even.png}}
+    \fi
+  }{\put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom.png}}}
+}
+
+\begin{document}
+
+\include{sections/title_page.tex}
+
+\iftoggle{printable}{
+  \newgeometry{
+    twoside,
+    top=2cm,
+    bottom=3cm,
+    left=2.5cm,
+    right=1.5cm,
+    marginparwidth=1.75cm,
+    footskip=2.05cm,
+  }
+}{}
+
+\author{\authortext}
+\maketitle
+
+\begin{center}
+  \iftoggle{githubbuild}{
+    \getenv[\githubsha]{GITHUB_SHA}
+    \versionwarning{} \href{\repourl}{\StrLeft{\githubsha}{7}}.
+  }{
+    \versionlabel{} \input{../.version}
+  }
+
+  \bigbreak
+
+  \intro{}
+
+  \bigbreak
+
+  \includegraphics[width=0.4\linewidth]{\qr/github.png} \\
+  \qrgithub
+\end{center}
+
+\AddToHookNext{shipout/background}{
+  \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \node(cover)[anchor=center, yshift=9em] at (current page.south) {
+    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
+  };
+\end{tikzpicture}
+
+\clearpage
+
+\begin{multicols*}{2}
+\tableofcontents
+\vspace*{\fill}
+\columnbreak
+\vspace{-3em}
+\includegraphics[width=\linewidth]{\art/elf.jpg}
+\end{multicols*}
+
+\clearpage
+
+\include{scenarios/sentinels.tex}
+
+\include{sections/back_cover.tex}
+
+\end{document}
