@@ -20,6 +20,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: draft-scenarios
 
     steps:
       - name: Set up repository
@@ -32,7 +35,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1
-          root_file: draft-scenarios/main_en.tex
+          root_file: main_en.tex
 
       - name: Install ghostscript
         run: |
@@ -42,21 +45,21 @@ jobs:
 
       - name: Optimize PDF
         run: |
-          du -sh draft-scenarios/main_en.pdf
-          gs -o draft-scenarios/main_en_optimized.pdf \
+          du -sh main_en.pdf
+          gs -o main_en_optimized.pdf \
             -sDEVICE=pdfwrite \
             -dCompatibilityLevel=1.5 \
             -dPDFSETTINGS=/prepress \
             -dDetectDuplicateImages=true \
-            draft-scenarios/main_en.pdf
-          mv draft-scenarios/main_en_optimized.pdf draft-scenarios/main_en.pdf
-          du -sh draft-scenarios/main_en.pdf
+            main_en.pdf
+          mv main_en_optimized.pdf main_en.pdf
+          du -sh main_en.pdf
 
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
         with:
           name: main_en
-          path: draft-scenarios/main_en.pdf
+          path: main_en.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish en in artifacts repository
