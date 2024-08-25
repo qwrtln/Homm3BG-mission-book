@@ -43,8 +43,6 @@ jobs:
 
       - name: Optimize PDF
         run: |
-          pwd
-          ls
           du -sh drafts.pdf
           gs -o drafts_optimized.pdf \
             -sDEVICE=pdfwrite \
@@ -68,7 +66,7 @@ jobs:
           mv drafts.pdf drafts/drafts.pdf
 
       - name: Publish drafts in artifacts repository
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}

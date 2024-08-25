@@ -41,7 +41,7 @@ Click on the table to download the most recent builds of the Mission Book in the
     </tbody>
 </table>
 
-Bonus: [Draft Scenarios 🇬🇧](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/draft-en/main_en.pdf)
+Bonus: [Draft Scenarios 🇬🇧](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf)
 
 ### 💡 What Is This?
 
