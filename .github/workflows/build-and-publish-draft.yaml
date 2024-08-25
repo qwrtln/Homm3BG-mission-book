@@ -1,0 +1,76 @@
+name: Build and Publish Drafts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'draft-scenarios/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'draft-scenarios/**'
+
+env:
+  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
+  ARTIFACT_RETENTION_DAYS: 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: draft-scenarios
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Compile draft book
+        uses: xu-cheng/latex-action@v3
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
+          root_file: drafts.tex
+
+      - name: Install ghostscript
+        run: |
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+          tar -xvf gs_10.03.0_amd64_snap.tgz
+          sudo snap install ./gs_10.03.0_amd64_snap/gs_10.03.0_amd64.snap --devmode
+
+      - name: Optimize PDF
+        run: |
+          du -sh drafts.pdf
+          gs -o drafts_optimized.pdf \
+            -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.5 \
+            -dPDFSETTINGS=/prepress \
+            -dDetectDuplicateImages=true \
+            drafts.pdf
+          mv drafts_optimized.pdf drafts.pdf
+          du -sh drafts.pdf
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: drafts
+          path: draft-scenarios/drafts.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Move file
+        run: |
+          mkdir drafts
+          mv drafts.pdf drafts/drafts.pdf
+
+      - name: Publish drafts in artifacts repository
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: drafts
+          publish_dir: ./draft-scenarios/drafts
+          force_orphan: true
