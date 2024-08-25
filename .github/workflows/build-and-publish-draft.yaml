@@ -59,15 +59,20 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           name: drafts
-          path: drafts.pdf
+          path: draft-scenarios/drafts.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-      - name: Publish en in artifacts repository
-        if: github.event_name != 'pull_request'
+      - name: Move file
+        run: |
+          mkdir drafts
+          mv drafts.pdf drafts/drafts.pdf
+
+      - name: Publish drafts in artifacts repository
+        # if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
           publish_branch: drafts
-          publish_dir: ./drafts
+          publish_dir: ./draft-scenarios/drafts
           force_orphan: true
