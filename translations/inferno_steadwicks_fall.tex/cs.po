@@ -253,7 +253,7 @@ msgid ""
 "This Scenario plays out over 16 Rounds.\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na 16 kol.\n"
+"Tento Scénář se hraje na 16 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -615,7 +615,7 @@ msgid ""
 "Place your Main Hero on the center Field of the Inferno Starting S6 Map Tile.\n"
 "\n"
 msgstr ""
-"Umístěte svého Hlavního Hrdinu na středové pole Startovního Dílku Peklo S6.\n"
+"Umístěte svého Hlavního Hrdinu na středové Pole Startovního Dílku Peklo S6.\n"
 "\n"
 
 #. type: multicols*
@@ -630,7 +630,7 @@ msgid ""
 "\n"
 msgstr ""
 "Umístěte svého Vedlejšího Hrdinu, reprezentovaného jedním modelem Hrdiny Frakce Kobka (podle vašeho výběru),\n"
-"na pole Osady dílku F2. Tato Osada neprodukuje žádné suroviny.\n"
+"na Pole Osady dílku F2. Tato Osada neprodukuje žádné suroviny.\n"
 "\n"
 
 #. type: multicols*

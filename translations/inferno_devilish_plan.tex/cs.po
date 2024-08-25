@@ -216,7 +216,7 @@ msgid ""
 "This Scenario plays out over 13 Rounds.\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na 13 kol.\n"
+"Tento Scénář se hraje na 13 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -529,7 +529,7 @@ msgid ""
 "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Umístěte svého Hrdinu na středové pole Startovního Dílku Peklo.\n"
+"Umístěte svého Hrdinu na středové Pole Startovního Dílku Peklo.\n"
 "\n"
 
 #. type: multicols*

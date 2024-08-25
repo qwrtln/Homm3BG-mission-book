@@ -253,7 +253,7 @@ msgstr ""
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
 "  \\item 2 × Vzdálený (II-III) Dílek Mapy\n"
 "  \\item 5 × Blízký (IV-V) Dílek Mapy\n"
-"  \\item 2 × Středový (VI-VII) Dílky Mapy, náhodně vyberte jeden s polem Náhodného Města a druhý s polem Dračí Utopie.\n"
+"  \\item 2 × Středový (VI-VII) Dílky Mapy, náhodně vyberte jeden s Polem Náhodného Města a druhý s Polem Dračí Utopie.\n"
 "\\end{itemize}\n"
 "\n"
 

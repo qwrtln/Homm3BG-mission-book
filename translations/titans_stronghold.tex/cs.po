@@ -183,7 +183,7 @@ msgid ""
 "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na 16 kol (15 na Nemožnou obtížnost).\n"
+"Tento Scénář se hraje na 16 Kol (15 na Nemožnou obtížnost).\n"
 "\n"
 
 #. type: multicols*
@@ -208,7 +208,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -258,7 +258,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
@@ -458,13 +458,13 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Pamatujte: střed dílku VI--VII vedle všech dílků I je Pevnost Titánů.\n"
 "  \\item Nikdo nesmí vstoupit do Pevnosti Titánů, dokud všechny ostatní dílky VII nejsou obsazeny kterýmkoliv hráčem.\n"
-"  \\item Po poražení neutrální armády úrovně VII, místo vyřešení pole, si hráč třikrát vybere jednu možnost z následujícího seznamu (možnost může být vybrána vícekrát):\n"
+"  \\item Po poražení neutrální armády úrovně VII, místo vyřešení Pole, si hráč třikrát vybere jednu možnost z následujícího seznamu (možnost může být vybrána vícekrát):\n"
 "    \\begin{itemize}\n"
 "      \\item Jiný hráč (váš výběr) získá 5\\,\\svg{gold}\n"
 "      \\item Jiný hráč (váš výběr) získá 2\\,\\svg{building_materials}\n"
 "      \\item Jiný hráč (váš výběr) získá 1\\,\\svg{valuables}\n"
 "    \\end{itemize}\n"
-"  Poté označte pole VII Kostičkou Frakce.\n"
+"  Poté označte Pole VII Kostičkou Frakce.\n"
 "  (Ve hře pro jednoho hráče není žádný bonus!)\n"
 "  \\item Ignorujte všechny žluté okraje na dílcích I.\n"
 "  \\item Svůj Stavební Žeton můžete použít k předání svých surovin jinému hráči.\n"
