@@ -35,7 +35,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1
-          root_file: main_en.tex
+          root_file: drafts.tex
 
       - name: Install ghostscript
         run: |
@@ -47,21 +47,21 @@ jobs:
         run: |
           pwd
           ls
-          du -sh main_en.pdf
-          gs -o main_en_optimized.pdf \
+          du -sh drafts.pdf
+          gs -o drafts_optimized.pdf \
             -sDEVICE=pdfwrite \
             -dCompatibilityLevel=1.5 \
             -dPDFSETTINGS=/prepress \
             -dDetectDuplicateImages=true \
-            main_en.pdf
-          mv main_en_optimized.pdf main_en.pdf
-          du -sh main_en.pdf
+            drafts.pdf
+          mv drafts_optimized.pdf drafts.pdf
+          du -sh drafts.pdf
 
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
         with:
-          name: main_en_drafts
-          path: main_en.pdf
+          name: drafts
+          path: drafts.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish en in artifacts repository
@@ -70,6 +70,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: draft-en
-          publish_dir: ./draft-en
+          publish_branch: drafts
+          publish_dir: ./drafts
           force_orphan: true
