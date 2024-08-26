@@ -97,13 +97,7 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario map editor}.\n"
-#| "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
-#| "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
-#| "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
 "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
@@ -111,7 +105,7 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
-"\\textbf{Zvláštní poděkování}: Patricku Kerstenovi za \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Editor map}.\n"
+"\\textbf{Zvláštní poděkování}: Patricku Kerstenovi za \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Editor Map}.\n"
 "Všem z Archon Studio za vytvoření hry a odpovídání na naše neustálé dotazy ohledně pravidel a dalších témat.\n"
 "Jon Van Caneghemovi a všem, kteří se podíleli na vývoji původní videohry.\n"
 "Všem, kteří projekt podpořili návrhy, opravami, obrazovými zdroji a slovy povzbuzení, ať už na Discordu nebo na BoardGameGeek fóru.\n"
