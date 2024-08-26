@@ -126,7 +126,7 @@ msgid ""
 "There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
-"Pokud preferujete sólo hru, tak na konci najdete 3-scenářovou kampaň frakce Peklo -- \\pagelink{1. Ďábelský Plán}{Kobky a Ďáblové}.\n"
+"Pokud preferujete sólo hru, tak na konci najdete 3-scenářovou kampaň Frakce Peklo -- \\pagelink{1. Ďábelský Plán}{Kobky a Ďáblové}.\n"
 "\n"
 
 #. type: multicols
