@@ -37,10 +37,7 @@ msgstr "\\addsection{Co si zahrát}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Follow these suggestions if you're not sure which scenario is best for you.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
@@ -60,12 +57,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/what_to_play.tex:13
-#, fuzzy, no-wrap
-#| msgid ""
-#| "If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
-#| "For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
-#| "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
 "For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
@@ -113,15 +105,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/what_to_play.tex:23
-#, fuzzy, no-wrap
-#| msgid ""
-#| "There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
-"Pokud preferujete sólo hru, tak na konci najdete 3-scenářovou kampaň Frakce Peklo -- \\pagelink{1. Ďábelský Plán}{Kobky a Ďáblové}.\n"
+"Pokud preferujete sólo hru, tak na konci najdete 3-Scenářovou Kampaň Frakce Peklo -- \\pagelink{1. Ďábelský Plán}{Kobky a Ďáblové}.\n"
 "\n"
 
 #. type: multicols
@@ -136,10 +125,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/what_to_play.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
 "\n"
