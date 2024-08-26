@@ -165,7 +165,7 @@ msgid ""
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
 "\n"
 msgstr ""
-"Kromě Magického Šípu se každé kouzlo v Balíčku Kouzel objevuje přesně dvakrát.\n"
+"Kromě Magického Šípu se každé Kouzlo v Balíčku Kouzel objevuje přesně dvakrát.\n"
 "Po přípravě Startovních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
 "\n"
 

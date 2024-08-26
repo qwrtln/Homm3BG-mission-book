@@ -72,7 +72,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
@@ -208,10 +208,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario plays out over 13 rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario plays out over 13 Rounds.\n"
 "\n"
@@ -284,15 +281,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Bonus:} Choose one of the following options:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Add a ``Slayer'' spell to your hand\n"
-#| "  \\item Add the ``Armor of Wonder'' Artifact to your hand\n"
-#| "  \\item Reinforce Magogs and gain 1 \\svg{valuables}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Bonus:} Choose one of the following options:\n"
 "\\begin{itemize}\n"
@@ -304,7 +293,7 @@ msgid ""
 msgstr ""
 "\\textbf{Bonus:} Zvolte jednu z následujících možností:\n"
 "\\begin{itemize}\n"
-"  \\item Přidejte si kouzlo \\uv{Zabiják} do ruky\n"
+"  \\item Přidejte si Kouzlo \\uv{Zabiják} do ruky\n"
 "  \\item Přidejte si Artefakt \\uv{Brnění Zázraků} do ruky\n"
 "  \\item Posilte Magogy a získejte 1 \\svg{valuables}\n"
 "\\end{itemize}\n"
@@ -314,7 +303,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:48
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
@@ -344,13 +333,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item \\textbf{Gold Dragon Army:} A Pack of Gold Dragons, a Pack of Unicorns, a Pack of Dendroids, a Pack of Centaurs\n"
-#| "  \\item \\textbf{Ivor's Army:} A Few Elves\\footnote{In Round 9, the Few Elves in Ivor's Army are reinforced to a Pack of Elves.}, Neutral Army at the same level as your Hero level\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item \\textbf{Gold Dragon Army:} A Pack of Gold Dragons, a Pack of Unicorns, a Pack of Dendroids, a Pack of Centaurs\n"
@@ -360,7 +343,7 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item \\textbf{Armáda Zlatých Draků:} Skupina Zlatých Draků, skupina Jednorožců, skupina Dendroidů, skupina Kentaurů\n"
-"  \\item \\textbf{Ivorova Armáda:} Málo Elfů\\footnote{V 9. Kole je Málo Elfů v Ivorově armádě posíleno na Skupinu Elfů.}, Neutrální armáda na úrovni vašeho Hrdiny\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v základních pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}\n"
+"  \\item \\textbf{Ivorova Armáda:} Málo Elfů\\footnote{V 9. Kole je Málo Elfů v Ivorově armádě posíleno na Skupinu Elfů.}, Neutrální armáda na úrovni vašeho Hrdiny\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v Základních Pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -376,15 +359,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:61
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first \\svg{unit_ranged} unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell card\n"
 "\n"
 msgstr ""
-"\\textbf{Ivorův Balíček Kouzel:} 1 × karta Kouzla Přesnosti (je použita na první \\svg{unit_ranged} Jednotku schopnou útoku na dálku), 1 × karta Kouzla Magický Šíp\n"
+"\\textbf{Ivorův Balíček Kouzel:} 1 × karta Kouzla Přesnost (je použita na první \\svg{unit_ranged} Jednotku schopnou útoku na dálku), 1 × karta Kouzla Magický Šíp\n"
 "\n"
 
 #. type: multicols*
@@ -399,14 +379,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:73
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{2 × Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 1 × Inferno (S6)\n"
-#| "  \\item 1 × Rampart (S4)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -424,14 +397,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:79
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{3 × Far (II--III) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item \\mbox{2 × Inferno (choose from: F16--F18, \\#F10)}\n"
-#| "  \\item 1 × Rampart (choose from: F10--F12)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -449,13 +415,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:84
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{2 × Near (IV--V) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Rampart (N7, N8)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -471,13 +431,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:89
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{1 × Center (VI--VII) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 1 × Dragon Utopia Center Map tile (C1)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -495,7 +449,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:91
 #: campaigns/inferno_steadwicks_fall.tex:97
 #: campaigns/inferno_deal_with_the_devil.tex:100
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
@@ -505,11 +459,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:94
-#, fuzzy, no-wrap
-#| msgid ""
-#| "The Enemy Hero is represented by one Rampart faction Hero model of your choice\n"
-#| "and appears in the center field of the S4 Starting Map tile.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "The Enemy Hero is represented by one Rampart Faction Hero model of your choice\n"
 "and appears in the center Field of the S4 Starting Map Tile.\n"
@@ -521,10 +471,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Place your Hero in the center field of the Inferno Starting Map tile.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
 "\n"
@@ -642,13 +589,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:140
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{13} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item At the end of the round, if both the Enemy Hero and the Gold Dragon Armies are not defeated, all is lost -- you lose!\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
@@ -664,13 +605,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:145
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{When you complete the scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Read: ``Congratulations! You have completed your quest to kill the fearsome beast, and can claim victory!''\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
@@ -688,7 +623,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:150
 #: campaigns/inferno_steadwicks_fall.tex:190
 #: campaigns/inferno_deal_with_the_devil.tex:175
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
@@ -698,17 +633,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:159
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "    \\item Your Hero does not gain Experience past Level 5.\n"
-#| "    \\item The Enemy Hero does not move and only waits in their Town. They start with Walls and a Gate on their side of the Combat Board.\n"
-#| "    \\item The N7 Map tile cannot be entered until Ivor is defeated.\n"
-#| "    \\item At the Dragon Utopia location, your Hero fights the Gold Dragons Army.\n"
-#| "    \\item The ``Castle Gate'' cannot be built.\n"
-#| "    \\item If your Hero visits an Obelisk, you may Search (2) the Ability deck, the Artifact deck, or the Spell deck.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "    \\item Your Hero does not gain Experience past Level 5.\n"
