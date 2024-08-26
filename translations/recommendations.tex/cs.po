@@ -92,14 +92,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Where:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item[$\\textbf{P}$] -- number of players\n"
-#| "  \\item[$\\textbf{R}$] -- number of rounds\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Where:\n"
 "\\begin{itemize}\n"
@@ -117,11 +110,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For example, if you're playing a 3-player scenario consisting of 12 rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
-#| "Your expected minimal play time would be around 3 hours.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "For example, if you're playing a 3-player Scenario consisting of 12 Rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
 "Your expected minimal play time would be around 3 hours.\n"
@@ -155,11 +144,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:35
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Except for the Magic Arrow, each spell appears exactly twice in the spell deck.\n"
-#| "After players prepare their starting M\\&M decks, it is recommended to remove Magic Arrows from the spell deck until no more than two remain.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Except for the Magic Arrow, each Spell appears exactly twice in the Spell Deck.\n"
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
@@ -181,15 +166,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Although rules as written state that you can remove only one card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"I když pravidla říkají, že při návštěvě Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
+"I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
 "\n"
 
 #. type: multicols
@@ -286,24 +268,7 @@ msgstr ""
 
 #. type: figure*
 #: sections/recommendations.tex:94
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[!h]\n"
-#| "  \\mbox{}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
-#| "    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
-#| "    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green fields.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\mbox{}"
+#, no-wrap
 msgid ""
 "[!h]\n"
 "  \\mbox{}\n"
@@ -334,7 +299,7 @@ msgstr ""
 "  \\begin{minipage}[t]{0.44\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
-"    \\caption[ranged protected]{\\textit{Kanci musí obsadit jedno ze zelených políček.}}\n"
+"    \\caption[ranged protected]{\\textit{Kanci musí obsadit jedno ze zelených Polí.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
 "  \\mbox{}"
@@ -351,10 +316,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:100
-#, fuzzy, no-wrap
-#| msgid ""
-#| "The following are not custom rules but rather recommendations to help you get the most out of your game:\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
 "\n"
@@ -364,15 +326,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:107
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item When deciding which building to construct in your town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other faction-specific buildings.\n"
-#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your deck.\n"
-#| "    This includes any cards that allow you to draw cards or retrieve cards from your discard pile.\n"
-#| "  \\item Try to avoid using your Main Hero's movement points for actions that your Secondary Hero can handle, such as flipping the Map tiles, visiting Water Wheels, and so on.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
