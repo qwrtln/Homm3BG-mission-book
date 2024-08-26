@@ -157,14 +157,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/bloody_grail.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few \\svgunit{bronze} units with the \\textit{highest} Recruitment cost\n"
-#| "  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
