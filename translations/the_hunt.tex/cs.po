@@ -740,8 +740,8 @@ msgstr ""
 "Dendroid drží klíč k síle Pohádkového Draka. Po smrti 2. Dendroida začněte "
 "odebírat jedno Kouzlo z Knihy Kouzel Pohádkového Draka, počínaje třetím "
 "Kouzlem. Snižte posílení Kouzel draka \\svg{empower} o 1 (počínaje "
-"maximálním) po poražení 2., 3. a 4. Dendroida. Když už nezbudou žádní "
-"Dendroidi, drak ztratí schopnost sesílat Kouzla. \\end{itemize} }"
+"maximálním) po poražení 2., 3. a 4. Dendroida. Po zabití všech Dendroidů "
+"ztratí drak schopnost sesílat Kouzla. \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:370
