@@ -82,7 +82,7 @@ msgid ""
 "\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 msgstr ""
-"\\textbf{Šablony scénářů a \\LaTeX{} kód}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Šablony Scénářů a \\LaTeX{} kód}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 
 #. type: multicols*
