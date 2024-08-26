@@ -19,15 +19,11 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/sentinels.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative scenario}{Sentinels}{\\images/"
-#| "sentinel.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Strážci}{\\images/sentinel."
+"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/sentinel."
 "png}"
 
 #. type: multicols*
@@ -93,10 +89,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This scenario is played over 12 rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
@@ -150,7 +143,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -178,10 +171,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:36
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map tile Pool:} Each player takes 1 random Near (IV--V) Map tile and 1 random Far (II--III) Map tile. These tiles should not contain any Obelisks.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
@@ -215,7 +205,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
@@ -225,14 +215,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:48
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{2 × Starting (I) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen factions\n"
-#| "  \\item Ignore their yellow borders\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -250,10 +233,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{4 × Far (II--III) Map tile}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{4 × Far (II--III) Map Tile}\n"
 "\n"
@@ -263,13 +243,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:55
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{4 × Near (IV--V) Map tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item All Near Map tiles must have Obelisks\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -331,10 +305,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "One of your towns is captured, or a main hero is defeated in a battle (retreat doesn't count).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
@@ -439,19 +410,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:102
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Players can trade resources when one of the active player's heroes visits a trading post or stands on a field adjacent to an allied hero.\n"
-#| "  \\item The hero who defeats an enemy army gains 2 \\svg{experience}.\n"
-#| "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
-#| "  \\item Additionally, no player can:\n"
-#| "  \\begin{itemize}\n"
-#| "      \\item Attack other Heroes.\n"
-#| "      \\item Capture a Mine or Settlement that is already Flagged.\n"
-#| "  \\end{itemize}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied Hero.\n"
@@ -489,28 +448,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:124
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Enemy armies spawn on a random Obelisk field (use hero miniatures from factions not in play).\n"
-#| "  \\item Determine which Obelisk field by rolling 2 Attack Dice. Apply the results as follows (D1/D2), reroll any 0:\n"
-#| "  \\begin{itemize}\n"
-#| "    \\item $+1$/$+1$ = North\n"
-#| "    \\item $+1$/$-1$ = East\n"
-#| "    \\item $-1$/$+1$ = West\n"
-#| "    \\item $-1$/$-1$ = South\n"
-#| "  \\end{itemize}\n"
-#| "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
-#| "  Rounds 8 and 10 are entirely random.\n"
-#| "  \\item If the tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
-#| "  \\item If there is a hero on the field where the enemy spawns, a fight starts immediately.\n"
-#| "  \\item Enemy armies move at the end of every turn, starting with the turn they spawned.\n"
-#| "  \\item Enemy armies have 3 MPs per round.\n"
-#| "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
-#| "    Place Black cubes on any field they pass through, treating those fields as empty from that point on.\n"
-#| "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Enemy armies spawn on a random Obelisk Field (use Hero miniatures from Factions not in play).\n"
@@ -566,16 +504,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:134
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
-#| "  \\item During a battle with an enemy army, a hero can retreat whenever a friendly unit is about to activate.\n"
-#| "    A retreating main Hero loses all remaining MPs and is returned to an allied town or settlement of their choice, keeping all remaining units.\n"
-#| "  \\item Retreating secondary heroes are removed from the game, but their remaining units are kept.\n"
-#| "  \\item Killed enemy units do not respawn.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
@@ -589,7 +518,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Boj s nepřátelskými armádami přes více než jedno Kolo Boje nestojí žádné Body Pohybu.\n"
 "  \\item Během bitvy s nepřátelskou armádou může Hrdina ustoupit kdykoliv, když se má Aktivovat přátelská Jednotka.\n"
-"    Ustupující hlavní Hrdina ztrácí všechny zbývající Body Pohybu a je vrácen do spojeneckého Města nebo Osady dle svého výběru, přičemž si ponechává všechny zbývající Jednotky.\n"
+"    Ustupující hlavní Hrdina ztrácí všechny zbývající BP a je vrácen do spojeneckého Města nebo Osady dle svého výběru, přičemž si ponechává všechny zbývající Jednotky.\n"
 "  \\item Ustupující sekundární Hrdinové jsou Odstraněni ze hry, ale jejich zbývající Jednotky jsou ponechány.\n"
 "  \\item Zabité nepřátelské Jednotky se znovu neobjevují.\n"
 "\\end{itemize}\n"
@@ -607,15 +536,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:143
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is reinforced from a fixed pool of neutral units (reinforcement pool = number in brackets in the table below).\n"
-#| "  \\item At the beginning of the \\nth{2} combat round and every following round, 2 units reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 units) to continue the fight until either the player retreats or every neutral unit from the reinforcement pool is killed. \\textit{If the number of enemy units at the beginning of a round is 1 or lower, draw up to a total of 4 units (i.e., there are always 4 or 5 enemy units on the board after reinforcing, if available).}\n"
-#| "  \\item Place the reinforcing units on the enemy base line, starting from the left with the lowest initiative (\\svg{unit_ranged} units first). If necessary, continue on the next line in the same order.\n"
-#| "  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 units and takes these as starting units to the next fight.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
@@ -626,8 +547,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item V 10. Kole se objeví Armáda Bosse. Je odlišná od předchozích armád, protože je posílena z předem daného fondu Neutrálních Jednotek (posilovací fond = číslo v závorkách v tabulce níže).\n"
-"  \\item Na začátku 2. Kola Boje a každého následujícího Kola posilují zbývající armádu 2 Jednotky z promíchaného posilovacího fondu (až do maxima 5 Jednotek), aby pokračovaly v Boji, dokud hráč neustoupí nebo dokud nejsou všechny Neutrální Jednotky z posilovacího fondu zabity. \\textit{Pokud je počet nepřátelských Jednotek na začátku Kola 1 nebo nižší, doplňte až do celkového počtu 4 Jednotek (tj. na desce jsou vždy 4 nebo 5 nepřátelských Jednotek po posílení, pokud jsou k dispozici).}\n"
+"  \\item V 10. Kole se objeví Armáda Bosse. Je odlišná od předchozích armád, protože je posílena z předem daného fondu Neutrálních Jednotek (Posilovací fond = číslo v závorkách v tabulce níže).\n"
+"  \\item Na začátku 2. Kola Boje a každého následujícího Kola posilují zbývající armádu 2 Jednotky z promíchaného Posilovacího fondu (až do maxima 5 Jednotek), aby pokračovaly v Boji, dokud hráč neustoupí nebo dokud nejsou všechny Neutrální Jednotky z Posilovacího fondu zabity. \\textit{Pokud je počet nepřátelských Jednotek na začátku Kola 1 nebo nižší, doplňte až do celkového počtu 4 Jednotek (tj. na desce jsou vždy 4 nebo 5 nepřátelských Jednotek po posílení, pokud jsou k dispozici).}\n"
 "  \\item Umístěte posilující Jednotky na nepřátelskou základní linii, začněte zleva s nejnižší iniciativou (nejprve \\svg{unit_ranged} Jednotky). Pokud je to nutné, pokračujte na další řadu ve stejném pořadí.\n"
 "  \\item Když hráč ustoupí, nepřátelská armáda doplní až do \\uv{minimálního} počtu 4 Jednotek a tyto Jednotky si vezme jako výchozí do dalšího Boje.\n"
 "\\end{itemize}\n"
@@ -715,10 +636,6 @@ msgstr ""
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:194
-#, fuzzy
-#| msgid ""
-#| "Always 1 unit of Azure Dragons (starting units of Boss Army). The rest is "
-#| "random\\label{azure}."
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
