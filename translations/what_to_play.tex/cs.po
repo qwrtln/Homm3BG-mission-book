@@ -89,12 +89,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/what_to_play.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "If you'd like to play a 2- or 4-player ``capture the Grail'' scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
-#| "For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
-#| "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
 "For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"

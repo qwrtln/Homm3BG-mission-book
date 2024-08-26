@@ -517,7 +517,7 @@ msgid ""
 "\n"
 msgstr ""
 "Útočící Hrdina Hradu je reprezentován jedním modelem Hrdiny Frakce Hrad\n"
-"a objeví se na poli Osady dílku F3 (a obsadí ho).\n"
+"a objeví se na Poli Osady Dílku F3 (a obsadí ho).\n"
 "\n"
 
 #. type: multicols*
@@ -528,7 +528,7 @@ msgid ""
 "\n"
 msgstr ""
 "Útočící Hrdina Bašty je reprezentován jedním modelem Hrdiny Frakce Bašta\n"
-"a objeví se na poli Osady dílku F10 (a obsadí ho).\n"
+"a objeví se na Poli Osady Dílku F10 (a obsadí ho).\n"
 "\n"
 
 #. type: multicols*
@@ -539,7 +539,7 @@ msgid ""
 "\n"
 msgstr ""
 "Útočící Hrdina Věže je reprezentován jedním modelem Hrdiny Frakce Věž\n"
-"a objeví se na poli Osady dílku \\#F1 (a obsadí ho).\n"
+"a objeví se na Poli Osady Dílku \\#F1 (a obsadí ho).\n"
 "\n"
 
 #. type: multicols*
@@ -560,7 +560,7 @@ msgid ""
 "\n"
 msgstr ""
 "Umístěte svého Vedlejšího Hrdinu, reprezentovaného jedním modelem Hrdiny Frakce Kobka (podle vašeho výběru),\n"
-"na Pole Osady dílku F2. Tato Osada neprodukuje žádné suroviny.\n"
+"na Pole Osady Dílku F2. Tato Osada neprodukuje žádné suroviny.\n"
 "\n"
 
 #. type: multicols*

@@ -360,7 +360,7 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item \\textbf{Armáda Zlatých Draků:} Skupina Zlatých Draků, skupina Jednorožců, skupina Dendroidů, skupina Kentaurů\n"
-"  \\item \\textbf{Ivorova Armáda:} Málo Elfů\\footnote{V 9. kole je Málo Elfů v Ivorově armádě posíleno na Skupinu Elfů.}, Neutrální armáda na úrovni vašeho Hrdiny\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v základních pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}\n"
+"  \\item \\textbf{Ivorova Armáda:} Málo Elfů\\footnote{V 9. Kole je Málo Elfů v Ivorově armádě posíleno na Skupinu Elfů.}, Neutrální armáda na úrovni vašeho Hrdiny\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v základních pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -516,7 +516,7 @@ msgid ""
 "\n"
 msgstr ""
 "Nepřátelský Hrdina je reprezentován libovolným modelem Hrdiny Frakce Bašta\n"
-"a objeví se na středovém poli Startovního Dílku Mapy S4.\n"
+"a objeví se na středovém Poli Startovního Dílku Mapy S4.\n"
 "\n"
 
 #. type: multicols*
