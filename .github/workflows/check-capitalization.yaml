@@ -21,7 +21,7 @@ jobs:
           do
             for word in ${WORDS[@]}
             do
-              if grep -qP "\s$word" $file; then
+              if grep -qP "\s$word" $file | grep -v "% no-check-caps$"; then
                 echo "---"
                 echo "Found \"$word\" instead of \"${word^}\" in $file:" | grep -i $word --color=always
                 grep -nHP --color=always "\s$word" $file
