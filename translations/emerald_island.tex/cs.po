@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-07-10 10:39+0200\n"
+"POT-Creation-Date: 2024-08-22 23:44+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,9 +19,10 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -29,47 +30,72 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:43
-#: coops/emerald_island.tex:40 clash/the_hunt.tex:39
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:59 coops/titans_stronghold.tex:62
-#: coops/emerald_island.tex:52 campaigns/inferno_devilish_plan.tex:105
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:63 coops/titans_stronghold.tex:66
-#: coops/emerald_island.tex:56 campaigns/inferno_devilish_plan.tex:109
-#: campaigns/inferno_steadwicks_fall.tex:126
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
+"\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:69 coops/titans_stronghold.tex:70
-#: coops/emerald_island.tex:60 clash/bloody_grail.tex:66 clash/the_hunt.tex:67
-#: campaigns/inferno_devilish_plan.tex:115
-#: campaigns/inferno_steadwicks_fall.tex:134
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -78,54 +104,62 @@ msgid ""
 "\\textbf{Author:} Invoceusse\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:19
-#: campaigns/inferno_deal_with_the_devil.tex:20
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\\textbf{Autor:} Invoceusse\n"
 "\n"
-msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:35 coops/emerald_island.tex:32
-#, no-wrap
+#: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} units of your choice\n"
-"  \\item A Few \\svgunit{bronze} units of your choice\n"
+"  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
+"  \\item A Few \\svgunit{bronze} Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Jednotky:}\n"
+"\\begin{itemize}\n"
+"  \\item Skupina \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item Málo \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:41 coops/emerald_island.tex:38
-#: clash/bloody_grail.tex:35 clash/the_hunt.tex:37
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Dodatečný Bonus:} Žádný\n"
+"\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:45 coops/emerald_island.tex:42
-#, no-wrap
+#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
+#, fuzzy, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout ($P$ stands for the number of players):\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři ($H$ znamená počet hráčů):\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/emerald_island.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative scenario}{Emerald Island}{\\images/"
+#| "logistics.png}"
 msgid ""
-"\\addscenariosection{1}{Cooperative scenario}{Emerald Island}{\\images/"
+"\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
+"\\addscenariosection{1}{Kooperativní scéná\\v{r}}{Smaragdový Ostrov}"
+"{\\images/logistics.png}"
 
 #. type: multicols*
 #: coops/emerald_island.tex:9
@@ -134,6 +168,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:14
@@ -145,14 +181,24 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\textit{Lord Markham se rozhodl uspořádat honbu za pokladem a vy a vaši přátelé se jí zúčastníte.\n"
+"  Ale pospěšte si! Další týmy jsou také na stopě a jeden z nich je téměř u konce!\n"
+"  Dávajte si ale pozor: zdá se, že na tomto ostrově číhá tvor vypadající jako drak!}\n"
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:16
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This scenario is played over 8 rounds.\n"
+#| "\n"
 msgid ""
-"This scenario is played over 8 rounds.\n"
+"This Scenario is played over 8 Rounds.\n"
 "\n"
 msgstr ""
+"Tento scénář se hraje na 8 kol.\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:20
@@ -161,106 +207,176 @@ msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
+"\\textbf{Počet Hráčů:} 1 -- 4\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:23
+#: coops/emerald_island.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:}\\par\n"
-"\\resources{5}{2}{1}\n"
+"\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Suroviny:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:26
+#: coops/emerald_island.tex:24
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:}\\par\n"
-"\\resources{10}{0}{1}\n"
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Počáteční Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:34 clash/bloody_grail.tex:31
+#: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
+#: clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Městské Budovy:} \\svgunit{bronze} Obydlí\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:36
-#, no-wrap
+#: coops/emerald_island.tex:34
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
+#| "\n"
 msgid ""
-"\\textbf{Map tile Pool:} If you wish, you can distribute the II--III tiles equally to each player rather than laying them out as proposed.\n"
+"\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
+"\\textbf{Dílky Mapy na ruce:} Pokud si přejete, můžete dílky II--III rozdělit rovnoměrně mezi každého hráče, místo aby byly rozmístěny podle návrhu ve scénáři.\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:48
-#, no-wrap
+#: coops/emerald_island.tex:46
+#, fuzzy, no-wrap
+#| msgid ""
+#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen factions.\n"
+#| "  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map tile}\n"
+"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen factions.\n"
-"  \\item Ignore any yellow lines between tiles I (but not between tiles I and tiles II--III)\n"
+"  \\item Starting Tiles of your chosen Factions.\n"
+"  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{H}$ \\textbf{× Startovní (I) Dílek Mapy}\n"
+"\\begin{itemize}\n"
+"  \\item Startovní Dílky vašich vybraných frakcí.\n"
+"  \\item Ignorujte jakékoliv žluté čáry mezi dílky I (ale ne mezi dílky I a dílky II--III)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:50
-#, no-wrap
+#: coops/emerald_island.tex:48
+#, fuzzy, no-wrap
+#| msgid ""
+#| "$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
+#| "\n"
 msgid ""
-"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map tile}\n"
+"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map Tile}\n"
 "\n"
 msgstr ""
+"$\\boldsymbol{4 H}$ \\textbf{× Vzdálený (II--III) Dílek Mapy}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:54
-#, no-wrap
+#: coops/emerald_island.tex:52
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
+#| "\n"
 msgid ""
-"Flag all Mines and Settlements. (Don't forget the building materials Mine in tile I. Each tile II--III contains one Mine or Settlement with a level III fight.)\n"
+"Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
+"Obsaďte všechny Doly a Osady. (Nezapomeňte na Důl na Stavební Materiály na dílku I. Každý dílek II--III obsahuje jeden Důl nebo Osadu s bojem na úrovni III.)\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:58
+#: coops/emerald_island.tex:56
 #, no-wrap
 msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
 "\n"
 msgstr ""
+"Na konci 8. kola zůstanou na mapě neobsazené Doly nebo Osady.\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:65
-#, no-wrap
+#: coops/emerald_island.tex:63
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{5} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Gain again the result of one field with a Black Cube.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Gain again the result of one field with a Black Cube.\n"
+"  \\item Gain again the result of one Field with a Black Cube.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{5. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Získejte znovu výsledek jednoho pole s Černou Kostičkou.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:86
-#, no-wrap
+#: coops/emerald_island.tex:84
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+#| "\\begin{itemize}\n"
+#| "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+#| "    \\item You can give Units to another player, even outside your turn, if one of your Heroes is:\n"
+#| "    \\begin{itemize}\n"
+#| "        \\item On the same Map tile as another player's Hero.\n"
+#| "        \\item In another player's Town.\n"
+#| "        \\item Next to another player's Hero.\n"
+#| "    \\end{itemize}\n"
+#| "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your faction's Unit pool (even if another player has one or more of your Units). This includes units you've previously given to another player.\n"
+#| "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+#| "    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+#| "    \\item The first time you reach level IV, gain your second specialty.\n"
+#| "    \\item When you reach level IV, move your token on the level tracker to level III.\n"
+#| "    \\item Additionally, no player can:\n"
+#| "    \\begin{itemize}\n"
+#| "        \\item Attack other Heroes.\n"
+#| "        \\item Capture a Mine or Settlement that is already Flagged.\n"
+#| "    \\end{itemize}\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
-"    \\item You can give Units to another player, even outside your turn, if one of your Heroes is:\n"
+"    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
 "    \\begin{itemize}\n"
-"        \\item On the same Map tile as another player's Hero.\n"
+"        \\item On the same Map Tile as another player's Hero.\n"
 "        \\item In another player's Town.\n"
 "        \\item Next to another player's Hero.\n"
 "    \\end{itemize}\n"
-"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your faction's Unit pool (even if another player has one or more of your Units). This includes units you've previously given to another player.\n"
+"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
-"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
-"    \\item The first time you reach level IV, gain your second specialty.\n"
-"    \\item When you reach level IV, move your token on the level tracker to level III.\n"
+"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item The first time you reach Level IV, gain your second specialty.\n"
+"    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
 "    \\item Additionally, no player can:\n"
 "    \\begin{itemize}\n"
 "        \\item Attack other Heroes.\n"
@@ -269,9 +385,30 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\\begin{itemize}\n"
+"    \\item Nemůžete postavit \\svgunit{golden} Obydlí.\n"
+"    \\item Můžete předat Jednotky jinému hráči, dokonce i mimo svůj tah, pokud je jeden z vašich Hrdinů:\n"
+"    \\begin{itemize}\n"
+"        \\item Na stejném dílku Mapy jako Hrdina jiného hráče.\n"
+"        \\item Ve Městě jiného hráče.\n"
+"        \\item Vedle Hrdiny jiného hráče.\n"
+"    \\end{itemize}\n"
+"    \\item Pokud nemáte žádné Jednotky ve svém balíčku Jednotek (po bitvě nebo pokud si neuchováte alespoň jednu Jednotku), vraťte všechny své Jednotky do balíčku Jednotek své Frakce (i když jiný hráč má jednu nebo více vašich Jednotek). To zahrnuje i Jednotky, které jste dříve předali jinému hráči.\n"
+"    \\item Když jste ve městě jiného hráče, můžete Naverbovat nebo Posílit jejich Jednotky, buď pro daného hráče nebo pro sebe. Potřebujete k tomu povolení druhého hráče, a musí k tomu být postavena odpovídající Obydlí nebo Citadela.\n"
+"    \\item Pro poslední boj o Důl/Osadu přidejte \\svgunit{golden} Neutrální Jednotku. Pro tento boj máte neomezený počet tahů. K přeskočení tohoto boje nemůžete použít Expertní Diplomacii!\n"
+"    \\item Poprvé, když dosáhnete úrovně IV, získáte svou druhou specializaci.\n"
+"    \\item Když dosáhnete úrovně IV, přesuňte svůj žeton na počítadle úrovní na úroveň III.\n"
+"    \\item Navíc žádný hráč nemůže:\n"
+"    \\begin{itemize}\n"
+"        \\item Útočit na jiné Hrdiny.\n"
+"        \\item Zmocnit se Dolu nebo Osady, které jsou již obsazeny.\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:88
+#: coops/emerald_island.tex:86
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
@@ -279,21 +416,50 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:102
-#, no-wrap
+#: coops/emerald_island.tex:100
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
+#| "  \\captionof{figure}{1-PLAYER SCENARIO}\n"
+#| "  \\vspace{3em}\n"
+#| "  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
+#| "  \\captionof{figure}{2-PLAYER SCENARIO}\n"
+#| "  \\vspace{3em}\n"
+#| "  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
+#| "  \\captionof{figure}{3-PLAYER SCENARIO}\n"
+#| "  \\vspace{3em}\n"
+#| "  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
+#| "  \\captionof{figure}{4-PLAYER SCENARIO}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.2\\paperwidth]{\\_assets/maps/emerald-1.png}\n"
-"  \\captionof{figure}{1-PLAYER SCENARIO}\n"
+"  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
+"  \\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-2.png}\n"
-"  \\captionof{figure}{2-PLAYER SCENARIO}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
+"  \\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-3.png}\n"
-"  \\captionof{figure}{3-PLAYER SCENARIO}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
+"  \\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}\n"
 "  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\_assets/maps/emerald-4.png}\n"
-"  \\captionof{figure}{4-PLAYER SCENARIO}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
+"  \\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 1 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 2 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 3 HRÁČE}\n"
+"  \\vspace{3em}\n"
+"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
+"  \\captionof{figure}{SCÉNÁŘ PRO 4 HRÁČE}\n"
+"\\end{center}\n"
+"\n"

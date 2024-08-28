@@ -51,6 +51,9 @@
 \usepackage{xifthen}
 \usepackage{xparse}
 
+\usepackage{tocloft}
+\renewcommand{\cftsubsecpagefont}{\bfseries}
+
 \usepackage[hang, symbol, perpage]{footmisc}
 \renewcommand{\footnotemargin}{1em}
 
@@ -66,6 +69,10 @@
 % Set the default spacing between paragraphs. Remove indentation.
 \usepackage[skip=6pt, indent=0pt]{parskip}
 \setstretch{1}
+
+% Default margins for itemize lists
+\setlist[itemize,2]{leftmargin=15pt, label=$\triangleright$}
+\setlist[enumerate,2]{leftmargin=15pt}
 
 % Get version from env
 % \getenv{variable_name} just prints the value
@@ -114,22 +121,6 @@
   {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
 
-\newcommand{\resources}[3]{%
-  \bgroup%
-  \def\arraystretch{2}%
-  \begin{tabularx}{\linewidth} {%
-    | >{\centering\arraybackslash}X%
-    | >{\centering\arraybackslash}X%
-    | >{\centering\arraybackslash}X | }%
-   \hline%
-   #1 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/gold.svg}}} &
-   #2 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/building_materials.svg}}} &
-   #3 {\raisebox{-0.2\height}{\includesvg[height=15px]{\svgs/valuables.svg}}} \\%
-   \hline%
-  \end{tabularx}%
-  \egroup%
-}%
-
 \renewcommand{\labelitemi}{
   \begin{tikzpicture}
     \node (listdot) [circle, inner sep=-3] {\includegraphics[width=1em, valign=c]{\layout/listdot.png}};
@@ -144,7 +135,7 @@
 \definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
 \definecolor{camel}{rgb}{0.76, 0.6, 0.42}
 \definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
-\definecolor{darkcerulean}{rgb}{0.03, 0.27, 0.49}
+\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
 \definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
 
 % Command to frame images
@@ -181,28 +172,31 @@
 
 %Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
 \newcommand{\addsection}[2]{
-  \vspace*{-5em}
-  \hspace*{-1em}
+  \vspace*{-5.72em}
+  \hspace*{-1.3em}
   \makebox[0pt][l]{
   \raisebox{-\totalheight}[0pt][7pt]{
-    \begin{tikzpicture}
-      \draw (0, 0) node[inner sep=0] {\includegraphics[width=\linewidth, height=0.2\linewidth]{\layout/section_heading.jpg}};
-      \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#2}};
-    \end{tikzpicture}
+      \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#2}};
+      \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.16\textwidth, outermargin=0.16\textwidth, innermargin=0.16\textwidth]
+  \begin{fullwidth}[leftmargin=0.21\textwidth]
     \begin{center}
-      \vspace*{\lang_header_adjustment}
+      \vspace{1em}
+      \vspace{\lang_header_adjustment}
       \section*{\sectionheadertext{#1}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
+      \pagetarget{#1}{}
     \end{center}
   \end{fullwidth}
   \vspace{1.75em}
+  \vspace{\lang_header_adjustment}
 }
 %End of create section heading.
 
-% Add title page for scenario type
+% Add title page for Scenario type
 \newcommand{\addscenariogroup}[2]{
   \thispagestyle{empty}
   \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
@@ -251,11 +245,11 @@
 }
 
 % Four mandatory params
-% - [optional] set to "subsection" or any other level if you want to have this as a subsection in TOC
-% - lines of campaign name (1-2 according to the name length)
-% - campaign name
-% - scenario name
-% - icon
+% - [optional] set to "subsection" or any other Level if you want to have this as a subsection in TOC
+% - Lines of Campaign Name (1-2 according to the name length)
+% - Campaign Name
+% - Scenario Name
+% - Icon
 %
 % TODO: possibly replace the whole \addsection with this
 \newcommand{\addscenariosection}[5][section]{
@@ -268,22 +262,26 @@
   \raisebox{-\totalheight}[0pt][7pt]{
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[\textwidth][c]{\includegraphics[width=1.06\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
-        \draw (-6.2, 0) node {\includegraphics[width=0.125\textwidth]{#5}};
+        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#5}};
       \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.2\textwidth]
+  \begin{fullwidth}[leftmargin=0.21\textwidth]
     \begin{center}
+      \vspace{\lang_header_adjustment}
       \vspace{-12pt}
       \section*{\sectionheadertext{\small{\sotitle{#3}}}}
+      \vspace{\lang_header_adjustment}
       \vspace{-10pt}
       \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
+      \pagetarget{#4}{}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}
+  \vspace{\lang_header_adjustment}
 }
 
 % Apply language-specific subsection spacings if defined
@@ -467,11 +465,15 @@
 
 \clearpage
 
+\include{\sections/what_to_play.tex}
+
 \include{coops/main.tex}
 
 \include{clash/main.tex}
 
 \include{campaigns/main.tex}
+
+\include{\sections/recommendations.tex}
 
 \include{\sections/credits.tex}
 

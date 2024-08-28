@@ -1,0 +1,153 @@
+# Czech translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-08-20 20:10+0200\n"
+"PO-Revision-Date: 2024-08-04 22:13+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:96 sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/what_to_play.tex:3
+msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
+msgstr "\\addsection{Co si zahrát}{\\images/forgetfulness.png}"
+
+#. type: multicols
+#: sections/what_to_play.tex:7
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Follow these suggestions if you're not sure which scenario is best for you.\n"
+#| "\n"
+msgid ""
+"Follow these suggestions if you're not sure which Scenario is best for you.\n"
+"\n"
+msgstr ""
+"Můžete se řídit těmito návrhy, pokud si nejste jisti, který scénář je pro vás nejlepší.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:9
+#, no-wrap
+msgid ""
+"\\subsection*{Cooperative Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Kooperativní Mód}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:13
+#, fuzzy, no-wrap
+#| msgid ""
+#| "If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
+#| "For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
+#| "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
+#| "\n"
+msgid ""
+"If you're new to the game and want to try \\textbf{learning the rules}, start with \\pagelink{Emerald Island}{Emerald Island}.\n"
+"For a big adventure for \\textbf{up to 6 players} with an epic battle at the end, try \\pagelink{Titans' Stronghold}{Titans' Stronghold}.\n"
+"For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
+"\n"
+msgstr ""
+"Pokud jste ve hře noví a chcete \\textbf{se naučit pravidla}, začněte se \\pagelink{Smaragdový Ostrov}{Smaragdovým Ostrovem}.\n"
+"Pro velké dobrodružství pro \\textbf{až 6 hráčů} s epickou bitvou na konci zkuste \\pagelink{Pevnost Titánů}{Pevnost Titánů}.\n"
+"Pro takticky zaměřenou hru pro dva hráče zkuste \\pagelink{Strážci}{Strážce}.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:15
+#, no-wrap
+msgid ""
+"\\subsection*{Clash Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Střet}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:19
+#, fuzzy, no-wrap
+#| msgid ""
+#| "If you'd like to play a 2- or 4-player ``capture the Grail'' scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+#| "For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
+#| "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
+#| "\n"
+msgid ""
+"If you'd like to play a 2- or 4-player ``capture the Grail'' Scenario with interesting twists, try \\pagelink{Bloody Grail}{Bloody Grail}.\n"
+"For an exciting boss fight for 2-3 players, choose \\pagelink{The Hunt}{The Hunt}.\n"
+"For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
+"\n"
+msgstr ""
+"Pokud byste chtěli hrát scénář \\uv{ukořistění Grálu} pro 2 nebo 4 hráče se zajímavými zvraty, zkuste \\pagelink{Krvavý Grál}{Krvavý Grál}.\n"
+"Pro vzrušující boj s bossem pro 2--3 hráče si vyberte \\pagelink{Lov}{Lov}.\n"
+"Pro nevyhnutelnou epickou bitvu mezi dvěma hráči s možným obléháním hrajte \\pagelink{Hrad Dračí Kletby}{Hrad Dračí Kletby}.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:21
+#, no-wrap
+msgid ""
+"\\subsection*{Campaign}\n"
+"\n"
+msgstr ""
+"\\subsection*{Kampaň}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:23
+#, fuzzy, no-wrap
+#| msgid ""
+#| "There is a 3-scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+#| "\n"
+msgid ""
+"There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
+"\n"
+msgstr ""
+"Pokud preferujete sólo hru, tak na konci najdete 3-scenářovou kampaň frakce Peklo -- \\pagelink{1. Ďábelský Plán}{Kobky a Ďáblové}.\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:25
+#, no-wrap
+msgid ""
+"\\subsection*{Recommendations}\n"
+"\n"
+msgstr ""
+"\\subsection*{Doporučení}\n"
+"\n"
+
+#. type: multicols
+#: sections/what_to_play.tex:27
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{recommendations} at the and of this book.\n"
+#| "\n"
+msgid ""
+"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
+"\n"
+msgstr ""
+"Pro informace týkající se herní doby, strategie a vlastních pravidel, se podívejte na \\pagelink{Doporučení}{Doporučení} na konci této knihy.\n"
+"\n"
