@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-28 17:40+0200\n"
+"POT-Creation-Date: 2024-08-28 17:56+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -31,7 +31,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -65,7 +66,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:64 clash/the_hunt.tex:65
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
@@ -76,7 +77,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/force_of_will.tex:76 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -97,7 +98,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:37 clash/the_hunt.tex:35
+#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
@@ -106,7 +107,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:80 clash/the_hunt.tex:81
+#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
@@ -119,6 +120,14 @@ msgstr ""
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/force_of_will.tex:33 clash/the_hunt.tex:33
+#, no-wrap
+msgid ""
+"\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 "\n"
 msgstr ""
 
@@ -176,14 +185,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: clash/the_hunt.tex:33
-#, no-wrap
-msgid ""
-"\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 "\n"
 msgstr ""
 
