@@ -2,7 +2,7 @@
 
 > 🏗️ THIS IS A WORK IN PROGRESS 🚧
 
-Click on the table to download the most recent builds in the chosen language:
+Click on the table to download the most recent builds of the Mission Book in the chosen language:
 
 <table>
     <thead>
@@ -41,9 +41,17 @@ Click on the table to download the most recent builds in the chosen language:
     </tbody>
 </table>
 
+Bonus: [Draft Scenarios 🇬🇧](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf)
+
 ### 💡 What Is This?
 
 This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
+There are two documents:
+
+|Mission Book ✅|Draft Scenarios 🏗️|
+|:----------:|:----------:|
+| ![image](docs/assets/mission-book-title.png) | ![image](docs/assets/draft-scenarios-title.png) |
+| A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
 
 ### 🤔 Why?
 

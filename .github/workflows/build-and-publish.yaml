@@ -40,7 +40,7 @@ jobs:
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
           ./${PO4A_DIR}/po4a -v --no-update po4a.cfg
 
-      - name: Compile rule book
+      - name: Compile mission book
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
