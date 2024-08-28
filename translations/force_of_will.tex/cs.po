@@ -117,37 +117,28 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/force_of_will.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/berserk.png}"
-msgstr "\\addscenariosection{1}{Střet}{Lov}{\\images/slayer.png}"
+msgstr "\\addscenariosection{1}{Střet}{Síla V\\r{u}le}{\\images/berserk.png}"
 
 #. type: multicols*
 #: clash/force_of_will.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} profmamadu\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Shakajiub\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} profmamadu\n"
+"\\textbf{Autor:} Shakajiub\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studio Discord}\n"
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols*
@@ -160,21 +151,22 @@ msgid ""
 "If by nothing else, then by sheer force of will.}\n"
 "\n"
 msgstr ""
+"\\textit{Divocí draci terorizují venkov.\n"
+"Farmáři nemohou v klidu pěstovat své plodiny, karavany se bojí převážet své zboží.\n"
+"Musíte na ty bestie zaútočit a porazit je.\n"
+"Pokud ne ničím jiným, tak pouhou silou vůle.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "This Scenario is played over 13 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
-"Tento Scénář se hraje na 13 Kol.\n"
+"Tento Scénář se hraje na 12 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -191,26 +183,17 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Počáteční Suroviny:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Počáteční Suroviny:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -220,7 +203,7 @@ msgid ""
 msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Skupinu \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 2 × Málo \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -236,16 +219,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile, all of which must contain an Obelisk\n"
-#| "  \\item 4 × Far (II--III) Map Tile, 2 of which must contain a Settlement\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player scenario:}\n"
 "\\begin{itemize}\n"
@@ -259,24 +233,15 @@ msgstr ""
 "\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 4 × Blízký (IV--V) Dílek Mapy, všechny musí obsahovat Obelisk\n"
-"  \\item 4 × Vzdálený (II--III) Dílek Mapy, z nichž 2 musí obsahovat Osadu\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole s Grálem\n"
+"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
+"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:54
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 4-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 4 × Starting (I) Map Tile\n"
-#| "  \\item 6 × Near (IV--V) Map Tile, 4 of which must contain an Obelisk\n"
-#| "  \\item 8 × Far (II--III) Map Tile, 4 of which must contain a Settlement\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 4-player scenario:}\n"
 "\\begin{itemize}\n"
@@ -289,54 +254,40 @@ msgid ""
 msgstr ""
 "\\textbf{Scénář pro 4 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 4 × Startovní (I) Dílek Mapy\n"
-"  \\item 6 × Blízký (IV--V) Dílek Mapy, z nichž 4 musí obsahovat Obelisk\n"
-"  \\item 8 × Vzdálený (II--III) Dílek Mapy, z nichž 4 musí obsahovat Osadu\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole s Grálem\n"
+"  \\item 3 × Startovní (I) Dílek Mapy\n"
+"  \\item 3 × Blízký (IV--V) Dílek Mapy\n"
+"  \\item 6 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "To win the Scenario, a Hero must obtain the Grail Token and bring it to their Faction Town.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "To win the Scenario, a Hero must Flag the Dragon Utopia Field.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
-"Aby Hrdina vyhrál Scénář, musí získat Žeton Grálu a přinést jej do Města své Frakce.\n"
+"Pro výhru ve Scénáři musí Hrdina obsadit Pole Dračí Utopie.\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "If the Dragon Boss still lives at the end of the \\nth{14} Round, all players lose the Scenario.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
-"Pokud Dračí Boss stále žije na konci 14. Kola, všichni hráči prohrávají Scénář.\n"
+"Na konci 12. Kola, pokud není žádný vítěz, všichni hráči prohrávají tento Scénář.\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:67
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -344,21 +295,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4., 8. a 12. Kolo:}\n"
+"\\textbf{4. a 8. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Odstraňte všechny Černé Kostičky ze všech Větrných Mlýnů, Vodních Kol a Mystických Zahrad na mapě.\n"
+"  \\item Odstraňte všechny Černé Kostičky ze všech Vodních Kol a Větrných Mlýnů na mapě.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:72
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Spawn an enemy army following the rules outlined below.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
 "\\begin{itemize}\n"
@@ -366,9 +311,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{7. a 8. Kolo:}\n"
+"\\textbf{5. a 9. Kolo (pouze pro Scénář 2 hráčů):}\n"
 "\\begin{itemize}\n"
-"  \\item Vyvolejte nepřátelskou armádu podle níže uvedených pravidel.\n"
+"  \\item Druhý hráč získává 1 \\svg{movement}.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -394,19 +339,27 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Když hráč navštíví Obelisk, hodí 2 \\svg{treasure} a vybere vyhodnotí jednu z nich.\n"
+"  \\item Hráč nesmí použít kartu Diplomacie, aby přeskočil Boj na poli Dračí Utopie.\n"
+"  \\item Když se Hrdina přesune na Pole Dračí Utopie, musí bojovat podle zvolené obtížnosti s následujícím počtem Neutrálních Jednotek:\n"
+"  \\begin{itemize}\n"
+"    \\item \\textbf{Lehká:} 1 × \\svgunit{azure}, 2 × \\svgunit{silver}, 1 × \\svgunit{bronze}\n"
+"    \\item \\textbf{Normální:} 1 × \\svgunit{azure}, 1 × \\svgunit{golden}, 2 × \\svgunit{silver}\n"
+"    \\item \\textbf{Těžká:} 1 × \\svgunit{azure}, 3 × \\svgunit{golden}\n"
+"    \\item \\textbf{Nemožná:}  2 × \\svgunit{azure}, 2 × \\svgunit{golden}\n"
+"  \\end{itemize}\n"
+"  \\item Dodržujte tyto kroky, když začne Boj proti Neutrálním Jednotkám na Poli Dračí Utopie:\n"
+"  \\begin{itemize}\n"
+"    \\item Umístěte až 4 své karty Jednotek volně do středního řádku Desky Bojiště.\n"
+"    \\item Nepřátelský hráč ovládající Neutrální Jednotky umístí každou Neutrální jednotku do jednoho ze 4 rohů Desky Bojiště.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:101
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{tikzpicture}[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-#| "  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-#| "  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-#| "  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
-#| "\\end{tikzpicture}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
@@ -419,9 +372,9 @@ msgid ""
 msgstr ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-"  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-"  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 3 HRÁČE}}}};\n"
+"  \\node at (14, 3.5) {\\includegraphics[width=\\linewidth]{\\_assets/maps/force-of-will-2p.png}};\n"
+"  \\node at (14, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
+"  \\node at (7, -7) {\\includegraphics[width=1.35\\linewidth]{\\_assets/maps/force-of-will-3p.png}};\n"
+"  \\node at (7, -13.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 3 HRÁČE}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
