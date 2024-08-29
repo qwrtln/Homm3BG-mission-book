@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-28 18:16+0200\n"
+"POT-Creation-Date: 2024-08-28 22:57+0200\n"
 "PO-Revision-Date: 2024-08-28 17:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -119,37 +119,28 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/force_of_will.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/berserk.png}"
-msgstr "\\addscenariosection{1}{Tryb Starcia}{Polowanie}{\\images/slayer.png}"
+msgstr "\\addscenariosection{1}{Tryb Starcia}{Siła Woli}{\\images/berserk.png}"
 
 #. type: multicols*
 #: clash/force_of_will.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} profmamadu\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Shakajiub\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} profmamadu\n"
+"\\textbf{Autor:} Shakajiub\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols*
@@ -162,21 +153,22 @@ msgid ""
 "If by nothing else, then by sheer force of will.}\n"
 "\n"
 msgstr ""
+"\\textit{Dzikie smoki terroryzują okolice.\n"
+"Rolnicy nie mogą spokojnie uprawiać swoich pól, karawany boją się przewozić swoje towary.\n"
+"Musisz uderzyć w samo serce ich siedliska i pokonać bestie.\n"
+"Jeśli nie inaczej, to czystą siłą woli.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "This Scenario is played over 13 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
-"Ten Scenariusz rozgrywany jest w 13 Rundach.\n"
+"Ten Scenariusz rozgrywany jest w 12 Rundach.\n"
 "\n"
 
 #. type: multicols*
@@ -193,26 +185,17 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -222,7 +205,7 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Grupa \\svgunit{bronze} Jednosek o najniższym koszcie rekrutacji\n"
+"  \\item 2 × Garstka \\svgunit{bronze} Jednosek o \\textbf{najwyższym} koszcie rekrutacji\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -238,18 +221,9 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile, all of which must contain an Obelisk\n"
-#| "  \\item 4 × Far (II--III) Map Tile, 2 of which must contain a Settlement\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
-"\\textbf{For a 2-player scenario:}\n"
+"\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map Tile\n"
 "  \\item 2 × Near (IV--V) Map Tile\n"
@@ -261,26 +235,17 @@ msgstr ""
 "\\textbf{Dla Scenariusza dwuosobowego:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV--V) Kafelek Mapy, z których każdy musi zawierać Obelisk\n"
-"  \\item 4 × Daleki (II--III) Kafelek Mapy, z których 2 muszą zawierać Osadę\n"
-"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać pole Graala\n"
+"  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać Smoczą Utopię\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:54
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 4-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 4 × Starting (I) Map Tile\n"
-#| "  \\item 6 × Near (IV--V) Map Tile, 4 of which must contain an Obelisk\n"
-#| "  \\item 8 × Far (II--III) Map Tile, 4 of which must contain a Settlement\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Grail Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
-"\\textbf{For a 4-player scenario:}\n"
+"\\textbf{For a 3-player Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Starting (I) Map Tile\n"
 "  \\item 3 × Near (IV--V) Map Tile\n"
@@ -289,56 +254,42 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Dla Scenariusza czetroosobowego:}\n"
+"\\textbf{Dla Scenariusza trzyoosobowego:}\n"
 "\\begin{itemize}\n"
-"  \\item 4 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 6 × Bliski (IV--V) Kafelek Mapy, z których 4 muszą zawierać Obelisk\n"
-"  \\item 8 × Daleki (II--III) Kafelek Mapy, z których 4 muszą zawierać Osadę\n"
-"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać pole Graala\n"
+"  \\item 3 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 3 × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 6 × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy, który musi zawierać Smoczą Utopię\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "To win the Scenario, a Hero must obtain the Grail Token and bring it to their Faction Town.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "To win the Scenario, a Hero must Flag the Dragon Utopia Field.\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
-"Zdobądź Żeton Graala i przynieść go do Miasta swojej Frakcji.\n"
+"\\subsection*{\\MakeUppercase{Warunki zwycięstwa}}\n"
+"Aby wygrać Scenariusz, Bohater musi oflagować pole Smoczej Utopii.\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "If the Dragon Boss still lives at the end of the \\nth{14} Round, all players lose the Scenario.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
-"Jeśli Smoczy Władca nadal żyje na koniec 14. Rundy, wszyscy gracze przegrywają Scenariusz.\n"
+"Na koniec 12. Rundy, jeśli nie ma zwycięzcy, wszyscy gracze przegrywają Scenariusz.\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:67
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -346,32 +297,27 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Rundy 4., 8. i 12.:}\n"
+"\\textbf{Rundy 4. i 8.:}\n"
 "\\begin{itemize}\n"
-"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka, Młyna Wodnego i Mistycznego Ogródu na mapie.\n"
+"  \\item Usuń czarne kostki z każdego Młyna Wodnego i Wiatraka na mapie.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:72
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Spawn an enemy army following the rules outlined below.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
 "\\begin{itemize}\n"
-"  \\item The second player gains 1 \\svg{movement}.\n"
+"  \\item The second player gains 1 \\svgeven{movement}.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Rundy 7. i 8.:}\n"
+"\\textbf{Rundy 5. i 9. (tylko Scenariusz dla 2 graczy):}\n"
 "\\begin{itemize}\n"
-"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
+"  \\item Drugi gracz zyskuje 1 \\svgeven{movement}.\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:93
@@ -389,25 +335,33 @@ msgid ""
 "  \\end{itemize}\n"
 "  \\item Follow these steps when Combat begins against Neutral Units at the Dragon Utopia:\n"
 "  \\begin{itemize}\n"
-"    \\item Place up to 4 of your unit cards freely onto the center row of the Combat Board.\n"
-"    \\item The enemy player controlling the Neutral Units places each Neutral unit in each of the 4 corners of the Combat Board.\n"
+"    \\item Place up to 4 of your Unit Cards freely onto the center row of the Combat Board.\n"
+"    \\item The enemy player controlling the Neutral Units places each Neutral Unit in each of the 4 corners of the Combat Board.\n"
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Gdy gracz Odwiedza Obelisk, rzuca 2 \\svg{treasure} i wybiera jeden wynik.\n"
+"  \\item Gracz nie może użyć karty Dyplomacji, aby ominąć Walkę na polu Smoczej Utopii.\n"
+"  \\item Gdy Bohater przemieszcza się na pole Smoczej Utopii, musi walczyć z następującą liczbą Neutralnych Jednostek w zależności od wybranego poziomu trudności:\n"
+"  \\begin{itemize}\n"
+"    \\item \\textbf{Łatwy:} 1 × \\svgunit{azure}, 2 × \\svgunit{silver}, 1 × \\svgunit{bronze}\n"
+"    \\item \\textbf{Normalny:} 1 × \\svgunit{azure}, 1 × \\svgunit{golden}, 2 × \\svgunit{silver}\n"
+"    \\item \\textbf{Trudny:} 1 × \\svgunit{azure}, 3 × \\svgunit{golden}\n"
+"    \\item \\textbf{Niemożliwy:} 2 × \\svgunit{azure}, 2 × \\svgunit{golden}\n"
+"  \\end{itemize}\n"
+"  \\item Postępuj według poniższych kroków, gdy zaczyna się Walka z Neutralnymi Jednostkami w Smoczej Utopii:\n"
+"  \\begin{itemize}\n"
+"    \\item Umieść do 4 swoich Kart Jednostek dowolnie na środkowym rzędzie Planszy Walki.\n"
+"    \\item Gracz kontrolujący Neutralne Jednostki umieszcza każdą z nich w jednym z 4 rogów Planszy Walki.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:101
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{tikzpicture}[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-#| "  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-#| "  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-#| "  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
-#| "\\end{tikzpicture}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
@@ -420,9 +374,9 @@ msgid ""
 msgstr ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 10) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-"  \\node at (14, 4) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
-"  \\node at (11, -3.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-"  \\node at (4, -2.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"  \\node at (14, 4) {\\includegraphics[width=\\linewidth]{\\_assets/maps/force-of-will-2p.png}};\n"
+"  \\node at (14, -3) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
+"  \\node at (7, -7) {\\includegraphics[width=1.35\\linewidth]{\\_assets/maps/force-of-will-3p.png}};\n"
+"  \\node at (7, -13.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
