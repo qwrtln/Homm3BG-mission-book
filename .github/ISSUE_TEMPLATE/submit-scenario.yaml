@@ -1,0 +1,96 @@
+name: "[WIP] Submit Scenario"
+description: "Please submit your scenario using this template"
+title: "New Scenario: "
+labels: new-scenario
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting your scenario! Please fill in the form below.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Scenario type
+      description: What game mode is this scenario for?
+      options:
+        - Coop
+        - Clash
+        - Campaign
+        - Alliance
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Scenario Title
+      description: What's the title of your scenario?
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Who is the author?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Please share a link to the scenario source.
+      placeholder: ex. https://discord.com/channels/740870068178649108/1239631918643941509
+    validations:
+      required: false
+  - type: textarea
+    id: story
+    attributes:
+      label: The Story
+      description: Write 1-2 paragraphs to set the story.
+      placeholder: There is a world beyond ours, filled with beasts and monsters...
+    validations:
+      required: true
+  - type: dropdown
+    id: length
+    attributes:
+      label: Scenario Length
+      description: How many rounds is this scenario played over?
+      options: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      default: 8
+    validations:
+      required: true
+  - type: input
+    id: player-count
+    attributes:
+      label: Player Count
+      description: Please specify the number of players.
+      placeholder: ex. 2-6, 2-3, 2 or 4
+    validations:
+      required: true
+  - type: dropdown
+    id: starting-gold
+    attributes:
+      label: Starting Gold
+      description: How much gold do the players start with?
+      options: [0, 5, 10, 15, 20, 25, 30, 35, 40]
+      default: 10
+    validations:
+      required: true
+  - type: dropdown
+    id: starting-bulding-materials
+    attributes:
+      label: Starting Building Materials
+      description: How much bulding materials do the players start with?
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      default: 3
+    validations:
+      required: true
+  - type: dropdown
+    id: starting-valuables
+    attributes:
+      label: Starting Valuables
+      description: How much valuables do the players start with?
+      options: [0, 1, 2, 3, 4, 5]
+      default: 1
+    validations:
+      required: true
