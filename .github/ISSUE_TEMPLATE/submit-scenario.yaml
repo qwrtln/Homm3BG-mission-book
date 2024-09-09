@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Thank you for submitting your scenario! Please fill in the form below.
+        Please don't remove the `New Scenario:` prefix from the title!
   - type: dropdown
     id: type
     attributes:
@@ -20,28 +21,28 @@ body:
       default: 0
     validations:
       required: true
-  # - type: input
-  #   id: title
-  #   attributes:
-  #     label: Scenario Title
-  #     description: What's the title of your scenario?
-  #   validations:
-  #     required: true
-  # - type: input
-  #   id: author
-  #   attributes:
-  #     label: Author
-  #     description: Who is the author?
-  #   validations:
-  #     required: true
-  # - type: input
-  #   id: source
-  #   attributes:
-  #     label: Source
-  #     description: Please share a link to the scenario source.
-  #     placeholder: ex. https://discord.com/channels/740870068178649108/1239631918643941509
-  #   validations:
-  #     required: false
+  - type: input
+    id: title
+    attributes:
+      label: Scenario Title
+      description: What's the title of your scenario?
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Who is the author?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Please share a link to the scenario source.
+      placeholder: ex. https://discord.com/channels/740870068178649108/1239631918643941509
+    validations:
+      required: false
   # - type: textarea
   #   id: story
   #   attributes:
