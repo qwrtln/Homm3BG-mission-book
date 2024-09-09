@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-26 19:17+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -32,9 +32,50 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\n"
+
+#. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -47,7 +88,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -61,7 +102,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -72,16 +113,16 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
 "\n"
 
 #. type: multicols*
@@ -105,18 +146,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Autor:} Tm335\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:18
-#: campaigns/inferno_steadwicks_fall.tex:16
-#: campaigns/inferno_deal_with_the_devil.tex:20
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario length}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
 "\n"
 
 #. type: multicols*
@@ -172,22 +201,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{AI hero setup}}\n"
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
 "\n"
 
 #. type: multicols*
@@ -196,34 +213,22 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Ustawienie Bohaterów}}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
-#: campaigns/inferno_deal_with_the_devil.tex:173
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Additional rules}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
-"\n"
-
-#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
-#: campaigns/inferno_steadwicks_fall.tex:195
+#: campaigns/inferno_steadwicks_fall.tex:190
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
-"During this ``Inferno'' campaign scenario, the following rules apply:\n"
+"During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"W trakcie scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"W trakcie Scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
 "\n"
 
 #. type: multicols*
@@ -231,10 +236,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
-"Take the following Map tiles and set them up as shown in the scenario map layout:\n"
+"Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy scenariusza:\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -242,7 +247,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:3
 msgid ""
 "\\addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}"
-"{3. Deal With The Devil}{\\images/firewall.png}"
+"{3. Deal With the Devil}{\\images/firewall.png}"
 msgstr ""
 "\\addscenariosection[subsection]{1}{Kampania Inferna $-$ Podziemia i Diabły}"
 "{3. Rozprawa z Diabłem}{\\images/firewall.png}"
@@ -285,10 +290,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:22
 #, no-wrap
 msgid ""
-"This scenario plays out over 14 rounds.\n"
+"This Scenario plays out over 14 Rounds.\n"
 "\n"
 msgstr ""
-"Ten scenariusz rozgrywany jest w 14 rundach.\n"
+"Ten Scenariusz rozgrywany jest w 14 Rundach.\n"
 "\n"
 
 #. type: multicols*
@@ -435,9 +440,9 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:69
 #, no-wrap
 msgid ""
-"Charging Armies \\#1 and \\#2 use the same AI deck and Skill deck. Reshuffle both decks after combat.\n"
+"Charging Armies \\#1 and \\#2 use the same AI Deck and Skill Deck. Reshuffle both Decks after Combat.\n"
 "\n"
-msgstr "Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii Umiejętności. Przetasuj obie talie po walce.\n"
+msgstr "Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii Umiejętności. Przetasuj obie Talie po Walce.\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:75
@@ -445,22 +450,22 @@ msgstr "Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii Umie
 msgid ""
 "Both Artifact cards of all Charging Armies are treated as Skills, and use the top ``less powerful'' effect on the card.\n"
 "The ``Sword of Hellfire'' will be used in attacks and retaliation attacks. It is not used when attacking Walls or Gates,\n"
-"and remains in effect on the unit. If ``Shield of the Damned'' is drawn, it takes effect when\n"
+"and remains in effect on the Unit. If ``Shield of the Damned'' is drawn, it takes effect when\n"
 "any Charging Army Unit takes attack or retaliation damage. If the AI Skill card advises ``do it again'', the Artifact\n"
-"cards are not played again immediately, but instead are played as soon as the next unit is able to use them.\n"
+"cards are not played again immediately, but instead are played as soon as the next Unit is able to use them.\n"
 "\n"
 msgstr ""
 "Obie karty Artefaktów wszystkich Szarżujących Armii traktowane są jako Umiejętności i używają górnego ,,słabszego'' efektu.\n"
 ",,Miecz Ognia Piekielnego'' będzie używany w atakach i kontratakach. Nie jest używany podczas atakowania Murów lub Bram\n"
-"i pozostaje aktywny na jednostce. Jeśli zostanie dobrana karta ,,Tarcza Potępionych'', jej efekt wchodzi w życie, gdy\n"
+"i pozostaje aktywny na Jednostce. Jeśli zostanie dobrana karta ,,Tarcza Potępionych'', jej efekt wchodzi w życie, gdy\n"
 "jakakolwiek Jednostka Szarżującej Armii otrzyma obrażenia od ataku lub kontrataku. Jeśli karta Umiejętności AI zaleca ,,powtórzenie'', karty Artefaktów\n"
-"nie są natychmiastowo używane ponownie, lecz są używane, gdy następna jednostka będzie mogła je zastosować.\n"
+"nie są natychmiastowo używane ponownie, lecz są używane, gdy następna Jednostka będzie mogła je zastosować.\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:86
 #, no-wrap
 msgid ""
-"\\textbf{3 × Starting (I) Map tile}\n"
+"\\textbf{3 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Castle (S3)\n"
@@ -479,7 +484,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:93
 #, no-wrap
 msgid ""
-"\\textbf{7 × Far (II--III) Map tile}\n"
+"\\textbf{7 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Inferno (F16, F17, F18)\n"
 "  \\item 3 × Castle (F3, \\#F4, F6)\n"
@@ -498,7 +503,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:98
 #, no-wrap
 msgid ""
-"\\textbf{1 × Near (IV--V) Map tile}\n"
+"\\textbf{1 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
@@ -513,33 +518,33 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:102
 #, no-wrap
 msgid ""
-"The Enemy Charging Rampart Hero \\#1 starts on the center field of the S4 Starting Map tile.\n"
+"The Enemy Charging Rampart Hero \\#1 starts on the center Field of the S4 Starting Map Tile.\n"
 "\n"
-msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym polu Kafelka S4.\n"
+msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:104
 #, no-wrap
 msgid ""
-"The Enemy Charging Castle Hero \\#1 starts on the center field of S3 Starting Map tile.\n"
+"The Enemy Charging Castle Hero \\#1 starts on the center Field of S3 Starting Map Tile.\n"
 "\n"
-msgstr "Szarżująca Armia Zamku \\#1 zaczyna na środkowym polu Kafelka S4.\n"
+msgstr "Szarżująca Armia Zamku \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:106
 #, no-wrap
 msgid ""
-"Place your Hero on the center field of the S6 Inferno Starting Map tile.\n"
+"Place your Hero on the center Field of the S6 Inferno Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Inferno S6.\n"
+"Umieść swojego Bohatera na środkowym Polu Początkowego Kafelka Mapy Inferno S6.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:108
 #, no-wrap
 msgid ""
-"You cannot recruit a Secondary Hero.\n"
+"You cannot Recruit a Secondary Hero.\n"
 "\n"
 msgstr ""
 "Nie możesz zrekrutować Bohatera Pomocniczego.\n"
@@ -594,7 +599,7 @@ msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
-"    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
+"    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where  % no-check-caps\n"
 "    their magic is diminished on this cursed ground.''\n"
 "\\end{itemize}\n"
 "\n"
@@ -602,7 +607,7 @@ msgstr ""
 "\\textbf{2. Runda:}\n"
 "\\begin{itemize}\n"
 "  \\item Przeczytaj: ,,Armie Zamku i AvLee będą wkrótce u naszych bram. Muszą przejść przez wulkaniczny korytarz\n"
-"    na wschodzie. Nie możemy stawać z nimi do walki w polu, musimy bronić się wewnątrz Klessive, gdzie\n"
+"    na wschodzie. Nie możemy stawać z nimi do walki w polu, musimy bronić się wewnątrz Klessive, gdzie  % no-check-caps\n"
 "    ich magia jest osłabiona na tej przeklętej ziemi.''\n"
 "\\end{itemize}\n"
 "\n"
@@ -630,13 +635,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The first armies will attack this round and next round. Prepare your defenses!\n"
+"  \\item The first armies will attack this Round and next Round. Prepare your defenses!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{4. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Pierwsze armie zaatakują w tej rundzie i w następnej. Przygotować nasze obrony!\n"
+"  \\item Pierwsze armie zaatakują w tej Rundzie i w następnej. Przygotować nasze obrony!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -646,15 +651,15 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{7} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Enemy Castle Charging Hero \\#2 appears on the Settlement field of the F3 tile or on the center field of S3 Starting Map tile (your choice).\n"
-"  \\item The Enemy Rampart Charging Hero \\#2 appears on the center field of the S4 Starting Map tile.\n"
+"  \\item The Enemy Castle Charging Hero \\#2 appears on the Settlement Field of the F3 Tile or on the center Field of S3 Starting Map Tile (your choice).\n"
+"  \\item The Enemy Rampart Charging Hero \\#2 appears on the center Field of the S4 Starting Map Tile.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{7. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Szarżująca Armia Zamku \\#2 pojawia się na polu Osady kafelka F3 albo na środkowym polu Początkowego Kafelka Mapy S3 (twój wybór).\n"
-"  \\item Szarżująca Armia Bastionu \\#2 pojawia się na środkowym polu Początkowego Kafelka Mapy S4.\n"
+"  \\item Szarżująca Armia Zamku \\#2 pojawia się na Polu Osady Kafelka F3 albo na środkowym Polu Początkowego Kafelka Mapy S3 (twój wybór).\n"
+"  \\item Szarżująca Armia Bastionu \\#2 pojawia się na środkowym Polu Początkowego Kafelka Mapy S4.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -664,13 +669,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The second armies will attack this round and next round. Prepare your defenses!\n"
+"  \\item The second armies will attack this Round and next Round. Prepare your defenses!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{10. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Kolejne armie zaatakują w tej i następnej rundzie. Przygotować nasze obrony!\n"
+"  \\item Kolejne armie zaatakują w tej i następnej Rundzie. Przygotować nasze obrony!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -680,7 +685,7 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Final Charging Enemy Army appears on the Settlement field of the F3 tile. This army has 4 MPs per turn.\n"
+"  \\item The Final Charging Enemy Army appears on the Settlement Field of the F3 Tile. This army has 4 MPs per Turn.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -696,13 +701,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Final Charging Army will attack this round. We must hold Kleesive at all costs!\n"
+"  \\item The Final Charging Army will attack this Round. We must hold Kleesive at all costs!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{16. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Ostatnia Szarżująca Armia zaatakuje w tej rundzie. Musimy bronić Kleesive za wszelką cenę!\n"
+"  \\item Ostatnia Szarżująca Armia zaatakuje w tej Rundzie. Musimy bronić Kleesive za wszelką cenę!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -710,13 +715,13 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:171
 #, no-wrap
 msgid ""
-"\\textbf{When you complete the scenario:}\n"
+"\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Congratulations! You have defended Kleesive and are victorious!''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Po zakończeniu scenariusza:}\n"
+"\\textbf{Po zakończeniu Scenariusza:}\n"
 "\\begin{itemize}\n"
 "  \\item Przeczytaj: ,,Gratulacje! Obroniłeś Kleesive i jesteś zwycięzcą!''\n"
 "\\end{itemize}\n"
@@ -730,45 +735,45 @@ msgid ""
 "  \\item Your Main Hero can only travel in Inferno Map Tiles. You cannot enter any other Map Tile type.\n"
 "  \\item You cannot attack Enemy Charging Heroes. You can only defend against them while inside of Kleesive.\n"
 "  \\item Gain 3 \\svg{gold} when you defeat a Charging Hero's Army.\n"
-"  \\item If an Enemy Charging Hero enters a map tile or field that your Main Hero is on (exception is if you are in\n"
-"    your Inferno city Kleesive), or if a charging hero attacks Kleesive and you are not present in your city\n"
+"  \\item If an Enemy Charging Hero enters a Map Tile or Field that your Main Hero is on (exception is if you are in\n"
+"    your Inferno city Kleesive), or if a charging Hero attacks Kleesive and you are not present in your city\n"
 "    of Kleesive, you are immediately transported back to Kleesive, you lose any remaining Movement Points\n"
 "    you have, lose 3 \\svg{gold}, gain \\svg{morale_negative}, and randomly discard 1 card from your hand.\n"
 "  \\item Enemy Charging Heroes move only 2 MPs. The Final Charging Army moves 4 MPs. They take the shortest\n"
-"    route to Kleesive. If you own a mine in a map tile they enter, they will capture the mine (but will not\n"
+"    route to Kleesive. If you own a Mine in a Map Tile they enter, they will capture the Mine (but will not\n"
 "    ``backtrack'' to do so), and then continue along the shortest route to Kleesive. They ignore everything\n"
 "    else. They also make use of Stables 1 MP bonus.\n"
 "  \\item Enemy Charging Heros always move amongst each to not ``block'' each other's paths (thus slowing each\n"
 "    other down). The Enemy Charging Hero that can get closest to Kleesive will move before any others.\n"
-"  \\item Castle and Rampart already have all mines controlled in their territory (non-Inferno map tiles). Place enemy\n"
-"    cubes on all of their mines.\n"
-"  \\item Your walls, gates, and arrow tower in Kleesive are completely rebuilt after each battle.\n"
-"  \\item Enemy \\svg{unit_flying} units will fly over walls and gates to attack your units whenever possible.\n"
-"  \\item Enemy \\svg{unit_ranged} units will always attack the Arrow Tower once there are no other \\svg{unit_ranged} units to attack.\n"
-"  \\item Enemy units will always attack your units if possible. Only when that is not possible, then the gate,\n"
-"    and then walls will be attacked.\n"
+"  \\item Castle and Rampart already have all Mines controlled in their territory (non-Inferno Map Tiles). Place enemy\n"
+"    cubes on all of their Mines.\n"
+"  \\item Your Walls, Gates, and Arrow Tower in Kleesive are completely rebuilt after each battle.\n"
+"  \\item Enemy \\svg{unit_flying} Units will fly over Walls and Gates to attack your Units whenever possible.\n"
+"  \\item Enemy \\svg{unit_ranged} Units will always attack the Arrow Tower once there are no other \\svg{unit_ranged} Units to attack.\n"
+"  \\item Enemy Units will always attack your Units if possible. Only when that is not possible, then the Gate,\n"
+"    and then Walls will be attacked.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Twój Bohater Główny przemieszcza się tylko po kafelkach mapy Inferno. Nie możesz wejść na żaden inny typ kafelka.\n"
+"  \\item Twój Bohater Główny przemieszcza się tylko po Kafelkach mapy Inferno. Nie możesz wejść na żaden inny typ Kafelka.\n"
 "  \\item Nie możesz atakować Szarżujących Bohaterów Wroga. Możesz tylko bronić się przed nimi będąc wewnątrz Kleesive.\n"
 "  \\item Zyskaj 3 \\svg{gold}, gdy pokonasz Szarżującą Armię.\n"
-"  \\item Jeśli Szarżująca Armia wejdzie na kafelek lub pole, na którym znajduje się Twój Bohater Główny (wyjątek stanowi, gdy jesteś w\n"
+"  \\item Jeśli Szarżująca Armia wejdzie na Kafelek lub Pole, na którym znajduje się Twój Bohater Główny (wyjątek stanowi, gdy jesteś w\n"
 "    swoim mieście Inferno Kleesive), lub jeśli Szarżująca Armia zaatakuje Kleesive, a Ty nie jesteś obecny w swoim mieście\n"
 "    Kleesive, natychmiast zostajesz przeniesiony z powrotem do Kleesive, tracisz wszystkie pozostałe Punkty Ruchu,\n"
 "    tracisz 3 \\svg{gold}, otrzujesz \\svg{morale_negative} i losowo odrzucasz 1 kartę z ręki.\n"
 "  \\item Szarżujące Armie poruszają się tylko 2 Punkty Ruchu. Ostatnia Szarżująca Armia porusza się 4 Punkty Ruchu. Podążają najkrótszą\n"
-"    drogą do Kleesive. Jeśli posiadasz kopalnię na kafelku mapy, na który wchodzą, przejmą kopalnię (ale nie ,,wrócą się'' po nią),\n"
+"    drogą do Kleesive. Jeśli posiadasz Kopalnię na Kafelku mapy, na który wchodzą, przejmą Kopalnię (ale nie ,,wrócą się'' po nią),\n"
 "    a następnie kontynuują najkrótszą drogę do Kleesive. Ignorują wszystko inne. Korzystają także z bonusu 1 Punktu Ruchu ze Stajni.\n"
 "  \\item Szarżujące Armie zawsze poruszają się tak, aby nie ,,blokować'' sobie nawzajem dróg (spowalniając się nawzajem).\n"
 "    Szarżujący Armia, która jest najbliżej Kleesive, będzie poruszała się przed innymi.\n"
-"  \\item Zamek i Bastion mają już zdobyte wszystkie kopalnie na swoim terytorium (kafelki mapy nie-Inferno). Umieść kostki wroga na\n"
-"    wszystkich ich kopalniach.\n"
+"  \\item Zamek i Bastion mają już zdobyte wszystkie Kopalnie na swoim terytorium (kafelki mapy nie-Inferno). Umieść kostki wroga na\n"
+"    wszystkich ich Kopalniach.\n"
 "  \\item Twoje mury, bramy i wieża łuczicza w Kleesive są odbudowane po każdej bitwie.\n"
-"  \\item Jednostki \\svg{unit_flying} wroga będą przelatywały nad murami i bramami, aby atakować Twoje jednostki, gdy tylko jest to możliwe.\n"
-"  \\item Jednostki \\svg{unit_ranged} wroga zawsze zaatakują Wieżę Łucziczą, gdy nie ma innych jednostek \\svg{unit_ranged} do zaatakowania.\n"
-"  \\item Jednostki wroga zawsze zaatakują Twoje jednostki, jeśli to możliwe. Tylko wtedy, gdy jest to niemożliwe, będą atakowane bramy,\n"
+"  \\item Jednostki \\svg{unit_flying} wroga będą przelatywały nad murami i bramami, aby atakować Twoje Jednostki, gdy tylko jest to możliwe.\n"
+"  \\item Jednostki \\svg{unit_ranged} wroga zawsze zaatakują Wieżę Łucziczą, gdy nie ma innych Jednostek \\svg{unit_ranged} do zaatakowania.\n"
+"  \\item Jednostki wroga zawsze zaatakują Twoje Jednostki, jeśli to możliwe. Tylko wtedy, gdy jest to niemożliwe, będą atakowane bramy,\n"
 "    a następnie mury.\n"
 "\\end{itemize}\n"
 "\n"

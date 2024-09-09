@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-28 23:13+0200\n"
 "PO-Revision-Date: 2024-07-31 22:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -31,6 +32,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
@@ -40,7 +44,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:20 clash/dragoncurse_castle.tex:21
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
@@ -61,9 +69,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -86,7 +95,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:37 clash/dragoncurse_castle.tex:36
 #, no-wrap
 msgid ""
-"\\textbf{Map tile Pool:} None\n"
+"\\textbf{Map Tile Pool:} None\n"
 "\n"
 msgstr ""
 "\\textbf{Dílky Mapy na ruce:} Žádné\n"
@@ -94,7 +103,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
@@ -106,7 +115,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
-#: clash/dragoncurse_castle.tex:34
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
@@ -165,10 +174,10 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:19
 #, no-wrap
 msgid ""
-"This scenario is played over a maximum of 11 rounds.\n"
+"This Scenario is played over a maximum of 11 Rounds.\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na nejvýše 11 kol.\n"
+"Tento Scénář se hraje na nejvýše 11 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -197,13 +206,13 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest recruitment cost\n"
+"  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Skupinu \\svgunit{bronze} jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 2 × Skupinu \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -212,22 +221,22 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map tiles and arrange them as shown in the scenario map layout:\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Starting (I) Map tile\n"
-"  \\item 2 × Far (II-III) Map tile\n"
-"  \\item 5 × Near (IV-V) Map tile\n"
-"  \\item 2 × Center (VI-VII) Map tiles, blindly choosing one with the Random Town field and the other with a Dragon Utopia field.\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II-III) Map Tile\n"
+"  \\item 5 × Near (IV-V) Map Tile\n"
+"  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
 "  \\item 2 × Vzdálený (II-III) Dílek Mapy\n"
 "  \\item 5 × Blízký (IV-V) Dílek Mapy\n"
-"  \\item 2 × Středový (VI-VII) Dílky Mapy, náhodně vyberte jeden s polem Náhodného Města a druhý s polem Dračí Utopie.\n"
+"  \\item 2 × Středový (VI-VII) Dílky Mapy, náhodně vyberte jeden s Polem Náhodného Města a druhý s Polem Dračí Utopie.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -236,13 +245,13 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-"When the Random Town is captured for the first time, players continue playing the current round and then play \\textbf{one additional final round}.\n"
-"The player controlling the Random Town at the end of that final round is the winner.\n"
+"When the Random Town is captured for the first time, players continue playing the current Round and then play \\textbf{one additional final Round}.\n"
+"The player controlling the Random Town at the end of that final Round is the winner.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
-"Když je Náhodné Město poprvé dobyto, hráči pokračují ve hře aktuálního kola a potom odehrají \\textbf{jedno další závěrečné kolo}.\n"
-"Hráč, který na konci tohoto závěrečného kola ovládá Náhodné Město, je vítězem.\n"
+"Když je Náhodné Město poprvé dobyto, hráči pokračují ve hře aktuálního Kola a potom odehrají \\textbf{jedno další závěrečné Kolo}.\n"
+"Hráč, který na konci tohoto závěrečného Kola ovládá Náhodné Město, je vítězem.\n"
 "\n"
 
 #. type: multicols*
@@ -250,13 +259,13 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"At the end of the \\nth{10} round, if no player controls the Random Town, both players lose the game (\\textit{the local ruler returns to the castle and regains control of the province}).\n"
-"However, if the Random Town is first captured in the \\nth{10} round, the game proceeds as normal to its additional final round (in this case, the \\nth{11} round).\n"
+"At the end of the \\nth{10} Round, if no player controls the Random Town, both players lose the game (\\textit{the local ruler returns to the castle and regains control of the province}).\n"
+"However, if the Random Town is first captured in the \\nth{10} Round, the game proceeds as normal to its additional final Round (in this case, the \\nth{11} Round).\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
-"Na konci 10. kola, pokud žádný hráč neovládá Náhodné Město, oba hráči prohrávají hru (\\textit{místní vládce se vrací do hradu a znovu získává kontrolu nad provincií}).\n"
-"Pokud je ale Náhodné Město poprvé dobyto v 10. kole, hra pokračuje jako obvykle do svého dalšího závěrečného kola (v tomto případě 11. kolo).\n"
+"Na konci 10. Kola, pokud žádný hráč neovládá Náhodné Město, oba hráči prohrávají hru (\\textit{místní vládce se vrací do hradu a znovu získává kontrolu nad provincií}).\n"
+"Pokud je ale Náhodné Město poprvé dobyto v 10. Kole, hra pokračuje jako obvykle do svého dalšího závěrečného Kola (v tomto případě 11. Kolo).\n"
 "\n"
 
 #. type: multicols*
@@ -266,14 +275,14 @@ msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black cubes from Water Wheels and Windmills on the map.\n"
-"  \\item All Heroes gain +1 \\svg{movement}\n"
+"  \\item All Heroes gain +1 \\svgeven{movement}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"  \\textbf{4. a 8. kolo:}\n"
+"  \\textbf{4. a 8. Kolo:}\n"
 "\\begin{itemize}\n"
 "  \\item Odstraňte všechny Černé Kostičky z Vodních Kol a Větrných Mlýnů na mapě.\n"
-"  \\item Všichni Hrdinové získávají +1 \\svg{movement}\n"
+"  \\item Všichni Hrdinové získávají +1 \\svgeven{movement}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -283,26 +292,26 @@ msgstr ""
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-"During this scenario:\n"
+"During this Scenario:\n"
 "\\begin{itemize}\n"
-"  \\item Whenever an Obelisk is visited for the first time, the visiting player gains 2 \\svg{building_materials}\n"
+"  \\item Whenever an Obelisk is Visited for the first time, the Visiting player gains 2 \\svg{building_materials}\n"
 "  \\item The Random Town is defended by Walls and a Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
 "  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
 "    \\begin{itemize}\n"
-"      \\item Place a newly recruited Secondary Hero.\n"
+"      \\item Place a newly Recruited Secondary Hero.\n"
 "      \\item Place the Main Hero when defeated.\n"
 "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
 "    \\end{itemize}\n"
-"  \\item The first player to visit the Dragon Utopia (after defeating the defending Azure unit(s)) draws cards from the Neutral Units \\svgunit{azure} deck until a Dragon not associated with any faction is drawn.\n"
-"    The player may immediately recruit that Dragon for free.\n"
+"  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws cards from the Neutral Units \\svgunit{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
+"    The player may immediately Recruit that Dragon for free.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
-"Během tohoto scénáře:\n"
+"Během tohoto Scénáře:\n"
 "\\begin{itemize}\n"
-"  \\item Kdykoli je Obelisk navštíven poprvé, hráč, který jej navštíví, získává 2 \\svg{building_materials}.\n"
+"  \\item Kdykoli je Obelisk Navštíven poprvé, hráč, který jej Navštíví, získává 2 \\svg{building_materials}.\n"
 "  \\item Náhodné Město je bráněno Zdmi a Bránou, když je vlastněno hráčem, ale má Střílnu pouze tehdy, pokud má hráč již Citadelu.\n"
 "  \\item Stejně jako jakékoli jiné Město, když je Náhodné Město vlastněno hráčem, je platným místem pro tohoto hráče k:\n"
 "    \\begin{itemize}\n"
@@ -310,7 +319,7 @@ msgstr ""
 "      \\item Umístění Hlavního Hrdiny po jeho porážce.\n"
 "      \\item Dočasnému transportu armády za 8~\\svg{gold}, když je Náhodné Město napadeno.\n"
 "    \\end{itemize}\n"
-"  \\item První hráč, který navštíví Dračí Utopii (po porážce bránící jednotky Azurového draka), dobere karty z balíčku Neutrálních Jednotek \\svgunit{azure}, dokud nebude nalezen Drak, který není spojený s žádnou frakcí.\n"
+"  \\item První hráč, který navštíví Dračí Utopii (po porážce bránící Jednotky Azurového draka), dobere karty z Balíčku Neutrálních Jednotek \\svgunit{azure}, dokud nebude nalezen Drak, který není spojený s žádnou Frakcí.\n"
 "    Hráč může okamžitě tohoto Draka zdarma Naverbovat.\n"
 "\\end{itemize}\n"
 "\n"

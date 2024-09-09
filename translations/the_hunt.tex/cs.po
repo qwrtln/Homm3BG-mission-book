@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-28 17:56+0200\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -30,7 +31,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -40,8 +42,29 @@ msgstr ""
 "\n"
 
 #. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Počáteční Jednotky:}\n"
+"\\begin{itemize}\n"
+"  \\item Skupinu \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item Málo \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -52,9 +75,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -65,7 +89,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -85,7 +112,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
@@ -96,13 +123,35 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:80 clash/the_hunt.tex:81
+#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
 #, no-wrap
 msgid ""
-"During this scenario:\n"
+"During this Scenario:\n"
 "\n"
 msgstr ""
-"Během tohoto scénáře:\n"
+"Během tohoto Scénáře:\n"
+"\n"
+
+#. type: multicols*
+#: clash/force_of_will.tex:20 clash/the_hunt.tex:19
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 2 or 3\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\\textbf{Počet Hráčů:} 2 nebo 3\n"
+"\n"
+
+#. type: multicols*
+#: clash/force_of_will.tex:33 clash/the_hunt.tex:33
+#, no-wrap
+msgid ""
+"\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
+"\n"
+msgstr ""
+"\\textbf{Dílky Mapy na ruce:} Každý hráč si vezme 1 náhodný Vzdálený (II--III) Dílek Mapy\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -150,23 +199,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"This scenario is played over 14 rounds.\n"
+"This Scenario is played over 14 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
-"Tento scénář se hraje na 12 kol.\n"
-"\n"
-
-#. type: multicols*
-#: clash/the_hunt.tex:19
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2 or 3\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
-"\\textbf{Počet Hráčů:} 2 nebo 3\n"
+"Tento Scénář se hraje na 14 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -180,24 +217,6 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:29
-#, no-wrap
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\svgunit{bronze} units with the \\textit{highest} Recruitment cost\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Počáteční Jednotky:}\n"
-"\\begin{itemize}\n"
-"  \\item Skupinu \\svgunit{bronze} jednotek s \\textit{nejnižšími} náklady na Verbování\n"
-"  \\item Málo \\svgunit{bronze} jednotek s \\textit{nejvyššími} náklady na Verbování\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:39
 #, no-wrap
 msgid ""
@@ -208,35 +227,25 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:33
-#, no-wrap
-msgid ""
-"\\textbf{Map tile Pool:} Each player takes 1 random Far (II--III) Map tile\n"
-"\n"
-msgstr ""
-"\\textbf{Dílky Mapy na ruce:} Každý hráč si vezme 1 náhodný Vzdálený (II--III) Dílek Mapy\n"
-"\n"
-
-#. type: multicols*
 #: clash/the_hunt.tex:39
 #, no-wrap
 msgid ""
-"Take the following Map tiles and arrange them as shown in the scenario map layout.\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
 "\n"
 msgstr ""
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:49
 #, no-wrap
 msgid ""
-"\\textbf{For a 2-player scenario:}\n"
+"\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Starting (I) Map tile\n"
-"  \\item 2 × Far (II--III) Map tile\n"
-"  \\item 2 × Near (IV--V) Map tile\n"
-"  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II--III) Map Tile\n"
+"  \\item 2 × Near (IV--V) Map Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile; place a Black cube or a miniature representing the Dragon in the center of the Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -245,7 +254,7 @@ msgstr ""
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
 "  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
 "  \\item 2 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo miniaturu představující Draka do středu dílku\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo miniaturu představující Draka do středu Dílku\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -253,12 +262,12 @@ msgstr ""
 #: clash/the_hunt.tex:57
 #, no-wrap
 msgid ""
-"\\textbf{For a 3-player scenario:}\n"
+"\\textbf{For a 3-player Scenario:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Starting (I) Map tile\n"
-"  \\item 3 × Far (II--III) Map tile\n"
-"  \\item 3 × Near (IV--V) Map tile\n"
-"  \\item 1 × Center (VI--VII) Map tile; place a Black cube or a miniature representing the Dragon in the center of the tile\n"
+"  \\item 3 × Starting (I) Map Tile\n"
+"  \\item 3 × Far (II--III) Map Tile\n"
+"  \\item 3 × Near (IV--V) Map Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile; place a Black cube or a miniature representing the Dragon in the center of the Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -267,7 +276,7 @@ msgstr ""
 "  \\item 3 × Startovní (I) Dílek Mapy\n"
 "  \\item 3 × Blízký (IV--V) Dílek Mapy\n"
 "  \\item 3 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo miniaturu představující Draka do středu dílku\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo miniaturu představující Draka do středu Dílku\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -288,11 +297,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"If the Dragon Boss still lives at the end of the \\nth{14} round, all players lose the scenario.\n"
+"If the Dragon Boss still lives at the end of the \\nth{14} Round, all players lose the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
-"Pokud Dračí Boss stále žije na konci 14. kola, všichni hráči prohrávají scénář.\n"
+"Pokud Dračí Boss stále žije na konci 14. Kola, všichni hráči prohrávají Scénář.\n"
 "\n"
 
 #. type: multicols*
@@ -305,7 +314,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4., 8. a 12. kolo:}\n"
+"\\textbf{4., 8. a 12. Kolo:}\n"
 "\\begin{itemize}\n"
 "  \\item Odstraňte všechny Černé Kostičky ze všech Vodních Kol, Větrných Mlýnů a Mystických Zahrad na mapě.\n"
 "\\end{itemize}\n"
@@ -315,10 +324,10 @@ msgstr ""
 #: clash/the_hunt.tex:74
 #, no-wrap
 msgid ""
-"Before the start of this scenario:\n"
+"Before the start of this Scenario:\n"
 "\n"
 msgstr ""
-"Před začátkem tohoto scénáře:\n"
+"Před začátkem tohoto Scénáře:\n"
 "\n"
 
 #. type: multicols*
@@ -343,27 +352,27 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Only a Main Hero can kill the Dragon.\n"
-"  \\item The final battle with the Dragon occurs at the center field of the Center Map tile.\n"
+"  \\item The final battle with the Dragon occurs at the center Field of the Center Map Tile.\n"
 "    Please refer to the encounter rules specified in the rules of the selected Dragon Boss.\n"
 "  \\item While fighting a Dragon Boss, ignore Gorgon's special ability.\n"
 "  \\item Heroes are unable to retreat from battles with the Dragon Boss.\n"
-"  \\item When each player visits an Obelisk, they can choose to roll a Treasure die or receive 1 \\svg{experience}.\n"
-"  \\item Players can visit each Obelisk only once.\n"
-"    Afterwards, they must place their Faction cube on the field.\n"
-"  \\item In the boss encounter, there is no battle round limit.\n"
+"  \\item When each player Visits an Obelisk, they can choose to roll a Treasure Die or receive 1 \\svg{experience}.\n"
+"  \\item Players can Visit each Obelisk only once.\n"
+"    Afterwards, they must place their Faction cube on the Field.\n"
+"  \\item In the boss encounter, there is no battle Round limit.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item Pouze Hlavní Hrdina může zabít Draka.\n"
-"  \\item Závěrečná bitva s Drakem se odehrává na středovém poli Středového Dílku mapy.\n"
+"  \\item Závěrečná bitva s Drakem se odehrává na středovém Poli Středového Dílku mapy.\n"
 "    Prosím, odkažte se na pravidla setkání uvedená u vybraného Dračího Bosse.\n"
-"  \\item Při boji s Dračím Bossem ignorujte speciální schopnost Gorgony.\n"
+"  \\item Při Boji s Dračím Bossem ignorujte speciální schopnost Gorgony.\n"
 "  \\item Hrdinové nemohou ustoupit z bitev s Dračím Bossem.\n"
 "  \\item Když každý hráč navštíví Obelisk, může si vybrat, zda hodí Kostkou Pokladu nebo získá 1 \\svg{experience}.\n"
 "  \\item Hráči mohou každý Obelisk navštívit pouze jednou.\n"
-"    Poté musí na pole umístit svou frakční kostku.\n"
-"  \\item V setkání s bossem není žádný limit bojových kol.\n"
+"    Poté musí na Pole umístit svou Kostičku Frakce.\n"
+"  \\item V setkání s bossem není žádný limit Kol Boje.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -410,19 +419,19 @@ msgid ""
 "miniature/card on the battlefield.  Ignore its ability.  \\item Prepare a "
 "pile of discarded Artifacts and shuffle it.  \\end{enumerate} \\medskip "
 "\\textbf{Rules:} \\begin{itemize} \\item \\textit{Hoarding Tendency:} At the "
-"start of each turn, randomly choose a card from the shuffled pile of "
-"discarded artifacts.  If the artifact is: \\begin{itemize} \\item A weapon: "
+"start of each Turn, randomly choose a card from the shuffled pile of "
+"discarded Artifacts.  If the Artifact is: \\begin{itemize} \\item A weapon: "
 "The Dragon gains one Breath attack that targets three creatures in a row.  "
-"The unit directly hit in the middle suffers full damage, while the units on "
+"The Unit directly hit in the middle suffers full damage, while the Units on "
 "both sides suffer 3\\,\\svg{damage-red} less.  \\item A piece of armor, "
 "shield, or clothing: The Dragon gains 3\\,\\svg{defense}, represented with "
 "spare Faction cubes.  Remove them after they have absorbed damage.  \\item A "
 "trinket: The Azure Dragon roars and summons an ice storm, causing all "
-"creatures to freeze in fear.  This results in every unit moving only 1 "
-"battle tile per round, while the Azure Dragon can fly to any tile on the "
-"combat board.  \\end{itemize} \\item The Azure Dragon is immune to all "
-"spells cast against it.  \\item Buffs and enhancements cast on player's "
-"units remain effective.  \\end{itemize} }"
+"creatures to freeze in fear.  This results in every Unit moving only 1 Field "
+"per Round, while the Azure Dragon can fly to any Field on the Combat Board.  "
+"\\end{itemize} \\item The Azure Dragon is immune to all Spells cast against "
+"it.  \\item Buffs and enhancements cast on player's Units remain effective.  "
+"\\end{itemize} }"
 msgstr ""
 "{ \\textbf{\\MakeUppercase{Boss: Azurový Drak}} \\medskip \\\\ \\textit{O "
 "Azurovém Drakovi se ví jen velmi málo. Je vzácný a mocný, takže ho vidělo "
@@ -437,16 +446,16 @@ msgstr ""
 "tahu náhodně vyberte kartu z promíchané hromádky odhozených artefaktů. Pokud "
 "je artefakt: \\begin{itemize} \\item Zbraň: Drak získá jeden Dechový útok, "
 "který zasáhne tři Jednotky v řadě. Jednotka přímo zasažená uprostřed utrpí "
-"plné poškození, zatímco jednotky po obou stranách utrpí o 3\\,\\svg{damage-"
+"plné poškození, zatímco Jednotky po obou stranách utrpí o 3\\,\\svg{damage-"
 "red} méně. \\item Kus brnění, štítu nebo oblečení: Drak získá 3\\,"
-"\\svg{defense}, což je znázorněno náhradními frakčními kostkami. Odstraňte "
-"je poté, co absorbují poškození. \\item Cetka: Azurový Drak zařve a přivolá "
+"\\svg{defense}, což je znázorněno náhradními Kostičkami Frakce. Odstraňte je "
+"poté, co absorbují poškození. \\item Cetka: Azurový Drak zařve a přivolá "
 "ledovou bouři, která způsobí, že všechny bytosti zamrznou strachem. To má za "
-"následek, že každá jednotka se pohybuje pouze o 1 bojový dílek za kolo, "
-"zatímco Azurový Drak může letět na jakýkoli dílek na bojové desce. "
-"\\end{itemize} \\item Azurový Drak je imunní vůči všem kouzlům seslaným "
-"proti němu. \\item Posílení a vylepšení seslaná na jednotky hráče zůstávají "
-"účinná. \\end{itemize} }"
+"následek, že každá Jednotka se pohybuje pouze o 1 Pole za Kolo, zatímco "
+"Azurový Drak může letět na jakékoli Pole na Desce Bojiště. \\end{itemize} "
+"\\item Azurový Drak je imunní vůči všem Kouzlům seslaným proti němu. \\item "
+"Posílení a vylepšení seslaná na Jednotky hráče zůstávají účinná. "
+"\\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:170
@@ -503,20 +512,20 @@ msgid ""
 "Place the Crystal Dragon miniature/card on the battlefield.  Ignore its "
 "ability.  \\item Place two Gold Golems and two Diamond Golems on the "
 "battlefield.  \\end{enumerate} \\medskip \\textbf{Rules:} \\begin{itemize} "
-"\\item At the start of every battle round, check if any of the Golems were "
-"removed in the previous round.  If so, spawn one new Diamond or Gold Golem "
+"\\item At the start of every battle Round, check if any of the Golems were "
+"removed in the previous Round.  If so, spawn one new Diamond or Gold Golem "
 "(chosen randomly) in the last row of the battlefield.  \\item \\textit{Golem "
 "Devour:} The Crystal Dragon can consume Golems to regain health.  During its "
-"turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume "
+"Turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume "
 "it, removing a certain amount of \\svg{damage-red} based on the type of "
 "Golem consumed: \\begin{itemize} \\item Consuming a Gold Golem: Remove 2 "
 "\\svg{damage-red}.  \\item Consuming a Diamond Golem: Remove 4 \\svg{damage-"
 "red}.  \\item[] \\textbf{Note:} The Crystal Dragon can only consume one "
-"Golem per turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond "
+"Golem per Turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond "
 "Golems do not possess any additional abilities beyond those specified on "
 "their cards.  They primarily serve as fodder for the Crystal Dragon's health "
 "regeneration.  \\item The Crystal Dragon \\textit{retaliates twice} per "
-"battle round.  \\end{itemize} }"
+"battle Round.  \\end{itemize} }"
 msgstr ""
 "{ \\textbf{\\MakeUppercase{Boss: Krystalový Drak}} \\medskip \\\\"
 "\\textit{Krystalový Drak je celý vyroben z červeného krystalu a oživen "
@@ -527,21 +536,20 @@ msgstr ""
 "\\begin{enumerate} \\item Umístěte miniaturu/kartu Krystalového Draka na "
 "bojiště. Ignorujte jeho schopnost. \\item Umístěte dva Zlaté Golemy a dva "
 "Diamantové Golemy na bojiště. \\end{enumerate} \\medskip \\textbf{Pravidla:} "
-"\\begin{itemize} \\item Na začátku každého bojového kola zkontrolujte, zda "
-"byli v předchozím kole odstraněni nějací Golemové. Pokud ano, vyvolejte "
-"jednoho nového Diamantového nebo Zlatého Golema (vybraného náhodně) do "
-"poslední řady bojiště. \\item \\textit{Požírání Golemů:} Krystalový Drak "
-"může žrát Golemy, aby si obnovil zdraví. Během svého tahu, pokud je "
-"Krystalový Drak vedle Golema, může se rozhodnout ho sežrat, čímž odstraní "
-"určité množství \\svg{damage-red} podle typu sežraného Golema: "
-"\\begin{itemize} \\item Zlatý Golem: Odstraňte 2 \\svg{damage-red}. \\item "
-"Diamantový Golem: Odstraňte 4 \\svg{damage-red}. \\item[] "
-"\\textbf{Poznámka:} Krystalový Drak může během svého tahu sežrat pouze "
-"jednoho Golema. \\end{itemize} \\item Schopnosti Golemů: Zlatí a Diamantoví "
-"Golemové nemají žádné další schopnosti nad rámec těch, které jsou uvedeny na "
-"jejich kartách. Slouží především jako potrava pro regeneraci zdraví "
-"Krystalového Draka. \\item Krystalový Drak má \\textit{Odvetný útok dvakrát} "
-"za bojové kolo. \\end{itemize} }"
+"\\begin{itemize} \\item Na začátku každého Kola Boje zkontrolujte, zda byli "
+"v předchozím Kole odstraněni nějací Golemové. Pokud ano, vyvolejte jednoho "
+"nového Diamantového nebo Zlatého Golema (vybraného náhodně) do poslední řady "
+"bojiště. \\item \\textit{Požírání Golemů:} Krystalový Drak může žrát Golemy, "
+"aby si obnovil zdraví. Během svého tahu, pokud je Krystalový Drak vedle "
+"Golema, může se rozhodnout ho sežrat, čímž odstraní určité množství "
+"\\svg{damage-red} podle typu sežraného Golema: \\begin{itemize} \\item Zlatý "
+"Golem: Odstraňte 2 \\svg{damage-red}. \\item Diamantový Golem: Odstraňte 4 "
+"\\svg{damage-red}. \\item[] \\textbf{Poznámka:} Krystalový Drak může během "
+"svého tahu sežrat pouze jednoho Golema. \\end{itemize} \\item Schopnosti "
+"Golemů: Zlatí a Diamantoví Golemové nemají žádné další schopnosti nad rámec "
+"těch, které jsou uvedeny na jejich kartách. Slouží především jako potrava "
+"pro regeneraci zdraví Krystalového Draka. \\item Krystalový Drak má "
+"\\textit{Odvetný útok dvakrát} za Kolo Boje. \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:235
@@ -599,20 +607,20 @@ msgid ""
 "through the strongest armor, lowering the defense of its target while "
 "inflicting further damage.  } \\medskip \\textbf{Fighting the Rust Dragon:} "
 "\\begin{enumerate} \\item Place the Rust Dragon miniature/card on the "
-"battlefield.  Ignore its ability.  \\item Prepare four spare M\\&M deck "
+"battlefield.  Ignore its ability.  \\item Prepare four spare M\\&M Deck "
 "cards to mark pools of acid.  \\end{enumerate} \\medskip \\textbf{Rules:} "
-"\\begin{itemize} \\item The Rust Dragon is immune to basic spells.  \\item "
+"\\begin{itemize} \\item The Rust Dragon is immune to basic Spells.  \\item "
 "\\textit{Corrosive Vomit:} The Rust Dragon has a powerful crowd control "
 "ability that allows it to spew four pools of sulfuric acid onto the "
-"battlefield \\textit{at the beginning} of each combat round.  Use M\\&M deck "
+"battlefield \\textit{at the beginning} of each Combat Round.  Use M\\&M Deck "
 "cards placed face down to mark their locations.  \\item The Rust Dragon "
-"cannot place pools on the same tiles as in the previous round.  Mark the "
-"tiles with spare Faction cubes to indicate where the pools were located.  "
-"\\item The pools of sulfuric acid block battlefield tiles and impede "
-"movement for one round only.  They serve as obstacles for both players and "
+"cannot place pools on the same Fields as in the previous Round.  Mark the "
+"Fields with spare Faction cubes to indicate where the pools were located.  "
+"\\item The pools of sulfuric acid block battlefield Fields and impede "
+"movement for one Round only.  They serve as Obstacles for both players and "
 "the Dragon.  \\item The Rust Dragon's passive ability, \\textit{Corrosion}, "
-"decreases an enemy unit's armor by 2 with each attack.  Place a spare "
-"Faction cube on the unit's card to indicate this effect.  Corrosion stacks "
+"decreases an enemy Unit's armor by 2 with each attack.  Place a spare "
+"Faction cube on the Unit's card to indicate this effect.  Corrosion stacks "
 "up to -4 \\svg{defense}.  \\end{itemize} }"
 msgstr ""
 "{ \\textbf{\\MakeUppercase{Boss: Rezavý Drak {\\scriptsize Vyžaduje "
@@ -623,19 +631,19 @@ msgstr ""
 "cíle a zároveň způsobit další poškození. } \\medskip \\\\ \\textbf{Boj s "
 "Rezavým Drakem:} \\begin{enumerate} \\item Umístěte miniaturu/kartu Rezavého "
 "Draka na bojiště. Ignorujte jeho schopnost. \\item Připravte čtyři náhradní "
-"karty balíčku M\\&M k označení kaluží kyseliny. \\end{enumerate} \\medskip "
+"karty Balíčku M\\&M k označení kaluží kyseliny. \\end{enumerate} \\medskip "
 "\\textbf{Pravidla:} \\begin{itemize} \\item Rezavý Drak je imunní vůči "
-"základním kouzlům. \\item \\textit{Korozivní Zvratky:} Rezavý Drak má mocnou "
+"základním Kouzlům. \\item \\textit{Korozivní Zvratky:} Rezavý Drak má mocnou "
 "schopnost kontroly davu, která mu umožňuje vypustit čtyři kaluže sirné "
-"kyseliny na bojiště \\textit{na začátku} každého bojového kola. Použijte "
-"karty balíčku M\\&M umístěné lícem dolů k označení jejich poloh. \\item "
-"Rezavý Drak nemůže umístit kaluže na stejná pole jako v předchozím kole. "
-"Označte pole náhradními frakčními kostkami, abyste označili, kde byly kaluže "
-"umístěny. \\item Kaluže sirné kyseliny blokují pole bojiště a brání pohybu "
-"pouze na jedno kolo. Slouží jako překážky jak pro hráče, tak pro Draka. "
+"kyseliny na bojiště \\textit{na začátku} každého Kola Boje. Použijte karty "
+"Balíčku M\\&M umístěné lícem dolů k označení jejich poloh. \\item Rezavý "
+"Drak nemůže umístit kaluže na stejná Pole jako v předchozím Kole. Označte "
+"Pole náhradními Kostičkami Frakce, abyste označili, kde byly kaluže "
+"umístěny. \\item Kaluže sirné kyseliny blokují Pole bojiště a brání pohybu "
+"pouze na jedno Kolo. Slouží jako překážky jak pro hráče, tak pro Draka. "
 "\\item Pasivní schopnost Rezavého Draka, \\textit{Koroze}, snižuje brnění "
-"nepřátelské jednotky o 2 při každém útoku. Na kartu jednotky umístěte "
-"náhradní frakční kostku, abyste označili tento efekt. Koroze se kumuluje až "
+"nepřátelské Jednotky o 2 při každém útoku. Na kartu Jednotky umístěte "
+"náhradní Kostičku Frakce, abyste označili tento efekt. Koroze se kumuluje až "
 "do -4 \\svg{defense}. \\end{itemize} }"
 
 #. type: Plain text
@@ -690,25 +698,25 @@ msgid ""
 "spells.  Some say Magic Mirror is one of their natural defensive traits.  } "
 "\\medskip \\textbf{Fighting the Faerie Dragon:} \\begin{enumerate} \\item "
 "Place 2 Faerie Dragon cards on the battlefield.  Ignore their abilities.  "
-"\\item Place 1 Dendroid card from the \\svg{silver} neutral units deck onto "
+"\\item Place 1 Dendroid card from the \\svg{silver} Neutral Units Deck onto "
 "the battlefield, and place 3 additional cards face down to represent the "
 "other 3 Dendroids.  \\end{enumerate} \\medskip \\textbf{Rules:} "
-"\\begin{itemize} \\item The Faerie Dragon is immune to basic spells.  \\item "
-"The Faerie Dragon can cast up to two different spells per battle round.  "
-"\\item All spells are displayed visibly next to the combat board: "
-"\\begin{enumerate} \\item The first spell is \\textit{Lightning}.  \\item "
-"The second spell is \\textit{Cure}.  \\item For the third spell, the Faerie "
-"Dragon randomly picks an expert spell from the Spell deck, excluding Map "
-"\\svg{map} spells.  If a Map \\svg{map} spell is picked, draw another "
-"spell.  \\end{enumerate} \\item \\textit{Trickster:} In the first round of "
+"\\begin{itemize} \\item The Faerie Dragon is immune to basic Spells.  \\item "
+"The Faerie Dragon can cast up to two different Spells per battle Round.  "
+"\\item All Spells are displayed visibly next to the Combat Board: "
+"\\begin{enumerate} \\item The first Spell is \\textit{Lightning}.  \\item "
+"The second Spell is \\textit{Cure}.  \\item For the third Spell, the Faerie "
+"Dragon randomly picks an expert Spell from the Spell Deck, excluding Map "
+"\\svg{map} Spells.  If a Map \\svg{map} Spell is picked, draw another "
+"Spell.  \\end{enumerate} \\item \\textit{Trickster:} In the first Round of "
 "the battle, the first targeted Faerie Dragon is a mere mirage.  It inflicts "
 "damage, but disappears from the battlefield when hit by an enemy.  \\item "
 "Dendroids' Ability: Each Dendroid holds a key to the Faerie Dragon's power.  "
-"After the second Dendroid dies, start removing one spell from the Faerie "
-"Dragon's spellbook, beginning with the third spell.  Decrease the dragon's "
-"spell empowerment \\svg{empower} by one (starting from its maximum) upon "
+"After the second Dendroid dies, start removing one Spell from the Faerie "
+"Dragon's spellbook, beginning with the third Spell.  Decrease the dragon's "
+"Spell Empowerment \\svg{empower} by one (starting from its maximum) upon "
 "vanquishing the 2nd, 3rd, and 4th Dendroids.  When there are no Dendroids "
-"left, the dragon loses the ability to cast spells.  \\end{itemize} }"
+"left, the dragon loses the ability to cast Spells.  \\end{itemize} }"
 msgstr ""
 "{ \\textbf{\\MakeUppercase{Boss: Pohádkový Drak {\\scriptsize Vyžaduje "
 "Rozšíření Bašta}}} \\medskip \\\\ \\textit{Pohádkoví Draci jsou klamně "
@@ -719,24 +727,24 @@ msgstr ""
 "Zrcadlo kouzel je jednou z jejich přirozených obranných vlastností. } "
 "\\medskip \\\\ \\textbf{Boj s Pohádkovým Drakem:} \\begin{enumerate} \\item "
 "Umístěte 2 karty Pohádkového Draka na bojiště. Ignorujte jejich schopnosti. "
-"\\item Umístěte 1 kartu Dendroida z \\svg{silver} balíčku neutrálních "
-"jednotek na bojiště a umístěte 3 další karty lícem dolů, aby představovaly "
+"\\item Umístěte 1 kartu Dendroida z \\svg{silver} Balíčku neutrálních "
+"Jednotek na bojiště a umístěte 3 další karty lícem dolů, aby představovaly "
 "další 3 Dendroidy. \\end{enumerate} \\medskip \\textbf{Pravidla:} "
-"\\begin{itemize} \\item Pohádkový Drak je imunní vůči základním kouzlům. "
-"\\item Pohádkový Drak může seslat až dvě různá kouzla za bojové kolo. \\item "
-"Všechna kouzla jsou viditelně zobrazena vedle Desky Bojiště: "
-"\\begin{enumerate} \\item První kouzlo je \\textit{Blesk}. \\item Druhé "
-"kouzlo je \\textit{Léčení}. \\item Pro třetí kouzlo Pohádkový Drak náhodně "
-"vybere expertní kouzlo z balíčku kouzel, s výjimkou kouzel Mapa \\svg{map}. "
-"Pokud je vybráno kouzlo Mapa \\svg{map}, vytáhněte další kouzlo. "
-"\\end{enumerate} \\item \\textit{Šprýmař:} V prvním kole bitvy je první "
+"\\begin{itemize} \\item Pohádkový Drak je imunní vůči základním Kouzlům. "
+"\\item Pohádkový Drak může seslat až dvě různá Kouzla za Kolo Boje. \\item "
+"Všechna Kouzla jsou viditelně zobrazena vedle Desky Bojiště: "
+"\\begin{enumerate} \\item První Kouzlo je \\textit{Blesk}. \\item Druhé "
+"Kouzlo je \\textit{Léčení}. \\item Pro třetí Kouzlo Pohádkový Drak náhodně "
+"vybere Expertní Kouzlo z Balíčku Kouzel, s výjimkou Kouzel Mapa \\svg{map}. "
+"Pokud je vybráno Kouzlo Mapa \\svg{map}, vytáhněte další Kouzlo. "
+"\\end{enumerate} \\item \\textit{Šprýmař:} V prvním Kole bitvy je první "
 "zacílený Pohádkový Drak pouhým Přeludem. Způsobuje poškození, ale zmizí z "
 "bojiště, když je zasažen nepřítelem. \\item Schopnost Dendroidů: Každý "
 "Dendroid drží klíč k síle Pohádkového Draka. Po smrti 2. Dendroida začněte "
-"odebírat jedno kouzlo z Knihy Kouzel Pohádkového Draka, počínaje třetím "
-"kouzlem. Snižte posílení kouzel draka \\svg{empower} o 1 (počínaje "
-"maximálním) po poražení 2., 3. a 4. Dendroida. Když už nezbudou žádní "
-"Dendroidi, drak ztratí schopnost sesílat kouzla. \\end{itemize} }"
+"odebírat jedno Kouzlo z Knihy Kouzel Pohádkového Draka, počínaje třetím "
+"Kouzlem. Snižte posílení Kouzel draka \\svg{empower} o 1 (počínaje "
+"maximálním) po poražení 2., 3. a 4. Dendroida. Po zabití všech Dendroidů "
+"ztratí drak schopnost sesílat Kouzla. \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:370

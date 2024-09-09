@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-04 22:13+0200\n"
+"POT-Creation-Date: 2024-08-26 19:17+0200\n"
 "PO-Revision-Date: 2024-07-02 09:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,9 +30,50 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
+#: coops/sentinels.tex:16 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"\n"
+
+#. type: multicols*
 #: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #, no-wrap
 msgid ""
@@ -45,7 +86,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
 msgid ""
@@ -59,7 +100,7 @@ msgstr ""
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:129
+#: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
@@ -70,16 +111,16 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:21 coops/emerald_island.tex:18
-#: campaigns/inferno_devilish_plan.tex:22
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
 "\n"
 
 #. type: multicols*
@@ -103,18 +144,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Autor:} Tm335\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:18
-#: campaigns/inferno_steadwicks_fall.tex:16
-#: campaigns/inferno_deal_with_the_devil.tex:20
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario length}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
 "\n"
 
 #. type: multicols*
@@ -170,22 +199,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{AI hero setup}}\n"
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
 "\n"
 
 #. type: multicols*
@@ -194,34 +211,22 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:100
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Umístění Hrdinů}}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:193
-#: campaigns/inferno_deal_with_the_devil.tex:173
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Additional rules}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
-"\n"
-
-#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
-#: campaigns/inferno_steadwicks_fall.tex:195
+#: campaigns/inferno_steadwicks_fall.tex:190
 #: campaigns/inferno_deal_with_the_devil.tex:175
 #, no-wrap
 msgid ""
-"During this ``Inferno'' campaign scenario, the following rules apply:\n"
+"During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"Během tohoto scénáře kampaně \\uv{Peklo} platí následující pravidla:\n"
+"Během tohoto Scénáře Kampaně \\uv{Peklo} platí následující pravidla:\n"
 "\n"
 
 #. type: multicols*
@@ -229,10 +234,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
-"Take the following Map tiles and set them up as shown in the scenario map layout:\n"
+"Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -240,7 +245,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:3
 msgid ""
 "\\addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}"
-"{3. Deal With The Devil}{\\images/firewall.png}"
+"{3. Deal With the Devil}{\\images/firewall.png}"
 msgstr ""
 "\\addscenariosection[subsection]{1}{Kampa\\v{n} Peklo $-$ Kobky a Ďáblové}"
 "{3. Dohoda s Ďáblem}{\\images/firewall.png}"
@@ -283,10 +288,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:22
 #, no-wrap
 msgid ""
-"This scenario plays out over 14 rounds.\n"
+"This Scenario plays out over 14 Rounds.\n"
 "\n"
 msgstr ""
-"Tento scénář se hraje na 14 kol.\n"
+"Tento Scénář se hraje na 14 Kol.\n"
 "\n"
 
 #. type: multicols*
@@ -433,10 +438,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:69
 #, no-wrap
 msgid ""
-"Charging Armies \\#1 and \\#2 use the same AI deck and Skill deck. Reshuffle both decks after combat.\n"
+"Charging Armies \\#1 and \\#2 use the same AI Deck and Skill Deck. Reshuffle both Decks after Combat.\n"
 "\n"
 msgstr ""
-"Útočící Armády \\#1 a \\#2 používají stejný AI balíček a balíček Schopností. Po boji oba balíčky zamíchejte.\n"
+"Útočící Armády \\#1 a \\#2 používají stejný AI Balíček a Balíček Schopností. Po Boji oba Balíčky zamíchejte.\n"
 "\n"
 
 #. type: multicols*
@@ -445,9 +450,9 @@ msgstr ""
 msgid ""
 "Both Artifact cards of all Charging Armies are treated as Skills, and use the top ``less powerful'' effect on the card.\n"
 "The ``Sword of Hellfire'' will be used in attacks and retaliation attacks. It is not used when attacking Walls or Gates,\n"
-"and remains in effect on the unit. If ``Shield of the Damned'' is drawn, it takes effect when\n"
+"and remains in effect on the Unit. If ``Shield of the Damned'' is drawn, it takes effect when\n"
 "any Charging Army Unit takes attack or retaliation damage. If the AI Skill card advises ``do it again'', the Artifact\n"
-"cards are not played again immediately, but instead are played as soon as the next unit is able to use them.\n"
+"cards are not played again immediately, but instead are played as soon as the next Unit is able to use them.\n"
 "\n"
 msgstr ""
 "Obě karty Artefaktů všech Útočících Armád jsou považovány za Schopnosti a používají \\uv{slabší} efekt uvedený na kartě.\n"
@@ -460,7 +465,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:86
 #, no-wrap
 msgid ""
-"\\textbf{3 × Starting (I) Map tile}\n"
+"\\textbf{3 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (S6)\n"
 "  \\item 1 × Castle (S3)\n"
@@ -480,7 +485,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:93
 #, no-wrap
 msgid ""
-"\\textbf{7 × Far (II--III) Map tile}\n"
+"\\textbf{7 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Inferno (F16, F17, F18)\n"
 "  \\item 3 × Castle (F3, \\#F4, F6)\n"
@@ -500,7 +505,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:98
 #, no-wrap
 msgid ""
-"\\textbf{1 × Near (IV--V) Map tile}\n"
+"\\textbf{1 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
@@ -516,40 +521,40 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:102
 #, no-wrap
 msgid ""
-"The Enemy Charging Rampart Hero \\#1 starts on the center field of the S4 Starting Map tile.\n"
+"The Enemy Charging Rampart Hero \\#1 starts on the center Field of the S4 Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Nepřátelský Útočící Hrdina Bašty \\#1 začíná na středovém poli Startovního Dílku S4.\n"
+"Nepřátelský Útočící Hrdina Bašty \\#1 začíná na středovém Poli Startovního Dílku S4.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:104
 #, no-wrap
 msgid ""
-"The Enemy Charging Castle Hero \\#1 starts on the center field of S3 Starting Map tile.\n"
+"The Enemy Charging Castle Hero \\#1 starts on the center Field of S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Nepřátelský Útočící Hrdina Hradu \\#1 začíná na poli Osady dílku F3 nebo na středovém poli Startovního Dílku S3.\n"
+"Nepřátelský Útočící Hrdina Hradu \\#1 začíná na středovém Poli Startovního Dílku S3.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:106
 #, no-wrap
 msgid ""
-"Place your Hero on the center field of the S6 Inferno Starting Map tile.\n"
+"Place your Hero on the center Field of the S6 Inferno Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Umístěte vašeho Hrdinu na středové pole Startovního Dílku S6 vaší Frakce.\n"
+"Umístěte vašeho Hrdinu na středové Pole Startovního Dílku S6 vaší Frakce.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:108
 #, no-wrap
 msgid ""
-"You cannot recruit a Secondary Hero.\n"
+"You cannot Recruit a Secondary Hero.\n"
 "\n"
 msgstr ""
-"Nemůžete naverbovat Vedlejšího Hrdinu.\n"
+"Nemůžete Naverbovat Vedlejšího Hrdinu.\n"
 "\n"
 
 #. type: multicols*
@@ -593,7 +598,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1. kolo:}\n"
+"\\textbf{1. Kolo:}\n"
 "\\begin{itemize}\n"
 "  \\item Přečtěte: \\uv{Královna Catherine odmítá naši žádost o výkupné a shromažďuje armády pro záchrannou\n"
 "    operaci. Klane Kreelah, připravte naši obranu! Chraňte Kleesiv za každou cenu. Máme výhodu.}\n"
@@ -607,15 +612,15 @@ msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor\n"
-"    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where\n"
+"    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where  % no-check-caps\n"
 "    their magic is diminished on this cursed ground.''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{2. kolo:}\n"
+"\\textbf{2. Kolo:}\n"
 "\\begin{itemize}\n"
 "  \\item Přečtěte: \\uv{Armády Hradu a AvLee budou brzy u našich bran. Musí projít přes vulkanický koridor\n"
-"    na našem východě. Nemůžeme se s nimi setkat v bitvě na otevřeném poli, musíme se bránit uvnitř Kleesivu, na této prokleté zemi, kde\n"
+"    na našem východě. Nemůžeme se s nimi setkat v bitvě na otevřeném Poli, musíme se bránit uvnitř Kleesivu, na této prokleté zemi, kde\n"
 "    je jejich magie oslabena.}\n"
 "\\end{itemize}\n"
 "\n"
@@ -631,7 +636,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{3. kolo:}\n"
+"\\textbf{3. Kolo:}\n"
 "\\begin{itemize}\n"
 "  \\item Přečtěte: \\uv{Naši zvědové hlásí, že nepřítel získal 2 velmi mocné artefakty s pomocí místních věštců.\n"
 "    Jsou to blázni, pokud si myslí, že jim to pomůže překonat naši Kreeganskou pevnost.}\n"
@@ -644,13 +649,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The first armies will attack this round and next round. Prepare your defenses!\n"
+"  \\item The first armies will attack this Round and next Round. Prepare your defenses!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4. kolo:}\n"
+"\\textbf{4. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item První armády zaútočí v tomto a následujícím kole. Připravte si obranu!\n"
+"  \\item První armády zaútočí v tomto a následujícím Kole. Připravte si obranu!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -660,15 +665,15 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{7} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Enemy Castle Charging Hero \\#2 appears on the Settlement field of the F3 tile or on the center field of S3 Starting Map tile (your choice).\n"
-"  \\item The Enemy Rampart Charging Hero \\#2 appears on the center field of the S4 Starting Map tile.\n"
+"  \\item The Enemy Castle Charging Hero \\#2 appears on the Settlement Field of the F3 Tile or on the center Field of S3 Starting Map Tile (your choice).\n"
+"  \\item The Enemy Rampart Charging Hero \\#2 appears on the center Field of the S4 Starting Map Tile.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{7. kolo:}\n"
+"\\textbf{7. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Nepřátelský Útočící Hrdina Hradu \\#2 se objeví na poli Osady dílku F3 nebo na středovém poli Startovního dílku S3.\n"
-"  \\item Nepřátelský Útočící Hrdina Bašty \\#2 se objeví na středovém poli Startovního dílku S4.\n"
+"  \\item Nepřátelský Útočící Hrdina Hradu \\#2 se objeví na Poli Osady Dílku F3 nebo na středovém Poli Startovního Dílku S3.\n"
+"  \\item Nepřátelský Útočící Hrdina Bašty \\#2 se objeví na středovém Poli Startovního Dílku S4.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -678,14 +683,14 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The second armies will attack this round and next round. Prepare your defenses!\n"
+"  \\item The second armies will attack this Round and next Round. Prepare your defenses!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\columnbreak\n"
-"\\textbf{10. kolo:}\n"
+"\\textbf{10. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Druhé armády zaútočí v tomto a následujícím kole. Připravte si obranu!\n"
+"  \\item Druhé armády zaútočí v tomto a následujícím Kole. Připravte si obranu!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -695,13 +700,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Final Charging Enemy Army appears on the Settlement field of the F3 tile. This army has 4 MPs per turn.\n"
+"  \\item The Final Charging Enemy Army appears on the Settlement Field of the F3 Tile. This army has 4 MPs per Turn.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{12. kolo:}\n"
+"\\textbf{12. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Finální Útočící Nepřátelská Armáda se objeví na poli Osady dílku F3. Tato armáda má 4 BP na kolo.\n"
+"  \\item Finální Útočící Nepřátelská Armáda se objeví na Poli Osady Dílku F3. Tato armáda má 4 BP na Kolo.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -711,13 +716,13 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Final Charging Army will attack this round. We must hold Kleesive at all costs!\n"
+"  \\item The Final Charging Army will attack this Round. We must hold Kleesive at all costs!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{16. kolo:}\n"
+"\\textbf{16. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Finální Útočící Armáda zaútočí v tomto kole. Musíme za každou cenu udržet Kleesiv!\n"
+"  \\item Finální Útočící Armáda zaútočí v tomto Kole. Musíme za každou cenu udržet Kleesiv!\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -725,13 +730,13 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:171
 #, no-wrap
 msgid ""
-"\\textbf{When you complete the scenario:}\n"
+"\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item Read: ``Congratulations! You have defended Kleesive and are victorious!''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Když dokončíte scénář:}\n"
+"\\textbf{Když dokončíte Scénář:}\n"
 "\\begin{itemize}\n"
 "  \\item Přečtěte: \\uv{Gratulujeme! Ubránili jste Kleesiv a zvítězili jste!}\n"
 "\\end{itemize}\n"
@@ -745,23 +750,23 @@ msgid ""
 "  \\item Your Main Hero can only travel in Inferno Map Tiles. You cannot enter any other Map Tile type.\n"
 "  \\item You cannot attack Enemy Charging Heroes. You can only defend against them while inside of Kleesive.\n"
 "  \\item Gain 3 \\svg{gold} when you defeat a Charging Hero's Army.\n"
-"  \\item If an Enemy Charging Hero enters a map tile or field that your Main Hero is on (exception is if you are in\n"
-"    your Inferno city Kleesive), or if a charging hero attacks Kleesive and you are not present in your city\n"
+"  \\item If an Enemy Charging Hero enters a Map Tile or Field that your Main Hero is on (exception is if you are in\n"
+"    your Inferno city Kleesive), or if a charging Hero attacks Kleesive and you are not present in your city\n"
 "    of Kleesive, you are immediately transported back to Kleesive, you lose any remaining Movement Points\n"
 "    you have, lose 3 \\svg{gold}, gain \\svg{morale_negative}, and randomly discard 1 card from your hand.\n"
 "  \\item Enemy Charging Heroes move only 2 MPs. The Final Charging Army moves 4 MPs. They take the shortest\n"
-"    route to Kleesive. If you own a mine in a map tile they enter, they will capture the mine (but will not\n"
+"    route to Kleesive. If you own a Mine in a Map Tile they enter, they will capture the Mine (but will not\n"
 "    ``backtrack'' to do so), and then continue along the shortest route to Kleesive. They ignore everything\n"
 "    else. They also make use of Stables 1 MP bonus.\n"
 "  \\item Enemy Charging Heros always move amongst each to not ``block'' each other's paths (thus slowing each\n"
 "    other down). The Enemy Charging Hero that can get closest to Kleesive will move before any others.\n"
-"  \\item Castle and Rampart already have all mines controlled in their territory (non-Inferno map tiles). Place enemy\n"
-"    cubes on all of their mines.\n"
-"  \\item Your walls, gates, and arrow tower in Kleesive are completely rebuilt after each battle.\n"
-"  \\item Enemy \\svg{unit_flying} units will fly over walls and gates to attack your units whenever possible.\n"
-"  \\item Enemy \\svg{unit_ranged} units will always attack the Arrow Tower once there are no other \\svg{unit_ranged} units to attack.\n"
-"  \\item Enemy units will always attack your units if possible. Only when that is not possible, then the gate,\n"
-"    and then walls will be attacked.\n"
+"  \\item Castle and Rampart already have all Mines controlled in their territory (non-Inferno Map Tiles). Place enemy\n"
+"    cubes on all of their Mines.\n"
+"  \\item Your Walls, Gates, and Arrow Tower in Kleesive are completely rebuilt after each battle.\n"
+"  \\item Enemy \\svg{unit_flying} Units will fly over Walls and Gates to attack your Units whenever possible.\n"
+"  \\item Enemy \\svg{unit_ranged} Units will always attack the Arrow Tower once there are no other \\svg{unit_ranged} Units to attack.\n"
+"  \\item Enemy Units will always attack your Units if possible. Only when that is not possible, then the Gate,\n"
+"    and then Walls will be attacked.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -769,7 +774,7 @@ msgstr ""
 "  \\item Váš Hlavní Hrdina může cestovat pouze na Dílky Mapy Peklo. Nemůžete vstoupit na žádný jiný typ Dílku Mapy.\n"
 "  \\item Nemůžete útočit na Nepřátelské Útočící Hrdiny. Můžete se pouze bránit proti nim, pokud jste uvnitř Kleesivu.\n"
 "  \\item Získáte 3 \\svg{gold}, když porazíte Armádu Útočícího Hrdiny.\n"
-"  \\item Pokud Nepřátelský Útočící Hrdina vstoupí na Dílek Mapy nebo pole, na kterém je váš Hlavní Hrdina (výjimkou je, pokud jste ve\n"
+"  \\item Pokud Nepřátelský Útočící Hrdina vstoupí na Dílek Mapy nebo Pole, na kterém je váš Hlavní Hrdina (výjimkou je, pokud jste ve\n"
 "    svém městě Kleesiv), nebo pokud útočí na Kleesiv a vy nejste přítomni ve svém městě\n"
 "    Kleesiv, budete okamžitě přeneseni zpět do Kleesivu, ztratíte zbývající Pohybové Body,\n"
 "    ztratíte 3 \\svg{gold}, získáte \\svg{morale_negative} a náhodně odhodíte 1 kartu z ruky.\n"
