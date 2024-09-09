@@ -1,0 +1,12 @@
+name: Parse new scenario
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  parse-new-scenario:
+    if: ${{ startsWith(github.event.issue.title, 'New Scenario:') }}
+    name: Parsing new scenario
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello form ${{ github.event.issue.title }}"

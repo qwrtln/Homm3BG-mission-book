@@ -70,7 +70,7 @@ Please refer to [the docs](https://qwrtln.github.io/Homm3BG-mission-book/) for t
 
 #### 🗺️ Scenarios
 
-Please open an issue if you'd like to add a scenario, or reach out to us on [our Discord server](https://discord.gg/khV8Ckw8RD).
+Please open an issue if you'd like to add a scenario, or reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6).
 We prefer battle-tested and community-vetted scenarios.
 
 #### 💻 Code
