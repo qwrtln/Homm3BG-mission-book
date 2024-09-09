@@ -5,7 +5,7 @@ on:
 
 jobs:
   parse-new-scenario:
-    if: ${{ ! startsWith(github.event.issue.title, 'New Scenario:') }}
+    if: ${{ startsWith(github.event.issue.title, 'New Scenario:') }}
     name: Parsing new scenario
     runs-on: ubuntu-latest
     steps:
