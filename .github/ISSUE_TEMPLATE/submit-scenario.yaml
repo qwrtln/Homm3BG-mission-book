@@ -26,6 +26,7 @@ body:
     attributes:
       label: Scenario Title
       description: What's the title of your scenario?
+      placeholder: ex. Dances with Dwarves
     validations:
       required: true
   - type: input
@@ -43,14 +44,14 @@ body:
       placeholder: ex. https://discord.com/channels/740870068178649108/1239631918643941509
     validations:
       required: false
-  # - type: textarea
-  #   id: story
-  #   attributes:
-  #     label: The Story
-  #     description: Write 1-2 paragraphs to set the story.
-  #     placeholder: There is a world beyond ours, filled with beasts and monsters...
-  #   validations:
-  #     required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: The Story
+      description: Write 1-2 paragraphs to set the story.
+      placeholder: There is a world beyond ours, filled with beasts and monsters...
+    validations:
+      required: true
   # - type: dropdown
   #   id: length
   #   attributes:
