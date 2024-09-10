@@ -9,4 +9,8 @@ jobs:
     name: Parsing new scenario
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello form ${{ github.event.issue.title }}"
+      - name: Print issue title
+        run: echo "Hello form ${{ github.event.issue.title }}"
+
+      - name: Print issue body
+        run: echo "${{ github.event.issue.body }}"
