@@ -11,37 +11,33 @@ Click on the table to download the most recent builds of the Mission Book in the
             <th align="center">Progress</th>
             <th align="center">Version 0.4 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
+            <th align="center">Draft Scenarios 🏗️</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td align="center">🌍</td>
-            <td align="center">✍️<br>Text</td>
-            <td align="center">🖥️<br>Digital</td>
-            <td align="center">🖥️<br>Digital</td>
-        </tr>
         <tr>
             <td>🇬🇧 English</td>
             <td align="center">—</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_English_Fan_Made_Mission_Book_0_4.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
+            <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf">download</a></td>
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center">99%</td>
+            <td align="center">100%</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Polski_Fan_Made_Mission_Book_0_4.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
+            <td align="center">—</td>
         </tr>
         <tr>
             <td>🇨🇿 Čeština</td>
-            <td align="center">99%</td>
+            <td align="center">100%</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Cestina_Fan_Made_Mission_Book_0_4.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
+            <td align="center">—</td>
         </tr>
     </tbody>
 </table>
-
-Bonus: [Draft Scenarios 🇬🇧](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf)
 
 ### 💡 What Is This?
 
@@ -50,7 +46,7 @@ There are two documents:
 
 |Mission Book ✅|Draft Scenarios 🏗️|
 |:----------:|:----------:|
-| ![image](docs/assets/mission-book-title.png) | ![image](docs/assets/draft-scenarios-title.png) |
+| [![image](docs/assets/mission-book-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf) | [![image](docs/assets/draft-scenarios-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf) |
 | A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
 
 ### 🤔 Why?
