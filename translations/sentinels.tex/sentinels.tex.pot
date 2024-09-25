@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-22 23:28+0200\n"
+"POT-Creation-Date: 2024-09-25 10:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -112,7 +113,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27 clash/the_hunt.tex:23
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -254,7 +256,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
@@ -270,7 +273,7 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{6} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Remove all Black cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+"  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "  \\item Spawn an enemy army following the rules outlined below.\n"
 "\\end{itemize}\n"
 "\n"
@@ -311,7 +314,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -366,7 +369,7 @@ msgid ""
 "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
 "  \\item Enemy armies have 3 MPs per Round.\n"
 "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
-"    Place Black cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
+"    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
 "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
 "\\end{itemize}\n"
 "\n"
