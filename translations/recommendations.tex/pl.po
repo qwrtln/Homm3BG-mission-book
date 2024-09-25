@@ -168,15 +168,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"Mimo że zasady mówią, że możesz usunąć tylko jedną kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie tylu kart, ile chcesz.\n"
+"Mimo że zasady mówią, że możesz usunąć tylko jedną Kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie tylu Kart, ile chcesz.\n"
 "\n"
 
 #. type: multicols
@@ -331,15 +328,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:107
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
-#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
-#| "    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
-#| "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
@@ -352,7 +341,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Decydując, który budynek wybudować w swoim Mieście, szczególnie na początku gry, \\textit{zazwyczaj} najlepiej jest priorytetowo traktować Jednostki ponad Ratusz, Cytadelę, Gildię Magów lub inne budynki specyficzne dla frakcji.\n"
 "  \\item Jeśli nie jesteś pewien, które Zaklęcie, Artefakt lub Zdolność wybrać, priorytetowo traktuj te, które pomagają w przeszukiwaniu Talii.\n"
-"    Obejmuje to karty, które pozwalają ci dobierać karty lub odzyskiwać karty ze stosu kart odrzuconych.\n"
+"    Obejmuje to Karty, które pozwalają ci dobierać Karty lub odzyskiwać Karty ze stosu Kart odrzuconych.\n"
 "  \\item Staraj się unikać zużywania Punktów Ruchu Bohatera Głównego na akcje, które może wykonać Bohater Pomocniczy, takie jak obracanie Kafelków Mapy, odwiedzanie Młynów Wodnych i tym podobne.\n"
 "\\end{itemize}\n"
 "\n"

@@ -352,10 +352,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:59
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Ivor's Deck:} 1 × Might card, 2 × Magic card, 1 × Skill card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Ivor's Deck:} 1 × Might Card, 2 × Magic Card, 1 × Skill Card\n"
 "\n"
@@ -365,10 +362,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:61
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Ivor's Spell Deck:} 1 × Precision Spell Card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell Card\n"
 "\n"
@@ -378,10 +372,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Ivor's Skill:} Archery Ability card (it always resolves its Basic effect)\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)\n"
 "\n"

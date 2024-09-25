@@ -357,23 +357,17 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{General Kendal's Deck:} 5 × Might card, 1 × Magic card, 3 × Skill card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{General Kendal's Deck:} 5 × Might Card, 1 × Magic Card, 3 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Generała Kendala:} 5 × karta Mocy, 1 × karta Magii, 3 × karta Umiejętności\n"
+"\\textbf{Talia Generała Kendala:} 5 × Karta Mocy, 1 × Karta Magii, 3 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:58
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell Card\n"
 "\n"
@@ -383,10 +377,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{General Kendal's Skill:} Artillery Ability Card\\footnote{For General Kendal, the Artilery Ability Card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability Card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
@@ -416,23 +407,17 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Charging Heroes' Deck:} 2 × Might card, 2 × Magic card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Deck:} 2 × Might Card, 2 × Magic Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Szarżujących Bohaterów:} 2 × karta Mocy, 2 × karta Magii\n"
+"\\textbf{Talia Szarżujących Bohaterów:} 2 × Karta Mocy, 2 × Karta Magii\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:68
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell Card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}.\n"
 "\n"
