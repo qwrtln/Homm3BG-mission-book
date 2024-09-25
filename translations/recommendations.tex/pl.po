@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 23:26+0200\n"
+"POT-Creation-Date: 2024-09-25 23:56+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -159,15 +159,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Ustawienie Bohaterów}}\n"
+"\\subsection*{Gwarantowana Osada}\n"
 "\n"
 
 #. type: multicols*
@@ -177,6 +174,8 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
+"Podczas rozdzielania Dalekich Kafelków (II--III) między graczy, pula Kafelków Mapy każdego gracza musi zawierać jedną Osadę.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:41
@@ -196,15 +195,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Magic Arrows}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{War Machines as Artifacts}\n"
 "\n"
 msgstr ""
-"\\subsection*{Magiczne Strzały}\n"
+"\\subsection*{Machiny Wojenne jako Artefakty}\n"
 "\n"
 
 #. type: multicols*
@@ -212,21 +208,21 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Shuffle one of each War Machine into the Artifact Deck before the start of the game.\n"
-"If using the optional Tournament rule of splitting the Artifact Deck, shuffle the War Machines into the Major Artifact deck.\n"
+"If using the optional Tournament rule of splitting the Artifact Deck, shuffle the War Machines into the Major Artifact Deck.\n"
 "\n"
 msgstr ""
+"Wtasuj po jednej z każdej Machiny Wojennej do Talii Artefaktów przed rozpoczęciem gry.\n"
+"Jeśli korzystasz z opcjonalnych Zasad Turniejowych dotyczących podziału Talii Artefaktów, wtasuj Machiny Wojenne do Talii Mocnych Artefaktów.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Recommendations}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Round One Mulligan}\n"
 "\n"
 msgstr ""
-"\\subsection*{Zalecenia}\n"
+"\\subsection*{Mulligan w pierwszej Rundzie}\n"
 "\n"
 
 #. type: multicols*
@@ -236,6 +232,8 @@ msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
 "\n"
 msgstr ""
+"Na początku pierwszej Rundy każdy gracz może jeden raz wtasować swoją rękę z powrotem do Talii Mocy i Magii i dobrać nową rękę startową.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:54
@@ -244,15 +242,20 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard+ Difficulty}\n"
 "\n"
 msgstr ""
+"\\subsection*{Walka V--VII na poziomie Trudnym wzwyż}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:57
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
-"For example, a Level VII Combat on Hard will be against 2 × Azure Neutral Units.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svgunit{azure} Neutral Units.\n"
 "\n"
 msgstr ""
+"Traktuj Walki na poziomie V--VII jako o jeden stopień trudności niższe podczas gry na poziomie Trudnym lub Niemożliwym.\n"
+"Na przykład, Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\svgunit{Azure} Neutralnym Jednostkom.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:59
@@ -276,15 +279,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Magic Arrows}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
-"\\subsection*{Magiczne Strzały}\n"
+"\\subsection*{Punkty Zwycięstwa}\n"
 "\n"
 
 #. type: multicols*
@@ -299,6 +299,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Kiedy grasz z opcjonalnymi Punktami Zwycięstwa z Księgi Turniejów, obowiązują następujące zasady (chyba że zasady Scenariusza mówią inaczej):\n"
+"\\begin{itemize}\n"
+"  \\item Miasta Frakcji przyznają 1 PZ.\n"
+"  \\item Posiadanie Graala na koniec gry przyznaje 3 PZ. Jeśli Graal został przetransportowany do Miasta Frakcji tego gracza, zamiast tego przyznaje 5 PZ.\n"
+"  \\item Zdobycie Smoczej Utopii przyznaje 3 PZ.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:76
