@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"POT-Creation-Date: 2024-09-25 23:26+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,11 +18,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:74 sections/recommendations.tex:129
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -40,7 +42,7 @@ msgstr "\\addsection{Doporučení}{\\art/haste.png}"
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:10
 #, no-wrap
 msgid ""
@@ -56,7 +58,7 @@ msgstr ""
 "Ať se líbí!\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:12
 #, no-wrap
 msgid ""
@@ -66,7 +68,7 @@ msgstr ""
 "\\subsection*{Herní Doba}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:14
 #, no-wrap
 msgid ""
@@ -76,7 +78,7 @@ msgstr ""
 "\\textbf{Minimální} herní dobu můžete odhadnout pomocí následujícího vzorce:\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:18
 #, no-wrap
 msgid ""
@@ -90,7 +92,7 @@ msgstr ""
 "\\end{center}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:24
 #, no-wrap
 msgid ""
@@ -108,7 +110,7 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:27
 #, no-wrap
 msgid ""
@@ -120,7 +122,7 @@ msgstr ""
 "Vaše očekávaná minimální herní doba bude kolem 3 hodin.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:30
 #, no-wrap
 msgid ""
@@ -132,7 +134,7 @@ msgstr ""
 "V tomto případě by to bylo kolem 6 hodin.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:32
 #, no-wrap
 msgid ""
@@ -142,7 +144,7 @@ msgstr ""
 "\\subsection*{Magické Šípy}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:35
 #, no-wrap
 msgid ""
@@ -154,8 +156,105 @@ msgstr ""
 "Po přípravě Startovních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:37
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Guaranteed Settlement}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Umístění Hrdinů}}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:39
+#, no-wrap
+msgid ""
+"When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:41
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:43
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/medusa.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:45
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Magic Arrows}\n"
+#| "\n"
+msgid ""
+"\\subsection*{War Machines as Artifacts}\n"
+"\n"
+msgstr ""
+"\\subsection*{Magické Šípy}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:48
+#, no-wrap
+msgid ""
+"Shuffle one of each War Machine into the Artifact Deck before the start of the game.\n"
+"If using the optional Tournament rule of splitting the Artifact Deck, shuffle the War Machines into the Major Artifact deck.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:50
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Recommendations}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Round One Mulligan}\n"
+"\n"
+msgstr ""
+"\\subsection*{Doporučení}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:52
+#, no-wrap
+msgid ""
+"At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:54
+#, no-wrap
+msgid ""
+"\\subsection*{Tier V--VII Combat on Hard+ Difficulty}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:57
+#, no-wrap
+msgid ""
+"Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+"For example, a Level VII Combat on Hard will be against 2 × Azure Neutral Units.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:59
 #, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
@@ -164,8 +263,8 @@ msgstr ""
 "\\subsection*{Tržiště}\n"
 "\n"
 
-#. type: multicols
-#: sections/recommendations.tex:39
+#. type: multicols*
+#: sections/recommendations.tex:61
 #, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
@@ -174,16 +273,34 @@ msgstr ""
 "I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
 "\n"
 
-#. type: multicols
-#: sections/recommendations.tex:41
+#. type: multicols*
+#: sections/recommendations.tex:63
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Magic Arrows}\n"
+#| "\n"
+msgid ""
+"\\subsection*{Victory Points}\n"
+"\n"
+msgstr ""
+"\\subsection*{Magické Šípy}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:70
 #, no-wrap
 msgid ""
-"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
+"\\begin{itemize}\n"
+"  \\item Faction Towns grant 1 VP.\n"
+"  \\item Possessing the Grail at the end of the match grants 3 VPs. If the Grail was transported to that player's Faction Town, it grants 5 VPs instead.\n"
+"  \\item Capturing a Dragon Utopia grants 3 VPs.\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:43
+#: sections/recommendations.tex:76
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -193,7 +310,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:45
+#: sections/recommendations.tex:78
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
@@ -203,7 +320,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:49
+#: sections/recommendations.tex:82
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
@@ -217,7 +334,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:53
+#: sections/recommendations.tex:86
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -227,7 +344,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:74
+#: sections/recommendations.tex:107
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -267,7 +384,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: figure*
-#: sections/recommendations.tex:94
+#: sections/recommendations.tex:127
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -305,7 +422,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: multicols
-#: sections/recommendations.tex:98
+#: sections/recommendations.tex:131
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -315,7 +432,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:100
+#: sections/recommendations.tex:133
 #, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
@@ -325,7 +442,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:107
+#: sections/recommendations.tex:140
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -345,7 +462,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:111
+#: sections/recommendations.tex:144
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

@@ -8,4 +8,4 @@ esac
 cd draft-scenarios
 rm -f drafts.aux && \
   latexmk -pdflua -shell-escape drafts.tex
-${open} drafts.pdf &
+${open} drafts.pdf &> /dev/null &
