@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 23:56+0200\n"
+"POT-Creation-Date: 2024-09-26 21:14+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -119,8 +119,8 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
-"Dla przykładu, jeśli grasz w Scenariusz dla 3 graczy składający się z 12 Rund, możesz łatwo obliczyć, że $3 \\times 12 \\times 5 = 180$.\n"
-"Twój przewidywany minimalny czas gry wyniesie około 3 godzin.\n"
+"Dla przykładu, jeśli grasz w Scenariusz dla trzech graczy składający się z 12 Rund, możesz łatwo obliczyć, że $3 \\times 12 \\times 5 = 180$.\n"
+"Twój przewidywany minimalny czas gry wyniesie około trzech godzin.\n"
 "\n"
 
 #. type: multicols*
@@ -271,10 +271,10 @@ msgstr ""
 #: sections/recommendations.tex:61
 #, no-wrap
 msgid ""
-"Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"Mimo że zasady mówią, że możesz usunąć tylko jedną kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie dowolnej liczby Kart.\n"
+"Mimo że zasady mówią, że możesz usunąć tylko jedną Kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie dowolnej liczby Kart.\n"
 "\n"
 
 #. type: multicols*
