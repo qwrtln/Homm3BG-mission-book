@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"POT-Creation-Date: 2024-09-25 10:08+0200\n"
 "PO-Revision-Date: 2024-07-04 10:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,7 +19,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -109,7 +110,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
@@ -122,7 +124,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -352,7 +354,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:59
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Deck:} 1 × Might card, 2 × Magic card, 1 × Skill card\n"
+"\\textbf{Ivor's Deck:} 1 × Might Card, 2 × Magic Card, 1 × Skill Card\n"
 "\n"
 msgstr ""
 "\\textbf{Talia Ivora:} 1 × Karta Mocy, 2 × Karta Magii, 1 × Karta Umiejętności\n"
@@ -362,7 +364,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:61
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Spell Deck:} 1 × Precision Spell card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell card\n"
+"\\textbf{Ivor's Spell Deck:} 1 × Precision Spell Card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell Card\n"
 "\n"
 msgstr ""
 "\\textbf{Talia Zaklęć Ivora:} 1 × Precyzja (działa na pierwszą Jednostkę \\svg{unit_ranged} zdolną do wykonania ataku \\svg{unit_ranged}), 1 × Magiczna Strzała\n"
@@ -372,7 +374,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:63
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Skill:} Archery Ability card (it always resolves its Basic effect)\n"
+"\\textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)\n"
 "\n"
 msgstr ""
 "\\textbf{Zdolność Ivora:} Łucznictwo (zawsze wykonuj Podstawowy efekt)\n"
