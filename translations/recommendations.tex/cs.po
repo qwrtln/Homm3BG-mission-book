@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"POT-Creation-Date: 2024-09-25 10:08+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -166,9 +167,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:39
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+#| "\n"
 msgid ""
-"Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
 "I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
@@ -326,12 +330,20 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:107
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
+#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
+#| "    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
+#| "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
 "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
-"    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
+"    This includes any Cards that allow you to draw Cards or retrieve Cards from your Discard Pile.\n"
 "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
 "\\end{itemize}\n"
 "\n"
