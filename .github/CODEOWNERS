@@ -1,14 +1,14 @@
 * @qwrtln
 /.github/ @qwrtln
-/assets/ @qwrtln @Re4XN @tomaas-zeman
-/campaigns/ @Re4XN @tomaas-zeman @qwrtln
-/clash/ @Re4XN @tomaas-zeman @qwrtln
-/coops/ @Re4XN @tomaas-zeman @qwrtln
-/templates/ @tomaas-zeman @qwrtln
+/assets/ @qwrtln @Re4XN @tomaas-zeman @tyson-heckert
+/campaigns/ @Re4XN @tomaas-zeman @qwrtln @tyson-heckert
+/clash/ @Re4XN @tomaas-zeman @qwrtln @tyson-heckert
+/coops/ @Re4XN @tomaas-zeman @qwrtln @tyson-heckert
+/templates/ @tomaas-zeman @qwrtln @tyson-heckert
 README.md @qwrtln
-main_en.tex @qwrtln @tomaas-zeman
+main_en.tex @qwrtln @tomaas-zeman @tyson-heckert
 metadata.tex @qwrtln
-po4a.cfg @qwrtln @tomaas-zeman
+po4a.cfg @qwrtln @tomaas-zeman @tyson-heckert
 
 # Polish
 **/pl.po @qwrtln
@@ -16,6 +16,6 @@ po4a.cfg @qwrtln @tomaas-zeman
 main_pl.tex @qwrtln
 
 # Czech
-**/cs.po @tomaas-zeman @qwrtln
-/translations/assets/cs/ @tomaas-zeman @qwrtln
-main_cs.tex @tomaas-zeman @qwrtln
+**/cs.po @tomaas-zeman @qwrtln @tyson-heckert
+/translations/assets/cs/ @tomaas-zeman @qwrtln @tyson-heckert
+main_cs.tex @tomaas-zeman @qwrtln @tyson-heckert

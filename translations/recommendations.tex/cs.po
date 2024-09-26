@@ -264,10 +264,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/recommendations.tex:61
-#, no-wrap
+#: sections/recommendations.tex:39
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+#| "\n"
 msgid ""
-"Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
 "I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
@@ -441,14 +444,22 @@ msgstr ""
 "Následující body nejsou vlastní pravidla, ale spíše doporučení, která vám pomohou získat z vaší hry co nejvíce:\n"
 "\n"
 
-#. type: multicols
-#: sections/recommendations.tex:140
-#, no-wrap
+#. type: multicols*
+#: sections/recommendations.tex:107
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
+#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
+#| "    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
+#| "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
 "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
-"    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
+"    This includes any Cards that allow you to draw Cards or retrieve Cards from your Discard Pile.\n"
 "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
 "\\end{itemize}\n"
 "\n"

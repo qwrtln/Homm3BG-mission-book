@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 18:15+0200\n"
+"POT-Creation-Date: 2024-09-25 10:08+0200\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,7 +20,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
@@ -100,7 +101,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
@@ -113,7 +115,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -357,17 +359,17 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:56
 #, no-wrap
 msgid ""
-"\\textbf{General Kendal's Deck:} 5 × Might card, 1 × Magic card, 3 × Skill card\n"
+"\\textbf{General Kendal's Deck:} 5 × Might Card, 1 × Magic Card, 3 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Generała Kendala:} 5 × karta Mocy, 1 × karta Magii, 3 × karta Umiejętności\n"
+"\\textbf{Talia Generała Kendala:} 5 × Karta Mocy, 1 × Karta Magii, 3 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:58
 #, no-wrap
 msgid ""
-"\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell card\n"
+"\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell Card\n"
 "\n"
 msgstr ""
 "\\textbf{Talia Zaklęć Generała Kendala:} 2 × Przyspieszenie\n"
@@ -377,7 +379,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:60
 #, no-wrap
 msgid ""
-"\\textbf{General Kendal's Skill:} Artillery Ability card\\footnote{For General Kendal, the Artilery Ability card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability card is drawn, as well as at the beginning of a Combat Round.}\n"
+"\\textbf{General Kendal's Skill:} Artillery Ability Card\\footnote{For General Kendal, the Artilery Ability Card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability Card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
 msgstr ""
 "\\textbf{Umiejętność Generała Kendala:} Karta Zdolności Artylerii\\footnote{Generał Kendal zawsze rozpatruje Efekt Mistrzowski Karty Zdolności Artylerii, a Balista Aktywuje się za każdym razem, gdy Karta Zdolności Artylerii jest dobierana, a także na początku Rundy Walki.}\n"
@@ -407,17 +409,17 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:66
 #, no-wrap
 msgid ""
-"\\textbf{Charging Heroes' Deck:} 2 × Might card, 2 × Magic card\n"
+"\\textbf{Charging Heroes' Deck:} 2 × Might Card, 2 × Magic Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Szarżujących Bohaterów:} 2 × karta Mocy, 2 × karta Magii\n"
+"\\textbf{Talia Szarżujących Bohaterów:} 2 × Karta Mocy, 2 × Karta Magii\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:68
 #, no-wrap
 msgid ""
-"\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}.\n"
+"\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell Card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}.\n"
 "\n"
 msgstr ""
 "\\textbf{Talia Zaklęć Szarżujących Bohaterów:} 2 × Spowolnienie\\footnote{Wszyscy Wrogowie Szarżujących Bohaterów korzystają z tych samych Talii AI i Zaklęć. Odnów je po każdej Walce.}.\n"
