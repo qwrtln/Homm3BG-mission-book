@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-26 21:14+0200\n"
+"POT-Creation-Date: 2024-09-27 10:06+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:74 sections/recommendations.tex:129
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -197,28 +197,6 @@ msgstr ""
 #: sections/recommendations.tex:45
 #, fuzzy, no-wrap
 #| msgid ""
-#| "\\subsection*{Magic Arrows}\n"
-#| "\n"
-msgid ""
-"\\subsection*{War Machines as Artifacts}\n"
-"\n"
-msgstr ""
-"\\subsection*{Magické Šípy}\n"
-"\n"
-
-#. type: multicols*
-#: sections/recommendations.tex:48
-#, no-wrap
-msgid ""
-"Shuffle one of each War Machine into the Artifact Deck before the start of the game.\n"
-"If using the optional Tournament rule of splitting the Artifact Deck, shuffle the War Machines into the Major Artifact Deck.\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: sections/recommendations.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
 #| "\\subsection*{Recommendations}\n"
 #| "\n"
 msgid ""
@@ -229,7 +207,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/recommendations.tex:52
+#: sections/recommendations.tex:47
 #, no-wrap
 msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
@@ -237,15 +215,15 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/recommendations.tex:54
+#: sections/recommendations.tex:49
 #, no-wrap
 msgid ""
-"\\subsection*{Tier V--VII Combat on Hard+ Difficulty}\n"
+"\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: sections/recommendations.tex:57
+#: sections/recommendations.tex:52
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
@@ -254,7 +232,17 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/recommendations.tex:59
+#: sections/recommendations.tex:56
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=\\linewidth]{\\art/black_market.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:58
 #, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
@@ -264,7 +252,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/recommendations.tex:61
+#: sections/recommendations.tex:60
 #, fuzzy, no-wrap
 #| msgid ""
 #| "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
@@ -277,7 +265,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/recommendations.tex:63
+#: sections/recommendations.tex:62
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{Magic Arrows}\n"
@@ -290,7 +278,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/recommendations.tex:70
+#: sections/recommendations.tex:69
 #, no-wrap
 msgid ""
 "When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
@@ -303,7 +291,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:76
+#: sections/recommendations.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -313,7 +301,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:78
+#: sections/recommendations.tex:77
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
@@ -323,7 +311,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:82
+#: sections/recommendations.tex:81
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
@@ -337,7 +325,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:86
+#: sections/recommendations.tex:85
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -347,7 +335,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:107
+#: sections/recommendations.tex:106
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -387,7 +375,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: figure*
-#: sections/recommendations.tex:127
+#: sections/recommendations.tex:126
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -425,7 +413,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: multicols
-#: sections/recommendations.tex:131
+#: sections/recommendations.tex:130
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -435,7 +423,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:133
+#: sections/recommendations.tex:132
 #, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
@@ -445,7 +433,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:140
+#: sections/recommendations.tex:139
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"
@@ -473,7 +461,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:144
+#: sections/recommendations.tex:143
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
