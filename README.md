@@ -77,3 +77,8 @@ Great! Please reach out. We'd love to hear from you.
 ### Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date&branch=master)](https://star-history.com/#qwrtln/Homm3BG-mission-book&Date)
+
+### 🛡️ Other Community Projects
+
+- [Rulebook Rewrite Project](https://github.com/Heegu-sama/Homm3BG)
+- [Board Game Cards Databse](https://github.com/Mirzipan/Homm3_BG_Database)
