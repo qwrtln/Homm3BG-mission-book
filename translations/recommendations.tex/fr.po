@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 10:08+0200\n"
+"POT-Creation-Date: 2024-09-27 10:06+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -41,7 +42,7 @@ msgstr ""
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:10
 #, no-wrap
 msgid ""
@@ -52,7 +53,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:12
 #, no-wrap
 msgid ""
@@ -60,7 +61,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:14
 #, no-wrap
 msgid ""
@@ -68,7 +69,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:18
 #, no-wrap
 msgid ""
@@ -78,7 +79,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:24
 #, no-wrap
 msgid ""
@@ -90,7 +91,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:27
 #, no-wrap
 msgid ""
@@ -99,7 +100,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:30
 #, no-wrap
 msgid ""
@@ -108,7 +109,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:32
 #, no-wrap
 msgid ""
@@ -116,7 +117,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:35
 #, no-wrap
 msgid ""
@@ -125,23 +126,23 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:37
 #, no-wrap
 msgid ""
-"\\subsection*{Trading Post}\n"
+"\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:39
 #, no-wrap
 msgid ""
-"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:41
 #, no-wrap
 msgid ""
@@ -149,8 +150,96 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:43
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/medusa.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:45
+#, no-wrap
+msgid ""
+"\\subsection*{Round One Mulligan}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:47
+#, no-wrap
+msgid ""
+"At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:49
+#, no-wrap
+msgid ""
+"\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:52
+#, no-wrap
+msgid ""
+"Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svgunit{azure} Neutral Units.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:56
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=\\linewidth]{\\art/black_market.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:58
+#, no-wrap
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:60
+#, no-wrap
+msgid ""
+"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:62
+#, no-wrap
+msgid ""
+"\\subsection*{Victory Points}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:69
+#, no-wrap
+msgid ""
+"When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
+"\\begin{itemize}\n"
+"  \\item Faction Towns grant 1 VP.\n"
+"  \\item Possessing the Grail at the end of the match grants 3 VPs. If the Grail was transported to that player's Faction Town, it grants 5 VPs instead.\n"
+"  \\item Capturing a Dragon Utopia grants 3 VPs.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/recommendations.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -158,7 +247,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:45
+#: sections/recommendations.tex:77
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
@@ -166,7 +255,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:49
+#: sections/recommendations.tex:81
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
@@ -176,7 +265,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:53
+#: sections/recommendations.tex:85
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -186,7 +275,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:74
+#: sections/recommendations.tex:106
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -209,7 +298,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:94
+#: sections/recommendations.tex:126
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -231,7 +320,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:98
+#: sections/recommendations.tex:130
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -239,7 +328,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:100
+#: sections/recommendations.tex:132
 #, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
@@ -247,7 +336,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:107
+#: sections/recommendations.tex:139
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -260,7 +349,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/recommendations.tex:111
+#: sections/recommendations.tex:143
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

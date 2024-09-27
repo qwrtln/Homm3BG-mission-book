@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 10:08+0200\n"
+"POT-Creation-Date: 2024-09-27 10:06+0200\n"
 "PO-Revision-Date: 2024-07-28 15:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -24,7 +24,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -42,7 +43,7 @@ msgstr "\\addsection{Zalecenia}{\\art/haste.png}"
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:10
 #, no-wrap
 msgid ""
@@ -58,7 +59,7 @@ msgstr ""
 "Miłej zabawy!\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:12
 #, no-wrap
 msgid ""
@@ -68,7 +69,7 @@ msgstr ""
 "\\subsection*{Czas Gry}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:14
 #, no-wrap
 msgid ""
@@ -78,7 +79,7 @@ msgstr ""
 "Możesz oszacować swój \\textbf{minimalny} czas gry, korzystając z następującego wzoru:\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:18
 #, no-wrap
 msgid ""
@@ -92,7 +93,7 @@ msgstr ""
 "\\end{center}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:24
 #, no-wrap
 msgid ""
@@ -110,7 +111,7 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:27
 #, no-wrap
 msgid ""
@@ -118,11 +119,11 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
-"Dla przykładu, jeśli grasz w Scenariusz dla 3 graczy składający się z 12 Rund, możesz łatwo obliczyć, że $3 \\times 12 \\times 5 = 180$.\n"
-"Twój przewidywany minimalny czas gry wyniesie około 3 godzin.\n"
+"Dla przykładu, jeśli grasz w Scenariusz dla trzech graczy składający się z 12 Rund, możesz łatwo obliczyć, że $3 \\times 12 \\times 5 = 180$.\n"
+"Twój przewidywany minimalny czas gry wyniesie około trzech godzin.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:30
 #, no-wrap
 msgid ""
@@ -134,7 +135,7 @@ msgstr ""
 "W tym przypadku będzie to 6 godzin.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:32
 #, no-wrap
 msgid ""
@@ -144,7 +145,7 @@ msgstr ""
 "\\subsection*{Magiczne Strzały}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:35
 #, no-wrap
 msgid ""
@@ -156,8 +157,96 @@ msgstr ""
 "Po przygotowaniu początkowych Talii M\\&M przez graczy, zaleca się usunięcie Magicznych Strzał z Talii Zaklęć, aż pozostaną nie więcej niż dwie.\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: sections/recommendations.tex:37
+#, no-wrap
+msgid ""
+"\\subsection*{Guaranteed Settlement}\n"
+"\n"
+msgstr ""
+"\\subsection*{Gwarantowana Osada}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:39
+#, no-wrap
+msgid ""
+"When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
+"\n"
+msgstr ""
+"Podczas rozdzielania Dalekich Kafelków (II--III) między graczy, pula Kafelków Mapy każdego gracza musi zawierać jedną Osadę.\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:41
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:43
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth]{\\art/medusa.jpg}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:45
+#, no-wrap
+msgid ""
+"\\subsection*{Round One Mulligan}\n"
+"\n"
+msgstr ""
+"\\subsection*{Mulligan w pierwszej Rundzie}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:47
+#, no-wrap
+msgid ""
+"At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
+"\n"
+msgstr ""
+"Na początku pierwszej Rundy każdy gracz może jeden raz wtasować swoją rękę z powrotem do Talii Mocy i Magii i dobrać nową rękę startową.\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:49
+#, no-wrap
+msgid ""
+"\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
+"\n"
+msgstr ""
+"\\subsection*{Walka V--VII na poziomie Trudnym wzwyż}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:52
+#, no-wrap
+msgid ""
+"Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svgunit{azure} Neutral Units.\n"
+"\n"
+msgstr ""
+"Grając na poziomie Trudnym lub Niemożliwym, traktuj Walki na poziomie V--VII jako łatwiejsze o jeden stopień trudności.\n"
+"Na przykład, Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\svgunit{Azure} Neutralnym Jednostkom.\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:56
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=\\linewidth]{\\art/black_market.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/recommendations.tex:58
 #, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
@@ -166,26 +255,48 @@ msgstr ""
 "\\subsection*{Punkt Handlowy}\n"
 "\n"
 
-#. type: multicols
-#: sections/recommendations.tex:39
+#. type: multicols*
+#: sections/recommendations.tex:60
 #, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"Mimo że zasady mówią, że możesz usunąć tylko jedną Kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie tylu Kart, ile chcesz.\n"
+"Mimo że zasady mówią, że możesz usunąć tylko jedną Kartę z ręki podczas odwiedzania Punktu Handlowego, zaleca się pozwolić na usunięcie dowolnej liczby Kart.\n"
 "\n"
 
-#. type: multicols
-#: sections/recommendations.tex:41
+#. type: multicols*
+#: sections/recommendations.tex:62
 #, no-wrap
 msgid ""
-"\\includegraphics[width=\\linewidth]{\\art/rogue.jpg}\n"
+"\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
+"\\subsection*{Punkty Zwycięstwa}\n"
+"\n"
+
+#. type: multicols*
+#: sections/recommendations.tex:69
+#, no-wrap
+msgid ""
+"When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
+"\\begin{itemize}\n"
+"  \\item Faction Towns grant 1 VP.\n"
+"  \\item Possessing the Grail at the end of the match grants 3 VPs. If the Grail was transported to that player's Faction Town, it grants 5 VPs instead.\n"
+"  \\item Capturing a Dragon Utopia grants 3 VPs.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"Podczas gier na Zasadach Turniejowych, przyznaj opisaną niżej ilość punktów za osiągnięcie poszczególnych celów (o ile Zasady Scenariusza nie mówią inaczej):\n"
+"\\begin{itemize}\n"
+"  \\item Miasta Frakcji przyznają 1 PZ.\n"
+"  \\item Posiadanie Graala na koniec gry przyznaje 3 PZ. Jeśli Graal został przetransportowany do Miasta Frakcji tego gracza, zamiast tego przyznaje 5 PZ.\n"
+"  \\item Zdobycie Smoczej Utopii przyznaje 3 PZ.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: sections/recommendations.tex:43
+#: sections/recommendations.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -195,7 +306,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:45
+#: sections/recommendations.tex:77
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
@@ -205,7 +316,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:49
+#: sections/recommendations.tex:81
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
@@ -219,7 +330,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:53
+#: sections/recommendations.tex:85
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -229,7 +340,7 @@ msgid ""
 msgstr ""
 
 #. type: figure*
-#: sections/recommendations.tex:74
+#: sections/recommendations.tex:106
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -269,7 +380,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: figure*
-#: sections/recommendations.tex:94
+#: sections/recommendations.tex:126
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -307,7 +418,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: multicols
-#: sections/recommendations.tex:98
+#: sections/recommendations.tex:130
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -317,7 +428,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:100
+#: sections/recommendations.tex:132
 #, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
@@ -327,7 +438,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:107
+#: sections/recommendations.tex:139
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -347,7 +458,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/recommendations.tex:111
+#: sections/recommendations.tex:143
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
