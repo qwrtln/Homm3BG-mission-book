@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check final newline
-        uses: qwrtln/check-final-newline@v1
+        uses: qwrtln/check-final-newline@v1.0.0
