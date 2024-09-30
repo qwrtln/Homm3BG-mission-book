@@ -1,6 +1,6 @@
 # Heroes of Might & Magic III: The Board Game 🐴 🛡️ ⚔️️<br>Fan-Made Mission Book
 
-> 🏗️ THIS IS A WORK IN PROGRESS 🚧
+[![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
 
 Click on the table to download the most recent builds of the Mission Book in the chosen language:
 
@@ -45,7 +45,7 @@ This project aims to collect high-quality, fan-made custom scenarios and compile
 There are two documents:
 
 |Mission Book ✅|Draft Scenarios 🏗️|
-|:----------:|:----------:|
+|:-------------:|:----------------:|
 | [![image](docs/assets/mission-book-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf) | [![image](docs/assets/draft-scenarios-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf) |
 | A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
 
@@ -73,3 +73,12 @@ We prefer battle-tested and community-vetted scenarios.
 
 Do you have an idea on how to improve the LaTeX code, document layout or design, or GitHub workflows?
 Great! Please reach out. We'd love to hear from you.
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date&branch=master)](https://star-history.com/#qwrtln/Homm3BG-mission-book&Date)
+
+### 🛡️ Other Community Projects
+
+- [Rulebook Rewrite Project](https://github.com/Heegu-sama/Homm3BG)
+- [Board Game Cards Databse](https://github.com/Mirzipan/Homm3_BG_Database)

@@ -12,7 +12,6 @@ on:
       - 'draft-scenarios/**'
 
 env:
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   ARTIFACT_RETENTION_DAYS: 1
 
 jobs:
@@ -37,9 +36,9 @@ jobs:
 
       - name: Install ghostscript
         run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf gs_10.03.0_amd64_snap.tgz
-          sudo snap install ./gs_10.03.0_amd64_snap/gs_10.03.0_amd64.snap --devmode
+          wget --quiet ${{ vars.GHOSTSCRIPT_URL }}
+          tar -xvf *_amd64_snap.tgz
+          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
       - name: Optimize PDF
         run: |
