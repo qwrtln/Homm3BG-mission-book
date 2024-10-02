@@ -270,14 +270,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black cubes from Water Wheels and Windmills on the map.\n"
-#| "  \\item All Heroes gain +1 \\svgeven{movement}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -295,24 +288,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:81
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{2}\n"
-#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-#| "During this Scenario:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Whenever an Obelisk is Visited for the first time, the Visiting player gains 2 \\svg{building_materials}\n"
-#| "  \\item The Random Town is defended by Walls and a Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
-#| "  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
-#| "    \\begin{itemize}\n"
-#| "      \\item Place a newly Recruited Secondary Hero.\n"
-#| "      \\item Place the Main Hero when defeated.\n"
-#| "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
-#| "    \\end{itemize}\n"
-#| "  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws cards from the Neutral Units \\svgunit{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
-#| "    The player may immediately Recruit that Dragon for free.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -343,7 +319,7 @@ msgstr ""
 "      \\item Umístění Hlavního Hrdiny po jeho porážce.\n"
 "      \\item Dočasnému transportu armády za 8~\\svg{gold}, když je Náhodné Město napadeno.\n"
 "    \\end{itemize}\n"
-"  \\item První hráč, který navštíví Dračí Utopii (po porážce bránící Jednotky Azurového draka), dobere karty z Balíčku Neutrálních Jednotek \\svgunit{azure}, dokud nebude nalezen Drak, který není spojený s žádnou Frakcí.\n"
+"  \\item První hráč, který navštíví Dračí Utopii (po porážce bránící Jednotky Azurového draka), dobere Karty z Balíčku Neutrálních Jednotek \\svgunit{azure}, dokud nebude nalezen Drak, který není spojený s žádnou Frakcí.\n"
 "    Hráč může okamžitě tohoto Draka zdarma Naverbovat.\n"
 "\\end{itemize}\n"
 "\n"
