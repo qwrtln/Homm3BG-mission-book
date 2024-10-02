@@ -158,15 +158,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Umístění Hrdinů}}\n"
+"\\subsection*{Garantovaná Osada}\n"
 "\n"
 
 #. type: multicols*
@@ -176,6 +173,8 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
+"Při rozdělování Vzdálených Dílků (II--III) mezi hráče musí každý hráč mít jeden dílek s Osadou.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:41
@@ -195,15 +194,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Recommendations}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Round One Mulligan}\n"
 "\n"
 msgstr ""
-"\\subsection*{Doporučení}\n"
+"\\subsection*{Druhá Šance v Prvním Kole}\n"
 "\n"
 
 #. type: multicols*
@@ -213,6 +209,8 @@ msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
 "\n"
 msgstr ""
+"Na začátku 1. Kola může každý hráč nejvýše jednou zamíchat Karty na ruce zpět do Balíčku a dobrat si novou startovní ruku.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:49
@@ -221,6 +219,8 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
+"\\subsection*{Boj Úrovně V--VII na Těžkou$+$\\\\Obtížnost}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:52
@@ -230,6 +230,9 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\svgunit{azure} Neutral Units.\n"
 "\n"
 msgstr ""
+"Boje úrovně V--VII budou mít o 1 nižší obtížnost při hře na Těžkou nebo Nemožnou obtížnost.\n"
+"Například Boj Úrovně VII na Těžkou obtížnost bude proti 2 × \\svgunit{azure} Neutrálním Jednotkám.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:56
@@ -253,28 +256,22 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Although rules as written state that you can remove only one card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
+"I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu Kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
 "\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:62
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Magic Arrows}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
-"\\subsection*{Magické Šípy}\n"
+"\\subsection*{Vítězné Body}\n"
 "\n"
 
 #. type: multicols*
@@ -289,6 +286,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Při hře s volitelnými Vítěznými Body (VB) z Knihy Turnajů platí následující pravidla (pokud nejsou nahrazena těmi ve scénáři):\n"
+"\\begin{itemize}\n"
+"  \\item Frakční Města poskytují 1 VB.\n"
+"  \\item Držení Grálu na konci hry poskytuje 3 VB. Pokud byl Grál přemístěn do Frakčního Města hráče, poskytuje 5 VB.\n"
+"  \\item Obsazená Dračí Utopie poskytuje 3 VB.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:75
@@ -434,15 +438,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:139
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
-#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
-#| "    This includes any cards that allow you to draw cards or retrieve cards from your Discard Pile.\n"
-#| "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
@@ -455,7 +451,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Při rozhodování, kterou budovu postavit ve vašem Městě, zejména na začátku hry, je \\textit{obvykle} nejlepší upřednostnit Jednotky před Radnicí, Citadelou, Cechem Mágů nebo jinými budovami Frakce.\n"
 "  \\item Pokud si nejste jisti, které Kouzlo, Artefakt nebo Dovednost zvolit, upřednostněte ty, které vám pomohou procházet vaším Balíčkem.\n"
-"    To zahrnuje jakékoli karty, které vám umožňují dobrat karty nebo získat karty z vaší Odhazovací Hromádky.\n"
+"    To zahrnuje jakékoli Karty, které vám umožňují dobrat Karty nebo získat Karty z vaší Odhazovací Hromádky.\n"
 "  \\item Snažte se vyhnout používání Bodů Pohybu vašeho Hlavního Hrdiny na akce, které může zvládnout váš Vedlejší Hrdina, jako je otáčení Dílků Mapy, návštěva Vodních Kol a podobně.\n"
 "\\end{itemize}\n"
 "\n"
