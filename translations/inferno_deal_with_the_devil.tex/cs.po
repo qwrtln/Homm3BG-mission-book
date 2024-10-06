@@ -309,8 +309,8 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item Hrstka Magogů\n"
-"  \\item Skupina Rarášků\n"
-"  \\item Skupina Kerberů\n"
+"  \\item Tlupa Rarášků\n"
+"  \\item Tlupa Kerberů\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -351,7 +351,7 @@ msgid ""
 "\\textbf{Rampart Charging Army \\#1:} A Few Centaurs, a Pack of Dwarves, a Pack of Elves, a Pack of Pegasi, a Few Unicorn\n"
 "\n"
 msgstr ""
-"\\textbf{Útočící Armáda Bašty \\#1:} Hrstka Kentaurů, Skupina Trpaslíků, Skupina Elfů, Skupina Pegasů, Hrstka Jednorožců\n"
+"\\textbf{Útočící Armáda Bašty \\#1:} Hrstka Kentaurů, Tlupa Trpaslíků, Tlupa Elfů, Tlupa Pegasů, Hrstka Jednorožců\n"
 "\n"
 
 #. type: multicols*
@@ -361,7 +361,7 @@ msgid ""
 "\\textbf{Castle Charging Army \\#1:} A Pack of Marksmen, a Pack of Elves, a Few Griffins, a Pack of Zealots, a Few Champions\n"
 "\n"
 msgstr ""
-"\\textbf{Útočící Armáda Hradu \\#1:} Skupina Střelců, Skupina Elfů, Hrstka Gryfů, Skupina Fanatiků, Hrstka Šampionů\n"
+"\\textbf{Útočící Armáda Hradu \\#1:} Tlupa Střelců, Tlupa Elfů, Hrstka Gryfů, Tlupa Fanatiků, Hrstka Šampionů\n"
 "\n"
 
 #. type: multicols*
@@ -371,7 +371,7 @@ msgid ""
 "\\textbf{Rampart Charging Army \\#2:} A Pack of Dwarves, a Pack of Elves, a Few Pegasi, a Pack of Dendroids, a Pack of Unicorns\n"
 "\n"
 msgstr ""
-"\\textbf{Útočící Armáda Bašty \\#2:} Skupina Trpaslíků, Skupina Elfů, Hrstka Pegasů, Skupina Dendroidů, Skupina Jednorožců\n"
+"\\textbf{Útočící Armáda Bašty \\#2:} Tlupa Trpaslíků, Tlupa Elfů, Hrstka Pegasů, Tlupa Dendroidů, Tlupa Jednorožců\n"
 "\n"
 
 #. type: multicols*
@@ -381,7 +381,7 @@ msgid ""
 "\\textbf{Castle Charging Army \\#2:} A Pack of Halberdiers, a Few Griffins, a Few Crusaders, a Pack of Zealots, a Pack of Champions\n"
 "\n"
 msgstr ""
-"\\textbf{Útočící Armáda Hradu \\#2:} Skupina Halapartníků, Hrstka Gryfů, Hrstka Křižáků, Skupina Fanatiků, Skupina Šampionů\n"
+"\\textbf{Útočící Armáda Hradu \\#2:} Tlupa Halapartníků, Hrstka Gryfů, Hrstka Křižáků, Tlupa Fanatiků, Tlupa Šampionů\n"
 "\n"
 
 #. type: multicols*
@@ -411,7 +411,7 @@ msgid ""
 "\\textbf{Final Charging Army:} A Pack of Griffins, a Pack of Zealots, a Pack of Champions, a Pack of Unicorns, a Few Archangels, a ``Ballista'' war machine\n"
 "\n"
 msgstr ""
-"\\textbf{Finální Útočící Armáda:} Skupina Gryfů, Skupina Fanatiků, Skupina Šampionů, Skupina Jednorožců, Hrstka Archandělů, Válečný Stroj \\uv{Balista}\n"
+"\\textbf{Finální Útočící Armáda:} Tlupa Gryfů, Tlupa Fanatiků, Tlupa Šampionů, Tlupa Jednorožců, Hrstka Archandělů, Válečný Stroj \\uv{Balista}\n"
 "\n"
 
 #. type: multicols*
