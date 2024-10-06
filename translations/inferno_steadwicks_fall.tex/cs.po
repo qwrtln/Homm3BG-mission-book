@@ -382,7 +382,7 @@ msgid ""
 "\\textbf{General Kendal's Skill:} Artillery Ability Card\\footnote{For General Kendal, the Artilery Ability Card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability Card is drawn, as well as at the beginning of a Combat Round.}\n"
 "\n"
 msgstr ""
-"\\textbf{Schopnost Generála Kendala:} Karta Dovednosti Dělostřelectvo\\footnote{Pro Generála Kendala Karta Dovednosti Dělostřelectvo vždy používá Expertní efekt a Válečný Stroj Balista se aktivuje pokaždé, když je Karta Dovednosti Dělostřelectvo vylosována, stejně jako na začátku Kola Souboje.}\n"
+"\\textbf{Schopnost Generála Kendala:} Karta Dovednosti Dělostřelectvo\\footnote{Pro Generála Kendala Karta Dovednosti Dělostřelectvo vždy používá Pokročilý efekt a Válečný Stroj Balista se aktivuje pokaždé, když je Karta Dovednosti Dělostřelectvo vylosována, stejně jako na začátku Kola Souboje.}\n"
 "\n"
 
 #. type: multicols*

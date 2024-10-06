@@ -433,7 +433,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Balíček Schopností/Dovedností Finální Útočící Armády:} 1 × Karta Artefaktu \\uv{Štít Prokletých}, 1 × Karta Artefaktu \\uv{Meč Pekelného Ohně},\n"
-"  1 × Karta Dovednosti \\uv{Balistika} (základní efekt), 1 × Karta Dovednosti \\uv{První pomoc} (expertní efekt)\n"
+"  1 × Karta Dovednosti \\uv{Balistika} (základní efekt), 1 × Karta Dovednosti \\uv{První pomoc} (Pokročilý efekt)\n"
 "\n"
 
 #. type: multicols*
