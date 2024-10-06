@@ -153,7 +153,7 @@ msgid ""
 "\n"
 msgstr ""
 "Kromě Magického Šípu se každé Kouzlo v Balíčku Kouzel objevuje přesně dvakrát.\n"
-"Po přípravě Startovních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
+"Po přípravě Úvodních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
 "\n"
 
 #. type: multicols*
@@ -209,7 +209,7 @@ msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
 "\n"
 msgstr ""
-"Na začátku 1. Kola může každý hráč nejvýše jednou zamíchat Karty na ruce zpět do Balíčku a dobrat si novou startovní ruku.\n"
+"Na začátku 1. Kola může každý hráč nejvýše jednou zamíchat Karty na ruce zpět do Balíčku a dobrat si novou úvodní ruku.\n"
 "\n"
 
 #. type: multicols*
