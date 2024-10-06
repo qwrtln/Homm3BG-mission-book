@@ -376,7 +376,7 @@ msgid ""
 "\\textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)\n"
 "\n"
 msgstr ""
-"\\textbf{Ivorova Schopnost:} Karta Dovednosti Lukostřelba (vždy se použije její Základní Efekt)\n"
+"\\textbf{Ivorova Schopnost:} Karta Dovednosti Lukostřelba (vždy se použije její Bežný Efekt)\n"
 "\n"
 
 #. type: multicols*
