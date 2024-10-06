@@ -121,7 +121,7 @@ msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
 "  \\item Skupina \\svgunit{bronze} Jednotek dle tvého výběru\n"
-"  \\item Málo \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item Hrstka \\svgunit{bronze} Jednotek dle tvého výběru\n"
 "\\end{itemize}\n"
 "\n"
 

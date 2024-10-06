@@ -157,7 +157,7 @@ msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
 "  \\item Skupinu \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
-"  \\item Málo \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
+"  \\item Hrstka \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 

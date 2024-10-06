@@ -203,7 +203,7 @@ msgid ""
 msgstr ""
 "\\textbf{Počáteční Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Málo \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
+"  \\item 2 × Hrstka \\svgunit{bronze} Jednotek s \\textit{nejvyššími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
