@@ -498,7 +498,7 @@ msgid ""
 "You lose one Combat encounter.\n"
 "\n"
 msgstr ""
-"Prohrajete jeden Boj.\n"
+"Prohrajete jeden Souboj.\n"
 "\n"
 
 #. type: multicols*
