@@ -460,7 +460,7 @@ msgstr ""
 "Obě Karty Artefaktů všech Útočících Armád jsou považovány za Schopnosti a používají \\uv{slabší} efekt uvedený na Kartě.\n"
 "\\uv{Meč Pekelného Ohně} bude použit při Útocích a Odvetných Útocích. Není použit při Útocích na Hradby nebo Brány,\n"
 "a zůstává v platnosti na Jednotce. \\uv{Štít Prokletých} nabývá účinku, když\n"
-"jakákoliv Jednotka Útočící Armády utrpí zranění z Útoku nebo Odvetného Útoku. Pokud Karta Schopnosti AI říká \\uv{udělej to znovu}, Karty Artefaktů se nevyužívají ihned znovu, ale použijí se, jakmile je další Jednotka schopna je využít.\n"
+"jakákoliv Jednotka Útočící Armády utrpí poškození z Útoku nebo Odvetného Útoku. Pokud Karta Schopnosti AI říká \\uv{udělej to znovu}, Karty Artefaktů se nevyužívají ihned znovu, ale použijí se, jakmile je další Jednotka schopna je využít.\n"
 "\n"
 
 #. type: multicols*
