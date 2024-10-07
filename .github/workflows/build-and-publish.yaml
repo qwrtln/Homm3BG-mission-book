@@ -24,7 +24,7 @@ jobs:
           - language: pl
             testing-words: "starcia\\|kooperacyjny\\|kampani"
           - language: cs
-            testing-words: "střet\\|kooperativní\\|kampan"
+            testing-words: "střet\\|kooperativní\\|kampaň"
 
     steps:
       - name: Set up repository
