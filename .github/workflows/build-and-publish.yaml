@@ -20,7 +20,7 @@ jobs:
       matrix:
         include:
           - language: en
-            testing-words: "cooperative\\|clash\\|campaign"
+            testing-words: "clash\\|cooperative\\|campaign"
           - language: pl
             testing-words: "starcia\\|kooperacyjny\\|kampani"
           - language: cs
