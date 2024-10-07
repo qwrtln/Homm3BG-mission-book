@@ -83,8 +83,10 @@ jobs:
       - name: Check for broken CMap
         if: github.event_name == 'pull_request'
         run: |
-          pdftotext main_${{ matrix.language }}.pdf - | grep -i "${{ matrix.testing-words }}"
-          if [[ $? -ne 0 ]]; then
+          if grep -iq main_${{ matrix.language }}.txt "${{ matrix.testing-words }}"
+          then
+            echo "All good"
+          else
             echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
             exit 1
           fi
