@@ -20,8 +20,11 @@ jobs:
       matrix:
         include:
           - language: en
+            testing-words: "cooperative\\|clash\\|campaign"
           - language: pl
+            testing-words: "starcia\\|kooperacyjny\\|kampani"
           - language: cs
+            testing-words: "střet\\|kooperativní\\|kampan"
 
     steps:
       - name: Set up repository
@@ -66,16 +69,25 @@ jobs:
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-      - name: Install pdfinfo
-        if: ${{ matrix.language == 'en' }}
+      - name: Install poppler
+        if:  github.event_name == 'pull_request'
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: Check number of pages
         id: check_pages
-        if: ${{ matrix.language == 'en' }}
+        if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
         run: |
           NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
           echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
+
+      - name: Check for broken CMap
+        if: github.event_name == 'pull_request'
+        run: |
+          pdftotext main_${{ matrix.language }}.pdf - | grep ${{ matrix.testing-words }}
+          if [[ $? -ne 0 ]]; then
+            echo "The CMap in ${{ matrix.language }} language is broken. See the output of 'Optimize PDF' step above."
+            exit 1
+          fi
 
       - name: Move file
         run: |
@@ -103,9 +115,8 @@ jobs:
         language: ["pl", "cs"]
 
     steps:
-      - name: Install pdfinfo
+      - name: Install poppler
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
-
 
       - name: Download PDFs
         uses: actions/download-artifact@v4
