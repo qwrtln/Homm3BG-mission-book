@@ -83,7 +83,8 @@ jobs:
       - name: Check for broken CMap
         if: github.event_name == 'pull_request'
         run: |
-          if grep -iq main_${{ matrix.language }}.txt "${{ matrix.testing-words }}"
+          pdftotext main_${{ matrix.language }}.pdf
+          if grep -iq "${{ matrix.testing-words }}" main_${{ matrix.language }}.txt
           then
             echo "All good"
           else
