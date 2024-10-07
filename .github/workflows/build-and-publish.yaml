@@ -20,11 +20,8 @@ jobs:
       matrix:
         include:
           - language: en
-            testing-words: "clash\\|cooperative\\|campaign"
           - language: pl
-            testing-words: "starcia\\|kooperacyjny\\|kampani"
           - language: cs
-            testing-words: "střet\\|kooperativní\\|kampaň"
 
     steps:
       - name: Set up repository
@@ -83,8 +80,9 @@ jobs:
       - name: Check for broken CMap
         if: github.event_name == 'pull_request'
         run: |
-          pdftotext main_${{ matrix.language }}.pdf
-          if grep -iq "${{ matrix.testing-words }}" main_${{ matrix.language }}.txt
+          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
+          pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
+          if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
           then
             echo "All good"
           else
