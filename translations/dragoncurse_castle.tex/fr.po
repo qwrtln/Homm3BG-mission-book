@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-10-17 21:50+0200\n"
+"POT-Creation-Date: 2024-10-17 21:57+0200\n"
 "PO-Revision-Date: 2024-07-31 22:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -115,8 +115,8 @@ msgstr ""
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
 msgid ""
-"\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/frenzy."
-"png}"
+"\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
+"town_portal.png}"
 msgstr ""
 
 #. type: multicols*
