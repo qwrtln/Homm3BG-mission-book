@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 10:08+0200\n"
+"POT-Creation-Date: 2024-10-17 21:57+0200\n"
 "PO-Revision-Date: 2024-07-31 22:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -114,8 +115,8 @@ msgstr ""
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
 msgid ""
-"\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/frenzy."
-"png}"
+"\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
+"town_portal.png}"
 msgstr ""
 
 #. type: multicols*
@@ -176,7 +177,7 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest Recruitment cost\n"
+"  \\item 2 × A Few \\svgunit{bronze} Units with the lowest Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -236,7 +237,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "During this Scenario:\n"
 "\\begin{itemize}\n"
-"  \\item Whenever an Obelisk is Visited for the first time, the Visiting player gains 2 \\svg{building_materials}\n"
+"  \\item Whenever an Obelisk is Visited for the first time, the Visiting player rolls 2 \\svg{resource} and resolves both results.\n"
 "  \\item The Random Town is defended by Walls and a Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
 "  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
 "    \\begin{itemize}\n"
