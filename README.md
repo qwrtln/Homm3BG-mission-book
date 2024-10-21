@@ -1,6 +1,13 @@
-# Heroes of Might & Magic III: The Board Game 🐴 🛡️ ⚔️️<br>Fan-Made Mission Book
+<div align="center">
+  <h1>Heroes of Might & Magic III: The Board Game<br>Fan-Made Mission Book</h1>
 
-[![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
+  <p align="center">
+    <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white">
+    <a href="https://discord.gg/Y4uM9pPWF6"><img src="https://dcbadge.limes.pink/api/server/Y4uM9pPWF6"></a>
+  </p>
+
+  [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
+</div>
 
 Click on the table to download the most recent builds of the Mission Book in the chosen language:
 
