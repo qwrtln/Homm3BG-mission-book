@@ -73,12 +73,12 @@ Please refer to [the docs](https://qwrtln.github.io/Homm3BG-mission-book/) for t
 
 #### 🗺️ Scenarios
 
-Please open an issue if you'd like to add a scenario, or reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6).
-We prefer battle-tested and community-vetted scenarios.
+Reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6), if you'd like to add your scenario.
+If you know your way around LaTeX and git, you can open a pull request for the Draft Scenarios.
 
 #### 💻 Code
 
-Do you have an idea on how to improve the LaTeX code, document layout or design, or GitHub workflows?
+Do you have an idea on how to improve the LaTeX code, document layout and design, or GitHub workflows?
 Great! Please reach out. We'd love to hear from you.
 
 ### Star History
