@@ -1,6 +1,13 @@
-# Heroes of Might & Magic III: The Board Game 🐴 🛡️ ⚔️️<br>Fan-Made Mission Book
+<div align="center">
+  <h1>Heroes of Might & Magic III: The Board Game<br>Fan-Made Mission Book</h1>
 
-[![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
+  <p align="center">
+    <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white">
+    <a href="https://discord.gg/Y4uM9pPWF6"><img src="https://dcbadge.limes.pink/api/server/Y4uM9pPWF6"></a>
+  </p>
+
+  [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
+</div>
 
 Click on the table to download the most recent builds of the Mission Book in the chosen language:
 
@@ -66,12 +73,12 @@ Please refer to [the docs](https://qwrtln.github.io/Homm3BG-mission-book/) for t
 
 #### 🗺️ Scenarios
 
-Please open an issue if you'd like to add a scenario, or reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6).
-We prefer battle-tested and community-vetted scenarios.
+Reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6), if you'd like to add your scenario.
+If you know your way around LaTeX and git, you can open a pull request for the Draft Scenarios.
 
 #### 💻 Code
 
-Do you have an idea on how to improve the LaTeX code, document layout or design, or GitHub workflows?
+Do you have an idea on how to improve the LaTeX code, document layout and design, or GitHub workflows?
 Great! Please reach out. We'd love to hear from you.
 
 ### Star History
