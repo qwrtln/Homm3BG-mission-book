@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 10:08+0200\n"
+"POT-Creation-Date: 2024-10-25 16:06+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -396,7 +397,8 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -447,7 +449,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:124
+#: coops/sentinels.tex:114
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -459,16 +461,6 @@ msgid ""
 "    \\item $-1$/$+1$ = West\n"
 "    \\item $-1$/$-1$ = South\n"
 "  \\end{itemize}\n"
-"  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
-"  Rounds 8 and 10 are entirely random.\n"
-"  \\item If the Tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
-"  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
-"  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
-"  \\item Enemy armies have 3 MPs per Round.\n"
-"  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
-"    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
-"  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
-"\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
@@ -480,10 +472,37 @@ msgstr ""
 "    \\item $-1$/$+1$ = Zachód\n"
 "    \\item $-1$/$-1$ = Południe\n"
 "  \\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:119
+#, no-wrap
+msgid ""
+"  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
+"  Rounds 8 and 10 are entirely random.\n"
+"  \\item If the Tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
+"  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
+"\n"
+msgstr ""
+"  \\end{itemize}\n"
 "  \\item Dla bardziej zbilansowanej dystrybucji, w Rundach 7. i 9., rzuć tylko drugą Kością Ataku (K2). Dla K1, przyjmij przeciwny wynik do tego, który wypadł w poprzedniej Rundzie.\n"
 "  Rundy 8. i 10. są całkowicie losowe.\n"
 "  \\item Jeśli Kafelek, na którym ma pojawić się wróg, nie został jeszcze odkryty, odwróć go i obróć według własnego uznania.\n"
 "  \\item Jeśli na Polu, na którym pojawia się wróg, znajduje się Bohater, natychmiast rozpoczyna się Walka.\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:126
+#, no-wrap
+msgid ""
+"  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
+"  \\item Enemy armies have 3 MPs per Round.\n"
+"  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
+"    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
+"  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
 "  \\item Wrogie armie ruszają się na końcu każdej tury, zaczynając od tury, w której się pojawiły.\n"
 "  \\item Wrogie armie mają 3 Punkty Ruchu na Rundę.\n"
 "  \\item Wrogie armie poruszają się zgodnie z opisem w Księdze Zasad (s.\\,33), ale zamiast zdobywania, niszczą wszystko na swojej drodze.\n"
@@ -493,7 +512,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:126
+#: coops/sentinels.tex:128
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
@@ -503,7 +522,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:134
+#: coops/sentinels.tex:136
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -525,7 +544,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:136
+#: coops/sentinels.tex:138
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
@@ -535,7 +554,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:143
+#: coops/sentinels.tex:145
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -554,7 +573,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: coops/sentinels.tex:147 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -563,7 +582,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/sentinels.tex:149 coops/titans_stronghold.tex:103
 #: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
@@ -573,7 +592,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: coops/sentinels.tex:154
+#: coops/sentinels.tex:156
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -585,7 +604,7 @@ msgstr ""
 "  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
-#: coops/sentinels.tex:191
+#: coops/sentinels.tex:193
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
@@ -634,7 +653,7 @@ msgstr ""
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:194
+#: coops/sentinels.tex:196
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."

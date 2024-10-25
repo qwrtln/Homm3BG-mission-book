@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-10-22 22:57+0200\n"
+"POT-Creation-Date: 2024-10-25 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -315,7 +315,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -351,7 +352,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:124
+#: coops/sentinels.tex:114
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -363,10 +364,24 @@ msgid ""
 "    \\item $-1$/$+1$ = West\n"
 "    \\item $-1$/$-1$ = South\n"
 "  \\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:119
+#, no-wrap
+msgid ""
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
 "  Rounds 8 and 10 are entirely random.\n"
 "  \\item If the Tile where an enemy is to spawn hasn't been discovered yet, flip it over and orient it as preferred.\n"
 "  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:126
+#, no-wrap
+msgid ""
 "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
 "  \\item Enemy armies have 3 MPs per Round.\n"
 "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
@@ -377,7 +392,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:126
+#: coops/sentinels.tex:128
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
@@ -385,7 +400,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:134
+#: coops/sentinels.tex:136
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -399,7 +414,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:136
+#: coops/sentinels.tex:138
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
@@ -407,7 +422,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:143
+#: coops/sentinels.tex:145
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -420,7 +435,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: coops/sentinels.tex:147 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -429,7 +444,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
+#: coops/sentinels.tex:149 coops/titans_stronghold.tex:103
 #: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
@@ -439,7 +454,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: coops/sentinels.tex:154
+#: coops/sentinels.tex:156
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -448,7 +463,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:191
+#: coops/sentinels.tex:193
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
@@ -475,7 +490,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:194
+#: coops/sentinels.tex:196
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
