@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-10-22 22:57+0200\n"
+"POT-Creation-Date: 2024-10-24 19:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,18 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 
@@ -252,23 +264,71 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:84
+#: coops/emerald_island.tex:68
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:75
+#, no-wrap
+msgid ""
 "    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
 "    \\begin{itemize}\n"
 "        \\item On the same Map Tile as another player's Hero.\n"
 "        \\item In another player's Town.\n"
 "        \\item Next to another player's Hero.\n"
 "    \\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:77
+#, no-wrap
+msgid ""
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:79
+#, no-wrap
+msgid ""
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:81
+#, no-wrap
+msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:83
+#, no-wrap
+msgid ""
 "    \\item The first time you reach Level IV, gain your second specialty.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:85
+#, no-wrap
+msgid ""
 "    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:92
+#, no-wrap
+msgid ""
 "    \\item Additionally, no player can:\n"
 "    \\begin{itemize}\n"
 "        \\item Attack other Heroes.\n"
@@ -279,7 +339,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:86
+#: coops/emerald_island.tex:94
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
@@ -287,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:100
+#: coops/emerald_island.tex:108
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

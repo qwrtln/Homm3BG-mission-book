@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-08-22 23:44+0200\n"
+"POT-Creation-Date: 2024-10-24 19:47+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,11 +18,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5 clash/the_hunt.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -77,13 +79,26 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64 clash/the_hunt.tex:65
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 
@@ -109,7 +124,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/the_hunt.tex:35
+#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
 msgid ""
@@ -186,7 +201,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
-#: clash/dragoncurse_castle.tex:34
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
@@ -249,23 +264,71 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:84
+#: coops/emerald_island.tex:68
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:75
+#, no-wrap
+msgid ""
 "    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
 "    \\begin{itemize}\n"
 "        \\item On the same Map Tile as another player's Hero.\n"
 "        \\item In another player's Town.\n"
 "        \\item Next to another player's Hero.\n"
 "    \\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:77
+#, no-wrap
+msgid ""
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:79
+#, no-wrap
+msgid ""
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:81
+#, no-wrap
+msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:83
+#, no-wrap
+msgid ""
 "    \\item The first time you reach Level IV, gain your second specialty.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:85
+#, no-wrap
+msgid ""
 "    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:92
+#, no-wrap
+msgid ""
 "    \\item Additionally, no player can:\n"
 "    \\begin{itemize}\n"
 "        \\item Attack other Heroes.\n"
@@ -276,7 +339,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:86
+#: coops/emerald_island.tex:94
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
@@ -284,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:100
+#: coops/emerald_island.tex:108
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
