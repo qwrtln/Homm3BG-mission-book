@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-09-25 10:08+0200\n"
+"POT-Creation-Date: 2024-10-25 16:19+0200\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
-#: sections/recommendations.tex:96 sections/credits.tex:10
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -31,7 +32,20 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:20 coops/titans_stronghold.tex:21
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
 #: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
 #: campaigns/inferno_devilish_plan.tex:22
 #: campaigns/inferno_steadwicks_fall.tex:20
@@ -45,7 +59,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
 #: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
@@ -56,7 +70,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
@@ -70,7 +84,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:60
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
 #: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
@@ -83,7 +97,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:61 coops/titans_stronghold.tex:64
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:65
 #: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
@@ -96,7 +110,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
@@ -111,8 +125,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
-#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
+#: coops/sentinels.tex:149 coops/titans_stronghold.tex:108
+#: coops/titans_stronghold.tex:114 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -151,8 +165,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:17
-#, no-wrap
+#: coops/titans_stronghold.tex:16
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
+#| "  No one has ever entered and returned to tell the tale.\n"
+#| "  Now, there are rumors about the death of the guardians and an incredible amount of treasures, potentially including the best bow in the world.\\\\\n"
+#| "  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
+#| "  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
+#| "}\n"
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "\n"
 msgid ""
 "\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
 "  No one has ever entered and returned to tell the tale.\n"
@@ -160,7 +183,6 @@ msgid ""
 "  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
 "  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
 "}\n"
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
 "\\textit{Před dávnými časy byla postavena mocná pevnost, aby v ní žili fantastičtí a vražední Titáni.\n"
@@ -173,7 +195,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:19
+#: coops/titans_stronghold.tex:20
 #, no-wrap
 msgid ""
 "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
@@ -183,7 +205,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:23
+#: coops/titans_stronghold.tex:24
 #, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1 -- 6\n"
@@ -193,7 +215,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:25
+#: coops/titans_stronghold.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
@@ -203,7 +225,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:33 coops/emerald_island.tex:30
+#: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -221,7 +243,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:35
+#: coops/titans_stronghold.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} None\n"
@@ -231,7 +253,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:37 clash/dragoncurse_castle.tex:36
+#: coops/titans_stronghold.tex:38 clash/dragoncurse_castle.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} None\n"
@@ -241,7 +263,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
 #: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
@@ -253,7 +275,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:40
+#: coops/titans_stronghold.tex:44 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -263,7 +285,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:49
+#: coops/titans_stronghold.tex:50
 #, no-wrap
 msgid ""
 "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
@@ -281,7 +303,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:51
+#: coops/titans_stronghold.tex:52
 #, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map Tile}\n"
@@ -291,7 +313,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:53
+#: coops/titans_stronghold.tex:54
 #, no-wrap
 msgid ""
 "$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map Tile}\n"
@@ -301,7 +323,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:55
+#: coops/titans_stronghold.tex:56
 #, no-wrap
 msgid ""
 "$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map Tile}\n"
@@ -311,7 +333,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:58
+#: coops/titans_stronghold.tex:59
 #, no-wrap
 msgid ""
 "If you don't have enough VI--VII Tiles, you can use another Tile near Tile I.\n"
@@ -323,7 +345,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:62
+#: coops/titans_stronghold.tex:63
 #, no-wrap
 msgid ""
 "Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Tiles I).\n"
@@ -333,7 +355,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:66
+#: coops/titans_stronghold.tex:67
 #, no-wrap
 msgid ""
 "There are undefeated Units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
@@ -343,7 +365,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:73
+#: coops/titans_stronghold.tex:74
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -359,7 +381,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:75
+#: coops/titans_stronghold.tex:76
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -367,13 +389,25 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:101
+#: coops/titans_stronghold.tex:81
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\\begin{itemize}\n"
 "  \\item Remember: the center of VI--VII Tile next to all I Tiles is the Titans' Stronghold.\n"
 "  \\item No one can enter the Titans' Stronghold until all other VII Fields are flagged by any player.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"\\begin{itemize}\n"
+"  \\item Pamatujte: střed Dílku VI--VII vedle všech Dílků I je Pevnost Titánů.\n"
+"  \\item Nikdo nesmí vstoupit do Pevnosti Titánů, dokud všechny ostatní Dílky VII nejsou obsazeny kterýmkoliv hráčem.\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:90
+#, no-wrap
+msgid ""
 "  \\item After defeating a Level VII Neutral army, instead of resolving the Field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
 "    \\begin{itemize}\n"
 "      \\item Another player (your choice) gains 5\\,\\svg{gold}\n"
@@ -382,11 +416,48 @@ msgid ""
 "    \\end{itemize}\n"
 "  Then, flag the VII Field with a Faction Cube.\n"
 "  (There is no bonus in solo play!)\n"
+"\n"
+msgstr ""
+"  \\item Po poražení Neutrální Armády úrovně VII, místo vyřešení Pole, si hráč třikrát vybere jednu možnost z následujícího seznamu (možnost může být vybrána vícekrát):\n"
+"    \\begin{itemize}\n"
+"      \\item Jiný hráč (váš výběr) získá 5\\,\\svg{gold}\n"
+"      \\item Jiný hráč (váš výběr) získá 2\\,\\svg{building_materials}\n"
+"      \\item Jiný hráč (váš výběr) získá 1\\,\\svg{valuables}\n"
+"    \\end{itemize}\n"
+"  Poté označte Pole VII Kostičkou Frakce.\n"
+"  (Ve hře pro jednoho hráče není žádný bonus!)\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:94
+#, no-wrap
+msgid ""
 "  \\item Ignore all yellow borders on Starting Tiles I.\n"
 "  \\item You can use your build Token to give your resources to another player.\n"
 "  \\item Two players can use their build Tokens to exchange Artifacts and/or Spells.\n"
+"\n"
+msgstr ""
+"  \\item Ignorujte všechny žluté okraje na dílcích I.\n"
+"  \\item Svůj Žeton Stavby můžete použít k předání svých surovin jinému hráči.\n"
+"  \\item Dva hráči mohou použít své Žetony Stavby k výměně Artefaktů a/nebo Kouzel.\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:97
+#, no-wrap
+msgid ""
 "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
 "  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
+"\n"
+msgstr ""
+"  \\item Kdykoliv hráč navštíví Obelisk, hodí si jednou Kostkou Pokladu, jednou Kostkou Surovin a vyřeší jednu z nich.\n"
+"  \\item Když jsou všechny Dílky VII (s výjimkou Pevnosti Titánů) obsazeny, náhodně vytáhněte a zamíchejte určený počet (viz další strana) Karet Neutrálních Jednotek z odpovídajících Balíčků, abyste vytvořili samostatný Balíček Neutrálních Jednotek pro Pevnost Titánů (Balíček Pevnosti Titánů je někdy rozdělen na dvě části, protože určité Scénáře by jinak nebylo možné s Kartami z určitých rozšíření implementovat).\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:106
+#, no-wrap
+msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
 "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
 "  \\item Additionally, no player can:\n"
@@ -397,23 +468,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
-"\\begin{itemize}\n"
-"  \\item Pamatujte: střed Dílku VI--VII vedle všech Dílků I je Pevnost Titánů.\n"
-"  \\item Nikdo nesmí vstoupit do Pevnosti Titánů, dokud všechny ostatní Dílky VII nejsou obsazeny kterýmkoliv hráčem.\n"
-"  \\item Po poražení Neutrální Armády úrovně VII, místo vyřešení Pole, si hráč třikrát vybere jednu možnost z následujícího seznamu (možnost může být vybrána vícekrát):\n"
-"    \\begin{itemize}\n"
-"      \\item Jiný hráč (váš výběr) získá 5\\,\\svg{gold}\n"
-"      \\item Jiný hráč (váš výběr) získá 2\\,\\svg{building_materials}\n"
-"      \\item Jiný hráč (váš výběr) získá 1\\,\\svg{valuables}\n"
-"    \\end{itemize}\n"
-"  Poté označte Pole VII Kostičkou Frakce.\n"
-"  (Ve hře pro jednoho hráče není žádný bonus!)\n"
-"  \\item Ignorujte všechny žluté okraje na dílcích I.\n"
-"  \\item Svůj Žeton Stavby můžete použít k předání svých surovin jinému hráči.\n"
-"  \\item Dva hráči mohou použít své Žetony Stavby k výměně Artefaktů a/nebo Kouzel.\n"
-"  \\item Kdykoliv hráč navštíví Obelisk, hodí si jednou Kostkou Pokladu, jednou Kostkou Surovin a vyřeší jednu z nich.\n"
-"  \\item Když jsou všechny Dílky VII (s výjimkou Pevnosti Titánů) obsazeny, náhodně vytáhněte a zamíchejte určený počet (viz další strana) Karet Neutrálních Jednotek z odpovídajících Balíčků, abyste vytvořili samostatný Balíček Neutrálních Jednotek pro Pevnost Titánů (Balíček Pevnosti Titánů je někdy rozdělen na dvě části, protože určité Scénáře by jinak nebylo možné s Kartami z určitých rozšíření implementovat).\n"
 "  \\item Kdykoliv Hrdina vstoupí do Pevnosti Titánů, vytáhne 5 Karet z Balíčku Pevnosti Titánů místo z Balíčků Karet Neutrálních Jednotek. Jednotky jsou umístěny na Desku Bojiště (viz \\uv{Rozmístění Neutrálních Jednotek} na str. 29 v základních pravidlech). Hráči se pokoušejí porazit Jednotky, které najdou v Pevnosti Titánů. Jakékoliv Neutrální Jednotky poražené během Souboje v Pevnosti Titánů jsou vráceny do svých příslušných Balíčků Neutrálních Jednotek místo do Balíčku Pevnosti Titánů. Jakékoliv Neutrální Jednotky, které přežijí Souboj v Pevnosti Titánů jsou zamíchány zpět do Balíčku Pevnosti Titánů. Pokud v tomto Balíčku není dostatek Karet Jednotek, vytáhněte tolik Karet Jednotek, kolik je k dispozici, a umístěte je na Desku Bojiště.\n"
 "  \\item Souboj v Pevnosti Titánů nyní stojí 1 BP za prodloužení o další Kolo Souboje, stejně jako Souboj proti Jednotkám nižší než Azurové úrovně.\n"
 "  \\item Navíc žádný hráč nemůže:\n"
@@ -425,7 +479,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:107
+#: coops/titans_stronghold.tex:112
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -435,7 +489,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/titans_stronghold.tex:182
+#: coops/titans_stronghold.tex:187
 msgid ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
 "Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
@@ -521,38 +575,38 @@ msgstr ""
 "3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 
 #. type: center
-#: coops/titans_stronghold.tex:188
+#: coops/titans_stronghold.tex:193
 msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 1 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 2 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 3 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 4 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 5 HRÁČŮ}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:226
+#: coops/titans_stronghold.tex:231
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 6 HRÁČŮ}}"
