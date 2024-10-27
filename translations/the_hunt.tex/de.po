@@ -1,0 +1,531 @@
+# German translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-10-22 22:57+0200\n"
+"PO-Revision-Date: 2024-10-22 22:57+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:124
+#: campaigns/inferno_deal_with_the_devil.tex:120
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:145 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
+#: clash/dragoncurse_castle.tex:38
+#, no-wrap
+msgid ""
+"\\textbf{Additional Bonus:} None\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
+#, no-wrap
+msgid ""
+"During this Scenario:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/force_of_will.tex:20 clash/the_hunt.tex:19
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 2 or 3\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/force_of_will.tex:33 clash/the_hunt.tex:33
+#, no-wrap
+msgid ""
+"\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/the_hunt.tex:3
+msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Mateusz ``MATMOT'' Motyka\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://boardgamegeek.com/filepage/277736/clash-scenario-the-hunt-v10}{BoardGameGeek}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:13
+#, no-wrap
+msgid ""
+"\\textit{The land quivers under the reign of the fearsome Dragon.\n"
+"  The one who dares to slay this monstrous beast shall ascend to the throne, crowned as the rightful ruler of the shattered kingdom.\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:16
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"This Scenario is played over 14 Rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:21
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:39
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:39
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:49
+#, no-wrap
+msgid ""
+"\\textbf{For a 2-player Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II--III) Map Tile\n"
+"  \\item 2 × Near (IV--V) Map Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:57
+#, no-wrap
+msgid ""
+"\\textbf{For a 3-player Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item 3 × Starting (I) Map Tile\n"
+"  \\item 3 × Far (II--III) Map Tile\n"
+"  \\item 3 × Near (IV--V) Map Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:60
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"Slay the Dragon Boss with your Main Hero.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:63
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"If the Dragon Boss still lives at the end of the \\nth{14} Round, all players lose the Scenario.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:70
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black Cubes from all the Water Wheels, Windmills and Mystical Gardens on the map.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:74
+#, no-wrap
+msgid ""
+"Before the start of this Scenario:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:79
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
+"    You can choose randomly by picking one of the four shuffled Statistic Cards: \\textit{Attack} -- Azure, \\textit{Defense} -- Crystal, \\textit{Knowledge} -- Rust, \\textit{Power} -- Faerie.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:93
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Only a Main Hero can kill the Dragon.\n"
+"  \\item The final battle with the Dragon occurs at the center Field of the Center Map Tile.\n"
+"    Please refer to the encounter rules specified in the rules of the selected Dragon Boss.\n"
+"  \\item While fighting a Dragon Boss, ignore Gorgon's special ability.\n"
+"  \\item Heroes are unable to retreat from battles with the Dragon Boss.\n"
+"  \\item When each player Visits an Obelisk, they can choose to roll a Treasure Die or receive 1 \\svg{experience}.\n"
+"  \\item Players can Visit each Obelisk only once.\n"
+"    Afterwards, they must place their Faction Cube on the Field.\n"
+"  \\item In the boss encounter, there is no battle Round limit.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:101
+#, no-wrap
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
+"  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
+"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
+"  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"\\end{tikzpicture}\n"
+"\n"
+msgstr ""
+
+#. type: wrapfigure
+#: clash/the_hunt.tex:147
+msgid ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/azure_dragon.jpg}}"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:147
+msgid ""
+"{ \\textbf{\\MakeUppercase{Boss: Azure Dragon}} \\medskip \\textit{Little is "
+"known of the Azure Dragon.  It is both rare and mighty, thus few have seen "
+"it, and fewer still have survived its attacks.  This powerful creature is "
+"not much bigger than most dragons, but is said to be capable of enduring "
+"prolonged physical attack.  It is said those standing face-to-face with an "
+"Azure Dragon tend to freeze from pure fear.  } \\medskip \\textbf{Fighting "
+"the Azure Dragon:} \\begin{enumerate} \\item Place the Azure Dragon "
+"Miniature/Card on the battlefield.  Ignore its ability.  \\item Prepare a "
+"pile of discarded Artifacts and shuffle it.  \\end{enumerate} \\medskip "
+"\\textbf{Rules:} \\begin{itemize} \\item \\textit{Hoarding Tendency:} At the "
+"start of each Turn, randomly choose a Card from the shuffled pile of "
+"discarded Artifacts.  If the Artifact is: \\begin{itemize} \\item A weapon: "
+"The Dragon gains one Breath attack that targets three creatures in a row.  "
+"The Unit directly hit in the middle suffers full damage, while the Units on "
+"both sides suffer 3\\,\\svg{damage-red} less.  \\item A piece of armor, "
+"shield, or clothing: The Dragon gains 3\\,\\svg{defense}, represented with "
+"spare Faction Cubes.  Remove them after they have absorbed damage.  \\item A "
+"trinket: The Azure Dragon roars and summons an ice storm, causing all "
+"creatures to freeze in fear.  This results in every Unit moving only 1 Field "
+"per Round, while the Azure Dragon can fly to any Field on the Combat Board.  "
+"\\end{itemize} \\item The Azure Dragon is immune to all Spells cast against "
+"it.  \\item Buffs and enhancements cast on player's Units remain effective.  "
+"\\end{itemize} }"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:170
+msgid ""
+"\\hommtable[]{8}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
+"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
+"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
+"{\\svgunit[12]{azure}} \\begin{tabularx}{\\linewidth}{XXXX} "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
+"\\textbf{Impossible}}\\\\ \\lightcell[1.8]{No additional\\\\changes} & "
+"\\lightcell[1.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 30} & \\lightcell[1.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
+"\\end{tabularx} }"
+msgstr ""
+
+#. type: wrapfigure
+#: clash/the_hunt.tex:212
+msgid ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/crystal_dragon.jpg}}"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:212
+msgid ""
+"{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
+"entirely from red crystal and brought to life through magical means, the "
+"Crystal Dragon is literally semitransparent, lit from the center by its "
+"magical heart.  Used frequently as a training tool for young dragon slayers, "
+"many wizards also create these creatures for the crystal they shed.  } "
+"\\medskip \\textbf{Fighting the Crystal Dragon:} \\begin{enumerate} \\item "
+"Place the Crystal Dragon Miniature/Card on the battlefield.  Ignore its "
+"ability.  \\item Place two Gold Golems and two Diamond Golems on the "
+"battlefield.  \\end{enumerate} \\medskip \\textbf{Rules:} \\begin{itemize} "
+"\\item At the start of every battle Round, check if any of the Golems were "
+"removed in the previous Round.  If so, spawn one new Diamond or Gold Golem "
+"(chosen randomly) in the last row of the battlefield.  \\item \\textit{Golem "
+"Devour:} The Crystal Dragon can consume Golems to regain health.  During its "
+"Turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume "
+"it, removing a certain amount of \\svg{damage-red} based on the type of "
+"Golem consumed: \\begin{itemize} \\item Consuming a Gold Golem: Remove 2 "
+"\\svg{damage-red}.  \\item Consuming a Diamond Golem: Remove 4 \\svg{damage-"
+"red}.  \\item[] \\textbf{Note:} The Crystal Dragon can only consume one "
+"Golem per Turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond "
+"Golems do not possess any additional abilities beyond those specified on "
+"their Cards.  They primarily serve as fodder for the Crystal Dragon's health "
+"regeneration.  \\item The Crystal Dragon \\textit{retaliates twice} per "
+"battle Round.  \\end{itemize} }"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:235
+msgid ""
+"\\hommtable[]{10}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
+"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
+"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
+"{\\svgunit[12]{azure}} \\begin{tabularx}{\\linewidth}{XXXX} "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
+"\\textbf{Impossible}}\\\\ \\lightcell[2.8]{No additional\\\\changes} & "
+"\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Retaliation}} & "
+"\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Remove additional 2 "
+"\\svg{damage-table} by consuming Golems} \\\\ \\end{tabularx} }"
+msgstr ""
+
+#. type: wrapfigure
+#: clash/the_hunt.tex:276
+msgid ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/rust_dragon.jpg}}"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:276
+msgid ""
+"{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
+"Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
+"live and feed in sulfur mines.  With this appetite, Rust Dragons spew a "
+"concentrated acid as their primary attack.  This acid is capable of eating "
+"through the strongest armor, lowering the defense of its target while "
+"inflicting further damage.  } \\medskip \\textbf{Fighting the Rust Dragon:} "
+"\\begin{enumerate} \\item Place the Rust Dragon Miniature/Card on the "
+"battlefield.  Ignore its ability.  \\item Prepare four spare M\\&M Deck "
+"Cards to mark pools of acid.  \\end{enumerate} \\medskip \\textbf{Rules:} "
+"\\begin{itemize} \\item The Rust Dragon is immune to basic Spells.  \\item "
+"\\textit{Corrosive Vomit:} The Rust Dragon has a powerful crowd control "
+"ability that allows it to spew four pools of sulfuric acid onto the "
+"battlefield \\textit{at the beginning} of each Combat Round.  Use M\\&M Deck "
+"Cards placed face down to mark their locations.  \\item The Rust Dragon "
+"cannot place pools on the same Fields as in the previous Round.  Mark the "
+"Fields with spare Faction Cubes to indicate where the pools were located.  "
+"\\item The pools of sulfuric acid block battlefield Fields and impede "
+"movement for one Round only.  They serve as Obstacles for both players and "
+"the Dragon.  \\item The Rust Dragon's passive ability, \\textit{Corrosion}, "
+"decreases an enemy Unit's armor by 2 with each attack.  Place a spare "
+"Faction Cube on the Unit's Card to indicate this effect.  Corrosion stacks "
+"up to -4 \\svg{defense}.  \\end{itemize} }"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:299
+msgid ""
+"\\hommtable[]{9}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
+"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
+"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
+"{\\svgunit[12]{azure}} \\begin{tabularx}{\\linewidth}{XXXX} "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
+"\\textbf{Impossible}}\\\\ \\lightcell[2.5]{No additional\\\\changes} & "
+"\\lightcell[2.5]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 20} & \\lightcell[2.5]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 32} & \\lightcell[2.5]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"40 \\\\ +1 to Corrosion armor decrease} \\\\ \\end{tabularx} }"
+msgstr ""
+
+#. type: wrapfigure
+#: clash/the_hunt.tex:348
+msgid ""
+"{l}{0.28\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/faerie_dragon.jpg}}"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:348
+msgid ""
+"{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
+"Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
+"but in truth, are mischievous tricksters.  Little is known about these "
+"notorious troublemakers.  What is known is found more in storybooks than "
+"magical tomes.  Some say they are invisible.  Some say they can cast "
+"spells.  Some say Magic Mirror is one of their natural defensive traits.  } "
+"\\medskip \\textbf{Fighting the Faerie Dragon:} \\begin{enumerate} \\item "
+"Place 2 Faerie Dragon Cards on the battlefield.  Ignore their abilities.  "
+"\\item Place 1 Dendroid Card from the \\svg{silver} Neutral Units Deck onto "
+"the battlefield, and place 3 additional Cards face down to represent the "
+"other 3 Dendroids.  \\end{enumerate} \\medskip \\textbf{Rules:} "
+"\\begin{itemize} \\item The Faerie Dragon is immune to basic Spells.  \\item "
+"The Faerie Dragon can cast up to two different Spells per battle Round.  "
+"\\item All Spells are displayed visibly next to the Combat Board: "
+"\\begin{enumerate} \\item The first Spell is \\textit{Lightning}.  \\item "
+"The second Spell is \\textit{Cure}.  \\item For the third Spell, the Faerie "
+"Dragon randomly picks an expert Spell from the Spell Deck, excluding Map "
+"\\svg{map} Spells.  If a Map \\svg{map} Spell is picked, draw another "
+"Spell.  \\end{enumerate} \\item \\textit{Trickster:} In the first Round of "
+"the battle, the first targeted Faerie Dragon is a mere mirage.  It inflicts "
+"damage, but disappears from the battlefield when hit by an enemy.  \\item "
+"Dendroids' Ability: Each Dendroid holds a key to the Faerie Dragon's power.  "
+"After the second Dendroid dies, start removing one Spell from the Faerie "
+"Dragon's spellbook, beginning with the third Spell.  Decrease the dragon's "
+"Spell Empowerment \\svg{empower} by one (starting from its maximum) upon "
+"vanquishing the 2nd, 3rd, and 4th Dendroids.  When there are no Dendroids "
+"left, the dragon loses the ability to cast Spells.  \\end{itemize} }"
+msgstr ""
+
+#. type: Plain text
+#: clash/the_hunt.tex:370
+msgid ""
+"\\hommtable[]{7}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
+"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
+"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
+"{\\svgunit[12]{azure}} \\begin{tabularx}{\\linewidth}{XXXX} "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
+"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
+"\\textbf{Impossible}}\\\\ \\lightcell[1.6]{No additional\\\\changes} & "
+"\\lightcell[1.6]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 18} & \\lightcell[1.6]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 26} & \\lightcell[1.6]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"32 \\\\ +1 Mirage} \\\\ \\end{tabularx} }"
+msgstr ""
