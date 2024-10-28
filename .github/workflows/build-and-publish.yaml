@@ -22,6 +22,7 @@ jobs:
           - language: en
           - language: pl
           - language: cs
+          - language: fr
           - language: de
 
     steps:
@@ -114,7 +115,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["pl", "cs", "de"]
+        language: ["pl", "cs", "fr", "de"]
 
     steps:
       - name: Install poppler
