@@ -31,34 +31,40 @@ Click on the table to download the most recent builds of the Mission Book in the
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/?lang=pl&component=#svg"></td>
+            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg"></td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Polski_Fan_Made_Mission_Book_1_0.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
             <td align="center">—</td>
         </tr>
         <tr>
             <td>🇨🇿 Čeština</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/?lang=cs&component=#svg"></td>
+            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Cestina_Fan_Made_Mission_Book_1_0.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
             <td align="center">—</td>
         </tr>
         <tr>
             <td>🇫🇷 Français</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/?lang=fr&component=#svg"></td>
+            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr.pdf">télécharger</a></td>
             <td align="center">—</td>
         </tr>
         <tr>
             <td>🇩🇪 Deutsch</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/?lang=de&component=#svg"></td>
+            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
             <td align="center">—</td>
         </tr>
     </tbody>
 </table>
+
+You can help tarnslate this project using Weblate.
+Click the image to get started:
+<a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
+<img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
+</a>
 
 ### 💡 What Is This?
 
