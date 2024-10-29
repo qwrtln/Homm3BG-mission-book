@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-24 19:47+0200\n"
-"PO-Revision-Date: 2024-10-29 20:23+0000\n"
-"Last-Translator: Karol Werner <karol@ppkt.eu>\n"
+"PO-Revision-Date: 2024-10-29 23:06+0000\n"
+"Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/"
 "homm3bg-fan-made-mission-book/coop-scenarios/emerald_island/pl/>\n"
 "Language: pl\n"
@@ -262,7 +262,11 @@ msgstr ""
 msgid ""
 "\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
-msgstr "\\textbf{Pula Kafelków Mapy:} Jeśli chcesz, możesz równomiernie rozdać Kafelki II--III każdemu z graczy, zamiast układać je zgodnie z proponowanym układem.\n"
+msgstr ""
+"\\textbf{Pula Kafelków Mapy:} Jeśli chcesz, możesz równomiernie rozdać "
+"Kafelki II--III każdemu z graczy, zamiast układać je zgodnie z proponowanym "
+"układem.\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:46
@@ -432,7 +436,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:94
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\vspace{2em}\n"
 "\n"
