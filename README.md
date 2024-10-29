@@ -67,6 +67,8 @@ Click the image to get started:
 <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
 </a>
 
+Your language is missing? Let us know on [our Discord server](https://discord.gg/Y4uM9pPWF6).
+
 ### 💡 What Is This?
 
 This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
