@@ -60,8 +60,9 @@ Click on the table to download the most recent builds of the Mission Book in the
     </tbody>
 </table>
 
-You can help tarnslate this project using Weblate.
+You can help tarnslate this project using [Weblate](https://weblate.org/en/).
 Click the image to get started:
+
 <a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
 <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
 </a>
