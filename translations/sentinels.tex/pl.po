@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-25 16:06+0200\n"
-"PO-Revision-Date: 2024-10-29 15:06+0000\n"
+"PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/sentinels/pl/>\n"
@@ -368,6 +368,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:83
@@ -383,6 +384,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Powtórz wydarzenia czasowe Rundy 6.\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:89
@@ -399,6 +401,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Powtórz wydarzenia czasowe Rund 7. i 8.\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:91 coops/emerald_island.tex:65
@@ -583,6 +586,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:149 coops/titans_stronghold.tex:103
@@ -593,6 +598,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/sentinels.tex:156
