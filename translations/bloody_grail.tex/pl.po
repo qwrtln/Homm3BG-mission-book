@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
-"PO-Revision-Date: 2024-10-29 15:06+0000\n"
+"PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/clash-scenarios/bloody_grail/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/clash-scenarios/bloody_grail/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,6 +60,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
@@ -155,6 +157,9 @@ msgid ""
 "\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
@@ -444,6 +449,11 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, "
+"keepaspectratio]{\\art/bless.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/bloody_grail.tex:136
