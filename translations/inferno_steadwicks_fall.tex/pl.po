@@ -28,7 +28,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
-#: sections/credits.tex:10
+#: sections/credits.tex:10 sections/recommendations.tex:96
 #, no-wrap
 msgid ""
 "{2}\n"
