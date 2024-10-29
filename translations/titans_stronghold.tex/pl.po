@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-25 16:19+0200\n"
-"PO-Revision-Date: 2024-10-29 15:06+0000\n"
+"PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/titans_stronghold/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/coop-scenarios/titans_stronghold/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -138,6 +138,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -181,12 +183,17 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
-"\\textit{Dawno temu zbudowano potężną fortecę, aby pomieścić fantastycznych i zabójczych Tytanów.\n"
+"\\textit{Dawno temu zbudowano potężną fortecę, aby pomieścić fantastycznych "
+"i zabójczych Tytanów.\n"
 "  Nikt nigdy nie wszedł do środka i nie wrócił, by opowiedzieć o tym.\n"
-"  Teraz krążą plotki o śmierci strażników i niesamowitej ilości skarbów, w tym potencjalnie najlepszego łuku na świecie.\\\\\n"
-"  Jeśli ta legenda o pustej fortecy jest prawdziwa, nadszedł czas na wykopaliska.\\\\\n"
-"  Ale na razie ty i twoi sojusznicy musicie znaleźć klucze rozsiane po Antagarich, aby otworzyć bramę do Twierdzy Tytanów.\n"
+"  Teraz krążą plotki o śmierci strażników i niesamowitej ilości skarbów, w "
+"tym potencjalnie najlepszego łuku na świecie.\\\\\n"
+"  Jeśli ta legenda o pustej fortecy jest prawdziwa, nadszedł czas na "
+"wykopaliska.\\\\\n"
+"  Ale na razie ty i twoi sojusznicy musicie znaleźć klucze rozsiane po "
+"Antagarich, aby otworzyć bramę do Twierdzy Tytanów.\n"
 "}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:20
@@ -381,6 +388,8 @@ msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:81
@@ -486,6 +495,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: Plain text
 #: coops/titans_stronghold.tex:187
@@ -580,6 +593,8 @@ msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 msgstr ""
+"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{"
+"\\art/land_mine.png}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:231
