@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
-"PO-Revision-Date: 2024-10-29 23:06+0000\n"
-"Last-Translator: krazanas <krazi321@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/campaigns/inferno_deal_with_the_devil/pl/>\n"
+"PO-Revision-Date: 2024-10-30 08:58+0000\n"
+"Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/campaigns/inferno_deal_with_the_devil/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -449,7 +449,10 @@ msgstr ""
 msgid ""
 "Charging Armies \\#1 and \\#2 use the same AI Deck and Skill Deck. Reshuffle both Decks after Combat.\n"
 "\n"
-msgstr "Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii Umiejętności. Przetasuj obie Talie po Walce.\n"
+msgstr ""
+"Szarżujące Armie \\#1 i \\#2 używają tej samej Talii AI i Talii "
+"Umiejętności. Przetasuj obie Talie po Walce.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:75
@@ -462,11 +465,18 @@ msgid ""
 "If the AI Skill Card advises ``do it again'', the Artifact Cards are not played again immediately, but instead are played as soon as the next Unit is able to use them.\n"
 "\n"
 msgstr ""
-"Obie Karty Artefaktów wszystkich Szarżujących Armii traktowane są jako Umiejętności i używają górnego ,,słabszego'' efektu.\n"
-",,Miecz Ognia Piekielnego'' będzie używany w atakach i kontratakach. Nie jest używany podczas atakowania Murów lub Bram\n"
-"i pozostaje aktywny na Jednostce. Jeśli zostanie dobrana Karta ,,Tarcza Potępionych'', jej efekt wchodzi w życie, gdy\n"
-"jakakolwiek Jednostka Szarżującej Armii otrzyma obrażenia od ataku lub kontrataku. Jeśli Karta Umiejętności AI zaleca ,,powtórzenie'', Karty Artefaktów\n"
-"nie są natychmiastowo używane ponownie, lecz są używane, gdy następna Jednostka będzie mogła je zastosować.\n"
+"Obie Karty Artefaktów wszystkich Szarżujących Armii traktowane są jako "
+"Umiejętności i używają górnego ,,słabszego'' efektu.\n"
+",,Miecz Ognia Piekielnego'' będzie używany w atakach i kontratakach. Nie "
+"jest używany podczas atakowania Murów lub Bram\n"
+"i pozostaje aktywny na Jednostce. Jeśli zostanie dobrana Karta ,,Tarcza "
+"Potępionych'', jej efekt wchodzi w życie, gdy\n"
+"jakakolwiek Jednostka Szarżującej Armii otrzyma obrażenia od ataku lub "
+"kontrataku. Jeśli Karta Umiejętności AI zaleca ,,powtórzenie'', Karty "
+"Artefaktów\n"
+"nie są natychmiastowo używane ponownie, lecz są używane, gdy następna "
+"Jednostka będzie mogła je zastosować.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:86
@@ -486,6 +496,7 @@ msgstr ""
 "  \\item 1 × Zamek (S3)\n"
 "  \\item 1 × Bastion (S4)\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:93
@@ -505,6 +516,7 @@ msgstr ""
 "  \\item 3 × Zamek (F3, \\#F4, F6)\n"
 "  \\item 1 × Bastion (F12)\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:98
@@ -520,6 +532,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item 1 × Inferno (N12)\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:102
@@ -527,7 +540,9 @@ msgstr ""
 msgid ""
 "The Enemy Charging Rampart Hero \\#1 starts on the center Field of the S4 Starting Map Tile.\n"
 "\n"
-msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
+msgstr ""
+"Szarżująca Armia Bastionu \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:104
@@ -535,7 +550,9 @@ msgstr "Szarżująca Armia Bastionu \\#1 zaczyna na środkowym Polu Kafelka S4.\
 msgid ""
 "The Enemy Charging Castle Hero \\#1 starts on the center Field of S3 Starting Map Tile.\n"
 "\n"
-msgstr "Szarżująca Armia Zamku \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
+msgstr ""
+"Szarżująca Armia Zamku \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:106
@@ -563,7 +580,10 @@ msgstr ""
 msgid ""
 "Defend your main fortress, Kleesive, from all Charging Enemy Heros, and from the Final Charging Army.\n"
 "\n"
-msgstr "Obroń swoją główną twierdzę, Kleesive, przed wszystkimi Szarżującymi Armiami.\n"
+msgstr ""
+"Obroń swoją główną twierdzę, Kleesive, przed wszystkimi Szarżującymi Armiami."
+"\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:116
@@ -571,7 +591,10 @@ msgstr "Obroń swoją główną twierdzę, Kleesive, przed wszystkimi Szarżują
 msgid ""
 "You lose one Combat encounter with your Main Hero. Surrender is not an option.\n"
 "\n"
-msgstr "Przegrywasz jakiekolwiek starcie twoim Bohaterem Głównym. Poddanie się nie jest opcją.\n"
+msgstr ""
+"Przegrywasz jakiekolwiek starcie twoim Bohaterem Głównym. Poddanie się nie "
+"jest opcją.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:118
@@ -579,7 +602,10 @@ msgstr "Przegrywasz jakiekolwiek starcie twoim Bohaterem Głównym. Poddanie si�
 msgid ""
 "Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.\n"
 "\n"
-msgstr "Klan Kreelah nie zdoła obronić Klessive przed Szarżującymi Bohaterami, którzy próbują uwolnić twojego jeńca, Króla Rolanda.\n"
+msgstr ""
+"Klan Kreelah nie zdoła obronić Klessive przed Szarżującymi Bohaterami, "
+"którzy próbują uwolnić twojego jeńca, Króla Rolanda.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_deal_with_the_devil.tex:126
