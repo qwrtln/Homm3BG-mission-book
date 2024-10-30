@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-25 16:06+0200\n"
-"PO-Revision-Date: 2024-10-29 23:06+0000\n"
-"Last-Translator: krazanas <krazi321@gmail.com>\n"
+"PO-Revision-Date: 2024-10-30 08:58+0000\n"
+"Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/sentinels/pl/>\n"
 "Language: pl\n"
@@ -577,6 +577,7 @@ msgstr ""
 "  \\item Umieść Jednostki wzmacniające drugiej linii wroga, zaczynając od lewej strony od Jednostek z najniższą Inicjatywą (najpierw Jednostki \\svg{unit_ranged}). W razie potrzeby kontynuuj na pierwszej linii w tej samej kolejności.\n"
 "  \\item Gdy gracz się wycofa, armia wroga dobiera do ,,minimum'' 4 Jednostek i bierze je jako początkowe Jednostki do kolejnej Walki.\n"
 "\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:147 clash/the_hunt.tex:41
