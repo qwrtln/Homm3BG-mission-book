@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-25 16:06+0200\n"
-"PO-Revision-Date: 2024-06-29 16:10+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-10-31 23:06+0000\n"
+"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/coop-scenarios/sentinels/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.8.2-dev\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -38,6 +40,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:7
@@ -76,6 +80,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Durée du scenario}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:18
@@ -96,6 +102,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -121,6 +129,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
@@ -169,6 +179,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
@@ -219,6 +231,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Condition de victoire}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:59
@@ -238,6 +252,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Condition de défaite}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:63
@@ -267,6 +283,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:73
@@ -452,6 +470,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/sentinels.tex:156
