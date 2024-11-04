@@ -3,7 +3,7 @@
 
   <p align="center">
     <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white">
-    <a href="https://discord.gg/Y4uM9pPWF6"><img src="https://dcbadge.limes.pink/api/server/Y4uM9pPWF6"></a>
+    <a href="https://discord.gg/Y4uM9pPWF6"><img src="https://dcbadge.limes.pink/api/server/nMbawQkj9R"></a>
   </p>
 
   [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
@@ -67,7 +67,7 @@ Click the image to get started:
 <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
 </a>
 
-Your language is missing? Let us know on [our Discord server](https://discord.gg/Y4uM9pPWF6).
+Your language is missing? Let us know on [our Discord server](https://discord.gg/nMbawQkj9R).
 
 ### 💡 What Is This?
 
@@ -96,7 +96,7 @@ Please refer to [the docs](https://qwrtln.github.io/Homm3BG-mission-book/) for t
 
 #### 🗺️ Scenarios
 
-Reach out to us on [our Discord server](https://discord.gg/Y4uM9pPWF6), if you'd like to add your scenario.
+Reach out to us on [our Discord server](https://discord.gg/nMbawQkj9R), if you'd like to add your scenario.
 If you know your way around LaTeX and git, you can open a pull request for the Draft Scenarios.
 
 #### 💻 Code
