@@ -3,7 +3,7 @@
 
   <p align="center">
     <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white">
-    <a href="https://discord.gg/Y4uM9pPWF6"><img src="https://dcbadge.limes.pink/api/server/nMbawQkj9R"></a>
+    <a href="https://discord.gg/nMbawQkj9R"><img src="https://dcbadge.limes.pink/api/server/nMbawQkj9R"></a>
   </p>
 
   [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
