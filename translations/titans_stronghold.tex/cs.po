@@ -166,16 +166,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
-#| "  No one has ever entered and returned to tell the tale.\n"
-#| "  Now, there are rumors about the death of the guardians and an incredible amount of treasures, potentially including the best bow in the world.\\\\\n"
-#| "  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
-#| "  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
-#| "}\n"
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
 "  No one has ever entered and returned to tell the tale.\n"
@@ -191,7 +182,6 @@ msgstr ""
 "  Pokud je tato legenda o prázdné pevnosti pravdivá, je čas na vykopávky.\\\\\n"
 "  Nejprve ale vy a vaši spojenci musíte najít klíče roztroušené po Antagarichu, abyste otevřeli bránu Pevnosti Titánů.\n"
 "}\n"
-"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
 "\n"
 
 #. type: multicols*
