@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-10-17 21:57+0200\n"
+"POT-Creation-Date: 2024-10-22 22:59+0200\n"
 "PO-Revision-Date: 2024-07-31 22:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -128,14 +128,11 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
-#| "frenzy.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
 "town_portal.png}"
-msgstr "\\addscenariosection{1}{Střet}{Hrad Dračí Kletby}{\\images/frenzy.png}"
+msgstr ""
+"\\addscenariosection{1}{Střet}{Hrad Dračí Kletby}{\\images/town_portal.png}"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:7
@@ -207,13 +204,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Pack \\svgunit{bronze} Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -223,7 +214,7 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Tlupu \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 2 × Hrstku \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -299,24 +290,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:81
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{2}\n"
-#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-#| "During this Scenario:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Whenever an Obelisk is Visited for the first time, the Visiting player gains 2 \\svg{building_materials}\n"
-#| "  \\item The Random Town is defended by Walls and a Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
-#| "  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
-#| "    \\begin{itemize}\n"
-#| "      \\item Place a newly Recruited Secondary Hero.\n"
-#| "      \\item Place the Main Hero when defeated.\n"
-#| "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
-#| "    \\end{itemize}\n"
-#| "  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws Cards from the Neutral Units \\svgunit{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
-#| "    The player may immediately Recruit that Dragon for free.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -339,7 +313,7 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
 "Během tohoto Scénáře:\n"
 "\\begin{itemize}\n"
-"  \\item Kdykoli je Obelisk Navštíven poprvé, hráč, který jej Navštíví, získává 2 \\svg{building_materials}.\n"
+"  \\item Kdykoli je Obelisk Navštíven poprvé, hráč, který jej Navštíví, háže 2 \\svg{resource} a vyhodnotí oba hody.\n"
 "  \\item Náhodné Město je bráněno Hradbami a Bránou, když je vlastněno hráčem, ale má Střílnu pouze tehdy, pokud má hráč již Citadelu.\n"
 "  \\item Stejně jako jakékoliv jiné Město, když je Náhodné Město vlastněno hráčem, je platným místem pro tohoto hráče k:\n"
 "    \\begin{itemize}\n"
