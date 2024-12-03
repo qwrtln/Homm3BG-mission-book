@@ -1,0 +1,776 @@
+# German translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2024-12-03 20:31+0100\n"
+"PO-Revision-Date: 2024-12-03 20:31+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:93
+#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_two_knights_defense.tex:47
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
+#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: campaigns/inferno_steadwicks_fall.tex:111
+#: campaigns/inferno_deal_with_the_devil.tex:110
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
+#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: campaigns/inferno_steadwicks_fall.tex:124
+#: campaigns/inferno_deal_with_the_devil.tex:120
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
+#: campaigns/castle_two_knights_defense.tex:95
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:147 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:135
+#: sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:32
+#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
+#: campaigns/castle_two_knights_defense.tex:25
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:50 campaigns/castle_greek_gift.tex:22
+#: campaigns/castle_sicilian_dragon.tex:20
+#: campaigns/castle_two_knights_defense.tex:19
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Castle\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: campaigns/castle_greek_gift.tex:4
+msgid ""
+"\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
+"{} {} {}The Queen's Gambit} \\addscenariosection[subsection]{1}{Castle "
+"Campaign $-$ The Queen's Gambit}{1. Greek Gift}{\\images/catherine.png}"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
+#: campaigns/castle_two_knights_defense.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Tyson Heckert\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
+#: campaigns/castle_two_knights_defense.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://travelledtales.com}{travelledtales.com}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:14
+#, no-wrap
+msgid ""
+"\\textit{Steadwick is free, but that doesn't mean it is safe.\n"
+"Dark powers still roam Erathia, and one now moves its pieces into position.\n"
+"While Catherine grapples with her responsibility — and her demons — she must be a bulwark against evil.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
+#: campaigns/castle_two_knights_defense.tex:13
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:18
+#: campaigns/castle_two_knights_defense.tex:15
+#, no-wrap
+msgid ""
+"This Scenario plays out over 8 Rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
+#: campaigns/castle_two_knights_defense.tex:17
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:24
+#, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} Any Castle Hero. If you are not Catherine, you are in her entourage for this story.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:33
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Few Halberdiers, a Few Marksmen\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
+#: campaigns/castle_two_knights_defense.tex:33
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
+#: campaigns/castle_two_knights_defense.tex:35
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Necropolis\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:41
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:43
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Deck:} 4 x Might Cards\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:45
+#, no-wrap
+msgid ""
+"\\textbf{Special:} Place the Cloak of the Undead King IV and VI Cards aside\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
+#: campaigns/castle_two_knights_defense.tex:45
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:54
+#, no-wrap
+msgid ""
+"\\textbf{1 × Starting (I) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 1 x Castle (S3)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:59
+#, no-wrap
+msgid ""
+"\\textbf{3 × Far (II--III) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 3 x Castle (F3, F6, F9)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:64
+#, no-wrap
+msgid ""
+"\\textbf{2 × Near (IV--V) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 2 x Castle (N3, N6)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
+#: campaigns/castle_two_knights_defense.tex:70
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:68
+#, no-wrap
+msgid ""
+"Place your Castle Hero on the center Field of the S3 Castle starting map Tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:70
+#, no-wrap
+msgid ""
+"Place a Necropolis Hero on the center Field of the N3 Castle Tile.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:74
+#, no-wrap
+msgid ""
+"Defeat the enemy army.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:81
+#: campaigns/castle_two_knights_defense.tex:89
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\\begin{itemize}\n"
+"  \\item You lose one combat encounter\n"
+"  \\item You run out of time at the end of the 8th Round\n"
+"\\end{itemize}"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:92
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{1} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``Distant Threat'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:97
+#, no-wrap
+msgid ""
+"\\textbf{If entering the settlement on F3:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``Reverent Allies'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:102
+#, no-wrap
+msgid ""
+"\\textbf{Before combat with the enemy Hero:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``Bait and Switch'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:107
+#, no-wrap
+msgid ""
+"\\textbf{When you complete the Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``The Chase Begins'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:125
+#: campaigns/castle_two_knights_defense.tex:107
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:127
+#: campaigns/castle_two_knights_defense.tex:109
+#, no-wrap
+msgid ""
+"During this Castle campaign Scenario, the following rules apply:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:118
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item The enemy army does not move\n"
+"  \\item Your Hero's maximum Level is 4\n"
+"  \\item The Glory of Erathia building is unavailable\n"
+"  \\item The Settlement on F3 does not have neutral enemies\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:122
+#, no-wrap
+msgid ""
+"\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: campaigns/castle_greek_gift.tex:131
+#, no-wrap
+msgid ""
+"[overlay]\n"
+"  \\node at (8.6, -5.3) {\n"
+"    \\includegraphics[width=\\textwidth]{\\_assets/maps/castle_greek_gift.png}\n"
+"  };\n"
+"  \\node at (10, -2.0) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F3}}}}};"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:161
+#: campaigns/castle_two_knights_defense.tex:133
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{The story}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:139
+#, no-wrap
+msgid ""
+"\\textbf{Distant Threat}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:143
+#, no-wrap
+msgid ""
+"Catherine Ironfist rubbed her tired, worn thumb across the image of her father, King Gryphonheart, in a locket.\n"
+"She wanted to remember the good, valiant parts of his life rather than his actions in unlife.\n"
+"Her gaze turned to her cracked skin and mangled thumbnail, and it reminded her of how hard she had fought to be where she was.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:147
+#, no-wrap
+msgid ""
+"The weight of Erathia rested on her shoulders.\n"
+"It had only been weeks since the siege and recapture of Steadwick, and resources, as well as manpower, were in short supply.\n"
+"Still, with time, the stony seat of the castle would be sufficient to further liberate the realm.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:152
+#, no-wrap
+msgid ""
+"One such problem was weighing on her mind.\n"
+"After replacing the locket in her hand with a missive, she re-read a particular entry about a rising necromancer named Vhidhax.\n"
+"Rumors were that the fiend had stolen precious artifacts that further enhanced his power over the dead.\n"
+"While rumors are usually best left to fishwives and children, this one aligned with information about an army growing in strength, and she dreaded the thought of the two problems colliding and crashing over her weary crown.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:155
+#, no-wrap
+msgid ""
+"Late that evening, Catherine was venting to Rion about the relative drudgery of rebuilding Steadwick.\n"
+"She'd just about fallen asleep in her chair when a heavy knock turned her attention to the room's large door that sported intricately carved shields from various long-gone baronies.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:159
+#, no-wrap
+msgid ""
+"The wooden portal flung open before she could spring up, revealing a wide-eyed and panicked guard.\n"
+"No words came from the man; whatever haunted him seemed absolute.\n"
+"Instead, he merely pointed with a trembling hand toward the window across the room.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:163
+#, no-wrap
+msgid ""
+"Catherine shot a look at Rion before the two darted toward the open air of the rectangular window.\n"
+"What they saw shocked them, too, and while Catherine's heart sank, she gripped Rion's shoulder with surprising strength.\n"
+"When he looked back at her with a slight wince, she only returned a stony look of resolve.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:167
+#, no-wrap
+msgid ""
+"Danger had come to Steadwick again.\n"
+"Atop a hill in the far distance, overlooking many of the defenseless farmsteads Catherine had in her charge, a predator swept its gaze like a wolf might hungrily eye sheep.\n"
+"A magnificently terrifying azure hue wafted from a Ghost Dragon's massive, extended wings like an ethereal heat haze.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:169
+#, no-wrap
+msgid ""
+"\\textbf{Reverent Allies}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:173
+#, no-wrap
+msgid ""
+"While Catherine trusted her horse, having fought tooth and nail with the battle-hardened steed for as long as she could remember, it shuddered in hesitation as they approached the majestic, columned main building of the settlement.\n"
+"Catherine had also felt the almost unsettling holy power in the area when, suddenly, the sound of rushing wings caught her attention.\n"
+"Her gaze snapped upward to catch sight of something approaching. \n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:178
+#, no-wrap
+msgid ""
+"The early morning sun was bright, and the figure that swooped low was in front of it.\n"
+"The silhouette of wings was visible, and Catherine thought it to be a Gryphon at first.\n"
+"However, as it closed in on them, it became apparent it was the shape of a man with wings instead.\n"
+"It caught Catherine's horse off guard, and she had to catch the reins and wrench them hard to steady herself and calm the frightened animal before it could fling her from her seat.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:182
+#, no-wrap
+msgid ""
+"With lightning speed, the figure landed mere feet from them to reveal the stubbled, handsome face of a young man with golden, curled locs and impressively robust bronze armor sculpted to his muscular form.\n"
+"He was one of the famed Archangels to have stayed near Steadwick after Catherine's victory.\n"
+"While the forces behind her fell to their knees in reverence, she only nodded with stern resolve.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:186
+#, no-wrap
+msgid ""
+"With a deeper, and more reverberating voice than any man, the angel was first to speak.\n"
+"``Queen Catherine.\n"
+"I expected you might come when I spied the rot taking form in the hills.''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:192
+#, no-wrap
+msgid ""
+"Catherine responded with a smile.\n"
+"It was good to see she still had allies; her forces would need bolstering to take on the undead.\n"
+"``It's good to see you, my friend,'' she said.\n"
+"``It seems Steadwick is threatened again, and I ride to root out the evil before it can seed.\n"
+"Would you join me at my side?''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:198
+#, no-wrap
+msgid ""
+"``Of course, my queen!'' the angel barked.\n"
+"``Combined, no evil can thwart our advance!'' As the final words left his lips and began to echo, he drew his weapon.\n"
+"The longsword ignited as it left its sheath, and its blazing glory had most of those kneeling averting their eyes.\n"
+"Immediately after, he took to the air and began circling the area again.\n"
+"Catherine smiled wide as she watched more angels appear, then looked back to her forces and extended an open palmed arm forward in a command to march.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:200
+#, no-wrap
+msgid ""
+"\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:202
+#, no-wrap
+msgid ""
+"\\textbf{Bait And Switch}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:207
+#, no-wrap
+msgid ""
+"Catherine couldn't wait to drive her sword through the heart of the Ghost Dragon, then lop the head from the one commanding it.\n"
+"She pushed her powerful mount forward, charging toward the waiting, taunting foes.\n"
+"While the great number of shambling undead, mostly animated citizens from nearby townships, was impossible to ignore, they wouldn't stop her.\n"
+"With a thunderous crash, she slammed past the forward lines, knocking off limbs and cracking bones.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:214
+#, no-wrap
+msgid ""
+"Seconds later, she was halfway through the mass of bodies when the stench of rotten flesh and the true immensity of her enemy's numbers hit her.\n"
+"Dread Knights flanked the dragon she'd been racing towards.\n"
+"Worse still, a robed, decrepit-looking figure was watching from the rear of the enemy lines.\n"
+"Despite its wretched appearance, it had an immensely powerful presence to it.\n"
+"A stinging tingle shot up Catherine's spine as she felt, more than saw, its eyes return her gaze.\n"
+"More than she could take on alone, she swung her steed in a circle to reform with her mounted allies, then looked to the sky just as an Archangel came crashing down onto the dragon.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:218
+#, no-wrap
+msgid ""
+"Shockingly, instead of slamming into the beast, the angel flew through it like it was made of air.\n"
+"He hit the ground with a crunching thud before, suddenly, the dragon's image began to shift and shimmer, then disintegrate.\n"
+"The Dread Knights did the same, and replacing them were throngs of further undead that now threatened to encircle Catherine and her forward forces.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:221
+#, no-wrap
+msgid ""
+"Catherine's eyes shot toward what she believed was the necromancer.\n"
+"It stood motionless a moment longer before cackling laughter cut through the air, and its image wafted away into the night air just as the others had.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:224
+#, no-wrap
+msgid ""
+"It was a trap.\n"
+"The necromancer and his strongest forces were not there, and Catherine would have to fight her way out from under a crush of undead, wasting precious time and lives.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:230
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item \\textcolor{darkcandyapplered}{Replace the Ghost Dragons and Dread Knights with \\svgunit{bronze} neutral Zombies and Skeletons.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Play ``Cloak of the Undead King IV'' and ``Cloak of the Undead King VI'' onto the packs of Zombies and Skeletons, respectively.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Remove the AI Might and Magic Deck from the game, the undead fight on their own.}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:233
+#, no-wrap
+msgid ""
+"\\textbf{The Chase Begins}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:237
+#, no-wrap
+msgid ""
+"Catherine huffed, sweat beading on her forehead as the last undead fell with wet thuds.\n"
+"Her forces were strong, and simple reanimations weren't the kind of threat to stop them.\n"
+"She just hoped… Her stomach churned as her gaze turned back to Steadwick.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:241
+#, no-wrap
+msgid ""
+"An orange glow, far too bright for torchlight, was coming from the castle.\n"
+"As she watched in horror, thick black smoke began to rise from the towers and parapets.\n"
+"Steadwick was burning.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:245
+#, no-wrap
+msgid ""
+"Rion quickly caught up to her, his horse panting as hard as he was.\n"
+"He began to speak but couldn't find the words as his mind raced.\n"
+"Instead, he placed a hand on his queen's shoulder. \n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:247
+#, no-wrap
+msgid ""
+"The necromancer had played his opening move and won.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:250
+#, no-wrap
+msgid ""
+"Just before Catherine turned to her regrouping forces, she spotted the spectral blue of the real Ghost Dragon in the distance.\n"
+"Its work destroying Steadwick's defenses had been finished.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:253
+#, no-wrap
+msgid ""
+"Archangels circled overhead, and Catherine threw her head to the sky, tears welling at the thought of losing what she had worked so hard to build.\n"
+"``Find him!'' she roared, addressing whatever gods were listening as well as the angels above.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:255
+#, no-wrap
+msgid ""
+"``Is that… wise?'' Rion asked softly.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:260
+#, no-wrap
+msgid ""
+"Catherine responded with fire in her eyes.\n"
+"``What good is rebuilding a ruin when the fiend will just continue to play his tricks?'' she said.\n"
+"``No.\n"
+"If we want to save Steadwick, we have to end him before he can further strengthen himself.''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:266
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item \\textcolor{darkcandyapplered}{Remove Archangels from your army.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Keep the rest of your forces and resources for the next Scenario.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Reset your Hero per the normal campaign rules.}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:272
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"\\raisebox{0pt}[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[0.8\\linewidth]{\\art/ghost_dragon.jpg}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""

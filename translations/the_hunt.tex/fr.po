@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-10-22 22:57+0200\n"
+"POT-Creation-Date: 2024-12-03 20:39+0100\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -24,7 +24,14 @@ msgstr ""
 #: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:93
+#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -36,7 +43,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:27
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
 #: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
@@ -59,7 +66,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:41
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
@@ -72,13 +79,15 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
 "\n"
 
-#. type: multicols*
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:68
+#. type: multicols
+#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
 #: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
+#: campaigns/castle_two_knights_defense.tex:95
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -88,7 +97,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
 #: campaigns/inferno_deal_with_the_devil.tex:173
@@ -99,8 +109,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
+#: coops/sentinels.tex:147 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:135
+#: sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -108,7 +120,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:39 coops/emerald_island.tex:36
+#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
 #: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
 #: clash/dragoncurse_castle.tex:38
 #, no-wrap
