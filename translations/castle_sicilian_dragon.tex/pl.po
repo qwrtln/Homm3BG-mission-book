@@ -158,7 +158,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
@@ -224,7 +224,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:121
 #: campaigns/castle_two_knights_defense.tex:105
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
@@ -235,23 +235,23 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:123
 #: campaigns/castle_two_knights_defense.tex:107
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"W trakcie Scenariusza kampanii ,,Inferno'' obowiązują następujące zasady:\n"
+"W trakcie Scenariusza kampanii Zamku obowiązują następujące zasady:\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:157
 #: campaigns/castle_two_knights_defense.tex:131
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Finałowa Armia}}\n"
+"\\subsection*{\\MakeUppercase{Opowieść}}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
