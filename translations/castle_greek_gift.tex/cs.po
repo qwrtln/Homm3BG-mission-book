@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:31+0100\n"
+"POT-Creation-Date: 2024-12-04 10:11+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,11 +25,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -82,8 +82,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -95,7 +95,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:147 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:135
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
 #: sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -255,11 +255,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
 msgstr ""
+"\\vspace{-1em} % FIX ME\n"
 "\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
 "\n"
 
@@ -538,8 +539,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:125
-#: campaigns/castle_two_knights_defense.tex:107
+#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:121
+#: campaigns/castle_two_knights_defense.tex:105
 #, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -549,8 +550,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:127
-#: campaigns/castle_two_knights_defense.tex:109
+#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:123
+#: campaigns/castle_two_knights_defense.tex:107
 #, fuzzy, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
@@ -592,8 +593,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:161
-#: campaigns/castle_two_knights_defense.tex:133
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:157
+#: campaigns/castle_two_knights_defense.tex:131
 #, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
@@ -704,7 +705,7 @@ msgstr ""
 msgid ""
 "While Catherine trusted her horse, having fought tooth and nail with the battle-hardened steed for as long as she could remember, it shuddered in hesitation as they approached the majestic, columned main building of the settlement.\n"
 "Catherine had also felt the almost unsettling holy power in the area when, suddenly, the sound of rushing wings caught her attention.\n"
-"Her gaze snapped upward to catch sight of something approaching. \n"
+"Her gaze snapped upward to catch sight of something approaching.\n"
 "\n"
 msgstr ""
 
@@ -882,7 +883,7 @@ msgstr ""
 msgid ""
 "Rion quickly caught up to her, his horse panting as hard as he was.\n"
 "He began to speak but couldn't find the words as his mind raced.\n"
-"Instead, he placed a hand on his queen's shoulder. \n"
+"Instead, he placed a hand on his queen's shoulder.\n"
 "\n"
 msgstr ""
 
@@ -949,7 +950,7 @@ msgstr ""
 #| msgid "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"
 msgid ""
 "\\begin{center}\n"
-"\\raisebox{0pt}[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[0.8\\linewidth]{\\art/ghost_dragon.jpg}}\n"
+"  \\framedimage[0.8\\linewidth]{\\art/ghost_dragon.jpg}\n"
 "\\end{center}\n"
 "\n"
 msgstr "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"

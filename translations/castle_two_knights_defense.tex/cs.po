@@ -163,11 +163,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
 msgstr ""
+"\\vspace{-1em} % FIX ME\n"
 "\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
 "\n"
 
