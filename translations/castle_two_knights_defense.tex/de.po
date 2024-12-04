@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:31+0100\n"
+"POT-Creation-Date: 2024-12-04 13:19+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,11 +25,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -68,8 +68,8 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -191,8 +191,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:125
-#: campaigns/castle_two_knights_defense.tex:107
+#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:121
+#: campaigns/castle_two_knights_defense.tex:105
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
@@ -200,8 +200,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:127
-#: campaigns/castle_two_knights_defense.tex:109
+#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:123
+#: campaigns/castle_two_knights_defense.tex:107
 #, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
@@ -209,8 +209,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:161
-#: campaigns/castle_two_knights_defense.tex:133
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:157
+#: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
@@ -274,7 +274,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:3
 msgid ""
 "\\addscenariosection[subsection]{1}{Castle Campaign $-$ The Queen's Gambit}"
-"{3. Two Knight's Defense}{\\images/catherine.png}"
+"{3. Two Knights Defense}{\\images/catherine.png}"
 msgstr ""
 
 #. type: multicols*
@@ -383,7 +383,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_two_knights_defense.tex:100
+#: campaigns/castle_two_knights_defense.tex:98
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -394,7 +394,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_two_knights_defense.tex:105
+#: campaigns/castle_two_knights_defense.tex:103
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -405,7 +405,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_two_knights_defense.tex:115
+#: campaigns/castle_two_knights_defense.tex:113
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -417,7 +417,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_two_knights_defense.tex:120
+#: campaigns/castle_two_knights_defense.tex:118
 #, no-wrap
 msgid ""
 "  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svgunit{azure} Azure neutral Deck to your army.\n"
@@ -428,7 +428,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_two_knights_defense.tex:126
+#: campaigns/castle_two_knights_defense.tex:124
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
@@ -439,7 +439,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:135
+#: campaigns/castle_two_knights_defense.tex:133
 #, no-wrap
 msgid ""
 "\\textbf{The Race}\n"
@@ -447,7 +447,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:139
+#: campaigns/castle_two_knights_defense.tex:137
 #, no-wrap
 msgid ""
 "Stacks of dry, cracked parchment sat next to dusty tomes on a table's blackened, rough-cut stone slab.\n"
@@ -457,7 +457,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:145
+#: campaigns/castle_two_knights_defense.tex:143
 #, no-wrap
 msgid ""
 "After fruitless hours, she huffed and sent a moldering volume crashing through a stack of paper as exhaustion threatened to overcome her.\n"
@@ -469,7 +469,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:152
+#: campaigns/castle_two_knights_defense.tex:150
 #, no-wrap
 msgid ""
 "Then it dawned on her.\n"
@@ -482,7 +482,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:155
+#: campaigns/castle_two_knights_defense.tex:153
 #, no-wrap
 msgid ""
 "To her surprise, the necropolis' courtyard was abuzz with energy.\n"
@@ -491,7 +491,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:160
+#: campaigns/castle_two_knights_defense.tex:158
 #, no-wrap
 msgid ""
 "Rion came rushing up to her a moment later, intent on delivering news of their new guests.\n"
@@ -502,7 +502,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:163
+#: campaigns/castle_two_knights_defense.tex:161
 #, no-wrap
 msgid ""
 "Catherine smiled wide.\n"
@@ -511,7 +511,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:165
+#: campaigns/castle_two_knights_defense.tex:163
 #, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a Few Champions to your army.}\n"
@@ -519,7 +519,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:167
+#: campaigns/castle_two_knights_defense.tex:165
 #, no-wrap
 msgid ""
 "\\textbf{Checkmate}\n"
@@ -527,7 +527,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:170
+#: campaigns/castle_two_knights_defense.tex:168
 #, no-wrap
 msgid ""
 "The broken remains of Vhidhax looked no grander than any of his many minions.\n"
@@ -536,7 +536,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:173
+#: campaigns/castle_two_knights_defense.tex:171
 #, no-wrap
 msgid ""
 "Catherine wiped blood, sweat, and dirt from her face.\n"
@@ -545,7 +545,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:178
+#: campaigns/castle_two_knights_defense.tex:176
 #, no-wrap
 msgid ""
 "Rion approached, and Catherine turned before embracing him in a rare moment of emotion.\n"
@@ -556,7 +556,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:180
+#: campaigns/castle_two_knights_defense.tex:178
 #, no-wrap
 msgid ""
 "Her duty fulfilled and her seat secure, Catherine would see Steadwick rebuilt with Erathia just a little safer… for now.\n"
@@ -564,7 +564,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:186
+#: campaigns/castle_two_knights_defense.tex:184
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -576,7 +576,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:188
+#: campaigns/castle_two_knights_defense.tex:186
 #, no-wrap
 msgid ""
 "\\textbf{A Queen's Fury}\n"
@@ -584,7 +584,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:192
+#: campaigns/castle_two_knights_defense.tex:190
 #, no-wrap
 msgid ""
 "Catherine's hard eyes scanned the badlands from a window high on the Dragon Utopia.\n"
@@ -594,7 +594,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:195
+#: campaigns/castle_two_knights_defense.tex:193
 #, no-wrap
 msgid ""
 "Worn and tired faces looked up at her outside the fortress, like beggars asking for scraps.\n"
@@ -603,7 +603,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:199
+#: campaigns/castle_two_knights_defense.tex:197
 #, no-wrap
 msgid ""
 "It took much convincing from Rion before Catherine finally softened.\n"
@@ -613,7 +613,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:201
+#: campaigns/castle_two_knights_defense.tex:199
 #, no-wrap
 msgid ""
 "\\textbf{A Queen's Right}\n"
@@ -621,7 +621,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:205
+#: campaigns/castle_two_knights_defense.tex:203
 #, no-wrap
 msgid ""
 "A strange, deep calling swelled within Catherine.\n"
@@ -631,7 +631,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:212
+#: campaigns/castle_two_knights_defense.tex:210
 #, no-wrap
 msgid ""
 "Catherine approached slowly, with the remains of her battered forces following cautiously.\n"
@@ -644,7 +644,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:215
+#: campaigns/castle_two_knights_defense.tex:213
 #, no-wrap
 msgid ""
 "His steed at a trot, Rion quickly approached.\n"
@@ -653,7 +653,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:220
+#: campaigns/castle_two_knights_defense.tex:218
 #, no-wrap
 msgid ""
 "``There's no need,'' Catherine replied.\n"
@@ -664,7 +664,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:223
+#: campaigns/castle_two_knights_defense.tex:221
 #, no-wrap
 msgid ""
 "Catherine drew her sword and reared her own steed high, presenting herself before her remaining forces with the dragon silhouetted behind her.\n"
@@ -673,7 +673,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:225
+#: campaigns/castle_two_knights_defense.tex:223
 #, no-wrap
 msgid ""
 "\\textbf{A Queen's Lament}\n"
@@ -681,7 +681,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:230
+#: campaigns/castle_two_knights_defense.tex:228
 #, no-wrap
 msgid ""
 "Reality set in after the adrenaline and euphoria of a hard-fought victory wore off.\n"
@@ -692,7 +692,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:236
+#: campaigns/castle_two_knights_defense.tex:234
 #, no-wrap
 msgid ""
 "Catherine regretted she couldn't save the dragons from their fate.\n"
@@ -704,7 +704,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_two_knights_defense.tex:242
+#: campaigns/castle_two_knights_defense.tex:240
 #, no-wrap
 msgid ""
 "Home felt distant in the haze of fury that Catherine had been prisoner to.\n"
