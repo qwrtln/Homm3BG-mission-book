@@ -143,7 +143,7 @@ msgid ""
 msgstr ""
 "\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
 "{} {} {}Gambit Królowej} \\addscenariosection[subsection]{1}{Kampania Zamku "
-"$-$ Gambit Królowej}{1. Poświęcenie Greca}{\\images/catherine.png}"
+"$-$ Gambit Królowej}{1. Grecki Dar}{\\images/catherine.png}"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
