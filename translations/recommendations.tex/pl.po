@@ -240,7 +240,7 @@ msgid ""
 "\n"
 msgstr ""
 "Grając na poziomie Trudnym lub Niemożliwym, traktuj Walki na poziomie V--VII jako łatwiejsze o jeden stopień trudności.\n"
-"Na przykład, Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\svgunit{Azure} Neutralnym Jednostkom.\n"
+"Na przykład, Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\svgunit{Azure} Jednostkom Neutralnym.\n"
 "\n"
 
 #. type: multicols*
