@@ -32,7 +32,8 @@ jobs:
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
         run: |
-          sudo apt-get update && sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
+          uname -a
+          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
           wget --quiet ${{ vars.PO4A_GH_URL }}/v${{ vars.PO4A_VERSION }}/po4a-${{ vars.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
           export PO4A_DIR="po4a-${{ vars.PO4A_VERSION }}"
           tar -xf ${PO4A_DIR}.tar.gz
@@ -50,6 +51,7 @@ jobs:
 
       - name: Install ghostscript
         run: |
+          echo ${{ vars.GHOSTSCRIPT_URL }}
           wget --quiet ${{ vars.GHOSTSCRIPT_URL }}
           tar -xvf *_amd64_snap.tgz
           sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
@@ -119,7 +121,9 @@ jobs:
 
     steps:
       - name: Install poppler
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+        run: |
+          uname -a
+          sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: Download PDFs
         uses: actions/download-artifact@v4
