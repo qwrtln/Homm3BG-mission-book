@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
     strategy:
@@ -32,8 +32,18 @@ jobs:
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
         run: |
-          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
-          wget --quiet ${{ vars.PO4A_GH_URL }}/v${{ vars.PO4A_VERSION }}/po4a-${{ vars.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends \  # po4a dependencies
+            gettext \
+            libmime-charset-perl \
+            libosp5 \
+            libpod-parser-perl \
+            libsgmls-perl \
+            libsombok3 \
+            libunicode-linebreak-perl \
+            libyaml-tiny-perl \
+            opensp \
+            sgml-base
+          wget --quiet ${{ vars.PO4A_GH_URL }}/v${{ vars.PO4A_VERSION }}/po4a-${{ vars.PO4A_VERSION}}.tar.gz
           export PO4A_DIR="po4a-${{ vars.PO4A_VERSION }}"
           tar -xf ${PO4A_DIR}.tar.gz
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
@@ -50,6 +60,7 @@ jobs:
 
       - name: Install ghostscript
         run: |
+          apt search ghostscript
           echo ${{ vars.GHOSTSCRIPT_URL }}
           wget --quiet ${{ vars.GHOSTSCRIPT_URL }}
           tar -xvf *_amd64_snap.tgz
