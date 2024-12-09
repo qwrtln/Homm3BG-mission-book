@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2024-12-09 14:18+0000\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -35,11 +35,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -177,6 +177,17 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
+#: coops/titans_stronghold.tex:74
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
@@ -190,7 +201,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
 #: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -200,39 +211,20 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:48
-#, no-wrap
-msgid ""
-"\\textbf{2 × Starting (I) Map Tile}\n"
-"\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen Factions\n"
-"  \\item Ignore their yellow borders\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
 #: coops/sentinels.tex:50
 #, no-wrap
 msgid ""
-"\\textbf{4 × Far (II--III) Map Tile}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/sentinels.tex:55
-#, no-wrap
-msgid ""
-"\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item All Near Map Tiles must have Obelisks\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 4 × Far (II--III) Map Tile\n"
+"  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -246,7 +238,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:59
+#: coops/sentinels.tex:54
 #, no-wrap
 msgid ""
 "Defeat all invading armies.\n"
@@ -254,8 +246,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:61 coops/titans_stronghold.tex:65
-#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -267,7 +259,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:63
+#: coops/sentinels.tex:58
 #, no-wrap
 msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
@@ -275,7 +267,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:65
+#: coops/sentinels.tex:60
 #, no-wrap
 msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
@@ -283,14 +275,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:67
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -300,7 +292,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:73
+#: coops/sentinels.tex:68
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{6} Round:}\n"
@@ -312,7 +304,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:78
+#: coops/sentinels.tex:73
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
@@ -323,7 +315,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:83
+#: coops/sentinels.tex:78
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
@@ -334,7 +326,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:89
+#: coops/sentinels.tex:84
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -346,7 +338,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
@@ -358,10 +350,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:102
+#: coops/sentinels.tex:98
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
+"  \\item Ignore all yellow borders on Starting Tiles.\n"
 "  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied Hero.\n"
 "  \\item The Hero who defeats an enemy army gains 2 \\svg{experience}.\n"
 "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
@@ -375,7 +368,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:104
+#: coops/sentinels.tex:100
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
@@ -383,7 +376,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:114
+#: coops/sentinels.tex:110
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -399,7 +392,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:119
+#: coops/sentinels.tex:115
 #, no-wrap
 msgid ""
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
@@ -410,11 +403,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:126
+#: coops/sentinels.tex:122
 #, no-wrap
 msgid ""
-"  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
 "  \\item Enemy armies have 3 MPs per Round.\n"
+"  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
 "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
 "    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
 "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
@@ -423,7 +416,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:128
+#: coops/sentinels.tex:124
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
@@ -431,7 +424,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:136
+#: coops/sentinels.tex:132
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -445,7 +438,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:138
+#: coops/sentinels.tex:134
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
@@ -453,7 +446,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:145
+#: coops/sentinels.tex:141
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -466,9 +459,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:41
+#: coops/sentinels.tex:143 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:135
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
 #: sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -477,8 +470,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:149 coops/titans_stronghold.tex:108
-#: coops/titans_stronghold.tex:114 clash/bloody_grail.tex:121
+#: coops/sentinels.tex:145 coops/titans_stronghold.tex:106
+#: coops/titans_stronghold.tex:112 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -489,7 +482,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: coops/sentinels.tex:156
+#: coops/sentinels.tex:152
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -498,7 +491,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:193
+#: coops/sentinels.tex:189
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
@@ -525,7 +518,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:196
+#: coops/sentinels.tex:192
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
