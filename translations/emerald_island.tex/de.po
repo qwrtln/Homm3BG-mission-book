@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2024-12-09 14:18+0000\n"
 "PO-Revision-Date: 2024-10-24 19:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,11 +25,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
@@ -63,8 +63,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -76,8 +76,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:61 coops/titans_stronghold.tex:65
-#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -87,14 +87,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:67
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -102,7 +102,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 coops/emerald_island.tex:65
+#: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
@@ -144,7 +144,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:44 coops/emerald_island.tex:40
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -228,27 +228,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:46
+#: coops/emerald_island.tex:45
 #, no-wrap
 msgid ""
-"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen Factions.\n"
-"  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III)\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 4P × Far (II--III) Map Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:48
-#, no-wrap
-msgid ""
-"$\\boldsymbol{4 P}$ \\textbf{× Far (II--III) Map Tile}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/emerald_island.tex:52
+#: coops/emerald_island.tex:49
 #, no-wrap
 msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
@@ -256,7 +247,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:56
+#: coops/emerald_island.tex:53
 #, no-wrap
 msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
@@ -264,7 +255,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:63
+#: coops/emerald_island.tex:60
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
@@ -275,16 +266,24 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:68
+#: coops/emerald_island.tex:65
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
+"    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:67
+#, no-wrap
+msgid ""
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:75
+#: coops/emerald_island.tex:74
 #, no-wrap
 msgid ""
 "    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
@@ -297,7 +296,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:77
+#: coops/emerald_island.tex:76
 #, no-wrap
 msgid ""
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
@@ -305,7 +304,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:79
+#: coops/emerald_island.tex:78
 #, no-wrap
 msgid ""
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
@@ -313,7 +312,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:81
+#: coops/emerald_island.tex:80
 #, no-wrap
 msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
@@ -321,7 +320,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:83
+#: coops/emerald_island.tex:82
 #, no-wrap
 msgid ""
 "    \\item The first time you reach Level IV, gain your second specialty.\n"
@@ -329,7 +328,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:85
+#: coops/emerald_island.tex:84
 #, no-wrap
 msgid ""
 "    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
@@ -337,7 +336,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:92
+#: coops/emerald_island.tex:91
 #, no-wrap
 msgid ""
 "    \\item Additionally, no player can:\n"
@@ -350,7 +349,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:94
+#: coops/emerald_island.tex:93
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
@@ -358,7 +357,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/emerald_island.tex:108
+#: coops/emerald_island.tex:107
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
