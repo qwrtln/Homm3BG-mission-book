@@ -32,17 +32,17 @@ jobs:
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
         run: |
-          sudo apt-get update && sudo apt-get install -y --no-install-recommends \  # po4a dependencies
-            gettext \
-            libmime-charset-perl \
-            libosp5 \
-            libpod-parser-perl \
-            libsgmls-perl \
-            libsombok3 \
-            libunicode-linebreak-perl \
-            libyaml-tiny-perl \
-            opensp \
-            sgml-base
+          sudo apt-get install -y --no-install-recommends po4a #\  # po4a dependencies
+            # gettext \
+            # libmime-charset-perl \
+            # libosp5 \
+            # libpod-parser-perl \
+            # libsgmls-perl \
+            # libsombok3 \
+            # libunicode-linebreak-perl \
+            # libyaml-tiny-perl \
+            # opensp \
+            # sgml-base
           wget --quiet ${{ vars.PO4A_GH_URL }}/v${{ vars.PO4A_VERSION }}/po4a-${{ vars.PO4A_VERSION}}.tar.gz
           export PO4A_DIR="po4a-${{ vars.PO4A_VERSION }}"
           tar -xf ${PO4A_DIR}.tar.gz
