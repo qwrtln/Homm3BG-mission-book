@@ -106,7 +106,13 @@ Great! Please reach out. We'd love to hear from you.
 
 ### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date&branch=master)](https://star-history.com/#qwrtln/Homm3BG-mission-book&Date)
+<a href="https://star-history.com/#qwrtln/Homm3BG-mission-book&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date" />
+  </picture>
+</a>
 
 ### 🛡️ Other Community Projects
 
