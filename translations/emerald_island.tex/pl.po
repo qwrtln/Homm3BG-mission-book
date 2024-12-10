@@ -279,13 +279,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of Familiars\n"
-#| "  \\item A Few Magogs\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -294,8 +288,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Grupa Chowańców\n"
-"  \\item Garstka Magogów\n"
+"  \\item G × Początkowy (I) Kafelek Mapy\n"
+"  \\item 4G × Daleki (II--III) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -337,38 +331,23 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{G}$ \\textbf{× Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych Frakcji.\n"
 "  \\item Zignoruj żółte granice pomiędzy Kafelkami I (ale nie pomiędzy Kafelkami II--III).\n"
-"\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:67
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
 "    \\item Nie możesz zbudować \\svgunit{golden} Siedliska.\n"
 "\n"
 
