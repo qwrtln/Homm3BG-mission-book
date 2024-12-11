@@ -190,37 +190,22 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
 
 \newpage
 
-\begin{minipage}{0.4\paperwidth}
+\begin{tikzpicture}[overlay, every node/.style={anchor=base}]
   \centering
-  \includegraphics[width=0.18\paperwidth]{\maps/titans-1.png}
-  \captionof{figure}{\textbf{1-PLAYER SCENARIO}}
-\end{minipage}
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/titans-2.png}
-  \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-\end{minipage}
-\vspace{1em}
-\linebreak
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-3.png}
-  \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
-\end{minipage}
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-4.png}
-  \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
-\end{minipage}
-\vspace{1em}
-\linebreak
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-5.png}
-  \captionof{figure}{\textbf{5-PLAYER SCENARIO}}
-\end{minipage}
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-6.png}
-  \captionof{figure}{\textbf{6-PLAYER SCENARIO}}
-\end{minipage}
+
+  \matrix [matrix anchor=north west, column sep=1em]
+  {
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-1.png}}; &
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-2.png}}; \\
+    \node {\textbf{1-PLAYER SCENARIO}}; &
+    \node {\textbf{2-PLAYER SCENARIO}}; \\[1em]
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-3.png}}; &
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-4.png}}; \\
+    \node {\textbf{3-PLAYER SCENARIO}}; &
+    \node {\textbf{4-PLAYER SCENARIO}}; \\[1em]
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-5.png}}; &
+    \node {\includegraphics[width=\textwidth/2-1em, height=\textheight/3-4em, keepaspectratio]{\maps/titans-6.png}}; \\
+    \node {\textbf{5-PLAYER SCENARIO}}; &
+    \node {\textbf{6-PLAYER SCENARIO}}; \\
+  };
+\end{tikzpicture}
