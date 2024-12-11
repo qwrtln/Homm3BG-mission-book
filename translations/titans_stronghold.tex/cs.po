@@ -246,9 +246,6 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:39 clash/dragoncurse_castle.tex:37
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} None\n"
-#| "\n"
 msgid ""
 "\\textbf{Map Tile Pool:} None\n"
 "\\vspace*{\\fill}\\columnbreak\n"
