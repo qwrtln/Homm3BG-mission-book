@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-10 13:03+0100\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-11-01 11:30+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -81,22 +81,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
-#: coops/titans_stronghold.tex:78
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
-msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
-
-#. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: coops/sentinels.tex:41 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:36 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -106,8 +95,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:51 coops/titans_stronghold.tex:56
+#: coops/emerald_island.tex:45 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -121,8 +110,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:55 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:49 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -134,10 +123,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
@@ -148,18 +137,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Événement programmés}}\n"
-"\n"
-
-#. type: multicols*
-#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
-#: coops/titans_stronghold.tex:116 clash/bloody_grail.tex:121
-#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
-"\n"
-msgstr ""
-"\\vspace*{\\fill}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -271,29 +248,21 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:38 clash/dragoncurse_castle.tex:36
-#, no-wrap
+#: coops/titans_stronghold.tex:39 clash/dragoncurse_castle.tex:37
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Map Tile Pool:} None\n"
+#| "\n"
 msgid ""
 "\\textbf{Map Tile Pool:} None\n"
+"\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 "\\textbf{Réserve de tuile :} Aucune\n"
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
-"\n"
-msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:40
+#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:38
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -303,7 +272,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:53
+#: coops/titans_stronghold.tex:50
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -316,7 +285,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:57
+#: coops/titans_stronghold.tex:54
 #, fuzzy, no-wrap
 #| msgid ""
 #| "If you don't have enough VI--VII Tiles, you can use another Tile near Tile I.\n"
@@ -333,7 +302,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:61
+#: coops/titans_stronghold.tex:58
 #, no-wrap
 msgid ""
 "Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Tiles I).\n"
@@ -343,7 +312,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:65
+#: coops/titans_stronghold.tex:62
 #, no-wrap
 msgid ""
 "There are undefeated Units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
@@ -353,7 +322,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:69
+#: coops/titans_stronghold.tex:66
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
@@ -363,13 +332,20 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:76
-#, no-wrap
+#: coops/titans_stronghold.tex:74
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
 "\\end{itemize}\n"
+"\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 "\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
@@ -379,7 +355,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:83
+#: coops/titans_stronghold.tex:79
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -395,7 +371,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:92
+#: coops/titans_stronghold.tex:88
 #, no-wrap
 msgid ""
 "  \\item After defeating a Level VII Neutral army, instead of resolving the Field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
@@ -419,7 +395,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:96
+#: coops/titans_stronghold.tex:92
 #, no-wrap
 msgid ""
 "  \\item Ignore all yellow borders on Starting Tiles I.\n"
@@ -433,11 +409,16 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:99
-#, no-wrap
+#: coops/titans_stronghold.tex:96
+#, fuzzy, no-wrap
+#| msgid ""
+#| "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
+#| "  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
+#| "\n"
 msgid ""
 "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
 "  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
+"  \\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 "  \\item A chaque fois qu'un joueur se déplace sur un obélisque, il lance un dé de ressource et 1 dé de trésor, et choisit 1 résultat.\n"
@@ -445,8 +426,18 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:108
-#, no-wrap
+#: coops/titans_stronghold.tex:106
+#, fuzzy, no-wrap
+#| msgid ""
+#| "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
+#| "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
+#| "  \\item Additionally, no player can:\n"
+#| "  \\begin{itemize}\n"
+#| "    \\item Attack other Heroes.\n"
+#| "    \\item Capture a Mine or Settlement that is already controlled.\n"
+#| "  \\end{itemize}\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
 "  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
@@ -456,6 +447,7 @@ msgid ""
 "    \\item Capture a Mine or Settlement that is already controlled.\n"
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 "  \\item Chaque fois qu'un héros entre dans la forteresse des titans, il pioche 5 cartes du paquet de l'armée de la forteresse des titans à la place des piles habituelles. Ces unités sont placées sur le plateau de combat (voir page 29 du livre de règles, ``Préparation des unités neutres''). Le joueur doit tenter de vaincre les créatures aussi piochées. Toutes les unités neutres vaincus sont remises dans leurs piles d'unités neutres respectives, plutôt que dans le paquet spécial. Toutes les unités neutres qui survivent à un combat dans la forteresse des titans sont remélangées dans le paquet de l'armée de la forteresse des titans. S'il y reste moins de 5 unités dans le paquet de l'armée de la forteresse des titans, placez uniquement les unités restantes sur le plateau combat.\n"
@@ -469,12 +461,18 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:114
-#, no-wrap
+#: coops/titans_stronghold.tex:111
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "\\begin{center}\n"
-"  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
+"  \\includegraphics[width=0.8\\linewidth, keepaspectratio]{\\art/dimension_door.png}\n"
 "\\end{center}\n"
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 "\\begin{center}\n"
@@ -483,7 +481,7 @@ msgstr ""
 "\n"
 
 #. type: Plain text
-#: coops/titans_stronghold.tex:189
+#: coops/titans_stronghold.tex:185
 msgid ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
 "Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
@@ -570,7 +568,7 @@ msgstr ""
 "\\end{tabularx} }"
 
 #. type: center
-#: coops/titans_stronghold.tex:195
+#: coops/titans_stronghold.tex:190
 msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
@@ -578,32 +576,32 @@ msgstr ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 1 JOUEUR}}"
+#. type: tikzpicture
+#: coops/titans_stronghold.tex:195
+#, no-wrap
+msgid ""
+"[overlay, every node/.style={anchor=base}]\n"
+"  \\centering\n"
+"\n"
+msgstr ""
 
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
-
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
-
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
-
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 5 JOUEURS}}"
-
-#. type: minipage
-#: coops/titans_stronghold.tex:233
-msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 6 JOUEURS}}"
+#. type: tikzpicture
+#: coops/titans_stronghold.tex:211
+#, no-wrap
+msgid ""
+"  \\matrix [matrix anchor=north west, column sep=1em]\n"
+"  {\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-1.png}}; &\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-2.png}}; \\\\\n"
+"    \\node {\\textbf{1-PLAYER SCENARIO}}; &\n"
+"    \\node {\\textbf{2-PLAYER SCENARIO}}; \\\\[1em]\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-3.png}}; &\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-4.png}}; \\\\\n"
+"    \\node {\\textbf{3-PLAYER SCENARIO}}; &\n"
+"    \\node {\\textbf{4-PLAYER SCENARIO}}; \\\\[1em]\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-5.png}}; &\n"
+"    \\node {\\includegraphics[width=\\textwidth/2-1em, height=\\textheight/3-4em, keepaspectratio]{\\maps/titans-6.png}}; \\\\\n"
+"    \\node {\\textbf{5-PLAYER SCENARIO}}; &\n"
+"    \\node {\\textbf{6-PLAYER SCENARIO}}; \\\\\n"
+"  };"
+msgstr ""
