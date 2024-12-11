@@ -32,8 +32,6 @@ This Scenario is played over 8 Rounds.
 
 \textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.
 
-\textbf{Additional Bonus:} None
-
 \subsection*{\MakeUppercase{Map Setup}}
 
 Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
@@ -61,48 +59,51 @@ There are unflagged Mines or Settlements left in map at the end of Round 8.
 \subsection*{\MakeUppercase{Additional Rules}}
 
 \begin{itemize}
-    \item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).
+  \item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).
 
-    \item You can't build a \svgunit{golden} Dwelling.
+  \item You can't build a \svgunit{golden} Dwelling.
 
-    \item You can give Units to another player, even outside your Turn, if one of your Heroes is:
-    \begin{itemize}
-        \item On the same Map Tile as another player's Hero.
-        \item In another player's Town.
-        \item Next to another player's Hero.
-    \end{itemize}
+  \item You can give Units to another player, even outside your Turn, if one of your Heroes is:
+  \begin{itemize}
+    \item On the same Map Tile as another player's Hero.
+    \item In another player's Town.
+    \item Next to another player's Hero.
+  \end{itemize}
 
-    \item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.
+  \item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.
 
-    \item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.
+  \item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.
 
-    \item For the last Mine/Settlement battle, add a \svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!
+  \item For the last Mine/Settlement battle, add a \svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!
 
-    \item The first time you reach Level IV, gain your second specialty.
+  \vspace*{\fill}\columnbreak
 
-    \item When you reach Level IV, move your Token on the Level tracker to Level III.
+  \item The first time you reach Level IV, gain your second specialty.
 
-    \item Additionally, no player can:
-    \begin{itemize}
-        \item Attack other Heroes.
-        \item Capture a Mine or Settlement that is already Flagged.
-    \end{itemize}
+  \item When you reach Level IV, move your Token on the Level tracker to Level III.
+
+  \item Additionally, no player can:
+  \begin{itemize}
+    \item Attack other Heroes.
+    \item Capture a Mine or Settlement that is already Flagged.
+  \end{itemize}
 \end{itemize}
 
-\vspace{2em}
+\vspace*{\fill}
+\begin{tikzpicture}[overlay, every node/.style={anchor=base}]
+  \centering
 
-\begin{center}
-  \includegraphics[width=0.2\paperwidth]{\maps/emerald-1.png}
-  \captionof{figure}{\textbf{1-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-2.png}
-  \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-3.png}
-  \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-4.png}
-  \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
-\end{center}
+  \matrix [matrix anchor=south, column sep=1em]
+  {
+    \node {\includegraphics[width=\columnwidth-1em, keepaspectratio]{\maps/emerald-1.png}}; &
+    \node {\includegraphics[width=\columnwidth-1em, keepaspectratio]{\maps/emerald-2.png}}; \\
+    \node {\textbf{1-PLAYER SCENARIO}}; &
+    \node {\textbf{2-PLAYER SCENARIO}}; \\[1em]
+    \node {\includegraphics[width=\columnwidth-1em, keepaspectratio]{\maps/emerald-3.png}}; &
+    \node {\includegraphics[width=\columnwidth-1em, keepaspectratio]{\maps/emerald-4.png}}; \\
+    \node {\textbf{3-PLAYER SCENARIO}}; &
+    \node {\textbf{4-PLAYER SCENARIO}}; \\
+  };
+\end{tikzpicture}
 
 \end{multicols*}
