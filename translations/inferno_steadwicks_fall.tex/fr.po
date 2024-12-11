@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,11 +28,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -71,11 +71,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
-#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: coops/sentinels.tex:41 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:36 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -85,8 +85,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:51 coops/titans_stronghold.tex:56
+#: coops/emerald_island.tex:45 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -100,8 +100,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:61 coops/titans_stronghold.tex:65
-#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:55 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:49 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -113,14 +113,14 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -130,11 +130,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:91 coops/emerald_island.tex:65
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:84 coops/emerald_island.tex:60
+#: clash/force_of_will.tex:73 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_deal_with_the_devil.tex:174
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -184,7 +184,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:48
 #: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
+#: campaigns/inferno_deal_with_the_devil.tex:47
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
@@ -194,7 +194,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:91
 #: campaigns/inferno_steadwicks_fall.tex:97
-#: campaigns/inferno_deal_with_the_devil.tex:100
+#: campaigns/inferno_deal_with_the_devil.tex:102
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
@@ -204,7 +204,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
 #: campaigns/inferno_steadwicks_fall.tex:190
-#: campaigns/inferno_deal_with_the_devil.tex:175
+#: campaigns/inferno_deal_with_the_devil.tex:176
 #, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
@@ -380,7 +380,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:72
-#: campaigns/inferno_deal_with_the_devil.tex:79
+#: campaigns/inferno_deal_with_the_devil.tex:81
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
@@ -565,7 +565,7 @@ msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item For any Enemy Settlements (F3, F10, \\#F1) that have not been defeated, an additional Enemy\n"
-"    Charging Hero of that Faction appears on each Settlement at the beginning of this Round.\n"
+"    Charging Hero of that Faction appears on each Settlement.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -663,11 +663,11 @@ msgstr ""
 #| "\\end{center}\n"
 #| "\n"
 msgid ""
-"\\vspace*{\\fill}\n"
+"% \\vspace*{\\fill}\n"
 "\\begin{center}\n"
-"  \\framedimage[0.9\\linewidth]{\\art/demon.jpg}\n"
+"  \\framedimage[\\columnwidth]{\\art/demon.jpg}\n"
 "\\end{center}\n"
-"\\vspace*{\\fill}\n"
+"% \\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 "\\begin{center}\n"
