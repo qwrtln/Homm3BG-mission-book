@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-09 14:18+0000\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -58,11 +58,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
+#: coops/sentinels.tex:41 coops/titans_stronghold.tex:41
+#: coops/emerald_island.tex:36 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_deal_with_the_devil.tex:79
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -72,8 +72,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:51 coops/titans_stronghold.tex:56
+#: coops/emerald_island.tex:45 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -87,8 +87,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:55 coops/titans_stronghold.tex:60
+#: coops/emerald_island.tex:49 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -100,10 +100,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:67
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
@@ -117,11 +117,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:86 coops/emerald_island.tex:62
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:84 coops/emerald_island.tex:60
+#: clash/force_of_will.tex:73 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_deal_with_the_devil.tex:174
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -159,19 +159,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
-"\n"
-msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:40
+#: coops/titans_stronghold.tex:43 coops/emerald_island.tex:38
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -278,7 +266,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:45
+#: coops/emerald_island.tex:43
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -294,7 +282,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:49
+#: coops/emerald_island.tex:47
 #, no-wrap
 msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
@@ -304,7 +292,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:53
+#: coops/emerald_island.tex:51
 #, no-wrap
 msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
@@ -314,7 +302,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:60
+#: coops/emerald_island.tex:58
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
@@ -330,11 +318,15 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:65
-#, no-wrap
+#: coops/emerald_island.tex:63
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
-"    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
+"  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
@@ -342,25 +334,36 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:67
-#, no-wrap
+#: coops/emerald_island.tex:65
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+#| "\n"
 msgid ""
-"    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+"  \\item You can't build a \\svgunit{golden} Dwelling.\n"
 "\n"
 msgstr ""
 "    \\item Nie możesz zbudować \\svgunit{golden} Siedliska.\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:74
-#, no-wrap
+#: coops/emerald_island.tex:72
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
+#| "    \\begin{itemize}\n"
+#| "        \\item On the same Map Tile as another player's Hero.\n"
+#| "        \\item In another player's Town.\n"
+#| "        \\item Next to another player's Hero.\n"
+#| "    \\end{itemize}\n"
+#| "\n"
 msgid ""
-"    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
-"    \\begin{itemize}\n"
-"        \\item On the same Map Tile as another player's Hero.\n"
-"        \\item In another player's Town.\n"
-"        \\item Next to another player's Hero.\n"
-"    \\end{itemize}\n"
+"  \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
+"  \\begin{itemize}\n"
+"    \\item On the same Map Tile as another player's Hero.\n"
+"    \\item In another player's Town.\n"
+"    \\item Next to another player's Hero.\n"
+"  \\end{itemize}\n"
 "\n"
 msgstr ""
 "    \\item Możesz przekazywać jednostki innemu graczowi, nawet poza swoją turą, jeśli jeden z twoich Bohaterów jest:\n"
@@ -372,64 +375,88 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:76
-#, no-wrap
+#: coops/emerald_island.tex:74
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
+#| "\n"
 msgid ""
-"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
+"  \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
 "\n"
 msgstr ""
 "    \\item Jeśli nie masz jednostek w swojej talii jednostek (po walce lub jeśli nie zachowasz co najmniej jednej jednostki), zwróć wszystkie swoje jednostki do puli jednostek twojej frakcji (nawet jeśli inny gracz ma jedną lub więcej twoich jednostek). Obejmuje to jednostki, które wcześniej przekazałeś innemu graczowi.\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:78
-#, no-wrap
+#: coops/emerald_island.tex:76
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+#| "\n"
 msgid ""
-"    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+"  \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
 "\n"
 msgstr ""
 "    \\item Będąc w mieście innego gracza, możesz rekrutować lub wzmacniać ich jednostki, albo dla nich, albo dla siebie. Potrzebujesz na to zgody innego gracza. Odpowiednie Siedliska lub Cytadela muszą być zbudowane.\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:80
-#, no-wrap
+#: coops/emerald_island.tex:79
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+#| "\n"
 msgid ""
-"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"  \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"  \\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 "    \\item Do ostatniej walki o Kopalnię/Osadę dodaj Neutralną \\svgunit{golden} Jednostkę. Masz nieograniczoną liczbę rund na tę walkę. Nie możesz użyć Mistrzowskiej Dyplomacji, aby pominąć tę walkę!\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:82
-#, no-wrap
+#: coops/emerald_island.tex:81
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item The first time you reach Level IV, gain your second specialty.\n"
+#| "\n"
 msgid ""
-"    \\item The first time you reach Level IV, gain your second specialty.\n"
+"  \\item The first time you reach Level IV, gain your second specialty.\n"
 "\n"
 msgstr ""
 "    \\item Przy pierwszym osiągnięciu poziomu IV, zdobądź swoją drugą specjalizację.\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:84
-#, no-wrap
+#: coops/emerald_island.tex:83
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
+#| "\n"
 msgid ""
-"    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
+"  \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
 "\n"
 msgstr ""
 "    \\item Po osiągnięciu poziomu IV, przenieś swoją kostkę na liczniku poziomów na poziom III.\n"
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:91
-#, no-wrap
+#: coops/emerald_island.tex:90
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    \\item Additionally, no player can:\n"
+#| "    \\begin{itemize}\n"
+#| "        \\item Attack other Heroes.\n"
+#| "        \\item Capture a Mine or Settlement that is already Flagged.\n"
+#| "    \\end{itemize}\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"    \\item Additionally, no player can:\n"
-"    \\begin{itemize}\n"
-"        \\item Attack other Heroes.\n"
-"        \\item Capture a Mine or Settlement that is already Flagged.\n"
-"    \\end{itemize}\n"
+"  \\item Additionally, no player can:\n"
+"  \\begin{itemize}\n"
+"    \\item Attack other Heroes.\n"
+"    \\item Capture a Mine or Settlement that is already Flagged.\n"
+"  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -442,45 +469,30 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:93
+#: coops/emerald_island.tex:94
 #, no-wrap
 msgid ""
-"\\vspace{2em}\n"
+"\\vspace*{\\fill}\n"
+"\\begin{tikzpicture}[overlay, every node/.style={anchor=base}]\n"
+"  \\centering\n"
 "\n"
 msgstr ""
-"\\vspace{2em}\n"
-"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:107
 #, no-wrap
 msgid ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
-"  \\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
-"  \\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
-"  \\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
-"  \\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}\n"
-"\\end{center}\n"
+"  \\matrix [matrix anchor=south, column sep=1em]\n"
+"  {\n"
+"    \\node {\\includegraphics[width=\\columnwidth-1em, keepaspectratio]{\\maps/emerald-1.png}}; &\n"
+"    \\node {\\includegraphics[width=\\columnwidth-1em, keepaspectratio]{\\maps/emerald-2.png}}; \\\\\n"
+"    \\node {\\textbf{1-PLAYER SCENARIO}}; &\n"
+"    \\node {\\textbf{2-PLAYER SCENARIO}}; \\\\[1em]\n"
+"    \\node {\\includegraphics[width=\\columnwidth-1em, keepaspectratio]{\\maps/emerald-3.png}}; &\n"
+"    \\node {\\includegraphics[width=\\columnwidth-1em, keepaspectratio]{\\maps/emerald-4.png}}; \\\\\n"
+"    \\node {\\textbf{3-PLAYER SCENARIO}}; &\n"
+"    \\node {\\textbf{4-PLAYER SCENARIO}}; \\\\\n"
+"  };\n"
+"\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.2\\paperwidth]{\\maps/emerald-1.png}\n"
-"  \\captionof{figure}{\\textbf{SCENARIUSZ 1-OSOBOWY}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-2.png}\n"
-"  \\captionof{figure}{\\textbf{SCENARIUSZ 2-OSOBOWY}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-3.png}\n"
-"  \\captionof{figure}{\\textbf{SCENARIUSZ 3-OSOBOWY}}\n"
-"  \\vspace{3em}\n"
-"  \\includegraphics[width=0.3\\paperwidth]{\\maps/emerald-4.png}\n"
-"  \\captionof{figure}{\\textbf{SCENARIUSZ 4-OSOBOWY}}\n"
-"\\end{center}\n"
-"\n"

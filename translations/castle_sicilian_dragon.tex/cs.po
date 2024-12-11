@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-04 10:11+0100\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: coops/sentinels.tex:43 campaigns/inferno_devilish_plan.tex:67
 #: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -51,8 +51,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:51 coops/titans_stronghold.tex:56
+#: coops/emerald_island.tex:45 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -66,10 +66,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
@@ -81,17 +81,6 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Časované Události}}\n"
 "\n"
-
-#. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
-#: sections/credits.tex:26
-#, no-wrap
-msgid ""
-"\\columnbreak\n"
-"\n"
-msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:36 campaigns/castle_sicilian_dragon.tex:30
@@ -115,6 +104,16 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
+
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:82 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
+#: sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:50 campaigns/castle_greek_gift.tex:22

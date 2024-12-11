@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-10-22 22:57+0200\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,14 @@ msgstr ""
 #: clash/force_of_will.tex:5 clash/the_hunt.tex:5
 #: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/what_to_play.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -32,21 +39,12 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 sections/credits.tex:26
+#: clash/dragoncurse_castle.tex:82 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
+#: sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/sentinels.tex:147 coops/titans_stronghold.tex:103
-#: coops/titans_stronghold.tex:109 clash/bloody_grail.tex:121
-#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 
@@ -106,6 +104,14 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/credits.tex:28 sections/credits.tex:32
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
 

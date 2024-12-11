@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,11 +28,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -81,14 +81,14 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -98,38 +98,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:135
-#: sections/credits.tex:26
-#, no-wrap
-msgid ""
-"\\columnbreak\n"
-"\n"
-msgstr ""
-"\\columnbreak\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:38 clash/dragoncurse_castle.tex:36
-#, no-wrap
+#: coops/titans_stronghold.tex:39 clash/dragoncurse_castle.tex:37
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Map Tile Pool:} None\n"
+#| "\n"
 msgid ""
 "\\textbf{Map Tile Pool:} None\n"
+"\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 "\\textbf{Pula Kafelków Mapy:} Brak\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
-"\n"
-msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols*
@@ -238,8 +217,18 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/dragoncurse_castle.tex:47
-#, no-wrap
+#: clash/dragoncurse_castle.tex:46
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
+#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 2 × Far (II-III) Map Tile\n"
+#| "  \\item 5 × Near (IV-V) Map Tile\n"
+#| "  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
@@ -247,7 +236,7 @@ msgid ""
 "  \\item 2 × Starting (I) Map Tile\n"
 "  \\item 2 × Far (II-III) Map Tile\n"
 "  \\item 5 × Near (IV-V) Map Tile\n"
-"  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field.\n"
+"  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -262,7 +251,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/dragoncurse_castle.tex:51
+#: clash/dragoncurse_castle.tex:50
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -276,7 +265,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/dragoncurse_castle.tex:55
+#: clash/dragoncurse_castle.tex:54
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -290,13 +279,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/dragoncurse_castle.tex:63
-#, no-wrap
+#: clash/dragoncurse_castle.tex:62
+#, fuzzy, no-wrap
+#| msgid ""
+#| "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black Cubes from Water Wheels and Windmills on the map.\n"
+#| "  \\item All Heroes gain +1 \\svgeven{movement}\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black Cubes from Water Wheels and Windmills on the map.\n"
-"  \\item All Heroes gain +1 \\svgeven{movement}\n"
+"  \\item All Heroes gain +1 \\svgeven{movement}.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -308,7 +304,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/dragoncurse_castle.tex:81
+#: clash/dragoncurse_castle.tex:80
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -345,8 +341,20 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
+#. type: multicols*
+#: clash/dragoncurse_castle.tex:82 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
+#: sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+"\\columnbreak\n"
+"\n"
+
 #. type: multicols
-#: clash/dragoncurse_castle.tex:91
+#: clash/dragoncurse_castle.tex:90
 #, no-wrap
 msgid ""
 "\\phantom{.}\n"
@@ -366,7 +374,7 @@ msgstr ""
 "\\phantom{.}"
 
 #. type: tikzpicture
-#: clash/dragoncurse_castle.tex:97
+#: clash/dragoncurse_castle.tex:95
 #, no-wrap
 msgid ""
 "[overlay]\n"

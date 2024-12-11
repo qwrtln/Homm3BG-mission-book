@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2024-12-11 05:19+0000\n"
 "PO-Revision-Date: 2024-10-22 22:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,11 +25,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:97
+#: campaigns/castle_sicilian_dragon.tex:155
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -48,14 +48,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
+#: coops/sentinels.tex:61 coops/titans_stronghold.tex:68
+#: coops/emerald_island.tex:53 clash/bloody_grail.tex:63
+#: clash/force_of_will.tex:61 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:56 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -63,24 +63,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:91 coops/emerald_island.tex:65
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: coops/sentinels.tex:84 coops/emerald_island.tex:60
+#: clash/force_of_will.tex:73 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:148
 #: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_deal_with_the_devil.tex:174
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
 
@@ -94,16 +84,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
+#: clash/bloody_grail.tex:79 clash/force_of_will.tex:75 clash/the_hunt.tex:79
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
@@ -190,7 +171,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:46
+#: clash/force_of_will.tex:36
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/force_of_will.tex:45
 #, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
@@ -200,11 +190,12 @@ msgid ""
 "  \\item 4 × Far (II--III) Map Tile\n"
 "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
 "\\end{itemize}\n"
+"\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:54
+#: clash/force_of_will.tex:53
 #, no-wrap
 msgid ""
 "\\textbf{For a 3-player Scenario:}\n"
@@ -212,13 +203,13 @@ msgid ""
 "  \\item 3 × Starting (I) Map Tile\n"
 "  \\item 3 × Near (IV--V) Map Tile\n"
 "  \\item 6 × Far (II--III) Map Tile\n"
-"  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+"  \\item 1 × Center (VI--VII) Map Tile with the Dragon Utopia Field\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:57
+#: clash/force_of_will.tex:56
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -227,7 +218,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:60
+#: clash/force_of_will.tex:59
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -236,7 +227,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:67
+#: clash/force_of_will.tex:66
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
@@ -247,7 +238,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:72
+#: clash/force_of_will.tex:71
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
@@ -264,6 +255,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item When a player Visits an Obelisk, they roll 2 \\svg{treasure} and choose one to resolve.\n"
 "  \\item A player may not use the Diplomacy Card to skip Combat on the Dragon Utopia Field.\n"
+"  \\vspace*{\\fill}\\columnbreak\n"
 "  \\item When a Hero moves to the Dragon Utopia Field, they must fight, depending on chosen difficulty, the following number of Neutral Units:\n"
 "  \\begin{itemize}\n"
 "    \\item \\textbf{Easy:} 1 × \\svgunit{azure}, 2 × \\svgunit{silver}, 1 × \\svgunit{bronze}\n"
@@ -286,10 +278,10 @@ msgstr ""
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 4) {\\includegraphics[width=\\linewidth]{\\_assets/maps/force-of-will-2p.png}};\n"
-"  \\node at (14, -3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (7, -7) {\\includegraphics[width=1.35\\linewidth]{\\_assets/maps/force-of-will-3p.png}};\n"
-"  \\node at (7, -13.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"  \\node at (14, 5) {\\includegraphics[width=\\linewidth]{\\_assets/maps/force-of-will-2p.png}};\n"
+"  \\node at (14, -2) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
+"  \\node at (7, -6) {\\includegraphics[width=1.35\\linewidth]{\\_assets/maps/force-of-will-3p.png}};\n"
+"  \\node at (7, -12.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
