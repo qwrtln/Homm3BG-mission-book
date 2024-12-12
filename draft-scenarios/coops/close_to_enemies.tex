@@ -22,7 +22,7 @@ This Scenario is played over 7 Rounds.
 
 \subsection*{\MakeUppercase{Player Setup}}
 
-\textbf{Player Count:} 1-6
+\textbf{Player Count:} 1--6
 
 \textbf{Starting Resources:} 14 \svg{gold}, 5 \svg{building_materials}, 2 \svg{valuables}
 
@@ -59,13 +59,13 @@ Prepare an AI Deck for Settlement defenders.
 \textbf{Settlement defenders Spell Deck:} 1 × Magic Arrow
 
 \subsection*{\MakeUppercase{Victory Conditions}}
-Conquer all Settlements by any player.
+Conquer all Settlements.
 
 \subsection*{\MakeUppercase{Defeat Conditions}}
 
 \begin{itemize}
-  \item Any player lose his town.
-  \item All settlements are not owned by any player at the end of 7th turn.
+  \item Any player loses their Town.
+  \item At least one Settlement remains unclaimed by the end of the \nth{7} Round. Time has run out! 
 \end{itemize}
 
 \subsection*{\MakeUppercase{Timed Events}}
@@ -100,9 +100,9 @@ Conquer all Settlements by any player.
 \subsection*{\MakeUppercase{Additional Rules}}
 
 \begin{itemize}
-  \item At any time, Players can spend their Building Token to perform the same actions as if they visited a Trading Post.
-  \item When defending the town, and your Hero is not here, you can still use your Units (for free).
-  \item Each settlement is defend by clans Settlement defenders. (see below)
+  \item Players can spend their Build Token at any time to perform Trading Post actions.
+  \item You can use your Units to defend your Town (without paying 8 \svg{gold}) even if your Hero is not present.
+  \item Each Settlement is defended by Settlement Defenders from local clans (see below).
 \end{itemize}
 
 \subsection*{\MakeUppercase{Enemy clan waves}}
@@ -114,17 +114,17 @@ Conquer all Settlements by any player.
   \item If you have a Citadel, the \textit{Arrow Tower} attack is reduced. The attacks for first/second/third wave become 2/3/4 \svg{attack}.
   \item This combat does not cost movement points.
   \item Refer to the \textit{Enemy Clan Armies} table for siege army strength.
-  \item If your main Hero is present in any of allied town (not settlement) and Clan wave attack your allied town where is no main Hero, you can participate on defending allied castle by using Might and Magic Cards (Simply: you defend your teammate's castle with their Units and your Hero's Cards).
+  \item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.
   \item Gain one \svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Settlements defenders}}
 \begin{itemize}
-  \item The strength of the army in Settlement is determined by the table \textit{Enemy's Clans armies} (last row).
-  \item After draw an enemy army, Player can discard one enemy Unit Card and draw a new Unit of same Tier.
-  \item The battle does not cost any extra movement points.
-  \item In this battles, you has to use AI Cards.
-  \item After won battle, you gain one Level.
+  \item The strength of Settlement Defenders is determined by the \textit{Enemy Clan Armies} table (last row).
+  \item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.
+  \item The combat does not cost Movement Points.
+  \item In these combats, you must use AI Cards.
+  \item After winning a combat, gain 2 \svg{experience}.
 \end{itemize}
 
 \columnbreak
@@ -139,7 +139,8 @@ Conquer all Settlements by any player.
   \hommtable[]{16}{
     \centering
     \medskip
-    \textbf{Enemy's Clans armies}\\
+    \textbf{Enemy Clan Armies}\\
+    \bigskip
 
     \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
     \newcommand{\silver}[0]{\svgunit[12]{silver}}
@@ -147,10 +148,10 @@ Conquer all Settlements by any player.
     \newcommand{\azure}[0]{\svgunit[12]{azure}}
 
       \begin{tabularx}{\linewidth}{p{0.2\linewidth}XXXX} &
-      \darkcell{\raisebox{-.2\height}{\svgunit[20]{bronze}} \textbf{Easy}} &
-      \darkcell{\raisebox{-.2\height}{\svgunit[20]{silver}} \textbf{Normal} &
-      \darkcell{\raisebox{-.2\height}{\svgunit[20]{golden}} \textbf{Hard}} &
-      \darkcell{\raisebox{-.2\height}{\svgunit[20]{azure}} \textbf{Impossible}}\\
+      \darkcell{\textbf{Easy}} &
+      \darkcell{\textbf{Normal}} &
+      \darkcell{\textbf{Hard}} &
+      \darkcell{\textbf{Impossible}}\\
       \darkcell[1.2]{First wave}
         & \lightcell[1.2]{\bronze}
         & \lightcell[1.2]{\bronze \bronze}
