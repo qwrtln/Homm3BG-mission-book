@@ -325,7 +325,7 @@ msgid ""
 msgstr ""
 "\\textbf{Runda 5.:}\n"
 "\\begin{itemize}\n"
-"  \\item Zyskaj nagrodę jednegoPola z Czarną Kostką.\n"
+"  \\item Zyskaj nagrodę jednego Pola z Czarną Kostką.\n"
 "\\end{itemize}\n"
 "\n"
 
