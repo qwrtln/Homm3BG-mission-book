@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-04 10:11+0100\n"
+"POT-Creation-Date: 2025-01-12 19:44+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
 #: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -57,8 +57,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -70,8 +70,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
@@ -85,7 +85,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:41
+#: coops/sentinels.tex:143 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
 #: sections/credits.tex:26
@@ -237,7 +237,7 @@ msgstr ""
 #: campaigns/castle_greek_gift.tex:43
 #, no-wrap
 msgid ""
-"\\textbf{Enemy Deck:} 4 x Might Cards\n"
+"\\textbf{Enemy Deck:} 4 × Might Cards\n"
 "\n"
 msgstr ""
 
@@ -264,7 +264,7 @@ msgstr ""
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 1 x Castle (S3)\n"
+"    \\item 1 × Castle (S3)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -275,7 +275,7 @@ msgstr ""
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 3 x Castle (F3, F6, F9)\n"
+"    \\item 3 × Castle (F3, F6, F9)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -286,7 +286,7 @@ msgstr ""
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 2 x Castle (N3, N6)\n"
+"    \\item 2 × Castle (N3, N6)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

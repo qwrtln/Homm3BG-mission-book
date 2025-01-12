@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-04 10:11+0100\n"
+"POT-Creation-Date: 2025-01-12 19:44+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,7 +42,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
 #: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -54,8 +54,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -69,8 +69,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
@@ -86,7 +86,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:147 clash/the_hunt.tex:41
+#: coops/sentinels.tex:143 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
 #: sections/credits.tex:26
@@ -339,12 +339,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:40
 #: campaigns/castle_two_knights_defense.tex:39
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
-"\\textbf{Enemy Deck:} 3 x Might Cards, 3 x Magic Cards, 1 x Skill Card\n"
+"\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Ivora:} 1 × Karta Mocy, 2 × Karta Magii, 1 × Karta Umiejętności\n"
+"\\textbf{Talia Wroga:} 3 × Karty Mocy, 3 × Karty Magii, 1 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols*
@@ -352,9 +352,11 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:41
 #, no-wrap
 msgid ""
-"\\textbf{Enemy Spells:} 2 x Lightning Bolt, 1 x Curse\n"
+"\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
 msgstr ""
+"\\textbf{Zaklęcia Wroga:} 2 × Błyskawica, 1 × Klątwa\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:44
@@ -364,6 +366,8 @@ msgid ""
 "\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
 "\n"
 msgstr ""
+"\\textbf{Umiejętności Wroga:} Płaszcz Króla Nieumarłych IV i VI, wróg zagra tę, którą może\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:46
@@ -372,7 +376,7 @@ msgstr ""
 #| "\\textbf{Final Charging Army Deck:} 3 × Might Card, 3 × Skill Card\n"
 #| "\n"
 msgid ""
-"\\textbf{Neutral Enemy Deck:} 4 x Might Cards\n"
+"\\textbf{Neutral Enemy Deck:} 4 × Might Cards\n"
 "\n"
 msgstr ""
 "\\textbf{Talia Ostatniej Szarżującej Armii:} 3 × Karta Mocy, 3 × Karta Umiejętności\n"
@@ -381,17 +385,17 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
 #: campaigns/castle_two_knights_defense.tex:52
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 1 x Necropolis (S1)\n"
+"    \\item 1 × Necropolis (S1)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\textbf{1 × Początkowy (IV--V) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Inferno (N12)\n"
+"  \\item 1 × Nekropolia (S1)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -407,7 +411,7 @@ msgstr ""
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 3 x random Tiles from Necropolis or Dungeon (F1, F2, F4, F5, F7, F8)\n"
+"    \\item 3 × random Tiles from Necropolis or Dungeon (F1, F2, F4, F5, F7, F8)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -420,18 +424,19 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
 #: campaigns/castle_two_knights_defense.tex:63
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 2 x Necropolis (N1, N4)\n"
-"    \\item 2 x Dungeon (N2, N5)\n"
+"    \\item 2 × Necropolis (N1, N4)\n"
+"    \\item 2 × Dungeon (N2, N5)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\textbf{4 × Bliski (IV--V) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Inferno (N12)\n"
+"    \\item 2 × Nekropolia (N1, N4)\n"
+"    \\item 2 × Lochy (N2, N5)\n"
 "\\end{itemize}\n"
 "\n"
 
