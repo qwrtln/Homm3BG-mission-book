@@ -265,9 +265,6 @@ msgstr ""
 #: campaigns/castle_sicilian_dragon.tex:42
 #: campaigns/castle_two_knights_defense.tex:41
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Final Charging Army Deck:} 3 × Might Card, 3 × Skill Card\n"
-#| "\n"
 msgid ""
 "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
