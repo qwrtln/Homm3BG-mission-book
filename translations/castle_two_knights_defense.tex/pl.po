@@ -405,7 +405,7 @@ msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
 "\n"
 msgstr ""
-"\\textbf{Armia Wroga:} Grupa Szkieletów, Grupa Zombie, Grupa Liczy, Grupa Upiornych Rycerzy\n"
+"\\textbf{Armia Wroga:} Grupa Szkieletów, Grupa Zombie, Grupa Liczy, Grupa Rycerzy Grozy\n"
 "\n"
 
 #. type: multicols*
@@ -538,7 +538,7 @@ msgid ""
 msgstr ""
 "  \\item Po pokonaniu neutralnej armii w Smoczej Utopii, dodaj losowego smoka z neutralnej Talii \\svgunit{azure} do swojej armii.\n"
 "  \\item Wroga armia porusza się zgodnie z normalnymi zasadami ruchu AI, zatrzymując się, by przejąć Osady i Kopalnie, a jej ostatecznym celem jest dotarcie do Smoczej Utopii.\n"
-"  \\item Jeśli wroga armia dotrze do Smoczej Utopii przed tobą, odwróć Grupę Upiornych Rycerzy na stronę Garstki i dodaj Grupę Upiornych Smoków.\n"
+"  \\item Jeśli wroga armia dotrze do Smoczej Utopii przed tobą, odwróć Grupę Rycerzy Grozy na stronę Garstki i dodaj Grupę Upiornych Smoków.\n"
 "\\end{itemize}\n"
 "\n"
 
