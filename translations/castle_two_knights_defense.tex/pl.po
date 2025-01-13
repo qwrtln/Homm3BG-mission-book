@@ -592,7 +592,7 @@ msgstr ""
 "Miała właśnie opuścić pomieszczenie, gdy kątem oka dostrzegła szczególny bazgroł, ujawniony przez jej destrukcyjny czyn.\n"
 "Ozdobny diagram, pośpiesznie naszkicowany, przedstawiał coś, co -- Katarzyna przypuszczała -- mogło być rodzajem nekromantycznego rytuału przyzwania.\n"
 "Przyciągnęła kruchy pergamin bliżej. Choć większość treści nie miała dla niej sensu, nie trzeba było być magiem, by zrozumieć, co przedstawiały mroczne rysunki.\n"
-"Były to instrukcje rytuału wskrzeszania Upiornych Smoków z martwych smoków.\n"
+"Były to instrukcje rytuału ożywiania Upiornych Smoków z martwych smoków.\n"
 "\n"
 
 #. type: multicols*
@@ -608,10 +608,10 @@ msgid ""
 "\n"
 msgstr ""
 "Wtedy ją olśniło.\n"
-"Stare legendy mówiły o pradawnej Smoczej Utopii w dzikich ziemiach.\n"
-"Vhidhax zapewne usiłuje pokonać majestatyczne stworzenia i użyć je przeciwko niej w desperackiej próbie.\n"
+"Stare legendy mówiły o pradawnej Smoczej Utopii na pustkowiach.\n"
+"Vhidhax zapewne usiłuje pokonać majestatyczne stworzenia i użyć ich przeciwko niej w desperackim akcie.\n"
 "Zmarszczyła brwi na myśl o tym, że jej osłabiony wróg miałby pokonać smoki.\n"
-"Ale jeśli mu się uda… Jeśli coś przeoczła, wróg odzyska dość sił, by pokonać jej nadwątlone wojska.\n"
+"Ale jeśli mu się uda... Jeśli coś przeoczła, wróg odzyska dość sił, by pokonać jej nadwątlone wojska.\n"
 "Zacisnęła pięść, miażdżąc kruchy papier w proch, po czym pobiegła do drzwi, by zebrać kogo się da.\n"
 "\n"
 
@@ -623,8 +623,8 @@ msgid ""
 "She placed her hands on the overlook's railing and peered over the edge to spy a host of knights in the color and flair of various baronies.\n"
 "\n"
 msgstr ""
-"Ku jej zaskoczeniu, dziedziniec nekropolii tętnił energią.\n"
-"Położyła dłonie na poręczy punktu obserwacyjnego i wyjrzała za krawędź, dostrzegając zastęp rycerzy w barwach i strojach różnych baronii.\n"
+"Ku jej zaskoczeniu dziedziniec nekropolii tętnił życiem.\n"
+"Oparła dłonie na poręczy punktu obserwacyjnego i wyjrzała za krawędź, dostrzegając zastęp rycerzy w barwach i strojach różnych baronii.\n"
 "\n"
 
 #. type: multicols*
@@ -637,7 +637,7 @@ msgid ""
 "The knights spent days tracking and catching up to us, and they mean to join us and see the campaign through.''\n"
 "\n"
 msgstr ""
-"Rion podbiegł do niej chwilę później, chcąc przekazać wieści o nowych gościach.\\\\\n"
+"Chwilę później Rion podbiegł do niej, chcąc przekazać wieści o nowych gościach.\\\\\n"
 "\\dialog Królowo Katarzyno! -- zawołał podekscytowany -- Lordowie z okolic Steadwick dowiedzieli się o tragedii i przysłali nam swoich czempionów na pomoc.\n"
 "Rycerze spędzili dni tropiąc i próbując nas dogonić, by do nas dołączyć i towarzyszyć do końca kampanii.\n"
 "\n"
@@ -683,7 +683,7 @@ msgid ""
 "\n"
 msgstr ""
 "Połamane szczątki Vhidhaxa nie wyglądały bardziej okazale niż jakikolwiek z jego wielu sług.\n"
-"Nekromantyczna energia pozbawiła go ciała już dawno temu; bez tej mocy zniknęła też jego obecność i złowroga nikczemność.\n"
+"Nekromantyczna energia pozbawiła go ciała już dawno temu; bez tej mocy zniknęła też jego złowroga obecność i nikczemność.\n"
 "\n"
 
 #. type: multicols*
@@ -710,8 +710,8 @@ msgid ""
 msgstr ""
 "Rion podszedł do Katarzyny, a ta odwróciła się, by uściskać go w rzadkim momencie wzruszenia.\n"
 "Ostatni raz widział swoją królową w takim stanie, gdy byli razem w Steadwick. Wyglądał na nieco zakłopotanego, nie mogąc znaleźć słów.\n"
-"Przez chwilę przyglądali się sobie nawzajem, w milczeniu oceniając swój stan.\n"
-"Rion pomyślał, że wyglądała na znacznie starszą i bardziej zmęczoną po takiej gehennie, ale cieszył się, widząc znów błysk w oczach swojej królowej.\n"
+"Przez chwilę przyglądali się sobie nawzajem, w~milczeniu oceniając swój stan.\n"
+"Rion pomyślał, że wyglądała na znacznie starszą i bardziej zmęczoną po takiej gehennie, ale cieszył się, widząc znów błysk w oczach swej królowej.\n"
 "\n"
 
 #. type: multicols*
@@ -721,7 +721,7 @@ msgid ""
 "Her duty fulfilled and her seat secure, Catherine would see Steadwick rebuilt with Erathia just a little safer… for now.\n"
 "\n"
 msgstr ""
-"Wypełniwszy obowiązek i zabezpieczywszy tron, Katarzyna dopilnuje, by Steadwick zostało odbudowane, a Erathia stała się nieco bezpieczniejsza… przynajmniej na razie.\n"
+"Wypełniwszy obowiązek i zabezpieczywszy tron, Katarzyna dopilnuje, by Steadwick zostało odbudowane, a Erathia stała się nieco bezpieczniejsza... przynajmniej na razie.\n"
 "\n"
 
 #. type: multicols*
@@ -749,6 +749,7 @@ msgid ""
 "\\textbf{A Queen's Fury}\n"
 "\n"
 msgstr ""
+"\\newpage"
 "\\textbf{Gniew Królowej}\n"
 "\n"
 
@@ -774,6 +775,9 @@ msgid ""
 "What was left of who she'd brought into the hostile landscape was silently requesting the right to return home, yet the badlands were an enticing prize, and the bloodlust whipped up in the Queen of Erathia hadn't subsided yet.\n"
 "\n"
 msgstr ""
+"Zmęczone i umorusane twarze spoglądały na nią spod twierdzy, niczym żebracy proszący o coś do jedzenia.\n"
+"Ci, co pozostali z tych, których przywiodła na te wrogie ziemie, milcząco błagali o powrotu do domu. Niemniej jednak pustkowia były kuszącą nagrodą, a żądza krwi, która zawładnęła Królową Erathii, jeszcze nie opadła.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:197
@@ -784,6 +788,10 @@ msgid ""
 "So, finally, she ordered only a select few to watch over the badlands with the remaining mercenaries and dragons while she returned home with the rest.\n"
 "\n"
 msgstr ""
+"Dopiero po długich namowach Riona Katarzyna w końcu złagodniała.\n"
+"Raporty ze Steadwick zostały jej przekazane, a łagodna natura maga przypomniała jej, że na jej ziemiach wciąż są ci, którzy potrzebują jej przewodnictwa.\n"
+"W końcu rozkazała jedynie garstce, by wraz z pozostałymi najemnikami i smokami pilnowali pustkowi, podczas gdy ona sama powróciła do domu z resztą wojsk.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:199
@@ -804,6 +812,10 @@ msgid ""
 "It was an odd place for dragons to call home, yet its sheer presence was undeniable.\n"
 "\n"
 msgstr ""
+"Dziwne, wewnętrzne wołanie wezbrało w Katarzynie.\n"
+"Skierowała wzrok na majestatyczną Smoczą Utopię, z jej rdzawymi murami i strzelistymi wieżyczkami.\n"
+"Było to dziwne miejsce jak na dom smoków, jednak jego obecność była niepodważalna.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:210
@@ -817,6 +829,13 @@ msgid ""
 "After a reflective moment, Catherine nodded, then turned, satisfied with the interaction.\n"
 "\n"
 msgstr ""
+"Katarzyna zbliżała się powoli, a resztki jej skołotanych sił ostrożnie podążały za nią.\n"
+"Gdy dotarła do stóp fortecy, po chwili majestatyczny błękitny pysk wyłonił się z wielkiego, łukowatego wejścia do kamiennej twierdzy.\n"
+"Wkrótce ukazała się cała smoczyca, a po rozpostarciu skrzydeł spojrzała z góry na ludzką królową.\n"
+"Podczas gdy wielu padło na kolana, Katarzyna uniosła wzrok, by spotkać spojrzenie stworzenia. Między dwoma istotami królewskiej krwi nastąpiła chwila zrozumienia.\n"
+"Zdawało się, że smoczyca wiedziała, jak straszny los właśnie ją ominął, a w podzięce ukłoniła się człowiekowi.\n"
+"Po chwili zadumy Katarzyna skinęła głową, po czym odwróciła się, usatysfakcjonowana tym spotkaniem.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:213
@@ -826,6 +845,11 @@ msgid ""
 "``Well? Are we going inside?'' he asked curiously.\n"
 "\n"
 msgstr ""
+"\\vspace*{-0.3em}\n"
+"Rion szybko podjechał, jadąc kłusem na swoim wierzchowcu.\\\\\n"
+"\\dialog I co? Wchodzimy do środka? -- zapytał.\n"
+"\\vspace*{-0.3em}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:218
@@ -837,6 +861,11 @@ msgid ""
 "Gods know we need it…''\n"
 "\n"
 msgstr ""
+"\\hspace*{-0.3em}\\dialog Nie ma takiej potrzeby -- odparła Katarzyna -- \n"
+"Widziałam to w jej oczach; smoczyca wie, co dziś zrobiliśmy.\n"
+"Mamy ich wdzięczność, a być może i przysługę do wykorzystania w przyszłości.\n"
+"Bogowie raczą wiedzieć, że jej potrzebujemy...\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:221
@@ -846,6 +875,9 @@ msgid ""
 "After a rousing speech that stirred the hearts of man and beast alike, she galloped to the rear lines to turn the formation toward home.\n"
 "\n"
 msgstr ""
+"Katarzyna dobyła miecz i poderwała konia na tylne nogi, ukazując się przed resztą swoich sił na tle sylwetki smoczycy.\n"
+"Po porywającej przemowie, która poruszyła serca zarówno ludzi jak i bestii, pogalopowała na tyły formacji, by skierować ją w stronę domu.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:223
@@ -867,6 +899,11 @@ msgid ""
 "The cost had been high…\n"
 "\n"
 msgstr ""
+"Rzeczywistość uderzyła do głowy, gdy opadła adrenalina i euforia po ciężko wywalczonym zwycięstwie.\n"
+"Pole bitwy było potwornym koszmarem.\n"
+"Zwłoki Upiornych Smoków rozwiewały się w nicość, gdy ostatki ich mocy umierały wraz z nimi, a porozrzucane, połamane ciała obu stron leżały w krwawych skupiskach.\n"
+"Cena zwycięstwa była wysoka...\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:234
@@ -879,6 +916,12 @@ msgid ""
 "Would actions like this cause her downfall one day?\n"
 "\n"
 msgstr ""
+"Katarzyna żałowała, że nie mogła ocalić smoków.\n"
+"Gdyby sprawy potoczyły się inaczej, mogłyby być silnymi sojusznikami, albo przynajmniej strażnikami trzymającymi w ryzach stwory z lokalnych pustkowi.\n"
+"Teraz trudno było przewidzieć, co wypełznie z niekontrolowanej dziczy do innych regionów czy osad pod jej panowaniem.\n"
+"Ostrożność przyniosła jej zwycięstwo, lecz zastanawiała się, czy aby na pewno?\n"
+"Czy takie działania nie sprowadzą na nią pewnego dnia zguby?\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:240
@@ -891,3 +934,9 @@ msgid ""
 "It was time to pick up the pieces.\n"
 "\n"
 msgstr ""
+"Dom był daleko, a Katarzynę wciąż pętała furia.\n"
+"Gdy przejeżdżała obok szczątków tych, którzy za nią walczyli, jej serce nieomal pękło.\n"
+"To była wojna, a na wojnie są ofiary.\n"
+"Zwróciła się do garstki ocalałych i słabym gestem dłoni wskazała drogę z pustkowi.\n"
+"Nadszedł czas, by wziąć się w garść.\n"
+"\n"
