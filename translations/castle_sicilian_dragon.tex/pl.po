@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-01-14 11:51+0000\n"
+"POT-Creation-Date: 2025-01-14 14:06+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:149
+#: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
@@ -226,11 +226,11 @@ msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"W trakcie Scenariusza kampanii Zamku obowiązują następujące zasady:\n"
+"W trakcie tego Scenariusza kampanii Zamku obowiązują następujące zasady:\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:151
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
@@ -492,7 +492,7 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
 "\\begin{itemize}\n"
-"  \\item Przegrywasz jakiekolwiek starcie w walce\n"
+"  \\item Przegrywasz jakąkolwiek walkę\n"
 "  \\item Kończy ci się czas pod koniec 11. Rundy\n"
 "\\end{itemize}\n"
 "\n"
@@ -525,7 +525,7 @@ msgid ""
 msgstr ""
 "\\textbf{Oflagowanie pierwszego Obelisku:}\n"
 "\\begin{itemize}\n"
-"  \\item Przeczytaj fragment ,,Pierwsza relikwia''\n"
+"  \\item Przeczytaj fragment ,,Pierwszy relikt''\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -562,67 +562,39 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:125
+#: campaigns/castle_sicilian_dragon.tex:132
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item The enemy army does not move\n"
-"  \\item Your Hero's maximum Level is 6\n"
-"  \\item All buildings are unavailable, building is not possible\n"
+"  \\item The enemy army does not move.\n"
+"  \\item Your Hero's maximum Level is 6.\n"
+"  \\item All buildings are unavailable, building is not possible.\n"
+"  \\item All neutral enemies fight using the Neutral Enemy Deck.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\svgunit{bronze} bronze, \\svgunit{silver} silver, and \\svgunit{golden} golden neutral enemy Decks.\n"
+"    You may recruit any, or all of them by paying their cost.\n"
+"    Shuffle any un-hired ones back into their Decks.\n"
+"  \\item The Grail may be sold at a trading post for 30 \\svgunit{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
+"  \\item When fighting the enemy at thier Town, they have a Citadel.\n"
+"    Don't forget to add the walls and arrow tower to make the battle a siege.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Wroga armia się nie porusza\n"
-"  \\item Maksymalny Poziom twojego Bohatera~to~6\n"
-"  \\item Wszystkie budynki są niedostępne, budowanie jest niemożliwe\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:131
-#, no-wrap
-msgid ""
-"\\begin{itemize}\n"
-"\\item All neutral enemies fight using the Neutral Enemy Deck.\n"
-"\\item Each time you visit a Trading Post, draw the top Cards from the \\svgunit{bronze} bronze, \\svgunit{silver} silver, and \\svgunit{golden} golden neutral enemy Decks.\n"
-"You may recruit any, or all of them by paying their cost.\n"
-"Shuffle any un-hired ones back into their Decks.\n"
-"\n"
-msgstr ""
-"\\begin{itemize}\n"
-"\\item Wszystkie Neutralne Jednostki walczą używając Talii Neutralnych Wrogów.\n"
-"\\item Za każdym razem gdy odwiedzasz Punkt Handlowy, dobierz wierzchnie Karty z talii Neutralnych Jednostek \\svgunit{bronze} brązowych, \\svgunit{silver} srebrnych i \\svgunit{golden} złotych.\n"
-"Możesz zrekrutować dowolne liczbę z nich, płacąc ich koszt.\n"
-"Wtasuj wszystkie niezrekrutowane Jednostki z powrotem do ich Talii.\n"
-"\n"
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:133
-#, no-wrap
-msgid ""
-"\\item The Grail may be sold at a trading post for 30 \\svgunit{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
-"\n"
-msgstr ""
-"\\item Możesz sprzedać Graala w Punkcie Handlowym za 30 \\svgunit{gold} \\textit{albo} \\textbf{dwa razy Przeszukać (3)} talię Reliktów.\n"
-"\n"
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:137
-#, no-wrap
-msgid ""
-"\\item When fighting the enemy at thier Town, they have a Citadel.\n"
-"Don't forget to add the walls and arrow tower to make the battle a siege.\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\item Wróg podczas oblężenia dysponuje Cytadelą.\n"
-"Nie zapomnij dodać murów i Wieży Łuczniczej.\n"
+"  \\item Wroga armia się nie porusza.\n"
+"  \\item Maksymalny Poziom twojego Bohatera~to~6.\n"
+"  \\item Wszystkie budynki są niedostępne, budowanie jest niemożliwe.\n"
+"  \\item Wszystkie Neutralne Jednostki walczą używając Talii Neutralnych Wrogów.\n"
+"  \\item Za każdym razem gdy odwiedzasz Punkt Handlowy, dobierz wierzchnie Karty z talii Neutralnych Jednostek \\svgunit{bronze} brązowych, \\svgunit{silver} srebrnych i \\svgunit{golden} złotych.\n"
+"    Możesz zrekrutować dowolną liczbę z nich, płacąc ich koszt.\n"
+"    Wtasuj wszystkie niezrekrutowane Jednostki z powrotem do ich Talii.\n"
+"  \\item Możesz sprzedać Graala w Punkcie Handlowym za 30 \\svgunit{gold} \\textit{albo} \\textbf{dwa razy Przeszukać (3)} talię Reliktów.\n"
+"  \\item Wróg podczas oblężenia dysponuje Cytadelą.\n"
+"    Nie zapomnij dodać murów i Wieży Łuczniczej.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: tikzpicture
-#: campaigns/castle_sicilian_dragon.tex:145
+#: campaigns/castle_sicilian_dragon.tex:140
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -632,17 +604,17 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:153
+#: campaigns/castle_sicilian_dragon.tex:148
 #, no-wrap
 msgid ""
 "\\textbf{Into the Badlands}\n"
 "\n"
 msgstr ""
-"\\textbf{W głąb pustkowi}\n"
+"\\textbf{W głąb pustkowia}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:157
+#: campaigns/castle_sicilian_dragon.tex:152
 #, no-wrap
 msgid ""
 "Catherine crossed arms and leaned on her saddle horn as she peered out over the wasteland they'd been led to.\n"
@@ -651,12 +623,12 @@ msgid ""
 "\n"
 msgstr ""
 "Katarzyna skrzyżowała ramiona i oparła się o łęk siodła, spoglądając na pustkowia, do których ich zwabiono.\n"
-"Archanioły wyprzedziły skromne siły, które zdołała zebrać. Zastanawiała się, czy aby na pewno słusznie postąpiła, pozwalając im odlecieć.\n"
-"Wroga twierdza wciąż pozostawała poza zasięgiem wzroku. Odnalezienie jej zajmie sporo czasu, a to nieprzyjazne pustkowie nie ułatwi im zadania.\n"
+"Archanioły udały się na zwiad, pozostawiajac skromne siły które zdołała zebrać. Zastanawiała się, czy aby na pewno słusznie postąpiła, każąc im odlecieć.\n"
+"Wroga twierdza wciąż pozostawała nieodnaleziona. Odszukanie jej zajmie sporo czasu, a to nieprzyjazne pustkowie nie ułatwi im zadania.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:162
+#: campaigns/castle_sicilian_dragon.tex:157
 #, no-wrap
 msgid ""
 "Rion pulled up next to her as he finished gulping the last contents of a water pouch.\n"
@@ -667,37 +639,34 @@ msgid ""
 msgstr ""
 "Rion podjechał do niej, dopijając ostatnie krople z bukłaka.\n"
 "Otarł z twarzy resztki wody i pot, zanim się odezwał.\\\\\n"
-"\\dialog Kiepskie miejsce na bitwę.\n"
-"Pomijając fatalne warunki, słyszałem, że tubylcy są dość... dzicy.\n"
-"\\vspace*{-0.3em}\n"
+"\\dialog{Kiepskie miejsce na bitwę.\n"
+"Pomijając fatalne warunki, słyszałem, że tubylcy są dość... dzicy.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:165
+#: campaigns/castle_sicilian_dragon.tex:160
 #, no-wrap
 msgid ""
 "``Well then, we'll just have to bring them to heel,'' Catherine replied coldly.\n"
 "The truth was she was more worried about that possibility than she let on, but she had to maintain her composure to protect the image of her strength.\n"
 "\n"
 msgstr ""
-"\\dialog W takim razie będziemy musieli ich poskromić -- odparła chłodno Katarzyna.\n"
+"\\dialog{W takim razie będziemy musieli ich poskromić -- odparła chłodno Katarzyna.}\n"
 "W rzeczywistości martwiła się tym o wiele bardziej, niż okazywała, ale musiała zachować zimną krew, by nie zachwiać wizerunku swojej siły.\n"
-"\\vspace*{-0.3em}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:167
+#: campaigns/castle_sicilian_dragon.tex:162
 #, no-wrap
 msgid ""
 "``You think they'll fight for us?'' Rion asked with a raised eyebrow.\n"
 "\n"
 msgstr ""
-"\\dialog Myślisz, że będą dla nas walczyć? -- Rion uniósł brwi.\n"
-"\\vspace*{-0.3em}\n"
+"\\dialog{Myślisz, że będą dla nas walczyć? -- Rion uniósł brwi.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:171
+#: campaigns/castle_sicilian_dragon.tex:166
 #, no-wrap
 msgid ""
 "Catherine tightly gripped a heavy sack of coin by her side and heaved it into her lap so the contents jingled like tiny bells to emphasize her point.\n"
@@ -706,22 +675,22 @@ msgid ""
 "\n"
 msgstr ""
 "Katarzyna chwyciła mocno ciężki mieszek złota wiszący u jej boku i położyła go sobie na kolanach. Monety zabrzęczały głośno, podkreślając jej intencje.\\\\\n"
-"\\dialog Odrobina hojności zdziała cuda.\n"
-"A tam, gdzie nie zdziała, zdziała miecz.\n"
+"\\dialog{Odrobina hojności zdziała cuda.\n"
+"A tam, gdzie nie zdziała, zdziała miecz.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:173
+#: campaigns/castle_sicilian_dragon.tex:168
 #, no-wrap
 msgid ""
 "\\textbf{The First Relic}\n"
 "\n"
 msgstr ""
-"\\textbf{Pierwsza Relikwia}\n"
+"\\textbf{Pierwszy relikt}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:177
+#: campaigns/castle_sicilian_dragon.tex:172
 #, no-wrap
 msgid ""
 "Ahead, a clearing of dry, cracked ground gave way to a large Obelisk protruding from the ground like a massive marker.\n"
@@ -731,11 +700,11 @@ msgid ""
 msgstr ""
 "Opodal znajdowała się polana z suchą, popękaną ziemią, z której wyrastał wielki Obelisk, niczym ogromny pomnik.\n"
 "Katarzyna widziała już w swoim życiu dość magicznych artefaktów, by rozpoznać, że budowla była miejscem mocy.\n"
-"Wskazując ramieniem naprzód, dała Rionowi znak, by przeprowadził inspekcję.\n"
+"Wskazując ramieniem naprzód, dała Rionowi znak, by zbadał obiekt.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:181
+#: campaigns/castle_sicilian_dragon.tex:176
 #, no-wrap
 msgid ""
 "The mage approached slowly, removing a glove to touch the cold stone of the smoothly cut sides with his skin.\n"
@@ -743,13 +712,13 @@ msgid ""
 "As awe-inspiring as it was, equally apparent was the time-worn damage.\n"
 "\n"
 msgstr ""
-"Kleryk podszedł powoli, zdejmując rękawicę, by dotknąć nagą dłonią zimnego kamienia o gładko ściętych bokach.\n"
-"Misterne runy były wyrzeźbione na jego powierzchni, ukazujące pisma w dawno zapomnianych językach.\n"
-"Choć budowla budziła podziw, widoczne były nadgryzienia zębem czasu.\n"
+"Kleryk zbliżył się. Zdjął rękawicę, by dotknąć nagą dłonią zimnego kamienia o gładko ciosanych bokach.\n"
+"Na powierzchni widniały misterne runy, ukazujące pisma w~dawno zapomnianych językach.\n"
+"Mimo widocznych nadgryzień zębem czasu, budowla wciąż budziła podziw.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:187
+#: campaigns/castle_sicilian_dragon.tex:182
 #, no-wrap
 msgid ""
 "After a moment, he turned to Catherine.\n"
@@ -760,15 +729,14 @@ msgid ""
 "\n"
 msgstr ""
 "Po chwili zwrócił się do Katarzyny.\\\\\n"
-"\\dialog To kamień transportowy -- powiedział --\n"
+"\\dialog{To kamień transportowy -- powiedział --\n"
 "Jak monolit, ale o mniejszym zasięgu.\n"
 "Przynajmniej... kiedyś tak było.\n"
-"Jest uszkodzony, a runy, które powinny pulsować silną magią i świecić, są teraz ciemne i pozbawione jakiejkolwiek mocy.\n"
-"\\vspace*{-0.3em}\n"
+"Jest uszkodzony, a runy, które powinny pulsować silną magią i świecić, są teraz ciemne i pozbawione jakiejkolwiek mocy.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:191
+#: campaigns/castle_sicilian_dragon.tex:186
 #, no-wrap
 msgid ""
 "Catherine dismounted and slowly inspected the area before saying anything.\n"
@@ -776,37 +744,35 @@ msgid ""
 "I can still feel residual heat; the Archangels were here.''\n"
 "\n"
 msgstr ""
-"Katarzyna zeskoczyła z wierzchowca i dokładnie obejrzała okolicę, zanim się odezwała.\\\\\n"
-"\\dialog Część zniszczeń jest świeża.\n"
-"Jeszcze czuć ciepło; były tu Archanioły.\n"
-"\\vspace*{-0.3em}\n"
+"Katarzyna zeskoczyła z wierzchowca i dokładnie obejrzała okolicę, zanim się odezwała.\n"
+"\\dialogg{Część zniszczeń jest świeża.\n"
+"Jeszcze czuć ciepło; były tu Archanioły.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:193
+#: campaigns/castle_sicilian_dragon.tex:188
 #, no-wrap
 msgid ""
 "``How can you be sure? Surely, some would have found us by now and notified us of their progress.''\n"
 "\n"
 msgstr ""
-"\\dialog Skąd ta pewność? Myślę, że ktoś by nas już znalazł i powiadomił o ich postępach.\n"
-"\\vspace*{-0.3em}\n"
+"\\dialogg{Skąd ta pewność? Myślę, że któryś z nich już by nas znalazł i powiadomił o ich postępach.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:196
+#: campaigns/castle_sicilian_dragon.tex:191
 #, no-wrap
 msgid ""
 "``They've never let me down,'' Catherine grunted.\n"
 "``Come, let's see if other such beacons exist.''\n"
 "\n"
 msgstr ""
-"\\dialog Nigdy mnie nie zawiedli -- mruknęła Katarzyna --\n"
-"Chodźmy sprawdić czy istnieją inne takie kamienie.\n"
+"\\dialogg{Nigdy mnie nie zawiedli -- mruknęła Katarzyna --\n"
+"Lepiej sprawdźmy, czy istnieją inne takie kamienie.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:198
+#: campaigns/castle_sicilian_dragon.tex:193
 #, no-wrap
 msgid ""
 "\\textbf{Showdown}\n"
@@ -816,7 +782,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:200
+#: campaigns/castle_sicilian_dragon.tex:195
 #, no-wrap
 msgid ""
 "Sounds of battle perked the ears of Catherine's forces, and she urged her steed forward to catch sight of the combatants.\n"
@@ -826,7 +792,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:203
+#: campaigns/castle_sicilian_dragon.tex:198
 #, no-wrap
 msgid ""
 "Rounding crags and jagged rocks jutting at all angles, another Obelisk revealed itself with the final moments of a battle taking place around it.\n"
@@ -834,11 +800,11 @@ msgid ""
 "\n"
 msgstr ""
 "Mijając skały i ostre głazy sterczące pod różnymi kątami, oczom jej ukazał się kolejny Obelisk, a wokół niego rozgrywały się ostatnie chwile bitwy.\n"
-"Kilku Archaniołów było na ziemi, otoczonych resztką liczniejszych nieumarłych.\n"
+"Kilka Archaniołów było na ziemi, otoczonych resztką liczniejszych nieumarłych.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:205
+#: campaigns/castle_sicilian_dragon.tex:200
 #, no-wrap
 msgid ""
 "Approaching at speed, Catherine raised a fist in the air to salute the holy warriors, and several rasped their bronze chestplates in return.\n"
@@ -848,7 +814,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:210
+#: campaigns/castle_sicilian_dragon.tex:205
 #, no-wrap
 msgid ""
 "``Queen Catherine, you've saved us the trouble of finding you,'' the lead angel said in his deep voice.\n"
@@ -857,14 +823,14 @@ msgid ""
 "We barely managed to intercept them in time to preserve this one.''\n"
 "\n"
 msgstr ""
-"\\dialog Królowo Katarzyno, oszczędziłaś nam trudu szukania ciebie -- powiedział przywódca aniołów swoim głębokim głosem.\n"
+"\\dialogg{Królowo Katarzyno, oszczędziłaś nam trudu szukania ciebie -- powiedział przywódca aniołów swoim głębokim głosem.\n"
 "Wskazał na Obelisk, gdy odgłosy bitwy w końcu ucichły.\n"
 "-- Wrogowie chcieli zniszczyć te budowle, abyśmy sami nie mogli ich użyć.\n"
-"Ledwo zdążyliśmy przybyć na czas, by ocalić tę jedną.\n"
+"Ledwo zdążyliśmy przybyć na czas, by ocalić tę jedyną.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:216
+#: campaigns/castle_sicilian_dragon.tex:211
 #, no-wrap
 msgid ""
 "Rion trotted past them as they spoke, intent on inspecting the intact Obelisk.\n"
@@ -876,13 +842,13 @@ msgid ""
 msgstr ""
 "Rion przegalopował obok nich, skupiony na zbadaniu ocalałego Obelisku.\n"
 "Jak poprzednio, chciał położyć rękę na zimnym kamieniu, ale cofnął ją przed dotknięciem.\\\\\n"
-"\\dialog Jest aktywny! -- powiedział podekscytoway\n"
+"\\dialog{Jest aktywny! -- powiedział podekscytoway\n"
 "-- To może być nasz przełom.\n"
-"Przy odrobinie szczęścia zabierze nas prosto do twierdzy wroga.\n"
+"Przy odrobinie szczęścia zabierze nas prosto do twierdzy wroga.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:219
+#: campaigns/castle_sicilian_dragon.tex:214
 #, no-wrap
 msgid ""
 "Catherine smiled, reaching to clasp the arm of the angel in thanks for his work.\n"
@@ -890,11 +856,11 @@ msgid ""
 "\n"
 msgstr ""
 "Katarzyna uśmiechnęła się, kładąć dłoń na ramieniu anioła w podziękowaniu za jego pracę.\n"
-"Spojrzała na pospiesznie zebraną armię, którą zgromadziła, mając nadzieję, że sprosta oblężeniu.\n"
+"Spojrzała na pospiesznie zebraną armię, mając nadzieję, że sprosta oblężeniu.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:225
+#: campaigns/castle_sicilian_dragon.tex:220
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -912,7 +878,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:228
+#: campaigns/castle_sicilian_dragon.tex:223
 #, no-wrap
 msgid ""
 "\\textbf{The Escape}\n"
@@ -922,19 +888,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:231
+#: campaigns/castle_sicilian_dragon.tex:226
 #, no-wrap
 msgid ""
 "With the thick, macabre, almost demonic-looking walls breached and the bulk of the necromancer's forces slain, the castle belonged to Catherine.\n"
 "It was an eye for an eye, and she relished driving the final blow into the last enemy ranks still in the courtyard herself.\n"
 "\n"
 msgstr ""
-"Po przebiciu się przez grube, makabryczne, niemal demoniczne mury i zniszczeniu większości sił nekromanty, zamek należał do Katarzyny.\n"
-"Oko za oko, ząb za ząb. W słodkiej zemście zadała finalny cios pozostałemu na dziedzińcu szeregowcu wroga.\n"
+"Po przebiciu się przez grube, makabryczne, niemal demoniczne mury i zniszczeniu większości sił nekromanty, zamek należał już do Katarzyny.\n"
+"Oko za oko, ząb za ząb. W słodkiej zemście osobiście zadała finalny cios pozostałemu na dziedzińcu szeregowcu wroga.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:236
+#: campaigns/castle_sicilian_dragon.tex:231
 #, no-wrap
 msgid ""
 "Unfortunately, after a frantic search of the grounds, Vhidhax himself was nowhere in sight.\n"
@@ -950,7 +916,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:241
+#: campaigns/castle_sicilian_dragon.tex:236
 #, no-wrap
 msgid ""
 "Catherine turned to observe the battlefield from above.\n"
@@ -959,50 +925,48 @@ msgid ""
 "Rion caught up with her a minute later, and the two exchanged looks of exhaustion.\n"
 "\n"
 msgstr ""
-"Katarzyna odwróciła się, by obserwować pole bitwy z góry.\n"
+"Katarzyna odwróciła się, by spojrzeć na pole bitwy z góry.\n"
 "Straty zadane przez nikczemnika były ogromne.\n"
 "Zarówno świeże jak i od dawna rozkładające się ciała leżały porozrzucane, a wśród nich kilka Archaniołów.\n"
 "Rion dogonił ją chwilę później. Wymienili zmęczone spojrzenia.\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:243
+#: campaigns/castle_sicilian_dragon.tex:238
 #, no-wrap
 msgid ""
 "``It's done,'' Rion said through panting breaths.\n"
 "\n"
 msgstr ""
-"\\dialog To już koniec -- powiedział Rion w zadyszce.\n"
+"\\dialogg{To już koniec -- powiedział Rion w zadyszce.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:246
+#: campaigns/castle_sicilian_dragon.tex:241
 #, no-wrap
 msgid ""
 "``No.\n"
 "The necromancer lives, and he flees north.''\n"
 "\n"
 msgstr ""
-"\\vspace*{-0.3em}\n"
-"\\hspace*{-0.25em}\\dialog Nie.\n"
-"Nekromanta przeżył i ucieka na północ.\n"
+"\\dialogg{Nie.\n"
+"Nekromanta przeżył i ucieka na północ.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:249
+#: campaigns/castle_sicilian_dragon.tex:244
 #, no-wrap
 msgid ""
 "``But… our forces.\n"
 "The Archangels are too few to continue; what hope do we have?''\n"
 "\n"
 msgstr ""
-"\\vspace*{-0.3em}\n"
-"\\dialog Ale... nasze siły.\n"
-"Archaniołów jest zbyt mało, by ruszyć dalej; na co możemy liczyć?\n"
+"\\dialogg{Ale... nasze siły.\n"
+"Archaniołów jest zbyt mało, by ruszyć dalej; na co możemy liczyć?}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:253
+#: campaigns/castle_sicilian_dragon.tex:248
 #, no-wrap
 msgid ""
 "``There is always hope, my friend.\n"
@@ -1010,27 +974,26 @@ msgid ""
 "Steadwick will never be safe otherwise!''\n"
 "\n"
 msgstr ""
-"\\vspace*{-0.3em}\n"
-"\\dialog Zawsze jest nadzieja, przyjacielu.\n"
+"\\dialogg{Zawsze jest nadzieja, przyjacielu.\n"
 "Użyjemy tego zamku jako bazy do uzupełnienia zapasów, a potem musimy rozpocząć pościg, zanim ten łotr odzyska siły.\n"
-"W przeciwnym razie Steadwick nigdy nie będzie bezpieczne!\n"
+"W przeciwnym razie Steadwick nigdy nie będzie bezpieczne!}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:256
+#: campaigns/castle_sicilian_dragon.tex:251
 #, no-wrap
 msgid ""
 "``This is foolish,'' Rion sighed.\n"
 "``We don't need to fight this hard; Vhidhax is not your father, Catherine…''\n"
 "\n"
 msgstr ""
-"\\vspace*{-0.3em}\n"
-"\\dialog To głpota -- westchnął Rion.\n"
-"Nie musimy walczyć tak zaciekle. Vhidhax nie jest twoim ojcem, Katarzyno...\n"
+"\\dialogg{To głupota -- westchnął Rion --\n"
+"Nie musimy walczyć tak zaciekle. Vhidhax nie jest twoim ojcem, Katarzyno...}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:262
+#: campaigns/castle_sicilian_dragon.tex:257
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -1048,7 +1011,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:267
+#: campaigns/castle_sicilian_dragon.tex:262
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"

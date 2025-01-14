@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-01-14 11:51+0000\n"
+"POT-Creation-Date: 2025-01-14 14:06+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:149
+#: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
@@ -195,7 +195,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:151
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
@@ -442,49 +442,26 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:125
+#: campaigns/castle_sicilian_dragon.tex:132
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item The enemy army does not move\n"
-"  \\item Your Hero's maximum Level is 6\n"
-"  \\item All buildings are unavailable, building is not possible\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:131
-#, no-wrap
-msgid ""
-"\\begin{itemize}\n"
-"\\item All neutral enemies fight using the Neutral Enemy Deck.\n"
-"\\item Each time you visit a Trading Post, draw the top Cards from the \\svgunit{bronze} bronze, \\svgunit{silver} silver, and \\svgunit{golden} golden neutral enemy Decks.\n"
-"You may recruit any, or all of them by paying their cost.\n"
-"Shuffle any un-hired ones back into their Decks.\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:133
-#, no-wrap
-msgid ""
-"\\item The Grail may be sold at a trading post for 30 \\svgunit{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: campaigns/castle_sicilian_dragon.tex:137
-#, no-wrap
-msgid ""
-"\\item When fighting the enemy at thier Town, they have a Citadel.\n"
-"Don't forget to add the walls and arrow tower to make the battle a siege.\n"
+"  \\item The enemy army does not move.\n"
+"  \\item Your Hero's maximum Level is 6.\n"
+"  \\item All buildings are unavailable, building is not possible.\n"
+"  \\item All neutral enemies fight using the Neutral Enemy Deck.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\svgunit{bronze} bronze, \\svgunit{silver} silver, and \\svgunit{golden} golden neutral enemy Decks.\n"
+"    You may recruit any, or all of them by paying their cost.\n"
+"    Shuffle any un-hired ones back into their Decks.\n"
+"  \\item The Grail may be sold at a trading post for 30 \\svgunit{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
+"  \\item When fighting the enemy at thier Town, they have a Citadel.\n"
+"    Don't forget to add the walls and arrow tower to make the battle a siege.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/castle_sicilian_dragon.tex:145
+#: campaigns/castle_sicilian_dragon.tex:140
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -494,7 +471,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:153
+#: campaigns/castle_sicilian_dragon.tex:148
 #, no-wrap
 msgid ""
 "\\textbf{Into the Badlands}\n"
@@ -502,7 +479,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:157
+#: campaigns/castle_sicilian_dragon.tex:152
 #, no-wrap
 msgid ""
 "Catherine crossed arms and leaned on her saddle horn as she peered out over the wasteland they'd been led to.\n"
@@ -512,7 +489,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:162
+#: campaigns/castle_sicilian_dragon.tex:157
 #, no-wrap
 msgid ""
 "Rion pulled up next to her as he finished gulping the last contents of a water pouch.\n"
@@ -523,7 +500,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:165
+#: campaigns/castle_sicilian_dragon.tex:160
 #, no-wrap
 msgid ""
 "``Well then, we'll just have to bring them to heel,'' Catherine replied coldly.\n"
@@ -532,7 +509,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:167
+#: campaigns/castle_sicilian_dragon.tex:162
 #, no-wrap
 msgid ""
 "``You think they'll fight for us?'' Rion asked with a raised eyebrow.\n"
@@ -540,7 +517,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:171
+#: campaigns/castle_sicilian_dragon.tex:166
 #, no-wrap
 msgid ""
 "Catherine tightly gripped a heavy sack of coin by her side and heaved it into her lap so the contents jingled like tiny bells to emphasize her point.\n"
@@ -550,7 +527,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:173
+#: campaigns/castle_sicilian_dragon.tex:168
 #, no-wrap
 msgid ""
 "\\textbf{The First Relic}\n"
@@ -558,7 +535,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:177
+#: campaigns/castle_sicilian_dragon.tex:172
 #, no-wrap
 msgid ""
 "Ahead, a clearing of dry, cracked ground gave way to a large Obelisk protruding from the ground like a massive marker.\n"
@@ -568,7 +545,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:181
+#: campaigns/castle_sicilian_dragon.tex:176
 #, no-wrap
 msgid ""
 "The mage approached slowly, removing a glove to touch the cold stone of the smoothly cut sides with his skin.\n"
@@ -578,7 +555,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:187
+#: campaigns/castle_sicilian_dragon.tex:182
 #, no-wrap
 msgid ""
 "After a moment, he turned to Catherine.\n"
@@ -590,7 +567,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:191
+#: campaigns/castle_sicilian_dragon.tex:186
 #, no-wrap
 msgid ""
 "Catherine dismounted and slowly inspected the area before saying anything.\n"
@@ -600,7 +577,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:193
+#: campaigns/castle_sicilian_dragon.tex:188
 #, no-wrap
 msgid ""
 "``How can you be sure? Surely, some would have found us by now and notified us of their progress.''\n"
@@ -608,7 +585,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:196
+#: campaigns/castle_sicilian_dragon.tex:191
 #, no-wrap
 msgid ""
 "``They've never let me down,'' Catherine grunted.\n"
@@ -617,7 +594,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:198
+#: campaigns/castle_sicilian_dragon.tex:193
 #, no-wrap
 msgid ""
 "\\textbf{Showdown}\n"
@@ -625,7 +602,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:200
+#: campaigns/castle_sicilian_dragon.tex:195
 #, no-wrap
 msgid ""
 "Sounds of battle perked the ears of Catherine's forces, and she urged her steed forward to catch sight of the combatants.\n"
@@ -633,7 +610,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:203
+#: campaigns/castle_sicilian_dragon.tex:198
 #, no-wrap
 msgid ""
 "Rounding crags and jagged rocks jutting at all angles, another Obelisk revealed itself with the final moments of a battle taking place around it.\n"
@@ -642,7 +619,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:205
+#: campaigns/castle_sicilian_dragon.tex:200
 #, no-wrap
 msgid ""
 "Approaching at speed, Catherine raised a fist in the air to salute the holy warriors, and several rasped their bronze chestplates in return.\n"
@@ -650,7 +627,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:210
+#: campaigns/castle_sicilian_dragon.tex:205
 #, no-wrap
 msgid ""
 "``Queen Catherine, you've saved us the trouble of finding you,'' the lead angel said in his deep voice.\n"
@@ -661,7 +638,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:216
+#: campaigns/castle_sicilian_dragon.tex:211
 #, no-wrap
 msgid ""
 "Rion trotted past them as they spoke, intent on inspecting the intact Obelisk.\n"
@@ -673,7 +650,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:219
+#: campaigns/castle_sicilian_dragon.tex:214
 #, no-wrap
 msgid ""
 "Catherine smiled, reaching to clasp the arm of the angel in thanks for his work.\n"
@@ -682,7 +659,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:225
+#: campaigns/castle_sicilian_dragon.tex:220
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -694,7 +671,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:228
+#: campaigns/castle_sicilian_dragon.tex:223
 #, no-wrap
 msgid ""
 "\\textbf{The Escape}\n"
@@ -705,7 +682,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:231
+#: campaigns/castle_sicilian_dragon.tex:226
 #, no-wrap
 msgid ""
 "With the thick, macabre, almost demonic-looking walls breached and the bulk of the necromancer's forces slain, the castle belonged to Catherine.\n"
@@ -714,7 +691,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:236
+#: campaigns/castle_sicilian_dragon.tex:231
 #, no-wrap
 msgid ""
 "Unfortunately, after a frantic search of the grounds, Vhidhax himself was nowhere in sight.\n"
@@ -725,7 +702,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:241
+#: campaigns/castle_sicilian_dragon.tex:236
 #, no-wrap
 msgid ""
 "Catherine turned to observe the battlefield from above.\n"
@@ -736,7 +713,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:243
+#: campaigns/castle_sicilian_dragon.tex:238
 #, no-wrap
 msgid ""
 "``It's done,'' Rion said through panting breaths.\n"
@@ -744,7 +721,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:246
+#: campaigns/castle_sicilian_dragon.tex:241
 #, no-wrap
 msgid ""
 "``No.\n"
@@ -753,7 +730,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:249
+#: campaigns/castle_sicilian_dragon.tex:244
 #, no-wrap
 msgid ""
 "``But… our forces.\n"
@@ -762,7 +739,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:253
+#: campaigns/castle_sicilian_dragon.tex:248
 #, no-wrap
 msgid ""
 "``There is always hope, my friend.\n"
@@ -772,7 +749,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:256
+#: campaigns/castle_sicilian_dragon.tex:251
 #, no-wrap
 msgid ""
 "``This is foolish,'' Rion sighed.\n"
@@ -781,7 +758,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:262
+#: campaigns/castle_sicilian_dragon.tex:257
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -793,7 +770,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_sicilian_dragon.tex:267
+#: campaigns/castle_sicilian_dragon.tex:262
 #, no-wrap
 msgid ""
 "\\vspace{2em}\n"
