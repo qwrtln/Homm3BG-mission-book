@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-04 13:19+0100\n"
+"POT-Creation-Date: 2025-01-12 19:44+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,7 +42,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:42 campaigns/inferno_devilish_plan.tex:67
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
 #: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -54,8 +54,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -69,8 +69,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
@@ -245,7 +245,7 @@ msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
-"W trakcie Scenariusza kampanii Zamku obowiązują następujące zasady:\n"
+"W trakcie tego Scenariusza kampanii Zamku obowiązują następujące zasady:\n"
 "\n"
 
 #. type: multicols*
@@ -262,12 +262,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:40
 #: campaigns/castle_two_knights_defense.tex:39
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
-"\\textbf{Enemy Deck:} 3 x Might Cards, 3 x Magic Cards, 1 x Skill Card\n"
+"\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Ivora:} 1 × Karta Mocy, 2 × Karta Magii, 1 × Karta Umiejętności\n"
+"\\textbf{Talia Wroga:} 3 × Karty Mocy, 3 × Karty Magii, 1 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols*
@@ -275,9 +275,11 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:41
 #, no-wrap
 msgid ""
-"\\textbf{Enemy Spells:} 2 x Lightning Bolt, 1 x Curse\n"
+"\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
 msgstr ""
+"\\textbf{Zaklęcia Wroga:} 2 × Błyskawica, 1 × Klątwa\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:44
@@ -287,39 +289,42 @@ msgid ""
 "\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
 "\n"
 msgstr ""
+"\\textbf{Umiejętności Wroga:} Płaszcz Króla Nieumarłych IV i VI, wróg zagra tę, którą może\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
 #: campaigns/castle_two_knights_defense.tex:52
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 1 x Necropolis (S1)\n"
+"    \\item 1 × Necropolis (S1)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\textbf{1 × Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Inferno (N12)\n"
+"  \\item 1 × Nekropolia (S1)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
 #: campaigns/castle_two_knights_defense.tex:63
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 2 x Necropolis (N1, N4)\n"
-"    \\item 2 x Dungeon (N2, N5)\n"
+"    \\item 2 × Necropolis (N1, N4)\n"
+"    \\item 2 × Dungeon (N2, N5)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\textbf{4 × Bliski (IV--V) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Inferno (N12)\n"
+"    \\item 2 × Nekropolia (N1, N4)\n"
+"    \\item 2 × Lochy (N2, N5)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -340,18 +345,17 @@ msgid ""
 "\\textit{With Vhidhax's stronghold in her grasp, Catherine needs to discover and halt the necromancer's next move.}\n"
 "\n"
 msgstr ""
+"\\textit{Mając twierdzę Vhidhaxa w swoim posiadaniu, Katarzyna musi odkryć i powstrzymać następny ruch nekromanty.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Faction Hero:} Choose any\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} The same Hero you played in Scenario 2\n"
 "\n"
 msgstr ""
-"\\textbf{Bohater Frakcji:} Wybierz dowolnego\n"
+"\\textbf{Bohater Frakcji:} Ten sam, którym grałeś w poprzednim Scenariuszu\n"
 "\n"
 
 #. type: multicols*
@@ -361,6 +365,8 @@ msgid ""
 "\\textbf{Starting Resources:} The resources you ended Scenario 2 with, plus 10 \\svg{gold}\n"
 "\n"
 msgstr ""
+"\\textbf{Zasoby Początkowe:} Te, z którymi zakończyłeś poprzedni Scenariusz plus 10 \\svg{gold}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:27
@@ -369,18 +375,17 @@ msgid ""
 "\\textbf{Starting Units:} The army you ended Scenario 2 with\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:} Armia, z którą zakończyłeś poprzedni Scenariusz\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, \\svgunit{silver} Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, \\svgunit{silver} Siedlisko, Cytadela\n"
 "\n"
 
 #. type: multicols*
@@ -390,51 +395,38 @@ msgid ""
 "\\textbf{Bonus:} Begin the Scenario at Hero Level 3, but do not take new Ability Cards.\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Rozpocznij z Bohaterem na Poziomie 3, ale nie dobieraj nowych Kart Zdolności.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Rampart Charging Army \\#2:} A Pack of Dwarves, a Pack of Elves, a Few Pegasi, a Pack of Dendroids, a Pack of Unicorns\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
 "\n"
 msgstr ""
-"\\textbf{Szarżująca Armia Bastionu \\#2:} Grupa Krasnoludów, Grupa Elfów, Garstka Pegazów, Grupa Entów, Grupa Jednorożców\n"
+"\\textbf{Armia Wroga:} Grupa Szkieletów, Grupa Zombie, Grupa Liczy, Grupa Rycerzy Grozy\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{2 × Near (IV--V) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Rampart (N7, N8)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
-"    \\item 2 x random Tiles from Necropolis or Dungeon (F1, F2, F4, F5, F7, F8)\n"
+"    \\item 2 × random Tiles from Necropolis or Dungeon (F1, F2, F4, F5, F7, F8)\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{2 × Bliski (IV--V) Kafelek Mapy}\n"
+"\\textbf{2 × Daleki (II--III) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Bastion (N7, N8)\n"
+"    \\item 2 × losowe Kafelki Nekropolii lub Lochu (F1, F2, F4, F5, F7, F8)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:68
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{1 × Center (VI--VII) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 1 × Dragon Utopia Center Map Tile (C1)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -450,15 +442,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:72
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Place your Castle Hero on the center Field of the Necropolis start Tile S1.\n"
 "\n"
 msgstr ""
-"Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Inferno.\n"
+"Umieść swojego Bohatera na środkowym polu Początkowego Kafelka Mapy Nekropolii S1.\n"
 "\n"
 
 #. type: multicols*
@@ -469,6 +458,9 @@ msgid ""
 "Reveal the Tile when the game begins.\n"
 "\n"
 msgstr ""
+"Umieść Bohatera Nekropolii na dolnym lewym Polu najbardziej wysuniętego na lewo Dalekiego Kafelka.\n"
+"Odkryj Kafelek na początku gry.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:81
@@ -479,18 +471,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\vspace{-2em} % FIX ME\n"
+"\\begin{itemize}\n"
+"  \\item Pokonaj wrogą armię\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:98
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{9} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Round 6.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -498,21 +486,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Runda 9.:}\n"
+"\\textbf{Runda 1.:}\n"
 "\\begin{itemize}\n"
-"  \\item Powtórz wydarzenia czasowe Rundy 6.\n"
+"  \\item Przeczytaj fragment ,,Wyścig''\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:103
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{When you complete the Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Read: ``Congratulations! You captured Steadwick and are victorious!''\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
@@ -520,9 +502,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Po zakończeniu Scenariusza:}\n"
+"\\textbf{Kiedy ukończysz Scenariusz:}\n"
 "\\begin{itemize}\n"
-"  \\item Przeczytaj: ,,Gratulacje! Zdobyłeś Steadwick i odnosisz zwycięstwo!''\n"
+"  \\item Przeczytaj fragment ,,Szach-mat''\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -537,6 +519,12 @@ msgid ""
 "  Shuffle any un-hired ones back into their Decks.\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Budynek Chwała Erathii jest niedostępny.\n"
+"  \\item Za każdym razem, gdy odwiedzasz Punkt Handlowy, dobierz po dwie wierzchnie Karty z talii Neutralnych Jednostek \\svgunit{bronze} brązowych, \\svgunit{silver} srebrnych i \\svgunit{golden} złotych.\n"
+"  Możesz zrekrutować dowolne liczbę z nich, płacąc ich koszt.\n"
+"  Potasuj wszystkie niezatrudnione jednostki z powrotem do ich Talii.\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:118
@@ -548,14 +536,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"  \\item Po pokonaniu neutralnej armii w Smoczej Utopii, dodaj losowego smoka z neutralnej Talii \\svgunit{azure} do swojej armii.\n"
+"  \\item Wroga armia porusza się zgodnie z normalnymi zasadami ruchu AI, zatrzymując się, by przejąć Osady i Kopalnie, a jej ostatecznym celem jest dotarcie do Smoczej Utopii.\n"
+"  \\item Jeśli wroga armia dotrze do Smoczej Utopii przed tobą, odwróć Grupę Rycerzy Grozy na stronę Garstki i dodaj Grupę Upiornych Smoków.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:124
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "    \\node at (-1.0, -8.5) {\n"
@@ -563,21 +552,15 @@ msgid ""
 "    };\n"
 "  \\end{tikzpicture}"
 msgstr ""
-"[overlay]\n"
-"  \\centering\n"
-"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:133
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Armies:}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{The Race}\n"
 "\n"
 msgstr ""
-"\\textbf{Armie wroga:}\n"
+"\\textbf{Wyścig}\n"
 "\n"
 
 #. type: multicols*
@@ -589,6 +572,10 @@ msgid ""
 "She was searching for any clue to her enemy's plans.\n"
 "\n"
 msgstr ""
+"Stosy suchego, popękanego pergaminu leżały obok zakurzonych woluminów na sczerniałej, grubo ciosanej kamiennej płycie stołu.\n"
+"Katarzyna pochylała się nad licznymi tekstami ukrytymi w komnatach nekromanty, podczas gdy jej oczy gorączkowo przeglądały strony.\n"
+"Szukała jakiejkolwiek wskazówki dotyczącej planów swojego wroga.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:143
@@ -601,6 +588,12 @@ msgid ""
 "They were the ritual instructions for raising Ghost Dragons from dead dragons.\n"
 "\n"
 msgstr ""
+"Po bezowocnych godzinach prychnęła i cisnęła butwiejący tom w stos papierów, gdy prawie zmogło ją wyczerpanie.\n"
+"Miała właśnie opuścić pomieszczenie, gdy kątem oka dostrzegła szczególny bazgroł, ujawniony przez jej destrukcyjny czyn.\n"
+"Ozdobny diagram, pośpiesznie naszkicowany, przedstawiał coś, co -- Katarzyna przypuszczała -- mogło być rodzajem nekromantycznego rytuału przyzwania.\n"
+"Przyciągnęła kruchy pergamin bliżej. Choć większość treści nie miała dla niej sensu, nie trzeba było być magiem, by zrozumieć, co przedstawiały mroczne rysunki.\n"
+"Były to instrukcje rytuału ożywiania Upiornych Smoków z martwych smoków.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:150
@@ -614,6 +607,13 @@ msgid ""
 "She clenched her fist, crushing the frail paper to dust before rushing to the doorway to gather who she could.\n"
 "\n"
 msgstr ""
+"Wtedy ją olśniło.\n"
+"Stare legendy mówiły o pradawnej Smoczej Utopii na pustkowiach.\n"
+"Vhidhax zapewne usiłuje pokonać majestatyczne stworzenia i użyć ich przeciwko niej w desperackim akcie.\n"
+"Zmarszczyła brwi na myśl o tym, że jej osłabiony wróg miałby pokonać smoki.\n"
+"Ale jeśli mu się uda... Jeśli coś przeoczła, wróg odzyska dość sił, by pokonać jej nadwątlone wojska.\n"
+"Zacisnęła pięść, miażdżąc kruchy papier w proch, po czym pobiegła do drzwi, by zebrać kogo się da.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:153
@@ -623,6 +623,9 @@ msgid ""
 "She placed her hands on the overlook's railing and peered over the edge to spy a host of knights in the color and flair of various baronies.\n"
 "\n"
 msgstr ""
+"Ku jej zaskoczeniu dziedziniec nekropolii tętnił życiem.\n"
+"Oparła dłonie na poręczy punktu obserwacyjnego i wyjrzała za krawędź, dostrzegając zastęp rycerzy w barwach i strojach różnych baronii.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:158
@@ -634,6 +637,10 @@ msgid ""
 "The knights spent days tracking and catching up to us, and they mean to join us and see the campaign through.''\n"
 "\n"
 msgstr ""
+"Chwilę później Rion podbiegł do niej, chcąc przekazać wieści o nowych gościach.\\\\\n"
+"\\dialog{Królowo Katarzyno! -- zawołał podekscytowany -- Lordowie z okolic Steadwick dowiedzieli się o tragedii i przysłali nam swoich czempionów na pomoc.\n"
+"Rycerze spędzili dni tropiąc i próbując nas dogonić, by do nas dołączyć i towarzyszyć do końca kampanii.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:161
@@ -643,6 +650,9 @@ msgid ""
 "``Then tell them to get ready; the race is on.''\n"
 "\n"
 msgstr ""
+"Katarzyna uśmiechnęła się szeroko.\n"
+"\\dialogg{W takim razie powiedz im, żeby się przygotowali; wyścig się zaczyna.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:163
@@ -651,18 +661,17 @@ msgid ""
 "\\textcolor{darkcandyapplered}{Add a Few Champions to your army.}\n"
 "\n"
 msgstr ""
+"\\textcolor{darkcandyapplered}{Dodaj Garstkę Czempionów do swojej armii.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:165
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Armies:}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Checkmate}\n"
 "\n"
 msgstr ""
-"\\textbf{Armie wroga:}\n"
+"\\textbf{Szach-mat}\n"
 "\n"
 
 #. type: multicols*
@@ -673,6 +682,9 @@ msgid ""
 "Necromantic energy had stripped the flesh from him long ago; without that power, his presence and ill-willed malevolence were gone as well.\n"
 "\n"
 msgstr ""
+"Połamane szczątki Vhidhaxa nie wyglądały bardziej okazale niż jakiekolwiek należące do jego wielu sług.\n"
+"Energia nekrotyczna pozbawiła go ciała już dawno temu; bez tej mocy zniknęła też jego złowroga obecność i nikczemność.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:171
@@ -682,6 +694,9 @@ msgid ""
 "Rion had been right; the necromancer was not her father, but perhaps his slaying would ease the sting of her family discord and the sting of betrayal, at least a little.\n"
 "\n"
 msgstr ""
+"Katarzyna otarła z twarzy krew, pot i brud.\n"
+"Rion miał rację; nekromanta nie był jej ojcem, ale być może jego zabicie złagodzi nieco ból rodzinnego rozłamu i choć trochę zdradę.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:176
@@ -693,6 +708,11 @@ msgid ""
 "Rion thought she looked much older and weathered from the ordeal, but he was happy to see a twinkle in his queen's eyes again.\n"
 "\n"
 msgstr ""
+"Rion podszedł do Katarzyny, a ta odwróciła się, by uściskać go w rzadkim momencie wzruszenia.\n"
+"Ostatni raz widział swoją królową w takim stanie, gdy byli razem w Steadwick. Wyglądał na nieco zakłopotanego, nie mogąc znaleźć słów.\n"
+"Przez chwilę przyglądali się sobie nawzajem, w~milczeniu oceniając swój stan.\n"
+"Rion pomyślał, że wyglądała na znacznie starszą i bardziej zmęczoną po takiej gehennie, ale cieszył się, widząc znów błysk w oczach swej królowej.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:178
@@ -701,6 +721,8 @@ msgid ""
 "Her duty fulfilled and her seat secure, Catherine would see Steadwick rebuilt with Erathia just a little safer… for now.\n"
 "\n"
 msgstr ""
+"Wypełniwszy obowiązek i zabezpieczywszy tron, Katarzyna dopilnuje, by Steadwick zostało odbudowane, a Erathia stała się nieco bezpieczniejsza... przynajmniej na razie.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:184
@@ -713,6 +735,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"    \\item \\textcolor{darkcandyapplered}{Jeśli ani ty, ani wróg nie dotarliście do Smoczej Utopii, przeczytaj ,,Prawo Królowej''}\n"
+"    \\item \\textcolor{darkcandyapplered}{Jeśli wroga armia dotarła do Smoczej Utopii przed tobą, przeczytaj ,,Lament Królowej''}\n"
+"    \\item \\textcolor{darkcandyapplered}{Jeśli dotarłeś do Smoczej Utopii i pokonałeś smoki przed pokonaniem wroga, przeczytaj ,,Gniew Królowej''}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:186
@@ -721,6 +749,8 @@ msgid ""
 "\\textbf{A Queen's Fury}\n"
 "\n"
 msgstr ""
+"\\newpage\\textbf{Gniew królowej}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:190
@@ -731,6 +761,10 @@ msgid ""
 "No one would challenge her reign, not with the badlands under her control or the remaining dragons in her retinue.\n"
 "\n"
 msgstr ""
+"Zimne oczy Katarzyny spoglądały na pustkowia z wysokiego okna Smoczej Utopii.\n"
+"Chociaż starcie ze słynnymi smoczymi strażnikami było godne potępienia, nawet ich zdołała podporządkować swojej woli, a pałac należał do niej.\n"
+"Nikt nie zakwestionuje jej panowania, podczas gdy pustkowia są pod jej kontrolą, a pozostałe smoki w jej orszaku.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:193
@@ -740,6 +774,9 @@ msgid ""
 "What was left of who she'd brought into the hostile landscape was silently requesting the right to return home, yet the badlands were an enticing prize, and the bloodlust whipped up in the Queen of Erathia hadn't subsided yet.\n"
 "\n"
 msgstr ""
+"Zmęczone i umorusane twarze spoglądały na nią spod twierdzy, niczym żebracy proszący o coś do jedzenia.\n"
+"Ci, co pozostali z tych, których przywiodła na te wrogie ziemie, milcząco błagali o powrotu do domu. Niemniej jednak pustkowia były kuszącą nagrodą, a żądza krwi, która zawładnęła Królową Erathii, jeszcze nie opadła.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:197
@@ -750,6 +787,10 @@ msgid ""
 "So, finally, she ordered only a select few to watch over the badlands with the remaining mercenaries and dragons while she returned home with the rest.\n"
 "\n"
 msgstr ""
+"Dopiero po długich namowach Riona Katarzyna w końcu złagodniała.\n"
+"Raporty ze Steadwick zostały jej przekazane, a łagodna natura maga przypomniała jej, że na jej ziemiach wciąż są ci, którzy potrzebują jej przewodnictwa.\n"
+"W końcu rozkazała jedynie garstce, by wraz z pozostałymi najemnikami i smokami pilnowali pustkowi, podczas gdy ona sama powróciła do domu z resztą wojsk.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:199
@@ -758,6 +799,8 @@ msgid ""
 "\\textbf{A Queen's Right}\n"
 "\n"
 msgstr ""
+"\\textbf{Prawo królowej}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:203
@@ -768,6 +811,10 @@ msgid ""
 "It was an odd place for dragons to call home, yet its sheer presence was undeniable.\n"
 "\n"
 msgstr ""
+"Dziwne, wewnętrzne wołanie wezbrało w Katarzynie.\n"
+"Skierowała wzrok na majestatyczną Smoczą Utopię, z jej rdzawymi murami i strzelistymi wieżyczkami.\n"
+"Było to dziwne miejsce jak na dom smoków, jednak jego obecność była niepodważalna.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:210
@@ -781,6 +828,13 @@ msgid ""
 "After a reflective moment, Catherine nodded, then turned, satisfied with the interaction.\n"
 "\n"
 msgstr ""
+"Katarzyna zbliżała się powoli, a resztki jej skołotanych sił ostrożnie podążały za nią.\n"
+"Gdy dotarła do stóp fortecy, po chwili majestatyczny błękitny pysk wyłonił się z wielkiego, łukowatego wejścia do kamiennej twierdzy.\n"
+"Wkrótce ukazała się cała smoczyca, a po rozpostarciu skrzydeł spojrzała z góry na ludzką królową.\n"
+"Podczas gdy wielu padło na kolana, Katarzyna uniosła wzrok, by spotkać spojrzenie stworzenia. Między dwoma istotami królewskiej krwi nastąpiła chwila zrozumienia.\n"
+"Zdawało się, że smoczyca wiedziała, jak straszny los właśnie ją ominął, a w podzięce ukłoniła się człowiekowi.\n"
+"Po chwili zadumy Katarzyna skinęła głową, po czym odwróciła się, usatysfakcjonowana tym spotkaniem.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:213
@@ -790,6 +844,9 @@ msgid ""
 "``Well? Are we going inside?'' he asked curiously.\n"
 "\n"
 msgstr ""
+"Rion szybko podjechał, jadąc kłusem na swoim wierzchowcu.\n"
+"\\dialogg{I co? Wchodzimy do środka? -- zapytał.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:218
@@ -801,6 +858,11 @@ msgid ""
 "Gods know we need it…''\n"
 "\n"
 msgstr ""
+"\\dialogg{Nie ma takiej potrzeby -- odparła Katarzyna -- \n"
+"Widziałam to w jej oczach; smoczyca wie, co dziś zrobiliśmy.\n"
+"Mamy ich wdzięczność, a być może i przysługę do wykorzystania w przyszłości.\n"
+"Bogowie raczą wiedzieć, że jej potrzebujemy...}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:221
@@ -810,6 +872,9 @@ msgid ""
 "After a rousing speech that stirred the hearts of man and beast alike, she galloped to the rear lines to turn the formation toward home.\n"
 "\n"
 msgstr ""
+"Katarzyna dobyła miecz i poderwała konia na tylne nogi, ukazując się przed resztą swoich sił na tle sylwetki smoczycy.\n"
+"Po porywającej przemowie, która poruszyła serca zarówno ludzi jak i bestii, pogalopowała na tyły formacji, by skierować ją w stronę domu.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:223
@@ -818,6 +883,8 @@ msgid ""
 "\\textbf{A Queen's Lament}\n"
 "\n"
 msgstr ""
+"\\textbf{Lament królowej}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:228
@@ -829,6 +896,11 @@ msgid ""
 "The cost had been high…\n"
 "\n"
 msgstr ""
+"Rzeczywistość uderzyła do głowy, gdy opadła adrenalina i euforia po ciężko wywalczonym zwycięstwie.\n"
+"Pole bitwy było potwornym koszmarem.\n"
+"Zwłoki Upiornych Smoków rozwiewały się w nicość, gdy ostatki ich mocy umierały wraz z nimi, a porozrzucane, połamane ciała obu stron leżały w krwawych skupiskach.\n"
+"Cena zwycięstwa była wysoka...\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:234
@@ -841,6 +913,12 @@ msgid ""
 "Would actions like this cause her downfall one day?\n"
 "\n"
 msgstr ""
+"Katarzyna żałowała, że nie mogła ocalić smoków.\n"
+"Gdyby sprawy potoczyły się inaczej, mogłyby być silnymi sojusznikami, albo przynajmniej strażnikami trzymającymi w ryzach stwory z lokalnych pustkowi.\n"
+"Teraz trudno było przewidzieć, co wypełznie z niekontrolowanej dziczy do innych regionów czy osad pod jej panowaniem.\n"
+"Ostrożność przyniosła jej zwycięstwo, lecz zastanawiała się, czy aby na pewno?\n"
+"Czy takie działania nie sprowadzą na nią pewnego dnia zguby?\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:240
@@ -853,3 +931,9 @@ msgid ""
 "It was time to pick up the pieces.\n"
 "\n"
 msgstr ""
+"Dom był daleko, a Katarzynę wciąż pętała furia.\n"
+"Gdy przejeżdżała obok szczątków tych, którzy za nią walczyli, jej serce nieomal pękło.\n"
+"To była wojna, a na wojnie są ofiary.\n"
+"Zwróciła się do garstki ocalałych i słabym gestem dłoni wskazała drogę z pustkowi.\n"
+"Nadszedł czas, by wziąć się w garść.\n"
+"\n"
