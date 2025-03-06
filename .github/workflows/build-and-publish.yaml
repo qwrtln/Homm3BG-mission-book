@@ -9,6 +9,9 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
+  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
+  PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
+  PO4A_VERSION: 0.73
 
 jobs:
   build:
@@ -33,8 +36,8 @@ jobs:
         if: ${{ matrix.language != 'en' }}
         run: |
           sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
-          wget --quiet ${{ vars.PO4A_GH_URL }}/v${{ vars.PO4A_VERSION }}/po4a-${{ vars.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
-          export PO4A_DIR="po4a-${{ vars.PO4A_VERSION }}"
+          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
+          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
           tar -xf ${PO4A_DIR}.tar.gz
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
           ./${PO4A_DIR}/po4a --no-update po4a.cfg
@@ -50,8 +53,8 @@ jobs:
 
       - name: Install ghostscript
         run: |
-          echo ${{ vars.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ vars.GHOSTSCRIPT_URL }}
+          echo ${{ env.GHOSTSCRIPT_URL }}
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
           tar -xvf *_amd64_snap.tgz
           sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
