@@ -112,25 +112,10 @@ When a Dragon Utopia is conquered, roll an attack die:
 
 \end{multicols*}
 
-\begin{minipage}{0.4\paperwidth}
+\begin{tikzpicture}[overlay]
   \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/dragon-valley-2p.png}
-  \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-\end{minipage}
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/dragon-valley-3p.png}
-  \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
-\end{minipage}
-\vspace{1em}
-\linebreak
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/dragon-valley-4p.png}
-  \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
-\end{minipage}
-\begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/dragon-valley-4p-short.png}
-  \captionof{figure}{\textbf{4-PLAYER SHORT SCENARIO}}
-\end{minipage}
+  \node at (4.5, -5) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p.png}};
+  \node at (4.5, -10) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SCENARIO}}}};
+  \node at (12.1, -14) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p-short.png}};
+  \node at (12.1, -21.6) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SHORT SCENARIO}}}};
+\end{tikzpicture}
