@@ -10,12 +10,8 @@ esac
 if [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
     echo "Windows detected, handling symlinks."
     trap 'git restore draft-scenarios/assets' EXIT
-
-    if [[ -L "draft-scenarios/assets" ]]; then
-        target=$(readlink "draft-scenarios/assets")
-        rm "draft-scenarios/assets"
-        cp -r "$target" "draft-scenarios/assets"
-    fi
+    rm "draft-scenarios/assets"
+    cp -r "assets" "draft-scenarios/assets"
 fi
 
 cd draft-scenarios || exit
