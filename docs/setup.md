@@ -12,9 +12,19 @@ Download and install the following:
 
  - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows
 
- - [**Inkscape**](https://inkscape.org/) - while installing on Windows, make sure to tick `Add Inkscape to the System Path` option
+ - [**Inkscape**](https://inkscape.org/) - while installing on Windows, make sure to tick `Add Inkscape to the System Path` option, if you're prompted with one
 
  - [**git**](https://git-scm.com/) to commit files to the repository
+
+ - [**Perl**](https://www.perl.org/get.html) to use a build script
+
+Optionally, to edit the TeX files conviniently:
+
+ - [**VSCode**](https://code.visualstudio.com/) with [**TeX Workshop extension**](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), or
+
+ - [**TeXstudio**](https://www.texstudio.org/), or
+
+ - [**TeXworks**](https://www.tug.org/texworks/)
 
 #### GitHub Account
 
@@ -41,12 +51,14 @@ A new directory titled `Homm3bg-mission-book` should appear now in your file exp
 
 #### Building the project
 
-In the directory, find `main_en.tex` file and open it in TeXstudio.
+In the git bash console, run this command:
 
-Use [these instructions](https://tex.stackexchange.com/questions/99475/how-to-invoke-latex-with-the-shell-escape-flag-in-texstudio-former-texmakerx) to add `--shell-escape` option to your build process.
-Once done, press the "Play" button in TeXstudio.
-After a while, the PDF file should open.
+```bash
+tools/drafts.sh
+```
 
+This will build the draft scenarios book.
+If the build is successful, you are all set to start working on your scenario.
 
 ### MacOS
 
@@ -60,7 +72,7 @@ Fork the repository and clone it.
 To build the project, it's best to use the script:
 
 ```bash
-tools/build.sh en
+tools/build.sh
 ```
 
 
@@ -73,5 +85,5 @@ Fork and clone the repo.
 Build the project using the script:
 
 ```bash
-tools/build.sh en
+tools/build.sh
 ```
