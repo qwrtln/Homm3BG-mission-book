@@ -1,145 +1,163 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Solo/Clash Scenario}{Gold Rush}{\images/estates.png}
+\addscenariosection{1}{Solo/Clash/Alliance Scenario}{Gold Rush}{\images/estates.png}
 
 \begin{multicols*}{2}
 
-    \textbf{Author:} farmaazon
+\textbf{Author:} farmaazon
 
-    \textbf{Source:} \href{https://discordapp.com/channels/740870068178649108/1344400556717768865/1344400556717768865}{Archon Studios Discord}
+\textbf{Source:} \href{https://discordapp.com/channels/740870068178649108/1344400556717768865/1344400556717768865}{Archon Studios Discord}
 
-    \textit{Your liege is in dire need of more gold for his long wars in far country. He laid on you a task of squeezing as much as you can from this area, and also find the legendary Grail.}
+\textit{Your liege, engaged in costly wars in distant lands, has tasked you with extracting as much wealth as possible from this region. More importantly, you must find the legendary Grail to secure his ultimate victory.}
 
-    \subsection*{\MakeUppercase{Scenario Length}}
+\subsection*{\MakeUppercase{Scenario Length}}
 
-    This Scenario is played over 13 Rounds.
+This Scenario is played over 13 Rounds.
 
-    \subsection*{\MakeUppercase{Player Setup}}
+\subsection*{\MakeUppercase{Player Setup}}
 
-    \textbf{Player Count:} 1, 2 or 4 (alliance variant)
+\textbf{Player Count:} 1, 2 or 4 (Alliance variant)
 
-    \textbf{Starting Resources:} 15 \svg{gold}, 6 \svg{building_materials}, 1 \svg{valuables}
+\textbf{Starting Resources:} 15 \svg{gold}, 6 \svg{building_materials}, 1 \svg{valuables}
 
-    \textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
+\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
 
-    \textbf{Starting Units:}
-    \begin{itemize}
-        \item A Pack of \svgunit{bronze} Units with the hightst Recruitment cost
-        \item A Few \svgunit{silver} Units with the lowest Recruitment cost
-    \end{itemize}
+\textbf{Starting Units:}
+\begin{itemize}
+  \item A Pack of \svgunit{bronze} Units with the hightst Recruitment cost
+  \item A Few \svgunit{silver} Units with the lowest Recruitment cost
+\end{itemize}
 
-    \textbf{Town Buildings:} \svgunit{bronze} Dwelling
+\textbf{Town Buildings:} \svgunit{bronze} Dwelling
 
-    \textbf{Map Tile Pool:} Each player takes 3 Far (II--III) Tiles with at least one settlement.
+\textbf{Map Tile Pool:} Each player takes 3 Far (II--III) Map Tiles with at least one Settlement.
 
-    \vfill
+\subsection*{\MakeUppercase{Map Setup}}
 
-    \subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
+\begin{itemize}
+  \item P × Starting (I) Map Tile
+  \item 1 × Near (IV--V) Map Tile (N1), plus:
+  \begin{itemize}
+    \item \textbf{For Solo Play:} 1 × additional Near (IV--V) Map Tile containing an Obelisk
+    \item \textbf{For PvP Play:} 2P × additional Near (IV--V) Map Tiles, with exactly $P$ of them containing an Obelisk; Tiles with Obelisks cannot be adjacent to the N1 Tile
+  \end{itemize}
+  \item 2 × Center (VI--VII) Map Tile (C2 and \#C1\footnote{If you do not have the Tower expansion, you may use C1 instead of \#C1, with two changes: the \textit{Dragon Utopia} is treated as a Settlement, and the \textit{Warrior's Tomb} is protected by Neutral Units instead of the Shrine. All special rules related to \#C1 should then be applied to C1.})
+\end{itemize}
+\subsection*{\MakeUppercase{Preparation}}
 
-    Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
-    \begin{itemize}
-        \item P × Starting (I) Map Tile
-        \item N1 Near (IV--V) Tile, plus \begin{itemize}
-            \item \textbf{Solo game}: 1 × additional Near (IV--V) Tile with obelisk
-            \item \textbf{PvP game}: 2 $P$ × additional Near (IV--V) Tile, exactly $P$ containing obelisk; Tiles with obelisks cannot be adjacent to N1 tile.
-        \end{itemize}
-        \item C2 and \#C1\footnote{If you do not have Tower expansion, you may use C1 instead, with two changes: \textit{Dragon Utopia} is actually a settlement, and \textit{Warrior Tomb} is protected by Neutral Units instead of the Shrine. All special rules related to \#C1 should be then applied to C1} Center (VI--VII) Map Tiles
-    \end{itemize}
+Remove the following Cards from their respective Decks and organize them into 5 separate piles\footnote{If playing as Lord Haart, replace his starting \textit{Estates} Ability with \textit{Scouting}.}:
+  
+\begin{enumerate}
+  \item \textit{Estates} Ability Card
+  \item Resource-generating Spell Cards (\textit{View Airs} and any similar Spells)
+  \item All \textit{Statue of Legion} Artifact pieces (\textit{X of Legion} Artifacts)
+  \item \textit{Obelisk Pile}: remaining non-Relic Artifacts that grant resources (including those with one of the options) and have no ongoing effect
+  \item \textit{Remaining Artifacts}: remaining Artifacts that grant resources 
+\end{enumerate}
+  
+These removed Cards will be available at specific locations throughout the Scenario.
 
-    \subsection*{\MakeUppercase{Preparation}}
+\vfill
 
-    Before game, remove \textit{Estates} ability, along with all spells and artifacts giving resources (even as one of the options) from their Decks\footnote{Lord Haart's starting ability is replaced with \textbf{Scouting}.} and organize them in 5 separate piles:
+\subsection*{\MakeUppercase{Additional Rules}}  
 
-    \begin{itemize}
-        \item \textit{Estates}
-        \item \textit{View Airs} (and other resource-giving spells if appear in the future)
-        \item \textit{Statue of Legion} parts (all \textit{X of Legion} artifacts)
-        \item "Obelisk" pile: remaining non-relic artifacts without an ongoing effect.
-        \item Remaining artifacts.
-    \end{itemize}
+\begin{table*}[b!]  
+  \hommtable[]{22}{  
+    \centering  
+    \begin{tabularx}{\linewidth}{p{0.25\linewidth}p{0.71\linewidth}}  
+      \darkcell{Tile and Location} & \darkcell{Additional Rules} \\  
+      \darkcell[1.3]{Obelisk} 
+      & \lightcell[1.3]{Pick one Artifact from the \textit{Obelisk Pile}, or roll 2 \svg{treasure-note} and choose one result.} \\  
+      \darkcell[1]{N1 Witch Hut}  
+      & \lightcell[1]{Instead of the standard effect, gain one of the \textit{Estates} Abilities.} \\  
+      \darkcell[1]{\#C1 Warrior Tomb}  
+      & \lightcell[1]{Instead of searching for an Artifact, pick one \textit{Statue of Legion} piece.} \\  
+      \darkcell[1.3]{\#C1/C2 Shrine of Magic Incantation}  
+      & \lightcell[1.3]{Instead of searching for a Spell, gain one \textit{View Air} Spell.} \\  
+      \darkcell[1.6]{\#C1 Settlement}  
+      & \lightcell[1.6]{Combat with Neutral Units cannot be skipped*. The first player to visit gains all remaining Artifacts from the \textit{Obelisk} and \textit{Remaining Artifacts} piles.} \\  
+      \darkcell[1.3]{C2 Grail}  
+      & \lightcell[1.3]{Combat with Neutral Units cannot be skipped*. Take the Grail Token and lose all remaining \svgeven{movement-note}.} \\  
+    \end{tabularx}  
+    \medskip  
+  }  
+  {\footnotesize * Including Quick Combat. Bypassing without visiting the Field (such as with the \textit{Pathfinding} Ability) is still allowed.}  
+\end{table*}  
 
-    These Cards will be available at specific locations.
+\begin{itemize}
+  \item At the start of certain Rounds, players must send a \textbf{tranche} to their lieges. The tranche value is expressed in \svg{gold}, but may be partially or entirely paid in other resources using these exchange rates: 1 \svg{building_materials} equals 2 \svg{gold} and 1 \svg{valuables} equals 4 \svg{gold}, with no change given. In Alliance mode, allied players collectively pay a single tranche. Any player or team unable to pay loses the game immediately.  
+  \item The difficulty of all Fields on the \#C1 Tile is lowered by one Level (effectively making it a ``V-VI'' Tile).  
+  \item Certain locations have special rules, typically allowing players to acquire resource-generating Cards - refer to the table below.
+  \item A Main Hero carrying the Grail Token is not protected by the \textit{Sanctuary} effect.
+  \item The Surrendering cost for a Main Hero carrying the Grail Token is increased to 30 \svg{gold}.
+  \item When defeating an enemy Main Hero, the victorious player may, instead of taking 5 \svg{gold}, choose to take either the Grail Token or one Artifact from the opponent's Discard Pile.
+\end{itemize}
 
-    \subsection*{\MakeUppercase{Additional Rules}}
+\subsection*{\MakeUppercase{Victory Conditions}}  
 
-    \begin{table*}[b!]
-        \hommtable[]{20}{
-            \centering
-            \begin{tabularx}{\linewidth}{p{0.25\linewidth}X} \darkcell{Tile and Location} & \darkcell{Additional rules} \\
-                \darkcell[1.3]{Obelisk}
-                & \lightcell[1.3]{Pick one artifact from "Obelisk" pile, or roll 2 treasure dice and choose one.} \\
-                \darkcell[1]{N1 Witch Hut}
-                & \lightcell[1]{Instead of standard effect, gain one of the \textit{Estates} abilities.} \\
-                \darkcell[1]{\#C1 Warrior Tomb}
-                & \lightcell[1]{Instead of searching an artifact, pick one of \textit{Statue of Legion} part} \\
-                \darkcell[1.3]{\#C1/C2 Shrine of Magic Incantation}
-                & \lightcell[1.3]{Instead of searching a spell, gain one \textit{View Air} spell.} \\
-                \darkcell[1.3]{\#C1 Settlement}
-                & \lightcell[1.3]{Fight with Neutral Units cannot be skipped*. First player gains all remaining artifacts from "Obelisk" and "Remaining" piles.} \\
-                \darkcell[1.3]{C2 Grail}
-                & \lightcell[1.3]{Fight with Neutral Units cannot be skipped*. Take the Grail Token and lose all remaining \svg{movement}} \\
-            \end{tabularx}
-            \medskip
-        }
-        * Including quick figts. Bypassing without visiting the Field (like with \textit{Pathfinding} ability) is still allowed.
-    \end{table*}
+\begin{itemize}  
+  \item At the end of any Round, a player/team who possesses the Grail Token and can afford all remaining \textbf{tranches} wins immediately.  
+  \item In \textbf{PvP games}, if no player wins after Round 13, the winner is the player/team who is able to pay the highest \textbf{tranche} value. When calculating this final value, possession of the Grail Token is worth an additional 60 \svg{gold}.  
+\end{itemize}  
 
-    \begin{itemize}
-        \item At the start of certain rounds, players will need to send a \textbf{tranche} to their lieges. The tranche value is expressed in \svg{gold}, but may be partially or entirely paid in other resources, with ratios being 1 \svg{building_materials} to 2 \svg{gold} and 1 \svg{valuables} to 4 \svg{gold}, without change. In alliance mode, allied players solidarily pays single tranche. Player or team unable to pay loses the game immediately.
-        \item The difficulty of all Fields on \#C1 Tile is lowered by one (so it is effectively a "V-VI" tile)
-        \item Certain locations have special rules, which usually allows getting Cards giving resources - refer to the table below.
-        \item Main Hero with Grail token is not protected by \textit{Sanctuary} effect.
-        \item Surrendering cost for Main Hero with Grail token is increased to 30\svg{gold}
-        \item Player defeating an enemy Main Hero may, instead of taking 5 \svg{gold}, take over Grail token or one artifact from the opponent's discard pile.
-    \end{itemize}
+\subsection*{\MakeUppercase{Defeat Conditions}}  
 
-    \subsection*{\MakeUppercase{Victory and Defeat Conditions}}
+\begin{itemize}  
+  \item Any player/team unable to pay a required \textbf{tranche} loses the game immediately.  
+  \item In \textbf{Solo play}, the player loses if they fail to meet the Victory Condition by the end of Round 13.  
+  \item In \textbf{PvP games}, if all players/teams cannot pay their \textbf{tranche} in the same Round, the player/team closest to affording their \textbf{tranche} wins (with the Grail Token counting as 60 \svg{gold}).  
+\end{itemize}  
 
-    \begin{itemize}
-        \item At end of any Round, player/team who has the Grail Token and is able to afford all remaining \textbf{tranches} wins immediately.
-        \item Player/team unable to pay required \textbf{tranche} loses the game immediately.
-        \item \textbf{Solo game} if player fails to meet victory condition after Round 13, they lose.
-        \item \textbf{PvP game} if no player wins after Round 13, or both players/teams cannot pay the \textbf{tranche} the same Round, the winner is a player/team who is able to pay highest \textbf{tranche} with Grail token being worth additional 60 \svg{gold}
-    \end{itemize}
+\subsection*{\MakeUppercase{Timed Events}}
 
-    \vfill
+Players must pay tranches at the start of specific Rounds, as shown in the table below. Tranches due on Resource Rounds are paid \textbf{after} receiving resources and resolving all other Round-beginning effects.  
 
-    \subsection*{\MakeUppercase{Timed Events}}
+After paying a tranche, \textbf{remove all Black Cubes} from every Windmill and Water Wheel on the map.  
 
-    \begin{table*}[b!]
-        \hommtable[]{12}{
-            \centering
-            \medskip
-            \textbf{Tranches depending on variant}\\
-            \bigskip
-            \begin{tabularx}{\linewidth}{p{0.15\linewidth}XXXX} & \darkcell{Solo variant} & \darkcell{1v1 variant} & \darkcell{2v2} \\
-                \darkcell{\nth{1} tranche}
-                & \lightcell{\nth{4} Round: 20 \svg{gold}}
-                & \lightcell{\nth{4} Round: 20 \svg{gold}}
-                & \lightcell{\nth{4} Round: 40 \svg{gold}} \\
-                \darkcell{\nth{2} tranche}
-                & \lightcell{\nth{8} Round: 50 \svg{gold}}
-                & \lightcell{\nth{10} Round: 60 \svg{gold}}
-                & \lightcell{\nth{10} Round: 120 \svg{gold}} \\
-                \darkcell{\nth{3} tranche}
-                & \lightcell{\nth{12} Round: 80 \svg{gold}}
-                & \lightcell{\nth{13} Round: 60 \svg{gold}}
-                & \lightcell{\nth{13} Round: 120 \svg{gold}} \\
-            \end{tabularx}
-        }
-    \end{table*}
+\vfill
 
-    Refer to the table below to see what tranches are to be paid on what turns. Tranches on Resource Rounds are paid \textbf{after} receiving resources and resolving Round-begin effects.
+\hommtable[]{16}{
+  \centering
+  \medskip
+  \textbf{Tranches depending on the variant}\\
+  \bigskip
+  \begin{tabularx}{\linewidth}{XXXXX} \darkcell{Round} & \darkcell{Solo} & \darkcell{1v1} & \darkcell{2v2} \\
+    \darkcell{\nth{4}}
+    & \lightcell{20 \svg{gold}}
+    & \lightcell{20 \svg{gold}}
+    & \lightcell{40 \svg{gold}} \\
+    \darkcell{\nth{8}}
+    & \lightcell{50 \svg{gold}}
+    & \lightcell{–}
+    & \lightcell{–} \\
+    \darkcell{\nth{10}}
+    & \lightcell{–}
+    & \lightcell{60 \svg{gold}}
+    & \lightcell{120 \svg{gold}} \\
+    \darkcell{\nth{12}}
+    & \lightcell{80 \svg{gold}}
+    & \lightcell{–}
+    & \lightcell{–} \\
+    \darkcell{\nth{13}}
+    & \lightcell{–}
+    & \lightcell{60 \svg{gold}}
+    & \lightcell{120 \svg{gold}} \\
+  \end{tabularx}
+}
 
-    After paying a tranche, \textbf{remove black Cubes} from all \textit{Windmills} and \textit{Waterwheels} on the map.
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \includegraphics[width=0.45\textwidth]{\maps/gold_rush-solo.png}
+  \caption{\footnotesize{\textbf{SOLO VARIANT}}}
+\end{wrapfigure}
 
-    \begin{tikzpicture}[overlay]
-        \centering
-        \node at (14, 3) {\includegraphics[width=0.45\textwidth]{\maps/gold_rush-solo.png}};
-        \node at (14, 0) {\footnotesize{\textbf{SOLO VARIANT}}};
-        \node at (4, -5) {\includegraphics[width=0.48\textwidth]{\maps/gold_rush-1v1.png}};
-        \node at (4, -9) {\footnotesize{\textbf{1v1 VARIANT}}};
-        \node at (14, -6) {\includegraphics[width=0.56\textwidth]{\maps/gold_rush-2v2.png}};
-        \node at (14, -11) {\footnotesize{\textbf{2v2 VARIANT}}};
-    \end{tikzpicture}
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \includegraphics[width=0.48\textwidth]{\maps/gold_rush-1v1.png}
+  \caption{\footnotesize{\textbf{1v1 VARIANT}}}
+\end{wrapfigure}
+
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \includegraphics[width=0.56\textwidth]{\maps/gold_rush-2v2.png}
+  \caption{\footnotesize{\textbf{2v2 VARIANT}}}
+\end{wrapfigure}
 
 \end{multicols*}
