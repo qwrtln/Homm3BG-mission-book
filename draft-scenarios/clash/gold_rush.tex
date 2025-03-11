@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Solo/Clash/Alliance Scenario}{Gold Rush}{\images/estates.png}
+\addscenariosection{1}{Solo/Clash/Alliance Scenario}{Gold Rush}{\images/gold-mine.png}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \textbf{Author:} farmaazon
 
@@ -108,20 +108,20 @@ These removed Cards will be available at specific locations throughout the Scena
   \item In \textbf{PvP games}, if all players/teams cannot pay their \textbf{tranche} in the same Round, the player/team closest to affording their \textbf{tranche} wins (with the Grail Token counting as 60 \svg{gold}).  
 \end{itemize}  
 
+\vfill
+
 \subsection*{\MakeUppercase{Timed Events}}
 
 Players must pay tranches at the start of specific Rounds, as shown in the table below. Tranches due on Resource Rounds are paid \textbf{after} receiving resources and resolving all other Round-beginning effects.  
 
 After paying a tranche, \textbf{remove all Black Cubes} from every Windmill and Water Wheel on the map.  
 
-\vfill
-
 \hommtable[]{16}{
   \centering
   \medskip
   \textbf{Tranches depending on the variant}\\
   \bigskip
-  \begin{tabularx}{\linewidth}{XXXXX} \darkcell{Round} & \darkcell{Solo} & \darkcell{1v1} & \darkcell{2v2} \\
+  \begin{tabularx}{0.95\linewidth}{XXXXX} \darkcell{Round} & \darkcell{Solo} & \darkcell{1v1} & \darkcell{2v2} \\
     \darkcell{\nth{4}}
     & \lightcell{20 \svg{gold}}
     & \lightcell{20 \svg{gold}}
@@ -145,19 +145,20 @@ After paying a tranche, \textbf{remove all Black Cubes} from every Windmill and 
   \end{tabularx}
 }
 
-\begin{wrapfigure}{r}{0.45\textwidth}
-  \includegraphics[width=0.45\textwidth]{\maps/gold_rush-solo.png}
-  \caption{\footnotesize{\textbf{SOLO VARIANT}}}
-\end{wrapfigure}
+\end{multicols}
 
-\begin{wrapfigure}{r}{0.45\textwidth}
-  \includegraphics[width=0.48\textwidth]{\maps/gold_rush-1v1.png}
-  \caption{\footnotesize{\textbf{1v1 VARIANT}}}
-\end{wrapfigure}
+\begin{tikzpicture}[overlay]
+    \centering
+    \node at (4.4, 5.5) {\includegraphics[width=0.45\textwidth]{\maps/gold_rush-solo.png}};
+    \node at (4.4, 2.5) {\footnotesize{\textbf{SOLO VARIANT}}};
+    \node at (4.5, -2) {\includegraphics[width=0.48\textwidth]{\maps/gold_rush-1v1.png}};
+    \node at (4.5, -6) {\footnotesize{\textbf{1v1 VARIANT}}};
+    \node at (13.6, -4) {\includegraphics[width=0.52\textwidth]{\maps/gold_rush-2v2.png}};
+    \node at (13.6, -8.5) {\footnotesize{\textbf{2v2 VARIANT}}};
+\end{tikzpicture}
 
-\begin{wrapfigure}{r}{0.45\textwidth}
-  \includegraphics[width=0.56\textwidth]{\maps/gold_rush-2v2.png}
-  \caption{\footnotesize{\textbf{2v2 VARIANT}}}
-\end{wrapfigure}
 
-\end{multicols*}
+
+\pagebreak
+
+
