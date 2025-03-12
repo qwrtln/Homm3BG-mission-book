@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-09 14:18+0000\n"
+"POT-Creation-Date: 2025-03-12 22:04+0000\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -35,8 +35,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:97
-#: campaigns/castle_sicilian_dragon.tex:155
+#: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
@@ -201,7 +200,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
-#: coops/titans_stronghold.tex:74
+#: coops/titans_stronghold.tex:78
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
@@ -322,13 +321,13 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:67
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
@@ -606,8 +605,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:143 clash/the_hunt.tex:41
 #: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
-#: sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:268 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -615,8 +613,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 coops/titans_stronghold.tex:106
-#: coops/titans_stronghold.tex:112 clash/bloody_grail.tex:121
+#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -643,18 +641,18 @@ msgid ""
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
 "\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
 "{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 "
-"+ 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]"
-"{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
-"\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
-"\\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} "
-"\\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]"
-"{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
-"\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & "
-"\\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} "
-"\\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & "
-"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & "
-"\\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
+"\\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\"
+"\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
+"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
+"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
+"\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
+"\\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
+"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
 "\\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} "
 "\\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
 "{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden "
@@ -666,9 +664,9 @@ msgstr ""
 "\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
 "\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
 "{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Kola 6 + "
-"7} & \\darkcell{Kola 8 + 9} & \\darkcell{Kolo 10}\\\\ \\darkcell[1.4]{Lehká} "
-"& \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Kola "
+"6 + 7} & \\darkcell{Kola 8 + 9} & \\darkcell{Kolo 10}\\\\ \\darkcell[1.4]"
+"{Lehká} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & "
 "\\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & "
 "\\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} "
 "\\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]"
