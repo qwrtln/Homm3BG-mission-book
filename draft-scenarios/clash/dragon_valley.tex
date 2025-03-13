@@ -25,7 +25,9 @@ This Scenario plays out over 13 Rounds
 \textbf{Starting Units:}
 \begin{itemize}
   \item 2 × Few \svgunit{bronze} Units of the highest recruitment cost
-%  \item A Pack of \svgunit{bronze} Units of the lowest recruitment cost
+  %\item A Pack of \svgunit{bronze} Units of the lowest recruitment cost
+  %\item Pack of \svgunit{bronze} of second highest recruitment cost
+  %\item A Pack of \svgunit{bronze} Units of the player's choice
 \end{itemize}
 
 \textbf{Town Buildings:}
@@ -58,21 +60,18 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 The game ends at the end of the Round when any of these conditions are met:
 
 \begin{itemize}
- \item One player has defeated all other players' Main Heroes once - \textit{That player wins the game immediately.}
- \item One player conquers both Dragon Utopias %- \textit{That player wins the game immediately.}
+ \item One player has defeated each other player's Main Heroes once - \textit{That player wins the game immediately.}
+ \item One player has conquered both Dragon Utopias %- \textit{That player wins the game immediately.}
  \item At the end of Round 13 (or Round 9 for the shorter game).
 \end{itemize}
 
 \subsection*{\MakeUppercase{Victory Points}}
-If no player has achieved an immediate victory, the player with the most Victory Points (VP) wins:
+If no player has achieved an immediate victory, the player with the most Victory Points (VP) wins. In addition to Tournament Book's "Scoring Victory Points" -section, the Players get VPs for:
 
 \begin{itemize}
  \item 5 VP for conquering a Dragon Utopia
  \item 4 VP for controlling 5 Mines or Settlements on Near and Center Tiles - \textit{once per game}
- \item 4 VP for defeating an enemy's Main Hero - \textit{once per defeated Faction}
- \item 2 VP for defeating an enemy's Secondary Hero - \textit{once per defeated Faction}
  \item 2 VP for each enemy Main Town captured - \textit{once per captured Faction}
- \item 1 VP for every controlled Mine or Settlement
 % \item 1 VP for every Level of Experience of your Main Hero
 \end{itemize}
 
@@ -80,7 +79,7 @@ If no player has achieved an immediate victory, the player with the most Victory
 
 \begin{itemize}
   \item[\textbf{\nth{1}}] \textbf{Round:} All Heroes gain +1 \svgeven{movement}.
-  \item[\textbf{\nth{4}}] \textbf{Round:} Remove Black Cubes from all locations that give Resources, Morale or Cards (but not from the Grail).
+  \item[\textbf{\nth{4}}] \textbf{Round:} Remove all Black Cubes. %Remove Black Cubes from all locations that give Resources, Morale or Cards (but not from the Grail).
   \item[\textbf{\nth{8}}] \textbf{Round:} Repeat event of Round 4.
   \item[\textbf{\nth{9}}] \textbf{Round:} Repeat event of Round 1.
   \item[\textbf{End}] \textbf{of \nth{10} Round:} Player(s) with the lowest XP roll 2 \svg{resource} dice.
@@ -90,26 +89,48 @@ If no player has achieved an immediate victory, the player with the most Victory
 \begin{itemize}
   \item Remove ``View Earth'' from the Spell Deck.
   \item Remove ``Unexpected Reinforcements'' from the Astrologers Proclaim Deck.
-  \item Create separate Decks for Minor, Major, and Relic Artifacts.
-  \item Create separate Decks for Basic and Expert Spells.
-  \item On Starting and Far Map Tiles, players can only acquire basic Spells and Minor Artifacts.
-  \item Level VII Neutral fights cannot be skipped.
-  \item If your Hero is Level VII, treat Level VI neutrals as Level VII, and gain 10 \svg{gold} for winning a Level VII Combat.
+  \item Split the Artifact and Spell Decks as depicted in the Tournament Book. %Create separate Decks for Minor, Major, and Relic Artifacts.
+%  \item Create separate Decks for Basic and Expert Spells.
+%  \item On Starting and Far Map Tiles, players can only acquire Basic Spells and Minor Artifacts. % To-do where to acquire expert spells?
   \item Sanctuary effect: \textbf{once per Faction} gain a \svg{morale_positive} token and draw 1 Card.
   \item Obelisk effect: \textbf{once per Faction} roll one \svg{resource} and draw one Card.
   \item When fighting a Neutral Combat, a player may add +1 difficulty for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck.
   \item Settlements on Center (VI-VII) Map Tiles are treated as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any XP).
-  \item Upon flagging a Grail Field, \textbf{choose one} and then put a Black Cube: %or "After claiming a Grail Field, choose one and then place a Black Cube."
+  
+  \item \MakeUppercase{Battlefield Conditions} At the star of each Round, roll 2 Attack Dice: % Perhaps after the additional rules?
+  \begin{itemize}
+    \item "-1/-1": Dense Fog -- All Ranged units gain disadvantage.
+    \item "-1/0": Raining Ash -- All \svg{unit_flying} Units gain -2 \svg{initiative}. % / Or -1 movement on "Medium Hex Combat Board"
+    \item "0/-1": Sinking Mud -- All \svg{unit_ground} Units move one space less.
+    \item "-1/+1": Scorching Earth -- All \svg{silver} and \svg{golden} Units start with 1 \svg{damage-red}.
+    \item "0/0": Clear Skies -- No effect. % or "calm before storm", "Sun is shining and birds are singing - " 
+    \item "+1/-1": Fey Trickery -- Players Activate their Units in ascending order of Unit Initiative. %\svg{initiative}
+    \item "0/+1": Rocky Terrain -- All Ground Units gain \svg{defense} Token.
+    \item "+1/0": Tail Wind -- \svg{unit_flying} Units gain +1 Movement.
+    \item "+1/+1": Perfect Conditions -- All \svg{unit_ranged} Units gain advantage. %Or "Clear Skies" \svg{unit_ranged}
+    \item \textit{The same condition may not occur two rounds in a row.}
+  \end{itemize} % Should this be made as a table?
+  
+  \item When fighting a Neutral Combat, a Player may add +1 difficulty only for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck. % could be moved to a timed event; Round 5: All Neutral Combats are considered +(I) on Far and Near Map tiles "
+  \item Level VII Neutral Combat cannot be skipped.
+  \item If your Hero is Level VII, treat Level VI neutrals as Level VII, then gain 10 \svg{gold} for winning a Level VII Combat. % "and gain" / "and then gain" May be removed.
+  \item Settlements on Center (VI-VII) Map Tiles count as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any \svg{experience}).
+  \item If a player's Main Hero defeats another Main Hero, the defeated Player may change a Defense Statistic Card to an Empowered Defense Card. % or - Defeated Main Hero may Empower one Defense Statistic Card ("from his Deck of M&M")
+  \item Upon visiting a Grail Field, \textbf{choose one} and then put a Black Cube:
   \begin{itemize}
     \item Receive: 10 \svg{gold}, 4 \svg{building_materials}, and 2 \svg{valuables}.
-    \item Roll 2 \svg{treasure} (reroll any XP) and 2 \svg{resource}.
+    \item Roll 2 \svg{treasure} (reroll any \svg{experience}) and 2 \svg{resource}.
   \end{itemize}
   \item When visiting a Dragon Utopia: Reshuffle the \svgunit{golden} and \svgunit{azure} Decks, then draw from \svgunit{azure} until you get 3 Dragons and choose 2 (3 on impossible difficulty), AND draw from \svgunit{golden} Neutral Deck until you get one Dragon.
   \item Upon flagging Dragon Utopia, \textbf{choose one} and then put a Black Cube: 
+  \item When visiting a Dragon Utopia: Reshuffle the \svgunit{golden} and \svgunit{azure} Decks, then draw from \svgunit{azure} until you get 3 Dragons and choose 2 (3 on impossible difficulty), AND draw from \svgunit{golden} until you get one Dragon.
+  \item Upon flagging Dragon Utopia, \textbf{choose one} and then put a Faction Cube:
+
   \begin{itemize}
     \item Recruit one of the defeated Dragons for half its \svg{gold} (rounded down) and its \svg{valuables} cost.
     \item Receive 15 \svg{gold} AND Search (3) any Artifact Deck.
   \end{itemize}
+  \item A Dragon Utopia can only be flagged once. A flagged Dragon Utopia is considered to be an empty field to all Players. % or: "Once flagged, it is treated as an empty field to all players."
 \end{itemize}
 
 After visiting a Dragon Utopia, roll an Attack Die:
@@ -122,6 +143,7 @@ After visiting a Dragon Utopia, roll an Attack Die:
 \subsection*{\MakeUppercase{Suggested Houserules}}
 \begin{itemize}
   \item Trading Posts - on a single visit, trade Resources and remove Cards, OR buy a War Machine. %"buy a war machine", or "buy war machines"?
+  \item Trading Posts - on a single visit, trade Resources and remove Cards, OR buy a War Machine.
 %  \item Fighting Neutral Units entails the following:
 %  \begin{itemize}
 %    \item No Combat Round limit
@@ -148,6 +170,7 @@ After visiting a Dragon Utopia, roll an Attack Die:
   \node at (4, -15) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p.png}};
   \node at (4, -20) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SCENARIO}}}};
   % 4-player short (This map layout is not yet balanced and ready, has to be tested out)
+  % 4-player short. -to be revised. Not tested.
   \node at (13, -15) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p-short.png}};
   \node at (13, -20) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER 9 ROUND SCENARIO}}}};
 \end{tikzpicture}
