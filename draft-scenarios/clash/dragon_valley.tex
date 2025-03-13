@@ -24,14 +24,14 @@ This Scenario plays out over 13 Rounds
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item A Few of \svgunit{bronze} Units of the player's choice
-  \item A Pack of \svgunit{bronze} Units of the player's choice
+  \item pack of \svgunit{bronze} of second highest recruitment cost
+  %\item A Pack of \svgunit{bronze} Units of the player's choice
 \end{itemize}
 
 \textbf{Town Buildings:}
 \begin{itemize}
   \item \svgunit{bronze} Dwelling
-  \item Each player may build the the \svg{building_special_tent} building with a discount of 4 \svg{gold} and 2 \svg{building_materials}.
+  \item Each player may build the \svg{building_special_tent} building with a discount of 4 \svg{gold} and 2 \svg{building_materials}. % "Player Setup" -> discount is only before start of game.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Map Setup}}
@@ -58,8 +58,8 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 The game ends at the end of the Round when any of these conditions are met:
 
 \begin{itemize}
- \item One player has defeated all other players' Main Heroes once - \textit{That player wins the game immediately.}
- \item One player conquers both Dragon Utopias %- \textit{That player wins the game immediately.}
+ \item One player has defeated each other player's Main Heroes once - \textit{That player wins the game immediately.}
+ \item One player has conquered both Dragon Utopias %- \textit{That player wins the game immediately.}
  \item At the end of Round 13 (or Round 9 for the shorter game).
 \end{itemize}
 
@@ -73,6 +73,7 @@ If no player has achieved an immediate victory, the player with the most Victory
  \item 2 VP for defeating an enemy's Secondary Hero - \textit{once per defeated Faction}
  \item 2 VP for each enemy Main Town captured - \textit{once per captured Faction}
  \item 1 VP for every controlled Mine or Settlement
+ \item 1 VP for every 2 Artifacts acquired during the game.
 % \item 1 VP for every Level of Experience of your Main Hero
 \end{itemize}
 
@@ -92,24 +93,25 @@ If no player has achieved an immediate victory, the player with the most Victory
   \item Remove ``Unexpected Reinforcements'' from the Astrologers Proclaim Deck.
   \item Create separate Decks for Minor, Major, and Relic Artifacts.
   \item Create separate Decks for Basic and Expert Spells.
-  \item On Starting and Far Map Tiles, players can only acquire basic Spells and Minor Artifacts.
+  \item On Starting and Far Map Tiles, players can only acquire Basic Spells and Minor Artifacts.
   \item Level VII Neutral fights cannot be skipped.
   \item If your Hero is Level VII, treat Level VI neutrals as Level VII, and gain 10 \svg{gold} for winning a Level VII Combat.
   \item Sanctuary effect: \textbf{once per Faction} gain a \svg{morale_positive} token and draw 1 Card.
   \item Obelisk effect: \textbf{once per Faction} roll one \svg{resource} and draw one Card.
   \item When fighting a Neutral Combat, a player may add +1 difficulty for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck.
-  \item Settlements on Center (VI-VII) Map Tiles are treated as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any XP).
+  \item Settlements on Center (VI-VII) Map Tiles count as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any \svg{experience}).
   \item Upon flagging a Grail Field, \textbf{choose one} and then put a Black Cube:
   \begin{itemize}
     \item Receive: 10 \svg{gold}, 4 \svg{building_materials}, and 2 \svg{valuables}.
-    \item Roll 2 \svg{treasure} (reroll any XP) and 2 \svg{resource}.
+    \item Roll 2 \svg{treasure} (reroll any \svg{experience}) and 2 \svg{resource}.
   \end{itemize}
   \item When visiting a Dragon Utopia: Reshuffle the \svgunit{golden} and \svgunit{azure} Decks, then draw from \svgunit{azure} until you get 3 Dragons and choose 2 (3 on impossible difficulty), AND draw from \svgunit{golden} until you get one Dragon.
-  \item Upon flagging Dragon Utopia, \textbf{choose one} and then put a Black Cube:
+  \item Upon flagging Dragon Utopia, \textbf{choose one} and then put a Faction Cube:
   \begin{itemize}
     \item Recruit one of the defeated Dragons for half its \svg{gold} (rounded down) and its \svg{valuables} cost.
     \item Receive 15 \svg{gold} AND Search (3) any Artifact Deck.
   \end{itemize}
+  \item A Dragon Utopia can only be flagged once. A flagged Dragon Utopia is considered to be an empty field to all Players. % or: "Once flagged, it is treated as an empty field for all players."
 \end{itemize}
 
 After visiting a Dragon Utopia, roll an Attack Die:
@@ -121,7 +123,7 @@ After visiting a Dragon Utopia, roll an Attack Die:
 
 \subsection*{\MakeUppercase{Suggested Houserules}}
 \begin{itemize}
-  \item Trading Posts - on a single visit, trade Resources and remove Cards, OR buy a War Machines.
+  \item Trading Posts - on a single visit, trade Resources and remove Cards, OR buy a War Machine.
 %  \item Fighting Neutral Units entails the following:
 %  \begin{itemize}
 %    \item No Combat Round limit
@@ -147,7 +149,7 @@ After visiting a Dragon Utopia, roll an Attack Die:
   % 4-player
   \node at (4, -15) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p.png}};
   \node at (4, -20) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SCENARIO}}}};
-  % 4-player short
+  % 4-player short. -to be revised. Not tested.
   \node at (13, -15) {\includegraphics[scale=0.165]{\maps/dragon-valley-4p-short.png}};
   \node at (13, -20) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER 9 ROUND SCENARIO}}}};
 \end{tikzpicture}
