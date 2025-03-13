@@ -93,13 +93,29 @@ If no player has achieved an immediate victory, the player with the most Victory
   \item Remove ``Unexpected Reinforcements'' from the Astrologers Proclaim Deck.
   \item Create separate Decks for Minor, Major, and Relic Artifacts.
   \item Create separate Decks for Basic and Expert Spells.
-  \item On Starting and Far Map Tiles, players can only acquire Basic Spells and Minor Artifacts.
-  \item Level VII Neutral fights cannot be skipped.
-  \item If your Hero is Level VII, treat Level VI neutrals as Level VII, and gain 10 \svg{gold} for winning a Level VII Combat.
+  \item On Starting and Far Map Tiles, players can only acquire Basic Spells and Minor Artifacts. % To-do where to acquire expert spells?
   \item Sanctuary effect: \textbf{once per Faction} gain a \svg{morale_positive} token and draw 1 Card.
   \item Obelisk effect: \textbf{once per Faction} roll one \svg{resource} and draw one Card.
-  \item When fighting a Neutral Combat, a player may add +1 difficulty for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck.
+  
+  \MakeUppercase{Battlefield Conditions} At the star of each Round, roll 2 Attack Dice: % Perhaps after the additional rules?
+  \begin{itemize}
+    \item "-1/-1": Dense Fog -- All Ranged units gain disadvantage. %\svg{unit_ranged} "gain" or "have?" "--" or ":"
+    \item "-1/0": Torrential Rain -- All Flying Units gain -2 initiative. % \svg{unit_flying} \svg{initiative} from rulebook rewrite. / Or -1 movement on "Medium Hex Combat Board"
+    \item "0/-1": Sinking Mud -- All Ground units have -1 Movement. %gain or have?
+    \item "-1/+1": Scorching Earth -- All \svg{silver} and \svg{golden} Units start with 1 \svg{damage_red}
+    \item "0/0": Clear Skies -- No effect. % or "calm before storm", "Sun is shining and birds are singing - " 
+    \item "+1/-1": Fey Trickery -- Players Activate their Units in ascending order of Unit Initiative. %\svg{initiative}
+    \item "0/+1": Rocky Terrain -- All Ground Units gain Shield Token. %\svg{defense}
+    \item "+1/0": Tail Wind -- Flying Units gain +1 Movement. %\svg{unit_flying}
+    \item "+1/+1": Perfect Conditions -- All Ranged Units gain advantage. %Or "Clear Skies" \svg{unit_ranged}
+  \end{itemize} % Should this be made as a table?
+  \textit{The same condition may not occur two rounds in a row.
+  
+  \item When fighting a Neutral Combat, a Player may add +1 difficulty only for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck. % could be moved to a timed event; Round 5: All Neutral Combats are considered +(I) on Far and Near Map tiles "
+  \item Level VII Neutral fights cannot be skipped.
+  \item If your Hero is Level VII, treat Level VI neutrals as Level VII, then gain 10 \svg{gold} for winning a Level VII Combat. % "and gain" / "and then gain" May be removed.
   \item Settlements on Center (VI-VII) Map Tiles count as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any \svg{experience}).
+  \item If a player's Main Hero defeats another Main Hero, the defeated Player may change a Defense Statistic Card to an Empowered Defense Card. % or - Defeated Main Hero may Empower one Defense Statistic Card ("from his Deck of M&M")
   \item Upon flagging a Grail Field, \textbf{choose one} and then put a Black Cube:
   \begin{itemize}
     \item Receive: 10 \svg{gold}, 4 \svg{building_materials}, and 2 \svg{valuables}.
@@ -111,7 +127,7 @@ If no player has achieved an immediate victory, the player with the most Victory
     \item Recruit one of the defeated Dragons for half its \svg{gold} (rounded down) and its \svg{valuables} cost.
     \item Receive 15 \svg{gold} AND Search (3) any Artifact Deck.
   \end{itemize}
-  \item A Dragon Utopia can only be flagged once. A flagged Dragon Utopia is considered to be an empty field to all Players. % or: "Once flagged, it is treated as an empty field for all players."
+  \item A Dragon Utopia can only be flagged once. A flagged Dragon Utopia is considered to be an empty field to all Players. % or: "Once flagged, it is treated as an empty field to all players."
 \end{itemize}
 
 After visiting a Dragon Utopia, roll an Attack Die:
