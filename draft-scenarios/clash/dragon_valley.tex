@@ -85,6 +85,32 @@ If no player has achieved an immediate victory, the player with the most Victory
   \item[\textbf{End}] \textbf{of \nth{10} Round:} Player(s) whose Heroes have the least experience roll 2 \svg{resource} dice.
 \end{itemize}
 
+\hommtable[]{31}{
+  \centering
+  \textbf{Battlefield Conditions}\\
+
+  \begin{tabularx}{\linewidth}{p{0.15\linewidth}XXXX}\\
+  \darkcell[1.4]{-1/-1} 
+    & \lightcell[1.4]{Dense Fog -- All Ranged units gain disadvantage.}\\
+  \darkcell[1.4]{-1/0}
+    & \lightcell[1.4]{Raining Ash -- All \svg{unit_flying-table} Units gain -2 \svg{initiative-table}.}\\
+  \darkcell[1.4]{0/-1}
+    & \lightcell[1.4]{Sinking Mud -- All \svg{unit_ground-table} Units move one space less.}\\
+  \darkcell[1.4]{-1/+1}
+    & \lightcell[1.4]{Scorching Earth -- All \svg{silver} and \svg{golden} Units start with 1 \svg{damage-table}.}\\
+  \darkcell[1.4]{0/0}
+    & \lightcell[1.4]{Clear Skies -- No effect.}\\
+  \darkcell[1.4]{+1/-1}
+    & \lightcell[1.4]{Fey Trickery -- Players Activate their Units in ascending order of Unit Initiative.}\\
+  \darkcell[1.4]{0/+1}
+    & \lightcell[1.4]{Rocky Terrain -- All Ground Units gain \svg{defense_yellow} Token.}\\
+  \darkcell[1.4]{+1/0}
+    & \lightcell[1.4]{Tail Wind -- \svg{unit_flying-table} Units gain +1 Movement.}\\
+  \darkcell[1.4]{-1/-1}
+    & \lightcell[1.4]{Perfect Conditions -- All \svg{unit_ranged-table} Units gain advantage.}\\
+  \end{tabularx}
+}
+
 \subsection*{\MakeUppercase{Additional Rules}}
 \begin{itemize}
   \item Remove ``View Earth'' from the Spell Deck.
@@ -95,22 +121,7 @@ If no player has achieved an immediate victory, the player with the most Victory
   \item Sanctuary effect: \textbf{once per Faction} gain a \svg{morale_positive} token and draw 1 Card.
   \item Obelisk effect: \textbf{once per Faction} roll one \svg{resource} and draw one Card.
   \item When fighting a Neutral Combat, a player may add +1 difficulty for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck.
-  \item Settlements on Center (VI-VII) Map Tiles are treated as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any XP).
-  
-  \item \MakeUppercase{Battlefield Conditions} At the star of each Round, roll 2 Attack Dice: % Perhaps after the additional rules?
-  \begin{itemize}
-    \item "-1/-1": Dense Fog -- All Ranged units gain disadvantage.
-    \item "-1/0": Raining Ash -- All \svg{unit_flying} Units gain -2 \svg{initiative}. % / Or -1 movement on "Medium Hex Combat Board"
-    \item "0/-1": Sinking Mud -- All \svg{unit_ground} Units move one space less.
-    \item "-1/+1": Scorching Earth -- All \svg{silver} and \svg{golden} Units start with 1 \svg{damage-table}. %\svg{damage-table}
-    \item "0/0": Clear Skies -- No effect. % or "calm before storm", "Sun is shining and birds are singing - " 
-    \item "+1/-1": Fey Trickery -- Players Activate their Units in ascending order of Unit Initiative. %\svg{initiative}
-    \item "0/+1": Rocky Terrain -- All Ground Units gain \svg{defense} Token.
-    \item "+1/0": Tail Wind -- \svg{unit_flying} Units gain +1 Movement.
-    \item "+1/+1": Perfect Conditions -- All \svg{unit_ranged} Units gain advantage. %Or "Clear Skies" \svg{unit_ranged}
-    \item \textit{The same condition may not occur two rounds in a row.}
-  \end{itemize} % Should this be made as a table?
-  
+  \item Settlements on Center (VI-VII) Map Tiles are treated as two Settlements in terms of rewards AND allow rolling one \svg{resource} or \svg{treasure} (reroll any XP).  
   \item When fighting a Neutral Combat, a Player may add +1 difficulty only for an extra 5 \svg{gold} + Search (2) the Artifact or the Spell Deck. % could be moved to a timed event; Round 5: All Neutral Combats are considered +(I) on Far and Near Map tiles "
   \item Level VII Neutral Combat cannot be skipped.
   \item If your Hero is Level VII, treat Level VI neutrals as Level VII, then gain 10 \svg{gold} for winning a Level VII Combat. % "and gain" / "and then gain" May be removed.
