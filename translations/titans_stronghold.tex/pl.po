@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2024-12-03 20:39+0100\n"
+"POT-Creation-Date: 2025-03-12 22:04+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,11 +28,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:99
-#: campaigns/castle_sicilian_dragon.tex:159
+#: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:93
-#: campaigns/castle_two_knights_defense.tex:131 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:73 sections/recommendations.tex:128
 #: sections/credits.tex:10
 #, no-wrap
@@ -83,6 +82,17 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
+#: coops/titans_stronghold.tex:78
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 clash/the_hunt.tex:37
 #: campaigns/inferno_devilish_plan.tex:65
 #: campaigns/inferno_steadwicks_fall.tex:70
@@ -96,8 +106,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:57 coops/titans_stronghold.tex:61
-#: coops/emerald_island.tex:50 campaigns/inferno_devilish_plan.tex:98
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
 #: campaigns/inferno_steadwicks_fall.tex:111
 #: campaigns/inferno_deal_with_the_devil.tex:110
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -111,8 +121,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:61 coops/titans_stronghold.tex:65
-#: coops/emerald_island.tex:54 campaigns/inferno_devilish_plan.tex:102
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
 #: campaigns/inferno_steadwicks_fall.tex:116
 #: campaigns/inferno_deal_with_the_devil.tex:114
 #, no-wrap
@@ -124,14 +134,14 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:67 coops/titans_stronghold.tex:69
-#: coops/emerald_island.tex:58 clash/bloody_grail.tex:64
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
 #: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
 #: campaigns/inferno_steadwicks_fall.tex:124
 #: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:101
-#: campaigns/castle_two_knights_defense.tex:95
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -141,8 +151,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:149 coops/titans_stronghold.tex:108
-#: coops/titans_stronghold.tex:114 clash/bloody_grail.tex:121
+#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 clash/bloody_grail.tex:121
 #: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -250,7 +260,7 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/titans_stronghold.tex:36 campaigns/castle_sicilian_dragon.tex:30
 #, no-wrap
 msgid ""
@@ -283,7 +293,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:44 coops/emerald_island.tex:40
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:40
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -293,67 +303,40 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:50
+#: coops/titans_stronghold.tex:53
 #, no-wrap
 msgid ""
-"$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
-"  \\item Starting Tiles of your chosen Factions.\n"
-"  \\item Ignore their yellow borders.\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 2P × Far (II--III) Map Tile\n"
+"  \\item 2P × Near (IV--V) Map Tile\n"
+"  \\item (P + 1) × Center (VI--VII) Map Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{G}$ \\textbf{× Początkowy (I) Kafelek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Początkowe Kafelki wybranych Frakcji.\n"
-"  \\item Zignoruj ich żółte granice.\n"
+"  \\item G × Początkowy (I) Kafelek Mapy\n"
+"  \\item 2G × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 2G × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item (G + 1) × Centralny (VI--VII) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:52
+#: coops/titans_stronghold.tex:57
 #, no-wrap
 msgid ""
-"$\\boldsymbol{2 P}$ \\textbf{× Far (II--III) Map Tile}\n"
+"\\textbf{\\MakeUppercase{Note:}} If you don’t have enough VI--VII Tiles, you can\n"
+"use another Tile near I Tiles. The center of this\n"
+"Tile is the Titans’ Stronghold.\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{2 G}$ \\textbf{× Daleki (II-III) Kafelek Mapy}\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:54
-#, no-wrap
-msgid ""
-"$\\boldsymbol{2 P}$ \\textbf{× Near (IV--V) Map Tile}\n"
-"\n"
-msgstr ""
-"$\\boldsymbol{2 G}$ \\textbf{× Bliski (IV-V) Kafelek Mapy}\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:56
-#, no-wrap
-msgid ""
-"$\\boldsymbol{(P + 1)}$ \\textbf{× Center (VI--VII) Map Tile}\n"
-"\n"
-msgstr ""
-"$\\boldsymbol{(G + 1)}$ \\textbf{× Centralny (VI-VII) Kafelek Mapy}\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:59
-#, no-wrap
-msgid ""
-"If you don't have enough VI--VII Tiles, you can use another Tile near Tile I.\n"
-"The center of this Tile is the Titans' Stronghold.\n"
-"\n"
-msgstr ""
-"Jeśli nie masz wystarczającej liczby Kafelków VI--VII, możesz użyć innego Kafelka blisko Kafelka I.\n"
+"\\textbf{\\MakeUppercase{Uwaga:}} Jeśli nie masz wystarczającej liczby Kafelków VI--VII, możesz użyć innego Kafelka obok Kafelków I.\n"
 "Centrum tego Kafelka to Twierdza Tytanów.\n"
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:63
+#: coops/titans_stronghold.tex:61
 #, no-wrap
 msgid ""
 "Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Tiles I).\n"
@@ -363,7 +346,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:67
+#: coops/titans_stronghold.tex:65
 #, no-wrap
 msgid ""
 "There are undefeated Units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
@@ -373,7 +356,23 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:74
+#: coops/titans_stronghold.tex:69
+#, no-wrap
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node[inner sep=0pt, opacity=0.3] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
+"\\end{tikzpicture}\n"
+"\n"
+msgstr ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\begin{scope}[transform canvas={cm={-1,0,0,1,(0,0)}}]\n"
+"    \\node[inner sep=0pt, opacity=0.3] at (0.3, -5) {\\includegraphics[width=0.85\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
+"  \\end{scope}\n"
+"\\end{tikzpicture}\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:76
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -389,17 +388,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:76
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
-msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:81
+#: coops/titans_stronghold.tex:83
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -415,7 +404,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:90
+#: coops/titans_stronghold.tex:92
 #, no-wrap
 msgid ""
 "  \\item After defeating a Level VII Neutral army, instead of resolving the Field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
@@ -439,7 +428,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:94
+#: coops/titans_stronghold.tex:96
 #, no-wrap
 msgid ""
 "  \\item Ignore all yellow borders on Starting Tiles I.\n"
@@ -453,7 +442,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:97
+#: coops/titans_stronghold.tex:99
 #, no-wrap
 msgid ""
 "  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
@@ -465,7 +454,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:106
+#: coops/titans_stronghold.tex:108
 #, no-wrap
 msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
@@ -494,7 +483,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:112
+#: coops/titans_stronghold.tex:114
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
@@ -508,94 +497,95 @@ msgstr ""
 "\n"
 
 #. type: Plain text
-#: coops/titans_stronghold.tex:187
+#: coops/titans_stronghold.tex:189
 msgid ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
 "Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
 "{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}"
 "[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
-"\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Easy} & "
-"\\darkcell{Normal} & \\darkcell{Hard} & \\darkcell{Impossible}\\\\ "
-"\\darkcell[1.2]{1 player} & \\lightcell[1.2]{3\\bronze 2\\silver 1\\golden "
-"1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 1\\azure} & "
-"\\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]"
-"{1\\bronze 2\\silver 2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 players} & "
-"\\lightcell[1.2]{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]"
-"{4\\bronze 5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze "
-"5\\silver 5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver "
-"7\\golden 4\\azure}\\\\ \\darkcell[1.8]{3 players} & \\lightcell[1.8]"
-"{8\\bronze 7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze "
-"7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver "
-"4\\golden 3\\azure \\linebreak Then\\linebreak 2\\bronze 4\\silver 3\\golden "
-"2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure "
-"\\linebreak Then\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ "
-"\\darkcell[1.8]{4 players} & \\lightcell[1.8]{10\\bronze 10\\silver "
-"6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden "
-"4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure "
-"\\linebreak Then\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & "
-"\\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak "
-"Then\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]"
-"{5 players} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure "
-"\\linebreak Then\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & "
-"\\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak "
-"Then\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]"
-"{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak Then\\linebreak "
-"3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze "
-"6\\silver 8\\golden 6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver "
-"8\\golden 5\\azure}\\\\ \\darkcell[1.7]{6 players} & \\lightcell[1.8]"
-"{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak "
-"7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze "
-"8\\silver 4\\golden 3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver "
-"5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden "
-"5\\azure \\linebreak Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} "
-"& \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak "
-"Then\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ "
-"\\end{tabularx} }"
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
+"\\darkcell{Easy} & \\darkcell{Normal} & \\darkcell{Hard} & "
+"\\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & \\lightcell[1.2]"
+"{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
+"2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
+"2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden "
+"3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]{5\\bronze "
+"5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver "
+"3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden "
+"3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
+"\\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden "
+"2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & "
+"\\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak "
+"Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
+"{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak "
+"1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 players} & "
+"\\lightcell[1.8]{10\\bronze 10\\silver\\linebreak 6\\golden 2\\azure} & "
+"\\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]"
+"{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak "
+"2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze "
+"5\\silver 7\\golden 4\\azure \\linebreak Then\\linebreak 1\\bronze 5\\silver "
+"7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 players} & \\lightcell[1.8]"
+"{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak "
+"7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze "
+"6\\silver 4\\golden 2\\azure \\linebreak Then\\linebreak 5\\bronze 6\\silver "
+"4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden "
+"4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} "
+"& \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak "
+"Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.7]"
+"{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure "
+"\\linebreak Then\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & "
+"\\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak "
+"Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]"
+"{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak Then\\linebreak "
+"3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze "
+"7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak 3\\bronze "
+"8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 msgstr ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Siła Armii Twierdzy "
 "Tytanów}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
 "\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
 "{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
-"\\begin{tabularx}{\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Łatwy} & "
-"\\darkcell{Normalny} & \\darkcell{Trudny} & \\darkcell{Niemożliwy}\\\\ "
-"\\darkcell[1.2]{1 gracz} & \\lightcell[1.2]{3\\bronze 2\\silver 1\\golden "
-"1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 1\\azure} & "
-"\\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]"
-"{1\\bronze 2\\silver 2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 graczy} & "
-"\\lightcell[1.2]{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]"
-"{4\\bronze 5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze "
-"5\\silver 5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver "
-"7\\golden 4\\azure}\\\\ \\darkcell[1.8]{3 graczy} & \\lightcell[1.8]"
-"{8\\bronze 7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze "
-"7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver "
-"4\\golden 3\\azure \\linebreak Potem\\linebreak 2\\bronze 4\\silver "
-"3\\golden 2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden "
-"3\\azure \\linebreak Potem\\linebreak 1\\bronze 4\\silver 5\\golden "
-"3\\azure}\\\\ \\darkcell[1.8]{4 graczy} & \\lightcell[1.8]{10\\bronze "
-"10\\silver 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver "
-"6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden "
-"3\\azure \\linebreak Potem\\linebreak 2\\bronze 5\\silver 5\\golden "
-"3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure "
-"\\linebreak Potem\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-"\\darkcell[1.8]{5 graczy} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden "
-"1\\azure \\linebreak Potem\\linebreak 7\\bronze 6\\silver 3\\golden "
-"2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure "
-"\\linebreak Potem\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & "
-"\\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak "
-"Potem\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]"
-"{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak Potem\\linebreak "
-"2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.7]{6 graczy} & "
-"\\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak "
-"Potem\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]"
-"{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak Potem\\linebreak "
-"6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
-"8\\silver 7\\golden 5\\azure \\linebreak Potem\\linebreak 3\\bronze "
-"7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver "
-"11\\golden 6\\azure \\linebreak Potem\\linebreak 3\\bronze 8\\silver "
-"10\\golden 6\\azure}\\\\ \\end{tabularx} }"
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
+"\\darkcell{Łatwy} & \\darkcell{Normalny} & \\darkcell{Trudny} & "
+"\\darkcell{Niemożliwy}\\\\ \\darkcell[1.2]{1 gracz} & \\lightcell[1.2]"
+"{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
+"2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
+"2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden "
+"3\\azure}\\\\ \\darkcell[1.2]{2 graczy} & \\lightcell[1.2]{5\\bronze "
+"5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver "
+"3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden "
+"3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
+"\\darkcell[1.8]{3 graczy} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden "
+"2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & "
+"\\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak "
+"Potem\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
+"{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Potem\\linebreak "
+"1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 graczy} & "
+"\\lightcell[1.8]{10\\bronze 10\\silver\\linebreak 6\\golden 2\\azure} & "
+"\\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]"
+"{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Potem\\linebreak "
+"2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze "
+"5\\silver 7\\golden 4\\azure \\linebreak Potem\\linebreak 1\\bronze "
+"5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 graczy} & "
+"\\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak "
+"Potem\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
+"{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Potem\\linebreak "
+"5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
+"6\\silver 6\\golden 4\\azure \\linebreak Potem\\linebreak 3\\bronze "
+"6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver "
+"8\\golden 6\\azure \\linebreak Potem\\linebreak 2\\bronze 6\\silver "
+"8\\golden 5\\azure}\\\\ \\darkcell[1.7]{6 graczy} & \\lightcell[1.8]"
+"{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Potem\\linebreak "
+"7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze "
+"8\\silver 4\\golden 3\\azure \\linebreak Potem\\linebreak 6\\bronze "
+"7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver "
+"7\\golden 5\\azure \\linebreak Potem\\linebreak 3\\bronze 7\\silver "
+"8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden "
+"6\\azure \\linebreak Potem\\linebreak 3\\bronze 8\\silver 10\\golden "
+"6\\azure}\\\\ \\end{tabularx} }"
 
 #. type: center
-#: coops/titans_stronghold.tex:193
+#: coops/titans_stronghold.tex:195
 msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
@@ -604,31 +594,31 @@ msgstr ""
 "{\\art/land_mine.png}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 1-OSOBOWY}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 2-OSOBOWY}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 3-OSOBOWY}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 4-OSOBOWY}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 5-OSOBOWY}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:231
+#: coops/titans_stronghold.tex:233
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 6-OSOBOWY}}"

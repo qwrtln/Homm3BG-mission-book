@@ -364,6 +364,33 @@
 }
 % End of Heroes-styled canvas definition.
 
+% Redefinition of the table for mutlicol enviromnents
+\newcommand{\hommtablemulticol}[3][shade, blur shadow={shadow opacity=15}]{
+  \begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background-multicol.jpg}}};
+    \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
+    \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
+    \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
+    \node at (current bounding box.center) {
+      \begin{varwidth}{0.95\linewidth}
+      \notefont{
+        \bgroup
+        \color{arylideyellow}
+        \hypersetup{linkcolor=amber}
+        \setlength{\tabcolsep}{0.3em}
+        #3
+        \egroup
+      }
+      \end{varwidth}
+    };
+    \begin{pgfonlayer}{background}
+      \begin{scope}[blend mode=multiply]
+        \draw [#1] (current bounding box.north west) rectangle (current bounding box.south east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}
+}
+
 \definecolor{darkcellborder}{HTML}{634831}
 \definecolor{darkcellbg}{HTML}{20160C}
 
@@ -480,7 +507,7 @@
 
 \include{\sections/credits.tex}
 
-\include{\sections/notes.tex}
+% \include{\sections/notes.tex}
 
 \include{sections/back_cover.tex}
 
