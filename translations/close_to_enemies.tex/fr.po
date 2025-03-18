@@ -1,0 +1,628 @@
+# French translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-03-18 18:53+0000\n"
+"PO-Revision-Date: 2025-03-18 18:53+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:18
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Durée du scenario}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:65
+#: campaigns/inferno_steadwicks_fall.tex:70
+#: campaigns/inferno_deal_with_the_devil.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
+#: campaigns/inferno_devilish_plan.tex:67 campaigns/castle_greek_gift.tex:49
+#: campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_two_knights_defense.tex:47
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:98
+#: campaigns/inferno_steadwicks_fall.tex:111
+#: campaigns/inferno_deal_with_the_devil.tex:110
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Condition de victoire}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:102
+#: campaigns/inferno_steadwicks_fall.tex:116
+#: campaigns/inferno_deal_with_the_devil.tex:114
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Condition de défaite}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:86 coops/emerald_island.tex:62
+#: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: campaigns/inferno_devilish_plan.tex:148
+#: campaigns/inferno_steadwicks_fall.tex:188
+#: campaigns/inferno_deal_with_the_devil.tex:173
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/stand_united.tex:87 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:268 sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: coops/close_to_enemies.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
+#| "{\\images/earthquake.png}"
+msgid ""
+"\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
+"ballistics.png}"
+msgstr ""
+"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
+"earthquake.png}"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:7
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Invoceusse\n"
+#| "\n"
+msgid ""
+"\\textbf{Author:} Kelghor\n"
+"\n"
+msgstr ""
+"\\textbf{Auteur :} Invoceusse\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:9
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+#| "\n"
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
+"\n"
+msgstr ""
+"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:11
+#, no-wrap
+msgid ""
+"\\textit{``Sir! The raiders are at our gates!''}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:13
+#, no-wrap
+msgid ""
+"\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:16
+#, no-wrap
+msgid ""
+"\\textit{The time has come to end these long-standing wars and crush your enemies like a bug once and for all!}\n"
+"% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:20
+#, fuzzy, no-wrap
+msgid ""
+"This Scenario is played over 7 Rounds.\n"
+"\n"
+msgstr ""
+"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:24
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Player Count:} 1 -- 6\n"
+#| "\n"
+msgid ""
+"\\textbf{Player Count:} 1--6\n"
+"\n"
+msgstr ""
+"\\textbf{Nombre de joueurs :} 1 -- 6\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:26
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: coops/close_to_enemies.tex:28 campaigns/inferno_steadwicks_fall.tex:28
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:33
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
+#| "  \\item A Few \\svgunit{bronze} Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item  1 × A Few \\svgunit{bronze} Units of your choice\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\svgunit{bronze}  de votre choix.\n"
+"  \\item Quelques unités \\svgunit{bronze} de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:44
+#, fuzzy, no-wrap
+#| msgid ""
+#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Starting Tiles of your chosen Factions.\n"
+#| "  \\item Ignore their yellow borders.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 4P × Far (II--III) Map Tile of the same terrain as player's Town, one of which must contain a Settlement\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"$\\boldsymbol{J}$ \\textbf{× Tuiles de départ (I)}\n"
+"\\begin{itemize}\n"
+"  \\item Prendre les tuiles de départ des factions choisies.\n"
+"  \\item Ignorez leur bordure jaune.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:47
+#, no-wrap
+msgid ""
+"Place Far (II--III) Map Tiles with Settlements matching your Faction's terrain in positions marked by colored Cubes in the Scenario map layout.\n"
+"Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corresponding Far (II--III) Map Tile with a Settlement.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:49
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Map Tile Pool:} None\n"
+#| "\n"
+msgid ""
+"\\textbf{Map Tile Pool (choose one):}\n"
+"\n"
+msgstr ""
+"\\textbf{Réserve de tuile :} Aucune\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:60
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Personal Pool:} Each player takes remaining 1~×~Far (II--III) Map Tile without a Settlement that matches their Town's terrain\n"
+"  \\item \\textbf{Shared Pool:}\n"
+"  \\begin{itemize}\n"
+"    \\item Remove all Far (II--III) Map Tiles without Settlements from the Map\n"
+"    \\item Take collected Map Tiles from the Map and remaining prepared Tiles and shuffle them together\n"
+"    \\item Return the shuffled Map Tiles to the Map in random order\n"
+"    \\item Remaining Map Tiles form the Shared Pool\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:48
+#: campaigns/inferno_steadwicks_fall.tex:48
+#: campaigns/inferno_deal_with_the_devil.tex:46
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:64
+#, no-wrap
+msgid ""
+"Prepare an AI Deck for Settlement defenders.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:66
+#, no-wrap
+msgid ""
+"\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:68
+#, no-wrap
+msgid ""
+"\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:74
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
+#| "  \\item A Few \\svgunit{bronze} Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"   \\item Conquer all Settlements.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\svgunit{bronze}  de votre choix.\n"
+"  \\item Quelques unités \\svgunit{bronze} de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:81
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Any player loses their Town.\n"
+"  \\item At least one Settlement remains unclaimed by the end of the \\nth{7} Round. Time has run out!\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:110
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\\textbf{\\nth{1} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item At the start of the Round, all players reveal their \\textit{Nemesis Map Tiles} (Far (II--III) Map Tiles containing Settlements that match their Town's home terrain). These Tiles may be revealed without any cost.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{2} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item The first wave of Enemy Clan armies attacks all Towns (see section below).\n"
+"  \\item After defending their Town, each player may may hire a Secondary Hero for 5~\\svg{gold} during this Round. This still requires spending a Population Token.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{3} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item At the start of the Round, each player discovers one Far (II--III) Map Tile. This Tile may be revealed at no cost, whether drawn from the pool or taken from the Map.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{4} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item The second wave of Enemy Clan armies attacks all Towns (see section below).\n"
+"  \\item After defending their Town, each player may Search (3) the \\textit{Artifact Deck}.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{6} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item The third wave of Enemy Clan armies attacks all Towns (see section below).\n"
+"  \\item After defending their Town, each player may Search (3) the \\textit{Artifact Deck}.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{7} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item During this Round, players may discard and draw twice at the start of their turn, instead of the usual once.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:118
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Players can spend their Build Token at any time to perform Trading Post actions.\n"
+"  \\item You can use your Units to defend your Town (without paying 8 \\svg{gold}) even if your Hero is not present.\n"
+"  \\item Each Settlement is defended by Settlement Defenders from local clans (see below).\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:131
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Enemy clan waves}}\n"
+"\\begin{itemize}\n"
+"  \\item Unconquered enemy Settlements will send clan armies to attack your Town!\n"
+"  \\item A battle occurs at the start of each player's turn.\n"
+"  \\item Before combat, you may use your Building, Spell Book, and Population Tokens, as well as Might and Magic Cards. However, you cannot move your Hero.\n"
+"  \\item Each player must defend their own Town.\n"
+"  \\item If you have a Citadel, the \\textit{Arrow Tower} attack is reduced. The attacks for first/second/third wave become 2/3/4 \\svg{attack}.\n"
+"  \\item This combat does not cost \\svgeven{movement}.\n"
+"  \\item Refer to the \\textit{Enemy Clan Armies} table for siege army strength.\n"
+"  \\item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.\n"
+"  \\item Gain one \\svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:134
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\vspace*{\\fill}\\columnbreak\n"
+#| "\n"
+msgid ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+
+#. type: multicols
+#: coops/close_to_enemies.tex:143
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Settlements Defenders}}\n"
+"\\begin{itemize}\n"
+"  \\item The strength of Settlement Defenders is determined by the \\textit{Enemy Clan Armies} table (last row).\n"
+"  \\item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.\n"
+"  \\item The combat does not cost \\svgeven{movement}.\n"
+"  \\item In these combats, you must use AI Cards.\n"
+"  \\item After winning a combat, gain 2 \\svg{experience}.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:152
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
+#| "\\end{center}\n"
+#| "\n"
+msgid ""
+"\\vspace*{\\fill}\n"
+"\\begin{center}\n"
+"  \\includegraphics[width=\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
+"  \\captionof{figure}{\\textbf{1-PLAYER SCENARIO | EXAMPLE }}\n"
+"\\end{center}\n"
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
+"\\end{center}\n"
+"\n"
+
+#. type: figure
+#: coops/close_to_enemies.tex:160
+msgid ""
+"[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
+"EXAMPLE }}"
+msgstr ""
+
+#. type: table*
+#: coops/close_to_enemies.tex:205
+#, no-wrap
+msgid ""
+"[b!]\n"
+"  \\hommtable[]{18}{\n"
+"    \\centering\n"
+"    \\medskip\n"
+"    \\textbf{Enemy Clan Armies}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}}\n"
+"    \\newcommand{\\silver}[0]{\\svgunit[12]{silver}}\n"
+"    \\newcommand{\\golden}[0]{\\svgunit[12]{golden}}\n"
+"    \\newcommand{\\azure}[0]{\\svgunit[12]{azure}}\n"
+"\n"
+"      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
+"      \\darkcell{\\textbf{Easy}} &\n"
+"      \\darkcell{\\textbf{Normal}} &\n"
+"      \\darkcell{\\textbf{Hard}} &\n"
+"      \\darkcell{\\textbf{Impossible}}\\\\\n"
+"      \\darkcell[1.2]{First wave}\n"
+"        & \\lightcell[1.2]{\\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Second wave}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Third wave}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Settlement Defenders}\n"
+"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
+"\n"
+"      \\end{tabularx}\n"
+"  }"
+msgstr ""
+
+#. type: figure
+#: coops/close_to_enemies.tex:215
+#, fuzzy
+#| msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
+
+#. type: figure
+#: coops/close_to_enemies.tex:222
+#, fuzzy
+#| msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
+
+#. type: figure
+#: coops/close_to_enemies.tex:237
+msgid ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
+"EXAMPLE}}"
+msgstr ""
+
+#. type: figure
+#: coops/close_to_enemies.tex:237
+msgid ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
+"EXAMPLE}}"
+msgstr ""

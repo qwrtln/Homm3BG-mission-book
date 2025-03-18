@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-02-09 21:18+0000\n"
+"POT-Creation-Date: 2025-03-18 18:53+0000\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,9 +18,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -56,8 +57,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
-#: coops/titans_stronghold.tex:116 clash/bloody_grail.tex:121
-#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
+#: sections/credits.tex:28 sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -77,7 +79,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/emerald_island.tex:32 clash/bloody_grail.tex:29
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
@@ -85,6 +88,20 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Městské Budovy:} \\svgunit{bronze} Obydlí\n"
+"\n"
+
+#. type: multicols*
+#: coops/stand_united.tex:23 clash/bloody_grail.tex:21
+#: campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:32
+#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
+#: campaigns/castle_two_knights_defense.tex:25
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -154,19 +171,6 @@ msgid ""
 "\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
-#: campaigns/inferno_deal_with_the_devil.tex:32
-#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
-#: campaigns/castle_two_knights_defense.tex:25
-#, no-wrap
-msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
-msgstr ""
-"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:27
