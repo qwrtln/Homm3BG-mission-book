@@ -6,8 +6,6 @@
 
 \textbf{Author:} Tm335
 
-% \textbf{Source:} \href{https://discord.com/channels/740870068178649108/1258257451665326090/1258257451665326090}{Archon Studios Discord}
-
 \textit{Gelu is the youngest individual to ever graduate from the Forest Guard.
   He must pass one final test and then he will enter service under Lord Falorel: assemble the pieces to the Elixir of Life so the Deyjan lords can't destroy the precious combination artifact.
 }
@@ -50,29 +48,13 @@ This Scenario plays out over 13 Rounds.
 
 \subsection*{\MakeUppercase{Coop Play Rules}}
 
-In addition to the Cooperative Mode rules (see page 11, ``Cooperative Mode'' in the Core Mission Book), reference the attached \pagetarget{Cooperative Play Rules}{Cooperative Play Rules} that apply to the Elixir of Life Rampart campaign.
+In addition to the Cooperative Mode rules (see page 11, ``Cooperative Mode'' in the Core Mission Book), reference the attached \pagetarget{Cooperative Play Rules}{Cooperative Play Rules} that apply to this campaign.
 
 \subsection*{\MakeUppercase{AI Hero Setup}}
 
 \textbf{Faction:} Necropolis, Inferno, Dungeon
 
-\textbf{Necropolis Army:} A Pack of Zombies, a Pack of Wraiths, a Pack of Liches, a Few Dread Knights, Walls and Gate
-
-\textbf{Necropolis Deck:} 1~×~Might Card, 3~×~Spell Cards
-
-\textbf{Necropolis Spell Deck:} 1~×~Resurrection, 1~×~Haste, 1~×~Weakness
-
-\textbf{Inferno Army:} A Pack of Magogs, a Pack of Cerebri, a Pack of Pit Lords, a Few Efreet, Walls and Gate
-
-\textbf{Inferno Deck:} 3~×~Might Cards, 1~×~Spell Card
-
-\textbf{Inferno Spell Deck:} 1~×~Fireball
-
-\textbf{Dungeon Army:} A Pack of Harpies, a Pack of Evil Eyes, a Pack of Medusas, a Few Manticores, a Few Black Dragons, Walls and Gate
-
-\textbf{Dungeon Deck:} 3~×~Might Cards, 3~×~Spell Cards
-
-\textbf{Dungeon Spell Deck:} 1~×~Magic Arrow, 1~×~Slow, 1~×~Sorrow
+Refer to the table below the map layout for details regarding Units and AI Decks.
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -102,7 +84,7 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 
 Place Necropolis, Inferno, and Dugeon Heros in their respective Faction Towns.
 Place Gelu on the center field of the Rampart S4 Starting Map tile.
-Place Mephala or Clancy on empty Field of the F10 Map Tile.
+Place Mephala or Clancy on an empty Field of the F10 Map Tile.
 Place the Pack of Medusas on the Far Map tile as shown in the Scenario map layout.
 
 \subsection*{\MakeUppercase{Victory Conditions}}
@@ -208,29 +190,45 @@ During this Scenario:
     Gelu is then defeated.
 \end{itemize}
 
-
-\vspace*{\fill}
-\begin{center}
-  \framedimage[0.95\linewidth]{\art/sharpshooter.jpg}
-\end{center}
-\vspace*{\fill}
+\includegraphics[width=\linewidth]{\art/dendroid.jpg}
 
 \end{multicols*}
 
 \begin{tikzpicture}[remember picture, overlay]
-  \node(bg)[anchor=center, yshift=37em, opacity=0.15] at (current page.south) {
-    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/luck.png}
-  };
-  \node(map)[anchor=center] at (current page.center) {
+  \node(map)[anchor=center] at (9, -4.5) {
     \includegraphics[width=\textwidth]{\maps/rampart_graduation_exercise.png}
   };
-  \node at (1.3,-8.9) {\large{{\textbf{\textcolor{darkcandyapplered}{S4}}}}};
-  \node at (3.3,-7) {\large{{\textbf{\textcolor{darkcandyapplered}{Pack of}}}}};
-  \node at (3.3,-7.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Medusas}}}}};
-  \node at (15.6, -8.9) {\large{{\textbf{\textcolor{darkcandyapplered}{F10}}}}};
-  \node at (3.5, -13.0) {\large{{\textbf{\textcolor{darkcandyapplered}{N3}}}}};
-  \node at (15.6, -13.0) {\large{{\textbf{\textcolor{darkcandyapplered}{N5}}}}};
-  \node at (5.9, -17.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S1}}}}};
-  \node at (14.5, -17.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S2}}}}};
-  \node at (11.9, -17.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S6}}}}};
+  \node at (1.3,-1.4) {\large{{\textbf{\textcolor{darkcandyapplered}{S4}}}}};
+  \node at (3.3,0.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Pack of}}}}};
+  \node at (3.3,0) {\large{{\textbf{\textcolor{darkcandyapplered}{Medusas}}}}};
+  \node at (15.6, -1.4) {\large{{\textbf{\textcolor{darkcandyapplered}{F10}}}}};
+  \node at (3.5, -5.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N3}}}}};
+  \node at (15.6, -5.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N5}}}}};
+  \node at (5.9, -9.7) {\large{{\textbf{\textcolor{darkcandyapplered}{S1}}}}};
+  \node at (14.5, -9.7) {\large{{\textbf{\textcolor{darkcandyapplered}{S2}}}}};
+  \node at (11.9, -9.7) {\large{{\textbf{\textcolor{darkcandyapplered}{S6}}}}};
 \end{tikzpicture}
+
+\begin{table*}[b!]
+  \hommtable[]{24}{
+    \centering
+    \medskip
+    \textbf{AI Hero Setup}\\
+    \medskip
+    \begin{tabularx}{0.95\linewidth}{>{\centering}p{0.15\linewidth}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+      \darkcell{Faction} & \darkcell{Units} & \darkcell{AI Deck} & \darkcell{Spells} \\
+      \darkcell[2.8]{Necropolis}
+      & \lightcell[2.8]{Pack of Zobmies\\Pack of Wraiths\\Pack of Liches\\Few Dread Knights\\Walls and Gate}
+      & \lightcell[2.8]{1~×~Might \svg{might-yellow} Card\\3~×~Magic \svg{magic-yellow} Card}
+      & \lightcell[2.8]{1~×~Resurrection\\1~×~Haste\\1~×~Weakness} \\
+      \darkcell[2.8]{Inferno}
+      & \lightcell[2.8]{Pack of Magogs\\Pack of Cerberi\\Pack of Pit Lords\\Few Efreet\\Walls and Gate}
+      & \lightcell[2.8]{3~×~Might \svg{might-yellow} Card\\1~×~Magic \svg{magic-yellow} Card}
+      & \lightcell[2.8]{1~×~Fireball} \\
+      \darkcell[3.2]{Dungeon}
+      & \lightcell[3.2]{Pack of Harpies\\Pack of Evil Eyes\\Pack of Medusas\\Few Manticores\\Few Black Dragons\\Walls and Gate}
+      & \lightcell[3.2]{3~×~Might \svg{might-yellow} Card\\3~×~Magic \svg{magic-yellow} Card}
+      & \lightcell[3.2]{1~×~Magic Arrow\\1~×~Slow\\1~×~Sorrow} \\
+    \end{tabularx}
+  }
+\end{table*}
