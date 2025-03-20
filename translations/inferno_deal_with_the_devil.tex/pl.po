@@ -389,7 +389,7 @@ msgid ""
 "\\textbf{Castle Charging Army \\#1:} A Pack of Marksmen, a Pack of Elves, a Few Griffins, a Pack of Zealots, a Few Champions\n"
 "\n"
 msgstr ""
-"\\textbf{Zamek Szarżująca Armia \\#1:} Grupa Kuszników, Grupa Elfów, Garstka Gryfów, Grupa Kapłanów, Garstka Czempionów\n"
+"\\textbf{Szarżująca Armia Zamku \\#1:} Grupa Kuszników, Grupa Elfów, Garstka Gryfów, Grupa Kapłanów, Garstka Czempionów\n"
 "\n"
 
 #. type: multicols*
