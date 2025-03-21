@@ -182,40 +182,31 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/stand_united.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
-#| "sentinel.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Strażnicy}{\\images/sentinel.png}"
+"\\addscenariosection{1}{Tryb Kooperacyjny}{Zjednoczeni w Sile}{\\images/"
+"interference.png}"
 
 #. type: multicols
 #: coops/stand_united.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Re4XN\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Re4XN\n"
+"\\textbf{Autor:} Neuron\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols
@@ -225,13 +216,12 @@ msgid ""
 "\\textit{Evil Dragon Lords threaten the entire Enroth. Heroes, with their armies united, march against them in an epic final stand.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textit{Złowrodzy Smoczy Władcy zagrażają całemu Enroth. Bohaterowie ze zjednoczonymi armiami maszerują przeciwko nim w epickim ostatecznym starciu.}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 8 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 9 Rounds.\n"
 "\n"
@@ -241,28 +231,22 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 2\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2--4\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 2\n"
+"\\textbf{Liczba Graczy:} 2--4\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -281,13 +265,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\svgunit{bronze} Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -298,21 +276,14 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Garstka \\svgunit{bronze} Jednosek o najniższym koszcie rekrutacji\n"
+"  \\item 1 × Garstka najtańszych \\svgunit{bronze} Jednosek\n"
+"  \\item 1 × Garstka najtańszych \\svgunit{silver} Jednosek\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -324,18 +295,15 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item G × Początkowy (I) Kafelek Mapy\n"
-"  \\item 2G × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 2G × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item (G + 1) × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item G × Daleki (II--III) Kafelek Mapy\n"
+"  \\item G × Bliski (IV--V) Kafelek Mapy, wszystkie muszą zawierać Obelisk\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy ze Smoczą Utopią\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Enemy Setup}}\n"
 "\n"
@@ -345,41 +313,32 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 6 × Might Card, 4 × Magic Card, 4 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Wroga:} 3 × Karty Mocy, 3 × Karty Magii, 1 × Karta Umiejętności\n"
+"\\textbf{Talia Wroga:} 6 × Karty Mocy, 4 × Karty Magii, 4 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:48
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Spells:} 1 × Fireball, 1 × Lightning Bolt, 1 × Weakness, 1 × Curse\n"
 "\n"
 msgstr ""
-"\\textbf{Zaklęcia Wroga:} 2 × Błyskawica, 1 × Klątwa\n"
+"\\textbf{Zaklęcia Wroga:} 1 × Kula Ognia, 1 × Piorun, 1 × Osłabienie, 1 × Klątwa\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Armies:}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Skill:} Sorcery\n"
 "\n"
 msgstr ""
-"\\textbf{Armie wroga:}\n"
+"\\textbf{Zdolność Wroga:} Talent Magiczny\n"
 "\n"
 
 #. type: multicols
@@ -389,6 +348,8 @@ msgid ""
 "All players win the Scenario when each player has won a fight in the Dragon Utopia.\n"
 "\n"
 msgstr ""
+"Wszyscy gracze wygrywają Scenariusz, gdy każdy gracz wygra walkę w Smoczej Utopii.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:58
@@ -397,6 +358,8 @@ msgid ""
 "If at least one player has failed to defeat the Dragon Utopia by the end of Round 9, the Scenario is lost.\n"
 "\n"
 msgstr ""
+"Jeśli co najmniej jeden gracz nie zdoła pokonać Smoczej Utopii przed końcem Rundy 9., Scenariusz jest przegrany.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:72
@@ -417,6 +380,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\\textbf{4. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Rzuć \\svg{resource} i rozpatrz wynik.\n"
+"\\end{itemize}\n"
+"\\textbf{6. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"\\end{itemize}\n"
+"\\textbf{8. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:85
@@ -434,15 +411,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Usuń obie karty Błękitnych Smoków z talii Neutralnych \\svgunit{azure} Jednostek i odłóż jedną z nich na bok.\n"
+"  \\item Gracze nie mogą rekrutować Bohaterów Pomocniczych.\n"
+"  \\item Walki Poziomu VII nie można pominąć przez Dyplomację ani w inny sposób.\n"
+"  \\item Gracze mogą użyć swojego Żetonu Budowy, aby handlować z jednym wybranym graczem. Obaj gracze mogą swobodnie wymieniać się Zasobami oraz wymieniać Artefakty lub Zaklęcia z ręki, tak jakby ich Bohaterowie stali obok siebie.\n"
+"  \\item Podczas gry gracze tworzą wspólną armię. Każdy gracz może wystawiać Jednostki ze wspólnej armii podczas Walki (zdolności \\svg{map} wspólnych Jednostek mogą być używane w każdej Rundzie tylko przez jednego gracza).\n"
+"  \\item Po oflagowaniu Obelisku, odrzuć wierzchnią Kartę z każdej talii Neutralnych Jednostek z wyjątkiem \\svgunit{azure}. Możesz zrekrutować jedną z tych Jednostek. Jednostki zrekrutowane w ten sposób trafiają do wspólnej armii.\n"
+"  \\item Podczas Walki w Smoczej Utopii jedna z Neutralnych \\svgunit{azure} Jednostek zawsze jest Błękitnym Smokiem, a Neutralna armia używa Talii AI. Przetasuj Talię AI i Talię Zaklęć AI po zakończeniu Walki.\n"
+"  \\item Po wygraniu Walki w Smoczej Utopii nie umieszczaj na polu Kostki Frakcji. Zwycięski gracz umieszcza jedną ze swoich ocalałych Jednostek Frakcji we wspólnej armii i może rozdzielić pozostałe Zasoby między innych graczy, po czym ten gracz zostaje usunięty z gry.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
@@ -451,20 +434,14 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
+"  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
+"  \\captionof{figure}{\\footnotesize\\textbf{SCENARIUSZ 2-OSOBOWY}}\n"
 "\\end{center}\n"
 "\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:101
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-#| "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-#| "  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-#| "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\centering\n"
@@ -474,10 +451,9 @@ msgid ""
 msgstr ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-"  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-"  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 4-OSOBOWY}}}};"
+"  \\node at (13.5, 4.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, 0.2) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:104
@@ -486,3 +462,5 @@ msgid ""
 "  \\node at (5, -5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
 "  \\node at (5, -9.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
+"  \\node at (5, -3.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
+"  \\node at (5, -7.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 4-OSOBOWY}}}};"
