@@ -186,7 +186,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Zjednoczeni w Sile}{\\images/"
+"\\addscenariosection{1}{Tryb Kooperacyjny}{Stańcie Zjednoczeni}{\\images/"
 "interference.png}"
 
 #. type: multicols

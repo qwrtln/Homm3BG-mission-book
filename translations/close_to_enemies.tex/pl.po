@@ -171,41 +171,31 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/close_to_enemies.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
-#| "logistics.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Wyspa Szmaragdów}{\\images/"
-"logistics.png}"
+"\\addscenariosection{1}{Scenariusz Kooperacyjny}{Blisko Wrogów}{\\images/"
+"ballistics.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Re4XN\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Kelghor\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Re4XN\n"
+"\\textbf{Autor:} Kelghor\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Discord Archon Studio}\n"
+"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Discord Archon Studio}\n"
 "\n"
 
 #. type: multicols
@@ -215,6 +205,8 @@ msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
 msgstr ""
+"\\textit{``Panie! Najeźdźcy są u naszych bram!''}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:13
@@ -223,6 +215,8 @@ msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
 "\n"
 msgstr ""
+"\\textit{``Zatrąbić w róg! Odeprzemy ich jak zawsze!'' rozkazujesz i ruszasz bronić miasta. Tak jak robiłeś to już wiele razy wcześniej. Takie jest surowe życie klanów przygranicznych, gdzie wojny i potyczki z sąsiadującymi rywalami nigdy tak naprawdę się nie kończą. Na szczęście twój sojusz pozostaje silny i wiesz, że ktoś pilnuje twoich tyłów.}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:16
@@ -232,44 +226,37 @@ msgid ""
 "% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
 "\n"
 msgstr ""
+"\\textit{Nadszedł czas, aby zakończyć te długotrwałe wojny i zmiażdżyć wrogów jak robaka raz na zawsze!}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 8 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
 msgstr ""
-"Ten Scenariusz jest rozgrywany w 8 Rundach.\n"
+"Ten Scenariusz jest rozgrywany w 7 Rundach.\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 -- 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1--6\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 1 -- 6\n"
+"\\textbf{Liczba Graczy:} 1--6\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -284,13 +271,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\svgunit{bronze} Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -300,20 +281,13 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Garstka \\svgunit{bronze} Jednosek o najniższym koszcie rekrutacji\n"
+"  \\item 1 × Garstka dowolnych \\svgunit{bronze} Jednosek\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -322,9 +296,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV-V) Kafelek Mapy z Obeliskiem\n"
+"  \\item G × Początkowy (I) Kafelek Mapy\n"
+"  \\item 4G × Daleki (II--III) Kafelek Mapy tego samego terenu co Miasto gracza, z których jeden musi zawierać Osadę\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -336,18 +309,18 @@ msgid ""
 "Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corresponding Far (II--III) Map Tile with a Settlement.\n"
 "\n"
 msgstr ""
+"Umieść Dalekie (II--III) Kafelki Mapy z Osadami pasujące do terenu twojej Frakcji na pozycjach oznaczonych kolorowymi kostkami w układzie mapy Scenariusza.\n"
+"Każda para kostek tego samego koloru wskazuje Początkowy (I) Kafelek Mapy i odpowiadający mu Daleki (II--III) Kafelek Mapy z Osadą.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:49
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool (choose one):}\n"
 "\n"
 msgstr ""
-"\\textbf{Pula Kafelków Mapy:} Brak\n"
+"\\textbf{Pula Kafelków Mapy (wybierz jedną):}\n"
 "\n"
 
 #. type: multicols
@@ -366,6 +339,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Osobista Pula:} Każdy gracz bierze pozostały 1~×~Daleki (II--III) kafelek mapy bez osady, który pasuje do terenu jego Miasta\n"
+"  \\item \\textbf{Wspólna Pula:}\n"
+"  \\begin{itemize}\n"
+"    \\item Usuń wszystkie Dalekie (II--III) Kafelki bez Osad z Mapy\n"
+"    \\item Potasuj zebrane Kafelki razem pozostałymi przygotowymi\n"
+"    \\item Połż potasowane Kafelki na Mapę w losowej kolejności\n"
+"    \\item Pozostałe Kafelki tworzą wspólną pulę\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:48
@@ -386,18 +370,17 @@ msgid ""
 "Prepare an AI Deck for Settlement defenders.\n"
 "\n"
 msgstr ""
+"Przygotują Talię AI dla Obrońców Osad.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{General Kendal's Deck:} 5 × Might Card, 1 × Magic Card, 3 × Skill Card\n"
-#| "\n"
+#,  no-wrap
 msgid ""
 "\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Generała Kendala:} 5 × Karta Mocy, 1 × Karta Magii, 3 × Karta Umiejętności\n"
+"\\textbf{Talia Obrońców Osad:} 1 × Karta Mocy, 1 × Karta Obrony, 1 × Karta Magii\n"
 "\n"
 
 #. type: multicols
@@ -407,15 +390,12 @@ msgid ""
 "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
 "\n"
 msgstr ""
+"\\textbf{Talia Zaklęć Obrońców Osad:} 1~×~Magiczna Strzała\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Defeat the enemy army\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "   \\item Conquer all Settlements.\n"
@@ -423,7 +403,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Pokonaj wrogą armię\n"
+"  \\item Podbij wszystkie Osady.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -437,6 +417,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Którykolwiek gracz traci swoje Miasto.\n"
+"  \\item Co najmniej jedna Osada pozostaje niezdobyta do końca 7. Rundy. Czas się skończył!\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:110
@@ -472,6 +457,35 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\\textbf{1. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Wszyscy gracze odkrywają swoje \\textit{Kafelki Nemezis} (Dalekie (II--III) Kafelki Mapy zawierające Osady, które pasują do terenu ich Miasta). Te Kafelki mogą być odkryte za darmo.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{2} Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Pierwsza fala armii Wrogich Klanów atakuje wszystkie Miasta (patrz sekcja poniżej).\n"
+"  \\item Po obronie swojego Miasta każdy gracz może zrekrutować Bohatera Pomocniczego za 5~\\svg{gold} podczas tej Rundy. Nadal wymaga to zużycia Żetonu Populacji.\n"
+"\\end{itemize}\n"
+"\\textbf{3. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Każdy gracz odkrywa jeden Daleki (II--III) Kafelek Mapy. Ten Kafelek może być odkryty za darmo, niezależnie od tego, czy został wyciągnięty z puli, czy jest na Mapie.\n"
+"\\end{itemize}\n"
+"\\textbf{4. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Druga fala armii Wrogich Klanów atakuje wszystkie Miasta (patrz sekcja poniżej).\n"
+"  \\item Po obronie swojego Miasta każdy gracz może Przeszukać (3) \\textit{Talię Artefaktów}.\n"
+"\\end{itemize}\n"
+"\\textbf{6. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Trzecia fala armii Wrogich Klanów atakuje wszystkie Miasta (patrz sekcja poniżej).\n"
+"  \\item Po obronie swojego Miasta każdy gracz może Przeszukać (3) \\textit{Talię Artefaktów}.\n"
+"\\end{itemize}\n"
+"\\textbf{7. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Podczas tej Rundy gracze mogą odrzucić i dobrać karty dwa razy na początku swojej tury, zamiast standardowego jednego.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:118
@@ -484,6 +498,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Gracze mogą używać Żetonu Budowy w dowolnym momencie, aby wykonać akcje Punktu Handlowego.\n"
+"  \\item Możesz użyć swoich Jednostek do obrony swojego Miasta (bez płacenia 8 \\svg{gold}), nawet jeśli twój Bohater nie jest obecny.\n"
+"  \\item Każda Osada jest broniona przez Obrońców Osady z lokalnych klanów (patrz poniżej).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:131
@@ -503,19 +523,30 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Fale ataków wrogich klanów}}\n"
+"\\begin{itemize}\n"
+"  \\item Niepodbite wrogie Osady będą wysyłać armie klanów do ataku na twoje Miasto!\n"
+"  \\item Walka następuje na początku tury każdego gracza.\n"
+"  \\item Przed walką możesz użyć swoich Żetonów Budowy i Populacji oraz Księgi Zaklęć, a także Kart Mocy i Magii. Nie możesz jednak przemieszczać swojego Bohatera.\n"
+"  \\item Każdy gracz musi bronić własnego Miasta.\n"
+"  \\item Jeśli masz Cytadelę, atak \\textit{Wieży Łuczniczej} jest zredukowany. Ataki dla pierwszej/drugiej/trzeciej fali wynoszą 2/3/4 \\svg{attack}.\n"
+"  \\item Ta Walka nie kosztuje \\svgeven{movement}.\n"
+"  \\item Zajrzyj do tabeli \\textit{Armii Wrogich Klanów}, aby sprawdzić siłę armii oblężniczej.\n"
+"  \\item Jeśli twój Bohater Główny znajduje się w sojuszniczym Mieście (nie Osadzie), gdy Klan atakuje inne sojusznicze Miasto bez obecnego Bohatera Głównego, możesz pomóc w obronie, używając swoich Kart Mocy i Magii. Sojuszniczy Bohater użyje swoich Jednostek, a ty możesz mu pomóc, zagrywając Karty ze swojej ręki podczas Walki.\n"
+"  \\item Zdobądź 1 \\svg{experience} po udanej obronie swojego Miasta, niezależnie od tego, czy twój Bohater Główny brał w niej udział.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:134
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\vspace*{\\fill}\\columnbreak\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols
@@ -532,6 +563,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Obrońcy Osad}}\n"
+"\\begin{itemize}\n"
+"  \\item Siła Obrońców Osad jest określana przez tabelę \\textit{Armii Wrogich Klanów} (ostatni wiersz).\n"
+"  \\item Po wylosowaniu armii gracz może odrzucić jedną kartę wrogiej Jednostki i dobrać nową Jednostkę tego samego Poziomu.\n"
+"  \\item Walka nie kosztuje \\svgeven{movement}.\n"
+"  \\item W tych walkach musisz używać Kart AI.\n"
+"  \\item Po wygraniu walki zdobywasz 2 \\svg{experience}.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:152
@@ -545,6 +585,13 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\\begin{center}\n"
+"  \\includegraphics[width=\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
+"  \\captionof{figure}{\\footnotesize\\textbf{SCENARIUSZ 1-OSOBOWY | PRZYKŁAD }}\n"
+"\\end{center}\n"
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: figure
 #: coops/close_to_enemies.tex:160
@@ -553,11 +600,13 @@ msgid ""
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
 "EXAMPLE }}"
 msgstr ""
+"[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCENARIUSZ 2-OSOBOWY | "
+"PRZYKŁAD }}"
 
 #. type: table*
 #: coops/close_to_enemies.tex:205
-#, fuzzy, no-wrap
-#| msgid "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+#, no-wrap
 msgid ""
 "[b!]\n"
 "  \\hommtable[]{18}{\n"
@@ -602,21 +651,60 @@ msgid ""
 "\n"
 "      \\end{tabularx}\n"
 "  }"
-msgstr "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Siła Wrogich Armii}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\\\ \\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normalny} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Trudny} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Niemożliwy} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+msgstr ""
+"[b!]\n"
+"  \\hommtable[]{18}{\n"
+"    \\centering\n"
+"    \\medskip\n"
+"    \\textbf{Armie Wrogich Klanów}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}}\n"
+"    \\newcommand{\\silver}[0]{\\svgunit[12]{silver}}\n"
+"    \\newcommand{\\golden}[0]{\\svgunit[12]{golden}}\n"
+"    \\newcommand{\\azure}[0]{\\svgunit[12]{azure}}\n"
+"\n"
+"      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
+"      \\darkcell{\\textbf{Łatwy}} &\n"
+"      \\darkcell{\\textbf{Normalny}} &\n"
+"      \\darkcell{\\textbf{Truny}} &\n"
+"      \\darkcell{\\textbf{Niemożliwy}}\\\\\n"
+"      \\darkcell[1.2]{Pierwsza fala}\n"
+"        & \\lightcell[1.2]{\\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Druga fala}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Trzecia fala}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Obrońcy Osady}\n"
+"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
+"\n"
+"      \\end{tabularx}\n"
+"  }"
 
 #. type: figure
 #: coops/close_to_enemies.tex:215
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 3-OSOBOWY}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 3-OSOBOWY | PRZYKŁAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:222
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 4-OSOBOWY}}"
+msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 4-OSOBOWY | PRZYKŁAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:237
@@ -625,6 +713,9 @@ msgid ""
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIUSZ 5-OSOBOWY | "
+"PRZYKŁAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:237
@@ -633,3 +724,6 @@ msgid ""
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIUSZ 6-OSOBOWY | "
+"PRZYKŁAD}}"
