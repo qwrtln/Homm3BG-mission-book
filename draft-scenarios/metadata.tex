@@ -88,7 +88,7 @@
 
 \captionsetup[figure]{labelformat=empty}
 \captionsetup[subfigure]{labelformat=empty, singlelinecheck=off, justification=centering}
-\usetikzlibrary{shadows, shadows.blur, calc, backgrounds}
+\usetikzlibrary{shadows, shadows.blur, calc, backgrounds, arrows.meta}
 
 \setlength{\columnsep}{1cm}
 \newtoggle{printable}
@@ -427,30 +427,12 @@
   \iftoggle{noartbackground}{}{
     \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
   }
-  \iftoggle{printable}{
-    \ifodd\value{page}
-      \put (0in,-\paperheight){\includegraphics[width=\paperwidth]{\layout/bottom-odd.png}}
-    \else
-      \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom-even.png}}
-    \fi
-  }{\put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom.png}}}
+  \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom.png}}
 }
 
 \begin{document}
 
 \include{sections/title_page.tex}
-
-\iftoggle{printable}{
-  \newgeometry{
-    twoside,
-    top=2cm,
-    bottom=3cm,
-    left=2.5cm,
-    right=1.5cm,
-    marginparwidth=1.75cm,
-    footskip=2.05cm,
-  }
-}{}
 
 \author{\authortext}
 \maketitle
@@ -500,6 +482,8 @@
 \include{clash/main.tex}
 
 \include{campaigns/main.tex}
+
+\include{sections/coop_campaign_rules.tex}
 
 \include{sections/back_cover.tex}
 

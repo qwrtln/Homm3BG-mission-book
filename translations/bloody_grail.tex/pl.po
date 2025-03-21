@@ -148,7 +148,7 @@ msgid ""
 "\\textit{A lady clad in dark robes visits you in your dreams, offering you a golden chalice filled with blood-red wine. Waking up in a cold sweat, you decide to embark on a quest to find this unholy artifact.}\n"
 "\n"
 msgstr ""
-"\\textit{Dama odziana w ciemne szaty odwiedza cię w snach, oferując złoty kielich wypełniony krwistoczerwonym winem. Budząc się zlany zimnym potem, postanawiasz wyruszyć na wyprawę, by znaleźć ten przeklęty artefakt.}\n"
+"\\textit{Dama odziana w ciemne szaty odwiedza cię we~śnie, oferując złoty kielich wypełniony krwistoczerwonym winem. Budząc się zlany zimnym potem, postanawiasz wyruszyć na wyprawę, by znaleźć ten przeklęty artefakt.}\n"
 "\n"
 
 #. type: multicols*

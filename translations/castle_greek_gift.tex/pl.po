@@ -433,7 +433,7 @@ msgid ""
 msgstr ""
 "\\textbf{Runda 1.:}\n"
 "\\begin{itemize}\n"
-"  \\item Przeczytaj fragment ,,odległe zagrożenie''\n"
+"  \\item Przeczytaj fragment ,,Odległe zagrożenie''\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -571,7 +571,7 @@ msgid ""
 "\\textbf{Distant Threat}\n"
 "\n"
 msgstr ""
-"\\textbf{odległe zagrożenie}\n"
+"\\textbf{Odległe zagrożenie}\n"
 "\n"
 
 #. type: multicols*
