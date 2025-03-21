@@ -18,7 +18,7 @@ Download and install the following:
 
  - [**Perl**](https://www.perl.org/get.html) to use a build script
 
-Optionally, to edit the TeX files conviniently:
+Optionally, to edit the TeX files conveniently:
 
  - [**VSCode**](https://code.visualstudio.com/) with [**TeX Workshop extension**](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), or
 
@@ -54,7 +54,7 @@ A new directory titled `Homm3bg-mission-book` should appear now in your file exp
 In the git bash console, run this command:
 
 ```bash
-tools/drafts.sh
+tools/build.sh -d
 ```
 
 This will build the draft scenarios book.
@@ -72,7 +72,7 @@ Fork the repository and clone it.
 To build the project, it's best to use the script:
 
 ```bash
-tools/build.sh
+tools/build.sh [-d]
 ```
 
 
@@ -85,5 +85,5 @@ Fork and clone the repo.
 Build the project using the script:
 
 ```bash
-tools/build.sh
+tools/build.sh [-d]
 ```
