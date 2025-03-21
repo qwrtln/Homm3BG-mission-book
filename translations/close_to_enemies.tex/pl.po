@@ -375,7 +375,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#,  no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
 "\n"
