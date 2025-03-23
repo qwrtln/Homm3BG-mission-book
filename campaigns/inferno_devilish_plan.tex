@@ -10,9 +10,11 @@
 
 \textit{A large elvish population inhabits Erathia's southeastern coast.
 Green and gold dragons, native to the region, augment their military strength.
-Before we conquer this region and redirect our forces to Steadwick, we must annihilate these dragons.
-Our Kreegan allies from Eeofol have requested the honor of this mission.
-The Kreegans are fierce warriors; they will relish the slaughter.}
+Before we conquer this region, and detour our forces to Steadwick, we must annihilate these dragons.
+Our Kreegan allies from Eeofol requested the honor of this mission.
+The Kreegans are fierce warriors.
+They will enjoy the slaughter.
+}
 
 \subsection*{\MakeUppercase{Scenario Length}}
 
@@ -46,20 +48,56 @@ This Scenario plays out over 13 Rounds.
 
 \subsection*{\MakeUppercase{AI Hero Setup}}
 
-\textbf{Faction:} Rampart
-
-\textbf{Enemy Armies:}
-
+\textbf{Gold Dragons Army (Rampart):}
 \begin{itemize}
-  \item \textbf{Gold Dragon Army:} A Pack of Gold Dragons, a Pack of Unicorns, a Pack of Dendroids, a Pack of Centaurs
-  \item \textbf{Ivor's Army:} A Few Elves\footnote{In Round 9, the Few Elves in Ivor's Army are Reinforced to a Pack of Elves.}, Neutral Army at the same Level as your Hero\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}
+  \item \textbf{Army:}
+    \begin{itemize}
+      \item A Pack of Gold Dragons
+      \item A Pack of Unicorns
+      \item A Pack of Dendroids
+      \item A Pack of Centaurs
+    \end{itemize}
 \end{itemize}
 
-\textbf{Ivor's Deck:} 1 × Might Card, 2 × Magic Card, 1 × Skill Card
+\textbf{Ivor (Rampart):}
+\begin{itemize}
+  \item \textbf{Army:}
+    \begin{itemize}
+      \item A Few Elves\footnote{In Round 9, the Few Elves in Ivor's Army are Reinforced to a Pack of Elves.}
+      \item Neutral Army at the same Level as your Hero\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}
+    \end{itemize}
+  \item \textbf{AI Deck:}
+    \begin{itemize}
+      \item 1 × Might \svg{might} Card
+      \item 2 × Magic \svg{magic} Card
+      \item 1 × Skill \svg{skill} Card
+    \end{itemize}
+  \item \textbf{Spells:}
+    \begin{itemize}
+      \item 1 × Precision\footnote{It resolves on the first \svg{unit_ranged} Unit able to make a \svg{unit_ranged} attack}
+      \item 1 × Magic Arrow
+    \end{itemize}
+  \item \textbf{Abilities:} Archery (always Basic effect)
+\end{itemize}
 
-\textbf{Ivor's Spell Deck:} 1 × Precision Spell Card (it resolves on the first \svg{unit_ranged} Unit able to make a \svg{unit_ranged} attack), 1 × Magic Arrow Spell Card
+% \textbf{Faction:} Rampart
+%
+% \textbf{Enemy Armies:}
+%
+% \begin{itemize}
+%   \item \textbf{Gold Dragons Army:} A Pack of Gold Dragons, a Pack of Unicorns, a Pack of Dendroids, a Pack of Centaurs
+%   \item \textbf{Ivor's Army:} A Few Elves\footnote{In Round 9, the Few Elves in Ivor's Army are Reinforced to a Pack of Elves.}, Neutral Army at the same Level as your Hero\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}
+% \end{itemize}
+%
+% \textbf{Ivor's Deck:} 1 × Might Card, 2 × Magic Card, 1 × Skill Card
+%
+% \textbf{Ivor's Spell Deck:} 1 × Precision Spell Card (it resolves on the first \svg{unit_ranged} Unit able to make a \svg{unit_ranged} attack), 1 × Magic Arrow Spell Card
+%
+% \textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)
 
-\textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)
+\begin{center}
+  {\transparent{0.2}\includegraphics[width=0.6\linewidth, keepaspectratio]{\art/slayer.png}}
+\end{center}
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -100,42 +138,45 @@ Defeat the Enemy Hero and the Gold Dragons Armies.
 
 \subsection*{\MakeUppercase{Defeat Conditions}}
 
-You lose one Combat encounter.
+You lose if any of the following occur:
+\begin{itemize}
+  \item You lose one Combat encounter.
+  \item You fail to defeat the Enemy Hero and the Gold Dragons Armies by the end of the Round 13.
+\end{itemize}
 
-You fail to defeat the Enemy Hero and the Gold Dragon Armies by the end of the Round 13.
+\begin{tikzpicture}[overlay]
+  \node at (3.5, -2)[opacity=0.2] {\includegraphics[width=0.45\linewidth]{\art/fire_magic.png}};
+\end{tikzpicture}
+
+\vspace*{\fill}
+\columnbreak
 
 \subsection*{\MakeUppercase{Timed Events}}
 
 \textbf{\nth{1} Round:}
 \begin{itemize}
-  \item Read: ``Our underlings have done well. They have managed to raise a volcano
-    and erect a fort in a sparsely populated forest just outside of Erathia's border.
-    While the Dungeon Overlords make their way underground toward the Erathian capitol,
-    you must strike at their allies, the elves of AvLee.''
+  \item Read ``Introduction'' section.
 \end{itemize}
 
 \textbf{\nth{2} Round:}
 \begin{itemize}
-  \item Read: ``The Gold Dragon Queen is a powerful ally of AvLee.
-    You must find her lair and see to her demise, as this will greatly weaken
-    the elves and make them less of a threat to our plans to destroy Erathia.
-    Go now, and make us proud!''
+  \item Read ``The Queen'' section.
 \end{itemize}
 
 \textbf{\nth{9} Round:}
 \begin{itemize}
-  \item The Few Elves of Ivor's Army are Reinforced to a Pack of Elves.
-    Ivor's Army also gains an Ammo Cart.
+  \item Reinforce the Few Elves in Ivor's army to a Pack of Elves.
+  \item Add an Ammo Cart to Ivor's Army.
 \end{itemize}
 
 \textbf{\nth{10} Round:}
 \begin{itemize}
-  \item The Rampart Faction Town that Ivor's Army resides in gains an Arrow Tower.
+  \item Add an Arrow Tower to Ivor's Army.
 \end{itemize}
 
 \textbf{\nth{13} Round:}
 \begin{itemize}
-  \item At the end of the Round, if both the Enemy Hero and the Gold Dragon Armies are not defeated, all is lost -- you lose!
+  \item At the end of the Round, if both the Enemy Hero and the Gold Dragons Armies are not defeated, all is lost -- you lose!
 \end{itemize}
 
 \textbf{When you complete the Scenario:}
@@ -157,21 +198,53 @@ During this ``Inferno'' Campaign Scenario, the following rules apply:
     \item If your Hero Visits an Obelisk, you may Search (2) the Ability Deck, the Artifact Deck, or the Spell Deck.
 \end{itemize}
 
-\vspace*{\fill}
-\includegraphics[width=\linewidth, keepaspectratio]{\art/slayer.png}
-\vspace*{\fill}
+% \vspace*{\fill}
+% {\transparent{0.2}\includegraphics[width=\linewidth, keepaspectratio]{\art/slayer.png}}
+% \vspace*{\fill}
 
 \end{multicols*}
 
-\begin{tikzpicture}[remember picture, overlay]
-  \node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {
-    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fire_magic.png}
-  };
-  \node(map)[anchor=center] at (current page.center) {
-    \includegraphics[width=\textwidth]{\maps/inferno_devilish_plan.png}
-  };
-  \node at (2,-6.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N8}}}}};
-  \node at (13, -6.5) {\large{{\textbf{\textcolor{darkcandyapplered}{N7}}}}};
-  \node at (4.8, -17.6) {\large{{\textbf{\textcolor{darkcandyapplered}{Inferno}}}}};
-  \node at (4.8, -18.3) {\large{{\textbf{\textcolor{darkcandyapplered}{Map Tiles}}}}};
+\begin{minipage}{\textwidth}
+  \vspace{-2em}
+  \begin{tikzpicture}[remember picture]
+    % \node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {
+    %   \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fire_magic.png}
+    % };
+    \node(map)[anchor=center] at (9, -5.5) {
+      \includegraphics[width=\textwidth]{\maps/inferno_devilish_plan.png}
+    };
+    \node at (2.0, 0.1) {\large{{\textbf{\textcolor{darkcandyapplered}{N8}}}}};
+    \node at (13.0, -0.1) {\large{{\textbf{\textcolor{darkcandyapplered}{N7}}}}};
+    \node at (5.0, -11.1) {\large{{\textbf{\textcolor{darkcandyapplered}{Inferno}}}}};
+    \node at (5.0, -11.8) {\large{{\textbf{\textcolor{darkcandyapplered}{Map Tiles}}}}};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{multicols*}{2}
+
+\vspace*{\fill}
+
+\subsection*{\MakeUppercase{The Story}}
+
+\begin{tikzpicture}[overlay]
+  \node at (14.4, 1.45) {\includegraphics[width=0.85\linewidth]{\art/efreet.jpg}};
 \end{tikzpicture}
+
+\textbf{Introduction}
+
+Our underlings have done well.
+They have managed to raise a volcano and erect a fort in a sparsely populated forest just outside of Erathia's border.
+While the Dungeon Overlords make their way underground toward the Erathian capitol, you must strike at their allies, the elves of AvLee.
+
+\textbf{The Queen}
+
+The Gold Dragon Queen is a powerful ally of AvLee.
+You must find her lair and see to her demise, as this will greatly weaken the elves and make them less of a threat to our plans to destroy Erathia.
+Go now, and make us proud!
+
+\columnbreak
+
+% \framedimage[0.9\linewidth]{\art/demon.jpg}
+
+\end{multicols*}
+
