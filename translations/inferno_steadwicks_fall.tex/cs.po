@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-18 18:53+0000\n"
+"POT-Creation-Date: 2025-03-24 14:51+0100\n"
 "PO-Revision-Date: 2024-07-01 19:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,6 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -38,10 +39,10 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
 #: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
-#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:18
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
@@ -52,11 +53,11 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
 #: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
 #: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
-#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
@@ -67,13 +68,13 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -85,9 +86,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:111
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
@@ -98,12 +99,12 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:116
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -116,9 +117,9 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:124
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
@@ -129,13 +130,13 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Časované Události}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -154,8 +155,8 @@ msgstr ""
 "\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
-#. type: multicols*
-#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:48
+#. type: multicols
+#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
@@ -166,7 +167,7 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
@@ -178,8 +179,8 @@ msgstr ""
 "\\textbf{Autor:} Tm335\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:24
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
 #, no-wrap
@@ -190,8 +191,8 @@ msgstr ""
 "\\textbf{Frakce:} Peklo\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:26
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
 #, no-wrap
@@ -202,8 +203,8 @@ msgstr ""
 "\\textbf{Hrdina Frakce:} Libovolný\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:32
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
@@ -214,10 +215,10 @@ msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:91
-#: campaigns/inferno_steadwicks_fall.tex:97
-#: campaigns/inferno_deal_with_the_devil.tex:100
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:119
+#: campaigns/inferno_deal_with_the_devil.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
@@ -226,16 +227,27 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Umístění Hrdinů}}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:150
-#: campaigns/inferno_steadwicks_fall.tex:190
-#: campaigns/inferno_deal_with_the_devil.tex:175
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:176
+#: campaigns/inferno_steadwicks_fall.tex:196
+#: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
 "Během tohoto Scénáře Kampaně \\uv{Peklo} platí následující pravidla:\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:206
+#: campaigns/inferno_steadwicks_fall.tex:213
+#, fuzzy, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{The Story}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Armáda Bosse}}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -345,110 +357,62 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:50 campaigns/castle_greek_gift.tex:22
-#: campaigns/castle_sicilian_dragon.tex:20
-#: campaigns/castle_two_knights_defense.tex:19
+#: campaigns/inferno_steadwicks_fall.tex:75
 #, no-wrap
 msgid ""
-"\\textbf{Faction:} Castle\n"
+"\\textbf{General Kendal (Castle):}\n"
+"\\begin{itemize}\n"
+"    \\item \\textbf{Army:}\n"
+"    \\begin{itemize}\n"
+"        \\item A Pack of Archangels\n"
+"        \\item A Pack of Champions\n"
+"        \\item A Pack of Zealots\n"
+"        \\item A Pack of Crusaders\n"
+"        \\item A Pack of Griffins\n"
+"        \\item A Balista War Machine\n"
+"    \\end{itemize}\n"
+"    \\item \\textbf{AI Deck:}\n"
+"    \\begin{itemize}\n"
+"        \\item 5 × Might \\svg{might} Card\n"
+"        \\item 1 × Magic \\svg{magic} Card\n"
+"        \\item 3 × Skill \\svg{skill} Card\n"
+"    \\end{itemize}\n"
+"    \\item \\textbf{Spells:}\n"
+"    \\begin{itemize}\n"
+"        \\item 2 × Haste\n"
+"    \\end{itemize}\n"
+"    \\item \\textbf{Abilities:}\n"
+"    \\begin{itemize}\n"
+"        \\item Artillery\\footnote{For General Kendal, the Artillery Ability Card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability Card is drawn, as well as at the beginning of a Combat Round.}\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Frakce:} Hrad\n"
-"\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:52
+#: campaigns/inferno_steadwicks_fall.tex:90
 #, no-wrap
 msgid ""
-"\\textbf{Enemies:} General Kendal, Charging Heroes\n"
+"\\textbf{Charging Heroes (Rampart, Tower, Castle):}\n"
+"\\begin{itemize}\n"
+"    \\item \\textbf{Army:}\n"
+"       Neutral Army one Level higher than your Hero Level (Max Level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
+"    \\item \\textbf{AI Deck:}\n"
+"    \\begin{itemize}\n"
+"        \\item 2 × \\svg{might} Might Card\n"
+"        \\item 2 × \\svg{magic} Magic Card\n"
+"    \\end{itemize}\n"
+"    \\item \\textbf{Spells:}\n"
+"    \\begin{itemize}\n"
+"        \\item 2 × Slow\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Nepřátelé:} Generál Kendal, Útočící Hrdinové\n"
-"\n"
 
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:54
-#, no-wrap
-msgid ""
-"\\textbf{General Kendal's Army:} A Pack of Archangels, a Pack of Champions, a Pack of Zealots, a Pack of Crusaders, a Pack of Griffins, a Balista War Machine\n"
-"\n"
-msgstr ""
-"\\textbf{Armáda Generála Kendala:} Tlupa Archandělů, Tlupa Šampionů, Tlupa Fanatiků, Tlupa Křižáků, Tlupa Gryfů, Válečný Stroj Balista\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:56
-#, no-wrap
-msgid ""
-"\\textbf{General Kendal's Deck:} 5 × Might Card, 1 × Magic Card, 3 × Skill Card\n"
-"\n"
-msgstr ""
-"\\textbf{Balíček Generála Kendala:} 5 × Karta Síly, 1 × Karta Magie, 3 × Karta Schopnosti\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:58
-#, no-wrap
-msgid ""
-"\\textbf{General Kendal's Spell Deck:} 2 × Haste Spell Card\n"
-"\n"
-msgstr ""
-"\\textbf{Balíček Kouzel Generála Kendala:} 2 × Karta Kouzla Spěch\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:60
-#, no-wrap
-msgid ""
-"\\textbf{General Kendal's Skill:} Artillery Ability Card\\footnote{For General Kendal, the Artilery Ability Card always resolves the Expert effect and the Ballista War Machine Activates every time the Artillery Ability Card is drawn, as well as at the beginning of a Combat Round.}\n"
-"\n"
-msgstr ""
-"\\textbf{Schopnost Generála Kendala:} Karta Dovednosti Dělostřelectvo\\footnote{Pro Generála Kendala Karta Dovednosti Dělostřelectvo vždy používá Pokročilý efekt a Válečný Stroj Balista se aktivuje pokaždé, když je Karta Dovednosti Dělostřelectvo vylosována, stejně jako na začátku Kola Souboje.}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:62
-#, no-wrap
-msgid ""
-"\\textbf{Charging Heroes' Factions:} Rampart, Tower, Castle\n"
-"\n"
-msgstr ""
-"\\textbf{Frakce Útočících Hrdinů:} Bašta, Věž, Hrad\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:64
-#, no-wrap
-msgid ""
-"\\textbf{Charging Heroes' Armies:} Neutral Army is one Level higher than your Hero Level (Max Level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}.\n"
-"\n"
-msgstr ""
-"\\textbf{Armády Útočících Hrdinů:} Neutrální Armáda je o jednu Úroveň vyšší než Úroveň vašeho Hrdiny (maximálně Úroveň VI)\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v Základních Pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:66
-#, no-wrap
-msgid ""
-"\\textbf{Charging Heroes' Deck:} 2 × Might Card, 2 × Magic Card\n"
-"\n"
-msgstr ""
-"\\textbf{Balíček Útočících Hrdinů:} 2 × Karta Síly, 2 × Karta Magie\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:68
-#, no-wrap
-msgid ""
-"\\textbf{Charging Heroes' Spell Deck:} 2 × Slow Spell Card\\footnote{All the Charging Heroes' Enemies use the same AI and Spell Decks. Reset them after every Combat.}.\n"
-"\n"
-msgstr ""
-"\\textbf{Balíček Kouzel Útočících Hrdinů:} 2 × Karta Kouzla Zpomalení\\footnote{Všichni Nepřátelští Útočící Hrdinové používají stejné Balíčky AI a Kouzel. Po každém Souboji je resetujte.}.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:72
-#: campaigns/inferno_deal_with_the_devil.tex:79
+#. type: multicols
+#: campaigns/inferno_steadwicks_fall.tex:94
+#: campaigns/inferno_deal_with_the_devil.tex:54
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
@@ -458,7 +422,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:78
+#: campaigns/inferno_steadwicks_fall.tex:100
 #, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
@@ -476,7 +440,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:110
 #, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
@@ -502,7 +466,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:95
+#: campaigns/inferno_steadwicks_fall.tex:117
 #, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
@@ -522,10 +486,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:99
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:121
+#, fuzzy, no-wrap
+#| msgid ""
+#| "The Enemy Hero General Kendal is represented by one Castle Faction Hero model and appears on the center Field of the S3 Starting Map Tile.\n"
+#| "\n"
 msgid ""
-"The Enemy Hero General Kendal is represented by one Castle Faction Hero model and appears on the center Field of the S3 Starting Map Tile.\n"
+"The Enemy Hero General Kendal is represented by a Castle Faction Hero model and appears on the center Field of the S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
 "Nepřátelský Hrdina Generál Kendal je reprezentován jedním modelem Hrdiny Frakce Hrad\n"
@@ -533,10 +500,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:101
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:123
+#, fuzzy, no-wrap
+#| msgid ""
+#| "The Castle Charging Hero is represented by one Castle Faction Hero model and appears on (and owns) the Settlement of the F3 Map Tile.\n"
+#| "\n"
 msgid ""
-"The Castle Charging Hero is represented by one Castle Faction Hero model and appears on (and owns) the Settlement of the F3 Map Tile.\n"
+"The Castle Charging Hero is represented by a Castle Faction Hero model and appears on (and owns) the Settlement of the F3 Map Tile.\n"
 "\n"
 msgstr ""
 "Útočící Hrdina Hradu je reprezentován jedním modelem Hrdiny Frakce Hrad\n"
@@ -544,10 +514,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:103
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:125
+#, fuzzy, no-wrap
+#| msgid ""
+#| "The Rampart Charging Hero is represented by one Rampart Faction Hero model and appears on (and owns) the Settlement of the F10 Map Tile.\n"
+#| "\n"
 msgid ""
-"The Rampart Charging Hero is represented by one Rampart Faction Hero model and appears on (and owns) the Settlement of the F10 Map Tile.\n"
+"The Rampart Charging Hero is represented by a Rampart Faction Hero model and appears on (and owns) the Settlement of the F10 Map Tile.\n"
 "\n"
 msgstr ""
 "Útočící Hrdina Bašty je reprezentován jedním modelem Hrdiny Frakce Bašta\n"
@@ -555,7 +528,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:105
+#: campaigns/inferno_steadwicks_fall.tex:127
 #, no-wrap
 msgid ""
 "The Tower Charging Hero is represented by one Tower Faction Hero model and appears on (and owns) the Settlement of the \\#F1 Map Tile.\n"
@@ -566,7 +539,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:107
+#: campaigns/inferno_steadwicks_fall.tex:129
 #, no-wrap
 msgid ""
 "Place your Main Hero on the center Field of the Inferno Starting S6 Map Tile.\n"
@@ -576,7 +549,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:109
+#: campaigns/inferno_steadwicks_fall.tex:131
 #, no-wrap
 msgid ""
 "Place your Secondary Hero, represented by one Dungeon Faction Hero model of your choice, on the Settlement of the F2 Map Tile. This Settlement produces no resources.\n"
@@ -587,11 +560,14 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:114
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:135
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Defeat all 3 Enemy Controlled Settlements (F3, F10, \\#F1), and capture Steadwick (S3) before\n"
+#| "Queen Catherine Ironfist arrives at the end of the Round 16.\n"
+#| "\n"
 msgid ""
-"Defeat all 3 Enemy Controlled Settlements (F3, F10, \\#F1), and capture Steadwick (S3) before\n"
-"Queen Catherine Ironfist arrives at the end of the Round 16.\n"
+"Capture all Enemy Settlements (F3, F10, \\#F1) and Steadwick (S3) before Queen Catherine Ironfist arrives at the end of Round 16.\n"
 "\n"
 msgstr ""
 "Poražte všechny 3 nepřáteli ovládané Osady (F3, F10, \\#F1) a dobyjte Steadwick (S3) dříve,\n"
@@ -599,111 +575,86 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:118
+#: campaigns/inferno_steadwicks_fall.tex:144
 #, no-wrap
 msgid ""
-"You lose one Combat encounter with your Main Hero (Surrendering costs 10 \\svg{gold}, and does not count as a defeat).\n"
+"You lose if any of the following occur:\n"
+"\\begin{itemize}\n"
+"  \\item You lose one Combat encounter with your Main Hero (Surrendering costs 10 \\svg{gold}, and does not count as a defeat).\n"
+"  \\item You lose your Faction Town on the S6 Map Tile.\n"
+"  \\item You run out of time -- you have time till the end of Round 16.\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"Prohrajete jeden Souboj s vaším Hlavním Hrdinou (Kapitulace stojí 10 \\svg{gold} a nepočítá se jako porážka).\n"
-"\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:120
-#, no-wrap
-msgid ""
-"You lose your Faction Town on the S6 Map Tile.\n"
-"\n"
-msgstr ""
-"Ztratíte své Město Frakce na Dílku Mapy S6.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:122
-#, no-wrap
-msgid ""
-"You run out of time -- you have time till the end of the Round 16.\n"
-"\n"
-msgstr ""
-"Vyprší vám čas -- máte čas do konce 16. Kola.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:131
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:151
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``You are to be congratulated on your progress so far.\n"
-"    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian\n"
-"    capital of Steadwick. You must capture the capital quickly!''\n"
+"  \\item Read ``Congratulations'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Blahopřejeme vám k dosavadnímu pokroku.\n"
-"    Zpustošili jste východní Erathii a nyní jste na dosah erathijského\n"
-"    hlavního města Steadwick. Musíte jej rychle dobýt!}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:137
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:156
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that\n"
-"    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its\n"
-"    garrisons before she arrives.\n"
+"  \\item Read ``News'' section.\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{2. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Nejenže Bracada a AvLee poslali posily, ale dostali jsme zprávy, že\n"
-"    královna Catherine Ironfist pochoduje s početnou armádou z jihu. Musíme ovládnout hlavní město a jeho\n"
-"    posádky dříve, než dorazí.\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:142
-#, no-wrap
-msgid ""
-"    You have just received a report on the progress of Queen Catherine.\n"
-"    Forces from Nighon and Eeofol are attempting to delay her march to Steadwick,\n"
-"    but doubt that they can delay her more than two or three months.''\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"    Právě jste obdrželi zprávu o postupu královny Catherine.\n"
-"    Síly z Nighonu a Eeofolu se pokoušejí zdržet její pochod do Steadwicku,\n"
-"    ale pochybují, že ji dokážou zdržet déle než dva nebo tři měsíce.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:149
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:161
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``You receive a report from the south. Queen Catherine's forces have been sufficiently delayed,\n"
-"    allowing you at least two months more to reach the capitol, but our own forces have suffered significant\n"
-"    losses. Do not let their sacrifice go to waste.''\n"
+"  \\item Read: ``First Report'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{5. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Obdrželi jste zprávu z jihu. Síly královny Catherine byly dostatečně zdrženy,\n"
-"    což vám poskytuje nejméně dva měsíce navíc k dosažení hlavního města, ale naše vlastní síly utrpěly značné\n"
-"    ztráty. Nenechte jejich oběť přijít vniveč.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:167
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -721,83 +672,95 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:162
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:172
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{11} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``You receive a report from the south. Our forces continue to throw themselves in the path of\n"
-"    Queen Catherine's armies, yet she continues to march northward. You have, at most, three or four weeks\n"
-"    before she can reach the capital.''\n"
+"  \\item Read ``Second Report'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{11. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Obdrželi jste zprávu z jihu. Naše síly se nadále vrhají do cesty armádám královny Catherine,\n"
-"    ale ona stále pochoduje na sever. Máte nanejvýš tři nebo čtyři týdny,\n"
-"    než se dostane do hlavního města.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:168
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:177
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Warning: ``Queen Catherine's march continues -- her forces are just two weeks away. If you do not hurry,\n"
-"    we will not have time to secure the capital before her arrival.''\n"
+"  \\item Read ``First Warning'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{13. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Varování: \\uv{Pochod královny Catherine pokračuje -- její síly jsou jen dva týdny daleko. Pokud si nepospíšíte,\n"
-"    nebudeme mít čas zabezpečit hlavní město před jejím příjezdem.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:174
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:182
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{15} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Warning: ``Your scouts report sighting Queen Catherine's army seven days to the southwest. If she\n"
-"    reaches the capitol before you, all is lost.''\n"
+"  \\item Read ``Second Warning'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{15. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Varování: \\uv{Vaši zvědové hlásí, že spatřili armádu královny Catherine sedm dní na jihozápad. Pokud\n"
-"    dorazí do hlavního města před vámi, je vše ztraceno.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:181
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:187
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item If Steadwick has not been taken, read: ``This morning, a massive army lead by Queen Catherine\n"
-"    Ironfist arrived at the Erathian capitol of Steadwick. We have no choice but to retreat our forces.\n"
-"    You have failed us... miserably.''\n"
+"  \\item Read ``The Ending'' section \\textbf{at the end of the Round}.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{16. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Pokud Steadwick nebyl dobyt, čtěte: \\uv{Dnes ráno dorazila do erathijského hlavního města Steadwick\n"
-"    obrovská armáda vedená královnou Catherine Ironfist. Nemáme jinou možnost než stáhnout naše síly.\n"
-"    Zklamali jste nás... žalostně.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:186
+#: campaigns/inferno_steadwicks_fall.tex:192
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -813,24 +776,40 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:207
-#, no-wrap
+#: campaigns/inferno_steadwicks_fall.tex:211
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "    \\item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,\n"
+#| "      and an Arrow Tower on their side of the Combat Board.\n"
+#| "    \\item The difficulty Level of every Combat encounter on the map increases by one till the end of the Scenario\n"
+#| "      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
+#| "    \\item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else\n"
+#| "      (including Mines and Settlements if possible) and go straight for the player's Faction Town (on Map Tile S6).\n"
+#| "      They do not pursue the player directly, but if they happen to be on the same Map Tile, they will\n"
+#| "      attack the player's Main Hero (not Secondary).\n"
+#| "    \\item The Enemy Charging Heroes move after the player's Turn ends.\n"
+#| "    \\item The borders on the Castle Starting Map Tile S3 cannot be crossed by any means until\n"
+#| "      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
+#| "    \\item Defeating Enemy Charging Heroes provides 2 \\svg{valuables}.\n"
+#| "    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle\n"
+#| "      Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
-"    \\item The General Kendal Hero does not move and only waits in their Town. They start with Walls, a Gate,\n"
-"      and an Arrow Tower on their side of the Combat Board.\n"
+"    \\item General Kendal does not move and only waits in his Town. He start with Walls, Gate,\n"
+"      and Arrow Tower on his side of the Combat Board.\n"
 "    \\item The difficulty Level of every Combat encounter on the map increases by one till the end of the Scenario\n"
 "      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
 "    \\item The Enemy Charging Heroes have only 2 Movement Points, instead of 3. They ignore everything else\n"
 "      (including Mines and Settlements if possible) and go straight for the player's Faction Town (on Map Tile S6).\n"
 "      They do not pursue the player directly, but if they happen to be on the same Map Tile, they will\n"
 "      attack the player's Main Hero (not Secondary).\n"
-"    \\item The Enemy Charging Heroes move after the player's Turn ends.\n"
 "    \\item The borders on the Castle Starting Map Tile S3 cannot be crossed by any means until\n"
 "      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
-"    \\item Defeating Enemy Charging Heroes provides 2 \\svg{valuables}.\n"
-"    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle\n"
-"      Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
+"    \\item Gain 2 \\svg{valuables} every time you defeat Enemy Charging Heroes.\n"
+"    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -853,20 +832,295 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:213
+#: campaigns/inferno_steadwicks_fall.tex:215
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\n"
+msgid ""
+"\\textbf{Congratulations}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Jednotky:}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:219
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{1} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``You are to be congratulated on your progress so far.\n"
+#| "    You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian\n"
+#| "    capital of Steadwick. You must capture the capital quickly!''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"You are to be congratulated on your progress so far.\n"
+"You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian capital of Steadwick.\n"
+"You must capture the capital quickly!\n"
+"\n"
+msgstr ""
+"\\textbf{1. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Blahopřejeme vám k dosavadnímu pokroku.\n"
+"    Zpustošili jste východní Erathii a nyní jste na dosah erathijského\n"
+"    hlavního města Steadwick. Musíte jej rychle dobýt!}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:221
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{The Escape}\n"
+#| "\n"
+msgid ""
+"\\textbf{News}\n"
+"\n"
+msgstr ""
+"\\vspace{-1em} % FIX ME\n"
+"\\textbf{The Escape}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:224
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{2} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``Not only have Bracada and AvLee sent reinforcements, but we have received news that\n"
+#| "    Queen Catherine Ironfist is marching a sizeable army from the south. We must control the capital and its\n"
+#| "    garrisons before she arrives.\n"
+#| "\n"
+msgid ""
+"Not only have Bracada and AvLee sent reinforcements, but we have received news that Queen Catherine Ironfist is marching a sizeable army from the south.\n"
+"We must control the capital and its garrisons before she arrives.\n"
+"\n"
+msgstr ""
+"\\textbf{2. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Nejenže Bracada a AvLee poslali posily, ale dostali jsme zprávy, že\n"
+"    královna Catherine Ironfist pochoduje s početnou armádou z jihu. Musíme ovládnout hlavní město a jeho\n"
+"    posádky dříve, než dorazí.\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:227
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You have just received a report on the progress of Queen Catherine.\n"
+#| "    Forces from Nighon and Eeofol are attempting to delay her march to Steadwick,\n"
+#| "    but doubt that they can delay her more than two or three months.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"You have just received a report on the progress of Queen Catherine.\n"
+"Forces from Nighon and Eeofol are attempting to delay her march to Steadwick, but doubt that they can delay her more than two or three months.\n"
+"\n"
+msgstr ""
+"    Právě jste obdrželi zprávu o postupu královny Catherine.\n"
+"    Síly z Nighonu a Eeofolu se pokoušejí zdržet její pochod do Steadwicku,\n"
+"    ale pochybují, že ji dokážou zdržet déle než dva nebo tři měsíce.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:229
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Enemy Armies:}\n"
+#| "\n"
+msgid ""
+"\\textbf{First Report}\n"
+"\n"
+msgstr ""
+"\\textbf{Nepřátelské Armády:}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:233
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{5} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``You receive a report from the south. Queen Catherine's forces have been sufficiently delayed,\n"
+#| "    allowing you at least two months more to reach the capitol, but our own forces have suffered significant\n"
+#| "    losses. Do not let their sacrifice go to waste.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"You receive a report from the south.\n"
+"Queen Catherine's forces have been sufficiently delayed, allowing you at least two months more to reach the capitol, but our own forces have suffered significant losses.\n"
+"Do not let their sacrifice go to waste.\n"
+"\n"
+msgstr ""
+"\\textbf{5. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Obdrželi jste zprávu z jihu. Síly královny Catherine byly dostatečně zdrženy,\n"
+"    což vám poskytuje nejméně dva měsíce navíc k dosažení hlavního města, ale naše vlastní síly utrpěly značné\n"
+"    ztráty. Nenechte jejich oběť přijít vniveč.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:235
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Faction:} Rampart\n"
+#| "\n"
+msgid ""
+"\\textbf{Second Report}\n"
+"\n"
+msgstr ""
+"\\textbf{Frakce:} Bašta\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:239
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{11} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``You receive a report from the south. Our forces continue to throw themselves in the path of\n"
+#| "    Queen Catherine's armies, yet she continues to march northward. You have, at most, three or four weeks\n"
+#| "    before she can reach the capital.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"You receive a report from the south.\n"
+"Our forces continue to throw themselves in the path of Queen Catherine's armies, yet she continues to march northward.\n"
+"You have, at most, three or four weeks before she can reach the capital.\n"
+"\n"
+msgstr ""
+"\\textbf{11. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Obdrželi jste zprávu z jihu. Naše síly se nadále vrhají do cesty armádám královny Catherine,\n"
+"    ale ona stále pochoduje na sever. Máte nanejvýš tři nebo čtyři týdny,\n"
+"    než se dostane do hlavního města.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:241
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Enemy Armies:}\n"
+#| "\n"
+msgid ""
+"\\textbf{First Warning}\n"
+"\n"
+msgstr ""
+"\\textbf{Nepřátelské Armády:}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:244
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{13} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Warning: ``Queen Catherine's march continues -- her forces are just two weeks away. If you do not hurry,\n"
+#| "    we will not have time to secure the capital before her arrival.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"Queen Catherine's march continues -- her forces are just two weeks away.\n"
+"If you do not hurry, we will not have time to secure the capital before her arrival.\n"
+"\n"
+msgstr ""
+"\\textbf{13. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Varování: \\uv{Pochod královny Catherine pokračuje -- její síly jsou jen dva týdny daleko. Pokud si nepospíšíte,\n"
+"    nebudeme mít čas zabezpečit hlavní město před jejím příjezdem.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:246
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Tm335\n"
+#| "\n"
+msgid ""
+"\\textbf{Second Warning}\n"
+"\n"
+msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:249
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{15} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Warning: ``Your scouts report sighting Queen Catherine's army seven days to the southwest. If she\n"
+#| "    reaches the capitol before you, all is lost.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"Your scouts report sighting Queen Catherine's army seven days to the southwest.\n"
+"If she reaches the capitol before you, all is lost.\n"
+"\n"
+msgstr ""
+"\\textbf{15. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Varování: \\uv{Vaši zvědové hlásí, že spatřili armádu královny Catherine sedm dní na jihozápad. Pokud\n"
+"    dorazí do hlavního města před vámi, je vše ztraceno.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:251
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{The Escape}\n"
+#| "\n"
+msgid ""
+"\\textbf{The Ending}\n"
+"\n"
+msgstr ""
+"\\vspace{-1em} % FIX ME\n"
+"\\textbf{The Escape}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:255
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{16} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item If Steadwick has not been taken, read: ``This morning, a massive army lead by Queen Catherine\n"
+#| "    Ironfist arrived at the Erathian capitol of Steadwick. We have no choice but to retreat our forces.\n"
+#| "    You have failed us... miserably.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"This morning, a massive army lead by Queen Catherine Ironfist arrived at the Erathian capitol of Steadwick.\n"
+"We have no choice but to retreat our forces.\n"
+"You have failed us... miserably.\n"
+"\n"
+msgstr ""
+"\\textbf{16. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Pokud Steadwick nebyl dobyt, čtěte: \\uv{Dnes ráno dorazila do erathijského hlavního města Steadwick\n"
+"    obrovská armáda vedená královnou Catherine Ironfist. Nemáme jinou možnost než stáhnout naše síly.\n"
+"    Zklamali jste nás... žalostně.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_steadwicks_fall.tex:257
 #, fuzzy, no-wrap
 #| msgid "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"
 msgid ""
-"\\vspace*{\\fill}\n"
-"\\begin{center}\n"
-"  \\framedimage[0.9\\linewidth]{\\art/demon.jpg}\n"
-"\\end{center}\n"
-"\\vspace*{\\fill}\n"
+"\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
 "\n"
 msgstr "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:223
+#: campaigns/inferno_steadwicks_fall.tex:267
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -880,7 +1134,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:238
+#: campaigns/inferno_steadwicks_fall.tex:282
 #, no-wrap
 msgid ""
 "  \\node at (3, -11.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N3}}}}};\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-18 18:53+0000\n"
+"POT-Creation-Date: 2025-03-24 14:51+0100\n"
 "PO-Revision-Date: 2024-07-04 10:47+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,6 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -38,10 +39,10 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
 #: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
-#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:18
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
@@ -52,11 +53,11 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
 #: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
 #: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
-#: campaigns/inferno_devilish_plan.tex:22
+#: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
@@ -67,13 +68,13 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -84,7 +85,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
-#: campaigns/inferno_devilish_plan.tex:67 campaigns/castle_greek_gift.tex:49
+#: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -98,9 +99,9 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:111
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
@@ -111,12 +112,12 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:116
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -129,9 +130,9 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:124
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
@@ -142,13 +143,13 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Časované Události}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -158,7 +159,31 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:48
+#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/stand_united.tex:87 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
+#: sections/credits.tex:26
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
+#: sections/credits.tex:32
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
@@ -170,8 +195,17 @@ msgstr ""
 "\n"
 
 #. type: multicols*
+#: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
-#: campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
@@ -184,7 +218,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:39
+#: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
@@ -205,7 +239,7 @@ msgstr ""
 "{} {} {}Kobky a Ďáblové} \\addscenariosection[subsection]{1}{Kampa\\v{n} "
 "Peklo $-$ Kobky a Ďáblové}{1. Ďábelský Plán}{\\images/firewall.png}"
 
-#. type: multicols*
+#. type: multicols
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
@@ -228,14 +262,23 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:16
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textit{A large elvish population inhabits Erathia's southeastern coast.\n"
+#| "Green and gold dragons, native to the region, augment their military strength.\n"
+#| "Before we conquer this region and redirect our forces to Steadwick, we must annihilate these dragons.\n"
+#| "Our Kreegan allies from Eeofol have requested the honor of this mission.\n"
+#| "The Kreegans are fierce warriors; they will relish the slaughter.}\n"
+#| "\n"
 msgid ""
 "\\textit{A large elvish population inhabits Erathia's southeastern coast.\n"
 "Green and gold dragons, native to the region, augment their military strength.\n"
-"Before we conquer this region and redirect our forces to Steadwick, we must annihilate these dragons.\n"
-"Our Kreegan allies from Eeofol have requested the honor of this mission.\n"
-"The Kreegans are fierce warriors; they will relish the slaughter.}\n"
+"Before we conquer this region, and detour our forces to Steadwick, we must annihilate these dragons.\n"
+"Our Kreegan allies from Eeofol requested the honor of this mission.\n"
+"The Kreegans are fierce warriors.\n"
+"They will enjoy the slaughter.\n"
+"}\n"
 "\n"
 msgstr ""
 "\\textit{Velká populace elfů obývá jihovýchodní pobřeží Erathie.\n"
@@ -246,7 +289,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_devilish_plan.tex:22
 #, no-wrap
 msgid ""
 "This Scenario plays out over 13 Rounds.\n"
@@ -255,8 +298,8 @@ msgstr ""
 "Tento Scénář se hraje na 13 Kol.\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:24
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
 #, no-wrap
@@ -267,8 +310,8 @@ msgstr ""
 "\\textbf{Frakce:} Peklo\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:26
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
 #, no-wrap
@@ -279,8 +322,8 @@ msgstr ""
 "\\textbf{Hrdina Frakce:} Libovolný\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:28
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:30
 #, no-wrap
 msgid ""
@@ -290,8 +333,8 @@ msgstr ""
 "\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:32
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
@@ -303,7 +346,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:37
+#: campaigns/inferno_devilish_plan.tex:39
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -319,7 +362,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:46
+#: campaigns/inferno_devilish_plan.tex:48
 #, no-wrap
 msgid ""
 "\\textbf{Bonus:} Choose one of the following options:\n"
@@ -339,73 +382,65 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:50
-#, no-wrap
-msgid ""
-"\\textbf{Faction:} Rampart\n"
-"\n"
-msgstr ""
-"\\textbf{Frakce:} Bašta\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:52
-#, no-wrap
-msgid ""
-"\\textbf{Enemy Armies:}\n"
-"\n"
-msgstr ""
-"\\textbf{Nepřátelské Armády:}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:57
-#, no-wrap
-msgid ""
-"\\begin{itemize}\n"
-"  \\item \\textbf{Gold Dragon Army:} A Pack of Gold Dragons, a Pack of Unicorns, a Pack of Dendroids, a Pack of Centaurs\n"
-"  \\item \\textbf{Ivor's Army:} A Few Elves\\footnote{In Round 9, the Few Elves in Ivor's Army are Reinforced to a Pack of Elves.}, Neutral Army at the same Level as your Hero\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\begin{itemize}\n"
-"  \\item \\textbf{Armáda Zlatých Draků:} Tlupa Zlatých Draků, Tlupa Jednorožců, Tlupa Dendroidů, Tlupa Kentaurů\n"
-"  \\item \\textbf{Ivorova Armáda:} Hrstka Elfů\\footnote{V 9. Kole je Hrstka Elfů v Ivorově armádě posíleno na Tlupu Elfů.}, Neutrální armáda na úrovni vašeho Hrdiny\\footnote{Viz strana 35, \\uv{Tabulka Obtížnosti Pole} v Základních Pravidlech, pro další podrobnosti o počtu Neutrálních Jednotek, které musíte dobrat pro tuto Neutrální Armádu.}\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:59
-#, no-wrap
-msgid ""
-"\\textbf{Ivor's Deck:} 1 × Might Card, 2 × Magic Card, 1 × Skill Card\n"
-"\n"
-msgstr ""
-"\\textbf{Ivorův Balíček:} 1 × Karta Síly, 2 × Karta Magie, 1 × Karta Schopnosti\n"
-"\n"
-
-#. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:61
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Spell Deck:} 1 × Precision Spell Card (it resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack), 1 × Magic Arrow Spell Card\n"
+"\\textbf{Gold Dragons Army (Rampart):}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Army:}\n"
+"    \\begin{itemize}\n"
+"      \\item A Pack of Gold Dragons\n"
+"      \\item A Pack of Unicorns\n"
+"      \\item A Pack of Dendroids\n"
+"      \\item A Pack of Centaurs\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Ivorův Balíček Kouzel:} 1 × Karta Kouzla Přesnost (je použita na první \\svg{unit_ranged} Jednotku schopnou útoku na dálku), 1 × Karta Kouzla Magický Šíp\n"
-"\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:63
+#: campaigns/inferno_devilish_plan.tex:82
 #, no-wrap
 msgid ""
-"\\textbf{Ivor's Skill:} Archery Ability Card (it always resolves its Basic effect)\n"
+"\\textbf{Ivor (Rampart):}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Army:}\n"
+"    \\begin{itemize}\n"
+"      \\item A Few Elves\n"
+"      \\item Neutral Army at the same Level as your Hero\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{AI Deck:}\n"
+"    \\begin{itemize}\n"
+"      \\item 1 × Might \\svg{might} Card\n"
+"      \\item 2 × Magic \\svg{magic} Card\n"
+"      \\item 1 × Skill \\svg{skill} Card\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{Spells:}\n"
+"    \\begin{itemize}\n"
+"      \\item 1 × Precision\\footnote{It resolves on the first \\svg{unit_ranged} Unit able to make a \\svg{unit_ranged} attack}\n"
+"      \\item 1 × Magic Arrow\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{Abilities:} Archery (always Basic effect)\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Ivorova Schopnost:} Karta Dovednosti Lukostřelba (vždy se použije její Bežný Efekt)\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:86
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+"\\begin{center}\n"
+"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"\\end{center}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:73
+#: campaigns/inferno_devilish_plan.tex:96
 #, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
@@ -423,7 +458,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:79
+#: campaigns/inferno_devilish_plan.tex:102
 #, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
@@ -441,7 +476,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:84
+#: campaigns/inferno_devilish_plan.tex:107
 #, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
@@ -457,7 +492,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:89
+#: campaigns/inferno_devilish_plan.tex:112
 #, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
@@ -472,10 +507,10 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:91
-#: campaigns/inferno_steadwicks_fall.tex:97
-#: campaigns/inferno_deal_with_the_devil.tex:100
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:119
+#: campaigns/inferno_deal_with_the_devil.tex:75
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
@@ -485,7 +520,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:94
+#: campaigns/inferno_devilish_plan.tex:117
 #, no-wrap
 msgid ""
 "The Enemy Hero is represented by one Rampart Faction Hero model of your choice\n"
@@ -497,7 +532,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_devilish_plan.tex:119
 #, no-wrap
 msgid ""
 "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
@@ -507,7 +542,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:100
+#: campaigns/inferno_devilish_plan.tex:123
 #, no-wrap
 msgid ""
 "Defeat the Enemy Hero and the Gold Dragons Armies.\n"
@@ -517,77 +552,104 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:104
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:131
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{13} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item At the end of the Round, if both the Enemy Hero and the Gold Dragon Armies are not defeated, all is lost -- you lose!\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
-"You lose one Combat encounter.\n"
+"You lose if any of the following occur:\n"
+"\\begin{itemize}\n"
+"  \\item You lose one Combat encounter.\n"
+"  \\item You fail to defeat the Enemy Hero and the Gold Dragons Armies by the end of the Round 13.\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
-"Prohrajete jeden Souboj.\n"
+"\\textbf{13. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Na konci Kola, pokud nejsou Nepřátelský Hrdina a Armády Zlatých Draků poraženi, je vše ztraceno -- prohráváte!\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:106
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:135
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[overlay]\n"
+#| "  \\centering\n"
+#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgid ""
-"You fail to defeat the Enemy Hero and the Gold Dragon Armies by the end of the Round 13.\n"
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
+"\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"Nepodaří se vám porazit Nepřátelského Hrdinu a Armády Zlatých Draků do konce 13. Kola.\n"
-"\n"
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:116
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:145
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``Our underlings have done well. They have managed to raise a volcano\n"
-"    and erect a fort in a sparsely populated forest just outside of Erathia's border.\n"
-"    While the Dungeon Overlords make their way underground toward the Erathian capitol,\n"
-"    you must strike at their allies, the elves of AvLee.''\n"
+"  \\item Read ``Introduction'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{1. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Naši podřízení si vedli dobře. Podařilo se jim vztyčit sopku\n"
-"    a postavit pevnost v řídce osídleném lese těsně za hranicemi Erathie.\n"
-"    Zatímco Pánové Kobek se podzemím blíží k erathijskému hlavnímu městu,\n"
-"    musíte udeřit na jejich spojence, elfy z AvLee.}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:124
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:150
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Read: ``The Gold Dragon Queen is a powerful ally of AvLee.\n"
-"    You must find her lair and see to her demise, as this will greatly weaken\n"
-"    the elves and make them less of a threat to our plans to destroy Erathia.\n"
-"    Go now, and make us proud!''\n"
+"  \\item Read ``The Queen'' section.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{2. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Čtěte: \\uv{Královna Zlatých Draků je mocnou spojenkyní AvLee.\n"
-"    Musíte najít její doupě a zajistit její zánik, protože to výrazně oslabí\n"
-"    elfy a učiní je menší hrozbou pro naše plány na zničení Erathie.\n"
-"    Jděte hned a udělejte nám radost!}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:130
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:156
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item The Few Elves of Ivor's Army are Reinforced to a Pack of Elves.\n"
+#| "    Ivor's Army also gains an Ammo Cart.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Few Elves of Ivor's Army are Reinforced to a Pack of Elves.\n"
-"    Ivor's Army also gains an Ammo Cart.\n"
+"  \\item Reinforce the Few Elves in Ivor's army to a Pack of Elves.\n"
+"  \\item Add an Ammo Cart to Ivor's Army.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -599,28 +661,40 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:135
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:161
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The Rampart Faction Town that Ivor's Army resides in gains an Arrow Tower.\n"
+"  \\item Add an Arrow Tower to Ivor's Army.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{10. Kolo:}\n"
+"\\textbf{9. Kolo:}\n"
 "\\begin{itemize}\n"
-"  \\item Město Frakce Bašta, ve kterém sídlí Ivorova Armáda, získává Střílnu.\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:140
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:166
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{13} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item At the end of the Round, if both the Enemy Hero and the Gold Dragon Armies are not defeated, all is lost -- you lose!\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item At the end of the Round, if both the Enemy Hero and the Gold Dragon Armies are not defeated, all is lost -- you lose!\n"
+"  \\item At the end of the Round, if both the Enemy Hero and the Gold Dragons Armies are not defeated, all is lost -- you lose!\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -631,7 +705,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:145
+#: campaigns/inferno_devilish_plan.tex:171
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -646,10 +720,10 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:150
-#: campaigns/inferno_steadwicks_fall.tex:190
-#: campaigns/inferno_deal_with_the_devil.tex:175
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:176
+#: campaigns/inferno_steadwicks_fall.tex:196
+#: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
@@ -659,7 +733,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:159
+#: campaigns/inferno_devilish_plan.tex:185
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -682,31 +756,31 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:163
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
-"\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/slayer.png}\n"
-"\\vspace*{\\fill}\n"
-"\n"
-msgstr ""
-
 #. type: tikzpicture
-#: campaigns/inferno_devilish_plan.tex:177
-#, no-wrap
+#: campaigns/inferno_devilish_plan.tex:200
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[remember picture, overlay]\n"
+#| "  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+#| "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+#| "  };\n"
+#| "  \\node(map)[anchor=center] at (current page.center) {\n"
+#| "    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+#| "  };\n"
+#| "  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+#| "  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+#| "  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
+#| "  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
 msgid ""
-"[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
-"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
-"  };\n"
-"  \\node(map)[anchor=center] at (current page.center) {\n"
-"    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
-"  };\n"
-"  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
-"  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
-"  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
-"  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
+"[remember picture]\n"
+"    \\node(map)[anchor=center] at (9, -5.5) {\n"
+"      \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+"    };\n"
+"    \\node at (2.0, 0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+"    \\node at (13.0, -0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+"    \\node at (5.0, -11.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
+"    \\node at (5.0, -11.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};\n"
+"  "
 msgstr ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
@@ -719,3 +793,111 @@ msgstr ""
 "  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
 "  \\node at (4.3, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Dílky Mapy}}}}};\n"
 "  \\node at (4.3, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Pekla}}}}};"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:206
+#: campaigns/inferno_steadwicks_fall.tex:213
+#, fuzzy, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{The Story}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Armáda Bosse}}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:210
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[overlay]\n"
+#| "  \\centering\n"
+#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node at (14.4, 1.45) {\\includegraphics[width=0.85\\linewidth]{\\art/efreet.jpg}};\n"
+"\\end{tikzpicture}\n"
+"\n"
+msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:212
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Tm335\n"
+#| "\n"
+msgid ""
+"\\textbf{Introduction}\n"
+"\n"
+msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:216
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{1} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``Our underlings have done well. They have managed to raise a volcano\n"
+#| "    and erect a fort in a sparsely populated forest just outside of Erathia's border.\n"
+#| "    While the Dungeon Overlords make their way underground toward the Erathian capitol,\n"
+#| "    you must strike at their allies, the elves of AvLee.''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"Our underlings have done well.\n"
+"They have managed to raise a volcano and erect a fort in a sparsely populated forest just outside of Erathia's border.\n"
+"While the Dungeon Overlords make their way underground toward the Erathian capitol, you must strike at their allies, the elves of AvLee.\n"
+"\n"
+msgstr ""
+"\\textbf{1. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Naši podřízení si vedli dobře. Podařilo se jim vztyčit sopku\n"
+"    a postavit pevnost v řídce osídleném lese těsně za hranicemi Erathie.\n"
+"    Zatímco Pánové Kobek se podzemím blíží k erathijskému hlavnímu městu,\n"
+"    musíte udeřit na jejich spojence, elfy z AvLee.}\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:218
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Enemy Armies:}\n"
+#| "\n"
+msgid ""
+"\\textbf{The Queen}\n"
+"\n"
+msgstr ""
+"\\textbf{Nepřátelské Armády:}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:222
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{2} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Read: ``The Gold Dragon Queen is a powerful ally of AvLee.\n"
+#| "    You must find her lair and see to her demise, as this will greatly weaken\n"
+#| "    the elves and make them less of a threat to our plans to destroy Erathia.\n"
+#| "    Go now, and make us proud!''\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"The Gold Dragon Queen is a powerful ally of AvLee.\n"
+"You must find her lair and see to her demise, as this will greatly weaken the elves and make them less of a threat to our plans to destroy Erathia.\n"
+"Go now, and make us proud!\n"
+"\n"
+msgstr ""
+"\\textbf{2. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Čtěte: \\uv{Královna Zlatých Draků je mocnou spojenkyní AvLee.\n"
+"    Musíte najít její doupě a zajistit její zánik, protože to výrazně oslabí\n"
+"    elfy a učiní je menší hrozbou pro naše plány na zničení Erathie.\n"
+"    Jděte hned a udělejte nám radost!}\n"
+"\\end{itemize}\n"
+"\n"

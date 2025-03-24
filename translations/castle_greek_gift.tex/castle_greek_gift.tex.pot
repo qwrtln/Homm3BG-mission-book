@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-01-12 19:44+0100\n"
+"POT-Creation-Date: 2025-03-24 10:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,16 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:224
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:97
-#: campaigns/castle_sicilian_dragon.tex:155
+#: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
@@ -47,8 +48,9 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
-#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
+#: campaigns/inferno_devilish_plan.tex:105 campaigns/castle_greek_gift.tex:49
+#: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
@@ -58,9 +60,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:111
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
@@ -73,10 +76,10 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:124
-#: campaigns/inferno_deal_with_the_devil.tex:120
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:99
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
 msgid ""
@@ -85,9 +88,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:143 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 campaigns/castle_sicilian_dragon.tex:131
+#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/stand_united.tex:87 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:246
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
 #, no-wrap
 msgid ""
@@ -96,23 +100,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/bloody_grail.tex:21 campaigns/inferno_devilish_plan.tex:30
+#: coops/stand_united.tex:23 clash/bloody_grail.tex:21
+#: campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: campaigns/inferno_steadwicks_fall.tex:50 campaigns/castle_greek_gift.tex:22
-#: campaigns/castle_sicilian_dragon.tex:20
-#: campaigns/castle_two_knights_defense.tex:19
-#, no-wrap
-msgid ""
-"\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
 
@@ -177,6 +172,15 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
+#: campaigns/castle_two_knights_defense.tex:19
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
 
@@ -381,7 +385,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:121
+#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
 #, no-wrap
 msgid ""
@@ -390,7 +394,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:123
+#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
 #, no-wrap
 msgid ""
@@ -431,7 +435,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:157
+#: campaigns/castle_greek_gift.tex:137 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
