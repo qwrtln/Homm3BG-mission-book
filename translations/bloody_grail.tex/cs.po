@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-24 15:31+0000\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -43,7 +43,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -60,7 +60,7 @@ msgstr ""
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
-#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
 #: sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -110,8 +110,8 @@ msgstr ""
 #. type: Plain text
 #: clash/bloody_grail.tex:3
 msgid ""
-"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-"
-"grail.png}"
+"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-grail."
+"png}"
 msgstr "\\addscenariosection{1}{Střet}{Krvavý Grál}{\\images/bloody-grail.png}"
 
 #. type: multicols*

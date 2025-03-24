@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-24 15:31+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -26,7 +26,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -78,7 +78,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -92,7 +92,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -108,7 +108,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:140
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -123,7 +123,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -140,7 +140,7 @@ msgstr ""
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
@@ -237,7 +237,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:129
+#: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
 #, no-wrap
@@ -249,7 +249,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:191
+#: campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:196
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
@@ -822,9 +822,7 @@ msgstr ""
 msgid ""
 "\\textbf{Enemy at the gates}\n"
 "\n"
-msgstr ""
-"\\textbf{Wróg u bram}n"
-"\n"
+msgstr "\\textbf{Wróg u bram}n\n"
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:228
@@ -852,7 +850,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:233
-#,  no-wrap
+#, no-wrap
 msgid ""
 "Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the help of local seers.\n"
 "They are fools to think these will help them overcome our Kreegan fortress.\n"
