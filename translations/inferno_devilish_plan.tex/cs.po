@@ -427,20 +427,17 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:86
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
-"[overlay]\n"
-"  \\centering\n"
-"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+"\\begin{center}\n"
+"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
