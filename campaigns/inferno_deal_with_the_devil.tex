@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_US
 \addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}{3. Deal With the Devil}{\images/firewall.png}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \textbf{Author:} Tm335
 
@@ -40,38 +40,13 @@ This Scenario plays out over 14 Rounds.
 
 \textbf{Town Buildings:} \svgunit{bronze} Dwelling, \svgunit{silver} Dwelling, City Hall, Citadel
 
-\textbf{Bonus:} Add a ``war machine'' of your choice to your hand.
+\textbf{Bonus:} Gain a War Machine of your choice.
 
 \subsection*{\MakeUppercase{AI Hero Setup}}
 
 \textbf{Faction:} Castle, Rampart
 
-\textbf{Rampart Charging Army \#1:} A Few Centaurs, a Pack of Dwarves, a Pack of Elves, a Pack of Pegasi, a Few Unicorn
-
-\textbf{Castle Charging Army \#1:} A Pack of Marksmen, a Pack of Elves, a Few Griffins, a Pack of Zealots, a Few Champions
-
-\textbf{Rampart Charging Army \#2:} A Pack of Dwarves, a Pack of Elves, a Few Pegasi, a Pack of Dendroids, a Pack of Unicorns
-
-\textbf{Castle Charging Army \#2:} A Pack of Halberdiers, a Few Griffins, a Few Crusaders, a Pack of Zealots, a Pack of Champions
-
-\textbf{Charging Armies \#1 and \#2 Deck:} 3 × Might Card, 2 × Skill Card
-
-\textbf{Charging Armies \#1 and \#2 Skill Deck:} 1 × ``Shield of the Damned'' Artifact Card, 1 × ``Sword of Hellfire'' Artifact Card
-
-\textbf{Final Charging Army:} A Pack of Griffins, a Pack of Zealots, a Pack of Champions, a Pack of Unicorns, a Few Archangels, a ``Ballista'' war machine
-
-\textbf{Final Charging Army Deck:} 3 × Might Card, 3 × Skill Card
-
-\textbf{Final Charging Army Skill/Ability Deck:} 1 × ``Shield of the Damned'' Artifact Card, 1 × ``Sword of Hellfire'' Artifact Card,
-  1 × ``Ballistics'' Ability Card (at Basic effect), 1 × ``First Aid'' Ability Card (at Expert effect)
-
-Charging Armies \#1 and \#2 use the same AI Deck and Skill Deck. Reshuffle both Decks after Combat.
-
-Both Artifact Cards of all Charging Armies are treated as Skills, and use the top ``less powerful'' effect on the Card.
-The ``Sword of Hellfire'' will be used in attacks and retaliation attacks.
-It is not used when attacking Walls or Gates, and remains in effect on the Unit.
-If ``Shield of the Damned'' is drawn, it takes effect when any Charging Army Unit takes attack or retaliation damage.
-If the AI Skill Card advises ``do it again'', the Artifact Cards are not played again immediately, but instead are played as soon as the next Unit is able to use them.
+Refer to the \pagelink{Steadwick's Fall AI}{table below the map layout} for detailed information about Units and AI Decks.
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -104,37 +79,35 @@ The Enemy Charging Castle Hero \#1 starts on the center Field of S3 Starting Map
 
 Place your Hero on the center Field of the S6 Inferno Starting Map Tile.
 
-You cannot Recruit a Secondary Hero.
-
 \subsection*{\MakeUppercase{Victory Conditions}}
 
 Defend your main fortress, Kleesive, from all Charging Enemy Heros, and from the Final Charging Army.
 
 \subsection*{\MakeUppercase{Defeat Conditions}}
 
-You lose one Combat encounter with your Main Hero. Surrender is not an option.
+You lose if any of the following occur:
 
-Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.
+\begin{itemize}
+  \item You lose one Combat encounter with your Main Hero.
+    Surrender is not an option.
+  \item Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.
+\end{itemize}
 
 \subsection*{\MakeUppercase{Timed Events}}
 
 \textbf{\nth{1} Round:}
 \begin{itemize}
-  \item Read: ``Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue
-    operation. Clan Kreelah, prepare our defenses! Protect Kleesive at all costs. We have the advantage.''
+  \item Read ``Refusal'' section.
 \end{itemize}
 
 \textbf{\nth{2} Round:}
 \begin{itemize}
-  \item Read: ``Castle and AvLee armies will be at our gates soon. They must come through the volcanic corridor
-    to our east. We cannot meet them in battle on the field, we must defend from within Kleesive, where  % no-check-caps
-    their magic is diminished on this cursed ground.''
+  \item Read ``Enemy at the gates'' section.
 \end{itemize}
 
 \textbf{\nth{3} Round:}
 \begin{itemize}
-  \item Read: ``Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the
-    help of local seers. They are fools to think these will help them overcome our Kreegan fortress.”
+  \item Read ``Scout Report'' section.
 \end{itemize}
 
 \textbf{\nth{4} Round:}
@@ -156,12 +129,14 @@ Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attemptin
 
 \textbf{\nth{12} Round:}
 \begin{itemize}
-  \item The Final Charging Enemy Army appears on the Settlement Field of the F3 Tile. This army has 4 MPs per Turn.
+  \item The Final Charging Enemy Army appears on the Settlement Field of the F3 Tile.
+    This army has 4 \svgeven{movement} per Turn.
 \end{itemize}
 
 \textbf{\nth{16} Round:}
 \begin{itemize}
-  \item The Final Charging Army will attack this Round. We must hold Kleesive at all costs!
+  \item The Final Charging Army will attack this Round.
+    We must hold Kleesive at all costs!
 \end{itemize}
 
 \textbf{When you complete the Scenario:}
@@ -175,52 +150,118 @@ During this ``Inferno'' Campaign Scenario, the following rules apply:
 
 \begin{itemize}
   \item Your Main Hero can only travel in Inferno Map Tiles. You cannot enter any other Map Tile type.
+  \item You cannot recruit a Secondary Hero.
   \item You cannot attack Enemy Charging Heroes. You can only defend against them while inside of Kleesive.
   \item Gain 3 \svg{gold} when you defeat a Charging Hero's Army.
   \item If an Enemy Charging Hero enters a Map Tile or Field that your Main Hero is on (exception is if you are in
     your Inferno city Kleesive), or if a charging Hero attacks Kleesive and you are not present in your city
     of Kleesive, you are immediately transported back to Kleesive, you lose any remaining Movement Points
     you have, lose 3 \svg{gold}, gain \svg{morale_negative}, and randomly discard 1 Card from your hand.
-  \item Enemy Charging Heroes move only 2 MPs. The Final Charging Army moves 4 MPs. They take the shortest
+  \item Enemy Charging Heroes move only 2 \svgeven{movement}. The Final Charging Army moves 4 \svgeven{movement}. They take the shortest
     route to Kleesive. If you own a Mine in a Map Tile they enter, they will capture the Mine (but will not
     ``backtrack'' to do so), and then continue along the shortest route to Kleesive. They ignore everything
-    else. They also make use of Stables 1 MP bonus.
+    else. They also make use of Stables 1 \svgeven{movement} bonus.
   \item Enemy Charging Heros always move amongst each to not ``block'' each other's paths (thus slowing each
     other down). The Enemy Charging Hero that can get closest to Kleesive will move before any others.
   \item Castle and Rampart already have all Mines controlled in their territory (non-Inferno Map Tiles). Place enemy
     Cubes on all of their Mines.
-  \item Your Walls, Gates, and Arrow Tower in Kleesive are completely rebuilt after each battle.
+  \item Your Walls, Gates, and Arrow Tower in Kleesive are rebuilt after each battle.
   \item Enemy \svg{unit_flying} Units will fly over Walls and Gates to attack your Units whenever possible.
   \item Enemy \svg{unit_ranged} Units will always attack the Arrow Tower once there are no other \svg{unit_ranged} Units to attack.
   \item Enemy Units will always attack your Units if possible. Only when that is not possible, then the Gate,
     and then Walls will be attacked.
+  \item During Combat with AI, treat Artifacts in Skill Decks just like Abilities.
+    The ``Sword of Hellfire'' will be used in attacks and retaliation attacks.
+    It is not used when attacking Walls or Gates, and remains in effect on the Unit.
+    ``Shield of the Damned'' takes effect when any Charging Army Unit takes attack or retaliation damage.
+    If the AI Skill Card advises to ``do it again'', the Artifacts are not played again immediately, but instead are played as soon as the next Unit is able to use them.
+
 \end{itemize}
 
-\vspace*{\fill}
-\includegraphics[width=\linewidth, keepaspectratio]{\art/cerberi.png}
-\vspace*{\fill}
 
-\end{multicols*}
+\end{multicols}
 
+
+\begin{minipage}{\textwidth}
 \begin{tikzpicture}[remember picture, overlay]
-  \node(bg)[anchor=center, yshift=37em, opacity=0.17] at (current page.south) {
+  \node(bg)[anchor=center, yshift=27em, opacity=0.17] at (current page.south) {
     \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/inferno.png}
   };
-  \node(map)[anchor=center] at (current page.center) {
+  \node(map)[anchor=center] at (9, -9) {
     \includegraphics[width=\textwidth]{\maps/inferno_deal_with_the_devil.png}
   };
 
 
-  \node at (1.5, -6) {\large{{\textbf{\textcolor{darkcandyapplered}{S4}}}}};
-  \node at (7, -6) {\large{{\textbf{\textcolor{darkcandyapplered}{\#F4}}}}};
-  \node at (12.6, -8.4) {\large{{\textbf{\textcolor{darkcandyapplered}{F17}}}}};
-  \node at (15, -9.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Kleesive}}}}};
-  \node at (15, -10.3) {\large{{\textbf{\textcolor{darkcandyapplered}{S6}}}}};
-  \node at (15.9, -16.8) {\large{{\textbf{\textcolor{darkcandyapplered}{N12}}}}};
-  \node at (12.4, -18) {\large{{\textbf{\textcolor{darkcandyapplered}{F16}}}}};
-  \node at (9.3, -15.6) {\large{{\textbf{\textcolor{darkcandyapplered}{F18}}}}};
-  \node at (6, -18) {\large{{\textbf{\textcolor{darkcandyapplered}{F12}}}}};
-  \node at (2, -19) {\large{{\textbf{\textcolor{darkcandyapplered}{S3}}}}};
-  \node at (0.1, -13.3) {\large{{\textbf{\textcolor{darkcandyapplered}{F3}}}}};
-  \node at (4.3, -10.3) {\large{{\textbf{\textcolor{darkcandyapplered}{F6}}}}};
+  \node at (1.5, -3.0) {\large{{\textbf{\textcolor{darkcandyapplered}{S4}}}}};
+  \node at (7, -3.0) {\large{{\textbf{\textcolor{darkcandyapplered}{\#F4}}}}};
+  \node at (12.6, -5.4) {\large{{\textbf{\textcolor{darkcandyapplered}{F17}}}}};
+  \node at (15, -6.5) {\large{{\textbf{\textcolor{darkcandyapplered}{Kleesive}}}}};
+  \node at (15, -7.3) {\large{{\textbf{\textcolor{darkcandyapplered}{S6}}}}};
+  \node at (15.9, -13.8) {\large{{\textbf{\textcolor{darkcandyapplered}{N12}}}}};
+  \node at (12.4, -15.0) {\large{{\textbf{\textcolor{darkcandyapplered}{F16}}}}};
+  \node at (9.3, -12.6) {\large{{\textbf{\textcolor{darkcandyapplered}{F18}}}}};
+  \node at (6, -15.0) {\large{{\textbf{\textcolor{darkcandyapplered}{F12}}}}};
+  \node at (2, -16.0) {\large{{\textbf{\textcolor{darkcandyapplered}{S3}}}}};
+  \node at (0.1, -10.3) {\large{{\textbf{\textcolor{darkcandyapplered}{F3}}}}};
+  \node at (4.3, -7.3) {\large{{\textbf{\textcolor{darkcandyapplered}{F6}}}}};
+
 \end{tikzpicture}
+\end{minipage}
+
+\pagebreak
+
+\begin{multicols}{2}
+\subsection*{\MakeUppercase{The Story}}
+
+\textbf{Refusal}
+
+Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue operation.
+Clan Kreelah, prepare our defenses!
+Protect Kleesive at all costs.
+We have the advantage.
+
+\textbf{Enemy at the Gates}
+
+Castle and AvLee armies will be at our gates soon.
+They must come through the volcanic corridor to our east.
+We cannot meet them in battle on the field, we must defend from within Kleesive, where their magic is diminished on this cursed ground.  % no-check-caps
+
+\textbf{Scout Report}
+
+Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the help of local seers.
+They are fools to think these will help them overcome our Kreegan fortress.
+
+\end{multicols}
+\vspace*{-1em}
+\begin{table*}[!hb]
+  \pagetarget{Steadwick's Fall AI}{}
+  \hommtable[]{37.5}{
+    \centering
+    \medskip
+    \textbf{AI Hero Setup}\\
+    \medskip
+    \begin{tabularx}{0.95\linewidth}{>{\centering}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\centering\arraybackslash}X>{\centering\arraybackslash}p{0.28\linewidth}}
+      \darkcell{Enemy} & \darkcell{Units} & \darkcell{AI Deck} & \darkcell{Artifacts/Abilities} \\
+      \darkcellleft[2.8]{Rampart Charging Army \#1}
+      & \lightcellleft[2.8]{Few Unicorns\\Pack of Pegasi\\Pack of Elves\\Pack of Dwarves\\Few Centaurs}
+      & \makebox[129pt][r]{\multirow{4}{*}[12.65ex]{\lightcellleft[11.75]{3~×~Might \svg{might-yellow} Card\\2~×~Skill \svg{skill-yellow} Card \\\phantom{.}\\ \textit{Armies use the same Deck. Reshuffle after every Combat.}}}}
+      & \makebox[147pt][r]{\multirow{4}{*}[12.65ex]{\lightcellleft[11.75]{1~×~Shield~of~the Damned \textit{(Top effect)}\\1~×~Sword~of~Hellfire \textit{(Top effect)}\\\phantom{.}\\ \textit{Armies use the same Deck. Reshuffle after every Combat.}}}} \\
+      \darkcellleft[2.8]{Caslte Charging Army \#1}
+      & \lightcellleft[2.8]{Few Champions\\Pack of Zealots\\Pack of Griffins\\Pack of Elves\\Pack of Marksmen}
+      &
+      & \\
+      \darkcellleft[2.8]{Rampart Charging Army \#2}
+      & \lightcellleft[2.8]{Pack of Unicorns\\Pack of Dendroids\\Few Pegasi\\Pack of Elves\\Pack of Dwarves}
+      &
+      & \\
+      \darkcellleft[2.8]{Caslte Charging Army \#2}
+      & \lightcellleft[2.8]{Pack of Champions\\Pack of Zealots\\Few Crusaders\\Few Grifins\\Pack of Halberdiers}
+      &
+      & \\
+      \darkcellleft[4.4]{Final Charging Army}
+      & \lightcellleft[4.4]{Few Archangels\\Pack of Unicorns\\Pack of Champions\\Pack of Zealots\\Pack of Griffins\\Ballista War Machine}
+      & \lightcellleft[4.4]{3~×~Might \svg{might-yellow} Card\\3~×~Skill \svg{skill-yellow} Card}
+    & \lightcellleft[4.4]{1~×~Shield~of~the Damned \textit{(Top effect)}\\1~×~Sword~of~Hellfire \textit{(Top effect)}\\1~×~Ballistics \textit{(Basic effect)}\\1~×~First~Aid \textit{(Expert effect)}} \\ \end{tabularx}
+  }
+\vspace*{-5em}
+\end{table*}
