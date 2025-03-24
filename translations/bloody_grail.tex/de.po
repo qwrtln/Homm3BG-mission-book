@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-18 18:53+0000\n"
+"POT-Creation-Date: 2025-03-24 10:20+0100\n"
 "PO-Revision-Date: 2024-10-22 22:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,6 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:224
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -42,9 +43,9 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:124
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
@@ -57,7 +58,8 @@ msgstr ""
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
-#: sections/credits.tex:28 sections/credits.tex:32
+#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -86,7 +88,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
-#: campaigns/inferno_devilish_plan.tex:30
+#: campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
@@ -100,8 +102,8 @@ msgstr ""
 #. type: Plain text
 #: clash/bloody_grail.tex:3
 msgid ""
-"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-grail."
-"png}"
+"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-"
+"grail.png}"
 msgstr ""
 
 #. type: multicols*

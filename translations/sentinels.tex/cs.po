@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-12 22:04+0000\n"
+"POT-Creation-Date: 2025-03-24 10:20+0100\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,17 +20,19 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
+"sentinel.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/"
+"sentinel.png}"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:224
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -82,9 +84,10 @@ msgstr ""
 "  Když to nastane, jen vy a váš spojenec budete stát mezi hordami a úplným zničením těchto zemí.\n"
 "}\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:18
+#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
@@ -105,10 +108,11 @@ msgstr ""
 "Tento Scénář se hraje na 12 Kol.\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
-#: coops/emerald_island.tex:18 clash/dragoncurse_castle.tex:21
-#: campaigns/inferno_devilish_plan.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
@@ -207,12 +211,13 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:38 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:65
-#: campaigns/inferno_steadwicks_fall.tex:70
-#: campaigns/inferno_deal_with_the_devil.tex:77
+#: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:37
+#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -222,8 +227,9 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:67
-#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
+#: campaigns/inferno_devilish_plan.tex:105 campaigns/castle_greek_gift.tex:49
+#: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
@@ -264,9 +270,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:47 campaigns/inferno_devilish_plan.tex:98
-#: campaigns/inferno_steadwicks_fall.tex:111
-#: campaigns/inferno_deal_with_the_devil.tex:110
+#: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
@@ -287,11 +294,12 @@ msgstr ""
 "Porážka všech invazivních armád.\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:51 campaigns/inferno_devilish_plan.tex:102
-#: campaigns/inferno_steadwicks_fall.tex:116
-#: campaigns/inferno_deal_with_the_devil.tex:114
+#: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -324,9 +332,9 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:108
-#: campaigns/inferno_steadwicks_fall.tex:124
-#: campaigns/inferno_deal_with_the_devil.tex:120
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #, no-wrap
@@ -405,12 +413,13 @@ msgstr ""
 "\\vspace{-0.5em}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
+#: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:148
-#: campaigns/inferno_steadwicks_fall.tex:188
-#: campaigns/inferno_deal_with_the_devil.tex:173
+#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -603,9 +612,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:268 sections/credits.tex:26
+#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/stand_united.tex:87 clash/the_hunt.tex:41
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:246
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
+#: sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -614,8 +625,10 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
-#: coops/titans_stronghold.tex:116 clash/bloody_grail.tex:121
-#: clash/bloody_grail.tex:127 sections/credits.tex:28 sections/credits.tex:32
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
+#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: sections/credits.tex:32
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
