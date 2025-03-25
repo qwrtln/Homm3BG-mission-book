@@ -102,13 +102,18 @@ During this Scenario:
 
 \end{multicols*}
 
+For 4 or more players, add more islands.
+See 6-player example:
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, yshift=37em, opacity=0.19] at (current page.south) {
+    \includegraphics[width=0.95\paperwidth, keepaspectratio]{\art/orb_of_tempestuous_fire.png}
+  };
+\end{tikzpicture}
+
 \begin{center}
-  \includegraphics[width=0.8\linewidth]{\maps/TreasureIsland_4p.png}
-  \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
   \vfill
-  \includegraphics[width=0.8\linewidth]{\maps/TreasureIsland_5p.png}
-  \captionof{figure}{\textbf{5-PLAYER SCENARIO}}
-  \vfill
-  \includegraphics[width=0.8\linewidth]{\maps/TreasureIsland_6p.png}
+  \includegraphics[width=\linewidth]{\maps/TreasureIsland_6p.png}
   \captionof{figure}{\textbf{6-PLAYER SCENARIO}}
+  \vfill
 \end{center}

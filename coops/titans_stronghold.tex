@@ -64,7 +64,7 @@ Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Til
 There are undefeated Units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).
 
 \begin{tikzpicture}[overlay]
-  \node[inner sep=0pt, opacity=0.3] at (0, -6.2) {\includegraphics[width=0.75\linewidth, keepaspectratio]{\art/shackles_of_war.png}};
+  \node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\includegraphics[width=0.75\linewidth, keepaspectratio]{\art/shackles_of_war.png}};
 \end{tikzpicture}
 
 \subsection*{\MakeUppercase{Timed Events}}
@@ -171,7 +171,7 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
     & \lightcell[1.8]{1\bronze 6\silver 8\golden 6\azure \linebreak
       Then\linebreak
       2\bronze 6\silver 8\golden 5\azure}\\
-  \darkcell[1.7]{6 players}
+  \darkcell[1.8]{6 players}
     & \lightcell[1.8]{8\bronze 8\silver 4\golden 1\azure \linebreak
       Then\linebreak
       7\bronze 7\silver 5\golden 2\azure}
@@ -193,9 +193,15 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
   \transparent{0.3}{\includegraphics[width=0.6\linewidth, keepaspectratio]{\art/land_mine.png}}
 \end{center}
 
-\vspace*{\fill}
-
 \newpage
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, opacity=0.15] at (current page.center) {
+    \includegraphics[width=\paperwidth, keepaspectratio]{\art/hellstorm_helmet.png}
+  };
+\end{tikzpicture}
+
+\vspace{-3em}
 
 \begin{minipage}{0.4\paperwidth}
   \centering
@@ -204,7 +210,7 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
 \end{minipage}
 \begin{minipage}{0.4\paperwidth}
   \centering
-  \includegraphics[width=0.36\paperwidth]{\maps/titans-2.png}
+  \includegraphics[width=0.3\paperwidth]{\maps/titans-2.png}
   \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
 \end{minipage}
 \vspace{1em}
@@ -222,12 +228,13 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
 \vspace{1em}
 \linebreak
 \begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-5.png}
+  \hfill
+  \includegraphics[width=0.44\paperwidth]{\maps/titans-5.png}
   \captionof{figure}{\textbf{5-PLAYER SCENARIO}}
 \end{minipage}
 \begin{minipage}{0.4\paperwidth}
-  \centering
-  \includegraphics[width=0.38\paperwidth]{\maps/titans-6.png}
+  \vspace{1em}
+  \hfill
+  \includegraphics[width=0.44\paperwidth]{\maps/titans-6.png}
   \captionof{figure}{\textbf{6-PLAYER SCENARIO}}
 \end{minipage}
