@@ -28,6 +28,7 @@
 \usepackage{hyperref}
 \usepackage[noautomatic, nonewpage]{imakeidx}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage[super]{nth}
 \usepackage{outlines}
 \usepackage{paracol}
@@ -117,6 +118,22 @@
   {\raisebox{-0.15\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
 
+\newcommand{\bronze}[1][10]{%
+  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/bronze-mono.svg}{\svgs/bronze.svg}}}}%
+}
+
+\newcommand{\silver}[1][10]{%
+  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/silver-mono.svg}{\svgs/silver.svg}}}}%
+}
+
+\newcommand{\golden}[1][10]{%
+  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/golden-mono.svg}{\svgs/golden.svg}}}}%
+}
+
+\newcommand{\azure}[1][10]{%
+  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/azure-mono.svg}{\svgs/azure.svg}}}}%
+}
+
 \newcommand{\svgunit}[2][10]{%
   {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
@@ -203,13 +220,17 @@
 \newcommand{\addscenariogroup}[2]{
   \thispagestyle{empty}
   \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
-  \AddToHookNext{shipout/background}{%
-    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}%
+  \iftoggle{noartbackground}{}{
+    \AddToHookNext{shipout/background}{%
+      \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}%
+    }
   }
   \begin{tikzpicture}[remember picture, overlay, inner sep=10pt]
-    \node(cover)[anchor=center] at (current page.center) {
-      \includegraphics[height=\paperheight, keepaspectratio]{#2}
-    };
+    \iftoggle{noartbackground}{}{
+      \node(cover)[anchor=center] at (current page.center) {
+        \includegraphics[height=\paperheight, keepaspectratio]{#2}
+      };
+    }
     \node(heading)[anchor=center] at (current page.center) {
       \includegraphics[width=\linewidth, keepaspectratio]{\layout/grouping_heading.png}
     };
@@ -339,7 +360,9 @@
 % 3) Table contents like title and tabularx environment
 \newcommand{\hommtable}[3][shade, blur shadow={shadow opacity=15}]{
   \begin{tikzpicture}
-    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background.jpg}}};
+    \iftoggle{noartbackground}{}{
+      \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background.jpg}}};
+    }
     \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
     \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
     \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
@@ -347,8 +370,10 @@
       \begin{varwidth}{0.95\linewidth}
       \notefont{
         \bgroup
-        \color{arylideyellow}
-        \hypersetup{linkcolor=amber}
+        \iftoggle{noartbackground}{}{
+          \color{arylideyellow}
+          \hypersetup{linkcolor=amber}
+        }
         \setlength{\tabcolsep}{0.3em}
         #3
         \egroup
@@ -367,7 +392,9 @@
 % Redefinition of the table for mutlicol enviromnents
 \newcommand{\hommtablemulticol}[3][shade, blur shadow={shadow opacity=15}]{
   \begin{tikzpicture}
-    \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background-multicol.jpg}}};
+    \iftoggle{noartbackground}{}{
+      \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background-multicol.jpg}}};
+    }
     \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
     \draw [borderoutyellow, thick] (current bounding box.north west) rectangle (current bounding box.south east);
     \draw [borderinyellow, thick] ([xshift=+3pt, yshift=-3pt] current bounding box.north west) rectangle ([xshift=-3pt, yshift=3pt] current bounding box.south east);
@@ -375,8 +402,10 @@
       \begin{varwidth}{0.95\linewidth}
       \notefont{
         \bgroup
-        \color{arylideyellow}
-        \hypersetup{linkcolor=amber}
+        \iftoggle{noartbackground}{}{
+          \color{arylideyellow}
+          \hypersetup{linkcolor=amber}
+        }
         \setlength{\tabcolsep}{0.3em}
         #3
         \egroup
@@ -406,8 +435,20 @@
 
 \newcommand{\lightcell}[2][0.9]{
   \begin{tikzpicture}
-    \filldraw[line width=1.0pt, fill=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
-    \node[text width=\linewidth, align=center] at (current bounding box.center) {\color{white}#2};
+    \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\iftoggle{noartbackground}{}{\color{white}}#2};
+  \end{tikzpicture}
+}
+
+\newcommand{\lightcellleft}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=left] at (current bounding box.center) {
+      \iftoggle{noartbackground}{}{\color{white}}
+      \leftskip=0.4em
+      \rightskip=0pt plus 1fil
+      #2\\
+    };
   \end{tikzpicture}
 }
 
@@ -455,8 +496,10 @@
   \qrgithub
 \end{center}
 
-\AddToHookNext{shipout/background}{
-  \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+\iftoggle{noartbackground}{}{
+  \AddToHookNext{shipout/background}{
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+  }
 }
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]

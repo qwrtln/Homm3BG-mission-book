@@ -28,10 +28,10 @@ This Scenario is played over 7 Rounds.
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item  1 × A Few \svgunit{bronze} Units of your choice
+  \item  1 × A Few \bronze\ Units of your choice
 \end{itemize}
 
-\textbf{Town Buildings:} \svgunit{bronze} Dwelling
+\textbf{Town Buildings:} \bronze\ Dwelling
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -165,10 +165,14 @@ Prepare an AI Deck for Settlement defenders.
     \textbf{Enemy Clan Armies}\\
     \bigskip
 
-    \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
-    \newcommand{\silver}[0]{\svgunit[12]{silver}}
-    \newcommand{\golden}[0]{\svgunit[12]{golden}}
-    \newcommand{\azure}[0]{\svgunit[12]{azure}}
+    \let\origbronze\bronze
+    \let\origsilver\silver
+    \let\origgolden\golden
+    \let\origazure\azure
+    \renewcommand{\bronze}{\origbronze[12]}
+    \renewcommand{\silver}{\origsilver[12]}
+    \renewcommand{\golden}{\origgolden[12]}
+    \renewcommand{\azure}{\origazure[12]}
 
       \begin{tabularx}{0.95\linewidth}{p{0.2\linewidth}XXXX} &
       \darkcell{\textbf{Easy}} &
