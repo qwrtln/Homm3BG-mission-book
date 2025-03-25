@@ -57,10 +57,17 @@ First Player to flag Dragon Utopia wins the Scenario.
 At the end of the \nth{12} Round, if the Dragon Utopia is not flagged by any player, all players lose the Scenario.
 
 \begin{center}
-  \transparent{0.4}{\includegraphics[width=0.55\linewidth, keepaspectratio]{\art/prayer.png}}
+  \transparent{0.2}{\includegraphics[width=0.55\linewidth, keepaspectratio]{\art/prayer.png}}
 \end{center}
 
 \subsection*{\MakeUppercase{Timed Events}}
+
+\textbf{\nth{1} Round:}
+\begin{itemize}
+  \item \nth{1} player gains \svg{morale_negative} Token (for Necropolis, -1 hand size  this turn).
+  \item \nth{2} player gains +1 \svgeven{movement}.
+  \item All the remaining players gain +1 \svgeven{movement}, and \svg{morale_positive} Token (for Necropolis, +1 hand size this turn).
+\end{itemize}
 
 \textbf{\nth{6} Round:}
 \begin{itemize}
@@ -78,12 +85,13 @@ During this Scenario:
   \item Each Obelisk can only be Flagged by one Player at a time.
   \item Whenever an Obelisk is visited for the first time, the visiting player gains one Arcane Spike.
   \item At the start of each Player's turn, that Player removes any unspent Arcane Spikes, then gains Arcane Spikes equal to the number of Obelisks controlled by them.
+  \item \textit{In Alliance Mode, add a Gold Unit for each extra alliance member to the Dragon Utopia fight (+1 when 2-people teams, +2 when 3-people teams.)}
 \end{itemize}
 
 \vspace{3em}
 
 \begin{center}
-  \transparent{0.4}{\includegraphics[width=0.9\linewidth, keepaspectratio]{\art/shield.png}}
+  \transparent{0.95}{\includegraphics[width=0.9\linewidth, keepaspectratio]{\art/magic_arrow.png}}
 \end{center}
 
 \textbf{Players can spend one Arcane Spike during combat to cast:}
@@ -92,7 +100,7 @@ During this Scenario:
   \begin{tabularx}{0.95\linewidth}{X}
     \darkcell{\raisebox{-.2\height}{} \textbf{Arcane Artillery}}\\
     \lightcell[1.8]{\svg{activation-table} Deal 1 \svg{damage-table} to target Unit by placing an Arcane Spike on it.} \\
-    \lightcell[3.8]{\svg{ongoing-table} A Unit with an Arcane Spike placed on it has its special ability negated \\ and receives +1 \svg{damage-table} from every source of \\ \svg{damage-table} and attacks for every Arcane Spike placed on them (even if they were to receive 0 damage)} \\
+    \lightcell[3.8]{\svg{ongoing-table} A Unit with an Arcane Spike placed on it has its special ability negated and suffers -1 \svg{defense_yellow} for every\\Arcane Spike on it.} \\
   \end{tabularx}
 }
 
@@ -101,10 +109,10 @@ During this Scenario:
 \begin{itemize}
   \item Arcane Artillery is considered to be a Spell of every school of magic of \svg{empower} 0.
   \item Arcane Artillery does not count toward your combat Round Spell limit.
-  \item Arcane Artillery ignores Azure Dragon's Special Ability when cast during \textbf{Level VII} combat.
+  \item Arcane Artillery ignores Units' Special Abilities.
   \item Players can cast Arcane Artillery during combat involving opponent's Heroes \textbf{during the neutral Unit's activation}.
   \item Each player can cast only \textbf{one Arcane Artillery per combat Round}.
-  \item \textit{In alliance mode, allies can cast Arcane Artillery on allied Unit's activation.}
+  \item \textit{In Alliance Mode, allies can cast Arcane Artillery on allied Unit's activation.}
 \end{itemize}
 
 \end{multicols}
