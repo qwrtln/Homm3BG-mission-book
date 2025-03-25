@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-25 14:49+0100\n"
 "PO-Revision-Date: 2024-06-29 16:10+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -31,7 +31,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -92,7 +92,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -106,7 +106,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -122,7 +122,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:140
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -137,7 +137,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -154,7 +154,7 @@ msgstr ""
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
-#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
 #: sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -379,7 +379,7 @@ msgstr ""
 #| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
-"  \\node[inner sep=0pt, opacity=0.3] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
+"  \\node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
@@ -538,7 +538,7 @@ msgid ""
 "4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden "
 "4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} "
 "& \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak "
-"Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.7]"
+"Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.8]"
 "{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure "
 "\\linebreak Then\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & "
 "\\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak "
@@ -548,8 +548,8 @@ msgid ""
 "7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak 3\\bronze "
 "8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 msgstr ""
-"\\hommtable[]{28}{ \\centering \\medskip \\textbf{Síla Armád Pevnosti "
-"Titánů}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
+"\\hommtable[]{28}{ \\centering \\medskip \\textbf{Síla Armád Pevnosti Titánů}"
+"\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} "
 "\\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]"
 "{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
 "\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
@@ -566,21 +566,21 @@ msgstr ""
 "{6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze "
 "3\\silver 4\\golden 3\\azure \\linebreak Poté\\linebreak 2\\bronze 4\\silver "
 "3\\golden 2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden "
-"3\\azure \\linebreak Poté\\linebreak 1\\bronze 4\\silver 5\\golden "
-"3\\azure}\\\\ \\darkcell[1.8]{4 hráči} & \\lightcell[1.8]{10\\bronze "
-"10\\silver \\linebreak 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze "
-"10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver "
-"5\\golden 3\\azure \\linebreak Poté\\linebreak 2\\bronze 5\\silver 5\\golden "
-"3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure "
-"\\linebreak Poté\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-"\\darkcell[1.8]{5 hráčů} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden "
-"1\\azure \\linebreak Poté\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} "
-"& \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak "
+"3\\azure \\linebreak Poté\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}"
+"\\\\ \\darkcell[1.8]{4 hráči} & \\lightcell[1.8]{10\\bronze 10\\silver "
+"\\linebreak 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver "
+"6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden "
+"3\\azure \\linebreak Poté\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} "
+"& \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak "
+"Poté\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]"
+"{5 hráčů} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure "
+"\\linebreak Poté\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & "
+"\\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak "
 "Poté\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]"
 "{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak Poté\\linebreak "
 "3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze "
 "6\\silver 8\\golden 6\\azure \\linebreak Poté\\linebreak 2\\bronze 6\\silver "
-"8\\golden 5\\azure}\\\\ \\darkcell[1.7]{6 hráčů} & \\lightcell[1.8]"
+"8\\golden 5\\azure}\\\\ \\darkcell[1.8]{6 hráčů} & \\lightcell[1.8]"
 "{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Poté\\linebreak "
 "7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze "
 "8\\silver 4\\golden 3\\azure \\linebreak Poté\\linebreak 6\\bronze 7\\silver "
@@ -597,32 +597,65 @@ msgid ""
 "{\\art/land_mine.png}}"
 msgstr ""
 
+#. type: tikzpicture
+#: coops/titans_stronghold.tex:203
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[remember picture, overlay]\n"
+#| "  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+#| "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+#| "  };\n"
+#| "  \\node(map)[anchor=center] at (current page.center) {\n"
+#| "    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+#| "  };\n"
+#| "  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+#| "  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+#| "  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
+#| "  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
+msgid ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.15] at (current page.center) {\n"
+"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
+"  };"
+msgstr ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+"  };\n"
+"  \\node(map)[anchor=center] at (current page.center) {\n"
+"    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+"  };\n"
+"  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+"  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+"  \\node at (4.3, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Dílky Mapy}}}}};\n"
+"  \\node at (4.3, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Pekla}}}}};"
+
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 1 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 2 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 3 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 4 HRÁČE}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 5 HRÁČŮ}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:233
+#: coops/titans_stronghold.tex:240
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 6 HRÁČŮ}}"
