@@ -229,7 +229,7 @@ msgid ""
 "This Scenario is played over 9 Rounds.\n"
 "\n"
 msgstr ""
-"Ten Scenariusz jest rozgrywany w 8 Rundach.\n"
+"Ten Scenariusz jest rozgrywany w 9 Rundach.\n"
 "\n"
 
 #. type: multicols
