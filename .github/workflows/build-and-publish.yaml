@@ -15,7 +15,59 @@ env:
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
+  make_monochrome:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Install magick
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec mv '{}' magick \;
+          chmod a+x magick
+
+      - name: Adjust map files for monochrome buld
+        run: |
+          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
+            -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+            IMG="assets/${IMG}"
+            echo "Converting ${IMG}"
+            TEMP_DIR=$(mktemp -d)
+            ALPHA="${TEMP_DIR}/alpha.png"
+            PROCESSED="${TEMP_DIR}/processed.png"
+
+            # Extract alpha channel
+            ./magick "${IMG}" -alpha extract "${ALPHA}"
+
+            # Adjust map images
+            ./magick "${IMG}" -negate -threshold 50% -negate -fill white -opaque black "${PROCESSED}"
+            ./magick "${PROCESSED}" -morphology Dilate Diamond:2 "${PROCESSED}"
+            ./magick "${PROCESSED}" -channel RGB -negate "${PROCESSED}"
+
+            # Recombine with original alpha
+            ./magick "${PROCESSED}" "${ALPHA}" -alpha off -compose CopyOpacity -composite "${IMG}"
+
+            rm -rf "${TEMP_DIR}"
+          done
+
+      - name: Move changed files
+        run: |
+          mkdir monochrome
+          git status --porcelain assets | awk '{print $2}' | xargs mv -t monochrome
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: monochrome-maps
+          path: monochrome
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
   build:
+    needs: make_monochrome
+    if: always()
     runs-on: ubuntu-latest
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
@@ -43,95 +95,73 @@ jobs:
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
           ./${PO4A_DIR}/po4a --no-update po4a.cfg
 
-      - name: Compile mission book
-        uses: xu-cheng/latex-action@v3
+      # - name: Compile mission book
+      #   uses: xu-cheng/latex-action@v3
+      #   with:
+      #     extra_system_packages: "inkscape"
+      #     latexmk_use_lualatex: true
+      #     latexmk_shell_escape: true
+      #     pre_compile: export HOMM3_GITHUB_BUILD=1
+      #     root_file: main_${{ matrix.language }}.tex
+      #
+      # - name: Install ghostscript
+      #   run: |
+      #     echo ${{ env.GHOSTSCRIPT_URL }}
+      #     wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+      #     tar -xvf *_amd64_snap.tgz
+      #     sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+      #
+      # - name: Optimize PDF
+      #   run: |
+      #     du -sh main_${{ matrix.language }}.pdf
+      #     tools/optimize.sh ${{ matrix.language }}
+      #     mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
+      #     du -sh main_${{ matrix.language }}.pdf
+      #
+      # - uses: actions/upload-artifact@v4
+      #   if: github.event_name == 'pull_request'
+      #   with:
+      #     name: main_${{ matrix.language }}
+      #     path: main_${{ matrix.language }}.pdf
+      #     retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+      #
+      # - name: Install poppler
+      #   if:  github.event_name == 'pull_request'
+      #   run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      #
+      # - name: Check number of pages
+      #   id: check_pages
+      #   if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
+      #   run: |
+      #     NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+      #     echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
+      #
+      # - name: Check for broken CMap
+      #   if: github.event_name == 'pull_request'
+      #   run: |
+      #     QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
+      #     pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
+      #     if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
+      #     then
+      #       echo "All good"
+      #     else
+      #       echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
+      #       exit 1
+      #     fi
+      #
+      # - name: Move file
+      #   run: |
+      #     mkdir ${{ matrix.language }}
+      #     mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
+
+      - name: Download monoochrome maps
+        uses: actions/download-artifact@v4
         with:
-          extra_system_packages: "inkscape"
-          latexmk_use_lualatex: true
-          latexmk_shell_escape: true
-          pre_compile: export HOMM3_GITHUB_BUILD=1
-          root_file: main_${{ matrix.language }}.tex
+          name: monochrome-maps
+          path: assets/maps
 
-      - name: Install ghostscript
-        run: |
-          echo ${{ env.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
-      - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
-
-      - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
-        with:
-          name: main_${{ matrix.language }}
-          path: main_${{ matrix.language }}.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
-      - name: Install poppler
-        if:  github.event_name == 'pull_request'
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
-
-      - name: Check number of pages
-        id: check_pages
-        if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
-        run: |
-          NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-          echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
-
-      - name: Check for broken CMap
-        if: github.event_name == 'pull_request'
-        run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
-          pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
-          if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
-          then
-            echo "All good"
-          else
-            echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
-            exit 1
-          fi
-
-      - name: Move file
-        run: |
-          mkdir ${{ matrix.language }}
-          # mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
-
-      - name: Install magick
-        run: |
-          sudo add-apt-repository universe
-          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec mv '{}' magick \;
-          chmod a+x magick
-
-      - name: Adjust map files for monochrome buld
-        run: |
-          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-            -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
-            IMG="assets/${IMG}"
-            TEMP_DIR=$(mktemp -d)
-            ALPHA="${TEMP_DIR}/alpha.png"
-            PROCESSED="${TEMP_DIR}/processed.png"
-
-            # Extract alpha channel
-            ./magick "${IMG}" -alpha extract "${ALPHA}"
-
-            # Adjust map images
-            ./magick "${IMG}" -negate -threshold 50% -negate -fill white -opaque black "${PROCESSED}"
-            ./magick "${PROCESSED}" -morphology Dilate Diamond:2 "${PROCESSED}"
-            ./magick "${PROCESSED}" -channel RGB -negate "${PROCESSED}"
-
-            # Recombine with original alpha
-            ./magick "${PROCESSED}" "${ALPHA}" -alpha off -compose CopyOpacity -composite "${IMG}"
-
-            rm -rf "${TEMP_DIR}"
-          done
+      - name: What's going on?
+        run: git status
 
       - name: Compile monochrome mission book
         uses: xu-cheng/latex-action@v3
@@ -142,12 +172,12 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
+      # - name: Optimize PDF
+      #   run: |
+      #     du -sh main_${{ matrix.language }}.pdf
+      #     tools/optimize.sh ${{ matrix.language }}
+      #     mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
+      #     du -sh main_${{ matrix.language }}.pdf
 
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
@@ -156,18 +186,18 @@ jobs:
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-      - name: Move file
-        run: mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
-
-      - name: Publish ${{ matrix.language }} in artifacts repository
-        # if: github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ matrix.language }}
-          publish_dir: ./${{ matrix.language }}
-          force_orphan: true
+      # - name: Move file
+      #   run: mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
+      #
+      # - name: Publish ${{ matrix.language }} in artifacts repository
+      #   if: github.event_name != 'pull_request'
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ matrix.language }}
+      #     publish_dir: ./${{ matrix.language }}
+      #     force_orphan: true
 
 
   check_pages:
