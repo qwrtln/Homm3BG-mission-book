@@ -16,6 +16,7 @@ env:
   GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: 0.73
+  IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
   build:
@@ -28,13 +29,70 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Compile draft book
+      # - name: Compile draft book
+      #   uses: xu-cheng/latex-action@v3
+      #   with:
+      #     extra_system_packages: "inkscape"
+      #     latexmk_use_lualatex: true
+      #     latexmk_shell_escape: true
+      #     pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
+      #     root_file: drafts.tex
+
+      # - name: Install ghostscript
+      #   run: |
+      #     wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+      #     tar -xvf *_amd64_snap.tgz
+      #     sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+
+      # - name: Optimize PDF
+      #   run: |
+      #     du -sh drafts.pdf
+      #     gs -o drafts_optimized.pdf \
+      #       -sDEVICE=pdfwrite \
+      #       -dCompatibilityLevel=1.5 \
+      #       -dPDFSETTINGS=/prepress \
+      #       -dDetectDuplicateImages=true \
+      #       drafts.pdf
+      #     mv drafts_optimized.pdf drafts.pdf
+      #     du -sh drafts.pdf
+      #
+      # - uses: actions/upload-artifact@v4
+      #   if: github.event_name == 'pull_request'
+      #   with:
+      #     name: drafts
+      #     path: draft-scenarios/drafts.pdf
+      #     retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Move file
+        run: |
+          mkdir drafts
+          # mv drafts.pdf drafts/drafts.pdf
+
+      - name: Install magick
+        # run: sudo apt-get install -y --no-install-recommends imagemagick
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec mv '{}' magick \;
+          chmod a+x magick
+          # mv magick /usr/bin
+
+      - name: Adjust map files for monochrome buld
+        run: |
+          ls
+          find ../assets/maps -name "*png" \
+            -exec ./magick '{}' -negate -threshold 50% -negate -fill white -opaque black '{}' \; \
+            -exec ./magick '{}' -morphology Dilate Diamond:2 '{}' \; \
+            -exec ./magick '{}' -channel RGB -negate '{}' \;
+
+      - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
-          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
+          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: drafts.tex
 
       - name: Install ghostscript
@@ -58,14 +116,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
         with:
-          name: drafts
+          name: drafts-mono
           path: draft-scenarios/drafts.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
-        run: |
-          mkdir drafts
-          mv drafts.pdf drafts/drafts.pdf
+        run: mv drafts.pdf drafts/drafts-mono.pdf
 
       - name: Publish drafts in artifacts repository
         if: github.event_name != 'pull_request'
