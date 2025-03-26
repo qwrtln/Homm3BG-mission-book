@@ -347,10 +347,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, \\svgunit{silver} Siedlisko, Ratusz, Cytadela\n"
+"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, \\silver\\ Siedlisko, Ratusz, Cytadela\n"
 "\n"
 
 #. type: multicols

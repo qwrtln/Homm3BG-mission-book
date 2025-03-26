@@ -16,6 +16,7 @@ env:
   GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: 0.73
+  IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
   build:
@@ -63,9 +64,69 @@ jobs:
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
+        if: github.event_name != 'pull_request'
         run: |
           mkdir drafts
           mv drafts.pdf drafts/drafts.pdf
+
+      - name: Install magick
+        if: github.event_name != 'pull_request'
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec mv '{}' magick \;
+          chmod a+x magick
+
+      - name: Adjust map files for monochrome buld
+        if: github.event_name != 'pull_request'
+        run: |
+          find . -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+            IMG="../assets/${IMG}"
+            TEMP_DIR=$(mktemp -d)
+            ALPHA="${TEMP_DIR}/alpha.png"
+            PROCESSED="${TEMP_DIR}/processed.png"
+
+            # Extract alpha channel
+            ./magick "${IMG}" -alpha extract "${ALPHA}"
+
+            # Adjust map images
+            ./magick "${IMG}" -negate -threshold 50% -negate -fill white -opaque black "${PROCESSED}"
+            ./magick "${PROCESSED}" -morphology Dilate Diamond:2 "${PROCESSED}"
+            ./magick "${PROCESSED}" -channel RGB -negate "${PROCESSED}"
+
+            # Recombine with original alpha
+            ./magick "${PROCESSED}" "${ALPHA}" -alpha off -compose CopyOpacity -composite "${IMG}"
+
+            rm -rf "${TEMP_DIR}"
+          done
+
+      - name: Compile monochrome draft book
+        if: github.event_name != 'pull_request'
+        uses: xu-cheng/latex-action@v3
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
+          root_file: drafts.tex
+
+      - name: Optimize PDF
+        if: github.event_name != 'pull_request'
+        run: |
+          du -sh drafts.pdf
+          gs -o drafts_optimized.pdf \
+            -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.5 \
+            -dPDFSETTINGS=/prepress \
+            -dDetectDuplicateImages=true \
+            drafts.pdf
+          mv drafts_optimized.pdf drafts.pdf
+          du -sh drafts.pdf
+
+      - name: Move file
+        if: github.event_name != 'pull_request'
+        run: mv drafts.pdf drafts/drafts-mono.pdf
 
       - name: Publish drafts in artifacts repository
         if: github.event_name != 'pull_request'

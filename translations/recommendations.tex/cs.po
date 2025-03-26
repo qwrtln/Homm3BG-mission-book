@@ -219,11 +219,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
-"For example, a Level VII Combat on Hard will be against 2 × \\svgunit{azure} Neutral Units.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\azure\\ Neutral Units.\n"
 "\n"
 msgstr ""
 "Souboje úrovně V--VII budou mít o 1 nižší obtížnost při hře na Těžkou nebo Nemožnou obtížnost.\n"
-"Například Souboj Úrovně VII na Těžkou obtížnost bude proti 2 × \\svgunit{azure} Neutrálním Jednotkám.\n"
+"Například Souboj Úrovně VII na Těžkou obtížnost bude proti 2 × \\azure\\ Neutrálním Jednotkám.\n"
 "\n"
 
 #. type: multicols*

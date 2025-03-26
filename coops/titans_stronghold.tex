@@ -28,8 +28,8 @@ This Scenario is played over 16 Rounds (15 on Impossible difficulty).
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item A Pack of \svgunit{bronze} Units of your choice
-  \item A Few \svgunit{bronze} Units of your choice
+  \item A Pack of \bronze\ Units of your choice
+  \item A Few \bronze\ Units of your choice
 \end{itemize}
 
 \textbf{Town Buildings:} None
@@ -124,10 +124,14 @@ There are undefeated Units left in the Titans' Stronghold at the end of Round 16
   \textbf{Strength of Titans' Stronghold Armies}\\
   \bigskip
 
-  \newcommand{\bronze}[0]{\svg[12]{bronze}}
-  \newcommand{\silver}[0]{\svg[12]{silver}}
-  \newcommand{\golden}[0]{\svg[12]{golden}}
-  \newcommand{\azure}[0]{\svg[12]{azure}}
+  \let\origbronze\bronze
+  \let\origsilver\silver
+  \let\origgolden\golden
+  \let\origazure\azure
+  \renewcommand{\bronze}{\origbronze[12]}
+  \renewcommand{\silver}{\origsilver[12]}
+  \renewcommand{\golden}{\origgolden[12]}
+  \renewcommand{\azure}{\origazure[12]}
 
   \begin{tabularx}{0.95\linewidth}{p{0.15\linewidth}XXXX} & \darkcell{Easy} & \darkcell{Normal} & \darkcell{Hard} & \darkcell{Impossible}\\
   \darkcell[1.2]{1 player}

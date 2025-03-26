@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: 2025-03-18 18:53+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -31,7 +31,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -85,7 +85,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
-#: campaigns/inferno_devilish_plan.tex:105 campaigns/castle_greek_gift.tex:49
+#: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -99,7 +99,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -115,7 +115,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:140
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -130,7 +130,7 @@ msgstr ""
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
@@ -144,7 +144,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:246
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
 #, no-wrap
@@ -159,10 +159,10 @@ msgstr ""
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Městské Budovy:} \\svgunit{bronze} Obydlí\n"
+"\\textbf{Městské Budovy:} \\bronze\\ Obydlí\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -285,19 +285,19 @@ msgstr ""
 #| msgid ""
 #| "\\textbf{Starting Units:}\n"
 #| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\svgunit{bronze} Units with the lowest Recruitment cost\n"
+#| "  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
 #| "\\end{itemize}\n"
 #| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item  1 × A Few \\svgunit{bronze} Units of your choice\n"
+"  \\item  1 × A Few \\bronze\\ Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Hrstku \\svgunit{bronze} Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 2 × Hrstku \\bronze\\ Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -508,7 +508,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:153
+#: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -554,7 +554,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: coops/close_to_enemies.tex:205
+#: coops/close_to_enemies.tex:209
 #, fuzzy, no-wrap
 #| msgid "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgid ""
@@ -565,10 +565,14 @@ msgid ""
 "    \\textbf{Enemy Clan Armies}\\\\\n"
 "    \\bigskip\n"
 "\n"
-"    \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}}\n"
-"    \\newcommand{\\silver}[0]{\\svgunit[12]{silver}}\n"
-"    \\newcommand{\\golden}[0]{\\svgunit[12]{golden}}\n"
-"    \\newcommand{\\azure}[0]{\\svgunit[12]{azure}}\n"
+"    \\let\\origbronze\\bronze\n"
+"    \\let\\origsilver\\silver\n"
+"    \\let\\origgolden\\golden\n"
+"    \\let\\origazure\\azure\n"
+"    \\renewcommand{\\bronze}{\\origbronze[12]}\n"
+"    \\renewcommand{\\silver}{\\origsilver[12]}\n"
+"    \\renewcommand{\\golden}{\\origgolden[12]}\n"
+"    \\renewcommand{\\azure}{\\origazure[12]}\n"
 "\n"
 "      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
 "      \\darkcell{\\textbf{Easy}} &\n"
@@ -604,21 +608,21 @@ msgid ""
 msgstr "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Síla Nepřátelských Armád}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Kola 6 + 7} & \\darkcell{Kola 8 + 9} & \\darkcell{Kolo 10}\\\\ \\darkcell[1.4]{Lehká} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normální} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Težká} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Nemožná} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: figure
-#: coops/close_to_enemies.tex:215
+#: coops/close_to_enemies.tex:219
 #, fuzzy
 #| msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 3 HRÁČE}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:222
+#: coops/close_to_enemies.tex:226
 #, fuzzy
 #| msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 4 HRÁČE}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:237
+#: coops/close_to_enemies.tex:241
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
@@ -626,7 +630,7 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:237
+#: coops/close_to_enemies.tex:241
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "

@@ -23,11 +23,11 @@ This Scenario is played over 14 Rounds.
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item A Pack of \svgunit{bronze} Units with the \textit{lowest} Recruitment cost
-  \item A Few \svgunit{bronze} Units with the \textit{highest} Recruitment cost
+  \item A Pack of \bronze\ Units with the \textit{lowest} Recruitment cost
+  \item A Few \bronze\ Units with the \textit{highest} Recruitment cost
 \end{itemize}
 
-\textbf{Town Buildings:} \svgunit{bronze} Dwelling, City Hall
+\textbf{Town Buildings:} \bronze\ Dwelling, City Hall
 
 \textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile
 
@@ -151,16 +151,20 @@ During this Scenario:
   \centering
   \medskip
 
-  \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
-  \newcommand{\silver}[0]{\svgunit[12]{silver}}
-  \newcommand{\golden}[0]{\svgunit[12]{golden}}
-  \newcommand{\azure}[0]{\svgunit[12]{azure}}
+  \let\origbronze\bronze
+  \let\origsilver\silver
+  \let\origgolden\golden
+  \let\origazure\azure
+  \renewcommand{\bronze}{\origbronze[20]}
+  \renewcommand{\silver}{\origsilver[20]}
+  \renewcommand{\golden}{\origgolden[20]}
+  \renewcommand{\azure}{\origazure[20]}
 
   \begin{tabularx}{0.95\linewidth}{XXXX}
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{bronze}} \textbf{Easy}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{silver}} \textbf{Normal}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{golden}} \textbf{Hard}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{azure}} \textbf{Impossible}}\\
+  \darkcell{\raisebox{-.2\height}{\bronze} \textbf{Easy}} &
+  \darkcell{\raisebox{-.2\height}{\silver} \textbf{Normal}} &
+  \darkcell{\raisebox{-.2\height}{\golden} \textbf{Hard}} &
+  \darkcell{\raisebox{-.2\height}{\azure} \textbf{Impossible}}\\
   \lightcell[1.8]{No additional\\changes} &
   \lightcell[1.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 22} &
   \lightcell[1.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 30} &
@@ -216,16 +220,20 @@ During this Scenario:
   \centering
   \medskip
 
-  \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
-  \newcommand{\silver}[0]{\svgunit[12]{silver}}
-  \newcommand{\golden}[0]{\svgunit[12]{golden}}
-  \newcommand{\azure}[0]{\svgunit[12]{azure}}
+  \let\origbronze\bronze
+  \let\origsilver\silver
+  \let\origgolden\golden
+  \let\origazure\azure
+  \renewcommand{\bronze}{\origbronze[20]}
+  \renewcommand{\silver}{\origsilver[20]}
+  \renewcommand{\golden}{\origgolden[20]}
+  \renewcommand{\azure}{\origazure[20]}
 
   \begin{tabularx}{0.95\linewidth}{XXXX}
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{bronze}} \textbf{Easy}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{silver}} \textbf{Normal}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{golden}} \textbf{Hard}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{azure}} \textbf{Impossible}}\\
+  \darkcell{\raisebox{-.2\height}{\bronze} \textbf{Easy}} &
+  \darkcell{\raisebox{-.2\height}{\silver} \textbf{Normal}} &
+  \darkcell{\raisebox{-.2\height}{\golden} \textbf{Hard}} &
+  \darkcell{\raisebox{-.2\height}{\azure} \textbf{Impossible}}\\
   \lightcell[2.8]{No additional\\changes} &
   \lightcell[2.8]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 22} &
   \lightcell[2.8]{{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 26 \\ +1 Retaliation}} &
@@ -233,7 +241,7 @@ During this Scenario:
   \end{tabularx}
 }
 
-\vspace{-2em}
+\vspace{-1em}
 
 \begin{wrapfigure}{l}{0.3\textwidth}
   \raisebox{0pt}[\dimexpr\height-1.2\baselineskip\relax]{\framedimage[1.1\linewidth]{\art/rust_dragon.jpg}}
@@ -280,16 +288,20 @@ During this Scenario:
   \centering
   \medskip
 
-  \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
-  \newcommand{\silver}[0]{\svgunit[12]{silver}}
-  \newcommand{\golden}[0]{\svgunit[12]{golden}}
-  \newcommand{\azure}[0]{\svgunit[12]{azure}}
+  \let\origbronze\bronze
+  \let\origsilver\silver
+  \let\origgolden\golden
+  \let\origazure\azure
+  \renewcommand{\bronze}{\origbronze[20]}
+  \renewcommand{\silver}{\origsilver[20]}
+  \renewcommand{\golden}{\origgolden[20]}
+  \renewcommand{\azure}{\origazure[20]}
 
   \begin{tabularx}{0.95\linewidth}{XXXX}
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{bronze}} \textbf{Easy}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{silver}} \textbf{Normal}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{golden}} \textbf{Hard}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{azure}} \textbf{Impossible}}\\
+  \darkcell{\raisebox{-.2\height}{\bronze} \textbf{Easy}} &
+  \darkcell{\raisebox{-.2\height}{\silver} \textbf{Normal}} &
+  \darkcell{\raisebox{-.2\height}{\golden} \textbf{Hard}} &
+  \darkcell{\raisebox{-.2\height}{\azure} \textbf{Impossible}}\\
   \lightcell[2.5]{No additional\\changes} &
   \lightcell[2.5]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 20} &
   \lightcell[2.5]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 32} &
@@ -297,7 +309,7 @@ During this Scenario:
   \end{tabularx}
 }
 
-\vspace{-2em}
+\vspace{-1em}
 
 \begin{wrapfigure}{l}{0.28\textwidth}
   \raisebox{0pt}[\dimexpr\height-0.2\baselineskip\relax]{\framedimage[1.1\linewidth]{\art/faerie_dragon.jpg}}
@@ -352,16 +364,20 @@ During this Scenario:
   \centering
   \medskip
 
-  \newcommand{\bronze}[0]{\svgunit[12]{bronze}}
-  \newcommand{\silver}[0]{\svgunit[12]{silver}}
-  \newcommand{\golden}[0]{\svgunit[12]{golden}}
-  \newcommand{\azure}[0]{\svgunit[12]{azure}}
+  \let\origbronze\bronze
+  \let\origsilver\silver
+  \let\origgolden\golden
+  \let\origazure\azure
+  \renewcommand{\bronze}{\origbronze[20]}
+  \renewcommand{\silver}{\origsilver[20]}
+  \renewcommand{\golden}{\origgolden[20]}
+  \renewcommand{\azure}{\origazure[20]}
 
   \begin{tabularx}{0.95\linewidth}{XXXX}
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{bronze}} \textbf{Easy}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{silver}} \textbf{Normal}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{golden}} \textbf{Hard}} &
-  \darkcell{\raisebox{-.2\height}{\svgunit[20]{azure}} \textbf{Impossible}}\\
+  \darkcell{\raisebox{-.2\height}{\bronze} \textbf{Easy}} &
+  \darkcell{\raisebox{-.2\height}{\silver} \textbf{Normal}} &
+  \darkcell{\raisebox{-.2\height}{\golden} \textbf{Hard}} &
+  \darkcell{\raisebox{-.2\height}{\azure} \textbf{Impossible}}\\
   \lightcell[1.6]{No additional\\changes} &
   \lightcell[1.6]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 18} &
   \lightcell[1.6]{\raisebox{-.25\height}{\includegraphics[height=15px]{\images/hp.png}} 26} &

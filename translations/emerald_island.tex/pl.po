@@ -152,15 +152,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
-"  \\item A Few \\svgunit{bronze} Units of your choice\n"
+"  \\item A Pack of \\bronze\\ Units of your choice\n"
+"  \\item A Few \\bronze\\ Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svgunit{bronze} Jednostek do wyboru\n"
-"  \\item Garstka \\svgunit{bronze} Jednostek do wyboru\n"
+"  \\item Grupa \\bronze\\ Jednostek do wyboru\n"
+"  \\item Garstka \\bronze\\ Jednostek do wyboru\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -269,10 +269,10 @@ msgstr ""
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko\n"
 "\n"
 
 #. type: multicols*
@@ -353,10 +353,10 @@ msgstr ""
 #: coops/emerald_island.tex:67
 #, no-wrap
 msgid ""
-"    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+"    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
-"    \\item Nie możesz zbudować \\svgunit{golden} Siedliska.\n"
+"    \\item Nie możesz zbudować \\golden\\ Siedliska.\n"
 "\n"
 
 #. type: multicols*
@@ -403,10 +403,10 @@ msgstr ""
 #: coops/emerald_island.tex:80
 #, no-wrap
 msgid ""
-"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"
 msgstr ""
-"    \\item Do ostatniej walki o Kopalnię/Osadę dodaj Neutralną \\svgunit{golden} Jednostkę. Masz nieograniczoną liczbę rund na tę walkę. Nie możesz użyć Mistrzowskiej Dyplomacji, aby pominąć tę walkę!\n"
+"    \\item Do ostatniej walki o Kopalnię/Osadę dodaj Neutralną \\golden\\ Jednostkę. Masz nieograniczoną liczbę rund na tę walkę. Nie możesz użyć Mistrzowskiej Dyplomacji, aby pominąć tę walkę!\n"
 "\n"
 
 #. type: multicols*

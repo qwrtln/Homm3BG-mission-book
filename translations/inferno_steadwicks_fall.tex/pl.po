@@ -333,10 +333,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, \\svgunit{silver} Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, \\silver\\ Siedlisko\n"
 "\n"
 
 #. type: multicols*

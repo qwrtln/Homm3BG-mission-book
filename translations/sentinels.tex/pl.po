@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 15:31+0000\n"
+"POT-Creation-Date: 2025-03-26 09:51+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -43,7 +43,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -165,8 +165,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -181,10 +181,10 @@ msgstr ""
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\svgunit{bronze} Siedlisko, Cytadela\n"
+"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, Cytadela\n"
 "\n"
 
 #. type: multicols
@@ -628,15 +628,16 @@ msgstr ""
 "  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
-#: coops/sentinels.tex:189
+#: coops/sentinels.tex:193
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\"
-"\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
+"\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round "
+"10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
 "\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
 "\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
 "\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
@@ -654,12 +655,13 @@ msgid ""
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Siła Wrogich Armii}\\\\ "
-"\\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\\\ "
-"\\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
+"\\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\"
+"\\ \\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
 "\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
 "\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
 "\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
@@ -677,7 +679,7 @@ msgstr ""
 "\\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:192
+#: coops/sentinels.tex:196
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."

@@ -221,10 +221,10 @@ msgstr ""
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Budovy ve Městě:} \\svgunit{bronze} Obydlí, Radnice\n"
+"\\textbf{Budovy ve Městě:} \\bronze\\ Obydlí, Radnice\n"
 "\n"
 
 #.  !TeX spellcheck = en_US

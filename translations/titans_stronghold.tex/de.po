@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-25 14:49+0100\n"
+"POT-Creation-Date: 2025-03-26 09:51+0000\n"
 "PO-Revision-Date: 2024-10-25 16:19+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -215,8 +215,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
-"  \\item A Few \\svgunit{bronze} Units of your choice\n"
+"  \\item A Pack of \\bronze\\ Units of your choice\n"
+"  \\item A Few \\bronze\\ Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -387,60 +387,61 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/titans_stronghold.tex:189
+#: coops/titans_stronghold.tex:193
 msgid ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
-"Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
-"{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}"
-"[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Easy} & \\darkcell{Normal} & \\darkcell{Hard} & "
-"\\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & \\lightcell[1.2]"
-"{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
-"2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
-"2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden "
-"3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]{5\\bronze "
-"5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver "
-"3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden "
-"3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-"\\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden "
-"2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & "
-"\\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak "
-"Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
-"{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak "
-"1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 players} & "
-"\\lightcell[1.8]{10\\bronze 10\\silver\\linebreak 6\\golden 2\\azure} & "
-"\\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]"
-"{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak "
-"2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze "
-"5\\silver 7\\golden 4\\azure \\linebreak Then\\linebreak 1\\bronze 5\\silver "
-"7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 players} & \\lightcell[1.8]"
-"{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak "
-"7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze "
-"6\\silver 4\\golden 2\\azure \\linebreak Then\\linebreak 5\\bronze 6\\silver "
-"4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden "
-"4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} "
-"& \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak "
-"Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.8]"
-"{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure "
-"\\linebreak Then\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & "
-"\\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak "
-"Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]"
-"{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak Then\\linebreak "
-"3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze "
-"7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak 3\\bronze "
-"8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
+"Stronghold Armies}\\\\ \\bigskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[12]} \\renewcommand{\\silver}"
+"{\\origsilver[12]} \\renewcommand{\\golden}{\\origgolden[12]} "
+"\\renewcommand{\\azure}{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}"
+"{p{0.15\\linewidth}XXXX} & \\darkcell{Easy} & \\darkcell{Normal} & "
+"\\darkcell{Hard} & \\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & "
+"\\lightcell[1.2]{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]"
+"{2\\bronze 2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
+"2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver "
+"2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]"
+"{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze "
+"5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver "
+"5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden "
+"4\\azure}\\\\ \\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze "
+"7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver "
+"5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden "
+"3\\azure \\linebreak Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} "
+"& \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak "
+"Then\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]"
+"{4 players} & \\lightcell[1.8]{10\\bronze 10\\silver\\linebreak 6\\golden "
+"2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & "
+"\\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak "
+"Then\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]"
+"{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak Then\\linebreak "
+"1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 players} & "
+"\\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak "
+"Then\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
+"{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Then\\linebreak "
+"5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
+"6\\silver 6\\golden 4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver "
+"6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden "
+"6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver 8\\golden "
+"5\\azure}\\\\ \\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze "
+"8\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver "
+"5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden "
+"3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} "
+"& \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak "
+"Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]"
+"{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak "
+"3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 msgstr ""
 
 #. type: center
-#: coops/titans_stronghold.tex:195
+#: coops/titans_stronghold.tex:199
 msgid ""
 "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 msgstr ""
 
 #. type: tikzpicture
-#: coops/titans_stronghold.tex:203
+#: coops/titans_stronghold.tex:207
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -450,31 +451,31 @@ msgid ""
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr ""
 
 #. type: minipage
-#: coops/titans_stronghold.tex:240
+#: coops/titans_stronghold.tex:244
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr ""

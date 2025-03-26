@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-26 16:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -31,7 +31,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -54,8 +54,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -64,7 +64,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -77,7 +77,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -92,7 +92,7 @@ msgstr ""
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
@@ -104,7 +104,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:246
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
 #, no-wrap
@@ -201,7 +201,7 @@ msgstr ""
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, City Hall\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
 
@@ -358,19 +358,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:170
+#: clash/the_hunt.tex:174
 msgid ""
-"\\hommtable[]{8}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
-"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
-"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
-"{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{XXXX} "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
-"\\textbf{Impossible}}\\\\ \\lightcell[1.8]{No additional\\\\changes} & "
-"\\lightcell[1.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
+"\\hommtable[]{8}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Hard}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[1.8]{No additional\\\\changes} & \\lightcell[1.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 30} & \\lightcell[1.8]"
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
 "40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
@@ -378,7 +379,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:212
+#: clash/the_hunt.tex:216
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -386,7 +387,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:212
+#: clash/the_hunt.tex:216
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
 "entirely from red crystal and brought to life through magical means, the "
@@ -414,19 +415,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:235
+#: clash/the_hunt.tex:243
 msgid ""
-"\\hommtable[]{10}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
-"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
-"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
-"{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{XXXX} "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
-"\\textbf{Impossible}}\\\\ \\lightcell[2.8]{No additional\\\\changes} & "
-"\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
+"\\hommtable[]{10}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Hard}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[2.8]{No additional\\\\changes} & \\lightcell[2.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Retaliation}} & "
 "\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
 "{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Remove additional 2 "
@@ -434,7 +436,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:276
+#: clash/the_hunt.tex:284
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -442,7 +444,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:276
+#: clash/the_hunt.tex:284
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
 "Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
@@ -469,26 +471,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:299
+#: clash/the_hunt.tex:311
 msgid ""
-"\\hommtable[]{9}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
-"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
-"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
-"{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{XXXX} "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
-"\\textbf{Impossible}}\\\\ \\lightcell[2.5]{No additional\\\\changes} & "
-"\\lightcell[2.5]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 20} & \\lightcell[2.5]{\\raisebox{-.25\\height}"
+"\\hommtable[]{9}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Hard}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[2.5]{No additional\\\\changes} & \\lightcell[2.5]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"20} & \\lightcell[2.5]{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 32} & \\lightcell[2.5]"
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
 "40 \\\\ +1 to Corrosion armor decrease} \\\\ \\end{tabularx} }"
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:348
+#: clash/the_hunt.tex:360
 msgid ""
 "{l}{0.28\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -496,7 +499,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:348
+#: clash/the_hunt.tex:360
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
 "Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
@@ -528,19 +531,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:370
+#: clash/the_hunt.tex:386
 msgid ""
-"\\hommtable[]{7}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
-"{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} "
-"\\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]"
-"{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{XXXX} "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{bronze}} \\textbf{Easy}} & "
-"\\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{silver}} \\textbf{Normal}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{golden}} \\textbf{Hard}} "
-"& \\darkcell{\\raisebox{-.2\\height}{\\svgunit[20]{azure}} "
-"\\textbf{Impossible}}\\\\ \\lightcell[1.6]{No additional\\\\changes} & "
-"\\lightcell[1.6]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 18} & \\lightcell[1.6]{\\raisebox{-.25\\height}"
+"\\hommtable[]{7}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Easy}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Hard}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[1.6]{No additional\\\\changes} & \\lightcell[1.6]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"18} & \\lightcell[1.6]{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 26} & \\lightcell[1.6]"
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
 "32 \\\\ +1 Mirage} \\\\ \\end{tabularx} }"
