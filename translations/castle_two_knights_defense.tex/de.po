@@ -316,7 +316,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:29
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, \\svgunit{silver} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
 
@@ -413,7 +413,7 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item The Glory of Erathia building is unavailable.\n"
-"  \\item Each time you visit a Trading Post, draw the top Cards from the \\svgunit{bronze} bronze, \\svgunit{silver} silver, and \\svgunit{golden} golden neutral enemy Decks.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\bronze\\ bronze, \\silver\\ silver, and \\golden\\ golden neutral enemy Decks.\n"
 "  You may recruit any, or all of them by paying their cost.\n"
 "  Shuffle any un-hired ones back into their Decks.\n"
 "\n"
@@ -423,7 +423,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:118
 #, no-wrap
 msgid ""
-"  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svgunit{azure} Azure neutral Deck to your army.\n"
+"  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\azure\\ Azure neutral Deck to your army.\n"
 "  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
 "  \\item If the enemy army reaches the Dragon Utopia before you do, flip the Pack side of Dread Knights to Few and add a Pack of Ghost Dragons.\n"
 "\\end{itemize}\n"

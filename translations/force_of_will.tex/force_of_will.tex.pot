@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -31,7 +31,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -52,7 +52,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -67,7 +67,7 @@ msgstr ""
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
@@ -92,7 +92,7 @@ msgstr ""
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item 2 × Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -269,10 +269,10 @@ msgid ""
 "  \\item A player may not use the Diplomacy Card to skip Combat on the Dragon Utopia Field.\n"
 "  \\item When a Hero moves to the Dragon Utopia Field, they must fight, depending on chosen difficulty, the following number of Neutral Units:\n"
 "  \\begin{itemize}\n"
-"    \\item \\textbf{Easy:} 1 × \\svgunit{azure}, 2 × \\svgunit{silver}, 1 × \\svgunit{bronze}\n"
-"    \\item \\textbf{Normal:} 1 × \\svgunit{azure}, 1 × \\svgunit{golden}, 2 × \\svgunit{silver}\n"
-"    \\item \\textbf{Hard:} 1 × \\svgunit{azure}, 3 × \\svgunit{golden}\n"
-"    \\item \\textbf{Impossible:}  2 × \\svgunit{azure}, 2 × \\svgunit{golden}\n"
+"    \\item \\textbf{Easy:} 1 × \\azure\\, 2 × \\silver\\, 1 × \\bronze\\\n"
+"    \\item \\textbf{Normal:} 1 × \\azure\\, 1 × \\golden\\, 2 × \\silver\\\n"
+"    \\item \\textbf{Hard:} 1 × \\azure\\, 3 × \\golden\\\n"
+"    \\item \\textbf{Impossible:}  2 × \\azure\\, 2 × \\golden\\\n"
 "  \\end{itemize}\n"
 "  \\item Follow these steps when Combat begins against Neutral Units at the Dragon Utopia:\n"
 "  \\begin{itemize}\n"

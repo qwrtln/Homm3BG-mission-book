@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 15:31+0000\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -22,8 +22,8 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
+"sentinel.png}"
 msgstr ""
 
 #. type: multicols*
@@ -41,7 +41,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -148,8 +148,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\svgunit{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -158,7 +158,7 @@ msgstr ""
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
 
@@ -502,15 +502,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:189
+#: coops/sentinels.tex:193
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} "
-"\\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]"
-"{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\"
-"\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
+"\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round "
+"10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
 "\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
 "\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
 "\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
@@ -529,7 +530,7 @@ msgid ""
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:192
+#: coops/sentinels.tex:196
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."

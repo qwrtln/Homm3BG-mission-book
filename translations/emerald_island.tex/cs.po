@@ -147,15 +147,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svgunit{bronze} Units of your choice\n"
-"  \\item A Few \\svgunit{bronze} Units of your choice\n"
+"  \\item A Pack of \\bronze\\ Units of your choice\n"
+"  \\item A Few \\bronze\\ Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item Tlupa \\svgunit{bronze} Jednotek dle tvého výběru\n"
-"  \\item Hrstka \\svgunit{bronze} Jednotek dle tvého výběru\n"
+"  \\item Tlupa \\bronze\\ Jednotek dle tvého výběru\n"
+"  \\item Hrstka \\bronze\\ Jednotek dle tvého výběru\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -264,10 +264,10 @@ msgstr ""
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\svgunit{bronze} Dwelling\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Městské Budovy:} \\svgunit{bronze} Obydlí\n"
+"\\textbf{Městské Budovy:} \\bronze\\ Obydlí\n"
 "\n"
 
 #. type: multicols*
@@ -365,14 +365,14 @@ msgstr ""
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"
-#| "    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+#| "    \\item You can't build a \\golden\\ Dwelling.\n"
 #| "\n"
 msgid ""
-"    \\item You can't build a \\svgunit{golden} Dwelling.\n"
+"    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"    \\item Nemůžete postavit \\svgunit{golden} Obydlí.\n"
+"    \\item Nemůžete postavit \\golden\\ Obydlí.\n"
 "\n"
 
 #. type: multicols*
@@ -419,10 +419,10 @@ msgstr ""
 #: coops/emerald_island.tex:80
 #, no-wrap
 msgid ""
-"    \\item For the last Mine/Settlement battle, add a \\svgunit{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"
 msgstr ""
-"    \\item Pro poslední Souboj o Důl/Osadu přidejte \\svgunit{golden} Neutrální Jednotku. Pro tento Souboj máte neomezený počet Tahů. K přeskočení tohoto Souboje nemůžete použít Pokročilou Diplomacii!\n"
+"    \\item Pro poslední Souboj o Důl/Osadu přidejte \\golden\\ Neutrální Jednotku. Pro tento Souboj máte neomezený počet Tahů. K přeskočení tohoto Souboje nemůžete použít Pokročilou Diplomacii!\n"
 "\n"
 
 #. type: multicols*
