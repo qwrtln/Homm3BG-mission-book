@@ -361,7 +361,9 @@
 % 3) Table contents like title and tabularx environment
 \newcommand{\hommtable}[3][shade, blur shadow={shadow opacity=15}]{
   \begin{tikzpicture}
-    \iftoggle{noartbackground}{}{
+    \iftoggle{noartbackground}{
+      \node[inner sep=0, minimum width=\linewidth, minimum height=#2\baselineskip] at (0,0) {};
+    }{
       \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background.jpg}}};
     }
     \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
@@ -393,7 +395,9 @@
 % Redefinition of the table for mutlicol enviromnents
 \newcommand{\hommtablemulticol}[3][shade, blur shadow={shadow opacity=15}]{
   \begin{tikzpicture}
-    \iftoggle{noartbackground}{}{
+    \iftoggle{noartbackground}{
+      \node[inner sep=0, minimum width=\linewidth, minimum height=#2\baselineskip] at (0,0) {};
+    }{
       \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#2\baselineskip}{\layout/table-background-multicol.jpg}}};
     }
     \draw [bordermidyellow, thick] ([xshift=+1pt, yshift=-1pt] current bounding box.north west) rectangle ([xshift=-1pt, yshift=1pt] current bounding box.south east);
