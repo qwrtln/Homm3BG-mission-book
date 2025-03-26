@@ -12,6 +12,7 @@ env:
   GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: 0.73
+  IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
   build:
@@ -42,14 +43,14 @@ jobs:
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
           ./${PO4A_DIR}/po4a --no-update po4a.cfg
 
-      - name: Compile mission book
-        uses: xu-cheng/latex-action@v3
-        with:
-          extra_system_packages: "inkscape"
-          latexmk_use_lualatex: true
-          latexmk_shell_escape: true
-          pre_compile: export HOMM3_GITHUB_BUILD=1
-          root_file: main_${{ matrix.language }}.tex
+      # - name: Compile mission book
+      #   uses: xu-cheng/latex-action@v3
+      #   with:
+      #     extra_system_packages: "inkscape"
+      #     latexmk_use_lualatex: true
+      #     latexmk_shell_escape: true
+      #     pre_compile: export HOMM3_GITHUB_BUILD=1
+      #     root_file: main_${{ matrix.language }}.tex
 
       - name: Install ghostscript
         run: |
@@ -58,24 +59,24 @@ jobs:
           tar -xvf *_amd64_snap.tgz
           sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
-      - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
-
-      - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
-        with:
-          name: main_${{ matrix.language }}
-          path: main_${{ matrix.language }}.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+      # - name: Optimize PDF
+      #   run: |
+      #     du -sh main_${{ matrix.language }}.pdf
+      #     tools/optimize.sh ${{ matrix.language }}
+      #     mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
+      #     du -sh main_${{ matrix.language }}.pdf
+      #
+      # - uses: actions/upload-artifact@v4
+      #   if: github.event_name == 'pull_request'
+      #   with:
+      #     name: main_${{ matrix.language }}
+      #     path: main_${{ matrix.language }}.pdf
+      #     retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
         run: |
           mkdir ${{ matrix.language }}
-          mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
+          # mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
 
       - name: Install magick
         run: |
@@ -89,7 +90,7 @@ jobs:
         run: |
           find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
             -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
-            IMG="../assets/${IMG}"
+            IMG="assets/${IMG}"
             TEMP_DIR=$(mktemp -d)
             ALPHA="${TEMP_DIR}/alpha.png"
             PROCESSED="${TEMP_DIR}/processed.png"
@@ -116,6 +117,13 @@ jobs:
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
+
+      - name: Optimize PDF
+        run: |
+          du -sh main_${{ matrix.language }}.pdf
+          tools/optimize.sh ${{ matrix.language }}
+          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
+          du -sh main_${{ matrix.language }}.pdf
 
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'pull_request'
