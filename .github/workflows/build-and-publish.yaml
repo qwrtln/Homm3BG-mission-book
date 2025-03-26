@@ -73,6 +73,30 @@ jobs:
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
+      - name: Install poppler
+        if:  github.event_name == 'pull_request'
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Check number of pages
+        id: check_pages
+        if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
+        run: |
+          NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
+
+      - name: Check for broken CMap
+        if: github.event_name == 'pull_request'
+        run: |
+          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
+          pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
+          if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
+          then
+            echo "All good"
+          else
+            echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
+            exit 1
+          fi
+
       - name: Move file
         run: |
           mkdir ${{ matrix.language }}
@@ -135,32 +159,8 @@ jobs:
       - name: Move file
         run: mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
 
-      - name: Install poppler
-        if:  github.event_name == 'pull_request'
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
-
-      - name: Check number of pages
-        id: check_pages
-        if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
-        run: |
-          NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-          echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
-
-      - name: Check for broken CMap
-        if: github.event_name == 'pull_request'
-        run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
-          pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
-          if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
-          then
-            echo "All good"
-          else
-            echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
-            exit 1
-          fi
-
       - name: Publish ${{ matrix.language }} in artifacts repository
-        if: github.event_name != 'pull_request'
+        # if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
