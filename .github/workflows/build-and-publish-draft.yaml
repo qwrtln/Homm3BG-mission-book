@@ -29,44 +29,44 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      # - name: Compile draft book
-      #   uses: xu-cheng/latex-action@v3
-      #   with:
-      #     extra_system_packages: "inkscape"
-      #     latexmk_use_lualatex: true
-      #     latexmk_shell_escape: true
-      #     pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
-      #     root_file: drafts.tex
+      - name: Compile draft book
+        uses: xu-cheng/latex-action@v3
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
+          root_file: drafts.tex
 
-      # - name: Install ghostscript
-      #   run: |
-      #     wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-      #     tar -xvf *_amd64_snap.tgz
-      #     sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+      - name: Install ghostscript
+        run: |
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+          tar -xvf *_amd64_snap.tgz
+          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
-      # - name: Optimize PDF
-      #   run: |
-      #     du -sh drafts.pdf
-      #     gs -o drafts_optimized.pdf \
-      #       -sDEVICE=pdfwrite \
-      #       -dCompatibilityLevel=1.5 \
-      #       -dPDFSETTINGS=/prepress \
-      #       -dDetectDuplicateImages=true \
-      #       drafts.pdf
-      #     mv drafts_optimized.pdf drafts.pdf
-      #     du -sh drafts.pdf
-      #
-      # - uses: actions/upload-artifact@v4
-      #   if: github.event_name == 'pull_request'
-      #   with:
-      #     name: drafts
-      #     path: draft-scenarios/drafts.pdf
-      #     retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+      - name: Optimize PDF
+        run: |
+          du -sh drafts.pdf
+          gs -o drafts_optimized.pdf \
+            -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.5 \
+            -dPDFSETTINGS=/prepress \
+            -dDetectDuplicateImages=true \
+            drafts.pdf
+          mv drafts_optimized.pdf drafts.pdf
+          du -sh drafts.pdf
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: drafts
+          path: draft-scenarios/drafts.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
         run: |
           mkdir drafts
-          # mv drafts.pdf drafts/drafts.pdf
+          mv drafts.pdf drafts/drafts.pdf
 
       - name: Install magick
         run: |
@@ -106,12 +106,6 @@ jobs:
           latexmk_shell_escape: true
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: drafts.tex
-
-      - name: Install ghostscript
-        run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
       - name: Optimize PDF
         run: |
