@@ -67,8 +67,7 @@ jobs:
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   build:
-    needs: make_monochrome
-    if: always()
+    needs: ${{ github.event_name == 'pull_request' && '[]' || 'make_monochrome' }}  # to make sure check_pages doesn't depend on make_monochrome
     runs-on: ubuntu-latest
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
