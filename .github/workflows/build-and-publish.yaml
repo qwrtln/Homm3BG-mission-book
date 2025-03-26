@@ -68,6 +68,7 @@ jobs:
 
   build:
     needs: make_monochrome
+    if: always()
     runs-on: ubuntu-latest
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
