@@ -78,7 +78,8 @@ jobs:
 
       - name: Adjust map files for monochrome buld
         run: |
-          find ../assets/maps -name "*png" -print0 | while IFS= read -r -d '' IMG; do
+          find . -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+            IMG="../assets/${IMG}"
             TEMP_DIR=$(mktemp -d)
             ALPHA="${TEMP_DIR}/alpha.png"
             PROCESSED="${TEMP_DIR}/processed.png"
