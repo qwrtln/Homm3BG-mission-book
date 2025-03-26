@@ -69,18 +69,15 @@ jobs:
           # mv drafts.pdf drafts/drafts.pdf
 
       - name: Install magick
-        # run: sudo apt-get install -y --no-install-recommends imagemagick
         run: |
           sudo add-apt-repository universe
-          sudo apt-get install -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec mv '{}' magick \;
           chmod a+x magick
-          # mv magick /usr/bin
 
       - name: Adjust map files for monochrome buld
         run: |
-          ls
           find ../assets/maps -name "*png" \
             -exec ./magick '{}' -negate -threshold 50% -negate -fill white -opaque black '{}' \; \
             -exec ./magick '{}' -morphology Dilate Diamond:2 '{}' \; \
