@@ -64,11 +64,13 @@ jobs:
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
+        if: github.event_name != 'pull_request'
         run: |
           mkdir drafts
           mv drafts.pdf drafts/drafts.pdf
 
       - name: Install magick
+        if: github.event_name != 'pull_request'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
@@ -77,6 +79,7 @@ jobs:
           chmod a+x magick
 
       - name: Adjust map files for monochrome buld
+        if: github.event_name != 'pull_request'
         run: |
           find . -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
             IMG="../assets/${IMG}"
@@ -99,6 +102,7 @@ jobs:
           done
 
       - name: Compile monochrome draft book
+        if: github.event_name != 'pull_request'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -108,6 +112,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
+        if: github.event_name != 'pull_request'
         run: |
           du -sh drafts.pdf
           gs -o drafts_optimized.pdf \
@@ -119,14 +124,8 @@ jobs:
           mv drafts_optimized.pdf drafts.pdf
           du -sh drafts.pdf
 
-      - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
-        with:
-          name: drafts-mono
-          path: draft-scenarios/drafts.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
       - name: Move file
+        if: github.event_name != 'pull_request'
         run: mv drafts.pdf drafts/drafts-mono.pdf
 
       - name: Publish drafts in artifacts repository
