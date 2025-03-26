@@ -97,7 +97,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
       git restore draft-scenarios/assets draft-scenarios/latexmkrc
     fi
 
-    if [[ "${HOMM3_NO_ART_BACKGROUND=1}" -eq 1 ]]; then
+    if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
       git restore assets/maps &> /dev/null || git restore ../assets/maps
     fi
   }
@@ -112,7 +112,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
       cp "latexmkrc" "draft-scenarios/latexmkrc"
   fi
 
-  if [[ "${HOMM3_NO_ART_BACKGROUND=1}" -eq 1 ]]; then
+  if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     find draft-scenarios -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       echo "Converting $IMG to monochrome..."
