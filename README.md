@@ -18,7 +18,9 @@ Click on the table to download the most recent builds of the Mission Book in the
             <th align="center">Progress</th>
             <th align="center">Version 1.1 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
+            <th align="center">Latest Build 🖨️ <br>(Monochrome)</th>
             <th align="center">Draft Scenarios 🏗️</th>
+            <th align="center">Draft Scenarios 🖨️ <br>(Monochrome)</th>
         </tr>
     </thead>
     <tbody>
@@ -27,13 +29,17 @@ Click on the table to download the most recent builds of the Mission Book in the
             <td align="center">—</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_English_Fan_Made_Mission_Book_1_1.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
+            <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en-mono.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf">download</a></td>
+            <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts-mono.pdf">download</a></td>
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
             <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg"></td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_Polski_Fan_Made_Mission_Book_1_1.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl-mono.pdf">️pobierz</a></td>
+            <td align="center">—</td>
             <td align="center">—</td>
         </tr>
         <tr>
@@ -41,6 +47,8 @@ Click on the table to download the most recent builds of the Mission Book in the
             <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs-mono.pdf">stáhnout</a></td>
+            <td align="center">—</td>
             <td align="center">—</td>
         </tr>
         <tr>
@@ -48,6 +56,8 @@ Click on the table to download the most recent builds of the Mission Book in the
             <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr.pdf">télécharger</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr-mono.pdf">télécharger</a></td>
+            <td align="center">—</td>
             <td align="center">—</td>
         </tr>
         <tr>
@@ -55,6 +65,8 @@ Click on the table to download the most recent builds of the Mission Book in the
             <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de-mono.pdf">speichern</a></td>
+            <td align="center">—</td>
             <td align="center">—</td>
         </tr>
     </tbody>
