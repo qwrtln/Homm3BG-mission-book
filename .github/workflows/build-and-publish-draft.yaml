@@ -78,10 +78,24 @@ jobs:
 
       - name: Adjust map files for monochrome buld
         run: |
-          find ../assets/maps -name "*png" \
-            -exec ./magick '{}' -negate -threshold 50% -negate -fill white -opaque black '{}' \; \
-            -exec ./magick '{}' -morphology Dilate Diamond:2 '{}' \; \
-            -exec ./magick '{}' -channel RGB -negate '{}' \;
+          find ../assets/maps -name "*png" -print0 | while IFS= read -r -d '' IMG; do
+            TEMP_DIR=$(mktemp -d)
+            ALPHA="${TEMP_DIR}/alpha.png"
+            PROCESSED="${TEMP_DIR}/processed.png"
+
+            # Extract alpha channel
+            ./magick "${IMG}" -alpha extract "${ALPHA}"
+
+            # Adjust map images
+            ./magick "${IMG}" -negate -threshold 50% -negate -fill white -opaque black "${PROCESSED}"
+            ./magick "${PROCESSED}" -morphology Dilate Diamond:2 "${PROCESSED}"
+            ./magick "${PROCESSED}" -channel RGB -negate "${PROCESSED}"
+
+            # Recombine with original alpha
+            ./magick "${PROCESSED}" "${ALPHA}" -alpha off -compose CopyOpacity -composite "${IMG}"
+
+            rm -rf "${TEMP_DIR}"
+          done
 
       - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v3
