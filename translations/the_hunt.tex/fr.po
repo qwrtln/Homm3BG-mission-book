@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-26 01:04+0100\n"
+"POT-Creation-Date: 2025-03-26 16:54+0100\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -445,11 +445,6 @@ msgid ""
 "\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
 "{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Remove additional 2 "
 "\\svg{damage-table} by consuming Golems} \\\\ \\end{tabularx} }"
-msgstr ""
-
-#. type: Plain text
-#: clash/the_hunt.tex:245 clash/the_hunt.tex:313
-msgid "\\iftoggle{noartbackground}{\\clearpage}{\\vspace{-2em}}"
 msgstr ""
 
 #. type: wrapfigure
