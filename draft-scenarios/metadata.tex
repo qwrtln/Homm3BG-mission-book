@@ -120,23 +120,20 @@
 
 \newcommand{\bronze}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/bronze-mono.svg}{\svgs/bronze.svg}}}}%
-}
+}%
 
 \newcommand{\silver}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/silver-mono.svg}{\svgs/silver.svg}}}}%
-}
+}%
 
 \newcommand{\golden}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/golden-mono.svg}{\svgs/golden.svg}}}}%
-}
+}%
 
 \newcommand{\azure}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/azure-mono.svg}{\svgs/azure.svg}}}}%
-}
-
-\newcommand{\svgunit}[2][10]{%
-  {\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
 }%
+
 \newcommand{\svgeven}[2][10]{%
   \includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}%
 }%
