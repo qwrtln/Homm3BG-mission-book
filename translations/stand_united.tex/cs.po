@@ -186,8 +186,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/"
-"sentinel.png}"
+"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/sentinel."
+"png}"
 
 #. type: multicols
 #: coops/stand_united.tex:7

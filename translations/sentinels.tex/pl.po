@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-26 01:04+0100\n"
+"POT-Creation-Date: 2025-03-26 09:51+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -23,8 +23,8 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
-"sentinel.png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
+"png}"
 msgstr ""
 "\\addscenariosection{1}{Tryb Kooperacyjny}{Strażnicy}{\\images/sentinel.png}"
 
