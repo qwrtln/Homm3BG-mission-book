@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'draft-scenarios/**'
+    paths:
+      - 'draft-scenarios/**'
   pull_request:
     branches: [main]
-    # paths:
-    #   - 'draft-scenarios/**'
+    paths:
+      - 'draft-scenarios/**'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
@@ -57,20 +57,20 @@ jobs:
           du -sh drafts.pdf
 
       - uses: actions/upload-artifact@v4
-        # if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request'
         with:
           name: drafts
           path: draft-scenarios/drafts.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Move file
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         run: |
           mkdir drafts
           mv drafts.pdf drafts/drafts.pdf
 
       - name: Install magick
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
@@ -82,7 +82,7 @@ jobs:
           sed -i 's/magick/\.\/magick/g' ../tools/to_monochrome.sh
 
       - name: Adjust map files for monochrome buld
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         run: |
           find . -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
             echo "Converting assets/${IMG}"
@@ -91,7 +91,7 @@ jobs:
           done
 
       - name: Compile monochrome draft book
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -101,7 +101,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         run: |
           du -sh drafts.pdf
           gs -o drafts_optimized.pdf \
@@ -114,15 +114,8 @@ jobs:
           du -sh drafts.pdf
 
       - name: Move file
-        # if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         run: mv drafts.pdf drafts/drafts-mono.pdf
-
-      - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
-        with:
-          name: drafts-mono
-          path: draft-scenarios/drafts/drafts-mono.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish drafts in artifacts repository
         if: github.event_name != 'pull_request'
