@@ -9,7 +9,8 @@
   [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
 </div>
 
-Click on the table to download the most recent builds of the Mission Book in the chosen language:
+Click on the table to download the most recent builds of the Mission Book in the chosen language.
+If your intention is to **print in black and white**, download the **monochrome** version.
 
 <table>
     <thead>
@@ -35,7 +36,13 @@ Click on the table to download the most recent builds of the Mission Book in the
         </tr>
         <tr>
             <td>🇵🇱 Polski</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg"></td>
+            <td align="center">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/pl/88x31-black.png" />
+                <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/pl/88x31-grey.png" />
+                <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg">
+              </picture>
+            </td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_Polski_Fan_Made_Mission_Book_1_1.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl-mono.pdf">️pobierz</a></td>
@@ -44,7 +51,13 @@ Click on the table to download the most recent builds of the Mission Book in the
         </tr>
         <tr>
             <td>🇨🇿 Čeština</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
+            <td align="center">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/cs/88x31-black.png" />
+                <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/cs/88x31-grey.png" />
+                <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg">
+              </picture>
+            </td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs-mono.pdf">stáhnout</a></td>
@@ -53,7 +66,13 @@ Click on the table to download the most recent builds of the Mission Book in the
         </tr>
         <tr>
             <td>🇫🇷 Français</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
+            <td align="center">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/fr/88x31-black.png" />
+                <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/fr/88x31-grey.png" />
+                <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg">
+              </picture>
+            </td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr.pdf">télécharger</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr-mono.pdf">télécharger</a></td>
@@ -62,7 +81,13 @@ Click on the table to download the most recent builds of the Mission Book in the
         </tr>
         <tr>
             <td>🇩🇪 Deutsch</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
+            <td align="center">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/de/88x31-black.png" />
+                <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/-/de/88x31-grey.png" />
+                <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg">
+              </picture>
+            </td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de-mono.pdf">speichern</a></td>
@@ -76,7 +101,11 @@ You can help tarnslate this project using [Weblate](https://weblate.org/en/).
 Click the image to get started:
 
 <a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
-<img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" />
+  <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png" />
+  <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png">
+</picture>
 </a>
 
 Your language is missing? Let us know on [our Discord server](https://discord.gg/nMbawQkj9R).
