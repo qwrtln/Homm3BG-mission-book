@@ -79,7 +79,7 @@ jobs:
           find . -name "ImageMagick*" -exec mv '{}' magick \;
           chmod a+x magick
           # Adjust script to use AppImage
-          sed -i 's/magick/\.\/magick/g' tools/to_monochrome.sh
+          sed -i 's/magick/\.\/magick/g' ../tools/to_monochrome.sh
 
       - name: Adjust map files for monochrome buld
         # if: github.event_name != 'pull_request'
@@ -87,7 +87,7 @@ jobs:
           find . -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
             echo "Converting assets/${IMG}"
             IMG="../assets/${IMG}"
-            tools/to_monochrome.sh "$IMG"
+            ../tools/to_monochrome.sh "$IMG"
           done
 
       - name: Compile monochrome draft book
@@ -121,7 +121,7 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           name: drafts-mono
-          path: draft-scenarios/drafts-mono.pdf
+          path: draft-scenarios/drafts/drafts-mono.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish drafts in artifacts repository
