@@ -113,7 +113,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   fi
 
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
-    find draft-scenarios -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+    find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       echo "Converting $IMG to monochrome..."
       tools/to_monochrome.sh "${IMG}"
@@ -137,7 +137,7 @@ fi
 if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
   trap 'git restore assets/maps' EXIT
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-    -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+    -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
     IMG="assets/${IMG}"
     echo "Converting $IMG to monochrome..."
     tools/to_monochrome.sh "${IMG}"

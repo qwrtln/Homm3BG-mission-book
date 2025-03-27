@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'draft-scenarios/**'
+    # paths:
+    #   - 'draft-scenarios/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'draft-scenarios/**'
+    # paths:
+    #   - 'draft-scenarios/**'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
@@ -74,31 +74,20 @@ jobs:
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          # apt has v6, while v7 is required, hence downloading AppImage
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec mv '{}' magick \;
           chmod a+x magick
+          # Adjust script to use AppImage
+          sed -i 's/magick/\.\/magick/g' tools/to_monochrome.sh
 
       - name: Adjust map files for monochrome buld
         if: github.event_name != 'pull_request'
         run: |
-          find . -name "*tex" -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
+          find . -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
             IMG="../assets/${IMG}"
-            TEMP_DIR=$(mktemp -d)
-            ALPHA="${TEMP_DIR}/alpha.png"
-            PROCESSED="${TEMP_DIR}/processed.png"
-
-            # Extract alpha channel
-            ./magick "${IMG}" -alpha extract "${ALPHA}"
-
-            # Adjust map images
-            ./magick "${IMG}" -negate -threshold 50% -negate -fill white -opaque black "${PROCESSED}"
-            ./magick "${PROCESSED}" -morphology Dilate Diamond:2 "${PROCESSED}"
-            ./magick "${PROCESSED}" -channel RGB -negate "${PROCESSED}"
-
-            # Recombine with original alpha
-            ./magick "${PROCESSED}" "${ALPHA}" -alpha off -compose CopyOpacity -composite "${IMG}"
-
-            rm -rf "${TEMP_DIR}"
+            echo "Converting $IMG"
+            tools/to_monochrome.sh "$IMG"
           done
 
       - name: Compile monochrome draft book
@@ -127,6 +116,13 @@ jobs:
       - name: Move file
         if: github.event_name != 'pull_request'
         run: mv drafts.pdf drafts/drafts-mono.pdf
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: drafts-mono
+          path: draft-scenarios/drafts-mono.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Publish drafts in artifacts repository
         if: github.event_name != 'pull_request'

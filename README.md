@@ -9,7 +9,8 @@
   [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
 </div>
 
-Click on the table to download the most recent builds of the Mission Book in the chosen language:
+Click on the table to download the most recent builds of the Mission Book in the chosen language.
+If your intention is to **print in black and white**, download the **monochrome** version.
 
 <table>
     <thead>
@@ -100,7 +101,11 @@ You can help tarnslate this project using [Weblate](https://weblate.org/en/).
 Click the image to get started:
 
 <a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
-<img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" alt="Translation status" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" />
+  <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png" />
+  <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png">
+</picture>
 </a>
 
 Your language is missing? Let us know on [our Discord server](https://discord.gg/nMbawQkj9R).
