@@ -156,7 +156,7 @@ jobs:
           mkdir ${{ matrix.language }}
           mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
 
-      - name: Download monoochrome maps
+      - name: Download monochrome maps
         if: github.event_name != 'pull_request'
         uses: actions/download-artifact@v4
         with:

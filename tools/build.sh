@@ -134,7 +134,7 @@ if [[ ${LANGUAGE} != en ]]; then
   fi
 fi
 
-if [[ "${HOMM3_NO_ART_BACKGROUND=1}" -eq 1 ]]; then
+if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
   trap 'git restore assets/maps' EXIT
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
     -exec grep -o "maps.*png" '{}' \; | while IFS= read -r IMG; do
