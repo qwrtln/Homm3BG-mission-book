@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-03-26 01:04+0100\n"
-"PO-Revision-Date: 2025-03-27 21:48+0000\n"
-"Last-Translator: Kelghor <kelghor@seznam.cz>\n"
+"PO-Revision-Date: 2025-03-28 00:24+0000\n"
+"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "homm3bg-fan-made-mission-book/coop-scenarios/close_to_enemies/cs/>\n"
 "Language: cs\n"
@@ -185,28 +185,23 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Tm335\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Kelghor\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Tm335\n"
+"\\textbf{Autor:} Kelghor\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studio Discord}\n"
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/"
+"1313651865648369725}{Archon Studio Discord}\n"
 "\n"
 
 #. type: multicols
@@ -216,6 +211,8 @@ msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
 msgstr ""
+"\\textit{``Sire! Nájezdníci jsou před branami!!''}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:13
@@ -224,6 +221,12 @@ msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
 "\n"
 msgstr ""
+"\\textit{``Zatrubte na poplach! Zaženeme je zpět jako vždy!“ přikážeš a "
+"vydáš se bránit město. Stejně jako už mnohokrát předtím. Takový je drsný "
+"život pohraničních klanů, kde války a potyčky se sousedními rivaly nikdy "
+"doopravdy nekončí. Naštěstí naše Aliance zůstává silná a Ty víš, že máte "
+"krytá záda.}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:16
@@ -233,18 +236,21 @@ msgid ""
 "% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
 "\n"
 msgstr ""
+"\\textit{Nadešel čas ukončit dlouholeté války a jednou provždy rozdrtit "
+"nepřátele jako chrousta!}\n"
+"% Překladatelské info: V Homam IV byla hláška typu: „Rufux rozdrtí tuto "
+"armádu jako chrousta.“ Pokud má scounting a má větší armádu. Takže „jako "
+"chrousta“ je malý easter egg, který na to odkazuje.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 8 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
 msgstr ""
-"Tento Scénář se hraje na 8 Kol.\n"
+"Tento Scénář se hraje na 7 Kol.\n"
 "\n"
 
 #. type: multicols
@@ -262,15 +268,13 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 "
+"\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -280,18 +284,13 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Počáteční Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 "
+"\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -301,7 +300,7 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Hrstku \\bronze\\ Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 1 × Málo \\bronze\\ jednotek dle tvého výběru\n"
 "\\end{itemize}\n"
 "\n"
 
