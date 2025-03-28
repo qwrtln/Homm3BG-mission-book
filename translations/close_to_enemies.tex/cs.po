@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-03-26 01:04+0100\n"
-"PO-Revision-Date: 2025-03-28 00:24+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"PO-Revision-Date: 2025-03-28 16:16+0000\n"
+"Last-Translator: Kelghor <kelghor@seznam.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "homm3bg-fan-made-mission-book/coop-scenarios/close_to_enemies/cs/>\n"
 "Language: cs\n"
@@ -172,16 +172,12 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/close_to_enemies.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
-#| "logistics.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Smaragdový Ostrov}"
-"{\\images/logistics.png}"
+"\\addscenariosection{1}{Kooperativní Scénář}{V Blízkosti Nepřátel}{\\images"
+"/ballistics.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
@@ -306,16 +302,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -323,12 +310,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
+"  \\item P × Startovní (I) Dílek Mapy\n"
+"  \\item 4P × Vzdálený (II--III) Dílek Mapy se stejným terénem jako hráčovo "
+"Město, jeden z dílků musí obsahovat Osadu\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -340,18 +325,21 @@ msgid ""
 "Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corresponding Far (II--III) Map Tile with a Settlement.\n"
 "\n"
 msgstr ""
+"Umístěte Vzdálené (II--III) Mapové dílky s Osadami odpovídajícími terénu "
+"vaší frakce na místa označená barevnými kostkami znázorněné na mapě scénáře."
+"\n"
+"Každá dvojice stejně barevných kostek označuje startovní (I) mapovou "
+"destičku a odpovídající vzdálenou (II--III) mapovou destičku s Osadou.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:49
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool (choose one):}\n"
 "\n"
 msgstr ""
-"\\textbf{Dílky Mapy na ruce:} Žádné\n"
+"\\textbf{Sdílené Mapové dílky (vyber jednu možnost):}\n"
 "\n"
 
 #. type: multicols
