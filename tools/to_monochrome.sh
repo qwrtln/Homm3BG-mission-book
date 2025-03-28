@@ -13,7 +13,7 @@ trap 'rm -rf ${TEMP_DIR}' EXIT
 # Extract alpha channel to preserve transparency
 magick "$INPUT_IMAGE" -alpha extract "$ALPHA_FILE"
 
-# Step 1: Create binary mask - combined operations where possible
+# Step 1: Create binary mask
 magick "$INPUT_IMAGE" \
   -colorspace HSL \
   -channel R \
@@ -31,7 +31,7 @@ magick "$INPUT_IMAGE" \
 # Create inverted mask
 magick "$BINARY_MASK" -negate "$INVERTED_MASK"
 
-# Step 2: Create monochrome version with combined operations
+# Step 2: Create monochrome version
 magick "$INPUT_IMAGE" \
   -negate \
   -threshold 50% \

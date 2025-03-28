@@ -17,7 +17,7 @@ env:
 jobs:
   make_monochrome:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
 
     steps:
       - name: Set up repository
@@ -31,6 +31,7 @@ jobs:
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec mv '{}' magick \;
           chmod a+x magick
+          # Adjust script to use AppImage
           sed -i 's/magick/\.\/magick/g' tools/to_monochrome.sh
 
       - name: Adjust map files for monochrome buld
