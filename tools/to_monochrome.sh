@@ -24,8 +24,8 @@ magick "$INPUT_IMAGE" \
   -blur 0x3 \
   -threshold 85% \
   -morphology Close Diamond:3 \
-  -morphology Open Diamond:2 \
-  -morphology Close Diamond:4 \
+  -morphology Open Diamond:8 \
+  -morphology Close Octagon:32 \
   "$BINARY_MASK"
 
 # Create inverted mask
