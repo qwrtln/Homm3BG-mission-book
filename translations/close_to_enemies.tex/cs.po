@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-03-26 01:04+0100\n"
-"PO-Revision-Date: 2025-03-18 18:53+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-29 19:47+0000\n"
+"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/coop-scenarios/close_to_enemies/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -38,6 +40,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -93,7 +97,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
 "\n"
 
 #. type: multicols*
@@ -152,6 +156,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
@@ -168,41 +174,31 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/close_to_enemies.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
-#| "logistics.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Smaragdový Ostrov}"
-"{\\images/logistics.png}"
+"\\addscenariosection{1}{Kooperativní Scénář}{V Blízkosti Nepřátel}{\\images/"
+"ballistics.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Tm335\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Kelghor\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Tm335\n"
+"\\textbf{Autor:} Kelghor\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studio Discord}\n"
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
 "\n"
 
 #. type: multicols
@@ -212,6 +208,8 @@ msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
 msgstr ""
+"\\textit{``Sire! Nájezdníci jsou před branami!!''}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:13
@@ -220,6 +218,8 @@ msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
 "\n"
 msgstr ""
+"\\textit{``Zatrubte na poplach! Zaženeme je zpět jako vždy!“ přikážeš a vydáš se bránit město. Stejně jako už mnohokrát předtím. Takový je drsný život pohraničních klanů, kde války a potyčky se sousedními rivaly nikdy doopravdy nekončí. Naštěstí naše Aliance zůstává silná a Ty víš, že máte krytá záda.}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:16
@@ -229,44 +229,38 @@ msgid ""
 "% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
 "\n"
 msgstr ""
+"\\textit{Nadešel čas ukončit dlouholeté války a jednou provždy rozdrtit nepřátele jako chrousta!}\n"
+"% Překladatelské info: V Homam IV byla hláška typu: „Rufux rozdrtí tuto armádu jako chrousta.“ Pokud má scounting a má větší armádu. Takže „jako chrousta“ je malý easter egg, který na to odkazuje.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 8 Rounds.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
 msgstr ""
-"Tento Scénář se hraje na 8 Kol.\n"
+"Tento Scénář se hraje na 7 Kol.\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 -- 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1--6\n"
 "\n"
 msgstr ""
-"\\textbf{Počet Hráčů:} 1 -- 6\n"
+"\\textbf{Počet Hráčů:} 1--6\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -276,18 +270,12 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Počáteční Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -297,22 +285,13 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Hrstku \\bronze\\ Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 1 × Málo \\bronze\\ Jednotek dle tvého výběru\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -320,12 +299,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
+"  \\item P × Startovní (I) Dílek Mapy\n"
+"  \\item 4P × Vzdálený (II--III) Dílek Mapy se stejným terénem jako má hráčův Startovní (I)  Dílek Mapy, jeden z dílků musí obsahovat Osadu\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -337,18 +313,18 @@ msgid ""
 "Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corresponding Far (II--III) Map Tile with a Settlement.\n"
 "\n"
 msgstr ""
+"Umístěte Vzdálené (II--III) Dílky Mapy s Osadami odpovídajícími terénu vaší frakce na místa označená barevnými kostkami znázorněné na mapě scénáře.\n"
+"Každá dvojice stejně barevných kostek označuje Startovní (I) Dílek Mapy a odpovídající Vzdálený (II--III) Dílek Mapy s Osadou.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:49
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool (choose one):}\n"
 "\n"
 msgstr ""
-"\\textbf{Dílky Mapy na ruce:} Žádné\n"
+"\\textbf{Sdílené Dílky Mapy (vyberte jednu možnost):}\n"
 "\n"
 
 #. type: multicols
@@ -367,6 +343,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Osobní balíček:} Každý hráč si vezme zbývající 1~×~Vzdálený (II--III) Dílek Mapy bez Osady, který má terén shodný s terénem jeho Startovního (I) Dílku Mapy\n"
+"  \\item \\textbf{Společný balíček:}\n"
+"  \\begin{itemize}\n"
+"    \\item Odstraňte všechny Vzdálené (II--III) Dílky Mapy bez Osady pryč z Mapy\n"
+"    \\item Vemte všechny takto získané Dílky Mapy a zamíchejte je\n"
+"    \\item Zamíchané  Dílky Mapy vraťte do Mapy v  náhodném pořadí\n"
+"    \\item Dílky Mapy, které zbydou vám utvoří  Sdílený balíček Dílků Mapy k prozkoumání\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
@@ -387,18 +374,17 @@ msgid ""
 "Prepare an AI Deck for Settlement defenders.\n"
 "\n"
 msgstr ""
+"Připrav AI Balíček pro Obránce Osady\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{General Kendal's Deck:} 5 × Might Card, 1 × Magic Card, 3 × Skill Card\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
 "\n"
 msgstr ""
-"\\textbf{Balíček Generála Kendala:} 5 × Karta Síly, 1 × Karta Magie, 3 × Karta Schopnosti\n"
+"\\textbf{Balíček Obránců Osady:} 1~×~Karta Síly (útoku), 1~×~Karta Síly (obrany), 1~×~Karta Kouzla\n"
 "\n"
 
 #. type: multicols
@@ -408,16 +394,12 @@ msgid ""
 "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
 "\n"
 msgstr ""
+"\\textbf{Balíček kouzel Obránců Osady:} 1~×~Magický Šíp\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of Familiars\n"
-#| "  \\item A Few Magogs\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "   \\item Conquer all Settlements.\n"
@@ -425,8 +407,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Tlupa Rarášků\n"
-"  \\item Hrstka Magogů\n"
+"  \\item Obsaďte všechny Osady\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -440,6 +421,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Nějaký hráč ztratí svoje Město.\n"
+"  \\item Alespoň jedna Osada zůstane neobsazená na konci 7. kola. Čas vypšel!\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:110
@@ -475,6 +461,35 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časové údálosti}}\n"
+"\\textbf{1. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Na začátku kola, každý hráč odhalí \\textit{Dílky Mapy svých Nemesis} (Vzdálený (II--III) Dílek Mapy s Osadou, který má stejný terén jako Startovní (I) Dílek Mapy hráče). Tyto Dílky Mapy jsou objeveny zdarma.\n"
+"\\end{itemize}\n"
+"\\textbf{2. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item První vlna armád Nepřátelských Klanů zaútočí na Města (viz oddíl níže).\n"
+"  \\item Po úspešné obraně města si ve svém tahu každý hráč může najmout Sekundárního hrdinu za 5~\\svg{gold}. Tato akce stále vyžaduje použití Žetonu populace.\n"
+"\\end{itemize}\n"
+"\\textbf{3. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Na začátku kola, každý hráč odhalí jeden Vzdálený (II--III) Dílek Mapy. Objevení Dílku Mapy je zdarma, ať už jendá o dílek položený na mapě, nebo dílek z balíčku k objevení.\n"
+"\\end{itemize}\n"
+"\\textbf{4. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Druhá vlna armád Nepřátelských Klanů zaútočí na Města (viz oddíl níže).\n"
+"  \\item Po ubránění svého Města si každý hráč může Hledat (3) z \\textit{Balíčku Artefaktů}.\n"
+"\\end{itemize}\n"
+"\\textbf{6. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Třetí vlna armád Nepřátelských Klanů zaútočí na Města (viz oddíl níže).\n"
+"  \\item Po ubránění svého Města si každý hráč může Hledat (3) z \\textit{Balíčku Artefaktů}.\n"
+"\\end{itemize}\n"
+"\\textbf{7. kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Během tohoto kola každý hráč na začtku svého tahu může dvakrát za sebou provést akci Vyhazování a dobírání karet, namísto obvyklého jednou.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:118
@@ -487,6 +502,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Hráči mohou kdykoliv utratit Žeton Výstavby,  aby vyvolali akci Tržiště.\n"
+"  \\item Své jednotky můžete použít k obraně vašeho Města  (aniž byste museli zapaltit 8~\\svg{gold}) i přesto, že váš hrdina není v Městě přítomen.\n"
+"  \\item Každá Osada je bráněna Obránci z místních klanů (viz níže).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:131
@@ -506,6 +527,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Nepřátelské Klany}}\n"
+"\\begin{itemize}\n"
+"  \\item Nedobyté Osady pošlou nepřátelské armády, aby zaútočili na tvoje Město!\n"
+"  \\item Bitva započne na počátku tahu hráče.\n"
+"  \\item Než bitva začne, můžeš použít svůj Žeton výstaby, Žeton knihy kouzel, Žeton populace a karty Might and Magic. Avšak nemůžeš hýbat hrdinou.\n"
+"  \\item Každý hráč musí ubránit svoje Město.\n"
+"  \\item Pokud máš Citadelu, tak síla útoku \\textit{Střílny} je snížena. Útok pro první/druhou/třetí vlnu nájezdů jsou upraveny na 2/3/4 \\svg{attack}.\n"
+"  \\item Tento souboj nestojí žádné \\svgeven{movement}.\n"
+"  \\item Sílu nepřátel zjistíš podle tabulky \\textit{Armády Nepřátelských Klanů}.\n"
+"  \\item Pokud je tvůj hrdina ve Městě spřáteleného hráče (ne v Osadě) ve chvíly, kdy na něj útočí Nepřátelské Armády, může se tvůj hrdina zúčastnit bitvy pomocí vlastních karet \\textit{Might and Magic}. Obléhaný hráč může použít svoje Jednotky, a ty mu můžeš pomoci hraním karet během souboje.\n"
+"  \\item Získej \\svg{experience} pokud úspěšně ubráníš Město, nezáleží na tom, jestli tvůj hlavní hrdina byl v boji přítomen.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
@@ -515,6 +549,9 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:143
@@ -530,11 +567,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Obránci Osady}}\n"
+"\\begin{itemize}\n"
+"  \\item Síla Obránců Osady je určena tabulkou \\textit{Armády Nepřátelských Klanů}.\n"
+"  \\item Po vyložení nepřátelské armády může hráč zahodit jednu kartu nepřátelkých Jendotek a vzít novou kartu stejné úrovně.\n"
+"  \\item Souboj nestojí žádné \\svgeven{movement}.\n"
+"  \\item V tomto souboji musíš použít, Balíček karet AI.\n"
+"  \\item Po vyhraném souboji získáš 2 \\svg{experience}.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:152
-#, fuzzy, no-wrap
-#| msgid "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
 "\\begin{center}\n"
@@ -543,7 +588,14 @@ msgid ""
 "\\end{center}\n"
 "\\vspace*{\\fill}\n"
 "\n"
-msgstr "{l}{0.3\\textwidth} \\raisebox{0pt}[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]{\\art/rust_dragon.jpg}}"
+msgstr ""
+"\\vspace*{\\fill}\n"
+"\\begin{center}\n"
+"  \\includegraphics[width=\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
+"  \\captionof{figure}{\\textbf{SCÉNÁŘ PRO 1 HRÁČE | PŘÍKLAD }}\n"
+"\\end{center}\n"
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: figure
 #: coops/close_to_enemies.tex:160
@@ -552,11 +604,13 @@ msgid ""
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
 "EXAMPLE }}"
 msgstr ""
+"[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCÉNÁŘ PRO 2 HRÁČE | "
+"PŘÍKLAD }}"
 
 #. type: table*
 #: coops/close_to_enemies.tex:209
-#, fuzzy, no-wrap
-#| msgid "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+#, no-wrap
 msgid ""
 "[b!]\n"
 "  \\hommtable[]{18}{\n"
@@ -605,21 +659,64 @@ msgid ""
 "\n"
 "      \\end{tabularx}\n"
 "  }"
-msgstr "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Síla Nepřátelských Armád}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svgunit[12]{bronze}} \\newcommand{\\silver}[0]{\\svgunit[12]{silver}} \\newcommand{\\golden}[0]{\\svgunit[12]{golden}} \\newcommand{\\azure}[0]{\\svgunit[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Kola 6 + 7} & \\darkcell{Kola 8 + 9} & \\darkcell{Kolo 10}\\\\ \\darkcell[1.4]{Lehká} & \\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Normální} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Težká} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]{Nemožná} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+msgstr ""
+"[b!]\n"
+"  \\hommtable[]{17}{\n"
+"    \\centering\n"
+"    \\medskip\n"
+"    \\textbf{Armády Nepřátelských Klanů}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\let\\origbronze\\bronze\n"
+"    \\let\\origsilver\\silver\n"
+"    \\let\\origgolden\\golden\n"
+"    \\let\\origazure\\azure\n"
+"    \\renewcommand{\\bronze}{\\origbronze[12]}\n"
+"    \\renewcommand{\\silver}{\\origsilver[12]}\n"
+"    \\renewcommand{\\golden}{\\origgolden[12]}\n"
+"    \\renewcommand{\\azure}{\\origazure[12]}\n"
+"\n"
+"      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
+"      \\darkcell{\\textbf{Easy}} &\n"
+"      \\darkcell{\\textbf{Normal}} &\n"
+"      \\darkcell{\\textbf{Hard}} &\n"
+"      \\darkcell{\\textbf{Impossible}}\\\\\n"
+"      \\darkcell[1.2]{První vlna}\n"
+"        & \\lightcell[1.2]{\\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Druhá vlna}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Třetí vlna}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Obránci Osady}\n"
+"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
+"\n"
+"      \\end{tabularx}\n"
+"  }"
 
 #. type: figure
 #: coops/close_to_enemies.tex:219
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 3 HRÁČE}}"
+msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 3 HRÁČE | PŘÍKLAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:226
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 4 HRÁČE}}"
+msgstr "\\captionof{figure}{\\textbf{SCÉNÁŘ PRO 4 HRÁČE | PŘÍKLAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:241
@@ -628,6 +725,9 @@ msgid ""
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCÉNÁŘ PRO 5 HRÁČŮ | "
+"PŘÍKLAD}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:241
@@ -636,3 +736,6 @@ msgid ""
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCÉNÁŘ PRO 6 HRÁČŮ | "
+"PŘÍKLAD}}"
