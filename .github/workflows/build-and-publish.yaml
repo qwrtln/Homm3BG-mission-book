@@ -15,42 +15,6 @@ env:
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
-  make_maps_monochrome:
-    runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
-
-    steps:
-      - name: Set up repository
-        uses: actions/checkout@v4
-
-      - name: Install magick
-        run: |
-          sudo add-apt-repository universe
-          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
-
-      - name: Adjust map files for monochrome buld
-        run: |
-          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-            -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
-            IMG="assets/${IMG}"
-            echo "Converting ${IMG}"
-            tools/to_monochrome.sh "$IMG"
-          done
-
-      - name: Move changed files
-        run: |
-          mkdir monochrome
-          git status --porcelain assets | awk '{print $2}' | xargs mv -t monochrome
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: monochrome-maps
-          path: monochrome
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
   build:
     runs-on: ubuntu-latest
     outputs:
@@ -58,12 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - language: en
-          - language: pl
-          - language: cs
-          - language: fr
-          - language: de
+        language: ["en", "pl", "cs", "fr", "de"]
 
     steps:
       - name: Set up repository
@@ -134,19 +93,50 @@ jobs:
           fi
 
 
+  make_maps_monochrome:
+    runs-on: ubuntu-latest
+    # if: github.event_name != 'pull_request'
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Install magick
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          # apt has v6, while v7 is required, hence downloading AppImage
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+
+      - name: Adjust map files for monochrome buld
+        run: |
+          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
+            -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
+            IMG="assets/${IMG}"
+            echo "Converting ${IMG}"
+            tools/to_monochrome.sh "$IMG"
+          done
+
+      - name: Move changed files
+        run: |
+          mkdir monochrome
+          git status --porcelain assets | awk '{print $2}' | xargs mv -t monochrome
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: monochrome-maps
+          path: monochrome
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+
   build_monochrome:
     needs: [build, make_maps_monochrome]
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - language: en
-          - language: pl
-          - language: cs
-          - language: fr
-          - language: de
+        language: ["en", "pl", "cs", "fr", "de"]
 
     steps:
       - name: Set up repository
@@ -202,11 +192,6 @@ jobs:
           name: main_${{ matrix.language }}
           path: ${{ matrix.language }}
 
-      - name: Check
-        run: |
-          ls -l ${{ matrix.language }}
-          ls -l ${{ matrix.language }} | xargs du -sh
-
       # - name: Publish ${{ matrix.language }} in artifacts repository
       #   uses: peaceiris/actions-gh-pages@v4
       #   with:
@@ -215,6 +200,7 @@ jobs:
       #     publish_branch: ${{ matrix.language }}
       #     publish_dir: ./${{ matrix.language }}
       #     force_orphan: true
+
 
   check_pages:
     runs-on: ubuntu-latest
