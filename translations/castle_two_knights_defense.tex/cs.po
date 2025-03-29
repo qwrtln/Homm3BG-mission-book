@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/"
-"homm3bg-fan-made-mission-book/campaigns/castle_two_knights_defense/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/campaigns/castle_two_knights_defense/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -45,7 +45,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
-#: campaigns/inferno_devilish_plan.tex:105 campaigns/castle_greek_gift.tex:49
+#: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -59,7 +59,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -76,7 +76,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:155
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
