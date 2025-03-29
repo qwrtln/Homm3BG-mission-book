@@ -23,10 +23,10 @@ magick "$INPUT_IMAGE" \
   -morphology close square:3 \
   -blur 0x3 \
   -threshold 85% \
+  -morphology Close Diamond:3 \
+  -morphology Open Diamond:8 \
+  -morphology Close Octagon:32 \
   "$BINARY_MASK"
-  # -morphology Close Diamond:3 \
-  # -morphology Open Diamond:8 \
-  # -morphology Close Octagon:32 \
 
 # Create inverted mask
 magick "$BINARY_MASK" -negate "$INVERTED_MASK"

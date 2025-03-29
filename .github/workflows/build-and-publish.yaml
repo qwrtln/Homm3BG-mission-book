@@ -95,7 +95,7 @@ jobs:
 
   make_maps_monochrome:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
 
     steps:
       - name: Set up repository
@@ -192,14 +192,14 @@ jobs:
           name: main_${{ matrix.language }}
           path: ${{ matrix.language }}
 
-      # - name: Publish ${{ matrix.language }} in artifacts repository
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: ${{ matrix.language }}
-      #     publish_dir: ./${{ matrix.language }}
-      #     force_orphan: true
+      - name: Publish ${{ matrix.language }} in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ matrix.language }}
+          publish_dir: ./${{ matrix.language }}
+          force_orphan: true
 
 
   check_pages:
