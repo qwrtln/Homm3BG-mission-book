@@ -185,7 +185,7 @@
 ]
 
 \newcommand{\sectionheadertext}[2][antiquewhite]{
-  \color{#1}\MakeUppercase{\textbf{\liberation #2}}
+  \iftoggle{noartbackground}{}{\color{#1}}\MakeUppercase{\textbf{\liberation #2}}
 }
 
 %Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
@@ -195,7 +195,11 @@
   \makebox[0pt][l]{
   \raisebox{-\totalheight}[0pt][7pt]{
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \iftoggle{noartbackground}{
+          \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading_monochrome.png}}};
+        }{
+          \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        }
         \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#2}};
       \end{tikzpicture}
     }
@@ -284,7 +288,11 @@
   \raisebox{-\totalheight}[0pt][7pt]{
     \ifthenelse{\oneliner}{\def\yscale{1}}{\def\yscale{1.3}}
       \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        \iftoggle{noartbackground}{
+          \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading_monochrome.png}}};
+        }{
+          \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
+        }
         \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#5}};
       \end{tikzpicture}
     }

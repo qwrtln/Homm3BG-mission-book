@@ -15,9 +15,9 @@ env:
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
-  make_monochrome:
+  make_maps_monochrome:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # if: github.event_name != 'pull_request'
 
     steps:
       - name: Set up repository
@@ -29,10 +29,10 @@ jobs:
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
           # apt has v6, while v7 is required, hence downloading AppImage
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec mv '{}' magick \;
-          chmod a+x magick
-          # Adjust script to use AppImage
-          sed -i 's/magick/\.\/magick/g' tools/to_monochrome.sh
+          find . -name "ImageMagick*" -exec chmod a+x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+          # chmod a+x magick
+          # # Adjust script to use AppImage
+          # sed -i 's/magick/\.\/magick/g' tools/to_monochrome.sh
 
       - name: Adjust map files for monochrome buld
         run: |
@@ -55,8 +55,6 @@ jobs:
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   build:
-    needs: make_monochrome
-    if: always()
     runs-on: ubuntu-latest
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
@@ -138,21 +136,42 @@ jobs:
             exit 1
           fi
 
-      - name: Move file
-        if: github.event_name != 'pull_request'
+
+  build_monochrome:
+    needs: [build, make_maps_monochrome]
+    runs-on: ubuntu-latest
+    # if: github.event_name != 'pull_request'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: en
+          - language: pl
+          - language: cs
+          - language: fr
+          - language: de
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Generate translations for ${{ matrix.language }}
+        if: ${{ matrix.language != 'en' }}
         run: |
-          mkdir ${{ matrix.language }}
-          mv main_${{ matrix.language }}.pdf ${{ matrix.language }}
+          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
+          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
+          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
+          tar -xf ${PO4A_DIR}.tar.gz
+          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
+          ./${PO4A_DIR}/po4a --no-update po4a.cfg
 
       - name: Download monochrome maps
-        if: github.event_name != 'pull_request'
         uses: actions/download-artifact@v4
         with:
           name: monochrome-maps
           path: assets/maps
 
       - name: Compile monochrome mission book
-        if: github.event_name != 'pull_request'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -161,8 +180,14 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
 
+      - name: Install ghostscript
+        run: |
+          echo ${{ env.GHOSTSCRIPT_URL }}
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+          tar -xvf *_amd64_snap.tgz
+          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+
       - name: Optimize PDF
-        if: github.event_name != 'pull_request'
         run: |
           du -sh main_${{ matrix.language }}.pdf
           tools/optimize.sh ${{ matrix.language }}
@@ -170,24 +195,27 @@ jobs:
           du -sh main_${{ matrix.language }}.pdf
 
       - name: Move file
-        if: github.event_name != 'pull_request'
         run: mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
 
-      - name: Publish ${{ matrix.language }} in artifacts repository
-        if: github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Download compiled book
+        uses: actions/download-artifact@v4
         with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ matrix.language }}
-          publish_dir: ./${{ matrix.language }}
-          force_orphan: true
+          name: main_${{ matrix.language }}.pdf
+          path: ${{ matrix.language }}
 
+      # - name: Publish ${{ matrix.language }} in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ matrix.language }}
+      #     publish_dir: ./${{ matrix.language }}
+      #     force_orphan: true
 
   check_pages:
     runs-on: ubuntu-latest
     needs: build
-    if: always() && github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request'
     strategy:
       fail-fast: false
       matrix:
