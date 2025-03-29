@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-29 20:04+0000\n"
+"POT-Creation-Date: 2025-03-26 16:54+0100\n"
 "PO-Revision-Date: 2024-06-29 16:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
@@ -87,8 +87,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
-#: campaigns/inferno_devilish_plan.tex:140
+#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -140,9 +139,8 @@ msgstr ""
 "\\textbf{Dodatečný Bonus:} Žádný\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
-#: clash/the_fractured_kingdoms.tex:58
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
