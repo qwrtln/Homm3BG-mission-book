@@ -1,0 +1,517 @@
+# Czech translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-03-29 21:01+0100\n"
+"PO-Revision-Date: 2025-03-29 21:01+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
+#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\n"
+
+#. type: multicols
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Městské Budovy:} \\bronze\\ Obydlí\n"
+"\n"
+
+#. type: multicols*
+#: coops/stand_united.tex:23 clash/bloody_grail.tex:21
+#: clash/the_fractured_kingdoms.tex:19 campaigns/inferno_devilish_plan.tex:32
+#: campaigns/inferno_deal_with_the_devil.tex:32
+#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
+#: campaigns/castle_two_knights_defense.tex:25
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols
+#: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
+#: clash/the_fractured_kingdoms.tex:29
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
+"\n"
+
+#. type: multicols
+#: clash/bloody_grail.tex:74 clash/the_fractured_kingdoms.tex:49
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"Before this Scenario:\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
+"Před tímto Scénářem:\n"
+"\n"
+
+#. type: multicols
+#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
+#: clash/the_fractured_kingdoms.tex:58
+#, no-wrap
+msgid ""
+"During this Scenario:\n"
+"\n"
+msgstr ""
+"Během tohoto Scénáře:\n"
+"\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/the_fractured_kingdoms.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
+#| "town_portal.png}"
+msgid ""
+"\\addscenariosection{1}{Clash Scenario}{The Fractured Kingdoms}{\\images/"
+"two_way_monolith.png}"
+msgstr ""
+"\\addscenariosection{1}{Střet}{Hrad Dračí Kletby}{\\images/town_portal.png}"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:7
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Tm335\n"
+#| "\n"
+msgid ""
+"\\textbf{Author:} mopo\n"
+"\n"
+msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:9
+#, no-wrap
+msgid ""
+"\\textit{A terrible Armageddon has stricken the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has past, they found their lands have drifted in the magic-laden space of this universe to collide with 4 other kingdoms. All 5 recognize that their first priority must be to rebuild and regrow, and they make a 5-kingdom alliance. However, each also knows in the back of their minds that whoever would break the alliance first, would gain a sharp first-strike advantage...}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:12
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "This Scenario is played over 13 Rounds.\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"This Scenario is played over 16 Rounds.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Délka Scénáře}}\n"
+"Tento Scénář se hraje na 13 Kol.\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:15
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
+#| "\\textbf{Player Count:} 2 or 4\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 5 free-for-all\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
+"\\textbf{Počet Hráčů:} 2 nebo 4\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:17
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:24
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item 3 × A Few \\bronze\\ Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Jednotky:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Hrstku \\bronze\\ Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:36
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{For a 2-player Scenario:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 2 × Near (IV--V) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item 5 × Starting (I) Map Tile; \\textbf{rotate them} so that their \\textbf{blocked Fields} match the ones marked in the Scenario map layout\n"
+"  \\item 10 × Near (IV--V) Map Tile\n"
+"  \\item 10 × Far (II--III) Map Tile\n"
+"  \\item 5 × Center (VI--VII) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Scénář pro 2 hráče:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Startovní (I) Dílek Mapy\n"
+"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
+"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:39
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "Slay the Dragon Boss with your Main Hero.\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"Score the most Victory Points (VPs) by the end of the \\nth{16} Round.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Podmínky Vítězství}}\n"
+"Zabijte Dračího Bosse se svým Hlavním Hrdinou.\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:46
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{\\nth{4} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item All yellow borders on the Starting (I) Map Tiles are ignored until the end fo the game.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{9. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Opakujte Časované Události ze 6. Kola.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:56
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic). A player may gain only Minor Artifacts on Starting or Far Tiles, Minor or Major Artifacts on Near Tiles, and Major or Relic Artifacts on Center Tiles.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic).\n"
+"    A player may gain only Minor Artifacts on Starting or Far Tiles, Minor or Major Artifacts on Near Tiles, and Major or Relic Artifacts on Center Tiles.\n"
+"  \\item Split the Spell Deck into 2 separate Decks (Basic and Expert Spells). Magic Arrow is a Baiic Spell.\n"
+"    A player may gain only Basic Spells on Starting or Far Tiles, Expert Spells on Near or Center Tiles.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item Rozdělte Balíček Artefaktů podle vzácnosti na 3 samostatné Balíčky (Menší, Větší a Relikvie). Hráč může získat pouze Menší Artefakty na Startovních nebo Vzdálených Dílcích, Menší nebo Větší Artefakty na Blízkých Dílcích a Větší nebo Relikvie na Středových Dílcích.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:71
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Each \\svg[12]{movement_token_green} in the map layout is a one-way portal.\n"
+"    Any Hero on the Field an \\svg[12]{movement_token_green} points away from can pay 1 \\svgeven{movement} to go to the Field that \\svg[12]{movement_token_green} is pointing to.\n"
+"  \\item You can defend your Town with your Hero if you have your Main Hero on your Starting (I) Map Tile.\n"
+"  \\item In addition to the regular tournament rules regarding scoring VPs, players gain VPs for the following:\n"
+"  \\item Owning the Grail Token increases your income by 5 \\svg{gold}.\n"
+"  \\item In addition to the standard tournament rules regarding scoring VPs, players gain VPs for:\n"
+"  \\begin{itemize}\n"
+"    \\item 2 VP for flagging a Dragon Utopia\n"
+"    \\item 2 VP for having the Dragon Utopia flagged at the end of the game\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:81
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Optional Rules}}\n"
+"\\begin{itemize}\n"
+"  \\item All \\svg[12]{movement_token_green} indicate two-way portals instead of one-way.\n"
+"    Heroes can travel in either direction by paying 1~\\svgeven{movement}.\n"
+"  \\item The portals start inactive (place them the inactive \\svg[12]{movement_token_red} side up).\n"
+"    Heroes must pay 1~\\svg{building_materials} and 1~\\svgeven{movement} to activate them.\n"
+"  \\item Heroes can destroy portals by paying 1~\\svgeven{movement}.\n"
+"    Flip a destroyd portal the \\svg[12]{movement_token_red} side up.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:87
+#, no-wrap
+msgid ""
+"[overlay, remember picture]\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:96
+#, no-wrap
+msgid ""
+"  \\newcommand{\\blocked}[3]{%\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
+"      \\draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]\n"
+"        (0:0.56cm) -- (60:0.56cm) -- (120:0.56cm) --\n"
+"        (180:0.56cm) -- (240:0.56cm) -- (300:0.56cm) -- cycle;\n"
+"    \\end{scope}\n"
+"  }\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:102
+#, no-wrap
+msgid ""
+"  \\newcommand{\\arrow}[3]{\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\node[rotate=#3, opacity=0.5] at ([shift={(2pt,-2pt)}]#1,#2) {\\includegraphics[height=23px]{\\images/movement_token_shadow.png}};\n"
+"    \\node[rotate=#3] at (#1, #2) {\\svg[20]{movement_token_green}};\n"
+"  }\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:106
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[remember picture, overlay]\n"
+#| "  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+#| "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+#| "  };\n"
+#| "  \\node(map)[anchor=center] at (current page.center) {\n"
+#| "    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+#| "  };\n"
+#| "  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+#| "  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+#| "  \\node at (4.8, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Inferno}}}}};\n"
+#| "  \\node at (4.8, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};"
+msgid ""
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9em] at (current page.center) {\n"
+"    \\includegraphics[width=1.25\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
+"  };\n"
+"\n"
+msgstr ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.5] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_magic.png}\n"
+"  };\n"
+"  \\node(map)[anchor=center] at (current page.center) {\n"
+"    \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+"  };\n"
+"  \\node at (2,-6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+"  \\node at (13, -6.5) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+"  \\node at (4.3, -17.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Dílky Mapy}}}}};\n"
+"  \\node at (4.3, -18.3) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Pekla}}}}};"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:108
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[overlay]\n"
+#| "  \\centering\n"
+#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+msgid ""
+"  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
+"\n"
+msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:111
+#, no-wrap
+msgid ""
+"  \\arrow{12.35}{-15.7}{-142}\n"
+"  \\arrow{14.4}{-17.6}{38}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:114
+#, no-wrap
+msgid ""
+"  \\arrow{13.91}{-9.95}{-72}\n"
+"  \\arrow{16.2}{-8.55}{108}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:117
+#, no-wrap
+msgid ""
+"  \\arrow{8.2}{-4.35}{-176}\n"
+"  \\arrow{8.75}{-6.9}{4}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:120
+#, no-wrap
+msgid ""
+"  \\arrow{1.5}{-10.35}{-99}\n"
+"  \\arrow{4.2}{-10.75}{81}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:123
+#, no-wrap
+msgid ""
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:125
+#, no-wrap
+msgid ""
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:127
+#, no-wrap
+msgid ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:129
+#, no-wrap
+msgid ""
+"  \\blocked{12.69}{-13.12}{67.7}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:131
+#, no-wrap
+msgid ""
+"  \\blocked{9.135}{-15.58}{0}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:133
+#, no-wrap
+msgid ""
+"  \\blocked{5.58}{-13.01}{-71}\n"
+"\n"
+msgstr ""

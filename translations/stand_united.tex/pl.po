@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 10:20+0100\n"
+"POT-Creation-Date: 2025-03-29 20:04+0000\n"
 "PO-Revision-Date: 2025-03-18 18:53+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,8 +22,8 @@ msgstr ""
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:224
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -75,7 +75,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
 #: coops/stand_united.tex:33 clash/the_hunt.tex:37
-#: campaigns/inferno_devilish_plan.tex:103
+#: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -89,7 +89,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:136
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
@@ -105,7 +105,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:140
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -120,7 +120,7 @@ msgstr ""
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:72
-#: campaigns/inferno_devilish_plan.tex:189
+#: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
@@ -134,7 +134,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:246
+#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
 #, no-wrap
@@ -149,7 +149,7 @@ msgstr ""
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
-#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
 #: sections/credits.tex:32
 #, no-wrap
 msgid ""
@@ -170,10 +170,11 @@ msgstr ""
 "Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
@@ -254,7 +255,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
-#: campaigns/inferno_devilish_plan.tex:32
+#: clash/the_fractured_kingdoms.tex:19 campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25

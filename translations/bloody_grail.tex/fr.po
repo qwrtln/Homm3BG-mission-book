@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-26 09:51+0000\n"
+"POT-Creation-Date: 2025-03-29 20:04+0000\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -23,7 +23,7 @@ msgstr ""
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
@@ -47,7 +47,8 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
 #: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
+#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -86,10 +87,11 @@ msgstr ""
 "\\textbf{Bonus de départ :} Aucun\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
@@ -98,7 +100,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
-#: campaigns/inferno_devilish_plan.tex:32
+#: clash/the_fractured_kingdoms.tex:19 campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
@@ -186,8 +188,9 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
+#: clash/the_fractured_kingdoms.tex:29
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -270,8 +273,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
-#: clash/bloody_grail.tex:74
+#. type: multicols
+#: clash/bloody_grail.tex:74 clash/the_fractured_kingdoms.tex:49
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -289,8 +292,9 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols*
+#. type: multicols
 #: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
+#: clash/the_fractured_kingdoms.tex:58
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
