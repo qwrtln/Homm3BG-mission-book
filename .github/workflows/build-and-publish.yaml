@@ -192,13 +192,20 @@ jobs:
           du -sh main_${{ matrix.language }}.pdf
 
       - name: Move file
-        run: mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
+        run: |
+          mkdir ${{ matrix.language }}
+          mv main_${{ matrix.language }}.pdf ${{ matrix.language }}/main_${{ matrix.language }}-mono.pdf
 
       - name: Download compiled book
         uses: actions/download-artifact@v4
         with:
           name: main_${{ matrix.language }}.pdf
           path: ${{ matrix.language }}
+
+      - name: Check
+        run: |
+          ls -l ${{ matrix.language }}
+          ls -l ${{ matrix.language }} | xargs du -sh
 
       # - name: Publish ${{ matrix.language }} in artifacts repository
       #   uses: peaceiris/actions-gh-pages@v4

@@ -75,8 +75,8 @@ jobs:
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
           # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.imagemagick_url }}
-          find . -name "imagemagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
       - name: Adjust map files for monochrome buld
         if: github.event_name != 'pull_request'
