@@ -199,7 +199,7 @@ jobs:
       - name: Download compiled book
         uses: actions/download-artifact@v4
         with:
-          name: main_${{ matrix.language }}.pdf
+          name: main_${{ matrix.language }}
           path: ${{ matrix.language }}
 
       - name: Check
