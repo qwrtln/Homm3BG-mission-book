@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-03-24 14:51+0100\n"
-"PO-Revision-Date: 2025-03-27 21:48+0000\n"
-"Last-Translator: Kelghor <kelghor@seznam.cz>\n"
+"PO-Revision-Date: 2025-03-29 17:21+0000\n"
+"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "homm3bg-fan-made-mission-book/campaigns/inferno_devilish_plan/cs/>\n"
 "Language: cs\n"
@@ -40,6 +40,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -206,6 +208,9 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
