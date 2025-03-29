@@ -62,7 +62,6 @@ jobs:
           du -sh main_${{ matrix.language }}.pdf
 
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
         with:
           name: main_${{ matrix.language }}
           path: main_${{ matrix.language }}.pdf
