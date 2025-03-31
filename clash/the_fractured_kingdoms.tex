@@ -5,7 +5,7 @@
 
 \textbf{Author:} mopo
 
-\textit{A terrible Armageddon has stricken the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has past, they found their lands have drifted in the magic-laden space of this universe to collide with 4 other kingdoms. All 5 recognize that their first priority must be to rebuild and regrow, and they make a 5-kingdom alliance. However, each also knows in the back of their minds that whoever would break the alliance first, would gain a sharp first-strike advantage...}
+\textit{A terrible Armageddon has struck the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has passed, they discovered their lands had drifted in the magic-laden space of this universe to collide with one another. All five recognize that their first priority must be to rebuild and regrow, and they form a five-kingdom alliance. However, each also knows in the back of their minds that whoever breaks the alliance first, would gain a sharp first-strike advantage...}
 
 \subsection*{\MakeUppercase{Scenario Length}}
 This Scenario is played over 16 Rounds.
@@ -43,6 +43,10 @@ Score the most Victory Points (VPs) by the end of the \nth{16} Round.
 \begin{itemize}
   \item All yellow borders on the Starting (I) Map Tiles are ignored until the end of the game.
 \end{itemize}
+\textbf{\nth{6}, \nth{9} and \nth{12} Rounds:}
+\begin{itemize}
+  \item Remove all Black Cubes from every Water Wheel and Windmill.
+\end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
 Before this Scenario:
@@ -57,31 +61,31 @@ Before this Scenario:
 During this Scenario:
 
 \begin{itemize}
-  \item Each \svg[12]{movement_token_green} in the map layout is a one-way portal.
+  \item Each \svg[12]{movement_token_green} in the map layout is a one-way monolith.
     Any Hero on the Field an \svg[12]{movement_token_green} points away from can pay 1 \svgeven{movement} to go to the Field that \svg[12]{movement_token_green} is pointing to.
   \item You can defend your Town with your Hero if you have your Main Hero on your Starting (I) Map Tile.
-  \item In addition to the regular tournament rules regarding scoring VPs, players gain VPs for the following:
-  \item Owning the Grail Token increases your income by 5 \svg{gold}.
-  \item In addition to the standard tournament rules regarding scoring VPs, players gain VPs for:
-  \begin{itemize}
-    \item 2 VP for flagging a Dragon Utopia
-    \item 2 VP for having the Dragon Utopia flagged at the end of the game
-  \end{itemize}
+\end{itemize}
+
+Victory Points are counted in accordance to the Tournament book. Additionally, you get:
+\begin{itemize}
+  \item 2 VP for flagging a Dragon Utopia for the first time
+  \item 2 VP for having the Dragon Utopia flagged at the end of the game
+  \item 5 VP for bringing the Grail to your Faction Town OR 3 VP for being in possesion of the Grail at the end of the game
 \end{itemize}
 
 \subsection*{\MakeUppercase{Optional Rules}}
 \begin{itemize}
-  \item All \svg[12]{movement_token_green} indicate two-way portals instead of one-way.
+  \item All \svg[12]{movement_token_green} indicate two-way monoliths instead of one-way.
     Heroes can travel in either direction by paying 1~\svgeven{movement}.
-  \item The portals start inactive (place them the inactive \svg[12]{movement_token_red} side up).
+  \item The monoliths start inactive (place them the inactive \svg[12]{movement_token_red} side up).
     Heroes must pay 1~\svg{building_materials} and 1~\svgeven{movement} to activate them.
-  \item Heroes can destroy portals by paying 1~\svgeven{movement}.
-    Flip a destroyd portal the \svg[12]{movement_token_red} side up.
+  \item Heroes can destroy monoliths by paying 1~\svgeven{movement}.
+    Flip a destroyd monolith the \svg[12]{movement_token_red} side up.
 \end{itemize}
 
 \end{multicols}
 
-\vspace*{-6.5em}
+\vspace*{-8em}
 
 \begin{tikzpicture}[overlay, remember picture]
 
@@ -100,8 +104,8 @@ During this Scenario:
     \node[rotate=#3] at (#1, #2) {\svg[20]{movement_token_green}};
   }
 
-  \node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9em] at (current page.center) {
-    \includegraphics[width=1.25\paperwidth, keepaspectratio]{\art/two_way_monolith.png}
+  \node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {
+    \includegraphics[width=1.2\paperwidth, keepaspectratio]{\art/two_way_monolith.png}
   };
 
   \node at (9, -12) {\includegraphics[width=0.9\paperwidth]{\maps/the_fractured_kingdoms.png}};
