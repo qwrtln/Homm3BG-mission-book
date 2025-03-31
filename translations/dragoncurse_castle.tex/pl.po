@@ -240,7 +240,7 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Garstka \\bronze\\ Jednosek o najniższym koszcie rekrutacji\n"
+"  \\item 2 × Garstka \\bronze\\ Jednostek o najniższym koszcie rekrutacji\n"
 "\\end{itemize}\n"
 "\n"
 
