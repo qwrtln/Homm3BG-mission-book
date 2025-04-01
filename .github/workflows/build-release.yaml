@@ -90,7 +90,7 @@ jobs:
       - name: Find map files
         id: set-matrix
         run: |
-          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq)
+          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
           echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
 
   make_maps_monochrome:
@@ -113,15 +113,13 @@ jobs:
           find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
       - name: Process map file
-        run: |
-          IMG="assets/${{ matrix.map }}"
-          tools/to_monochrome.sh "${IMG}"
+        run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
         uses: actions/upload-artifact@v4
         with:
-          name: monochrome-map-${{ hashFiles(format('assets/{0}', matrix.map)) }}
-          path: assets/${{ matrix.map }}
+          name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
+          path: assets/maps/${{ matrix.map }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   build_monochrome:
