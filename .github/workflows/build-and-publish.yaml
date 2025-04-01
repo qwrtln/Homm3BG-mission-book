@@ -234,7 +234,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["pl", "cs", "fr", "de"]
+        language: ["en", "pl", "cs", "fr", "de"]
     steps:
       - name: Create dir
         run: mkdir ${{ matrix.language }}

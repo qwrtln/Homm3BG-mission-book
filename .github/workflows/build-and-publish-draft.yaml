@@ -183,7 +183,7 @@ jobs:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
           publish_branch: drafts
-          publish_dir: ./draft-scenarios/drafts
+          publish_dir: ./drafts
           force_orphan: true
 
       - uses: geekyeggo/delete-artifact@v5
