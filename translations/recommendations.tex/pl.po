@@ -335,12 +335,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:83
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
@@ -348,7 +343,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -472,12 +467,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:141
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
@@ -485,6 +475,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
 "\\end{center}\n"
 "\n"

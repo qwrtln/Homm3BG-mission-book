@@ -222,12 +222,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vfill\n"
 "\\begin{center}\n"
@@ -235,24 +230,15 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\vfill\n"
 "\\begin{center}\n"
-"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
 "\\end{center}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:49
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II-III) Map Tile\n"
-#| "  \\item 5 × Near (IV-V) Map Tile\n"
-#| "  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -265,6 +251,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
 "\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
 "Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
 "\\begin{itemize}\n"
@@ -361,15 +348,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\phantom{.}\n"
-#| "\\vfill\n"
-#| "\\begin{center}\n"
-#| "  \\transparent{0.3}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
-#| "\\end{center}\n"
-#| "\\vfill\n"
-#| "\\phantom{.}"
+#, no-wrap
 msgid ""
 "\\phantom{.}\n"
 "\\vfill\n"
@@ -382,7 +361,7 @@ msgstr ""
 "\\phantom{.}\n"
 "\\vfill\n"
 "\\begin{center}\n"
-"  \\transparent{0.3}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
 "\\end{center}\n"
 "\\vfill\n"
 "\\phantom{.}"

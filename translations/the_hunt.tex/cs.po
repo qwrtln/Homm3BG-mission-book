@@ -360,34 +360,19 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:79
-#, fuzzy, no-wrap
-#| msgid ""
-#| "During this Scenario:\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
 "Během tohoto Scénáře:\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Only a Main Hero can kill the Dragon.\n"
-#| "  \\item The final battle with the Dragon occurs at the center Field of the Center Map Tile.\n"
-#| "    Please refer to the encounter rules specified in the rules of the selected Dragon Boss.\n"
-#| "  \\item While fighting a Dragon Boss, ignore Gorgon's special ability.\n"
-#| "  \\item Heroes are unable to retreat from battles with the Dragon Boss.\n"
-#| "  \\item When each player Visits an Obelisk, they can choose to roll a Treasure Die or receive 1 \\svg{experience}.\n"
-#| "  \\item Players can Visit each Obelisk only once.\n"
-#| "    Afterwards, they must place their Faction Cube on the Field.\n"
-#| "  \\item In the boss encounter, there is no battle Round limit.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Only a Main Hero can kill the Dragon.\n"
@@ -414,6 +399,7 @@ msgstr ""
 "    Poté musí na Pole umístit svou Kostičku Frakce.\n"
 "  \\item V setkání s bossem není žádný limit Kol Souboje.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*

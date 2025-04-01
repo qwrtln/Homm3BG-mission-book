@@ -226,15 +226,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -245,25 +237,18 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Dla Scenariusza dwuosobowego:}\n"
 "\\begin{itemize}\n"
-"  \\item G × Początkowy (I) Kafelek Mapy\n"
-"  \\item 2G × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 2G × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item (G + 1) × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 2 × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 3-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -274,11 +259,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Dla Scenariusza trzyosobowego:}\n"
 "\\begin{itemize}\n"
-"  \\item G × Początkowy (I) Kafelek Mapy\n"
-"  \\item 2G × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 2G × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item (G + 1) × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item 3 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 3 × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 3 × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -334,13 +320,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:76
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
-#| "    You can choose randomly by picking one of the four shuffled Statistic Cards: \\textit{Attack} -- Azure, \\textit{Defense} -- Crystal, \\textit{Knowledge} -- Rust, \\textit{Power} -- Faerie.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
@@ -352,39 +332,25 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Wybierz jednego ze Smoków z listy bossów: Błękitny Smok, Kryształowy Smok, Rdzawy Smok, lub Czarodziejski Smok.\n"
 "    Możesz wybrać losowo, wybierając jedną z czterech przetasowanych Kart Statystyk: \\textit{Atak} -- Błękitny, \\textit{Obrona} -- Kryształowy, \\textit{Wiedza} -- Rdzawy, \\textit{Moc} -- Czarodziejski.\n"
+"  \\item Umieść Czarną Kostkę lub figurkę reprezentującą Smoka na środku Centralnego Kafelka Mapy.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:79
-#, fuzzy, no-wrap
-#| msgid ""
-#| "During this Scenario:\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
 "Podczas tego Scenariusza:\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Only a Main Hero can kill the Dragon.\n"
-#| "  \\item The final battle with the Dragon occurs at the center Field of the Center Map Tile.\n"
-#| "    Please refer to the encounter rules specified in the rules of the selected Dragon Boss.\n"
-#| "  \\item While fighting a Dragon Boss, ignore Gorgon's special ability.\n"
-#| "  \\item Heroes are unable to retreat from battles with the Dragon Boss.\n"
-#| "  \\item When each player Visits an Obelisk, they can choose to roll a Treasure Die or receive 1 \\svg{experience}.\n"
-#| "  \\item Players can Visit each Obelisk only once.\n"
-#| "    Afterwards, they must place their Faction Cube on the Field.\n"
-#| "  \\item In the boss encounter, there is no battle Round limit.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Only a Main Hero can kill the Dragon.\n"
@@ -411,19 +377,17 @@ msgstr ""
 "    Następnie muszą umieścić swoją Kostkę Frakcji na Polu.\n"
 "  \\item W walce ze Smokiem nie ma limitu Rund Walki.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:94
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
 "\n"
 msgstr ""
-"\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
+"\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
 "\n"
 
 #. type: multicols*
@@ -433,6 +397,8 @@ msgid ""
 "\\medskip\n"
 "\n"
 msgstr ""
+"\\medskip\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:98
@@ -441,16 +407,12 @@ msgid ""
 "{\\footnotesize\\centering\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}\\par}\n"
 "\n"
 msgstr ""
+"{\\footnotesize\\centering\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}\\par}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:104
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (13.5, 1.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-#| "  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay, anchor=north]\n"
 "  \\centering\n"
@@ -459,10 +421,11 @@ msgid ""
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"[overlay]\n"
+"\\begin{tikzpicture}[overlay, anchor=north]\n"
 "  \\centering\n"
-"  \\node at (13.5, 4.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, 0.2) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"  \\node at (0, 0) {\\includegraphics[width=\\textwidth, height=0.48\\textheight, keepaspectratio]{\\maps/the-hunt-3.png}};\n"
+"  \\node at (0, -12) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"\\end{tikzpicture}\n"
 "\n"
 
 #. type: wrapfigure

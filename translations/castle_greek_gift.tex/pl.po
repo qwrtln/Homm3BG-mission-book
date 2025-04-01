@@ -532,15 +532,19 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:125
-#, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#, no-wrap
 msgid ""
 "{\n"
 "  \\transparent{0.2}\n"
 "  \\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
 "}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
+"{\n"
+"  \\transparent{0.2}\n"
+"  \\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
+"}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/castle_greek_gift.tex:134
