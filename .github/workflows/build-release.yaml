@@ -79,9 +79,27 @@ jobs:
           path: "*.pdf"
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
+  find_map_files:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Find map files
+        id: set-matrix
+        run: |
+          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq)
+          echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
 
   make_maps_monochrome:
+    needs: find_map_files
     runs-on: ubuntu-latest
+    name: Convert map ${{ matrix.map }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
@@ -94,22 +112,21 @@ jobs:
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
-      - name: Adjust map files for monochrome build
+      - name: Process map file
         run: |
-          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \;)
-          echo "$IMAGES" | parallel --max-procs=2 'IMG="assets/{}" && echo "Converting ${IMG}" && tools/to_monochrome.sh "${IMG}"'
+          IMG="assets/${{ matrix.map }}"
+          tools/to_monochrome.sh "${IMG}"
 
-      - name: Move changed files
-        run: |
-          mkdir monochrome
-          git status --porcelain assets | awk '{print $2}' | xargs mv -t monochrome
+          # Create directory structure that preserves the original path
+          mkdir -p "monochrome/assets/maps/$(dirname "${{ matrix.map }}" | sed 's|^maps/||')"
+          cp "$IMG" "monochrome/assets/maps/$(echo "${{ matrix.map }}" | sed 's|^maps/||')"
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload processed file
+        uses: actions/upload-artifact@v4
         with:
-          name: monochrome-maps
+          name: monochrome-map-${{ hashFiles(format('assets/{0}', matrix.map)) }}
           path: monochrome
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
 
   build_monochrome:
     needs: [make_maps_monochrome]
@@ -144,8 +161,11 @@ jobs:
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
         with:
-          name: monochrome-maps
-          path: assets/maps
+          pattern: monochrome-map-*
+          path: .
+          merge-multiple: true
+
+      # Downloaded maps are already in the right structure - no need to reorganize
 
       - name: Set version
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
