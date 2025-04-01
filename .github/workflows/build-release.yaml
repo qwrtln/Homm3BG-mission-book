@@ -94,14 +94,10 @@ jobs:
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
-      - name: Adjust map files for monochrome buld
+      - name: Adjust map files for monochrome build
         run: |
-          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-            -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
-            IMG="assets/${IMG}"
-            echo "Converting ${IMG}"
-            tools/to_monochrome.sh "$IMG"
-          done
+          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \;)
+          echo "$IMAGES" | parallel --max-procs=4 'IMG="assets/{}" && echo "Converting ${IMG}" && tools/to_monochrome.sh "${IMG}"'
 
       - name: Move changed files
         run: |
@@ -150,6 +146,9 @@ jobs:
         with:
           name: monochrome-maps
           path: assets/maps
+
+      - name: Set version
+        run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
 
       - name: Create artifact name
         id: artifact_name
