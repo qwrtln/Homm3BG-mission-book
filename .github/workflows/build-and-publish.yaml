@@ -246,16 +246,19 @@ jobs:
           path: ${{ matrix.language }}
           merge-multiple: true
 
-      - name: Publish drafts in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Publish ${{ matrix.language }} in artifacts repository
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: drafts
-          publish_dir: ./draft-scenarios/drafts
+          publish_branch: ${{ matrix.language }}
+          publish_dir: ./${{ matrix.language }}
           force_orphan: true
 
+
+  delete_artifacts:
+    runs-on: ubuntu-latest
+    needs: [publish]
+    steps:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: monochrome-map-*
-          failOnError: false
