@@ -361,22 +361,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:69
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:76
@@ -486,12 +477,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:114
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
@@ -499,7 +485,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
 "\\end{center}\n"
 "\n"
 
