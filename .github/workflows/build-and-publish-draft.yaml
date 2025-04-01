@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'draft-scenarios/**'
-  # pull_request:
-  #   branches: [main]
-    # paths:
-    #   - 'draft-scenarios/**'
+    paths:
+      - 'draft-scenarios/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'draft-scenarios/**'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
@@ -65,7 +65,7 @@ jobs:
 
   find_draft_map_files:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -177,17 +177,14 @@ jobs:
           path: drafts
           merge-multiple: true
 
-      - name: Check
-        run: ls -l drafts
-
-      # - name: Publish drafts in artifacts repository
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: drafts
-      #     publish_dir: ./draft-scenarios/drafts
-      #     force_orphan: true
+      - name: Publish drafts in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: drafts
+          publish_dir: ./draft-scenarios/drafts
+          force_orphan: true
 
       - uses: geekyeggo/delete-artifact@v5
         with:

@@ -93,7 +93,7 @@ jobs:
 
   find_map_files:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -246,18 +246,16 @@ jobs:
           path: ${{ matrix.language }}
           merge-multiple: true
 
-      - name: Check
-        run: ls -l ${{ matrix.language }}
-
-      # - name: Publish drafts in artifacts repository
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: drafts
-      #     publish_dir: ./draft-scenarios/drafts
-      #     force_orphan: true
+      - name: Publish drafts in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: drafts
+          publish_dir: ./draft-scenarios/drafts
+          force_orphan: true
 
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: monochrome-map-*
+          failOnError: false
