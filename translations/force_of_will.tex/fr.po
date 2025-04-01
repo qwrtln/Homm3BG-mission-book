@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-29 20:04+0000\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2024-10-31 23:06+0000\n"
 "Last-Translator: invoceusse <invoceusse@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -29,7 +29,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -57,9 +57,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
@@ -74,9 +73,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:62
+#: coops/sentinels.tex:86 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -87,9 +86,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
+#: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -110,7 +107,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
 #: clash/the_fractured_kingdoms.tex:29
 #, no-wrap
 msgid ""
@@ -120,8 +117,8 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
-#: clash/the_fractured_kingdoms.tex:58
+#: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
+#: clash/the_fractured_kingdoms.tex:62
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
@@ -276,12 +273,13 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:93
+#: clash/force_of_will.tex:94
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item When a player Visits an Obelisk, they roll 2 \\svg{treasure} and choose one to resolve.\n"
 "  \\item A player may not use the Diplomacy Card to skip Combat on the Dragon Utopia Field.\n"
+"  \\columnbreak\n"
 "  \\item When a Hero moves to the Dragon Utopia Field, they must fight, depending on chosen difficulty, the following number of Neutral Units:\n"
 "  \\begin{itemize}\n"
 "    \\item \\textbf{Easy:} 1 × \\azure\\, 2 × \\silver\\, 1 × \\bronze\\\n"
@@ -299,7 +297,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:101
+#: clash/force_of_will.tex:102
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"

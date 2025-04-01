@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 22:41+0100\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -24,12 +24,12 @@ msgstr ""
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -338,12 +338,12 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -470,11 +470,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\includegraphics[width=0.7\\linewidth]{\\art/coin.png}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
 "\\end{center}\n"
 "\n"

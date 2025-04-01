@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-29 20:04+0000\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,7 +28,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -74,8 +74,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
-#: coops/stand_united.tex:33 clash/the_hunt.tex:37
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
@@ -89,9 +89,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
@@ -106,9 +105,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:62
+#: coops/sentinels.tex:86 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -118,43 +117,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Dodatečná Pravidla}}\n"
-"\n"
-
-#. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
-#: coops/stand_united.tex:87 clash/the_hunt.tex:41
-#: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
-#: sections/credits.tex:26
-#, no-wrap
-msgid ""
-"\\columnbreak\n"
-"\n"
-msgstr ""
-"\\columnbreak\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
-"\n"
-msgstr ""
-"\\textbf{Dodatečný Bonus:} Žádný\n"
-"\n"
-
-#. type: multicols
-#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
-#: clash/the_fractured_kingdoms.tex:58
-#, no-wrap
-msgid ""
-"During this Scenario:\n"
-"\n"
-msgstr ""
-"Během tohoto Scénáře:\n"
 "\n"
 
 #. type: multicols*
@@ -252,7 +214,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:39
+#: clash/the_hunt.tex:37
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
@@ -262,15 +224,24 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:49
-#, no-wrap
+#: clash/the_hunt.tex:45
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{For a 2-player Scenario:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 2 × Near (IV--V) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map Tile\n"
 "  \\item 2 × Far (II--III) Map Tile\n"
 "  \\item 2 × Near (IV--V) Map Tile\n"
-"  \\item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -278,35 +249,44 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
 "  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 2 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo Figurku představující Draka do středu Dílku\n"
+"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:57
-#, no-wrap
+#: clash/the_hunt.tex:53
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{For a 2-player Scenario:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 2 × Near (IV--V) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{For a 3-player Scenario:}\n"
 "\\begin{itemize}\n"
 "  \\item 3 × Starting (I) Map Tile\n"
 "  \\item 3 × Far (II--III) Map Tile\n"
 "  \\item 3 × Near (IV--V) Map Tile\n"
-"  \\item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile\n"
+"  \\item 1 × Center (VI--VII) Map Tile\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 3 hráče:}\n"
+"\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Startovní (I) Dílek Mapy\n"
-"  \\item 3 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 3 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy; umístěte Černou Kostičku nebo Figurku představující Draka do středu Dílku\n"
+"  \\item 2 × Startovní (I) Dílek Mapy\n"
+"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
+"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:60
+#: clash/the_hunt.tex:56
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -318,7 +298,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:63
+#: clash/the_hunt.tex:59
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -330,7 +310,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:70
+#: clash/the_hunt.tex:66
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -346,7 +326,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:74
+#: clash/the_hunt.tex:70
 #, no-wrap
 msgid ""
 "Before the start of this Scenario:\n"
@@ -356,12 +336,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:79
-#, no-wrap
+#: clash/the_hunt.tex:76
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
+#| "    You can choose randomly by picking one of the four shuffled Statistic Cards: \\textit{Attack} -- Azure, \\textit{Defense} -- Crystal, \\textit{Knowledge} -- Rust, \\textit{Power} -- Faerie.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.\n"
 "    You can choose randomly by picking one of the four shuffled Statistic Cards: \\textit{Attack} -- Azure, \\textit{Defense} -- Crystal, \\textit{Knowledge} -- Rust, \\textit{Power} -- Faerie.\n"
+"  \\item Place a Black Cube or a Miniature representing the Dragon in the center of the Center Map Tile.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -372,7 +359,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:93
+#: clash/the_hunt.tex:79
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"During this Scenario:\n"
+"\n"
+msgstr ""
+"\\columnbreak\n"
+"Během tohoto Scénáře:\n"
+"\n"
+
+#. type: multicols*
+#: clash/the_hunt.tex:92
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -386,6 +385,7 @@ msgid ""
 "    Afterwards, they must place their Faction Cube on the Field.\n"
 "  \\item In the boss encounter, there is no battle Round limit.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
@@ -399,32 +399,69 @@ msgstr ""
 "    Poté musí na Pole umístit svou Kostičku Frakce.\n"
 "  \\item V setkání s bossem není žádný limit Kol Souboje.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:101
+#: clash/the_hunt.tex:94
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
+msgid ""
+"\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
+"\n"
+msgstr ""
+"\\begin{center}\n"
+"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"\\end{center}\n"
+"\n"
+
+#. type: multicols*
+#: clash/the_hunt.tex:96
 #, no-wrap
 msgid ""
-"\\begin{tikzpicture}[overlay]\n"
+"\\medskip\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:98
+#, no-wrap
+msgid ""
+"{\\footnotesize\\centering\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}\\par}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/the_hunt.tex:104
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[overlay]\n"
+#| "  \\centering\n"
+#| "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
+#| "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
+#| "  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
+#| "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
+msgid ""
+"\\begin{tikzpicture}[overlay, anchor=north]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-"  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-"  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"  \\node at (0, 0) {\\includegraphics[width=\\textwidth, height=0.48\\textheight, keepaspectratio]{\\maps/the-hunt-3.png}};\n"
+"  \\node at (0, -12) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{tikzpicture}[overlay]\n"
+"[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 9) {\\includegraphics[scale=0.187]{\\maps/the-hunt-2.png}};\n"
-"  \\node at (14, 3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
-"  \\node at (11, -4.5) {\\includegraphics[scale=0.187]{\\maps/the-hunt-3.png}};\n"
-"  \\node at (4, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 3 HRÁČE}}}};\n"
-"\\end{tikzpicture}\n"
-"\n"
+"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
+"  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
+"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
+"  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 4 HRÁČE}}}};"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:147
+#: clash/the_hunt.tex:150
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -432,7 +469,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:147
+#: clash/the_hunt.tex:150
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Azure Dragon}} \\medskip \\textit{Little is "
 "known of the Azure Dragon.  It is both rare and mighty, thus few have seen "
@@ -483,7 +520,7 @@ msgstr ""
 "hráče zůstávají účinná. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:174
+#: clash/the_hunt.tex:177
 #, fuzzy
 #| msgid ""
 #| "\\hommtable[]{8}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
@@ -536,7 +573,7 @@ msgstr ""
 "\\end{tabularx} }"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:216
+#: clash/the_hunt.tex:219
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -544,7 +581,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:216
+#: clash/the_hunt.tex:219
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
 "entirely from red crystal and brought to life through magical means, the "
@@ -596,7 +633,7 @@ msgstr ""
 "za Kolo Souboje. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:243
+#: clash/the_hunt.tex:246
 #, fuzzy
 #| msgid ""
 #| "\\hommtable[]{10}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
@@ -650,7 +687,7 @@ msgstr ""
 "\\svg{damage-table} sežráním Golemů} \\\\ \\end{tabularx} }\\pagebreak"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:284
+#: clash/the_hunt.tex:287
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -661,7 +698,7 @@ msgstr ""
 "{\\art/rust_dragon.jpg}}"
 
 #. type: Plain text
-#: clash/the_hunt.tex:284
+#: clash/the_hunt.tex:287
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
 "Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
@@ -710,7 +747,7 @@ msgstr ""
 "do -4 \\svg{defense}. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:311
+#: clash/the_hunt.tex:314
 #, fuzzy
 #| msgid ""
 #| "\\hommtable[]{9}{ \\centering \\medskip \\newcommand{\\bronze}[0]"
@@ -761,7 +798,7 @@ msgstr ""
 "40 \\\\ +1 ke snížení obrany z Koroze} \\\\ \\end{tabularx} }"
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:360
+#: clash/the_hunt.tex:363
 msgid ""
 "{l}{0.28\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -769,7 +806,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:360
+#: clash/the_hunt.tex:363
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
 "Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
@@ -828,7 +865,7 @@ msgstr ""
 "ztratí drak schopnost sesílat Kouzla. \\end{itemize} }"
 
 #. type: Plain text
-#: clash/the_hunt.tex:386
+#: clash/the_hunt.tex:389
 #, fuzzy
 #| msgid ""
 #| "\\hommtable[]{7}{ \\centering \\medskip \\newcommand{\\bronze}[0]"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-29 20:04+0000\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -29,7 +29,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -44,28 +44,10 @@ msgstr ""
 "{2}\n"
 "\n"
 
-#. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
-#: campaigns/inferno_devilish_plan.tex:140
-#: campaigns/inferno_steadwicks_fall.tex:146
-#: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Timed Events}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
-"\n"
-
 #. type: multicols*
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
-#: clash/bloody_grail.tex:121 clash/bloody_grail.tex:127
+#: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
 #: sections/credits.tex:32
 #, no-wrap
@@ -74,18 +56,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\vspace*{\\fill}\n"
-"\n"
-
-#. type: multicols*
-#: coops/titans_stronghold.tex:40 coops/emerald_island.tex:36
-#: clash/bloody_grail.tex:33 clash/force_of_will.tex:35 clash/the_hunt.tex:35
-#: clash/dragoncurse_castle.tex:38
-#, no-wrap
-msgid ""
-"\\textbf{Additional Bonus:} None\n"
-"\n"
-msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
 "\n"
 
 #. type: multicols
@@ -218,7 +188,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
 #: clash/the_fractured_kingdoms.tex:29
 #, no-wrap
 msgid ""
@@ -231,7 +201,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:44
+#: clash/bloody_grail.tex:42
 #, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
@@ -253,7 +223,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:52
+#: clash/bloody_grail.tex:50
 #, no-wrap
 msgid ""
 "\\textbf{For a 4-player Scenario:}\n"
@@ -275,7 +245,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:54
+#: clash/bloody_grail.tex:52
 #, no-wrap
 msgid ""
 "\\textbf{\\MakeUppercase{Note:}} Before placing the Near Tiles, separate them into 2 piles (with and without an Obelisk). Place them alternately so that the Tiles with an Obelisk are not placed adjacent to each other.\n"
@@ -285,7 +255,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:57
+#: clash/bloody_grail.tex:55
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -297,7 +267,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:60
+#: clash/bloody_grail.tex:58
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -309,7 +279,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:62
+#: clash/bloody_grail.tex:60
 #, no-wrap
 msgid ""
 "If the Grail Token has been obtained, the players gain additional time (until the end of the \\nth{16} Round) to bring the Grail to their Faction's Town. Otherwise, all players lose the Scenario.\n"
@@ -319,7 +289,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:71
+#: clash/bloody_grail.tex:63
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+"\\columnbreak\n"
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\n"
+
+#. type: multicols*
+#: clash/bloody_grail.tex:70
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{6}, \\nth{9} and \\nth{12} Rounds:}\n"
@@ -339,7 +321,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:74 clash/the_fractured_kingdoms.tex:49
+#: clash/bloody_grail.tex:73 clash/the_fractured_kingdoms.tex:53
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -351,7 +333,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:78
+#: clash/bloody_grail.tex:77
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -365,8 +347,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
-#: clash/the_fractured_kingdoms.tex:58
+#: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
+#: clash/the_fractured_kingdoms.tex:62
 #, no-wrap
 msgid ""
 "During this Scenario:\n"
@@ -376,7 +358,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:119
+#: clash/bloody_grail.tex:118
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -384,7 +366,7 @@ msgid ""
 "  \\begin{enumerate}[leftmargin=15pt]\n"
 "    \\item \\textbf{[Cleanse]} The player receives one of the following boons, depending on how many Obelisks they have Visited:\n"
 "    \\begin{enumerate}\n"
-"      \\item \\textbf{[1st Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have a Secondary Hero, gain 6 \\svg{gold} instead. Then, choose one enemy player to discard 1 random Card from their hand.\n"
+"      \\item \\textbf{[1st Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have one, gain 6 \\svg{gold} instead. Then, choose one enemy player to discard 1 random Card from their hand.\n"
 "      \\item \\textbf{[2nd Obelisk]} Increase your \\svg{gold}, \\svg{building_materials}, or \\svg{valuables} income by 1 step.\n"
 "      \\item \\textbf{[3rd Obelisk]} Roll 2 \\svg{treasure} and choose 1 to resolve; then, gain \\svg{morale_positive} and \\svgeven{movement}.\n"
 "      \\item \\textbf{[4th Obelisk]} Remove up to 4 Cards from your hand, except Statistic Cards; then, search each corresponding Deck for a Card of your choice and put it in your hand.\n"
@@ -429,6 +411,7 @@ msgstr ""
 "      \\item \\textbf{[3. Obelisk]} Rzuć 2 \\svg{treasure} i rozpatrz 1; następnie otrzymaj \\svg{morale_positive} i \\svgeven{movement}.\n"
 "      \\item \\textbf{[4. Obelisk]} Usuń do 4 Kart ze swojej ręki, z wyjątkiem Kart Statystyk; następnie przeszukaj każdą odpowiednią Talię i wybierz Kartę, którą dodasz do swojej ręki.\n"
 "    \\end{enumerate}\n"
+"    \\columnbreak\n"
 "    \\item \\textbf{[Ofiara]} Usuń * Kartę Jednostki Frakcji ze swojej Talii Jednostek w zamian za:\n"
 "    \\begin{enumerate}\n"
 "      \\item *\\bronze\\: Zyskaj 6 \\svg{gold}, 3 \\svg{building_materials} i 1 \\svg{valuables}. Dodatkowo, jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (4)} Talię Słabych Artefaktów.\n"
@@ -460,24 +443,27 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/bloody_grail.tex:125
+#: clash/bloody_grail.tex:124
 #, no-wrap
 msgid ""
 "\\begin{center}\n"
-"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.3}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
 "\\end{center}\n"
 "\n"
 
 #. type: tikzpicture
-#: clash/bloody_grail.tex:136
+#: clash/bloody_grail.tex:138
 #, no-wrap
 msgid ""
 "[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=0em, yshift=-25em] at (current page.south) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/quiet_eye_of_the_dragon.png}\n"
+"  };\n"
 "  \\centering\n"
 "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
 "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
@@ -485,6 +471,9 @@ msgid ""
 "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
 "[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=0em, yshift=-25em] at (current page.south) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/quiet_eye_of_the_dragon.png}\n"
+"  };\n"
 "  \\centering\n"
 "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
 "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"

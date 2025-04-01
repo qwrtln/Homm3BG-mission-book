@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 14:51+0100\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -25,17 +25,17 @@ msgstr ""
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -76,8 +76,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:38 coops/close_to_enemies.tex:37
-#: coops/stand_united.tex:33 clash/the_hunt.tex:37
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
@@ -91,7 +91,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:47 coops/close_to_enemies.tex:70
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:70
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
@@ -107,7 +107,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:51 coops/close_to_enemies.tex:76
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:76
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
@@ -121,9 +121,9 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 campaigns/inferno_devilish_plan.tex:140
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
@@ -137,9 +137,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:62
+#: coops/sentinels.tex:86 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:72
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -991,7 +991,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, yshift=37em, opacity=0.17] at (current page.south) {\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.07] at (current page.south) {\n"
 "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_shield.png}\n"
 "  };\n"
 "  \\node(map)[anchor=center] at (current page.center) {\n"
@@ -1000,7 +1000,7 @@ msgid ""
 "\n"
 msgstr ""
 "[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, yshift=37em, opacity=0.17] at (current page.south) {\n"
+"  \\node(bg)[anchor=center, yshift=37em, opacity=0.07] at (current page.south) {\n"
 "    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fire_shield.png}\n"
 "  };\n"
 "  \\node(map)[anchor=center] at (current page.center) {\n"
