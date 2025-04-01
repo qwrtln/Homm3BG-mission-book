@@ -75,6 +75,7 @@ jobs:
       - name: Find map files
         run: |
           IMAGES=$(find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
+          echo $IMAGES
           echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
 
   make_draft_maps_monochrome:
