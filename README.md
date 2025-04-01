@@ -16,7 +16,6 @@ If your intention is to **print in black and white**, download the **monochrome*
     <thead>
         <tr>
             <th>Language</th>
-            <th align="center">Progress</th>
             <th align="center">Version 1.1 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
             <th align="center">Latest Build 🖨️ <br>(Monochrome)</th>
@@ -27,7 +26,6 @@ If your intention is to **print in black and white**, download the **monochrome*
     <tbody>
         <tr>
             <td>🇬🇧 English</td>
-            <td align="center">—</td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_English_Fan_Made_Mission_Book_1_1.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en-mono.pdf">download</a></td>
@@ -35,8 +33,10 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts-mono.pdf">download</a></td>
         </tr>
         <tr>
-            <td>🇵🇱 Polski</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg"></td>
+            <td>
+            🇵🇱 Polski<br>
+            <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg">
+            </td>
             <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_Polski_Fan_Made_Mission_Book_1_1.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl-mono.pdf">️pobierz</a></td>
@@ -44,8 +44,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center">—</td>
         </tr>
         <tr>
-            <td>🇨🇿 Čeština</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
+            <td>🇨🇿 Čeština<br>
+            <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs-mono.pdf">stáhnout</a></td>
@@ -53,8 +53,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center">—</td>
         </tr>
         <tr>
-            <td>🇫🇷 Français</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
+            <td>🇫🇷 Français<br>
+            <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr.pdf">télécharger</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr-mono.pdf">télécharger</a></td>
@@ -62,8 +62,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center">—</td>
         </tr>
         <tr>
-            <td>🇩🇪 Deutsch</td>
-            <td align="center"><img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
+            <td>🇩🇪 Deutsch<br>
+            <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
             <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de-mono.pdf">speichern</a></td>
