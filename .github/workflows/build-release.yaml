@@ -87,6 +87,21 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Download ImageMagick
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          # apt has v6, while v7 is required, hence downloading AppImage
+          wget --quiet ${{ env.IMAGEMAGICK_URL }}
+          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' magick \;
+
+      - name: Upload ImageMagick binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: imagemagick-binary
+          path: magick
+          retention-days: 1
+
       - name: Find map files
         id: set-matrix
         run: |
@@ -96,7 +111,7 @@ jobs:
   make_maps_monochrome:
     needs: find_map_files
     runs-on: ubuntu-latest
-    name: Convert map ${{ matrix.map }}
+    name: Convert ${{ matrix.map }}
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
@@ -104,28 +119,22 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Install magick
-        run: |
-          sudo add-apt-repository universe
-          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+      - name: Download ImageMagick binary
+        uses: actions/download-artifact@v4
+        with:
+          name: imagemagick-binary
+          path: /usr/local/bin
 
       - name: Process map file
         run: |
           IMG="assets/${{ matrix.map }}"
           tools/to_monochrome.sh "${IMG}"
 
-          # Create directory structure that preserves the original path
-          mkdir -p "monochrome/assets/maps/$(dirname "${{ matrix.map }}" | sed 's|^maps/||')"
-          cp "$IMG" "monochrome/assets/maps/$(echo "${{ matrix.map }}" | sed 's|^maps/||')"
-
       - name: Upload processed file
         uses: actions/upload-artifact@v4
         with:
-          name: monochrome-map-${{ hashFiles(format('assets/{0}', matrix.map)) }}
-          path: monochrome
+          name: monochrome-${{ matrix.map }}
+          path: assets/maps/${{ matrix.map }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   build_monochrome:
@@ -162,10 +171,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: monochrome-map-*
-          path: .
+          path: assets/maps
           merge-multiple: true
-
-      # Downloaded maps are already in the right structure - no need to reorganize
 
       - name: Set version
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
@@ -208,3 +215,8 @@ jobs:
           name: ${{ steps.artifact_name.outputs.artifact_name }}
           path: "*.pdf"
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - uses: geekyeggo/delete-artifact@v5
+        with:
+          name: monochrome-map-*
+          failOnError: false
