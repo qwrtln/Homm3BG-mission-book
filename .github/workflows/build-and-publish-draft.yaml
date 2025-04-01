@@ -6,8 +6,8 @@ on:
       - main
     # paths:
     #   - 'draft-scenarios/**'
-  pull_request:
-    branches: [main]
+  # pull_request:
+  #   branches: [main]
     # paths:
     #   - 'draft-scenarios/**'
 

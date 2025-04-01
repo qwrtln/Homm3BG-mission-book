@@ -196,18 +196,6 @@ jobs:
           path: main_${{ matrix.language }}-mono.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-      - name: Check
-        run: ls -l ${{ matrix.language }}
-
-      # - name: Publish ${{ matrix.language }} in artifacts repository
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: ${{ matrix.language }}
-      #     publish_dir: ./${{ matrix.language }}
-      #     force_orphan: true
-
 
   check_pages:
     runs-on: ubuntu-latest
@@ -238,6 +226,7 @@ jobs:
             echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
             exit 1
           fi
+
 
   publish:
     runs-on: ubuntu-latest
