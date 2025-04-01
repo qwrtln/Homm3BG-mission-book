@@ -16,7 +16,7 @@ If your intention is to **print in black and white**, download the **monochrome*
     <thead>
         <tr>
             <th>Language</th>
-            <th align="center">Version 1.1 🪨<br>(Stable)</th>
+            <th align="center">Version 1.2 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
             <th align="center">Latest Build 🖨️ <br>(Monochrome)</th>
             <th align="center">Draft Scenarios 🏗️</th>
@@ -26,7 +26,7 @@ If your intention is to **print in black and white**, download the **monochrome*
     <tbody>
         <tr>
             <td>🇬🇧 English</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_English_Fan_Made_Mission_Book_1_1.pdf">download</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_English_Fan_Made_Mission_Book_1_2.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en-mono.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf">download</a></td>
@@ -37,7 +37,7 @@ If your intention is to **print in black and white**, download the **monochrome*
             🇵🇱 Polski<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg">
             </td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_Polski_Fan_Made_Mission_Book_1_1.pdf">pobierz</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_Polski_Fan_Made_Mission_Book_1_2.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl-mono.pdf">️pobierz</a></td>
             <td align="center">—</td>
