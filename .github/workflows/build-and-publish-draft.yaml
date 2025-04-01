@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'draft-scenarios/**'
+    # paths:
+    #   - 'draft-scenarios/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'draft-scenarios/**'
+    # paths:
+    #   - 'draft-scenarios/**'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
@@ -57,20 +57,38 @@ jobs:
           du -sh drafts.pdf
 
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
         with:
           name: drafts
           path: draft-scenarios/drafts.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-      - name: Move file
-        if: github.event_name != 'pull_request'
+
+  find_draft_map_files:
+    runs-on: ubuntu-latest
+    # if: github.event_name != 'pull_request'
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Find map files
         run: |
-          mkdir drafts
-          mv drafts.pdf drafts/drafts.pdf
+          IMAGES=$(find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
+          echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
+
+  make_draft_maps_monochrome:
+    needs: [find_draft_map_files]
+    runs-on: ubuntu-latest
+    name: Convert ${{ matrix.map }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.find_draft_map_files.outputs.matrix) }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
 
       - name: Install magick
-        if: github.event_name != 'pull_request'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
@@ -78,17 +96,35 @@ jobs:
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
-      - name: Adjust map files for monochrome buld
-        if: github.event_name != 'pull_request'
-        run: |
-          find . -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
-            echo "Converting assets/${IMG}"
-            IMG="../assets/${IMG}"
-            ../tools/to_monochrome.sh "$IMG"
-          done
+      - name: Process map file
+        run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
+
+      - name: Upload processed file
+        uses: actions/upload-artifact@v4
+        with:
+          name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
+          path: assets/maps/${{ matrix.map }}
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  build_draft_monochrome:
+    needs: [build, make_draft_maps_monochrome]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: draft-scenarios
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Download monochrome maps
+        uses: actions/download-artifact@v4
+        with:
+          pattern: monochrome-map-*
+          path: assets
+          merge-multiple: true
 
       - name: Compile monochrome draft book
-        if: github.event_name != 'pull_request'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -97,8 +133,13 @@ jobs:
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: drafts.tex
 
+      - name: Install ghostscript
+        run: |
+          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
+          tar -xvf *_amd64_snap.tgz
+          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+
       - name: Optimize PDF
-        if: github.event_name != 'pull_request'
         run: |
           du -sh drafts.pdf
           gs -o drafts_optimized.pdf \
@@ -111,15 +152,25 @@ jobs:
           du -sh drafts.pdf
 
       - name: Move file
-        if: github.event_name != 'pull_request'
-        run: mv drafts.pdf drafts/drafts-mono.pdf
+        run: |
+          mkdir -p drafts
+          mv drafts.pdf drafts/drafts-mono.pdf
 
-      - name: Publish drafts in artifacts repository
-        if: github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Download regular draft PDF
+        uses: actions/download-artifact@v4
         with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: drafts
-          publish_dir: ./draft-scenarios/drafts
-          force_orphan: true
+          name: drafts
+          path: drafts
+        continue-on-error: true
+
+      - name: Check
+        run: ls -l drafts
+
+      # - name: Publish drafts in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: drafts
+      #     publish_dir: ./draft-scenarios/drafts
+      #     force_orphan: true

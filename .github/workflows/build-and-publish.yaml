@@ -91,11 +91,28 @@ jobs:
             exit 1
           fi
 
+  find_map_files:
+    runs-on: ubuntu-latest
+    # if: github.event_name != 'pull_request'
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Find map files
+        id: set-matrix
+        run: |
+          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
+          echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
 
   make_maps_monochrome:
+    needs: find_map_files
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
-
+    name: Convert ${{ matrix.map }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
@@ -108,29 +125,18 @@ jobs:
           wget --quiet ${{ env.IMAGEMAGICK_URL }}
           find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
 
-      - name: Adjust map files for monochrome buld
-        run: |
-          find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-            -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
-            IMG="assets/${IMG}"
-            echo "Converting ${IMG}"
-            tools/to_monochrome.sh "$IMG"
-          done
+      - name: Process map file
+        run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
-      - name: Move changed files
-        run: |
-          mkdir monochrome
-          git status --porcelain assets | awk '{print $2}' | xargs mv -t monochrome
-
-      - uses: actions/upload-artifact@v4
+      - name: Upload processed file
+        uses: actions/upload-artifact@v4
         with:
-          name: monochrome-maps
-          path: monochrome
+          name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
+          path: assets/maps/${{ matrix.map }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
-
   build_monochrome:
-    needs: [build, make_maps_monochrome]
+    needs: [make_maps_monochrome]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -154,8 +160,9 @@ jobs:
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
         with:
-          name: monochrome-maps
+          pattern: monochrome-map-*
           path: assets/maps
+          merge-multiple: true
 
       - name: Compile monochrome mission book
         uses: xu-cheng/latex-action@v3
@@ -191,14 +198,17 @@ jobs:
           name: main_${{ matrix.language }}
           path: ${{ matrix.language }}
 
-      - name: Publish ${{ matrix.language }} in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ matrix.language }}
-          publish_dir: ./${{ matrix.language }}
-          force_orphan: true
+      - name: Check
+        run: ls -l ${{ matrix.language }}
+
+      # - name: Publish ${{ matrix.language }} in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ matrix.language }}
+      #     publish_dir: ./${{ matrix.language }}
+      #     force_orphan: true
 
 
   check_pages:
