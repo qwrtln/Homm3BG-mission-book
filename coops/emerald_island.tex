@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_US
 \addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\images/logistics.png}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \textbf{Author:} Invoceusse
 
@@ -31,8 +31,6 @@ This Scenario is played over 8 Rounds.
 \textbf{Town Buildings:} \bronze\ Dwelling
 
 \textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.
-
-\textbf{Additional Bonus:} None
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -89,20 +87,35 @@ There are unflagged Mines or Settlements left in map at the end of Round 8.
     \end{itemize}
 \end{itemize}
 
-\vspace{2em}
+\end{multicols}
 
-\begin{center}
+\begin{tikzpicture}[overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {
+    \includegraphics[width=1.2\paperwidth, keepaspectratio]{\art/ammo_cart.png}
+  };
+\end{tikzpicture}
+\vfill
+\begin{minipage}{0.4\paperwidth}
+  \centering
   \includegraphics[width=0.2\paperwidth]{\maps/emerald-1.png}
   \captionof{figure}{\textbf{1-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-2.png}
+\end{minipage}
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.25\paperwidth]{\maps/emerald-2.png}
   \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-3.png}
+\end{minipage}
+\vfill
+% \linebreak
+\begin{minipage}{0.4\paperwidth}
+  \hfill
+  \includegraphics[width=0.35\paperwidth]{\maps/emerald-3.png}
   \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
-  \vspace{3em}
-  \includegraphics[width=0.3\paperwidth]{\maps/emerald-4.png}
+\end{minipage}
+\begin{minipage}{0.4\paperwidth}
+  \vspace{1em}
+  \hfill
+  \includegraphics[width=0.46\paperwidth]{\maps/emerald-4.png}
   \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
-\end{center}
-
-\end{multicols*}
+\end{minipage}
+\vfill

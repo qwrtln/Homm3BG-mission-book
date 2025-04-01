@@ -29,8 +29,6 @@ This Scenario is played over 13 Rounds.
 
 \textbf{Map Tile Pool:} Each player takes 2 random Far (II--III) Map Tiles, one of which must contain a Settlement
 
-\textbf{Additional Bonus:} None
-
 \subsection*{\MakeUppercase{Map Setup}}
 Take the following Map Tiles and arrange them as shown in the Scenario map layout:
 
@@ -60,6 +58,7 @@ If the Grail is not obtained at least once by the end of the \nth{13} Round, the
 
 If the Grail Token has been obtained, the players gain additional time (until the end of the \nth{16} Round) to bring the Grail to their Faction's Town. Otherwise, all players lose the Scenario.
 
+\columnbreak
 \subsection*{\MakeUppercase{Timed Events}}
 
 \textbf{\nth{6}, \nth{9} and \nth{12} Rounds:}
@@ -83,7 +82,7 @@ During this Scenario:
   \begin{enumerate}[leftmargin=15pt]
     \item \textbf{[Cleanse]} The player receives one of the following boons, depending on how many Obelisks they have Visited:
     \begin{enumerate}
-      \item \textbf{[1st Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have a Secondary Hero, gain 6 \svg{gold} instead. Then, choose one enemy player to discard 1 random Card from their hand.
+      \item \textbf{[1st Obelisk]} You gain a Secondary Hero. Place their model on this Field. If you already have one, gain 6 \svg{gold} instead. Then, choose one enemy player to discard 1 random Card from their hand.
       \item \textbf{[2nd Obelisk]} Increase your \svg{gold}, \svg{building_materials}, or \svg{valuables} income by 1 step.
       \item \textbf{[3rd Obelisk]} Roll 2 \svg{treasure} and choose 1 to resolve; then, gain \svg{morale_positive} and \svgeven{movement}.
       \item \textbf{[4th Obelisk]} Remove up to 4 Cards from your hand, except Statistic Cards; then, search each corresponding Deck for a Card of your choice and put it in your hand.
@@ -120,7 +119,7 @@ During this Scenario:
 \vspace*{\fill}
 
 \begin{center}
-  \transparent{0.3}{\includegraphics[width=0.5\linewidth, keepaspectratio]{\art/bless.png}}
+  \transparent{0.2}{\includegraphics[width=0.5\linewidth, keepaspectratio]{\art/bless.png}}
 \end{center}
 
 \vspace*{\fill}
@@ -128,6 +127,9 @@ During this Scenario:
 \end{multicols*}
 
 \begin{tikzpicture}[overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=0em, yshift=-25em] at (current page.south) {
+    \includegraphics[width=1.2\paperwidth, keepaspectratio]{\art/quiet_eye_of_the_dragon.png}
+  };
   \centering
   \node at (4.5, -5) {\includegraphics[scale=0.165]{\maps/bloody-grail-2p.png}};
   \node at (4.5, -10) {\footnotesize{\textbf{\MakeUppercase{2-PLAYER SCENARIO}}}};

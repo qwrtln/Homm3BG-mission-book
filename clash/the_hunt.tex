@@ -31,20 +31,16 @@ This Scenario is played over 14 Rounds.
 
 \textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile
 
-\textbf{Additional Bonus:} None
-
 \subsection*{\MakeUppercase{Map Setup}}
 
 Take the following Map Tiles and arrange them as shown in the Scenario map layout.
-
-\columnbreak
 
 \textbf{For a 2-player Scenario:}
 \begin{itemize}
   \item 2 × Starting (I) Map Tile
   \item 2 × Far (II--III) Map Tile
   \item 2 × Near (IV--V) Map Tile
-  \item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile
+  \item 1 × Center (VI--VII) Map Tile
 \end{itemize}
 
 \textbf{For a 3-player Scenario:}
@@ -52,7 +48,7 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
   \item 3 × Starting (I) Map Tile
   \item 3 × Far (II--III) Map Tile
   \item 3 × Near (IV--V) Map Tile
-  \item 1 × Center (VI--VII) Map Tile; place a Black Cube or a Miniature representing the Dragon in the center of the Tile
+  \item 1 × Center (VI--VII) Map Tile
 \end{itemize}
 
 \subsection*{\MakeUppercase{Victory Conditions}}
@@ -75,8 +71,10 @@ Before the start of this Scenario:
 \begin{itemize}
   \item Select one of the Dragons from the boss list: Azure Dragon, Crystal Dragon, Rust Dragon, or Faerie Dragon.
     You can choose randomly by picking one of the four shuffled Statistic Cards: \textit{Attack} -- Azure, \textit{Defense} -- Crystal, \textit{Knowledge} -- Rust, \textit{Power} -- Faerie.
+  \item Place a Black Cube or a Miniature representing the Dragon in the center of the Center Map Tile.
 \end{itemize}
 
+\columnbreak
 During this Scenario:
 
 \begin{itemize}
@@ -90,13 +88,18 @@ During this Scenario:
     Afterwards, they must place their Faction Cube on the Field.
   \item In the boss encounter, there is no battle Round limit.
 \end{itemize}
+\columnbreak
 
-\begin{tikzpicture}[overlay]
+\includegraphics[width=\columnwidth, keepaspectratio]{\maps/the-hunt-2.png}
+
+\medskip
+
+{\footnotesize\centering\textbf{\MakeUppercase{2-PLAYER SCENARIO}}\par}
+
+\begin{tikzpicture}[overlay, anchor=north]
   \centering
-  \node at (14, 9) {\includegraphics[scale=0.187]{\maps/the-hunt-2.png}};
-  \node at (14, 3) {\footnotesize{\textbf{\MakeUppercase{2-PLAYER SCENARIO}}}};
-  \node at (11, -4.5) {\includegraphics[scale=0.187]{\maps/the-hunt-3.png}};
-  \node at (4, -3.5) {\footnotesize{\textbf{\MakeUppercase{3-PLAYER SCENARIO}}}};
+  \node at (0, 0) {\includegraphics[width=\textwidth, height=0.48\textheight, keepaspectratio]{\maps/the-hunt-3.png}};
+  \node at (0, -12) {\footnotesize{\textbf{\MakeUppercase{3-PLAYER SCENARIO}}}};
 \end{tikzpicture}
 
 \end{multicols*}
