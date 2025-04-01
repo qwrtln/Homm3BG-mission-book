@@ -97,7 +97,7 @@ jobs:
       - name: Adjust map files for monochrome build
         run: |
           IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \;)
-          echo "$IMAGES" | parallel --max-procs=4 'IMG="assets/{}" && echo "Converting ${IMG}" && tools/to_monochrome.sh "${IMG}"'
+          echo "$IMAGES" | parallel --max-procs=2 'IMG="assets/{}" && echo "Converting ${IMG}" && tools/to_monochrome.sh "${IMG}"'
 
       - name: Move changed files
         run: |
