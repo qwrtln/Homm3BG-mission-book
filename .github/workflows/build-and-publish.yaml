@@ -240,3 +240,11 @@ jobs:
             echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
             exit 1
           fi
+
+  delete_artifacts:
+    runs-on: ubuntu-latest
+    needs: [build_monochrome]
+    steps:
+      - uses: geekyeggo/delete-artifact@v5
+        with:
+          name: monochrome-map-*
