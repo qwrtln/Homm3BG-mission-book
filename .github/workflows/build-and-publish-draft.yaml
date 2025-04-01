@@ -173,8 +173,9 @@ jobs:
       - name: Download regular draft PDF
         uses: actions/download-artifact@v4
         with:
-          name: drafts*
+          pattern: drafts*
           path: drafts
+          merge-multiple: true
 
       - name: Check
         run: ls -l drafts
