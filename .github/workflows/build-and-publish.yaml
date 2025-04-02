@@ -31,12 +31,27 @@ jobs:
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
         run: |
-          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
-          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
-          tar -xf ${PO4A_DIR}.tar.gz
-          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
-          ./${PO4A_DIR}/po4a --no-update po4a.cfg
+          sudo apt-get install -y po4a
+          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
+          tar -xf po4a-${{ env.PO4A_VERSION}}.tar.gz
+          export PERL5LIB="po4a-${{ env.PO4A_VERSION }}/lib:${PERL5LIB}"
+          ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
+
+      - name: Cache LaTeX packages and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.texlive
+            ~/.texmf-var
+            ./**/*.aux
+            ./**/*.log
+            ./**/*.toc
+            ./**/*.out
+            ./main_${{ matrix.language }}.pdf
+          key: texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          restore-keys: |
+            texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-
+            texlive-${{ matrix.language }}-
 
       - name: Compile mission book
         uses: xu-cheng/latex-action@v3
@@ -117,15 +132,42 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Generate file hash
+        id: hash
+        run: |
+          HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
+          echo "file_hash=$HASH" >> $GITHUB_OUTPUT
+
+      - name: Check processed map cache
+        id: cache-map
+        uses: actions/cache@v3
+        with:
+          path: assets/maps/${{ matrix.map }}
+          key: monochrome-map-${{ steps.hash.outputs.file_hash }}
+
+      - name: Cache ImageMagick AppImage
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        id: cache-magick
+        uses: actions/cache@v3
+        with:
+          path: /usr/local/bin/magick
+          key: imagemagick-${{ env.IMAGEMAGICK_URL }}
+
       - name: Install magick
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+
+          if [[ ! -f /usr/local/bin/magick ]]; then
+            echo "No cache found, downloading ImageMagick AppImage."
+            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+            chmod +x magick
+            mv magick /usr/local/bin/magick
+          fi
 
       - name: Process map file
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
@@ -150,12 +192,26 @@ jobs:
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
         run: |
-          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
-          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
-          tar -xf ${PO4A_DIR}.tar.gz
-          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
-          ./${PO4A_DIR}/po4a --no-update po4a.cfg
+          sudo apt-get install -y po4a
+          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
+          tar -xf po4a-${{ env.PO4A_VERSION}}.tar.gz
+          export PERL5LIB="po4a-${{ env.PO4A_VERSION }}/lib:${PERL5LIB}"
+          ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
+
+      - name: Cache LaTeX packages and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.texlive
+            ~/.texmf-var
+            ./**/*.aux
+            ./**/*.log
+            ./**/*.toc
+            ./**/*.out
+          key: texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          restore-keys: |
+            texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-
+            texlive-${{ matrix.language }}-
 
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
@@ -255,11 +311,7 @@ jobs:
           publish_dir: ./${{ matrix.language }}
           force_orphan: true
 
-
-  delete_artifacts:
-    runs-on: ubuntu-latest
-    needs: [publish]
-    steps:
       - uses: geekyeggo/delete-artifact@v5
+        if: ${{ matrix.language == 'en' }}
         with:
           name: monochrome-map-*

@@ -29,6 +29,22 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Cache LaTeX packages and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.texlive
+            ~/.texmf-var
+            ./**/*.aux
+            ./**/*.log
+            ./**/*.toc
+            ./**/*.out
+            ./draft-scenarios/drafts.pdf
+          key: texlive-drafts-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          restore-keys: |
+            texlive-drafts-${{ hashFiles('**/*.tex') }}-
+            texlive-drafts-
+
       - name: Compile draft book
         uses: xu-cheng/latex-action@v3
         with:
@@ -91,15 +107,42 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Generate file hash
+        id: hash
+        run: |
+          HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
+          echo "file_hash=$HASH" >> $GITHUB_OUTPUT
+
+      - name: Check processed map cache
+        id: cache-map
+        uses: actions/cache@v3
+        with:
+          path: assets/maps/${{ matrix.map }}
+          key: monochrome-map-${{ steps.hash.outputs.file_hash }}
+
+      - name: Cache ImageMagick AppImage
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        id: cache-magick
+        uses: actions/cache@v3
+        with:
+          path: /usr/local/bin/magick
+          key: imagemagick-${{ env.IMAGEMAGICK_URL }}
+
       - name: Install magick
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+
+          if [[ ! -f /usr/local/bin/magick ]]; then
+            echo "No cache found, downloading ImageMagick AppImage."
+            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+            chmod +x magick
+            mv magick /usr/local/bin/magick
+          fi
 
       - name: Process map file
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
@@ -126,6 +169,21 @@ jobs:
           pattern: monochrome-map-*
           path: assets
           merge-multiple: true
+
+      - name: Cache LaTeX packages and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.texlive
+            ~/.texmf-var
+            ./**/*.aux
+            ./**/*.log
+            ./**/*.toc
+            ./**/*.out
+          key: texlive-drafts-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          restore-keys: |
+            texlive-drafts-${{ hashFiles('**/*.tex') }}-
+            texlive-drafts-
 
       - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v3
