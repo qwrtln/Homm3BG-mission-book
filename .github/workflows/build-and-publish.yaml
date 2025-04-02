@@ -158,25 +158,25 @@ jobs:
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
 
       - name: Cache ImageMagick AppImage
-        if: steps.cache-map.outputs.cache-hit != 'true'
+        # if: steps.cache-map.outputs.cache-hit != 'true'
+        id: cache-magick
         uses: actions/cache@v3
         with:
-          path: imagemagick-appimage
+          path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
 
       - name: Install magick
-        if: steps.cache-map.outputs.cache-hit != 'true'
+        if: steps.cache-magick.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
 
-          mkdir -p imagemagick-appimage
-          if [[ ! -f imagemagick-appimage/magick ]]; then
+          if [[ ! -f /usr/local/bin/magick ]]; then
             echo "No cache found, downloading ImageMagick AppImage."
-            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O imagemagick-appimage/magick
-            chmod +x imagemagick-appimage/magick
+            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+            chmod +x magick
+            mv magick /usr/local/bin/magick
           fi
-          mv imagemagick-appimage/magick /usr/local/bin/magick
 
       - name: Process map file
         if: steps.cache-map.outputs.cache-hit != 'true'
