@@ -107,7 +107,7 @@ jobs:
 
   find_map_files:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -302,7 +302,6 @@ jobs:
           merge-multiple: true
 
       - name: Publish ${{ matrix.language }} in artifacts repository
-        if:  github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
