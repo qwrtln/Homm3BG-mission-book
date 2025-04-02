@@ -39,6 +39,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./draft-scenarios/drafts.pdf
           key: texlive-drafts-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
           restore-keys: |
             texlive-drafts-${{ hashFiles('**/*.tex') }}-

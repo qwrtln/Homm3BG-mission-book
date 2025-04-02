@@ -47,6 +47,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./main_${{ matrix.language }}.pdf
           key: texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
           restore-keys: |
             texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-
