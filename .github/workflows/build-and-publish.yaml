@@ -130,17 +130,8 @@ jobs:
         id: set-matrix
         run: |
           IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
+          echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}'
           echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
-
-      - name: Calculate file hashes
-        id: set-hashes
-        run: |
-          HASH_MAP="{}"
-          for MAP in $(echo "${{ steps.set-matrix.outputs.matrix }}" | jq -r '.map[]'); do
-            HASH=$(sha256sum "assets/maps/$MAP" | cut -d' ' -f1)
-            HASH_MAP=$(echo "$HASH_MAP" | jq --arg map "$MAP" --arg hash "$HASH" '. + {($map): $hash}')
-          done
-          echo "hashes=$HASH_MAP" >> $GITHUB_OUTPUT
 
   make_maps_monochrome:
     needs: find_map_files
@@ -153,28 +144,28 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Get map hash
-        id: get-hash
+      - name: Generate file hash
+        id: hash
         run: |
-          HASHES='${{ needs.find_map_files.outputs.hashes }}'
-          MAP_HASH=$(echo "$HASHES" | jq -r '."${{ matrix.map }}"')
-          echo "map_hash=$MAP_HASH" >> $GITHUB_OUTPUT
+          HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
+          echo "file_hash=$HASH" >> $GITHUB_OUTPUT
 
-      - name: Cache monochrome map
+      - name: Check processed map cache
         id: cache-map
         uses: actions/cache@v3
         with:
           path: assets/maps/${{ matrix.map }}
-          key: monochrome-map-${{ matrix.map }}-${{ steps.get-hash.outputs.map_hash }}
-
+          key: monochrome-map-${{ steps.hash.outputs.file_hash }}
 
       - name: Cache ImageMagick AppImage
+        if: steps.cache-map.outputs.cache-hit != 'true'
         uses: actions/cache@v3
         with:
           path: imagemagick-appimage
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
 
       - name: Install magick
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
