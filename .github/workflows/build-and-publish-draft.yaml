@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cache LaTeX packages and build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.texlive
@@ -39,10 +39,8 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-            ./draft-scenarios/drafts.pdf
-          key: texlive-drafts-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex') }}
           restore-keys: |
-            texlive-drafts-${{ hashFiles('**/*.tex') }}-
             texlive-drafts-
 
       - name: Compile draft book
@@ -115,7 +113,7 @@ jobs:
 
       - name: Check processed map cache
         id: cache-map
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: assets/maps/${{ matrix.map }}
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
@@ -123,7 +121,7 @@ jobs:
       - name: Cache ImageMagick AppImage
         if: steps.cache-map.outputs.cache-hit != 'true'
         id: cache-magick
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
@@ -171,7 +169,7 @@ jobs:
           merge-multiple: true
 
       - name: Cache LaTeX packages and build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.texlive
@@ -180,10 +178,9 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-          key: texlive-drafts-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex') }}
           restore-keys: |
-            texlive-drafts-${{ hashFiles('**/*.tex') }}-
-            texlive-drafts-
+            texlive-drafts-mono-
 
       - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v3

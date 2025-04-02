@@ -38,7 +38,7 @@ jobs:
           ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
 
       - name: Cache LaTeX packages and build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.texlive
@@ -48,9 +48,13 @@ jobs:
             ./**/*.toc
             ./**/*.out
             ./main_${{ matrix.language }}.pdf
-          key: texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+          key: >-
+            texlive-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            }}
           restore-keys: |
-            texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-
             texlive-${{ matrix.language }}-
 
       - name: Compile mission book
@@ -140,7 +144,7 @@ jobs:
 
       - name: Check processed map cache
         id: cache-map
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: assets/maps/${{ matrix.map }}
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
@@ -148,7 +152,7 @@ jobs:
       - name: Cache ImageMagick AppImage
         if: steps.cache-map.outputs.cache-hit != 'true'
         id: cache-magick
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
@@ -199,7 +203,7 @@ jobs:
           ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
 
       - name: Cache LaTeX packages and build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.texlive
@@ -208,10 +212,15 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-          key: texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-${{ github.run_id }}
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            texlive-mono-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            }}
           restore-keys: |
-            texlive-${{ matrix.language }}-${{ hashFiles('**/*.tex') }}-
-            texlive-${{ matrix.language }}-
+            texlive-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
