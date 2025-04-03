@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        uses: qwrtln/po4a-action@main
+        uses: qwrtln/po4a-action@v1
         with:
           version: "0.73"
           config: "po4a.cfg"
@@ -192,7 +192,7 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        uses: qwrtln/po4a-action@main
+        uses: qwrtln/po4a-action@v1
         with:
           version: "0.73"
           config: "po4a.cfg"
