@@ -30,12 +30,11 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        run: |
-          sudo apt-get install -y po4a
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
-          tar -xf po4a-${{ env.PO4A_VERSION}}.tar.gz
-          export PERL5LIB="po4a-${{ env.PO4A_VERSION }}/lib:${PERL5LIB}"
-          ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
+        uses: qwrtln/po4a-action@main
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
 
       - name: Cache LaTeX packages and build
         uses: actions/cache@v4
