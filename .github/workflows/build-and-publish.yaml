@@ -9,7 +9,7 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
+  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/gs_10.05_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: "0.73"
@@ -100,7 +100,7 @@ jobs:
       - name: Check for broken CMap
         if: github.event_name == 'pull_request'
         run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1')
+          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
           pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
           if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
           then
