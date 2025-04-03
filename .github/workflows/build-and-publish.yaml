@@ -11,8 +11,6 @@ env:
   ARTIFACT_RETENTION_DAYS: 1
   GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/gs_10.05_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
-  PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
-  PO4A_VERSION: "0.73"
 
 jobs:
   build:
@@ -30,12 +28,11 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        run: |
-          sudo apt-get install -y po4a
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
-          tar -xf po4a-${{ env.PO4A_VERSION}}.tar.gz
-          export PERL5LIB="po4a-${{ env.PO4A_VERSION }}/lib:${PERL5LIB}"
-          ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
+        uses: qwrtln/po4a-action@v1
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
 
       - name: Cache LaTeX packages and build
         uses: actions/cache@v4
@@ -195,12 +192,11 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        run: |
-          sudo apt-get install -y po4a
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
-          tar -xf po4a-${{ env.PO4A_VERSION}}.tar.gz
-          export PERL5LIB="po4a-${{ env.PO4A_VERSION }}/lib:${PERL5LIB}"
-          ./po4a-${{ env.PO4A_VERSION }}/po4a --no-update po4a.cfg
+        uses: qwrtln/po4a-action@v1
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
 
       - name: Cache LaTeX packages and build
         uses: actions/cache@v4
