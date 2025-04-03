@@ -30,7 +30,7 @@ jobs:
         if: ${{ matrix.language != 'en' }}
         uses: qwrtln/po4a-action@main
         with:
-          version: "0.69"
+          version: "0.73"
           config: "po4a.cfg"
           args: "--no-update"
 
