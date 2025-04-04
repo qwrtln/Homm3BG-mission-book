@@ -88,6 +88,38 @@ if [[ "${DRAFTS_MODE}" -eq 1 && "${LANGUAGE}" != "en" ]]; then
   exit 1
 fi
 
+monochrome_with_cache() {
+  local img
+  local cache_dir
+  local basename
+  local current_hash
+  local cache_img
+  local cache_hash
+  local stored_hash
+
+  img="$1"
+  cache_dir="$2"
+
+  basename=$(basename "${img}" .png)
+  current_hash=$(md5sum "${img}" | awk '{print $1}')
+  cache_img="${cache_dir}/${basename}.png"
+  cache_hash="${cache_dir}/${basename}.hash"
+
+  # Check if cached image exists and hash matches
+  if [[ -f "${cache_hash}" && -f "${cache_img}" ]]; then
+    stored_hash=$(cat "${cache_hash}")
+    if [[ "${current_hash}" = "${stored_hash}" ]]; then
+      cp "${cache_img}" "${img}"
+      return
+    fi
+  fi
+
+  echo "Converting $img to monochrome..."
+  tools/to_monochrome.sh "${img}"
+  cp "${img}" "${cache_img}"
+  echo "${current_hash}" > "${cache_hash}"
+}
+
 # Handle drafts mode
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   cleanup() {
@@ -113,16 +145,21 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   fi
 
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
+    CACHE_DIR="cache/monochrome-maps"
+    mkdir -p ${CACHE_DIR}
+    trap 'git restore assets/maps' EXIT
+
     find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
-      echo "Converting $IMG to monochrome..."
-      tools/to_monochrome.sh "${IMG}"
+      monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
   fi
+
   cd draft-scenarios || exit
   rm -f drafts.aux && \
     latexmk -pdflua -shell-escape drafts.tex
   ${open} drafts.pdf &> /dev/null &
+  cd - || exit
   exit 0
 fi
 
@@ -134,13 +171,16 @@ if [[ ${LANGUAGE} != en ]]; then
   fi
 fi
 
+
 if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
+  CACHE_DIR="cache/monochrome-maps"
+  mkdir -p ${CACHE_DIR}
   trap 'git restore assets/maps' EXIT
+
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
     -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
     IMG="assets/${IMG}"
-    echo "Converting $IMG to monochrome..."
-    tools/to_monochrome.sh "${IMG}"
+    monochrome_with_cache "${IMG}" "${CACHE_DIR}"
   done
 fi
 
