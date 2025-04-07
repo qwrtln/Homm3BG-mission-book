@@ -182,9 +182,7 @@ jobs:
         with:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
-
-      - name: Move file
-        run:  mv drafts.pdf drafts-mono.pdf
+          output-file: draft-scenarios/drafts-mono.pdf
 
       - uses: actions/upload-artifact@v4
         with:

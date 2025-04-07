@@ -45,7 +45,9 @@ jobs:
         id: artifact_name
         run: |
           ARTIFACT_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}"
+          FILE_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}.pdf"
           echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> "$GITHUB_OUTPUT"
+          echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile mission book
         uses: xu-cheng/latex-action@v3
@@ -60,15 +62,12 @@ jobs:
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
-
-      - name: Rename file
-        run: |
-          mv "main_${{ matrix.language }}.pdf" "Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}.pdf"
+          output-file: ${{ steps.artifact_name.outputs.file_name }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.artifact_name.outputs.artifact_name }}
-          path: "*.pdf"
+          path: ${{ steps.artifact_name.outputs.file_name }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   find_map_files:
@@ -118,7 +117,8 @@ jobs:
     needs: [make_maps_monochrome]
     runs-on: ubuntu-latest
     outputs:
-      artifact_name: ${{ steps.artifact_name.outputs.artifact_name }}
+      artifact_name: ${{ steps.names.outputs.artifact_name }}
+      file_name: ${{ steps.names.outputs.file_name }}
     strategy:
       fail-fast: false
       matrix:
@@ -155,10 +155,12 @@ jobs:
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
 
       - name: Create artifact name
-        id: artifact_name
+        id: names
         run: |
           ARTIFACT_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome"
+          FILE_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome.pdf"
           echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> "$GITHUB_OUTPUT"
+          echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile monochrome mission book
         uses: xu-cheng/latex-action@v3
@@ -174,15 +176,12 @@ jobs:
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
-
-      - name: Rename file
-        run: |
-          mv "main_${{ matrix.language }}.pdf" "Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome.pdf"
+          output-file: ${{ steps.names.outputs.file_name }}
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.artifact_name.outputs.artifact_name }}
-          path: "*.pdf"
+          name: ${{ steps.names.outputs.artifact_name }}
+          path: ${{ steps.names.outputs.file_name }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   delete_artifacts:
