@@ -85,7 +85,7 @@ jobs:
 
   find_map_files:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -270,14 +270,14 @@ jobs:
           path: ${{ matrix.language }}
           merge-multiple: true
 
-      # - name: Publish ${{ matrix.language }} in artifacts repository
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: ${{ matrix.language }}
-      #     publish_dir: ./${{ matrix.language }}
-      #     force_orphan: true
+      - name: Publish ${{ matrix.language }} in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ matrix.language }}
+          publish_dir: ./${{ matrix.language }}
+          force_orphan: true
 
       - uses: geekyeggo/delete-artifact@v5
         if: ${{ matrix.language == 'en' }}
