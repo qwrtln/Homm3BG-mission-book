@@ -9,14 +9,13 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/gs_10.05_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      number_of_pages: ${{ steps.optimize.outputs.page-count }}
+      number_of_pages: ${{ steps.pages.outputs.number_of_pages }}
     strategy:
       fail-fast: false
       matrix:
@@ -77,6 +76,11 @@ jobs:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
           test-string: ${{ steps.quote.outputs.quote }}
+
+      - name: Output number of pages
+        if: matrix.language == 'en'
+        id: pages
+        run: echo "number_of_pages=${{ steps.optimize.outputs.page-count }}" >> $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
         with:

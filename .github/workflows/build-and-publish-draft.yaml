@@ -10,10 +10,10 @@ on:
     branches: [main]
     paths:
       - 'draft-scenarios/**'
+      - '.github/workflows/build-and-publish-draft.yaml'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/gs_10.05_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
@@ -50,23 +50,11 @@ jobs:
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
           root_file: drafts.tex
 
-      - name: Install ghostscript
-        run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
       - name: Optimize PDF
-        run: |
-          du -sh drafts.pdf
-          gs -o drafts_optimized.pdf \
-            -sDEVICE=pdfwrite \
-            -dCompatibilityLevel=1.5 \
-            -dPDFSETTINGS=/prepress \
-            -dDetectDuplicateImages=true \
-            drafts.pdf
-          mv drafts_optimized.pdf drafts.pdf
-          du -sh drafts.pdf
+        uses: qwrtln/optimize-pdf@main
+        with:
+          file-name: drafts.pdf
+          quality-level: prepress
 
       - uses: actions/upload-artifact@v4
         with:
@@ -188,12 +176,6 @@ jobs:
           latexmk_shell_escape: true
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: drafts.tex
-
-      - name: Install ghostscript
-        run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
 
       - name: Optimize PDF
         run: |

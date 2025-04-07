@@ -5,7 +5,6 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: "0.73"
@@ -39,12 +38,6 @@ jobs:
           export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
           ./${PO4A_DIR}/po4a --no-update po4a.cfg
 
-      - name: Install ghostscript
-        run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
       - name: Set version
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
 
@@ -63,11 +56,10 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
+        uses: qwrtln/optimize-pdf@main
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
 
       - name: Rename file
         run: |
@@ -177,19 +169,11 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Install ghostscript
-        run: |
-          echo ${{ env.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
+        uses: qwrtln/optimize-pdf@main
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
 
       - name: Rename file
         run: |
