@@ -76,6 +76,7 @@ jobs:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
           test-string: ${{ steps.quote.outputs.quote }}
+          convert-to-cmyk: true
 
       - uses: actions/upload-artifact@v4
         with:
@@ -216,8 +217,6 @@ jobs:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
           output-file: main_${{ matrix.language }}-mono.pdf
-          test-string: bździna
-          convert-to-cmyk: true
 
       - uses: actions/upload-artifact@v4
         with:
