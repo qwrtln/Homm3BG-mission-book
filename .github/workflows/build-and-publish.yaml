@@ -85,7 +85,7 @@ jobs:
 
   find_map_files:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -215,9 +215,9 @@ jobs:
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
-
-      - name: Move file
-        run: mv main_${{ matrix.language }}.pdf main_${{ matrix.language }}-mono.pdf
+          output-file: main_${{ matrix.language }}-mono.pdf
+          test-string: bździna
+          convert-to-cmyk: true
 
       - uses: actions/upload-artifact@v4
         with:
@@ -228,8 +228,6 @@ jobs:
 
   check_pages:
     runs-on: ubuntu-latest
-    container:
-      image: minidocks/poppler
     needs: build
     if: github.event_name == 'pull_request'
     strategy:
@@ -245,8 +243,7 @@ jobs:
 
       - name: Check number of pages in digital version
         run: |
-          # ACTUAL_NUM_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-          ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          ACTUAL_NUM_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
           echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
           echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
           if [[ ${{ needs.build.outputs.number_of_pages }} != ${ACTUAL_NUM_OF_PAGES} ]]; then
@@ -273,14 +270,14 @@ jobs:
           path: ${{ matrix.language }}
           merge-multiple: true
 
-      - name: Publish ${{ matrix.language }} in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ matrix.language }}
-          publish_dir: ./${{ matrix.language }}
-          force_orphan: true
+      # - name: Publish ${{ matrix.language }} in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ matrix.language }}
+      #     publish_dir: ./${{ matrix.language }}
+      #     force_orphan: true
 
       - uses: geekyeggo/delete-artifact@v5
         if: ${{ matrix.language == 'en' }}
