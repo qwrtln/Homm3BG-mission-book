@@ -80,7 +80,9 @@ jobs:
       - name: Output number of pages
         if: matrix.language == 'en'
         id: pages
-        run: echo "number_of_pages=${{ steps.optimize.outputs.page-count }}" >> $GITHUB_OUTPUT
+        run: |
+          echo "number_of_pages: ${{ steps.optimize.outputs.page-count }}"
+          echo "number_of_pages=${{ steps.optimize.outputs.page-count }}" >> $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
         with:

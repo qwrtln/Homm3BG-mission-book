@@ -53,7 +53,7 @@ jobs:
       - name: Optimize PDF
         uses: qwrtln/optimize-pdf@main
         with:
-          file-name: drafts.pdf
+          file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
 
       - uses: actions/upload-artifact@v4
@@ -178,16 +178,10 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        run: |
-          du -sh drafts.pdf
-          gs -o drafts_optimized.pdf \
-            -sDEVICE=pdfwrite \
-            -dCompatibilityLevel=1.5 \
-            -dPDFSETTINGS=/prepress \
-            -dDetectDuplicateImages=true \
-            drafts.pdf
-          mv drafts_optimized.pdf drafts.pdf
-          du -sh drafts.pdf
+        uses: qwrtln/optimize-pdf@main
+        with:
+          file-name: draft-scenarios/drafts.pdf
+          quality-level: prepress
 
       - name: Move file
         run:  mv drafts.pdf drafts-mono.pdf
