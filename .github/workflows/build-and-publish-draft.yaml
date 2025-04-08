@@ -51,7 +51,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        uses: qwrtln/optimize-pdf@main
+        uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
@@ -178,7 +178,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        uses: qwrtln/optimize-pdf@main
+        uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress

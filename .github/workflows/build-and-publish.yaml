@@ -71,7 +71,7 @@ jobs:
 
       - name: Optimize PDF
         id: optimize
-        uses: qwrtln/optimize-pdf@main
+        uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
@@ -211,7 +211,7 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
-        uses: qwrtln/optimize-pdf@main
+        uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
