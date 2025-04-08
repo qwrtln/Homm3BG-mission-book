@@ -46,7 +46,11 @@ jobs:
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
             }}
           restore-keys: |
-            pdf-${{ matrix.language }}-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
+            || ''
+            }}
 
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
