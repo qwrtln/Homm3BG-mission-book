@@ -5,7 +5,6 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs_10.03.0_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
   PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
   PO4A_VERSION: "0.73"
@@ -31,19 +30,11 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        run: |
-          sudo apt-get install -y po4a  # installs po4a dependencies
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz
-          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
-          tar -xf ${PO4A_DIR}.tar.gz
-          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
-          ./${PO4A_DIR}/po4a --no-update po4a.cfg
-
-      - name: Install ghostscript
-        run: |
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+        uses: qwrtln/po4a-action@v1
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
 
       - name: Set version
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
@@ -52,7 +43,9 @@ jobs:
         id: artifact_name
         run: |
           ARTIFACT_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}"
+          FILE_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}.pdf"
           echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> "$GITHUB_OUTPUT"
+          echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile mission book
         uses: xu-cheng/latex-action@v3
@@ -63,20 +56,16 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
-
-      - name: Rename file
-        run: |
-          mv "main_${{ matrix.language }}.pdf" "Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}.pdf"
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          output-file: ${{ steps.artifact_name.outputs.file_name }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.artifact_name.outputs.artifact_name }}
-          path: "*.pdf"
+          path: ${{ steps.artifact_name.outputs.file_name }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   find_map_files:
@@ -104,15 +93,42 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Generate file hash
+        id: hash
+        run: |
+          HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
+          echo "file_hash=$HASH" >> $GITHUB_OUTPUT
+
+      - name: Check processed map cache
+        id: cache-map
+        uses: actions/cache@v4
+        with:
+          path: assets/maps/${{ matrix.map }}
+          key: monochrome-map-${{ steps.hash.outputs.file_hash }}
+
+      - name: Cache ImageMagick AppImage
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        id: cache-magick
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/bin/magick
+          key: imagemagick-${{ env.IMAGEMAGICK_URL }}
+
       - name: Install magick
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          # apt has v6, while v7 is required, hence downloading AppImage
-          wget --quiet ${{ env.IMAGEMAGICK_URL }}
-          find . -name "ImageMagick*" -exec chmod +x '{}' \; -exec mv '{}' /usr/local/bin/magick \;
+
+          if [[ ! -f /usr/local/bin/magick ]]; then
+            echo "No cache found, downloading ImageMagick AppImage."
+            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+            chmod +x magick
+            mv magick /usr/local/bin/magick
+          fi
 
       - name: Process map file
+        if: steps.cache-map.outputs.cache-hit != 'true'
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
@@ -126,7 +142,8 @@ jobs:
     needs: [make_maps_monochrome]
     runs-on: ubuntu-latest
     outputs:
-      artifact_name: ${{ steps.artifact_name.outputs.artifact_name }}
+      artifact_name: ${{ steps.names.outputs.artifact_name }}
+      file_name: ${{ steps.names.outputs.file_name }}
     strategy:
       fail-fast: false
       matrix:
@@ -144,13 +161,11 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        run: |
-          sudo apt-get install -y po4a  # required as standalone po4a is missing some deps
-          wget --quiet ${{ env.PO4A_GH_URL }}/v${{ env.PO4A_VERSION }}/po4a-${{ env.PO4A_VERSION}}.tar.gz  # sadly the version from apt isn't working
-          export PO4A_DIR="po4a-${{ env.PO4A_VERSION }}"
-          tar -xf ${PO4A_DIR}.tar.gz
-          export PERL5LIB="${PO4A_DIR}/lib:${PERL5LIB}"
-          ./${PO4A_DIR}/po4a --no-update po4a.cfg
+        uses: qwrtln/po4a-action@v1
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
 
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
@@ -163,10 +178,12 @@ jobs:
         run: echo "VERSION=$(cat .version | tr . _)" >> $GITHUB_ENV
 
       - name: Create artifact name
-        id: artifact_name
+        id: names
         run: |
           ARTIFACT_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome"
+          FILE_NAME="Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome.pdf"
           echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> "$GITHUB_OUTPUT"
+          echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile monochrome mission book
         uses: xu-cheng/latex-action@v3
@@ -177,28 +194,17 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Install ghostscript
-        run: |
-          echo ${{ env.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
-
-      - name: Rename file
-        run: |
-          mv "main_${{ matrix.language }}.pdf" "Heroes3_${{ matrix.language_name }}_Fan_Made_Mission_Book_${{ env.VERSION }}-monochrome.pdf"
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          output-file: ${{ steps.names.outputs.file_name }}
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.artifact_name.outputs.artifact_name }}
-          path: "*.pdf"
+          name: ${{ steps.names.outputs.artifact_name }}
+          path: ${{ steps.names.outputs.file_name }}
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
   delete_artifacts:
