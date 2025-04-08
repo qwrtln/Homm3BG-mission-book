@@ -6,8 +6,6 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
-  PO4A_GH_URL: https://github.com/mquinson/po4a/releases/download
-  PO4A_VERSION: "0.73"
 
 jobs:
   build:

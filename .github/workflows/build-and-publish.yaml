@@ -33,27 +33,42 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
-      - name: Cache LaTeX packages and build
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
+      - name: Cache LaTeX build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-            ./main_${{ matrix.language }}.pdf
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-${{ matrix.language }}-
 
       - name: Compile mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -63,13 +78,14 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Find quote string
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
         id: quote
         run: |
           QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
           echo "quote=$QUOTE" >> $GITHUB_OUTPUT
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         id: optimize
         uses: qwrtln/optimize-pdf@v1
         with:
@@ -174,12 +190,27 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
       - name: Cache LaTeX packages and build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
@@ -188,13 +219,14 @@ jobs:
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/download-artifact@v4
         with:
           pattern: monochrome-map-*
@@ -202,6 +234,7 @@ jobs:
           merge-multiple: true
 
       - name: Compile monochrome mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -211,11 +244,16 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
           output-file: main_${{ matrix.language }}-mono.pdf
+
+      - name: Move file
+        if: steps.cache-pdf.outputs.cache-hit == 'true'
+        run: mv main_${{ matrix.language }}.pdf main_${{ matrix.language }}-mono.pdf
 
       - uses: actions/upload-artifact@v4
         with:
@@ -272,6 +310,7 @@ jobs:
 
       - name: Publish ${{ matrix.language }} in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
+        if: github.event_name != 'pull_request'
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts

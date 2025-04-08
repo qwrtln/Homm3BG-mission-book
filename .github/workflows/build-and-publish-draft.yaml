@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'draft-scenarios/**'
+      - '.github/workflows/build-and-publish-draft.yaml'
   pull_request:
     branches: [main]
     paths:
@@ -27,21 +28,31 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Cache built PDF
+        if: github.event_name == 'pull_request'
+        uses: actions/cache@v4
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          restore-keys: |
+            pdf-drafts-
+
       - name: Cache LaTeX packages and build
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex') }}
+          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
 
       - name: Compile draft book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -51,6 +62,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
@@ -154,21 +166,32 @@ jobs:
           path: assets
           merge-multiple: true
 
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          restore-keys: |
+            pdf-drafts-
+
       - name: Cache LaTeX packages and build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex') }}
+          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
-            texlive-drafts-mono-
+            texlive-drafts-
 
       - name: Compile monochrome draft book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -178,11 +201,16 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
           output-file: draft-scenarios/drafts-mono.pdf
+
+      - name: Move file
+        if: steps.cache-pdf.outputs.cache-hit == 'true'
+        run: mv drafts.pdf drafts-mono.pdf
 
       - uses: actions/upload-artifact@v4
         with:
@@ -206,6 +234,7 @@ jobs:
 
       - name: Publish drafts in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
+        if: github.event_name != 'pull_request'
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
