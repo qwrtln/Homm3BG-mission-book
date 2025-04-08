@@ -42,15 +42,11 @@ jobs:
           key: >-
             pdf-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
-            pdf-${{ matrix.language }}-${{
-            matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
-            || ''
-            }}
+            pdf-${{ matrix.language }}-
 
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -64,8 +60,8 @@ jobs:
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-${{ matrix.language }}-
@@ -202,8 +198,8 @@ jobs:
           key: >-
             pdf-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.language }}-
@@ -221,8 +217,8 @@ jobs:
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-mono-${{ matrix.language }}-
