@@ -77,7 +77,7 @@ jobs:
 
   find_draft_map_files:
     runs-on: ubuntu-latest
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -234,6 +234,7 @@ jobs:
 
       - name: Publish drafts in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
+        if: github.event_name != 'pull_request'
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
