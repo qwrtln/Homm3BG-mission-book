@@ -51,6 +51,7 @@ jobs:
             texlive-drafts-
 
       - name: Compile draft book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -60,6 +61,7 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
