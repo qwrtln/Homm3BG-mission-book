@@ -29,6 +29,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cache built PDF
+        if: github.event_name == 'pull_request'
         uses: actions/cache@v4
         id: cache-pdf
         with:
@@ -167,6 +168,7 @@ jobs:
 
       - name: Cache built PDF
         uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
         id: cache-pdf
         with:
           path: |
@@ -205,6 +207,10 @@ jobs:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
           output-file: draft-scenarios/drafts-mono.pdf
+
+      - name: Move file
+        if: steps.cache-pdf.outputs.cache-hit == 'true'
+        run: mv drafts.pdf drafts-mono.pdf
 
       - uses: actions/upload-artifact@v4
         with:
