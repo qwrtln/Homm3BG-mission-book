@@ -9,14 +9,13 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  GHOSTSCRIPT_URL: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/gs_10.05_amd64_snap.tgz
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      number_of_pages: ${{ steps.check_pages.outputs.num_of_pages }}
+      number_of_pages: ${{ steps.optimize.outputs.page-count }}
     strategy:
       fail-fast: false
       matrix:
@@ -34,27 +33,42 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
-      - name: Cache LaTeX packages and build
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
+      - name: Cache LaTeX build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-            ./main_${{ matrix.language }}.pdf
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-${{ matrix.language }}-
 
       - name: Compile mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -63,49 +77,27 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Install ghostscript
+      - name: Find quote string
+        if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
+        id: quote
         run: |
-          echo ${{ env.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
+          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
+          echo "quote=$QUOTE" >> $GITHUB_OUTPUT
 
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        id: optimize
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          test-string: ${{ steps.quote.outputs.quote }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: main_${{ matrix.language }}
           path: main_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
-      - name: Install poppler
-        if:  github.event_name == 'pull_request'
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
-
-      - name: Check number of pages
-        id: check_pages
-        if: ${{ matrix.language == 'en' && github.event_name == 'pull_request' }}
-        run: |
-          NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-          echo "NUM_OF_PAGES=${NUM_OF_PAGES}" >> "$GITHUB_OUTPUT"
-
-      - name: Check for broken CMap
-        if: github.event_name == 'pull_request'
-        run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
-          pdftotext main_${{ matrix.language }}.pdf - | tr '\n' ' ' > main_${{ matrix.language }}.txt
-          if grep -iq "$QUOTE" main_${{ matrix.language }}.txt
-          then
-            echo "All good"
-          else
-            echo "The CMap in main_${{ matrix.language }}.pdf file is broken. See the output of 'Optimize PDF' step above."
-            exit 1
-          fi
 
   find_map_files:
     runs-on: ubuntu-latest
@@ -198,12 +190,27 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
       - name: Cache LaTeX packages and build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
@@ -212,13 +219,14 @@ jobs:
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/download-artifact@v4
         with:
           pattern: monochrome-map-*
@@ -226,6 +234,7 @@ jobs:
           merge-multiple: true
 
       - name: Compile monochrome mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -234,21 +243,16 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Install ghostscript
-        run: |
-          echo ${{ env.GHOSTSCRIPT_URL }}
-          wget --quiet ${{ env.GHOSTSCRIPT_URL }}
-          tar -xvf *_amd64_snap.tgz
-          sudo snap install ./*_amd64_snap/*_amd64.snap --devmode
-
       - name: Optimize PDF
-        run: |
-          du -sh main_${{ matrix.language }}.pdf
-          tools/optimize.sh ${{ matrix.language }}
-          mv main_${{ matrix.language }}_optimized.pdf main_${{ matrix.language }}.pdf
-          du -sh main_${{ matrix.language }}.pdf
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          output-file: main_${{ matrix.language }}-mono.pdf
 
       - name: Move file
+        if: steps.cache-pdf.outputs.cache-hit == 'true'
         run: mv main_${{ matrix.language }}.pdf main_${{ matrix.language }}-mono.pdf
 
       - uses: actions/upload-artifact@v4
@@ -260,6 +264,8 @@ jobs:
 
   check_pages:
     runs-on: ubuntu-latest
+    container:
+      image: minidocks/poppler
     needs: build
     if: github.event_name == 'pull_request'
     strategy:
@@ -268,10 +274,6 @@ jobs:
         language: ["pl", "cs", "fr", "de"]
 
     steps:
-      - name: Install poppler
-        run: |
-          sudo apt-get install -y poppler-utils
-
       - name: Download PDFs
         uses: actions/download-artifact@v4
         with:
@@ -279,7 +281,6 @@ jobs:
 
       - name: Check number of pages in digital version
         run: |
-          file main_${{ matrix.language }}/main_${{ matrix.language }}.pdf
           ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
           echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
           echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
@@ -309,6 +310,7 @@ jobs:
 
       - name: Publish ${{ matrix.language }} in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
+        if: github.event_name != 'pull_request'
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts

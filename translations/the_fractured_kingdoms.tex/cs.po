@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-31 16:31+0200\n"
+"POT-Creation-Date: 2025-04-07 13:28+0200\n"
 "PO-Revision-Date: 2025-03-29 21:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:135 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -43,9 +43,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:55 clash/bloody_grail.tex:64
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:65
-#: clash/dragoncurse_castle.tex:57 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
@@ -87,7 +86,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:36 clash/force_of_will.tex:38
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
 #: clash/the_fractured_kingdoms.tex:29
 #, no-wrap
 msgid ""
@@ -100,7 +99,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:74 clash/the_fractured_kingdoms.tex:53
+#: clash/bloody_grail.tex:73 clash/the_fractured_kingdoms.tex:53
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -112,7 +111,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:80 clash/force_of_will.tex:76 clash/the_hunt.tex:81
+#: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
 #: clash/the_fractured_kingdoms.tex:62
 #, no-wrap
 msgid ""
@@ -307,7 +306,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item Split the Artifact Deck by rarity into 3 separate Decks (Minor, Major, and Relic).\n"
 "    A player may gain only Minor Artifacts on Starting or Far Tiles, Minor or Major Artifacts on Near Tiles, and Major or Relic Artifacts on Center Tiles.\n"
-"  \\item Split the Spell Deck into 2 separate Decks (Basic and Expert Spells). Magic Arrow is a Baiic Spell.\n"
+"  \\item Split the Spell Deck into 2 separate Decks (Basic and Expert Spells). Magic Arrow is a Basic Spell.\n"
 "    A player may gain only Basic Spells on Starting or Far Tiles, Expert Spells on Near or Center Tiles.\n"
 "\\end{itemize}\n"
 "\n"
