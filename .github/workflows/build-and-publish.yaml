@@ -49,6 +49,7 @@ jobs:
             pdf-${{ matrix.language }}-
 
       - name: Cache LaTeX build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
@@ -99,7 +100,7 @@ jobs:
 
   find_map_files:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -188,12 +189,26 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
       - name: Cache LaTeX packages and build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ~/.texlive
-            ~/.texmf-var
             ./**/*.aux
             ./**/*.log
             ./**/*.toc
@@ -202,13 +217,14 @@ jobs:
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'chapters/**/*.tex')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language))
+            && hashFiles('main_en.tex', 'metadata.tex', '**/*.tex', 'assets/**/*', '!**/draft-scenarios/**')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!**/draft-scenarios/**')
             }}
           restore-keys: |
             texlive-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/download-artifact@v4
         with:
           pattern: monochrome-map-*
@@ -216,6 +232,7 @@ jobs:
           merge-multiple: true
 
       - name: Compile monochrome mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -225,6 +242,7 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ matrix.language }}.pdf
