@@ -160,13 +160,6 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Download monochrome maps
-        uses: actions/download-artifact@v4
-        with:
-          pattern: monochrome-map-*
-          path: assets
-          merge-multiple: true
-
       - name: Cache built PDF
         uses: actions/cache@v4
         if: github.event_name == 'pull_request'
@@ -177,6 +170,13 @@ jobs:
           key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             pdf-drafts-
+
+      - name: Download monochrome maps
+        uses: actions/download-artifact@v4
+        with:
+          pattern: monochrome-map-*
+          path: assets
+          merge-multiple: true
 
       - name: Cache LaTeX packages and build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -234,15 +234,15 @@ jobs:
           path: drafts
           merge-multiple: true
 
-      - name: Publish drafts in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.event_name != 'pull_request'
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: drafts
-          publish_dir: ./drafts
-          force_orphan: true
+      # - name: Publish drafts in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   if: github.event_name != 'pull_request'
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: drafts
+      #     publish_dir: ./drafts
+      #     force_orphan: true
 
       # - uses: geekyeggo/delete-artifact@v5
       #   with:
