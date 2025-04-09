@@ -108,7 +108,7 @@ ensure_base_file() {
 # e.g. '1,2,4-6,20' becomes [1,2,4,5,6,20]
 parse_pages() {
   local range="$1"
-  local pages=()
+  local result=()
 
   IFS=',' read -ra parts <<< "$range"
 
@@ -117,14 +117,15 @@ parse_pages() {
       start=$(echo "$part" | cut -d"-" -f1)
       end=$(echo "$part" | cut -d"-" -f2)
       for ((i=start; i<=end; i++)); do
-        pages+=("$i")
+        result+=("$i")
       done
     else
-      pages+=("$part")
+      result+=("$part")
     fi
   done
 
-  echo "${pages[@]}"
+  # Return as space-separated string to be captured by readarray
+  printf '%s\n' "${result[@]}"
 }
 
 #
@@ -165,13 +166,13 @@ done
 
 # Check that we have either language or draft but not both
 if [[ "$drafts" -eq 1 && -n "$language" ]]; then
-  echo "Error: -d/--draft and -l/--language options are mutually exclusive."
+  echo "Error: -d/--drafts and -l/--language options are mutually exclusive."
   help
 fi
 
 # Check that we have either language or draft
 if [[ "$drafts" -eq 0 && -z "$language" ]]; then
-  echo "Error: You must specify either -l/--language or -d/--draft option."
+  echo "Error: You must specify either -l/--language or -d/--drafts option."
   help
 fi
 
@@ -197,9 +198,9 @@ base_file=$(ensure_base_file "$language" "$printable" "$drafts")
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf -- "$tmp_dir"' EXIT
 
-pages=$(parse_pages "$range")
+readarray -t pages < <(parse_pages "$range")
 
-for page in $pages; do
+for page in "${pages[@]}"; do
   echo "Making images of ${base_file} and $([ "$drafts" -eq 1 ] && echo "drafts.pdf" || echo "main_${language}.pdf") for page ${page}..."
   pdftoppm "${base_file}" "${tmp_dir}/aa" -f "${page}" -l "${page}" -png -progress &
 
@@ -212,15 +213,15 @@ done
 
 wait
 
-for page in $pages; do
-  echo "Combining pages $(printf %02d $page)..."
-  montage "${tmp_dir}/*$(printf %02d $page).png" -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d $page).png" && \
-  rm "${tmp_dir}/aa-$(printf %02d $page).png" "${tmp_dir}/bb-$(printf %02d $page).png" &
+for page in "${pages[@]}"; do
+  echo "Combining pages $(printf %02d "$page")..."
+  montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
+  rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
 done
 
 if [[ "$single_page" -eq 1 ]]; then
   wait
-  montage "${tmp_dir}/${identifier}*" -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
+  montage "${tmp_dir}/${identifier}"* -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
 fi
 
 wait
