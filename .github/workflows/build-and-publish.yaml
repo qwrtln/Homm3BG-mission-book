@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      number_of_pages: ${{ steps.optimize.outputs.page-count }}
+      number_of_pages: ${{ steps.check_pages.outputs.number_of_pages }}
     strategy:
       fail-fast: false
       matrix:
@@ -58,6 +58,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./svg-inkscape
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
@@ -92,6 +93,17 @@ jobs:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
           test-string: ${{ steps.quote.outputs.quote }}
+
+      - name: Check number of pages
+        if: matrix.language == 'en'
+        id: check_pages
+        run: |
+          if [[ "${{ steps.cache-pdf.outputs.cache-hit }}" == 'true' ]]; then
+            NUMBER_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          else
+            NUMBER_OF_PAGES=${{ steps.optimize.outputs.page-count }}
+          fi
+          echo "number_of_pages=${NUMBER_OF_PAGES}" > $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
         with:
@@ -215,7 +227,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-            ./main_${{ matrix.language }}.pdf
+            ./svg-inkscape
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
@@ -284,7 +296,7 @@ jobs:
           ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
           echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
           echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
-          if [[ ${{ needs.build.outputs.number_of_pages }} != ${ACTUAL_NUM_OF_PAGES} ]]; then
+          if [[ "${{ needs.build.outputs.number_of_pages }}" != ${ACTUAL_NUM_OF_PAGES} ]]; then
             echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
             exit 1
           fi

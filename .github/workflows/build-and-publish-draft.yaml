@@ -47,6 +47,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./svg-inkscape
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
@@ -186,6 +187,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./svg-inkscape
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
