@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 cache_dir="$(pwd)/cache"
 
-#
-# HELPER FUNCTIONS
-#
-
 help() {
   echo "
-    Usage: ./tools/compare_pages.sh -l <language> -r <range> [OPTIONS]
+    Usage: ./tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
 
-    Mandatory Arguments:
-      -l, --language <language>     Specify the language for comparison (en, de, es, fr, pl, ru, ua, cs, ...).
+    Mandatory Arguments (choose one):
+      -l, --language <language>     Specify the language for comparison (en, pl, cs, de, fr).
+      -d, --drafts                  Compare draft scenarios (mutually exclusive with -l).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
 
     Optional Arguments:
@@ -20,6 +17,8 @@ help() {
     Examples:
       ./tools/compare_pages.sh -l en -r 1
       ./tools/compare_pages.sh --language en --range 1
+      ./tools/compare_pages.sh -d -r 1,3-5
+      ./tools/compare_pages.sh --drafts --range 1-10 --single-page
 
       ./tools/compare_pages.sh -l en -r 1,5-7,30 --single-page --printable
           - This will produce files 'en-01.png, en-05.png, en-06.png, en-07.png and en-30.png'.
@@ -37,19 +36,35 @@ file_type() {
 }
 
 base_file_path() {
-  local language="$1"
+  local identifier="$1"
   local printable="$2"
-  local type=$(file_type "$printable")
+  local drafts="$3"
+  local type
 
-  echo "${cache_dir}/${type}_${language}.pdf"
+  if [[ "$drafts" -eq 1 ]]; then
+    echo "${cache_dir}/drafts.pdf"
+  else
+    type=$(file_type "$printable")
+    echo "${cache_dir}/${type}_${identifier}.pdf"
+  fi
 }
 
 download_base_file() {
-  local language="$1"
+  local identifier="$1"
   local printable="$2"
-  local type=$(file_type "$printable")
-  local url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${language}/${type}_${language}.pdf"
-  local output_file=$(base_file_path "$language" "$printable")
+  local drafts="$3"
+  local output_file=""
+  local type
+  local url=""
+
+  if [[ "$drafts" -eq 1 ]]; then
+    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf"
+    output_file="${cache_dir}/drafts.pdf"
+  else
+    type=$(file_type "$printable")
+    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${identifier}/${type}_${identifier}.pdf"
+    output_file=$(base_file_path "$identifier" "$printable" 0)
+  fi
 
   mkdir -p "$cache_dir"
   curl -o "$output_file" "$url"
@@ -67,9 +82,12 @@ file_mod_time() {
 # Only download a base file if it's not already present locally or
 # is older than 1 hour. Otherwise we use the cached one to speed-up the workflow.
 ensure_base_file() {
-  local language="$1"
+  local base_file
+  local identifier="$1"
   local printable="$2"
-  local base_file=$(base_file_path "$language" "$printable")
+  local drafts="$3"
+
+  base_file=$(base_file_path "$identifier" "$printable" "$drafts")
 
   if [[ -f $base_file ]]; then
     mod_time=$(file_mod_time "$base_file")
@@ -77,10 +95,10 @@ ensure_base_file() {
     age=$((now - mod_time))  # seconds
 
     if [[ $age -gt 3600 ]]; then
-      download_base_file "$language" "$printable"
+      download_base_file "$identifier" "$printable" "$drafts"
     fi
   else
-    download_base_file "$language" "$printable"
+    download_base_file "$identifier" "$printable" "$drafts"
   fi
 
   echo "$base_file"
@@ -99,10 +117,10 @@ parse_pages() {
       start=$(echo "$part" | cut -d"-" -f1)
       end=$(echo "$part" | cut -d"-" -f2)
       for ((i=start; i<=end; i++)); do
-        pages+=($i)
+        pages+=("$i")
       done
     else
-      pages+=($part)
+      pages+=("$part")
     fi
   done
 
@@ -117,12 +135,16 @@ language=""
 range=""
 printable=0
 single_page=0
+drafts=0
 
 while [[ "$1" != "" ]]; do
   case $1 in
     -l | --language )
       shift
       language=$1
+      ;;
+    -d | --drafts )
+      drafts=1
       ;;
     -p | --printable )
       printable=1
@@ -141,12 +163,36 @@ while [[ "$1" != "" ]]; do
   shift
 done
 
-if [[ -z "$language" || -z "$range" ]]; then
+# Check that we have either language or draft but not both
+if [[ "$drafts" -eq 1 && -n "$language" ]]; then
+  echo "Error: -d/--draft and -l/--language options are mutually exclusive."
   help
 fi
 
+# Check that we have either language or draft
+if [[ "$drafts" -eq 0 && -z "$language" ]]; then
+  echo "Error: You must specify either -l/--language or -d/--draft option."
+  help
+fi
+
+if [[ -z "$range" ]]; then
+  echo "Error: You must specify a page range with -r/--range option."
+  help
+fi
+
+# Set the identifier for file paths and naming
+identifier="$language"
+if [[ "$drafts" -eq 1 ]]; then
+  identifier="drafts"
+  # Printable option doesn't apply to drafts
+  if [[ "$printable" -eq 1 ]]; then
+    echo "Note: --printable option ignored for drafts."
+    printable=0
+  fi
+fi
+
 echo "Checking if there is the base file for comparison..."
-base_file=$(ensure_base_file "$language" "$printable")
+base_file=$(ensure_base_file "$language" "$printable" "$drafts")
 
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf -- "$tmp_dir"' EXIT
@@ -154,28 +200,32 @@ trap 'rm -rf -- "$tmp_dir"' EXIT
 pages=$(parse_pages "$range")
 
 for page in $pages; do
-  echo "Making images of ${base_file} and main_${language}.pdf for page ${page}..."
+  echo "Making images of ${base_file} and $([ "$drafts" -eq 1 ] && echo "drafts.pdf" || echo "main_${language}.pdf") for page ${page}..."
   pdftoppm "${base_file}" "${tmp_dir}/aa" -f "${page}" -l "${page}" -png -progress &
-  pdftoppm "main_${language}.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
+
+  if [[ "$drafts" -eq 1 ]]; then
+    pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
+  else
+    pdftoppm "main_${language}.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
+  fi
 done
 
 wait
 
 for page in $pages; do
   echo "Combining pages $(printf %02d $page)..."
-  montage ${tmp_dir}/*$(printf %02d $page).png -tile 2x1 -geometry +0+0 ${tmp_dir}/${language}-$(printf %02d $page).png && \
-  rm ${tmp_dir}/aa-$(printf %02d $page).png ${tmp_dir}/bb-$(printf %02d $page).png &
+  montage "${tmp_dir}/*$(printf %02d $page).png" -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d $page).png" && \
+  rm "${tmp_dir}/aa-$(printf %02d $page).png" "${tmp_dir}/bb-$(printf %02d $page).png" &
 done
-
 
 if [[ "$single_page" -eq 1 ]]; then
   wait
-  montage ${tmp_dir}/${language}* -tile "1x" -geometry +0+0 ${tmp_dir}/${language}-all.png
+  montage "${tmp_dir}/${identifier}*" -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
 fi
 
 wait
 
 mkdir -p screenshots
-mv ${tmp_dir}/${language}* screenshots
+mv "${tmp_dir}/${identifier}"* screenshots
 
 echo "Done."
