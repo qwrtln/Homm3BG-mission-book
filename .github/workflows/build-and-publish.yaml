@@ -243,9 +243,6 @@ jobs:
           quality-level: prepress
           output-file: main_${{ matrix.language }}-mono.pdf
 
-      - name: Move file
-        run: mv main_${{ matrix.language }}.pdf main_${{ matrix.language }}-mono.pdf
-
       - uses: actions/upload-artifact@v4
         with:
           name: main_${{ matrix.language }}-mono
