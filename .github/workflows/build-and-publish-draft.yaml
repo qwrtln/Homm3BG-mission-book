@@ -78,7 +78,7 @@ jobs:
 
   find_draft_map_files:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # if: github.event_name != 'pull_request'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -244,6 +244,6 @@ jobs:
           publish_dir: ./drafts
           force_orphan: true
 
-      - uses: geekyeggo/delete-artifact@v5
-        with:
-          name: monochrome-map-*
+      # - uses: geekyeggo/delete-artifact@v5
+      #   with:
+      #     name: monochrome-map-*
