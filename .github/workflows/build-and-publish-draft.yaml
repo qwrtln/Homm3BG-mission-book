@@ -160,19 +160,7 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Cache built PDF
-        uses: actions/cache@v4
-        if: github.event_name == 'pull_request'
-        id: cache-pdf
-        with:
-          path: |
-            ./draft-scenarios/drafts.pdf
-          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
-          restore-keys: |
-            pdf-drafts-
-
       - name: Cache LaTeX packages and build
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
@@ -181,9 +169,9 @@ jobs:
             ./**/*.toc
             ./**/*.out
             ./svg-inkscape
-          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
-            texlive-drafts-
+            texlive-drafts-mono-
 
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
@@ -192,8 +180,10 @@ jobs:
           path: assets
           merge-multiple: true
 
+      - name: git status
+        run: git status
+
       - name: Compile monochrome draft book
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -203,7 +193,6 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
@@ -211,7 +200,6 @@ jobs:
           output-file: draft-scenarios/drafts-mono.pdf
 
       - name: Move file
-        if: steps.cache-pdf.outputs.cache-hit == 'true'
         run: mv drafts.pdf drafts-mono.pdf
 
       - uses: actions/upload-artifact@v4
