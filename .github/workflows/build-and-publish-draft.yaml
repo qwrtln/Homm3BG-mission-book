@@ -34,7 +34,7 @@ jobs:
         id: cache-pdf
         with:
           path: |
-            ./main_${{ matrix.language }}.pdf
+            ./draft-scenarios/drafts.pdf
           key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             pdf-drafts-
@@ -166,17 +166,10 @@ jobs:
         id: cache-pdf
         with:
           path: |
-            ./main_${{ matrix.language }}.pdf
+            ./draft-scenarios/drafts.pdf
           key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             pdf-drafts-
-
-      - name: Download monochrome maps
-        uses: actions/download-artifact@v4
-        with:
-          pattern: monochrome-map-*
-          path: assets
-          merge-multiple: true
 
       - name: Cache LaTeX packages and build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -191,6 +184,13 @@ jobs:
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
+
+      - name: Download monochrome maps
+        uses: actions/download-artifact@v4
+        with:
+          pattern: monochrome-map-*
+          path: assets
+          merge-multiple: true
 
       - name: Compile monochrome draft book
         if: steps.cache-pdf.outputs.cache-hit != 'true'
