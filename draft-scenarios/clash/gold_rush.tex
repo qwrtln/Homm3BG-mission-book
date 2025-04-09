@@ -1,10 +1,6 @@
 % !TeX spellcheck = en_US
 \addscenariosection{1}{Solo/Clash/Alliance Scenario}{Gold Rush}{\images/gold-mine.png}
 
-\newenvironment{Figure}
-{\par\medskip\noindent\minipage{\linewidth}}
-{\endminipage\par\medskip}
-
 \begin{multicols*}{2}
 
 \textbf{Author:} farmaazon
@@ -35,10 +31,9 @@ This Scenario is played over 13 Rounds.
 
 \textbf{Map Tile Pool:} Each player takes 2 Far (II--III) Map Tiles.
 
-% It looks much better if Map Setup section is in new column.
-% Both \vfill or \columnbreak work strangely here.
-% Maybe replace it with some fancy image in the future.
-\vspace{9em}
+\begin{center}
+  {\transparent{0.2}\includegraphics[width=0.7\linewidth, keepaspectratio]{\art/elemental_conflux.png}}
+\end{center}
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -52,16 +47,45 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 
 \subsection*{\MakeUppercase{Additional Rules}}
 
+\begin{table*}[b!]
+  \hommtable[]{23}{
+    \centering
+    \begin{tabularx}{\linewidth}{p{0.25\linewidth}p{0.71\linewidth}}
+      \darkcell{Tile and Location} & \darkcell{Additional Rules} \\
+      \darkcell[1]{Obelisk}
+      & \lightcell[1]{Choose one Minor Artifact from Resource Cards, or take 6 \svg{gold}} \\
+      \darkcell[1]{N1 Witch Hut}
+      & \lightcell[1]{Instead of standard effect, you may take \textit{Estates} Ability.} \\
+      \darkcell[2]{\#C1 Warrior Tomb}
+      & \lightcell[2]{Instead of \textbf{one} Artifact Search, you may choose Minor or Major Artifact from Resource Cards. The other Search must be from Artifact Deck.} \\
+      \darkcell[1.3]{\#C1/C2 Shrine of Magic Incantation}
+      & \lightcell[1.3]{Instead of searching for a Spell, you may take one \textit{View Air} Spell.} \\
+      \darkcell[2]{\#C1 Settlement}
+      & \lightcell[2]{Combat with Neutral Units cannot be skipped\textsuperscript{\hyperref[fn:combat]{*}}. The chosen settlement bonus is doubled\textsuperscript{\hyperref[fn:bonus]{**}}. Choose 5 (if you're first to Flag) or 2 (otherwise) artifacts from Resource Cards.} \\
+      \darkcell[1.3]{C2 Grail}
+      & \lightcell[1.3]{Combat with Neutral Units cannot be skipped\textsuperscript{\hyperref[fn:combat]{*}}. Take the Grail Token and lose all remaining \svgeven{movement-note}.} \\
+    \end{tabularx}
+    \medskip
+  }
+  \phantomsection
+  \label{fn:combat}
+  \footnotesize{\textsuperscript{*} Including Quick Combat. Bypassing without visiting the Field (such as with the \textit{Pathfinding} Ability) is still allowed.}
+
+  \phantomsection
+  \label{fn:bonus}
+  \footnotesize{\textsuperscript{**} For example: if you choose increasing \svg{valuables} production, you increase it by two and get 2 \svg{valuables} if you are first player to Flag this settlement. If you choose reinforcement, you may reinforce two Units.}
+\end{table*}
+
 \begin{itemize}
   \item Before the game, remove all Cards that grant resources (including those with resource granting as one of the options) from their respective Decks, and form a \textbf{Resource Cards} pool. These Cards will be available at specific locations throughout the Scenario. If any of these Cards is removed from the game, it goes back to the pool.
   \item Lord Haart's starting \textit{Estates} Ability is replaced with \textit{Scouting}.
   \item At the start of certain Rounds, players must send a \textbf{tranche} to their lieges. The tranche value is expressed in \svg{gold}, but may be partially or entirely paid in other resources using these exchange rates: 1 \svg{building_materials} equals 2 \svg{gold} and 1 \svg{valuables} equals 4 \svg{gold}, with no change given. In Alliance mode, allied players collectively pay a single tranche. Any player or team unable to pay loses the game immediately.
   \item The difficulty of all Fields on the \#C1 Tile is lowered by one Level (effectively making it a ``V-VI'' Tile).
-  \item Certain locations have special rules, typically allowing players to acquire \textbf{Resource Cards} -- refer to the table on the next page.
+  \item Certain locations have special rules, typically allowing players to acquire \textbf{Resource Cards} -- refer to the table below.
+  \item When defeating an enemy Main Hero, the victorious player may, instead of taking \mbox{5 \svg{gold}}, choose and take one Artifact from the opponent's Discard Pile.
   \item A Hero carrying the Grail Token is not protected by the \textit{Sanctuary} effect.
   \item If a Hero carrying the Grail Token surrenders or is defeated by an enemy Hero, they give the Token to the opponent.
-  \item If a Hero carrying the Grail Token is defeated by a Neutral Army, the Grail Token is placed on the Field where the Hero was defeated. Any Hero visiting this Field takes the Token and loses all remaining \svg{movement}.
-  \item When defeating an enemy Main Hero, the victorious player may, instead of taking \mbox{5 \svg{gold}}, choose and take one Artifact from the opponent's Discard Pile.
+  \item If a Hero carrying the Grail Token is defeated by a Neutral Army, the Grail Token is placed on the Field where the Hero was defeated. Any Hero visiting this Field takes the Token and loses all remaining~\svg{movement}.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Victory Conditions}}
@@ -71,18 +95,19 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
   \item In \textbf{PvP games}, if nobody wins after 13 Rounds, the winner is the player/team who is able to pay the highest \textbf{tranche} value with their remaining resources.
 \end{itemize}
 
+\columnbreak
+
 \subsection*{\MakeUppercase{Defeat Conditions}}
 
 \begin{itemize}
   \item Fail to pay a required \textbf{tranche}.
   \item In \textbf{Solo play}: fail to meet the Victory Condition by the end of Round 13.
-  \item In \textbf{PvP games}, if both players/teams cannot pay their \textbf{tranche} in the same Round, the player/team with the highest \textbf{tranche} value in remaining resources wins, with the Grail Token counting as 60 \svg{gold}.
+  \item In \textbf{PvP games}, if both players/teams cannot pay their \textbf{tranche} in the same Round, the player/team with the highest \textbf{tranche} value in remaining resources wins, with the Grail Token counting as 60~\svg{gold}.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Timed Events}}
 
 Players must pay tranches at the start of specific Rounds, as shown in the table below. After paying, \textbf{remove all Black Cubes} from every Windmill and Water Wheel on the map.
-
 
 \hommtablemulticol[]{14}{
   \centering
@@ -109,59 +134,40 @@ Players must pay tranches at the start of specific Rounds, as shown in the table
   \end{tabularx}
 }
 
-\begin{tikzpicture}[overlay]
-    \centering
-    \node at (4.4, -4.8) {\includegraphics[width=0.8\linewidth]{\maps/gold_rush-solo.png}};
-    \node at (5.7, -6.43) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
-    \node at (6.1, -4.32) {\large{{\textbf{\textcolor{deepskyblue}{\#C1}}}}};
-    \node at (6.5, -2.1) {\large{{\textbf{\textcolor{deepskyblue}{C2}}}}};
-    \node at (4.4, -9.0) {\footnotesize{\textbf{SOLO VARIANT}}};
+\vspace*{\fill}
+\columnbreak
+
+\begin{center}
+
+\begin{tikzpicture}
+  \centering
+  \node at (0.0, 0.0) {\includegraphics[width=0.6\linewidth]{\maps/gold_rush-solo.png}};
+  \node at (1.0, -1.2) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
+  \node at (1.27, 0.4) {\large{{\textbf{\textcolor{deepskyblue}{\#C1}}}}};
+  \node at (1.56, 2.1) {\large{{\textbf{\textcolor{deepskyblue}{C2}}}}};
+  \node at (0.0, -3.1) {\footnotesize{\textbf{SOLO VARIANT}}};
 \end{tikzpicture}
+
+\vfill
+    
+\begin{tikzpicture}
+  \centering
+  \node at (0.0, 0.0) {\includegraphics[width=0.92\linewidth]{\maps/gold_rush-1v1.png}};
+  \node at (-0.25, -1.22) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
+  \node at (0.0, 0.4) {\large{{\textbf{\textcolor{deepskyblue}{\#C1}}}}};
+  \node at (0.35, 2.15) {\large{{\textbf{\textcolor{deepskyblue}{C2}}}}};
+  \node at (0.0, -3.3) {\footnotesize{\textbf{1v1 VARIANT}}};
+\end{tikzpicture}
+
+\vfill
+
+\begin{tikzpicture}
+  \node at (0, 0) {\includegraphics[width=\linewidth]{\maps/gold_rush-2v2.png}};
+  \node at (0.03, 0.45) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
+  \node at (0, -4.6) {\footnotesize{\textbf{2v2 VARIANT}}};
+\end{tikzpicture}
+
+\end{center}
 
 \end{multicols*}
 
-\begin{tikzpicture}[overlay]
-    \centering
-    \node at (4.0, -3.0) {\includegraphics[width=0.48\textwidth]{\maps/gold_rush-1v1.png}};
-    \node at (3.7, -4.4) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
-    \node at (4.0, -2.57) {\large{{\textbf{\textcolor{deepskyblue}{\#C1}}}}};
-    \node at (4.35, -0.7) {\large{{\textbf{\textcolor{deepskyblue}{C2}}}}};
-    \node at (4.0, -6.5) {\footnotesize{\textbf{1v1 VARIANT}}};
-    
-    \node at (13.4, -4.6) {\includegraphics[width=0.56\textwidth]{\maps/gold_rush-2v2.png}};
-    \node at (13.4, -4.1) {\large{{\textbf{\textcolor{deepskyblue}{N1}}}}};
-    \node at (13.4, -9.3) {\footnotesize{\textbf{2v2 VARIANT}}};
-\end{tikzpicture}
-
-\begin{tikzpicture}[overlay]
-    
-\end{tikzpicture}
-
-\begin{table*}[t]
-  \hommtable[]{23}{
-    \centering
-      \begin{tabularx}{\linewidth}{p{0.25\linewidth}p{0.71\linewidth}}
-        \darkcell{Tile and Location} & \darkcell{Additional Rules} \\
-        \darkcell[1]{Obelisk}
-        & \lightcell[1]{Choose one Minor Artifact from Resource Cards, or take 6 \svg{gold}} \\
-        \darkcell[1]{N1 Witch Hut}
-        & \lightcell[1]{Instead of standard effect, you may take \textit{Estates} Ability.} \\
-        \darkcell[2]{\#C1 Warrior Tomb}
-        & \lightcell[2]{Instead of \textbf{one} Artifact Search, you may choose Minor or Major Artifact from Resource Cards. The other Search must be from Artifact Deck.} \\
-        \darkcell[1.3]{\#C1/C2 Shrine of Magic Incantation}
-        & \lightcell[1.3]{Instead of searching for a Spell, you may take one \textit{View Air} Spell.} \\
-        \darkcell[2]{\#C1 Settlement}
-        & \lightcell[2]{Combat with Neutral Units cannot be skipped\textsuperscript{\hyperref[fn:combat]{*}}. The chosen settlement bonus is doubled\textsuperscript{\hyperref[fn:bonus]{**}}. Choose 5 (if you're first to Flag) or 2 (otherwise) artifacts from Resource Cards.} \\
-        \darkcell[1.3]{C2 Grail}
-        & \lightcell[1.3]{Combat with Neutral Units cannot be skipped\textsuperscript{\hyperref[fn:combat]{*}}. Take the Grail Token and lose all remaining \svgeven{movement-note}.} \\
-      \end{tabularx}
-    \medskip
-    }
-  \phantomsection
-  \label{fn:combat}
-  \footnotesize{\textsuperscript{*} Including Quick Combat. Bypassing without visiting the Field (such as with the \textit{Pathfinding} Ability) is still allowed.}
-
-  \phantomsection
-  \label{fn:bonus}
-  \footnotesize{\textsuperscript{**} For example: if you choose increasing \svg{valuables} production, you increase it by two and get 10 \svg{valuables} if you are first player to Flag this settlement. If you choose reinforcement, you may reinforce two Units.}
-\end{table*}
