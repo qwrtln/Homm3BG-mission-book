@@ -13,6 +13,8 @@ help() {
     Optional Arguments:
       -p, --printable               Compares your build against 'printable' build.
       -s, --single-page             Combines all compared pages into a single image.
+      -m, --mono                    Uses monochrome version of files for baseline comparison.
+                                    Only affects GitHub downloads, not local files.
 
     Examples:
       ./tools/compare_pages.sh -l en -r 1
@@ -20,11 +22,14 @@ help() {
       ./tools/compare_pages.sh -d -r 1,3-5
       ./tools/compare_pages.sh --drafts --range 1-10 --single-page
 
-      ./tools/compare_pages.sh -l en -r 1,5-7,30 --single-page --printable
+      ./tools/compare_pages.sh -l en -r 1,5-7,30 --single-page --mono
           - This will produce files 'en-01.png, en-05.png, en-06.png, en-07.png and en-30.png'.
           - Then because there is the '--single-page' parameter, it combines them to a single file 'en-all.png'.
-          - It will use 'printable_en.pdf' from the repository as baseline because '--printable' was specified.
+          - It will use 'main_en-mono.pdf' from the repository as baseline because '--mono' was specified.
             It would use 'main_en.pdf' if this parameter was omitted.
+
+      ./tools/compare_pages.sh -d -r 1-3 --mono
+          - This will download 'drafts-mono.pdf' from GitHub for comparison.
   "
 
   exit 2
@@ -39,13 +44,19 @@ base_file_path() {
   local identifier="$1"
   local printable="$2"
   local drafts="$3"
+  local monochrome="$4"
   local type
+  local file_suffix=""
+
+  if [[ "$monochrome" -eq 1 ]]; then
+    file_suffix="-mono"
+  fi
 
   if [[ "$drafts" -eq 1 ]]; then
-    echo "${cache_dir}/drafts.pdf"
+    echo "${cache_dir}/drafts${file_suffix}.pdf"
   else
     type=$(file_type "$printable")
-    echo "${cache_dir}/${type}_${identifier}.pdf"
+    echo "${cache_dir}/${type}_${identifier}${file_suffix}.pdf"
   fi
 }
 
@@ -53,17 +64,23 @@ download_base_file() {
   local identifier="$1"
   local printable="$2"
   local drafts="$3"
+  local monochrome="$4"
   local output_file=""
   local type
   local url=""
+  local file_suffix=""
+
+  if [[ "$monochrome" -eq 1 ]]; then
+    file_suffix="-mono"
+  fi
 
   if [[ "$drafts" -eq 1 ]]; then
-    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf"
-    output_file="${cache_dir}/drafts.pdf"
+    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts${file_suffix}.pdf"
+    output_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
   else
     type=$(file_type "$printable")
-    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${identifier}/${type}_${identifier}.pdf"
-    output_file=$(base_file_path "$identifier" "$printable" 0)
+    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${identifier}/${type}_${identifier}${file_suffix}.pdf"
+    output_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
   fi
 
   mkdir -p "$cache_dir"
@@ -86,8 +103,9 @@ ensure_base_file() {
   local identifier="$1"
   local printable="$2"
   local drafts="$3"
+  local monochrome="$4"
 
-  base_file=$(base_file_path "$identifier" "$printable" "$drafts")
+  base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
 
   if [[ -f $base_file ]]; then
     mod_time=$(file_mod_time "$base_file")
@@ -95,10 +113,10 @@ ensure_base_file() {
     age=$((now - mod_time))  # seconds
 
     if [[ $age -gt 3600 ]]; then
-      download_base_file "$identifier" "$printable" "$drafts"
+      download_base_file "$identifier" "$printable" "$drafts" "$monochrome"
     fi
   else
-    download_base_file "$identifier" "$printable" "$drafts"
+    download_base_file "$identifier" "$printable" "$drafts" "$monochrome"
   fi
 
   echo "$base_file"
@@ -137,6 +155,7 @@ range=""
 printable=0
 single_page=0
 drafts=0
+monochrome=0
 
 while [[ "$1" != "" ]]; do
   case $1 in
@@ -156,6 +175,9 @@ while [[ "$1" != "" ]]; do
       ;;
     -s | --single-page )
       single_page=1
+      ;;
+    -m | --mono )
+      monochrome=1
       ;;
     * )
       help
@@ -193,7 +215,7 @@ if [[ "$drafts" -eq 1 ]]; then
 fi
 
 echo "Checking if there is the base file for comparison..."
-base_file=$(ensure_base_file "$language" "$printable" "$drafts")
+base_file=$(ensure_base_file "$language" "$printable" "$drafts" "$monochrome")
 
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf -- "$tmp_dir"' EXIT
