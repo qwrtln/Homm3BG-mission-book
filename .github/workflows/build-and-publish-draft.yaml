@@ -34,7 +34,7 @@ jobs:
         id: cache-pdf
         with:
           path: |
-            ./main_${{ matrix.language }}.pdf
+            ./draft-scenarios/drafts.pdf
           key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             pdf-drafts-
@@ -47,6 +47,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./svg-inkscape
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
@@ -159,26 +160,7 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Download monochrome maps
-        uses: actions/download-artifact@v4
-        with:
-          pattern: monochrome-map-*
-          path: assets
-          merge-multiple: true
-
-      - name: Cache built PDF
-        uses: actions/cache@v4
-        if: github.event_name == 'pull_request'
-        id: cache-pdf
-        with:
-          path: |
-            ./main_${{ matrix.language }}.pdf
-          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
-          restore-keys: |
-            pdf-drafts-
-
       - name: Cache LaTeX packages and build
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
@@ -186,12 +168,19 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+            ./svg-inkscape
+          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
-            texlive-drafts-
+            texlive-drafts-mono-
+
+      - name: Download monochrome maps
+        uses: actions/download-artifact@v4
+        with:
+          pattern: monochrome-map-*
+          path: assets/maps
+          merge-multiple: true
 
       - name: Compile monochrome draft book
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -201,16 +190,11 @@ jobs:
           root_file: drafts.tex
 
       - name: Optimize PDF
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
           output-file: draft-scenarios/drafts-mono.pdf
-
-      - name: Move file
-        if: steps.cache-pdf.outputs.cache-hit == 'true'
-        run: mv drafts.pdf drafts-mono.pdf
 
       - uses: actions/upload-artifact@v4
         with:
