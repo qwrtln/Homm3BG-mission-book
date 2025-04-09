@@ -58,6 +58,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
+            ./svg-inkscape
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
@@ -94,11 +95,11 @@ jobs:
           test-string: ${{ steps.quote.outputs.quote }}
 
       - name: Check number of pages
-        if: inputs.language == 'en'
+        if: matrix.language == 'en'
         id: check_pages
         run: |
           if [[ "${{ steps.cache-pdf.outputs.cache-hit }}" == 'true' ]]; then
-            NUMBER_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }} | awk '/^Pages:/ {print $2}')
+            NUMBER_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
           else
             NUMBER_OF_PAGES=${{ steps.optimize.outputs.page-count }}
           fi
@@ -226,7 +227,7 @@ jobs:
             ./**/*.log
             ./**/*.toc
             ./**/*.out
-            ./main_${{ matrix.language }}.pdf
+            ./svg-inkscape
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
