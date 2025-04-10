@@ -3,14 +3,14 @@
 # Default values
 LANGUAGE="en"
 DRAFTS_MODE=0
+PRINTABLE_MODE=0
+MONO_MODE=0
 
-# Valid language codes
 valid_languages=("en" "pl" "fr" "cs")
 
-# Function to print usage information
 usage() {
-  echo "Usage: $0 [language] [-p|--printable] [-n|--no-bg] [-d|--drafts]"
-  echo "Example: $0 fr --printable --no-bg"
+  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts]"
+  echo "Example: $0 fr --printable --mono"
   echo
   echo "Positional arguments:"
   echo "  language           Language code (${valid_languages[*]})"
@@ -19,12 +19,14 @@ usage() {
   echo
   echo "Options:"
   echo "  -p, --printable    Enable printable mode"
-  echo "  -n, --no-bg        Disable background"
+  echo "  -m, --mono         Monochrome mode"
   echo "  -d, --drafts       Generate draft scenarios"
+  echo "  -h, --help         Show this help message"
+  echo
+  echo "Short options can be combined, e.g. -dm for drafts and mono"
   exit 1
 }
 
-# Function to check if language is valid
 is_valid_language() {
   local lang="$1"
   for valid_lang in "${valid_languages[@]}"; do
@@ -35,7 +37,6 @@ is_valid_language() {
   return 1
 }
 
-# Check for OS type for the open command
 case "$(uname -s)" in
   Darwin*)    open=open;;
   Linux*)     open=xdg-open;;
@@ -55,32 +56,41 @@ fi
 
 # Parse remaining command line arguments
 while [[ $# -gt 0 ]]; do
-  case $1 in
-    -p|--printable)
-        export HOMM3_PRINTABLE=1
-        shift
-        ;;
-    -n|--no-bg)
-        export HOMM3_NO_ART_BACKGROUND=1
-        shift
-        ;;
-    -d|--drafts)
-        DRAFTS_MODE=1
-        shift
-        ;;
-    -h|--help)
-        usage
-        ;;
-    -*)
-        echo "Error: Unknown option $1" >&2
-        usage
-        ;;
-    *)
-        echo "Error: Unexpected argument '$1'" >&2
-        usage
-        ;;
-  esac
+  arg="$1"
+  shift
+
+  # Handle long options
+  if [[ $arg == --* ]]; then
+    case "${arg:2}" in
+      printable) PRINTABLE_MODE=1 ;;
+      mono) MONO_MODE=1 ;;
+      drafts) DRAFTS_MODE=1 ;;
+      help) usage ;;
+      *) echo "Error: Unknown option $arg" >&2; usage ;;
+    esac
+    continue
+  fi
+
+  # Handle short and combined options
+  if [[ $arg == -* ]]; then
+    for (( i=1; i<${#arg}; i++ )); do
+      case "${arg:$i:1}" in
+        p) PRINTABLE_MODE=1 ;;
+        m) MONO_MODE=1 ;;
+        d) DRAFTS_MODE=1 ;;
+        h) usage ;;
+        *) echo "Error: Unknown option -${arg:$i:1}" >&2; usage ;;
+      esac
+    done
+    continue
+  fi
+
+  echo "Error: Unexpected argument '$arg'" >&2
+  usage
 done
+
+[[ $PRINTABLE_MODE -eq 1 ]] && export HOMM3_PRINTABLE=1
+[[ $MONO_MODE -eq 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
 
 # Check if language is specified with drafts mode
 if [[ "${DRAFTS_MODE}" -eq 1 && "${LANGUAGE}" != "en" ]]; then
@@ -120,12 +130,13 @@ monochrome_with_cache() {
   echo "${current_hash}" > "${cache_hash}"
 }
 
-# Handle drafts mode
+# Handle drafts
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
+  # shellcheck disable=SC2317
   cleanup() {
     if [[ -n "$original_dir" ]]; then
       # Windows-specific cleanup
-      cd "$original_dir"
+      cd "$original_dir" || exit
       git restore draft-scenarios/assets draft-scenarios/latexmkrc
     fi
 
