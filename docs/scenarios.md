@@ -16,9 +16,9 @@ However, there is a set of predefined [**templates**](https://github.com/qwrtln/
 
 - Try to contain your PRs to a single scenario at a time. If you have multiple scenarios to add, create a PR for each of them.
 
-- Always add screenshots of your scenario to the PR. You can use [**the screenshot script**](/scripts/#pdf2imagesh) to generate them.
+- Always add screenshots of your scenario to the PR. You can use [**the screenshot script**](scripts.md#pdf2imagesh) to generate them.
 
-- If you're updating an existing scenario, create comparison images using the [**compare pages script**](/scripts/#compare_pagessh).
+- If you're updating an existing scenario, create comparison images using the [**compare pages script**](scripts.md#compare_pagessh).
 
 ## Solo Campaign
 

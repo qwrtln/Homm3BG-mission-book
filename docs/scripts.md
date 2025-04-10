@@ -12,7 +12,7 @@ The main script for generating PDF files from source files in different language
 
 - [Perl](https://www.perl.org/) for running LaTeX build tools
 
-- [po4a](https://github.com/mquinson/po4a) for translation handling
+- [po4a](https://github.com/mquinson/po4a) for translation handling - only if building the Mission Book (not Drafts) in non-English
 
 **Usage:**
 ```bash
