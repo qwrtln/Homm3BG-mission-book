@@ -109,7 +109,10 @@ This repository serves as a means to version the scenarios and for the community
 
 ### 💪 Contributing
 
-Please refer to [the docs](https://qwrtln.github.io/Homm3BG-mission-book/) for technical details.
+We have compiled some documents to help you get started.
+If you're new to Git and LaTeX, see the [local setup](https://qwrtln.github.io/Homm3BG-mission-book/) document.
+Read our [guidelines](https://qwrtln.github.io/Homm3BG-mission-book/scenarios/) on the technicalities of starting with adding your scenario.
+To learn how to use the scripts that facilitate the process, see the [scripts](https://qwrtln.github.io/Homm3BG-mission-book/scripts/) document.
 
 #### 🗺️ Scenarios
 
