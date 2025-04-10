@@ -1,4 +1,5 @@
 site_name: Fan-Made Mission Book Docs
+site_url: https://qwrtln.github.io/Homm3BG-mission-book/
 theme:
   name: material
   features:
