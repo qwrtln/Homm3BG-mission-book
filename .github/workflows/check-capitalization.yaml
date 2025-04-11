@@ -21,15 +21,14 @@ jobs:
           do
             for word in ${WORDS[@]}
             do
-              if grep -v "% no-check-caps$" $file | grep -q "\s$word"; then
+              if grep -v "% no-check-caps$" $file | grep -q "\s$word\b\|\s${word}s\b\|\s${word}es\b"; then
                 echo "---"
-                echo "Found \"$word\" instead of \"${word^}\" in $file:" | grep -i $word --color=always
-                grep -nH --color=always "\s$word" $file
+                echo "Found \"$word\" or its plural instead of capitalized form in $file:" | grep -i $word --color=always
+                grep -nH --color=always "\s$word\b\|\s${word}s\b\|\s${word}es\b" $file
                 ERRORS=1
               fi
             done
           done
-
 
           if [[ $ERRORS == 1 ]]; then
             echo "---"
