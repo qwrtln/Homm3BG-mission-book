@@ -90,13 +90,37 @@ VPs for:
   \item In a 2-Player game when a Player gains \textbf{x} VP for controlling the Hill. That Player also has to distribute \textbf{x} \svg{damage-red} to their Units.
 \end{itemize}
 
+\columnbreak
+
+
 \begin{center}
-  \vfill
   \includegraphics[width=1.0\linewidth]{\maps/king_of_the_hill_v2-2p.png}
   \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-  \vfill
-  \includegraphics[width=1.0\linewidth]{\maps/king_of_the_hill_v2-3p.png}
-  \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
 \end{center}
+
+\begin{tikzpicture}[overlay, remember picture]
+
+  \newcommand{\blocked}[3]{%
+    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle
+    \begin{scope}[shift={(#1,#2)}, rotate=#3]
+      \draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]
+        (0:0.38cm) -- (60:0.38cm) -- (120:0.38cm) --
+        (180:0.38cm) -- (240:0.38cm) -- (300:0.38cm) -- cycle;
+    \end{scope}
+  }
+
+
+  \node at (4.5, -5) {\includegraphics[width=1.0\linewidth]{\maps/king_of_the_hill_v2-3p.png}};
+
+  \blocked{4.66}{-3.85}{90}
+
+  \node at (7.73, -3.8) {{{\footnotesize\textbf{\textcolor{red}{C1/C3}}}}};
+
+  \node at (4.33, -5.48) {{{\tiny{The}}}};
+  \node at (4.33, -5.68) {{{\tiny{Hill}}}};
+
+  \node at (4.4, -10) {\textbf{3-PLAYER SCENARIO}};
+
+\end{tikzpicture}
 
 \end{multicols*}
