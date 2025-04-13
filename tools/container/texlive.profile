@@ -5,13 +5,15 @@ TEXMFSYSCONFIG /opt/texlive/texdir/texmf-config
 TEXMFVAR       /root/texlive/texmf-var
 TEXMFCONFIG    /root/texlive/texmf-config
 TEXMFHOME      /root/texmf
-binary_x86_64-linuxmusl 1
 binary_x86_64-linux 0
+binary_x86_64-linuxmusl 1
+collection-xetex 0
 instopt_adjustpath 0
 instopt_adjustrepo 1
 instopt_letter 0
 instopt_portable 0
 instopt_write18_restricted 1
+selected_scheme scheme-small
 tlpdbopt_autobackup 0
 tlpdbopt_create_formats 1
 tlpdbopt_generate_updmap 0

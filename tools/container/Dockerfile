@@ -9,10 +9,7 @@ RUN apk add --no-cache wget && \
     tar -xf po4a-${PO4A_VERSION}.tar.gz -C /po4a --strip-components=1 && \
     rm po4a-${PO4A_VERSION}.tar.gz
 
-# Final stage: TeXLive installation
 FROM alpine:latest
-
-LABEL org.opencontainers.image.title="Docker Image with TeXLive and po4a"
 
 ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib"
@@ -61,10 +58,10 @@ RUN apk --no-cache add \
     && cpanm --no-wget Pod::Parser \
     && cpanm --no-wget YAML::Tiny \
     && cpanm --no-wget Unicode::GCString \
-    && apk del .build-deps
-
-# Install TeXLive with a small scheme plus specific packages
-RUN mkdir -p /tmp/install-tl && \
+    && cpanm --no-wget Syntax::Keyword::Try \
+    && cpanm --no-wget Encode::Locale \
+    && apk del .build-deps && \
+    mkdir -p /tmp/install-tl && \
     cd /tmp/install-tl && \
     MIRROR_URL="$(curl -fsS -w "%{redirect_url}" -o /dev/null https://mirror.ctan.org/)" && \
     echo "Using mirror: ${MIRROR_URL}" && \
@@ -76,7 +73,7 @@ RUN mkdir -p /tmp/install-tl && \
     sha512sum -c ./install-tl-unx.tar.gz.sha512 && \
     mkdir -p /tmp/install-tl/installer && \
     tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer && \
-    /tmp/install-tl/installer/install-tl --profile=/texlive.profile --scheme=small && \
+    /tmp/install-tl/installer/install-tl --profile=/texlive.profile && \
     # Install additional collections and packages
     /opt/texlive/texdir/bin/*/tlmgr install \
       adjustbox \
@@ -86,6 +83,7 @@ RUN mkdir -p /tmp/install-tl && \
       collection-binextra \
       collection-fontsrecommended \
       collection-latex \
+      collection-langcyrillic \
       collection-latexrecommended \
       collection-pictures \
       enumitem \
@@ -93,6 +91,9 @@ RUN mkdir -p /tmp/install-tl && \
       footmisc \
       fullwidth \
       imakeidx \
+      listings  \
+      listingsutf8  \
+      luabidi \
       multirow \
       nth \
       oberdiek \
@@ -106,35 +107,45 @@ RUN mkdir -p /tmp/install-tl && \
       tcolorbox \
       titlesec \
       tocloft \
+      tools \
       transparent \
       varwidth \
       wrapfig \
       xstring \
-      zref \
-      tools && \
+      zref && \
     /opt/texlive/texdir/bin/*/tlmgr path add && \
     /opt/texlive/texdir/bin/*/mktexlsr
 
-# System font configuration for XeTeX and LuaTeX
 RUN mkdir -p /etc/fonts/conf.d && \
     ln -s /opt/texlive/texdir/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf && \
     fc-cache -fv && \
     # Create cache directories with correct permissions
-    mkdir -p /root/.texlive2025/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache && \
-    chmod -R 777 /root/.texlive2025 /root/texmf-var && \
-    chmod -R 777 /opt/texlive/texdir/texmf-var
-
-RUN rm -rf \
-    /opt/texlive/texdir/install-tl \
-    /opt/texlive/texdir/install-tl.log \
-    /opt/texlive/texdir/texmf-dist/doc \
-    /opt/texlive/texdir/texmf-dist/source \
-    /opt/texlive/texdir/texmf-var/web2c/tlmgr.log \
-    /texlive.profile \
-    /texlive_pgp_keys.asc \
-    /tmp/install-tl && \
+    mkdir -p /root/.texlive*/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache && \
+    chmod -R 777 /root/.texlive* /root/texmf-var && \
+    chmod -R 777 /opt/texlive/texdir/texmf-var && \
+    apk del --purge \
+      wget \
+      tar \
+      make \
+      xz \
+      gnupg \
+    rm -rf \
+      /root/.gnupg \
+      /root/.wget-hsts \
+      /usr/share/man/* \
+      /usr/share/doc/* \
+      /var/cache/apk/* \
+      /var/tmp/* \
+      /opt/texlive/texdir/install-tl \
+      /opt/texlive/texdir/install-tl.log \
+      /opt/texlive/texdir/texmf-dist/doc \
+      /opt/texlive/texdir/texmf-dist/source \
+      /opt/texlive/texdir/texmf-var/web2c/tlmgr.log \
+      /opt/texlive/texdir/bin/*/etex \
+      /texlive.profile \
+      /texlive_pgp_keys.asc \
+      /tmp/install-tl && \
     git config --global --add safe.directory /data
 
 WORKDIR /data
-
 CMD ["/bin/bash"]
