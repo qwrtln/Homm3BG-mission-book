@@ -16,4 +16,5 @@ git restore \
   main_pl.tex \
   metadata.tex \
   mkdocs.yml \
-  po4a.cfg
+  po4a.cfg \
+  run.sh
