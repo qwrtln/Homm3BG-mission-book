@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-IMAGE="homm3bg:latest"
-GITHUB_REGISTRY="ghcr.io"
-FULL_IMAGE="${GITHUB_REGISTRY}/qwrtln/${IMAGE}"
+IMAGE="ghcr.io/qwrtln/homm3bg:latest"
 
 # Help message
 show_help() {
@@ -41,17 +39,6 @@ elif command -v docker &>/dev/null; then
 else
     echo "Error: No container engine found. Please install podman or docker."
     exit 1
-fi
-
-# Check if the image exists
-if ! $CONTAINER_ENGINE image exists "$IMAGE" &>/dev/null && ! $CONTAINER_ENGINE image exists "$FULL_IMAGE" &>/dev/null; then
-    echo "Image $IMAGE not found locally, pulling from GitHub Container Registry..."
-    $CONTAINER_ENGINE pull "$FULL_IMAGE" || {
-        echo "Error: Failed to pull $FULL_IMAGE"
-        exit 1
-    }
-    # Tag the image without registry prefix for easier use
-    $CONTAINER_ENGINE tag "$FULL_IMAGE" "$IMAGE"
 fi
 
 echo "Running $SCRIPT_PATH" "${@}"
