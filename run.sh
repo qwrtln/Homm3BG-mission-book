@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-IMAGE="homm3bg:latest"
-GITHUB_REGISTRY="ghcr.io"
-FULL_IMAGE="${GITHUB_REGISTRY}/qwrtln/${IMAGE}"
+IMAGE="ghcr.io/qwrtln/homm3bg:latest"
 
 # Help message
 show_help() {
@@ -43,17 +41,6 @@ else
     exit 1
 fi
 
-# Check if the image exists
-if ! $CONTAINER_ENGINE image exists "$IMAGE" &>/dev/null && ! $CONTAINER_ENGINE image exists "$FULL_IMAGE" &>/dev/null; then
-    echo "Image $IMAGE not found locally, pulling from GitHub Container Registry..."
-    $CONTAINER_ENGINE pull "$FULL_IMAGE" || {
-        echo "Error: Failed to pull $FULL_IMAGE"
-        exit 1
-    }
-    # Tag the image without registry prefix for easier use
-    $CONTAINER_ENGINE tag "$FULL_IMAGE" "$IMAGE"
-fi
-
 echo "Running $SCRIPT_PATH" "${@}"
 
 if [[ "$CONTAINER_ENGINE" = "podman" ]]; then
@@ -70,7 +57,6 @@ if [[ "$SCRIPT_NAME" == "build" ]]; then
         Darwin*)    open_cmd="open";;
         Linux*)     open_cmd="xdg-open";;
         MINGW*|MSYS*|CYGWIN*)    open_cmd="start";;
-        *)          open_cmd="";;
     esac
 
     # Determine which PDF to open based on arguments
@@ -85,13 +71,13 @@ if [[ "$SCRIPT_NAME" == "build" ]]; then
     done
 
     # Check for draft option
-    if [[ " $* " == *" -d "* ]]; then
+    if [[ "$*" =~ -[a-zA-Z]*d[a-zA-Z]* ]]; then
         pdf_file="draft-scenarios/drafts.pdf"
     fi
 
     if [[ -n "$open_cmd" && -f "$pdf_file" ]]; then
         echo "Opening $pdf_file"
-        $open_cmd "$pdf_file"
+        $open_cmd "$pdf_file" &> /dev/null &
     elif [[ -n "$open_cmd" ]]; then
         echo "PDF file $pdf_file not found"
     fi
