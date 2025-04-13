@@ -11,7 +11,6 @@ The main script for generating PDF files from source files in different language
 **Dependencies:**
 
 - [Perl](https://www.perl.org/) for running LaTeX build tools
-
 - [po4a](https://github.com/mquinson/po4a) for translation handling - only if building the Mission Book (not Drafts) in non-English
 
 **Usage:**
@@ -22,10 +21,11 @@ tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-h|--help]
 **Arguments:**
 
 - `language`: Language code (defaults to 'en' if not specified)
-  - Valid options: `en`, `pl`, `fr`, `cs`
-  - Note: Language selection is incompatible with drafts mode
+- Valid options: `en`, `pl`, `fr`, `cs`
+- Note: Language selection is incompatible with drafts mode
 
 **Options:**
+
 - `-m, --mono`: Monochrome mode (removes colored backgrounds from maps)
 - `-d, --drafts`: Generate draft scenarios
 - `-p, --printable`: Enable printable mode, currently not used for this project
@@ -54,6 +54,7 @@ tools/build.sh -dm
 Extracts specific pages from a PDF and converts them to high-quality PNG images.
 
 **Dependencies:**
+
 - [Poppler Utils](https://poppler.freedesktop.org/) (pdftoppm) for PDF to image conversion
 
 **Usage:**
@@ -64,7 +65,6 @@ tools/pdf2image.sh (-l <language> | -d) -r <range>
 **Mandatory Arguments (choose one):**
 
 - `-l, --language <language>`: Specify the language of the PDF to convert
-
 - `-d, --drafts`: Use draft scenarios PDF instead of language PDF
 
 **Required:**
@@ -91,9 +91,7 @@ Visually compares pages between your local PDF build and a reference version fro
 **Dependencies:**
 
 - [cURL](https://curl.se/) for downloading reference files
-
 - [Poppler Utils](https://poppler.freedesktop.org/) (pdftoppm) for PDF to image conversion
-
 - [ImageMagick](https://imagemagick.org/) (montage) for creating comparison images
 
 **Usage:**
@@ -104,7 +102,6 @@ tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
 **Mandatory Arguments (choose one):**
 
 - `-l, --language <language>`: Specify the language for comparison (e.g., `en`, `pl`)
-
 - `-d, --drafts`: Compare draft scenarios (mutually exclusive with `-l`)
 
 **Required:**
@@ -114,7 +111,6 @@ tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
 **Optional:**
 
 - `-s, --single-page`: Combine all compared pages into a single image
-
 - `-m, --mono`: Use monochrome version for baseline comparison
 
 **Examples:**
@@ -149,7 +145,6 @@ tools/optimize.sh [language] [options]
 **Options:**
 
 - `-d, --drafts`: Optimize draft scenarios PDF instead of language PDF
-
 - `--cmyk`: Convert colors to CMYK color space for professional printing
 
 **Examples:**
