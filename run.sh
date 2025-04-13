@@ -3,7 +3,7 @@ set -e
 
 IMAGE="homm3bg:latest"
 GITHUB_REGISTRY="ghcr.io"
-FULL_IMAGE="${GITHUB_REGISTRY}/${IMAGE}"
+FULL_IMAGE="${GITHUB_REGISTRY}/qwrtln/${IMAGE}"
 
 # Help message
 show_help() {
@@ -11,16 +11,16 @@ show_help() {
     echo ""
     echo "Where SCRIPT_PATH is the full path to the script, e.g.:"
     echo "  tools/build.sh"
-    echo "  tools/clean.sh"
     echo "  tools/compare_pages.sh"
     echo ""
     echo "Any additional arguments will be passed to the script."
     echo ""
     echo "Example: $0 tools/build.sh pl"
+    echo "Example: $0 tools/compare_pages.sh -l en -r 5-9"
     exit 1
 }
 
-if [[ $# -eq 0 ]] || [[ "$1" == "help" ]]; then
+if [[ $# -eq 0 ]] || [[ "$1" == "help" ]] || [[ "$1" == "--help" ]]; then
     show_help
 fi
 
