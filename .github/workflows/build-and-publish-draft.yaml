@@ -39,15 +39,27 @@ jobs:
           restore-keys: |
             pdf-drafts-
 
-      - name: Cache LaTeX packages and build
+      - name: Cache Inkscape artifacts
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
-            ./**/*.aux
-            ./**/*.log
-            ./**/*.toc
-            ./**/*.out
             ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
+      - name: Cache LaTeX build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            .draft-scenarios/**/*.aux
+            .draft-scenarios/**/*.fdb_latexmk
+            .draft-scenarios/**/*.fls
+            .draft-scenarios/**/*.toc
+            .draft-scenarios/**/*.out
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
@@ -160,25 +172,35 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      - name: Cache LaTeX packages and build
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./**/*.aux
-            ./**/*.log
-            ./**/*.toc
-            ./**/*.out
-            ./svg-inkscape
-          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
-          restore-keys: |
-            texlive-drafts-mono-
-
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
         with:
           pattern: monochrome-map-*
           path: assets/maps
           merge-multiple: true
+
+      - name: Cache Inkscape artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
+      - name: Cache LaTeX build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .draft-scenarios/**/*.aux
+            .draft-scenarios/**/*.fdb_latexmk
+            .draft-scenarios/**/*.fls
+            .draft-scenarios/**/*.toc
+            .draft-scenarios/**/*.out
+          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          restore-keys: |
+            texlive-drafts-mono-
 
       - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v3
