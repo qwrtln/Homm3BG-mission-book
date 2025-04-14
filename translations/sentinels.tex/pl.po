@@ -680,7 +680,7 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:197
 msgid "\\stepcounter{footnote}"
-msgstr ""
+msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:197
