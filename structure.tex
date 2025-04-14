@@ -1,0 +1,62 @@
+\include{\sections/title_page.tex}
+
+\author{\authortext}
+\maketitle
+
+\begin{center}
+  \iftoggle{githubbuild}{
+    \getenv[\githubsha]{GITHUB_SHA}
+    \versionwarning{} \hrefwithoutfootnote{\repourl}{\StrLeft{\githubsha}{7}}.
+  }{
+    \versionlabel{} \input{.version}
+  }
+
+  \bigbreak
+
+  \intro{}
+
+  \bigbreak
+
+  \includegraphics[width=0.4\linewidth]{\qr/github.png} \\
+  \qrgithub \\
+  \repourl
+\end{center}
+
+\iftoggle{noartbackground}{}{
+  \AddToHookNext{shipout/background}{
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
+  }
+}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \node(cover)[anchor=center, yshift=9em] at (current page.south) {
+    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
+  };
+\end{tikzpicture}
+
+\clearpage
+\begin{multicols*}{2}
+\tableofcontents
+\vspace*{\fill}
+\columnbreak
+\vspace{-3em}
+\includegraphics[width=\linewidth]{\art/elf.jpg}
+
+\end{multicols*}
+
+\clearpage
+\include{\sections/what_to_play.tex}
+
+\include{coops/main.tex}
+
+\include{clash/main.tex}
+
+\include{campaigns/main.tex}
+
+\include{\sections/recommendations.tex}
+
+\include{\sections/credits.tex}
+
+% \include{\sections/notes.tex}
+
+\include{sections/back_cover.tex}

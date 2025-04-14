@@ -43,8 +43,8 @@ jobs:
           key: >-
             pdf-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.language }}-
@@ -66,8 +66,8 @@ jobs:
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-${{ matrix.language }}-
@@ -233,8 +233,8 @@ jobs:
           key: >-
             texlive-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             texlive-mono-${{ matrix.language }}-
