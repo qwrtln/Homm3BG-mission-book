@@ -150,7 +150,5 @@ msgstr ""
 
 #. type: Plain text
 #: sections/what_to_play.tex:33
-#, fuzzy
-#| msgid "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
+msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
