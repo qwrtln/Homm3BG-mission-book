@@ -50,7 +50,7 @@ jobs:
             pdf-${{ matrix.language }}-
 
       - name: Cache LaTeX build
-        if: false && steps.cache-pdf.outputs.cache-hit != 'true'
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
