@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"POT-Creation-Date: 2025-04-14 07:17+0100\n"
 "PO-Revision-Date: 2024-12-03 20:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -133,7 +133,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:9
 #, no-wrap
 msgid ""
-"\\textbf{Source:} \\href{https://travelledtales.com}{travelledtales.com}\n"
+"\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 msgstr ""
 

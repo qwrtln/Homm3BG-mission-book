@@ -1,8 +1,11 @@
 site_name: Fan-Made Mission Book Docs
+site_url: https://qwrtln.github.io/Homm3BG-mission-book/
 theme:
   name: material
   features:
     - content.code.copy
+    - navigation.instant
+    - content.tabs.link
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -28,9 +31,10 @@ theme:
 repo_url: https://github.com/qwrtln/Homm3BG-mission-book
 repo_name: Fan-Made Mission Book
 nav:
-  - Home: index.md
-  - Local Setup: setup.md
+  - Local Setup: index.md
   - Writing Scenarios: scenarios.md
+  - Using Scripts: scripts.md
+  - Container-based  setup: container.md
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -39,3 +43,5 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true

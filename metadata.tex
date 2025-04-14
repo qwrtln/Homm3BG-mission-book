@@ -55,7 +55,7 @@
 \usepackage{tocloft}
 \renewcommand{\cftsubsecpagefont}{\bfseries}
 
-\usepackage[hang, symbol, perpage]{footmisc}
+\usepackage[hang]{footmisc}
 \renewcommand{\footnotemargin}{1em}
 
 \newtcolorbox{scaledfigure}[1][]{height fill, space to=\myspace,#1}
@@ -496,6 +496,11 @@
 
 \begin{document}
 
+\NewCommandCopy\hrefwithoutfootnote\href
+\iftoggle{printable}{
+  \renewcommand{\href}[2]{\hrefwithoutfootnote{#1}{#2}\footnote{#1}\enlargethispage{\baselineskip}}
+}
+
 \include{\sections/title_page.tex}
 
 \author{\authortext}
@@ -504,7 +509,7 @@
 \begin{center}
   \iftoggle{githubbuild}{
     \getenv[\githubsha]{GITHUB_SHA}
-    \versionwarning{} \href{\repourl}{\StrLeft{\githubsha}{7}}.
+    \versionwarning{} \hrefwithoutfootnote{\repourl}{\StrLeft{\githubsha}{7}}.
   }{
     \versionlabel{} \input{.version}
   }
@@ -516,7 +521,8 @@
   \bigbreak
 
   \includegraphics[width=0.4\linewidth]{\qr/github.png} \\
-  \qrgithub
+  \qrgithub \\
+  \repourl
 \end{center}
 
 \iftoggle{noartbackground}{}{
