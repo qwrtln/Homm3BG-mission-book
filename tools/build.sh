@@ -137,7 +137,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     if [[ -n "$original_dir" ]]; then
       # Windows-specific cleanup
       cd "$original_dir" || exit
-      git restore draft-scenarios/assets draft-scenarios/latexmkrc
+      git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
     fi
 
     if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
@@ -150,9 +150,9 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   if [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
       echo "Windows detected, handling symlinks."
       original_dir=$(pwd)
-      rm "draft-scenarios/assets"
+      rm "draft-scenarios/assets" "draft-scenarios/latexmkrc" "draft-scenarios/metadata.tex" "draft-scenarios/.version"
       cp -r "assets" "draft-scenarios/assets"
-      cp "latexmkrc" "draft-scenarios/latexmkrc"
+      cp "latexmkrc" "metadata.tex" ".version" "draft-scenarios/"
   fi
 
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
