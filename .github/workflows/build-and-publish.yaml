@@ -54,11 +54,15 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ./**/*.aux
-            ./**/*.log
-            ./**/*.toc
-            ./**/*.out
-            ./svg-inkscape
+            ./main_${{ matrix.language }}.aux
+            ./main_${{ matrix.language }}.fdb_latexmk
+            ./main_${{ matrix.language }}.fls
+            ./main_${{ matrix.language }}.out
+            ./main_${{ matrix.language }}.toc
+            ./campaigns/*.aux
+            ./coops/*.aux
+            ./clash/*.aux
+            ./sections/**/*.aux
           key: >-
             texlive-${{ matrix.language }}-${{
             matrix.language == 'en'
@@ -67,6 +71,17 @@ jobs:
             }}
           restore-keys: |
             texlive-${{ matrix.language }}-
+
+      - name: Cache Inkscape artifacts
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
 
       - name: Compile mission book
         if: steps.cache-pdf.outputs.cache-hit != 'true'
