@@ -55,11 +55,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            .draft-scenarios/**/*.aux
-            .draft-scenarios/**/*.fdb_latexmk
-            .draft-scenarios/**/*.fls
-            .draft-scenarios/**/*.toc
-            .draft-scenarios/**/*.out
+            ./draft-scenarios/**/*.aux
+            ./draft-scenarios/**/*.fdb_latexmk
+            ./draft-scenarios/**/*.fls
+            ./draft-scenarios/**/*.toc
+            ./draft-scenarios/**/*.out
           key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
@@ -193,11 +193,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            .draft-scenarios/**/*.aux
-            .draft-scenarios/**/*.fdb_latexmk
-            .draft-scenarios/**/*.fls
-            .draft-scenarios/**/*.toc
-            .draft-scenarios/**/*.out
+            ./draft-scenarios/**/*.aux
+            ./draft-scenarios/**/*.fdb_latexmk
+            ./draft-scenarios/**/*.fls
+            ./draft-scenarios/**/*.toc
+            ./draft-scenarios/**/*.out
           key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-mono-
