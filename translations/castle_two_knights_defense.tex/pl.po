@@ -119,9 +119,6 @@ msgstr ""
 #: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
 #: campaigns/castle_two_knights_defense.tex:9
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://travelledtales.com}{travelledtales.com}\n"
-#| "\n"
 msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
