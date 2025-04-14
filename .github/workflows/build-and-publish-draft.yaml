@@ -35,7 +35,7 @@ jobs:
         with:
           path: |
             ./draft-scenarios/drafts.pdf
-          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          key: pdf-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'metadata.tex', 'assets/**/*') }}
           restore-keys: |
             pdf-drafts-
 
@@ -60,7 +60,7 @@ jobs:
             ./draft-scenarios/**/*.fls
             ./draft-scenarios/**/*.toc
             ./draft-scenarios/**/*.out
-          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          key: texlive-drafts-${{ hashFiles('draft-scenarios/**/*.tex', 'metadata.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-
 
@@ -198,7 +198,7 @@ jobs:
             ./draft-scenarios/**/*.fls
             ./draft-scenarios/**/*.toc
             ./draft-scenarios/**/*.out
-          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'assets/**/*') }}
+          key: texlive-drafts-mono-${{ hashFiles('draft-scenarios/**/*.tex', 'metadata.tex', 'assets/**/*') }}
           restore-keys: |
             texlive-drafts-mono-
 
