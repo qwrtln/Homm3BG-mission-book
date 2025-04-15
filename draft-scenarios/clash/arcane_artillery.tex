@@ -120,32 +120,38 @@ During this Scenario:
 
 \newpage
 
-  \begin{minipage}{0.4\paperwidth}
-    \centering
-    \includegraphics[width=0.36\paperwidth]{\maps/arcane_artillery_2p.png}
-    \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
-  \end{minipage}
-  \vspace{1em}
-  \linebreak
-  \begin{minipage}{0.4\paperwidth}
-    \centering
-    \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_3p.png}
-    \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
-  \end{minipage}
-  \begin{minipage}{0.4\paperwidth}
-    \centering
-    \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_4p.png}
-    \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
-  \end{minipage}
-  \vspace{1em}
-  \linebreak
-  \begin{minipage}{0.4\paperwidth}
-    \centering
-    \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_5p.png}
-    \captionof{figure}{\textbf{5-PLAYER SCENARIO}}
-  \end{minipage}
-  \begin{minipage}{0.4\paperwidth}
-    \centering
-    \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_6p.png}
-    \captionof{figure}{\textbf{6-PLAYER SCENARIO}}
-  \end{minipage}
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, opacity=0.07, yshift=3em] at (current page.center) {
+    \includegraphics[width=\paperwidth, keepaspectratio]{\art/astrologers.png}
+  };
+\end{tikzpicture}
+
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.36\paperwidth]{\maps/arcane_artillery_2p.png}
+  \captionof{figure}{\textbf{2-PLAYER SCENARIO}}
+\end{minipage}
+\vspace{1em}
+\linebreak
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_3p.png}
+  \captionof{figure}{\textbf{3-PLAYER SCENARIO}}
+\end{minipage}
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_4p.png}
+  \captionof{figure}{\textbf{4-PLAYER SCENARIO}}
+\end{minipage}
+\vspace{1em}
+\linebreak
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_5p.png}
+  \captionof{figure}{\textbf{5-PLAYER SCENARIO}}
+\end{minipage}
+\begin{minipage}{0.4\paperwidth}
+  \centering
+  \includegraphics[width=0.38\paperwidth]{\maps/arcane_artillery_6p.png}
+  \captionof{figure}{\textbf{6-PLAYER SCENARIO}}
+\end{minipage}
