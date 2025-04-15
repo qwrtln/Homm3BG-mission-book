@@ -1,4 +1,4 @@
-name: Run po4a check on comment
+name: Invalidate cache on comment
 
 on:
   issue_comment:
@@ -40,16 +40,18 @@ jobs:
             echo "No caches found matching prefix ${{ env.CACHE_PREFIX }}" >> boxy.txt
           else
             CACHE_COUNT=$(jq '.caches | length' caches.json)
+            jq -r '.caches[] | "• Key: \(.key)\n  ID: \(.id)\n  Size: \(if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
+              elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
+              elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
+              else "\(.size_in_bytes/1073741824 | floor) GB" end)\n  Created: \(.created_at)"' caches.json >> formatted-caches.txt
             (
               echo "Found $CACHE_COUNT caches matching prefix `${{ env.CACHE_PREFIX }}`"
               echo "<details><summary>Click to see the list 💾</summary>"
               echo
               echo '```'
-              jq -r '.caches[] | "• Key: \(.key)\n  ID: \(.id)\n  Size: \(if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
-                elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
-                elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
-                else "\(.size_in_bytes/1073741824 | floor) GB" end)\n  Created: \(.created_at)"' caches.json
-              echo '```'>"
+              cat formatted-caches.txt
+              echo '```'
+              echo "</details>"
             ) >> body.txt
           fi
           gh pr comment ${{ steps.comment-branch.outputs.head_ref }} --body-file body.txt
