@@ -18,6 +18,9 @@ jobs:
     name: Check po4a changes to commit
     # if: (github.event.issue.pull_request && startsWith(github.event.comment.body, 'Invalidate cache'))
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+
 
     steps:
       - uses: xt0rted/pull-request-comment-branch@v2
@@ -61,5 +64,3 @@ jobs:
             ) >> body.txt
           fi
           gh pr comment ${{ steps.comment-branch.outputs.head_ref }} --body-file body.txt
-        env:
-          GH_TOKEN: ${{ github.token }}
