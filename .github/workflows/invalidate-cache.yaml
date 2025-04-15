@@ -1,0 +1,57 @@
+name: Run po4a check on comment
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: write
+  id-token: write
+  statuses: write
+
+jobs:
+  check-comment:
+    name: Check po4a changes to commit
+    # if: (github.event.issue.pull_request && startsWith(github.event.comment.body, 'Invalidate cache'))
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+
+      - name: Get cache prefix
+        run: |
+          # comment="${{ github.event.comment.body }}"
+          # cache_name="${comment#Invalidate cache }"
+          # echo "CACHE_PREFIX=$cache_name" >> $GITHUB_ENV
+          echo "CACHE_PREFIX=texlive-drafts-" >> $GITHUB_ENV
+
+      - name: List caches
+        run: |
+          gh api repos/${{ github.repository_owner }}/${{ github.repository }} /actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
+
+      - name: Add comment
+        run: |
+          if [[ $(jq '.caches | length == 0' caches.json) == "true" ]]; then
+            echo "No caches found matching prefix ${{ env.CACHE_PREFIX }}" >> boxy.txt
+          else
+            CACHE_COUNT=$(jq '.caches | length' caches.json)
+            (
+              echo "Found $CACHE_COUNT caches matching prefix `${{ env.CACHE_PREFIX }}`"
+              echo "<details><summary>Click to see the list 💾</summary>"
+              echo
+              echo '```'
+              jq -r '.caches[] | "• Key: \(.key)\n  ID: \(.id)\n  Size: \(if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
+                elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
+                elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
+                else "\(.size_in_bytes/1073741824 | floor) GB" end)\n  Created: \(.created_at)"' caches.json
+              echo '```'>"
+            ) >> body.txt
+          fi
+          gh pr comment ${{ steps.comment-branch.outputs.head_ref }} --body-file body.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
