@@ -23,6 +23,11 @@ jobs:
       - uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
 
+      - name: Set up repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+
       - name: Get cache prefix
         run: |
           # comment="${{ github.event.comment.body }}"
@@ -33,6 +38,7 @@ jobs:
       - name: List caches
         run: |
           gh api repos/${{ github.repository_owner }}/${{ github.repository }} /actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
+          cat caches.json
 
       - name: Add comment
         run: |
