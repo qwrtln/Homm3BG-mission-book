@@ -37,7 +37,7 @@ jobs:
 
       - name: List caches
         run: |
-          gh api repos/${{ github.repository_owner }}/${{ github.repository }} /actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
+          gh api repos/${{ github.repository }}/actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
           cat caches.json
 
       - name: Add comment
