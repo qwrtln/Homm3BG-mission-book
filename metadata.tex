@@ -64,7 +64,7 @@
   linkcolor=goldenbrown,
   filecolor=magenta,
   urlcolor=cyan,
-  pdftitle={Heroes of Might \& Magic III Fan-Made Mission Book},
+  pdftitle=\documenttitle,
   pdfpagemode=UseNone,
 }
 % Set the default spacing between paragraphs. Remove indentation.
@@ -120,7 +120,7 @@
 
 \newcommand{\bronze}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/bronze-mono.svg}{\svgs/bronze.svg}}}}%
-}
+}%
 
 \newcommand{\silver}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/silver-mono.svg}{\svgs/silver.svg}}}}%
@@ -494,75 +494,13 @@
   \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=0.05\paperheight]{\layout/bottom.png}}
 }
 
-\begin{document}
-
 \NewCommandCopy\hrefwithoutfootnote\href
 \iftoggle{printable}{
   \renewcommand{\href}[2]{\hrefwithoutfootnote{#1}{#2}\footnote{#1}\enlargethispage{\baselineskip}}
 }
 
-\include{\sections/title_page.tex}
+\begin{document}
 
-\author{\authortext}
-\maketitle
-
-\begin{center}
-  \iftoggle{githubbuild}{
-    \getenv[\githubsha]{GITHUB_SHA}
-    \versionwarning{} \hrefwithoutfootnote{\repourl}{\StrLeft{\githubsha}{7}}.
-  }{
-    \versionlabel{} \input{.version}
-  }
-
-  \bigbreak
-
-  \intro{}
-
-  \bigbreak
-
-  \includegraphics[width=0.4\linewidth]{\qr/github.png} \\
-  \qrgithub \\
-  \repourl
-\end{center}
-
-\iftoggle{noartbackground}{}{
-  \AddToHookNext{shipout/background}{
-    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{\layout/tausta.png}}
-  }
-}
-\thispagestyle{empty}
-\begin{tikzpicture}[remember picture, overlay]
-  \node(cover)[anchor=center, yshift=9em] at (current page.south) {
-    \includegraphics[width=1.01\paperwidth, keepaspectratio]{\layout/rampart_background.png}
-  };
-\end{tikzpicture}
-
-\clearpage
-
-\begin{multicols*}{2}
-\tableofcontents
-\vspace*{\fill}
-\columnbreak
-\vspace{-3em}
-\includegraphics[width=\linewidth]{\art/elf.jpg}
-\end{multicols*}
-
-\clearpage
-
-\include{\sections/what_to_play.tex}
-
-\include{coops/main.tex}
-
-\include{clash/main.tex}
-
-\include{campaigns/main.tex}
-
-\include{\sections/recommendations.tex}
-
-\include{\sections/credits.tex}
-
-% \include{\sections/notes.tex}
-
-\include{sections/back_cover.tex}
+\input{structure.tex}
 
 \end{document}
