@@ -38,7 +38,7 @@ jobs:
           echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
         env:
           # COMMENT: ${{ github.event.comment.body }}
-          COMMENT: pdf-fr-01
+          COMMENT: texlive-drafts-
 
       - name: List caches
         run: |
@@ -50,6 +50,7 @@ jobs:
             echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> body.txt
           else
             echo "CACHE_COUNT=$(jq '.caches | length' caches.json) " >> $GITHUB_ENV
+            gh cache list -k ${{ env.CACHE_PREFIX }} --json id -q '.[].id' | xargs -n 1 gh cache delete
             jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
                 elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
                 elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
