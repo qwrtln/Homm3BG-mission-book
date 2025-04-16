@@ -97,7 +97,7 @@ VPs for:
   \newcommand{\blocked}[3]{%
     % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle
     \begin{scope}[shift={(#1,#2)}, rotate=#3]
-      \draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]
+      \draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=0.5]
         (0:0.44cm) -- (60:0.44cm) -- (120:0.44cm) --
         (180:0.44cm) -- (240:0.44cm) -- (300:0.44cm) -- cycle;
     \end{scope}
@@ -117,15 +117,15 @@ VPs for:
   \node at (13.4, -10.5) {\textbf{3-PLAYER SCENARIO}};
 
   \node at (4.6, -3.8) {\includegraphics[width=0.54\linewidth]{\maps/king_of_the_hill_v2-2p.png}};
-  
+
   \blocked{6.63}{-2.76}{90}
   \blocked{2.57}{-4.15}{90}
-  
+
   \node at (6.8, -6.4) {\large{{\textbf{\textcolor{darkcandyapplered}{C1/C3}}}}};
-  
+
   \node at (4.61, -3.29) {{{\footnotesize{The}}}};
   \node at (4.61, -3.58) {{{\footnotesize{Hill}}}};
-  
+
   \node at (4.6, -9.0) {\textbf{2-PLAYER SCENARIO}};
 \end{tikzpicture}
 
