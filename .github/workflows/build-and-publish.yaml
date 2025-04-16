@@ -49,6 +49,17 @@ jobs:
           restore-keys: |
             pdf-${{ matrix.language }}-
 
+      - name: Cache Inkscape artifacts
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
@@ -64,24 +75,13 @@ jobs:
             ./clash/*.aux
             ./sections/**/*.aux
           key: >-
-            texlive-${{ matrix.language }}-${{
+            texlive-mission-${{ matrix.language }}-${{
             matrix.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
-            texlive-${{ matrix.language }}-
-
-      - name: Cache Inkscape artifacts
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./svg-inkscape
-          key: >-
-            inkscape-${{ hashFiles('assets/glyphs/*') }}
-          restore-keys: |
-            inkscape-
+            texlive-mission-${{ matrix.language }}-
 
       - name: Compile mission book
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -217,6 +217,16 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Cache Inkscape artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
       - name: Cache LaTeX build
         uses: actions/cache@v4
         with:
@@ -231,24 +241,13 @@ jobs:
             ./clash/*.aux
             ./sections/**/*.aux
           key: >-
-            texlive-mono-${{ matrix.language }}-${{
+            texlive-mission-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
-            texlive-mono-${{ matrix.language }}-
-
-      - name: Cache Inkscape artifacts
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./svg-inkscape
-          key: >-
-            inkscape-${{ hashFiles('assets/glyphs/*') }}
-          restore-keys: |
-            inkscape-
+            texlive-mission-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
