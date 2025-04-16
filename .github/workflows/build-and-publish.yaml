@@ -74,6 +74,7 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
+        id: cache-inkscape;w
         uses: actions/cache@v4
         with:
           path: |
@@ -87,7 +88,7 @@ jobs:
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
-          extra_system_packages: "inkscape"
+          extra_system_packages: ${{ steps.cache-inkscape.outputs.cache-hit != 'true' && 'inkscape' || '' }}
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1
@@ -217,6 +218,17 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Cache Inkscape artifacts
+        id: cache-inkscape
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
       - name: Cache LaTeX build
         uses: actions/cache@v4
         with:
@@ -239,17 +251,6 @@ jobs:
           restore-keys: |
             texlive-mission-mono-${{ matrix.language }}-
 
-      - name: Cache Inkscape artifacts
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./svg-inkscape
-          key: >-
-            inkscape-${{ hashFiles('assets/glyphs/*') }}
-          restore-keys: |
-            inkscape-
-
       - name: Download monochrome maps
         uses: actions/download-artifact@v4
         with:
@@ -260,7 +261,7 @@ jobs:
       - name: Compile monochrome mission book
         uses: xu-cheng/latex-action@v3
         with:
-          extra_system_packages: "inkscape"
+          extra_system_packages: ${{ steps.cache-inkscape.outputs.cache-hit != 'true' && 'inkscape' || '' }}
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
