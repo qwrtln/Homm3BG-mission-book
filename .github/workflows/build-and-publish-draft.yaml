@@ -41,7 +41,6 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        id: cache-inkscape
         uses: actions/cache@v4
         with:
           path: |
@@ -182,7 +181,6 @@ jobs:
 
       - name: Cache Inkscape artifacts
         uses: actions/cache@v4
-        id: cache-inkscape
         with:
           path: |
             ./svg-inkscape

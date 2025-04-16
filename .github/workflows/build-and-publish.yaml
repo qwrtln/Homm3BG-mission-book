@@ -49,6 +49,17 @@ jobs:
           restore-keys: |
             pdf-${{ matrix.language }}-
 
+      - name: Cache Inkscape artifacts
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
@@ -71,18 +82,6 @@ jobs:
             }}
           restore-keys: |
             texlive-mission-${{ matrix.language }}-
-
-      - name: Cache Inkscape artifacts
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        id: cache-inkscape
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./svg-inkscape
-          key: >-
-            inkscape-${{ hashFiles('assets/glyphs/*') }}
-          restore-keys: |
-            inkscape-
 
       - name: Compile mission book
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -219,7 +218,6 @@ jobs:
           args: "--no-update"
 
       - name: Cache Inkscape artifacts
-        id: cache-inkscape
         uses: actions/cache@v4
         with:
           path: |
