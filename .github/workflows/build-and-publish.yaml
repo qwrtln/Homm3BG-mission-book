@@ -64,13 +64,13 @@ jobs:
             ./clash/*.aux
             ./sections/**/*.aux
           key: >-
-            texlive-${{ matrix.language }}-${{
+            texlive-mission-${{ matrix.language }}-${{
             matrix.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
-            texlive-${{ matrix.language }}-
+            texlive-mission-${{ matrix.language }}-
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -231,13 +231,13 @@ jobs:
             ./clash/*.aux
             ./sections/**/*.aux
           key: >-
-            texlive-mono-${{ matrix.language }}-${{
+            texlive-mission-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
-            texlive-mono-${{ matrix.language }}-
+            texlive-mission-mono-${{ matrix.language }}-
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
