@@ -54,15 +54,15 @@ jobs:
             echo 'No caches found matching prefix "${{ env.CACHE_PREFIX }}"' >> boxy.txt
           else
             CACHE_COUNT=$(jq '.caches | length' caches.json)
-            jq -r '.caches[] | "• Key: \(.key)\n  Size: \(if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
+          jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
               elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
               elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
-          else "\(.size_in_bytes/1073741824 | floor) GB" end)\n  Created: \(.created_at)\n  Last used: \(.last_accessed_at)\n  ID: \(.id)\n  Version: \(.version)"' caches.json >> formatted-caches.txt
+          else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json >> formatted-caches.txt
             (
               echo "Found $CACHE_COUNT 💾 caches matching prefix `${{ env.CACHE_PREFIX }}`"
               echo "<details><summary>Click to see the list</summary>"
               echo
-              echo '```'
+              echo '```jq'
               cat formatted-caches.txt
               echo '```'
               echo "</details>"
