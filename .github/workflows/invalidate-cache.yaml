@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   check-comment:
-    name: Check po4a changes to commit
+    name: Invalidate cache
     # if: (github.event.issue.pull_request && startsWith(github.event.comment.body, 'Invalidate cache'))
     runs-on: ubuntu-latest
     env:
@@ -48,14 +48,14 @@ jobs:
           if [[ $(jq '.caches | length == 0' caches.json) == "true" ]]; then
             echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> body.txt
           else
-            echo "CACHE_COUNT=$(jq '.caches | length' caches.json) " >> $GITHUB_ENV
+            CACHE_COUNT=$(jq '.caches | length' caches.json)
             gh cache list -k ${{ env.CACHE_PREFIX }} --json id -q '.[].id' | xargs -n 1 gh cache delete
             jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
                 elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
                 elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
             else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json >> formatted-caches.txt
             (
-              echo 'Deleted ${{ env.CACHE_COUNT }} caches 💾 matching prefix `${{ env.CACHE_PREFIX }}`'
+              echo "Deleted ${CACHE_COUNT} caches 💾 matching prefix \`${{ env.CACHE_PREFIX }}\`"
               echo "<details><summary>Click to see the list</summary>"
               echo
               echo '```json'
