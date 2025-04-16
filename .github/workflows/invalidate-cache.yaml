@@ -38,7 +38,7 @@ jobs:
           echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
         env:
           # COMMENT: ${{ github.event.comment.body }}
-          COMMENT: pdf-fr-01de0aedf58e8
+          COMMENT: pdf-fr-01
 
       - name: List caches
         run: |
@@ -47,7 +47,7 @@ jobs:
       - name: Add comment
         run: |
           if [[ $(jq '.caches | length == 0' caches.json) == "true" ]]; then
-            echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> boxy.txt
+            echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> body.txt
           else
             echo "CACHE_COUNT=$(jq '.caches | length' caches.json) " >> $GITHUB_ENV
             jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
