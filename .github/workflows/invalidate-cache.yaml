@@ -30,6 +30,12 @@ jobs:
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
 
+      - name: Check if user has write access
+        id: write_access
+        uses: prince-chrismc/check-actor-permissions-action@v3
+        with:
+          permission: write
+
       - name: Get cache prefix
         run: |
           comment="${{ env.COMMENT }}"
@@ -37,7 +43,7 @@ jobs:
           echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
         env:
           # COMMENT: ${{ github.event.comment.body }}
-          COMMENT: pdf-drafts-
+          COMMENT: texlive-drafts-
 
       - name: List caches
         run: |
@@ -55,7 +61,7 @@ jobs:
                 elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
             else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json >> formatted-caches.txt
             (
-              echo "Deleted ${CACHE_COUNT} caches 💾 matching prefix \`${{ env.CACHE_PREFIX }}\`"
+              echo "Invalidated ${CACHE_COUNT} caches 💾 matching prefix \`${{ env.CACHE_PREFIX }}\`"
               echo "<details><summary>Click to see the list</summary>"
               echo
               echo '```json'
@@ -65,3 +71,10 @@ jobs:
             ) >> body.txt
           fi
           gh pr comment ${{ steps.comment-branch.outputs.head_ref }} --body-file body.txt
+
+      - name: Comment about non-membership status
+        if: ${{ failure() && steps.write_access.conclusion == 'failure' }}
+        run: |
+          gh pr comment ${{ steps.comment-branch.outputs.head_ref }} --body "⛔ Sorry, only members with write access are allowed to run this action!"
+        env:
+          GH_TOKEN: ${{ github.token }}
