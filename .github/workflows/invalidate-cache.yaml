@@ -37,7 +37,7 @@ jobs:
           echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
         env:
           # COMMENT: ${{ github.event.comment.body }}
-          COMMENT: texlive-drafts-
+          COMMENT: pdf-drafts-
 
       - name: List caches
         run: |
