@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'draft-scenarios/**'
-      - '.github/workflows/build-and-publish-draft.yaml'
+      - '.github/workflows/**'
   pull_request:
     branches: [main]
     paths:
       - 'draft-scenarios/**'
-      - '.github/workflows/build-and-publish-draft.yaml'
+      - '.github/workflows/**'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
