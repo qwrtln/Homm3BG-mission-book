@@ -3,8 +3,6 @@ name: Invalidate cache on comment
 on:
   issue_comment:
     types: [created]
-  pull_request:
-    branches: [main]
 
 permissions:
   actions: write
@@ -15,11 +13,10 @@ permissions:
 jobs:
   check-comment:
     name: Invalidate cache
-    # if: (github.event.issue.pull_request && startsWith(github.event.comment.body, 'Invalidate cache'))
+    if: (github.event.issue.pull_request && startsWith(github.event.comment.body, 'Invalidate cache'))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-
 
     steps:
       - uses: xt0rted/pull-request-comment-branch@v2
@@ -42,8 +39,7 @@ jobs:
           cache_prefix="${comment#Invalidate cache }"
           echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
         env:
-          # COMMENT: ${{ github.event.comment.body }}
-          COMMENT: texlive-drafts-dude-
+          COMMENT: ${{ github.event.comment.body }}
 
       - name: List caches
         run: |
