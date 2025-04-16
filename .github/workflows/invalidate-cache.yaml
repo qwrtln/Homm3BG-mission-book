@@ -7,11 +7,10 @@ on:
     branches: [main]
 
 permissions:
+  actions: write
   contents: read
   issues: read
   pull-requests: write
-  id-token: write
-  statuses: write
 
 jobs:
   check-comment:
