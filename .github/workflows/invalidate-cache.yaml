@@ -33,20 +33,25 @@ jobs:
 
       - name: Get cache prefix
         run: |
-          # comment="${{ github.event.comment.body }}"
-          # cache_name="${comment#Invalidate cache }"
-          # echo "CACHE_PREFIX=$cache_name" >> $GITHUB_ENV
-          echo "CACHE_PREFIX=texlive-drafts-" >> $GITHUB_ENV
+          comment="${{ env.COMMENT }}"
+          cache_prefix="${comment#Invalidate cache }"
+          echo "CACHE_PREFIX=$cache_prefix" >> $GITHUB_ENV
+        env:
+          # COMMENT: ${{ github.event.comment.body }}
+          COMMENT: texlive-drafts-
 
       - name: List caches
         run: |
           gh api repos/${{ github.repository }}/actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
-          jq '.caches[]' caches.json
+          jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
+              elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
+              elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
+          else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json
 
       - name: Add comment
         run: |
           if [[ $(jq '.caches | length == 0' caches.json) == "true" ]]; then
-            echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> boxy.txt
+            echo 'No caches found matching prefix "${{ env.CACHE_PREFIX }}"' >> boxy.txt
           else
             CACHE_COUNT=$(jq '.caches | length' caches.json)
             jq -r '.caches[] | "• Key: \(.key)\n  Size: \(if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
