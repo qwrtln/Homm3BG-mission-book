@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-16 16:46+0200\n"
+"POT-Creation-Date: 2025-04-16 17:47+0200\n"
 "PO-Revision-Date: 2025-03-29 21:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -352,13 +352,15 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:100
+#: clash/the_fractured_kingdoms.tex:102
 #, no-wrap
 msgid ""
 "  \\newcommand{\\blocked}[3]{%\n"
 "    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
 "    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
-"      \\draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=\\iftoggle{noartbackground}{0.9}{0.5}]\n"
+"      \\iftoggle{noartbackground}\n"
+"      {\\draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]}\n"
+"      {\\draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=\\iftoggle{noartbackground}{0.9}{0.5}]}\n"
 "        (0:0.56cm) -- (60:0.56cm) -- (120:0.56cm) --\n"
 "        (180:0.56cm) -- (240:0.56cm) -- (300:0.56cm) -- cycle;\n"
 "    \\end{scope}\n"
@@ -368,7 +370,9 @@ msgstr ""
 "  \\newcommand{\\blocked}[3]{%\n"
 "    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
 "    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
-"      \\draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=\\iftoggle{noartbackground}{0.9}{0.5}]\n"
+"      \\iftoggle{noartbackground}\n"
+"      {\\draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]}\n"
+"      {\\draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=\\iftoggle{noartbackground}{0.9}{0.5}]}\n"
 "        (0:0.56cm) -- (60:0.56cm) -- (120:0.56cm) --\n"
 "        (180:0.56cm) -- (240:0.56cm) -- (300:0.56cm) -- cycle;\n"
 "    \\end{scope}\n"
@@ -376,7 +380,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:106
+#: clash/the_fractured_kingdoms.tex:108
 #, no-wrap
 msgid ""
 "  \\newcommand{\\arrow}[3]{\n"
@@ -391,26 +395,26 @@ msgstr ""
 "    \\node[rotate=#3, opacity=0.5] at ([shift={(2pt,-2pt)}]#1,#2) {\\includegraphics[height=23px]{\\images/movement_token_shadow.png}};\n"
 "    \\node[rotate=#3] at (#1, #2) {\\svg[20]{movement_token_green}};\n"
 "  }\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:110
-#, no-wrap
-msgid ""
-"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
-"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
-"  };\n"
-"\n"
-msgstr ""
-"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
-"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
-"  };\n"
 "\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:112
 #, no-wrap
 msgid ""
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
+"  };\n"
+"\n"
+msgstr ""
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
+"  };\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:114
+#, no-wrap
+msgid ""
 "  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
 "\n"
 msgstr ""
@@ -418,7 +422,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:115
+#: clash/the_fractured_kingdoms.tex:117
 #, no-wrap
 msgid ""
 "  \\arrow{12.35}{-15.7}{-142}\n"
@@ -430,7 +434,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:118
+#: clash/the_fractured_kingdoms.tex:120
 #, no-wrap
 msgid ""
 "  \\arrow{13.91}{-9.95}{-72}\n"
@@ -442,7 +446,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:121
+#: clash/the_fractured_kingdoms.tex:123
 #, no-wrap
 msgid ""
 "  \\arrow{8.2}{-4.35}{-176}\n"
@@ -454,7 +458,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:124
+#: clash/the_fractured_kingdoms.tex:126
 #, no-wrap
 msgid ""
 "  \\arrow{1.5}{-10.35}{-99}\n"
@@ -463,44 +467,44 @@ msgid ""
 msgstr ""
 "  \\arrow{1.5}{-10.35}{-99}\n"
 "  \\arrow{4.2}{-10.75}{81}\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:127
-#, no-wrap
-msgid ""
-"  \\arrow{6.65}{-16.1}{155}\n"
-"  \\arrow{5.45}{-18.7}{-25}\n"
-"\n"
-msgstr ""
-"  \\arrow{6.65}{-16.1}{155}\n"
-"  \\arrow{5.45}{-18.7}{-25}\n"
 "\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:129
 #, no-wrap
 msgid ""
-"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
 "\n"
 msgstr ""
-"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
 "\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:131
 #, no-wrap
 msgid ""
-"  \\blocked{11.40}{-8.87}{23}\n"
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
 "\n"
 msgstr ""
-"  \\blocked{11.40}{-8.87}{23}\n"
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
 "\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:133
 #, no-wrap
 msgid ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
+msgstr ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:135
+#, no-wrap
+msgid ""
 "  \\blocked{12.69}{-13.12}{67.7}\n"
 "\n"
 msgstr ""
@@ -508,7 +512,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:135
+#: clash/the_fractured_kingdoms.tex:137
 #, no-wrap
 msgid ""
 "  \\blocked{9.135}{-15.58}{0}\n"
@@ -518,7 +522,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:137
+#: clash/the_fractured_kingdoms.tex:139
 #, no-wrap
 msgid ""
 "  \\blocked{5.58}{-13.01}{-71}\n"
