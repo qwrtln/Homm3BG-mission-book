@@ -43,15 +43,15 @@ jobs:
       - name: List caches
         run: |
           gh api repos/${{ github.repository }}/actions/caches | jq -c '{caches: [.actions_caches[] | select(.key | startswith("${{ env.CACHE_PREFIX }}"))]}' > caches.json
-          jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
-              elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
-              elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
-          else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json
+          # jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
+          #     elif .size_in_bytes < 1048576 then "\(.size_in_bytes/1024 | floor) KB"
+          #     elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
+          # else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json
 
       - name: Add comment
         run: |
           if [[ $(jq '.caches | length == 0' caches.json) == "true" ]]; then
-            echo 'No caches found matching prefix "${{ env.CACHE_PREFIX }}"' >> boxy.txt
+            echo 'No caches found matching prefix `${{ env.CACHE_PREFIX }}`' >> boxy.txt
           else
             CACHE_COUNT=$(jq '.caches | length' caches.json)
           jq '.caches[] | { key,size: (if .size_in_bytes < 1024 then "\(.size_in_bytes) bytes"
@@ -59,10 +59,10 @@ jobs:
               elif .size_in_bytes < 1073741824 then "\(.size_in_bytes/1048576 | floor) MB"
           else "\(.size_in_bytes/1073741824 | floor) GB" end), ref, created_at, last_accessed_at, id, version }' caches.json >> formatted-caches.txt
             (
-              echo "Found $CACHE_COUNT 💾 caches matching prefix `${{ env.CACHE_PREFIX }}`"
+              echo 'Found $CACHE_COUNT caches 💾 matching prefix `${{ env.CACHE_PREFIX }}`'
               echo "<details><summary>Click to see the list</summary>"
               echo
-              echo '```jq'
+              echo '```json'
               cat formatted-caches.txt
               echo '```'
               echo "</details>"
