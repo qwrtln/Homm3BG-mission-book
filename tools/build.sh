@@ -5,6 +5,7 @@ LANGUAGE="en"
 DRAFTS_MODE=0
 PRINTABLE_MODE=0
 MONO_MODE=0
+SCENARIO_KEYWORD=""
 
 valid_languages=("en" "pl" "fr" "cs")
 
@@ -21,6 +22,7 @@ usage() {
   echo "  -p, --printable    Enable printable mode"
   echo "  -m, --mono         Monochrome mode"
   echo "  -d, --drafts       Generate draft scenarios"
+  echo "  -s, --scenario     Build a single scenario matching a keyword given"
   echo "  -h, --help         Show this help message"
   echo
   echo "Short options can be combined, e.g. -dm for drafts and mono"
@@ -65,6 +67,14 @@ while [[ $# -gt 0 ]]; do
       printable) PRINTABLE_MODE=1 ;;
       mono) MONO_MODE=1 ;;
       drafts) DRAFTS_MODE=1 ;;
+      scenario)
+        if [[ $# -lt 1 ]]; then
+          echo "Error: --scenario requires a keyword argument" >&2
+          usage
+        fi
+        SCENARIO_KEYWORD="$1"
+        shift
+        ;;
       help) usage ;;
       *) echo "Error: Unknown option $arg" >&2; usage ;;
     esac
@@ -73,11 +83,25 @@ while [[ $# -gt 0 ]]; do
 
   # Handle short and combined options
   if [[ $arg == -* ]]; then
+    # Special handling for -s which requires an argument
+    if [[ $arg =~ s && ! $arg =~ ^-s$ ]]; then
+      echo "Error: -s option must be specified separately as it requires an argument" >&2
+      usage
+    fi
+
     for (( i=1; i<${#arg}; i++ )); do
       case "${arg:$i:1}" in
         p) PRINTABLE_MODE=1 ;;
         m) MONO_MODE=1 ;;
         d) DRAFTS_MODE=1 ;;
+        s)
+          if [[ $# -lt 1 ]]; then
+            echo "Error: -s requires a keyword argument" >&2
+            usage
+          fi
+          SCENARIO_KEYWORD="$1"
+          shift
+          ;;
         h) usage ;;
         *) echo "Error: Unknown option -${arg:$i:1}" >&2; usage ;;
       esac
@@ -97,6 +121,37 @@ if [[ "${DRAFTS_MODE}" -eq 1 && "${LANGUAGE}" != "en" ]]; then
   echo "Error: Language selection is incompatible with drafts mode" >&2
   exit 1
 fi
+
+# Define cleanup functions that will be registered with trap
+cleanup_monochrome() {
+  if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
+    git restore assets/maps &> /dev/null || git restore ../assets/maps
+  fi
+}
+
+cleanup_windows_drafts() {
+  if [[ -n "$original_dir" ]]; then
+    # Windows-specific cleanup
+    cd "$original_dir" || exit
+    git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
+  fi
+}
+
+cleanup_scenario() {
+  if [[ -n "${SCENARIO_KEYWORD}" ]]; then
+    git restore structure.tex
+  fi
+}
+
+# Combined cleanup function for trap
+cleanup() {
+  cleanup_monochrome
+  cleanup_windows_drafts
+  cleanup_scenario
+}
+
+# Register the combined cleanup with trap
+trap cleanup EXIT
 
 monochrome_with_cache() {
   local img
@@ -130,22 +185,13 @@ monochrome_with_cache() {
   echo "${current_hash}" > "${cache_hash}"
 }
 
+# Handle scenario filtering
+if [[ -n "${SCENARIO_KEYWORD}" ]]; then
+  tools/find_scenario.sh "${SCENARIO_KEYWORD}"
+fi
+
 # Handle drafts
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
-  # shellcheck disable=SC2317
-  cleanup() {
-    if [[ -n "$original_dir" ]]; then
-      # Windows-specific cleanup
-      cd "$original_dir" || exit
-      git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
-    fi
-
-    if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
-      git restore assets/maps &> /dev/null || git restore ../assets/maps
-    fi
-  }
-  trap cleanup EXIT
-
   # For Windows only - replace symlink with a copy
   if [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
       echo "Windows detected, handling symlinks."
@@ -158,7 +204,6 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
-    trap 'git restore assets/maps' EXIT
 
     find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
@@ -186,7 +231,6 @@ fi
 if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
   CACHE_DIR="cache/monochrome-maps"
   mkdir -p ${CACHE_DIR}
-  trap 'git restore assets/maps' EXIT
 
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
     -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
