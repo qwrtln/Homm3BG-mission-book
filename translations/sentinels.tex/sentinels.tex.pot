@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-14 07:17+0100\n"
+"POT-Creation-Date: 2025-04-25 07:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -313,19 +313,18 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:84
+#: coops/sentinels.tex:83
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Repeat the Timed Events of Rounds \\mbox{7 and 8.}\n"
+"  \\item Spawn an enemy army following the rules outlined below.\n"
 "\\end{itemize}\n"
-"\\vspace{-0.5em}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:60
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:174
@@ -338,7 +337,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:98
+#: coops/sentinels.tex:97
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -356,7 +355,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:100
+#: coops/sentinels.tex:99
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
@@ -364,7 +363,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:110
+#: coops/sentinels.tex:109
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -380,7 +379,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:115
+#: coops/sentinels.tex:114
 #, no-wrap
 msgid ""
 "  \\item For a more balanced distribution, in Rounds 7 and 9, only roll the second Attack Die (D2). For D1, take the opposite result from what was rolled in the previous Round.\n"
@@ -391,7 +390,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:122
+#: coops/sentinels.tex:121
 #, no-wrap
 msgid ""
 "  \\item Enemy armies have 3 MPs per Round.\n"
@@ -404,7 +403,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:124
+#: coops/sentinels.tex:123
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
@@ -412,7 +411,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:132
+#: coops/sentinels.tex:131
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -426,7 +425,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:134
+#: coops/sentinels.tex:133
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
@@ -434,7 +433,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/sentinels.tex:141
+#: coops/sentinels.tex:140
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -447,7 +446,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
@@ -458,7 +457,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
@@ -470,7 +469,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: coops/sentinels.tex:152
+#: coops/sentinels.tex:151
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -479,7 +478,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:193
+#: coops/sentinels.tex:192
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
@@ -507,12 +506,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: coops/sentinels.tex:197
+#: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
 msgstr ""
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:197
+#: coops/sentinels.tex:196
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
