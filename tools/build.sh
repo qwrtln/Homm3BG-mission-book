@@ -237,6 +237,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     latexmk -pdflua -shell-escape drafts.tex
   ${open} drafts.pdf &> /dev/null &
   cd - || exit
+  echo "draft-scenarios/drafts.pdf"
   exit 0
 fi
 
