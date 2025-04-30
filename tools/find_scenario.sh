@@ -50,8 +50,8 @@ else
     # Extract just the file path (everything before the first colon)
     FILE_PATH=$(echo "${RESULTS[$i]}" | cut -d':' -f1)
     CONTENT=$(echo "${RESULTS[$i]}" | cut -d':' -f3)
-    echo "[$((i+1))] $FILE_PATH" | grep -i "$INPUT" --color=always
-    echo "    ${CONTENT}" | grep -i "$INPUT" --color=always
+    echo -e "[$((i+1))] \033[1;32m$FILE_PATH\033[0m"
+    echo "    $CONTENT" | grep -i "$INPUT" --color=always
     echo ""
   done
 
