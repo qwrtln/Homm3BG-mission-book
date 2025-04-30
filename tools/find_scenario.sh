@@ -20,20 +20,13 @@ if [[ "$COUNT" -eq 0 ]]; then
 elif [[ "$COUNT" -eq 1 ]]; then
   # Extract just the file path (everything before the first colon)
   FILE_PATH=$(echo "${RESULTS[0]}" | cut -d':' -f1)
-  if [[ "$FILE_PATH" == sections/* ]]; then
-    echo "Found reference: $FILE_PATH"
-    echo "\\include{$FILE_PATH}" > structure.tex
-    exit 0
-  fi
-
   FILENAME=$(basename "$FILE_PATH")
 
   # Look for \input{...} references to this file in the search directories
-  INPUT_REFERENCES=$(grep -r ".input{.*$FILENAME" $SEARCH_DIRS --include="*.tex")
-
+  INPUT_REFERENCES=$(grep -r ".\(input\|include\){.*$FILENAME" $SEARCH_DIRS structure.tex --include="*.tex" --exclude-dir "*translated*")
   if [[ -n "$INPUT_REFERENCES" ]]; then
     # Extract the path from the first reference
-    REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -1 | grep -o '.input{[^}]*}' | sed 's/\\input{//;s/}//')
+    REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -1 | grep -o '.\(input\|include\){[^}]*}' | sed 's/\\include{//g;s/\\input{//g;s/}//g')
 
     if [[ "$FILE_PATH" == draft-scenarios/* ]]; then
       if [[ "$REFERENCED_PATH" != draft-scenarios/* ]]; then
@@ -74,11 +67,11 @@ else
     fi
 
     FILENAME=$(basename "$FILE_PATH")
-    INPUT_REFERENCES=$(grep -r ".input{.*$FILENAME" $SEARCH_DIRS --include="*.tex")
+    INPUT_REFERENCES=$(grep -r ".\(input\|include\){.*$FILENAME" $SEARCH_DIRS --include="*.tex")
 
     if [[ -n "$INPUT_REFERENCES" ]]; then
       # Extract the path from the first reference
-      REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -1 | grep -o '.input{[^}]*}' | sed 's/\\input{//;s/}//')
+      REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -1 | grep -o '.\(input\|include\){[^}]*}' | sed 's/\\include{//g;s/\\input{//g;s/}//g')
 
       if [[ "$FILE_PATH" == draft-scenarios/* ]]; then
         if [[ "$REFERENCED_PATH" != draft-scenarios/* ]]; then
