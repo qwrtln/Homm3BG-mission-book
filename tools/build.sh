@@ -116,32 +116,34 @@ done
 [[ $PRINTABLE_MODE -eq 1 ]] && export HOMM3_PRINTABLE=1
 [[ $MONO_MODE -eq 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
 
-# Check if language is specified with drafts mode
-if [[ "${DRAFTS_MODE}" -eq 1 && "${LANGUAGE}" != "en" ]]; then
-  echo "Error: Language selection is incompatible with drafts mode" >&2
-  exit 1
+# Check for incompatible options
+if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
+  if [[ "${LANGUAGE}" != "en" ]]; then
+    echo "Error: Language selection is incompatible with drafts mode" >&2
+    exit 1
+  fi
+  if [[ "${SCENARIO_KEYWORD}" != "" ]]; then
+    echo "Error: Scenario selection is incompatible with drafts mode" >&2
+    exit 1
+  fi
 fi
 
-if [[ "${DRAFTS_MODE}" -eq 1 && "${SCENARIO_KEYWORD}" != "" ]]; then
-  echo "Error: Scenario selection is incompatible with drafts mode" >&2
-  exit 1
-fi
-
-# Define cleanup functions that will be registered with trap
+# Mono mode cleanup to restore maps
 cleanup_monochrome() {
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     git restore assets/maps &> /dev/null || git restore ../assets/maps
   fi
 }
 
+# Windows-specific cleanup to handle symlinks
 cleanup_windows_drafts() {
   if [[ -n "$original_dir" ]]; then
-    # Windows-specific cleanup
     cd "$original_dir" || exit
     git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
   fi
 }
 
+# Single scenario cleanup to restore document structure
 cleanup_scenario() {
   if [[ -n "${SCENARIO_KEYWORD}" ]]; then
     git restore structure.tex
@@ -189,9 +191,23 @@ monochrome_with_cache() {
   echo "${current_hash}" > "${cache_hash}"
 }
 
-# Handle scenario filtering
+# Handle scenario filtering, save for later use
+SCENARIO=""
 if [[ -n "${SCENARIO_KEYWORD}" ]]; then
-  tools/find_scenario.sh "${SCENARIO_KEYWORD}"
+  if ! tools/find_scenario.sh "${SCENARIO_KEYWORD}"; then
+    exit 1
+  fi
+  SCENARIO=$(grep -o "[^/{}]*\.[^{}]*" structure.tex | cut -d'.' -f1)
+  # Handle monochrome mode for a single file
+  if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
+    CACHE_DIR="cache/monochrome-maps"
+    mkdir -p ${CACHE_DIR}
+
+    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec grep -Po "maps[^}]*\.png" {} \; | while IFS= read -r IMG; do
+      IMG="assets/${IMG}"
+      monochrome_with_cache "${IMG}" "${CACHE_DIR}"
+    done
+  fi
 fi
 
 # Handle drafts
@@ -205,6 +221,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
       cp "latexmkrc" "metadata.tex" ".version" "draft-scenarios/"
   fi
 
+  # Monochromize maps if it's mono mode
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
@@ -223,6 +240,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   exit 0
 fi
 
+# Run po4a for non-English languages
 if [[ ${LANGUAGE} != en ]]; then
   if ! po4a --no-update po4a.cfg | grep "/${LANGUAGE}/"; then
     echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
@@ -231,7 +249,8 @@ if [[ ${LANGUAGE} != en ]]; then
   fi
 fi
 
-if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
+# Monochromize maps if it's mono mode but not in single scenario mode, which was handled before
+if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]] && [[ "${SCENARIO_KEYWORD}" == "" ]]; then
   CACHE_DIR="cache/monochrome-maps"
   mkdir -p ${CACHE_DIR}
 
@@ -248,15 +267,15 @@ rm -f "main_${LANGUAGE}.aux" && \
 
 # Rename the file if building a single scenario
 FILE="main_${LANGUAGE}.pdf"
-if [[ "${SCENARIO_KEYWORD}" != "" ]]; then
-  FILE="$(grep -o "[^/{}]*\.[^{}]*" structure.tex | cut -d'.' -f1).pdf"
+if [[ "${SCENARIO}" != "" ]]; then
+  FILE="${SCENARIO}.pdf"
   cp "main_${LANGUAGE}.pdf" "${FILE}"
 fi
 
 ${open} "${FILE}" &> /dev/null &
 
 # Optimize PDF if it's a single scenario and ghostscript is available
-if [[ "${SCENARIO_KEYWORD}" != "" ]] && command -v gs >/dev/null 2>&1; then
+if [[ "${SCENARIO}" != "" ]] && command -v gs >/dev/null 2>&1; then
   tools/optimize.sh -f "${FILE}"
   mv "${FILE%.*}_optimized.${FILE##*.}" "${FILE}"
 fi

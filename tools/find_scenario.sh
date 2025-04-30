@@ -16,10 +16,16 @@ COUNT=${#RESULTS[@]}
 # Handle based on number of results
 if [[ "$COUNT" -eq 0 ]]; then
   echo "No files found matching '$INPUT'."
-  exit 0
+  exit 1
 elif [[ "$COUNT" -eq 1 ]]; then
   # Extract just the file path (everything before the first colon)
   FILE_PATH=$(echo "${RESULTS[0]}" | cut -d':' -f1)
+  if [[ "$FILE_PATH" == sections/* ]]; then
+    echo "Found reference: $FILE_PATH"
+    echo "\\include{$FILE_PATH}" > structure.tex
+    exit 0
+  fi
+
   FILENAME=$(basename "$FILE_PATH")
 
   # Look for \input{...} references to this file in the search directories
@@ -61,6 +67,11 @@ else
   read -r SELECTION
   if [[ "$SELECTION" =~ ^[0-9]+$ ]] && [[ "$SELECTION" -ge 1 ]] && [[ "$SELECTION" -le "$COUNT" ]]; then
     FILE_PATH=$(echo "${RESULTS[$((SELECTION-1))]}" | cut -d':' -f1)
+    if [[ "$FILE_PATH" == sections/* ]]; then
+      echo "Found reference: $FILE_PATH"
+      echo "\\include{$FILE_PATH}" > structure.tex
+      exit 0
+    fi
 
     FILENAME=$(basename "$FILE_PATH")
     INPUT_REFERENCES=$(grep -r ".input{.*$FILENAME" $SEARCH_DIRS --include="*.tex")
@@ -87,4 +98,3 @@ else
     exit 1
   fi
 fi
-
