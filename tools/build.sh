@@ -10,8 +10,8 @@ SCENARIO_KEYWORD=""
 valid_languages=("en" "pl" "fr" "cs")
 
 usage() {
-  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts]"
-  echo "Example: $0 fr --printable --mono"
+  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario KEYWORD]"
+  echo "Example: $0 -d --mono"
   echo
   echo "Positional arguments:"
   echo "  language           Language code (${valid_languages[*]})"
@@ -119,6 +119,11 @@ done
 # Check if language is specified with drafts mode
 if [[ "${DRAFTS_MODE}" -eq 1 && "${LANGUAGE}" != "en" ]]; then
   echo "Error: Language selection is incompatible with drafts mode" >&2
+  exit 1
+fi
+
+if [[ "${DRAFTS_MODE}" -eq 1 && "${SCENARIO_KEYWORD}" != "" ]]; then
+  echo "Error: Scenario selection is incompatible with drafts mode" >&2
   exit 1
 fi
 
