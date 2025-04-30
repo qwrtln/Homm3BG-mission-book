@@ -67,7 +67,7 @@ else
   read -r SELECTION
   if [[ "$SELECTION" =~ ^[0-9]+$ ]] && [[ "$SELECTION" -ge 1 ]] && [[ "$SELECTION" -le "$COUNT" ]]; then
     FILE_PATH=$(echo "${RESULTS[$((SELECTION-1))]}" | cut -d':' -f1)
-    if [[ "$FILE_PATH" == sections/* ]]; then
+    if [[ "$FILE_PATH" == */sections/* ]]; then
       echo "Found reference: $FILE_PATH"
       echo "\\include{$FILE_PATH}" > structure.tex
       exit 0
