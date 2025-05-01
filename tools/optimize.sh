@@ -4,6 +4,7 @@
 LANGUAGE="en"
 DRAFT_MODE=false
 CMYK_MODE=false
+CUSTOM_FILE=""
 ARGS=""
 
 while [[ $# -gt 0 ]]; do
@@ -11,6 +12,15 @@ while [[ $# -gt 0 ]]; do
     -d|--drafts)
       DRAFT_MODE=true
       shift
+      ;;
+    -f|--file)
+      if [[ -n "$2" && "$2" != -* ]]; then
+        CUSTOM_FILE="$2"
+        shift 2
+      else
+        echo "Error: Argument for $1 is missing" >&2
+        exit 1
+      fi
       ;;
     --cmyk)
       CMYK_MODE=true
@@ -26,7 +36,10 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ "$DRAFT_MODE" == "true" ]]; then
+if [[ -n "$CUSTOM_FILE" ]]; then
+  INPUT_FILE="$CUSTOM_FILE"
+  OUTPUT_FILE="${CUSTOM_FILE%.*}_optimized.${CUSTOM_FILE##*.}"
+elif [[ "$DRAFT_MODE" == "true" ]]; then
   INPUT_FILE="draft-scenarios/drafts.pdf"
   OUTPUT_FILE="draft-scenarios/drafts_optimized.pdf"
 else
@@ -40,7 +53,7 @@ fi
 
 gs -o "${OUTPUT_FILE}" \
   -sDEVICE=pdfwrite \
-  -dCompatibilityLevel=1.5 \
+  -dCompatibilityLevel=1.7 \
   -dPDFSETTINGS=/prepress \
   -dDetectDuplicateImages=true \
   ${ARGS} "${INPUT_FILE}"

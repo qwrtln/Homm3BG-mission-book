@@ -14,6 +14,7 @@ show_help() {
     echo "Any additional arguments will be passed to the script."
     echo ""
     echo "Example: $0 tools/build.sh pl"
+    echo "Example: $0 tools/build.sh -s \"keyword\""
     echo "Example: $0 tools/compare_pages.sh -l en -r 5-9"
     exit 1
 }
@@ -43,14 +44,17 @@ fi
 
 echo "Running $SCRIPT_PATH" "${@}"
 
+temp_output=$(mktemp)
+trap 'rm -f "$temp_output"' EXIT
+
 if [[ "$CONTAINER_ENGINE" = "podman" ]]; then
-    podman run --rm -v "$(pwd):/data" "$IMAGE" "$SCRIPT_PATH" "$@"
+    podman run --rm -v "$(pwd):/data" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
 else
     # For Docker, we also specify the user to avoid permission issues
-    docker run --rm -v "$(pwd):/data" --user "$(id -u):$(id -g)" "$IMAGE" "$SCRIPT_PATH" "$@"
+    docker run --rm -v "$(pwd):/data" --user "$(id -u):$(id -g)" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
 fi
 
-# Open PDF after build script
+# Open PDF only after build script
 if [[ "$SCRIPT_NAME" == "build" ]]; then
     # Determine the open command based on OS
     case "$(uname -s)" in
@@ -59,26 +63,7 @@ if [[ "$SCRIPT_NAME" == "build" ]]; then
         MINGW*|MSYS*|CYGWIN*)    open_cmd="start";;
     esac
 
-    # Determine which PDF to open based on arguments
-    pdf_file="main_en.pdf"
-
-    # Check for language option
-    for arg in "$@"; do
-        if [[ "$arg" != -* && "$arg" != "" ]]; then
-            pdf_file="main_$arg.pdf"
-            break
-        fi
-    done
-
-    # Check for draft option
-    if [[ "$*" =~ -[a-zA-Z]*d[a-zA-Z]* ]]; then
-        pdf_file="draft-scenarios/drafts.pdf"
-    fi
-
-    if [[ -n "$open_cmd" && -f "$pdf_file" ]]; then
-        echo "Opening $pdf_file"
-        $open_cmd "$pdf_file" &> /dev/null &
-    elif [[ -n "$open_cmd" ]]; then
-        echo "PDF file $pdf_file not found"
-    fi
+    # Get the last line of output which should contain the PDF filename
+    pdf_file=$(tail -n 1 "$temp_output" | tr -d '[:space:]')
+    $open_cmd "$pdf_file" &> /dev/null &
 fi
