@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_US
 \addsection{Random Scenario}{\images/random.png}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \textit{As dice roll and fortunes shift, the lands of Antagarich spread before you in all their splendor.
   Your destiny follows these celestial rolls, each battle and treasure determined by chance.
@@ -44,9 +44,6 @@ Choose one of the following sizes:
 \end{itemize}
 
 \textbf{Medium (M) Map:} 12 Rounds, and give every player:
-% \begin{tikzpicture}[overlay]
-%   \node at (4.9, -1.1) {\includegraphics[width=0.3\linewidth]{\maps/medium.png}};
-% \end{tikzpicture}
 \begin{itemize}
   \item 1 × Starting (I) Map Tile
   \item 2 × Far (II-III) Map Tile
@@ -62,29 +59,31 @@ Choose one of the following sizes:
 
 \medskip
 
-\hommtablemulticol[]{18}{
+\hommtablemulticol[]{19}{
   \centering
   \medskip
   \textbf{Central Map Tile(s)}\\
   \bigskip
   \hspace{-0.7em}
-  \begin{tabularx}{0.99\linewidth}{p{1.7em}>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X} & \darkcell[1.4]{Battle Royale} & \darkcell[1.4]{King of the Hill} & \darkcell[1.4]{Capture the Grail} \\
-    \darkcell[1.4]{S}
-    & \lightcell[1.4]{1~× Near (IV-V)}
-    & \multirow{3}{*}[5.5ex]{\parbox{\linewidth}{\centering\lightcell[5.35]{1~× Center (VI-VII) with a Dragon Utopia (C1 or C3)}}}
-    & \multirow{3}{*}[5.5ex]{\parbox{\linewidth}{\centering\lightcell[5.35]{1~× Center (VI-VII) with a\linebreak Grail\linebreak (C2 or C4)}}} \\
+  \begin{tabularx}{0.99\linewidth}{p{1.7em}>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X} & \darkcell[1.4]{Battle Royale} & \darkcell[1.4]{King of \phantom{y}the Hill\phantom{y}} & \darkcell[1.4]{Capture \phantom{y}the Grail\phantom{y}} \\
+    \darkcell[1.8]{S}
+    & \lightcell[1.8]{\includegraphics[width=0.75\linewidth]{\maps/near-tile.png}}
+    & \multirow{3}{*}[7.6ex]{\parbox{\linewidth}{\centering\lightcell[6.19]{\includegraphics[width=0.75\linewidth]{\maps/center-tile.png} with a Dragon Utopia (C1 or C3)}}}
+    & \multirow{3}{*}[7.6ex]{\parbox{\linewidth}{\centering\lightcell[6.19]{\includegraphics[width=0.75\linewidth]{\maps/center-tile.png} with a\linebreak Grail\linebreak (C2 or C4)}}} \\
     \darkcell[2.2]{M}
     & \lightcell[2.2]{\includegraphics[width=0.95\linewidth]{\maps/medium.png}}
     &
     & \\
-    \darkcell[1.4]{XL}
-    & \lightcell[1.4]{1~× Center (VI-VII)}
+    \darkcell[1.8]{XL}
+    & \lightcell[1.8]{\includegraphics[width=0.75\linewidth]{\maps/center-tile.png}}
     &
     & \\
   \end{tabularx}
 }
 
-\end{multicols*}
+\end{multicols}
+
+\vspace{-3\baselineskip}
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -92,7 +91,7 @@ Choose one of the following sizes:
 \definecolor{infernobg}{RGB}{190,21,38}
 \definecolor{rampartbg}{RGB}{53,192,56}
 
-Put the Central Map Tile(s) for your scenario type and size first in the middle.
+First, place the Central Map Tile(s) for your Scenario type and size in the middle.
 Decide player order before placing the remaining Tiles.
 In reverse player order, each player places one Tile in descending level (Near \rightarrow\ Far \rightarrow\ Starting).  % no-check-caps
 Every new Tile needs to connect to at least one existing Tile.
