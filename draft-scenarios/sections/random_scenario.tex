@@ -33,41 +33,57 @@ Standard Grail rules apply: spend 2 \svgeven{movement} to dig it up, and bring i
 \vspace*{\fill}
 \columnbreak
 
-\subsection*{\MakeUppercase{Scenario Length\\and Map Size}}
+\subsection*{\MakeUppercase{Map Size}}
 
-Depending on your appetite for play, choose a size:
+Choose one of the following sizes:
 
-\textbf{Small (S) Map:} 8 Rounds, put one Near (IV-V) Map Tile in the middle, and give every player:
+\textbf{Small (S) Map:} 8 Rounds, and give every player:
 \begin{itemize}
   \item 1 × Starting (I) Map Tile
   \item 2 × Far (II-III) Map Tile
 \end{itemize}
 
-\textbf{Medium (M) Map:} 12 Rounds, put three Near (IV-V) Map Tiles in the middle, and give every player:
-\begin{tikzpicture}[overlay]
-  \node at (4.9, -1.1) {\includegraphics[width=0.3\linewidth]{\maps/medium.png}};
-\end{tikzpicture}
+\textbf{Medium (M) Map:} 12 Rounds, and give every player:
+% \begin{tikzpicture}[overlay]
+%   \node at (4.9, -1.1) {\includegraphics[width=0.3\linewidth]{\maps/medium.png}};
+% \end{tikzpicture}
 \begin{itemize}
   \item 1 × Starting (I) Map Tile
   \item 2 × Far (II-III) Map Tile
   \item 1 × Near (IV-V) Map Tile
 \end{itemize}
 
-\textbf{Large (XL) Map:} 16 Rounds, put one Center (VI-VII) Map Tile in the middle, and give every player:
+\textbf{Large (XL) Map:} 16 Rounds, and give every player:
 \begin{itemize}
   \item 1 × Starting (I) Map Tile
   \item 2 × Far (II-III) Map Tile
   \item 2 × Near (IV-V) Map Tile
 \end{itemize}
 
-\begin{tikzpicture}[overlay]
-  \node[inner sep=0pt, opacity=0.2, xscale=-1, rotate=12] at (3.2, -3.9) {\includegraphics[width=0.8\linewidth, keepaspectratio]{\art/hourglass.png}};
-\end{tikzpicture}
+\medskip
+
+\hommtablemulticol[]{18}{
+  \centering
+  \medskip
+  \textbf{Central Map Tile(s)}\\
+  \bigskip
+  \hspace{-0.7em}
+  \begin{tabularx}{0.99\linewidth}{p{1.7em}XXX} & \darkcell[1.4]{Battle Royale} & \darkcell[1.4]{King of the Hill} & \darkcell[1.4]{Capture the Grail} \\    \darkcell[1.4]{S}
+    & \lightcell[1.4]{1~× Near (IV-V)}
+    & \multirow{3}{*}[5.5ex]{\lightcell[5.3]{1~× Center (VI-VII) with a Dragon Utopia (C1 or C3)}}
+    & \multirow{3}{*}[5.5ex]{\lightcell[5.3]{1~× Center (VI-VII) with a\linebreak Grail\linebreak (C2 or C4)}} \\
+    \darkcell[2.0]{M}
+    & \lightcell[2.0]{\includegraphics[width=0.9\linewidth]{\maps/medium.png}}
+    &
+    & \\
+    \darkcell[1.4]{XL}
+    & \lightcell[1.4]{1~× Center (VI-VII)}
+    &
+    & \\
+  \end{tabularx}
+}
 
 \end{multicols*}
-
-
-\pagebreak
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -75,7 +91,8 @@ Depending on your appetite for play, choose a size:
 \definecolor{infernobg}{RGB}{190,21,38}
 \definecolor{rampartbg}{RGB}{53,192,56}
 
-Decide player order before placing the Tiles.
+Put the Central Map Tile(s) for your scenario type and size first in the middle.
+Decide player order before placing the remaining Tiles.
 In reverse player order, each player places one Tile in descending level (Near \rightarrow\ Far \rightarrow\ Starting).  % no-check-caps
 Every new Tile needs to connect to at least one existing Tile.
 
@@ -237,8 +254,8 @@ Choose your \textbf{starting conditions} and \textbf{Town strength}.
   \begin{tabularx}{0.99\linewidth}{p{0.12\linewidth}XXXX} & \darkcell{Stingy} & \darkcell{Fair} & \darkcell{Generous}\\
   \darkcell[1.4]{Army}
     & \lightcellleft[1.4]{2 × Few cheapest \bronze\ Units}
-    & \lightcellleft[1.4]{Pack of cheap \bronze\ Units \linebreak Few pricy \bronze\ Units}
-    & \lightcellleft[1.4]{Pack of pricy \bronze\ Units \linebreak Few cheap \silver\ Units}\\
+    & \lightcellleft[1.4]{Pack of cheap \bronze\ Units \linebreak Few chosen \bronze\ Units}
+    & \lightcellleft[1.4]{Pack of chosen \bronze\ Units \linebreak Few cheap \silver\ Units}\\
   \darkcell[1.4]{Starting Resources}
     & \lightcellleft[1.4]{10 \svg{gold}, 3 \svg{building_materials}, 1 \svg{valuables}}
     & \lightcellleft[1.4]{16 \svg{gold}, 5 \svg{building_materials}, 1 \svg{valuables}}
