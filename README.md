@@ -61,15 +61,6 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center">—</td>
             <td align="center">—</td>
         </tr>
-        <tr>
-            <td>🇩🇪 Deutsch<br>
-            <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
-            <td align="center">—</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de-mono.pdf">speichern</a></td>
-            <td align="center">—</td>
-            <td align="center">—</td>
-        </tr>
     </tbody>
 </table>
 

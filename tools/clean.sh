@@ -17,4 +17,5 @@ git restore \
   metadata.tex \
   mkdocs.yml \
   po4a.cfg \
-  run.sh
+  run.sh \
+  structure.tex

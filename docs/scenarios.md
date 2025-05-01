@@ -20,6 +20,8 @@ However, there is a set of predefined [**templates**](https://github.com/qwrtln/
 
 - If you're updating an existing scenario, create comparison images using the [**compare pages script**](scripts.md#compare_pagessh).
 
+- To compile your scenario quickly, use `-s` option with the build script. For instance, if your scenario is called "Dances with Dwarves", you can run `tools/build.sh -s 'dances with'` to build only your scenario instead of the whole book.
+
 ## Solo Campaign
 
 Your first scenario should start with the following line that adds a record to the table of contents:
