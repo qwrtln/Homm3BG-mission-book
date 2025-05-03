@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/stand_united/cs/>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/coop-scenarios/stand_united/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -156,6 +156,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
@@ -284,13 +286,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -301,22 +297,14 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Hrstku \\bronze\\ Jednotek s \\textit{nejnižšími} náklady na Verbování\n"
+"  \\item 1 × Hrstku \\bronze\\ Jednotek\n"
+"  \\item 1 × Hrstku \\silver\\ Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -326,26 +314,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
+"  \\item H × Startovní (I) Dílek Mapy\n"
+"  \\item H × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item H × Blízký (IV--V) Dílek Mapy, všechny musí obsahovat pole Obelisk\n"
+"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí "
+"Utopie\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Enemy Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
+"\\subsection*{\\MakeUppercase{Příprava AI Nepřítele}}\n"
 "\n"
 
 #. type: multicols
