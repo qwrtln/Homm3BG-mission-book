@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/sections/recommendations/cs/>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/sections/recommendations/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -52,7 +52,7 @@ msgstr "\\addsection{Doporučení}{\\art/haste.png}"
 #. type: Plain text
 #: sections/recommendations.tex:5
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
-msgstr ""
+msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/recommendations.tex:10
@@ -232,12 +232,7 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:54
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{\n"
 "  \\hfill\n"
@@ -246,9 +241,12 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-"\\end{center}\n"
+"{\n"
+"  \\hfill\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.8\\linewidth]{\\art"
+"/black_market.png}}\n"
+"  \\vspace{-3em}\n"
+"}\n"
 "\n"
 
 #. type: multicols*
@@ -337,12 +335,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:83
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
@@ -350,7 +343,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art"
+"/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -474,12 +468,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:141
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
@@ -487,6 +476,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}"
+"\n"
 "\\end{center}\n"
 "\n"
