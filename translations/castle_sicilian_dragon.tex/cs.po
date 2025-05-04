@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-14 07:17+0100\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/campaigns/castle_sicilian_dragon/cs/>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/campaigns/castle_sicilian_dragon/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -53,7 +53,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve scénáři:\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\n"
 
 #. type: multicols*
@@ -116,7 +116,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
 #: campaigns/castle_two_knights_defense.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
@@ -132,6 +132,9 @@ msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 msgstr ""
+"\\textbf{Zdroj:} \\hrefwithoutfootnote"
+"{https://travelledtales.com}{travelledtales.com}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
@@ -174,7 +177,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
 msgstr ""
-"\\vspace{-1em} % FIX ME\n"
 "\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
 "\n"
 
