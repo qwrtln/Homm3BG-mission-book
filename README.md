@@ -131,3 +131,4 @@ Great! Please reach out. We'd love to hear from you.
 - [Rulebook Rewrite Project](https://github.com/Heegu-sama/Homm3BG)
 - [Board Game Cards Databse](https://github.com/Mirzipan/Homm3_BG_Database)
 - [Factory Rule Book](https://github.com/piotrbruzda/Homm3BG-FactoryRulebook)
+- [Scenario Map Editor](https://github.com/zedero/HoMM3Boardgame)
