@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/emerald_island/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -354,38 +354,23 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III)\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{H}$ \\textbf{× Startovní (I) Dílek Mapy}\n"
 "\\begin{itemize}\n"
-"  \\item Startovní Dílky vašich vybraných Frakcí.\n"
 "  \\item Ignorujte jakékoliv žluté čáry mezi Dílky I (ale ne mezi Dílky I a Dílky II--III)\n"
-"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "    \\item You can't build a \\golden\\ Dwelling.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
 "    \\item Nemůžete postavit \\golden\\ Obydlí.\n"
 "\n"
 

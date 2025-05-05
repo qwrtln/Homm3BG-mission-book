@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/titans_stronghold/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -91,6 +91,8 @@ msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -165,6 +167,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -307,16 +311,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -326,29 +321,24 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
-"  \\item 4 × Vzdálený (II--III) Dílek Mapy\n"
-"  \\item 1 × Středový (VI--VII) Dílek Mapy, který musí obsahovat Pole Dračí Utopie\n"
+"  \\item H × Startovní (I) Dílek Mapy\n"
+"  \\item 2H × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 2H × Blízký (IV--V) Dílek Mapy\n"
+"  \\item (H+1) × Středový (VI--VII) Dílek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "If you don't have enough VI--VII Tiles, you can use another Tile near Tile I.\n"
-#| "The center of this Tile is the Titans' Stronghold.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\MakeUppercase{Note:}} If you don’t have enough VI--VII Tiles, you can\n"
 "use another Tile near I Tiles. The center of this\n"
 "Tile is the Titans’ Stronghold.\n"
 "\n"
 msgstr ""
-"Pokud nemáte dostatek Dílků VI--VII, můžete použít jiný Dílek blízko Dílku I.\n"
+"\\textbf{\\MakeUppercase{Poznámka:}} Pokud nemáte dostatek Dílků VI--VII, můžete použít jiný Dílek blízko Dílku I.\n"
 "Střed tohoto Dílku je Pevnost Titánů.\n"
 "\n"
 
@@ -374,20 +364,17 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:69
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"[overlay]\n"
-"  \\centering\n"
-"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
+"\\end{tikzpicture}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:76

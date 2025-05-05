@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-03-29 17:21+0000\n"
-"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/clash-scenarios/dragoncurse_castle/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -220,12 +220,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vfill\n"
 "\\begin{center}\n"
@@ -233,24 +228,15 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\vfill\n"
 "\\begin{center}\n"
-"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
 "\\end{center}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:49
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II-III) Map Tile\n"
-#| "  \\item 5 × Near (IV-V) Map Tile\n"
-#| "  \\item 2 × Center (VI-VII) Map Tiles, blindly choosing one with the Random Town Field and the other with a Dragon Utopia Field.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -263,6 +249,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
 "\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
 "Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\\begin{itemize}\n"
@@ -359,12 +346,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\phantom{.}\n"
 "\\vfill\n"
@@ -374,10 +356,13 @@ msgid ""
 "\\vfill\n"
 "\\phantom{.}"
 msgstr ""
+"\\phantom{.}\n"
+"\\vfill\n"
 "\\begin{center}\n"
-"  {\\transparent{0.2}\\includegraphics[width=0.3\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
 "\\end{center}\n"
-"\n"
+"\\vfill\n"
+"\\phantom{.}"
 
 #. type: tikzpicture
 #: clash/dragoncurse_castle.tex:99
@@ -387,3 +372,6 @@ msgid ""
 "  \\centering\n"
 "  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\maps/dragoncurse-castle.png}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\maps/dragoncurse-castle.png}};"
