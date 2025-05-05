@@ -5,14 +5,16 @@ language=""
 range=""
 drafts=0
 output_dir="screenshots"
+custom_pdf=""
 
 help() {
   echo "
-    Usage: $(basename "$0") (-l <language> | -d) -r <range>
+    Usage: $(basename "$0") (-l <language> | -d | -f <file>) -r <range>
 
     Mandatory Arguments (choose one):
       -l, --language <language>     Specify the language for PDF (e.g., en, pl, cs, de, fr).
       -d, --drafts                  Use draft scenarios PDF instead of language-specific PDF.
+      -f, --file <path>             Use a custom PDF file at the specified path.
       -r, --range <range>           Provide comma-separated list of pages or range of pages.
                                     Examples: 1,3,5 or 1-5 or 1,3-5,7
 
@@ -20,6 +22,7 @@ help() {
       $(basename "$0") -l en -r 1
       $(basename "$0") --language en --range 1-5
       $(basename "$0") -d -r 1,3-5
+      $(basename "$0") -f custom.pdf -r 1-3
   "
 
   exit 2
@@ -59,6 +62,10 @@ while [[ "$1" != "" ]]; do
     -d | --drafts )
       drafts=1
       ;;
+    -f | --file )
+      shift
+      custom_pdf=$1
+      ;;
     -r | --range )
       shift
       range=$1
@@ -74,13 +81,13 @@ while [[ "$1" != "" ]]; do
 done
 
 # Validate arguments
-if [[ "$drafts" -eq 1 && -n "$language" ]]; then
-  echo "Error: -d/--drafts and -l/--language options are mutually exclusive."
+if [[ "$drafts" -eq 1 && -n "$language" ]] || [[ "$drafts" -eq 1 && -n "$custom_pdf" ]] || [[ -n "$language" && -n "$custom_pdf" ]]; then
+  echo "Error: -d/--drafts, -l/--language, and -f/--file options are mutually exclusive."
   help
 fi
 
-if [[ "$drafts" -eq 0 && -z "$language" ]]; then
-  echo "Error: You must specify either -l/--language or -d/--drafts option."
+if [[ "$drafts" -eq 0 && -z "$language" && -z "$custom_pdf" ]]; then
+  echo "Error: You must specify either -l/--language, -d/--drafts, or -f/--file option."
   help
 fi
 
@@ -93,7 +100,10 @@ fi
 mkdir -p "$output_dir"
 
 # Set the source PDF and output prefix
-if [[ "$drafts" -eq 1 ]]; then
+if [[ -n "$custom_pdf" ]]; then
+  source_pdf="$custom_pdf"
+  output_prefix=$(basename "$custom_pdf" .pdf)
+elif [[ "$drafts" -eq 1 ]]; then
   source_pdf="draft-scenarios/drafts.pdf"
   output_prefix="drafts"
 else
