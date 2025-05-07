@@ -296,7 +296,6 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:43
-#, fuzzy, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -460,7 +459,6 @@ msgstr ""
 
 #. type: tikzpicture
 #: coops/emerald_island.tex:121
-#, fuzzy, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"

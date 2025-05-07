@@ -186,7 +186,6 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/stand_united.tex:3
-#, fuzzy
 #| msgid ""
 #| "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
 #| "sentinel.png}"
@@ -194,33 +193,25 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Strážci}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sjednoťme se}{\\images/"
+"interference.png}"
 
 #. type: multicols
 #: coops/stand_united.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} profmamadu\n"
-#| "\n"
 msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} profmamadu\n"
+"\\textbf{Autor:} NeuroN\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
-#| "\n"
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
+"\\textbf{Zdroj:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols
@@ -230,44 +221,34 @@ msgid ""
 "\\textit{Evil Dragon Lords threaten the entire Enroth. Heroes, with their armies united, march against them in an epic final stand.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textit{Zlí Dračí Páni ohrožují celý Enroth. Hrdinové sjednotí armády a táhnou proti nim v epickém závěrečném střetu.}  % no-check-caps\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 8 Rounds.\n"
-#| "\n"
 msgid ""
 "This Scenario is played over 9 Rounds.\n"
 "\n"
 msgstr ""
-"Tento Scénář se hraje na 8 Kol.\n"
+"Tento Scénář se hraje na 9 Kol.\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 2\n"
-#| "\n"
 msgid ""
 "\\textbf{Player Count:} 2--4\n"
 "\n"
 msgstr ""
-"\\textbf{Počet Hráčů:} 2\n"
+"\\textbf{Počet Hráčů:} 2--4\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -297,8 +278,8 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Hrstku \\bronze\\ Jednotek\n"
-"  \\item 1 × Hrstku \\silver\\ Jednotek\n"
+"  \\item 1 × Hrstku nejlevnějších \\bronze\\ Jednotek\n"
+"  \\item 1 × Hrstku nejlevnějších \\silver\\ Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -334,35 +315,29 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:46
-#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 6 × Might Card, 4 × Magic Card, 4 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Ivorův Balíček:} 1 × Karta Síly, 2 × Karta Magie, 1 × Karta Schopnosti\n"
+"\\textbf{Nepřítelův Balíček:} 6 × Karta Síly, 4 × Karta Magie, 4 × Karta Schopnosti\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:48
-#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Enemy Spells:} 1 × Fireball, 1 × Lightning Bolt, 1 × Weakness, 1 × Curse\n"
 "\n"
 msgstr ""
-"\\textbf{Balíček Schopností Finální Útočící Armády:} 3 × Karta Síly, 3 × Karta Schopnosti\n"
+"\\textbf{Nepřátelská Kouzla:} 1 × Ohnivá Koule, 1 × Blesk, 1× Slabost, 1× Prokletí\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Armies:}\n"
-#| "\n"
 msgid ""
 "\\textbf{Enemy Skill:} Sorcery\n"
 "\n"
 msgstr ""
-"\\textbf{Nepřátelské Armády:}\n"
+"\\textbf{Nepřátelské Dovednosti:} Kouzelnictví\n"
 "\n"
 
 #. type: multicols
@@ -372,6 +347,8 @@ msgid ""
 "All players win the Scenario when each player has won a fight in the Dragon Utopia.\n"
 "\n"
 msgstr ""
+"Všichni hráči zvítězí pokud každý z nich vyhraje souboj proti Dračí Utopii.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:58
@@ -380,6 +357,8 @@ msgid ""
 "If at least one player has failed to defeat the Dragon Utopia by the end of Round 9, the Scenario is lost.\n"
 "\n"
 msgstr ""
+"Pokud nejméně jeden hráč selže ve zdolání Dračí Utopie do konce 9. Kola, Scénář skončil neúspěchem.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:72
@@ -400,6 +379,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Časované Události}}\n"
+"\\textbf{4. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Hodtě \\svg{resource} a vyhodnoťte výsledek.\n"
+"\\end{itemize}\n"
+"\\textbf{6. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Zopakujte Událost 4. Kola.\n"
+"\\end{itemize}\n"
+"\\textbf{8. Kolo:}\n"
+"\\begin{itemize}\n"
+"  \\item Zopakujte Událost 4. Kola.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:85
@@ -417,6 +410,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Odeberte obě karty Azurový Drak z \\azure\\ Balíčku Neutrálních Jednotek a mějte je přichystané pro pozdější použití.\n"
+"  \\item Hráči nemohou najmout Sekundárního Hrdinu.\n"
+"  \\item Souboj VII Úrovně  nemůže být přeskočen žádným způsobem, ani pomocí Diplomacie.\n"
+"  \\item Hráči mohou použít svůj Žeton Stavby k zahájení obchodu s jedním dalším vybraným hráčem. Oba hráči si mohou volně vyměňovat suroviny a mohou si vyměňovat artefakty nebo kouzla z ruky, jako by jejich hrdinové byli vedle sebe.\n"
+"  \\item Během hry hráči sestavují společnou armádu. Každý hráč může během boje nasadit jednotky ze společné armády (schopnosti \\svg{map} společných jednotek může v každém kole aktivovat pouze jeden hráč).  % no-check-caps\n"
+"  \\item Po označení Obelisku vyhoďte vrchní kartu z každého Balíčku Neutrálních Jednotek kromě \\azure\\. Jednu z těchto Jednotek můžete najmout. Takto naverbované Jednotky jdou do společné armády.\n"
+"  \\item Během boje v Dračí Utopii je jednou z neutrálních \\azure\\ jednotek vždy Azurový Drak a Neutrální Armáda používá balíček AI. Na konci boje znovu promíchejte Balíček Jednotek AI a Balíček Kouzel AI.\n"
+"  \\item Po vítězství v boji proti Dračí Utopii není na pole Dračí Utopie umístěna žádná Frakční Kostka. Vítězný Hráč umístí jednu ze svých přeživších Jednotek Frakce do společné armády a může přerozdělit své zbývající suroviny mezi ostatní Hráče, načež je tento Hráč odstraněn ze hry.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:92
@@ -428,17 +432,14 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
+"  \\captionof{figure}{\\footnotesize\\textbf{SCÉNÁŘ PRO 2 HRÁČE}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:104
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\centering\n"
-#| "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-#| "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-#| "  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-#| "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgid ""
 "[overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=-8em, yshift=-38.9em] at (current page.center) {\n"
@@ -450,11 +451,13 @@ msgid ""
 "\n"
 msgstr ""
 "[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-8em, yshift=-38.9em] at (current page.center) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/cove_part.png}\n"
+"  };\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-"  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 2 HRÁČE}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-"  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 4 HRÁČE}}}};"
+"  \\node at (13.5, 3.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, -0.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 3 HRÁČE}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:107
@@ -463,3 +466,5 @@ msgid ""
 "  \\node at (5, -5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
 "  \\node at (5, -9.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
+"  \\node at (5, -3.0) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
+"  \\node at (5, -7.3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 4 HRÁČE}}}};"

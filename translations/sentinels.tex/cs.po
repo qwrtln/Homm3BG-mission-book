@@ -506,7 +506,6 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:121
-#, fuzzy
 msgid ""
 "  \\item Enemy armies have 3 MPs per Round.\n"
 "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
@@ -627,7 +626,6 @@ msgstr ""
 
 #. type: Plain text
 #: coops/sentinels.tex:192
-#, fuzzy
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
@@ -653,7 +651,7 @@ msgid ""
 "\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
-"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Síla Nepřátelské Armády}\\"
 "\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
 "\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
 "{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
