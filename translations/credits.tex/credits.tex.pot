@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-05-08 20:36+0200\n"
+"POT-Creation-Date: 2025-05-08 21:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,7 +98,7 @@ msgstr ""
 #: sections/credits.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.\n"
+"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
 "\n"
 msgstr ""
 

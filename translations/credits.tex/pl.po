@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-05-08 20:36+0200\n"
+"POT-Creation-Date: 2025-05-08 21:05+0200\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -112,7 +112,7 @@ msgstr ""
 #: sections/credits.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.\n"
+"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
 "\n"
 msgstr ""
 "\\textbf{Pisanie scenariuszy w \\LaTeX{}-u:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.\n"
