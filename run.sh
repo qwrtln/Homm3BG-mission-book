@@ -14,7 +14,7 @@ show_help() {
     echo "Any additional arguments will be passed to the script."
     echo ""
     echo "Example: $0 tools/build.sh pl"
-    echo "Example: $0 tools/build.sh -s \"keyword\""
+    echo "Example: $0 tools/build.sh -s \"search\""
     echo "Example: $0 tools/compare_pages.sh -l en -r 5-9"
     exit 1
 }
