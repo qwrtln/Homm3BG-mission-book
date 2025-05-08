@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"POT-Creation-Date: 2025-05-08 20:36+0200\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -44,10 +44,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -57,11 +57,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
-#: sections/credits.tex:32
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: sections/credits.tex:34
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -99,9 +99,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:15
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+#| "\n"
 msgid ""
-"\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Scenario templating, tooling and automation}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"
 msgstr ""
 "\\textbf{Šablony Scénářů a \\LaTeX{} kód}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
@@ -111,6 +114,14 @@ msgstr ""
 #: sections/credits.tex:17
 #, no-wrap
 msgid ""
+"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/credits.tex:19
+#, no-wrap
+msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
@@ -118,7 +129,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/credits.tex:22
+#: sections/credits.tex:24
 #, no-wrap
 msgid ""
 "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
@@ -134,7 +145,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/credits.tex:24
+#: sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
@@ -144,7 +155,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/credits.tex:30
+#: sections/credits.tex:32
 #, no-wrap
 msgid ""
 "{\\tikz[transparency group]\\node[opacity=0.2]{\\includegraphics[width=1.3\\linewidth]{\\art/genie.png}};}\n"
