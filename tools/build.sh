@@ -198,7 +198,7 @@ if [[ -n "${SCENARIO_SEARCH}" ]]; then
   if ! tools/_find_scenario.sh "${SCENARIO_SEARCH}"; then
     exit 1
   fi
-  SCENARIO=$(grep -o "[^/{}]*\.[^{}]*" structure.tex | cut -d'.' -f1)
+  SCENARIO=$(perl -ne 'while(/[^\/{}]*\.[^{}]*/g){$_=$&;s/\..*//;print "$_\n"}' structure.tex)
   # Handle monochrome mode for a single file
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
