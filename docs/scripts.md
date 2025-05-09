@@ -26,10 +26,10 @@ tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scena
 
 **Options:**
 
-- `-m, --mono`: Monochrome mode (removes colored backgrounds from maps)
 - `-d, --drafts`: Generate draft scenarios
-- `-p, --printable`: Enable printable mode, currently not used for this project
 - `-s, --scenario <SEARCH>`: Build only scenario matching the input given (incompatible with `-d`)
+- `-m, --mono`: Monochrome mode (removes colored backgrounds from maps)
+- `-p, --printable`: Enable printable mode, currently not used for this project
 - `-h, --help`: Show help message
 
 Short options can be combined, e.g., `-dm` for drafts and mono.
@@ -51,6 +51,9 @@ tools/build.sh -dm
 
 # Build Sentinels scenario - this will produce sentinels.pdf file
 tools/build.sh -s sentinels
+
+# Build the 1st scenario of the Inferno campaign (A Devilish Plan) in Czech language and monochrome mode
+tools/build.sh cs -m -s devilish
 ```
 
 ## **pdf2image.sh**
