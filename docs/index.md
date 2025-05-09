@@ -67,11 +67,11 @@ Please read the instructions for your operating system (or container).
     You can install everything using Homebrew:
 
     ```bash
-    brew install mactex inkscape
+    brew install mactex inkscape perl
     ```
 
     Fork the repository and clone it.
-    To build the project, it's best to use the script (it requires Perl):
+    To build the project, it's best to use the script:
 
     ```bash
     tools/build.sh -d
@@ -79,17 +79,16 @@ Please read the instructions for your operating system (or container).
 
     To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
     ```bash
-    brew install poppler po4a ghostscript
+    brew install poppler po4a ghostscript imagemagick bash grep
     ```
-
 
 === "Linux"
     ### Linux
 
-    Install a `texlive` distribution and `inkscape` using your package manager.
+    Install a `texlive` distribution, `inkscape`, and `perl` using your package manager.
 
     Fork and clone the repo.
-    To build the project, it's best to use the script (it requires Perl):
+    To build the project, it's best to use the script:
 
     ```bash
     tools/build.sh -d
@@ -100,6 +99,7 @@ Please read the instructions for your operating system (or container).
     - po4a
     - poppler-utils
     - ghostscript
+    - imagemagick
 
 === "Container"
     ### Container
