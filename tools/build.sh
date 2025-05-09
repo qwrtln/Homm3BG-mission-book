@@ -40,11 +40,19 @@ is_valid_language() {
 }
 
 case "$(uname -s)" in
-  Darwin*)    open=open;;
-  Linux*)     open=xdg-open;;
-  MINGW*|MSYS*|CYGWIN*)    open=start;;
+  Darwin*)
+    open=open
+    grep_cmd=ggrep
+    ;;
+  Linux*)
+    open=xdg-open
+    grep_cmd=grep
+    ;;
+  MINGW*|MSYS*|CYGWIN*)
+    open=start
+    grep_cmd=grep
+    ;;
 esac
-
 # Check if first argument is a language code
 if [[ $1 =~ ^[a-z]{2}$ ]]; then
   if is_valid_language "$1"; then
@@ -204,7 +212,7 @@ if [[ -n "${SCENARIO_SEARCH}" ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
 
-    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec grep -Po "maps[^}]*\.png" {} \; | while IFS= read -r IMG; do
+    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec "${grep_cmd}" -Po "maps[^}]*\.png" {} \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
@@ -227,7 +235,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
 
-    find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
+    find draft-scenarios -name "*tex" -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
@@ -257,7 +265,7 @@ if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 && "${SCENARIO_SEARCH}" == "" ]]; then
   mkdir -p ${CACHE_DIR}
 
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-    -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
+    -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
     IMG="assets/${IMG}"
     monochrome_with_cache "${IMG}" "${CACHE_DIR}"
   done
