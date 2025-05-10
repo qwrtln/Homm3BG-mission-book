@@ -150,4 +150,4 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:33
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr ""
+msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"

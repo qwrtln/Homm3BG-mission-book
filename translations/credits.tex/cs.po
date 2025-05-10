@@ -99,15 +99,11 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Scenario templating and \\LaTeX{} writing}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
-#| "\n"
 msgid ""
 "\\textbf{Scenario templating, tooling and automation}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"
 msgstr ""
-"\\textbf{Šablony Scénářů a \\LaTeX{} kód}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Šablony Scénářů, nástroje a automatizace}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
 "\n"
 
 #. type: multicols*
@@ -117,6 +113,8 @@ msgid ""
 "\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textbf{Scénáře přisplěli v \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:19
