@@ -1,6 +1,6 @@
 # Local Setup
 
-In order to contribute, you'll need a minimum of [LaTeX](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape ang git.
+In order to contribute, you'll need a minimum of [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape ang git.
 Please read the instructions for your operating system (or container).
 
 === "Windows"
@@ -52,7 +52,7 @@ Please read the instructions for your operating system (or container).
 
     #### Building the project
 
-    In the git bash console, run this command:
+    In the git bash console, run this command (see the [**build script**](scripts.md#buildsh) for details):
 
     ```bash
     tools/build.sh -d
@@ -67,29 +67,40 @@ Please read the instructions for your operating system (or container).
     You can install everything using Homebrew:
 
     ```bash
-    brew install mactex inkscape
+    brew install mactex inkscape perl
     ```
 
     Fork the repository and clone it.
-    To build the project, it's best to use the script (it requires Perl):
+    To build the project, it's best to use the script (see the [**build script**](scripts.md#buildsh) for details):
 
     ```bash
     tools/build.sh -d
     ```
 
-    To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
+    For building a single scenario (the `-s` flag, useful if you're working on one), you also need newer versions of `bash` and `grep` than the ones MacOS ships with:
+
     ```bash
-    brew install poppler po4a ghostscript
+    brew install bash grep
     ```
 
+    Then, you can use the script like this (see [**best practices**](scenarios.md#best-practices) for details):
+
+    ```bash
+    tools/build.sh -s 'my scenario'
+    ```
+
+    To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
+    ```bash
+    brew install poppler po4a ghostscript imagemagick
+    ```
 
 === "Linux"
     ### Linux
 
-    Install a `texlive` distribution and `inkscape` using your package manager.
+    Install a `texlive` distribution, `inkscape`, and `perl` using your package manager.
 
     Fork and clone the repo.
-    To build the project, it's best to use the script (it requires Perl):
+    To build the project, it's best to use the script (see the [**build script**](scripts.md#buildsh) for details):
 
     ```bash
     tools/build.sh -d
@@ -100,6 +111,7 @@ Please read the instructions for your operating system (or container).
     - po4a
     - poppler-utils
     - ghostscript
+    - imagemagick
 
 === "Container"
     ### Container

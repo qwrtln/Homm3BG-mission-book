@@ -15,7 +15,7 @@ The main script for generating PDF files from source files in different language
 
 **Usage:**
 ```bash
-tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario KEYWORD] [-h|--help]
+tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH] [-h|--help]
 ```
 
 **Arguments:**
@@ -26,10 +26,10 @@ tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scena
 
 **Options:**
 
-- `-m, --mono`: Monochrome mode (removes colored backgrounds from maps)
 - `-d, --drafts`: Generate draft scenarios
+- `-s, --scenario <SEARCH>`: Build only scenario matching the input given (incompatible with `-d`)
+- `-m, --mono`: Monochrome mode (removes colored backgrounds from maps)
 - `-p, --printable`: Enable printable mode, currently not used for this project
-- `-s, --scenario <KEYWORD>`: Build only scenario matching a keyword given (incompatible with `-d`)
 - `-h, --help`: Show help message
 
 Short options can be combined, e.g., `-dm` for drafts and mono.
@@ -51,6 +51,9 @@ tools/build.sh -dm
 
 # Build Sentinels scenario - this will produce sentinels.pdf file
 tools/build.sh -s sentinels
+
+# Build the 1st scenario of the Inferno campaign (A Devilish Plan) in Czech language and monochrome mode
+tools/build.sh cs -m -s devilish
 ```
 
 ## **pdf2image.sh**
@@ -236,9 +239,9 @@ tools/clean.sh
 The script removes all `.aux` files, temporary directories like `translated` and `svg-inkscape`, the `cache` directory, and generated PDF files.
 It then uses `git restore` to bring back essential files that might have been modified or removed.
 
-## **find_scenario.sh**
+## **_find_scenario.sh**
 
-Finds a specific file to be build by the `tools/build.sh` script with the `-s` flag using a keyword given.
+Finds a specific file to be build by the `tools/build.sh` script with the `-s` flag using an input given.
 Probably should not be used on its own.
 
 ## **release.sh** (legacy)

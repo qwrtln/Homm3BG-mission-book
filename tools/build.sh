@@ -5,12 +5,12 @@ LANGUAGE="en"
 DRAFTS_MODE=0
 PRINTABLE_MODE=0
 MONO_MODE=0
-SCENARIO_KEYWORD=""
+SCENARIO_SEARCH=""
 
 valid_languages=("en" "pl" "fr" "cs")
 
 usage() {
-  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario KEYWORD]"
+  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]"
   echo "Example: $0 -d --mono"
   echo
   echo "Positional arguments:"
@@ -22,7 +22,7 @@ usage() {
   echo "  -p, --printable    Enable printable mode"
   echo "  -m, --mono         Monochrome mode"
   echo "  -d, --drafts       Generate draft scenarios"
-  echo "  -s, --scenario     Build a single scenario matching a keyword given"
+  echo "  -s, --scenario     Build a single scenario matching the input given"
   echo "  -h, --help         Show this help message"
   echo
   echo "Short options can be combined, e.g. -dm for drafts and mono"
@@ -40,11 +40,19 @@ is_valid_language() {
 }
 
 case "$(uname -s)" in
-  Darwin*)    open=open;;
-  Linux*)     open=xdg-open;;
-  MINGW*|MSYS*|CYGWIN*)    open=start;;
+  Darwin*)
+    open=open
+    grep_cmd=ggrep
+    ;;
+  Linux*)
+    open=xdg-open
+    grep_cmd=grep
+    ;;
+  MINGW*|MSYS*|CYGWIN*)
+    open=start
+    grep_cmd=grep
+    ;;
 esac
-
 # Check if first argument is a language code
 if [[ $1 =~ ^[a-z]{2}$ ]]; then
   if is_valid_language "$1"; then
@@ -69,10 +77,10 @@ while [[ $# -gt 0 ]]; do
       drafts) DRAFTS_MODE=1 ;;
       scenario)
         if [[ $# -lt 1 ]]; then
-          echo "Error: --scenario requires a keyword argument" >&2
+          echo "Error: --scenario requires a string argument" >&2
           usage
         fi
-        SCENARIO_KEYWORD="$1"
+        SCENARIO_SEARCH="$1"
         shift
         ;;
       help) usage ;;
@@ -96,10 +104,10 @@ while [[ $# -gt 0 ]]; do
         d) DRAFTS_MODE=1 ;;
         s)
           if [[ $# -lt 1 ]]; then
-            echo "Error: -s requires a keyword argument" >&2
+            echo "Error: -s requires a string argument" >&2
             usage
           fi
-          SCENARIO_KEYWORD="$1"
+          SCENARIO_SEARCH="$1"
           shift
           ;;
         h) usage ;;
@@ -122,7 +130,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     echo "Error: Language selection is incompatible with drafts mode" >&2
     exit 1
   fi
-  if [[ "${SCENARIO_KEYWORD}" != "" ]]; then
+  if [[ "${SCENARIO_SEARCH}" != "" ]]; then
     echo "Error: Scenario selection is incompatible with drafts mode" >&2
     exit 1
   fi
@@ -138,14 +146,15 @@ cleanup_monochrome() {
 # Windows-specific cleanup to handle symlinks
 cleanup_windows_drafts() {
   if [[ -n "$original_dir" ]]; then
-    cd "$original_dir" || exit
+    pushd "$original_dir" || exit
     git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
+    popd || exit
   fi
 }
 
 # Single scenario cleanup to restore document structure
 cleanup_scenario() {
-  if [[ -n "${SCENARIO_KEYWORD}" ]]; then
+  if [[ -n "${SCENARIO_SEARCH}" ]]; then
     git restore structure.tex
   fi
 }
@@ -193,17 +202,17 @@ monochrome_with_cache() {
 
 # Handle scenario filtering, save for later use
 SCENARIO=""
-if [[ -n "${SCENARIO_KEYWORD}" ]]; then
-  if ! tools/find_scenario.sh "${SCENARIO_KEYWORD}"; then
+if [[ -n "${SCENARIO_SEARCH}" ]]; then
+  if ! tools/_find_scenario.sh "${SCENARIO_SEARCH}"; then
     exit 1
   fi
-  SCENARIO=$(grep -o "[^/{}]*\.[^{}]*" structure.tex | cut -d'.' -f1)
+  SCENARIO=$(perl -pE 's|.*/||; s|\..*||' structure.tex)
   # Handle monochrome mode for a single file
   if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
 
-    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec grep -Po "maps[^}]*\.png" {} \; | while IFS= read -r IMG; do
+    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec "${grep_cmd}" -Po "maps[^}]*\.png" {} \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
@@ -226,17 +235,17 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
 
-    find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
+    find draft-scenarios -name "*tex" -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
   fi
 
-  cd draft-scenarios || exit
+  pushd draft-scenarios || exit
   rm -f drafts.aux && \
     latexmk -pdflua -shell-escape drafts.tex
   ${open} drafts.pdf &> /dev/null &
-  cd - || exit
+  popd || exit
   echo "draft-scenarios/drafts.pdf"
   exit 0
 fi
@@ -251,12 +260,12 @@ if [[ ${LANGUAGE} != en ]]; then
 fi
 
 # Monochromize maps if it's mono mode but not in single scenario mode, which was handled before
-if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 ]] && [[ "${SCENARIO_KEYWORD}" == "" ]]; then
+if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 && "${SCENARIO_SEARCH}" == "" ]]; then
   CACHE_DIR="cache/monochrome-maps"
   mkdir -p ${CACHE_DIR}
 
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-    -exec grep -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
+    -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | while IFS= read -r IMG; do
     IMG="assets/${IMG}"
     monochrome_with_cache "${IMG}" "${CACHE_DIR}"
   done
