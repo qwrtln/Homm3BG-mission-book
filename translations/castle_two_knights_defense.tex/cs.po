@@ -35,6 +35,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
+#, no-wrap
 msgid ""
 "{2}\n"
 "\n"
@@ -47,6 +48,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
@@ -62,6 +64,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
@@ -78,6 +81,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
@@ -91,6 +95,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
@@ -101,6 +106,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
 #: campaigns/castle_two_knights_defense.tex:7
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
@@ -111,6 +117,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
 #: campaigns/castle_two_knights_defense.tex:9
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
@@ -121,6 +128,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
@@ -131,6 +139,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:18
 #: campaigns/castle_two_knights_defense.tex:15
+#, no-wrap
 msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
@@ -141,6 +150,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
 #: campaigns/castle_two_knights_defense.tex:17
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
@@ -151,6 +161,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
 #: campaigns/castle_two_knights_defense.tex:19
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle\n"
 "\n"
@@ -161,6 +172,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
@@ -171,6 +183,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
@@ -181,6 +194,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
@@ -191,6 +205,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
@@ -201,6 +216,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:81
 #: campaigns/castle_two_knights_defense.tex:89
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\\begin{itemize}\n"
@@ -217,6 +233,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
@@ -227,6 +244,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
+#, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
@@ -237,6 +255,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
@@ -247,6 +266,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:40
 #: campaigns/castle_two_knights_defense.tex:39
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
@@ -257,6 +277,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:42
 #: campaigns/castle_two_knights_defense.tex:41
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
@@ -267,6 +288,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:44
 #: campaigns/castle_two_knights_defense.tex:43
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
 "\n"
@@ -277,6 +299,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
 #: campaigns/castle_two_knights_defense.tex:52
+#, no-wrap
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -293,6 +316,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
 #: campaigns/castle_two_knights_defense.tex:63
+#, no-wrap
 msgid ""
 "\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -315,11 +339,12 @@ msgid ""
 "\\addscenariosection[subsection]{1}{Castle Campaign $-$ The Queen's Gambit}"
 "{3. Two Knights Defense}{\\images/catherine.png}"
 msgstr ""
-"\\addscenariosection[subsection]{1}{Kampaň Hradu $-$ Dámský Gambit}"
-"{3. Obrana Dvou Rytířů}{\\images/catherine.png}"
+"\\addscenariosection[subsection]{1}{Kampaň Hradu $-$ Dámský Gambit}{3. "
+"Obrana Dvou Rytířů}{\\images/catherine.png}"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:11
+#, no-wrap
 msgid ""
 "\\textit{With Vhidhax's stronghold in her grasp, Catherine needs to discover and halt the necromancer's next move.}\n"
 "\n"
@@ -329,6 +354,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:21
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} The same Hero you played in Scenario 2\n"
 "\n"
@@ -338,6 +364,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:23
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} The resources you ended Scenario 2 with, plus 10 \\svg{gold}\n"
 "\n"
@@ -347,6 +374,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:27
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:} The army you ended Scenario 2 with\n"
 "\n"
@@ -356,6 +384,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:29
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, Citadel\n"
 "\n"
@@ -375,6 +404,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:37
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
 "\n"
@@ -384,6 +414,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:57
+#, no-wrap
 msgid ""
 "\\textbf{2 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -399,6 +430,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:68
+#, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -414,6 +446,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:72
+#, no-wrap
 msgid ""
 "Place your Castle Hero on the center Field of the Necropolis start Tile S1.\n"
 "\n"
@@ -435,6 +468,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:81
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Defeat the enemy army\n"
@@ -448,6 +482,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:98
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -463,6 +498,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:103
+#, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
@@ -512,6 +548,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:124
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "    \\node at (-1.0, -8.5) {\n"
@@ -527,6 +564,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:133
+#, no-wrap
 msgid ""
 "\\textbf{The Race}\n"
 "\n"
@@ -623,8 +661,7 @@ msgid ""
 "\n"
 msgstr ""
 "Catherine se široce usmála.\n"
-"\\uv{Tak jim řekni, ať se připraví, závod začíná.}"
-"\n"
+"\\uv{Tak jim řekni, ať se připraví, závod začíná.}\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:163
@@ -638,6 +675,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:165
+#, no-wrap
 msgid ""
 "\\textbf{Checkmate}\n"
 "\n"
@@ -691,9 +729,7 @@ msgstr ""
 msgid ""
 "Her duty fulfilled and her seat secure, Catherine would see Steadwick rebuilt with Erathia just a little safer… for now.\n"
 "\n"
-msgstr ""
-"Catherine splnila svou povinnost a zajistila si své místo, aby Steadwick byl znovu vybudován a Erathia byla jen o něco bezpečnější... prozatím."
-"\n"
+msgstr "Catherine splnila svou povinnost a zajistila si své místo, aby Steadwick byl znovu vybudován a Erathia byla jen o něco bezpečnější... prozatím.\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:184
@@ -745,8 +781,7 @@ msgid ""
 "What was left of who she'd brought into the hostile landscape was silently requesting the right to return home, yet the badlands were an enticing prize, and the bloodlust whipped up in the Queen of Erathia hadn't subsided yet.\n"
 "\n"
 msgstr ""
-"Před pevností k ní vzhlížely unavené tváře jako žebráci, kteří žádají o zbytky."
-"To, co zbylo z toho, koho přivedla do nehostinné krajiny, se tiše dožadovalo práva vrátit se domů, ale pustiny byly lákavou kořistí a krvežíznivost, kterou v sobě královna Erathie vybičovala, ještě neutichla.\n"
+"Před pevností k ní vzhlížely unavené tváře jako žebráci, kteří žádají o zbytky.To, co zbylo z toho, koho přivedla do nehostinné krajiny, se tiše dožadovalo práva vrátit se domů, ale pustiny byly lákavou kořistí a krvežíznivost, kterou v sobě královna Erathie vybičovala, ještě neutichla.\n"
 "\n"
 
 #. type: multicols*
@@ -829,9 +864,7 @@ msgid ""
 "Gods know we need it…''\n"
 "\n"
 msgstr ""
-"\\uv{To není třeba,} odpověděla Catherine."
-"\\uv{Viděla jsem mu to na očích, drak ví, co jsme dnes udělali."
-"Máme jejich poděkování a možná i laskavost, které se v budoucnu dovoláme.\n"
+"\\uv{To není třeba,} odpověděla Catherine.\\uv{Viděla jsem mu to na očích, drak ví, co jsme dnes udělali.Máme jejich poděkování a možná i laskavost, které se v budoucnu dovoláme.\n"
 "Bohové vědí, že ji potřebujeme ...}\n"
 "\n"
 
@@ -888,8 +921,7 @@ msgstr ""
 "Kdyby se věci vyvíjely jinak, mohli být silnými spojenci nebo alespoň strážci, kteří by drželi na uzdě místní zlovolné tvory.\n"
 "Teď bylo těžké říct, co by z nekontrolované divočiny mohlo uniknout do jiných krajů nebo městských částí, které měla na starosti.\n"
 "Opatrnost jí přinesla vítězství, ale přemýšlela, jestli to stačí.\n"
-"Mohly by podobné činy jednoho dne způsobit její pád?"
-"\n"
+"Mohly by podobné činy jednoho dne způsobit její pád?\n"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:240
@@ -906,5 +938,4 @@ msgstr ""
 "Když klusala kolem ostatků těch, kteří za ni bojovali, srdce se jí rozbušilo dojetím.\n"
 "Byla to válka a ztráty byly nevyhnutelné.\n"
 "Obrátila se k několika zbývajícím a slabou rukou naznačila cestu z pustiny vpřed.\n"
-"Bylo na čase jednotlivé kousky posbírat."
-"\n"
+"Bylo na čase jednotlivé kousky posbírat.\n"

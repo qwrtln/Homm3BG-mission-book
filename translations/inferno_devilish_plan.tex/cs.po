@@ -590,6 +590,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:131
+#, no-wrap
 msgid ""
 "You lose if any of the following occur:\n"
 "\\begin{itemize}\n"
@@ -606,6 +607,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:135
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
@@ -619,6 +621,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:145
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -634,6 +637,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -649,6 +653,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:156
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
@@ -666,6 +671,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:161
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
@@ -681,6 +687,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:166
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
@@ -748,6 +755,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: campaigns/inferno_devilish_plan.tex:200
+#, no-wrap
 msgid ""
 "[remember picture]\n"
 "    \\node(map)[anchor=center] at (9, -5.5) {\n"
@@ -767,12 +775,12 @@ msgstr ""
 "  \\node at (2.0, 0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
 "  \\node at (13.0, -0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
 "  \\node at (5.0, -11.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Dílky Mapy}}}}};\n"
-"  \\node at (5.0, -11.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Pekla}}}}};"
-"  "
+"  \\node at (5.0, -11.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Pekla}}}}};  "
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:206
 #: campaigns/inferno_steadwicks_fall.tex:213
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
 "\n"
@@ -782,6 +790,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:210
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (14.4, 1.45) {\\includegraphics[width=0.85\\linewidth]{\\art/efreet.jpg}};\n"
@@ -795,6 +804,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:212
+#, no-wrap
 msgid ""
 "\\textbf{Introduction}\n"
 "\n"
@@ -804,6 +814,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:216
+#, no-wrap
 msgid ""
 "Our underlings have done well.\n"
 "They have managed to raise a volcano and erect a fort in a sparsely populated forest just outside of Erathia's border.\n"
@@ -817,6 +828,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:218
+#, no-wrap
 msgid ""
 "\\textbf{The Queen}\n"
 "\n"
@@ -826,6 +838,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:222
+#, no-wrap
 msgid ""
 "The Gold Dragon Queen is a powerful ally of AvLee.\n"
 "You must find her lair and see to her demise, as this will greatly weaken the elves and make them less of a threat to our plans to destroy Erathia.\n"

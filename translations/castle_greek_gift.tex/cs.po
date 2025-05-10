@@ -135,8 +135,8 @@ msgid ""
 "Campaign $-$ The Queen's Gambit}{1. Greek Gift}{\\images/catherine.png}"
 msgstr ""
 "\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
-"{} {} {}Dámský Gambit} \\addscenariosection[subsection]{1}{"
-"Kampaň Hradu $-$ Dámský Gambit}{1. Danajský Dar}{\\images/catherine.png}"
+"{} {} {}Dámský Gambit} \\addscenariosection[subsection]{1}{Kampaň Hradu $-$ "
+"Dámský Gambit}{1. Danajský Dar}{\\images/catherine.png}"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
@@ -177,6 +177,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
@@ -187,6 +188,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:18
 #: campaigns/castle_two_knights_defense.tex:15
+#, no-wrap
 msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
@@ -197,6 +199,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
 #: campaigns/castle_two_knights_defense.tex:17
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
@@ -227,6 +230,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:26
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
@@ -236,6 +240,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:33
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -263,6 +268,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
@@ -272,6 +278,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:41
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
 "\n"
@@ -281,6 +288,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:43
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 4 × Might Cards\n"
 "\n"
@@ -301,6 +309,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
@@ -326,6 +335,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:59
+#, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -341,6 +351,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:64
+#, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -357,6 +368,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
@@ -366,6 +378,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:68
+#, no-wrap
 msgid ""
 "Place your Castle Hero on the center Field of the S3 Castle starting map Tile.\n"
 "\n"
@@ -375,6 +388,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:70
+#, no-wrap
 msgid ""
 "Place a Necropolis Hero on the center Field of the N3 Castle Tile.\n"
 "\n"
@@ -384,6 +398,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:74
+#, no-wrap
 msgid ""
 "Defeat the enemy army.\n"
 "\n"
@@ -410,6 +425,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:92
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -424,6 +440,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:97
+#, no-wrap
 msgid ""
 "\\textbf{If entering the settlement on F3:}\n"
 "\\begin{itemize}\n"
@@ -439,6 +456,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:102
+#, no-wrap
 msgid ""
 "\\textbf{Before combat with the enemy Hero:}\n"
 "\\begin{itemize}\n"
@@ -454,6 +472,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:107
+#, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
 "\\begin{itemize}\n"
@@ -470,6 +489,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
@@ -480,6 +500,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
+#, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
@@ -509,6 +530,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:125
+#, no-wrap
 msgid ""
 "{\n"
 "  \\transparent{0.2}\n"
@@ -541,6 +563,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
@@ -550,6 +573,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:142
+#, no-wrap
 msgid ""
 "\\textbf{Distant Threat}\n"
 "\n"
@@ -657,6 +681,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:172
+#, no-wrap
 msgid ""
 "\\textbf{Reverent Allies}\n"
 "\n"
@@ -673,8 +698,7 @@ msgid ""
 "Her gaze snapped upward to catch sight of something approaching.\n"
 "\n"
 msgstr ""
-"Catherine sice svému koni důvěřovala, protože s tímto bitvami zoceleným ořem bojovala zuby nehty, co si pamatovala. Ale když se blížili k majestátní sloupové hlavní budově osady, kůň se zachvěl."
-"Catherine také pocítila téměř znepokojivou svatou sílu v okolí, když znenadání její pozornost upoutal zvuk spěchajících křídel.\n"
+"Catherine sice svému koni důvěřovala, protože s tímto bitvami zoceleným ořem bojovala zuby nehty, co si pamatovala. Ale když se blížili k majestátní sloupové hlavní budově osady, kůň se zachvěl.Catherine také pocítila téměř znepokojivou svatou sílu v okolí, když znenadání její pozornost upoutal zvuk spěchajících křídel.\n"
 "Upřela svůj pohled vzhůru, aby zahlédla něco se blížíciho.\n"
 "\n"
 
@@ -717,10 +741,8 @@ msgid ""
 "I expected you might come when I spied the rot taking form in the hills.''\n"
 "\n"
 msgstr ""
-"Anděl pronesl slova jako první, hlubokým a zvučnějším hlasem než kterýkoli smrtelník spustil:"
-"\\uv{Královno Catherine.\n"
-"Čekal jsem, že přijdete, jakmile jsem zahlédl hnilobu formující se v kopcích.}"
-"\n"
+"Anděl pronesl slova jako první, hlubokým a zvučnějším hlasem než kterýkoli smrtelník spustil:\\uv{Královno Catherine.\n"
+"Čekal jsem, že přijdete, jakmile jsem zahlédl hnilobu formující se v kopcích.}\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:195
@@ -751,8 +773,7 @@ msgid ""
 "Catherine smiled wide as she watched more angels appear, then looked back to her forces and extended an open palmed arm forward in a command to march.\n"
 "\n"
 msgstr ""
-"\\uv{Samozřejmě, má Královno!} vyhrkl anděl."
-"\\uv{Společně nám žádné zlo nezabrání v postupu!} Když poslední slova opustila jeho rty a roznesla se do dáli, vytáhl zbraň.\n"
+"\\uv{Samozřejmě, má Královno!} vyhrkl anděl.\\uv{Společně nám žádné zlo nezabrání v postupu!} Když poslední slova opustila jeho rty a roznesla se do dáli, vytáhl zbraň.\n"
 "Dlouhý meč vzplál, jakmile opustil pochvu, a jeho planoucí sláva donutila většinu klečících odvrátit zrak.\n"
 "Hned poté se vznesl do vzduchu a začal znovu kroužit kolem.\n"
 "Kateřina se zeširoka usmála, když viděla, jak se objevují další andělé, pak se ohlédla na své síly a natáhla ruku s otevřenou dlaní dopředu na povel k pochodu.\n"
@@ -764,11 +785,11 @@ msgstr ""
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
 "\n"
-msgstr ""
-"\\textcolor{darkcandyapplered}{Přidejte Hrstku Archandělů do své Armády.}\n"
+msgstr "\\textcolor{darkcandyapplered}{Přidejte Hrstku Archandělů do své Armády.}\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:205
+#, no-wrap
 msgid ""
 "\\textbf{Bait And Switch}\n"
 "\n"
@@ -878,7 +899,6 @@ msgstr ""
 "\\textbf{Pronásledování Začíná}\n"
 "\n"
 
-
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:240
 #, no-wrap
@@ -927,9 +947,7 @@ msgstr ""
 msgid ""
 "The necromancer had played his opening move and won.\n"
 "\n"
-msgstr ""
-"Nekromant zahrál své zahájení a vyhrál."
-"\n"
+msgstr "Nekromant zahrál své zahájení a vyhrál.\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:253
@@ -965,7 +983,6 @@ msgstr ""
 "\\uv{Je to... moudré?} zeptal se tiše Rion.\n"
 "\n"
 
-
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:263
 #, no-wrap
@@ -978,8 +995,7 @@ msgid ""
 msgstr ""
 "Catherine odpověděla s ohněm v očích.\n"
 "\\uv{K čemu je dobré obnovovat zříceninu, když ten ďábel bude dál vyvádět své kousky?} řekla.\n"
-"\\uv{Ne."
-"Jestli chceme Steadwick zachránit, musíme s ním skoncovat dřív, než se bude moci ještě víc posílit.}“\n"
+"\\uv{Ne.Jestli chceme Steadwick zachránit, musíme s ním skoncovat dřív, než se bude moci ještě víc posílit.}“\n"
 "\n"
 
 #. type: multicols*
@@ -1002,6 +1018,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:275
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\framedimage[0.8\\linewidth]{\\art/ghost_dragon.jpg}\n"

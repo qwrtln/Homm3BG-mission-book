@@ -138,6 +138,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
@@ -148,6 +149,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
 #: campaigns/castle_two_knights_defense.tex:17
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
@@ -180,6 +182,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
@@ -190,6 +193,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
@@ -200,6 +204,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
@@ -210,6 +215,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
@@ -220,6 +226,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
+#, no-wrap
 msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
@@ -230,6 +237,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
@@ -244,8 +252,8 @@ msgid ""
 "\\addscenariosection[subsection]{1}{Castle Campaign $-$ The Queen's Gambit}"
 "{2. Sicilian Dragon}{\\images/catherine.png}"
 msgstr ""
-"\\addscenariosection[subsection]{1}{Kampa\\v{n} Hradu $-$ Dámský Gambit}"
-"{2. Drak ze Sicílie}{\\images/catherine.png}"
+"\\addscenariosection[subsection]{1}{Kampa\\v{n} Hradu $-$ Dámský Gambit}{2. "
+"Drak ze Sicílie}{\\images/catherine.png}"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:12
@@ -261,6 +269,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:16
+#, no-wrap
 msgid ""
 "This Scenario plays out over 11 Rounds.\n"
 "\n"
@@ -270,6 +279,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:22
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} The same Hero as Scenario 1\n"
 "\n"
@@ -309,6 +319,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:38
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Few Dread Knights, a Few Ghost Dragons\n"
 "\n"
@@ -319,6 +330,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:40
 #: campaigns/castle_two_knights_defense.tex:39
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
@@ -329,6 +341,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:42
 #: campaigns/castle_two_knights_defense.tex:41
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
@@ -349,6 +362,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:46
+#, no-wrap
 msgid ""
 "\\textbf{Neutral Enemy Deck:} 4 × Might Cards\n"
 "\n"
@@ -359,6 +373,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
 #: campaigns/castle_two_knights_defense.tex:52
+#, no-wrap
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -374,6 +389,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:60
+#, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -390,6 +406,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
 #: campaigns/castle_two_knights_defense.tex:63
+#, no-wrap
 msgid ""
 "\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -407,6 +424,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:71
+#, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -432,6 +450,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:77
+#, no-wrap
 msgid ""
 "Place your Castle Hero on the empty Field of the rightmost Far Tile.\n"
 "\n"
@@ -441,6 +460,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:79
+#, no-wrap
 msgid ""
 "Place a Necropolis Hero on the center Field of the S1 Necropolis Tile.\n"
 "\n"
@@ -450,6 +470,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:86
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Find the Archangels\n"
@@ -483,6 +504,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:100
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -498,6 +520,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:105
+#, no-wrap
 msgid ""
 "\\textbf{Visiting the first Obelisk:}\n"
 "\\begin{itemize}\n"
@@ -513,6 +536,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:110
+#, no-wrap
 msgid ""
 "\\textbf{Visiting the second Obelisk:}\n"
 "\\begin{itemize}\n"
@@ -576,6 +600,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: campaigns/castle_sicilian_dragon.tex:140
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\node at (9.0, -6.0) {\n"
@@ -623,8 +648,7 @@ msgid ""
 msgstr ""
 "Rion se zastavil vedle ní, když dopil poslední obsah vaku s vodou.\n"
 "Než něco řekl, otřel si z tváře kapky potu.\n"
-"\\uv{Tohle není nejlepší místo na boj."
-"Kromě špatných podmínek jsem slyšel, že místní obyvatelé jsou známí svou zvláštní... krutostí.}\n"
+"\\uv{Tohle není nejlepší místo na boj.Kromě špatných podmínek jsem slyšel, že místní obyvatelé jsou známí svou zvláštní... krutostí.}\n"
 "\n"
 
 #. type: multicols*
@@ -635,10 +659,8 @@ msgid ""
 "The truth was she was more worried about that possibility than she let on, but she had to maintain her composure to protect the image of her strength.\n"
 "\n"
 msgstr ""
-"\\uv{No, tak je prostě budeme muset dostat na lopatky,} odpověděla Catherine chladně."
-"Pravdou bylo, že se této možnosti obávala víc, než dávala najevo, ale musela zachovat klid, aby ochránila obraz své síly.\n"
+"\\uv{No, tak je prostě budeme muset dostat na lopatky,} odpověděla Catherine chladně.Pravdou bylo, že se této možnosti obávala víc, než dávala najevo, ale musela zachovat klid, aby ochránila obraz své síly.\n"
 "\n"
-
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:162
@@ -666,6 +688,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:168
+#, no-wrap
 msgid ""
 "\\textbf{The First Relic}\n"
 "\n"
@@ -714,8 +737,7 @@ msgid ""
 msgstr ""
 "Po chvíli se obrátil ke Catherine.\n"
 "\\uv{Je to transportní maják,} řekl.\n"
-"\\uv{Jako monolit, ale s kratším dosahem."
-"Alespoň... byl.\n"
+"\\uv{Jako monolit, ale s kratším dosahem.Alespoň... byl.\n"
 "Je poškozený, a tam, kde by magie v runách měla být silná, dokonce zářivá, je temná a veškerá síla je dávno rozpadlá.}\n"
 "\n"
 
@@ -751,12 +773,12 @@ msgid ""
 "``Come, let's see if other such beacons exist.''\n"
 "\n"
 msgstr ""
-"\\uv{Nikdy mě nezklamali,} zavrčela Catherine."
-"\\uv{Pojďme se podívat, jestli existují další takové majáky.}\n"
+"\\uv{Nikdy mě nezklamali,} zavrčela Catherine.\\uv{Pojďme se podívat, jestli existují další takové majáky.}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:193
+#, no-wrap
 msgid ""
 "\\textbf{Showdown}\n"
 "\n"
@@ -806,8 +828,7 @@ msgid ""
 "We barely managed to intercept them in time to preserve this one.''\n"
 "\n"
 msgstr ""
-"\\uv{Královno Catherine, ušetřila jste nám práci s vaším hledáním,} řekl hlavní Archanděl svým hlubokým hlasem."
-"Otevřenou dlaní ukázal na Obelisk, když zvuky bitvy konečně utichly.\n"
+"\\uv{Královno Catherine, ušetřila jste nám práci s vaším hledáním,} řekl hlavní Archanděl svým hlubokým hlasem.Otevřenou dlaní ukázal na Obelisk, když zvuky bitvy konečně utichly.\n"
 "\\uv{Nepřátelé nám chtěli zabránit v přístupu k těmto stavbám tím, že je zničí.\n"
 "Sotva se nám je podařilo zachytit včas, abychom zachovali tento Obelisk.}“\n"
 "\n"
@@ -826,8 +847,7 @@ msgstr ""
 "Rion klusal kolem nich, zatímco mluvili, a chtěl si prohlédnout neporušený Obelisk.\n"
 "Stejně jako předtím začal pokládat ruku na chladný kámen, ale než se ho dotkl, ucouvl.\n"
 "\\uv{Je aktivní!} řekl vzrušeně.\n"
-"\\uv{Tohle je možná ten zlom, který potřebujeme."
-"S trochou štěstí nás to zavede přímo k nepřátelské pevnosti.}\n"
+"\\uv{Tohle je možná ten zlom, který potřebujeme.S trochou štěstí nás to zavede přímo k nepřátelské pevnosti.}\n"
 "\n"
 
 #. type: multicols*
@@ -859,7 +879,6 @@ msgstr ""
 "    Neučiníte-li tak hned, můžete utratit jeden \\svgeven{movement} na tomto Obelisku a cestu uskutečnit.}\n"
 "\\end{itemize}\n"
 "\n"
-
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:223
@@ -934,8 +953,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\uv{Není.}\n"
-"\\uv{Nekromant žije a utíká na sever.}"
-"\n"
+"\\uv{Nekromant žije a utíká na sever.}\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:244
@@ -946,8 +964,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\uv{Ale... naše síly.\n"
-"Archandělů je příliš málo na to, aby mohli pokračovat; jakou máme naději?}"
-"\n"
+"Archandělů je příliš málo na to, aby mohli pokračovat; jakou máme naději?}\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:248
@@ -970,10 +987,7 @@ msgid ""
 "``This is foolish,'' Rion sighed.\n"
 "``We don't need to fight this hard; Vhidhax is not your father, Catherine…''\n"
 "\n"
-msgstr ""
-"\\uv{To je bláznovství,} povzdechl si Rion."
-"Nemusíme tak tvrdě bojovat, Vhidhax není tvůj otec, Catherine..."
-"\n"
+msgstr "\\uv{To je bláznovství,} povzdechl si Rion.Nemusíme tak tvrdě bojovat, Vhidhax není tvůj otec, Catherine...\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:257
@@ -995,6 +1009,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:262
+#, no-wrap
 msgid ""
 "\\vspace{2em}\n"
 "\\begin{center}\n"
@@ -1007,4 +1022,3 @@ msgstr ""
 "  \\framedimage[0.75\\linewidth]{\\art/necropolis_town.jpg}\n"
 "\\end{center}\n"
 "\n"
-

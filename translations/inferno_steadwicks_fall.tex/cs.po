@@ -246,6 +246,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:206
 #: campaigns/inferno_steadwicks_fall.tex:213
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
 "\n"
@@ -532,6 +533,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:121
+#, no-wrap
 msgid ""
 "The Enemy Hero General Kendal is represented by a Castle Faction Hero model and appears on the center Field of the S3 Starting Map Tile.\n"
 "\n"
@@ -541,6 +543,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:123
+#, no-wrap
 msgid ""
 "The Castle Charging Hero is represented by a Castle Faction Hero model and appears on (and owns) the Settlement of the F3 Map Tile.\n"
 "\n"
@@ -550,6 +553,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:125
+#, no-wrap
 msgid ""
 "The Rampart Charging Hero is represented by a Rampart Faction Hero model and appears on (and owns) the Settlement of the F10 Map Tile.\n"
 "\n"
@@ -589,6 +593,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:135
+#, no-wrap
 msgid ""
 "Capture all Enemy Settlements (F3, F10, \\#F1) and Steadwick (S3) before Queen Catherine Ironfist arrives at the end of Round 16.\n"
 "\n"
@@ -618,6 +623,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:151
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -633,6 +639,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:156
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -648,6 +655,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:161
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -681,6 +689,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:172
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{11} Round:}\n"
 "\\begin{itemize}\n"
@@ -696,6 +705,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:177
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
@@ -711,6 +721,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:182
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{15} Round:}\n"
 "\\begin{itemize}\n"
@@ -726,6 +737,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:187
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
@@ -757,6 +769,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:211
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "    \\item General Kendal does not move and only waits in his Town. He start with Walls, Gate,\n"
@@ -792,6 +805,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:215
+#, no-wrap
 msgid ""
 "\\textbf{Congratulations}\n"
 "\n"
@@ -801,6 +815,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:219
+#, no-wrap
 msgid ""
 "You are to be congratulated on your progress so far.\n"
 "You have laid waste to Eastern Erathia, and are now within striking distance of the Erathian capital of Steadwick.\n"
@@ -814,6 +829,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:221
+#, no-wrap
 msgid ""
 "\\textbf{News}\n"
 "\n"
@@ -823,6 +839,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:224
+#, no-wrap
 msgid ""
 "Not only have Bracada and AvLee sent reinforcements, but we have received news that Queen Catherine Ironfist is marching a sizeable army from the south.\n"
 "We must control the capital and its garrisons before she arrives.\n"
@@ -834,6 +851,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:227
+#, no-wrap
 msgid ""
 "You have just received a report on the progress of Queen Catherine.\n"
 "Forces from Nighon and Eeofol are attempting to delay her march to Steadwick, but doubt that they can delay her more than two or three months.\n"
@@ -845,6 +863,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:229
+#, no-wrap
 msgid ""
 "\\textbf{First Report}\n"
 "\n"
@@ -854,6 +873,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:233
+#, no-wrap
 msgid ""
 "You receive a report from the south.\n"
 "Queen Catherine's forces have been sufficiently delayed, allowing you at least two months more to reach the capitol, but our own forces have suffered significant losses.\n"
@@ -867,6 +887,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:235
+#, no-wrap
 msgid ""
 "\\textbf{Second Report}\n"
 "\n"
@@ -876,6 +897,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:239
+#, no-wrap
 msgid ""
 "You receive a report from the south.\n"
 "Our forces continue to throw themselves in the path of Queen Catherine's armies, yet she continues to march northward.\n"
@@ -889,6 +911,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:241
+#, no-wrap
 msgid ""
 "\\textbf{First Warning}\n"
 "\n"
@@ -898,6 +921,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:244
+#, no-wrap
 msgid ""
 "Queen Catherine's march continues -- her forces are just two weeks away.\n"
 "If you do not hurry, we will not have time to secure the capital before her arrival.\n"
@@ -909,6 +933,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:246
+#, no-wrap
 msgid ""
 "\\textbf{Second Warning}\n"
 "\n"
@@ -918,6 +943,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:249
+#, no-wrap
 msgid ""
 "Your scouts report sighting Queen Catherine's army seven days to the southwest.\n"
 "If she reaches the capitol before you, all is lost.\n"
@@ -929,6 +955,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:251
+#, no-wrap
 msgid ""
 "\\textbf{The Ending}\n"
 "\n"
@@ -938,6 +965,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:255
+#, no-wrap
 msgid ""
 "This morning, a massive army lead by Queen Catherine Ironfist arrived at the Erathian capitol of Steadwick.\n"
 "We have no choice but to retreat our forces.\n"
@@ -951,6 +979,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:257
+#, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
 "\n"
@@ -958,9 +987,9 @@ msgstr ""
 "\\textcolor{darkcandyapplered}{Pokud nebyl Steadwick dobyt, prohrál jste Scénář!}\n"
 "\n"
 
-
 #. type: tikzpicture
 #: campaigns/inferno_steadwicks_fall.tex:267
+#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, yshift=37em, opacity=0.07] at (current page.south) {\n"

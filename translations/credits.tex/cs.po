@@ -99,6 +99,7 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:15
+#, no-wrap
 msgid ""
 "\\textbf{Scenario templating, tooling and automation}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"

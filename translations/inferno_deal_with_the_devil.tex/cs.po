@@ -353,6 +353,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:44
+#, no-wrap
 msgid ""
 "\\textbf{Bonus:} Gain a War Machine of your choice.\n"
 "\n"
@@ -488,6 +489,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:95
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item You lose one Combat encounter with your Main Hero.\n"
@@ -505,6 +507,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:102
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -520,6 +523,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:107
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -535,6 +539,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:112
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{3} Round:}\n"
 "\\begin{itemize}\n"
@@ -601,6 +606,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:135
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{12} Round:}\n"
 "\\begin{itemize}\n"
@@ -618,6 +624,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:141
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{16} Round:}\n"
 "\\begin{itemize}\n"
@@ -651,6 +658,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:178
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Your Main Hero can only travel in Inferno Map Tiles. You cannot enter any other Map Tile type.\n"
@@ -722,6 +730,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: campaigns/inferno_deal_with_the_devil.tex:193
+#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, yshift=27em, opacity=0.17] at (current page.south) {\n"
@@ -743,6 +752,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: campaigns/inferno_deal_with_the_devil.tex:207
+#, no-wrap
 msgid ""
 "  \\node at (1.5, -3.0) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{S4}}}}};\n"
 "  \\node at (7, -3.0) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{\\#F4}}}}};\n"
@@ -774,6 +784,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:215
+#, no-wrap
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{The Story}}\n"
@@ -785,6 +796,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:217
+#, no-wrap
 msgid ""
 "\\textbf{Refusal}\n"
 "\n"
@@ -794,6 +806,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:222
+#, no-wrap
 msgid ""
 "Queen Catherine Ironfist refuses our ransom demand, and they are amassing armies for a rescue operation.\n"
 "Clan Kreelah, prepare our defenses!\n"
@@ -809,6 +822,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:224
+#, no-wrap
 msgid ""
 "\\textbf{Enemy at the gates}\n"
 "\n"
@@ -818,6 +832,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:228
+#, no-wrap
 msgid ""
 "Castle and AvLee armies will be at our gates soon.\n"
 "They must come through the volcanic corridor to our east.\n"
@@ -831,6 +846,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:230
+#, no-wrap
 msgid ""
 "\\textbf{Scout Report}\n"
 "\n"
@@ -840,6 +856,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:233
+#, no-wrap
 msgid ""
 "Our scouts have reported that the enemy has acquired 2 very powerful major artifacts with the help of local seers.\n"
 "They are fools to think these will help them overcome our Kreegan fortress.\n"

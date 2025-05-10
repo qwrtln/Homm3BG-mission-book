@@ -484,6 +484,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:114
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
@@ -542,13 +543,12 @@ msgid ""
 "3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 msgstr ""
 "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Síla Armád Pevnosti "
-"Titánů}\\\\ \\bigskip \\let\\origbronze\\bronze "
-"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
-"\\renewcommand{\\bronze}{\\origbronze[12]} \\renewcommand{\\silver}"
-"{\\origsilver[12]} \\renewcommand{\\golden}{\\origgolden[12]} "
-"\\renewcommand{\\azure}{\\origazure[12]} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Lehká} & \\darkcell{Normální} & \\darkcell{Těžká} & "
+"Titánů}\\\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Lehká} & \\darkcell{Normální} & \\darkcell{Těžká} & "
 "\\darkcell{Nemožná}\\\\ \\darkcell[1.2]{1 Hráč} & \\lightcell[1.2]{3\\bronze "
 "2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
 "2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden "
@@ -596,6 +596,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: coops/titans_stronghold.tex:207
+#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07] at (current page.center) {\n"

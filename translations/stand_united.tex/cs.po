@@ -186,9 +186,6 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/stand_united.tex:3
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
-#| "sentinel.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
@@ -198,6 +195,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:7
+#, no-wrap
 msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
@@ -207,6 +205,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:9
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studio Discord}\n"
 "\n"
@@ -226,6 +225,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:15
+#, no-wrap
 msgid ""
 "This Scenario is played over 9 Rounds.\n"
 "\n"
@@ -235,6 +235,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:19
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2--4\n"
 "\n"
@@ -244,6 +245,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:21
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
@@ -315,6 +317,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:46
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 6 × Might Card, 4 × Magic Card, 4 × Skill Card\n"
 "\n"
@@ -324,6 +327,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:48
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Spells:} 1 × Fireball, 1 × Lightning Bolt, 1 × Weakness, 1 × Curse\n"
 "\n"
@@ -333,6 +337,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:50
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Skill:} Sorcery\n"
 "\n"
@@ -440,6 +445,7 @@ msgstr ""
 
 #. type: tikzpicture
 #: coops/stand_united.tex:104
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=-8em, yshift=-38.9em] at (current page.center) {\n"
