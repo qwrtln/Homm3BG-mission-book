@@ -43,8 +43,8 @@ Take the following Map Tiles ($P$ stands for the number of players) and arrange 
 The game ends at the end of the Round when any of the following conditions are met:
 
 \begin{itemize}
-  \item One player has defeated each other player's Main Heroes once - \textit{that player wins the game immediately.}
-  \item One player has flagged all Obelisks - \textit{that player wins the game immediately.}
+  \item One player has defeated each other player's Main Heroes once. \textit{That player wins the game immediately.}
+  \item One player has flagged all Obelisks. \textit{That player wins the game immediately.}
   \item At the end of Round 14.
 \end{itemize}
 
@@ -60,7 +60,7 @@ If no player has achieved an immediate victory, the player with the most Victory
 \subsection*{\MakeUppercase{Timed Events}}
 \textbf{\nth{4} Round:}
 \begin{itemize}
-  \item Remove all Black Cubes from the Map.
+  \item Remove all Black Cubes from the Map except from Learning Stones.
 \end{itemize}
 \textbf{\nth{6} Round:}
 \begin{itemize}
@@ -68,22 +68,21 @@ If no player has achieved an immediate victory, the player with the most Victory
 \end{itemize}
 \textbf{\nth{9} Round:}
 \begin{itemize}
-  \item Remove all Black Cubes.
+  \item Repeat event of Round 4.
 \end{itemize}
 \textbf{\nth{10} Round:}
 \begin{itemize}
   \item The player(s) whose Main Hero has the least \svg{experience}, roll 2 \svg{resource}.
 \end{itemize}
-\columnbreak
 \textbf{\nth{12} Round:}
 \begin{itemize}
-  \item Remove all Black Cubes.
+  \item Repeat event of Round 4.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
 \begin{itemize}
   \item \textbf{Sanctuary:} Search (2) your Deck. \textit{Visitable once per Faction}.
-  \item \textbf{Obelisk:} Guarded by Level VI Neutrals. Search (2) \svg{skill} \svg{spellpower} or \svg{artifact}. \textit{Can be flagged by multiple players.}
+  \item \textbf{Obelisk:} Guarded by Level VI Neutrals. Search (2) \svg{skill}, \svg{spellpower} or \svg{artifact}. \textit{Can be flagged by multiple players.}
   \item Each \textbf{blocked Field} adjacent to an Obelisk is a two-way Astral Gate, which only becomes active after that Obelisk has been visited.
   \item An \textbf{Astral Gate} cannot be entered from a different Map Tile. When a Hero enters an Astral Gate, they are teleported to another random activated Astral Gate on the Map and arrive on an adjacent Field.
   \item Instead of teleporting randomly, a player may discard 1 Unit to choose the destination Astral Gate.
@@ -97,5 +96,5 @@ If no player has achieved an immediate victory, the player with the most Victory
 \end{multicols}
 
 \begin{tikzpicture}[overlay, remember picture]
-  \node[yshift=-12em] at (current page.center) {\includegraphics[width=0.85\linewidth]{\maps/astral_run.png}};
+  \node[yshift=-12em] at (current page.center) {\includegraphics[width=0.84\linewidth]{\maps/astral_run.png}};
 \end{tikzpicture}
