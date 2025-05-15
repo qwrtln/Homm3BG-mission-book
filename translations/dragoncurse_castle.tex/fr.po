@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2024-10-31 23:06+0000\n"
-"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
+"PO-Revision-Date: 2025-05-15 08:02+0000\n"
+"Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/clash-scenarios/dragoncurse_castle/fr/>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -102,11 +102,13 @@ msgstr ""
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
