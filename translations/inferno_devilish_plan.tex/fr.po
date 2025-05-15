@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 14:51+0100\n"
-"PO-Revision-Date: 2024-10-31 23:06+0000\n"
-"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
+"PO-Revision-Date: 2025-05-15 08:02+0000\n"
+"Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/campaigns/inferno_devilish_plan/fr/>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -97,6 +97,8 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué dans le scénario :\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -164,11 +166,13 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
