@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-24 14:51+0100\n"
+"POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: 2025-05-15 08:02+0000\n"
 "Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/"
-"homm3bg-fan-made-mission-book/campaigns/inferno_devilish_plan/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/campaigns/inferno_devilish_plan/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
-#: sections/recommendations.tex:73 sections/recommendations.tex:128
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/credits.tex:10
 #, no-wrap
 msgid ""
@@ -97,8 +97,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les tuiles suivantes et disposez-les comme indiqué dans le scénario :"
-"\n"
+"Prenez les tuiles suivantes et disposez-les comme indiqué dans le scénario :\n"
 "\n"
 
 #. type: multicols*
