@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-05-15 08:02+0000\n"
-"Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/sections/recommendations/fr/>\n"
+"PO-Revision-Date: 2025-05-16 12:06+0000\n"
+"Last-Translator: Nohud <nohud@hotmail.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/sections/recommendations/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,14 +46,13 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/recommendations.tex:3
-#, fuzzy
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr "\\addsection{Recommendations}{\\art/haste.png}"
+msgstr "\\addsection{Recommandations}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
-msgstr ""
+msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/recommendations.tex:10
