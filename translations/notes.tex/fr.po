@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
-"PO-Revision-Date: 2025-05-15 08:02+0000\n"
-"Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
+"PO-Revision-Date: 2025-05-16 12:06+0000\n"
+"Last-Translator: Nohud <nohud@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/sections/notes/fr/>\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. type: Plain text
 #: sections/notes.tex:3
 msgid "\\addsection{Notes}{\\images/intelligence.png}"
-msgstr ""
+msgstr "\\addsection{Notes}{\\images/intelligence.png}"
 
 #. type: tikzpicture
 #: sections/notes.tex:7
