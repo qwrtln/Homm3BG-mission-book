@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-14 07:17+0100\n"
-"PO-Revision-Date: 2024-10-31 23:06+0000\n"
-"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
+"PO-Revision-Date: 2025-05-16 12:06+0000\n"
+"Last-Translator: Nohud <nohud@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/sections/what_to_play/fr/>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -47,7 +47,7 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:3
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr ""
+msgstr "\\addsection{Comment jouer}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -56,6 +56,8 @@ msgid ""
 "Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
+"Suivez ces suggestions si vous n'êtes pas sûr du scénario qui vous convient le mieux.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:9
