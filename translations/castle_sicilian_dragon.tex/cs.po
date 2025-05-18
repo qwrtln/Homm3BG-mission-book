@@ -830,7 +830,7 @@ msgid ""
 msgstr ""
 "\\uv{Královno Catherine, ušetřila jste nám práci s vaším hledáním,} řekl hlavní Archanděl svým hlubokým hlasem.Otevřenou dlaní ukázal na Obelisk, když zvuky bitvy konečně utichly.\n"
 "\\uv{Nepřátelé nám chtěli zabránit v přístupu k těmto stavbám tím, že je zničí.\n"
-"Sotva se nám je podařilo zachytit včas, abychom zachovali tento Obelisk.}“\n"
+"Sotva se nám je podařilo zachytit včas, abychom zachovali tento Obelisk.}\n"
 "\n"
 
 #. type: multicols*
