@@ -482,7 +482,7 @@ msgid ""
 msgstr ""
 "\\textbf{Když dokončíte Scénář:}\n"
 "\\begin{itemize}\n"
-"  \\item Přečtěte sekci\\uv{Pronásledování Začíná}\n"
+"  \\item Přečtěte sekci \\uv{Pronásledování Začíná}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -785,7 +785,9 @@ msgstr ""
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
 "\n"
-msgstr "\\textcolor{darkcandyapplered}{Přidejte Hrstku Archandělů do své Armády.}\n"
+msgstr ""
+"\\textcolor{darkcandyapplered}{Přidejte Hrstku Archandělů do své Armády.}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:205
