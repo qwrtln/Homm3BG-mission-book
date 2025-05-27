@@ -24,24 +24,26 @@ RUN apk --no-cache add \
     curl \
     diffutils \
     fontconfig \
+    gettext \
+    gettext-dev \
     ghostscript \
-    gnupg \
     git \
+    gnupg \
     grep \
     imagemagick \
     inkscape \
     make \
+    ncurses \
+    opensp \
     perl \
+    perl-dev \
+    perl-unicode-linebreak \
+    perl-yaml \
     poppler-utils \
     tar \
     wget \
     xz \
-    perl-unicode-linebreak \
-    perl-yaml \
-    gettext \
-    gettext-dev \
-    perl-dev \
-    opensp \
+    && [[ -f /usr/bin/locale ]] || ln -s /usr/bin/gettext /usr/bin/locale \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         perl-app-cpanminus \
