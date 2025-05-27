@@ -12,9 +12,7 @@ RUN apk add --no-cache wget && \
 FROM alpine:latest
 
 ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
-    PERL5LIB="/opt/po4a/lib" \
-    LANG=C.UTF-8 \
-    LC_ALL=C.UTF-8
+    PERL5LIB="/opt/po4a/lib"
 
 COPY --from=po4a-builder /po4a /opt/po4a
 
@@ -26,27 +24,25 @@ RUN apk --no-cache add \
     curl \
     diffutils \
     fontconfig \
-    gettext \
-    gettext-dev \
     ghostscript \
-    git \
     gnupg \
+    git \
     grep \
     imagemagick \
     inkscape \
     make \
-    musl-locales \
-    ncurses \
-    opensp \
     perl \
-    perl-dev \
-    perl-unicode-linebreak \
-    perl-yaml \
     poppler-utils \
     tar \
-    util-linux \
     wget \
     xz \
+    perl-unicode-linebreak \
+    perl-yaml \
+    gettext \
+    gettext-dev \
+    perl-dev \
+    opensp \
+    && [[ -f /usr/bin/locale ]] || ln -s /usr/bin/gettext /usr/bin/locale \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         perl-app-cpanminus \
@@ -135,7 +131,7 @@ RUN mkdir -p /etc/fonts/conf.d && \
       make \
       xz \
       gnupg \
-    && rm -rf \
+    rm -rf \
       /root/.gnupg \
       /root/.wget-hsts \
       /usr/share/man/* \
