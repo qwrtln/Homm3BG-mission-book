@@ -669,7 +669,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"    \\item General Kendal does not move and only waits in his Town. He start with Walls, Gate,\n"
+"    \\item General Kendal does not move and only waits in his Town. He starts with Walls, Gate,\n"
 "      and Arrow Tower on his side of the Combat Board.\n"
 "    \\item The difficulty Level of every Combat encounter on the map increases by one till the end of the Scenario\n"
 "      (see page 35, ``Field Difficulty Level Table'' in the Core Rulebook).\n"
