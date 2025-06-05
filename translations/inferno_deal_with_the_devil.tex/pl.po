@@ -456,7 +456,7 @@ msgid ""
 "The Enemy Charging Castle Hero \\#1 starts on the center Field of S3 Starting Map Tile.\n"
 "\n"
 msgstr ""
-"Szarżująca Armia Zamku \\#1 zaczyna na środkowym Polu Kafelka S4.\n"
+"Szarżująca Armia Zamku \\#1 zaczyna na środkowym Polu Kafelka S3.\n"
 "\n"
 
 #. type: multicols
@@ -694,7 +694,7 @@ msgstr ""
 "  \\item Jeśli Szarżująca Armia wejdzie na Kafelek lub Pole, na którym znajduje się Twój Bohater Główny (wyjątek stanowi, gdy jesteś w\n"
 "    swoim mieście Inferno Kleesive), lub jeśli Szarżująca Armia zaatakuje Kleesive, a Ty nie jesteś obecny w swoim mieście\n"
 "    Kleesive, natychmiast zostajesz przeniesiony z powrotem do Kleesive, tracisz wszystkie pozostałe Punkty Ruchu,\n"
-"    tracisz 3 \\svg{gold}, otrzujesz \\svg{morale_negative} i losowo odrzucasz 1 Kartę z ręki.\n"
+"    tracisz 3 \\svg{gold}, otrzymujesz \\svg{morale_negative} i losowo odrzucasz 1 Kartę z ręki.\n"
 "  \\item Szarżujące Armie poruszają się tylko 2 \\svgeven{movement}. Ostatnia Szarżująca Armia porusza się 4 \\svgeven{movement}. Podążają najkrótszą\n"
 "    drogą do Kleesive. Jeśli posiadasz Kopalnię na Kafelku mapy, na który wchodzą, przejmą Kopalnię (ale nie ,,wrócą się'' po nią),\n"
 "    a następnie kontynuują najkrótszą drogę do Kleesive. Ignorują wszystko inne. Korzystają także z bonusu 1 Punktu Ruchu ze Stajni.\n"
@@ -822,7 +822,7 @@ msgstr ""
 msgid ""
 "\\textbf{Enemy at the gates}\n"
 "\n"
-msgstr "\\textbf{Wróg u bram}n\n"
+msgstr "\\textbf{Wróg u bram}\n"
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:228
