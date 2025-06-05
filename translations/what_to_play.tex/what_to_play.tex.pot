@@ -117,7 +117,7 @@ msgstr ""
 #: sections/what_to_play.tex:27
 #, no-wrap
 msgid ""
-"For information regarding your play time, strategizing, and custom rules, checkout out \\pagelink{Recommendations}{Recommendations} at the and of this book.\n"
+"For information regarding your play time, strategizing, and custom rules, check out \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
 "\n"
 msgstr ""
 
