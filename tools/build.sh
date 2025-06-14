@@ -7,7 +7,7 @@ PRINTABLE_MODE=0
 MONO_MODE=0
 SCENARIO_SEARCH=""
 
-valid_languages=("en" "pl" "fr" "cs")
+valid_languages=("en" "pl" "fr" "cs" "de")
 
 usage() {
   echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]"
