@@ -1,0 +1,480 @@
+# German translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/credits.tex:10
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
+#: coops/titans_stronghold.tex:78
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:70
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:76
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
+#: sections/credits.tex:32
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: coops/titans_stronghold.tex:3
+msgid ""
+"\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}{\\images/"
+"earthquake.png}"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Invoceusse\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:16
+#, no-wrap
+msgid ""
+"\\textit{A long time ago, a mighty fortress was built to house the fantastic and murderous Titans.\n"
+"  No one has ever entered and returned to tell the tale.\n"
+"  Now, there are rumors about the death of the guardians and an incredible amount of treasures, potentially including the best bow in the world.\\\\\n"
+"  If this legend of the empty fort is true, it's time for excavation.\\\\\n"
+"  But for now, you and your allies need to find the keys spread across Antagarich to open the gate of the Titans' Stronghold.\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:20
+#, no-wrap
+msgid ""
+"This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:24
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 1 -- 6\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\bronze\\ Units of your choice\n"
+"  \\item A Few \\bronze\\ Units of your choice\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:36 campaigns/castle_sicilian_dragon.tex:30
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} None\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:38
+#, no-wrap
+msgid ""
+"\\textbf{Map Tile Pool:} None\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
+#, no-wrap
+msgid ""
+"\\textbf{Additional Bonus:} None\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
+#: coops/stand_united.tex:35
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:53
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 2P × Far (II--III) Map Tile\n"
+"  \\item 2P × Near (IV--V) Map Tile\n"
+"  \\item (P + 1) × Center (VI--VII) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:57
+#, no-wrap
+msgid ""
+"\\textbf{\\MakeUppercase{Note:}} If you don’t have enough VI--VII Tiles, you can\n"
+"use another Tile near I Tiles. The center of this\n"
+"Tile is the Titans’ Stronghold.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:61
+#, no-wrap
+msgid ""
+"Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Tiles I).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:65
+#, no-wrap
+msgid ""
+"There are undefeated Units left in the Titans' Stronghold at the end of Round 16 (15 on Impossible difficulty).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:69
+#, no-wrap
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node[inner sep=0pt, opacity=0.2] at (0, -6.2) {\\includegraphics[width=0.75\\linewidth, keepaspectratio]{\\art/shackles_of_war.png}};\n"
+"\\end{tikzpicture}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:76
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:83
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\\begin{itemize}\n"
+"  \\item Remember: the center of VI--VII Tile next to all I Tiles is the Titans' Stronghold.\n"
+"  \\item No one can enter the Titans' Stronghold until all other VII Fields are flagged by any player.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:92
+#, no-wrap
+msgid ""
+"  \\item After defeating a Level VII Neutral army, instead of resolving the Field, the player chooses an option three times from the following list (an option may be chosen multiple times):\n"
+"    \\begin{itemize}\n"
+"      \\item Another player (your choice) gains 5\\,\\svg{gold}\n"
+"      \\item Another player (your choice) gains 2\\,\\svg{building_materials}\n"
+"      \\item Another player (your choice) gains 1\\,\\svg{valuables}\n"
+"    \\end{itemize}\n"
+"  Then, flag the VII Field with a Faction Cube.\n"
+"  (There is no bonus in solo play!)\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:96
+#, no-wrap
+msgid ""
+"  \\item Ignore all yellow borders on Starting Tiles I.\n"
+"  \\item You can use your build Token to give your resources to another player.\n"
+"  \\item Two players can use their build Tokens to exchange Artifacts and/or Spells.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:99
+#, no-wrap
+msgid ""
+"  \\item Whenever a player Visits an Obelisk, that player rolls one treasure Die and one resource Die, and resolves one of them.\n"
+"  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:108
+#, no-wrap
+msgid ""
+"  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
+"  \\item Combat in the Titans' Stronghold now costs 1 MP to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
+"  \\item Additionally, no player can:\n"
+"  \\begin{itemize}\n"
+"    \\item Attack other Heroes.\n"
+"    \\item Capture a Mine or Settlement that is already controlled.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:114
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: coops/titans_stronghold.tex:193
+msgid ""
+"\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
+"Stronghold Armies}\\\\ \\bigskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[12]} \\renewcommand{\\silver}"
+"{\\origsilver[12]} \\renewcommand{\\golden}{\\origgolden[12]} "
+"\\renewcommand{\\azure}{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}"
+"{p{0.15\\linewidth}XXXX} & \\darkcell{Easy} & \\darkcell{Normal} & "
+"\\darkcell{Hard} & \\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & "
+"\\lightcell[1.2]{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]"
+"{2\\bronze 2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
+"2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver "
+"2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]"
+"{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze "
+"5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver "
+"5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden "
+"4\\azure}\\\\ \\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze "
+"7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver "
+"5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden "
+"3\\azure \\linebreak Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} "
+"& \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak "
+"Then\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]"
+"{4 players} & \\lightcell[1.8]{10\\bronze 10\\silver\\linebreak 6\\golden "
+"2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & "
+"\\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak "
+"Then\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]"
+"{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak Then\\linebreak "
+"1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 players} & "
+"\\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak "
+"Then\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
+"{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Then\\linebreak "
+"5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
+"6\\silver 6\\golden 4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver "
+"6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden "
+"6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver 8\\golden "
+"5\\azure}\\\\ \\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze "
+"8\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver "
+"5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden "
+"3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} "
+"& \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak "
+"Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]"
+"{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak "
+"3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
+msgstr ""
+
+#. type: center
+#: coops/titans_stronghold.tex:199
+msgid ""
+"\\transparent{0.2}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
+"{\\art/land_mine.png}}"
+msgstr ""
+
+#. type: tikzpicture
+#: coops/titans_stronghold.tex:207
+#, no-wrap
+msgid ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07] at (current page.center) {\n"
+"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
+"  };"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
+msgstr ""
+
+#.  \linebreak
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244
+msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244
+msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
+msgstr ""
