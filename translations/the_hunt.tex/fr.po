@@ -1,22 +1,20 @@
-# French translations for Homm package
-# Copyright (C) 2024 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# French translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2024-10-31 23:06+0000\n"
-"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/clash-scenarios/the_hunt/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -51,12 +49,12 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -65,6 +63,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
+"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -78,7 +82,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
 "\n"
 
 #. type: multicols
@@ -105,20 +109,24 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:33 clash/the_hunt.tex:33
@@ -131,16 +139,27 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/the_hunt.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
+#| "{\\images/earthquake.png}"
 msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgstr ""
+"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
+"earthquake.png}"
 
 #. type: multicols*
 #: clash/the_hunt.tex:7
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Invoceusse\n"
+#| "\n"
 msgid ""
 "\\textbf{Author:} Mateusz ``MATMOT'' Motyka\n"
 "\n"
 msgstr ""
+"\\textbf{Auteur :} Invoceusse\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:9
@@ -162,47 +181,57 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:16
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 14 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:21
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
+"\\textbf{Bâtiments de départ :} Aucun\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:37
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+#| "\n"
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
 "\n"
 msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -213,23 +242,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{J}$ \\textbf{× Tuiles de départ (I)}\n"
-"\\begin{itemize}\n"
-"  \\item Prendre les tuiles de départ des factions choisies.\n"
-"  \\item Ignorez leur bordure jaune.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 3-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -240,21 +256,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{J}$ \\textbf{× Tuiles de départ (I)}\n"
-"\\begin{itemize}\n"
-"  \\item Prendre les tuiles de départ des factions choisies.\n"
-"  \\item Ignorez leur bordure jaune.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:56
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Slay the Dragon Boss with your Main Hero.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:59
@@ -267,7 +282,13 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:66
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -275,6 +296,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\begin{itemize}\n"
+"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:70

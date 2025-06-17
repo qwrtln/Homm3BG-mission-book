@@ -1,23 +1,20 @@
-# French translations for Homm package
-# Traductions françaises du paquet Homm
-# Copyright (C) 2024 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# French translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2024-10-31 23:06+0000\n"
-"Last-Translator: invoceusse <invoceusse@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/campaigns/inferno_steadwicks_fall/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -55,7 +52,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du scenario}}\n"
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
 "\n"
 
 #. type: multicols
@@ -70,7 +67,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
 "\n"
 
 #. type: multicols
@@ -85,7 +82,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
 "\n"
 
 #. type: multicols*
@@ -101,7 +98,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de victoire}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
 "\n"
 
 #. type: multicols
@@ -115,7 +112,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de défaite}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
 "\n"
 
 #. type: multicols
@@ -142,79 +139,95 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:28 campaigns/inferno_steadwicks_fall.tex:28
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
+"\\textbf{Auteur :} Invoceusse\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
+"\\textbf{Auteur :} Invoceusse\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus de départ :} Aucun\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus de départ :} Aucun\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:176
@@ -234,7 +247,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -247,11 +260,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:9
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+#| "\n"
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1246353361456861276/1246353361456861276}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:14
@@ -266,19 +284,29 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:18
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
+#| "\n"
 msgid ""
 "This Scenario plays out over 16 Rounds.\n"
 "\n"
 msgstr ""
+"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 1 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:36
@@ -294,11 +322,16 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:38
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Town Buildings:} None\n"
+#| "\n"
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Bâtiments de départ :} Aucun\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:46
@@ -371,15 +404,24 @@ msgstr ""
 #. type: multicols
 #: campaigns/inferno_steadwicks_fall.tex:94
 #: campaigns/inferno_deal_with_the_devil.tex:54
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:100
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
+#| "  \\item A Few \\bronze\\ Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -388,6 +430,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
+"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:110
@@ -511,13 +559,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:156
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -525,21 +567,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:161
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -547,11 +578,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:167
@@ -589,13 +615,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:177
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
 "\\begin{itemize}\n"
@@ -603,11 +623,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:182
@@ -710,17 +725,11 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:221
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{The Escape}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{News}\n"
 "\n"
 msgstr ""
-"\\vspace{-1em} % FIX ME\n"
-"\\textbf{The Escape}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:224
@@ -742,16 +751,11 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:229
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{First Report}\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:233
@@ -765,16 +769,11 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:235
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Second Report}\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:239
@@ -829,14 +828,13 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:251
 #, fuzzy, no-wrap
 #| msgid ""
-#| "\\textbf{The Escape}\n"
+#| "\\textbf{Town Buildings:} None\n"
 #| "\n"
 msgid ""
 "\\textbf{The Ending}\n"
 "\n"
 msgstr ""
-"\\vspace{-1em} % FIX ME\n"
-"\\textbf{The Escape}\n"
+"\\textbf{Bâtiments de départ :} Aucun\n"
 "\n"
 
 #. type: multicols*
@@ -851,24 +849,20 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:257
+#, no-wrap
+msgid ""
+"\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: campaigns/inferno_steadwicks_fall.tex:267
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{center}\n"
 #| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
 #| "\\end{center}\n"
 #| "\n"
-msgid ""
-"\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
-"\n"
-msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
-"\n"
-
-#. type: tikzpicture
-#: campaigns/inferno_steadwicks_fall.tex:267
-#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, yshift=37em, opacity=0.07] at (current page.south) {\n"
@@ -879,6 +873,10 @@ msgid ""
 "  };\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/inferno_steadwicks_fall.tex:282

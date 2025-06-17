@@ -1,22 +1,20 @@
-# French translations for Homm package
+# French translations for PACKAGE package
 # Copyright (C) 2025 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
+# This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-05-16 12:06+0000\n"
-"Last-Translator: Nohud <nohud@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/close_to_enemies/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -54,7 +52,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du scenario}}\n"
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
 "\n"
 
 #. type: multicols
@@ -69,7 +67,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
 "\n"
 
 #. type: multicols
@@ -84,7 +82,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
 "\n"
 
 #. type: multicols*
@@ -92,12 +90,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les tuiles suivantes et disposez-les comme indiqué dans le scénario :\n"
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
 "\n"
 
 #. type: multicols*
@@ -113,7 +111,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de victoire}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
 "\n"
 
 #. type: multicols
@@ -127,7 +125,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de défaite}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
 "\n"
 
 #. type: multicols
@@ -137,11 +135,13 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
@@ -153,7 +153,7 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\columnbreak\n"
+"\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 
 #. type: multicols
@@ -161,12 +161,12 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de la ville:} \\bronze\\ Dwelling\n"
+"\\textbf{Bâtiments de départ :} Aucun\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -237,6 +237,9 @@ msgstr ""
 #. type: multicols
 #: coops/close_to_enemies.tex:20
 #, fuzzy, no-wrap
+#| msgid ""
+#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
+#| "\n"
 msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
@@ -272,11 +275,13 @@ msgstr ""
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:28 campaigns/inferno_steadwicks_fall.tex:28
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:33
@@ -304,14 +309,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -319,12 +317,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{J}$ \\textbf{× Tuiles de départ (I)}\n"
-"\\begin{itemize}\n"
-"  \\item Prendre les tuiles de départ des factions choisies.\n"
-"  \\item Ignorez leur bordure jaune.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:47
@@ -369,11 +361,13 @@ msgstr ""
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:64
@@ -401,26 +395,13 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "   \\item Conquer all Settlements.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:81
@@ -527,12 +508,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:152
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
 "\\begin{center}\n"
@@ -542,10 +518,6 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: figure
 #: coops/close_to_enemies.tex:160
@@ -557,7 +529,8 @@ msgstr ""
 
 #. type: table*
 #: coops/close_to_enemies.tex:209
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Easy} & \\darkcell{Normal} & \\darkcell{Hard} & \\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & \\lightcell[1.2]{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 players} & \\lightcell[1.8]{10\\bronze 10\\silver 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Then\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak Then\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 players} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Then\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 msgid ""
 "[b!]\n"
 "  \\hommtable[]{18}{\n"
@@ -606,7 +579,7 @@ msgid ""
 "\n"
 "      \\end{tabularx}\n"
 "  }"
-msgstr ""
+msgstr "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Force des armées dans la forteresse des titans}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Facile} & \\darkcell{Normal} & \\darkcell{Difficile} & \\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 joueur} & \\lightcell[1.2]{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver 2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden 3\\azure}\\\\ \\darkcell[1.2]{2 joueurs} & \\lightcell[1.2]{5\\bronze 5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver 3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{3 joueurs} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak Puis\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Puis\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 joueurs} & \\lightcell[1.8]{10\\bronze 10\\silver 6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure \\linebreak Puis\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak Puis\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ \\darkcell[1.8]{5 joueurs} & \\lightcell[1.8]{6\\bronze 6\\silver 4\\golden 1\\azure \\linebreak Puis\\linebreak 7\\bronze 6\\silver 3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden 2\\azure \\linebreak Puis\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak Puis\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak Puis\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.8]{6 joueurs} & \\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak Puis\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak Puis\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak Puis\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Puis\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
 
 #. type: figure
 #: coops/close_to_enemies.tex:219

@@ -1,22 +1,20 @@
-# French translations for Homm package
-# Copyright (C) 2024 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# French translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-05-16 12:06+0000\n"
-"Last-Translator: Nohud <nohud@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/sections/recommendations/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -47,12 +45,12 @@ msgstr ""
 #. type: Plain text
 #: sections/recommendations.tex:3
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr "\\addsection{Recommandations}{\\art/haste.png}"
+msgstr ""
 
 #. type: Plain text
 #: sections/recommendations.tex:5
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
-msgstr "\\iftoggle{printable}{}{\\bigbreak}"
+msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:10
@@ -67,11 +65,16 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:12
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:14
@@ -140,11 +143,16 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:37
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:39
@@ -190,7 +198,11 @@ msgstr ""
 #. type: multicols*
 #: sections/recommendations.tex:54
 #, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "{\n"
 "  \\hfill\n"
@@ -198,7 +210,11 @@ msgid ""
 "  \\vspace{-3em}\n"
 "}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:56
@@ -218,11 +234,16 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:60
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:67
@@ -266,13 +287,21 @@ msgstr ""
 #. type: multicols
 #: sections/recommendations.tex:83
 #, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: figure*
 #: sections/recommendations.tex:104
@@ -321,11 +350,16 @@ msgstr ""
 
 #. type: multicols
 #: sections/recommendations.tex:128
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:130
@@ -351,10 +385,18 @@ msgstr ""
 #. type: multicols
 #: sections/recommendations.tex:141
 #, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
 "\\end{center}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"\\end{center}\n"
+"\n"
