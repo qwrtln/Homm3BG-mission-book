@@ -81,6 +81,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Il y a un monde au delà du notre, empli de bêtes et de montres, tout juste retenues par une formation de quatre obélisques sacrés. \n"
+"  Mais le pouvoir de ces pierres faibli, et une brèche est imminente.\n"
+"  A ce moment, seul vous et vos alliés nous separeront des hordes et de la destruction totale de ces terres.\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
