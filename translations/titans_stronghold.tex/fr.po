@@ -54,7 +54,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Duree du Scenario}}\n"
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
 "\n"
 
 #. type: multicols
