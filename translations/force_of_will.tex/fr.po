@@ -91,7 +91,7 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Bonus Additionnel :} Aucun\n"
 "\n"
 
 #. type: multicols
