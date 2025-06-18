@@ -517,7 +517,7 @@ msgstr ""
 "  \\item Les Armées ennemies se déplacent à la fin de chaque Manche, en commençant par la Manche où ils apparraissent.\n"
 "  \\item Les Armées Ennemies se déplacent selon les règles (p.\\,33), mais à la place de capturer, ils détruisent tout sur leur passage.\n"
 "    Placez un Cube Noir sur les cases qu'ils visitent, ces cases sont maintenant des cases vides.\n"
-"  \\item Si un ennemi peut aller dans plusieurs , les Joueurs choisissent où il se déplace.\n"
+"  \\item Si un ennemi peut aller dans plusieurs cases, les Joueurs choisissent où il se déplace.\n"
 "\\end{itemize}\n"
 "\n"
 
