@@ -156,8 +156,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unités \\bronze\\ de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Groupe \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Quelques \\bronze\\ de votre choix.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -254,7 +254,7 @@ msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de joueurs :} 1 -- 6\n"
+"\\textbf{Nombre de Joueurs :} 1 -- 6\n"
 "\n"
 
 #. type: multicols
@@ -306,7 +306,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:43
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item P × Starting (I) Map Tile\n"
+#| "  \\item 2P × Far (II--III) Map Tile\n"
+#| "  \\item 2P × Near (IV--V) Map Tile\n"
+#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -314,6 +322,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item J × Tuiles de Départ (I)\n"
+"  \\item 2J × Tuiles Lointaines (II--III)\n"
+"  \\item 2J × Tuiles Proches (IV--V)\n"
+"  \\item (J + 1) × Tuiles Centrales (VI--VII)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:47
@@ -333,7 +348,14 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:58
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
+#| "  \\item A Few \\bronze\\ Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -341,6 +363,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
+"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:63
