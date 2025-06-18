@@ -133,7 +133,7 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de joueurs :} 2\n"
+"\\textbf{Nombre de Joueurs :} 2\n"
 "\n"
 
 #. type: multicols
@@ -168,7 +168,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Starting Units:}\n"
+"\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
 "  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
 "  \\item Une Unité Quelques \\bronze\\ avec le coût de Recrutement le plus \\textit{élevé}\n"
@@ -201,7 +201,7 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus Additionnel :} Aucun\n"
+"\\textbf{Bonus Additionnel :} Fouillez (2) le Deck Artéfact\n"
 "\n"
 
 #. type: multicols*
@@ -235,7 +235,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
