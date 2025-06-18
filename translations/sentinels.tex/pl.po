@@ -260,7 +260,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item 2 × Początkowy (I) Kafelek Mapy\n"
 "  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV-V) Kafelek Mapy z Obeliskiem\n"
+"  \\item 4 × Bliski (IV--V) Kafelek Mapy z Obeliskiem\n"
 "\\end{itemize}\n"
 "\n"
 

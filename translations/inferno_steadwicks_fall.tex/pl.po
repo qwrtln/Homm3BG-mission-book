@@ -648,7 +648,7 @@ msgid ""
 msgstr ""
 "\\textbf{2. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Przeczytaj fragment ,,Wiadomości'.'\n"
+"  \\item Przeczytaj fragment ,,Wiadomości''.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -858,7 +858,7 @@ msgid ""
 "\n"
 msgstr ""
 "Otrzymałeś właśnie raport dotyczący postępów wojsk Królowej Katarzyny.\n"
-"Siły z Nighonu i Eeofolu starają się opóźnić jej marsz, ale nie będą jej w stanie zatrzymać na dłużej niż dwa, trzy miesiące.''\n"
+"Siły z Nighonu i Eeofolu starają się opóźnić jej marsz, ale nie będą jej w stanie zatrzymać na dłużej niż dwa, trzy miesiące.\n"
 "\n"
 
 #. type: multicols*
