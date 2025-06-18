@@ -825,12 +825,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:262
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vspace{2em}\n"
 "\\begin{center}\n"
@@ -839,6 +834,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\framedimage[0.75\\linewidth]{\\art/necropolis_town.jpg}\n"
 "\\end{center}\n"
 "\n"
