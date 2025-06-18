@@ -621,7 +621,7 @@ msgid ""
 msgstr ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+"  \\node at (14, 4) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
@@ -685,5 +685,5 @@ msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
-"Toujours 1 Unité de Dragon Azure (Unités de Départ de l'Armée du Boss). "
-"Le reste est aléatoire\\label{azure}."
+"Toujours 1 Unité de Dragon Azure (Unités de Départ de l'Armée du Boss). Le "
+"reste est aléatoire\\label{azure}."

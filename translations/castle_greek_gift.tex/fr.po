@@ -94,7 +94,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols*
