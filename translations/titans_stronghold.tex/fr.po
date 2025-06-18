@@ -489,7 +489,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth]{\\art/dimension_door.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -587,8 +587,6 @@ msgid ""
 "\\transparent{0.2}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
 "{\\art/land_mine.png}}"
 msgstr ""
-"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
-"{\\art/land_mine.png}}"
 
 #. type: tikzpicture
 #: coops/titans_stronghold.tex:207
@@ -599,10 +597,6 @@ msgid ""
 "    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
 "  };"
 msgstr ""
-"[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, opacity=0.07] at (current page.center) {\n"
-"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
-"  };"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
