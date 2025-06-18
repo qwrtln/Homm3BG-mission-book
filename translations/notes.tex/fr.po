@@ -1,11 +1,11 @@
-# French translations for PACKAGE package
+# French translations for Homm package
 # Copyright (C) 2025 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Homm package.
 # Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
 "PO-Revision-Date: 2024-10-22 22:57+0200\n"
 "Last-Translator: Automatically generated\n"
