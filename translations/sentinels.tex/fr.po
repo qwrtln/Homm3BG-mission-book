@@ -621,7 +621,7 @@ msgid ""
 msgstr ""
 "[overlay]\n"
 "  \\centering\n"
-"  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
+"  \\node at (14, 6) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
