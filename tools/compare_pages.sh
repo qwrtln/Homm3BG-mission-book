@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+
+
 cache_dir="$(pwd)/cache"
+output_dir="screenshots"
 
 help() {
   echo "
@@ -96,6 +99,38 @@ file_mod_time() {
   fi
 }
 
+# Check if cached PDF is up-to-date
+is_pdf_current() {
+  local pdf_file="$1"
+
+  if [[ ! -f "$pdf_file" ]]; then
+    return 1
+  fi
+
+  # First check: check commit SHA using GitHub API
+  if command -v pdftotext >/dev/null 2>&1 && command -v curl >/dev/null 2>&1; then
+    # Get latest commit SHA and check if it's in the PDF
+    local latest_sha
+    latest_sha=$(curl -s -f -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/qwrtln/Homm3BG-mission-book/commits/main" 2>/dev/null)
+    if [[ -n "$latest_sha" ]] && pdftotext "$pdf_file" - 2>/dev/null | grep -q "${latest_sha:0:7}"; then
+      return 0
+    fi
+  fi
+
+  # Fallback: time-based check if poppler is not available
+  local mod_time now age
+  mod_time=$(file_mod_time "$pdf_file")
+  now=$(date +%s)
+  age=$((now - mod_time))  # seconds
+
+  # If file is newer than 3 hours, consider it current
+  if [[ $age -le 10800 ]]; then
+    return 0
+  fi
+
+  return 1
+}
+
 # Only download a base file if it's not already present locally or
 # is older than 1 hour. Otherwise we use the cached one to speed-up the workflow.
 ensure_base_file() {
@@ -104,19 +139,10 @@ ensure_base_file() {
   local printable="$2"
   local drafts="$3"
   local monochrome="$4"
+  local base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
 
-  base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
-
-  if [[ -f $base_file ]]; then
-    mod_time=$(file_mod_time "$base_file")
-    now=$(date +%s)
-    age=$((now - mod_time))  # seconds
-
-    if [[ $age -gt 3600 ]]; then
-      download_base_file "$identifier" "$printable" "$drafts" "$monochrome"
-    fi
-  else
-    download_base_file "$identifier" "$printable" "$drafts" "$monochrome"
+  if ! is_pdf_current "$base_file"; then
+    download_base_file "$language" "$printable"
   fi
 
   echo "$base_file"
@@ -251,4 +277,4 @@ wait
 mkdir -p screenshots
 mv "${tmp_dir}/${identifier}"* screenshots
 
-echo "Done."
+echo "Done. Images saved to $output_dir directory."
