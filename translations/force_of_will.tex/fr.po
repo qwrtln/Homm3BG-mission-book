@@ -66,7 +66,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -76,12 +76,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
 "\n"
 
 #. type: multicols*
@@ -91,7 +91,7 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Bonus Additionnel :} Aucun\n"
 "\n"
 
 #. type: multicols

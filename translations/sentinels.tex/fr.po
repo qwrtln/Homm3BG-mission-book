@@ -19,16 +19,12 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/sentinels.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Coopératif}{Sentinelles}{\\images/sentinel."
+"png}"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -57,23 +53,17 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} silence70011\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} silence70011\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
 "\n"
@@ -91,6 +81,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Il existe un monde au-delà du nôtre, empli de bêtes et de monstres, tout juste retenues par une formation de quatre Obélisques Sacrés.\n"
+"  Mais la puissance de ces pierres faiblit, et une brèche est imminente.\n"
+"  Quand cela se produira, vous et votre allié serez le dernier rempart entre les hordes et la destruction totale de ces terres.\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -108,15 +103,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce scénario se joue en 12 manches.\n"
 "\n"
 
 #. type: multicols
@@ -136,25 +128,22 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de joueurs :} 1 -- 6\n"
+"\\textbf{Nombre de Joueurs :} 2\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -170,7 +159,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -179,21 +168,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
+"  \\item Une Unité Quelques \\bronze\\ avec le coût de Recrutement le plus \\textit{élevé}\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
+"\\textbf{Bâtiment de Départ:} Demeure \\bronze\\, Citadelle\n"
 "\n"
 
 #. type: multicols
@@ -203,18 +192,17 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
+"\\textbf{Réserve de Tuiles:} Chaque joueur pioche une Tuile Proche (IV--V) et une Tuile Lointaine (II--III) au hasard. Ces Tuiles ne doivent pas avoir d'Obélisques.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Bonus Additionnel :} Fouillez (2) le Deck Artéfact\n"
 "\n"
 
 #. type: multicols*
@@ -248,12 +236,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
 "\n"
 
 #. type: multicols
@@ -267,6 +255,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 × Tuile de Départ (I)\n"
+"  \\item 4 × Tuiles Lointaines (II--III)\n"
+"  \\item 4 × Tuiles Proches (IV--V) avec Obélisque\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -291,6 +285,8 @@ msgid ""
 "Defeat all invading armies.\n"
 "\n"
 msgstr ""
+"Vaincre toutes les armées des envahisseurs.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -313,6 +309,8 @@ msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
 "\n"
 msgstr ""
+"Une armée ennemie reste invaincue à la fin de la Manche 12.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:60
@@ -321,6 +319,8 @@ msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
+"Une de vos Villes est capturée, ou un Héros Principal est vaincu en combat (fuir ne compte pas).\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -336,18 +336,12 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:68
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{6} Round:}\n"
 "\\begin{itemize}\n"
@@ -356,21 +350,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{6$^{e}$ Manche :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Retirez tous les Cubes Noirs des Moulins à Eau, Moulins à Vent et Jardins Mystiques sur le plateau.\n"
+"  \\item Faire apparaître une armée ennemie en suivant les règles ci-dessous.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:73
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{7} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -378,22 +367,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{7$^{e}$ et 8$^{e}$ Manches :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Faire apparaître une armée ennemie en suivant les règles ci-dessous.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:78
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
@@ -401,22 +383,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{9$^{e}$ Manche:}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Répéter les évènements de la Manche 6.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: coops/sentinels.tex:83
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
 "\\begin{itemize}\n"
@@ -424,9 +399,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{10$^{e}$ Manche :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Faire apparaître une armée ennemie en suivant les règles ci-dessous.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -437,12 +412,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
 "\n"
 
 #. type: multicols
@@ -462,18 +437,27 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Ignorez toutes les bordures jaunes des Tuiles de Départ (I).\n"
+"  \\item Les Joueurs peuvent échanger des ressources si l'un de leurs Héros visite un comptoir ou si il est adjacent à un Héros allié.\n"
+"  \\item Le Héros qui vainc une armée ennemie gagne 2 \\svg{experience}.\n"
+"    Le Joueur victorieux lance deux dés de trésor et applique le résultat de son choix.\n"
+"  \\item De plus, aucun Joueur :\n"
+"  \\begin{itemize}\n"
+"      \\item Ne peut attaquer un autre Héros.\n"
+"      \\item Capturer une Mine ou une Enclave déjà Revendiquée.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:99
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Apparition Ennemie\\\\et Mouvement}}\n"
 "\n"
 
 #. type: multicols
@@ -491,6 +475,16 @@ msgid ""
 "  \\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Les Armées Ennemies apparaissent sur un Obélisque aléatoire (Utilisez la figurine d'un Héros d'une Faction non jouée).\n"
+"  \\item Déterminez l'Obélisque en lançant 2 Dés d'Attaque. Appliquez les résultats comme suit (D1/D2), relancez les 0:\n"
+"  \\begin{itemize}\n"
+"    \\item $+1$/$+1$ = Nord\n"
+"    \\item $+1$/$-1$ = Est\n"
+"    \\item $-1$/$+1$ = Ouest\n"
+"    \\item $-1$/$-1$ = Sud\n"
+"  \\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:114
@@ -502,6 +496,11 @@ msgid ""
 "  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
 "\n"
 msgstr ""
+"  \\item Pour une distribution plus équilibrée, aux Manches 7 et 9, lancez uniquement le second dé d'attaque (D2). Pour D1, choisissez le résultat opposé à la Manche précédente.\n"
+"  Les Manches 8 et 10 sont aléatoires.\n"
+"  \\item Si la Tuile où apparaît l'ennemi n'a pas été découverte, retournez-la et orientez-la comme vous le souhaitez.\n"
+"  \\item Si un Héros se trouve sur la case d'apparition, un combat commence immédiatement.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:121
@@ -515,18 +514,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"  \\item Les Armées Ennemies ont 3 PM par Manche.\n"
+"  \\item Les Armées ennemies se déplacent à la fin de chaque Manche, en commençant par la Manche où elles apparaissent.\n"
+"  \\item Les Armées Ennemies se déplacent selon les règles (p.\\,33), mais à la place de capturer, elles détruisent tout sur leur passage.\n"
+"    Placez un Cube Noir sur les cases qu'elles visitent, ces cases sont maintenant des cases vides.\n"
+"  \\item Si un ennemi peut aller dans plusieurs cases, les Joueurs choisissent où il se déplace.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:123
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Combat avec\\\\les Armées Ennemies}}\n"
 "\n"
 
 #. type: multicols
@@ -542,18 +545,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Combattre les Armées Ennemies plus d'un tour de combat ne coûtent pas de Point de Mouvement.\n"
+"  \\item Pendant un combat avec une armée ennemie, un Héros peut fuir à l'activation d'une unité alliée.\n"
+"    Un Héros Principal fuyant perd le reste de ses Points de Mouvement et retourne dans une Ville ou une Enclave alliée de son choix en gardant toutes ses unités survivantes.\n"
+"  \\item Un Héros Secondaire fuyant est retiré du jeu, mais le Joueur conserve les unités survivantes.\n"
+"  \\item Les Unités Ennemies tuées ne réapparaissent pas.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:133
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
+"\\subsection*{\\MakeUppercase{Armée du Boss}}\n"
 "\n"
 
 #. type: multicols
@@ -568,18 +576,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item A la Manche 10, une Armée de Boss apparaît. Elle est différente des précédentes car elle est Renforcée par une réserve d'Unités Neutres (Réserve de Renfort = nombre entre parenthèses dans la table).\n"
+"  \\item Au début du 2$^{e}$ Tour de Combat et chaque Tour suivant, 2 Unités Renforcent l'armée restante de la Réserve de Renforts mélangée (maximum 5 Unités) pour continuer le combat jusqu'à la fuite ou la victoire totale du Joueur. \\textit{Si le nombre d'Unités ennemies est de 1 ou moins au début d'un Tour de Combat, piochez jusqu'à un total de 4 Unités ( il y a toujours 4 ou 5 Unités sur le Plateau après Renfort, si possible).}\n"
+"  \\item Placez les Renforts sur leur ligne de base, en commençant par la gauche avec l'Initiative la plus basse (Unités \\svg{unit_ranged} en premier). Si besoin, continuez sur la ligne suivante dans le même ordre.\n"
+"  \\item Si un Joueur fuit, l'Armée Ennemie pioche jusqu'à un «minimum» de 4 Unités comme Unités de Départ pour le prochain combat.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
@@ -604,54 +619,12 @@ msgid ""
 "  \\centering\n"
 "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 4) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
-#, fuzzy
-#| msgid ""
-#| "\\hommtable[]{28}{ \\centering \\medskip \\textbf{Strength of Titans' "
-#| "Stronghold Armies}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
-#| "{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} "
-#| "\\newcommand{\\golden}[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]"
-#| "{\\svg[12]{azure}} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}"
-#| "XXXX} & \\darkcell{Easy} & \\darkcell{Normal} & \\darkcell{Hard} & "
-#| "\\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 player} & \\lightcell[1.2]"
-#| "{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
-#| "2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
-#| "2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden "
-#| "3\\azure}\\\\ \\darkcell[1.2]{2 players} & \\lightcell[1.2]{5\\bronze "
-#| "5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver "
-#| "3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden "
-#| "3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-#| "\\darkcell[1.8]{3 players} & \\lightcell[1.8]{8\\bronze 7\\silver "
-#| "4\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden "
-#| "3\\azure} & \\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure "
-#| "\\linebreak Then\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & "
-#| "\\lightcell[1.8]{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak "
-#| "Then\\linebreak 1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ "
-#| "\\darkcell[1.8]{4 players} & \\lightcell[1.8]{10\\bronze 10\\silver "
-#| "6\\golden 2\\azure} & \\lightcell[1.8]{8\\bronze 10\\silver 6\\golden "
-#| "4\\azure} & \\lightcell[1.8]{2\\bronze 5\\silver 5\\golden 3\\azure "
-#| "\\linebreak Then\\linebreak 2\\bronze 5\\silver 5\\golden 3\\azure} & "
-#| "\\lightcell[1.8]{1\\bronze 5\\silver 7\\golden 4\\azure \\linebreak "
-#| "Then\\linebreak 1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-#| "\\darkcell[1.8]{5 players} & \\lightcell[1.8]{6\\bronze 6\\silver "
-#| "4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 6\\silver "
-#| "3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden "
-#| "2\\azure \\linebreak Then\\linebreak 5\\bronze 6\\silver 4\\golden "
-#| "3\\azure} & \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure "
-#| "\\linebreak Then\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & "
-#| "\\lightcell[1.8]{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak "
-#| "Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ "
-#| "\\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver "
-#| "4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver "
-#| "5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden "
-#| "3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden "
-#| "3\\azure} & \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure "
-#| "\\linebreak Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & "
-#| "\\lightcell[1.8]{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak "
-#| "Then\\linebreak 3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ "
-#| "\\end{tabularx} }"
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
 "\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
@@ -677,52 +650,34 @@ msgid ""
 "\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
-"\\hommtable[]{28}{ \\centering \\medskip \\textbf{Force des armées dans la "
-"forteresse des titans}\\\\ \\bigskip \\newcommand{\\bronze}[0]{\\svg[12]"
-"{bronze}} \\newcommand{\\silver}[0]{\\svg[12]{silver}} \\newcommand{\\golden}"
-"[0]{\\svg[12]{golden}} \\newcommand{\\azure}[0]{\\svg[12]{azure}} "
-"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
-"\\darkcell{Facile} & \\darkcell{Normal} & \\darkcell{Difficile} & "
-"\\darkcell{Impossible}\\\\ \\darkcell[1.2]{1 joueur} & \\lightcell[1.2]"
-"{3\\bronze 2\\silver 1\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze "
-"2\\silver 2\\golden 1\\azure} & \\lightcell[1.2]{2\\bronze 2\\silver "
-"2\\golden 2\\azure} & \\lightcell[1.2]{1\\bronze 2\\silver 2\\golden "
-"3\\azure}\\\\ \\darkcell[1.2]{2 joueurs} & \\lightcell[1.2]{5\\bronze "
-"5\\silver 3\\golden 1\\azure} & \\lightcell[1.2]{4\\bronze 5\\silver "
-"3\\golden 2\\azure} & \\lightcell[1.2]{2\\bronze 5\\silver 5\\golden "
-"3\\azure} & \\lightcell[1.2]{1\\bronze 5\\silver 7\\golden 4\\azure}\\\\ "
-"\\darkcell[1.8]{3 joueurs} & \\lightcell[1.8]{8\\bronze 7\\silver 4\\golden "
-"2\\azure} & \\lightcell[1.8]{6\\bronze 7\\silver 5\\golden 3\\azure} & "
-"\\lightcell[1.8]{2\\bronze 3\\silver 4\\golden 3\\azure \\linebreak "
-"Puis\\linebreak 2\\bronze 4\\silver 3\\golden 2\\azure} & \\lightcell[1.8]"
-"{1\\bronze 3\\silver 5\\golden 3\\azure \\linebreak Puis\\linebreak "
-"1\\bronze 4\\silver 5\\golden 3\\azure}\\\\ \\darkcell[1.8]{4 joueurs} & "
-"\\lightcell[1.8]{10\\bronze 10\\silver 6\\golden 2\\azure} & \\lightcell[1.8]"
-"{8\\bronze 10\\silver 6\\golden 4\\azure} & \\lightcell[1.8]{2\\bronze "
-"5\\silver 5\\golden 3\\azure \\linebreak Puis\\linebreak 2\\bronze 5\\silver "
-"5\\golden 3\\azure} & \\lightcell[1.8]{1\\bronze 5\\silver 7\\golden "
-"4\\azure \\linebreak Puis\\linebreak 1\\bronze 5\\silver 7\\golden "
-"4\\azure}\\\\ \\darkcell[1.8]{5 joueurs} & \\lightcell[1.8]{6\\bronze "
-"6\\silver 4\\golden 1\\azure \\linebreak Puis\\linebreak 7\\bronze 6\\silver "
-"3\\golden 2\\azure} & \\lightcell[1.8]{5\\bronze 6\\silver 4\\golden "
-"2\\azure \\linebreak Puis\\linebreak 5\\bronze 6\\silver 4\\golden 3\\azure} "
-"& \\lightcell[1.8]{3\\bronze 6\\silver 6\\golden 4\\azure \\linebreak "
-"Puis\\linebreak 3\\bronze 6\\silver 6\\golden 4\\azure} & \\lightcell[1.8]"
-"{1\\bronze 6\\silver 8\\golden 6\\azure \\linebreak Puis\\linebreak "
-"2\\bronze 6\\silver 8\\golden 5\\azure}\\\\ \\darkcell[1.8]{6 joueurs} & "
-"\\lightcell[1.8]{8\\bronze 8\\silver 4\\golden 1\\azure \\linebreak "
-"Puis\\linebreak 7\\bronze 7\\silver 5\\golden 2\\azure} & \\lightcell[1.8]"
-"{6\\bronze 8\\silver 4\\golden 3\\azure \\linebreak Puis\\linebreak "
-"6\\bronze 7\\silver 5\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
-"8\\silver 7\\golden 5\\azure \\linebreak Puis\\linebreak 3\\bronze 7\\silver "
-"8\\golden 4\\azure} & \\lightcell[1.8]{3\\bronze 7\\silver 11\\golden "
-"6\\azure \\linebreak Puis\\linebreak 3\\bronze 8\\silver 10\\golden "
-"6\\azure}\\\\ \\end{tabularx} }"
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Force de l'Armée Ennemie}\\"
+"\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Manches 6 + 7} & \\darkcell{Manches 8 + 9} & \\darkcell{Manche "
+"10}\\\\ \\darkcell[1.4]{Facile} & \\lightcell[1.4]{\\bronze \\silver "
+"\\silver \\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
+"\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
+"\\darkcell[1.4]{Difficile} & \\lightcell[1.4]{\\silver \\silver \\golden "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ "
+"\\darkcell[1.4]{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden "
+"\\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure "
+"\\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: Plain text
 #: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
-msgstr ""
+msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:196
@@ -730,3 +685,5 @@ msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
+"Toujours 1 Unité de Dragon Azure (Unités de Départ de l'Armée du Boss). Le "
+"reste est aléatoire\\label{azure}."
