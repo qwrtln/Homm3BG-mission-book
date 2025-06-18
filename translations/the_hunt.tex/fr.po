@@ -54,7 +54,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -63,10 +63,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
+"  \\item Une Unité Quelques \\bronze\\ avec le coût de Recrutement le plus \\textit{élevé}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -109,12 +109,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
 "\n"
 
 #. type: multicols*

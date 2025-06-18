@@ -90,12 +90,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
 #: campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
 "\n"
 
 #. type: multicols*
@@ -152,12 +152,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
 "\n"
 
 #. type: multicols*
@@ -166,12 +166,12 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:83 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:268
 #: sections/credits.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
