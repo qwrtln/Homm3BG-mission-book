@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"POT-Creation-Date: 2025-06-19 08:35+0000\n"
 "PO-Revision-Date: 2025-04-01 12:55+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -40,11 +40,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
+#: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
-#: sections/credits.tex:32
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: sections/credits.tex:34
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -306,7 +306,7 @@ msgid ""
 "  \\item Players can use their Deck of Might \\& Magic when paying gold to defend their Faction Town.\n"
 "  \\item Ignore Combat encounters on the Field with the Grail.\n"
 "  \\item Players may not Visit the Field with the Grail Token unless they have already Visited at least two Obelisks or the Grail Token has been taken by any Hero at least once.\n"
-"  \\item To obtain the Grail Token, a player’s Hero must spend 2 MPs on the Field with the Grail.\n"
+"  \\item To obtain the Grail Token, a player’s Hero must spend 2 \\svgeven{movement} on the Field with the Grail.\n"
 "  \\item If a player does not possess the title of ``\\textcolor{darkcandyapplered}{Blood Knight},'' they must Remove a Faction Unit Card from their Unit Deck immediately after obtaining the Grail Token. This effect can only occur once per player.\n"
 "  \\item If another Hero defeats the Hero with the Grail Token, they also take the Grail Token.\n"
 "  \\item If a Hero with the Grail Token Surrenders, the Grail Token is placed on the hex where the Hero Surrendered.\n"

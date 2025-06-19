@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"POT-Creation-Date: 2025-06-19 08:35+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -101,10 +101,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -324,7 +324,7 @@ msgid ""
 "      \\item Place the Main Hero when defeated.\n"
 "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
 "    \\end{itemize}\n"
-"  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws Cards from the Neutral Units \\azure\\ Deck until a Dragon not associated with any Faction is drawn.\n"
+"  \\item The first player to Visit the Dragon Utopia (after defeating the defending \\azure\\ Unit(s)) draws Cards from the Neutral Units \\azure\\ Deck until a Dragon not associated with any Faction is drawn.\n"
 "    The player may immediately Recruit that Dragon for free.\n"
 "\\end{itemize}\n"
 "\n"
@@ -341,7 +341,7 @@ msgstr ""
 "      \\item Umieścić Bohatera Głównego, gdy został pokonany.\n"
 "      \\item Tymczasowo przetransportować armię za 8 \\svg{gold}, gdy Losowe Miasto jest atakowane.\n"
 "    \\end{itemize}\n"
-"  \\item Pierwszy gracz, który odwiedzi Smoczą Utopię (po pokonaniu broniących jednostek Błękitnych), ciągnie Karty z Talii Neutralnych \\azure\\ Jednostek do momentu, aż wylosuje Smoka niepowiązanego z żadną frakcją.\n"
+"  \\item Pierwszy gracz, który odwiedzi Smoczą Utopię (po pokonaniu broniących \\azure\\ Jednostek), ciągnie Karty z Talii Neutralnych \\azure\\ Jednostek do momentu, aż wylosuje Smoka niepowiązanego z żadną frakcją.\n"
 "    Gracz może natychmiastowo zrekrutować tego Smoka za darmo.\n"
 "\\end{itemize}\n"
 "\n"
