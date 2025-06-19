@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-25 07:18+0000\n"
-"PO-Revision-Date: 2025-06-19 01:14+0200"
+"POT-Creation-Date: 2025-06-19 08:35+0000\n"
+"PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/sentinels/pl/>\n"
@@ -260,7 +260,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item 2 × Początkowy (I) Kafelek Mapy\n"
 "  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV--V) Kafelek Mapy z Obeliskiem\n"
+"  \\item 4 × Bliski (IV-V) Kafelek Mapy z Obeliskiem\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -506,7 +506,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:121
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "  \\item Enemy armies have 3 MPs per Round.\n"
+#| "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
+#| "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
+#| "    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
+#| "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "  \\item Enemy armies have 3 \\svgeven{movement} per Round.\n"
 "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
@@ -516,7 +524,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"  \\item Wrogie armie mają 3 \\svgeven{movement} na Rundę.\n"
+"  \\item Wrogie armie mają 3 Punkty Ruchu na Rundę.\n"
 "  \\item Wrogie armie ruszają się na końcu każdej tury, zaczynając od tury, w której się pojawiły.\n"
 "  \\item Wrogie armie poruszają się zgodnie z opisem w Księdze Zasad (s.\\,33), ale zamiast zdobywania, niszczą wszystko na swojej drodze.\n"
 "    Umieść Czarną Kostkę na każdym Polu, przez które przechodzą, odtąd traktując te Pola jako puste.\n"
@@ -536,7 +544,16 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:131
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
+#| "  \\item During a battle with an enemy army, a Hero can retreat whenever a friendly Unit is about to Activate.\n"
+#| "    A retreating Main Hero loses all remaining MPs and is returned to an allied Town or Settlement of their choice, keeping all remaining Units.\n"
+#| "  \\item Retreating Secondary Heroes are removed from the game, but their remaining Units are kept.\n"
+#| "  \\item Killed enemy Units do not respawn.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Fighting enemy armies over more than one Combat Round does not cost \\svgeven{movement}.\n"
@@ -548,9 +565,9 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje \\svgeven{movement}.\n"
+"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje Punktów Ruchu.\n"
 "  \\item Podczas Walki z wrogą armią Bohater może wycofać się, gdy ma zostać aktywowana dowolna Jednostka jego armii.\n"
-"    Wycofujący się główny Bohater traci wszystkie pozostałe \\svgeven{movement} i wraca do wybranego przez siebie sojuszniczego Miasta albo Osady, zachowując wszystkie pozostałe Jednostki.\n"
+"    Wycofujący się główny Bohater traci wszystkie pozostałe Punkty Ruchu i wraca do wybranego przez siebie sojuszniczego Miasta albo Osady, zachowując wszystkie pozostałe Jednostki.\n"
 "  \\item Wycofujący się Pomocniczy Bohaterowie są usuwani z gry, ale ich pozostałe Jednostki są zachowane.\n"
 "  \\item Zabite wrogie Jednostki nie odradzają się.\n"
 "\\end{itemize}\n"
@@ -568,7 +585,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:140
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
+#| "  \\item At the beginning of the \\nth{2} Combat Round and every following Round, 2 Units Reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 Units) to continue the fight until either the player retreats or every Neutral Unit from the Reinforcement pool is killed. \\textit{If the number of enemy Units at the beginning of a Round is 1 or lower, draw up to a total of 4 Units (i.e., there are always 4 or 5 enemy Units on the Board after Reinforcing, if available).}\n"
+#| "  \\item Place the Reinforcing Units on the enemy base line, starting from the left with the lowest Initiative (\\svg{unit_ranged} Units first). If necessary, continue on the next line in the same order.\n"
+#| "  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 Units and takes these as starting Units to the next fight.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
@@ -590,7 +615,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -603,8 +628,8 @@ msgstr ""
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:28
-#: sections/credits.tex:32
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: sections/credits.tex:34
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"

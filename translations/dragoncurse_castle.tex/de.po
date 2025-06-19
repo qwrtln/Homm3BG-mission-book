@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-06-19 01:14+0200"
+"POT-Creation-Date: 2025-06-19 08:35+0000\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -88,10 +88,10 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"

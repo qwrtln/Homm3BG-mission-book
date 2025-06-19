@@ -199,7 +199,7 @@ msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} NeuroN\n"
+"\\textbf{Autor:} Neuron\n"
 "\n"
 
 #. type: multicols

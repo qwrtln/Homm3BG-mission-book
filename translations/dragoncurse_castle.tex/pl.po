@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-06-19 01:14+0200"
+"POT-Creation-Date: 2025-06-19 08:35+0000\n"
+"PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/clash-scenarios/dragoncurse_castle/pl/>\n"
@@ -101,10 +101,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -310,7 +310,24 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:83
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "{2}\n"
+#| "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+#| "During this Scenario:\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Whenever an Obelisk is Visited for the first time, the Visiting player rolls 2 \\svg{resource} and resolves both results.\n"
+#| "  \\item The Random Town is defended by Walls and a Gate when owned by a player, but it only has an Arrow Tower if that player already has a Citadel.\n"
+#| "  \\item Like any other Town, when the Random Town is owned by a player, it is a valid location for that player to:\n"
+#| "    \\begin{itemize}\n"
+#| "      \\item Place a newly Recruited Secondary Hero.\n"
+#| "      \\item Place the Main Hero when defeated.\n"
+#| "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
+#| "    \\end{itemize}\n"
+#| "  \\item The first player to Visit the Dragon Utopia (after defeating the defending Azure Unit(s)) draws Cards from the Neutral Units \\azure\\ Deck until a Dragon not associated with any Faction is drawn.\n"
+#| "    The player may immediately Recruit that Dragon for free.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
