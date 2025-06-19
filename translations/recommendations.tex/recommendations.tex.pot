@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-19 01:13+0200"
+"POT-Creation-Date: 2025-06-19 08:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,7 +252,7 @@ msgstr ""
 #: sections/recommendations.tex:79
 #, no-wrap
 msgid ""
-"Placing Neutral Units far apart only makes the other player waste \svgeven{movement}, which slows the game down.\n"
+"Placing Neutral Units far apart only makes the other player waste \\svgeven{movement}, which slows the game down.\n"
 "The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
 "See examples that follow.\n"
 "\n"
