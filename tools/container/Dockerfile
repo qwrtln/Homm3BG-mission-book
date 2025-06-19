@@ -33,6 +33,7 @@ RUN apk --no-cache add \
     grep \
     imagemagick \
     inkscape \
+    less \
     make \
     ncurses \
     opensp \
