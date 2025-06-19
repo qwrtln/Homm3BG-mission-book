@@ -22,6 +22,7 @@ COPY texlive_pgp_keys.asc /
 RUN apk --no-cache add \
     bash \
     curl \
+    delta \
     diffutils \
     fontconfig \
     gettext \

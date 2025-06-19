@@ -506,15 +506,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:121
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  \\item Enemy armies have 3 MPs per Round.\n"
-#| "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
-#| "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
-#| "    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
-#| "  \\item If an enemy's movement could go in different directions, the players decide which way they go.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\item Enemy armies have 3 \\svgeven{movement} per Round.\n"
 "  \\item Enemy armies move at the end of every Turn, starting with the Turn they spawned.\n"
@@ -524,7 +516,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"  \\item Wrogie armie mają 3 Punkty Ruchu na Rundę.\n"
+"  \\item Wrogie armie mają 3 \\svgeven{movement} na Rundę.\n"
 "  \\item Wrogie armie ruszają się na końcu każdej tury, zaczynając od tury, w której się pojawiły.\n"
 "  \\item Wrogie armie poruszają się zgodnie z opisem w Księdze Zasad (s.\\,33), ale zamiast zdobywania, niszczą wszystko na swojej drodze.\n"
 "    Umieść Czarną Kostkę na każdym Polu, przez które przechodzą, odtąd traktując te Pola jako puste.\n"
@@ -544,16 +536,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:131
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Fighting enemy armies over more than one Combat Round does not cost Movement Points.\n"
-#| "  \\item During a battle with an enemy army, a Hero can retreat whenever a friendly Unit is about to Activate.\n"
-#| "    A retreating Main Hero loses all remaining MPs and is returned to an allied Town or Settlement of their choice, keeping all remaining Units.\n"
-#| "  \\item Retreating Secondary Heroes are removed from the game, but their remaining Units are kept.\n"
-#| "  \\item Killed enemy Units do not respawn.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Fighting enemy armies over more than one Combat Round does not cost \\svgeven{movement}.\n"
@@ -565,7 +548,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje Punktów Ruchu.\n"
+"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje \\svgeven{movement}.\n"
 "  \\item Podczas Walki z wrogą armią Bohater może wycofać się, gdy ma zostać aktywowana dowolna Jednostka jego armii.\n"
 "    Wycofujący się główny Bohater traci wszystkie pozostałe Punkty Ruchu i wraca do wybranego przez siebie sojuszniczego Miasta albo Osady, zachowując wszystkie pozostałe Jednostki.\n"
 "  \\item Wycofujący się Pomocniczy Bohaterowie są usuwani z gry, ale ich pozostałe Jednostki są zachowane.\n"
@@ -585,15 +568,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:140
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
-#| "  \\item At the beginning of the \\nth{2} Combat Round and every following Round, 2 Units Reinforce the remaining army from the shuffled reinforcement pool (up to a maximum of 5 Units) to continue the fight until either the player retreats or every Neutral Unit from the Reinforcement pool is killed. \\textit{If the number of enemy Units at the beginning of a Round is 1 or lower, draw up to a total of 4 Units (i.e., there are always 4 or 5 enemy Units on the Board after Reinforcing, if available).}\n"
-#| "  \\item Place the Reinforcing Units on the enemy base line, starting from the left with the lowest Initiative (\\svg{unit_ranged} Units first). If necessary, continue on the next line in the same order.\n"
-#| "  \\item When a player retreats, the enemy army draws up to the ``minimum'' of 4 Units and takes these as starting Units to the next fight.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item In Round 10, a Boss Army spawns. It is different from previous armies because it is Reinforced from a fixed pool of Neutral Units (Reinforcement pool = number in brackets in the table below).\n"
@@ -607,7 +582,7 @@ msgstr ""
 "  \\item W Rundzie 10. pojawia się Finałowa Armia. Różni się od poprzednich tym, że jest wzmocniona ustaloną pulą Neutralnych Jednostek (pula wzmocnień = liczba w nawiasach w tabeli poniżej).\n"
 "  \\item Na początku 2. Rundy Walki i w każdej kolejnej Rundzie do armii dołączają 2 Jednostki z potasowanej puli wzmocnień (maksymalnie do 5 Jednostek), aby kontynuować Walkę aż do wycofania się gracza lub zabicia każdej Jednostki Neutralnej z puli wzmocnień. \\textit{Jeśli liczba Jednostek wroga na początku Rundy wynosi 1 lub mniej, dobierz do 4 Jednostek (tj. na planszy zawsze jest 4 lub 5 Jednostek wroga po wzmocnieniu, jeśli są dostępne).}\n"
 "  \\item Umieść Jednostki wzmacniające na drugiej linii wroga, zaczynając od lewej strony od Jednostek z najniższą Inicjatywą (najpierw Jednostki \\svg{unit_ranged}). W razie potrzeby kontynuuj na pierwszej linii w tej samej kolejności.\n"
-"  \\item Gdy gracz się wycofa, armia wroga dobiera do ,,minimum'' 4 Jednostek i bierze je jako początkowe Jednostki do kolejnej Walki.\n"
+"  \\item Gdy gracz się wycofa, armia wroga dobiera do minimum 4 Jednostek i bierze je jako początkowe Jednostki do kolejnej Walki.\n"
 "\\end{itemize}\n"
 "\n"
 
