@@ -1,23 +1,20 @@
-# Polish translations for Homm package
-# Copyright (C) 2024 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# German translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-25 07:18+0000\n"
-"PO-Revision-Date: 2024-10-30 08:58+0000\n"
-"Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/sentinels/pl/>\n"
-"Language: pl\n"
+"PO-Revision-Date: 2025-04-25 07:18+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -26,7 +23,6 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Strażnicy}{\\images/sentinel.png}"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -50,8 +46,6 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
-"{2}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:7
@@ -60,8 +54,6 @@ msgid ""
 "\\textbf{Author:} silence70011\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} silence70011\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:9
@@ -70,8 +62,6 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Źródło:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Discord Archon Studio}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:14
@@ -83,11 +73,6 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
-"\\textit{Jest świat poza naszym, pełen bestii i potworów, ledwo powstrzymywany przez formację czterech świętych Obelisków.\n"
-"  Ale moc tych kamieni słabnie i wkrótce nastąpi wyłom.\n"
-"  Gdy to się stanie, tylko ty i twój sojusznik staniecie między hordami a całkowitym zniszczeniem tych ziem.\n"
-"}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -100,8 +85,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:18
@@ -110,8 +93,6 @@ msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
-"Ten Scenariusz jest rozgrywany w 12 Rundach.\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -125,8 +106,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -135,8 +114,6 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
-"\\textbf{Liczba Graczy:} 2\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:24
@@ -145,8 +122,6 @@ msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -156,8 +131,6 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
@@ -170,12 +143,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki Początkowe:}\n"
-"\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} Jednostek o \\textit{najniższym} koszcie rekrutacji\n"
-"  \\item Garstka \\svg{bronze} Jednostek o \\textit{najwyższym} koszcie rekrutacji\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
@@ -184,8 +151,6 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, Cytadela\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:36
@@ -194,8 +159,6 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
-"\\textbf{Pula Kafelków Mapy:} Każdy gracz losuje 1 Bliski (IV--V) Kafelek Mapy i 1 Daleki (II--III) Kafelek Mapy. Te Kafelki nie powinny zawierać żadnych Obelisków.\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
@@ -204,8 +167,6 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
-"\\textbf{Dodatkowy Bonus:} Przeszukaj (2) Talię Artefaktów\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
@@ -215,8 +176,6 @@ msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -230,8 +189,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
@@ -243,8 +200,6 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Ułóż poniższe Kafelki Mapy zgodnie z układem pokazanym na mapie Scenariusza:\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:50
@@ -257,12 +212,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV--V) Kafelek Mapy z Obeliskiem\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -277,8 +226,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:54
@@ -287,8 +234,6 @@ msgid ""
 "Defeat all invading armies.\n"
 "\n"
 msgstr ""
-"Pokonaj wszystkie najeżdżające armie.\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -301,8 +246,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:58
@@ -311,8 +254,6 @@ msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
 "\n"
 msgstr ""
-"Niepokonana wroga armia pozostaje na końcu 12. Rundy.\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:60
@@ -321,8 +262,6 @@ msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
-"Jedno z Miast zostaje zdobyte lub Bohater Główny zostaje pokonany w Walce (wycofanie się nie liczy).\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -338,8 +277,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:68
@@ -352,12 +289,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Runda 6.:}\n"
-"\\begin{itemize}\n"
-"  \\item Usuń Czarne Kostki z każdego Wiatraka, Młyna Wodnego i Mistycznego Ogródu.\n"
-"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:73
@@ -369,11 +300,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Rundy 7. i 8.:}\n"
-"\\begin{itemize}\n"
-"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:78
@@ -385,11 +311,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Runda 9.:}\n"
-"\\begin{itemize}\n"
-"  \\item Powtórz wydarzenia czasowe Rundy 6.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:83
@@ -401,11 +322,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Runda 10.:}\n"
-"\\begin{itemize}\n"
-"  \\item Umieść wrogą armię zgodnie z zasadami poniżej.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -419,8 +335,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:97
@@ -439,18 +353,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item Zignoruj wszystkie żółte granice na Kafelkach Startowych.\n"
-"  \\item Gracze mogą handlować zasobami, gdy jeden z Bohaterów aktywnego gracza odwiedza punkt handlowy lub stoi na Polu sąsiadującym z sojuszniczym Bohaterem.\n"
-"  \\item Bohater, który pokona wrogą armię, zdobywa 2 \\svg{experience}.\n"
-"    Zwycięski gracz rzuca dwoma Kośćmi Skarbów i rozpatruje wynik jednej z nich.\n"
-"  \\item Dodatkowo żaden gracz nie może:\n"
-"  \\begin{itemize}\n"
-"      \\item Atakować innych Bohaterów.\n"
-"      \\item Przejąć Kopalni lub Osady, która jest już Oflagowana.\n"
-"  \\end{itemize}\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:99
@@ -459,8 +361,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Pojawianie się i Ruch\\\\Wrogów}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:109
@@ -477,16 +377,6 @@ msgid ""
 "  \\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item Wrogie armie pojawiają się na Polu z Obeliskiem (użyj figurek Bohaterów frakcji, które nie biorą udziału w grze).\n"
-"  \\item Określ, na którym Obelisku poprzez rzut 2 Kośćmi Ataku. Zastosuj wyniki w następujący sposób (K1/K2), przerzuć każde 0:\n"
-"  \\begin{itemize}[leftmargin=15pt]\n"
-"    \\item $+1$/$+1$ = Północ\n"
-"    \\item $+1$/$-1$ = Wschód\n"
-"    \\item $-1$/$+1$ = Zachód\n"
-"    \\item $-1$/$-1$ = Południe\n"
-"  \\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:114
@@ -498,11 +388,6 @@ msgid ""
 "  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
 "\n"
 msgstr ""
-"  \\item Dla bardziej zbilansowanej dystrybucji, w Rundach 7. i 9., rzuć tylko drugą Kością Ataku (K2). Dla K1, przyjmij przeciwny wynik do tego, który wypadł w poprzedniej Rundzie.\n"
-"  Rundy 8. i 10. są całkowicie losowe.\n"
-"  \\item Jeśli Kafelek, na którym ma pojawić się wróg, nie został jeszcze odkryty, odwróć go i obróć według własnego uznania.\n"
-"  \\item Jeśli na Polu, na którym pojawia się wróg, znajduje się Bohater, natychmiast rozpoczyna się Walka.\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:121
@@ -516,13 +401,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"  \\item Wrogie armie mają 3 Punkty Ruchu na Rundę.\n"
-"  \\item Wrogie armie ruszają się na końcu każdej tury, zaczynając od tury, w której się pojawiły.\n"
-"  \\item Wrogie armie poruszają się zgodnie z opisem w Księdze Zasad (s.\\,33), ale zamiast zdobywania, niszczą wszystko na swojej drodze.\n"
-"    Umieść Czarną Kostkę na każdym Polu, przez które przechodzą, odtąd traktując te Pola jako puste.\n"
-"  \\item Jeśli ruch armii wroga mógłby odbyć się w różnych kierunkach, gracze decydują, w którą stronę ona pójdzie.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:123
@@ -531,8 +409,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Walka z Wrogą Armią}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:131
@@ -547,14 +423,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item Walka z wrogimi armiami przez więcej niż jedną Rundę Walki nie kosztuje Punktów Ruchu.\n"
-"  \\item Podczas Walki z wrogą armią Bohater może wycofać się, gdy ma zostać aktywowana dowolna Jednostka jego armii.\n"
-"    Wycofujący się główny Bohater traci wszystkie pozostałe Punkty Ruchu i wraca do wybranego przez siebie sojuszniczego Miasta albo Osady, zachowując wszystkie pozostałe Jednostki.\n"
-"  \\item Wycofujący się Pomocniczy Bohaterowie są usuwani z gry, ale ich pozostałe Jednostki są zachowane.\n"
-"  \\item Zabite wrogie Jednostki nie odradzają się.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:133
@@ -563,8 +431,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Finałowa Armia}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:140
@@ -578,13 +444,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\begin{itemize}\n"
-"  \\item W Rundzie 10. pojawia się Finałowa Armia. Różni się od poprzednich tym, że jest wzmocniona ustaloną pulą Neutralnych Jednostek (pula wzmocnień = liczba w nawiasach w tabeli poniżej).\n"
-"  \\item Na początku 2. Rundy Walki i w każdej kolejnej Rundzie do armii dołączają 2 Jednostki z potasowanej puli wzmocnień (maksymalnie do 5 Jednostek), aby kontynuować Walkę aż do wycofania się gracza lub zabicia każdej Jednostki Neutralnej z puli wzmocnień. \\textit{Jeśli liczba Jednostek wroga na początku Rundy wynosi 1 lub mniej, dobierz do 4 Jednostek (tj. na planszy zawsze jest 4 lub 5 Jednostek wroga po wzmocnieniu, jeśli są dostępne).}\n"
-"  \\item Umieść Jednostki wzmacniające na drugiej linii wroga, zaczynając od lewej strony od Jednostek z najniższą Inicjatywą (najpierw Jednostki \\svg{unit_ranged}). W razie potrzeby kontynuuj na pierwszej linii w tej samej kolejności.\n"
-"  \\item Gdy gracz się wycofa, armia wroga dobiera do ,,minimum'' 4 Jednostek i bierze je jako początkowe Jednostki do kolejnej Walki.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:145
@@ -596,8 +455,6 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\columnbreak\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -610,8 +467,6 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\n"
-"\n"
 
 #. type: tikzpicture
 #: coops/sentinels.tex:151
@@ -621,9 +476,6 @@ msgid ""
 "  \\centering\n"
 "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
-"[overlay]\n"
-"  \\centering\n"
-"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
@@ -652,34 +504,11 @@ msgid ""
 "\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
-"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Siła Wrogich Armii}\\\\ "
-"\\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
-"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
-"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
-"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
-"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
-"& \\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\"
-"\\ \\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
-"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
-"\\ \\darkcell[1.4]{Normalny} & \\lightcell[1.4]{\\silver \\silver \\silver "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
-"\\darkcell[1.4]{Trudny} & \\lightcell[1.4]{\\silver \\silver \\golden "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ "
-"\\darkcell[1.4]{Niemożliwy} & \\lightcell[1.4]{\\silver \\golden \\golden "
-"\\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure "
-"\\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: Plain text
 #: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
-msgstr "\\stepcounter{footnote}"
+msgstr ""
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:196
@@ -687,5 +516,3 @@ msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
-"Zawsze 1 Jednostka Błękitnych Smoków (początkowe Jednostki Finałowej Armii). "
-"Reszta jest losowa\\label{azure}."

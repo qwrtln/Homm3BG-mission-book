@@ -1,20 +1,20 @@
-# French translations for Homm package
+# German translations for PACKAGE package
 # Copyright (C) 2025 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
+# This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
 "PO-Revision-Date: 2025-04-01 12:55+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: fr\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -38,8 +38,6 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
-"{2}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -52,8 +50,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -67,8 +63,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -77,8 +71,6 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de Joueurs :} 2\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -94,8 +86,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
@@ -107,61 +97,41 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\columnbreak\n"
-"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
-"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
 "town_portal.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} profmamadu\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:15
@@ -177,53 +147,31 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over a maximum of 11 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 20 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -231,21 +179,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vfill\n"
 "\\begin{center}\n"
@@ -253,10 +190,6 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:49
@@ -296,13 +229,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -311,11 +238,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:83
@@ -341,12 +263,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\phantom{.}\n"
 "\\vfill\n"
@@ -356,10 +273,6 @@ msgid ""
 "\\vfill\n"
 "\\phantom{.}"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: tikzpicture
 #: clash/dragoncurse_castle.tex:99

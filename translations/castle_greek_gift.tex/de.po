@@ -1,20 +1,20 @@
-# French translations for Homm package
+# German translations for PACKAGE package
 # Copyright (C) 2025 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
+# This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-14 07:17+0100\n"
 "PO-Revision-Date: 2025-04-14 07:17+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: fr\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -38,8 +38,6 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
-"{2}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
@@ -48,8 +46,6 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiment de Départ:} Demeure \\bronze\\, Citadelle\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
@@ -61,8 +57,6 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -77,8 +71,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -94,8 +86,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
@@ -107,8 +97,6 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\columnbreak\n"
-"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -116,13 +104,11 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -136,13 +122,11 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
 #: campaigns/castle_two_knights_defense.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
@@ -166,46 +150,38 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:18
 #: campaigns/castle_two_knights_defense.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
 #: campaigns/castle_two_knights_defense.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
 #: campaigns/castle_two_knights_defense.tex:19
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:24
@@ -217,27 +193,15 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -245,34 +209,24 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:41
@@ -301,13 +255,11 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:54
@@ -345,13 +297,11 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:68
@@ -391,13 +341,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -405,11 +349,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:97
@@ -447,13 +386,11 @@ msgstr ""
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
-"\n"
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
@@ -479,15 +416,14 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:125
-#, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#, no-wrap
 msgid ""
 "{\n"
 "  \\transparent{0.2}\n"
 "  \\includegraphics[width=\\linewidth, keepaspectratio]{\\art/griffin.png}\n"
 "}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
 
 #. type: tikzpicture
 #: campaigns/castle_greek_gift.tex:134
@@ -503,13 +439,11 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:142
@@ -839,19 +773,10 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:275
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\framedimage[0.8\\linewidth]{\\art/ghost_dragon.jpg}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"

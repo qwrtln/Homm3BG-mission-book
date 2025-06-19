@@ -7,16 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-16 17:47+0200\n"
-"PO-Revision-Date: 2025-05-16 12:06+0000\n"
-"Last-Translator: Nohud <nohud@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/clash-scenarios/the_fractured_kingdoms/fr/>\n"
+"PO-Revision-Date: 2025-04-16 17:47+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -57,7 +55,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -65,12 +63,12 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de la ville:} \\bronze\\ Dwelling\n"
+"\\textbf{Bâtiments de départ :} Aucun\n"
 "\n"
 
 #. type: multicols*
@@ -79,30 +77,36 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
 #: clash/the_fractured_kingdoms.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:73 clash/the_fractured_kingdoms.tex:53
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "Before this Scenario:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
@@ -159,7 +163,7 @@ msgid ""
 "This Scenario is played over 16 Rounds.\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du scenario}}\n"
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
 "\n"
 
 #. type: multicols
@@ -173,7 +177,7 @@ msgid ""
 "\\textbf{Player Count:} 5 free-for-all\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
 "\n"
 
 #. type: multicols
@@ -237,13 +241,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
@@ -255,11 +253,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:60
@@ -354,13 +347,22 @@ msgstr ""
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:112
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
 "  };\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:114

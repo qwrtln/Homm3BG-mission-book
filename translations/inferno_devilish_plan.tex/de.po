@@ -1,20 +1,20 @@
-# French translations for Homm package
+# German translations for PACKAGE package
 # Copyright (C) 2025 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Homm package.
+# This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Homm 3BG-mission-book\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-03-26 01:04+0100\n"
 "PO-Revision-Date: 2025-03-26 01:04+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: fr\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -38,8 +38,6 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
-"{2}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -52,8 +50,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -67,8 +63,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -82,8 +76,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
@@ -95,8 +87,6 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -111,8 +101,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -125,8 +113,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -142,8 +128,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
-"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:86 coops/emerald_island.tex:62
@@ -157,8 +141,6 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
@@ -171,8 +153,6 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\columnbreak\n"
-"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:145 coops/titans_stronghold.tex:110
@@ -185,31 +165,25 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\n"
-"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
-"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -217,23 +191,19 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
-"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -248,26 +218,19 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:10
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:18
@@ -285,74 +248,54 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario plays out over 13 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
-"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
-"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
-"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item A Pack of Familiars\n"
@@ -360,12 +303,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:48
@@ -426,33 +363,17 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:86
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  {\\transparent{0.2}\\includegraphics[width=0.7\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -461,12 +382,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:102
@@ -506,13 +421,11 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:117
@@ -553,22 +466,13 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:135
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:145
@@ -583,13 +487,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -597,11 +495,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:156
@@ -691,32 +584,21 @@ msgstr ""
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:206
 #: campaigns/inferno_steadwicks_fall.tex:213
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:210
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (14.4, 1.45) {\\includegraphics[width=0.85\\linewidth]{\\art/efreet.jpg}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
-"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:212

@@ -7,7 +7,7 @@ PRINTABLE_MODE=0
 MONO_MODE=0
 SCENARIO_SEARCH=""
 
-valid_languages=("en" "pl" "fr" "cs")
+valid_languages=("en" "pl" "fr" "cs" "de")
 
 usage() {
   echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]"
@@ -164,6 +164,9 @@ cleanup() {
   cleanup_monochrome
   cleanup_windows_drafts
   cleanup_scenario
+  if [[ ${LANGUAGE} != en ]]; then
+    git restore po4a.cfg
+  fi
 }
 
 trap cleanup EXIT
@@ -252,6 +255,7 @@ fi
 
 # Run po4a for non-English languages
 if [[ ${LANGUAGE} != en ]]; then
+  sed -i'' "s/^\[po4a_langs\].*$/[po4a_langs] ${LANGUAGE}/" po4a.cfg
   if ! po4a --no-update po4a.cfg | grep "/${LANGUAGE}/"; then
     echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
     find translations -name "$LANGUAGE.po" -type f -exec msgfmt -c --check-format -o /dev/null '{}' \;
