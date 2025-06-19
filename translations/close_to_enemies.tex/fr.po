@@ -121,7 +121,7 @@ msgstr ""
 #. type: Plain text
 #: coops/close_to_enemies.tex:3
 msgid "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/ballistics.png}"
-msgstr "\\addscenariosection{1}{Scénario Coopératif}{}{\\images/earthquake.png}"
+msgstr "\\addscenariosection{1}{Scénario Coopératif}{Les Ennemis à nos Portes}{\\images/earthquake.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
@@ -150,7 +150,7 @@ msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
 msgstr ""
-"\\textit{«Messire! Les pillards sont à nos portes»'}\n"
+"\\textit{«Messire! Les pillards sont à nos portes»}\n"
 "\n"
 
 #. type: multicols
@@ -182,7 +182,7 @@ msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 7 manches.\n"
+"Ce scénario se joue en 7 Manches.\n"
 "\n"
 
 #. type: multicols
@@ -256,7 +256,7 @@ msgid ""
 "\n"
 msgstr ""
 "Placez la Tuile Lointaine (II--III) avec l'Enclave correspondant à votre terrain de Faction sur la position marquée par un Cube coloré dans l'image de Préparation du Plateau.\n"
-"Chaque paire de la même couleur indique une Tuile de Départ(I)  et sa Tuile Lointaine (II--III) avec Enclave correspondante.\n"
+"Chaque paire de la même couleur indique une Tuile de Départ(I) et sa Tuile Lointaine (II--III) avec Enclave correspondante.\n"
 "\n"
 
 #. type: multicols
