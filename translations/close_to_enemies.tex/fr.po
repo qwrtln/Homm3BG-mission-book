@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-06-19 15:52+0200\n"
+"PO-Revision-Date: 2025-06-20 14:03+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -18,7 +18,22 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5 coops/emerald_island.tex:5 coops/close_to_enemies.tex:5 coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5 clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6 campaigns/inferno_devilish_plan.tex:202 campaigns/inferno_steadwicks_fall.tex:5 campaigns/inferno_deal_with_the_devil.tex:5 campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85 campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5 campaigns/castle_sicilian_dragon.tex:144 campaigns/castle_two_knights_defense.tex:5 campaigns/castle_two_knights_defense.tex:91 campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5 sections/recommendations.tex:71 sections/recommendations.tex:126 sections/credits.tex:10
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/credits.tex:10
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -28,7 +43,11 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18 coops/close_to_enemies.tex:18 coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20 campaigns/inferno_steadwicks_fall.tex:16 campaigns/inferno_deal_with_the_devil.tex:20
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
@@ -38,7 +57,12 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22 coops/emerald_island.tex:18 coops/close_to_enemies.tex:22 coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24 campaigns/inferno_steadwicks_fall.tex:20 campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
@@ -48,7 +72,12 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44 coops/emerald_island.tex:36 coops/close_to_enemies.tex:37 coops/stand_united.tex:33 clash/the_hunt.tex:35 campaigns/inferno_devilish_plan.tex:88 campaigns/inferno_steadwicks_fall.tex:92 campaigns/inferno_deal_with_the_devil.tex:52
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -58,7 +87,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39 campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50 campaigns/castle_two_knights_defense.tex:47
+#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
+#: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
+#: campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
@@ -68,7 +100,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59 coops/emerald_island.tex:45 coops/close_to_enemies.tex:70 coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121 campaigns/inferno_steadwicks_fall.tex:133 campaigns/inferno_deal_with_the_devil.tex:83 campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81 campaigns/castle_two_knights_defense.tex:77
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:70
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -78,7 +116,11 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63 coops/emerald_island.tex:49 coops/close_to_enemies.tex:76 coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125 campaigns/inferno_steadwicks_fall.tex:137 campaigns/inferno_deal_with_the_devil.tex:87
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:76
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -88,7 +130,12 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:60 coops/close_to_enemies.tex:112 coops/stand_united.tex:74 clash/force_of_will.tex:74 clash/the_hunt.tex:68 campaigns/inferno_devilish_plan.tex:174 campaigns/inferno_steadwicks_fall.tex:194 campaigns/inferno_deal_with_the_devil.tex:148
+#: coops/sentinels.tex:86 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -98,7 +145,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145 coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
+#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -108,7 +158,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35 coops/stand_united.tex:31 clash/bloody_grail.tex:29 clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34 clash/the_fractured_kingdoms.tex:26
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
@@ -298,7 +351,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50 campaigns/inferno_steadwicks_fall.tex:48 campaigns/inferno_deal_with_the_devil.tex:46
+#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
+#: campaigns/inferno_steadwicks_fall.tex:48
+#: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
@@ -418,12 +473,12 @@ msgstr ""
 "\\textbf{Manche 4:}\n"
 "\\begin{itemize}\n"
 "  \\item La deuxième vague d'Armée des Clans Ennemis attaque chaque Ville (voir ci-dessous).\n"
-"  \\item Après avoir défendu leur Ville, chaque Joueur peut Fouillez (3) le \\textit{Deck d'Artéfact}.\n"
+"  \\item Après la défense de sa Ville, chaque Joueur peut Fouillez (3) le \\textit{Deck d'Artéfact}.\n"
 "\\end{itemize}\n"
 "\\textbf{Manche 6:}\n"
 "\\begin{itemize}\n"
 "  \\item La troisième vague de l'Armée des Clans Ennemis attaque chaque Ville (voir ci-dessous).\n"
-"  \\item Après avoir défendu leur Ville, chaque Joueur peut Fouillez (3) le \\textit{Deck d'Artéfact}.\n"
+"  \\item Après la défense de la Ville, chaque Joueur peut Fouillez (3) le \\textit{Deck d'Artéfact}.\n"
 "\\end{itemize}\n"
 "\\textbf{Manche 7:}\n"
 "\\begin{itemize}\n"
@@ -469,14 +524,14 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Vagues des Clans Ennemis}}\n"
 "\\begin{itemize}\n"
-"  \\item Les Enclaves non revendiquées enverront une Armée des Clans pour attaquer votre Ville!\n"
+"  \\item Les Enclaves non revendiquées enverront une Armée pour attaquer votre Ville!\n"
 "  \\item Un combat débute au début du tour de chaque Joueur.\n"
 "  \\item Avant combat, vous pouvez utiliser vos Jetons Construction, Grimoire et Population, ainsi que des cartes de votre main. Cependant vous ne pouvez pas déplacer votre Héros.\n"
 "  \\item Chaque Joueur défend sa propre Ville.\n"
 "  \\item Si vous avez une Citadelle, l'attaque de la \\textit{Tourelle} est réduite. Son attaque pour les vagues 1/2/3 devient 2/3/4 \\svg{attack}.\n"
 "  \\item Ce combat ne coûte pas de \\svgeven{movement}.\n"
 "  \\item Se référer au tableau \\textit{Armée des Clans Ennemis} pour la force des armées de siège.\n"
-"  \\item Si votre Héros est dans une Ville alliée (pas une Enclave) quand un Clan attaque une autre Ville alliée sans Héros présent, vous pouvez aider à défendre en utilisant les cartes de votre main. Le Héros allié utilisera ses Unités et vous pouvez aider en jouant les cartes de votre main durant le combat.\n"
+"  \\item Si votre Héros est dans une Ville alliée (pas une Enclave) quand un Clan attaque une autre Ville alliée sans Héros présent, vous pouvez aider à défendre en utilisant les cartes de votre main. Le Héros allié utilisera ses Unités et vous pouvez aider avec les cartes de votre main durant le combat.\n"
 "  \\item Gagnez un \\svg{experience} quand vous défendez avec succès votre Ville, avec ou sans la participation du Héros Principal.\n"
 "\\end{itemize}\n"
 "\n"
