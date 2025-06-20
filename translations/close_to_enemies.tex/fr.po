@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-01 12:55+0000\n"
+"POT-Creation-Date: 2025-06-20 23:01+0000\n"
 "PO-Revision-Date: 2025-06-20 14:03+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
 #: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
@@ -58,7 +58,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
-#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
 #: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
 #: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
@@ -73,7 +73,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:33 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
@@ -87,21 +87,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 coops/close_to_enemies.tex:39
-#: campaigns/inferno_devilish_plan.tex:90 campaigns/castle_greek_gift.tex:49
-#: campaigns/castle_sicilian_dragon.tex:50
-#: campaigns/castle_two_knights_defense.tex:47
-#, no-wrap
-msgid ""
-"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
-"\n"
-msgstr ""
-"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
-"\n"
-
-#. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:70
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
@@ -117,7 +104,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:76
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
@@ -130,8 +117,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:86 coops/emerald_island.tex:60
-#: coops/close_to_enemies.tex:112 coops/stand_united.tex:74
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:68
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
@@ -145,10 +132,10 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:143 coops/close_to_enemies.tex:145
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:26
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -158,7 +145,18 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
+#: coops/close_to_enemies.tex:37 coops/stand_united.tex:35
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"\n"
+
+#. type: multicols
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
@@ -194,16 +192,6 @@ msgstr ""
 #: coops/close_to_enemies.tex:9
 #, no-wrap
 msgid ""
-"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
-"\n"
-msgstr ""
-"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1313651865648369725}{Archon Studio Discord}\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:11
-#, no-wrap
-msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
 msgstr ""
@@ -211,7 +199,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:13
+#: coops/close_to_enemies.tex:11
 #, no-wrap
 msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
@@ -221,7 +209,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:16
+#: coops/close_to_enemies.tex:14
 #, no-wrap
 msgid ""
 "\\textit{The time has come to end these long-standing wars and crush your enemies like a bug once and for all!}\n"
@@ -233,7 +221,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:20
+#: coops/close_to_enemies.tex:18
 #, no-wrap
 msgid ""
 "This Scenario is played over 7 Rounds.\n"
@@ -243,7 +231,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:24
+#: coops/close_to_enemies.tex:22
 #, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1--6\n"
@@ -253,7 +241,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:26
+#: coops/close_to_enemies.tex:24
 #, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
@@ -263,7 +251,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/close_to_enemies.tex:28 campaigns/inferno_steadwicks_fall.tex:28
+#: coops/close_to_enemies.tex:26 campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
@@ -273,7 +261,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:33
+#: coops/close_to_enemies.tex:31
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -289,7 +277,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:44
+#: coops/close_to_enemies.tex:42
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -305,7 +293,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:47
+#: coops/close_to_enemies.tex:45
 #, no-wrap
 msgid ""
 "Place Far (II--III) Map Tiles with Settlements matching your Faction's terrain in positions marked by colored Cubes in the Scenario map layout.\n"
@@ -317,7 +305,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:49
+#: coops/close_to_enemies.tex:47
 #, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool (choose one):}\n"
@@ -327,7 +315,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:60
+#: coops/close_to_enemies.tex:58
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -355,7 +343,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
+#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
@@ -367,7 +355,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:64
+#: coops/close_to_enemies.tex:62
 #, no-wrap
 msgid ""
 "Prepare an AI Deck for Settlement defenders.\n"
@@ -377,7 +365,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:66
+#: coops/close_to_enemies.tex:64
 #, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
@@ -387,7 +375,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:68
+#: coops/close_to_enemies.tex:66
 #, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
@@ -397,7 +385,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:74
+#: coops/close_to_enemies.tex:72
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -411,7 +399,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:81
+#: coops/close_to_enemies.tex:79
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -427,7 +415,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:110
+#: coops/close_to_enemies.tex:108
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -491,7 +479,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:118
+#: coops/close_to_enemies.tex:116
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -509,7 +497,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:131
+#: coops/close_to_enemies.tex:129
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy clan waves}}\n"
@@ -541,7 +529,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
+#: coops/close_to_enemies.tex:132 campaigns/inferno_devilish_plan.tex:138
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -553,7 +541,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:143
+#: coops/close_to_enemies.tex:141
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Settlements Defenders}}\n"
@@ -577,7 +565,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:152
+#: coops/close_to_enemies.tex:150
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -597,7 +585,7 @@ msgstr ""
 "\n"
 
 #. type: figure
-#: coops/close_to_enemies.tex:160
+#: coops/close_to_enemies.tex:158
 msgid ""
 "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
@@ -608,7 +596,7 @@ msgstr ""
 "EXEMPLE }}"
 
 #. type: table*
-#: coops/close_to_enemies.tex:209
+#: coops/close_to_enemies.tex:207
 #, no-wrap
 msgid ""
 "[b!]\n"
@@ -708,17 +696,17 @@ msgstr ""
 "  }"
 
 #. type: figure
-#: coops/close_to_enemies.tex:219
+#: coops/close_to_enemies.tex:217
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO 3-JOUEURS | EXEMPLE}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:226
+#: coops/close_to_enemies.tex:224
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO 4-JOUEURS | EXEMPLE}}"
 
 #. type: tikzpicture
-#: coops/close_to_enemies.tex:246
+#: coops/close_to_enemies.tex:244
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -732,7 +720,7 @@ msgstr ""
 "  };"
 
 #. type: figure
-#: coops/close_to_enemies.tex:246
+#: coops/close_to_enemies.tex:244
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
@@ -743,7 +731,7 @@ msgstr ""
 "EXEMPLE}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:246
+#: coops/close_to_enemies.tex:244
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
