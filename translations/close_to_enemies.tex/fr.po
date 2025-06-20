@@ -173,8 +173,12 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/close_to_enemies.tex:3
-msgid "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/ballistics.png}"
-msgstr "\\addscenariosection{1}{Scénario Coopératif}{Les Ennemis à nos Portes}{\\images/earthquake.png}"
+msgid ""
+"\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
+"ballistics.png}"
+msgstr ""
+"\\addscenariosection{1}{Scénario Coopératif}{Les Ennemis à nos Portes}"
+"{\\images/earthquake.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
@@ -594,8 +598,14 @@ msgstr ""
 
 #. type: figure
 #: coops/close_to_enemies.tex:160
-msgid "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | EXAMPLE }}"
-msgstr "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCENARIO 2-JOUEURS | EXEMPLE }}"
+msgid ""
+"[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
+"EXAMPLE }}"
+msgstr ""
+"[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCENARIO 2-JOUEURS | "
+"EXEMPLE }}"
 
 #. type: table*
 #: coops/close_to_enemies.tex:209
@@ -723,10 +733,22 @@ msgstr ""
 
 #. type: figure
 #: coops/close_to_enemies.tex:246
-msgid "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIO 5-JOUEURS | EXEMPLE}}"
+msgid ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
+"EXAMPLE}}"
+msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIO 5-JOUEURS | "
+"EXEMPLE}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:246
-msgid "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIO 6-JOUEURS | EXEMPLE}}"
+msgid ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
+"EXAMPLE}}"
+msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIO 6-JOUEURS | "
+"EXEMPLE}}"
