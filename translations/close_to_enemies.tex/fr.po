@@ -724,9 +724,9 @@ msgstr ""
 #. type: figure
 #: coops/close_to_enemies.tex:246
 msgid "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIO 5-JOUEURS | EXAMPLE}}"
+msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIO 5-JOUEURS | EXEMPLE}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:246
 msgid "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIO 6-JOUEURS | EXAMPLE}}"
+msgstr "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIO 6-JOUEURS | EXEMPLE}}"
