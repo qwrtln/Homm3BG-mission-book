@@ -293,7 +293,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\n\n"
+"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
 "\n"
 
 #. type: multicols
