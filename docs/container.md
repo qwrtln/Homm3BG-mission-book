@@ -1,7 +1,7 @@
 # Container-based Setup
 
 Instead of installing all the dependencies directly on your system, you can use our container-based setup that works across all operating systems (see the [Dockerfile](https://github.com/qwrtln/Homm3BG-mission-book/blob/main/tools/container/Dockerfile)).
-The built image weighs ~1.15 GB.
+The built image weighs ~1.12 GB.
 You only need [Podman](https://podman.io/getting-started/installation) (recommended) or [Docker](https://www.docker.com/get-started) container engine to be installed.
 
 ## Wrapper Script
