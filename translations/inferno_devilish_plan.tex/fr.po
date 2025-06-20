@@ -192,23 +192,24 @@ msgstr ""
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
 "\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:134 campaigns/inferno_devilish_plan.tex:138
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
 "\\columnbreak\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\\columnbreak\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*

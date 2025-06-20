@@ -149,24 +149,24 @@ msgstr ""
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:28 campaigns/inferno_steadwicks_fall.tex:28
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:62 campaigns/inferno_devilish_plan.tex:50
 #: campaigns/inferno_steadwicks_fall.tex:48
 #: campaigns/inferno_deal_with_the_devil.tex:46
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
 "\n"
 
 #. type: multicols
