@@ -7,7 +7,8 @@ RUN apk add --no-cache wget && \
     wget --quiet ${PO4A_GH_URL}/v${PO4A_VERSION}/po4a-${PO4A_VERSION}.tar.gz && \
     mkdir -p /po4a && \
     tar -xf po4a-${PO4A_VERSION}.tar.gz -C /po4a --strip-components=1 && \
-    rm po4a-${PO4A_VERSION}.tar.gz
+    rm po4a-${PO4A_VERSION}.tar.gz && \
+    apk del --purge wget
 
 FROM alpine:latest
 
@@ -119,9 +120,8 @@ RUN apk --no-cache add \
       xstring \
       zref && \
     /opt/texlive/texdir/bin/*/tlmgr path add && \
-    /opt/texlive/texdir/bin/*/mktexlsr
-
-RUN mkdir -p /etc/fonts/conf.d && \
+    /opt/texlive/texdir/bin/*/mktexlsr && \
+    mkdir -p /etc/fonts/conf.d && \
     ln -s /opt/texlive/texdir/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf && \
     fc-cache -fv && \
     # Create cache directories with correct permissions

@@ -33,16 +33,12 @@ CONTAINER_ENGINE=""
 
 if command -v podman &>/dev/null; then
     CONTAINER_ENGINE="podman"
-    echo "Using podman as container engine"
 elif command -v docker &>/dev/null; then
     CONTAINER_ENGINE="docker"
-    echo "Using docker as container engine"
 else
     echo "Error: No container engine found. Please install podman or docker."
     exit 1
 fi
-
-echo "Running $SCRIPT_PATH" "${@}"
 
 temp_output=$(mktemp)
 trap 'rm -f "$temp_output"' EXIT
