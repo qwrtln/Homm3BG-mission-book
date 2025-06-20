@@ -178,7 +178,7 @@ msgid ""
 "ballistics.png}"
 msgstr ""
 "\\addscenariosection{1}{Scénario Coopératif}{Les Ennemis à nos Portes}"
-"{\\images/earthquake.png}"
+"{\\images/ballistics.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
