@@ -5,14 +5,12 @@ on:
    inputs:
      scenario_type:
        description: 'Type of scenarios to build'
-       required: false
+       required: true
        type: string
-       default: 'clash'
      language:
        description: 'Language to build'
-       required: false
+       required: true
        type: string
-       default: 'en'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
@@ -64,7 +62,7 @@ jobs:
           path: |
             ./${{ matrix.scenario }}_${{ inputs.language }}.pdf
           key: >-
-            pdf-${{ matrix.scenario }}-${{ matrix.language }}-${{
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
             matrix.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
             || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), 'assets/**/*')
@@ -83,29 +81,6 @@ jobs:
           restore-keys: |
             inkscape-
 
-      # - name: Cache LaTeX build
-      #   if: steps.cache-pdf.outputs.cache-hit != 'true'
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       ./main_${{ matrix.language }}.aux
-      #       ./main_${{ matrix.language }}.fdb_latexmk
-      #       ./main_${{ matrix.language }}.fls
-      #       ./main_${{ matrix.language }}.out
-      #       ./main_${{ matrix.language }}.toc
-      #       ./campaigns/*.aux
-      #       ./coops/*.aux
-      #       ./clash/*.aux
-      #       ./sections/**/*.aux
-      #     key: >-
-      #       texlive-mission-${{ matrix.language }}-${{
-      #       matrix.language == 'en'
-      #       && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
-      #       || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
-      #       }}
-      #     restore-keys: |
-      #       texlive-mission-${{ matrix.language }}-
-      #
       - name: Compile scenario
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
