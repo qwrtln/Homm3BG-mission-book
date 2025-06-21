@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-04-14 07:17+0100\n"
+"POT-Creation-Date: 2025-06-22 00:57+0200\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -18,12 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
@@ -32,9 +33,10 @@ msgstr ""
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
-#: sections/credits.tex:10
+#: sections/what_to_play.tex:5
 #, no-wrap
 msgid ""
 "{2}\n"

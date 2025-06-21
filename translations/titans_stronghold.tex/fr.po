@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-19 08:35+0000\n"
+"POT-Creation-Date: 2025-06-21 22:58+0000\n"
 "PO-Revision-Date: 2024-11-01 11:30+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -18,12 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.8.2-dev\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
 #: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
 #: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 campaigns/inferno_devilish_plan.tex:6
+#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
@@ -32,9 +33,10 @@ msgstr ""
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/what_to_play.tex:5
+#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
-#: sections/credits.tex:10
+#: sections/what_to_play.tex:5
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -45,7 +47,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/close_to_enemies.tex:18 coops/stand_united.tex:13
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
 #: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
@@ -59,7 +61,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
-#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
 #: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
 #: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
@@ -75,6 +77,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
 #: clash/force_of_will.tex:24 clash/the_hunt.tex:23
+#: clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -96,7 +99,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:37
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:33 clash/the_hunt.tex:35
 #: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
@@ -111,7 +114,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:70
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
@@ -127,7 +130,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:76
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
@@ -147,7 +150,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -156,12 +159,12 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34
+#: sections/credits.tex:34 sections/random_scenario.tex:316
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -300,7 +303,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
-#: coops/stand_united.tex:35
+#: coops/close_to_enemies.tex:37 coops/stand_united.tex:35
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
