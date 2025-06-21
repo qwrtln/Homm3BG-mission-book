@@ -88,12 +88,10 @@ jobs:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
-          pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ inputs.language }}.tex
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        id: optimize
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ inputs.language }}.pdf
@@ -104,4 +102,41 @@ jobs:
         with:
           name: ${{ matrix.scenario }}_${{ inputs.language }}
           path: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Install magick
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+          chmod +x magick
+          mv magick /usr/local/bin/magick
+
+      - name: Process map files
+        run: |
+          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
+          for map in $MAP_FILES; do
+            tools/to_monochrome.sh "assets/maps/$map"
+          done
+
+      - name: Compile scenario
+        uses: xu-cheng/latex-action@v3
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: export HOMM3_NO_ART_BACKGROUND=1
+          root_file: main_${{ inputs.language }}.tex
+
+      - name: Optimize PDF
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ inputs.language }}.pdf
+          quality-level: prepress
+          output-file: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.scenario }}_${{ inputs.language }}_mono
+          path: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
