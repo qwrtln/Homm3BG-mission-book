@@ -25,8 +25,7 @@ jobs:
         run: |
           # SCENARIOS=$(find clash coops campaigns -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \;)
           SCENARIOS=$(find clash -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \;)
-          echo "matrix=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {scenario: .}')" >> $GITHUB_OUTPUT
-
+          echo "matrix=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0)) as $scenarios | ["en", "pl"] as $languages | [$scenarios[] | . as $scenario | $languages[] | {scenario: $scenario, language: .}] | {include: .}')" >> $GITHUB_OUTPUT
 
   build_scenarios:
     runs-on: ubuntu-latest
@@ -103,13 +102,6 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Find quote string
-        if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
-        id: quote
-        run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
-          echo "quote=$QUOTE" >> $GITHUB_OUTPUT
-
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         id: optimize
@@ -117,11 +109,10 @@ jobs:
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
-          test-string: ${{ steps.quote.outputs.quote }}
-          output-file: ${{ matrix.scenario }}.pdf
+          output-file: ${{ matrix.scenario }}_${{ matrix.language }}.pdf
 
       - uses: actions/upload-artifact@v4
         with:
-          name: main_${{ matrix.language }}
-          path: main_${{ matrix.language }}.pdf
+          name: ${{ matrix.scenario }}_${{ matrix.language }}
+          path: ${{ matrix.scenario }}_${{ matrix.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
