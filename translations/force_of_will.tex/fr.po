@@ -210,9 +210,6 @@ msgstr ""
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
