@@ -9,6 +9,11 @@ on:
 jobs:
   call_build:
     uses: ./.github/workflows/build-individual-scenarios.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario_type: ["clash"]
+        language: ["en", "pl"]
     with:
-      scenario_type: "clash"
-      language: "en"
+      scenario_type: ${{ matrix.scenario_type }}
+      language: ${{ matrix.language }}

@@ -114,7 +114,7 @@ jobs:
         id: optimize
         uses: qwrtln/optimize-pdf@v1
         with:
-          file-name: main_${{ matrix.language }}.pdf
+          file-name: main_${{ inputs.language }}.pdf
           quality-level: prepress
           output-file: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
 
