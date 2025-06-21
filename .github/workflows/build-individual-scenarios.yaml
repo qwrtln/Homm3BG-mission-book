@@ -104,7 +104,23 @@ jobs:
           path: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
+      - name: Cache monochrome built PDF
+        uses: actions/cache@v4
+        id: cache-mono-pdf
+        with:
+          path: |
+            ./${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
+          key: >-
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-
+
       - name: Install magick
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
@@ -113,6 +129,7 @@ jobs:
           mv magick /usr/local/bin/magick
 
       - name: Process map files
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         run: |
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
           for map in $MAP_FILES; do
@@ -120,6 +137,7 @@ jobs:
           done
 
       - name: Compile scenario
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -129,6 +147,7 @@ jobs:
           root_file: main_${{ inputs.language }}.tex
 
       - name: Optimize PDF
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ inputs.language }}.pdf
@@ -140,3 +159,17 @@ jobs:
           name: ${{ matrix.scenario }}_${{ inputs.language }}_mono
           path: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      - name: Put PDFs in a directory
+        run: |
+          mkdir -p ${{ matrix.scenario }}
+          mv *.pdf ${{ matrix.scenario }}
+
+      - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ inputs.language }}/${{ matrix.scenario }}
+          publish_dir: ./${{ inputs.language }}
+          force_orphan: true
