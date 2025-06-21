@@ -1,23 +1,20 @@
 # French translations for Homm package
-# Traductions françaises du paquet Homm
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-05-16 12:06+0000\n"
-"Last-Translator: Nohud <nohud@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/clash-scenarios/force_of_will/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -52,7 +49,7 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -69,7 +66,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -84,6 +81,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
@@ -92,7 +91,7 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Bonus Additionnel :} Aucun\n"
 "\n"
 
 #. type: multicols
@@ -105,18 +104,20 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de la ville:} \\bronze\\ Dwelling\n"
+"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
 "\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
 #: clash/the_fractured_kingdoms.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
@@ -130,25 +131,41 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/force_of_will.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
+#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/berserk.png}"
 msgstr ""
+"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
+"earthquake.png}"
 
 #. type: multicols*
 #: clash/force_of_will.tex:7
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} Invoceusse\n"
+#| "\n"
 msgid ""
 "\\textbf{Author:} Shakajiub\n"
 "\n"
 msgstr ""
+"\\textbf{Auteur :} Invoceusse\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:9
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+#| "\n"
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:14
@@ -163,33 +180,52 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:17
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:22
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
+#| "  \\item A Few \\bronze\\ Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -197,6 +233,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
+"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:33 clash/the_hunt.tex:33
@@ -236,12 +278,17 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:57
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "To win the Scenario, a Hero must Flag the Dragon Utopia Field.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:60
@@ -254,7 +301,13 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:67
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -262,6 +315,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\begin{itemize}\n"
+"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:72

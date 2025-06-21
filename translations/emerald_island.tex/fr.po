@@ -1,22 +1,20 @@
 # French translations for Homm package
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
-# Automatically generated, 2024.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-04-01 12:55+0000\n"
-"PO-Revision-Date: 2025-05-16 12:06+0000\n"
-"Last-Translator: Nohud <nohud@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/emerald_island/fr/>\n"
+"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -55,7 +53,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
 "\n"
 
 #. type: multicols
@@ -70,7 +68,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du plateau}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
 "\n"
 
 #. type: multicols*
@@ -86,7 +84,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de victoire}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
 "\n"
 
 #. type: multicols
@@ -100,7 +98,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Condition de défaite}}\n"
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
 "\n"
 
 #. type: multicols
@@ -117,7 +115,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -132,6 +130,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -156,8 +156,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Groupe \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Quelques \\bronze\\ de votre choix.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -196,18 +196,29 @@ msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/emerald_island.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
+#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
+"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
+"earthquake.png}"
 
 #. type: multicols
 #: coops/emerald_island.tex:9
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+#| "\n"
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:14
@@ -222,35 +233,55 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:16
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
+#| "\n"
 msgid ""
 "This Scenario is played over 8 Rounds.\n"
 "\n"
 msgstr ""
+"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:20
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Player Count:} 1 -- 6\n"
+#| "\n"
 msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
+"\\textbf{Nombre de Joueurs :} 1 -- 6\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:22
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:24
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:35
@@ -262,7 +293,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de la ville:} \\bronze\\ Dwelling\n"
+"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
 "\n"
 
 #. type: multicols
@@ -277,10 +308,11 @@ msgstr ""
 #: coops/emerald_island.tex:43
 #, fuzzy, no-wrap
 #| msgid ""
-#| "$\\boldsymbol{P}$ \\textbf{× Starting (I) Map Tile}\n"
 #| "\\begin{itemize}\n"
-#| "  \\item Starting Tiles of your chosen Factions.\n"
-#| "  \\item Ignore their yellow borders.\n"
+#| "  \\item P × Starting (I) Map Tile\n"
+#| "  \\item 2P × Far (II--III) Map Tile\n"
+#| "  \\item 2P × Near (IV--V) Map Tile\n"
+#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
 #| "\\end{itemize}\n"
 #| "\n"
 msgid ""
@@ -290,10 +322,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"$\\boldsymbol{J}$ \\textbf{× Tuiles de départ (I)}\n"
 "\\begin{itemize}\n"
-"  \\item Prendre les tuiles de départ des factions choisies.\n"
-"  \\item Ignorez leur bordure jaune.\n"
+"  \\item J × Tuiles de Départ (I)\n"
+"  \\item 2J × Tuiles Lointaines (II--III)\n"
+"  \\item 2J × Tuiles Proches (IV--V)\n"
+"  \\item (J + 1) × Tuiles Centrales (VI--VII)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -315,7 +348,14 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:58
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
+#| "  \\item A Few \\bronze\\ Units of your choice\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -323,6 +363,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
+"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:63
