@@ -1,0 +1,526 @@
+# German translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"PO-Revision-Date: 2025-06-22 00:57+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/what_to_play.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
+#: sections/random_scenario.tex:308
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
+#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
+#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
+#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
+#: sections/random_scenario.tex:306
+#, no-wrap
+msgid ""
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
+#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: sections/credits.tex:34 sections/random_scenario.tex:316
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/the_hunt.tex:96 sections/random_scenario.tex:61
+#, no-wrap
+msgid ""
+"\\medskip\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/random_scenario.tex:3
+msgid "\\addsection{Random Scenario}{\\images/random.png}"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:10
+#, no-wrap
+msgid ""
+"\\textit{As dice roll and fortunes shift, the lands of Antagarich spread before you in all their splendor.\n"
+"  Your destiny follows these celestial rolls, each battle and treasure determined by chance.\n"
+"  Will you emerge victorious in this battle royale, claim the sacred grail, or stand alone as the king of the hill when the final die settles?  % no-check-caps\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:13
+#, no-wrap
+msgid ""
+"Instead of playing a specific Scenario, you can follow these guidelines to create a random one.\n"
+"Of course, you can adjust everything at will.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:15
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Type}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:17
+#, no-wrap
+msgid ""
+"Choose one of the following types for your play:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Free-for-All} -- Win by eliminating your opponents or gaining more Victory Points (VPs) than them.\n"
+"VPs are counted in accordance to the Tournament book.\n"
+"Additionally, you get:\n"
+"\\begin{itemize}\n"
+"  \\item 5 VPs for flagging a Dragon Utopia for the first time.\n"
+"  \\item 2 VPs for controlling the Dragon Utopia at the end of the game.\n"
+"  \\item 5 VPs for bringing the Grail to your Faction Town \\textit{OR} 3 VPs for owning the Grail  at the end of the game.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:30
+#, no-wrap
+msgid ""
+"\\textbf{King of the Hill} -- Start a map with a Dragon Utopia in the middle.\n"
+"You don't need to fight the Level 7 Combat to capture it.\n"
+"You get 1 VP for each Round you hold the Dragon Utopia under your control, no VPs from anything else.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:35
+#, no-wrap
+msgid ""
+"\\textbf{Capture the Grail} -- Start a map with the Grail in the middle.\n"
+"Standard Grail rules apply: spend 2 \\svgeven{movement} to dig it up, and bring it to your Town.\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:37
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Size}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:39
+#, no-wrap
+msgid ""
+"Choose one of the following sizes:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:45
+#, no-wrap
+msgid ""
+"\\textbf{Small (S) Map:} 8 Rounds, and give every player:\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II-III) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:52
+#, no-wrap
+msgid ""
+"\\textbf{Medium (M) Map:} 12 Rounds, and give every player:\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II-III) Map Tile\n"
+"  \\item 1 × Near (IV-V) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:59
+#, no-wrap
+msgid ""
+"\\textbf{Large (XL) Map:} 16 Rounds, and give every player:\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Starting (I) Map Tile\n"
+"  \\item 2 × Far (II-III) Map Tile\n"
+"  \\item 2 × Near (IV-V) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:83
+#, no-wrap
+msgid ""
+"\\hommtablemulticol[]{19}{\n"
+"  \\centering\n"
+"  \\medskip\n"
+"  \\textbf{Central Map Tile(s)}\\\\\n"
+"  \\bigskip\n"
+"  \\hspace{-0.7em}\n"
+"  \\begin{tabularx}{0.99\\linewidth}{p{1.7em}>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X} & \\darkcell[1.4]{Free-for-All} & \\darkcell[1.4]{King of the Hill} & \\darkcell[1.4]{Capture the Grail} \\\\\n"
+"    \\darkcell[1.8]{S}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/near-tile.png}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} with a Dragon Utopia (C1 or C3)}}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} with a\\linebreak Grail\\linebreak (C2 or C4)}}} \\\\\n"
+"    \\darkcell[2.2]{M}\n"
+"    & \\lightcell[2.2]{\\includegraphics[width=0.95\\linewidth]{\\maps/medium.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"    \\darkcell[1.8]{XL}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: subsection{#2}
+#: sections/random_scenario.tex:89
+msgid "\\MakeUppercase{Map Setup}"
+msgstr ""
+
+#.  no-check-caps
+#. type: Plain text
+#: sections/random_scenario.tex:98
+msgid ""
+"First, place the Central Map Tile(s) for your Scenario type and size in the "
+"middle.  Decide player order before placing the remaining Tiles.  In reverse "
+"player order, each player places one Tile in descending level (Near "
+"\\rightarrow\\ Far \\rightarrow\\ Starting).  Every new Tile needs to "
+"connect to at least one existing Tile."
+msgstr ""
+
+#. type: Plain text
+#: sections/random_scenario.tex:101
+msgid ""
+"The following \\textbf{example} shows building the map for a \\textbf{3-"
+"player XL Free-for-All}, with player 1 playing as \\textcolor{rampartbg}"
+"{\\textbf{Rampart}}, player 2 as \\textcolor{infernobg}{\\textbf{Inferno}}, "
+"and player 3 as \\textcolor{castlebg}{\\textbf{Castle}}.  First, put the "
+"Center (VI-VII) Map Tile in the middle, and then proceed to distribute Near "
+"(IV-V) Map Tiles in the following order:"
+msgstr ""
+
+#.  Create a command for player images with horizontal padding
+#.  Slightly narrower to create padding
+#.  Images at 90% of column width for padding
+#. type: minipage
+#: sections/random_scenario.tex:112
+msgid "\\captionof{figure}{\\large\\textbf{#2}}"
+msgstr ""
+
+#.  #1 = x-offset from current position
+#.  #2 = y-offset from current position
+#.  #3 = rotation angle in degrees
+#.  #4 = arrow color
+#. type: newcommand{#4}
+#: sections/random_scenario.tex:124
+msgid ""
+"\\tikz[remember picture, overlay, baseline=(current bounding box.base)] "
+"{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
+"opacity=0.8] ([shift={(#1,#2)}]here) -- ++({#3}:0.8cm); }"
+msgstr ""
+
+#.  Save the content in a box to measure its dimensions
+#. type: lrbox
+#: sections/random_scenario.tex:165
+msgid "{\\contentbox}"
+msgstr ""
+
+#.  Header
+#.  Add left margin
+#. type: minipage
+#: sections/random_scenario.tex:165
+msgid ""
+"\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
+"\\rule{\\textwidth}{0pt}"
+msgstr ""
+
+#. type: minipage
+#: sections/random_scenario.tex:165
+msgid "\\textbf{\\textcolor{castlebg}{Player 3: Castle}}"
+msgstr ""
+
+#. type: minipage
+#: sections/random_scenario.tex:165
+msgid "\\textbf{\\textcolor{infernobg}{Player 2: Inferno}}"
+msgstr ""
+
+#. type: minipage
+#: sections/random_scenario.tex:165
+msgid "\\textbf{\\textcolor{rampartbg}{Player 1: Rampart}}"
+msgstr ""
+
+#.  First row
+#.  Add left margin
+#.  Add right margin
+#. type: minipage
+#: sections/random_scenario.tex:165
+msgid ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-1.png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-2.png}{2}\\playerarrow{-1.5}{0.2}{160}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
+"\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
+msgstr ""
+
+#. type: center
+#: sections/random_scenario.tex:165 sections/random_scenario.tex:183
+#: sections/random_scenario.tex:230
+msgid "{\\rule{0.98\\textwidth}{0.5pt}}"
+msgstr ""
+
+#.  Second row
+#.  Add left margin
+#.  Add right margin
+#. type: minipage
+#: sections/random_scenario.tex:183
+msgid ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-4.png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-5.png}{5}\\playerarrow{-0.8}{1.4}{210}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
+"\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
+msgstr ""
+
+#. type: tikzpicture
+#: sections/random_scenario.tex:190
+#, no-wrap
+msgid ""
+"  % Calculate content height\n"
+"  \\newlength{\\contentheight}\n"
+"  \\setlength{\\contentheight}{\\ht\\contentbox}\n"
+"  \\addtolength{\\contentheight}{\\dp\\contentbox}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: sections/random_scenario.tex:196
+#, no-wrap
+msgid ""
+"  % Draw the background columns with fixed positions and extra padding\n"
+"  % Moving columns slightly to align better with the padded content\n"
+"  \\fill[castlebg, opacity=0.1] (0.01\\textwidth,0) rectangle (0.31\\textwidth,-\\contentheight);\n"
+"  \\fill[infernobg, opacity=0.1] (0.36\\textwidth,0) rectangle (0.66\\textwidth,-\\contentheight);\n"
+"  \\fill[rampartbg, opacity=0.1] (0.71\\textwidth,0) rectangle (0.99\\textwidth,-\\contentheight);\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: sections/random_scenario.tex:199
+#, no-wrap
+msgid ""
+"  % Place the content\n"
+"  \\node[inner sep=0pt, anchor=north west] at (0,0) {\\usebox{\\contentbox}};"
+msgstr ""
+
+#. type: Plain text
+#: sections/random_scenario.tex:204
+msgid ""
+"Then, keeping the same order, place Far (II-III) Map Tiles, and finally "
+"Starting (I) Map Tiles:"
+msgstr ""
+
+#.  Add left margin
+#.  Add right margin
+#. type: minipage
+#: sections/random_scenario.tex:226
+msgid ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-"
+"far-1.png}{7}\\playerarrow{-4.4}{3.8}{-30}{rampartbg} \\playerarrow{-3.9}"
+"{-0.3}{60}{infernobg} \\playerarrow{-0.6}{4.0}{-120}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-far-2.png}{8}\\playerarrow{-4.7}{4.3}"
+"{-60}{rampartbg} \\playerarrow{-5.2}{-0.1}{30}{infernobg} \\playerarrow{-0.9}"
+"{4.3}{-150}{castlebg} \\hfill \\playerimage{\\maps/free-for-all-xl-"
+"finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
+"{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
+msgstr ""
+
+#. type: subsection{#2}
+#: sections/random_scenario.tex:235
+msgid "\\MakeUppercase{Player Setup}"
+msgstr ""
+
+#. type: Plain text
+#: sections/random_scenario.tex:237
+msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
+msgstr ""
+
+#. type: Plain text
+#: sections/random_scenario.tex:246
+msgid ""
+"\\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure"
+msgstr ""
+
+#. type: renewcommand{#4}
+#: sections/random_scenario.tex:246
+msgid "\\origbronze[12]"
+msgstr ""
+
+#. type: renewcommand{#4}
+#: sections/random_scenario.tex:246
+msgid "\\origsilver[12]"
+msgstr ""
+
+#. type: renewcommand{#4}
+#: sections/random_scenario.tex:246
+msgid "\\origgolden[12]"
+msgstr ""
+
+#. type: renewcommand{#4}
+#: sections/random_scenario.tex:246
+msgid "\\origazure[12]"
+msgstr ""
+
+#. type: Plain text
+#: sections/random_scenario.tex:283
+msgid ""
+"\\hommtable[]{27}{ \\centering \\medskip \\textbf{Starting Conditions}\\\\ "
+"\\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Stingy} & \\darkcell{Fair} & \\darkcell{Generous}\\\\ "
+"\\darkcell[1.4]{Army} & \\lightcellleft[1.4]{2 × Few cheapest \\bronze\\ "
+"Units} & \\lightcellleft[1.4]{Pack of cheap \\bronze\\ Units \\linebreak Few "
+"chosen \\bronze\\ Units} & \\lightcellleft[1.4]{Pack of chosen \\bronze\\ "
+"Units \\linebreak Few cheap \\silver\\ Units}\\\\ \\darkcell[1.4]{Starting "
+"Resources} & \\lightcellleft[1.4]{10 \\svg{gold}, 3 "
+"\\svg{building_materials}, 1 \\svg{valuables}} & \\lightcellleft[1.4]{16 "
+"\\svg{gold}, 5 \\svg{building_materials}, 1 \\svg{valuables}} & "
+"\\lightcellleft[1.4]{20 \\svg{gold}, 8 \\svg{building_materials}, 2 "
+"\\svg{valuables}}\\\\ \\end{tabularx} \\bigskip "
+"{\\color{\\iftoggle{noartbackground}{black}{darkyellow}}\\rule{\\textwidth}"
+"{0.5pt}} \\vspace*{1em} \\textbf{Town Strength}\\\\ \\bigskip "
+"\\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Settlement} & \\darkcell{City} & \\darkcell{Capitol}\\\\ "
+"\\darkcell[1.4]{Starting Income} & \\lightcellleft[1.4]{10 \\svg{gold}, 0 "
+"\\svg{building_materials}, 0 \\svg{valuables}} & \\lightcellleft[1.4]{15 "
+"\\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}} & "
+"\\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 "
+"\\svg{valuables}}\\\\ \\darkcell[2.0]{Town Buildings} & \\lightcellleft[2.0]"
+"{\\bronze\\ Dwelling} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak "
+"City Hall} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall "
+"\\linebreak Citadel}\\\\ \\end{tabularx} }"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:304
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{1} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item All Heroes gain +1 \\svgeven{movement}.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{6} and \\nth{9} Rounds:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black Cubes from every Water Wheel and Windmill on the map.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{10} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Player(s) whose Main Hero has the least experience roll 2 \\svg{resource}.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{12} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat event of Round 6.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/random_scenario.tex:314
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item When Visiting a an Obelisk, roll 2 \\svg{treasure} and choose 1 to resolve.\n"
+"  \\item Players can spend their Build Token at any time to perform Trading Post actions.\n"
+"  \\item Level VII Combat cannot be skipped by Diplomacy or any other means.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
