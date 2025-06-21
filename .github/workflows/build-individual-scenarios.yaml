@@ -44,21 +44,33 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
-      # - name: Cache built PDF
-      #   uses: actions/cache@v4
-      #   if: github.event_name == 'pull_request'
-      #   id: cache-pdf
-      #   with:
-      #     path: |
-      #       ./main_${{ matrix.language }}.pdf
-      #     key: >-
-      #       pdf-${{ matrix.language }}-${{
-      #       matrix.language == 'en'
-      #       && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*')
-      #       || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*')
-      #       }}
-      #     restore-keys: |
-      #       pdf-${{ matrix.language }}-
+      - name: Generate translations for ${{ inputs.language }}
+        if: ${{ inputs.language != 'en' }}
+        uses: qwrtln/po4a-action@v1
+        with:
+          version: "0.73"
+          config: "po4a.cfg"
+          args: "--no-update"
+
+      - name: Adjust document structure
+        run: |
+          echo ${{ matrix.scenario }}
+          tools/_find_scenario.sh ${{ matrix.scenario }}
+
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        id: cache-pdf
+        with:
+          path: |
+            ./${{ matrix.scenario }}_${{ inputs.language }}.pdf
+          key: >-
+            pdf-${{ matrix.scenario }}-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), 'assets/**/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -94,13 +106,8 @@ jobs:
       #     restore-keys: |
       #       texlive-mission-${{ matrix.language }}-
       #
-      - name: Adjust document structure
-        run: |
-          echo ${{ matrix.scenario }}
-          tools/_find_scenario.sh ${{ matrix.scenario }}
-
       - name: Compile scenario
-        # if: steps.cache-pdf.outputs.cache-hit != 'true'
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
