@@ -84,7 +84,7 @@ Or, if you prefer, download <strong>individual scenarios</strong> 👇
 
 #### File types
  - 🎨 Full color
- - 🖨️ _For monochrome printing (italics)_
+ - 🖨️ _For monochrome printing_
 
 Number of players (P) in the brackets.
 
