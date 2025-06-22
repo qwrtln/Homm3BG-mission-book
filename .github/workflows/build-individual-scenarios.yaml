@@ -52,7 +52,7 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
-      - name: Find assets referenced in ${{ matrix.scenario }}
+      - name: Find and use only assets referenced in ${{ matrix.scenario }}
         id: find-assets
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
@@ -64,8 +64,12 @@ jobs:
               ASSET_PATHS="$ASSET_PATHS $FOUND_FILE"
             fi
           done
-          echo "asset-paths=$ASSET_PATHS" >> $GITHUB_OUTPUT
+          rm assets/maps/* assets/images/* assets/art/*
+          for filename in $ASSET_PATHS; do
+            git restore "$filename"
+          done
           echo $ASSET_PATHS
+          git status
 
       - name: Adjust document structure
         run: |
@@ -81,8 +85,8 @@ jobs:
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', steps.find-assets.outputs.asset-paths)
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), steps.find-assets.outputs.asset-paths)
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-
@@ -152,6 +156,7 @@ jobs:
           for map in $MAP_FILES; do
             tools/to_monochrome.sh "assets/maps/$map"
           done
+          git status
 
       - name: Compile scenario
         if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
@@ -180,7 +185,15 @@ jobs:
       - name: Put PDFs in a directory
         run: |
           mkdir -p ${{ matrix.scenario }}
-          cp *.pdf ${{ matrix.scenario }}
+          cp ${{ matrix.scenario }}*.pdf ${{ matrix.scenario }}
+
+      - name: Restore original map files for caching purposes
+        run:
+          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
+          for map in $MAP_FILES; do
+            git restore "assets/maps/$map"
+          done
+          git status
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
