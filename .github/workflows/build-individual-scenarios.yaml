@@ -79,7 +79,6 @@ jobs:
 
       - name: Adjust document structure
         id: adjust-structure
-        continue-on-error: true
         run: |
           echo ${{ matrix.scenario }}
           tools/_find_scenario.sh ${{ matrix.scenario }}
@@ -87,7 +86,6 @@ jobs:
       - name: Cache built PDF
         uses: actions/cache@v4
         id: cache-pdf
-        if: steps.adjust-structure.outcome != 'failure'
         with:
           path: |
             ./${{ matrix.scenario }}_${{ inputs.language }}.pdf
@@ -101,7 +99,7 @@ jobs:
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-
 
       - name: Cache Inkscape artifacts
-        if: steps.cache-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
 
         uses: actions/cache@v4
         with:
@@ -113,7 +111,7 @@ jobs:
             inkscape-
 
       - name: Compile scenario
-        if: steps.cache-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
 
         uses: xu-cheng/latex-action@v3
         with:
@@ -123,7 +121,7 @@ jobs:
           root_file: main_${{ inputs.language }}.tex
 
       - name: Optimize PDF
-        if: steps.cache-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ inputs.language }}.pdf
@@ -131,7 +129,6 @@ jobs:
           output-file: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
 
       - uses: actions/upload-artifact@v4
-        if: steps.adjust-structure.outcome != 'failure'
         with:
           name: ${{ matrix.scenario }}_${{ inputs.language }}
           path: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
@@ -139,7 +136,6 @@ jobs:
 
       - name: Cache monochrome built PDF
         uses: actions/cache@v4
-        if: steps.adjust-structure.outcome != 'failure'
         id: cache-mono-pdf
         with:
           path: |
@@ -154,7 +150,7 @@ jobs:
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-
 
       - name: Install magick
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         run: |
           sudo add-apt-repository universe
           sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
@@ -163,7 +159,7 @@ jobs:
           mv magick /usr/local/bin/magick
 
       - name: Process map files
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         run: |
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
           for map in $MAP_FILES; do
@@ -172,7 +168,7 @@ jobs:
           git status
 
       - name: Compile scenario
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
@@ -182,7 +178,7 @@ jobs:
           root_file: main_${{ inputs.language }}.tex
 
       - name: Optimize PDF
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true' && steps.adjust-structure.outcome != 'failure'
+        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
         uses: qwrtln/optimize-pdf@v1
         with:
           file-name: main_${{ inputs.language }}.pdf
@@ -190,20 +186,17 @@ jobs:
           output-file: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
 
       - uses: actions/upload-artifact@v4
-        if: steps.adjust-structure.outcome != 'failure'
         with:
           name: ${{ matrix.scenario }}_${{ inputs.language }}_mono
           path: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Put PDFs in a directory
-        if: steps.adjust-structure.outcome != 'failure'
         run: |
           mkdir -p ${{ matrix.scenario }}
           cp ${{ matrix.scenario }}*.pdf ${{ matrix.scenario }}
 
       - name: Restore original map files for caching purposes
-        if: steps.adjust-structure.outcome != 'failure'
         run: |
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
           for f in $MAP_FILES; do
@@ -211,7 +204,6 @@ jobs:
           done
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
-        if: steps.adjust-structure.outcome != 'failure'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
