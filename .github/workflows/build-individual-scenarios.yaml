@@ -11,6 +11,9 @@ on:
        description: 'Language to build'
        required: true
        type: string
+   secrets:
+     SSH_DEPLOY_KEY_BUILD_ARTIFACTS:
+       required: true
 
 env:
   ARTIFACT_RETENTION_DAYS: 1

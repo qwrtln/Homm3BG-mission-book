@@ -17,3 +17,5 @@ jobs:
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}
+    secrets:
+      SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
