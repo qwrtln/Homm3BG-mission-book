@@ -65,9 +65,7 @@ jobs:
             fi
           done
           rm assets/maps/* assets/images/* assets/art/*
-          for filename in $ASSET_PATHS; do
-            git restore "$filename"
-          done
+          git restore $ASSET_PATHS
           echo $ASSET_PATHS
           git status
 
@@ -190,9 +188,7 @@ jobs:
       - name: Restore original map files for caching purposes
         run:
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
-          for map in $MAP_FILES; do
-            git restore "assets/maps/$map"
-          done
+          git restore "assets/maps/$map"
           git status
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
