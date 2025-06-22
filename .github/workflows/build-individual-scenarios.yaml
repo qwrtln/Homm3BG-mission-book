@@ -198,8 +198,9 @@ jobs:
       - name: Restore original map files for caching purposes
         run:
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
-          git restore ${MAP_FILES[@]}
-          git status
+          for f in $MAP_FILES; do
+            find assets/maps -name "$f" -type f -exec git restore {} \;
+          done
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
