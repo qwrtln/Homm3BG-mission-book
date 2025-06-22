@@ -300,6 +300,89 @@ Number of players (P) in the brackets.
     </tbody>
 </table>
 
+
+<details>
+<summary>Click to unfold the table with <strong>draft scenarios</strong></summary>
+
+<table>
+    <thead>
+        <tr>
+            <th>Scenario</th>
+            <th colspan=2 align="center">🇬🇧 English</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">-</td>
+            <td align="center">🎨 color</td>
+            <td align="center">🖨️ <em>mono</em></td>
+        </tr>
+        <tr>
+            <td>⚔️ Arcane Artillery (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery/arcane_artillery_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash/secret_bomb_stash_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ The Battle for Treasure Island (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island/treasure_island_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island/treasure_island_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Gold Rush (1, 2, or 4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush/gold_rush_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush/gold_rush_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Dragon Valley (2-4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley/dragon_valley_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley/dragon_valley_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Shattered Alliance (3-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance/shattered_alliance_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Astral Run (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run/astral_run_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run/astral_run_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ King of the Hill (2-3)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill/king_of_the_hill_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ The Obelisk (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk/obelisk_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk/obelisk_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Graduation Exercise (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise/rampart_graduation_exercise_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Cutthroats (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats/rampart_cutthroats_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats/rampart_cutthroats_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Coop Campaign Rules (-)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules/coop_campaign_rules_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules/coop_campaign_rules_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+    </tbody>
+</table>
+
+</details>
+
+
 ### 💡 What Is This?
 
 This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
