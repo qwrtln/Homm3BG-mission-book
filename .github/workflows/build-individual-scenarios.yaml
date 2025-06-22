@@ -166,7 +166,7 @@ jobs:
       - name: Put PDFs in a directory
         run: |
           mkdir -p ${{ matrix.scenario }}
-          mv *.pdf ${{ matrix.scenario }}
+          cp *.pdf ${{ matrix.scenario }}
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
