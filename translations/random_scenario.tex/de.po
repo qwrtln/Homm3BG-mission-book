@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-21 22:58+0000\n"
-"PO-Revision-Date: 2025-06-22 00:57+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/sections/random_scenario/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -55,6 +59,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -69,6 +75,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -81,6 +89,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -93,6 +103,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_hunt.tex:96 sections/random_scenario.tex:61
@@ -101,12 +113,14 @@ msgid ""
 "\\medskip\n"
 "\n"
 msgstr ""
+"\\medskip\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/random_scenario.tex:3
 msgid "\\addsection{Random Scenario}{\\images/random.png}"
-msgstr ""
+msgstr "\\addsection{Zufälliges Szenario}{\\images/random.png}"
 
 #. type: multicols
 #: sections/random_scenario.tex:10
@@ -118,6 +132,15 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Während die Würfel rollen und das Glück sich wendet, breitet sich "
+"das Land von Antagarich in all seiner Pracht vor dir aus.\n"
+"Dein Schicksal folgt diesen himmlischen Würfen, jede Schlacht und jeder "
+"Schatz wird vom Zufall bestimmt.\n"
+"Wirst du aus diesem Krieg siegreich hervorgehen, den Heiligen Gral erobern "
+"oder allein als König des Hügels dastehen, wenn der letzte Würfel fällt?  % "
+"no-check-caps\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:13
@@ -127,6 +150,10 @@ msgid ""
 "Of course, you can adjust everything at will.\n"
 "\n"
 msgstr ""
+"Anstatt ein bestimmtes Szenario zu spielen, könnt ihr diesen Richtlinien "
+"folgen, um ein zufälliges Szenario zu erstellen.\n"
+"Natürlich könnt ihr alles nach Belieben anpassen.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:15
@@ -135,6 +162,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Type}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Art des Szenarios}}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:17
@@ -143,6 +172,8 @@ msgid ""
 "Choose one of the following types for your play:\n"
 "\n"
 msgstr ""
+"Wählt eine der folgenden Arten für euer Spiel:\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:26
@@ -168,6 +199,12 @@ msgid ""
 "You get 1 VP for each Round you hold the Dragon Utopia under your control, no VPs from anything else.\n"
 "\n"
 msgstr ""
+"\\textbf{König des Hügels} -- Starte die Karte mit einer Drachen-Utopia in "
+"der Mitte.\n"
+"Ihr müsst nicht den Level 7-Kampf durchführen, um sie einzunehmen.\n"
+"Ihr erhaltet 1 SP für jede Runde, in der ihr die Drachen-Utopia kontrolliert "
+"und keine Siegpunkte anderweitig.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:35
