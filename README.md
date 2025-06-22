@@ -299,20 +299,6 @@ Number of players (P) in the brackets.
         </tr>
     </tbody>
 </table>
-</details>
-
-You can help translate this project using [Weblate](https://weblate.org/en/).
-Click the image to get started:
-
-<a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" />
-  <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png" />
-  <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png">
-</picture>
-</a>
-
-Your language is missing? Let us know on [our Discord server](https://discord.gg/nMbawQkj9R).
 
 ### 💡 What Is This?
 
@@ -342,6 +328,19 @@ If you're new to Git and LaTeX, see the [local setup](https://qwrtln.github.io/H
 There's also zero-hassle [container-based](https://qwrtln.github.io/Homm3BG-mission-book/container/) setup available.
 Read our [guidelines](https://qwrtln.github.io/Homm3BG-mission-book/scenarios/) on the technicalities of starting with adding your scenario before opening a PR.
 To learn how to use the scripts that facilitate the process, see the [scripts](https://qwrtln.github.io/Homm3BG-mission-book/scripts/) document.
+
+You can help translate this project using [Weblate](https://weblate.org/en/).
+Click the image to get started:
+
+<a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-black.png" />
+  <source media="(prefers-color-scheme: light)" srcset="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png" />
+  <img src="https://hosted.weblate.org/widget/homm3bg-fan-made-mission-book/287x66-grey.png">
+</picture>
+</a>
+
+Your language is missing? Let us know on [our Discord server](https://discord.gg/nMbawQkj9R).
 
 #### 🗺️ Scenarios
 
