@@ -57,19 +57,24 @@ jobs:
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
           ASSET_FILES=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" | sed 's|.*\/||' | sort | uniq)
-          ASSET_PATHS=""
-          for filename in $ASSET_FILES; do
-            FOUND_FILE=$(find assets/ -name "$filename" -type f | head -1)
+
+          KEEP_FILES=""
+          for f in $ASSET_FILES; do
+            FOUND_FILE=$(find assets/ -name "$f" -type f | head -1)
             if [[ -n "$FOUND_FILE" ]]; then
-              ASSET_PATHS="$ASSET_PATHS $FOUND_FILE"
+              KEEP_FILES="$KEEP_FILES $FOUND_FILE"
             fi
           done
-          rm assets/maps/* assets/images/* assets/art/*
-          for f in $ASSET_PATHS; do
-            echo Restoring $f
-            git checkout HEAD -- $f
+          echo $KEEP_FILES
+          for dir in assets/maps assets/images assets/art; do
+            for file in "$dir"/*; do
+              if [[ -f "$file" ]] && [[ ! " $KEEP_FILES " =~ " $file " ]]; then
+                echo "Deleting: $file"
+                rm "$file"
+              fi
+            done
           done
-          echo $ASSET_PATHS
+
           git status
 
       - name: Adjust document structure
