@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-03-26 01:04+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/campaigns/inferno_devilish_plan/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -52,6 +56,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -65,6 +71,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -78,6 +86,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
@@ -88,6 +98,9 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der "
+"Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -102,6 +115,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -114,6 +129,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -129,6 +146,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -143,6 +162,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -155,6 +176,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -167,6 +190,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
@@ -177,6 +202,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Botvorbereitung}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:132 campaigns/inferno_devilish_plan.tex:138
@@ -198,6 +225,9 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
@@ -225,6 +255,8 @@ msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Tm335\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:10
@@ -275,6 +307,8 @@ msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
+"\\textbf{Fraktionsheld:} beliebig\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:30
@@ -284,6 +318,9 @@ msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:34
