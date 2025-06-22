@@ -56,13 +56,13 @@ jobs:
         id: find-assets
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
-          ASSET_FILES=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" | sed 's|.*\/||' | sort | uniq)
+          ASSET_PATHS=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" | sort | uniq)
 
           KEEP_FILES=""
-          for f in $ASSET_FILES; do
-            FOUND_FILE=$(find assets/ -name "$f" -type f | head -1)
-            if [[ -n "$FOUND_FILE" ]]; then
-              KEEP_FILES="$KEEP_FILES $FOUND_FILE"
+          for asset_path in $ASSET_PATHS; do
+            FULL_PATH="assets/$asset_path"
+            if [[ -f "$FULL_PATH" ]]; then
+              KEEP_FILES="$KEEP_FILES $FULL_PATH"
             fi
           done
           echo $KEEP_FILES
@@ -72,11 +72,10 @@ jobs:
                 echo "Deleting: $file"
                 rm "$file"
               else
-                echo "$file is in the $KEEP_FILES list, not deleting."
+                echo "$file is on the list, not deleting!"
               fi
             done
           done
-
           git status
 
       - name: Adjust document structure
@@ -196,10 +195,10 @@ jobs:
           cp ${{ matrix.scenario }}*.pdf ${{ matrix.scenario }}
 
       - name: Restore original map files for caching purposes
-        run:
-          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
+        run: |
+          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
           for f in $MAP_FILES; do
-            find assets/maps -name "$f" -type f -exec git restore {} \;
+            git restore "assets/$f"
           done
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
