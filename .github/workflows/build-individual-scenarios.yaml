@@ -71,6 +71,8 @@ jobs:
               if [[ -f "$file" ]] && [[ ! " $KEEP_FILES " =~ " $file " ]]; then
                 echo "Deleting: $file"
                 rm "$file"
+              else
+                echo "$file is in the $KEEP_FILES list, not deleting."
               fi
             done
           done
