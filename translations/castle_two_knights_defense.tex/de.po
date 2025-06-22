@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-14 07:17+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/campaigns/castle_two_knights_defense/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
@@ -50,6 +54,9 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der "
+"Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -64,6 +71,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -79,6 +88,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -91,6 +102,9 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
@@ -100,6 +114,8 @@ msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Tyson Heckert\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
@@ -109,6 +125,9 @@ msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 msgstr ""
+"\\textbf{Quelle:} \\hrefwithoutfootnote"
+"{https://travelledtales.com}{travelledtales.com}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
@@ -118,6 +137,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:18
@@ -127,6 +148,8 @@ msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
 msgstr ""
+"Dieses Szenario dauert 8 Runden.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
@@ -136,6 +159,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
@@ -145,6 +170,8 @@ msgid ""
 "\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
+"\\textbf{Fraktion:} Schloss\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
@@ -163,6 +190,8 @@ msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
 msgstr ""
+"\\textbf{Fraktion:} Nekropolis\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
@@ -172,6 +201,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
