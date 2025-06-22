@@ -168,11 +168,11 @@ jobs:
           mkdir -p ${{ matrix.scenario }}
           mv *.pdf ${{ matrix.scenario }}
 
-      - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ inputs.language }}/${{ matrix.scenario }}
-          publish_dir: ./${{ inputs.language }}
-          force_orphan: true
+      # - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}
+      #     publish_dir: ./${{ inputs.language }}
+      #     force_orphan: true
