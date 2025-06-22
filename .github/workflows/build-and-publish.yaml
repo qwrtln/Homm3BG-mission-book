@@ -306,7 +306,6 @@ jobs:
             exit 1
           fi
 
-
   publish:
     runs-on: ubuntu-latest
     needs: [build, build_monochrome]
@@ -347,7 +346,6 @@ jobs:
         if: matrix.language == 'en'
         run: echo "should_trigger=true" >> $GITHUB_OUTPUT
 
-
   call_build:
     needs: publish
     if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
@@ -355,7 +353,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario_type: ["clash", "coops", "campaigns"]
+        scenario_type: ["clash", "coops", "campaigns", "sections"]
         language: ["en", "pl", "cs", "fr"]
     with:
       scenario_type: ${{ matrix.scenario_type }}

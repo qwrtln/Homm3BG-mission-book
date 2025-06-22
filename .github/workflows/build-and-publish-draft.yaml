@@ -251,3 +251,17 @@ jobs:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: monochrome-map-*
+
+  call_build:
+    needs: publish
+    uses: ./.github/workflows/build-individual-scenarios.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario_type: ["draft-scenarios/clash", "draft-scenarios/campaigns", "draft-scenarios/sections"]
+        language: ["en"]
+    with:
+      scenario_type: ${{ matrix.scenario_type }}
+      language: ${{ matrix.language }}
+    secrets:
+      SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
