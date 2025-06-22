@@ -9,6 +9,16 @@
   [![](assets/github/title-page-small.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)[![](assets/github/content-small.gif)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf)
 </div>
 
+### 💡 What Is This?
+
+This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
+There are two documents, click to download:
+
+|Mission Book ✅|Draft Scenarios 🏗️|
+|:-------------:|:----------------:|
+| [![image](docs/assets/mission-book-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf) | [![image](docs/assets/draft-scenarios-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf) |
+| A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
+
 Click on the table to download the most recent builds of the Mission Book in the chosen language.
 If your intention is to **print in black and white**, download the **monochrome** version.
 
@@ -231,6 +241,16 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
+            <td>⚔️ Random Scenario 🎲 (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en_mono.pdf"><em>click</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
         <tr>
             <td>🗺️ Inferno: A Devilish Plan (1)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan/inferno_devilish_plan_en.pdf">click</a></td>
@@ -382,16 +402,6 @@ Number of players (P) in the brackets.
 
 </details>
 
-
-### 💡 What Is This?
-
-This project aims to collect high-quality, fan-made custom scenarios and compile them into a booklet styled like [The Rewritten Rule Book](https://github.com/Heegu-sama/Homm3BG).
-There are two documents:
-
-|Mission Book ✅|Draft Scenarios 🏗️|
-|:-------------:|:----------------:|
-| [![image](docs/assets/mission-book-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf) | [![image](docs/assets/draft-scenarios-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf) |
-| A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
 
 ### 🤔 Why?
 
