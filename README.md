@@ -301,7 +301,7 @@ Number of players (P) in the brackets.
 </table>
 </details>
 
-You can help tarnslate this project using [Weblate](https://weblate.org/en/).
+You can help translate this project using [Weblate](https://weblate.org/en/).
 Click the image to get started:
 
 <a href="https://hosted.weblate.org/engage/homm3bg-fan-made-mission-book/">
