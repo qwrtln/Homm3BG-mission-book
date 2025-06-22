@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-03-26 09:51+0000\n"
+"POT-Creation-Date: 2025-06-21 22:58+0000\n"
 "PO-Revision-Date: 2025-05-15 08:02+0000\n"
 "Last-Translator: SkullsuiT <jfdswhaos@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
