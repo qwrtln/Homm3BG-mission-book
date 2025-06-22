@@ -73,17 +73,16 @@ If your intention is to **print in black and white**, download the **monochrome*
     </tbody>
 </table>
 
-<details>
-<summary>Click for a table with <strong>individual scenarios</strong> 👇</summary>
+Or, if you prefer, download <strong>individual scenarios</strong> 👇
 
-### Legend:
+### Legend
 
-#### Scenario types:
+#### Scenario types
  - 🤝 Coop
  - ⚔️ Clash
  - 🗺️ Campaign
 
-#### Fle types:
+#### File types
  - 🎨 Full color
  - 🖨️ For monochrome printing
 
