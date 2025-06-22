@@ -65,7 +65,10 @@ jobs:
             fi
           done
           rm assets/maps/* assets/images/* assets/art/*
-          git restore ${ASSET_PATHS[@]}
+          for f in $ASSET_PATHS; do
+            echo Restoring $f
+            git checkout HEAD -- $f
+          done
           echo $ASSET_PATHS
           git status
 
