@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-16 17:47+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/clash-scenarios/the_fractured_kingdoms/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -55,6 +59,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -66,6 +72,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -78,6 +86,9 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
@@ -88,6 +99,10 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der "
+"Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:73 clash/the_fractured_kingdoms.tex:53
@@ -97,6 +112,9 @@ msgid ""
 "Before this Scenario:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"Vor diesem Szenario:\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
@@ -106,6 +124,8 @@ msgid ""
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"Während dieses Szenarios:\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -114,6 +134,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{The Fractured Kingdoms}{\\images/"
 "two_way_monolith.png}"
 msgstr ""
+"\\addscenariosection{1}{Konfliktmodus}{Die zerbrochenen Königreiche}{\\images"
+"/two_way_monolith.png}"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:7
@@ -122,6 +144,8 @@ msgid ""
 "\\textbf{Author:} mopo\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} mopo\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:9
@@ -130,6 +154,15 @@ msgid ""
 "\\textit{A terrible Armageddon has struck the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has passed, they discovered their lands had drifted in the magic-laden space of this universe to collide with one another. All five recognize that their first priority must be to rebuild and regrow, and they form a five-kingdom alliance. However, each also knows in the back of their minds that whoever breaks the alliance first, would gain a sharp first-strike advantage...}\n"
 "\n"
 msgstr ""
+"\\textit{Ein schreckliches Unheil hat das Reich heimgesucht und die "
+"Königreiche von fünf Herrschern wurden auseinandergerissen. Doch nach "
+"einiger Zeit bemerkten sie, dass ihre Länder im magisch erfüllten Raum "
+"dieses Universums getrieben waren und miteinander kollidierten. Alle fünf "
+"erkannten, dass Wiederaufbau und Wachstum oberste Priorität haben müssen, "
+"und schlossen ein Bündnis aus fünf Königreichen. Doch jeder von ihnen wusste "
+"im Hinterkopf, dass derjenige, der das Bündnis zuerst brechen würde, einen "
+"entscheidenden Vorteil beim Erstschlag hätte…}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:12
@@ -139,6 +172,9 @@ msgid ""
 "This Scenario is played over 16 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"16 Rounds\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:15
@@ -148,6 +184,9 @@ msgid ""
 "\\textbf{Player Count:} 5 free-for-all\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\\textbf{Fraktionsanzahl:} 5 (jeder gegen jeden)\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:17
@@ -167,6 +206,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item 3 × \\bronze\\-Einheiten auf der \"Wenige\"-Seite\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:36
