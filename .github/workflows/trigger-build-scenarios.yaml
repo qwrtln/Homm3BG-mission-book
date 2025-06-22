@@ -1,0 +1,20 @@
+name: Trigger Build Scenarios
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+jobs:
+  call_build:
+    uses: ./.github/workflows/build-individual-scenarios.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario_type: ["draft-scenarios/campaigns"]
+        language: ["en"]
+    with:
+      scenario_type: ${{ matrix.scenario_type }}
+      language: ${{ matrix.language }}
+    secrets:
+      SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
