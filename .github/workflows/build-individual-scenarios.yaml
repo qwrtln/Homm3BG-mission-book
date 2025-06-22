@@ -65,6 +65,7 @@ jobs:
             fi
           done
           echo "asset-paths=$ASSET_PATHS" >> $GITHUB_OUTPUT
+          echo $ASSET_PATHS
 
       - name: Adjust document structure
         run: |
