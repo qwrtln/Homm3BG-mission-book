@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr", "de"]
+        language: ["en", "pl", "cs", "fr"]
 
     steps:
       - name: Set up repository
@@ -203,7 +203,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr", "de"]
+        language: ["en", "pl", "cs", "fr"]
 
     steps:
       - name: Set up repository
@@ -288,7 +288,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["pl", "cs", "fr", "de"]
+        language: ["pl", "cs", "fr"]
 
     steps:
       - name: Download PDFs
@@ -313,7 +313,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr", "de"]
+        language: ["en", "pl", "cs", "fr"]
     outputs:
       should_trigger: ${{ steps.check.outputs.should_trigger }}
     steps:

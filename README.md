@@ -139,8 +139,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island/emerald_island_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Close to Enemies</td>
@@ -161,8 +161,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united/stand_united_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Bloody Grail</td>
@@ -172,8 +172,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail/bloody_grail_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ The Hunt</td>
@@ -183,8 +183,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt/the_hunt_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt/the_hunt_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt/the_hunt_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Dragoncurse Castle</td>
@@ -194,8 +194,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle/dragoncurse_castle_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle/dragoncurse_castle_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle/dragoncurse_castle_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle/dragoncurse_castle_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle/dragoncurse_castle_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Force of Will</td>
@@ -205,8 +205,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will/force_of_will_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-force_of_will/force_of_will_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-force_of_will/force_of_will_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ The Fractured Kingdoms</td>
@@ -216,19 +216,19 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms/the_fractured_kingdoms_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms/the_fractured_kingdoms_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms/the_fractured_kingdoms_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms/the_fractured_kingdoms_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms/the_fractured_kingdoms_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Trial by Combat</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat/trial_by_combat_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat/trial_by_combat_en_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat/trial_by_combat_pl.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat/trial_by_combat_pl_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-trial_by_combat/trial_by_combat_cs.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-trial_by_combat/trial_by_combat_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat/trial_by_combat_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat/trial_by_combat_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Inferno: A Devilish Plan</td>
@@ -238,8 +238,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan/inferno_devilish_plan_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan/inferno_devilish_plan_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan/inferno_devilish_plan_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan/inferno_devilish_plan_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan/inferno_devilish_plan_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Inferno: Steadwick's Fall</td>
@@ -249,8 +249,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall/inferno_steadwicks_fall_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall/inferno_steadwicks_fall_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall/inferno_steadwicks_fall_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Inferno: Deal with the Devil</td>
@@ -260,8 +260,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil/inferno_deal_with_the_devil_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil/inferno_deal_with_the_devil_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil/inferno_deal_with_the_devil_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil/inferno_deal_with_the_devil_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil/inferno_deal_with_the_devil_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Castle: Greek Gift</td>
@@ -271,8 +271,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift/castle_greek_gift_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_greek_gift/castle_greek_gift_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_greek_gift/castle_greek_gift_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Castle: Sicilian Dragon</td>
@@ -282,8 +282,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon/castle_sicilian_dragon_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon/castle_sicilian_dragon_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon/castle_sicilian_dragon_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_sicilian_dragon/castle_sicilian_dragon_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_sicilian_dragon/castle_sicilian_dragon_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Castle: Two Knights' Defense</td>
@@ -293,8 +293,8 @@ If your intention is to **print in black and white**, download the **monochrome*
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense/castle_two_knights_defense_pl_mono.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs_mono.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense/castle_two_knights_defense_fr.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense/castle_two_knights_defense_fr_mono.pdf">click</a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
     </tbody>
 </table>
