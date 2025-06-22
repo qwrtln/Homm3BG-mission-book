@@ -78,7 +78,6 @@ jobs:
           done
 
       - name: Adjust document structure
-        id: adjust-structure
         run: |
           echo ${{ matrix.scenario }}
           tools/_find_scenario.sh ${{ matrix.scenario }}
@@ -100,7 +99,6 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-
         uses: actions/cache@v4
         with:
           path: |
@@ -112,7 +110,6 @@ jobs:
 
       - name: Compile scenario
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-
         uses: xu-cheng/latex-action@v3
         with:
           extra_system_packages: "inkscape"
