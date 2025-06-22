@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-21 22:58+0000\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/clash-scenarios/bloody_grail/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -52,6 +56,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -63,6 +69,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -75,6 +83,9 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 "
+"\\svg{valuables}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -83,6 +94,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-grail."
 "png}"
 msgstr ""
+"\\addscenariosection{1}{Konfliktmodus}{Blutiger Gral}{\\images/bloody-"
+"grail.png}"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:7
@@ -91,6 +104,8 @@ msgid ""
 "\\textbf{Author:} Re4XN\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Re4XN\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:9
@@ -99,6 +114,9 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1239631918643941509}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Quelle:} \\href{https://discord.com/channels/740870068178649108/"
+"1239631918643941509}{Archon Studios Discord}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:11
@@ -107,6 +125,10 @@ msgid ""
 "\\textit{A lady clad in dark robes visits you in your dreams, offering you a golden chalice filled with blood-red wine. Waking up in a cold sweat, you decide to embark on a quest to find this unholy artifact.}\n"
 "\n"
 msgstr ""
+"\\textit{Eine Dame in dunklem Gewand erscheint dir im Traum und bietet dir "
+"einen goldenen Kelch mit blutrotem Wein an. Du wachst schweißgebadet auf und "
+"beschließt, dich auf die Suche nach diesem unheiligen Artefakt zu machen.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:14
@@ -116,6 +138,9 @@ msgid ""
 "This Scenario is played over 13 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"Dieses Szenario dauert 13 Runden.\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:17
@@ -125,6 +150,9 @@ msgid ""
 "\\textbf{Player Count:} 2 or 4\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\\textbf{Fraktionsanzahl:} 2 oder 4\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:19
@@ -133,6 +161,9 @@ msgid ""
 "\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 "
+"\\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:27
@@ -163,6 +194,10 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der "
+"Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:42
@@ -256,6 +291,9 @@ msgid ""
 "Before this Scenario:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"Vor diesem Szenario:\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:77
@@ -275,6 +313,8 @@ msgid ""
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"Während dieses Szenarios:\n"
+"\n"
 
 #. type: multicols*
 #: clash/bloody_grail.tex:118
