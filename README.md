@@ -84,7 +84,7 @@ Or, if you prefer, download <strong>individual scenarios</strong> 👇
 
 #### File types
  - 🎨 Full color
- - _🖨️ For monochrome printing (italics)_
+ - 🖨️ _For monochrome printing (italics)_
 
 Number of players (P) in the brackets.
 
@@ -102,13 +102,13 @@ Number of players (P) in the brackets.
         <tr>
             <td align="center">-</td>
             <td align="center">🎨 color</td>
-            <td align="center"><em>🖨️ mono</em></td>
+            <td align="center">🖨️ <em>mono</em></td>
             <td align="center">🎨 color</td>
-            <td align="center"><em>🖨️ mono</em></td>
+            <td align="center">🖨️ <em>mono</em></td>
             <td align="center">🎨 color</td>
-            <td align="center"><em>🖨️ mono</em></td>
+            <td align="center">🖨️ <em>mono</em></td>
             <td align="center">🎨 color</td>
-            <td align="center"><em>🖨️ mono</em></td>
+            <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
             <td>🤝 Sentinels (2)</td>
