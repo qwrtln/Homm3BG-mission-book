@@ -174,5 +174,5 @@ jobs:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
           publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}
-          publish_dir: ./${{ inputs.language }}
+          publish_dir: ./${{ matrix.scenario }}
           force_orphan: true
