@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-05-08 21:05+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"homm3bg-fan-made-mission-book/sections/credits/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -52,6 +56,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -64,21 +70,24 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: Plain text
 #: sections/credits.tex:4
 msgid "\\addsection{Credits}{\\images/experience.png}"
-msgstr ""
+msgstr "\\addsection{Mitwirkende}{\\images/experience.png}"
 
 #. type: Plain text
 #: sections/credits.tex:6
 msgid "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
-msgstr ""
+msgstr "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
 
 #. type: Plain text
 #: sections/credits.tex:8
+#, fuzzy
 msgid "\\bigbreak"
-msgstr ""
+msgstr "\\bigbreak"
 
 #. type: multicols*
 #: sections/credits.tex:13
@@ -88,6 +97,12 @@ msgid ""
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
+"Dieses Projekt übernimmt schamlos bewährte Methoden aus dem \\href{https://"
+"github.com/Heegu-sama/Homm3BG}{\\textbf{Rule Book Rewrite Project}}, "
+"einschließlich \\LaTeX{}-Code, GitHub-Engineering und Übersetzungsframework."
+"\n"
+"Schaut es euch an, falls ihr es noch nicht gesehen habt.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:15
@@ -96,6 +111,9 @@ msgid ""
 "\\textbf{Scenario templating, tooling and automation}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"
 msgstr ""
+"\\textbf{Szenario-Vorlagen, Tools und Automatisierung}: Andrzej Wiącek, "
+"Tomáš Zeman\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:17
@@ -104,6 +122,10 @@ msgid ""
 "\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textbf{Szenarien in \\LaTeX{} beigesteuert:} Andrzej Wiącek, Tomáš Zeman, "
+"Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam "
+"Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:19
@@ -112,6 +134,8 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
+"\\phantom{Translators placeholder}\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:24
@@ -123,6 +147,15 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
+"\\textbf{Besonderen Dank an}: Patrick Kersten für den \\href{https://"
+"zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
+"Alle vom Archon Studio, für die Produktion des Spiels und die Beantwortung "
+"unserer unablässigen Anfragen zu den Regeln und anderen Themen.\n"
+"Jon Van Caneghem und alle, die an der Entwicklung des originalen Videospiels "
+"beteiligt waren.\n"
+"Alle, die das Projekt mit Vorschlägen, Korrekturen, Bildressourcen und Worte "
+"der Ermutigung auf Discord oder BoardGameGeek unterstützt haben.\n"
+"\n"
 
 #. type: multicols*
 #: sections/credits.tex:26
