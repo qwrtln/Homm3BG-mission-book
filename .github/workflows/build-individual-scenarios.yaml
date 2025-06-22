@@ -18,6 +18,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
+  EXCLUDE_LIST: title_page\|back_cover
 
 jobs:
   find_scenarios:
@@ -31,7 +32,7 @@ jobs:
       - name: Find scenarios
         id: find_scenarios
         run: |
-          SCENARIOS=$(find ${{ inputs.scenario_type }} -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \;)
+          SCENARIOS=$(find ${{ inputs.scenario_type }} -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \; | grep -v "${{ env.EXCLUDE_LIST }}")
           echo "matrix=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {scenario: .}')" >> $GITHUB_OUTPUT
 
   build_scenarios:
