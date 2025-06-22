@@ -31,7 +31,6 @@ jobs:
       - name: Find scenarios
         id: find_scenarios
         run: |
-          # SCENARIOS=$(find clash coops campaigns -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \;)
           SCENARIOS=$(find ${{ inputs.scenario_type }} -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \;)
           echo "matrix=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {scenario: .}')" >> $GITHUB_OUTPUT
 
@@ -53,6 +52,20 @@ jobs:
           config: "po4a.cfg"
           args: "--no-update"
 
+      - name: Find assets referenced in ${{ matrix.scenario }}
+        id: find-assets
+        run: |
+          SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
+          ASSET_FILES=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" | sed 's|.*\/||' | sort | uniq)
+          ASSET_PATHS=""
+          for filename in $ASSET_FILES; do
+            FOUND_FILE=$(find assets/ -name "$filename" -type f | head -1)
+            if [[ -n "$FOUND_FILE" ]]; then
+              ASSET_PATHS="$ASSET_PATHS $FOUND_FILE"
+            fi
+          done
+          echo "asset-paths=$ASSET_PATHS" >> $GITHUB_OUTPUT
+
       - name: Adjust document structure
         run: |
           echo ${{ matrix.scenario }}
@@ -67,8 +80,8 @@ jobs:
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', steps.find-assets.outputs.asset-paths)
+            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('${{ inputs.scenario_type }}/translated/{0}/${{ matrix.scenario }}.tex', matrix.language), steps.find-assets.outputs.asset-paths)
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-
