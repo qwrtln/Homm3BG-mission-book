@@ -204,7 +204,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Scenario Coopératif}{Les Iles Émeraudes}{\\images/"
+"\\addscenariosection{1}{Scenario Coopératif}{Le Ile d'Émeraude}{\\images/"
 "logistics.png}"
 
 #. type: multicols
