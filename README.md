@@ -150,8 +150,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island/emerald_island_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr_mono.pdf"><em>clic</em></a></td>
         </tr>
         <tr>
             <td>🤝 Close to Enemies (1-6)</td>
@@ -172,8 +172,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united/stand_united_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr_mono.pdf"><em>clic</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Bloody Grail (2 or 4)</td>
@@ -183,8 +183,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail/bloody_grail_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr_mono.pdf"><em>clic</em></a></td>
         </tr>
         <tr>
             <td>⚔️ The Hunt (2-3)</td>
