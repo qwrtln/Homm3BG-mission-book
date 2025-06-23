@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr"]
+        language: ["en", "pl", "cs", "fr", "de"]
 
     steps:
       - name: Set up repository
@@ -203,7 +203,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr"]
+        language: ["en", "pl", "cs", "fr", "de"]
 
     steps:
       - name: Set up repository
@@ -288,7 +288,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["pl", "cs", "fr"]
+        language: ["pl", "cs", "fr", "de"]
 
     steps:
       - name: Download PDFs
@@ -312,7 +312,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["en", "pl", "cs", "fr"]
+        language: ["en", "pl", "cs", "fr", "de"]
     outputs:
       should_trigger: ${{ steps.check.outputs.should_trigger }}
     steps:
@@ -354,7 +354,7 @@ jobs:
       fail-fast: false
       matrix:
         scenario_type: ["clash", "coops", "campaigns", "sections"]
-        language: ["en", "pl", "cs", "fr"]
+        language: ["en", "pl", "cs", "fr", "de"]
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}
