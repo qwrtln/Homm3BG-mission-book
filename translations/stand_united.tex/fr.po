@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-06-23 14:55+0200\n"
+"PO-Revision-Date: 2025-06-23 15:07+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -57,8 +57,7 @@ msgstr ""
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22 coops/emerald_island.tex:18
 #: coops/close_to_enemies.tex:20 coops/stand_united.tex:17
 #: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
-#: campaigns/inferno_steadwicks_fall.tex:20
-#: campaigns/inferno_deal_with_the_devil.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20 campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
@@ -173,8 +172,7 @@ msgstr ""
 #. type: Plain text
 #: coops/stand_united.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
-"interference.png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/interference.png}"
 msgstr ""
 "\\addscenariosection{1}{Scénario Coopératif}{Stand United}{\\images/interference.png}"
 
@@ -403,11 +401,11 @@ msgstr ""
 "  \\item Retirez chaque Dragon Azure du Deck d'Unités Neutres \\azure\\ et en mettre un de côté pour plus tard.\n"
 "  \\item Les Joueurs ne peuvent pas Recruter de Héros Secondaires.\n"
 "  \\item Les Combats Niveaux VII ne peuvent être évités par Diplomatie ou d'autres moyens.\n"
-"  \\item Les Joueurs peuvent utiliser leur Jeton Construction pour échanger avec un autre Joueur. Les deux Joueurs peuvent échanger librement des Ressources, ainsi que des Sorts et Artefacts comme si leurs Héros étaient adjacents.\n"
-"  \\item Pendant la partie, les Joueurs créent une armée partagée. Chaque Joueur peut jouer les Unités de l'armée partagée pendant les Combats (les capacités \\svg{map} des Unités partagées ne peuvent être activées à chaque Manche que par une Joueur).  % no-check-caps\n"
-"  \\item Lors de la Visite d'un Obélisque, défaussez la première Carte de chaque Deck d'Unités Neutres sauf \\azure\\. Vous pouvez Recruter une de ces Unités. Les Unités ainsi Recrutées vont dans l'armée partagée.\n"
-"  \\item Lors du Combat dans les Terres Désolées, un des Unités \\azure\\ est toujours le Dragon Azure et l'Armée Neutre utilise le Deck IA. Remélangez le Deck IA et le Deck de Sorts IA à la fin du Combat.\n"
-"  \\item Après victoire aux Terres Désolées, aucun Cube de Faction n'est placé sur la case. Le Joueur victorieux place une de ses Unités de Faction survivante dans l'armée partagée et peut redistribuer ses Ressources restantes entre les autres Joueurs, après quoi ce Joueur est retiré du jeu.\n"
+"  \\item Un Joueur peut utiliser son Jeton Construction pour échanger avec un autre Joueur. Les deux Joueurs échangent librement des Ressources, ainsi que des Sorts et Artefacts comme si leurs Héros étaient adjacents.\n"
+"  \\item Les Joueurs vont créer une armée partagée. Chaque Joueur peut jouer les Unités de l'armée partagée pendant les Combats (les capacités \\svg{map} des Unités partagées ne peuvent être activées à chaque Manche que par un Joueur).  % no-check-caps\n"
+"  \\item Lors de la Visite d'un Obélisque, défaussez la 1$^{ère}$ Carte de chaque Deck d'Unités Neutres sauf \\azure\\. Vous pouvez Recruter une Unité. Les Unités ainsi Recrutées vont dans l'armée partagée.\n"
+"  \\item Lors du Combat dans les Terres Désolées, un des Unités \\azure\\ est toujours le Dragon Azure et l'Armée Neutre utilise le Deck IA. Remélangez le Deck IA et Sorts IA à la fin du Combat.\n"
+"  \\item Après victoire aux Terres Désolées, aucun Cube de Faction n'est placé sur la case. Le Joueur victorieux place une Unité de Faction survivante dans l'armée partagée et peut redistribuer ses Ressources restantes entre les autres Joueurs, puis ce Joueur est retiré du jeu.\n"
 "\\end{itemize}\n"
 "\n"
 
