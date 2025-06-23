@@ -106,11 +106,14 @@ Number of players (P) in the brackets.
             <th colspan=2 align="center">🇵🇱 Polski</th>
             <th colspan=2 align="center">🇨🇿 Čeština</th>
             <th colspan=2 align="center">🇫🇷 Français</th>
+            <th colspan=2 align="center">🇩🇪 Deutsch</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td align="center">-</td>
+            <td align="center">🎨 color</td>
+            <td align="center">🖨️ <em>mono</em></td>
             <td align="center">🎨 color</td>
             <td align="center">🖨️ <em>mono</em></td>
             <td align="center">🎨 color</td>
@@ -130,6 +133,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-sentinels/sentinels_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels/sentinels_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels/sentinels_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Titans' Stronghold (1-6)</td>
@@ -141,6 +146,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold/titans_stronghold_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold/titans_stronghold_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold/titans_stronghold_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Emerald Island (1-4)</td>
@@ -152,6 +159,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Close to Enemies (1-6)</td>
@@ -163,6 +172,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies/close_to_enemies_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies/close_to_enemies_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies/close_to_enemies_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Stand United (2-4)</td>
@@ -174,6 +185,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Bloody Grail (2 or 4)</td>
@@ -185,6 +198,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ The Hunt (2-3)</td>
@@ -194,6 +209,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt/the_hunt_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -207,6 +224,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle/dragoncurse_castle_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Force of Will (2-3)</td>
@@ -216,6 +235,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will/force_of_will_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -229,6 +250,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms/the_fractured_kingdoms_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Trial by Combat (2-4)</td>
@@ -240,10 +263,15 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
+        <tr>
             <td>⚔️ Random Scenario 🎲 (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en_mono.pdf"><em>click</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -261,6 +289,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Inferno: Steadwick's Fall (1)</td>
@@ -270,6 +300,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -283,6 +315,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Castle: Greek Gift (1)</td>
@@ -292,6 +326,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift/castle_greek_gift_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -305,6 +341,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon/castle_sicilian_dragon_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
         </tr>
         <tr>
             <td>🗺️ Castle: Two Knights' Defense (1)</td>
@@ -314,6 +352,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense/castle_two_knights_defense_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>

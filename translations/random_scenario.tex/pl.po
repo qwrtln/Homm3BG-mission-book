@@ -118,10 +118,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/random_scenario.tex:3
-#, fuzzy
-#| msgid "\\addsection{Credits}{\\images/experience.png}"
 msgid "\\addsection{Random Scenario}{\\images/random.png}"
-msgstr "\\addsection{Twórcy}{\\images/experience.png}"
+msgstr "\\addsection{Losowy Scenariusz}{\\images/random.png}"
 
 #. type: multicols
 #: sections/random_scenario.tex:10
