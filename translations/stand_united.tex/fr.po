@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-06-23 15:07+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -207,41 +208,31 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/stand_united.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Coopératif}{Fronts Unis}{\\images/"
+"interference.png}"
 
 #. type: multicols
 #: coops/stand_united.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} NeuroN\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1332731339614453802/1332731339614453802}{Archon Studio Discord}\n"
 "\n"
 
 #. type: multicols
@@ -251,44 +242,37 @@ msgid ""
 "\\textit{Evil Dragon Lords threaten the entire Enroth. Heroes, with their armies united, march against them in an epic final stand.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textit{Les Seigneurs Dragons Maléfiques menacent Enroth tout entier. Les Héros, unis avec leurs armées, marchent à leur rencontre pour un dernier combat épique.}  % no-check-caps\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 9 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce Scénario se joue en 9 Manches.\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 -- 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2--4\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de joueurs :} 1 -- 6\n"
+"\\textbf{Nombre de Joueurs :} 2 -- 4\n"
 "\n"
 
 #. type: multicols
 #: coops/stand_united.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -307,14 +291,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -325,8 +302,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Quelques \\bronze\\ avec le plus faible coût de Recrutement.\n"
+"  \\item Une Unité Quelques \\silver\\ avec le plus faible coût de Recrutement.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -342,18 +319,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item J × Tuile de Départ (I)\n"
+"  \\item J × Tuile Lointaine (II--III)\n"
+"  \\item J × Tuile Proche (IV--V), toute avec un Obélisque\n"
+"  \\item 1 × Tuile Centre (VI--VII) qui doit avoir des Terres Désolées\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Enemy Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
 "\n"
 
 #. type: multicols
@@ -363,6 +344,8 @@ msgid ""
 "\\textbf{Enemy Deck:} 6 × Might Card, 4 × Magic Card, 4 × Skill Card\n"
 "\n"
 msgstr ""
+"\\textbf{Deck Ennemi:} 6 × Cartes Force, 4 × Cartes Magie, 4 × Cartes Capacité\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:48
@@ -371,18 +354,17 @@ msgid ""
 "\\textbf{Enemy Spells:} 1 × Fireball, 1 × Lightning Bolt, 1 × Weakness, 1 × Curse\n"
 "\n"
 msgstr ""
+"\\textbf{Sorts Ennemis:} 1 × Boule de Feu, 1 × Eclair, 1 × Faiblesse, 1 × Malédiction\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Skill:} Sorcery\n"
 "\n"
 msgstr ""
-"\\textbf{Réserve de tuile :} Aucune\n"
+"\\textbf{Compétence Ennemi:} Sorcellerie\n"
 "\n"
 
 #. type: multicols
@@ -392,6 +374,8 @@ msgid ""
 "All players win the Scenario when each player has won a fight in the Dragon Utopia.\n"
 "\n"
 msgstr ""
+"Tous les joueurs gagnent quand chacun a gagné un combat dans les Terres Désolées.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:58
@@ -400,6 +384,8 @@ msgid ""
 "If at least one player has failed to defeat the Dragon Utopia by the end of Round 9, the Scenario is lost.\n"
 "\n"
 msgstr ""
+"Si au moins un Joueur n'a pas gagné le combat dans les Terres Désolées à la fin de la Manche~9.\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:72
@@ -420,6 +406,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{évènements programmés}}\n"
+"\\textbf{Manche 4:}\n"
+"\\begin{itemize}\n"
+"  \\item Lancez un \\svg{resource} et résoudre le résultat.\n"
+"\\end{itemize}\n"
+"\\textbf{Manche 6:}\n"
+"\\begin{itemize}\n"
+"  \\item Répétez les évènements de la Manche 4.\n"
+"\\end{itemize}\n"
+"\\textbf{Manche 8:}\n"
+"\\begin{itemize}\n"
+"  \\item Répétez les évènements de la Manche 4.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:85
@@ -437,15 +437,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Retirez les Dragons Azures du Deck d'Unités Neutres \\azure\\ et en mettre un de côté pour plus tard.\n"
+"  \\item Les Joueurs ne peuvent pas Recruter de Héros Secondaires.\n"
+"  \\item Le Combat Niveaux VII ne peut être évité par Diplomatie ou d'autres moyens.\n"
+"  \\item Un Joueur peut utiliser son Jeton Construction pour échanger avec un autre Joueur. Les deux Joueurs échangent librement des Ressources, des Sorts et Artefacts comme si leurs Héros étaient adjacents.\n"
+"  \\item Les Joueurs vont créer une armée partagée. Chaque Joueur peut jouer les Unités de l'armée partagée pendant les Combats (les capacités \\svg{map} des Unités partagées ne peuvent être activées à chaque Manche que par un Joueur).  % no-check-caps\n"
+"  \\item Lors de la Visite d'un Obélisque, défaussez la 1$^{ère}$ Carte des Decks d'Unités Neutres sauf \\azure{}. Vous pouvez Recruter une de ces Unités. Les Unités ainsi Recrutées vont dans l'armée partagée.\n"
+"  \\item Lors du Combat dans les Terres Désolées, un des Unités \\azure\\ est toujours le Dragon Azure et l'Armée Neutre utilise le Deck IA. Remélangez le Deck IA et Sorts IA à la fin du Combat.\n"
+"  \\item Après victoire aux Terres Désolées, aucun Cube de Faction n'est placé sur la case. Le Joueur victorieux place une Unité de Faction survivante dans l'armée partagée et peut redistribuer ses Ressources restantes entre les autres Joueurs, puis ce Joueur est retiré du jeu.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/stand_united.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
@@ -454,7 +460,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
+"  \\captionof{figure}{\\footnotesize\\textbf{SCENARIO 2-JOUEURS}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -471,6 +478,14 @@ msgid ""
 "  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\n"
 msgstr ""
+"[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-8em, yshift=-38.9em] at (current page.center) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/cove_part.png}\n"
+"  };\n"
+"  \\centering\n"
+"  \\node at (13.5, 3.0) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, -1.2) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 3-JOUEURS}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:107
@@ -479,3 +494,5 @@ msgid ""
 "  \\node at (5, -5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
 "  \\node at (5, -9.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
+"  \\node at (5, -4) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
+"  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 4-JOUEURS}}}};"
