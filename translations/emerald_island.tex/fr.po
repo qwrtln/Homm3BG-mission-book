@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-06-23 08:32+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -199,28 +200,21 @@ msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/emerald_island.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
 "logistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scenario Coopératif}{Les Iles Émeraudes}{\\images/"
+"logistics.png}"
 
 #. type: multicols
 #: coops/emerald_island.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
 "\n"
 
 #. type: multicols
@@ -233,57 +227,50 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\textit{Lord Markham a décidé d'organiser une chasse au trésor et vous et vos amis serez de la partie.\n"
+"  Mais dépêchez vous! D'autres équipes sont aussi en chemin, et une équipe est même proche de la fin!\n"
+"  Et surtout prenez garde, un créature qu'on pense être un dragon rôde sur l'île!}\n"
+"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over 8 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce scénario se joue en 8 Manches.\n"
 "\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Player Count:} 1 -- 6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Player Count:} 1 -- 4\n"
 "\n"
 msgstr ""
-"\\textbf{Nombre de Joueurs :} 1 -- 6\n"
+"\\textbf{Nombre de Joueurs :} 1 -- 4\n"
 "\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de départ :} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -306,18 +293,12 @@ msgid ""
 "\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.\n"
 "\n"
 msgstr ""
+"\\textbf{Réserve de Tuile:} Si vous le souhaitez, vous pouvez distribuer les Tuiles II--III équitablement entre les Joueurs au lieu de les poser sur le Plateau comme proposé.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
@@ -327,9 +308,7 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item J × Tuiles de Départ (I)\n"
-"  \\item 2J × Tuiles Lointaines (II--III)\n"
-"  \\item 2J × Tuiles Proches (IV--V)\n"
-"  \\item (J + 1) × Tuiles Centrales (VI--VII)\n"
+"  \\item 4J × Tuiles Lointaines (II--III)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -340,6 +319,8 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
+"Revendiquez chaque Mines et Enclaves. (Ne pas oubliez la Mine de la Tuile I. Chaque Tuile II--III contient une Mine ou une Enclave avec un combat de niveau III.)\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:51
@@ -348,17 +329,12 @@ msgid ""
 "There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
 "\n"
 msgstr ""
+"Il y a des Mines ou Enclaves non revendiquez à la fin de la Manche 8.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:58
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{5} Round:}\n"
 "\\begin{itemize}\n"
@@ -366,10 +342,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Manche 5:}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Gagnez à nouveau la récompense d'une case avec un Cube noir.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -381,6 +356,9 @@ msgid ""
 "    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"    \\item Ignorez les bordures jaunes entre les Tuiles I (mais pas entre les Tuilles I et II--III).\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:65
@@ -389,6 +367,8 @@ msgid ""
 "    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
+"    \\item Vous ne pouvez pas construire la Demeure \\golden\\.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:72
@@ -402,6 +382,13 @@ msgid ""
 "    \\end{itemize}\n"
 "\n"
 msgstr ""
+"    \\item Vous pouvez donner des Unités à un autre Joueur, même en dehors de votre Tour, si un de vos Héros est:\n"
+"    \\begin{itemize}\n"
+"        \\item Sur la même Tuile qu'un Héros d'un autre Joueur.\n"
+"        \\item Dans la Ville d'un autre Joueur.\n"
+"        \\item Adjacent au Héros d'un autre Joueur.\n"
+"    \\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:74
@@ -410,6 +397,8 @@ msgid ""
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
 "\n"
 msgstr ""
+"    \\item Si vous n'avez plus d'Unités dans votre Deck d'Unités (après combat ou si vous ne gardez pas au moins une Unité), retournez toutes vos Unités dans votre Réserve d'Unités de Faction (même si un autre Joueur a une ou plus de vos Unités). Cela inclut les Unités données à d'autres Joueurs.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:76
@@ -418,6 +407,8 @@ msgid ""
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
 "\n"
 msgstr ""
+"    \\item Dans une Ville alliée, vous pouvez Recruter ou Améliorer leurs Unités, soit pour l'allié, soit pour vous; Vous devez avoir l'accord de l'allié. La Demeure ou la Citadelle doivent être construite.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:78
@@ -426,6 +417,8 @@ msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"
 msgstr ""
+"    \\item Pour le dernier combat de Mine/Enclave, ajoutez une Unité Neutre \\golden\\. Les Tours sont illimités et l'utilisation de Diplomatie Expert est interdite pour ce combat!\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:80
@@ -434,6 +427,8 @@ msgid ""
 "    \\item The first time you reach Level IV, gain your second specialty.\n"
 "\n"
 msgstr ""
+"    \\item Au votre premier Niveau IV, gagnez votre deuxième Carte de Spécialité.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:82
@@ -442,6 +437,8 @@ msgid ""
 "    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
 "\n"
 msgstr ""
+"    \\item Quand vous atteignez le Niveau IV, déplacez votre marqueur de la Piste des Niveaux sur III.\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:89
@@ -455,22 +452,24 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"    \\item De plus, aucun Joueur ne peut:\n"
+"    \\begin{itemize}\n"
+"        \\item Attaquer d'autres Héros other Heroes.\n"
+"        \\item Capturer une Mine ou une Enclave déjà Revendiquée.\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/emerald_island.tex:121
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/ammo_cart.png}\n"
 "  };"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
-"\n"
+"[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/ammo_cart.png}\n"
+"  };"
