@@ -294,7 +294,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI Enemy Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Héros IA}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
 "\n"
 
 #. type: multicols
