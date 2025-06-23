@@ -91,8 +91,8 @@ jobs:
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
+            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-
@@ -140,8 +140,8 @@ jobs:
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', '${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex', 'assets/**/*')
-            || hashFiles('main_${{ matrix.language }}.tex', 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
+            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-
