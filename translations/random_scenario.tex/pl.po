@@ -428,17 +428,17 @@ msgstr ""
 #. type: minipage
 #: sections/random_scenario.tex:165
 msgid "\\textbf{\\textcolor{castlebg}{Player 3: Castle}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{castlebg}{Gracz 3: Zamek}}"
 
 #. type: minipage
 #: sections/random_scenario.tex:165
 msgid "\\textbf{\\textcolor{infernobg}{Player 2: Inferno}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{infernobg}{Gracz 2: Inferno}}"
 
 #. type: minipage
 #: sections/random_scenario.tex:165
 msgid "\\textbf{\\textcolor{rampartbg}{Player 1: Rampart}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{rampartbg}{Gracz 1: Bastion}}"
 
 #.  First row
 #.  Add left margin
