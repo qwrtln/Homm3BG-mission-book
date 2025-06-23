@@ -367,7 +367,7 @@ msgid ""
 "    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
-"    \\item Vous ne pouvez pas construire la Demeure \\golden\\.\n"
+"    \\item Vous ne pouvez pas construire la Demeure \\golden\\{}.\n"
 "\n"
 
 #. type: multicols
