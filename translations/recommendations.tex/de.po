@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/sections/recommendations/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,17 +42,19 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/recommendations.tex:3
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr ""
+msgstr "\\addsection{Empfehlungen}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
-msgstr ""
+msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/recommendations.tex:10
@@ -62,6 +66,11 @@ msgid ""
 "Enjoy!\n"
 "\n"
 msgstr ""
+"{2}\n"
+"Wir haben einige spezielle Regeln und bewährte Methoden zusammengestellt, um euer Spielerlebnis zu verbessern.\n"
+"Beachtet, dass dies lediglich die \\textbf{Meinungen der Autoren} dieses Buches darstellt.\n"
+"Viel Spaß!\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:12
@@ -70,6 +79,8 @@ msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
+"\\subsection*{Spieldauer}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:14
@@ -78,6 +89,8 @@ msgid ""
 "You can estimate your \\textbf{minimal} play time using the following formula:\n"
 "\n"
 msgstr ""
+"Ihr könnt eure\\textbf{minimale} Spielzeit mit der folgenden Formel abschätzen:\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:18
@@ -88,6 +101,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  Spieldauer $= \\boldsymbol{S × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:24
@@ -100,6 +117,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Wobei:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{F}$] -- Fraktionsanzahl\n"
+"  \\item[$\\textbf{R}$] -- Rundenanzahl\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:27
@@ -109,6 +132,9 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
+"Wenn ihr beispielsweise ein 3-Fraktionen-Szenario mit 12 Runden spielt, könnt ihr leicht berechnen, dass $3 x 12 x 5 = 180 $ ist.\n"
+"Eure voraussichtliche Mindestspielzeit beträgt etwa 3 Stunden.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:30
@@ -118,6 +144,9 @@ msgid ""
 "In this case, that would be 6 hours.\n"
 "\n"
 msgstr ""
+"Um die \\textbf{Obergrenze} eurer Spieldauer zu berechnen (realistischer bei unerfahrenen Spielern), verdoppelt einfach das Ergebnis.\n"
+"In diesem Beispiel wären es 6 Stunden.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:32
@@ -126,6 +155,8 @@ msgid ""
 "\\subsection*{Magic Arrows}\n"
 "\n"
 msgstr ""
+"\\subsection*{Magische Pfeile}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:35
@@ -151,6 +182,8 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
+"Beim Verteilen von Fernen Gebieten (II-III) unter den Fraktionen muss jede Fraktion ein Gebiet mit einer Siedlung enthalten.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:41

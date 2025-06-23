@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-21 22:58+0000\n"
-"PO-Revision-Date: 2025-04-25 07:18+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/coop-scenarios/sentinels/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -23,6 +25,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
 "png}"
 msgstr ""
+"\\addscenariosection{1}{Kooperatives Szenario}{Wächter}{\\images/sentinel."
+"png}"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -48,6 +52,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:7
@@ -56,6 +62,8 @@ msgid ""
 "\\textbf{Author:} silence70011\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} silence70011\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:9
@@ -64,6 +72,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Quelle:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:14
@@ -75,6 +85,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Es gibt eine Welt jenseits unserer, voller Bestien und Monster, die nur durch eine Formation aus vier heiligen Obelisken in Schach gehalten wird.\n"
+"Doch die Macht dieser Steine schwindet, und ein Bruch steht unmittelbar bevor.\n"
+"Wenn es so weit ist, stehen nur du und dein Verbündeter zwischen den Horden und der völligen Verwüstung dieser Länder.\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -87,6 +102,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:18
@@ -95,6 +112,8 @@ msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
+"12 Runden\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -108,6 +127,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -116,6 +137,8 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
+"\\textbf{Fraktionsanzahl:} 2\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:24
@@ -124,6 +147,8 @@ msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -134,6 +159,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
@@ -146,6 +173,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item 1 \\bronze\\-Einheit mit den \\textit{niedrigsten} Rekrutierungskosten auf der \"Rudel\"-Seite\n"
+"  \\item 1 \\bronze\\-Einheit mit den \\textit{höchsten} Rekrutierungskosten auf der \"Wenige\"-Seite\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
@@ -154,6 +187,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung, Zitadelle\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:36
@@ -174,11 +209,13 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
 #: coops/titans_stronghold.tex:78
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -192,6 +229,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
@@ -202,6 +241,8 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:50
@@ -228,6 +269,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:54
@@ -248,6 +291,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:58
@@ -279,6 +324,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:68
@@ -338,6 +385,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:97
@@ -459,6 +508,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -471,6 +522,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/sentinels.tex:151

@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/clash-scenarios/force_of_will/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -50,6 +54,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -65,6 +71,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -79,6 +87,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
@@ -87,6 +97,8 @@ msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Keiner\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -98,6 +110,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
@@ -108,6 +122,9 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt:\n"
+"\n"
 
 #. type: multicols
 #: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
@@ -117,6 +134,8 @@ msgid ""
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"Während dieses Szenarios:\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -124,6 +143,7 @@ msgstr ""
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/berserk.png}"
 msgstr ""
+"\\addscenariosection{1}{Konfliktmodus}{Willenskraft}{\\images/berserk.png}"
 
 #. type: multicols*
 #: clash/force_of_will.tex:7
@@ -132,6 +152,8 @@ msgid ""
 "\\textbf{Author:} Shakajiub\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Shakajiub\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:9
@@ -140,6 +162,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Quelle:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:14
@@ -169,6 +193,9 @@ msgid ""
 "\\textbf{Player Count:} 2 or 3\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\\textbf{Fraktionsanzahl:} 2 oder 3\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
@@ -177,6 +204,8 @@ msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:29
@@ -196,6 +225,8 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 "\n"
 msgstr ""
+"\\textbf{Kartenteilvorrat:} Jede Fraktion erhält 1 zufälligtes Fernes (II--III) Gebiet\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:46

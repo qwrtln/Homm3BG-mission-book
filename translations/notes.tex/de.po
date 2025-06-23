@@ -7,26 +7,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
-"PO-Revision-Date: 2024-10-22 22:57+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/sections/notes/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/notes.tex:3
 msgid "\\addsection{Notes}{\\images/intelligence.png}"
-msgstr ""
+msgstr "\\addsection{Notizen}{\\images/intelligence.png}"
 
 #. type: tikzpicture
 #: sections/notes.tex:7
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "[remember picture, overlay, blend mode=multiply]\n"
 "  \\node[inner sep=0, opacity=0.44] at (current page.center)\n"
 "  {\\includegraphics[width=\\paperwidth, height=\\paperheight]{\\layout/citadel_background.jpg}};"
 msgstr ""
+"[remember picture, overlay, blend mode=multiply]\n"
+"  \\node[inner sep=0, opacity=0.44] at (current page.center)\n"
+"  {\\includegraphics[width=\\paperwidth, height=\\paperheight]{\\layout/citadel_background.jpg}};"

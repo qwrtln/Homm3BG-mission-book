@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/coop-scenarios/emerald_island/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -53,6 +57,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -66,6 +72,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -80,6 +88,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -92,6 +102,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -107,6 +119,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -121,6 +135,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
@@ -129,6 +145,8 @@ msgid ""
 "\\textbf{Author:} Invoceusse\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Invoceusse\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
@@ -141,6 +159,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item Eine beliebige \\bronze\\-Einheit auf der \"Rudel\"-Seite\n"
+"  \\item Eine beliebige \\bronze\\-Einheit auf der \"Wenige\"-Seite\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
@@ -150,11 +174,13 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($F$ steht für die Fraktionsanzahl):\n"
+"\n"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{1-FRAKTIONEN-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
@@ -165,7 +191,7 @@ msgstr ""
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{3-FRAKTIONEN-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
@@ -230,6 +256,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -241,6 +269,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:34

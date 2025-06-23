@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-06-22 00:57+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/clash-scenarios/trial_by_combat/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -50,6 +54,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
@@ -58,6 +64,8 @@ msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -66,6 +74,8 @@ msgid ""
 "\\addscenariosection{1}{King of the Hill Scenario}{Trial by Combat}{\\images/"
 "crusader.png}"
 msgstr ""
+"\\addscenariosection{1}{König des Hügels-Szenario}{Kampfgericht}{\\images/"
+"crusader.png}"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:7
@@ -74,6 +84,8 @@ msgid ""
 "\\textbf{Author:} LAAMAKALA\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} LAAMAKALA\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:9
@@ -82,6 +94,8 @@ msgid ""
 "\\textit{There is no honor — only victory or death. The weak will fall, the strong will fight, and only one will rule.}\n"
 "\n"
 msgstr ""
+"\\textit{Es gibt keine Ehre — nur Sieg oder Niederlage. Die Schwachen werden fallen, die Starken werden kämpfen und nur einer wird herrschen.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:12
@@ -91,6 +105,9 @@ msgid ""
 "This Scenario plays out over 8-10 Rounds.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"Dieses Szenario dauert 8-10 Runden.\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:15
@@ -100,6 +117,9 @@ msgid ""
 "\\textbf{Player Count:} 2 -- 4\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\\textbf{Fraktionsanzahl:} 2 -- 4\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:25
@@ -112,6 +132,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item 1 \\silver\\-Einheit mit den niedrigsten Rekrutierungskosten auf der \"Wenige\"-Seite\n"
+"  \\item Durchsuche (2) das neutrale \\bronze\\-Einheitendeck\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:32
@@ -125,6 +151,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:}\n"
+"\\begin{itemize}\n"
+"  \\item \\bronze\\-Behausung\n"
+"  \\item Rathaus\n"
+"  \\item Magiergilde\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:35
@@ -134,6 +167,9 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt ($F$ steht für die Anzahl der Fraktionen):\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:42
@@ -156,6 +192,9 @@ msgid ""
 "When any player first flags ``The Hill'', each player, including the one who flagged it, gets two more full turns. After all players have completed their turns, the game ends, and the player who controls ``The Hill'' at that time wins. However, if ``The Hill'' has not been flagged by the start of Round 9, the first player to flag it during or after Round 9 immediately wins the game.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingung}}\n"
+"Sobald eine Fraktion „den Hügel“ erstmals einnimmt, erhält jede Fraktion, einschließlich der einnehmenden, zwei weitere volle Züge. Nachdem alle Fraktionen ihre Züge beendet haben, endet das Spiel. Die Fraktion, die „den Hügel“ zu diesem Zeitpunkt kontrolliert, gewinnt. Sollte „der Hügel“ jedoch zu Beginn der 9. Runde noch nicht eingenommen worden sein, gewinnt die Fraktion, die ihn während oder nach der 9. Runde zuerst einnimmt.\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:67
@@ -236,6 +275,35 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\vspace*{-5em}\n"
+"\\hommtablemulticol[]{33}{\n"
+"  \\centering\n"
+"  \\medskip\n"
+"  \\textbf{Battlefield Conditions}\\\\\n"
+"  \\medskip\n"
+"\n"
+"  \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX}\\\\\n"
+"  \\darkcell[1.4]{-1/-1}\n"
+"    & \\lightcell[1.4]{Dense Fog – All \\svg{unit_ranged-table} Units gain disadvantage.}\\\\\n"
+"  \\darkcell[1.4]{-1/0}\n"
+"    & \\lightcell[1.4]{Raining Ash – All \\svg{unit_flying-table} Units gain -2 \\svg{initiative-table}.}\\\\\n"
+"  \\darkcell[1.4]{-1/+1}\n"
+"    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-table}.}\\\\\n"
+"  \\darkcell[1.4]{0/-1}\n"
+"    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-table} Units move one space less.}\\\\\n"
+"  \\darkcell[1.4]{0/0}\n"
+"    & \\lightcell[1.4]{Clear Skies – No effect.}\\\\\n"
+"  \\darkcell[1.4]{0/+1}\n"
+"    & \\lightcell[1.4]{Rocky Terrain – All \\svg{unit_ground-table} Units gain \\svg{defense_yellow} Token.}\\\\\n"
+"  \\darkcell[1.8]{+1/-1}\n"
+"    & \\lightcell[1.8]{Fey Trickery – Players Activate their Units in ascending order of Unit Initiative.}\\\\\n"
+"  \\darkcell[1.4]{+1/0}\n"
+"    & \\lightcell[1.4]{Tail Wind – \\svg{unit_flying-table} Units gain +1 Movement.}\\\\\n"
+"  \\darkcell[1.4]{+1/+1}\n"
+"    & \\lightcell[1.4]{Perfect Conditions – All \\svg{unit_ranged-table} Units gain advantage.}\\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:112

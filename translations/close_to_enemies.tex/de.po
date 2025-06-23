@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/coop-scenarios/close_to_enemies/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -40,6 +42,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -52,6 +56,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -65,6 +71,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -78,6 +86,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -92,6 +102,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -104,6 +116,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -118,6 +132,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -130,6 +146,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
@@ -139,6 +157,8 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($F$ steht für die Fraktionsanzahl):\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -150,6 +170,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -158,6 +180,8 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
+"\\addscenariosection{1}{Kooperativer Modus}{Nahe bei den Feinden}{\\images/"
+"ballistics.png}"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:7
@@ -166,6 +190,8 @@ msgid ""
 "\\textbf{Author:} Kelghor\n"
 "\n"
 msgstr ""
+"\\textbf{Autor:} Kelghor\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:9
@@ -182,6 +208,8 @@ msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
 "\n"
 msgstr ""
+"\\textit{„Blast das Kriegshorn! Wir werden sie zurückschlagen, wie immer!“, befiehlst du und widmest dich der Verteidigung der Stadt. So wie du es schon mehrere Male getan hast. Dies ist das Leben der Grenzclans, wo Kriege und Scharmützel mit benachbarten Rivalen nie wirklich enden. Glücklicherweise bleibt deine Allianz stark, und du weißt, dass du auf der sicheren Seite bist.}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:14
@@ -223,6 +251,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:31
@@ -289,6 +319,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Botvorbereitung}}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:62
