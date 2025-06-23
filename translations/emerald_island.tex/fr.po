@@ -367,7 +367,7 @@ msgid ""
 "    \\item You can't build a \\golden\\ Dwelling.\n"
 "\n"
 msgstr ""
-"    \\item Vous ne pouvez pas construire la Demeure \\golden{}.\n"
+"    \\item Vous ne pouvez pas construire la Demeure~\\golden{}.\n"
 "\n"
 
 #. type: multicols
@@ -417,7 +417,7 @@ msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"
 msgstr ""
-"    \\item Pour le dernier combat de Mine/Enclave, ajoutez une Unité Neutre \\golden\\ . Les Tours sont illimités et l'utilisation de Diplomatie Expert est interdite pour ce combat!\n"
+"    \\item Pour le dernier combat de Mine/Enclave, ajoutez une Unité Neutre \\golden{}. Les Tours sont illimités et l'utilisation de Diplomatie Expert est interdite pour ce combat!\n"
 "\n"
 
 #. type: multicols
