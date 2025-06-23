@@ -740,6 +740,9 @@ msgid ""
 "\\textbf{The Ending}\n"
 "\n"
 msgstr ""
+"\\vspace{-5em}\n"
+"\\textbf{The Ending}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:255

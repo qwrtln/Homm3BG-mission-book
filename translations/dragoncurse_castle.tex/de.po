@@ -231,6 +231,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:49
