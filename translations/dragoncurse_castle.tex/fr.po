@@ -294,7 +294,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:83
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "{2}\n"
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
