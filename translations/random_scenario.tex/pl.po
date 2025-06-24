@@ -153,15 +153,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "You lose if any of the following occur:\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Choose one of the following types for your play:\n"
 "\n"
 msgstr ""
-"Przegrywasz, jeśli zdarzy się którekolwiek z poniższych:\n"
+"Wybierz jeden z poniższych typów:\n"
 "\n"
 
 #. type: multicols
