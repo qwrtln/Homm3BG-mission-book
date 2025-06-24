@@ -33,17 +33,32 @@ jobs:
         id: find_scenarios
         run: |
           SCENARIOS=$(find ${{ inputs.scenario_type }} -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \; | grep -v "${{ env.EXCLUDE_LIST }}")
-          echo "matrix=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {scenario: .}')" >> $GITHUB_OUTPUT
+          echo "scenarios=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0))')" >> $GITHUB_OUTPUT
 
   build_scenarios:
     runs-on: ubuntu-latest
     needs: find_scenarios
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.find_scenarios.outputs.matrix) }}
+      matrix:
+        scenario: ${{ fromJson(needs.find_scenarios.outputs.scenarios) }}
+        variant: ["color", "mono"]
+        language: ["${{ inputs.language }}"]
+    outputs:
+      filename: ${{ steps.set-filename.outputs.filename }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
+
+      - name: Set filename
+        id: set-filename
+        run: |
+          if [[ "${{ matrix.variant }}" == "mono" ]]; then
+            FILENAME="${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf"
+          else
+            FILENAME="${{ matrix.scenario }}_${{ inputs.language }}.pdf"
+          fi
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
 
       - name: Generate translations for ${{ inputs.language }}
         if: ${{ inputs.language != 'en' }}
@@ -87,15 +102,33 @@ jobs:
         id: cache-pdf
         with:
           path: |
-            ./${{ matrix.scenario }}_${{ inputs.language }}.pdf
+            ./${{ steps.set-filename.outputs.filename }}
           key: >-
-            pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-${{
             inputs.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
             || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), 'assets/**/*')
             }}
           restore-keys: |
-            pdf-${{ matrix.scenario }}-${{ inputs.language }}-
+            pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-
+
+      - name: Install magick
+        if: matrix.variant == 'mono'
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+          chmod +x magick
+          mv magick /usr/local/bin/magick
+
+      - name: Process map files
+        if: matrix.variant == 'mono'
+        run: |
+          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
+          for map in $MAP_FILES; do
+            tools/to_monochrome.sh "assets/maps/$map"
+          done
+          git status
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -123,88 +156,18 @@ jobs:
         with:
           file-name: main_${{ inputs.language }}.pdf
           quality-level: prepress
-          output-file: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.scenario }}_${{ inputs.language }}
-          path: ${{ matrix.scenario }}_${{ inputs.language }}.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
-      - name: Cache monochrome built PDF
-        uses: actions/cache@v4
-        id: cache-mono-pdf
-        with:
-          path: |
-            ./${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
-          key: >-
-            pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-${{
-            inputs.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
-            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), 'assets/**/*')
-            }}
-          restore-keys: |
-            pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-
-
-      - name: Install magick
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
-        run: |
-          sudo add-apt-repository universe
-          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
-          chmod +x magick
-          mv magick /usr/local/bin/magick
-
-      - name: Process map files
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
-        run: |
-          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq | sed 's|maps/||')
-          for map in $MAP_FILES; do
-            tools/to_monochrome.sh "assets/maps/$map"
-          done
-          git status
-
-      - name: Compile scenario
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
-        uses: xu-cheng/latex-action@v3
-        with:
-          extra_system_packages: "inkscape"
-          latexmk_use_lualatex: true
-          latexmk_shell_escape: true
-          pre_compile: export HOMM3_NO_ART_BACKGROUND=1
-          root_file: main_${{ inputs.language }}.tex
-
-      - name: Optimize PDF
-        if: steps.cache-mono-pdf.outputs.cache-hit != 'true'
-        uses: qwrtln/optimize-pdf@v1
-        with:
-          file-name: main_${{ inputs.language }}.pdf
-          quality-level: prepress
-          output-file: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.scenario }}_${{ inputs.language }}_mono
-          path: ${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+          output-file: ${{ steps.set-filename.outputs.filename }}
 
       - name: Put PDFs in a directory
         run: |
           mkdir -p ${{ matrix.scenario }}
-          cp ${{ matrix.scenario }}*.pdf ${{ matrix.scenario }}
-
-      - name: Restore original map files for caching purposes
-        run: |
-          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
-          for f in $MAP_FILES; do
-            git restore "assets/$f"
-          done
+          cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
           external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}
+          publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}-${{ matrix.variant }}
           publish_dir: ./${{ matrix.scenario }}
           force_orphan: true
