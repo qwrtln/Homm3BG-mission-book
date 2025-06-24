@@ -119,7 +119,7 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:3
 msgid "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/town_portal.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{Château Maudit du Dragon}{\\images/"
+"\\addscenariosection{1}{Scénario Affrontement}{Château Dragoncurse}{\\images/"
 "town_portal.png}"
 
 #. type: multicols*
