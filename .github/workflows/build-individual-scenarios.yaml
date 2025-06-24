@@ -124,7 +124,7 @@ jobs:
         run: |
           MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
           for map in $MAP_FILES; do
-            tools/to_monochrome.sh "assets/maps/$map"
+            tools/to_monochrome.sh "assets/$map"
           done
           git status
 
