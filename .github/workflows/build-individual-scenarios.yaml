@@ -110,24 +110,6 @@ jobs:
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-
 
-      - name: Install magick
-        if: matrix.variant == 'mono'
-        run: |
-          sudo add-apt-repository universe
-          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-          wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
-          chmod +x magick
-          mv magick /usr/local/bin/magick
-
-      - name: Process map files
-        if: matrix.variant == 'mono'
-        run: |
-          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
-          for map in $MAP_FILES; do
-            tools/to_monochrome.sh "assets/$map"
-          done
-          git status
-
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: actions/cache@v4
@@ -138,6 +120,37 @@ jobs:
             inkscape-${{ hashFiles('assets/glyphs/*') }}
           restore-keys: |
             inkscape-
+
+      - name: Cache processed maps
+        if: matrix.variant == 'mono' && steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        id: cache-maps
+        with:
+          path: assets/maps/
+          key: >-
+            maps-${{ matrix.scenario }}-${{
+            hashFiles(format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario))
+            }}-${{ hashFiles('assets/maps/*.png') }}
+          restore-keys: |
+            maps-${{ matrix.scenario }}-
+
+      - name: Install magick
+        if: matrix.variant == 'mono' && steps.cache-pdf.outputs.cache-hit != 'true' && steps.cache-maps.outputs.cache-hit != 'true'
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+          wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+          chmod +x magick
+          mv magick /usr/local/bin/magick
+
+      - name: Process map files
+        if: matrix.variant == 'mono' && steps.cache-pdf.outputs.cache-hit != 'true' && steps.cache-maps.outputs.cache-hit != 'true'
+        run: |
+          MAP_FILES=$(grep -Po "maps[^}]*\.png" ${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex | sort | uniq)
+          for map in $MAP_FILES; do
+            tools/to_monochrome.sh "assets/$map"
+          done
+          git status
 
       - name: Compile scenario
         if: steps.cache-pdf.outputs.cache-hit != 'true'
