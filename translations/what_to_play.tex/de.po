@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"PO-Revision-Date: 2025-06-24 15:03+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/sections/what_to_play/de/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -58,7 +58,7 @@ msgid ""
 "Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
-"Folgt diesen Vorschlägen, wenn ihr nicht sicher seid, welches Szenario für euch am besten geeignet ist.\n"
+"Folgt diesen Vorschlägen, wenn ihr nicht sicher seid, welches Szenario für euch am besten ist.\n"
 "\n"
 
 #. type: multicols
@@ -81,7 +81,7 @@ msgid ""
 "\n"
 msgstr ""
 "Wenn ihr das Spiel zum ersten Mal spielt und die \\textbf{Regeln lernen} wollt, beginnt mit \\pagelink{Smaragdinsel}{Smaragdinsel}.\n"
-"Für ein großes Abenteuer für \\textbf{bis zu 6 Fraktionen} mit einem epischen Kampf am Ende, versucht \\pagelink{Festung der Titanen}{Festung der Titanen}.\n"
+"Für ein großes Abenteuer für \\textbf{bis zu 6 Fraktionen} mit einem epischen Finale, versucht \\pagelink{Festung der Titanen}{Festung der Titanen}.\n"
 "Für ein taktischeres Spiel für zwei Fraktionen, versucht \\pagelink{Wächter}{Wächter}.\n"
 "\n"
 
@@ -104,9 +104,9 @@ msgid ""
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
-"Wenn ihr ein „Erobere den Gral“-Szenario für 2 oder 4 Fraktionen mit interessanten Wendungen spielen möchtet, versucht es mit \\pagelink{Blutiger Gral}{Blutiger Gral}.\n"
+"Wenn ihr ein „Erobere den Gral“-Szenario für 2 oder 4 Fraktionen spielen möchtet, versucht es mit \\pagelink{Blutiger Gral}{Blutiger Gral}.\n"
 "Für einen spannenden Bosskampf für 2-3 Fraktionen wählt \\pagelink{Die Jagd}{Die Jagd}.\n"
-"Für einen unvermeidlichen epischen Kampf zwischen zwei Fraktionen mit möglicher Belagerung spielt \\pagelink{Drachenfluch}{Drachenfluch}.\n"
+"Für einen epischen Kampf zwischen zwei Fraktionen mit möglicher Belagerung spielt \\pagelink{Drachenfluch}{Drachenfluch}.\n"
 "\n"
 
 #. type: multicols
@@ -152,4 +152,4 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:33
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr "\\enlargethispage{5\\baselineskip}"
+msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
