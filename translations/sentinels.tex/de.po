@@ -5,43 +5,35 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2025-06-21 22:58+0000\n"
-"PO-Revision-Date: 2025-06-23 13:02+0000\n"
+"PO-Revision-Date: 2025-06-24 20:40+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
-"mission-book/coop-scenarios/sentinels/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-mission-"
+"book/coop-scenarios/sentinels/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Poedit 3.6\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/sentinels.tex:3
-msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
-"png}"
-msgstr ""
-"\\addscenariosection{1}{Kooperatives Szenario}{Wächter}{\\images/sentinel."
-"png}"
+msgid "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel.png}"
+msgstr "\\addscenariosection{1}{Kooperatives Szenario}{Wächter}{\\images/sentinel.png}"
 
 #. type: multicols
-#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
-#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5 coops/emerald_island.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:202
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/inferno_devilish_plan.tex:6 campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5 campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:144
-#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144 campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:285
@@ -86,16 +78,15 @@ msgid ""
 "\n"
 msgstr ""
 "\\textit{Es gibt eine Welt jenseits unserer, voller Bestien und Monster, die nur durch eine Formation aus vier heiligen Obelisken in Schach gehalten wird.\n"
-"Doch die Macht dieser Steine schwindet, und ein Bruch steht unmittelbar bevor.\n"
+"Doch die Macht dieser Steine schwindet, und ein Überfall steht unmittelbar bevor.\n"
 "Wenn es so weit ist, stehen nur du und dein Verbündeter zwischen den Horden und der völligen Verwüstung dieser Länder.\n"
 "}\n"
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
-#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
-#: campaigns/inferno_steadwicks_fall.tex:16
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18 coops/close_to_enemies.tex:16
+#: coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:20 campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
@@ -116,10 +107,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
-#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
-#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
-#: campaigns/inferno_devilish_plan.tex:24
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22 coops/emerald_island.tex:18
+#: coops/close_to_enemies.tex:20 coops/stand_united.tex:17
+#: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
@@ -151,9 +141,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
-#: clash/trial_by_combat.tex:19
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28 clash/force_of_will.tex:24
+#: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -175,8 +164,8 @@ msgid ""
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 \\bronze\\-Einheit mit den \\textit{niedrigsten} Rekrutierungskosten auf der \"Rudel\"-Seite\n"
-"  \\item 1 \\bronze\\-Einheit mit den \\textit{höchsten} Rekrutierungskosten auf der \"Wenige\"-Seite\n"
+"  \\item Ein Rudel \\bronze\\-Einheiten mit den \\textit{niedrigsten} Rekrutierungskosten\n"
+"  \\item Wenige \\bronze\\-Einheiten mit den \\textit{höchsten} Rekrutierungskosten\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -197,6 +186,8 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
+"Jede Fraktion erhält zufällig 1 Nahes Gebiet (IV-V) und 1 Fernes Gebiet (II-III). Diese Gebiete sollten keine Obelisken enthalten.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
@@ -205,11 +196,12 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Durchsuche (2) den Artefaktstapel\n"
+"\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
-#: coops/titans_stronghold.tex:78
-#, fuzzy, no-wrap
+#: coops/sentinels.tex:40 coops/titans_stronghold.tex:42 coops/titans_stronghold.tex:78
+#, no-wrap
 msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
@@ -218,11 +210,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
-#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
-#: coops/stand_united.tex:33 clash/the_hunt.tex:35
-#: campaigns/inferno_devilish_plan.tex:88
-#: campaigns/inferno_steadwicks_fall.tex:92
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44 coops/emerald_island.tex:36
+#: coops/close_to_enemies.tex:35 coops/stand_united.tex:33 clash/the_hunt.tex:35
+#: campaigns/inferno_devilish_plan.tex:88 campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
@@ -255,15 +245,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 Startgebiete (I)\n"
+"  \\item 4 Ferne Gebiete (II-III)\n"
+"  \\item 4 Nahe Gebiete (IV-V) mit Obelisk\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
-#: campaigns/inferno_steadwicks_fall.tex:133
-#: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
-#: campaigns/castle_two_knights_defense.tex:77
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59 coops/emerald_island.tex:45
+#: coops/close_to_enemies.tex:68 coops/stand_united.tex:52
+#: campaigns/inferno_devilish_plan.tex:121 campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83 campaigns/castle_greek_gift.tex:72
+#: campaigns/castle_sicilian_dragon.tex:81 campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -279,12 +273,13 @@ msgid ""
 "Defeat all invading armies.\n"
 "\n"
 msgstr ""
+"Besiegt alle einfallenden Armeen.\n"
+"\n"
 
 #. type: multicols
-#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
-#: campaigns/inferno_steadwicks_fall.tex:137
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63 coops/emerald_island.tex:49
+#: coops/close_to_enemies.tex:74 coops/stand_united.tex:56
+#: campaigns/inferno_devilish_plan.tex:125 campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
@@ -301,6 +296,8 @@ msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
 "\n"
 msgstr ""
+"Eine unbesiegte Armee des Gegners bleibt am Ende von Runde 12 übrig.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:60
@@ -309,16 +306,17 @@ msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
+"Eine eurer Städte wird eingenommen oder ein Hauptheld wird im Kampf besiegt (Rückzug zählt nicht).\n"
+"\n"
 
 #. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
-#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
-#: campaigns/inferno_devilish_plan.tex:140
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71 coops/emerald_island.tex:53
+#: clash/force_of_will.tex:62 clash/the_hunt.tex:61 clash/dragoncurse_castle.tex:59
+#: clash/the_fractured_kingdoms.tex:41 campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
-#: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/inferno_deal_with_the_devil.tex:97 campaigns/castle_greek_gift.tex:87
+#: campaigns/castle_sicilian_dragon.tex:95 campaigns/castle_two_knights_defense.tex:93
+#: sections/random_scenario.tex:287
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -338,6 +336,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{6. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Entfernt alle Statusmarker von allen Wasserrädern, Windmühlen und Mystischen Gärten auf der Abenteuerkarte.\n"
+"  \\item Erschafft eine feindliche Armee mithilfe der untenstehenden Regeln.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:73
@@ -349,6 +353,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{7. und 8. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Erschafft eine feindliche Armee mithilfe der untenstehenden Regeln.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:78
@@ -360,6 +369,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{9. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Wiederholt die Ereignisse von Runde 6.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:83
@@ -371,15 +385,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{10. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Erschafft eine feindliche Armee mithilfe der untenstehenden Regeln.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: coops/sentinels.tex:85 coops/emerald_island.tex:60
-#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
-#: campaigns/inferno_devilish_plan.tex:174
-#: campaigns/inferno_steadwicks_fall.tex:194
-#: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60 coops/close_to_enemies.tex:110
+#: coops/stand_united.tex:74 clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: campaigns/inferno_devilish_plan.tex:174 campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148 sections/random_scenario.tex:308
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -405,6 +421,18 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Ignoriert alle gelben Linien auf Startgebieten.\n"
+"  \\item Spieler können Ressourcen tauschen, wenn ein Held des aktiven Spielers einen Handelsposten besucht oder benachbart zu einem verbündeten Helden steht.\n"
+"  \\item The Hero who defeats an enemy army gains 2 \\svg{experience}.\n"
+"    The victorious player rolls two Treasure Dice and resolves one of them.\n"
+"  \\item Additionally, no player can:\n"
+"  \\begin{itemize}\n"
+"      \\item Attack other Heroes.\n"
+"      \\item Capture a Mine or Settlement that is already Flagged.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:99
@@ -413,6 +441,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Gegnererschaffung und\\\\-bewegung}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:109
@@ -429,6 +459,16 @@ msgid ""
 "  \\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Feindliche Armeen werden auf einem zufälligen Feld mit Obelisk erschaffen (nehmt Heldenfiguren von nicht verwendeten Fraktionen)\n"
+"  \\item Bestimmt das Feld, indem ihr solange 2 Angriffswürfel werft, bis keine 0 mehr erscheint:\n"
+"  \\begin{itemize}\n"
+"    \\item $+1$/$+1$ = Norden\n"
+"    \\item $+1$/$-1$ = Osten\n"
+"    \\item $-1$/$+1$ = Westen\n"
+"    \\item $-1$/$-1$ = Süden\n"
+"  \\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:114
@@ -440,6 +480,11 @@ msgid ""
 "  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
 "\n"
 msgstr ""
+"  \\item Für eine balanciertere Verteilung werft ihr in der 7. und 9. Runde nur den zweiten Würfel neu. Der erste Würfel erhält das entgegengesetzte Resultat, das er in der vorigen Runde hatte.\n"
+"  Runden 8 und 10 sind wieder zufällig.\n"
+"  \\item Wenn das Gebiet, auf dem der Gegner platziert werden soll, noch nicht entdeckt wurde, deckt es auf und platziert es in beliebiger Ausrichtung.\n"
+"  \\item Wenn sich ein Held auf dem Gebiet befindet, auf dem der Gegner erschaffen wird, beginnt direkt ein Kampf.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:121
@@ -453,6 +498,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"  \\item Feindliche Armeen haben 3 \\svgeven{movement} pro Runde.\n"
+"  \\item Feindliche Armeen bewegen sich am Ende jedes Zugs ab dem Zug, in dem sie erschaffen wurden.\n"
+"  \\item Feindliche Armeen bewegen sich wie in der Anleitung beschrieben (S. 33), aber anstatt einzunehmen, zerstören sie alles auf ihrem Weg.\n"
+"    Platziert Statuswürfel auf allen Feldern, die sie betreten. Diese Felder werden fortan als leer betrachtet.\n"
+"  \\item Wenn sich ein Gegner in verschiedene Richtungen bewegen könnte, wählen die Spieler die Richtung.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:123
@@ -461,6 +513,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Kampf gegen gegen\\\\feindliche Armeen}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:131
@@ -475,6 +529,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Kämpfe gegen feindliche Armeen, die länger als eine Kampfrunde dauern, kosten keine \\svgeven{movement}.\n"
+"  \\item Während eines Kampfes gegen eine feindliche Armee, kann sich der Held zurückziehen, wenn eine seiner Einheiten aktiviert wird.\n"
+"    Beim Rückzug verliert der Hauptheld seine verbliebene \\svgeven{movement}, wird auf eine verbündete Stadt oder Siedlung seiner Wahl gesetzt und behält alle übrig gebliebenen Einheiten.\n"
+"  \\item Nebenhelden werden beim Rückzug aus dem Spiel entfernt, aber übrig gebliebene Einheiten bleiben im Spiel.\n"
+"  \\item Besiegte feindliche Einheiten erscheinen nicht wieder.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:133
@@ -483,6 +545,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Boss-Armee}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:140
@@ -496,13 +560,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item In der 10. Runde wird eine Boss-Armee erschaffen. Sie unterscheidet sich von bisherigen Armeen, da sie durch einen festen Vorrat an neutralen Einheiten verstärkt wird (Vorrat = Zahl in Klammern in untenstehender Tabelle).\n"
+"  \\item Zu Beginn der 2. und jeder folgenden Kampfrunde verstärken 2 Einheiten aus dem gemischten Vorrat die verbliebene Armee (bis zu einem Maximum von 5 Einheiten), bis sich entweder der Spieler zurückzieht oder jede neutrale Einheit des Vorrats besiegt ist. \\textit{Wenn die Anzahl der Gegner zu Beginn einer Runde 1 oder niedriger ist, füllt wieder auf 4 Einheiten auf (d.h. es befinden sich nach der Verstärkung immer 4 oder 5 feindliche Einheiten auf dem Kampf-Spielplan, falls möglich.}\n"
+"  \\item Platziert die Verstärkungen in der hinteren Reihe des Gegners von links nach rechts, beginnend mit der niedrigsten Initiative (\\svg{unit_ranged}-Einheiten zuerst). Falls nötig, werden Einheiten nach diesem Schema in der vorderen Reihe platziert.\n"
+"  \\item Wenn sich ein Spieler zurückzieht, wird die feindliche Armee auf ein Minimum von 4 Einheiten aufgefüllt. Diese sind die Starteinheiten im nächsten Kampf.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -513,10 +583,9 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
-#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
-#: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:316
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94 clash/bloody_grail.tex:120
+#: clash/bloody_grail.tex:126 campaigns/inferno_devilish_plan.tex:204
+#: sections/credits.tex:30 sections/credits.tex:34 sections/random_scenario.tex:316
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -533,39 +602,61 @@ msgid ""
 "  \\centering\n"
 "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
 msgid ""
-"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\\\ "
+"\\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
 "\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
 "{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
-"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
-"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
-"& \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round "
-"10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
-"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
-"\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
-"\\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
-"\\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} "
-"\\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
-"{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden "
-"\\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & "
-"\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
-"\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}{\\origazure[12]} "
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Rounds 6 + "
+"7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\\\ \\darkcell[1.4]{Easy} & "
+"\\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]"
+"{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver "
+"\\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, "
+"1\\azure)}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak "
+"(2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Hard} & \\lightcell[1.4]"
+"{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver "
+"\\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
+"{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]"
+"{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}"
+"\\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Schwierigkeitsgrad der feindlichen "
+"Armeen}\\\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}{\\origazure[12]} "
+"\\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & \\darkcell{Runden 6 + "
+"7} & \\darkcell{Runden 8 + 9} & \\darkcell{Runde 10}\\\\ \\darkcell[1.4]{Leicht} & "
+"\\lightcell[1.4]{\\bronze \\silver \\silver \\silver \\golden} & \\lightcell[1.4]"
+"{\\silver \\silver \\silver \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver "
+"\\golden \\azure \\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, "
+"1\\azure)}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden \\azure} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\azure \\footref{azure} \\linebreak "
+"(2\\silver, 7\\golden, 1\\azure)}\\\\ \\darkcell[1.4]{Experte} & \\lightcell[1.4]"
+"{\\silver \\silver \\golden \\golden \\golden} & \\lightcell[1.4]{\\silver \\silver "
+"\\golden \\golden \\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
+"{Unmöglich} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden \\golden} & "
+"\\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & \\lightcell[1.4]"
+"{\\golden \\azure \\azure \\azure \\footref{azure} \\linebreak (7\\golden, 3\\azure)}"
+"\\\\ \\end{tabularx} }"
 
 #. type: Plain text
 #: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
-msgstr ""
+msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:196
@@ -573,3 +664,5 @@ msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
+"Immer 1 Einheit Azurdrachen (Starteinheiten der Boss-Armee). Der Rest wird zufällig "
+"bestimmt\\label{azure}."
