@@ -18,7 +18,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
-  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits
+  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play
 
 jobs:
   find_scenarios:
@@ -85,23 +85,23 @@ jobs:
       - name: Debug cache key components
         run: |
           echo "=== Cache Key Debug ==="
-          echo "Language: ${{ matrix.language }}"
+          echo "Language: ${{ inputs.language }}"
           echo "Scenario: ${{ matrix.scenario }}"
           echo "Scenario type: ${{ inputs.scenario_type }}"
           echo ""
           echo "=== File paths being hashed ==="
-          echo "Main file: ${{ format('main_{0}.tex', matrix.language) }}"
-          echo "Translated file: ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario) }}"
+          echo "Main file: ${{ format('main_{0}.tex', inputs.language) }}"
+          echo "Translated file: ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario) }}"
           echo ""
           echo "=== File existence check ==="
-          ls -la ${{ format('main_{0}.tex', matrix.language) }} || echo "Main file not found"
-          ls -la ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario) }} || echo "Translated file not found"
+          ls -la ${{ format('main_{0}.tex', inputs.language) }} || echo "Main file not found"
+          ls -la ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario) }} || echo "Translated file not found"
           echo ""
           echo "=== Individual file hashes ==="
           echo "metadata.tex: $(sha256sum metadata.tex)"
           echo "structure.tex: $(sha256sum structure.tex)"
-          echo "main_pl.tex: $(sha256sum ${{ format('main_{0}.tex', matrix.language) }})"
-          echo "translated file: $(sha256sum ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario) }})"
+          echo "main_pl.tex: $(sha256sum ${{ format('main_{0}.tex', inputs.language) }})"
+          echo "translated file: $(sha256sum ${{ format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario) }})"
 
       - name: Cache built PDF
         uses: actions/cache@v4
@@ -111,9 +111,9 @@ jobs:
             ./${{ matrix.scenario }}_${{ inputs.language }}.pdf
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{
-            matrix.language == 'en'
+            inputs.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
-            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
+            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-
@@ -160,9 +160,9 @@ jobs:
             ./${{ matrix.scenario }}_${{ inputs.language }}_mono.pdf
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-${{
-            matrix.language == 'en'
+            inputs.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*')
-            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, matrix.language, matrix.scenario), 'assets/**/*')
+            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), 'assets/**/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-mono-
