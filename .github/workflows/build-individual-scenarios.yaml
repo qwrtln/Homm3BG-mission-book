@@ -24,7 +24,7 @@ jobs:
   find_scenarios:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.find_scenarios.outputs.matrix }}
+      scenarios: ${{ steps.find_scenarios.outputs.scenarios }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
@@ -44,8 +44,6 @@ jobs:
         scenario: ${{ fromJson(needs.find_scenarios.outputs.scenarios) }}
         variant: ["color", "mono"]
         language: ["${{ inputs.language }}"]
-    outputs:
-      filename: ${{ steps.set-filename.outputs.filename }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
