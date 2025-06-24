@@ -128,9 +128,7 @@ jobs:
         with:
           path: assets/maps/
           key: >-
-            maps-${{ matrix.scenario }}-${{
-            hashFiles(format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario))
-            }}-${{ hashFiles('assets/maps/*.png') }}
+            maps-${{ matrix.scenario }}-${{ hashFiles('assets/maps/*.png') }}
           restore-keys: |
             maps-${{ matrix.scenario }}-
 
