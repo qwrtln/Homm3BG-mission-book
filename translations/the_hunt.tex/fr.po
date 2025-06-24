@@ -198,7 +198,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Demeure \\bronze{}, Salle du Conseil\n"
+"\\textbf{Bâtiments de Départ :} Demeure \\bronze{}, Salle du Conseil\n"
 "\n"
 
 #. type: multicols*
@@ -208,7 +208,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
 "\n"
 msgstr ""
-"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario:\n"
+"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
 "\n"
 
 #. type: multicols*
