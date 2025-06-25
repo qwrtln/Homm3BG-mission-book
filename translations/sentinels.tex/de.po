@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-06-25 09:26+0200\n"
+"POT-Creation-Date: 2025-06-25 07:28+0000\n"
 "PO-Revision-Date: 2025-06-24 21:18+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -22,11 +22,11 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
-"sentinel.png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
+"png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperatives Szenario}{Wächter}{\\images/"
-"sentinel.png}"
+"\\addscenariosection{1}{Kooperatives Szenario}{Wächter}{\\images/sentinel."
+"png}"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
