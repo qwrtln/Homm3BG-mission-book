@@ -102,7 +102,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Niederlagenbedingungen}}\n"
 "\n"
 
 #. type: multicols

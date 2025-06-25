@@ -52,7 +52,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Startgebäude:} \\bronze\\-Behausung, Zitadelle\n"
+"\\textbf{Startgebäude:} \\bronze{}-Behausung, Zitadelle\n"
 "\n"
 
 #. type: multicols*
