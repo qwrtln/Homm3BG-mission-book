@@ -87,7 +87,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\\subsection*{\\MakeUppercase{Vorbereitung der Karte}}\n"
 "\n"
 
 #. type: multicols
