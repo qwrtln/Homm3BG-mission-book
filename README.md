@@ -125,90 +125,90 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🤝 Sentinels (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-sentinels/sentinels_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-sentinels/sentinels_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-sentinels/sentinels_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-sentinels/sentinels_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-sentinels/sentinels_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-sentinels/sentinels_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels/sentinels_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels/sentinels_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-sentinels-color/sentinels_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-sentinels-mono/sentinels_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-sentinels-color/sentinels_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-sentinels-mono/sentinels_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-sentinels-color/sentinels_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-sentinels-mono/sentinels_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels-color/sentinels_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-sentinels-mono/sentinels_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Titans' Stronghold (1-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold/titans_stronghold_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold/titans_stronghold_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-titans_stronghold/titans_stronghold_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-titans_stronghold/titans_stronghold_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold/titans_stronghold_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold/titans_stronghold_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold/titans_stronghold_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold/titans_stronghold_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-color/titans_stronghold_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-mono/titans_stronghold_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-titans_stronghold-color/titans_stronghold_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-titans_stronghold-mono/titans_stronghold_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold-color/titans_stronghold_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold-mono/titans_stronghold_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold-color/titans_stronghold_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold-mono/titans_stronghold_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Emerald Island (1-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-emerald_island/emerald_island_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-emerald_island/emerald_island_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island/emerald_island_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island/emerald_island_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island/emerald_island_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island/emerald_island_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-emerald_island-color/emerald_island_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-emerald_island-mono/emerald_island_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island-color/emerald_island_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-emerald_island-mono/emerald_island_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island-color/emerald_island_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island-mono/emerald_island_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island-color/emerald_island_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island-mono/emerald_island_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Close to Enemies (1-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies/close_to_enemies_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies/close_to_enemies_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-close_to_enemies/close_to_enemies_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-close_to_enemies/close_to_enemies_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies/close_to_enemies_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies/close_to_enemies_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies/close_to_enemies_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies/close_to_enemies_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies-color/close_to_enemies_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies-mono/close_to_enemies_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-close_to_enemies-color/close_to_enemies_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-close_to_enemies-mono/close_to_enemies_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies-color/close_to_enemies_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies-mono/close_to_enemies_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies-color/close_to_enemies_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies-mono/close_to_enemies_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>🤝 Stand United (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-stand_united/stand_united_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-stand_united/stand_united_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united/stand_united_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united/stand_united_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united/stand_united_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united/stand_united_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-stand_united-color/stand_united_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-stand_united-mono/stand_united_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united-color/stand_united_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-stand_united-mono/stand_united_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united-color/stand_united_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united-mono/stand_united_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united-color/stand_united_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united-mono/stand_united_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ Bloody Grail (2 or 4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-bloody_grail/bloody_grail_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-bloody_grail/bloody_grail_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail/bloody_grail_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail/bloody_grail_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail/bloody_grail_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail/bloody_grail_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-bloody_grail-color/bloody_grail_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-bloody_grail-mono/bloody_grail_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail-color/bloody_grail_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-bloody_grail-mono/bloody_grail_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail-color/bloody_grail_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-bloody_grail-mono/bloody_grail_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail-color/bloody_grail_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-bloody_grail-mono/bloody_grail_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
             <td>⚔️ The Hunt (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt/the_hunt_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt/the_hunt_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt/the_hunt_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt/the_hunt_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt/the_hunt_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-color/the_hunt_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-mono/the_hunt_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-color/the_hunt_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-mono/the_hunt_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-color/the_hunt_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-mono/the_hunt_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -216,12 +216,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Dragoncurse Castle (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle/dragoncurse_castle_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle/dragoncurse_castle_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle/dragoncurse_castle_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle/dragoncurse_castle_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle/dragoncurse_castle_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle/dragoncurse_castle_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-color/dragoncurse_castle_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-mono/dragoncurse_castle_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-color/dragoncurse_castle_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-mono/dragoncurse_castle_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-color/dragoncurse_castle_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-mono/dragoncurse_castle_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -229,12 +229,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Force of Will (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will/force_of_will_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will/force_of_will_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will/force_of_will_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will/force_of_will_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will/force_of_will_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will-color/force_of_will_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will-mono/force_of_will_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will-color/force_of_will_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will-mono/force_of_will_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will-color/force_of_will_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will-mono/force_of_will_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -242,12 +242,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ The Fractured Kingdoms (5)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_fractured_kingdoms/the_fractured_kingdoms_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_fractured_kingdoms/the_fractured_kingdoms_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms/the_fractured_kingdoms_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms/the_fractured_kingdoms_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms/the_fractured_kingdoms_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms/the_fractured_kingdoms_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_fractured_kingdoms-color/the_fractured_kingdoms_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_fractured_kingdoms-mono/the_fractured_kingdoms_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms-color/the_fractured_kingdoms_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms-mono/the_fractured_kingdoms_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms-color/the_fractured_kingdoms_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms-mono/the_fractured_kingdoms_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -255,8 +255,8 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Trial by Combat (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat/trial_by_combat_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat/trial_by_combat_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-color/trial_by_combat_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-mono/trial_by_combat_en_mono.pdf"><em>click</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -268,8 +268,8 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Random Scenario 🎲 (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario/random_scenario_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario-color/random_scenario_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario-mono/random_scenario_en_mono.pdf"><em>click</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -281,12 +281,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Inferno: A Devilish Plan (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan/inferno_devilish_plan_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan/inferno_devilish_plan_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan/inferno_devilish_plan_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan/inferno_devilish_plan_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan/inferno_devilish_plan_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-color/inferno_devilish_plan_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-mono/inferno_devilish_plan_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-color/inferno_devilish_plan_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-mono/inferno_devilish_plan_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-color/inferno_devilish_plan_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-mono/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -294,12 +294,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Inferno: Steadwick's Fall (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall/inferno_steadwicks_fall_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall/inferno_steadwicks_fall_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall/inferno_steadwicks_fall_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-color/inferno_steadwicks_fall_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-color/inferno_steadwicks_fall_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-color/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -307,12 +307,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Inferno: Deal with the Devil (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil/inferno_deal_with_the_devil_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil/inferno_deal_with_the_devil_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil/inferno_deal_with_the_devil_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil/inferno_deal_with_the_devil_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil/inferno_deal_with_the_devil_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -320,12 +320,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Castle: Greek Gift (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_greek_gift/castle_greek_gift_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_greek_gift/castle_greek_gift_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift/castle_greek_gift_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift/castle_greek_gift_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift/castle_greek_gift_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_greek_gift-color/castle_greek_gift_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_greek_gift-mono/castle_greek_gift_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift-color/castle_greek_gift_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_greek_gift-mono/castle_greek_gift_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift-color/castle_greek_gift_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_greek_gift-mono/castle_greek_gift_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -333,12 +333,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Castle: Sicilian Dragon (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_sicilian_dragon/castle_sicilian_dragon_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_sicilian_dragon/castle_sicilian_dragon_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon/castle_sicilian_dragon_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon/castle_sicilian_dragon_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon/castle_sicilian_dragon_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon/castle_sicilian_dragon_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_sicilian_dragon-color/castle_sicilian_dragon_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_sicilian_dragon-mono/castle_sicilian_dragon_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon-color/castle_sicilian_dragon_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon-mono/castle_sicilian_dragon_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon-color/castle_sicilian_dragon_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon-mono/castle_sicilian_dragon_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -346,12 +346,12 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🗺️ Castle: Two Knights' Defense (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_two_knights_defense/castle_two_knights_defense_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_two_knights_defense/castle_two_knights_defense_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense/castle_two_knights_defense_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense/castle_two_knights_defense_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense/castle_two_knights_defense_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_two_knights_defense-color/castle_two_knights_defense_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-castle_two_knights_defense-mono/castle_two_knights_defense_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense-color/castle_two_knights_defense_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense-mono/castle_two_knights_defense_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense-color/castle_two_knights_defense_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense-mono/castle_two_knights_defense_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
@@ -379,63 +379,63 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Arcane Artillery (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery/arcane_artillery_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash/secret_bomb_stash_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ The Battle for Treasure Island (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island/treasure_island_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island/treasure_island_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-color/treasure_island_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-mono/treasure_island_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Gold Rush (1, 2, or 4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush/gold_rush_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush/gold_rush_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Dragon Valley (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley/dragon_valley_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley/dragon_valley_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-color/dragon_valley_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-mono/dragon_valley_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Shattered Alliance (3-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance/shattered_alliance_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-color/shattered_alliance_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-mono/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Astral Run (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run/astral_run_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run/astral_run_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ King of the Hill (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill/king_of_the_hill_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-color/king_of_the_hill_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-mono/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ The Obelisk (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk/obelisk_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk/obelisk_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-color/obelisk_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-mono/obelisk_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🗺️ Rampart: Graduation Exercise (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise/rampart_graduation_exercise_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-color/rampart_graduation_exercise_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-mono/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🗺️ Rampart: Cutthroats (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats/rampart_cutthroats_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats/rampart_cutthroats_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-color/rampart_cutthroats_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-mono/rampart_cutthroats_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🗺️ Rampart: Coop Campaign Rules (-)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules/coop_campaign_rules_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules/coop_campaign_rules_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-color/coop_campaign_rules_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-mono/coop_campaign_rules_en_mono.pdf"><em>click</em></a></td>
         </tr>
     </tbody>
 </table>
