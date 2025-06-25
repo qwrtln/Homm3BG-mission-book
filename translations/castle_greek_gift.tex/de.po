@@ -52,7 +52,6 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\textbf{Startgebäude:} \\bronze{}-Behausung, Zitadelle\n"
 "\n"
 
