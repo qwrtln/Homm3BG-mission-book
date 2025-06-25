@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-25 07:28+0000\n"
+"POT-Creation-Date: 2025-06-21 22:58+0000\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -143,22 +143,28 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:15
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario length}}\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Type}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Typ Scenariusza}}\n"
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:17
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "You lose if any of the following occur:\n"
+#| "\n"
 msgid ""
 "Choose one of the following types for your play:\n"
 "\n"
 msgstr ""
-"Wybierz jeden z poniższych typów:\n"
+"Przegrywasz, jeśli zdarzy się którekolwiek z poniższych:\n"
 "\n"
 
 #. type: multicols
