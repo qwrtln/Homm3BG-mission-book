@@ -279,7 +279,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Sieg}}\n"
 "\n"
 
 #. type: multicols
@@ -303,7 +303,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Niederlagenbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Niederlage}}\n"
 "\n"
 
 #. type: multicols
