@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-21 22:58+0000\n"
+"POT-Creation-Date: 2025-06-26 21:13+0200\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -375,11 +375,11 @@ msgstr ""
 #. type: minipage
 #: sections/random_scenario.tex:165
 msgid ""
-"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-1."
-"png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill \\playerimage{\\maps/"
-"free-for-all-xl-2.png}{2}\\playerarrow{-1.5}{0.2}{160}{infernobg} \\hfill "
-"\\playerimage{\\maps/free-for-all-xl-3.png}{3} \\playerarrow{-4.3}{2.6}{-60}"
-"{rampartbg}"
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-1.png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-2.png}{2}\\playerarrow{-1.5}{0.2}{160}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
+"\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
 msgstr ""
 
 #. type: center
@@ -394,11 +394,11 @@ msgstr ""
 #. type: minipage
 #: sections/random_scenario.tex:183
 msgid ""
-"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-4."
-"png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill \\playerimage{\\maps/"
-"free-for-all-xl-5.png}{5}\\playerarrow{-0.8}{1.4}{210}{infernobg} \\hfill "
-"\\playerimage{\\maps/free-for-all-xl-6.png}{6} \\playerarrow{-3.6}{1.2}{120}"
-"{rampartbg}"
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-4.png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-5.png}{5}\\playerarrow{-0.8}{1.4}{210}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
+"\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
 msgstr ""
 
 #. type: tikzpicture
@@ -449,9 +449,9 @@ msgid ""
 "{-0.3}{60}{infernobg} \\playerarrow{-0.6}{4.0}{-120}{castlebg} \\hfill "
 "\\playerimage{\\maps/free-for-all-xl-far-2.png}{8}\\playerarrow{-4.7}{4.3}"
 "{-60}{rampartbg} \\playerarrow{-5.2}{-0.1}{30}{infernobg} \\playerarrow{-0.9}"
-"{4.3}{-150}{castlebg} \\hfill \\playerimage{\\maps/free-for-all-xl-finish."
-"png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}{0.9}{30}"
-"{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
+"{4.3}{-150}{castlebg} \\hfill \\playerimage{\\maps/free-for-all-xl-"
+"finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
+"{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
 msgstr ""
 
 #. type: subsection{#2}
