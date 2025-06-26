@@ -66,22 +66,51 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\n"
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
 "\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\textbf{Fraktionsanzahl:} 2\n"
+"\n"
+"#-#-#-#-#  de.po  #-#-#-#-#\n"
+"\\textbf{Spieleranzahl:} 2\n"
 "\n"
 
 #. type: multicols
