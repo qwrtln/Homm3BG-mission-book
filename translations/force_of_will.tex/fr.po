@@ -201,13 +201,14 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\textbf{Nombre de Joueurs:} 2 ou 3\n"
 "\n"
 
 #. type: multicols*
@@ -251,6 +252,8 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 "\n"
 msgstr ""
+"\\textbf{Réserve de Tuiles:} Chaque Joueur prend 1 Tuile Lointaine (II--III) au hasard.\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:46
