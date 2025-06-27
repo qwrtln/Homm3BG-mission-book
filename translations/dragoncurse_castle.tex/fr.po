@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-06-24 15:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -118,71 +119,42 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de Départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/dragoncurse_castle.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
 "town_portal.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Château Dragoncurse}{\\images/"
+"town_portal.png}"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} profmamadu\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur:} profmamadu\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1253016693517717714/1253016693517717714}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols*
@@ -196,56 +168,46 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Le majestueux château sur la colline surplombe cette riche province, et le souverain local est temporairement absent, laissant seulement son armée pour défendre les murs du château.\n"
+"Les deux souverains voisins soudain décide que ces terres leurs reviennent de droit et doivent être sécurisées avant le retour du souverain local.\n"
+"Cependant, les légendes parlent d'un dragon sauvage lié à ces terres.\n"
+"Allez vous rejeter la malédiction comme une simple distraction, ou le dragon peut-il être apprivoisé vous donnant l'avantage nécessaire sur votre adversaire?\n"
+"}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario is played over a maximum of 11 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce Scénario se joue en 11 manches maximum.\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 20 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 20 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -253,21 +215,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item 2 × Unités Quelques \\bronze{} avec le coût de Recrutement le plus faible\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vfill\n"
 "\\begin{center}\n"
@@ -275,8 +231,9 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\vfill\n"
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -295,6 +252,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Tuiles de Départ (I)\n"
+"  \\item 2 × Tuiles Lointaines (II-III)\n"
+"  \\item 5 × Tuiles Proches (IV-V)\n"
+"  \\item 2 × Tuiles Centres (VI-VII), au hasard, une avec une Case Ville Aléatoire et une autre avec une Case Terres Désolées.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:53
@@ -305,6 +272,10 @@ msgid ""
 "The player controlling the Random Town at the end of that final Round is the winner.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"Quand la Ville Aléatoire est revendiquée pour la première fois, les Joueurs finissent la Manche et jouent \\textbf{une Manche supplémentaire finale}.\n"
+"Le Joueur contrôlant la Ville Aléatoire à la fin de la Manche finale gagne la partie.\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:57
@@ -315,16 +286,13 @@ msgid ""
 "However, if the Random Town is first captured in the \\nth{10} Round, the game proceeds as normal to its additional final Round (in this case, the \\nth{11} Round).\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"A la fin de la Manche 10, si aucun Joueur ne contrôle la Ville Aléatoire, les deux Joueurs perdent la partie (\\textit{le souverain local revient à son château et reprend le contrôle de la province}).\n"
+"\n"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\textbf{\\nth{4} and \\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -333,9 +301,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{Manches 4 et 8 :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Retirez tous les Cubes Noirs des Moulins à Eau, Moulins à Vent et Jardins Mystiques sur le Plateau.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -360,15 +328,26 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
+"Pendant ce Scénario:\n"
+"\\begin{itemize}\n"
+"  \\item A la première Visite d'un Obélisque, le Joueur Visitant lance 2 \\svg{resource} et résous les deux résultats.\n"
+"  \\item La Ville Aléatoire est défendue par des Murs et une Porte quand une joueur l'a revendiquée, il n'a de Tourelle que si le Joueur a une Citadelle.\n"
+"  \\item Comme toute Ville, quand la Ville Aléatoire est revendiquée par un Joueur, c'est un lieu valide pour le Joueur pour:\n"
+"    \\begin{itemize}\n"
+"      \\item Placer un Héros Secondaire nouvellement Recruté.\n"
+"      \\item Placer le Héros Principal si il est battu.\n"
+"      \\item Transporter temporairement son armée, pour 8 \\svg{gold}, quand la Ville Aléatoire est attaquée.\n"
+"    \\end{itemize}\n"
+"  \\item Le premier Joueur à Visiter les Terres Désolées (après avoir battu les Unités  \\azure{}), piochez du Deck d'Unités Neutres \\azure\\ jusqu'à piocher un Dragon non associé à une Faction.\n"
+"    Le Joueur peut immédiatement le Recruter gratuitement.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/dragoncurse_castle.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\phantom{.}\n"
 "\\vfill\n"
@@ -378,10 +357,13 @@ msgid ""
 "\\vfill\n"
 "\\phantom{.}"
 msgstr ""
+"\\phantom{.}\n"
+"\\vfill\n"
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\images/earthquake.png}}\n"
 "\\end{center}\n"
-"\n"
+"\\vfill\n"
+"\\phantom{.}"
 
 #. type: tikzpicture
 #: clash/dragoncurse_castle.tex:99
@@ -391,3 +373,6 @@ msgid ""
 "  \\centering\n"
 "  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\maps/dragoncurse-castle.png}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (8.5, -4) {\\includegraphics[width=0.7\\paperwidth]{\\maps/dragoncurse-castle.png}};"

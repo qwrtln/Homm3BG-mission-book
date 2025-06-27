@@ -162,7 +162,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -171,6 +171,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\textbf{Unités de Départ:}\n"
+"\\begin{itemize}\n"
+"  \\item Une Unité Groupe \\bronze{} avec le coût de Recrutement le plus \\textit{faible}\n"
+"  \\item Une Unité Quelques \\bronze{} avec le coût de Recrutement le plus \\textit{élevé}\n"
+"\\end{itemize}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
 "  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
