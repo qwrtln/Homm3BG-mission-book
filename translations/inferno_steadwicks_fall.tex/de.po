@@ -70,9 +70,7 @@ msgstr ""
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
-"\n"
+msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -86,7 +84,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
+"\\subsection*{\\MakeUppercase{Vorbereitung der Karte}}\n"
 "\n"
 
 #. type: multicols*
@@ -102,7 +100,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Sieg}}\n"
 "\n"
 
 #. type: multicols
@@ -116,7 +114,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{NIederlagenbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Niederlage}}\n"
 "\n"
 
 #. type: multicols
