@@ -25,8 +25,22 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Cache po4a entries [${{ matrix.language }}]
+        if: matrix.language != 'en'
+        id: cache-po4a
+        uses: actions/cache@v4
+        with:
+          path: |
+            */translated/${{ matrix.language }}/*.tex
+          key: >-
+            po4a-${{ matrix.language }}-${{
+              hashFiles('po4a.cfg', format('translations/*/{0}.po', matrix.language), 'translations/*/*.pot')
+            }}
+          restore-keys: |
+            po4a-${{ matrix.language }}-
+
       - name: Generate translations for ${{ matrix.language }}
-        if: ${{ matrix.language != 'en' }}
+        if: matrix.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
         uses: qwrtln/po4a-action@v1
         with:
           version: "0.73"
@@ -70,9 +84,9 @@ jobs:
             ./main_${{ matrix.language }}.fls
             ./main_${{ matrix.language }}.out
             ./main_${{ matrix.language }}.toc
-            ./campaigns/*.aux
-            ./coops/*.aux
-            ./clash/*.aux
+            ./campaigns/**/*.aux
+            ./coops/**/*.aux
+            ./clash/**/*.aux
             ./sections/**/*.aux
           key: >-
             texlive-mission-${{ matrix.language }}-${{
@@ -360,4 +374,3 @@ jobs:
       language: ${{ matrix.language }}
     secrets:
       SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-
