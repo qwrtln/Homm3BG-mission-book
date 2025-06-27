@@ -79,6 +79,7 @@ jobs:
           version: "0.73"
           config: "po4a.cfg"
           args: "--no-update"
+          language: ${{ inputs.language }}
 
       - name: Find and use only assets referenced in ${{ matrix.scenario }}
         id: find-assets

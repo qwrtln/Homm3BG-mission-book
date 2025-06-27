@@ -58,7 +58,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -67,18 +67,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
 "  \\item Une Unité Groupe \\bronze{} avec le coût de Recrutement le plus \\textit{faible}\n"
 "  \\item Une Unité Quelques \\bronze{} avec le coût de Recrutement le plus \\textit{élevé}\n"
-"\\end{itemize}\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Unités de Départ:}\n"
-"\\begin{itemize}\n"
-"  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
-"  \\item Une Unité Quelques \\bronze\\ avec le coût de Recrutement le plus \\textit{élevé}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -157,7 +149,8 @@ msgstr ""
 #: clash/the_hunt.tex:3
 msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{La Chasse}{\\images/slayer.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{La Chasse}{\\images/"
+"slayer.png}"
 
 #. type: multicols*
 #: clash/the_hunt.tex:7

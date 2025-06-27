@@ -231,6 +231,7 @@ jobs:
           version: "0.73"
           config: "po4a.cfg"
           args: "--no-update"
+          language: ${{ matrix.language }}
 
       - name: Cache Inkscape artifacts
         uses: actions/cache@v4
