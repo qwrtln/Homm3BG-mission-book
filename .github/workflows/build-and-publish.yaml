@@ -41,11 +41,12 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: matrix.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
-        uses: qwrtln/po4a-action@v1
+        uses: qwrtln/po4a-action@single-lang
         with:
           version: "0.73"
           config: "po4a.cfg"
           args: "--no-update"
+          language: ${{ matrix.language }}
 
       - name: Cache built PDF
         uses: actions/cache@v4
@@ -225,7 +226,7 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        uses: qwrtln/po4a-action@v1
+        uses: qwrtln/po4a-action@single-lang
         with:
           version: "0.73"
           config: "po4a.cfg"
