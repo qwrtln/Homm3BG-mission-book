@@ -70,9 +70,7 @@ msgstr ""
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
-"\n"
+msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -81,7 +79,7 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
-"\\textbf{Fraktionsanzahl:} 2\n"
+"\\textbf{Spieleranzahl:} 2\n"
 "\n"
 
 #. type: multicols

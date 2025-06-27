@@ -54,7 +54,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt:\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Karte gezeigt:\n"
 "\n"
 
 #. type: multicols*
@@ -70,7 +70,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Siegbedingungen}}\n"
+"\\subsection*{\\MakeUppercase{Sieg}}\n"
 "\n"
 
 #. type: multicols
