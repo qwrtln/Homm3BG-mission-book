@@ -220,15 +220,12 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Size}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
+"\\subsection*{\\MakeUppercase{Rozmiar Mapy}}\n"
 "\n"
 
 #. type: multicols
