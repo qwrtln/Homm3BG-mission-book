@@ -527,14 +527,8 @@ msgstr ""
 
 #. type: subsection{#2}
 #: sections/random_scenario.tex:235
-#, fuzzy
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\n"
 msgid "\\MakeUppercase{Player Setup}"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\n"
+msgstr "\\MakeUppercase{Przygotowanie Graczy}"
 
 #. type: Plain text
 #: sections/random_scenario.tex:237

@@ -58,8 +58,22 @@ jobs:
           fi
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
 
-      - name: Generate translations for ${{ inputs.language }}
+      - name: Cache po4a entries [${{ inputs.language }}]
         if: ${{ inputs.language != 'en' }}
+        id: cache-po4a
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ inputs.scenario_type }}/translated/${{ inputs.language }}/${{ matrix.scenario }}.tex
+          key: >-
+            po4a-${{ matrix.scenario }}-${{ inputs.language }}-${{
+              hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario))
+            }}
+          restore-keys: |
+            po4a-${{ matrix.scenario }}-${{ inputs.language }}-
+
+      - name: Generate translations for ${{ inputs.language }}
+        if: inputs.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
         uses: qwrtln/po4a-action@v1
         with:
           version: "0.73"
