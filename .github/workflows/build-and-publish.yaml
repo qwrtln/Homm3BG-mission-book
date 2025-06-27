@@ -353,10 +353,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario_type: ["sections"]
-        language: ["pl"]
-        # scenario_type: ["clash", "coops", "campaigns", "sections"]
-        # language: ["en", "pl", "cs", "fr", "de"]
+        scenario_type: ["clash", "coops", "campaigns", "sections"]
+        language: ["en", "pl", "cs", "fr", "de"]
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}
