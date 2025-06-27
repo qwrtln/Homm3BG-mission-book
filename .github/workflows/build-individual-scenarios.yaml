@@ -74,7 +74,7 @@ jobs:
 
       - name: Generate translations for ${{ inputs.language }}
         if: inputs.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
-        uses: qwrtln/po4a-action@v1.1
+        uses: qwrtln/po4a-action@v1.2
         with:
           version: "0.73"
           config: "po4a.cfg"

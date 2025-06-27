@@ -113,18 +113,14 @@ msgstr ""
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 or 4\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 -- 4\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\\textbf{Liczba Graczy:} 2 lub 4\n"
+"\\textbf{Liczba Graczy:} 2 -- 4\n"
 "\n"
 
 #. type: multicols*
