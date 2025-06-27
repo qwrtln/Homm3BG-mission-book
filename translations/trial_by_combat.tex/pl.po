@@ -79,15 +79,12 @@ msgstr "\\addscenariosection{1}{Tryb Starcia}{Polowanie}{\\images/slayer.png}"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} mopo\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} LAAMAKALA\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} mopo\n"
+"\\textbf{Autor:} LAAMAKALA\n"
 "\n"
 
 #. type: multicols*
