@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-06-24 12:17+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -57,7 +58,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -66,6 +67,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\textbf{Unités de Départ:}\n"
+"\\begin{itemize}\n"
+"  \\item Une Unité Groupe \\bronze{} avec le coût de Recrutement le plus \\textit{faible}\n"
+"  \\item Une Unité Quelques \\bronze{} avec le coût de Recrutement le plus \\textit{élevé}\n"
+"\\end{itemize}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
 "  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
@@ -123,13 +132,14 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\textbf{Nombre de Joueurs:} 2 ou 3\n"
 "\n"
 
 #. type: multicols*
@@ -139,30 +149,24 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 "\n"
 msgstr ""
+"\\textbf{Réserve de Tuiles:} Chaque Joueur prend 1 Tuile Lointaine (II--III) au hasard.\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/the_hunt.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{The Hunt}{\\images/slayer.png}"
 
 #. type: multicols*
 #: clash/the_hunt.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Mateusz ``MATMOT'' Motyka\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} Mateusz «MATMOT» Motyka\n"
 "\n"
 
 #. type: multicols*
@@ -172,6 +176,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://boardgamegeek.com/filepage/277736/clash-scenario-the-hunt-v10}{BoardGameGeek}\n"
 "\n"
 msgstr ""
+"\\textbf{Source:} \\href{https://boardgamegeek.com/filepage/277736/clash-scenario-the-hunt-v10}{BoardGameGeek}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:13
@@ -182,55 +188,51 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{La terre tremble sous le règne du redoutable Dragon.\n"
+"  Celui qui osera pourfendre cette bête monstrueuse se verra offrir le trône, couronné souverain légitime de ce royaume brisé.\n"
+"}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 14 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"Ce Scénario se joue en 14 Manches.\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
+"\\textbf{Bâtiments de Départ :} Demeure \\bronze{}, Salle du Conseil\n"
 "\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout.\n"
 "\n"
 msgstr ""
-"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
+"Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
 "\n"
 
 #. type: multicols*
@@ -246,6 +248,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Scénario pour 2 Joueurs:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Tuiles de Départ (I)\n"
+"  \\item 2 × Tuiles Lointaines (II--III)\n"
+"  \\item 2 × Tuiles Proches (IV--V)\n"
+"  \\item 1 × Tuile Centre (VI--VII)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:53
@@ -260,19 +270,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Scénario pour 3 Joueurs:}\n"
+"\\begin{itemize}\n"
+"  \\item 3 × Tuiles de Départ (I)\n"
+"  \\item 3 × Tuiles Lointaines (II--III)\n"
+"  \\item 3 × Tuiles Proches (IV--V)\n"
+"  \\item 1 × Tuile Centre (VI--VII)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Slay the Dragon Boss with your Main Hero.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"Tuer le Boss Dragon avec votre Héros Principal.\n"
 "\n"
 
 #. type: multicols*
@@ -283,16 +299,13 @@ msgid ""
 "If the Dragon Boss still lives at the end of the \\nth{14} Round, all players lose the Scenario.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"Si le Boss Dragon est encore en vie à la fin de la Manche 14.\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -300,9 +313,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{Manches 4, 8 et 12 :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Retirez tous les Cubes Noirs des Moulins à Eau, Moulins à Vent et Jardins Mystiques sur le plateau.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -313,6 +326,8 @@ msgid ""
 "Before the start of this Scenario:\n"
 "\n"
 msgstr ""
+"Avant le début de ce Scénario:\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:76
@@ -325,6 +340,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Sélectionnez un des Dragons de la liste de Boss: Dragon Azure, Dragon de Cristal, Dragon de Rouille ou Dragon Féérique.\n"
+"    Vous pouvez choisir au hasard en piochant une des quatre Cartes Statistiques: \\textit{Attaque} -- Azure, \\textit{Défense} -- Cristal, \\textit{Savoir} -- Rouille, \\textit{Puissance} -- Féérique.\n"
+"  \\item Placez un Cube Noir ou une Figurine représentant le Dragon au centre de la Tuile Centre (VI--VII).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:79
@@ -334,6 +355,9 @@ msgid ""
 "During this Scenario:\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"Pendant ce Scénario:\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:92
@@ -353,15 +377,29 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Seul le Héros Principal peut tuer le Dragon.\n"
+"  \\item Le combat final avec le Dragon se produit sur la Case au centre de la Tuile Centre.\n"
+"    Se référer aux règles spécifiques de chaque Dragon pour ce combat.\n"
+"  \\item Durant ce combat, ignorez la capacité spéciales des Gorgones.\n"
+"  \\item Les Héros ne peuvent pas fuir le combat contre le Boss Dragon.\n"
+"  \\item Quand un Joueur Visite un Obélisque, il choisit de lancer un Dé de Trésor ou gagner 1 \\svg{experience}.\n"
+"  \\item Chaque Joueur ne peut Visiter chaque Obélisque qu'une fois.\n"
+"    Après, il doit placer une Cube de Faction sur la Case.\n"
+"  \\item Le Combat de Boss n'a pas de limite de Tour de Combat.\n"
+"\\end{itemize}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:94
-#, fuzzy, no-wrap
-#| msgid "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+#, no-wrap
 msgid ""
 "\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
 "\n"
-msgstr "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]{\\art/land_mine.png}}"
+msgstr ""
+"\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_hunt.tex:96 sections/random_scenario.tex:61
@@ -370,6 +408,8 @@ msgid ""
 "\\medskip\n"
 "\n"
 msgstr ""
+"\\medskip\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:98
@@ -378,6 +418,8 @@ msgid ""
 "{\\footnotesize\\centering\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}\\par}\n"
 "\n"
 msgstr ""
+"{\\footnotesize\\centering\\textbf{\\MakeUppercase{SCENARIO 2-JOUEURS}}\\par}\n"
+"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:104
@@ -390,6 +432,12 @@ msgid ""
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
+"\\begin{tikzpicture}[overlay, anchor=north]\n"
+"  \\centering\n"
+"  \\node at (0, 0) {\\includegraphics[width=\\textwidth, height=0.48\\textheight, keepaspectratio]{\\maps/the-hunt-3.png}};\n"
+"  \\node at (0, -12) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 3-JOUEURS}}}};\n"
+"\\end{tikzpicture}\n"
+"\n"
 
 #. type: wrapfigure
 #: clash/the_hunt.tex:150
@@ -398,6 +446,9 @@ msgid ""
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
 "{\\art/azure_dragon.jpg}}"
 msgstr ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/azure_dragon.jpg}}"
 
 #. type: Plain text
 #: clash/the_hunt.tex:150
@@ -426,6 +477,29 @@ msgid ""
 "it.  \\item Buffs and enhancements cast on player's Units remain effective.  "
 "\\end{itemize} }"
 msgstr ""
+"{ \\textbf{\\MakeUppercase{Boss: Dragon Azure}} \\par \\medskip \\textit{On "
+"ne sait que peu de chose sur le Dragon Azure.  Il est rare et puissant, peu "
+"en ont vu et encore moins ont survécu à son attaque.  Cet puissante créature "
+"n'est pas plus grande que la plupart des dragons, mais peut subir de longues "
+"attaques physiques.  On dit que se trouver face à face avec un Dragon Azure, "
+"c'est être glacé de peur.  } \\par\\medskip \\textbf{Combattre le Dragon "
+"Azure:} \\begin{enumerate} \\item Placez la Figurine/Carte du Dragon Azure "
+"sur le Plateau de Combat.  Ignorez sa capacité.  \\item Préparez une pile "
+"d'Artefacts défaussés et mélangez-la.  \\end{enumerate} \\medskip "
+"\\textbf{Règles:} \\begin{itemize} \\item \\textit{Syllogomanie:} Au début "
+"de chaque Tour, choisissez au hasard une Carte de la pile d'Artefacts "
+"défaussés.  Si l'Artefact est: \\begin{itemize} \\item Une Arme: Le Dragon "
+"gagne un Souffle qui cible trois créatures en ligne.  L'Unité directement "
+"touchée subit les dégâts maximum, les Unités de chaque côté subissent 3\\,"
+"\\svg{damage-red} de moins.  \\item Une Armure, Bouclier ou Vêtement: Le "
+"Dragon gagne 3\\,\\svg{defense}, représenté par des Cubes de Faction.  "
+"Retirez-les après qu'ils aient absorbés des dégâts.  \\item Un Bijou: Le "
+"Dragon rugit et invoque une tempête de glace, glaçant de peur toutes "
+"créatures.  Chaque Unité ne peut se déplacer que d'une Case par Tour, le "
+"Dragon peut voler sur n'importe quelle case du Plateau de Combat.  "
+"\\end{itemize} \\item Le Dragon est immunisé à tous les Sorts le ciblant.  "
+"\\item Les Sorts lancés sur les Unités du Joueur restent efficace.  "
+"\\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:177
@@ -447,6 +521,22 @@ msgid ""
 "40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
 "\\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{8}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Facile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Difficle}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[1.8]{Pas de changement\\\\ additionnel} & \\lightcell[1.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 30} & \\lightcell[1.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
+"\\end{tabularx} }"
 
 #. type: wrapfigure
 #: clash/the_hunt.tex:219
@@ -455,6 +545,9 @@ msgid ""
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
 "{\\art/crystal_dragon.jpg}}"
 msgstr ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/crystal_dragon.jpg}}"
 
 #. type: Plain text
 #: clash/the_hunt.tex:219
@@ -483,6 +576,28 @@ msgid ""
 "regeneration.  \\item The Crystal Dragon \\textit{retaliates twice} per "
 "battle Round.  \\end{itemize} }"
 msgstr ""
+"{ \\textbf{\\MakeUppercase{Boss: Dragon de Cristal}} \\par \\medskip "
+"\\textit{Entièrement fait de cristal rouge et amené à la vie par magie, le "
+"Dragon de Cristal est littéralement semi transparent, éclairé en son centre "
+"par son cœur magique.  Utilisé fréquemment comme outil d'entrainement pour "
+"les jeunes chasseurs de dragons, les sorciers les créent aussi pour leur mue "
+"de cristal.  } \\par \\medskip \\textbf{Combattre le Dragon de Cristal:} "
+"\\begin{enumerate} \\item Placez la Figurine/Carte du Dragon sur le Plateau "
+"de Combat.  Ignorez sa capacité.  \\item Placez deux Golems d'Or et deux "
+"Golems de Diamant sur le Plateau de Combat.  \\end{enumerate} \\medskip "
+"\\textbf{Règles:} \\begin{itemize} \\item Au début du Combat, vérifiez si un "
+"des Golems a été retiré au Tour précédent.  Si oui, placez un nouveau Golem "
+"d'or ou de Diamant au hasard sur la ligne arrière du Plateau.  \\item "
+"\\textit{Absorption de Golem:} Le Dragon peut absorber des Golems pour se "
+"régénérer.  Pendant son Tour, si le Dragon est adjacent à un Golem, il peut "
+"choisir de l'absorber pour retirer un nombre de \\svg{damage-red} en "
+"fonction du type de Golem: \\begin{itemize} \\item Golem d'Or: Retirez 2 "
+"\\svg{damage-red}.  \\item Golem de Diamant: Retirez 4 \\svg{damage-red}.  "
+"\\item[] \\textbf{Note:} Le Dragon ne peut absorber qu'un Golem par Tour.  "
+"\\end{itemize} \\item Capacités de Golem: Les Golems d'Or et de Diamant "
+"n'ont pas d'autres capacités que celle de leurs Cartes.  Ils servent "
+"principalement de sacrifice pour la régénération du Dragon.  \\item Le "
+"Dragon \\textit{riposte deux fois} par Tour de Combat.  \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:246
@@ -504,6 +619,23 @@ msgid ""
 "{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Remove additional 2 "
 "\\svg{damage-table} by consuming Golems} \\\\ \\end{tabularx} }"
 msgstr ""
+"\\vspace{1em}\n"
+"\\hommtable[]{10}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Facile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Difficile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[2.8]{ Pas de changement\\\\ additionnel} & \\lightcell[2.8]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Riposte}} & "
+"\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
+"{\\images/hp.png}} 32 \\\\ +1 Riposte \\\\ Retirez 2 \\svg{damage-table} "
+"supplémentaire par absorption} \\\\ \\end{tabularx} }\\pagebreak"
 
 #. type: wrapfigure
 #: clash/the_hunt.tex:287
@@ -512,6 +644,9 @@ msgid ""
 "[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
 "{\\art/rust_dragon.jpg}}"
 msgstr ""
+"{l}{0.3\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/rust_dragon.jpg}}"
 
 #. type: Plain text
 #: clash/the_hunt.tex:287
@@ -539,6 +674,29 @@ msgid ""
 "Faction Cube on the Unit's Card to indicate this effect.  Corrosion stacks "
 "up to -4 \\svg{defense}.  \\end{itemize} }"
 msgstr ""
+"{ \\textbf{\\MakeUppercase{Boss: Dragon de Rouille {\\scriptsize Extension "
+"Forteresse}}} \\par\\medskip \\textit{Les Dragons de Rouille sont connus "
+"pour chasser les Gorgones, habite et se nourrissent dans les Mines de "
+"souffre.  Avec cet appétit, les dragons de Rouille crache un acide concentré "
+"comme attaque principale.  Cet acide est capable de ronger même la plus dure "
+"des armures, abaissant les défenses de leur cible tout en faisant des "
+"dégâts.  } \\par \\medskip \\textbf{Combattre le Dragon de Rouille:} "
+"\\begin{enumerate} \\item Placez la Figurine ou la Carte sur le Plateau de "
+"Combat.  Ignorez sa capacité.  \\item Préparez  quatre Cartes non utilisé "
+"pour marquer les mares d'acide.  \\end{enumerate} \\medskip "
+"\\textbf{Règles:} \\begin{itemize} \\item Le Dragon est immunisé aux Sorts "
+"Basiques.  \\item \\textit{Crachat Corrosif:} Le Dragon a une puissante "
+"capacité de contrôle de foule qui permet de cracher quatre mares d'acide "
+"sulfurique sur le Plateau de Combat \\textit{au début} de chaque Tour de "
+"Combat.  Utilisez les Cartes face cachée pour marquer la position des "
+"mares.  \\item Le Dragon ne peut pas placer de mares sur la même Case qu'au "
+"Tour précédent.  Marquez les cases précédentes avec des Cubes de Faction non "
+"utilisés.  \\item Les mares bloquent la case et entravent les mouvement pour "
+"le Tour.  Ce sont des obstacles pour les Joueurs et le Dragon.  \\item La "
+"capacité passive du Dragon, \\textit{Corrosion}, diminue la défense d'une "
+"Unité de 2 pour chaque attaque.  Placez un Cube de Faction non utilisé sur "
+"la Carte de l'Unité pour marquer cet effet.  La Corrosion s'empile jusqu'à "
+"-4 \\svg{defense}.  \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:314
@@ -559,6 +717,21 @@ msgid ""
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
 "40 \\\\ +1 to Corrosion armor decrease} \\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{9}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Facile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Difficle}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[2.5]{Pas de Changement\\\\ additionnel} & \\lightcell[2.5]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"20} & \\lightcell[2.5]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 32} & \\lightcell[2.5]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"40 \\\\ +1 à la diminution de défense de Corrosion} \\\\ \\end{tabularx} }"
 
 #. type: wrapfigure
 #: clash/the_hunt.tex:363
@@ -567,6 +740,9 @@ msgid ""
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
 "{\\art/faerie_dragon.jpg}}"
 msgstr ""
+"{l}{0.28\\textwidth} \\raisebox{0pt}"
+"[\\dimexpr\\height-1.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
+"{\\art/faerie_dragon.jpg}}"
 
 #. type: Plain text
 #: clash/the_hunt.tex:363
@@ -599,6 +775,33 @@ msgid ""
 "vanquishing the 2nd, 3rd, and 4th Dendroids.  When there are no Dendroids "
 "left, the dragon loses the ability to cast Spells.  \\end{itemize} }"
 msgstr ""
+"{ \\textbf{\\MakeUppercase{Boss: Dragon Féérique {\\scriptsize Extension "
+"Rempart}}} \\par \\medskip \\textit{Les Dragons Féériques sont faussement "
+"mignons, mais en vérité, ce sont de méchants farceurs.  Peu de choses sont "
+"connus sur ces fauteurs de troubles notoires.  Ce que l'on sait se trouve "
+"plus dans des livres de contes que des livres magiques.  Certains les "
+"pensent invisibles.  Certains pensent qu'ils lancent des Sorts.  Certains "
+"pensent que Miroir Magique est une de leur défense naturelle.  } \\par "
+"\\medskip \\textbf{Combattre le Dragon Féérique:} \\begin{enumerate} \\item "
+"Place 2 Dragons Féériques sur le Plateau de Combat.  Ignorez leur capacité.  "
+"\\item Placez 1 Carte de Sylvanien du Deck d'Unité Neutre \\svg{silver} sur "
+"le Plateau, et placez 3 Cartes supplémentaires face cachée pour représenter "
+"3 autres Sylvaniens.  \\end{enumerate} \\medskip \\textbf{Règles:} "
+"\\begin{itemize} \\item Le Dragon est immunisé aux Sorts basiques.  \\item "
+"Le Dragon peut lancer jusque deux Sort différents par Tour.  \\item Chaque "
+"Sort est placé face visible: \\begin{enumerate} \\item Le 1er Sort est "
+"\\textit{Eclair}.  \\item Le 2ème Sort est \\textit{Soin}.  \\item Pour le "
+"3ème Sort, le Dragon prend au hasard un Sort Expert du Deck de Sort, en "
+"excluant les Sorts \\svg{map}.  Si un Sort \\svg{map} est pioché, piochez un "
+"autre Sort.  \\end{enumerate} \\item \\textit{Farceur:} Au premier Tour de "
+"Combat, le premier Dragon Féérique ciblé n'est qu'un simple Mirage.  Il "
+"inflige des dégâts, mais disparaît du Plateau à la première touche ennemie.  "
+"\\item Capacité des Sylvaniens: Chaque Sylvanien possède une partie du "
+"pouvoir du Dragon Féérique.  A la mort du 2ème Sylvanien, retirez un Sort du "
+"Grimoire du Dragon, en commençant par le 3ème.  Diminuer de 1 \\svg{empower} "
+"(en commençant par le maximum) en vainquant le 2ème, 3ème et 4ème "
+"Sylvanien.  Sans Sylvanien, le Dragon perd sa capacité à lancer des Sorts.  "
+"\\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:389
@@ -619,3 +822,18 @@ msgid ""
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
 "32 \\\\ +1 Mirage} \\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{7}{ \\centering \\medskip \\let\\origbronze\\bronze "
+"\\let\\origsilver\\silver \\let\\origgolden\\golden \\let\\origazure\\azure "
+"\\renewcommand{\\bronze}{\\origbronze[20]} \\renewcommand{\\silver}"
+"{\\origsilver[20]} \\renewcommand{\\golden}{\\origgolden[20]} "
+"\\renewcommand{\\azure}{\\origazure[20]} \\begin{tabularx}{0.95\\linewidth}"
+"{XXXX} \\darkcell{\\raisebox{-.2\\height}{\\bronze} \\textbf{Facile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\silver} \\textbf{Normal}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\golden} \\textbf{Difficile}} & "
+"\\darkcell{\\raisebox{-.2\\height}{\\azure} \\textbf{Impossible}}\\\\ "
+"\\lightcell[1.6]{Pas de changement\\\\ additionnel} & \\lightcell[1.6]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"18} & \\lightcell[1.6]{\\raisebox{-.25\\height}"
+"{\\includegraphics[height=15px]{\\images/hp.png}} 26} & \\lightcell[1.6]"
+"{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
+"32 \\\\ +1 Mirage} \\\\ \\end{tabularx} }"
