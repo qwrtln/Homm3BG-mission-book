@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-21 22:58+0000\n"
+"POT-Creation-Date: 2025-06-27 09:55+0200\n"
 "PO-Revision-Date: 2025-04-25 07:18+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,11 +20,11 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:3
 msgid ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
+"sentinel.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Coopératif}{Sentinelles}{\\images/sentinel."
-"png}"
+"\\addscenariosection{1}{Scénario Coopératif}{Sentinelles}{\\images/"
+"sentinel.png}"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
