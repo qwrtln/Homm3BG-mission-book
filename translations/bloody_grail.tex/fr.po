@@ -63,31 +63,12 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de Départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"\\textbf{Bâtiments de départ :} Demeure \\bronze\\\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}\n"
 "\n"
 
 #. type: multicols*
