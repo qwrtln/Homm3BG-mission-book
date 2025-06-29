@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-06-29 21:45+0000\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -123,12 +123,19 @@ msgstr ""
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:25
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Few cheapest \\silver\\ Units\n"
+#| "  \\item Search (2) Neutral \\bronze\\ Unit Deck\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
 "  \\item A Few cheapest \\silver\\ Units\n"
-"  \\item Search (2) Neutral \\bronze\\ Unit Deck\n"
+"  \\item A chosen Neutral \\bronze\\ Unit matching the player's Faction\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
