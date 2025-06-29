@@ -26,6 +26,11 @@ jobs:
             echo "There are uncommited changes to translations:"
             git status --porcelain translations
             git diff | tee po4a.patch | git --no-pager diff --color=always
+            echo ""
+            echo "To fix them, you can either:"
+            echo "1. Type \"po4a commit\" comment in your PR. A bot will commit the changes visible above."
+            echo "2. Run po4a locally, and commit the changes."
+            echo "3. Download and apply po4a-patch artifact from this workflow."
             exit 1
           fi
 
