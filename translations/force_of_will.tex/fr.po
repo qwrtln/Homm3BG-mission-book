@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-06-30 13:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -138,40 +139,30 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/force_of_will.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/berserk.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Force de Volonté}{\\images/"
+"berserk.png}"
 
 #. type: multicols*
 #: clash/force_of_will.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Shakajiub\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} Shakajiub\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols*
@@ -184,19 +175,22 @@ msgid ""
 "If by nothing else, then by sheer force of will.}\n"
 "\n"
 msgstr ""
+"\\textit{sz Dragons Sauvages terrorisent la campagne.\n"
+"Les fermiers ne peuvent pas cultiver leurs récoltes en paix, les caravanes ont trop peur pour transporter leurs biens.\n"
+"Il faut frapper au cœur et vaincre ses bêtes.\n"
+"Même s'il le faut, alors ce sera par la seule Force de la Volonté.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"Ce Scénario se joue en 12 Manches.\n"
 "\n"
 
 #. type: multicols*
@@ -213,24 +207,17 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -238,10 +225,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item 2 × Unités Quelques \\bronze{} avec le coût de Recrutement le plus \\textit{élevé}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -268,6 +254,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Scénario pour 2 Joueurs:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Tuiles de Départ (I)\n"
+"  \\item 2 × Tuiles Proches (IV--V)\n"
+"  \\item 4 × Tuiles Lointaines (II--III)\n"
+"  \\item 1 × Tuiles Centre (VI--VII), avec une Case Terres Désolées\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:54
@@ -282,19 +276,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Scénario pour 3 Joueurs:}\n"
+"\\begin{itemize}\n"
+"  \\item 3 × Tuiles de Départ (I)\n"
+"  \\item 3 × Tuiles Proches (IV--V)\n"
+"  \\item 6 × Tuiles Lointaines (II--III)\n"
+"  \\item 1 × Tuiles Centre (VI--VII), avec une Case Terres Désolées\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "To win the Scenario, a Hero must Flag the Dragon Utopia Field.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"Pour gagner, un Héros doit Revendiquer la Case des Terres Désolées.\n"
 "\n"
 
 #. type: multicols*
@@ -305,16 +305,13 @@ msgid ""
 "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"A la fin de la Manche 12, si il n'y a pas de gagnant, chaque Joueur perd le Scénario.\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:67
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
 "\\begin{itemize}\n"
@@ -322,9 +319,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{Manches 4 et 8 :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Retirez tous les Cubes Noirs des Moulins à Eau, Moulins à Vent et Jardins Mystiques sur le Plateau.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -338,6 +335,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manches 5 et 9 (Scénario 2 Joueurs uniquement):}\n"
+"\\begin{itemize}\n"
+"  \\item Le Joueur 2 gagne 1 \\svgeven{movement}.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:94
@@ -362,6 +364,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Quand un Joueur Visite un Obélisque, il lance 2 \\svg{treasure} et choisir un résultat.\n"
+"  \\item Diplomatie est interdite pour éviter le combat de la Case des Terres Désolées.\n"
+"  \\item Quand un Héros se déplace sur la Case des Terres Désolées, il doit combattre, en fonction de la difficulté choisie, les Unités Neutres suivantes:\n"
+"  \\begin{itemize}\n"
+"    \\item \\textbf{Facile:} 1 × \\azure\\, 2 × \\silver\\, 1 × \\bronze\\\n"
+"    \\item \\textbf{Normal:} 1 × \\azure\\, 1 × \\golden\\, 2 × \\silver\\\n"
+"    \\item \\textbf{Difficile:} 1 × \\azure\\, 3 × \\golden\\\n"
+"    \\item \\textbf{Impossible:}  2 × \\azure\\, 2 × \\golden\\\n"
+"  \\end{itemize}\n"
+"  \\item Suivez ces étapes lors du début du Combat contre les Unités Neutres des Terres Désolées:\n"
+"  \\begin{itemize}\n"
+"    \\item Placez jusqu'à 4 de vos Unités librement sur la ligne centrale du Plateau de Combat.\n"
+"    \\item Le Joueur ennemi contrôlant les Unités Neutres place chaque Unité Neutre sur un des 4 coins du Plateau de Combat.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:102
@@ -376,3 +395,11 @@ msgid ""
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 4) {\\includegraphics[width=\\linewidth]{\\_assets/maps/force-of-will-2p.png}};\n"
+"  \\node at (14, -3) {\\footnotesize{\\textbf{\\MakeUppercase{Scénario 2 Joueurs}}}};\n"
+"  \\node at (7, -7) {\\includegraphics[width=1.35\\linewidth]{\\_assets/maps/force-of-will-3p.png}};\n"
+"  \\node at (7, -13.5) {\\footnotesize{\\textbf{\\MakeUppercase{Scénario 3 Joueurs}}}};\n"
+"\\end{tikzpicture}\n"
+"\n"
