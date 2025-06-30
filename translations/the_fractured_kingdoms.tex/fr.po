@@ -98,7 +98,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"Prenez les Tuiles suivantes et placez-les comme indiqué dans les images de la Préparation du Plateau:\n"
+"Prenez les Tuiles suivantes et placez-les comme indiqué dans les images du Plateau:\n"
 "\n"
 
 #. type: multicols
