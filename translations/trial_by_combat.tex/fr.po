@@ -356,7 +356,7 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item Après avoir gagné une Combat Neutre, vous pouvez sacrifier 2 Unités \\bronze{} pour gagner 1 Unité 1 \\silver\\ que vous avez vaincu.\n"
-"  \\item Quand un Héros Principal est battu, au prochain tour de ce Joueur, il peut Renforcer une Carte Statistique de son Deck, et Fouiller (2) le Deck Neutre \\silver\\.\n"
+"  \\item Quand un Héros Principal est battu, au prochain tour de ce Joueur, il peut Renforcer une Carte Statistique de son Deck, et Fouiller (2) le Deck Neutre \\silver{}.\n"
 "\\end{itemize}\n"
 "\n"
 
