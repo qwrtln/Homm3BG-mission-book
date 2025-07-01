@@ -73,7 +73,7 @@ msgid ""
 "\\addscenariosection{1}{King of the Hill Scenario}{Trial by Combat}{\\images/"
 "crusader.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Roi de la Colline}{Epreuve de Force}"
+"\\addscenariosection{1}{Scénario Roi de la Colline}{épreuve de Force}"
 "{\\images/crusader.png}"
 
 #. type: multicols*
