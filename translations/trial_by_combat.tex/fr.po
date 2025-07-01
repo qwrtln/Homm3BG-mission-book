@@ -57,12 +57,12 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US

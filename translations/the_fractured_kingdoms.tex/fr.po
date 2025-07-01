@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-16 17:47+0200\n"
+"PO-Revision-Date: 2025-06-30 15:20+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -126,28 +127,21 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/the_fractured_kingdoms.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{The Fractured Kingdoms}{\\images/"
 "two_way_monolith.png}"
 msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Les Royaumes Brisés}{\\images/"
+"two_way_monolith.png}"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Invoceusse\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} mopo\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} mopo\n"
 "\n"
 
 #. type: multicols
@@ -157,58 +151,46 @@ msgid ""
 "\\textit{A terrible Armageddon has struck the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has passed, they discovered their lands had drifted in the magic-laden space of this universe to collide with one another. All five recognize that their first priority must be to rebuild and regrow, and they form a five-kingdom alliance. However, each also knows in the back of their minds that whoever breaks the alliance first, would gain a sharp first-strike advantage...}\n"
 "\n"
 msgstr ""
+"\\textit{Un terrible Armageddon a frappé les terres. Cinq souverains, cinq royaumes brisés. Avec du temps, ils découvrirent que leurs terres avaient dérivés dans l'espace de magie de l'univers avant de se percuter. Les cinq reconnurent que la priorité première était de se reconstruire, se redévelopper, et formèrent l'Alliance des Cinq Royaumes. Cependant, chacun garde aussi en tête  que celui qui brisera l'alliance en premier aura le net avantage de frapper en premier...}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:12
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "This Scenario is played over 16 Rounds.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"Ce Scénario se joue en 16 Manches.\n"
 "\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 5 free-for-all\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\textbf{Nombre de Joueurs:} 5\n"
 "\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -218,8 +200,7 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item 3 × Unités Quelques \\bronze{}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -235,6 +216,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item 5 × Tuiles de Départ (I); \\textbf{orientez-les} pour que les \\textbf{Cases Bloquées} correspondent au schéma du Scénario\n"
+"  \\item 10 × Tuiles Proches (IV--V)\n"
+"  \\item 10 × Tuiles Lointaines (II--III)\n"
+"  \\item 5 × Tuiles Centre (VI--VII)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:39
@@ -244,6 +232,9 @@ msgid ""
 "Score the most Victory Points (VPs) by the end of the \\nth{16} Round.\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"Marquer le plus de Points de Victoire (VP) à la fin de la Manche 16.\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:50
@@ -259,6 +250,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 4:}\n"
+"\\begin{itemize}\n"
+"  \\item Les bordures jaunes des Tuiles de Départ (I) sont ignorées jusqu'à la fin de la partie.\n"
+"\\end{itemize}\n"
+"\\textbf{Manche 6, 9 et 12:}\n"
+"\\begin{itemize}\n"
+"  \\item Retirez les Cubes Noirs des Moulins à Eau et des Moulins à Vent.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:60
@@ -272,6 +272,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Séparez le Deck Artefact en 3 par rareté.\n"
+"    Un Joueur ne gagne que du Mineur sur les Tuiles de Départ ou Lointaines, Mineur ou Majeur sur les Proches et Majeur ou Relique sur les Centres.\n"
+"  \\item Séparez le Deck Sort en 2 (Sorts Basiques et Experts). Flèche Magique est un Sort Basique.\n"
+"    Un Joueur ne gagne que des Sorts Basiques sur les Tuiles de Départ ou Lointaines et Experts sur les Proches ou Centre.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:68
@@ -284,6 +291,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Chaque \\svg[12]{movement_token_green} sur le Plateau est un monolithe à sens unique.\n"
+"    Un Héros sur une Case avec une \\svg[12]{movement_token_green} vers l'extérieur peut payer 1~\\svgeven{movement} pour aller sur la Case pointée par la \\svg[12]{movement_token_green}.\n"
+"  \\item Vous pouvez défendre votre Ville avec votre Héros si votre Héros Principal est sur la Tuile de Départ (I).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:75
@@ -297,6 +310,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Les Points de Victoire sont comptés selon les Règles du Livre de Tournoi. De plus, gagnez:\n"
+"\\begin{itemize}\n"
+"  \\item 2 VP en Revendiquant les Terres Désolées pour la première fois\n"
+"  \\item 2 VP en ayant Revendiquées les Terres Désolées à la fin de la partie\n"
+"  \\item 5 VP en ayant le Graal dans votre Ville de Faction OU 3 VP en possédant du Graal à la fin de la partie\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:85
@@ -313,6 +333,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Règles Optionnelles}}\n"
+"\\begin{itemize}\n"
+"  \\item Les \\svg[12]{movement_token_green} indiquent des monolithes double sens.\n"
+"    Les Héros peuvent se déplacer dans les deux directions en payant 1~\\svgeven{movement}.\n"
+"  \\item Les monolithes commencent inactifs (placez la face inactive \\svg[12]{movement_token_red} visible).\n"
+"    Un Héros doit payer 1~\\svg{building_materials} et 1~\\svgeven{movement} pour l'activer.\n"
+"  \\item Un Héros peut détruire un monolith en payant 1~\\svgeven{movement}.\n"
+"    Retournez un monolith détruit sur la face \\svg[12]{movement_token_red}.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:91
@@ -321,6 +351,8 @@ msgid ""
 "[overlay, remember picture]\n"
 "\n"
 msgstr ""
+"[overlay, remember picture]\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:102
@@ -338,6 +370,17 @@ msgid ""
 "  }\n"
 "\n"
 msgstr ""
+"  \\newcommand{\\blocked}[3]{%\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
+"      \\iftoggle{noartbackground}\n"
+"      {\\draw[draw=darkyellow, thick, pattern=north east lines, pattern color=darkyellow]}\n"
+"      {\\draw[draw=yellow!40!white!90!brown, line width=1.4pt, draw opacity=0.9, fill=yellow!50!white!80!brown, fill opacity=\\iftoggle{noartbackground}{0.9}{0.5}]}\n"
+"        (0:0.56cm) -- (60:0.56cm) -- (120:0.56cm) --\n"
+"        (180:0.56cm) -- (240:0.56cm) -- (300:0.56cm) -- cycle;\n"
+"    \\end{scope}\n"
+"  }\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:108
@@ -350,24 +393,25 @@ msgid ""
 "  }\n"
 "\n"
 msgstr ""
+"  \\newcommand{\\arrow}[3]{\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\node[rotate=#3, opacity=0.5] at ([shift={(2pt,-2pt)}]#1,#2) {\\includegraphics[height=23px]{\\images/movement_token_shadow.png}};\n"
+"    \\node[rotate=#3] at (#1, #2) {\\svg[20]{movement_token_green}};\n"
+"  }\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:112
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
 "  };\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/two_way_monolith.png}\n"
+"  };\n"
 "\n"
 
 #. type: tikzpicture
@@ -377,6 +421,8 @@ msgid ""
 "  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
 "\n"
 msgstr ""
+"  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:117
@@ -386,6 +432,9 @@ msgid ""
 "  \\arrow{14.4}{-17.6}{38}\n"
 "\n"
 msgstr ""
+"  \\arrow{12.35}{-15.7}{-142}\n"
+"  \\arrow{14.4}{-17.6}{38}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:120
@@ -395,6 +444,9 @@ msgid ""
 "  \\arrow{16.2}{-8.55}{108}\n"
 "\n"
 msgstr ""
+"  \\arrow{13.91}{-9.95}{-72}\n"
+"  \\arrow{16.2}{-8.55}{108}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:123
@@ -404,6 +456,9 @@ msgid ""
 "  \\arrow{8.75}{-6.9}{4}\n"
 "\n"
 msgstr ""
+"  \\arrow{8.2}{-4.35}{-176}\n"
+"  \\arrow{8.75}{-6.9}{4}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:126
@@ -413,6 +468,9 @@ msgid ""
 "  \\arrow{4.2}{-10.75}{81}\n"
 "\n"
 msgstr ""
+"  \\arrow{1.5}{-10.35}{-99}\n"
+"  \\arrow{4.2}{-10.75}{81}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:129
@@ -422,6 +480,9 @@ msgid ""
 "  \\arrow{5.45}{-18.7}{-25}\n"
 "\n"
 msgstr ""
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:131
@@ -430,6 +491,8 @@ msgid ""
 "  \\blocked{7.05}{-8.85}{-25.5}\n"
 "\n"
 msgstr ""
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:133
@@ -438,6 +501,8 @@ msgid ""
 "  \\blocked{11.40}{-8.87}{23}\n"
 "\n"
 msgstr ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:135
@@ -446,6 +511,8 @@ msgid ""
 "  \\blocked{12.69}{-13.12}{67.7}\n"
 "\n"
 msgstr ""
+"  \\blocked{12.69}{-13.12}{67.7}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:137
@@ -454,6 +521,8 @@ msgid ""
 "  \\blocked{9.135}{-15.58}{0}\n"
 "\n"
 msgstr ""
+"  \\blocked{9.135}{-15.58}{0}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:139
@@ -462,3 +531,5 @@ msgid ""
 "  \\blocked{5.58}{-13.01}{-71}\n"
 "\n"
 msgstr ""
+"  \\blocked{5.58}{-13.01}{-71}\n"
+"\n"
