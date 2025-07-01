@@ -107,7 +107,7 @@ jobs:
           latexmk_shell_escape: true
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
-          texlive_version: 20250601
+          texlive_version: 2025
 
       - name: Find quote string
         if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
