@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-29 21:45+0000\n"
+"POT-Creation-Date: 2025-07-01 19:56+0200\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -147,13 +147,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:32
-#, no-wrap
+#: clash/trial_by_combat.tex:31
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Town Buildings:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item \\bronze\\ Dwelling\n"
+#| "  \\item City Hall\n"
+#| "  \\item Mage Guild\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Town Buildings:}\n"
 "\\begin{itemize}\n"
 "  \\item \\bronze\\ Dwelling\n"
-"  \\item City Hall\n"
 "  \\item Mage Guild\n"
 "\\end{itemize}\n"
 "\n"
@@ -167,7 +174,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:35
+#: clash/trial_by_combat.tex:34
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -180,16 +187,30 @@ msgstr ""
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:42
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
 "  \\item 2P × Far (II-III) Map Tiles\n"
-"  \\item 2P × Near (IV-V) Map Tiles (one with Obelisk, adjacent to Center Map Tile)\n"
+"  \\item P × Near (IV-V) Map Tiles with Obelisk adjacent to Center Map Tile\n"
+"  \\item P × Near (IV-V) Map Tiles without Obelisk\n"
 "  \\item 1 × Center Map Tile. The center Field is ``The Hill''\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 Startgebiete (I)\n"
+"  \\item 4 Ferne Gebiete (II-III)\n"
+"  \\item 4 Nahe Gebiete (IV-V) mit Obelisk\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:45
