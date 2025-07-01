@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-01 14:55+0000\n"
+"POT-Creation-Date: 2025-07-01 19:56+0200\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -149,7 +149,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:32
+#: clash/trial_by_combat.tex:31
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\textbf{\\nth{2} Round:}\n"
@@ -161,7 +161,6 @@ msgid ""
 "\\textbf{Town Buildings:}\n"
 "\\begin{itemize}\n"
 "  \\item \\bronze\\ Dwelling\n"
-"%  \\item City Hall\n"
 "  \\item Mage Guild\n"
 "\\end{itemize}\n"
 "\n"
@@ -173,7 +172,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:35
+#: clash/trial_by_combat.tex:34
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -189,7 +188,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:43
+#: clash/trial_by_combat.tex:42
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"
@@ -203,7 +202,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
 "  \\item 2P × Far (II-III) Map Tiles\n"
-"  \\item P × Near (IV-V) Map Tiles, with Obelisk adjacent to Center Map Tile\n"
+"  \\item P × Near (IV-V) Map Tiles with Obelisk adjacent to Center Map Tile\n"
 "  \\item P × Near (IV-V) Map Tiles without Obelisk\n"
 "  \\item 1 × Center Map Tile. The center Field is ``The Hill''\n"
 "\\end{itemize}\n"
@@ -218,7 +217,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:46
+#: clash/trial_by_combat.tex:45
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Condition}}\n"
@@ -227,7 +226,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:68
+#: clash/trial_by_combat.tex:67
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -284,7 +283,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:79
+#: clash/trial_by_combat.tex:78
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -301,7 +300,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:108
+#: clash/trial_by_combat.tex:107
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -336,7 +335,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:113
+#: clash/trial_by_combat.tex:112
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -347,7 +346,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:122
+#: clash/trial_by_combat.tex:121
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{center}\n"
