@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-29 21:45+0000\n"
+"POT-Creation-Date: 2025-07-01 19:56+0200\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -155,7 +155,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:32
+#: clash/trial_by_combat.tex:31
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\textbf{\\nth{2} Round:}\n"
@@ -167,7 +167,6 @@ msgid ""
 "\\textbf{Town Buildings:}\n"
 "\\begin{itemize}\n"
 "  \\item \\bronze\\ Dwelling\n"
-"  \\item City Hall\n"
 "  \\item Mage Guild\n"
 "\\end{itemize}\n"
 "\n"
@@ -179,7 +178,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:35
+#: clash/trial_by_combat.tex:34
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -209,7 +208,8 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item P × Starting (I) Map Tile\n"
 "  \\item 2P × Far (II-III) Map Tiles\n"
-"  \\item 2P × Near (IV-V) Map Tiles (one with Obelisk, adjacent to Center Map Tile)\n"
+"  \\item P × Near (IV-V) Map Tiles with Obelisk adjacent to Center Map Tile\n"
+"  \\item P × Near (IV-V) Map Tiles without Obelisk\n"
 "  \\item 1 × Center Map Tile. The center Field is ``The Hill''\n"
 "\\end{itemize}\n"
 "\n"
