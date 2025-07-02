@@ -145,12 +145,12 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:}, Demeure \\bronze{}, Guilde des Mages\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}, Guilde des Mages\n"
 "\n"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
