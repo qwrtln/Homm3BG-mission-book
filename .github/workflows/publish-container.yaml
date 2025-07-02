@@ -6,10 +6,13 @@ on:
       - main
     paths:
       - 'tools/container/**'
+      - '.githuw/workflows/publish-container.yaml'
   pull_request:
     branches: [main]
     paths:
       - 'tools/container/**'
+      - '.githuw/workflows/publish-container.yaml'
+  workflow_dispatch:
 
 jobs:
   build:
