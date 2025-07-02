@@ -204,7 +204,7 @@ msgid ""
 msgstr ""
 "\\textbf{Roi de la Colline} -- Commencez un Plateau avec des Terres Désolées au centre.\n"
 "Vous n'avez pas à faire le combat Niveau 7 pour les revendiquer.\n"
-"Vous gagnez 1 VP à chaque Manche où vous contrôlez les Terres Désolées, il n'y a pas d'autre VP.\n"
+"Vous gagnez 1 VP à chaque Manche où vous contrôlez les Terres Désolées.\n"
 "\n"
 
 #. type: multicols
