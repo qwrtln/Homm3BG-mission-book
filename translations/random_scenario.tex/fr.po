@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-07-02 10:48+0200\n"
-"PO-Revision-Date: 2025-06-22 00:57+0200\n"
+"PO-Revision-Date: 2025-07-02 10:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -117,14 +118,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/random_scenario.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid "\\addsection{Random Scenario}{\\images/random.png}"
-msgstr ""
-"\\addscenariosection{1}{Mode coopératif}{La forteresse des Titans}{\\images/"
-"earthquake.png}"
+msgstr "\\addsection{Scénario Aléatoire}{\\images/random.png}"
 
 #. type: multicols
 #: sections/random_scenario.tex:10
@@ -136,6 +131,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Alors que les dés roulent et la chance tourne, les terres d'Antagarich s'étendent devant vous dans toute leur splendeur.\n"
+"  Votre destin suit ces dés célestes, chaque bataille et trésor sont déterminés par la chance.\n"
+"  Allez vous émerger vous victorieux de cette mêlée, réclamer le Graal sacré ou vous tenir seul, Roi sur la Colline, quand le dernier dé s'arrêtera?  % no-check-caps\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:13
@@ -145,15 +145,18 @@ msgid ""
 "Of course, you can adjust everything at will.\n"
 "\n"
 msgstr ""
+"Au lieu de jouer un Scénario spécifique, vous pouvez suivre ces règles pour en créer un aléatoire.\n"
+"Vous pouvez aussi l'ajuster librement.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Type}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"\\subsection*{\\MakeUppercase{Type de Scénario}}\n"
 "\n"
 
 #. type: multicols
@@ -163,6 +166,8 @@ msgid ""
 "Choose one of the following types for your play:\n"
 "\n"
 msgstr ""
+"Choisissez un de ces types pour votre partie:\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:26
@@ -178,6 +183,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Chacun pour Soi} -- Gagner en éliminant vos opposants ou en gagnant le plus de Points de Victoire (VPs).\n"
+"Les VP sont décomptés comme dans le Livre de Tournoi.\n"
+"De plus, gagnez:\n"
+"\\begin{itemize}\n"
+"  \\item 5 VP en revendiquant des Terres Désolées pour la première fois.\n"
+"  \\item 2 VP en contrôlant des Terres Désolées à la fin de la partie.\n"
+"  \\item 5 VP en ayant le Graal dans votre Ville de Faction \\textit{OU} 3 VP en possédant le Graal à la fin de la partie.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:30
@@ -188,6 +202,10 @@ msgid ""
 "You get 1 VP for each Round you hold the Dragon Utopia under your control, no VPs from anything else.\n"
 "\n"
 msgstr ""
+"\\textbf{Roi de la Colline} -- Commencez un Plateau avec des Terres Désolées au centre.\n"
+"Vous n'avez pas à faire le combat Niveau 7 pour les revendiquer.\n"
+"Vous gagnez 1 VP à chaque Manche où vous contrôlez les Terres Désolées.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:35
@@ -199,31 +217,25 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\textbf{Capture du Graal} -- Commencez un Plateau avec le Graal au centre.\n"
+"Appliquez les règles standards du Graal: dépensez 2 \\svgeven{movement} pour obtenir le Jeton et l'apporter à votre Ville.\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Size}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
+"\\subsection*{\\MakeUppercase{Taille du Plateau}}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Small (S) Map:} 8 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -232,24 +244,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Plateau Petit (S):} 8 Manches et donnez à chaque Joueur:\n"
 "\\begin{itemize}\n"
-"  \\item J × Tuiles de Départ (I)\n"
-"  \\item 2J × Tuiles Lointaines (II--III)\n"
-"  \\item 2J × Tuiles Proches (IV--V)\n"
-"  \\item (J + 1) × Tuiles Centrales (VI--VII)\n"
+"  \\item 1 × Tuile de Départ (I)\n"
+"  \\item 2 × Tuiles Lointaines (II-III)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Medium (M) Map:} 12 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -259,23 +263,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Plateau Medium (M):} 12 Manches et donnez à chaque Joueur:\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Tuile de Départ (I)\n"
-"  \\item 4 × Tuiles Lointaines (II--III)\n"
-"  \\item 4 × Tuiles Proches (IV--V) avec Obélisque\n"
+"  \\item 1 × Tuile de Départ (I)\n"
+"  \\item 2 × Tuiles Lointaines (II--III)\n"
+"  \\item 1 × Tuiles Proches (IV--V)\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Large (XL) Map:} 16 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -285,10 +283,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Plateau Large (XL):} 16 Manches et donnez à chaque Joueur:\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Tuile de Départ (I)\n"
-"  \\item 4 × Tuiles Lointaines (II--III)\n"
-"  \\item 4 × Tuiles Proches (IV--V) avec Obélisque\n"
+"  \\item 1 × Tuile de Départ (I)\n"
+"  \\item 2 × Tuiles Lointaines (II--III)\n"
+"  \\item 2 × Tuiles Proches (IV--V)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -319,17 +318,33 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\hommtablemulticol[]{19}{\n"
+"  \\centering\n"
+"  \\medskip\n"
+"  \\textbf{Tuile(s) Centre}\\\\\n"
+"  \\bigskip\n"
+"  \\hspace{-0.7em}\n"
+"  \\begin{tabularx}{0.99\\linewidth}{p{1.7em}>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X} & \\darkcell[1.4]{Chacun pour Soi} & \\darkcell[1.4]{Roi de la Colline} & \\darkcell[1.4]{Capture du Graal} \\\\\n"
+"    \\darkcell[1.8]{S}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/near-tile.png}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} avec Terres Désolées (C1 ou C3)}}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} avec un\\linebreak Graal\\linebreak (C2 ou C4)}}} \\\\\n"
+"    \\darkcell[2.2]{M}\n"
+"    & \\lightcell[2.2]{\\includegraphics[width=0.95\\linewidth]{\\maps/medium.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"    \\darkcell[1.8]{XL}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
 
 #. type: subsection{#2}
 #: sections/random_scenario.tex:87
-#, fuzzy
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
 msgid "\\MakeUppercase{Map Setup}"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"\n"
+msgstr "\\MakeUppercase{Préparation du Plateau}"
 
 #.  no-check-caps
 #. type: Plain text
@@ -341,6 +356,11 @@ msgid ""
 "\\rightarrow\\ Far \\rightarrow\\ Starting).  Every new Tile needs to "
 "connect to at least one existing Tile."
 msgstr ""
+"Placez en premier la Tuile Centre pour la taille et le type de Scénario. "
+"Décidez de l'ordre des Joueurs avant de placer les Tuiles. Dans l'ordre "
+"inverse, chaque Joueur place une Tuile par ordre décroissant de rang (Proche "
+"\\rightarrow\\ Lointaine \\rightarrow\\ Départ). Chaque nouvelle Tuile doit "
+"se connecter à au moins une Tuile déjà placée."
 
 #. type: Plain text
 #: sections/random_scenario.tex:99
@@ -352,16 +372,20 @@ msgid ""
 "Center (VI-VII) Map Tile in the middle, and then proceed to distribute Near "
 "(IV-V) Map Tiles in the following order:"
 msgstr ""
+"L'\\textbf{exemple} suivant montre la construction du Plateau pour "
+"\\textbf{3-Joueurs XL Chacun pour Soi}, avec le Joueur 1 "
+"\\textcolor{rampartbg}{\\textbf{Rempart}}, le Joueur 2 \\textcolor{infernobg}"
+"{\\textbf{Hadès}} et le Joueur 3 \\textcolor{castlebg}{\\textbf{Château}}.  "
+"Placez en premier la Tuile Centre (VI-VII) au centre, puis placez les Tuiles "
+"Proches (IV-V) dans l'ordre suivant:"
 
 #.  Create a command for player images with horizontal padding
 #.  Slightly narrower to create padding
 #.  Images at 90% of column width for padding
 #. type: minipage
 #: sections/random_scenario.tex:110
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\large\\textbf{#2}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
+msgstr "\\captionof{figure}{\\large\\textbf{#2}}"
 
 #.  #1 = x-offset from current position
 #.  #2 = y-offset from current position
@@ -374,12 +398,15 @@ msgid ""
 "{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
 "opacity=0.8] ([shift={(#1,#2)}]here) -- ++({#3}:0.8cm); }"
 msgstr ""
+"\\tikz[remember picture, overlay, baseline=(current bounding box.base)] "
+"{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
+"opacity=0.8] ([shift={(#1,#2)}]here) -- ++({#3}:0.8cm); }"
 
 #.  Save the content in a box to measure its dimensions
 #. type: lrbox
 #: sections/random_scenario.tex:163
 msgid "{\\contentbox}"
-msgstr ""
+msgstr "{\\contentbox}"
 
 #.  Header
 #.  Add left margin
@@ -389,21 +416,23 @@ msgid ""
 "\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
 "\\rule{\\textwidth}{0pt}"
 msgstr ""
+"\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
+"\\rule{\\textwidth}{0pt}"
 
 #. type: minipage
 #: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{castlebg}{Player 3: Castle}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{castlebg}{Joueur 3: Château}}"
 
 #. type: minipage
 #: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{infernobg}{Player 2: Inferno}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{infernobg}{Joueur 2: Hadès}}"
 
 #. type: minipage
 #: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{rampartbg}{Player 1: Rampart}}"
-msgstr ""
+msgstr "\\textbf{\\textcolor{rampartbg}{Joueur 1: Rempart}}"
 
 #.  First row
 #.  Add left margin
@@ -417,12 +446,17 @@ msgid ""
 "{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
 "\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-1.png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-2.png}{2}\\playerarrow{-1.5}{0.2}{160}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
+"\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
 
 #. type: center
 #: sections/random_scenario.tex:163 sections/random_scenario.tex:181
 #: sections/random_scenario.tex:228
 msgid "{\\rule{0.98\\textwidth}{0.5pt}}"
-msgstr ""
+msgstr "{\\rule{0.98\\textwidth}{0.5pt}}"
 
 #.  Second row
 #.  Add left margin
@@ -436,6 +470,11 @@ msgid ""
 "{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
 "\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-4.png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-5.png}{5}\\playerarrow{-0.8}{1.4}{210}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
+"\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:188
@@ -447,6 +486,11 @@ msgid ""
 "  \\addtolength{\\contentheight}{\\dp\\contentbox}\n"
 "\n"
 msgstr ""
+"  % Calculate content height\n"
+"  \\newlength{\\contentheight}\n"
+"  \\setlength{\\contentheight}{\\ht\\contentbox}\n"
+"  \\addtolength{\\contentheight}{\\dp\\contentbox}\n"
+"\n"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:194
@@ -459,6 +503,12 @@ msgid ""
 "  \\fill[rampartbg, opacity=0.1] (0.71\\textwidth,0) rectangle (0.99\\textwidth,-\\contentheight);\n"
 "\n"
 msgstr ""
+"  % Draw the background columns with fixed positions and extra padding\n"
+"  % Moving columns slightly to align better with the padded content\n"
+"  \\fill[castlebg, opacity=0.1] (0.01\\textwidth,0) rectangle (0.31\\textwidth,-\\contentheight);\n"
+"  \\fill[infernobg, opacity=0.1] (0.36\\textwidth,0) rectangle (0.66\\textwidth,-\\contentheight);\n"
+"  \\fill[rampartbg, opacity=0.1] (0.71\\textwidth,0) rectangle (0.99\\textwidth,-\\contentheight);\n"
+"\n"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:197
@@ -467,6 +517,8 @@ msgid ""
 "  % Place the content\n"
 "  \\node[inner sep=0pt, anchor=north west] at (0,0) {\\usebox{\\contentbox}};"
 msgstr ""
+"  % Place the content\n"
+"  \\node[inner sep=0pt, anchor=north west] at (0,0) {\\usebox{\\contentbox}};"
 
 #. type: Plain text
 #: sections/random_scenario.tex:202
@@ -474,6 +526,8 @@ msgid ""
 "Then, keeping the same order, place Far (II-III) Map Tiles, and finally "
 "Starting (I) Map Tiles:"
 msgstr ""
+"Puis, continuez avec le même ordre pour les Tuiles Lointaines (II-III), et "
+"Les Tuiles de Départ (I):"
 
 #.  Add left margin
 #.  Add right margin
@@ -489,22 +543,26 @@ msgid ""
 "finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
 "{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-"
+"far-1.png}{7}\\playerarrow{-4.4}{3.8}{-30}{rampartbg} \\playerarrow{-3.9}"
+"{-0.3}{60}{infernobg} \\playerarrow{-0.6}{4.0}{-120}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-far-2.png}{8}\\playerarrow{-4.7}{4.3}"
+"{-60}{rampartbg} \\playerarrow{-5.2}{-0.1}{30}{infernobg} \\playerarrow{-0.9}"
+"{4.3}{-150}{castlebg} \\hfill \\playerimage{\\maps/free-for-all-xl-"
+"finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
+"{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
 
 #. type: subsection{#2}
 #: sections/random_scenario.tex:233
-#, fuzzy
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\n"
 msgid "\\MakeUppercase{Player Setup}"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\n"
+msgstr "\\MakeUppercase{Préparation des Joueurs}"
 
 #. type: Plain text
 #: sections/random_scenario.tex:235
 msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
 msgstr ""
+"Choisissez vos \\textbf{Conditions de Départ} et la \\textbf{Force de la "
+"Ville}."
 
 #. type: Plain text
 #: sections/random_scenario.tex:244
@@ -512,26 +570,28 @@ msgid ""
 "\\let\\origbronze\\bronze \\let\\origsilver\\silver "
 "\\let\\origgolden\\golden \\let\\origazure\\azure"
 msgstr ""
+"\\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origbronze[12]"
-msgstr ""
+msgstr "\\origbronze[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origsilver[12]"
-msgstr ""
+msgstr "\\origsilver[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origgolden[12]"
-msgstr ""
+msgstr "\\origgolden[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origazure[12]"
-msgstr ""
+msgstr "\\origazure[12]"
 
 #. type: Plain text
 #: sections/random_scenario.tex:281
@@ -561,6 +621,31 @@ msgid ""
 "City Hall} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall "
 "\\linebreak Citadel}\\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{27}{ \\centering \\medskip \\textbf{Conditionsde Départ}\\\\ "
+"\\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Avare} & \\darkcell{Honnête} & \\darkcell{Généreux}\\\\ "
+"\\darkcell[2.4]{Armée} & \\lightcellleft[2.4]{2 × Unités Quelques \\bronze\\ "
+"les moins chers} & \\lightcellleft[2.4]{Unité Groupe \\bronze\\ la moins "
+"cher \\linebreak Unité Quelques \\bronze\\ au choix} & \\lightcellleft[2.4]"
+"{Unité Groupe \\bronze\\ au choix \\linebreak Unité Quelques \\silver\\ la "
+"moins cher}\\\\ \\darkcell[1.4]{Ressources de Départ} & \\lightcellleft[1.4]"
+"{10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}} & "
+"\\lightcellleft[1.4]{16 \\svg{gold}, 5 \\svg{building_materials}, 1 "
+"\\svg{valuables}} & \\lightcellleft[1.4]{20 \\svg{gold}, 8 "
+"\\svg{building_materials}, 2 \\svg{valuables}}\\\\ \\end{tabularx} \\bigskip "
+"{\\color{\\iftoggle{noartbackground}{black}{darkyellow}}\\rule{\\textwidth}"
+"{0.5pt}} \\vspace*{1em} \\textbf{Force de la Ville}\\\\ \\bigskip "
+"\\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Campement} & \\darkcell{Cité} & \\darkcell{Capitale}\\\\ "
+"\\darkcell[1.4]{Revenus de Départ} & \\lightcellleft[1.4]{10 \\svg{gold}, 0 "
+"\\svg{building_materials}, 0 \\svg{valuables}} & \\lightcellleft[1.4]{15 "
+"\\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}} & "
+"\\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 "
+"\\svg{valuables}}\\\\ \\darkcell[2.0]{Bâtiments de Départ} & "
+"\\lightcellleft[2.0]{Demeure \\bronze{}} & \\lightcellleft[2.0]{Demeure "
+"\\bronze{} \\linebreak Salle du Conseil} & \\lightcellleft[2.0]{Demeure "
+"\\bronze{} \\linebreak Salle du Conseil \\linebreak Citadelle}\\\\ "
+"\\end{tabularx} }"
 
 #. type: multicols
 #: sections/random_scenario.tex:302
@@ -584,6 +669,23 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 1:}\n"
+"\\begin{itemize}\n"
+"  \\item Les Héros gagnent +1 \\svgeven{movement}.\n"
+"\\end{itemize}\n"
+"\\textbf{Manches 6 et 9:}\n"
+"\\begin{itemize}\n"
+"  \\item Retirez les Cubes Noirs de chaque Moulin à Eau et Moulin à Vent sur le Plateau.\n"
+"\\end{itemize}\n"
+"\\textbf{Manche 10:}\n"
+"\\begin{itemize}\n"
+"  \\item Le Joueur dont le Héros Principal a le moins d'expérience lances 2 \\svg{resource}.\n"
+"\\end{itemize}\n"
+"\\textbf{Manche 12:}\n"
+"\\begin{itemize}\n"
+"  \\item Repetez les évènements de la Manche 6.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:312
@@ -596,3 +698,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item En Visitant un Obélisque, lancez 2 \\svg{treasure} et choisir un résultat.\n"
+"  \\item Les Joueurs peuvent utiliser leurs Jetons Construction librement pour faire les actions du Comptoir.\n"
+"  \\item Les Combats Niveau VII ne peuvent pas être évités par Diplomatie ou d'autres moyens.\n"
+"\\end{itemize}\n"
+"\n"
