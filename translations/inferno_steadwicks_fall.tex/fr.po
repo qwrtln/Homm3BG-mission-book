@@ -857,7 +857,7 @@ msgid ""
 "\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
 "\n"
 msgstr ""
-"\\vspace*{-1em}\n"
+"\\vspace*{-2em}\n"
 "\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
 "\n"
 
