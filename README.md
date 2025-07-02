@@ -261,8 +261,8 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-color/trial_by_combat_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-mono/trial_by_combat_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -274,8 +274,8 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-color/random_scenario_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-mono/random_scenario_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
