@@ -857,6 +857,9 @@ msgid ""
 "\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
 "\n"
 msgstr ""
+"\\vspace*{-1em}\n"
+"\\textcolor{darkcandyapplered}{If Steadwick has not been captured, the Scenario is lost!}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/inferno_steadwicks_fall.tex:267
