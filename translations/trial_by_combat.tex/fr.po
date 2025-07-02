@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-01 19:56+0200\n"
+"POT-Creation-Date: 2025-07-02 10:48+0200\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -154,30 +154,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:31
+#: clash/trial_by_combat.tex:27
 #, fuzzy, no-wrap
 #| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
+#| "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 #| "\n"
 msgid ""
-"\\textbf{Town Buildings:}\n"
-"\\begin{itemize}\n"
-"  \\item \\bronze\\ Dwelling\n"
-"  \\item Mage Guild\n"
-"\\end{itemize}\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
-"\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
-"\\end{itemize}\n"
+"\\textbf{Bâtiment de Départ:} Demeure \\bronze\\, Citadelle\n"
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:34
+#: clash/trial_by_combat.tex:30
 #, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
@@ -188,7 +178,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:42
+#: clash/trial_by_combat.tex:38
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"
@@ -217,7 +207,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:45
+#: clash/trial_by_combat.tex:41
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Condition}}\n"
@@ -226,7 +216,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:67
+#: clash/trial_by_combat.tex:63
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -254,7 +244,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:78
+#: clash/trial_by_combat.tex:74
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -271,11 +261,11 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:107
+#: clash/trial_by_combat.tex:103
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
-"\\hommtablemulticol[]{33}{\n"
+"\\hommtablemulticol[]{32}{\n"
 "  \\centering\n"
 "  \\medskip\n"
 "  \\textbf{Battlefield Conditions}\\\\\n"
@@ -290,8 +280,8 @@ msgid ""
 "    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-table}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-table} Units move one space less.}\\\\\n"
-"  \\darkcell[1.4]{0/0}\n"
-"    & \\lightcell[1.4]{Clear Skies – No effect.}\\\\\n"
+"  \\darkcell[1.0]{0/0}\n"
+"    & \\lightcell[1.0]{Clear Skies – No effect.}\\\\\n"
 "  \\darkcell[1.4]{0/+1}\n"
 "    & \\lightcell[1.4]{Rocky Terrain – All \\svg{unit_ground-table} Units gain \\svg{defense_yellow} Token.}\\\\\n"
 "  \\darkcell[1.8]{+1/-1}\n"
@@ -306,7 +296,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:112
+#: clash/trial_by_combat.tex:108
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -317,7 +307,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:121
+#: clash/trial_by_combat.tex:117
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{center}\n"
