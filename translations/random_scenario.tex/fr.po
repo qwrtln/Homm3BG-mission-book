@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-27 09:55+0200\n"
+"POT-Creation-Date: 2025-07-02 10:48+0200\n"
 "PO-Revision-Date: 2025-07-02 10:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -234,17 +234,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/random_scenario.tex:39
-#, no-wrap
-msgid ""
-"Choose one of the following sizes:\n"
-"\n"
-msgstr ""
-"Choisissez une des tailles suivantes:\n"
-"\n"
-
-#. type: multicols
 #: sections/random_scenario.tex:43
+#, no-wrap
 msgid ""
 "\\textbf{Small (S) Map:} 8 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -262,6 +253,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:50
+#, no-wrap
 msgid ""
 "\\textbf{Medium (M) Map:} 12 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -281,6 +273,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:57
+#, no-wrap
 msgid ""
 "\\textbf{Large (XL) Map:} 16 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
