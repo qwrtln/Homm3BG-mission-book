@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-27 09:55+0200\n"
+"POT-Creation-Date: 2025-07-02 10:48+0200\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -53,7 +53,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -69,7 +69,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -83,7 +83,7 @@ msgstr ""
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:304
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -97,7 +97,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:316
+#: sections/credits.tex:34 sections/random_scenario.tex:314
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -107,7 +107,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/the_hunt.tex:96 sections/random_scenario.tex:61
+#: clash/the_hunt.tex:96 sections/random_scenario.tex:59
 #, no-wrap
 msgid ""
 "\\medskip\n"
@@ -219,15 +219,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:39
-#, no-wrap
-msgid ""
-"Choose one of the following sizes:\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: sections/random_scenario.tex:45
+#: sections/random_scenario.tex:43
 #, no-wrap
 msgid ""
 "\\textbf{Small (S) Map:} 8 Rounds, and give every player:\n"
@@ -239,7 +231,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:52
+#: sections/random_scenario.tex:50
 #, no-wrap
 msgid ""
 "\\textbf{Medium (M) Map:} 12 Rounds, and give every player:\n"
@@ -252,7 +244,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:59
+#: sections/random_scenario.tex:57
 #, no-wrap
 msgid ""
 "\\textbf{Large (XL) Map:} 16 Rounds, and give every player:\n"
@@ -265,7 +257,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:83
+#: sections/random_scenario.tex:81
 #, no-wrap
 msgid ""
 "\\hommtablemulticol[]{19}{\n"
@@ -293,13 +285,13 @@ msgid ""
 msgstr ""
 
 #. type: subsection{#2}
-#: sections/random_scenario.tex:89
+#: sections/random_scenario.tex:87
 msgid "\\MakeUppercase{Map Setup}"
 msgstr ""
 
 #.  no-check-caps
 #. type: Plain text
-#: sections/random_scenario.tex:98
+#: sections/random_scenario.tex:96
 msgid ""
 "First, place the Central Map Tile(s) for your Scenario type and size in the "
 "middle.  Decide player order before placing the remaining Tiles.  In reverse "
@@ -309,7 +301,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: sections/random_scenario.tex:101
+#: sections/random_scenario.tex:99
 msgid ""
 "The following \\textbf{example} shows building the map for a \\textbf{3-"
 "player XL Free-for-All}, with player 1 playing as \\textcolor{rampartbg}"
@@ -323,7 +315,7 @@ msgstr ""
 #.  Slightly narrower to create padding
 #.  Images at 90% of column width for padding
 #. type: minipage
-#: sections/random_scenario.tex:112
+#: sections/random_scenario.tex:110
 msgid "\\captionof{figure}{\\large\\textbf{#2}}"
 msgstr ""
 
@@ -332,7 +324,7 @@ msgstr ""
 #.  #3 = rotation angle in degrees
 #.  #4 = arrow color
 #. type: newcommand{#4}
-#: sections/random_scenario.tex:124
+#: sections/random_scenario.tex:122
 msgid ""
 "\\tikz[remember picture, overlay, baseline=(current bounding box.base)] "
 "{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
@@ -341,31 +333,31 @@ msgstr ""
 
 #.  Save the content in a box to measure its dimensions
 #. type: lrbox
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid "{\\contentbox}"
 msgstr ""
 
 #.  Header
 #.  Add left margin
 #. type: minipage
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid ""
 "\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
 "\\rule{\\textwidth}{0pt}"
 msgstr ""
 
 #. type: minipage
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{castlebg}{Player 3: Castle}}"
 msgstr ""
 
 #. type: minipage
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{infernobg}{Player 2: Inferno}}"
 msgstr ""
 
 #. type: minipage
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid "\\textbf{\\textcolor{rampartbg}{Player 1: Rampart}}"
 msgstr ""
 
@@ -373,7 +365,7 @@ msgstr ""
 #.  Add left margin
 #.  Add right margin
 #. type: minipage
-#: sections/random_scenario.tex:165
+#: sections/random_scenario.tex:163
 msgid ""
 "\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
 "xl-1.png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill "
@@ -383,8 +375,8 @@ msgid ""
 msgstr ""
 
 #. type: center
-#: sections/random_scenario.tex:165 sections/random_scenario.tex:183
-#: sections/random_scenario.tex:230
+#: sections/random_scenario.tex:163 sections/random_scenario.tex:181
+#: sections/random_scenario.tex:228
 msgid "{\\rule{0.98\\textwidth}{0.5pt}}"
 msgstr ""
 
@@ -392,7 +384,7 @@ msgstr ""
 #.  Add left margin
 #.  Add right margin
 #. type: minipage
-#: sections/random_scenario.tex:183
+#: sections/random_scenario.tex:181
 msgid ""
 "\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
 "xl-4.png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill "
@@ -402,7 +394,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: sections/random_scenario.tex:190
+#: sections/random_scenario.tex:188
 #, no-wrap
 msgid ""
 "  % Calculate content height\n"
@@ -413,7 +405,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: sections/random_scenario.tex:196
+#: sections/random_scenario.tex:194
 #, no-wrap
 msgid ""
 "  % Draw the background columns with fixed positions and extra padding\n"
@@ -425,7 +417,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: sections/random_scenario.tex:199
+#: sections/random_scenario.tex:197
 #, no-wrap
 msgid ""
 "  % Place the content\n"
@@ -433,7 +425,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: sections/random_scenario.tex:204
+#: sections/random_scenario.tex:202
 msgid ""
 "Then, keeping the same order, place Far (II-III) Map Tiles, and finally "
 "Starting (I) Map Tiles:"
@@ -442,7 +434,7 @@ msgstr ""
 #.  Add left margin
 #.  Add right margin
 #. type: minipage
-#: sections/random_scenario.tex:226
+#: sections/random_scenario.tex:224
 msgid ""
 "\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-"
 "far-1.png}{7}\\playerarrow{-4.4}{3.8}{-30}{rampartbg} \\playerarrow{-3.9}"
@@ -455,44 +447,44 @@ msgid ""
 msgstr ""
 
 #. type: subsection{#2}
-#: sections/random_scenario.tex:235
+#: sections/random_scenario.tex:233
 msgid "\\MakeUppercase{Player Setup}"
 msgstr ""
 
 #. type: Plain text
-#: sections/random_scenario.tex:237
+#: sections/random_scenario.tex:235
 msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
 msgstr ""
 
 #. type: Plain text
-#: sections/random_scenario.tex:246
+#: sections/random_scenario.tex:244
 msgid ""
 "\\let\\origbronze\\bronze \\let\\origsilver\\silver "
 "\\let\\origgolden\\golden \\let\\origazure\\azure"
 msgstr ""
 
 #. type: renewcommand{#4}
-#: sections/random_scenario.tex:246
+#: sections/random_scenario.tex:244
 msgid "\\origbronze[12]"
 msgstr ""
 
 #. type: renewcommand{#4}
-#: sections/random_scenario.tex:246
+#: sections/random_scenario.tex:244
 msgid "\\origsilver[12]"
 msgstr ""
 
 #. type: renewcommand{#4}
-#: sections/random_scenario.tex:246
+#: sections/random_scenario.tex:244
 msgid "\\origgolden[12]"
 msgstr ""
 
 #. type: renewcommand{#4}
-#: sections/random_scenario.tex:246
+#: sections/random_scenario.tex:244
 msgid "\\origazure[12]"
 msgstr ""
 
 #. type: Plain text
-#: sections/random_scenario.tex:283
+#: sections/random_scenario.tex:281
 msgid ""
 "\\hommtable[]{27}{ \\centering \\medskip \\textbf{Starting Conditions}\\\\ "
 "\\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
@@ -521,7 +513,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:304
+#: sections/random_scenario.tex:302
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -544,7 +536,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:314
+#: sections/random_scenario.tex:312
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
