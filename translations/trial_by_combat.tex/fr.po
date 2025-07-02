@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -139,26 +139,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:31
+#: clash/trial_by_combat.tex:27
 #, no-wrap
+
 msgid ""
-"\\textbf{Town Buildings:}\n"
-"\\begin{itemize}\n"
-"  \\item \\bronze\\ Dwelling\n"
-"  \\item Mage Guild\n"
-"\\end{itemize}\n"
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:}\n"
-"\\begin{itemize}\n"
-"  \\item Demeure \\bronze{}\n"
-"  \\item Guilde des Mages\n"
-"\\end{itemize}\n"
+"\\textbf{Bâtiments de Départ:}, Demeure \\bronze{}, Guilde des Mages\n"
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:34
-#, no-wrap
+#: clash/trial_by_combat.tex:30
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -169,7 +162,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:42
+#: clash/trial_by_combat.tex:38
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -190,7 +183,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:45
+#: clash/trial_by_combat.tex:41
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Condition}}\n"
@@ -202,7 +195,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:67
+#: clash/trial_by_combat.tex:63
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -252,7 +245,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:78
+#: clash/trial_by_combat.tex:74
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -280,11 +273,11 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:107
+#: clash/trial_by_combat.tex:103
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
-"\\hommtablemulticol[]{33}{\n"
+"\\hommtablemulticol[]{32}{\n"
 "  \\centering\n"
 "  \\medskip\n"
 "  \\textbf{Battlefield Conditions}\\\\\n"
@@ -299,8 +292,8 @@ msgid ""
 "    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-table}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-table} Units move one space less.}\\\\\n"
-"  \\darkcell[1.4]{0/0}\n"
-"    & \\lightcell[1.4]{Clear Skies – No effect.}\\\\\n"
+"  \\darkcell[1.0]{0/0}\n"
+"    & \\lightcell[1.0]{Clear Skies – No effect.}\\\\\n"
 "  \\darkcell[1.4]{0/+1}\n"
 "    & \\lightcell[1.4]{Rocky Terrain – All \\svg{unit_ground-table} Units gain \\svg{defense_yellow} Token.}\\\\\n"
 "  \\darkcell[1.8]{+1/-1}\n"
@@ -344,7 +337,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:112
+#: clash/trial_by_combat.tex:108
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -360,7 +353,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:121
+#: clash/trial_by_combat.tex:117
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-07-02 10:48+0200\n"
 "PO-Revision-Date: 2025-06-23 13:01+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -220,15 +220,25 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:54
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\vfill\n"
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "{\n"
 "  \\hfill\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.8\\linewidth]{\\art/black_market.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/black_market.png}}\n"
 "  \\vspace{-3em}\n"
 "}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/vision.png}}\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:56
