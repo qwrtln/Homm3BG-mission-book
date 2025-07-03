@@ -118,7 +118,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -319,7 +319,7 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
-"Revendiquez chaque Mines et Enclaves. (N'oubliez pas la Mine de la Tuile I. Chaque Tuile II--III contient une Mine ou une Enclave avec un combat de niveau III.)\n"
+"Revendiquez chaque Mines et Enclaves. (Ne pas oublier la Mine de la Tuile I. Chaque Tuile II--III contient une Mine ou une Enclave avec un combat de niveau III.)\n"
 "\n"
 
 #. type: multicols
@@ -344,7 +344,7 @@ msgid ""
 msgstr ""
 "\\textbf{Manche 5:}\n"
 "\\begin{itemize}\n"
-"  \\item Gagnez à nouveau la récompense d'une case avec un cube noir.\n"
+"  \\item Gagnez à nouveau la récompense d'une case avec un Cube Noir.\n"
 "\\end{itemize}\n"
 "\n"
 
