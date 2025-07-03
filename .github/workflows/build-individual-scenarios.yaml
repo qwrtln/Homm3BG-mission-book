@@ -184,11 +184,13 @@ jobs:
           output-file: ${{ steps.set-filename.outputs.filename }}
 
       - name: Put PDFs in a directory
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         run: |
           mkdir -p ${{ matrix.scenario }}
           cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
