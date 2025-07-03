@@ -110,7 +110,7 @@ msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 12 manches.\n"
+"Ce Scénario se joue en 12 Manches.\n"
 "\n"
 
 #. type: multicols
@@ -185,7 +185,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiment de Départ:} Demeure \\bronze\\, Citadelle\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}, Citadelle\n"
 "\n"
 
 #. type: multicols
@@ -338,7 +338,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
 "\n"
 
 #. type: multicols

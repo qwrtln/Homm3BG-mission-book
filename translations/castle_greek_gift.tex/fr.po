@@ -50,7 +50,7 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiment de Départ:} Demeure \\bronze\\, Citadelle\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}, Citadelle\n"
 "\n"
 
 #. type: multicols*
@@ -95,7 +95,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
 "\n"
 
 #. type: multicols
