@@ -151,7 +151,7 @@ msgid ""
 "\\textit{A terrible Armageddon has struck the lands. Five rulers have found their kingdoms broken and torn apart, but after some time has passed, they discovered their lands had drifted in the magic-laden space of this universe to collide with one another. All five recognize that their first priority must be to rebuild and regrow, and they form a five-kingdom alliance. However, each also knows in the back of their minds that whoever breaks the alliance first, would gain a sharp first-strike advantage...}\n"
 "\n"
 msgstr ""
-"\\textit{Un terrible Armageddon a frappé les terres. Cinq souverains, cinq royaumes brisés. Avec du temps, ils découvrirent que leurs terres avaient dérivés dans l'espace de magie de l'univers avant de se percuter. Les cinq reconnurent que la priorité première était de se reconstruire, se redévelopper, et formèrent l'Alliance des Cinq Royaumes. Cependant, chacun garde aussi en tête  que celui qui brisera l'alliance en premier aura le net avantage de frapper en premier...}\n"
+"\\textit{Un terrible Armageddon a frappé les terres. Cinq souverains, cinq royaumes brisés. Avec du temps, ils découvrirent que leurs terres avaient dérivé dans l'espace de magie de l'univers avant de se percuter. Les cinq reconnurent que la priorité première était de se reconstruire, se redévelopper, et formèrent l'Alliance des Cinq Royaumes. Cependant, chacun garde aussi en tête que celui qui brisera l'alliance en premier aura le net avantage de frapper en premier...}\n"
 "\n"
 
 #. type: multicols
@@ -314,7 +314,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item 2 VP en Revendiquant les Terres Désolées pour la première fois\n"
 "  \\item 2 VP en ayant Revendiquées les Terres Désolées à la fin de la partie\n"
-"  \\item 5 VP en ayant le Graal dans votre Ville de Faction OU 3 VP en possédant du Graal à la fin de la partie\n"
+"  \\item 5 VP en ayant le Graal dans votre Ville de Faction OU 3 VP en possédant le Graal à la fin de la partie\n"
 "\\end{itemize}\n"
 "\n"
 
