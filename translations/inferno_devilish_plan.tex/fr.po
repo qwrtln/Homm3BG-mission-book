@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-07-02 10:48+0200\n"
-"PO-Revision-Date: 2025-03-26 01:04+0100\n"
+"PO-Revision-Date: 2025-07-03 11:46+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -246,30 +247,30 @@ msgid ""
 "{} {} {}Dungeons and Devils} \\addscenariosection[subsection]{1}{Inferno "
 "Campaign $-$ Dungeons and Devils}{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
+"\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
+"{} {} {}Dungeons and Devils} \\addscenariosection[subsection]{1}{Campagne "
+"Hadès $-$ Donjons et Diables}{1. Un Plan Diabolique}{\\images/firewall.png}"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} Tm335\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:10
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source :} \\href{https://discord.com/channels/740870068178649108/1219333721019256943}{Archon Studio Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1243057664666238996/1243057664666238996}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols*
@@ -285,77 +286,75 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Une large population elfe habite la côte sud-est d'Erathia.\n"
+"Dragons Verts et Dragons d'Or, natifs de la région, augmentent leur force militaire.\n"
+"Avant de conquérir cette région et diriger nos forces vers Steadwick, nous devons annihiler ces dragons.\n"
+"Nos alliés Kreegan d'Eeofol demandent l'honneur de cette mission.\n"
+"Les Kreegans sont de féroces guerriers.\n"
+"Ils se réjouiront de ce massacre.\n"
+"}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:22
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario plays out over 13 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce scénario se joue en 13 Manches.\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Faction :} Hadès\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Héros de Faction:} Au choix\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Unités de Départ:}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item A Pack of Familiars\n"
@@ -363,10 +362,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item Groupe Familiers.\n"
+"  \\item Quelques Magogs.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -382,6 +380,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Choisissez une des options suivantes:\n"
+"\\begin{itemize}\n"
+"  \\item Ajoutez un Sort «Pourfendeur» à votre main\n"
+"  \\item Ajoutez l'Artefact «Armure Miraculeuse» à votre main\n"
+"  \\item Améliorer les Magogs et gagnez 1 \\svg{valuables}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:61
@@ -399,6 +404,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Armée des Dragons d'Or (Rempart):}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Armée:}\n"
+"    \\begin{itemize}\n"
+"      \\item Un Groupe de Dragons d'Or\n"
+"      \\item Un Groupe de Licornes\n"
+"      \\item Un Groupe de Sylvaniens\n"
+"      \\item Un Groupe de Centaures\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:82
@@ -426,15 +442,31 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Ivor (Rempart):}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Armée:}\n"
+"    \\begin{itemize}\n"
+"      \\item Quelques Elfes\n"
+"      \\item Armée Neutre de même Niveau que votre Héros\\footnote{Voir page 35, «Table de Difficulté des Cases» du Livre de Règle, pour plus de détails sur le nombre d'Unités d'Armée Neutres à piocher.}\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{Deck IA:}\n"
+"    \\begin{itemize}\n"
+"      \\item 1 × Carte Force \\svg{might}\n"
+"      \\item 2 × Carte Magic \\svg{magic}\n"
+"      \\item 1 × Carte Capacité \\svg{skill}\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{Sorts:}\n"
+"    \\begin{itemize}\n"
+"      \\item 1 × Précision\\footnote{Ce résous sur la première Unité \\svg{unit_ranged} capable de faire une attaque \\svg{unit_ranged}}\n"
+"      \\item 1 × Flèche Magique\n"
+"    \\end{itemize}\n"
+"  \\item \\textbf{Compétence:} Archerie (uniquement effet Basique)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:86
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  {\\transparent{0.2}\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
@@ -442,20 +474,13 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  {\\transparent{0.2}\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
 "\\end{center}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:96
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\bronze\\ Units of your choice\n"
-#| "  \\item A Few \\bronze\\ Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
 "\\begin{itemize}\n"
@@ -464,10 +489,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{2 × Tuiles de Départ (I)}\n"
 "\\begin{itemize}\n"
-"  \\item Un groupe d'unité \\bronze\\  de votre choix.\n"
-"  \\item Quelques unités \\bronze\\ de votre choix.\n"
+"  \\item 1 × Hadès (S6)\n"
+"  \\item 1 × Rempart (S4)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -482,6 +507,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{3 × Tuiles Lointaines (II--III)}\n"
+"\\begin{itemize}\n"
+"  \\item \\mbox{2 × Hadès (parmi: F16--F18, \\#F10)}\n"
+"  \\item 1 × Rempart (parmi: F10--F12)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:107
@@ -493,6 +524,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{2 × Tuiles Proches (IV--V)}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Rempart (N7, N8)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:112
@@ -504,17 +540,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{1 × Tuile Centre (VI--VII)}\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Tuile Centre Terres Désolées (C1)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Placement des Héros}}\n"
 "\n"
 
 #. type: multicols*
@@ -525,6 +566,9 @@ msgid ""
 "and appears in the center Field of the S4 Starting Map Tile.\n"
 "\n"
 msgstr ""
+"Le Héros Ennemi est représenté par une Figurine Héros Rempart au choix\n"
+"et apparaît sur la Case centrale de la Tuile de Départ S4.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:119
@@ -533,6 +577,9 @@ msgid ""
 "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
 "\n"
 msgstr ""
+"Placez votre Héros sur la Case centrale de la Tuile de Départ Hadès.\n"
+"\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:123
@@ -541,6 +588,8 @@ msgid ""
 "Defeat the Enemy Hero and the Gold Dragons Armies.\n"
 "\n"
 msgstr ""
+"Vaincre le Héros Ennemi et l'Armée des Dragons d'Or.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:131
@@ -553,24 +602,25 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Vous perdez si l'un des cas suivants se produit:\n"
+"\\begin{itemize}\n"
+"  \\item Vous perdez un Combat.\n"
+"  \\item Le Héros Ennemi et/ou l'Armée des Dragons d'Or ne sont pas vaincus à la fin de la Manche 13.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:135
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
+"\\end{tikzpicture}\n"
 "\n"
 
 #. type: multicols*
@@ -583,16 +633,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 1:}\n"
+"\\begin{itemize}\n"
+"  \\item Lisez la section «Introduction».\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:150
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
 "\\begin{itemize}\n"
@@ -600,9 +649,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{Manche 2:}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Lisez la section «La Reine».\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -617,6 +666,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 9:}\n"
+"\\begin{itemize}\n"
+"  \\item Améliorez les Quelques Elfes de l'Armée d'Ivor en Groupe.\n"
+"  \\item Ajoutez un Chariot de Munition à l'Armée d'Ivor.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:161
@@ -628,6 +683,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 10:}\n"
+"\\begin{itemize}\n"
+"  \\item Ajoutez une Tourelle à l'Armée d'Ivor.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:166
@@ -639,6 +699,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 13:}\n"
+"\\begin{itemize}\n"
+"  \\item A la fin de la Manche, si le Héros Ennemi et l'Armée des Dragons d'Or ne sont pas vaincus, tout est perdu -- vous perdez!\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:171
@@ -650,6 +715,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Quand vous complétez le Scénario:}\n"
+"\\begin{itemize}\n"
+"  \\item Lisez «Félicitations!» Vous avez complété votre quête de tuer ces redoutables bêtes et revendiqué la victoire!''\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:176
@@ -660,6 +730,8 @@ msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"Pendant ce Scénario de la Campagne «Hadès», les règles suivantes s'appliquent:\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:185
@@ -675,6 +747,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"    \\item Votre Héros ne peut pas dépasser le Niveau 5.\n"
+"    \\item Le Héros Ennemi ne se déplace pas et attends dans sa Ville. Il commencent avec des Murs et un Porte de son côté du Plateau de Combat.\n"
+"    \\item La Tuile N7 est inaccessible tant que Ivor n'est pas vaincu.\n"
+"    \\item Aux Terres Désolées, votre Héros combat l'Armée des Dragons d'Or.\n"
+"    \\item Le «Passage Funeste» ne peut pas être construit.\n"
+"    \\item Si votre Héros Visite un Obélisque, vous pouvez Fouiller (2) le Deck Compétence, Artefact ou Sort.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/inferno_devilish_plan.tex:200
@@ -690,35 +771,39 @@ msgid ""
 "    \\node at (5.0, -11.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Map Tiles}}}}};\n"
 "  "
 msgstr ""
+"[remember picture]\n"
+"    \\node(map)[anchor=center] at (9, -5.5) {\n"
+"      \\includegraphics[width=\\textwidth]{\\maps/inferno_devilish_plan.png}\n"
+"    };\n"
+"    \\node at (2.0, 0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N8}}}}};\n"
+"    \\node at (13.0, -0.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{N7}}}}};\n"
+"    \\node at (5.0, -11.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{IHadès}}}}};\n"
+"    \\node at (5.0, -11.8) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Tuiles}}}}};\n"
+"  "
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:206
 #: campaigns/inferno_steadwicks_fall.tex:213
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
+"\\subsection*{\\MakeUppercase{L'Histoire}}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:210
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (14.4, 1.45) {\\includegraphics[width=0.85\\linewidth]{\\art/efreet.jpg}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node at (14.4, 1.45) {\\includegraphics[width=0.85\\linewidth]{\\art/efreet.jpg}};\n"
+"\\end{tikzpicture}\n"
 "\n"
 
 #. type: multicols*
@@ -728,6 +813,8 @@ msgid ""
 "\\textbf{Introduction}\n"
 "\n"
 msgstr ""
+"\\textbf{Introduction}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:216
@@ -738,6 +825,10 @@ msgid ""
 "While the Dungeon Overlords make their way underground toward the Erathian capitol, you must strike at their allies, the elves of AvLee.\n"
 "\n"
 msgstr ""
+"Nos laquais ont bien agi.\n"
+"Ils ont réussi à faire émerger un volcan et à ériger un fort dans une forêt peu peuplée juste à l'extérieur de la frontière d'Erathia.\n"
+"Pendant que les Seigneurs du Donjon avancent sous terre vers la Capitale d'Erathia, vous devez frapper leurs alliés, les elfes d'AvLee.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:218
@@ -746,6 +837,8 @@ msgid ""
 "\\textbf{The Queen}\n"
 "\n"
 msgstr ""
+"\\textbf{La Reine}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:222
@@ -756,3 +849,7 @@ msgid ""
 "Go now, and make us proud!\n"
 "\n"
 msgstr ""
+"La Reine Dragon d'Or est une puissante alliée d'AvLee.\n"
+"Vous devez trouver son antre et veiller à sa mort, cela diminuera grandement les elfes et les rendra moins menaçants à nos plans pour détruire Erathia.\n"
+"Partez maintenant et rendez nous fier!\n"
+"\n"
