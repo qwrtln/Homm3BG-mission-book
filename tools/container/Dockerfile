@@ -151,18 +151,13 @@ RUN apk --no-cache add \
       /tmp/install-tl && \
     git config --global --add safe.directory /data && \
     echo 'alias build="tools/build.sh"' >> /root/.bashrc && \
-    echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
+    echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc && \
+    echo 'alias cpo4a="tools/po4a_commit.sh"' >> /root/.bashrc
 
 WORKDIR /data
 
 ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
-    # The following suppresses tput errors
-    TERM=xterm-256color \
-    # The following vars suppress Inkscape warnings
-    DISPLAY=:99 \
-    QT_QPA_PLATFORM=offscreen \
-    XDG_RUNTIME_DIR=/tmp \
-    INKSCAPE_PROFILE_DIR=/tmp/.config/inkscape
+    TERM=xterm-256color
 
 CMD ["/bin/bash"]
