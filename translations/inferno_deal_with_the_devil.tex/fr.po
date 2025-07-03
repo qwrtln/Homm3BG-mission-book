@@ -180,71 +180,71 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:8
 #: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tm335\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur :} Tm335\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:26
 #: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Inferno\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Faction :} Hadès\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:28
 #: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction Hero:} Choose any\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Héros de Faction:} Au choix\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Unités de Départ:}\n"
 "\n"
 
 #. type: multicols
 #: campaigns/inferno_devilish_plan.tex:114
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes Placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Placement des Héros}}\n"
 "\n"
 
 #. type: multicols
@@ -256,6 +256,8 @@ msgid ""
 "During this ``Inferno'' Campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"Pendant ce Scénario de la Campagne «Hadès», les règles suivantes s'appliquent:\n"
+"\n"
 
 #. type: multicols
 #: campaigns/inferno_steadwicks_fall.tex:94
