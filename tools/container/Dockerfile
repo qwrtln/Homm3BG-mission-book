@@ -128,8 +128,6 @@ RUN apk --no-cache add \
     mkdir -p /root/.texlive*/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache && \
     chmod -R 777 /root/.texlive* /root/texmf-var && \
     chmod -R 777 /opt/texlive/texdir/texmf-var && \
-    # Pre-generate luaotfload font database to avoid runtime generation
-    /opt/texlive/texdir/bin/*/luaotfload-tool --update --force && \
     apk del --purge \
       wget \
       tar \
