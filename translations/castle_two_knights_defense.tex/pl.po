@@ -342,7 +342,7 @@ msgid ""
 "{3. Two Knights Defense}{\\images/catherine.png}"
 msgstr ""
 "\\addscenariosection[subsection]{2}{Kampania Zamku $-$ Gambit Królowej}{3. "
-"Obrona Dwóch Skoczków}{\\images/catherine.png}"
+"Obrona Dwóch Skoczków}{\\images/catherine.png}\\vspace{-0.5em}"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:11

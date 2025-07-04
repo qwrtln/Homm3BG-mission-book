@@ -7,6 +7,7 @@
 *.ilg
 *.ind
 *.log
+*.mo
 *.out
 *.pdf
 *.synctex(busy)

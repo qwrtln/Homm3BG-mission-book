@@ -12,9 +12,6 @@ RUN apk add --no-cache wget && \
 
 FROM alpine:latest
 
-ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
-    PERL5LIB="/opt/po4a/lib"
-
 COPY --from=po4a-builder /po4a /opt/po4a
 
 COPY texlive.profile /
@@ -128,6 +125,8 @@ RUN apk --no-cache add \
     mkdir -p /root/.texlive*/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache && \
     chmod -R 777 /root/.texlive* /root/texmf-var && \
     chmod -R 777 /opt/texlive/texdir/texmf-var && \
+    # Pre-generate luaotfload font database to avoid runtime generation
+    /opt/texlive/texdir/bin/*/luaotfload-tool --update --force && \
     apk del --purge \
       wget \
       tar \
@@ -150,7 +149,15 @@ RUN apk --no-cache add \
       /texlive.profile \
       /texlive_pgp_keys.asc \
       /tmp/install-tl && \
-    git config --global --add safe.directory /data
+    git config --global --add safe.directory /data && \
+    echo 'alias build="tools/build.sh"' >> /root/.bashrc && \
+    echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc && \
+    echo 'alias cpo4a="tools/po4a_commit.sh"' >> /root/.bashrc
 
 WORKDIR /data
+
+ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
+    PERL5LIB="/opt/po4a/lib" \
+    TERM=xterm-256color
+
 CMD ["/bin/bash"]

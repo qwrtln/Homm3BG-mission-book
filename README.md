@@ -235,8 +235,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-force_of_will-mono/force_of_will_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will-color/force_of_will_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-force_of_will-mono/force_of_will_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-force_of_will-color/force_of_will_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-force_of_will-mono/force_of_will_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -248,8 +248,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_fractured_kingdoms-mono/the_fractured_kingdoms_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms-color/the_fractured_kingdoms_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms-mono/the_fractured_kingdoms_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms-color/the_fractured_kingdoms_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms-mono/the_fractured_kingdoms_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -261,8 +261,8 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-color/trial_by_combat_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-mono/trial_by_combat_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -274,8 +274,8 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-color/random_scenario_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-mono/random_scenario_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>

@@ -16,6 +16,16 @@ po4a.cfg @qwrtln @tomaas-zeman @tyson-heckert
 main_pl.tex @qwrtln
 
 # Czech
-**/cs.po @tomaas-zeman @qwrtln @tyson-heckert
-/translations/assets/cs/ @tomaas-zeman @qwrtln @tyson-heckert
-main_cs.tex @tomaas-zeman @qwrtln @tyson-heckert
+**/cs.po @tomaas-zeman @qwrtln
+/translations/assets/cs/ @tomaas-zeman @qwrtln
+main_cs.tex @tomaas-zeman @qwrtln
+
+# French
+**/fr.po @qwrtln @Legrecofr
+/translations/assets/fr/ @qwrtln @Legrecofr
+main_fr.tex @qwrtln @Legrecofr
+
+# German
+**/de.po @qwrtln
+/translations/assets/de/ @qwrtln
+main_de.tex @qwrtln
