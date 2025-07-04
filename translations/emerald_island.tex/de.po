@@ -159,8 +159,8 @@ msgid ""
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item Eine beliebige \\bronze\\-Einheit auf der \"Rudel\"-Seite\n"
-"  \\item Eine beliebige \\bronze\\-Einheit auf der \"Wenige\"-Seite\n"
+"  \\item Ein Rudel \\bronze{}-Einheiten eurer Wahl\n"
+"  \\item Wenige \\bronze{}-Einheiten eurer Wahl\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -172,29 +172,29 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($F$ steht für die Fraktionsanzahl):\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($S$ steht für die Spieleranzahl):\n"
 "\n"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{1-FRAKTIONEN-SZENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{1-SPIELER-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{2-SPIELER-SZENARIO}}"
 
 #.  \linebreak
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{3-FRAKTIONEN-SZENARIO}}"
+msgstr "\\captionof{figure}{\\textbf{3-SPIELER-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{4-SPIELER-SZENARIO}}"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text

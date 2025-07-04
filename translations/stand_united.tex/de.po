@@ -169,7 +169,7 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
-"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($F$ steht für die Fraktionsanzahl):\n"
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt: ($S$ steht für die Spieleranzahl):\n"
 "\n"
 
 #. type: multicols
