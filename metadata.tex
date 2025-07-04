@@ -125,9 +125,11 @@
   }{%
     \edef\svgpath{\svgs/\detokenize{#2}.svg}%
   }%
-  \leavevmode\hbox{\raisebox{-0.15\height}{%
+  \IfBeginWith{#2}{movement}{%
     \includesvg[height=#1px]{\svgpath}%
-  }}%
+  }{%
+    \raisebox{-0.15\height}{\includesvg[height=#1px]{\svgpath}}%
+  }%
 }
 
 \newcommand{\bronze}[1][10]{%
@@ -144,10 +146,6 @@
 
 \newcommand{\azure}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/azure-mono.svg}{\svgs/azure.svg}}}}%
-}%
-
-\newcommand{\svgeven}[2][10]{%
-  \includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}%
 }%
 
 \renewcommand{\labelitemi}{

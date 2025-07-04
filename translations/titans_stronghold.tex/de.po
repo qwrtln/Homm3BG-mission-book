@@ -410,7 +410,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
-"  \\item Combat in the Titans' Stronghold now costs 1 \\svgeven{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
+"  \\item Combat in the Titans' Stronghold now costs 1 \\svg{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
 "    \\item Attack other Heroes.\n"
