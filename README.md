@@ -146,8 +146,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-titans_stronghold-mono/titans_stronghold_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold-color/titans_stronghold_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-titans_stronghold-mono/titans_stronghold_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-titans_stronghold-color/titans_stronghold_de.pdf">klick</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-titans_stronghold-mono/titans_stronghold_de_mono.pdf"><em>klick</em></a></td>
         </tr>
         <tr>
             <td>🤝 Emerald Island (1-4)</td>
@@ -287,8 +287,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-mono/inferno_devilish_plan_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-color/inferno_devilish_plan_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-mono/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-color/inferno_devilish_plan_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-mono/inferno_devilish_plan_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
