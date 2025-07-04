@@ -254,7 +254,7 @@ msgstr ""
 #: sections/recommendations.tex:79
 #, no-wrap
 msgid ""
-"Placing Neutral Units far apart only makes the other player waste \\svgeven{movement}, which slows the game down.\n"
+"Placing Neutral Units far apart only makes the other player waste \\svg{movement}, which slows the game down.\n"
 "The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
 "See examples that follow.\n"
 "\n"

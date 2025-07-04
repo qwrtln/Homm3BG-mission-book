@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-07-05 00:39+0200\n"
 "PO-Revision-Date: 2025-06-24 12:17+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -97,7 +97,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -113,7 +113,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -395,7 +395,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/the_hunt.tex:96 sections/random_scenario.tex:61
+#: clash/the_hunt.tex:96 sections/random_scenario.tex:59
 #, no-wrap
 msgid ""
 "\\medskip\n"
@@ -460,9 +460,9 @@ msgid ""
 "discarded Artifacts.  If the Artifact is: \\begin{itemize} \\item A weapon: "
 "The Dragon gains one Breath attack that targets three creatures in a row.  "
 "The Unit directly hit in the middle suffers full damage, while the Units on "
-"both sides suffer 3\\,\\svg{damage-red} less.  \\item A piece of armor, "
-"shield, or clothing: The Dragon gains 3\\,\\svg{defense}, represented with "
-"spare Faction Cubes.  Remove them after they have absorbed damage.  \\item A "
+"both sides suffer 3\\,\\svg{damage} less.  \\item A piece of armor, shield, "
+"or clothing: The Dragon gains 3\\,\\svg{defense}, represented with spare "
+"Faction Cubes.  Remove them after they have absorbed damage.  \\item A "
 "trinket: The Azure Dragon roars and summons an ice storm, causing all "
 "creatures to freeze in fear.  This results in every Unit moving only 1 Field "
 "per Round, while the Azure Dragon can fly to any Field on the Combat Board.  "
@@ -484,15 +484,14 @@ msgstr ""
 "défaussés.  Si l'Artefact est: \\begin{itemize} \\item Une Arme: Le Dragon "
 "gagne un Souffle qui cible trois créatures en ligne.  L'Unité directement "
 "touchée subit les dégâts maximum, les Unités de chaque côté subissent 3\\,"
-"\\svg{damage-red} de moins.  \\item Une Armure, Bouclier ou Vêtement: Le "
-"Dragon gagne 3\\,\\svg{defense}, représenté par des Cubes de Faction.  "
-"Retirez-les après qu'ils aient absorbés des dégâts.  \\item Un Bijou: Le "
-"Dragon rugit et invoque une tempête de glace, glaçant de peur toutes "
-"créatures.  Chaque Unité ne peut se déplacer que d'une Case par Tour, le "
-"Dragon peut voler sur n'importe quelle case du Plateau de Combat.  "
-"\\end{itemize} \\item Le Dragon est immunisé à tous les Sorts le ciblant.  "
-"\\item Les Sorts lancés sur les Unités du Joueur restent efficace.  "
-"\\end{itemize} }"
+"\\svg{damage} de moins.  \\item Une Armure, Bouclier ou Vêtement: Le Dragon "
+"gagne 3\\,\\svg{defense}, représenté par des Cubes de Faction.  Retirez-les "
+"après qu'ils aient absorbés des dégâts.  \\item Un Bijou: Le Dragon rugit et "
+"invoque une tempête de glace, glaçant de peur toutes créatures.  Chaque "
+"Unité ne peut se déplacer que d'une Case par Tour, le Dragon peut voler sur "
+"n'importe quelle case du Plateau de Combat.  \\end{itemize} \\item Le Dragon "
+"est immunisé à tous les Sorts le ciblant.  \\item Les Sorts lancés sur les "
+"Unités du Joueur restent efficace.  \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:177
@@ -511,7 +510,7 @@ msgid ""
 "22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 30} & \\lightcell[1.8]"
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
-"40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
+"40 \\\\ +2 \\svg{attack-yellow} \\\\ +2 \\svg{defense-yellow}} "
 "\\end{tabularx} }"
 msgstr ""
 "\\hommtable[]{8}{ \\centering \\medskip \\let\\origbronze\\bronze "
@@ -528,7 +527,7 @@ msgstr ""
 "22} & \\lightcell[1.8]{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 30} & \\lightcell[1.8]"
 "{\\raisebox{-.25\\height}{\\includegraphics[height=15px]{\\images/hp.png}} "
-"40 \\\\ +2 \\svg{attack_yellow} \\\\ +2 \\svg{defense_yellow}} "
+"40 \\\\ +2 \\svg{attack-yellow} \\\\ +2 \\svg{defense-yellow}} "
 "\\end{tabularx} }"
 
 #. type: wrapfigure
@@ -559,13 +558,13 @@ msgid ""
 "(chosen randomly) in the last row of the battlefield.  \\item \\textit{Golem "
 "Devour:} The Crystal Dragon can consume Golems to regain health.  During its "
 "Turn, if the Crystal Dragon is adjacent to a Golem, it can choose to consume "
-"it, removing a certain amount of \\svg{damage-red} based on the type of "
-"Golem consumed: \\begin{itemize} \\item Consuming a Gold Golem: Remove 2 "
-"\\svg{damage-red}.  \\item Consuming a Diamond Golem: Remove 4 \\svg{damage-"
-"red}.  \\item[] \\textbf{Note:} The Crystal Dragon can only consume one "
-"Golem per Turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond "
-"Golems do not possess any additional abilities beyond those specified on "
-"their Cards.  They primarily serve as fodder for the Crystal Dragon's health "
+"it, removing a certain amount of \\svg{damage} based on the type of Golem "
+"consumed: \\begin{itemize} \\item Consuming a Gold Golem: Remove 2 "
+"\\svg{damage}.  \\item Consuming a Diamond Golem: Remove 4 \\svg{damage}.  "
+"\\item[] \\textbf{Note:} The Crystal Dragon can only consume one Golem per "
+"Turn.  \\end{itemize} \\item Golem Abilities: Gold and Diamond Golems do not "
+"possess any additional abilities beyond those specified on their Cards.  "
+"They primarily serve as fodder for the Crystal Dragon's health "
 "regeneration.  \\item The Crystal Dragon \\textit{retaliates twice} per "
 "battle Round.  \\end{itemize} }"
 msgstr ""
@@ -583,14 +582,14 @@ msgstr ""
 "d'or ou de Diamant au hasard sur la ligne arrière du Plateau.  \\item "
 "\\textit{Absorption de Golem:} Le Dragon peut absorber des Golems pour se "
 "régénérer.  Pendant son Tour, si le Dragon est adjacent à un Golem, il peut "
-"choisir de l'absorber pour retirer un nombre de \\svg{damage-red} en "
-"fonction du type de Golem: \\begin{itemize} \\item Golem d'Or: Retirez 2 "
-"\\svg{damage-red}.  \\item Golem de Diamant: Retirez 4 \\svg{damage-red}.  "
-"\\item[] \\textbf{Note:} Le Dragon ne peut absorber qu'un Golem par Tour.  "
-"\\end{itemize} \\item Capacités de Golem: Les Golems d'Or et de Diamant "
-"n'ont pas d'autres capacités que celle de leurs Cartes.  Ils servent "
-"principalement de sacrifice pour la régénération du Dragon.  \\item Le "
-"Dragon \\textit{riposte deux fois} par Tour de Combat.  \\end{itemize} }"
+"choisir de l'absorber pour retirer un nombre de \\svg{damage} en fonction du "
+"type de Golem: \\begin{itemize} \\item Golem d'Or: Retirez 2 \\svg{damage}.  "
+"\\item Golem de Diamant: Retirez 4 \\svg{damage}.  \\item[] \\textbf{Note:} "
+"Le Dragon ne peut absorber qu'un Golem par Tour.  \\end{itemize} \\item "
+"Capacités de Golem: Les Golems d'Or et de Diamant n'ont pas d'autres "
+"capacités que celle de leurs Cartes.  Ils servent principalement de "
+"sacrifice pour la régénération du Dragon.  \\item Le Dragon \\textit{riposte "
+"deux fois} par Tour de Combat.  \\end{itemize} }"
 
 #. type: Plain text
 #: clash/the_hunt.tex:246
@@ -610,7 +609,7 @@ msgid ""
 "{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Retaliation}} & "
 "\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
 "{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Remove additional 2 "
-"\\svg{damage-table} by consuming Golems} \\\\ \\end{tabularx} }"
+"\\svg{damage-yellow} by consuming Golems} \\\\ \\end{tabularx} }"
 msgstr ""
 "\\vspace{1em}\n"
 "\\hommtable[]{10}{ \\centering \\medskip \\let\\origbronze\\bronze "
@@ -627,7 +626,7 @@ msgstr ""
 "22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Riposte}} & "
 "\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 32 \\\\ +1 Riposte \\\\ Retirez 2 \\svg{damage-table} "
+"{\\images/hp.png}} 32 \\\\ +1 Riposte \\\\ Retirez 2 \\svg{damage-yellow} "
 "supplémentaire par absorption} \\\\ \\end{tabularx} }\\pagebreak"
 
 #. type: wrapfigure
