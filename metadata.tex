@@ -115,8 +115,20 @@
 \def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
 
 \newcommand{\svg}[2][10]{%
-  {\raisebox{-0.15\height}{\includesvg[height=#1px]{\svgs/\detokenize{#2}.svg}}}%
-}%
+  \iftoggle{noartbackground}{%
+    \IfEndWith{#2}{-yellow}{%
+      \StrGobbleRight{#2}{7}[\svgfilename]%
+      \edef\svgpath{\svgs/\svgfilename.svg}%
+    }{%
+      \edef\svgpath{\svgs/\detokenize{#2}.svg}%
+    }%
+  }{%
+    \edef\svgpath{\svgs/\detokenize{#2}.svg}%
+  }%
+  \leavevmode\hbox{\raisebox{-0.15\height}{%
+    \includesvg[height=#1px]{\svgpath}%
+  }}%
+}
 
 \newcommand{\bronze}[1][10]{%
   \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/bronze-mono.svg}{\svgs/bronze.svg}}}}%
