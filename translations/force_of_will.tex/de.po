@@ -92,23 +92,11 @@ msgstr ""
 
 #. type: multicols*
 #: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Bonus:} Keiner\n"
-"\n"
-"#-#-#-#-#  de.po  #-#-#-#-#\n"
-"\\textbf{Zusätzlicher Bonus:} Keiner\n"
-"\n"
-"#-#-#-#-#  de.po  #-#-#-#-#\n"
-"\\textbf{Zusätzlicher Bonus:} Keiner\n"
-"\n"
-"#-#-#-#-#  de.po  #-#-#-#-#\n"
 "\\textbf{Zusätzlicher Bonus:} Keiner\n"
 "\n"
 
