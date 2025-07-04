@@ -545,7 +545,6 @@ msgstr ""
 
 #. type: Plain text
 #: clash/the_hunt.tex:219
-#, msgid ""
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
 "entirely from red crystal and brought to life through magical means, the "
