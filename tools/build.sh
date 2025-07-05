@@ -5,6 +5,7 @@ LANGUAGE="en"
 DRAFTS_MODE=0
 PRINTABLE_MODE=0
 MONO_MODE=0
+NO_GS=0
 SCENARIO_SEARCH=""
 
 valid_languages=("en" "pl" "fr" "cs" "de")
@@ -23,6 +24,7 @@ usage() {
   echo "  -m, --mono         Monochrome mode"
   echo "  -d, --drafts       Generate draft scenarios"
   echo "  -s, --scenario     Build a single scenario matching the input given"
+  echo "  -n, --no-gs        Don't run ghostscript after building a single scenario"
   echo "  -h, --help         Show this help message"
   echo
   echo "Short options can be combined, e.g. -dm for drafts and mono"
@@ -75,6 +77,7 @@ while [[ $# -gt 0 ]]; do
       printable) PRINTABLE_MODE=1 ;;
       mono) MONO_MODE=1 ;;
       drafts) DRAFTS_MODE=1 ;;
+      no-gs) NO_GS=1 ;;
       scenario)
         if [[ $# -lt 1 ]]; then
           echo "Error: --scenario requires a string argument" >&2
@@ -102,6 +105,7 @@ while [[ $# -gt 0 ]]; do
         p) PRINTABLE_MODE=1 ;;
         m) MONO_MODE=1 ;;
         d) DRAFTS_MODE=1 ;;
+        n) NO_GS=1 ;;
         s)
           if [[ $# -lt 1 ]]; then
             echo "Error: -s requires a string argument" >&2
@@ -301,7 +305,7 @@ FILE="${JOB}.pdf"
 ${open} "${FILE}" &> /dev/null &
 
 # Optimize PDF if it's a single scenario and ghostscript is available
-if [[ "${SCENARIO}" != "" ]] && command -v gs >/dev/null 2>&1; then
+if [[ "${SCENARIO}" != "" && "${NO_GS}" != "1" ]] && command -v gs >/dev/null 2>&1; then
   tools/optimize.sh -f "${FILE}"
   mv "${FILE%.*}_optimized.${FILE##*.}" "${FILE}"
 fi
