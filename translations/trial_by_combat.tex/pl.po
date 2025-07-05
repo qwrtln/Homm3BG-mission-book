@@ -73,8 +73,7 @@ msgid ""
 "\\addscenariosection{1}{King of the Hill Scenario}{Trial by Combat}{\\images/"
 "crusader.png}"
 msgstr ""
-"\\addscenariosection{1}{Król na wzgórzu}{Sąd przez Walkę}{\\images/"
-"crusader.png}"
+"\\addscenariosection{1}{Król wzgórza}{Próba Walki}{\\images/crusader.png}"
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:7
