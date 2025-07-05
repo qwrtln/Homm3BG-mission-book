@@ -270,8 +270,8 @@ Number of players (P) in the brackets.
             <td>⚔️ Random Scenario 🎲 (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario-color/random_scenario_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-random_scenario-mono/random_scenario_en_mono.pdf"><em>click</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-random_scenario-color/random_scenario_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-random_scenario-mono/random_scenario_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-color/random_scenario_fr.pdf">clic</a></td>
