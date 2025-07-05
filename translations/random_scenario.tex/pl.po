@@ -131,6 +131,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Kości się toczą, fortuna się zmienia, a ziemie Antagarich rozciągają się przed tobą w całym swym majestacie.\n"
+"  Twoje przeznaczenie podąża za tymi rzutami, każda bitwa i skarb to wynik przypadku.\n"
+"  Czy wyjdziesz zwycięsko z tej bitwy, zdobędziesz Święty Graal, czy staniesz samotnie jako król na wzgórzu, gdy ostatnia kość padnie?\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:13
@@ -140,44 +145,33 @@ msgid ""
 "Of course, you can adjust everything at will.\n"
 "\n"
 msgstr ""
+"Zamiast grać w konkretny Scenariusz, możesz stworzyć losowy zgodnie z poniższymi wytycznymi.\n"
+"Oczywiście, możesz dostosować wszystko wedle własnej woli.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario length}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Type}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\\subsection*{\\MakeUppercase{Typ Scenariusza}}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "You lose if any of the following occur:\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Choose one of the following types for your play:\n"
 "\n"
 msgstr ""
-"Przegrywasz, jeśli zdarzy się którekolwiek z poniższych:\n"
+"Wybierz jeden z ponizszych:\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Victory Points are counted in accordance to the Tournament book. Additionally, you get:\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 VP for flagging a Dragon Utopia for the first time\n"
-#| "  \\item 2 VP for having the Dragon Utopia flagged at the end of the game\n"
-#| "  \\item 5 VP for bringing the Grail to your Faction Town OR 3 VP for being in possession of the Grail at the end of the game\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Free-for-All} -- Win by eliminating your opponents or gaining more Victory Points (VPs) than them.\n"
 "VPs are counted in accordance to the Tournament book.\n"
@@ -189,11 +183,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"Punkty Zwycięstwa są liczone zgodnie z Księgą Turniejów. Dodatkowo, otrzymujesz:\n"
+"\\textbf{Wolna amerykanka} -- Wygraj eliminując swoich przeciwników lub zdobywając najwięcej Punktów Zwycięstwa (PZ).\n"
+"PZ są liczone zgodnie z Księgą Turniejów.\n"
+"Dodatkowo otrzymujesz:\n"
 "\\begin{itemize}\n"
-"  \\item 2 PZ za oflagowanie Smoczej Utopii po raz pierwszy\n"
-"  \\item 2 PZ za posiadanie oflagowanej Smoczej Utopii na koniec gry\n"
-"  \\item 5 PZ za przyniesienie Graala do swojego Miasta ALBO 3 PZ za posiadanie Graala na koniec gry\n"
+"  \\item 5 PZ za oflagowanie Smoczej Utopii jako pierwszy.\n"
+"  \\item 2 PZ za kontrolowanie Smoczej Utopii na końcu gry.\n"
+"  \\item 5 PZ za przyniesienie Graala do Miasta swojej Frakcji \\textit{LUB} 3 PZ za posiadanie Graala na końcu gry.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -206,6 +202,10 @@ msgid ""
 "You get 1 VP for each Round you hold the Dragon Utopia under your control, no VPs from anything else.\n"
 "\n"
 msgstr ""
+"\\textbf{Król na wzgórzu} -- Rozpocznij mapę ze Smoczą Utopią pośrodku.\n"
+"Nie musisz toczyć Walki Poziomu 7, aby ją zdobyć.\n"
+"Otrzymujesz 1 PZ za każdą Rundę, w której trzymasz Smoczą Utopię pod swoją kontrolą, żadnych PZ z niczego innego.\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:35
@@ -217,6 +217,11 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\textbf{Zdobądź Graal} -- Rozpocznij mapę z Graalem pośrodku.\n"
+"Obowiązują standardowe zasady Graala: wydaj 2 \\svg{movement}, aby go wykopać, i przynieś do swojego Miasta.\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:37
@@ -230,13 +235,7 @@ msgstr ""
 
 #. type: multicols
 #: sections/random_scenario.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 4P × Far (II--III) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Small (S) Map:} 8 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -245,24 +244,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Mała (S):} 8 Rund, rozdaj każdemu graczowi:\n"
 "\\begin{itemize}\n"
-"  \\item G × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4G × Daleki (II--III) Kafelek Mapy\n"
+"  \\item 1 × Startowy (I) Kafelek Mapy\n"
+"  \\item 2 × Daleki (II-III) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:50
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II--III) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Medium (M) Map:} 12 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -272,27 +263,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Dla Scenariusza dwuosobowego:}\n"
+"\\textbf{Średnia (M):} 12 Rund, rozdaj każdemu graczowi:\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 2 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item 1 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 2 × Daleki (II-III) Kafelek Mapy\n"
+"  \\item 1 × Bliski (IV-V) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: sections/random_scenario.tex:57
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II--III) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Large (XL) Map:} 16 Rounds, and give every player:\n"
 "\\begin{itemize}\n"
@@ -302,12 +283,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Dla Scenariusza dwuosobowego:}\n"
+"\\textbf{Duża (XL):} 12 Rund, rozdaj każdemu graczowi:\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 2 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item 1 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 2 × Daleki (II-III) Kafelek Mapy\n"
+"  \\item 2 × Bliski (IV-V) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -338,17 +318,33 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\hommtablemulticol[]{20}{\n"
+"  \\centering\n"
+"  \\medskip\n"
+"  \\textbf{Centralne Kafelki Mapy}\\\\\n"
+"  \\bigskip\n"
+"  \\hspace{-0.7em}\n"
+"  \\begin{tabularx}{0.99\\linewidth}{p{1.7em}>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X>{\\centering\\arraybackslash}X} & \\darkcell[1.8]{Wolna amerykanka} & \\darkcell[1.8]{Król na wzgórzu} & \\darkcell[1.8]{Zdobądź Graal} \\\\\n"
+"    \\darkcell[1.8]{S}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/near-tile.png}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} ze Smoczą Utopią (C1 albo C3)}}}\n"
+"    & \\multirow{3}{*}[7.6ex]{\\parbox{\\linewidth}{\\centering\\lightcell[6.19]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png} z Graalem\\linebreak (C2 albo C4)}}} \\\\\n"
+"    \\darkcell[2.2]{M}\n"
+"    & \\lightcell[2.2]{\\includegraphics[width=0.95\\linewidth]{\\maps/medium.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"    \\darkcell[1.8]{XL}\n"
+"    & \\lightcell[1.8]{\\includegraphics[width=0.75\\linewidth]{\\maps/center-tile.png}}\n"
+"    &\n"
+"    & \\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
 
 #. type: subsection{#2}
 #: sections/random_scenario.tex:87
-#, fuzzy
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "\n"
 msgid "\\MakeUppercase{Map Setup}"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
-"\n"
+msgstr "\\MakeUppercase{Przygotowanie Mapy}"
 
 #.  no-check-caps
 #. type: Plain text
@@ -360,6 +356,11 @@ msgid ""
 "\\rightarrow\\ Far \\rightarrow\\ Starting).  Every new Tile needs to "
 "connect to at least one existing Tile."
 msgstr ""
+"Najpierw umieść Centralny Kafelek Mapy dla twojego typu i rozmiaru "
+"Scenariusza pośrodku. Ustal kolejność graczy przed umieszczeniem pozostałych "
+"Kafelków. W odwrotnej kolejności graczy, każdy gracz umieszcza jeden Kafelek "
+"poziomami malejąco (Bliski \\rightarrow\\ Daleki \\rightarrow\\ Początkowy). "
+"Każdy nowy Kafelek musi łączyć się z co najmniej jednym już położonym."
 
 #. type: Plain text
 #: sections/random_scenario.tex:99
@@ -371,16 +372,20 @@ msgid ""
 "Center (VI-VII) Map Tile in the middle, and then proceed to distribute Near "
 "(IV-V) Map Tiles in the following order:"
 msgstr ""
+"Przykład poniżej pokazuje budowanie mapy dla \\textbf{3-osobowej XL-ki "
+"wolnej amerykanki}, z graczem 1 grającym jako \\textcolor{rampartbg}"
+"{\\textbf{Bastion}}, graczem 2 jako \\textcolor{infernobg}"
+"{\\textbf{Inferno}}, i graczem 3 jako \\textcolor{castlebg}"
+"{\\textbf{Zamek}}. Umieść Centralny (VI-VII) Kafelek pośrodku, a następnie "
+"umieszczaj Bliskie (IV-V) Kafelki w następującej kolejności:"
 
 #.  Create a command for player images with horizontal padding
 #.  Slightly narrower to create padding
 #.  Images at 90% of column width for padding
 #. type: minipage
 #: sections/random_scenario.tex:110
-#, fuzzy
-#| msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgid "\\captionof{figure}{\\large\\textbf{#2}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIUSZ 2-OSOBOWY}}"
+msgstr "\\captionof{figure}{\\large\\textbf{#2}}"
 
 #.  #1 = x-offset from current position
 #.  #2 = y-offset from current position
@@ -393,12 +398,15 @@ msgid ""
 "{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
 "opacity=0.8] ([shift={(#1,#2)}]here) -- ++({#3}:0.8cm); }"
 msgstr ""
+"\\tikz[remember picture, overlay, baseline=(current bounding box.base)] "
+"{ \\coordinate (here) at (0,0); \\draw[-Triangle, ultra thick, #4, "
+"opacity=0.8] ([shift={(#1,#2)}]here) -- ++({#3}:0.8cm); }"
 
 #.  Save the content in a box to measure its dimensions
 #. type: lrbox
 #: sections/random_scenario.tex:163
 msgid "{\\contentbox}"
-msgstr ""
+msgstr "{\\contentbox}"
 
 #.  Header
 #.  Add left margin
@@ -408,6 +416,8 @@ msgid ""
 "\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
 "\\rule{\\textwidth}{0pt}"
 msgstr ""
+"\\noindent \\rule{\\textwidth}{0pt} \\hspace{0.01\\textwidth} "
+"\\rule{\\textwidth}{0pt}"
 
 #. type: minipage
 #: sections/random_scenario.tex:163
@@ -436,12 +446,17 @@ msgid ""
 "{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
 "\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-1.png}{1}\\playerarrow{-2.8}{0.2}{60}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-2.png}{2}\\playerarrow{-1.5}{0.2}{160}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-3.png}{3} "
+"\\playerarrow{-4.3}{2.6}{-60}{rampartbg}"
 
 #. type: center
 #: sections/random_scenario.tex:163 sections/random_scenario.tex:181
 #: sections/random_scenario.tex:228
 msgid "{\\rule{0.98\\textwidth}{0.5pt}}"
-msgstr ""
+msgstr "{\\rule{0.98\\textwidth}{0.5pt}}"
 
 #.  Second row
 #.  Add left margin
@@ -455,6 +470,11 @@ msgid ""
 "{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
 "\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-"
+"xl-4.png}{4}\\playerarrow{-3.2}{3.2}{-30}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-5.png}{5}\\playerarrow{-0.8}{1.4}{210}"
+"{infernobg} \\hfill \\playerimage{\\maps/free-for-all-xl-6.png}{6} "
+"\\playerarrow{-3.6}{1.2}{120}{rampartbg}"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:188
@@ -466,6 +486,11 @@ msgid ""
 "  \\addtolength{\\contentheight}{\\dp\\contentbox}\n"
 "\n"
 msgstr ""
+"  % Calculate content height\n"
+"  \\newlength{\\contentheight}\n"
+"  \\setlength{\\contentheight}{\\ht\\contentbox}\n"
+"  \\addtolength{\\contentheight}{\\dp\\contentbox}\n"
+"\n"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:194
@@ -478,6 +503,12 @@ msgid ""
 "  \\fill[rampartbg, opacity=0.1] (0.71\\textwidth,0) rectangle (0.99\\textwidth,-\\contentheight);\n"
 "\n"
 msgstr ""
+"  % Draw the background columns with fixed positions and extra padding\n"
+"  % Moving columns slightly to align better with the padded content\n"
+"  \\fill[castlebg, opacity=0.1] (0.01\\textwidth,0) rectangle (0.31\\textwidth,-\\contentheight);\n"
+"  \\fill[infernobg, opacity=0.1] (0.36\\textwidth,0) rectangle (0.66\\textwidth,-\\contentheight);\n"
+"  \\fill[rampartbg, opacity=0.1] (0.71\\textwidth,0) rectangle (0.99\\textwidth,-\\contentheight);\n"
+"\n"
 
 #. type: tikzpicture
 #: sections/random_scenario.tex:197
@@ -486,6 +517,8 @@ msgid ""
 "  % Place the content\n"
 "  \\node[inner sep=0pt, anchor=north west] at (0,0) {\\usebox{\\contentbox}};"
 msgstr ""
+"  % Place the content\n"
+"  \\node[inner sep=0pt, anchor=north west] at (0,0) {\\usebox{\\contentbox}};"
 
 #. type: Plain text
 #: sections/random_scenario.tex:202
@@ -493,6 +526,8 @@ msgid ""
 "Then, keeping the same order, place Far (II-III) Map Tiles, and finally "
 "Starting (I) Map Tiles:"
 msgstr ""
+"Zachowując tę samą kolejność, umieść Dalekie (II-III) Kafelki i na końcu "
+"Początkowe (I):"
 
 #.  Add left margin
 #.  Add right margin
@@ -508,6 +543,14 @@ msgid ""
 "finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
 "{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
 msgstr ""
+"\\noindent \\hspace{0.01\\textwidth} \\playerimage{\\maps/free-for-all-xl-"
+"far-1.png}{7}\\playerarrow{-4.4}{3.8}{-30}{rampartbg} \\playerarrow{-3.9}"
+"{-0.3}{60}{infernobg} \\playerarrow{-0.6}{4.0}{-120}{castlebg} \\hfill "
+"\\playerimage{\\maps/free-for-all-xl-far-2.png}{8}\\playerarrow{-4.7}{4.3}"
+"{-60}{rampartbg} \\playerarrow{-5.2}{-0.1}{30}{infernobg} \\playerarrow{-0.9}"
+"{4.3}{-150}{castlebg} \\hfill \\playerimage{\\maps/free-for-all-xl-"
+"finish.png}{9} \\playerarrow{-5.2}{4.3}{-30}{rampartbg} \\playerarrow{-5.5}"
+"{0.9}{30}{infernobg} \\playerarrow{-0.3}{4.3}{-150}{castlebg}"
 
 #. type: subsection{#2}
 #: sections/random_scenario.tex:233
@@ -517,7 +560,7 @@ msgstr "\\MakeUppercase{Przygotowanie Graczy}"
 #. type: Plain text
 #: sections/random_scenario.tex:235
 msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
-msgstr ""
+msgstr "Wybierz \\textbf{warunki początkowe} i \\textbf{siłę Miasta}."
 
 #. type: Plain text
 #: sections/random_scenario.tex:244
@@ -525,26 +568,28 @@ msgid ""
 "\\let\\origbronze\\bronze \\let\\origsilver\\silver "
 "\\let\\origgolden\\golden \\let\\origazure\\azure"
 msgstr ""
+"\\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origbronze[12]"
-msgstr ""
+msgstr "\\origbronze[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origsilver[12]"
-msgstr ""
+msgstr "\\origsilver[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origgolden[12]"
-msgstr ""
+msgstr "\\origgolden[12]"
 
 #. type: renewcommand{#4}
 #: sections/random_scenario.tex:244
 msgid "\\origazure[12]"
-msgstr ""
+msgstr "\\origazure[12]"
 
 #. type: Plain text
 #: sections/random_scenario.tex:281
@@ -574,25 +619,34 @@ msgid ""
 "City Hall} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall "
 "\\linebreak Citadel}\\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{27}{ \\centering \\medskip \\textbf{Warunki początkowe}\\\\ "
+"\\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Skąpe} & \\darkcell{Uczciwe} & \\darkcell{Hojne}\\\\ "
+"\\darkcell[2.4]{Armia} & \\lightcellleft[2.4]{2 × Garstka najtańszych "
+"\\bronze\\ Jednostek} & \\lightcellleft[2.4]{Grupa najtańszych \\bronze\\ "
+"Jednostek \\linebreak Garstka wybranych \\bronze\\ Jednostek} & "
+"\\lightcellleft[2.4]{Grupa wybranych \\bronze\\ Jednostek \\linebreak "
+"Garstka najtańszych \\silver\\ Jednostek}\\\\ \\darkcell[1.4]{Zasoby} & "
+"\\lightcellleft[1.4]{10 \\svg{gold}, 3 \\svg{building_materials}, 1 "
+"\\svg{valuables}} & \\lightcellleft[1.4]{16 \\svg{gold}, 5 "
+"\\svg{building_materials}, 1 \\svg{valuables}} & \\lightcellleft[1.4]{20 "
+"\\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}}\\\\ "
+"\\end{tabularx} \\bigskip {\\color{\\iftoggle{noartbackground}{black}"
+"{darkyellow}}\\rule{\\textwidth}{0.5pt}} \\vspace*{1em} \\textbf{Siła Miasta}"
+"\\\\ \\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
+"\\darkcell{Osada} & \\darkcell{Ratusz} & \\darkcell{Kapitol}\\\\ "
+"\\darkcell[1.4]{Przychód} & \\lightcellleft[1.4]{10 \\svg{gold}, 0 "
+"\\svg{building_materials}, 0 \\svg{valuables}} & \\lightcellleft[1.4]{15 "
+"\\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}} & "
+"\\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 "
+"\\svg{valuables}}\\\\ \\darkcell[2.0]{Budynki Miasta} & \\lightcellleft[2.0]"
+"{\\bronze\\ Siedlisko} & \\lightcellleft[2.0]{\\bronze\\ Siedlisko "
+"\\linebreak Ratusz} & \\lightcellleft[2.0]{\\bronze\\ Siedlisko \\linebreak "
+"Ratusz \\linebreak Cytadela}\\\\ \\end{tabularx} }"
 
 #. type: multicols
 #: sections/random_scenario.tex:302
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\\textbf{\\nth{4} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Roll a \\svg{resource} and resolve the result.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{6} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the event of Round 4.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{8} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the event of Round 4.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -612,18 +666,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
-"\\textbf{4. Runda:}\n"
+"\\textbf{1. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Rzuć \\svg{resource} i rozpatrz wynik.\n"
+"  \\item Wszyscy Bohaterowie otrzymują +1 \\svg{movement}.\n"
 "\\end{itemize}\n"
-"\\textbf{6. Runda:}\n"
+"\\textbf{6. i 9. Rundy:}\n"
 "\\begin{itemize}\n"
-"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Młyna Wodnego i Wiatraka na mapie.\n"
 "\\end{itemize}\n"
-"\\textbf{8. Runda:}\n"
+"\\textbf{10. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"  \\item Gracz(e), których Bohater Główny ma najmniej doświadczenia, rzucają 2 \\svg{resource}.\n"
+"\\end{itemize}\n"
+"\\textbf{12. Runda:}\n"
+"\\begin{itemize}\n"
+"  \\item Powtórz wydarzenie z 6. Rundy.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -638,3 +695,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Podczas odwiedzania Obelisku rzuć 2 \\svg{treasure} i rozpatrz 1.\n"
+"  \\item Gracze mogą wydać swój Żeton Budowy w dowolnym momencie, aby wykonać akcję Punktu Handlowego.\n"
+"  \\item Walka Poziomu VII nie może być pominięta przez Dyplomację ani w żaden inny sposób.\n"
+"\\end{itemize}\n"
+"\n"
