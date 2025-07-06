@@ -257,8 +257,8 @@ Number of players (P) in the brackets.
             <td>⚔️ Trial by Combat (2-4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-color/trial_by_combat_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-mono/trial_by_combat_en_mono.pdf"><em>click</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-color/trial_by_combat_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-mono/trial_by_combat_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-color/trial_by_combat_fr.pdf">clic</a></td>
