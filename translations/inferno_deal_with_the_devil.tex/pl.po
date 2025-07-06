@@ -236,7 +236,7 @@ msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki początkowe:}\n"
+"\\textbf{Jednostki Początkowe:}\n"
 "\n"
 
 #. type: multicols
@@ -620,7 +620,7 @@ msgid ""
 msgstr ""
 "\\textbf{12. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Ostatnia Szarżująca Armia pojawia się Osadzie Kafelka F3. Ta armia ma 4 \\svg{movement} na turę.\n"
+"  \\item Ostatnia Szarżująca Armia pojawia się na Osadzie Kafelka F3. Ta armia ma 4 \\svg{movement} na turę.\n"
 "\\end{itemize}\n"
 "\n"
 
