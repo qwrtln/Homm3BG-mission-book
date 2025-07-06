@@ -158,7 +158,7 @@ msgid ""
 "\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Starting Resources:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
