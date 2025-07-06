@@ -228,7 +228,7 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Garstka \\bronze\\ Jednostek o \\textbf{najwyższym} koszcie rekrutacji\n"
+"  \\item 2 × Garstka \\bronze\\ Jednostek o \\textbf{najwyższym} koszcie Rekrutacji\n"
 "\\end{itemize}\n"
 "\n"
 

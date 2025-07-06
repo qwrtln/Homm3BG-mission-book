@@ -318,7 +318,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka i Młyna Wodnego na mapie.\n"
 "  \\item Wszyscy gracze posiadający tytuł ``\\textcolor{cobalt}{Rycerza Graala}'' zyskują \\svg{morale_positive}.\n"
-"  \\item Wszyscy gracze, którzy nie posiadają tytułu, otrzymują 2 \\svg{morale_negative}.\n"
+"  \\item Wszyscy gracze, którzy nie posiadają tytułu, otrzymują 2~\\svg{morale_negative}.\n"
 "\\end{itemize}\n"
 "\n"
 

@@ -634,7 +634,7 @@ msgid ""
 "\n"
 msgstr ""
 "Katarzyna skrzyżowała ramiona i oparła się o łęk siodła, spoglądając na pustkowia, do których ich zwabiono.\n"
-"Archanioły udały się na zwiad, pozostawiajac skromne siły które zdołała zebrać. Zastanawiała się, czy aby na pewno słusznie postąpiła, każąc im odlecieć.\n"
+"Archanioły udały się na zwiad, pozostawiając skromne siły, które zdołała zebrać. Zastanawiała się, czy aby na pewno słusznie postąpiła, każąc im odlecieć.\n"
 "Wroga twierdza wciąż pozostawała nieodnaleziona. Odszukanie jej zajmie sporo czasu, a to nieprzyjazne pustkowie nie ułatwi im zadania.\n"
 "\n"
 
