@@ -629,7 +629,7 @@ msgstr ""
 "22} & \\lightcell[2.8]{{\\raisebox{-.25\\height}"
 "{\\includegraphics[height=15px]{\\images/hp.png}} 26 \\\\ +1 Kontratak}} & "
 "\\lightcell[2.8]{\\raisebox{-.25\\height}{\\includegraphics[height=15px]"
-"{\\images/hp.png}} 32 \\\\ +1 Retaliation \\\\ Usuń dodatkowe 2\\,"
+"{\\images/hp.png}} 32 \\\\ +1 Kontratak \\\\ Usuń dodatkowe 2\\,"
 "\\svg{damage-yellow} przy pochłanianiu Golemów} \\\\ \\end{tabularx} }"
 
 #. type: wrapfigure

@@ -179,7 +179,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Scenariusz Kooperacyjny}{Blisko Wrogów}{\\images/"
+"\\addscenariosection{1}{Scenariusz Kooperacyjny}{Wrogowie u bram}{\\images/"
 "ballistics.png}"
 
 #. type: multicols

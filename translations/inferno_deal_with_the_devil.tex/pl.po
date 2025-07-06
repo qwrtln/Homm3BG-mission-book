@@ -236,7 +236,7 @@ msgid ""
 "\\textbf{Starting Units:}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki początkowe:}\n"
+"\\textbf{Jednostki Początkowe:}\n"
 "\n"
 
 #. type: multicols

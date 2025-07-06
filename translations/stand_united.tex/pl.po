@@ -203,7 +203,7 @@ msgid ""
 "\\textbf{Author:} NeuroN\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Neuron\n"
+"\\textbf{Autor:} NeuroN\n"
 "\n"
 
 #. type: multicols
@@ -325,7 +325,7 @@ msgid ""
 "\\textbf{Enemy Deck:} 6 × Might Card, 4 × Magic Card, 4 × Skill Card\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Wroga:} 6 × Karty Mocy, 4 × Karty Magii, 4 × Karta Umiejętności\n"
+"\\textbf{Talia Wroga:} 6 × Karta Mocy, 4 × Karta Magii, 4 × Karta Umiejętności\n"
 "\n"
 
 #. type: multicols
