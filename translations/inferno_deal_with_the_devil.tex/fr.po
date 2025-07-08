@@ -268,11 +268,7 @@ msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario:\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
