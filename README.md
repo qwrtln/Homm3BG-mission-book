@@ -300,8 +300,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-color/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_setadwicks_fall-color/inferno_setadwicks_fall_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_setadwicks_fall-mono/inferno_setadwicks_fall_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -313,8 +313,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>

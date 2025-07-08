@@ -462,16 +462,12 @@ msgstr ""
 #. type: multicols
 #: campaigns/inferno_steadwicks_fall.tex:94
 #: campaigns/inferno_deal_with_the_devil.tex:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "Prenez les Tuiles suivantes et disposez-les comme indiqué sur le schéma du Scénario:\n"
-"\n"
-"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
-"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario:\n"
 "\n"
 
 #. type: multicols*
