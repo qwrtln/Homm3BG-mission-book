@@ -12,6 +12,8 @@ on:
     paths:
       - 'tools/container/**'
       - '.github/workflows/publish-container.yaml'
+  schedule:
+    - cron: '17 3 1 * *'
   workflow_dispatch:
 
 jobs:
