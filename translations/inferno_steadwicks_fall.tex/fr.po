@@ -18,15 +18,19 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 
 #. type: multicols
-#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5 coops/emerald_island.tex:5
-#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
 #: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
-#: campaigns/inferno_devilish_plan.tex:6 campaigns/inferno_devilish_plan.tex:202
-#: campaigns/inferno_steadwicks_fall.tex:5 campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
 #: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:144 campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:285
@@ -41,9 +45,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18 coops/close_to_enemies.tex:16
-#: coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17
-#: campaigns/inferno_devilish_plan.tex:20 campaigns/inferno_steadwicks_fall.tex:16
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
 msgid ""
@@ -54,10 +59,12 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22 coops/emerald_island.tex:18
-#: coops/close_to_enemies.tex:20 coops/stand_united.tex:17
-#: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
-#: campaigns/inferno_steadwicks_fall.tex:20 campaigns/inferno_deal_with_the_devil.tex:24
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
@@ -67,9 +74,11 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44 coops/emerald_island.tex:36
-#: coops/close_to_enemies.tex:35 coops/stand_united.tex:33 clash/the_hunt.tex:35
-#: campaigns/inferno_devilish_plan.tex:88 campaigns/inferno_steadwicks_fall.tex:92
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
 msgid ""
@@ -80,11 +89,13 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59 coops/emerald_island.tex:45
-#: coops/close_to_enemies.tex:68 coops/stand_united.tex:52
-#: campaigns/inferno_devilish_plan.tex:121 campaigns/inferno_steadwicks_fall.tex:133
-#: campaigns/inferno_deal_with_the_devil.tex:83 campaigns/castle_greek_gift.tex:72
-#: campaigns/castle_sicilian_dragon.tex:81 campaigns/castle_two_knights_defense.tex:77
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -94,9 +105,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63 coops/emerald_island.tex:49
-#: coops/close_to_enemies.tex:74 coops/stand_united.tex:56
-#: campaigns/inferno_devilish_plan.tex:125 campaigns/inferno_steadwicks_fall.tex:137
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
 msgid ""
@@ -107,13 +119,14 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71 coops/emerald_island.tex:53
-#: clash/force_of_will.tex:62 clash/the_hunt.tex:61 clash/dragoncurse_castle.tex:59
-#: clash/the_fractured_kingdoms.tex:41 campaigns/inferno_devilish_plan.tex:140
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
-#: campaigns/inferno_deal_with_the_devil.tex:97 campaigns/castle_greek_gift.tex:87
-#: campaigns/castle_sicilian_dragon.tex:95 campaigns/castle_two_knights_defense.tex:93
-#: sections/random_scenario.tex:287
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -123,10 +136,13 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:85 coops/emerald_island.tex:60 coops/close_to_enemies.tex:110
-#: coops/stand_united.tex:74 clash/force_of_will.tex:74 clash/the_hunt.tex:68
-#: campaigns/inferno_devilish_plan.tex:174 campaigns/inferno_steadwicks_fall.tex:194
-#: campaigns/inferno_deal_with_the_devil.tex:148 sections/random_scenario.tex:308
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
+#: sections/random_scenario.tex:308
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -147,7 +163,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48 campaigns/inferno_deal_with_the_devil.tex:46
+#: campaigns/inferno_steadwicks_fall.tex:48
+#: campaigns/inferno_deal_with_the_devil.tex:46
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
@@ -157,7 +174,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:8 campaigns/inferno_steadwicks_fall.tex:7
+#: campaigns/inferno_devilish_plan.tex:8
+#: campaigns/inferno_steadwicks_fall.tex:7
 #: campaigns/inferno_deal_with_the_devil.tex:7
 #, no-wrap
 msgid ""
@@ -168,7 +186,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:26 campaigns/inferno_steadwicks_fall.tex:22
+#: campaigns/inferno_devilish_plan.tex:26
+#: campaigns/inferno_steadwicks_fall.tex:22
 #: campaigns/inferno_deal_with_the_devil.tex:26
 #, no-wrap
 msgid ""
@@ -179,7 +198,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:28 campaigns/inferno_steadwicks_fall.tex:24
+#: campaigns/inferno_devilish_plan.tex:28
+#: campaigns/inferno_steadwicks_fall.tex:24
 #: campaigns/inferno_deal_with_the_devil.tex:28
 #, no-wrap
 msgid ""
@@ -190,7 +210,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:34 campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
 msgid ""
@@ -201,7 +222,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:114 campaigns/inferno_steadwicks_fall.tex:119
+#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
 #, no-wrap
 msgid ""
@@ -212,7 +234,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:176 campaigns/inferno_steadwicks_fall.tex:196
+#: campaigns/inferno_devilish_plan.tex:176
+#: campaigns/inferno_steadwicks_fall.tex:196
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
 msgid ""
@@ -223,7 +246,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:206 campaigns/inferno_steadwicks_fall.tex:213
+#: campaigns/inferno_devilish_plan.tex:206
+#: campaigns/inferno_steadwicks_fall.tex:213
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The Story}}\n"
@@ -236,11 +260,11 @@ msgstr ""
 #. type: Plain text
 #: campaigns/inferno_steadwicks_fall.tex:3
 msgid ""
-"\\addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}{2. "
-"Steadwick's Fall}{\\images/firewall.png}"
+"\\addscenariosection[subsection]{1}{Inferno Campaign $-$ Dungeons and Devils}"
+"{2. Steadwick's Fall}{\\images/firewall.png}"
 msgstr ""
-"\\addscenariosection[subsection]{1}{Campagne Hadès $-$ Donjons et Diables}{2. La "
-"Chute de Steadwick}{\\images/firewall.png}"
+"\\addscenariosection[subsection]{1}{Campagne Hadès $-$ Donjons et Diables}"
+"{2. La Chute de Steadwick}{\\images/firewall.png}"
 
 #. type: multicols*
 #: campaigns/inferno_steadwicks_fall.tex:9
@@ -436,7 +460,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/inferno_steadwicks_fall.tex:94 campaigns/inferno_deal_with_the_devil.tex:54
+#: campaigns/inferno_steadwicks_fall.tex:94
+#: campaigns/inferno_deal_with_the_devil.tex:54
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
