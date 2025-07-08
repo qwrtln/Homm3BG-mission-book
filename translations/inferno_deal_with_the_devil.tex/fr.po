@@ -802,7 +802,7 @@ msgid ""
 "\\textbf{Refusal}\n"
 "\n"
 msgstr ""
-"\\textbf{Le Refusl}\n"
+"\\textbf{Le Refus}\n"
 "\n"
 
 #. type: multicols
