@@ -263,7 +263,7 @@ msgstr ""
 #. type: multicols
 #: campaigns/inferno_steadwicks_fall.tex:94
 #: campaigns/inferno_deal_with_the_devil.tex:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Take the following Map Tiles and set them up as shown in the Scenario map layout:\n"
 "\n"
