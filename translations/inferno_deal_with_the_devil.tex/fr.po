@@ -629,6 +629,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:141
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{14} Round:}\n"
 "\\begin{itemize}\n"
