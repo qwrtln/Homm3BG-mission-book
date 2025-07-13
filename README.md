@@ -423,6 +423,11 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-mono/obelisk_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
+            <td>⚔️ Blood for Ore (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-color/blood_for_ore_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>🗺️ Rampart: Graduation Exercise (2)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-color/rampart_graduation_exercise_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-mono/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
