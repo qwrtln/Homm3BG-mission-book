@@ -1,6 +1,6 @@
 FROM alpine:latest AS po4a-builder
 
-ARG PO4A_VERSION=0.73
+ARG PO4A_VERSION=0.74
 ENV PO4A_GH_URL=https://github.com/mquinson/po4a/releases/download
 
 RUN apk add --no-cache wget && \
@@ -47,15 +47,9 @@ RUN apk --no-cache add \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         perl-app-cpanminus \
-    && wget -q https://cpan.metacpan.org/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz \
-    && tar -xzf SGMLSpm-1.1.tar.gz \
-    && cd SGMLSpm-1.1 \
-    && perl Makefile.PL \
-    && make install \
-    && cd .. \
-    && rm -rf SGMLSpm-1.1 SGMLSpm-1.1.tar.gz \
-    # Install other required po4a/Perl modules
+    # Install all po4a/Perl dependencies with cpanm
     && CFLAGS="-I/usr/include" LIBS="-L/usr/lib -lintl" cpanm --no-wget Locale::gettext \
+    && cpanm --no-wget SGMLS \
     && cpanm --no-wget Text::WrapI18N \
     && cpanm --no-wget Term::ReadKey \
     && cpanm --no-wget Pod::Parser \
