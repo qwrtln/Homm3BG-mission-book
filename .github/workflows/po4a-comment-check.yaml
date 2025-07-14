@@ -29,7 +29,7 @@ jobs:
       - name: Run po4a
         uses: qwrtln/po4a-action@1.1
         with:
-          version: "0.73"
+          version: "0.74"
           config: "po4a.cfg"
           args: "--no-translations"
 

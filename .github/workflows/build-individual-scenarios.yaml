@@ -76,7 +76,7 @@ jobs:
         if: inputs.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
         uses: qwrtln/po4a-action@v1.2
         with:
-          version: "0.73"
+          version: "0.74"
           config: "po4a.cfg"
           args: "--no-update"
           language: ${{ inputs.language }}
