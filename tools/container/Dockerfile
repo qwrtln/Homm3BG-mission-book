@@ -145,6 +145,7 @@ RUN <<EOF
     /texlive.profile \
     /texlive_pgp_keys.asc \
     /tmp/install-tl
+  mkdir -p /data
   git config --global --add safe.directory /data
   echo 'alias build="tools/build.sh"' >> /root/.bashrc
   echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
