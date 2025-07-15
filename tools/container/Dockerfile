@@ -18,6 +18,7 @@ COPY texlive.profile /
 COPY texlive_pgp_keys.asc /
 
 RUN <<EOF
+  set -ex
   apk --no-cache add \
     bash \
     curl \
