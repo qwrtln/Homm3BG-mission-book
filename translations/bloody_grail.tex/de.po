@@ -64,31 +64,12 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po  #-#-#-#-#\n"
 "\\textbf{Startgebäude:} \\bronze{}-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
 "\n"
 
 #. type: multicols*

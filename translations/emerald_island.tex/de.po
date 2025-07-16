@@ -277,31 +277,12 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po  #-#-#-#-#\n"
 "\\textbf{Startgebäude:} \\bronze{}-Behausung\n"
-"\n"
-"#-#-#-#-#  de.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\textbf{Startgebäude:} \\bronze\\-Behausung\n"
 "\n"
 
 #. type: multicols
@@ -325,8 +306,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item P × Startgebiete (I)\n"
-"  \\item 4P × Ferne Gebiete (II--III) \n"
+"  \\item S × Startgebiete (I)\n"
+"  \\item 4S × Ferne Gebiete (II--III) \n"
 "\\end{itemize}\n"
 "\n"
 
@@ -337,7 +318,7 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
-"Kontrolliert alle Minen und Siedlungen. (Vergesst nicht die Baumaterialien-Mine in Gebiet I. Jedes II--III-Gebiet beinhaltet eine Mine oder Siedlung mit einem Level III-Kampf.\n"
+"Kontrolliert alle Minen und Siedlungen. (Vergesst nicht die Baumaterialien-Minen in I-Gebieten. Jedes II--III-Gebiet beinhaltet eine Mine oder Siedlung mit einem Level III-Kampf.)\n"
 "\n"
 
 #. type: multicols
@@ -415,7 +396,7 @@ msgid ""
 "    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
 "\n"
 msgstr ""
-"    \\item Wenn ihr keine Einheiten in eurem Einheitendeck habt (nach einem Kampf oder wenn ihr keine Einheit behaltet), nehmt alle Einheiten in den Einheitenstapel eurer Fraktion zurück (auch, wenn ein anderer Spieler eine oder mehrere eurer Einheiten hat). Das beinhaltet Einheiten, die ihr anderen Spielern gegeben habt.\n"
+"    \\item Wenn ihr keine Einheiten in eurem Einheitendeck habt (nach einem Kampf oder wenn ihr keine Einheit behaltet), legt alle Einheiten in den Einheitenstapel eurer Fraktion zurück (auch, wenn ein anderer Spieler eine oder mehrere eurer Einheiten hat). Das beinhaltet Einheiten, die ihr anderen Spielern gegeben habt.\n"
 "\n"
 
 #. type: multicols
@@ -445,7 +426,7 @@ msgid ""
 "    \\item The first time you reach Level IV, gain your second specialty.\n"
 "\n"
 msgstr ""
-"    \\item Wenn ihr zum ersten Mal Stufe 4 erreicht, erhaltet die \"Stufe-4\"-Sonderfähigkeitenkarte.\n"
+"    \\item Wenn ihr zum ersten Mal Stufe 4 erreicht, erhaltet die Stufe 4-Sonderfähigkeitenkarte.\n"
 "\n"
 
 #. type: multicols
