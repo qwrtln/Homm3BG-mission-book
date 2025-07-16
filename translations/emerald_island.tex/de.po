@@ -318,7 +318,7 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
-"Kontrolliert alle Minen und Siedlungen. (Vergesst nicht die Baumaterialien-Minen in I-Gebieten. Jedes II--III-Gebiet beinhaltet eine Mine oder Siedlung mit einem Level III-Kampf.)\n"
+"Kontrolliert alle Minen und Siedlungen. (Vergesst nicht die Baumaterialien-Mine in Gebiet I. Jedes II--III-Gebiet beinhaltet eine Mine oder Siedlung mit einem Level III-Kampf.)\n"
 "\n"
 
 #. type: multicols
