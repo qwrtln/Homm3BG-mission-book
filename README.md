@@ -159,8 +159,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-emerald_island-mono/emerald_island_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island-color/emerald_island_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-emerald_island-mono/emerald_island_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-emerald_island-color/emerald_island_de.pdf">klick</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-emerald_island-mono/emerald_island_de_mono.pdf"><em>klick</em></a></td>
         </tr>
         <tr>
             <td>🤝 Close to Enemies (1-6)</td>
