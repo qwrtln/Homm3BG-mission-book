@@ -100,7 +100,7 @@ jobs:
 
       - name: Compile mission book
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
@@ -273,7 +273,7 @@ jobs:
           merge-multiple: true
 
       - name: Compile monochrome mission book
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
