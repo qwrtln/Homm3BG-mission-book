@@ -47,7 +47,7 @@ jobs:
           echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile mission book
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
@@ -186,7 +186,7 @@ jobs:
           echo "FILE_NAME=${FILE_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Compile monochrome mission book
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
