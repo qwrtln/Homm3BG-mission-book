@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-07-24 22:34+0200\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -126,7 +126,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -140,7 +140,7 @@ msgstr ""
 #: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
 #: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
 #: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:304
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -154,7 +154,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:316
+#: sections/credits.tex:34 sections/random_scenario.tex:314
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -413,7 +413,7 @@ msgid ""
 "  \\item Level VII Combat cannot be skipped by Diplomacy or any other means.\n"
 "  \\item Players can use their Build Token to initiate trade with one other chosen player. The two players can freely exchange Resources and can exchange Artifacts or Spells from their hand as if their Heroes were adjacent.\n"
 "  \\item During the game, players assemble a shared army. Every player can field Units from the shared army during Combat (shared Units' \\svg{map} abilities can be activated each Round by only one player).  % no-check-caps\n"
-"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\azure\\. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
+"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\azure{}. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
 "  \\item During Combat at the Dragon Utopia, one of the Neutral \\azure\\ Units is always the Azure Dragon and the Neutral army uses the AI Deck. Reshuffle the AI Deck and AI Spell Deck at the end of Combat.\n"
 "  \\item After winning Combat at the Dragon Utopia, no Faction Cube is placed on the Dragon Utopia Field. The victorious player puts one of their surviving Faction Units into the shared army and can redistribute their remaining Resources among other players, after which that player gets removed from the game.\n"
 "\\end{itemize}\n"
@@ -425,7 +425,7 @@ msgstr ""
 "  \\item Souboj VII Úrovně  nemůže být přeskočen žádným způsobem, ani pomocí Diplomacie.\n"
 "  \\item Hráči mohou použít svůj Žeton Stavby k zahájení obchodu s jedním dalším vybraným hráčem. Oba hráči si mohou volně vyměňovat suroviny a mohou si vyměňovat artefakty nebo kouzla z ruky, jako by jejich hrdinové byli vedle sebe.\n"
 "  \\item Během hry hráči sestavují společnou armádu. Každý hráč může během boje nasadit jednotky ze společné armády (schopnosti \\svg{map} společných jednotek může v každém kole aktivovat pouze jeden hráč).  % no-check-caps\n"
-"  \\item Po označení Obelisku vyhoďte vrchní kartu z každého Balíčku Neutrálních Jednotek kromě \\azure\\. Jednu z těchto Jednotek můžete najmout. Takto naverbované Jednotky jdou do společné armády.\n"
+"  \\item Po označení Obelisku vyhoďte vrchní kartu z každého Balíčku Neutrálních Jednotek kromě \\azure{}. Jednu z těchto Jednotek můžete najmout. Takto naverbované Jednotky jdou do společné armády.\n"
 "  \\item Během boje v Dračí Utopii je jednou z neutrálních \\azure\\ jednotek vždy Azurový Drak a Neutrální Armáda používá balíček AI. Na konci boje znovu promíchejte Balíček Jednotek AI a Balíček Kouzel AI.\n"
 "  \\item Po vítězství v boji proti Dračí Utopii není na pole Dračí Utopie umístěna žádná Frakční Kostka. Vítězný Hráč umístí jednu ze svých přeživších Jednotek Frakce do společné armády a může přerozdělit své zbývající suroviny mezi ostatní Hráče, načež je tento Hráč odstraněn ze hry.\n"
 "\\end{itemize}\n"
