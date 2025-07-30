@@ -210,6 +210,9 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
