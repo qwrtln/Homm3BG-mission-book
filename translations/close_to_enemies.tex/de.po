@@ -343,7 +343,6 @@ msgstr ""
 "    \\item Die übrigen Gebiete bilden den Gemeinsamen Vorrat\n"
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
-"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
