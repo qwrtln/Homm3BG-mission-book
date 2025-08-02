@@ -466,7 +466,7 @@ msgstr ""
 "  };\n"
 "  \\centering\n"
 "  \\node at (13.5, 1.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
 "\n"
 
 #. type: tikzpicture
