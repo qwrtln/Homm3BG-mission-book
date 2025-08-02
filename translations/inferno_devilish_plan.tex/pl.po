@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-08-02 19:31+0200\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -166,11 +166,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:304
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:304
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -203,18 +202,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-
-#. type: multicols*
-#: coops/close_to_enemies.tex:132 campaigns/inferno_devilish_plan.tex:138
-#, no-wrap
-msgid ""
-"\\vspace*{\\fill}\n"
-"\\columnbreak\n"
-"\n"
-msgstr ""
-"\\vspace*{\\fill}\n"
-"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
@@ -620,6 +607,18 @@ msgstr ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node at (3.5, -2)[opacity=0.2] {\\includegraphics[width=0.45\\linewidth]{\\art/fire_magic.png}};\n"
 "\\end{tikzpicture}\n"
+"\n"
+
+#. type: multicols*
+#: campaigns/inferno_devilish_plan.tex:138
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*

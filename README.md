@@ -172,8 +172,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-close_to_enemies-mono/close_to_enemies_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies-color/close_to_enemies_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-close_to_enemies-mono/close_to_enemies_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-close_to_enemies-color/close_to_enemies_de.pdf">klick</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-close_to_enemies-mono/close_to_enemies_de_mono.pdf"><em>klick</em></a></td>
         </tr>
         <tr>
             <td>🤝 Stand United (2-4)</td>
