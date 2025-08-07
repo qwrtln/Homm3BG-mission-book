@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-08-02 19:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -112,22 +112,10 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
 #: sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
-"\\columnbreak\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 
@@ -383,7 +371,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/close_to_enemies.tex:129
+#: coops/close_to_enemies.tex:131
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy clan waves}}\n"
@@ -398,13 +386,6 @@ msgid ""
 "  \\item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.\n"
 "  \\item Gain one \\svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.\n"
 "\\end{itemize}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/close_to_enemies.tex:132 campaigns/inferno_devilish_plan.tex:138
-#, no-wrap
-msgid ""
 "\\vspace*{\\fill}\n"
 "\\columnbreak\n"
 "\n"
@@ -422,11 +403,12 @@ msgid ""
 "  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/close_to_enemies.tex:150
+#: coops/close_to_enemies.tex:148
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -439,7 +421,7 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:158
+#: coops/close_to_enemies.tex:156
 msgid ""
 "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
@@ -447,7 +429,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: coops/close_to_enemies.tex:207
+#: coops/close_to_enemies.tex:205
 #, no-wrap
 msgid ""
 "[b!]\n"
@@ -500,17 +482,17 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:217
+#: coops/close_to_enemies.tex:215
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:224
+#: coops/close_to_enemies.tex:222
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
 msgstr ""
 
 #. type: tikzpicture
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -520,7 +502,7 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
@@ -528,7 +510,7 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "

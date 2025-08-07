@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-06-23 13:01+0000\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2025-08-02 19:31+0200\n"
+"PO-Revision-Date: 2025-07-30 12:41+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
 "mission-book/coop-scenarios/close_to_enemies/de/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -124,27 +124,13 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
-"\n"
-
-#. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
-#, no-wrap
-msgid ""
-"\\columnbreak\n"
-"\n"
-msgstr ""
-"\\columnbreak\n"
 "\n"
 
 #. type: multicols
@@ -178,7 +164,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Close to Enemies}{\\images/"
 "ballistics.png}"
 msgstr ""
-"\\addscenariosection{1}{Kooperativer Modus}{Nahe bei den Feinden}{\\images/"
+"\\addscenariosection{1}{Kooperativer Modus}{In Feindesnähe}{\\images/"
 "ballistics.png}"
 
 #. type: multicols
@@ -197,7 +183,7 @@ msgstr ""
 msgid ""
 "\\textit{``Sir! The raiders are at our gates!''}\n"
 "\n"
-msgstr ""
+msgstr "\\textit{``Herr! Die Plünderer stehen vor unseren Toren!''}\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:11
@@ -205,9 +191,7 @@ msgstr ""
 msgid ""
 "\\textit{``Sound the warhorn! We'll drive them back as always!'' you command, and go to defend the city. Just as you have done many times before. Such is the harsh life of the border clans, where wars and skirmishes with neighboring rivals never truly end. Fortunately, your alliance remains strong, and you know your back is covered.}\n"
 "\n"
-msgstr ""
-"\\textit{„Blast das Kriegshorn! Wir werden sie zurückschlagen, wie immer!“, befiehlst du und widmest dich der Verteidigung der Stadt. So wie du es schon mehrere Male getan hast. Dies ist das Leben der Grenzclans, wo Kriege und Scharmützel mit benachbarten Rivalen nie wirklich enden. Glücklicherweise bleibt deine Allianz stark, und du weißt, dass du auf der sicheren Seite bist.}\n"
-"\n"
+msgstr "\\textit{„Blast das Kriegshorn! Wir werden sie zurückschlagen, wie immer!“, befiehlst du und widmest dich der Verteidigung der Stadt. So wie du es schon mehrere Male getan hast. Dies ist das harte Leben der Grenzclans, wo Kriege und Scharmützel mit benachbarten Rivalen nie wirklich enden. Glücklicherweise bleibt deine Allianz stark, und du weißt, dass du auf der sicheren Seite bist.}\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:14
@@ -217,6 +201,9 @@ msgid ""
 "% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
 "\n"
 msgstr ""
+"\\textit{Die Zeit ist gekommen, diese langjährigen Kriege zu beenden und eure Gegner endlich wie Käfer zu zerquetschen!}\n"
+"% Translator info: In Homam IV was Quote like: \"Rufux will crush this army like a bug.\" If has scounting and has bigger army. So \"like a bug\" is little easter egg referencing on this.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:18
@@ -225,6 +212,8 @@ msgid ""
 "This Scenario is played over 7 Rounds.\n"
 "\n"
 msgstr ""
+"7 Runden\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:22
@@ -233,6 +222,8 @@ msgid ""
 "\\textbf{Player Count:} 1--6\n"
 "\n"
 msgstr ""
+"\\textbf{Spieleranzahl:} 1--6\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:24
@@ -241,6 +232,8 @@ msgid ""
 "\\textbf{Starting Resources:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Startressourcen:} 14 \\svg{gold}, 5 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/close_to_enemies.tex:26 campaigns/inferno_steadwicks_fall.tex:28
@@ -262,6 +255,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item  Wenige \\bronze{}-Einheiten eurer Wahl\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:42
@@ -273,6 +271,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item S × Startgebiete (1)\n"
+"  \\item 4S × Ferne Gebiete (II--III) mit dem gleichen Terrain wie eure Städte, je eines davon muss eine Siedlung enthalten\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:45
@@ -282,6 +285,9 @@ msgid ""
 "Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corresponding Far (II--III) Map Tile with a Settlement.\n"
 "\n"
 msgstr ""
+"Platziert die fernen Gebiete (II--III) mit Siedlungen, die zum Terrain eurer Fraktion passen, auf den Positionen, die in der Abenteuerkarte mit farbigen Würfeln markiert sind.\n"
+"Jedes Paar von Würfeln gleicher Farbe markiert ein Startgebiet (I) und das zugehörige Ferne Gebiet (II--III) mit Siedlung.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:47
@@ -290,6 +296,8 @@ msgid ""
 "\\textbf{Map Tile Pool (choose one):}\n"
 "\n"
 msgstr ""
+"\\textbf{Gebietsvorrat (wählt eines):}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:58
@@ -307,6 +315,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Persönlicher Vorrat:} Jeder Spieler nimmt 1 × Fernes Gebiet (II--III) ohne Siedlung, das zum Terrain der Fraktion passt.\n"
+"  \\item \\textbf{Gemeinsamer Vorrat:}\n"
+"  \\begin{itemize}\n"
+"    \\item Entfernt alle Fernen Gebiete (II--III) ohne Siedlungen von der Karte\n"
+"    \\item Mischt alle entfernten und übrigen vorbereiteten Gebiete zusammen\n"
+"    \\item Platziert die gemischten Gebiete in zufälliger Reihenfolge auf der Abenteuerkarte\n"
+"    \\item Die übrigen Gebiete bilden den Gemeinsamen Vorrat\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
@@ -327,6 +345,8 @@ msgid ""
 "Prepare an AI Deck for Settlement defenders.\n"
 "\n"
 msgstr ""
+"Bereitet Bot-Stapel für die Verteidiger der Siedlung vor.\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:64
@@ -335,6 +355,8 @@ msgid ""
 "\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
 "\n"
 msgstr ""
+"\\textbf{Bot-Stapel der Verteidiger:} 1 × Angriff, 1 × Verteidigung, 1 × Zauberkraft\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
@@ -343,6 +365,8 @@ msgid ""
 "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
 "\n"
 msgstr ""
+"\\textbf{Bot-Zauberstapel der Verteidiger:} 1 × Magischer Pfeil\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:72
@@ -353,6 +377,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"   \\item Erobert alle Siedlungen.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:79
@@ -364,6 +392,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Ein Spieler verliert seine Stadt.\n"
+"  \\item Mindestens eine Siedlung wurde am Ende der 7. Runde nicht eingenommen. Die Zeit ist abgelaufen!\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:108
@@ -399,6 +432,35 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Besondere Ereignisse}}\n"
+"\\textbf{1. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Zu Beginn der Runde enthüllen alle Spieler ihre \\textit{Feind-Gebiete} (Ferne Gebiete (II--III), die die Siedlung ihres Terrains beinhalten). Diese Gebiete können ohne Kosten aufgedeckt werden.\n"
+"\\end{itemize}\n"
+"\\textbf{2. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Die erste Welle der gegnerischen Clanarmeen attackiert alle Städte (siehe Abschnitt unten).\n"
+"  \\item Nach der Verteidigung der Stadt darf jeder Spieler in dieser Runde einen Nebenhelden für 5~\\svg{gold} rekrutieren. Dreht dafür den Bevölkerungsmarker um.\n"
+"\\end{itemize}\n"
+"\\textbf{3. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Zu Beginn der Runde entdeckt jeder Spieler ein Fernes Gebiet (II--III). Diese Gebiete können ohne Kosten aufgedeckt werden, egal, ob sie vom Vorrat oder der Abenteuerkarte stammen.\n"
+"\\end{itemize}\n"
+"\\textbf{4. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Die zweite Welle der gegnerischen Clanarmeen attackiert alle Städte (siehe Abschnitt unten).\n"
+"  \\item Nach der Verteidigung der Stadt durchsucht jeder Spieler den \\textit{Artefaktstapel} (3).\n"
+"\\end{itemize}\n"
+"\\textbf{6. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item Die dritte Welle der gegnerischen Clanarmeen attackiert alle Städte (siehe Abschnitt unten).\n"
+"  \\item Nach der Verteidigung der Stadt durchsucht jeder Spieler den \\textit{Artefaktstapel} (3).\n"
+"\\end{itemize}\n"
+"\\textbf{7. Runde:}\n"
+"\\begin{itemize}\n"
+"  \\item In dieser Runde dürfen die Spieler zu Beginn ihres Zuges zweimal Karten abwerfen und ziehen, statt wie üblich einmal.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:116
@@ -411,9 +473,15 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Die Spieler können ihren Baumarker jederzeit abwerfen um den Handelsposten zu benutzen.\n"
+"  \\item Ihr könnt eure Stadt mit euren Einheiten verteidigen (ohne 8 \\svg{gold} zu bezahlen), auch wenn euer Held nicht anwesend ist.\n"
+"  \\item Jede Siedlung wird von Verteidigern der lokalen Clans verteidigt (siehe unten).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:129
+#: coops/close_to_enemies.tex:131
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy clan waves}}\n"
@@ -428,17 +496,23 @@ msgid ""
 "  \\item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.\n"
 "  \\item Gain one \\svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.\n"
 "\\end{itemize}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/close_to_enemies.tex:132 campaigns/inferno_devilish_plan.tex:138
-#, no-wrap
-msgid ""
 "\\vspace*{\\fill}\n"
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Gegnerische Wellen}}\n"
+"\\begin{itemize}\n"
+"  \\item Nicht eingenommene Siedlungen werden Clanarmeen aussenden, die eure Stadt angreifen!\n"
+"  \\item Zu Beginn jedes Spielerzugs findet ein Kampf statt.\n"
+"  \\item Vor dem Kampf können Bau-, Zauberbuch-, und Bevölkerungsmarker, sowie Macht- und Magie-Karten eingesetzt werden. Der Held darf allerdings nicht bewegt werden..\n"
+"  \\item Jeder Spieler muss seine eigene Stadt verteidigen.\n"
+"  \\item Besitzt ihr eine Zitadelle, wird der \\textit{Geschützturmschaden} reduziert. Die Angriffe für die erste/zweite/dritte Welle sind 2/3/4 \\svg{attack}.\n"
+"  \\item Dieser Kampf kostet keine \\svg{movement}.\n"
+"  \\item Die Stärke der belagernden Armee findet ihr in der \\textit{Gegnerische Clanarmeen}-Tabelle.\n"
+"  \\item Wenn sich euer Hauptheld in einer verbündeten Stadt (nicht Siedlung) befindet, wenn ein Clan eine verbündete Stadt angreift, in der kein Hauptheld anwesend ist, könnt ihr mit euren Macht- und Magie-Karten bei der Verteidigung helfen. Der verbündete Held benutzt seine Einheiten und ihr könnt helfen, indem ihr während des Kampfes Karten von eurer Hand spielt.\n"
+"  \\item Erhaltet \\svg{experience} wenn ihr erfolgreich eure Stadt verteidigt, unabhängig davon, ob euer Hauptheld teilgenommen hat.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/close_to_enemies.tex:141
@@ -452,11 +526,21 @@ msgid ""
 "  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Siedlungsverteidiger}}\n"
+"\\begin{itemize}\n"
+"  \\item Die Stärke der Verteidiger wird von der \\textit{Gegnerische Clanarmeen}-Tabelle bestimmt (letzte Zeile).\n"
+"  \\item Nach der Vorbereitung der gegnerischen Armee darf ein Spieler eine gegnerische Einheitenkarte abwerfen und eine neue Einheit derselben Stufe ziehen.\n"
+"  \\item Dieser Kampf kostet keine \\svg{movement}.\n"
+"  \\item In diesem Kampf werden die Bot-Stapel verwendet.\n"
+"  \\item Erhaltet 2 \\svg{experience} nach einem Sieg.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:150
+#: coops/close_to_enemies.tex:148
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -467,17 +551,27 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\\begin{center}\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
+"  \\captionof{figure}{\\textbf{1-SPIELER-SZENARIO | BEISPIEL}}\n"
+"\\end{center}\n"
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: figure
-#: coops/close_to_enemies.tex:158
+#: coops/close_to_enemies.tex:156
 msgid ""
 "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
 "EXAMPLE }}"
 msgstr ""
+"[h!] \\centering \\includegraphics[width=0.55\\linewidth]{\\maps/"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-SPIELER-SZENARIO | "
+"BEISPIEL}}"
 
 #. type: table*
-#: coops/close_to_enemies.tex:207
+#: coops/close_to_enemies.tex:205
 #, no-wrap
 msgid ""
 "[b!]\n"
@@ -528,19 +622,66 @@ msgid ""
 "      \\end{tabularx}\n"
 "  }"
 msgstr ""
+"[b!]\n"
+"  \\hommtable[]{16.5}{\n"
+"    \\centering\n"
+"    \\medskip\n"
+"    \\textbf{Gegnerische Clanarmeen}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\let\\origbronze\\bronze\n"
+"    \\let\\origsilver\\silver\n"
+"    \\let\\origgolden\\golden\n"
+"    \\let\\origazure\\azure\n"
+"    \\renewcommand{\\bronze}{\\origbronze[12]}\n"
+"    \\renewcommand{\\silver}{\\origsilver[12]}\n"
+"    \\renewcommand{\\golden}{\\origgolden[12]}\n"
+"    \\renewcommand{\\azure}{\\origazure[12]}\n"
+"\n"
+"      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
+"      \\darkcell{\\textbf{Leicht}} &\n"
+"      \\darkcell{\\textbf{Normal}} &\n"
+"      \\darkcell{\\textbf{Experte}} &\n"
+"      \\darkcell{\\textbf{Unmöglich}}\\\\\n"
+"      \\darkcell[1.2]{Erste Welle}\n"
+"        & \\lightcell[1.2]{\\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Zweite Welle}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Dritte Welle}\n"
+"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
+"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"\n"
+"      \\darkcell[1.2]{Verteidiger der Siedlungen}\n"
+"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
+"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
+"\n"
+"      \\end{tabularx}\n"
+"  }"
 
 #. type: figure
-#: coops/close_to_enemies.tex:217
+#: coops/close_to_enemies.tex:215
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{3-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:224
+#: coops/close_to_enemies.tex:222
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
-msgstr ""
+msgstr "\\captionof{figure}{\\textbf{4-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: tikzpicture
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -548,19 +689,29 @@ msgid ""
 "    \\includegraphics[width=1.1\\paperwidth, keepaspectratio]{\\art/ballista.png}\n"
 "  };"
 msgstr ""
+"[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-29em] at (current page.south) {\n"
+"    \\includegraphics[width=1.1\\paperwidth, keepaspectratio]{\\art/ballista.png}\n"
+"  };"
 
 #. type: figure
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-SPIELER-SZENARIO | "
+"BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:244
+#: coops/close_to_enemies.tex:242
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
 "EXAMPLE}}"
 msgstr ""
+"[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-SPIELER-SZENARIO | "
+"BEISPIEL}}"
