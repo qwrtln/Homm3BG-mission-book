@@ -125,7 +125,7 @@
   }{%
     \edef\svgpath{\svgs/\detokenize{#2}.svg}%
   }%
-  \IfBeginWith{#2}{movement}{%
+  \IfStrEq{#2}{movement}{%
     \includesvg[height=#1px]{\svgpath}%
   }{%
     \raisebox{-0.15\height}{\includesvg[height=#1px]{\svgpath}}%
