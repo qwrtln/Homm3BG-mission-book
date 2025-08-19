@@ -79,8 +79,14 @@ RUN <<EOF
   sha512sum -c ./install-tl-unx.tar.gz.sha512
   mkdir -p /tmp/install-tl/installer
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
-  /tmp/install-tl/installer/install-tl --profile=/texlive.profile
-  /opt/texlive/texdir/bin/*/tlmgr install \
+
+  # Find and set the TeX Live binary path before installation (necessary for multiplatform builds)
+  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/$(uname -m)-linuxmusl"
+  PATH="${TEXLIVE_BIN_DIR}:${PATH}" /tmp/install-tl/installer/install-tl --profile=/texlive.profile
+  # Update TeX Live bin PATH for subsequent commands
+  export PATH="${TEXLIVE_BIN_DIR}:${PATH}"
+
+  tlmgr install \
     adjustbox \
     bigfoot \
     catchfile \
@@ -118,18 +124,17 @@ RUN <<EOF
     wrapfig \
     xstring \
     zref
-  /opt/texlive/texdir/bin/*/tlmgr path add
-  /opt/texlive/texdir/bin/*/mktexlsr
+  tlmgr path add
+  mktexlsr
   mkdir -p /etc/fonts/conf.d
   ln -s /opt/texlive/texdir/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
   fc-cache -fv
   mkdir -p /root/.texlive*/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache
   chmod -R 777 /root/.texlive* /root/texmf-var
   chmod -R 777 /opt/texlive/texdir/texmf-var
-  /opt/texlive/texdir/bin/*/luaotfload-tool --update --force
+  luaotfload-tool --update --force
 
-  # TeXlive names bin directory depending on architecture - detect it automatically
-  TEXLIVE_BIN_DIR=$(find /opt/texlive/texdir/bin -maxdepth 1 -type d -name "*-linuxmusl" | head -n1)
+  # Create symlink for consistent PATH regardless of architecture
   ln -sf "${TEXLIVE_BIN_DIR}" /opt/texlive/current-bin
 
   apk del --purge \
@@ -163,6 +168,7 @@ EOF
 
 WORKDIR /data
 
+# Use the symlinked directory for consistent PATH across architectures
 ENV PATH="/opt/texlive/current-bin:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
     TERM=xterm-256color
