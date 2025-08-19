@@ -41,7 +41,7 @@ You can run the comands yourself, if you prefer.
 
     Pull the image first:
     ```bash
-    podman pull ghcr.io/qwrtln/homm3bg:latest
+    podman pull --platform linux/amd64 ghcr.io/qwrtln/homm3bg:latest
     ```
 
     And then run it with the repository mounted as a volume:
@@ -53,7 +53,7 @@ You can run the comands yourself, if you prefer.
 
     Pull the image first:
     ```bash
-    docker pull ghcr.io/qwrtln/homm3bg:latest
+    docker pull --platform linux/amd64 ghcr.io/qwrtln/homm3bg:latest
     ```
 
     And then run it with the repository mounted as a volume:

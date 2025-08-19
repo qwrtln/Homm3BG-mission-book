@@ -12,10 +12,6 @@ RUN apk add --no-cache wget && \
 
 FROM alpine:latest
 
-ARG TARGETARCH
-ARG TARGETOS
-ARG TARGETPLATFORM
-
 COPY --from=po4a-builder /po4a /opt/po4a
 
 COPY texlive.profile /
@@ -79,17 +75,7 @@ RUN <<EOF
   sha512sum -c ./install-tl-unx.tar.gz.sha512
   mkdir -p /tmp/install-tl/installer
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
-
-  case "$(uname -m)" in
-    x86_64) PLATFORM="x86_64-linuxmusl" ;;
-    aarch64) PLATFORM="aarch64-linuxmusl" ;;
-    *) echo "Unsupported architecture: $(uname -m)" && exit 1 ;;
-  esac
-
-  echo "binary_${PLATFORM} 1" >> /texlive.profile
-  echo "tlpdbopt_post_code 0" >> /texlive.profile
   /tmp/install-tl/installer/install-tl --profile=/texlive.profile
-
   /opt/texlive/texdir/bin/*/tlmgr install \
     adjustbox \
     bigfoot \
@@ -137,11 +123,6 @@ RUN <<EOF
   chmod -R 777 /root/.texlive* /root/texmf-var
   chmod -R 777 /opt/texlive/texdir/texmf-var
   /opt/texlive/texdir/bin/*/luaotfload-tool --update --force
-
-  # Create symlink for consistent PATH regardless of architecture
-  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/$(uname -m)-linuxmusl"
-  ln -sf "${TEXLIVE_BIN_DIR}" /opt/texlive/current-bin
-
   apk del --purge \
     wget \
     tar \
@@ -173,7 +154,7 @@ EOF
 
 WORKDIR /data
 
-ENV PATH="/opt/texlive/current-bin:/opt/po4a:${PATH}" \
+ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
     TERM=xterm-256color
 
