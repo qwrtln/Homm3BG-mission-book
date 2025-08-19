@@ -80,23 +80,16 @@ RUN <<EOF
   mkdir -p /tmp/install-tl/installer
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
 
-  # Map Docker architecture to TeX Live architecture names
   case "$(uname -m)" in
     x86_64) TEXLIVE_ARCH="x86_64-linuxmusl" ;;
     aarch64) TEXLIVE_ARCH="aarch64-linuxmusl" ;;
     *) echo "Unsupported architecture: $(uname -m)" && exit 1 ;;
   esac
 
-  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/${TEXLIVE_ARCH}"
-  echo "Expected TeX Live binary directory: ${TEXLIVE_BIN_DIR}"
-  echo "Architecture mapping: $(uname -m) -> ${TEXLIVE_ARCH}"
-
   echo "binary_${TEXLIVE_ARCH} 1" >> /texlive.profile
-  TEXLIVE_INSTALL_ENV_NOCHECK=1 /tmp/install-tl/installer/install-tl --profile=/texlive.profile
+  /tmp/install-tl/installer/install-tl --profile=/texlive.profile
 
-  export PATH="${TEXLIVE_BIN_DIR}:${PATH}"
-
-  tlmgr install \
+  /opt/texlive/texdir/bin/*/tlmgr install \
     adjustbox \
     bigfoot \
     catchfile \
@@ -134,17 +127,17 @@ RUN <<EOF
     wrapfig \
     xstring \
     zref
-  tlmgr path add
-  mktexlsr
+  /opt/texlive/texdir/bin/*/tlmgr path add
+  /opt/texlive/texdir/bin/*/mktexlsr
   mkdir -p /etc/fonts/conf.d
   ln -s /opt/texlive/texdir/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
   fc-cache -fv
   mkdir -p /root/.texlive*/texmf-var /root/texmf-var/luatex-cache/generic /root/texmf-var/fonts/cache
   chmod -R 777 /root/.texlive* /root/texmf-var
   chmod -R 777 /opt/texlive/texdir/texmf-var
-  luaotfload-tool --update --force
+  /opt/texlive/texdir/bin/*/luaotfload-tool --update --force
 
-  # Create symlink for consistent PATH regardless of architecture
+  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/$(uname -m)-linuxmusl"
   ln -sf "${TEXLIVE_BIN_DIR}" /opt/texlive/current-bin
 
   apk del --purge \
@@ -178,7 +171,6 @@ EOF
 
 WORKDIR /data
 
-# Use the symlinked directory for consistent PATH across architectures
 ENV PATH="/opt/texlive/current-bin:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
     TERM=xterm-256color
