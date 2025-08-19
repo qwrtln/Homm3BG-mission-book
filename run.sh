@@ -44,10 +44,10 @@ temp_output=$(mktemp)
 trap 'rm -f "$temp_output"' EXIT
 
 if [[ "$CONTAINER_ENGINE" = "podman" ]]; then
-    podman run --rm -v "$(pwd):/data" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
+    podman run --rm --platform=linux/amd64 -v "$(pwd):/data" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
 else
     # For Docker, we also specify the user to avoid permission issues
-    docker run --rm -v "$(pwd):/data" --user "$(id -u):$(id -g)" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
+    docker run --rm --platform linux/amd64 -v "$(pwd):/data" --user "$(id -u):$(id -g)" "$IMAGE" "$SCRIPT_PATH" "$@" | tee "$temp_output"
 fi
 
 # Open PDF only after build script
