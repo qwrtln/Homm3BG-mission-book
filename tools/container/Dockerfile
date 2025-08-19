@@ -91,12 +91,9 @@ RUN <<EOF
   echo "Expected TeX Live binary directory: ${TEXLIVE_BIN_DIR}"
   echo "Architecture mapping: $(uname -m) -> ${TEXLIVE_ARCH}"
 
-  # Install TeX Live with explicit platform
-  /tmp/install-tl/installer/install-tl \
-    --profile=/texlive.profile \
-    --platform="${TEXLIVE_ARCH}"
+  echo "binary_${TEXLIVE_ARCH} 1" >> /texlive.profile
+  TEXLIVE_INSTALL_ENV_NOCHECK=1 /tmp/install-tl/installer/install-tl --profile=/texlive.profile
 
-  # Update PATH for subsequent commands
   export PATH="${TEXLIVE_BIN_DIR}:${PATH}"
 
   tlmgr install \
