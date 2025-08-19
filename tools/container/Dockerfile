@@ -80,10 +80,23 @@ RUN <<EOF
   mkdir -p /tmp/install-tl/installer
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
 
-  # Find and set the TeX Live binary path before installation (necessary for multiplatform builds)
-  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/$(uname -m)-linuxmusl"
-  PATH="${TEXLIVE_BIN_DIR}:${PATH}" /tmp/install-tl/installer/install-tl --profile=/texlive.profile
-  # Update TeX Live bin PATH for subsequent commands
+  # Map Docker architecture to TeX Live architecture names
+  case "$(uname -m)" in
+    x86_64) TEXLIVE_ARCH="x86_64-linuxmusl" ;;
+    aarch64) TEXLIVE_ARCH="aarch64-linuxmusl" ;;
+    *) echo "Unsupported architecture: $(uname -m)" && exit 1 ;;
+  esac
+
+  TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/${TEXLIVE_ARCH}"
+  echo "Expected TeX Live binary directory: ${TEXLIVE_BIN_DIR}"
+  echo "Architecture mapping: $(uname -m) -> ${TEXLIVE_ARCH}"
+
+  # Install TeX Live with explicit platform
+  /tmp/install-tl/installer/install-tl \
+    --profile=/texlive.profile \
+    --platform="${TEXLIVE_ARCH}"
+
+  # Update PATH for subsequent commands
   export PATH="${TEXLIVE_BIN_DIR}:${PATH}"
 
   tlmgr install \
