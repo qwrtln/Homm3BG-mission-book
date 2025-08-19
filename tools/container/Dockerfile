@@ -12,6 +12,10 @@ RUN apk add --no-cache wget && \
 
 FROM alpine:latest
 
+ARG TARGETARCH
+ARG TARGETOS
+ARG TARGETPLATFORM
+
 COPY --from=po4a-builder /po4a /opt/po4a
 
 COPY texlive.profile /
@@ -123,6 +127,12 @@ RUN <<EOF
   chmod -R 777 /root/.texlive* /root/texmf-var
   chmod -R 777 /opt/texlive/texdir/texmf-var
   /opt/texlive/texdir/bin/*/luaotfload-tool --update --force
+
+  TEXLIVE_BIN_DIR=$(find /opt/texlive/texdir/bin -maxdepth 1 -type d -name "*-linuxmusl" | head -n1)
+  echo "TeX Live binary directory: ${TEXLIVE_BIN_DIR}"
+
+  ln -sf "${TEXLIVE_BIN_DIR}" /opt/texlive/current-bin
+
   apk del --purge \
     wget \
     tar \
@@ -154,7 +164,7 @@ EOF
 
 WORKDIR /data
 
-ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
+ENV PATH="/opt/texlive/current-bin:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
     TERM=xterm-256color
 
