@@ -81,12 +81,13 @@ RUN <<EOF
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
 
   case "$(uname -m)" in
-    x86_64) TEXLIVE_ARCH="x86_64-linuxmusl" ;;
-    aarch64) TEXLIVE_ARCH="aarch64-linuxmusl" ;;
+    x86_64) PLATFORM="x86_64-linuxmusl" ;;
+    aarch64) PLATFORM="aarch64-linuxmusl" ;;
     *) echo "Unsupported architecture: $(uname -m)" && exit 1 ;;
   esac
 
-  echo "binary_${TEXLIVE_ARCH} 1" >> /texlive.profile
+  echo "binary_${PLATFORM} 1" >> /texlive.profile
+  echo "tlpdbopt_post_code 0" >> /texlive.profile
   /tmp/install-tl/installer/install-tl --profile=/texlive.profile
 
   /opt/texlive/texdir/bin/*/tlmgr install \
@@ -137,6 +138,7 @@ RUN <<EOF
   chmod -R 777 /opt/texlive/texdir/texmf-var
   /opt/texlive/texdir/bin/*/luaotfload-tool --update --force
 
+  # Create symlink for consistent PATH regardless of architecture
   TEXLIVE_BIN_DIR="/opt/texlive/texdir/bin/$(uname -m)-linuxmusl"
   ln -sf "${TEXLIVE_BIN_DIR}" /opt/texlive/current-bin
 
