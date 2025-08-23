@@ -22,7 +22,7 @@ find_latex_references() {
   if [[ -n "$INPUT_REFERENCES" ]]; then
     # Extract the path from the first reference
     local REFERENCED_PATH
-    REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -1 | grep -E '(\\input|\\include)\{[^}]*\}' | sed -E 's/.*\\(input|include)\{([^}]*)\}.*/\2/')
+    REFERENCED_PATH=$(echo "$INPUT_REFERENCES" | head -n 1 | grep -E '(\\input|\\include)\{[^}]*\}' | sed -E 's/.*\\(input|include)\{([^}]*)\}.*/\2/')
 
     # Check if file path is in draft-scenarios
     if [[ "$FILE_PATH" == draft-scenarios/* ]]; then
