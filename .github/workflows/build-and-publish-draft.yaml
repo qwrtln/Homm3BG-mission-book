@@ -100,7 +100,7 @@ jobs:
       - name: Find map files
         id: set-matrix
         run: |
-          IMAGES=$(find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort | uniq | sed 's|maps/||')
+          IMAGES=$(find draft-scenarios -name "*tex" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort -u | sed 's|maps/||')
           echo $IMAGES
           echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
 
