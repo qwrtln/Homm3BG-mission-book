@@ -219,7 +219,7 @@ if [[ -n "${SCENARIO_SEARCH}" ]]; then
     CACHE_DIR="cache/monochrome-maps"
     mkdir -p ${CACHE_DIR}
 
-    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec "${grep_cmd}" -Po "maps[^}]*\.png" {} \; | awk '!seen[$0]++' | while IFS= read -r IMG; do
+    find . -type f -name "${SCENARIO}.tex" ! -path "*/translated/*" -exec "${grep_cmd}" -Po "maps[^}]*\.png" {} \; | sort -u | while IFS= read -r IMG; do
       IMG="assets/${IMG}"
       monochrome_with_cache "${IMG}" "${CACHE_DIR}"
     done
@@ -283,7 +283,7 @@ if [[ "${HOMM3_NO_ART_BACKGROUND}" -eq 1 && "${SCENARIO_SEARCH}" == "" ]]; then
   mkdir -p ${CACHE_DIR}
 
   find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" \
-    -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | awk '!seen[$0]++' | while IFS= read -r IMG; do
+    -exec "${grep_cmd}" -Po "maps[^}]*\.png" '{}' \; | sort -u | while IFS= read -r IMG; do
     IMG="assets/${IMG}"
     monochrome_with_cache "${IMG}" "${CACHE_DIR}"
   done
