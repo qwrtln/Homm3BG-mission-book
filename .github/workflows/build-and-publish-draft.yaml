@@ -68,7 +68,7 @@ jobs:
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v4
         with:
-          extra_system_packages: "inkscape"
+          docker_image: ghcr.io/qwrtln/homm3bg:latest
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1
@@ -205,7 +205,7 @@ jobs:
       - name: Compile monochrome draft book
         uses: xu-cheng/latex-action@v4
         with:
-          extra_system_packages: "inkscape"
+          docker_image: ghcr.io/qwrtln/homm3bg:latest
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           pre_compile: cd draft-scenarios && export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
