@@ -102,9 +102,9 @@ jobs:
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v4
         with:
-          extra_system_packages: "inkscape"
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
+          docker_image: ghcr.io/qwrtln/homm3bg:latest
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
 
