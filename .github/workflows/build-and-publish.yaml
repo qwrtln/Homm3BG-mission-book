@@ -33,11 +33,11 @@ jobs:
         echo "matrix=$(jq -c . matrix.json)" >> $GITHUB_OUTPUT
 
   build:
-    runs-on: ubuntu-latest
     needs: matrix-setup
+    runs-on: ubuntu-latest
+    name: ${{ matrix.display }}
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.number_of_pages }}
-    name: ${{ matrix.display }}
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
@@ -316,10 +316,9 @@ jobs:
 
   check_pages:
     runs-on: ubuntu-latest
-    needs: matrix-setup
     container:
       image: minidocks/poppler
-    needs: build
+    needs: [build, matrix-setup]
     if: github.event_name == 'pull_request'
     name: 🔍 Page count check [${{ matrix.display }}]
     strategy:
