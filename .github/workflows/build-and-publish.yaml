@@ -347,7 +347,7 @@ jobs:
     needs: [matrix-setup, build, build_monochrome]
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
     outputs:
       should_trigger: ${{ steps.check.outputs.should_trigger }}
     steps:
