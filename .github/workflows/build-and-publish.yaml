@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+      check-pages-matrix: ${{ steps.set-matrix.outputs.check-pages-matrix }}
     steps:
     - id: set-matrix
       run: |
@@ -31,6 +32,7 @@ jobs:
         }
         EOF
         echo "matrix=$(jq -c . matrix.json)" >> $GITHUB_OUTPUT
+        echo "check-pages-matrix=$(jq -c 'del(.include[] | select(.language == "en"))' matrix.json)" >> $GITHUB_OUTPUT
 
   build:
     needs: matrix-setup
@@ -323,7 +325,7 @@ jobs:
     name: 🔍 Page count check [${{ matrix.display }}]
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
     steps:
       - name: Download PDFs
         uses: actions/download-artifact@v4
