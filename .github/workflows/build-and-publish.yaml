@@ -12,15 +12,37 @@ env:
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
 
 jobs:
-  build:
+  matrix-setup:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      check-pages-matrix: ${{ steps.set-matrix.outputs.check-pages-matrix }}
+    steps:
+    - id: set-matrix
+      run: |
+        cat << 'EOF' > matrix.json
+        {
+          "include": [
+            { "language": "en", "display": "🇺🇸 English" },
+            { "language": "pl", "display": "🇵🇱 Polski" },
+            { "language": "cs", "display": "🇨🇿 Čeština" },
+            { "language": "fr", "display": "🇫🇷 Français" },
+            { "language": "de", "display": "🇩🇪 Deutsch" }
+          ]
+        }
+        EOF
+        echo "matrix=$(jq -c . matrix.json)" >> $GITHUB_OUTPUT
+        echo "check-pages-matrix=$(jq -c 'del(.include[] | select(.language == "en"))' matrix.json)" >> $GITHUB_OUTPUT
+
+  build:
+    needs: matrix-setup
+    runs-on: ubuntu-latest
+    name: ${{ matrix.display }}
     outputs:
       number_of_pages: ${{ steps.check_pages.outputs.number_of_pages }}
     strategy:
       fail-fast: false
-      matrix:
-        language: ["en", "pl", "cs", "fr", "de"]
-
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
     steps:
       - name: Set up repository
         uses: actions/checkout@v4
@@ -217,8 +239,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        language: ["en", "pl", "cs", "fr", "de"]
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
 
     steps:
       - name: Set up repository
@@ -299,13 +320,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: minidocks/poppler
-    needs: build
+    needs: [build, matrix-setup]
     if: github.event_name == 'pull_request'
+    name: 🔍 Page count check [${{ matrix.display }}]
     strategy:
       fail-fast: false
-      matrix:
-        language: ["pl", "cs", "fr", "de"]
-
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
     steps:
       - name: Download PDFs
         uses: actions/download-artifact@v4
