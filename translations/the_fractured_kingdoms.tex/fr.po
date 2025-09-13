@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-09-13 20:37+0200\n"
 "PO-Revision-Date: 2025-06-30 15:20+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -52,7 +52,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -401,7 +401,20 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:112
+#: clash/the_fractured_kingdoms.tex:115
+#, no-wrap
+msgid ""
+"  \\newcommand{\\greenline}[3]{%\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
+"      \\draw[green!70!black, line width=5pt, line cap=round] (-0.3,0) -- (0.3,0);\n"
+"    \\end{scope}\n"
+"  }\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:119
 #, no-wrap
 msgid ""
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {\n"
@@ -415,99 +428,128 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:114
+#: clash/the_fractured_kingdoms.tex:121
 #, no-wrap
 msgid ""
 "  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
 "\n"
 msgstr ""
 "  \\node at (9, -12) {\\includegraphics[width=0.9\\paperwidth]{\\maps/the_fractured_kingdoms.png}};\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:117
-#, no-wrap
-msgid ""
-"  \\arrow{12.35}{-15.7}{-142}\n"
-"  \\arrow{14.4}{-17.6}{38}\n"
-"\n"
-msgstr ""
-"  \\arrow{12.35}{-15.7}{-142}\n"
-"  \\arrow{14.4}{-17.6}{38}\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:120
-#, no-wrap
-msgid ""
-"  \\arrow{13.91}{-9.95}{-72}\n"
-"  \\arrow{16.2}{-8.55}{108}\n"
-"\n"
-msgstr ""
-"  \\arrow{13.91}{-9.95}{-72}\n"
-"  \\arrow{16.2}{-8.55}{108}\n"
 "\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:123
 #, no-wrap
 msgid ""
-"  \\arrow{8.2}{-4.35}{-176}\n"
-"  \\arrow{8.75}{-6.9}{4}\n"
+"  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green borders mean adjacent Tiles.}}}};\n"
 "\n"
 msgstr ""
-"  \\arrow{8.2}{-4.35}{-176}\n"
-"  \\arrow{8.75}{-6.9}{4}\n"
-"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:126
 #, no-wrap
 msgid ""
-"  \\arrow{1.5}{-10.35}{-99}\n"
-"  \\arrow{4.2}{-10.75}{81}\n"
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (7, -11);\n"
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
 "\n"
 msgstr ""
-"  \\arrow{1.5}{-10.35}{-99}\n"
-"  \\arrow{4.2}{-10.75}{81}\n"
-"\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:129
+#: clash/the_fractured_kingdoms.tex:132
 #, no-wrap
 msgid ""
-"  \\arrow{6.65}{-16.1}{155}\n"
-"  \\arrow{5.45}{-18.7}{-25}\n"
+"  \\greenline{11.4}{-11.2}{13}\n"
+"  \\greenline{7.0}{-11.15}{162}\n"
+"  \\greenline{9.24}{-9.5}{90}\n"
+"  \\greenline{7.8}{-13.75}{-127}\n"
+"  \\greenline{10.5}{-13.75}{-65}\n"
 "\n"
 msgstr ""
-"  \\arrow{6.65}{-16.1}{155}\n"
-"  \\arrow{5.45}{-18.7}{-25}\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:131
-#, no-wrap
-msgid ""
-"  \\blocked{7.05}{-8.85}{-25.5}\n"
-"\n"
-msgstr ""
-"  \\blocked{7.05}{-8.85}{-25.5}\n"
-"\n"
-
-#. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:133
-#, no-wrap
-msgid ""
-"  \\blocked{11.40}{-8.87}{23}\n"
-"\n"
-msgstr ""
-"  \\blocked{11.40}{-8.87}{23}\n"
-"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:135
 #, no-wrap
 msgid ""
+"  \\arrow{12.35}{-15.7}{-142}\n"
+"  \\arrow{14.4}{-17.6}{38}\n"
+"\n"
+msgstr ""
+"  \\arrow{12.35}{-15.7}{-142}\n"
+"  \\arrow{14.4}{-17.6}{38}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:138
+#, no-wrap
+msgid ""
+"  \\arrow{13.91}{-9.95}{-72}\n"
+"  \\arrow{16.2}{-8.55}{108}\n"
+"\n"
+msgstr ""
+"  \\arrow{13.91}{-9.95}{-72}\n"
+"  \\arrow{16.2}{-8.55}{108}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:141
+#, no-wrap
+msgid ""
+"  \\arrow{8.2}{-4.35}{-176}\n"
+"  \\arrow{8.75}{-6.9}{4}\n"
+"\n"
+msgstr ""
+"  \\arrow{8.2}{-4.35}{-176}\n"
+"  \\arrow{8.75}{-6.9}{4}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:144
+#, no-wrap
+msgid ""
+"  \\arrow{1.5}{-10.35}{-99}\n"
+"  \\arrow{4.2}{-10.75}{81}\n"
+"\n"
+msgstr ""
+"  \\arrow{1.5}{-10.35}{-99}\n"
+"  \\arrow{4.2}{-10.75}{81}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:147
+#, no-wrap
+msgid ""
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
+"\n"
+msgstr ""
+"  \\arrow{6.65}{-16.1}{155}\n"
+"  \\arrow{5.45}{-18.7}{-25}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:149
+#, no-wrap
+msgid ""
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"\n"
+msgstr ""
+"  \\blocked{7.05}{-8.85}{-25.5}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:151
+#, no-wrap
+msgid ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
+msgstr ""
+"  \\blocked{11.40}{-8.87}{23}\n"
+"\n"
+
+#. type: tikzpicture
+#: clash/the_fractured_kingdoms.tex:153
+#, no-wrap
+msgid ""
 "  \\blocked{12.69}{-13.12}{67.7}\n"
 "\n"
 msgstr ""
@@ -515,7 +557,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:137
+#: clash/the_fractured_kingdoms.tex:155
 #, no-wrap
 msgid ""
 "  \\blocked{9.135}{-15.58}{0}\n"
@@ -525,7 +567,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: clash/the_fractured_kingdoms.tex:139
+#: clash/the_fractured_kingdoms.tex:157
 #, no-wrap
 msgid ""
 "  \\blocked{5.58}{-13.01}{-71}\n"
