@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-09-13 11:25+0200\n"
+"POT-Creation-Date: 2025-09-13 20:37+0200\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -441,7 +441,7 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:123
 #, no-wrap
 msgid ""
-"  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green Borders mean adjacent Tiles.}}}};\n"
+"  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green borders mean adjacent Tiles.}}}};\n"
 "\n"
 msgstr ""
 
