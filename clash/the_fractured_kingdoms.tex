@@ -106,11 +106,30 @@ Victory Points are counted in accordance to the Tournament book. Additionally, y
     \node[rotate=#3] at (#1, #2) {\svg[20]{movement_token_green}};
   }
 
+  \newcommand{\greenline}[3]{%
+    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle
+    \begin{scope}[shift={(#1,#2)}, rotate=#3]
+      \draw[green!70!black, line width=5pt, line cap=round] (-0.3,0) -- (0.3,0);
+    \end{scope}
+  }
+
   \node(bg)[anchor=center, opacity=0.07, xshift=2em, yshift=-9.5em] at (current page.center) {
     \includegraphics[width=1.2\paperwidth, keepaspectratio]{\art/two_way_monolith.png}
   };
 
   \node at (9, -12) {\includegraphics[width=0.9\paperwidth]{\maps/the_fractured_kingdoms.png}};
+
+  \node[text width=4cm] at (2.5, -3.5) {\footnotesize{\textbf{\textcolor{green!70!black}{Green Borders mean adjacent Tiles.}}}};
+
+  \draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (7, -11);    % Arrow to first green line
+  \draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5); % Arrow to second green line
+
+  \greenline{11.4}{-11.2}{13}
+  \greenline{7.0}{-11.15}{162}
+  \greenline{9.24}{-9.5}{90}
+  \greenline{7.8}{-13.75}{-127}
+  \greenline{10.5}{-13.75}{-65}
+  % \greenline{12.5}{-13.5}{90}
 
   \arrow{12.35}{-15.7}{-142}
   \arrow{14.4}{-17.6}{38}
@@ -136,6 +155,5 @@ Victory Points are counted in accordance to the Tournament book. Additionally, y
   \blocked{9.135}{-15.58}{0}
 
   \blocked{5.58}{-13.01}{-71}
-
 
 \end{tikzpicture}
