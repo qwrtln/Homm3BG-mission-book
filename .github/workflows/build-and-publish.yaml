@@ -18,380 +18,380 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       check-pages-matrix: ${{ steps.set-matrix.outputs.check-pages-matrix }}
     steps:
-      - id: set-matrix
-        run: |
-          cat << 'EOF' > matrix.json
-          {
-            "include": [
-              { "language": "en", "display": "🇺🇸 English" },
-              { "language": "pl", "display": "🇵🇱 Polski" },
-              { "language": "cs", "display": "🇨🇿 Čeština" },
-              { "language": "fr", "display": "🇫🇷 Français" },
-              { "language": "de", "display": "🇩🇪 Deutsch" }
-            ]
-          }
-          EOF
-          echo "matrix=$(jq -c . matrix.json)" >> $GITHUB_OUTPUT
-          echo "check-pages-matrix=$(jq -c 'del(.include[] | select(.language == "en"))' matrix.json)" >> $GITHUB_OUTPUT
+    - id: set-matrix
+      run: |
+        cat << 'EOF' > matrix.json
+        {
+          "include": [
+            { "language": "en", "display": "🇺🇸 English" },
+            { "language": "pl", "display": "🇵🇱 Polski" },
+            { "language": "cs", "display": "🇨🇿 Čeština" },
+            { "language": "fr", "display": "🇫🇷 Français" },
+            { "language": "de", "display": "🇩🇪 Deutsch" }
+          ]
+        }
+        EOF
+        echo "matrix=$(jq -c . matrix.json)" >> $GITHUB_OUTPUT
+        echo "check-pages-matrix=$(jq -c 'del(.include[] | select(.language == "en"))' matrix.json)" >> $GITHUB_OUTPUT
 
-  # build:
-  #   needs: matrix-setup
-  #   runs-on: ubuntu-latest
-  #   name: ${{ matrix.display }}
-  #   outputs:
-  #     number_of_pages: ${{ steps.check_pages.outputs.number_of_pages }}
-  #   strategy:
-  #     fail-fast: false
-  #     matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
-  #   steps:
-  #     - name: Set up repository
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Cache po4a entries [${{ matrix.language }}]
-  #       if: matrix.language != 'en' && github.event_name == 'pull_request'
-  #       id: cache-po4a
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: |
-  #           */translated/${{ matrix.language }}/*.tex
-  #         key: >-
-  #           po4a-${{ matrix.language }}-${{
-  #             hashFiles('po4a.cfg', format('translations/*/{0}.po', matrix.language), 'translations/*/*.pot')
-  #           }}
-  #         restore-keys: |
-  #           po4a-${{ matrix.language }}-
-  #
-  #     - name: Generate translations for ${{ matrix.language }}
-  #       if: matrix.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
-  #       uses: qwrtln/po4a-action@v1.2
-  #       with:
-  #         version: "0.74"
-  #         config: "po4a.cfg"
-  #         args: "--no-update"
-  #         language: ${{ matrix.language }}
-  #
-  #     - name: Cache built PDF
-  #       uses: actions/cache@v4
-  #       if: github.event_name == 'pull_request'
-  #       id: cache-pdf
-  #       with:
-  #         path: |
-  #           ./main_${{ matrix.language }}.pdf
-  #         key: >-
-  #           pdf-${{ matrix.language }}-${{
-  #           matrix.language == 'en'
-  #           && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-  #           || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
-  #           }}
-  #         restore-keys: |
-  #           pdf-${{ matrix.language }}-
-  #
-  #     - name: Cache Inkscape artifacts
-  #       if: steps.cache-pdf.outputs.cache-hit != 'true'
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: |
-  #           ./svg-inkscape
-  #         key: >-
-  #           inkscape-${{ hashFiles('assets/glyphs/*') }}
-  #         restore-keys: |
-  #           inkscape-
-  #
-  #     - name: Cache LaTeX build
-  #       if: steps.cache-pdf.outputs.cache-hit != 'true'
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: |
-  #           ./main_${{ matrix.language }}.aux
-  #           ./main_${{ matrix.language }}.fdb_latexmk
-  #           ./main_${{ matrix.language }}.fls
-  #           ./main_${{ matrix.language }}.out
-  #           ./main_${{ matrix.language }}.toc
-  #           ./campaigns/**/*.aux
-  #           ./coops/**/*.aux
-  #           ./clash/**/*.aux
-  #           ./sections/**/*.aux
-  #         key: >-
-  #           texlive-mission-${{ matrix.language }}-${{
-  #           matrix.language == 'en'
-  #           && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-  #           || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
-  #           }}
-  #         restore-keys: |
-  #           texlive-mission-${{ matrix.language }}-
-  #
-  #     - name: Compile mission book
-  #       if: steps.cache-pdf.outputs.cache-hit != 'true'
-  #       uses: xu-cheng/latex-action@v4
-  #       with:
-  #         docker_image: ghcr.io/qwrtln/homm3bg:latest
-  #         latexmk_use_lualatex: true
-  #         latexmk_shell_escape: true
-  #         pre_compile: export HOMM3_GITHUB_BUILD=1
-  #         root_file: main_${{ matrix.language }}.tex
-  #
-  #     - name: Find quote string
-  #       if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
-  #       id: quote
-  #       run: |
-  #         QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
-  #         echo "quote=$QUOTE" >> $GITHUB_OUTPUT
-  #
-  #     - name: Optimize PDF
-  #       if: steps.cache-pdf.outputs.cache-hit != 'true'
-  #       id: optimize
-  #       uses: qwrtln/optimize-pdf@v1
-  #       with:
-  #         file-name: main_${{ matrix.language }}.pdf
-  #         quality-level: prepress
-  #         test-string: ${{ steps.quote.outputs.quote }}
-  #
-  #     - name: Check number of pages
-  #       if: matrix.language == 'en'
-  #       id: check_pages
-  #       run: |
-  #         if [[ "${{ steps.cache-pdf.outputs.cache-hit }}" == 'true' ]]; then
-  #           NUMBER_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-  #         else
-  #           NUMBER_OF_PAGES=${{ steps.optimize.outputs.page-count }}
-  #         fi
-  #         echo "number_of_pages=${NUMBER_OF_PAGES}" > $GITHUB_OUTPUT
-  #
-  #     - uses: actions/upload-artifact@v4
-  #       with:
-  #         name: main_${{ matrix.language }}
-  #         path: main_${{ matrix.language }}.pdf
-  #         retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-  #
-  # find_map_files:
-  #   runs-on: ubuntu-latest
-  #   if: github.event_name != 'pull_request'
-  #   outputs:
-  #     matrix: ${{ steps.set-matrix.outputs.matrix }}
-  #   steps:
-  #     - name: Set up repository
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Find map files
-  #       id: set-matrix
-  #       run: |
-  #         IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort -u | sed 's|maps/||')
-  #         echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
-  #
-  # make_maps_monochrome:
-  #   needs: find_map_files
-  #   runs-on: ubuntu-latest
-  #   name: Convert ${{ matrix.map }}
-  #   strategy:
-  #     fail-fast: false
-  #     matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
-  #   steps:
-  #     - name: Set up repository
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Generate file hash
-  #       id: hash
-  #       run: |
-  #         HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
-  #         echo "file_hash=$HASH" >> $GITHUB_OUTPUT
-  #
-  #     - name: Check processed map cache
-  #       id: cache-map
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: assets/maps/${{ matrix.map }}
-  #         key: monochrome-map-${{ steps.hash.outputs.file_hash }}
-  #
-  #     - name: Cache ImageMagick AppImage
-  #       if: steps.cache-map.outputs.cache-hit != 'true'
-  #       id: cache-magick
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: /usr/local/bin/magick
-  #         key: imagemagick-${{ env.IMAGEMAGICK_URL }}
-  #
-  #     - name: Install magick
-  #       if: steps.cache-map.outputs.cache-hit != 'true'
-  #       run: |
-  #         sudo add-apt-repository universe
-  #         sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
-  #
-  #         if [[ ! -f /usr/local/bin/magick ]]; then
-  #           echo "No cache found, downloading ImageMagick AppImage."
-  #           wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
-  #           chmod +x magick
-  #           mv magick /usr/local/bin/magick
-  #         fi
-  #
-  #     - name: Process map file
-  #       if: steps.cache-map.outputs.cache-hit != 'true'
-  #       run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
-  #
-  #     - name: Upload processed file
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
-  #         path: assets/maps/${{ matrix.map }}
-  #         retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-  #
-  # build_monochrome:
-  #   needs: [matrix-setup, make_maps_monochrome]
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #     matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
-  #
-  #   steps:
-  #     - name: Set up repository
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Generate translations for ${{ matrix.language }}
-  #       if: ${{ matrix.language != 'en' }}
-  #       uses: qwrtln/po4a-action@v1.2
-  #       with:
-  #         version: "0.74"
-  #         config: "po4a.cfg"
-  #         args: "--no-update"
-  #         language: ${{ matrix.language }}
-  #
-  #     - name: Cache Inkscape artifacts
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: |
-  #           ./svg-inkscape
-  #         key: >-
-  #           inkscape-${{ hashFiles('assets/glyphs/*') }}
-  #         restore-keys: |
-  #           inkscape-
-  #
-  #     - name: Cache LaTeX build
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: |
-  #           ./main_${{ matrix.language }}.aux
-  #           ./main_${{ matrix.language }}.fdb_latexmk
-  #           ./main_${{ matrix.language }}.fls
-  #           ./main_${{ matrix.language }}.out
-  #           ./main_${{ matrix.language }}.toc
-  #           ./campaigns/*.aux
-  #           ./coops/*.aux
-  #           ./clash/*.aux
-  #           ./sections/**/*.aux
-  #         key: >-
-  #           texlive-mission-mono-${{ matrix.language }}-${{
-  #           matrix.language == 'en'
-  #           && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-  #           || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
-  #           }}
-  #         restore-keys: |
-  #           texlive-mission-mono-${{ matrix.language }}-
-  #
-  #     - name: Download monochrome maps
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         pattern: monochrome-map-*
-  #         path: assets/maps
-  #         merge-multiple: true
-  #
-  #     - name: Compile monochrome mission book
-  #       uses: xu-cheng/latex-action@v4
-  #       with:
-  #         docker_image: ghcr.io/qwrtln/homm3bg:latest
-  #         latexmk_use_lualatex: true
-  #         latexmk_shell_escape: true
-  #         pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
-  #         root_file: main_${{ matrix.language }}.tex
-  #
-  #     - name: Optimize PDF
-  #       uses: qwrtln/optimize-pdf@v1
-  #       with:
-  #         file-name: main_${{ matrix.language }}.pdf
-  #         quality-level: prepress
-  #         output-file: main_${{ matrix.language }}-mono.pdf
-  #
-  #     - uses: actions/upload-artifact@v4
-  #       with:
-  #         name: main_${{ matrix.language }}-mono
-  #         path: main_${{ matrix.language }}-mono.pdf
-  #         retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-  #
-  #
-  # check_pages:
-  #   runs-on: ubuntu-latest
-  #   container:
-  #     image: minidocks/poppler
-  #   needs: [build, matrix-setup]
-  #   if: github.event_name == 'pull_request'
-  #   name: 🔍 Page count check [${{ matrix.display }}]
-  #   strategy:
-  #     fail-fast: false
-  #     matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
-  #   steps:
-  #     - name: Download PDFs
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         pattern: "*_${{ matrix.language }}"
-  #
-  #     - name: Check number of pages in digital version
-  #       run: |
-  #         ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
-  #         echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
-  #         echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
-  #         if [[ "${{ needs.build.outputs.number_of_pages }}" != ${ACTUAL_NUM_OF_PAGES} ]]; then
-  #           echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
-  #           exit 1
-  #         fi
-  #
-  # publish:
-  #   runs-on: ubuntu-latest
-  #   needs: [matrix-setup, build, build_monochrome]
-  #   strategy:
-  #     fail-fast: false
-  #     matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
-  #   outputs:
-  #     should_trigger: ${{ steps.check.outputs.should_trigger }}
-  #   steps:
-  #     - name: Create dir
-  #       run: mkdir ${{ matrix.language }}
-  #
-  #     - name: Download compiled books
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         pattern: main_${{ matrix.language }}*
-  #         path: ${{ matrix.language }}
-  #         merge-multiple: true
-  #
-  #     - name: Publish ${{ matrix.language }} in artifacts repository
-  #       uses: peaceiris/actions-gh-pages@v4
-  #       if: github.event_name != 'pull_request'
-  #       with:
-  #         deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-  #         external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-  #         publish_branch: ${{ matrix.language }}
-  #         publish_dir: ./${{ matrix.language }}
-  #         force_orphan: true
-  #
-  #     - uses: geekyeggo/delete-artifact@v5
-  #       if: ${{ matrix.language == 'en' }}
-  #       with:
-  #         name: monochrome-map-*
-  #
-  #     - name: Set trigger flag
-  #       id: check
-  #       if: matrix.language == 'en'
-  #       run: echo "should_trigger=true" >> $GITHUB_OUTPUT
-  #
-  # call_build:
-  #   needs: publish
-  #   if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
-  #   uses: ./.github/workflows/build-individual-scenarios.yaml
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       scenario_type: ["clash", "coops", "campaigns", "sections"]
-  #       language: ["en", "pl", "cs", "fr", "de"]
-  #   with:
-  #     scenario_type: ${{ matrix.scenario_type }}
-  #     language: ${{ matrix.language }}
-  #   secrets:
-  #     SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+  build:
+    needs: matrix-setup
+    runs-on: ubuntu-latest
+    name: ${{ matrix.display }}
+    outputs:
+      number_of_pages: ${{ steps.check_pages.outputs.number_of_pages }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Cache po4a entries [${{ matrix.language }}]
+        if: matrix.language != 'en' && github.event_name == 'pull_request'
+        id: cache-po4a
+        uses: actions/cache@v4
+        with:
+          path: |
+            */translated/${{ matrix.language }}/*.tex
+          key: >-
+            po4a-${{ matrix.language }}-${{
+              hashFiles('po4a.cfg', format('translations/*/{0}.po', matrix.language), 'translations/*/*.pot')
+            }}
+          restore-keys: |
+            po4a-${{ matrix.language }}-
+
+      - name: Generate translations for ${{ matrix.language }}
+        if: matrix.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
+        uses: qwrtln/po4a-action@v1.2
+        with:
+          version: "0.74"
+          config: "po4a.cfg"
+          args: "--no-update"
+          language: ${{ matrix.language }}
+
+      - name: Cache built PDF
+        uses: actions/cache@v4
+        if: github.event_name == 'pull_request'
+        id: cache-pdf
+        with:
+          path: |
+            ./main_${{ matrix.language }}.pdf
+          key: >-
+            pdf-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
+            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            }}
+          restore-keys: |
+            pdf-${{ matrix.language }}-
+
+      - name: Cache Inkscape artifacts
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
+      - name: Cache LaTeX build
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./main_${{ matrix.language }}.aux
+            ./main_${{ matrix.language }}.fdb_latexmk
+            ./main_${{ matrix.language }}.fls
+            ./main_${{ matrix.language }}.out
+            ./main_${{ matrix.language }}.toc
+            ./campaigns/**/*.aux
+            ./coops/**/*.aux
+            ./clash/**/*.aux
+            ./sections/**/*.aux
+          key: >-
+            texlive-mission-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
+            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            }}
+          restore-keys: |
+            texlive-mission-${{ matrix.language }}-
+
+      - name: Compile mission book
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: xu-cheng/latex-action@v4
+        with:
+          docker_image: ghcr.io/qwrtln/homm3bg:latest
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: export HOMM3_GITHUB_BUILD=1
+          root_file: main_${{ matrix.language }}.tex
+
+      - name: Find quote string
+        if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
+        id: quote
+        run: |
+          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
+          echo "quote=$QUOTE" >> $GITHUB_OUTPUT
+
+      - name: Optimize PDF
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        id: optimize
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          test-string: ${{ steps.quote.outputs.quote }}
+
+      - name: Check number of pages
+        if: matrix.language == 'en'
+        id: check_pages
+        run: |
+          if [[ "${{ steps.cache-pdf.outputs.cache-hit }}" == 'true' ]]; then
+            NUMBER_OF_PAGES=$(docker run --rm  -v "`pwd`:/app" -w /app minidocks/poppler pdfinfo main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          else
+            NUMBER_OF_PAGES=${{ steps.optimize.outputs.page-count }}
+          fi
+          echo "number_of_pages=${NUMBER_OF_PAGES}" > $GITHUB_OUTPUT
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: main_${{ matrix.language }}
+          path: main_${{ matrix.language }}.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  find_map_files:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Find map files
+        id: set-matrix
+        run: |
+          IMAGES=$(find . -type f -name "*tex" -not -regex ".*/\(draft-scenarios\|translated\|svg-inkscape\|templates\)/.*" -exec grep -Po "maps[^}]*\.png" '{}' \; | sort -u | sed 's|maps/||')
+          echo "matrix=$(echo "$IMAGES" | jq -R -s -c 'split("\n") | map(select(length > 0)) | {map: .}')" >> $GITHUB_OUTPUT
+
+  make_maps_monochrome:
+    needs: find_map_files
+    runs-on: ubuntu-latest
+    name: Convert ${{ matrix.map }}
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Generate file hash
+        id: hash
+        run: |
+          HASH=$(sha256sum "assets/maps/${{ matrix.map }}" | cut -d ' ' -f 1)
+          echo "file_hash=$HASH" >> $GITHUB_OUTPUT
+
+      - name: Check processed map cache
+        id: cache-map
+        uses: actions/cache@v4
+        with:
+          path: assets/maps/${{ matrix.map }}
+          key: monochrome-map-${{ steps.hash.outputs.file_hash }}
+
+      - name: Cache ImageMagick AppImage
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        id: cache-magick
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/bin/magick
+          key: imagemagick-${{ env.IMAGEMAGICK_URL }}
+
+      - name: Install magick
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+
+          if [[ ! -f /usr/local/bin/magick ]]; then
+            echo "No cache found, downloading ImageMagick AppImage."
+            wget --quiet ${{ env.IMAGEMAGICK_URL }} -O magick
+            chmod +x magick
+            mv magick /usr/local/bin/magick
+          fi
+
+      - name: Process map file
+        if: steps.cache-map.outputs.cache-hit != 'true'
+        run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
+
+      - name: Upload processed file
+        uses: actions/upload-artifact@v4
+        with:
+          name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
+          path: assets/maps/${{ matrix.map }}
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  build_monochrome:
+    needs: [matrix-setup, make_maps_monochrome]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Generate translations for ${{ matrix.language }}
+        if: ${{ matrix.language != 'en' }}
+        uses: qwrtln/po4a-action@v1.2
+        with:
+          version: "0.74"
+          config: "po4a.cfg"
+          args: "--no-update"
+          language: ${{ matrix.language }}
+
+      - name: Cache Inkscape artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./svg-inkscape
+          key: >-
+            inkscape-${{ hashFiles('assets/glyphs/*') }}
+          restore-keys: |
+            inkscape-
+
+      - name: Cache LaTeX build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./main_${{ matrix.language }}.aux
+            ./main_${{ matrix.language }}.fdb_latexmk
+            ./main_${{ matrix.language }}.fls
+            ./main_${{ matrix.language }}.out
+            ./main_${{ matrix.language }}.toc
+            ./campaigns/*.aux
+            ./coops/*.aux
+            ./clash/*.aux
+            ./sections/**/*.aux
+          key: >-
+            texlive-mission-mono-${{ matrix.language }}-${{
+            matrix.language == 'en'
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
+            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            }}
+          restore-keys: |
+            texlive-mission-mono-${{ matrix.language }}-
+
+      - name: Download monochrome maps
+        uses: actions/download-artifact@v4
+        with:
+          pattern: monochrome-map-*
+          path: assets/maps
+          merge-multiple: true
+
+      - name: Compile monochrome mission book
+        uses: xu-cheng/latex-action@v4
+        with:
+          docker_image: ghcr.io/qwrtln/homm3bg:latest
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+          pre_compile: export HOMM3_GITHUB_BUILD=1 HOMM3_NO_ART_BACKGROUND=1
+          root_file: main_${{ matrix.language }}.tex
+
+      - name: Optimize PDF
+        uses: qwrtln/optimize-pdf@v1
+        with:
+          file-name: main_${{ matrix.language }}.pdf
+          quality-level: prepress
+          output-file: main_${{ matrix.language }}-mono.pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: main_${{ matrix.language }}-mono
+          path: main_${{ matrix.language }}-mono.pdf
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+
+  check_pages:
+    runs-on: ubuntu-latest
+    container:
+      image: minidocks/poppler
+    needs: [build, matrix-setup]
+    if: github.event_name == 'pull_request'
+    name: 🔍 Page count check [${{ matrix.display }}]
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
+    steps:
+      - name: Download PDFs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "*_${{ matrix.language }}"
+
+      - name: Check number of pages in digital version
+        run: |
+          ACTUAL_NUM_OF_PAGES=$(pdfinfo main_${{ matrix.language }}/main_${{ matrix.language }}.pdf | awk '/^Pages:/ {print $2}')
+          echo "Expected number of pages: ${{ needs.build.outputs.number_of_pages }}"
+          echo "Actual number of pages:   ${ACTUAL_NUM_OF_PAGES}"
+          if [[ "${{ needs.build.outputs.number_of_pages }}" != ${ACTUAL_NUM_OF_PAGES} ]]; then
+            echo "The digital document in ${{ matrix.language }} language doesn't have correct number of pages. See the output above."
+            exit 1
+          fi
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [matrix-setup, build, build_monochrome]
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
+    outputs:
+      should_trigger: ${{ steps.check.outputs.should_trigger }}
+    steps:
+      - name: Create dir
+        run: mkdir ${{ matrix.language }}
+
+      - name: Download compiled books
+        uses: actions/download-artifact@v4
+        with:
+          pattern: main_${{ matrix.language }}*
+          path: ${{ matrix.language }}
+          merge-multiple: true
+
+      - name: Publish ${{ matrix.language }} in artifacts repository
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.event_name != 'pull_request'
+        with:
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ matrix.language }}
+          publish_dir: ./${{ matrix.language }}
+          force_orphan: true
+
+      - uses: geekyeggo/delete-artifact@v5
+        if: ${{ matrix.language == 'en' }}
+        with:
+          name: monochrome-map-*
+
+      - name: Set trigger flag
+        id: check
+        if: matrix.language == 'en'
+        run: echo "should_trigger=true" >> $GITHUB_OUTPUT
+
+  call_build:
+    needs: publish
+    if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
+    uses: ./.github/workflows/build-individual-scenarios.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario_type: ["clash", "coops", "campaigns", "sections"]
+        language: ["en", "pl", "cs", "fr", "de"]
+    with:
+      scenario_type: ${{ matrix.scenario_type }}
+      language: ${{ matrix.language }}
+    secrets:
+      SSH_DEPLOY_KEY_BUILD_ARTIFACTS: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}

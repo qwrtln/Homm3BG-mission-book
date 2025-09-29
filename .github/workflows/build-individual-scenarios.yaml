@@ -183,24 +183,18 @@ jobs:
           quality-level: prepress
           output-file: ${{ steps.set-filename.outputs.filename }}
 
-      - uses: actions/upload-artifact@v4
+      - name: Put PDFs in a directory
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ${{ matrix.scenario }}
+          cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
+
+      - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
+        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: ${{ steps.set-filename.outputs.filename }}
-          path: ${{ steps.set-filename.outputs.filename }}
-          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
-
-      # - name: Put PDFs in a directory
-      #   if: steps.cache-pdf.outputs.cache-hit != 'true'
-      #   run: |
-      #     mkdir -p ${{ matrix.scenario }}
-      #     cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
-
-      # - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
-      #   if: steps.cache-pdf.outputs.cache-hit != 'true'
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-      #     publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}-${{ matrix.variant }}
-      #     publish_dir: ./${{ matrix.scenario }}
-      #     force_orphan: true
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+          publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}-${{ matrix.variant }}
+          publish_dir: ./${{ matrix.scenario }}
+          force_orphan: true
