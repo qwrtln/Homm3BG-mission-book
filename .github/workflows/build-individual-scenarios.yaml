@@ -173,7 +173,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           root_file: main_${{ inputs.language }}.tex
-          pre_compile: ${{ matrix.variant == 'mono' && 'export HOMM3_NO_ART_BACKGROUND=1' || '' }}
+          pre_compile: export HOMM3_FEEDBACK_PAGE=1 ${{ matrix.variant == 'mono' && 'HOMM3_NO_ART_BACKGROUND=1' || '' }}
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -183,18 +183,24 @@ jobs:
           quality-level: prepress
           output-file: ${{ steps.set-filename.outputs.filename }}
 
-      - name: Put PDFs in a directory
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p ${{ matrix.scenario }}
-          cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
-
-      - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-artifact@v4
         with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}-${{ matrix.variant }}
-          publish_dir: ./${{ matrix.scenario }}
-          force_orphan: true
+          name: ${{ steps.set-filename.outputs.filename }}
+          path: ${{ steps.set-filename.outputs.filename }}
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+      # - name: Put PDFs in a directory
+      #   if: steps.cache-pdf.outputs.cache-hit != 'true'
+      #   run: |
+      #     mkdir -p ${{ matrix.scenario }}
+      #     cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
+
+      # - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
+      #   if: steps.cache-pdf.outputs.cache-hit != 'true'
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
+      #     external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
+      #     publish_branch: ${{ inputs.language }}-${{ matrix.scenario }}-${{ matrix.variant }}
+      #     publish_dir: ./${{ matrix.scenario }}
+      #     force_orphan: true

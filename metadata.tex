@@ -95,6 +95,7 @@
 \newtoggle{printable}
 \newtoggle{noartbackground}
 \newtoggle{githubbuild}
+\newtoggle{feedbackpage}
 
 % Variables
 \def\_assets{assets}
@@ -113,6 +114,7 @@
 \def\qr{\_assets/qr-codes}
 
 \def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
+\def\discordurl{https://discord.gg/nMbawQkj9R}
 
 \newcommand{\svg}[2][10]{%
   \iftoggle{noartbackground}{%
@@ -512,5 +514,9 @@
 \begin{document}
 
 \input{structure.tex}
+
+\iftoggle{feedbackpage}{
+  \include{\sections/feedback_page.tex}
+}
 
 \end{document}

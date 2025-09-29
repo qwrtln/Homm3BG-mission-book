@@ -9,6 +9,9 @@ if ($ENV{HOMM3_NO_ART_BACKGROUND}) {
 if ($ENV{HOMM3_GITHUB_BUILD}) {
   $toggles .= '\toggletrue{githubbuild}'
 }
+if ($ENV{HOMM3_FEEDBACK_PAGE}) {
+  $toggles .= '\toggletrue{feedbackpage}'
+}
 
 if ($toggles) {
   &alt_tex_cmds;
