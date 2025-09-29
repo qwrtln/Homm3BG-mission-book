@@ -20,7 +20,7 @@ msgstr ""
 #. type: Plain text
 #: sections/feedback_page.tex:4
 msgid "\\addsection{Got any feedback?}{\\images/orb_of_the_firmament.png}"
-msgstr "\\addsection{Informacja zwrotna}{\\images/orb_of_the_firmament.png}"
+msgstr "\\addsection{Podziel się opinią}{\\images/orb_of_the_firmament.png}"
 
 #.  no-check-caps
 #. type: Plain text
