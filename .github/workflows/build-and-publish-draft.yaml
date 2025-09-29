@@ -253,7 +253,7 @@ jobs:
   #         name: monochrome-map-*
 
   call_build:
-    needs: publish
+    # needs: publish
     uses: ./.github/workflows/build-individual-scenarios.yaml
     strategy:
       fail-fast: false
