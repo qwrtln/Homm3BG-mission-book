@@ -146,7 +146,7 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
 fi
 
 if [[ $FEEDBACK_PAGE == 1 && $SCENARIO_SEARCH == "" ]]; then
-  echo "Error: Feedback page is appended only to single scenarios" >&2
+  echo "Error: Feedback page is appended only to single scenarios (-s option)" >&2
   exit 1
 fi
 
