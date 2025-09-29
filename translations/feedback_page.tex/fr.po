@@ -1,0 +1,70 @@
+# French translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-09-30 01:09+0200\n"
+"PO-Revision-Date: 2025-09-30 01:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. type: Plain text
+#: sections/feedback_page.tex:4
+#, fuzzy
+#| msgid "\\addsection{Random Scenario}{\\images/random.png}"
+msgid "\\addsection{Got any feedback?}{\\images/orb_of_the_firmament.png}"
+msgstr "\\addsection{Scénario Aléatoire}{\\images/random.png}"
+
+#.  no-check-caps
+#. type: Plain text
+#: sections/feedback_page.tex:13
+msgid ""
+"We hope you enjoyed this scenario.  It was created by hobbyists in their "
+"free time, for hobbyists just as yourself.  Did you enjoy playing it? Was "
+"there anything that could be improved? The authors would really appreciate "
+"your feedback.  Please reach out using one of the mediums below.  Cheers!"
+msgstr ""
+
+#. type: multicols
+#: sections/feedback_page.tex:20
+#, no-wrap
+msgid ""
+"{2}\n"
+"  \\bigbreak\n"
+"  \\centering\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"  Scan to join the Heroes III Board Game community \\textbf{Discord} server.\\\\\n"
+"  \\href{\\discordurl}{\\discordurl}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/feedback_page.tex:25
+#, no-wrap
+msgid ""
+"  \\columnbreak\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
+"  \\qrgithub \\\\\n"
+"  \\href{\\repourl}{\\repourl}"
+msgstr ""
+
+#. type: center
+#: sections/feedback_page.tex:30
+#, fuzzy
+#| msgid ""
+#| "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, "
+#| "keepaspectratio]{\\art/land_mine.png}}"
+msgid ""
+"\\transparent{0.2}{\\includegraphics[width=0.3\\linewidth, keepaspectratio]"
+"{\\art/mirth.png}}"
+msgstr ""
+"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
+"{\\art/land_mine.png}}"

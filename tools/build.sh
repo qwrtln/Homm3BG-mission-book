@@ -6,6 +6,7 @@ DRAFTS_MODE=0
 PRINTABLE_MODE=0
 MONO_MODE=0
 NO_GS=0
+FEEDBACK_PAGE=0
 SCENARIO_SEARCH=""
 
 valid_languages=("en" "pl" "fr" "cs" "de")
@@ -25,6 +26,7 @@ usage() {
   echo "  -d, --drafts       Generate draft scenarios"
   echo "  -s, --scenario     Build a single scenario matching the input given"
   echo "  -n, --no-gs        Don't run ghostscript after building a single scenario"
+  echo "  -f, --feedback     Append feedback page to a single scenario"
   echo "  -h, --help         Show this help message"
   echo
   echo "Short options can be combined, e.g. -dm for drafts and mono"
@@ -86,6 +88,7 @@ while [[ $# -gt 0 ]]; do
         SCENARIO_SEARCH="$1"
         shift
         ;;
+      feedback) FEEDBACK_PAGE=1 ;;
       help) usage ;;
       *) echo "Error: Unknown option $arg" >&2; usage ;;
     esac
@@ -114,6 +117,7 @@ while [[ $# -gt 0 ]]; do
           SCENARIO_SEARCH="$1"
           shift
           ;;
+        f) FEEDBACK_PAGE=1 ;;
         h) usage ;;
         *) echo "Error: Unknown option -${arg:$i:1}" >&2; usage ;;
       esac
@@ -125,8 +129,9 @@ while [[ $# -gt 0 ]]; do
   usage
 done
 
-[[ $PRINTABLE_MODE -eq 1 ]] && export HOMM3_PRINTABLE=1
-[[ $MONO_MODE -eq 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
+[[ $PRINTABLE_MODE == 1 ]] && export HOMM3_PRINTABLE=1
+[[ $MONO_MODE == 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
+[[ $FEEDBACK_PAGE == 1 ]] && export HOMM3_INDIVIDUAL_SCENARIO=1
 
 # Check for incompatible options
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
@@ -138,6 +143,11 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     echo "Error: Scenario selection is incompatible with drafts mode" >&2
     exit 1
   fi
+fi
+
+if [[ $FEEDBACK_PAGE == 1 && $SCENARIO_SEARCH == "" ]]; then
+  echo "Error: Feedback page is appended only to single scenarios" >&2
+  exit 1
 fi
 
 # Mono mode cleanup to restore maps

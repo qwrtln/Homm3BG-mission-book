@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-09-30 01:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: sections/feedback_page.tex:4
+msgid "\\addsection{Got any feedback?}{\\images/orb_of_the_firmament.png}"
+msgstr ""
+
+#.  no-check-caps
+#. type: Plain text
+#: sections/feedback_page.tex:13
+msgid ""
+"We hope you enjoyed this scenario.  It was created by hobbyists in their "
+"free time, for hobbyists just as yourself.  Did you enjoy playing it? Was "
+"there anything that could be improved? The authors would really appreciate "
+"your feedback.  Please reach out using one of the mediums below.  Cheers!"
+msgstr ""
+
+#. type: multicols
+#: sections/feedback_page.tex:20
+#, no-wrap
+msgid ""
+"{2}\n"
+"  \\bigbreak\n"
+"  \\centering\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"  Scan to join the Heroes III Board Game community \\textbf{Discord} server.\\\\\n"
+"  \\href{\\discordurl}{\\discordurl}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/feedback_page.tex:25
+#, no-wrap
+msgid ""
+"  \\columnbreak\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
+"  \\qrgithub \\\\\n"
+"  \\href{\\repourl}{\\repourl}"
+msgstr ""
+
+#. type: center
+#: sections/feedback_page.tex:30
+msgid ""
+"\\transparent{0.2}{\\includegraphics[width=0.3\\linewidth, keepaspectratio]"
+"{\\art/mirth.png}}"
+msgstr ""
