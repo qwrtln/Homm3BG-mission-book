@@ -173,7 +173,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           root_file: main_${{ inputs.language }}.tex
-          pre_compile: export HOMM3_FEEDBACK_PAGE=1 ${{ matrix.variant == 'mono' && 'HOMM3_NO_ART_BACKGROUND=1' || '' }}
+          pre_compile: export HOMM3_INDIVIDUAL_SCENARIO=1 ${{ matrix.variant == 'mono' && 'HOMM3_NO_ART_BACKGROUND=1' || '' }}
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'

@@ -95,7 +95,7 @@
 \newtoggle{printable}
 \newtoggle{noartbackground}
 \newtoggle{githubbuild}
-\newtoggle{feedbackpage}
+\newtoggle{individualscenario}
 
 % Variables
 \def\_assets{assets}
@@ -515,7 +515,7 @@
 
 \input{structure.tex}
 
-\iftoggle{feedbackpage}{
+\iftoggle{individualscenario}{
   \include{\sections/feedback_page.tex}
 }
 
