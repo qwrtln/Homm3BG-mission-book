@@ -41,7 +41,8 @@ msgid ""
 "\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
 "\\input{.version} }"
 msgstr ""
-"\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} Ceci est une version non-éditée créée sur GitHub à partir du commit "
+"\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} Ceci est une "
+"version non-éditée créée sur GitHub à partir du commit "
 "\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
 "\\input{.version} }"
 
@@ -52,8 +53,9 @@ msgid ""
 "\\hrefwithoutfootnote{\\repourl}{GitHub repository}.  Everyone is welcome to "
 "contribute Scenarios, make changes, and fix errors."
 msgstr ""
-"Ceci est un projet communautaire doté d'un \\hrefwithoutfootnote{\\repourl}{dépôt GitHub}. "
-"Vous êtes tous invités à apporter vos contributions, modifications, corrections et traductions."
+"Ceci est un projet communautaire doté d'un \\hrefwithoutfootnote{\\repourl}"
+"{dépôt GitHub}. Vous êtes tous invités à apporter vos contributions, "
+"modifications, corrections et traductions."
 
 #. type: multicols
 #: sections/intro_and_toc.tex:28

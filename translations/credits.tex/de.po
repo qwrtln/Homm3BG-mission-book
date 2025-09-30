@@ -85,7 +85,6 @@ msgstr "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
 #. type: center
 #: sections/credits.tex:8 sections/intro_and_toc.tex:16
 #: sections/intro_and_toc.tex:21
-#, fuzzy
 msgid "\\bigbreak"
 msgstr "\\bigbreak"
 
