@@ -382,14 +382,14 @@ jobs:
         run: echo "should_trigger=true" >> $GITHUB_OUTPUT
 
   call_build:
-    # needs: publish
-    # if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
+    needs: publish
+    if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
     uses: ./.github/workflows/build-individual-scenarios.yaml
     strategy:
       fail-fast: false
       matrix:
-        scenario_type: ["clash"] #, "coops", "campaigns", "sections"]
-        language: ["en"] #, "pl", "cs", "fr", "de"]
+        scenario_type: ["clash", "coops", "campaigns", "sections"]
+        language: ["en", "pl", "cs", "fr", "de"]
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}
