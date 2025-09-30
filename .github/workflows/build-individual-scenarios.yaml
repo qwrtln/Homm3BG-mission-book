@@ -18,7 +18,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
-  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play\|notes
+  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play\|notes\|feedback_page\|intro_and_toc
 
 jobs:
   find_scenarios:
@@ -67,7 +67,7 @@ jobs:
             ${{ inputs.scenario_type }}/translated/${{ inputs.language }}/${{ matrix.scenario }}.tex
           key: >-
             po4a-${{ matrix.scenario }}-${{ inputs.language }}-${{
-              hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario))
+              hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario), format('translations/feedback_page.tex/{0}.po', inputs.language))
             }}
           restore-keys: |
             po4a-${{ matrix.scenario }}-${{ inputs.language }}-
@@ -85,7 +85,7 @@ jobs:
         id: find-assets
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
-          ASSET_PATHS=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" | sort | uniq)
+          ASSET_PATHS=$(grep -hPo '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" "sections/feedback_page.tex" | sort | uniq)
 
           KEEP_FILES=""
           for asset_path in $ASSET_PATHS; do
@@ -106,9 +106,7 @@ jobs:
           done
 
       - name: Adjust document structure
-        run: |
-          echo ${{ matrix.scenario }}
-          tools/_find_scenario.sh ${{ matrix.scenario }}
+        run: tools/_find_scenario.sh ${{ matrix.scenario }}
 
       - name: Cache built PDF
         uses: actions/cache@v4
@@ -119,8 +117,8 @@ jobs:
           key: >-
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-${{
             inputs.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*', '!assets/map-files/*')
-            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), 'assets/**/*', '!assets/map-files/*')
+            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'sections/feedback_page.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*', '!assets/map-files/*')
+            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), format('translations/feedback_page.tex/{0}.po', inputs.language), 'assets/**/*', '!assets/map-files/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-
@@ -173,7 +171,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           root_file: main_${{ inputs.language }}.tex
-          pre_compile: ${{ matrix.variant == 'mono' && 'export HOMM3_NO_ART_BACKGROUND=1' || '' }}
+          pre_compile: export HOMM3_INDIVIDUAL_SCENARIO=1 ${{ matrix.variant == 'mono' && 'HOMM3_NO_ART_BACKGROUND=1' || '' }}
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -190,7 +188,7 @@ jobs:
           cp ${{ steps.set-filename.outputs.filename }} ${{ matrix.scenario }}
 
       - name: Publish ${{ matrix.scenario }} [${{ inputs.language }}] in artifacts repository
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        if: steps.cache-pdf.outputs.cache-hit != 'true' && github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}

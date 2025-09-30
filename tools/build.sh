@@ -6,6 +6,7 @@ DRAFTS_MODE=0
 PRINTABLE_MODE=0
 MONO_MODE=0
 NO_GS=0
+FEEDBACK_PAGE=0
 SCENARIO_SEARCH=""
 
 valid_languages=("en" "pl" "fr" "cs" "de")
@@ -25,6 +26,7 @@ usage() {
   echo "  -d, --drafts       Generate draft scenarios"
   echo "  -s, --scenario     Build a single scenario matching the input given"
   echo "  -n, --no-gs        Don't run ghostscript after building a single scenario"
+  echo "  -f, --feedback     Append feedback page to a single scenario"
   echo "  -h, --help         Show this help message"
   echo
   echo "Short options can be combined, e.g. -dm for drafts and mono"
@@ -86,6 +88,7 @@ while [[ $# -gt 0 ]]; do
         SCENARIO_SEARCH="$1"
         shift
         ;;
+      feedback) FEEDBACK_PAGE=1 ;;
       help) usage ;;
       *) echo "Error: Unknown option $arg" >&2; usage ;;
     esac
@@ -114,6 +117,7 @@ while [[ $# -gt 0 ]]; do
           SCENARIO_SEARCH="$1"
           shift
           ;;
+        f) FEEDBACK_PAGE=1 ;;
         h) usage ;;
         *) echo "Error: Unknown option -${arg:$i:1}" >&2; usage ;;
       esac
@@ -125,8 +129,9 @@ while [[ $# -gt 0 ]]; do
   usage
 done
 
-[[ $PRINTABLE_MODE -eq 1 ]] && export HOMM3_PRINTABLE=1
-[[ $MONO_MODE -eq 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
+[[ $PRINTABLE_MODE == 1 ]] && export HOMM3_PRINTABLE=1
+[[ $MONO_MODE == 1 ]] && export HOMM3_NO_ART_BACKGROUND=1
+[[ $FEEDBACK_PAGE == 1 ]] && export HOMM3_INDIVIDUAL_SCENARIO=1
 
 # Check for incompatible options
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
@@ -138,6 +143,11 @@ if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
     echo "Error: Scenario selection is incompatible with drafts mode" >&2
     exit 1
   fi
+fi
+
+if [[ $FEEDBACK_PAGE == 1 && $SCENARIO_SEARCH == "" ]]; then
+  echo "Error: Feedback page is appended only to single scenarios (-s option)" >&2
+  exit 1
 fi
 
 # Mono mode cleanup to restore maps
@@ -168,9 +178,6 @@ cleanup() {
   cleanup_monochrome
   cleanup_windows_drafts
   cleanup_scenario
-  if [[ ${LANGUAGE} != en ]]; then
-    git restore po4a.cfg
-  fi
 }
 
 trap cleanup EXIT
@@ -259,17 +266,16 @@ fi
 
 # Run po4a for non-English languages
 if [[ ${LANGUAGE} != en ]]; then
-  sed -i'' "s/^\[po4a_langs\].*$/[po4a_langs] ${LANGUAGE}/" po4a.cfg
   if [[ -n "${SCENARIO_SEARCH}" ]]; then
     # Filter po4a output to only show the specific scenario
-    if ! po4a --no-update po4a.cfg | grep -E "(/${LANGUAGE}/|^[[:space:]]*$)" | grep -E "(${SCENARIO}\.tex|^[[:space:]]*$)"; then
+    if ! po4a --no-update po4a.cfg --target-lang "${LANGUAGE}" | grep -E "(/${LANGUAGE}/|^[[:space:]]*$)" | grep -E "(${SCENARIO}\.tex|^[[:space:]]*$)"; then
       echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
       find translations -name "$LANGUAGE.po" -type f -exec msgfmt -c --check-format -o /dev/null '{}' \;
       exit 1
     fi
   else
     # Show all po4a output for non-scenario builds
-    if ! po4a --no-update po4a.cfg | grep "/${LANGUAGE}/"; then
+    if ! po4a --no-update po4a.cfg --target-lang "${LANGUAGE}" | grep "/${LANGUAGE}/"; then
       echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
       find translations -name "$LANGUAGE.po" -type f -exec msgfmt -c --check-format -o /dev/null '{}' \;
       exit 1

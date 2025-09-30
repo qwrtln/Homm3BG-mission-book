@@ -1,0 +1,134 @@
+# German translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-09-30 13:50+0200\n"
+"PO-Revision-Date: 2025-09-30 13:50+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: center
+#: sections/credits.tex:8 sections/intro_and_toc.tex:16
+#: sections/intro_and_toc.tex:21
+msgid "\\bigbreak"
+msgstr "\\bigbreak"
+
+#.  !TeX spellcheck = en_US
+#. type: title{#1}
+#: sections/intro_and_toc.tex:3
+msgid "Fan-Made Mission Book"
+msgstr "Von Fans erstelltes Missionsheft"
+
+#. type: author{#1}
+#: sections/intro_and_toc.tex:6
+msgid "By The Community"
+msgstr "Von der Gemeinschaft"
+
+#. type: center
+#: sections/intro_and_toc.tex:14
+msgid ""
+"\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} This is an "
+"unreleased version built on GitHub from commit "
+"\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
+"\\input{.version} }"
+msgstr ""
+"\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} Dies ist eine "
+"unveröffentlichte Version auf GitHub \\hrefwithoutfootnote{\\repourl}"
+"{\\StrLeft{\\githubsha}{7}}.  }{ Version \\input{.version} }"
+
+#. type: center
+#: sections/intro_and_toc.tex:19
+msgid ""
+"This is a community-driven project, which has a "
+"\\hrefwithoutfootnote{\\repourl}{GitHub repository}.  Everyone is welcome to "
+"contribute Scenarios, make changes, and fix errors."
+msgstr ""
+"Dies ist ein Gemeinschaftsprojekt, erreichbar über "
+"\\hrefwithoutfootnote{\\repourl}{GitHub repository}. Jeder ist dazu "
+"eingeladen sich zu beteiligen, Veränderungen vorzunehmen und Fehler zu "
+"korrigieren."
+
+#. type: multicols
+#: sections/intro_and_toc.tex:28
+#, no-wrap
+msgid ""
+"{2}\n"
+"    \\bigbreak\n"
+"    \\centering\n"
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"    Scan to join the Heroes III Board Game community \\textbf{Discord} server.\\\\\n"
+"    \\href{\\discordurl}{\\discordurl}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/intro_and_toc.tex:33
+#, no-wrap
+msgid ""
+"    \\columnbreak\n"
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
+"    Scan to open \\textbf{GitHub} repository. \\\\\n"
+"    \\href{\\repourl}{\\repourl}\n"
+"  "
+msgstr ""
+"    \\columnbreak\n"
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
+"    Link zum \\textbf{GitHub} Verzeichnis. \\\\\n"
+"    \\href{\\repourl}{\\repourl}\n"
+"  "
+
+#. type: Plain text
+#: sections/intro_and_toc.tex:47
+msgid ""
+"\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
+"(0in,-\\paperheight)"
+"{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
+"tausta.png}} } }"
+msgstr ""
+"\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
+"(0in,-\\paperheight)"
+"{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
+"tausta.png}} } }"
+
+#. type: tikzpicture
+#: sections/intro_and_toc.tex:47
+#, no-wrap
+msgid ""
+"[remember picture, overlay]\n"
+"  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
+"    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
+"  };"
+msgstr ""
+"[remember picture, overlay]\n"
+"  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
+"    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
+"  };"
+
+#. type: multicols*
+#: sections/intro_and_toc.tex:55
+#, no-wrap
+msgid ""
+"{2}\n"
+"\\tableofcontents\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\\vspace{-3em}\n"
+"\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\\tableofcontents\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\\vspace{-3em}\n"
+"\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
+"\n"
