@@ -85,7 +85,7 @@ jobs:
         id: find-assets
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
-          ASSET_PATHS=$(grep -Po '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" "sections/feedback_page.tex" | sort | uniq)
+          ASSET_PATHS=$(grep -hPo '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" "sections/feedback_page.tex" | sort | uniq)
           echo $ASSET_PATHS
           KEEP_FILES=""
           for asset_path in $ASSET_PATHS; do
