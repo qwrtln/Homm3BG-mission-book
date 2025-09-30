@@ -178,9 +178,6 @@ cleanup() {
   cleanup_monochrome
   cleanup_windows_drafts
   cleanup_scenario
-  if [[ ${LANGUAGE} != en ]]; then
-    git restore po4a.cfg
-  fi
 }
 
 trap cleanup EXIT
@@ -269,17 +266,16 @@ fi
 
 # Run po4a for non-English languages
 if [[ ${LANGUAGE} != en ]]; then
-  sed -i'' "s/^\[po4a_langs\].*$/[po4a_langs] ${LANGUAGE}/" po4a.cfg
   if [[ -n "${SCENARIO_SEARCH}" ]]; then
     # Filter po4a output to only show the specific scenario
-    if ! po4a --no-update po4a.cfg | grep -E "(/${LANGUAGE}/|^[[:space:]]*$)" | grep -E "(${SCENARIO}\.tex|^[[:space:]]*$)"; then
+    if ! po4a --no-update po4a.cfg --target-lang "${LANGUAGE}" | grep -E "(/${LANGUAGE}/|^[[:space:]]*$)" | grep -E "(${SCENARIO}\.tex|^[[:space:]]*$)"; then
       echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
       find translations -name "$LANGUAGE.po" -type f -exec msgfmt -c --check-format -o /dev/null '{}' \;
       exit 1
     fi
   else
     # Show all po4a output for non-scenario builds
-    if ! po4a --no-update po4a.cfg | grep "/${LANGUAGE}/"; then
+    if ! po4a --no-update po4a.cfg --target-lang "${LANGUAGE}" | grep "/${LANGUAGE}/"; then
       echo -e "---\npo4a failed for language ${LANGUAGE}, please fix the errors."
       find translations -name "$LANGUAGE.po" -type f -exec msgfmt -c --check-format -o /dev/null '{}' \;
       exit 1

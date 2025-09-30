@@ -86,7 +86,7 @@ jobs:
         run: |
           SCENARIO_FILE="${{ inputs.scenario_type }}/${{ matrix.scenario }}.tex"
           ASSET_PATHS=$(grep -hPo '(images|art|maps)/[^}]*\.(png|jpg|jpeg)' "$SCENARIO_FILE" "sections/feedback_page.tex" | sort | uniq)
-          echo $ASSET_PATHS
+
           KEEP_FILES=""
           for asset_path in $ASSET_PATHS; do
             FULL_PATH="assets/$asset_path"
@@ -94,7 +94,7 @@ jobs:
               KEEP_FILES="$KEEP_FILES $FULL_PATH"
             fi
           done
-          echo $KEEP_FILES
+
           for dir in assets/maps assets/images assets/art; do
             for file in "$dir"/*; do
               if [[ -f "$file" ]] && [[ ! " $KEEP_FILES " =~ " $file " ]]; then
