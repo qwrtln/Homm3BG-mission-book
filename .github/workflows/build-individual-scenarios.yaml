@@ -67,7 +67,7 @@ jobs:
             ${{ inputs.scenario_type }}/translated/${{ inputs.language }}/${{ matrix.scenario }}.tex
           key: >-
             po4a-${{ matrix.scenario }}-${{ inputs.language }}-${{
-              hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario), format('translations/feedback_page.tex/{0}.pot', inputs.language))
+              hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario), format('translations/feedback_page.tex/{0}.po', inputs.language))
             }}
           restore-keys: |
             po4a-${{ matrix.scenario }}-${{ inputs.language }}-
@@ -118,7 +118,7 @@ jobs:
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-${{
             inputs.language == 'en'
             && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'sections/feedback_page.tex', format('{0}/{1}.tex', inputs.scenario_type, matrix.scenario), 'assets/**/*', '!assets/map-files/*')
-            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), format('translations/feedback_page.tex/{0}.pot', inputs.language), 'assets/**/*', '!assets/map-files/*')
+            || hashFiles(format('main_{0}.tex', inputs.language), 'metadata.tex', 'structure.tex', format('{0}/translated/{1}/{2}.tex', inputs.scenario_type, inputs.language, matrix.scenario), format('translations/feedback_page.tex/{0}.po', inputs.language), 'assets/**/*', '!assets/map-files/*')
             }}
           restore-keys: |
             pdf-${{ matrix.scenario }}-${{ inputs.language }}-${{ matrix.variant }}-
