@@ -65,6 +65,7 @@ jobs:
         with:
           path: |
             ${{ inputs.scenario_type }}/translated/${{ inputs.language }}/${{ matrix.scenario }}.tex
+            sections/translated/${{ inputs.language }}/feedback_page.tex
           key: >-
             po4a-${{ matrix.scenario }}-${{ inputs.language }}-${{
               hashFiles('po4a.cfg', format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language), format('translations/{0}.tex/{0}.pot', matrix.scenario), format('translations/feedback_page.tex/{0}.po', inputs.language))
