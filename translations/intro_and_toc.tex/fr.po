@@ -26,12 +26,12 @@ msgstr ""
 #. type: title{#1}
 #: sections/intro_and_toc.tex:3
 msgid "Fan-Made Mission Book"
-msgstr ""
+msgstr "Livre de mission fait par les fans"
 
 #. type: author{#1}
 #: sections/intro_and_toc.tex:6
 msgid "By The Community"
-msgstr ""
+msgstr "Par la communauté"
 
 #. type: center
 #: sections/intro_and_toc.tex:14
@@ -41,6 +41,9 @@ msgid ""
 "\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
 "\\input{.version} }"
 msgstr ""
+"\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} Ceci est une version non-éditée créée sur GitHub à partir du commit "
+"\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
+"\\input{.version} }"
 
 #. type: center
 #: sections/intro_and_toc.tex:19
@@ -49,6 +52,8 @@ msgid ""
 "\\hrefwithoutfootnote{\\repourl}{GitHub repository}.  Everyone is welcome to "
 "contribute Scenarios, make changes, and fix errors."
 msgstr ""
+"Ceci est un projet communautaire doté d'un \\hrefwithoutfootnote{\\repourl}{dépôt GitHub}. "
+"Vous êtes tous invités à apporter vos contributions, modifications, corrections et traductions."
 
 #. type: multicols
 #: sections/intro_and_toc.tex:28
@@ -73,6 +78,11 @@ msgid ""
 "    \\href{\\repourl}{\\repourl}\n"
 "  "
 msgstr ""
+"    \\columnbreak\n"
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
+"    Scannez pour ouvrir le dépôt \\textbf{GitHub}. \\\\\n"
+"    \\href{\\repourl}{\\repourl}\n"
+"  "
 
 #. type: Plain text
 #: sections/intro_and_toc.tex:47
@@ -82,24 +92,23 @@ msgid ""
 "{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
 "tausta.png}} } }"
 msgstr ""
+"\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
+"(0in,-\\paperheight)"
+"{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
+"tausta.png}} } }"
 
 #. type: tikzpicture
 #: sections/intro_and_toc.tex:47
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"
-#| "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/ammo_cart.png}\n"
-#| "  };"
+#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
 "    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
 "  };"
 msgstr ""
-"[overlay]\n"
-"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"
-"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/ammo_cart.png}\n"
+"[remember picture, overlay]\n"
+"  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
+"    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
 "  };"
 
 #. type: multicols*
@@ -114,3 +123,10 @@ msgid ""
 "\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\\tableofcontents\n"
+"\\vspace*{\\fill}\n"
+"\\columnbreak\n"
+"\\vspace{-3em}\n"
+"\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
+"\n"
