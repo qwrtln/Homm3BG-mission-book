@@ -7,8 +7,11 @@ on:
     paths:
       - 'draft-scenarios/**'
       - '.github/workflows/build-and-publish-draft.yaml'
+      - 'sections/feedback_page.tex'
+      - 'translations/feedback_page.tex/**'
   pull_request:
-    branches: [main]
+    branches:
+      - main
     paths:
       - 'draft-scenarios/**'
       - '.github/workflows/build-and-publish-draft.yaml'
