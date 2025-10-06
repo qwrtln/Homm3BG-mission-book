@@ -63,7 +63,7 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: matrix.language != 'en' && steps.cache-po4a.outputs.cache-hit != 'true'
-        uses: qwrtln/po4a-action@v1.2
+        uses: qwrtln/po4a-action@v1.3
         with:
           version: "0.74"
           config: "po4a.cfg"
@@ -247,7 +247,7 @@ jobs:
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
-        uses: qwrtln/po4a-action@v1.2
+        uses: qwrtln/po4a-action@v1.3
         with:
           version: "0.74"
           config: "po4a.cfg"
