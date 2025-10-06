@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-30 13:50+0200\n"
+"POT-Creation-Date: 2025-10-06 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,12 +51,30 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/intro_and_toc.tex:28
+#: sections/intro_and_toc.tex:25
 #, no-wrap
 msgid ""
-"{2}\n"
+"{3}\n"
 "    \\bigbreak\n"
 "    \\centering\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/intro_and_toc.tex:29
+#, no-wrap
+msgid ""
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
+"    Scan to open Scenario \\textbf{feedback form}.\\\\\n"
+"    \\href{\\formurl}{https://docs.google.com/forms/...}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: sections/intro_and_toc.tex:34
+#, no-wrap
+msgid ""
+"    \\columnbreak\n"
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
 "    Scan to join the Heroes III Board Game community \\textbf{Discord} server.\\\\\n"
 "    \\href{\\discordurl}{\\discordurl}\n"
@@ -64,7 +82,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: sections/intro_and_toc.tex:33
+#: sections/intro_and_toc.tex:39
 #, no-wrap
 msgid ""
 "    \\columnbreak\n"
@@ -75,7 +93,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: sections/intro_and_toc.tex:47
+#: sections/intro_and_toc.tex:53
 msgid ""
 "\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
 "(0in,-\\paperheight)"
@@ -84,7 +102,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: sections/intro_and_toc.tex:47
+#: sections/intro_and_toc.tex:53
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -94,7 +112,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/intro_and_toc.tex:55
+#: sections/intro_and_toc.tex:61
 #, no-wrap
 msgid ""
 "{2}\n"
