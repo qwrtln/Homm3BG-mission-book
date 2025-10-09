@@ -34,7 +34,7 @@ msgstr ""
 "Doufáme, že jste si tento scénář užili.  Vytvořili jej nadšenci ve svém "
 "volném čase, pro nadšence jako jste vy.  Líbilo se vám to? Bylo něco, co by "
 "se dalo zlepšit? Autoři by opravdu ocenili vaši zpětnou vazbu.  Prosím, "
-"ozvěte se prostřednictvím některého z níže uvedených kanálů.  Diky!"
+"ozvěte se prostřednictvím některého z níže uvedených kanálů.  Díky!"
 
 #. type: multicols
 #: sections/feedback_page.tex:20
