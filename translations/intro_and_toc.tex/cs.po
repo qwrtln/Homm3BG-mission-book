@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-10-06 10:06+0000\n"
-"PO-Revision-Date: 2025-09-30 13:50+0200\n"
+"PO-Revision-Date: 2025-10-09 21:48+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: cs\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.7\n"
 
 #. type: center
 #: sections/credits.tex:8 sections/intro_and_toc.tex:16
@@ -66,37 +67,28 @@ msgid ""
 "    \\centering\n"
 "\n"
 msgstr ""
+"{3}\n"
+"    \\bigbreak\n"
+"    \\centering\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
 "    Scan to open Scenario \\textbf{feedback form}.\\\\\n"
 "    \\href{\\formurl}{https://docs.google.com/forms/...}\n"
 "\n"
 msgstr ""
-"    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Naskenuj pro otevření \\textbf{GitHub} repozitáře. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
+"    Naskenuj pro otevření \\textbf{formuláře pro zpětnou vazbu} scenáře.\\\\\n"
+"    \\href{\\formurl}{https://docs.google.com/forms/...}\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "    \\columnbreak\n"
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
@@ -105,10 +97,10 @@ msgid ""
 "\n"
 msgstr ""
 "    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Naskenuj pro otevření \\textbf{GitHub} repozitáře. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"    Naskenuj pro přidání se ke komunitnímu \\textbf{Discord} serveru hry Heroes III Board Game.\\\\\n"
+"    \\href{\\discordurl}{\\discordurl}\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:39
