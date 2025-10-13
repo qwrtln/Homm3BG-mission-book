@@ -27,7 +27,8 @@ jobs:
             { "language": "pl", "display": "🇵🇱 Polski" },
             { "language": "cs", "display": "🇨🇿 Čeština" },
             { "language": "fr", "display": "🇫🇷 Français" },
-            { "language": "de", "display": "🇩🇪 Deutsch" }
+            { "language": "de", "display": "🇩🇪 Deutsch" },
+            { "language": "ru", "display": "🇷🇺 Русский" }
           ]
         }
         EOF

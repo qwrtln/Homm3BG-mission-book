@@ -1,0 +1,383 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"PO-Revision-Date: 2025-06-22 00:57+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/what_to_play.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
+#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
+#: campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35
+#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: campaigns/inferno_steadwicks_fall.tex:137
+#: campaigns/inferno_deal_with_the_devil.tex:87
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
+#: sections/random_scenario.tex:308
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Invoceusse\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A Pack of \\bronze\\ Units of your choice\n"
+"  \\item A Few \\bronze\\ Units of your choice\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
+#: coops/close_to_enemies.tex:37 coops/stand_united.tex:35
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
+msgstr ""
+
+#.  \linebreak
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: coops/emerald_island.tex:3
+msgid ""
+"\\addscenariosection{1}{Cooperative Scenario}{Emerald Island}{\\images/"
+"logistics.png}"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1222679455261261986}{Archon Studio Discord}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:14
+#, no-wrap
+msgid ""
+"\\textit{Lord Markham has decided to organize a treasure hunt and you and your friends are going to take part.\n"
+"  But hurry up! Other teams are also on the trail, and one of them is almost finished!\n"
+"  And above all, beware: it seems that a creature identified as a dragon lurks on this island!}\n"
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:16
+#, no-wrap
+msgid ""
+"This Scenario is played over 8 Rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:20
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 1 -- 4\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:22
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:24
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Map Tile Pool:} If you wish, you can distribute the II--III Tiles equally to each player rather than laying them out as proposed.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:43
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 4P × Far (II--III) Map Tile\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:47
+#, no-wrap
+msgid ""
+"Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:51
+#, no-wrap
+msgid ""
+"There are unflagged Mines or Settlements left in map at the end of Round 8.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:58
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{5} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Gain again the result of one Field with a Black Cube.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:63
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"    \\item Ignore any yellow lines between Tiles I (but not between Tiles I and Tiles II--III).\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:65
+#, no-wrap
+msgid ""
+"    \\item You can't build a \\golden\\ Dwelling.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:72
+#, no-wrap
+msgid ""
+"    \\item You can give Units to another player, even outside your Turn, if one of your Heroes is:\n"
+"    \\begin{itemize}\n"
+"        \\item On the same Map Tile as another player's Hero.\n"
+"        \\item In another player's Town.\n"
+"        \\item Next to another player's Hero.\n"
+"    \\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:74
+#, no-wrap
+msgid ""
+"    \\item If you have no Units in your Unit Deck (after a battle or if you do not keep at least one Unit), return all your Units to your Faction's Unit pool (even if another player has one or more of your Units). This includes Units you've previously given to another player.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:76
+#, no-wrap
+msgid ""
+"    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:78
+#, no-wrap
+msgid ""
+"    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:80
+#, no-wrap
+msgid ""
+"    \\item The first time you reach Level IV, gain your second specialty.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:82
+#, no-wrap
+msgid ""
+"    \\item When you reach Level IV, move your Token on the Level tracker to Level III.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/emerald_island.tex:89
+#, no-wrap
+msgid ""
+"    \\item Additionally, no player can:\n"
+"    \\begin{itemize}\n"
+"        \\item Attack other Heroes.\n"
+"        \\item Capture a Mine or Settlement that is already Flagged.\n"
+"    \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: coops/emerald_island.tex:121
+#, no-wrap
+msgid ""
+"[overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-23em] at (current page.south) {\n"
+"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/ammo_cart.png}\n"
+"  };"
+msgstr ""
