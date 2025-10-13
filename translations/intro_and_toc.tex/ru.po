@@ -50,6 +50,9 @@ msgid ""
 "\\hrefwithoutfootnote{\\repourl}{GitHub repository}.  Everyone is welcome to "
 "contribute Scenarios, make changes, and fix errors."
 msgstr ""
+"Эта книга поддерживается сообществом в \\href{\\repourl}{репозитории на "
+"GitHub}. Вы можете внести свой вклад в разработку, внести изменения или "
+"исправить ошибки. "
 
 #. type: multicols
 #: sections/intro_and_toc.tex:25

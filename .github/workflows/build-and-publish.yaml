@@ -131,12 +131,16 @@ jobs:
           pre_compile: export HOMM3_GITHUB_BUILD=1
           root_file: main_${{ matrix.language }}.tex
 
-      - name: Find quote string
+      - name: Find test string
+        id: test
         if: github.event_name == 'pull_request' && steps.cache-pdf.outputs.cache-hit != 'true'
-        id: quote
         run: |
-          QUOTE=$(grep "intro" main_${{ matrix.language }}.tex -A2 | tail -1 | awk '{$1=$1};1'| awk '{for(i=1;i<=4;i++) printf $i" "; print ""}')
-          echo "quote=$QUOTE" >> $GITHUB_OUTPUT
+          NEEDLE="$(grep TEST_SUBSTRING= main_${{ inputs.language }}.tex | cut -f2 -d=)"
+          if [[ -z "$NEEDLE" ]]; then
+            echo "No TEST_SUBSTRING found in main_${{ inputs.language }}.tex."
+            exit 1
+          fi
+          echo "NEEDLE=$NEEDLE" >> $GITHUB_OUTPUT
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
@@ -145,7 +149,7 @@ jobs:
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
-          test-string: ${{ steps.quote.outputs.quote }}
+          test-string: ${{ steps.test.outputs.needle }}
 
       - name: Check number of pages
         if: matrix.language == 'en'
