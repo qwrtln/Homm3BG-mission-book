@@ -199,7 +199,7 @@
   BoldItalicFont = *-BoldItalic
 ]
 
-\newcommand{\sectionheadertext}[2][antiquewhite]{
+\providecommand{\sectionheadertext}[2][antiquewhite]{
   \iftoggle{noartbackground}{}{\color{#1}}\MakeUppercase{\textbf{\liberation #2}}
 }
 
@@ -351,7 +351,7 @@
 \definecolor{borderinyellow}{HTML}{B09E69}
 \definecolor{bordermidyellow}{HTML}{6f6749}
 % Create note box
-\newcommand{\notefont}[0]{\liberation\selectfont}
+\providecommand{\notefont}[0]{\liberation\selectfont}
 \newcommand{\note}[2]{
   \begin{tikzpicture}
     \draw (0, 0) node[inner sep=0] {\makebox[\linewidth][c]{\picdims[width=\linewidth]{\linewidth}{#1\baselineskip}{\layout/table-background.jpg}}};
