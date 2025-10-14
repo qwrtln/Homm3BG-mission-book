@@ -26,7 +26,7 @@ msgstr ""
 #. type: Plain text
 #: sections/language_metadata.tex:4
 msgid "\\providecommand{\\pageshorthand}{p.}"
-msgstr ""
+msgstr "\\providecommand{\\pageshorthand}{s.}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:6
