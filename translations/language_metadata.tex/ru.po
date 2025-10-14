@@ -1,0 +1,63 @@
+# Russian translations for Homm package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2025-10-13 19:58+0000\n"
+"PO-Revision-Date: 2025-10-13 21:50+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:2
+msgid "Heroes of Might \\& Magic III Fan-Made Mission Book"
+msgstr "Heroes of Might \\& Magic III Книга сценариев от сообщества"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:4
+msgid "p."
+msgstr "стр."
+
+#. type: Plain text
+#: sections/language_metadata.tex:6
+msgid "\\def\\coopspath{coops}"
+msgstr "\\def\\coopspath{coops/translated/ru}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:8
+msgid "\\def\\coopstitle{Cooperative Scenarios}"
+msgstr "\\def\\coopstitle{Кооперативные сценарии}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:10
+msgid "\\def\\clashpath{clash}"
+msgstr "\\def\\clashpath{clash/translated/ru}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:12
+msgid "\\def\\clashtitle{Clash Scenarios}"
+msgstr "\\def\\clashtitle{Сценарии столкновений}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:14
+msgid "\\def\\campaignspath{campaigns}"
+msgstr "\\def\\campaignspath{campaigns/translated/ru}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:16
+msgid "\\def\\campaignstitle{Campaigns}"
+msgstr "\\def\\campaignstitle{Кампании}"
+
+#. type: Plain text
+#: sections/language_metadata.tex:17
+msgid "\\def\\lang_header_adjustment{0px}"
+msgstr "\\def\\lang_header_adjustment{0px}"

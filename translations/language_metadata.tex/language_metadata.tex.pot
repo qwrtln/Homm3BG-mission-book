@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-10-13 19:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:2
+msgid "Heroes of Might \\& Magic III Fan-Made Mission Book"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:4
+msgid "p."
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:6
+msgid "\\def\\coopspath{coops}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:8
+msgid "\\def\\coopstitle{Cooperative Scenarios}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:10
+msgid "\\def\\clashpath{clash}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:12
+msgid "\\def\\clashtitle{Clash Scenarios}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:14
+msgid "\\def\\campaignspath{campaigns}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:16
+msgid "\\def\\campaignstitle{Campaigns}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:17
+msgid "\\def\\lang_header_adjustment{0px}"
+msgstr ""

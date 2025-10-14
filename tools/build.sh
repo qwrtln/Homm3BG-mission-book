@@ -9,7 +9,7 @@ NO_GS=0
 FEEDBACK_PAGE=0
 SCENARIO_SEARCH=""
 
-valid_languages=("en" "pl" "fr" "cs" "de")
+valid_languages=("en" "pl" "fr" "cs" "de" "ru")
 
 usage() {
   echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]"

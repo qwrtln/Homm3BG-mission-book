@@ -1,0 +1,721 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"PO-Revision-Date: 2025-06-22 00:57+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
+#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
+#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
+#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/what_to_play.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
+#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_two_knights_defense.tex:47
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: campaigns/inferno_steadwicks_fall.tex:133
+#: campaigns/inferno_deal_with_the_devil.tex:83
+#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/stand_united.tex:23 clash/bloody_grail.tex:21
+#: clash/the_fractured_kingdoms.tex:19 campaigns/inferno_devilish_plan.tex:32
+#: campaigns/inferno_deal_with_the_devil.tex:32
+#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
+#: campaigns/castle_two_knights_defense.tex:25
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
+#: campaigns/castle_two_knights_defense.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} Tyson Heckert\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:10 campaigns/castle_sicilian_dragon.tex:9
+#: campaigns/castle_two_knights_defense.tex:9
+#, no-wrap
+msgid ""
+"\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
+#: campaigns/castle_two_knights_defense.tex:13
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario length}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:18
+#: campaigns/castle_two_knights_defense.tex:15
+#, no-wrap
+msgid ""
+"This Scenario plays out over 8 Rounds.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
+#: campaigns/castle_two_knights_defense.tex:17
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
+#: campaigns/castle_two_knights_defense.tex:19
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Castle\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
+#: campaigns/castle_two_knights_defense.tex:33
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
+#: campaigns/castle_two_knights_defense.tex:35
+#, no-wrap
+msgid ""
+"\\textbf{Faction:} Necropolis\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
+#: campaigns/castle_two_knights_defense.tex:45
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map setup}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
+#: campaigns/castle_two_knights_defense.tex:70
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Heroes placement}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:81
+#: campaigns/castle_two_knights_defense.tex:89
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"\\begin{itemize}\n"
+"  \\item You lose one combat encounter\n"
+"  \\item You run out of time at the end of the 8th Round\n"
+"\\end{itemize}"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
+#: campaigns/castle_two_knights_defense.tex:105
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
+#: campaigns/castle_two_knights_defense.tex:107
+#, no-wrap
+msgid ""
+"During this Castle campaign Scenario, the following rules apply:\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
+#: campaigns/castle_two_knights_defense.tex:131
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{The story}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_sicilian_dragon.tex:40
+#: campaigns/castle_two_knights_defense.tex:39
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_sicilian_dragon.tex:42
+#: campaigns/castle_two_knights_defense.tex:41
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_sicilian_dragon.tex:44
+#: campaigns/castle_two_knights_defense.tex:43
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_sicilian_dragon.tex:55
+#: campaigns/castle_two_knights_defense.tex:52
+#, no-wrap
+msgid ""
+"\\textbf{1 × Starting (I) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 1 × Necropolis (S1)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_sicilian_dragon.tex:66
+#: campaigns/castle_two_knights_defense.tex:63
+#, no-wrap
+msgid ""
+"\\textbf{4 × Near (IV--V) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 2 × Necropolis (N1, N4)\n"
+"    \\item 2 × Dungeon (N2, N5)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: campaigns/castle_two_knights_defense.tex:3
+msgid ""
+"\\addscenariosection[subsection]{1}{Castle Campaign $-$ The Queen's Gambit}"
+"{3. Two Knights Defense}{\\images/catherine.png}"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:11
+#, no-wrap
+msgid ""
+"\\textit{With Vhidhax's stronghold in her grasp, Catherine needs to discover and halt the necromancer's next move.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:21
+#, no-wrap
+msgid ""
+"\\textbf{Faction Hero:} The same Hero you played in Scenario 2\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:23
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} The resources you ended Scenario 2 with, plus 10 \\svg{gold}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:27
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:} The army you ended Scenario 2 with\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, Citadel\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:31
+#, no-wrap
+msgid ""
+"\\textbf{Bonus:} Begin the Scenario at Hero Level 3, but do not take new Ability Cards.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:37
+#, no-wrap
+msgid ""
+"\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:57
+#, no-wrap
+msgid ""
+"\\textbf{2 × Far (II--III) Map Tile}\n"
+"\\begin{itemize}\n"
+"    \\item 2 × random Tiles from Necropolis or Dungeon (F1, F2, F4, F5, F7, F8)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:68
+#, no-wrap
+msgid ""
+"\\textbf{1 × Center (VI--VII) Map Tile}\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Dragon Utopia Tile (C1)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:72
+#, no-wrap
+msgid ""
+"Place your Castle Hero on the center Field of the Necropolis start Tile S1.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:75
+#, no-wrap
+msgid ""
+"Place a Necropolis Hero on the bottom left Field of the leftmost Far Tile.\n"
+"Reveal the Tile when the game begins.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:81
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Defeat the enemy army\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_two_knights_defense.tex:98
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{1} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``The Race'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_two_knights_defense.tex:103
+#, no-wrap
+msgid ""
+"\\textbf{When you complete the Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item Read ``Checkmate'' section\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_two_knights_defense.tex:113
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item The Glory of Erathia building is unavailable.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\bronze\\ bronze, \\silver\\ silver, and \\golden\\ golden neutral enemy Decks.\n"
+"  You may recruit any, or all of them by paying their cost.\n"
+"  Shuffle any un-hired ones back into their Decks.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_two_knights_defense.tex:118
+#, no-wrap
+msgid ""
+"  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\azure\\ Azure neutral Deck to your army.\n"
+"  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
+"  \\item If the enemy army reaches the Dragon Utopia before you do, flip the Pack side of Dread Knights to Few and add a Pack of Ghost Dragons.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: campaigns/castle_two_knights_defense.tex:124
+#, no-wrap
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"    \\node at (-1.0, -8.5) {\n"
+"      \\includegraphics[width=0.70\\paperwidth]{\\_assets/maps/castle_two_knights_defense.png}\n"
+"    };\n"
+"  \\end{tikzpicture}"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:133
+#, no-wrap
+msgid ""
+"\\textbf{The Race}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:137
+#, no-wrap
+msgid ""
+"Stacks of dry, cracked parchment sat next to dusty tomes on a table's blackened, rough-cut stone slab.\n"
+"Catherine slumped over the numerous texts stashed throughout the necromancer's chambers while her eyes frantically scanned the pages.\n"
+"She was searching for any clue to her enemy's plans.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:143
+#, no-wrap
+msgid ""
+"After fruitless hours, she huffed and sent a moldering volume crashing through a stack of paper as exhaustion threatened to overcome her.\n"
+"She was about to spin and leave the room when the corner of her eye caught a particular scribbling, revealed by her destructive act.\n"
+"An ornate diagram, hastily scribbled, depicted what Catherine supposed might be some kind of necromantic summoning ritual.\n"
+"Pulling the frail parchment closer, while most of it didn't make sense to her, it didn't take a mage to know what the dark drawings detailed.\n"
+"They were the ritual instructions for raising Ghost Dragons from dead dragons.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:150
+#, no-wrap
+msgid ""
+"Then it dawned on her.\n"
+"Old tales told of an ancient Dragon Utopia in the badlands.\n"
+"Vhidhax must be attempting to overtake the majestic creatures and use them against her in a last-ditch effort.\n"
+"She frowned at the thought of her weakened enemy being able to defeat the dragons.\n"
+"But if he did… If she missed something, he would have newfound strength enough to overpower her battered forces.\n"
+"She clenched her fist, crushing the frail paper to dust before rushing to the doorway to gather who she could.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:153
+#, no-wrap
+msgid ""
+"To her surprise, the necropolis' courtyard was abuzz with energy.\n"
+"She placed her hands on the overlook's railing and peered over the edge to spy a host of knights in the color and flair of various baronies.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:158
+#, no-wrap
+msgid ""
+"Rion came rushing up to her a moment later, intent on delivering news of their new guests.\n"
+"``Queen Catherine!'' he said excitedly.\n"
+"``Lordships around Steadwick heard of the tragedy and have sent their champions to aid us.\n"
+"The knights spent days tracking and catching up to us, and they mean to join us and see the campaign through.''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:161
+#, no-wrap
+msgid ""
+"Catherine smiled wide.\n"
+"``Then tell them to get ready; the race is on.''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:163
+#, no-wrap
+msgid ""
+"\\textcolor{darkcandyapplered}{Add a Few Champions to your army.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:165
+#, no-wrap
+msgid ""
+"\\textbf{Checkmate}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:168
+#, no-wrap
+msgid ""
+"The broken remains of Vhidhax looked no grander than any of his many minions.\n"
+"Necromantic energy had stripped the flesh from him long ago; without that power, his presence and ill-willed malevolence were gone as well.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:171
+#, no-wrap
+msgid ""
+"Catherine wiped blood, sweat, and dirt from her face.\n"
+"Rion had been right; the necromancer was not her father, but perhaps his slaying would ease the sting of her family discord and the sting of betrayal, at least a little.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:176
+#, no-wrap
+msgid ""
+"Rion approached, and Catherine turned before embracing him in a rare moment of emotion.\n"
+"The last time he'd seen his queen like this was when they were in Steadwick together, and he looked a little embarrassed as he was lost for words.\n"
+"The two studied each other momentarily, silently checking on each other.\n"
+"Rion thought she looked much older and weathered from the ordeal, but he was happy to see a twinkle in his queen's eyes again.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:178
+#, no-wrap
+msgid ""
+"Her duty fulfilled and her seat secure, Catherine would see Steadwick rebuilt with Erathia just a little safer… for now.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:184
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"    \\item \\textcolor{darkcandyapplered}{If neither you or the enemy reached the Dragon Utopia, read ``A Queen's Right''}\n"
+"    \\item \\textcolor{darkcandyapplered}{If the enemy army reached the Dragon Utopia before being defeated, read ``A Queen's Lament''}\n"
+"    \\item \\textcolor{darkcandyapplered}{If you reached the Dragon Utopia and defeated the dragons within before defeating the enemy, read ``A Queen's Fury''}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:186
+#, no-wrap
+msgid ""
+"\\textbf{A Queen's Fury}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:190
+#, no-wrap
+msgid ""
+"Catherine's hard eyes scanned the badlands from a window high on the Dragon Utopia.\n"
+"While coming to blows with the famed dragon guardians was regrettable, she'd brought even them to heel, and the palace was hers.\n"
+"No one would challenge her reign, not with the badlands under her control or the remaining dragons in her retinue.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:193
+#, no-wrap
+msgid ""
+"Worn and tired faces looked up at her outside the fortress, like beggars asking for scraps.\n"
+"What was left of who she'd brought into the hostile landscape was silently requesting the right to return home, yet the badlands were an enticing prize, and the bloodlust whipped up in the Queen of Erathia hadn't subsided yet.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:197
+#, no-wrap
+msgid ""
+"It took much convincing from Rion before Catherine finally softened.\n"
+"Reports from Steadwick were thrust in her face, and the mage's gentle nature reminded her that there were still those in her lands who needed her guidance.\n"
+"So, finally, she ordered only a select few to watch over the badlands with the remaining mercenaries and dragons while she returned home with the rest.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:199
+#, no-wrap
+msgid ""
+"\\textbf{A Queen's Right}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:203
+#, no-wrap
+msgid ""
+"A strange, deep calling swelled within Catherine.\n"
+"She turned her focus to the majestic Dragon Utopia, with its rust-colored walls and pointed turrets.\n"
+"It was an odd place for dragons to call home, yet its sheer presence was undeniable.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:210
+#, no-wrap
+msgid ""
+"Catherine approached slowly, with the remains of her battered forces following cautiously.\n"
+"Reaching the foot of the fortress, it was only a moment before the majestic snout of an azure dragon crawled into view from the large, curved, open entry to the stony fortress.\n"
+"The rest of the creature soon followed, and with a stretch of wings, it stared down at the human queen.\n"
+"While many fell to their knees, Catherine looked up to meet the dragon's gaze, and the two shared a moment of understanding between royalty.\n"
+"It appeared the dragon knew what fate it had been spared from, and in thanks, it bowed to the human.\n"
+"After a reflective moment, Catherine nodded, then turned, satisfied with the interaction.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:213
+#, no-wrap
+msgid ""
+"His steed at a trot, Rion quickly approached.\n"
+"``Well? Are we going inside?'' he asked curiously.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:218
+#, no-wrap
+msgid ""
+"``There's no need,'' Catherine replied.\n"
+"``I saw it in her eyes; the dragon knows what we did today.\n"
+"We have their thanks and perhaps a favor to call on in the future.\n"
+"Gods know we need it…''\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:221
+#, no-wrap
+msgid ""
+"Catherine drew her sword and reared her own steed high, presenting herself before her remaining forces with the dragon silhouetted behind her.\n"
+"After a rousing speech that stirred the hearts of man and beast alike, she galloped to the rear lines to turn the formation toward home.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:223
+#, no-wrap
+msgid ""
+"\\textbf{A Queen's Lament}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:228
+#, no-wrap
+msgid ""
+"Reality set in after the adrenaline and euphoria of a hard-fought victory wore off.\n"
+"The battlefield was a nightmare of horrors.\n"
+"Ghost Dragon corpses faded away as the last of their power died with them, and the scattered, broken bodies of both sides lay in clumps of gory remains.\n"
+"The cost had been high…\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:234
+#, no-wrap
+msgid ""
+"Catherine regretted she couldn't save the dragons from their fate.\n"
+"If things had been different, they might have been strong allies or at least sentinels to keep the local badland creatures in check.\n"
+"Now, it was hard to tell what would leak from the unchecked wilds into other regions or townships under her charge.\n"
+"Caution had won her the day, but she wondered if it was enough.\n"
+"Would actions like this cause her downfall one day?\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: campaigns/castle_two_knights_defense.tex:240
+#, no-wrap
+msgid ""
+"Home felt distant in the haze of fury that Catherine had been prisoner to.\n"
+"As she trotted past the remains of those who had fought for her, her heart swelled with emotion.\n"
+"It was war, and loss was inevitable.\n"
+"She turned to the remaining few and threw a weak hand forward out of the badlands.\n"
+"It was time to pick up the pieces.\n"
+"\n"
+msgstr ""
