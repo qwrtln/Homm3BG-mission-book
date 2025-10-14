@@ -22,7 +22,9 @@ msgstr ""
 msgid ""
 "\\providecommand{\\documenttitle}{Heroes of Might \\& Magic III Fan-Made "
 "Mission Book}"
-msgstr "\\providecommand{\\documenttitle}{Heroes of Might \\& Magic III Книга сценариев от сообщества}"
+msgstr ""
+"\\providecommand{\\documenttitle}{Heroes of Might \\& Magic III Книга "
+"сценариев от сообщества}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:4
