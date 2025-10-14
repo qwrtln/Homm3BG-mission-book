@@ -79,7 +79,7 @@ msgstr ""
 #: sections/credits.tex:8 sections/intro_and_toc.tex:16
 #: sections/intro_and_toc.tex:21
 msgid "\\bigbreak"
-msgstr ""
+msgstr "\\bigbreak"
 
 #. type: multicols*
 #: sections/credits.tex:13
