@@ -5,9 +5,12 @@
 /clash/ @Re4XN @tomaas-zeman @qwrtln @tyson-heckert
 /coops/ @Re4XN @tomaas-zeman @qwrtln @tyson-heckert
 /templates/ @tomaas-zeman @qwrtln @tyson-heckert
+/sections/ @qwrtln
+/draft-scenarios/ @qwrtln @Laamakala
 README.md @qwrtln
 main_en.tex @qwrtln @tomaas-zeman @tyson-heckert
 metadata.tex @qwrtln
+structure.tex @qwrtln
 po4a.cfg @qwrtln @tomaas-zeman @tyson-heckert
 
 # Polish
@@ -26,6 +29,11 @@ main_cs.tex @tomaas-zeman @qwrtln
 main_fr.tex @qwrtln @Legrecofr
 
 # German
-**/de.po @qwrtln
-/translations/assets/de/ @qwrtln
-main_de.tex @qwrtln
+**/de.po @qwrtln @mrzielscheibe
+/translations/assets/de/ @qwrtln @mrzielscheibe
+main_de.tex @qwrtln @mrzielscheibe
+
+# Russian
+**/ru.po @qwrtln @elsakovsanya1996-beep @DarthGandalf
+/translations/assets/ru/ @qwrtln @elsakovsanya1996-beep @DarthGandalf
+main_ru.tex @qwrtln @elsakovsanya1996-beep @DarthGandalf
