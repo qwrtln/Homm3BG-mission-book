@@ -74,7 +74,7 @@ jobs:
                 format('translations/{0}.tex/{1}.po', matrix.scenario, inputs.language),
                 format('translations/{0}.tex/{0}.pot', matrix.scenario),
                 format('translations/feedback_page.tex/{0}.po', inputs.language),
-                format('translations/language_metadata.tex/{0}.po', inputs.language),
+                format('translations/language_metadata.tex/{0}.po', inputs.language)
               )
             }}
           restore-keys: |
