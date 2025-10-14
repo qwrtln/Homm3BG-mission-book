@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-13 19:58+0000\n"
+"POT-Creation-Date: 2025-10-14 19:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: newcommand{#4}
+#. type: Plain text
 #: sections/language_metadata.tex:2
-msgid "Heroes of Might \\& Magic III Fan-Made Mission Book"
+msgid ""
+"\\providecommand{\\documenttitle}{Heroes of Might \\& Magic III Fan-Made "
+"Mission Book}"
 msgstr ""
 
-#. type: newcommand{#4}
+#. type: Plain text
 #: sections/language_metadata.tex:4
-msgid "p."
+msgid "\\providecommand{\\pageshorthand}{p.}"
 msgstr ""
 
 #. type: Plain text
