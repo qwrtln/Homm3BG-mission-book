@@ -20,44 +20,44 @@ msgstr ""
 #. type: newcommand{#4}
 #: sections/language_metadata.tex:2
 msgid "Heroes of Might \\& Magic III Fan-Made Mission Book"
-msgstr ""
+msgstr "Heroes of Might \\& Magic III Книга сценариев от сообщества"
 
 #. type: newcommand{#4}
 #: sections/language_metadata.tex:4
 msgid "p."
-msgstr ""
+msgstr "стр."
 
 #. type: Plain text
 #: sections/language_metadata.tex:6
 msgid "\\def\\coopspath{coops}"
-msgstr ""
+msgstr "\\def\\coopspath{coops/translated/ru}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:8
 msgid "\\def\\coopstitle{Cooperative Scenarios}"
-msgstr ""
+msgstr "\\def\\coopstitle{Кооперативные сценарии}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:10
 msgid "\\def\\clashpath{clash}"
-msgstr ""
+msgstr "\\def\\clashpath{clash/translated/ru}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:12
 msgid "\\def\\clashtitle{Clash Scenarios}"
-msgstr ""
+msgstr "\\def\\clashtitle{Сценарии столкновений}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:14
 msgid "\\def\\campaignspath{campaigns}"
-msgstr ""
+msgstr "\\def\\campaignspath{campaigns/translated/ru}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:16
 msgid "\\def\\campaignstitle{Campaigns}"
-msgstr ""
+msgstr "\\def\\campaignstitle{Кампании}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:17
 msgid "\\def\\lang_header_adjustment{0px}"
-msgstr ""
+msgstr "\\def\\lang_header_adjustment{0px}"
