@@ -57,7 +57,11 @@ jobs:
             */translated/${{ matrix.language }}/*.tex
           key: >-
             po4a-${{ matrix.language }}-${{
-              hashFiles('po4a.cfg', format('translations/*/{0}.po', matrix.language), 'translations/*/*.pot')
+              hashFiles(
+                'po4a.cfg',
+                format('translations/*/{0}.po', matrix.language),
+                'translations/*/*.pot'
+              )
             }}
           restore-keys: |
             po4a-${{ matrix.language }}-
@@ -81,8 +85,25 @@ jobs:
           key: >-
             pdf-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            && hashFiles(
+                'main_en.tex',
+                'metadata.tex',
+                'structure.tex',
+                'campaigns/*.tex',
+                'coops/*.tex',
+                'clash/*.tex',
+                'sections/*.tex',
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
+            || hashFiles(
+                format('main_{0}.tex', matrix.language),
+                'metadata.tex',
+                'structure.tex',
+                format('**/{0}/*.tex', matrix.language),
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
             }}
           restore-keys: |
             pdf-${{ matrix.language }}-
@@ -115,8 +136,25 @@ jobs:
           key: >-
             texlive-mission-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            && hashFiles(
+                'main_en.tex',
+                'metadata.tex',
+                'structure.tex',
+                'campaigns/*.tex',
+                'coops/*.tex',
+                'clash/*.tex',
+                'sections/*.tex',
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
+            || hashFiles(
+                format('main_{0}.tex', matrix.language),
+                'metadata.tex',
+                'structure.tex',
+                format('**/{0}/*.tex', matrix.language),
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
             }}
           restore-keys: |
             texlive-mission-${{ matrix.language }}-
@@ -285,8 +323,25 @@ jobs:
           key: >-
             texlive-mission-mono-${{ matrix.language }}-${{
             matrix.language == 'en'
-            && hashFiles('main_en.tex', 'metadata.tex', 'structure.tex', 'campaigns/*.tex', 'coops/*.tex', 'clash/*.tex', 'sections/*.tex', 'assets/**/*', '!assets/map-files/*')
-            || hashFiles(format('main_{0}.tex', matrix.language), 'metadata.tex', 'structure.tex', format('**/{0}/*.tex', matrix.language), 'assets/**/*', '!assets/map-files/*')
+            && hashFiles(
+                'main_en.tex',
+                'metadata.tex',
+                'structure.tex',
+                'campaigns/*.tex',
+                'coops/*.tex',
+                'clash/*.tex',
+                'sections/*.tex',
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
+            || hashFiles(
+                format('main_{0}.tex', matrix.language),
+                'metadata.tex',
+                'structure.tex',
+                format('**/{0}/*.tex', matrix.language),
+                'assets/**/*',
+                '!assets/map-files/*'
+              )
             }}
           restore-keys: |
             texlive-mission-mono-${{ matrix.language }}-
