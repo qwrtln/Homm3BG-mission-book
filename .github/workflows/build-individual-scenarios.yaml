@@ -18,7 +18,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
-  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play\|notes\|feedback_page\|intro_and_toc
+  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play\|notes\|feedback_page\|intro_and_toc\|language_metadata
 
 jobs:
   find_scenarios:
