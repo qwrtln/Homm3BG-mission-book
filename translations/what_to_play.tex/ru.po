@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-06-22 00:57+0200\n"
+"PO-Revision-Date: 2025-10-15 14:06+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ru\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -41,12 +42,14 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/what_to_play.tex:3
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr ""
+msgstr "\\addsection{Как играть?}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -55,6 +58,8 @@ msgid ""
 "Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
+"Воспользуйтесь этими рекомендациями, если вы не уверены, какой Сценарий вам подходит лучше всего.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:9
@@ -63,6 +68,8 @@ msgid ""
 "\\subsection*{Cooperative Mode}\n"
 "\n"
 msgstr ""
+"\\subsection*{Кооператив}\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:13
@@ -73,6 +80,10 @@ msgid ""
 "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
 "\n"
 msgstr ""
+"Если вы новичок в игре и хотите \\textbf{освоить правила}, начните с \\pagelink{Изумрудный остров}{Изумрудного острова}.\n"
+"Для масштабного приключения \\textbf{до 6 игроков} с эпической битвой в финале, попробуйте \\pagelink{Цитадель Титанов}{Цитадель Титанов}.\n"
+"Для тактической игры для двух игроков, попробуйте \\pagelink{Стражи}{Стражей}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:15
@@ -81,6 +92,8 @@ msgid ""
 "\\subsection*{Clash Mode}\n"
 "\n"
 msgstr ""
+"\\subsection*{Столкновение (Clash)}\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:19
@@ -91,6 +104,10 @@ msgid ""
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
+"Если вы ищете Сценарий для 2 или 4 игроков с интересными поворотами сюжета, попробуйте \\pagelink{Кровавый Грааль}{Кровавый Грааль}.\n"
+"Для захватывающей битвы с боссом для 2-3 игроков, выберите \\pagelink{Охота}{Охоту}.\n"
+"Для неизбежной эпической битвы между двумя игроками с возможной осадой, сыграйте в  \\pagelink{Замок Драконьего Проклятия}{Замок Драконьего Проклятия}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:21
@@ -99,6 +116,8 @@ msgid ""
 "\\subsection*{Campaign}\n"
 "\n"
 msgstr ""
+"\\subsection*{Кампания}\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:23
@@ -107,6 +126,8 @@ msgid ""
 "There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
+"В конце находится кампания Инферно, состоящая из 3--х Сценариев \\pagelink{1. Дьявольский План}{Подземелья и Дьяволы}, если вы предпочитаете одиночную игру.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:25
@@ -115,6 +136,8 @@ msgid ""
 "\\subsection*{Recommendations}\n"
 "\n"
 msgstr ""
+"\\subsection*{Рекомендации}\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:27
@@ -123,8 +146,10 @@ msgid ""
 "For information regarding your play time, strategizing, and custom rules, check out \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
 "\n"
 msgstr ""
+"Для получении информации о времени игры, стратегии и пользовательских правилах, ознакомьтесь \\pagelink{Рекомендации}{Рекомендациями} в конце книги.\n"
+"\n"
 
 #. type: Plain text
 #: sections/what_to_play.tex:33
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr ""
+msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
