@@ -41,6 +41,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28

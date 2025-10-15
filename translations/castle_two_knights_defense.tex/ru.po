@@ -41,6 +41,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
