@@ -24,6 +24,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
 "sentinel.png}"
 msgstr ""
+"\\addscenariosection{1}{Кооперативный сценарий}{Стражи}{\\images/sentinel.png}"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -49,6 +50,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:7
@@ -57,6 +60,8 @@ msgid ""
 "\\textbf{Author:} silence70011\n"
 "\n"
 msgstr ""
+"\\textbf{Автор:} silence70011\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:9
@@ -65,6 +70,8 @@ msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
 "\n"
 msgstr ""
+"\\textbf{Источник:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Discord Archon Studio}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:14
@@ -76,6 +83,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\textit{Мир за пределами нашего, полон тварей и чудовищ, едва сдерживаемый комплексом четырех священных Обелисков.\n"
+"  Но сила этих камней убывает, и прорыв неминуем.\n"
+"  Когда это случится, только вы и ваш союзник встанете между ордами и полным опустошением этих земель.\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -88,6 +100,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Продолжительность сценария}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:18
@@ -96,6 +110,8 @@ msgid ""
 "This Scenario is played over 12 Rounds.\n"
 "\n"
 msgstr ""
+"Этот сценарий длится 12 Раундов.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -109,6 +125,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -117,6 +135,8 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
+"\\textbf{Число Игроков:} 2\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:24
@@ -125,6 +145,8 @@ msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Стартовые ресурсы:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -135,6 +157,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Стартовый Доход:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
@@ -147,6 +171,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item «pack» \\svg{bronze} Юнитов с \\textit{najniższym} Стоимостью Найма\n"
+"  \\item «few» \\svg{bronze} Юнитов с \\textit{najwyższym} Стоимостью Найма\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
@@ -155,6 +185,8 @@ msgid ""
 "\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
 "\n"
 msgstr ""
+"\\textbf{Городские Постройки:} \\bronze\\ Жилища, Цитадель\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:36
@@ -163,6 +195,8 @@ msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
 "\n"
 msgstr ""
+"\\textbf{Набор Элементов Карты:} Каждый игрок берет 1 случайный Ближний (IV--V) Элемент Карты и 1 Дальний (II--III) Элемент Карты. Эти плитки не должны содержать Обелисков.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:38
@@ -171,6 +205,8 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
+"\\textbf{Дополнительный Бонус:} Поиск (2) в колоде артефактов\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
@@ -180,6 +216,8 @@ msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -193,6 +231,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
@@ -203,6 +243,8 @@ msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
+"Возьмите следующие Элементы Карты и расположите их как показано на схеме Карты Сценария:\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:50
@@ -215,6 +257,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 × Стартовый (I) Элемент Карты\n"
+"  \\item 4 × Далёкий  (II--III) Элемент Карты\n"
+"  \\item 4 × Ближний (IV--V) Элемент Карты с Полем Обелиска\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -229,6 +277,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:54
@@ -237,6 +287,8 @@ msgid ""
 "Defeat all invading armies.\n"
 "\n"
 msgstr ""
+"Уничтожь все вторгшиеся армии.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -249,6 +301,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:58
@@ -257,6 +311,8 @@ msgid ""
 "An undefeated enemy army remains at the end of Round 12.\n"
 "\n"
 msgstr ""
+"Непобеждённая вражеская армия остаётся на поле к концу 12 Раунда.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:60
@@ -265,6 +321,8 @@ msgid ""
 "One of your Towns is captured, or a Main Hero is defeated in a battle (retreat doesn't count).\n"
 "\n"
 msgstr ""
+"Один из ваших Городов захвачен, или Главный Герой побеждён в битве (отступление не считается).\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -280,6 +338,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:68
@@ -292,6 +352,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Runda 6.:}\n"
+"\\begin{itemize}\n"
+"  \\item Уберите все Чёрные Кубики с каждой Мельницы, Водяной Мельницы, Мистического Сада на карте.\n"
+"  \\item Разместите вражескую армию в соответствии с правилами ниже.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:73
@@ -303,6 +369,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Раунды 7. и 8.:}\n"
+"\\begin{itemize}\n"
+"  \\item Разместите вражескую армию в соответствии с правилами ниже.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:78
@@ -314,6 +385,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Раунд 9.:}\n"
+"\\begin{itemize}\n"
+"  \\item Повторите события Раунда 6.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:83
@@ -325,6 +401,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Раунд 10.:}\n"
+"\\begin{itemize}\n"
+"  \\item Разместите вражескую армию в соответствии с правилами ниже.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -339,6 +420,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Дополнительные Правила}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:97
@@ -357,6 +440,18 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item  Игнорируйте жёлтые границы на стартовых Элементах.\n"
+"  \\item Игроки могут торговать ресурсами, когда Герой активного игрока посещает Торговый Пост или находится на Поле рядом с союзным Героем.\n"
+"  \\item Герой, победивший вражескую армию, получает 2 \\svg{experience}.\n"
+"    Победивший игрок бросает два Кубика Сокровищ и выбирает один результат.\n"
+"  \\item Кроме того, игроки не могут:\n"
+"  \\begin{itemize}\n"
+"      \\item Атаковать других Героев.\n"
+"      \\item Захватывать Шахту или Поселок под флагом противника.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:99
@@ -365,6 +460,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Enemy Spawning\\\\and Movement}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Вражеское расположение\\\\и движение}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:109
@@ -381,6 +478,16 @@ msgid ""
 "  \\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Вражеские армии появляются на случайном Поле с Обелиском (используйте миниатюры Героев из фракций, не участвующих в игре).\n"
+"  \\item Определите поле Обелиска, бросив 2 Кубика Атаки. Применяйте результаты следующим образом (К1/К2), перебрасывайте 0:\n"
+"  \\begin{itemize}[leftmargin=15pt]\n"
+"    \\item $+1$/$+1$ = Север\n"
+"    \\item $+1$/$-1$ = Восток\n"
+"    \\item $-1$/$+1$ = Запад\n"
+"    \\item $-1$/$-1$ = Юг\n"
+"  \\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:114
@@ -392,6 +499,11 @@ msgid ""
 "  \\item If there is a Hero on the Field where the enemy spawns, a fight starts immediately.\n"
 "\n"
 msgstr ""
+"  \\item ля более сбалансированного распределения, в Раундах 7 и 9 бросайте только второй Кубик Атаки (К2). Для К1 используйте противоположный результату из предыдущего Раунда.\n"
+"  Раунды 8. и 10. полностью случайны.\n"
+"  \\item Если Элемент, где должен появиться враг, ещё не открыт, переверните его и расположите по своему усмотрению.\n"
+"  \\item Если на Поле, где появляется враг, находится Герой, битва начинается немедленно.\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:121
@@ -405,6 +517,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"  \\item Вражеские армии имеют 3 \\svg{movement} за Раунд.\n"
+"  \\item Вражеские армии двигаются в конце каждого Раунда, начиная с Раунда их расположения.\n"
+"  \\item Вражеские армии двигаются по правилам из Книги Правил (стр. 33), но вместо захвата уничтожают всё на своём пути.\n"
+"    Размещайте Чёрные Кубики на каждом Поле, через которое они прошли, считая эти Поля пустыми с этого момента.\n"
+"  \\item Если движение врага может идти в разных направлениях, игроки решают, куда он направится.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:123
@@ -413,6 +532,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Combat with\\\\Enemy Armies}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Сражение с вражеской армией}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:131
@@ -427,6 +548,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"  \\item Сражение с вражескими армиями длительностью более одного Раунда Боя не тратит \\svg{movement}.\n"
+"  \\item Во время сражения с вражеской армией Герой может отступить, когда должен Активироваться любой его Юнит.\n"
+"    Отступающий Главный Герой теряет все оставшиеся ОП и возвращается в выбранный им союзный Город или Посёлок, сохраняя все оставшиеся Юниты.\n"
+"  \\item Отступающие Второстепенные Герои удаляются из игры, но их оставшиеся Юниты сохраняются.\n"
+"  \\item Уничтоженные вражеские Юниты не возрождаются..\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:133
@@ -435,6 +563,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Boss Army}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Армия Босса}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:140
@@ -448,6 +578,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item  В 10 Раунде появляется Армия Босса. Она отличается от предыдущих армий тем, что усиливается из фиксированного пула Нейтральных Юнитов (пул усиления = число в скобках в таблице ниже).\n"
+"  \\item В начале 2 Раунда Боя и каждого последующего раунда, 2 Юнита усиливают оставшуюся армию из перемешанного пула усиления (до максимум 5 Юнитов), чтобы продолжить бой до отступления игрока или уничтожения всех Нейтральных Юнитов из пула усиления. \textit{Если количество вражеских Юнитов в начале раунда равно 1 или меньше, возьмите до 4 Юнитов (т.е. после усиления на поле всегда остаётся 4 или 5 вражеских Юнитов, если они доступны).}\n"
+"  \\item Разместите усиливающие Юниты на вражеской задней линии, начиная слева с самой низкой Инициативы (сначала Юниты \\svg{unit_ranged}). При необходимости продолжите на следующей линии в том же порядке.\n"
+"  \\item Когда игрок отступает, вражеская армия берёт минимум 4 Юнита и использует их как стартовые Юниты в следующем сражении.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -460,6 +597,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -472,6 +611,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: tikzpicture
 #: coops/sentinels.tex:151
@@ -481,6 +622,9 @@ msgid ""
 "  \\centering\n"
 "  \\node at (14, 2) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
 #: coops/sentinels.tex:192
@@ -509,11 +653,35 @@ msgid ""
 "\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
 "\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 msgstr ""
+"\\hommtable[]{20}{ \\centering \\medskip \\textbf{Сила вражеской армии}\\\\ "
+"\\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
+"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
+"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
+"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
+"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
+"& \\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\"
+"\\ \\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
+"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
+"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
+"\\ \\darkcell[1.4]{Normalny} & \\lightcell[1.4]{\\silver \\silver \\silver "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
+"\\darkcell[1.4]{Trudny} & \\lightcell[1.4]{\\silver \\silver \\golden "
+"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
+"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ "
+"\\darkcell[1.4]{Niemożliwy} & \\lightcell[1.4]{\\silver \\golden \\golden "
+"\\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden "
+"\\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure "
+"\\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
 
 #. type: Plain text
 #: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
 msgstr ""
+msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
 #: coops/sentinels.tex:196
@@ -521,3 +689,4 @@ msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."
 msgstr ""
+"Всегда 1 Юнит Лазурных Драконов (стартовые Юниты Армии Босса). Остальные случайны\\label{azure}."
