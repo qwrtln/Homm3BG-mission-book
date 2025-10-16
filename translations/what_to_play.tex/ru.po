@@ -49,7 +49,7 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:3
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr "\\addsection{Как играть?}{\\images/forgetfulness.png}"
+msgstr "\\addsection{Во что сыграть?}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -81,8 +81,8 @@ msgid ""
 "\n"
 msgstr ""
 "Если вы новичок и хотите \\textbf{освоить правила}, начните с \\pagelink{Изумрудный остров}{Изумрудного острова}.\n"
-"Для большого приключения \\textbf{до 6 игроков} с эпической битвой в финале, попробуйте \\pagelink{Цитадель Титанов}{Цитадель Титанов}.\n"
-"Для тактической игры для двух игроков \\pagelink{Стражи}{Стражей}.\n"
+"Для большого приключения \\textbf{до 6 игроков} с эпической битвой в финале, выберите \\pagelink{Цитадель Титанов}{Цитадель Титанов}.\n"
+"Для тактической игры для двух игроков -- в \\pagelink{Стражи}{Стражей}.\n"
 "\n"
 
 #. type: multicols
@@ -126,7 +126,7 @@ msgid ""
 "There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
-"В конце находится кампания Инферно, состоящая из 3--х Сценариев \\pagelink{1. Дьявольский План}{Подземелья и Дьяволы}, если вы предпочитаете одиночную игру.\n"
+"В конце находится кампания Инферно, состоящая из 3-х Сценариев \\pagelink{1. Дьявольский План}{Подземелья и Дьяволы}, если вы предпочитаете одиночную игру.\n"
 "\n"
 
 #. type: multicols
@@ -152,4 +152,4 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:33
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
+msgstr ""
