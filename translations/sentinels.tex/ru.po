@@ -49,6 +49,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:7

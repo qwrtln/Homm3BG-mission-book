@@ -41,6 +41,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
