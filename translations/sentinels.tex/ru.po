@@ -548,6 +548,7 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
 "  \\item Сражение с вражескими армиями длительностью более одного Раунда Боя не тратит \\svg{movement}.\n"
 "  \\item Во время сражения с вражеской армией Герой может отступить, когда должен Активироваться любой его Юнит.\n"
 "    Отступающий Главный Герой теряет все оставшиеся ОП и возвращается в выбранный им союзный Город или Посёлок, сохраняя все оставшиеся Юниты.\n"
@@ -680,7 +681,6 @@ msgstr ""
 #. type: Plain text
 #: coops/sentinels.tex:196
 msgid "\\stepcounter{footnote}"
-msgstr ""
 msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
