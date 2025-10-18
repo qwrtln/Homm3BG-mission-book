@@ -14,6 +14,7 @@ git restore \
   main_en.tex \
   main_fr.tex \
   main_pl.tex \
+  main_ru.tex \
   metadata.tex \
   mkdocs.yml \
   po4a.cfg \
