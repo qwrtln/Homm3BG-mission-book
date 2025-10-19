@@ -41,6 +41,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -54,6 +56,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -67,6 +71,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -81,6 +87,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -93,6 +101,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -108,6 +118,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -122,6 +134,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Дополнительные Правила}}\n"
+"\n"
 
 #. type: multicols
 #: coops/titans_stronghold.tex:7 coops/emerald_island.tex:7

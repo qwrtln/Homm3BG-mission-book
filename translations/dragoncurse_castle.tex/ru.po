@@ -41,6 +41,8 @@ msgid ""
 "{2}\n"
 "\n"
 msgstr ""
+"{2}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
@@ -53,6 +55,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Длительность сценария}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -66,6 +70,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:22 clash/dragoncurse_castle.tex:23
@@ -74,6 +80,8 @@ msgid ""
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
+"\\textbf{Число игроков:} 2\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -89,6 +97,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
@@ -101,6 +111,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
