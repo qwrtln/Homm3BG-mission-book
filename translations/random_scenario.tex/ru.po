@@ -58,6 +58,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
@@ -72,6 +74,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Дополнительные Правила}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
@@ -83,6 +87,8 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -95,6 +101,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_hunt.tex:96 sections/random_scenario.tex:59

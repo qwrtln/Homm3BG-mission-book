@@ -55,6 +55,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33

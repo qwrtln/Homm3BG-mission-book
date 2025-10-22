@@ -53,6 +53,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Стартовый доход:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17

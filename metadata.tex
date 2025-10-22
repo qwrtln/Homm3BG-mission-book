@@ -25,6 +25,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{hyperref}
 \usepackage[noautomatic, nonewpage]{imakeidx}
+\usepackage{microtype}
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage[super]{nth}
@@ -291,7 +292,6 @@
 %
 % TODO: possibly replace the whole \addsection with this
 \newcommand{\addscenariosection}[5][section]{
-  \sodef\sotitle{}{0.2em}{0.6em}{1.2em}
   \def\oneliner{\equal{#2}{1}}
 
   \vspace*{-5.72em}
@@ -313,7 +313,7 @@
     \begin{center}
       \vspace{\lang_header_adjustment}
       \vspace{-12pt}
-      \section*{\sectionheadertext{\small{\sotitle{#3}}}}
+      \section*{\sectionheadertext{\small{\textls[200]{\spaceskip=0.6em plus 0.2em minus 0.1em #3}}}}
       \vspace{\lang_header_adjustment}
       \vspace{-10pt}
       \section*{\sectionheadertext{#4}}
