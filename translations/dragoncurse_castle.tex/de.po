@@ -133,8 +133,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Dragoncurse Castle}{\\images/"
 "town_portal.png}"
 msgstr ""
-"\\addscenariosection{1}{Konfliktmodus}{Drachenfluch}{\\images/town_portal."
-"png}"
+"\\addscenariosection{1}{Konfliktmodus}{Drachenfluch}{\\images/"
+"town_portal.png}"
 
 #. type: multicols*
 #: clash/dragoncurse_castle.tex:7

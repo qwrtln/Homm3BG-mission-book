@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-23 22:06+0100\n"
+"POT-Creation-Date: 2025-10-23 21:18+0000\n"
 "PO-Revision-Date: 2025-10-06 10:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -122,12 +122,14 @@ msgstr ""
 #: sections/intro_and_toc.tex:53
 msgid ""
 "\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
-"(0in,-\\paperheight){\\includegraphics[width=\\paperwidth,"
-"height=\\paperheight]{\\layout/tausta.png}} } }"
+"(0in,-\\paperheight)"
+"{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
+"tausta.png}} } }"
 msgstr ""
 "\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
-"(0in,-\\paperheight){\\includegraphics[width=\\paperwidth,"
-"height=\\paperheight]{\\layout/tausta.png}} } }"
+"(0in,-\\paperheight)"
+"{\\includegraphics[width=\\paperwidth,height=\\paperheight]{\\layout/"
+"tausta.png}} } }"
 
 #. type: tikzpicture
 #: sections/intro_and_toc.tex:53
