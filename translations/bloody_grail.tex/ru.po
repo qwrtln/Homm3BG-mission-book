@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-27 09:55+0200\n"
+"POT-Creation-Date: 2025-10-23 22:06+0100\n"
 "PO-Revision-Date: 2025-06-27 09:55+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -49,7 +49,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:316
+#: sections/credits.tex:34 sections/random_scenario.tex:314
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -85,8 +85,8 @@ msgstr ""
 #. type: Plain text
 #: clash/bloody_grail.tex:3
 msgid ""
-"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-"
-"grail.png}"
+"\\addscenariosection{1}{Clash Scenario}{Bloody Grail}{\\images/bloody-grail."
+"png}"
 msgstr ""
 
 #. type: multicols*

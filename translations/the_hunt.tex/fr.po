@@ -149,8 +149,8 @@ msgstr ""
 #: clash/the_hunt.tex:3
 msgid "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{La Chasse}{\\images/"
-"slayer.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{La Chasse}{\\images/slayer."
+"png}"
 
 #. type: multicols*
 #: clash/the_hunt.tex:7

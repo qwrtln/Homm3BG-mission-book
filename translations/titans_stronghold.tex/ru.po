@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-27 09:55+0200\n"
+"POT-Creation-Date: 2025-10-23 22:06+0100\n"
 "PO-Revision-Date: 2025-06-27 09:55+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -65,37 +65,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Подготовка игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Игроков}}\n"
 "\n"
 
 #. type: multicols*
@@ -128,37 +103,12 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:88
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Подготовка карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Подготовка Карты}}\n"
 "\n"
 
 #. type: multicols*
@@ -169,43 +119,12 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Условия победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Победы}}\n"
 "\n"
 
 #. type: multicols
@@ -214,34 +133,12 @@ msgstr ""
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Условия поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{Условия Поражения}}\n"
 "\n"
 
 #. type: multicols
@@ -252,53 +149,13 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
-#, fuzzy, no-wrap
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{События по раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
-"\n"
-"#-#-#-#-#  ru.po (PACKAGE VERSION)  #-#-#-#-#\n"
-"\\subsection*{\\MakeUppercase{События по Раундам}}\n"
 "\n"
 
 #. type: multicols
@@ -306,7 +163,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:316
+#: sections/credits.tex:34 sections/random_scenario.tex:314
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -587,12 +444,12 @@ msgid ""
 "5\\bronze 6\\silver 4\\golden 3\\azure} & \\lightcell[1.8]{3\\bronze "
 "6\\silver 6\\golden 4\\azure \\linebreak Then\\linebreak 3\\bronze 6\\silver "
 "6\\golden 4\\azure} & \\lightcell[1.8]{1\\bronze 6\\silver 8\\golden "
-"6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver 8\\golden 5\\azure}"
-"\\\\ \\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze 8\\silver "
-"4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver 5\\golden "
-"2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden 3\\azure "
-"\\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} & "
-"\\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak "
+"6\\azure \\linebreak Then\\linebreak 2\\bronze 6\\silver 8\\golden "
+"5\\azure}\\\\ \\darkcell[1.8]{6 players} & \\lightcell[1.8]{8\\bronze "
+"8\\silver 4\\golden 1\\azure \\linebreak Then\\linebreak 7\\bronze 7\\silver "
+"5\\golden 2\\azure} & \\lightcell[1.8]{6\\bronze 8\\silver 4\\golden "
+"3\\azure \\linebreak Then\\linebreak 6\\bronze 7\\silver 5\\golden 3\\azure} "
+"& \\lightcell[1.8]{3\\bronze 8\\silver 7\\golden 5\\azure \\linebreak "
 "Then\\linebreak 3\\bronze 7\\silver 8\\golden 4\\azure} & \\lightcell[1.8]"
 "{3\\bronze 7\\silver 11\\golden 6\\azure \\linebreak Then\\linebreak "
 "3\\bronze 8\\silver 10\\golden 6\\azure}\\\\ \\end{tabularx} }"
