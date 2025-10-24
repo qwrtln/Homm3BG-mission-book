@@ -48,7 +48,7 @@ msgstr ""
 #. type: Plain text
 #: sections/recommendations.tex:3
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr ""
+msgstr " \addsection{Рекомендации}{\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
@@ -65,6 +65,11 @@ msgid ""
 "Enjoy!\n"
 "\n"
 msgstr ""
+"{2}\n"
+"Мы собрали несколько пользовательских правил и лучших практик для лучшего игрового опыта.\n"
+"Помните, что это лишь \\textbf{мнения авторов} этой книги.\n"
+"Приятной игры!\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:12
@@ -73,6 +78,8 @@ msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
+"\\subsection*{Время игры}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:14
@@ -81,6 +88,8 @@ msgid ""
 "You can estimate your \\textbf{minimal} play time using the following formula:\n"
 "\n"
 msgstr ""
+"Ты можешь рассчитать \\textbf{минимальное} игровое время по следующей формуле:\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:18
@@ -91,6 +100,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  Время игры $= \\boldsymbol{\\text{И} × \\text{Р} × 5}$ [мин]\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:24
@@ -103,6 +116,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Где:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{И}$] -- количество игроков\n"
+"  \\item[$\\textbf{Р}$] -- количество раундов\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:27
@@ -112,6 +131,9 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
+"Например, если вы играете в cценарий на трёх игроков длительностью 12 раундов, вы можете легко вычислить, что $3 \\times 12 \\times 5 = 180$.\n"
+"Ваше ожидаемое минимальное время игры составит около трёх часов.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:30
@@ -121,6 +143,9 @@ msgid ""
 "In this case, that would be 6 hours.\n"
 "\n"
 msgstr ""
+"Чтобы вычислить \\textbf{верхнюю границу} времени игры (более реалистично при наличии неопытных игроков), просто удвойте результат.\n"
+"В этом случае получится 6 часов.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:32
@@ -129,6 +154,8 @@ msgid ""
 "\\subsection*{Magic Arrows}\n"
 "\n"
 msgstr ""
+"\\subsection*{Волшебные стрелы}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:35
@@ -138,6 +165,9 @@ msgid ""
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
 "\n"
 msgstr ""
+"За исключением Волшебной стрелы, все заклинания встречаются в колоде заклинаний ровно два раза.\n"
+"После того как игроки подготовят свои стартовые колоды, рекомендуется убрать Волшебные стрелы из колоды заклинаний, пока их останется не более двух.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:37
@@ -146,6 +176,8 @@ msgid ""
 "\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
+"\\subsection*{Гарантированный посёлок}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:39
@@ -154,6 +186,8 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
+"При распределении дальних фрагментов (II--III) между игроками, набор фрагментов карты каждого игрока должен включать один посёлок.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:41
@@ -162,6 +196,8 @@ msgid ""
 "\\subsection*{Round One Mulligan}\n"
 "\n"
 msgstr ""
+"\\subsection*{Пересдача в первом раунде}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:43
@@ -170,6 +206,8 @@ msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
 "\n"
 msgstr ""
+"В начале первого раунда каждый игрок может один раз перемешать карты своей руки обратно в свою колоду и получить новые стартовые карты.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:45
@@ -178,6 +216,8 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
+"\\subsection*{Сражение V--VII на уровне\\\\тяжелый и выше}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:48
@@ -187,6 +227,9 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\azure\\ Neutral Units.\n"
 "\n"
 msgstr ""
+"Играя на уровнях тяжёлый или невозможный, считайте сражения уровней V–VII на одну ступень сложности ниже.\n"
+"Например, сражение уровня VII на тяжёлом будет против 2 × \\azure\\ нейтральных отрядов.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:54
@@ -207,6 +250,8 @@ msgid ""
 "\\subsection*{Trading Post}\n"
 "\n"
 msgstr ""
+"\\subsection*{Рынок}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:58
@@ -215,6 +260,8 @@ msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
+"Хотя по базовым правилам вы можете убрать только одну карту из руки при посещении Рынка, рекомендуется разрешить убирать любое количество карт.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:60
@@ -223,6 +270,8 @@ msgid ""
 "\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
+"\\subsection*{Победные очки}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:67
@@ -236,6 +285,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"При использовании опциональных победных очков из турнирной книги действуют правила (если cценарий не предписывает иное):\n"
+"\\begin{itemize}\n"
+"  \\item Города фракций дают 1 ПО.\n"
+"  \\item Обладание Граалем в конце матча даёт 3 ПО. Если Грааль был доставлен в город фракции этого игрока, то даётся 5, а не 3.\n"
+"  \\item Захват Утопии драконов даёт 3 ПО.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:73
@@ -244,6 +300,8 @@ msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
 "\n"
 msgstr ""
+"\\subsection*{Сражение с нейтральными отрядами}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:75
@@ -252,6 +310,8 @@ msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
+"В сражении с нейтральными отрядами в сценариях столкновений, если игрок располагает свои отряды только на одной половине (левой или правой) доски сражения, игрок, располагающий нейтральные отряды, должен поступить так же.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:79
@@ -262,6 +322,10 @@ msgid ""
 "See examples that follow.\n"
 "\n"
 msgstr ""
+"Расположение нейтральных отрядов далеко друг от друга лишь заставляет другого игрока тратить \\svg{movement}, что замедляет игру.\n"
+"Исключением из этого правила является случай, когда нужно раcположить трёх нейтральных \\svg{unit_ground} или \\svg{unit_flying}, поскольку все они должны занять переднюю линию.\n"
+"Смотрите следующие примеры.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:83
@@ -295,6 +359,23 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Нейтральные отряды расположены\\\\правильно.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Такое расположение не разрешено, потому что игрок за Некрополис расположил свои отряды в левой половине доски сражений.\n"
+"      Крестьяне также должны начать сражение с левой стороны.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: figure*
 #: sections/recommendations.tex:124
@@ -317,6 +398,22 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Исключение:} Три не-\\svg{unit_ranged} отряда должны быть расположены на передней линии.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Наездники на кабанах должны занять одно из зелёных полей.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: multicols
 #: sections/recommendations.tex:128
@@ -325,6 +422,8 @@ msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
+"\\subsection*{Общие рекомендации}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:130
@@ -333,6 +432,8 @@ msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
 "\n"
 msgstr ""
+"Ниже приведены не пользовательские правила, а рекомендации, которые помогут вам получить максимальную отдачу от игры:\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:137
@@ -346,6 +447,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item При решении, какое строение построить в вашем городе, особенно в начале игры, \\textit{обычно} лучше отдавать приоритет юнитам чем Ратуше, Цитадели, Гильдии магов или другим фракционным зданиям.\n"
+"  \\item Если вы не уверены, какое заклинание, артефакт или навык выбрать, отдавайте приоритет тем, которые помогают вам циклически использовать вашу колоду.\n"
+"    Это включает любые карты, которые позволяют вам брать карты или возвращать карты из вашей стопки сброса.\n"
+"  \\item Старайтесь избегать использования ОП основного героя для действий, которые может выполнить вторичный герой, таких как открытие элементов карты, посещение Водяных мельниц и тому подобное.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:141
