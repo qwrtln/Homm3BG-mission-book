@@ -391,8 +391,8 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🤝 Wandering Dragons (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-color/wandering_dragons_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Arcane Artillery (2-6)</td>
@@ -446,8 +446,8 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>🍻 Brothers in Arms (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-color/brothers_in_arms_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/brothers_in_arms_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-color/brothers_in_arms_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-mono/brothers_in_arms_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🗺️ Rampart: Graduation Exercise (2)</td>
