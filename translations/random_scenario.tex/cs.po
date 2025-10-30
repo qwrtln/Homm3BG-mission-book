@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -51,7 +51,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -67,7 +67,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:308
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -80,7 +80,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:304
+#: sections/credits.tex:28 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -94,7 +94,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:316
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -555,37 +555,49 @@ msgstr ""
 msgid "\\origazure[12]"
 msgstr ""
 
-#. type: Plain text
-#: sections/random_scenario.tex:281
+#. type: table*
+#: sections/random_scenario.tex:283
+#, no-wrap
 msgid ""
-"\\hommtable[]{27}{ \\centering \\medskip \\textbf{Starting Conditions}\\\\ "
-"\\bigskip \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
-"\\darkcell{Stingy} & \\darkcell{Fair} & \\darkcell{Generous}\\\\ "
-"\\darkcell[1.4]{Army} & \\lightcellleft[1.4]{2 × Few cheapest \\bronze\\ "
-"Units} & \\lightcellleft[1.4]{Pack of cheap \\bronze\\ Units \\linebreak Few "
-"chosen \\bronze\\ Units} & \\lightcellleft[1.4]{Pack of chosen \\bronze\\ "
-"Units \\linebreak Few cheap \\silver\\ Units}\\\\ \\darkcell[1.4]{Starting "
-"Resources} & \\lightcellleft[1.4]{10 \\svg{gold}, 3 "
-"\\svg{building_materials}, 1 \\svg{valuables}} & \\lightcellleft[1.4]{16 "
-"\\svg{gold}, 5 \\svg{building_materials}, 1 \\svg{valuables}} & "
-"\\lightcellleft[1.4]{20 \\svg{gold}, 8 \\svg{building_materials}, 2 "
-"\\svg{valuables}}\\\\ \\end{tabularx} \\bigskip "
-"{\\color{\\iftoggle{noartbackground}{black}{darkyellow}}\\rule{\\textwidth}"
-"{0.5pt}} \\vspace*{1em} \\textbf{Town Strength}\\\\ \\bigskip "
-"\\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & "
-"\\darkcell{Settlement} & \\darkcell{City} & \\darkcell{Capitol}\\\\ "
-"\\darkcell[1.4]{Starting Income} & \\lightcellleft[1.4]{10 \\svg{gold}, 0 "
-"\\svg{building_materials}, 0 \\svg{valuables}} & \\lightcellleft[1.4]{15 "
-"\\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}} & "
-"\\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 "
-"\\svg{valuables}}\\\\ \\darkcell[2.0]{Town Buildings} & \\lightcellleft[2.0]"
-"{\\bronze\\ Dwelling} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak "
-"City Hall} & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall "
-"\\linebreak Citadel}\\\\ \\end{tabularx} }"
+"  \\hommtable[]{27}{\n"
+"    \\centering\n"
+"    \\medskip\n"
+"    \\textbf{Starting Conditions}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & \\darkcell{Stingy} & \\darkcell{Fair} & \\darkcell{Generous}\\\\\n"
+"    \\darkcell[1.4]{Army}\n"
+"      & \\lightcellleft[1.4]{2 × Few cheapest \\bronze\\ Units}\n"
+"      & \\lightcellleft[1.4]{Pack of cheap \\bronze\\ Units \\linebreak Few chosen \\bronze\\ Units}\n"
+"      & \\lightcellleft[1.4]{Pack of chosen \\bronze\\ Units \\linebreak Few cheap \\silver\\ Units}\\\\\n"
+"    \\darkcell[1.4]{Starting Resources}\n"
+"      & \\lightcellleft[1.4]{10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+"      & \\lightcellleft[1.4]{16 \\svg{gold}, 5 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+"      & \\lightcellleft[1.4]{20 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}}\\\\\n"
+"    \\end{tabularx}\n"
+"\n"
+"    \\bigskip\n"
+"    {\\color{\\iftoggle{noartbackground}{black}{darkyellow}}\\rule{\\textwidth}{0.5pt}}\n"
+"\n"
+"    \\vspace*{1em}\n"
+"    \\textbf{Town Strength}\\\\\n"
+"    \\bigskip\n"
+"\n"
+"    \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & \\darkcell{Settlement} & \\darkcell{City} & \\darkcell{Capitol}\\\\\n"
+"    \\darkcell[1.4]{Starting Income}\n"
+"      & \\lightcellleft[1.4]{10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}}\n"
+"      & \\lightcellleft[1.4]{15 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+"      & \\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}}\\\\\n"
+"    \\darkcell[2.0]{Town Buildings}\n"
+"      & \\lightcellleft[2.0]{\\bronze\\ Dwelling}\n"
+"      & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall}\n"
+"      & \\lightcellleft[2.0]{\\bronze\\ Dwelling \\linebreak City Hall \\linebreak Citadel}\\\\\n"
+"    \\end{tabularx}\n"
+"  }"
 msgstr ""
 
 #. type: multicols
-#: sections/random_scenario.tex:302
+#: sections/random_scenario.tex:304
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -637,7 +649,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/random_scenario.tex:312
+#: sections/random_scenario.tex:314
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
