@@ -89,7 +89,11 @@ Randomly draw the following Neutral dragon Unit Cards into two \textbf{Dragon De
   \item If two or more player assets are equidistant, the WD prioritize 1)~Heroes, 2)~Towns and 3)~Settlements.
     If this does not resolve which direction the WD should move, roll a die to determine the target.
   \item The WD attack if they reach a Field with a Hero, a Town, or a Settlement with a Hero.
+<<<<<<< HEAD
+    In this case, the battle is fought until the end without a chance for Retreat or Surrender.
+=======
     In this case, the battle is fought until the end without a chance for retreat or surrender.
+>>>>>>> 23fd602 (Fix blunder)
     If the WD reach a Settlement without a Hero in it, the player instantly loses it.
   \item The WD may move through Blocked Fields and will end their movement on an empty Field, if possible.
   \item If the WD are defeated, the player who defeated them gains \svg{morale_positive}.
