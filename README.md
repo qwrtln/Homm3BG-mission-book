@@ -390,7 +390,7 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
-            <td>🤝 Wanderind Dragons (2)</td>
+            <td>🤝 Wandering Dragons (2)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-color/wandering_dragons_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-titans_stronghold-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
         </tr>
