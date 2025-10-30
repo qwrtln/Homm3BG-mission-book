@@ -261,7 +261,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario_type: ["draft-scenarios/clash", "draft-scenarios/campaigns", "draft-scenarios/sections"]
+        scenario_type: ["draft-scenarios/coops", "draft-scenarios/clash", "draft-scenarios/alliances", "draft-scenarios/campaigns", "draft-scenarios/sections"]
         language: ["en"]
     with:
       scenario_type: ${{ matrix.scenario_type }}
