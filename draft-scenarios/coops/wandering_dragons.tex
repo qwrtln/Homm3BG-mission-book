@@ -79,7 +79,8 @@ Randomly draw the following Neutral dragon Unit Cards into two \textbf{Dragon De
 \columnbreak
 
 \begin{itemize}
-  \item The WD start from the Dragon Utopia and are marked with a \svg{morale_negative} token.
+  \item The WD start at the center of the undiscovered Center Map Tile and are marked with a \svg{morale_negative} token.
+  \item The WD \textbf{do not discover} Map Tiles they move throgh.
   \item The WD move at the end of every Round. Roll 2 Attack Dice and add 1 to the result. On a result of:
   \begin{itemize}
     \item +1, +2, or +3, the WD move that amount of Fields toward the player asset (Hero, Town, or Settlement) that is closest to it.
@@ -90,7 +91,7 @@ Randomly draw the following Neutral dragon Unit Cards into two \textbf{Dragon De
     If this does not resolve which direction the WD should move, roll a die to determine the target.
   \item The WD attack if they reach a Field with a Hero, a Town, or a Settlement with a Hero.
     In this case, the battle is fought until the end without a chance for retreat or surrender.
-    If the WD reach a Settlement without a Hero in it, the player instantly loses it.
+    If the WD reach a Settlement without a Hero in it, remove the Faction Cube from it.
   \item The WD may move through Blocked Fields and will end their movement on an empty Field, if possible.
   \item If the WD are defeated, the player who defeated them gains \svg{morale_positive}.
   \item \textbf{Obelisk:} Roll \svg{treasure} and \svg{resource} and resolve both.
@@ -98,7 +99,7 @@ Randomly draw the following Neutral dragon Unit Cards into two \textbf{Dragon De
 \end{multicols}
 
 \begin{tikzpicture}[overlay]
-  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-18em] at (current page.south) {
+  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-17em] at (current page.south) {
     \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fireball.png}
   };
   \centering
