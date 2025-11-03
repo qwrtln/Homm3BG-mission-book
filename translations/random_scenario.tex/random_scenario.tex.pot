@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-19 12:16+0000\n"
+"POT-Creation-Date: 2025-10-23 21:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:306
+#: sections/credits.tex:28 sections/random_scenario.tex:304
 #, no-wrap
 msgid ""
 "\\columnbreak\n"

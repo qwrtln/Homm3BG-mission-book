@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-19 11:49+0000\n"
+"POT-Creation-Date: 2025-10-23 21:18+0000\n"
 "PO-Revision-Date: 2025-06-27 09:55+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -55,6 +55,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Длительность сценария}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
@@ -68,6 +70,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка игроков}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
@@ -78,6 +82,8 @@ msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
+"\\textbf{Стартовый доход:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:40 coops/titans_stronghold.tex:42
@@ -87,6 +93,8 @@ msgid ""
 "\\vspace*{\\fill}\\columnbreak\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\\columnbreak\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
@@ -100,6 +108,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка карты}}\n"
+"\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
@@ -114,6 +124,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия победы}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
@@ -126,6 +138,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Условия поражения}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
@@ -141,6 +155,8 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{События по раундам}}\n"
+"\n"
 
 #. type: multicols
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
@@ -153,6 +169,8 @@ msgid ""
 "\\vspace*{\\fill}\n"
 "\n"
 msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text

@@ -102,6 +102,7 @@ Or, if you prefer, download <strong>individual scenarios</strong> 👇
  - 🤝 Coop
  - ⚔️ Clash
  - 🗺️ Campaign
+ - 🍻 Alliance
 
 #### File types
  - 🎨 Full color
@@ -389,6 +390,11 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
+            <td>🤝 Wandering Dragons (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>⚔️ Arcane Artillery (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
@@ -402,11 +408,6 @@ Number of players (P) in the brackets.
             <td>⚔️ The Battle for Treasure Island (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-color/treasure_island_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-mono/treasure_island_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Gold Rush (1, 2, or 4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Dragon Valley (2-4)</td>
@@ -437,6 +438,16 @@ Number of players (P) in the brackets.
             <td>⚔️ Blood for Ore (4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-color/blood_for_ore_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🍻 Brothers in Arms (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-color/brothers_in_arms_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-mono/brothers_in_arms_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🗺️ Rampart: Graduation Exercise (2)</td>
