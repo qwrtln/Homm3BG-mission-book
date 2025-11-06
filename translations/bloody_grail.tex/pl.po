@@ -2,11 +2,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-10-23 21:18+0000\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -35,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -51,7 +50,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -67,10 +66,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko\n"
 "\n"
 
 #. type: multicols*
@@ -167,8 +166,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
-"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -375,9 +374,9 @@ msgid ""
 "    \\end{enumerate}\n"
 "    \\item \\textbf{[Sacrifice]} Remove a * Faction Unit Card from your Unit Deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\bronze\\: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
-"      \\item *\\silver\\: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
-"      \\item *\\golden\\: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic Card Deck. Finally, if the Unit Card was on the Pack side, \\textbf{Search (2)} the \\azure\\ Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svg{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
+"      \\item *\\svg{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
+"      \\item *\\svg{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic Card Deck. Finally, if the Unit Card was on the Pack side, \\textbf{Search (2)} the \\svg{azure} Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red Faction Cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
@@ -386,7 +385,7 @@ msgid ""
 "  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may, after Visiting an Obelisk, Recruit an enemy Unit sacrificed at that Obelisk for half the cost (rounded down); if a Pack was sacrificed, the player may choose to Recruit Few instead.\n"
 "  \\item If a Unit Recruited at an Obelisk is defeated, remove it.\n"
 "  \\item A player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' may not use the Diplomacy Ability Card. If a player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' draws the Diplomacy Ability Card, they may show it to the other players, then discard it and draw a new Ability Card in its stead.\n"
-"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may not use the Diplomacy Ability Card to Recruit Neutral \\azure\\ Units.\n"
+"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may not use the Diplomacy Ability Card to Recruit Neutral \\svg{azure} Units.\n"
 "  \\item Whenever an Astrologers Proclaim or Event Card that allows you to Recruit Neutral Units is drawn, ignore it and draw a new Astrologers Proclaim or Event Card.\n"
 "  \\item Players can use their Deck of Might \\& Magic when paying gold to defend their Faction Town.\n"
 "  \\item Ignore Combat encounters on the Field with the Grail.\n"
@@ -416,9 +415,9 @@ msgstr ""
 "    \\columnbreak\n"
 "    \\item \\textbf{[Ofiara]} Usuń * Kartę Jednostki Frakcji ze swojej Talii Jednostek w zamian za:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\bronze\\: Zyskaj 6 \\svg{gold}, 3 \\svg{building_materials} i 1 \\svg{valuables}. Dodatkowo, jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (4)} Talię Słabych Artefaktów.\n"
-"      \\item *\\silver\\: Zyskaj 12 \\svg{gold}, 6 \\svg{building_materials} i 2 \\svg{valuables}. Dodatkowo, jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (3)} Talię Mocnych Artefaktów.\n"
-"      \\item *\\golden\\: Zyskaj 18 \\svg{gold}, 9 \\svg{building_materials} i 3 \\svg{valuables}. Dodatkowo, \\textbf{Przeszukaj (2)} Talię Reliktów. Jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (2)} Talię Jednostek \\azure\\; możesz Zrekrutować jedną z tych Jednostek za połowę kosztu (zaokrąglonego w dół).\n"
+"      \\item *\\svg{bronze}: Zyskaj 6 \\svg{gold}, 3 \\svg{building_materials} i 1 \\svg{valuables}. Dodatkowo, jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (4)} Talię Słabych Artefaktów.\n"
+"      \\item *\\svg{silver}: Zyskaj 12 \\svg{gold}, 6 \\svg{building_materials} i 2 \\svg{valuables}. Dodatkowo, jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (3)} Talię Mocnych Artefaktów.\n"
+"      \\item *\\svg{golden}: Zyskaj 18 \\svg{gold}, 9 \\svg{building_materials} i 3 \\svg{valuables}. Dodatkowo, \\textbf{Przeszukaj (2)} Talię Reliktów. Jeśli Karta Jednostki była na stronie Grupy, \\textbf{Przeszukaj (2)} Talię Jednostek \\svg{azure}; możesz Zrekrutować jedną z tych Jednostek za połowę kosztu (zaokrąglonego w dół).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item Gracz, który wybierze \\textbf{Ofiarę} przy Obelisku, zyskuje tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}''. Umieść czerwoną Kostkę Frakcji na portrecie swojego Bohatera, aby oznaczyć ten efekt. \\textcolor{darkcandyapplered}{Rycerz Krwi} nigdy nie może wybrać opcji \\textbf{Oczyszczenia} podczas odwiedzania Obelisku.\n"
@@ -427,7 +426,7 @@ msgstr ""
 "  \\item Gracz posiadający tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'' może po odwiedzeniu Obelisku zrekrutować wrogą Jednostkę ofiarowaną przy tym Obelisku za połowę kosztu (zaokrąglonego w dół); jeśli została ofiarowana Grupa, gracz może zrekrutować Garstkę.\n"
 "  \\item Jeśli Zrekrutowana przy Obelisku Jednostka zostanie pokonana, usuń ją z gry.\n"
 "  \\item Gracz, który nie posiada tytułu lub posiada tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}'', nie może używać Karty Dyplomacji. Jeśli gracz, który nie posiada tytułu lub posiada tytuł ,,\\textcolor{darkcandyapplered}{Rycerza Krwi}'', dobierze Kartę Dyplomacji, może ją pokazać innym graczom, następnie odrzucić i wylosować nową Kartę Zdolności.\n"
-"  \\item Gracz posiadający tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'' nie może używać Karty Dyplomacji do rekrutacji \\azure\\ Jednostek Neutralnych.\n"
+"  \\item Gracz posiadający tytuł ,,\\textcolor{cobalt}{Rycerza Graala}'' nie może używać Karty Dyplomacji do rekrutacji \\svg{azure} Jednostek Neutralnych.\n"
 "  \\item Kiedy wylosowana zostanie Karta Astrologowie Ogłaszają lub Karta Wydarzenia, która pozwala na rekrutację Jednostek Neutralnych, zignoruj ją i wylosuj nową Kartę Astrologowie Ogłaszają lub Kartę Wydarzenia.\n"
 "  \\item Gracze mogą używać swojej Talii Mocy i Magii, gdy płacą złoto za obronę Miasta swojej Frakcji.\n"
 "  \\item Zignoruj walkę z Jednostkami Neutralnymi na polu z Graalem.\n"

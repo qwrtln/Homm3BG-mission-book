@@ -2,11 +2,10 @@
 # Copyright (C) 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2025.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -79,10 +78,10 @@ msgstr ""
 #: clash/trial_by_combat.tex:7
 #, no-wrap
 msgid ""
-"\\textbf{Author:} LAAMAKALA\n"
+"\\textbf{Author:} Laamakala\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} LAAMAKALA\n"
+"\\textbf{Autor:} Shakajiub\n"
 "\n"
 
 #. type: multicols*
@@ -125,15 +124,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few cheapest \\silver\\ Units\n"
-"  \\item A chosen Neutral \\bronze\\ Unit matching the player's Faction\n"
+"  \\item A Few cheapest \\svg{silver} Units\n"
+"  \\item A chosen Neutral \\svg{bronze} Unit matching the player's Faction\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Garstka najtańszych \\silver\\ Jednostek\n"
-"  \\item Wybrana Neutralna \\bronze\\ Jednostka odpowiadająca Fakcji gracza\n"
+"  \\item Garstka najtańszych \\svg{silver} Jednostek\n"
+"  \\item Wybrana Neutralna \\svg{bronze} Jednostka odpowiadająca Fakcji gracza\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -141,10 +140,10 @@ msgstr ""
 #: clash/trial_by_combat.tex:27
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, Gildia Magów\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko, Gildia Magów\n"
 "\n"
 
 #. type: multicols*
@@ -288,7 +287,7 @@ msgid ""
 "  \\darkcell[1.4]{-1/0}\n"
 "    & \\lightcell[1.4]{Raining Ash – All \\svg{unit_flying-yellow} Units gain -2 \\svg{initiative-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{-1/+1}\n"
-"    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
+"    & \\lightcell[1.4]{Scorching Earth – All \\svg{silver} and \\svg{golden} Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-yellow} Units move one space less.}\\\\\n"
 "  \\darkcell[1.0]{0/0}\n"
@@ -318,7 +317,7 @@ msgstr ""
 "  \\darkcell[1.4]{-1/0}\n"
 "    & \\lightcell[1.4]{Deszcz popiołu – Jednostki \\svg{unit_flying-yellow} otrzymują -2 \\svg{initiative-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{-1/+1}\n"
-"    & \\lightcell[1.4]{Spalona ziemia – Jednostki \\silver\\ i \\golden\\ zaczynają Walkę z 1 \\svg{damage-yellow}.}\\\\\n"
+"    & \\lightcell[1.4]{Spalona ziemia – Jednostki \\svg{silver} i \\svg{golden} zaczynają Walkę z 1 \\svg{damage-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Grząskie błoto – Jednostki \\svg{unit_ground-yellow} poruszają się o jedno pole mniej.}\\\\\n"
 "  \\darkcell[1.0]{0/0}\n"
@@ -340,15 +339,15 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item After winning a Neutral Combat, you may sacrifice 2 \\bronze\\ Units to gain 1 \\silver\\ Unit you defeated.\n"
-"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\silver\\ Neutral Deck.\n"
+"  \\item After winning a Neutral Combat, you may sacrifice 2 \\svg{bronze} Units to gain 1 \\svg{silver} Unit you defeated.\n"
+"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\svg{silver} Neutral Deck.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\vspace*{-1em}\n"
 "\\begin{itemize}\n"
-"  \\item Po wygraniu Walki z Jednostkami Neutralnymi możesz poświęcić 2 Jednostki \\bronze\\, aby otrzymać 1 Jednostkę \\silver{}, którą pokonałeś.\n"
-"  \\item Gdy Bohater Główny zostanie pokonany, na początku następnej tury tego gracza może on wzmocnić dowolną Kartę Statystyk ze swojej Talii M\\&M i Przeszukać (2) Talię Jednostek \\silver{} Neutralnych.\n"
+"  \\item Po wygraniu Walki z Jednostkami Neutralnymi możesz poświęcić 2 Jednostki \\svg{bronze}, aby otrzymać 1 Jednostkę \\svg{silver}, którą pokonałeś.\n"
+"  \\item Gdy Bohater Główny zostanie pokonany, na początku następnej tury tego gracza może on wzmocnić dowolną Kartę Statystyk ze swojej Talii M\\&M i Przeszukać (2) Talię Jednostek \\svg{silver} Neutralnych.\n"
 "\\end{itemize}\n"
 "\n"
 

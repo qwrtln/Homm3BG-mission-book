@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -113,7 +113,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -127,7 +127,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -280,7 +280,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:38
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling\n"
 "\n"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgid ""
 "    \\end{itemize}\n"
 "    \\item \\textbf{AI Deck:}\n"
 "    \\begin{itemize}\n"
-"        \\item 5 × Might \\svg{might} Card\n"
+"        \\item 5 × Might \\svg[12]{might} Card\n"
 "        \\item 1 × Magic \\svg{magic} Card\n"
 "        \\item 3 × Skill \\svg{skill} Card\n"
 "    \\end{itemize}\n"
@@ -341,7 +341,7 @@ msgid ""
 "       Neutral Army one Level higher than your Hero Level (Max Level VI)\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
 "    \\item \\textbf{AI Deck:}\n"
 "    \\begin{itemize}\n"
-"        \\item 2 × \\svg{might} Might Card\n"
+"        \\item 2 × \\svg[12]{might} Might Card\n"
 "        \\item 2 × \\svg{magic} Magic Card\n"
 "    \\end{itemize}\n"
 "    \\item \\textbf{Spells:}\n"
@@ -377,7 +377,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:110
 #, no-wrap
 msgid ""
-"\\textbf{3 × Far (II--III) Map Tile}\n"
+"\\textbf{6 × Far (II--III) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 1 × Castle (F3)\n"
 "  \\item 1 × Rampart (F10)\n"
@@ -393,7 +393,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:117
 #, no-wrap
 msgid ""
-"\\textbf{2 × Near (IV--V) Map Tile}\n"
+"\\textbf{4 × Near (IV--V) Map Tile}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Castle (N3, choose from: \\#N3, N6)\n"
 "  \\item 1 × Rampart (N8)\n"

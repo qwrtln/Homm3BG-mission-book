@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -59,7 +59,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -73,7 +73,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -95,7 +95,7 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
 
@@ -184,7 +184,7 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
+"  \\item 2 × Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -275,10 +275,10 @@ msgid ""
 "  \\columnbreak\n"
 "  \\item When a Hero moves to the Dragon Utopia Field, they must fight, depending on chosen difficulty, the following number of Neutral Units:\n"
 "  \\begin{itemize}\n"
-"    \\item \\textbf{Easy:} 1 × \\azure\\, 2 × \\silver\\, 1 × \\bronze\\\n"
-"    \\item \\textbf{Normal:} 1 × \\azure\\, 1 × \\golden\\, 2 × \\silver\\\n"
-"    \\item \\textbf{Hard:} 1 × \\azure\\, 3 × \\golden\\\n"
-"    \\item \\textbf{Impossible:}  2 × \\azure\\, 2 × \\golden\\\n"
+"    \\item \\textbf{Easy:} 1 × \\svg{azure}, 2 × \\svg{silver}, 1 × \\svg{bronze}\n"
+"    \\item \\textbf{Normal:} 1 × \\svg{azure}, 1 × \\svg{golden}, 2 × \\svg{silver}\n"
+"    \\item \\textbf{Hard:} 1 × \\svg{azure}, 3 × \\svg{golden}\n"
+"    \\item \\textbf{Impossible:}  2 × \\svg{azure}, 2 × \\svg{golden}\n"
 "  \\end{itemize}\n"
 "  \\item Follow these steps when Combat begins against Neutral Units at the Dragon Utopia:\n"
 "  \\begin{itemize}\n"

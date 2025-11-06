@@ -2,11 +2,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-10-23 21:18+0000\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -44,7 +43,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -168,8 +167,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -184,10 +183,10 @@ msgstr ""
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, Cytadela\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko, Cytadela\n"
 "\n"
 
 #. type: multicols
@@ -334,7 +333,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -416,7 +415,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -450,7 +449,7 @@ msgstr ""
 "  \\item Dodatkowo żaden gracz nie może:\n"
 "  \\begin{itemize}\n"
 "      \\item Atakować innych Bohaterów.\n"
-"      \\item Przejąć Kopalni lub Osady, która jest już Oflagowana.\n"
+"      \\item Przejąć Kopalni lub Osady, która jest już oflagowana.\n"
 "  \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
@@ -593,7 +592,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:304
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -607,7 +606,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -629,63 +628,71 @@ msgstr ""
 "  \\node at (14, 3) {\\includegraphics[width=0.4\\paperwidth]{\\maps/sentinels.png}};"
 
 #. type: Plain text
-#: coops/sentinels.tex:192
+#: coops/sentinels.tex:183
 msgid ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Strength of Enemy Armies}\\"
-"\\ \\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
-"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
-"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
-"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
-"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
-"& \\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round "
-"10}\\\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
-"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
-"\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\silver \\silver \\silver "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
-"\\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden \\azure} & "
-"\\lightcell[1.4]{\\golden \\golden \\azure \\azure \\footref{azure} "
-"\\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ \\darkcell[1.4]"
-"{Impossible} & \\lightcell[1.4]{\\silver \\golden \\golden \\golden "
-"\\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden \\azure} & "
-"\\lightcell[1.4]{\\golden \\azure \\azure \\azure \\footref{azure} "
-"\\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+"\\ \\bigskip \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
+"\\darkcell{Rounds 6 + 7} & \\darkcell{Rounds 8 + 9} & \\darkcell{Round 10}\\"
+"\\ \\darkcell[1.4]{Easy} & \\lightcell[1.4]{\\svg[12]{bronze}\\svg[12]"
+"{silver}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}} & "
+"\\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]"
+"{golden}\\svg[12]{golden}} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]"
+"{silver}\\svg[12]{golden}\\svg[12]{azure}\\footref{azure} \\linebreak "
+"(2\\svg[12]{bronze}, 4\\svg[12]{silver}, 3\\svg[12]{golden}, 1\\svg[12]"
+"{azure})}\\\\ \\darkcell[1.4]{Normal} & \\lightcell[1.4]{\\svg[12]{silver}"
+"\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}} & "
+"\\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]"
+"{golden}\\svg[12]{azure}} & \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{azure}\\footref{azure} \\linebreak "
+"(2\\svg[12]{silver}, 7\\svg[12]{golden}, 1\\svg[12]{azure})}\\\\ "
+"\\darkcell[1.4]{Hard} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}"
+"\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}} & \\lightcell[1.4]"
+"{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}"
+"\\svg[12]{azure}} & \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]{golden}"
+"\\svg[12]{azure}\\svg[12]{azure}\\footref{azure} \\linebreak (2\\svg[12]"
+"{silver}, 6\\svg[12]{golden}, 2\\svg[12]{azure})}\\\\ \\darkcell[1.4]"
+"{Impossible} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{golden}\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{golden}} & \\lightcell[1.4]{\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{azure}} "
+"& \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]{azure}\\svg[12]{azure}\\svg[12]"
+"{azure}\\footref{azure} \\linebreak (7\\svg[12]{golden}, 3\\svg[12]{azure})}"
+"\\\\ \\end{tabularx} }"
 msgstr ""
 "\\hommtable[]{20}{ \\centering \\medskip \\textbf{Siła Wrogich Armii}\\\\ "
-"\\bigskip \\let\\origbronze\\bronze \\let\\origsilver\\silver "
-"\\let\\origgolden\\golden \\let\\origazure\\azure \\renewcommand{\\bronze}"
-"{\\origbronze[12]} \\renewcommand{\\silver}{\\origsilver[12]} "
-"\\renewcommand{\\golden}{\\origgolden[12]} \\renewcommand{\\azure}"
-"{\\origazure[12]} \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} "
-"& \\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\"
-"\\ \\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\bronze \\silver \\silver "
-"\\silver \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\bronze, 4\\silver, 3\\golden, 1\\azure)}\\"
-"\\ \\darkcell[1.4]{Normalny} & \\lightcell[1.4]{\\silver \\silver \\silver "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\silver \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\golden \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 7\\golden, 1\\azure)}\\\\ "
-"\\darkcell[1.4]{Trudny} & \\lightcell[1.4]{\\silver \\silver \\golden "
-"\\golden \\golden} & \\lightcell[1.4]{\\silver \\silver \\golden \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\golden \\azure \\azure "
-"\\footref{azure} \\linebreak (2\\silver, 6\\golden, 2\\azure)}\\\\ "
-"\\darkcell[1.4]{Niemożliwy} & \\lightcell[1.4]{\\silver \\golden \\golden "
-"\\golden \\golden} & \\lightcell[1.4]{\\golden \\golden \\golden \\golden "
-"\\azure} & \\lightcell[1.4]{\\golden \\azure \\azure \\azure "
-"\\footref{azure} \\linebreak (7\\golden, 3\\azure)}\\\\ \\end{tabularx} }"
+"\\bigskip \\begin{tabularx}{0.95\\linewidth}{p{0.15\\linewidth}XXXX} & "
+"\\darkcell{Rundy 6 + 7} & \\darkcell{Rundy 8 + 9} & \\darkcell{Runda 10}\\\\ "
+"\\darkcell[1.4]{Łatwy} & \\lightcell[1.4]{\\svg[12]{bronze}\\svg[12]{silver}"
+"\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}} & \\lightcell[1.4]"
+"{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}"
+"\\svg[12]{golden}} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}"
+"\\svg[12]{golden}\\svg[12]{azure}\\footref{azure} \\linebreak (2\\svg[12]"
+"{bronze}, 4\\svg[12]{silver}, 3\\svg[12]{golden}, 1\\svg[12]{azure})}\\\\ "
+"\\darkcell[1.4]{Normalny} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]"
+"{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}} & "
+"\\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]"
+"{golden}\\svg[12]{azure}} & \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{azure}\\footref{azure} \\linebreak "
+"(2\\svg[12]{silver}, 7\\svg[12]{golden}, 1\\svg[12]{azure})}\\\\ "
+"\\darkcell[1.4]{Trudny} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{silver}"
+"\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}} & \\lightcell[1.4]"
+"{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}"
+"\\svg[12]{azure}} & \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]{golden}"
+"\\svg[12]{azure}\\svg[12]{azure}\\footref{azure} \\linebreak (2\\svg[12]"
+"{silver}, 6\\svg[12]{golden}, 2\\svg[12]{azure})}\\\\ \\darkcell[1.4]"
+"{Niemożliwy} & \\lightcell[1.4]{\\svg[12]{silver}\\svg[12]{golden}\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{golden}} & \\lightcell[1.4]{\\svg[12]"
+"{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{azure}} "
+"& \\lightcell[1.4]{\\svg[12]{golden}\\svg[12]{azure}\\svg[12]{azure}\\svg[12]"
+"{azure}\\footref{azure} \\linebreak (7\\svg[12]{golden}, 3\\svg[12]{azure})}"
+"\\\\ \\end{tabularx} }"
 
 #. type: Plain text
-#: coops/sentinels.tex:196
+#: coops/sentinels.tex:187
 msgid "\\stepcounter{footnote}"
 msgstr "\\stepcounter{footnote}"
 
 #. type: footnotetext{#2}
-#: coops/sentinels.tex:196
+#: coops/sentinels.tex:187
 msgid ""
 "Always 1 Unit of Azure Dragons (starting Units of Boss Army). The rest is "
 "random\\label{azure}."

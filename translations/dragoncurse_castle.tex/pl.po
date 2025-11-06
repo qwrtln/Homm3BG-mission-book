@@ -2,11 +2,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -35,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -93,7 +92,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -103,11 +102,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -123,10 +121,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -213,13 +211,13 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
+"  \\item 2 × A Few \\svg{bronze} Units with the lowest Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Garstka \\bronze\\ Jednostek o najniższym koszcie Rekrutacji\n"
+"  \\item 2 × Garstka \\svg{bronze} Jednostek o najniższym koszcie Rekrutacji\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -327,7 +325,7 @@ msgid ""
 "      \\item Place the Main Hero when defeated.\n"
 "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
 "    \\end{itemize}\n"
-"  \\item The first player to Visit the Dragon Utopia (after defeating the defending \\azure\\ Unit(s)) draws Cards from the Neutral Units \\azure\\ Deck until a Dragon not associated with any Faction is drawn.\n"
+"  \\item The first player to Visit the Dragon Utopia (after defeating the defending \\svg{azure} Unit(s)) draws Cards from the Neutral Units \\svg{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
 "    The player may immediately Recruit that Dragon for free.\n"
 "\\end{itemize}\n"
 "\n"
@@ -344,7 +342,7 @@ msgstr ""
 "      \\item Umieścić Bohatera Głównego, gdy został pokonany.\n"
 "      \\item Tymczasowo przetransportować armię za 8 \\svg{gold}, gdy Losowe Miasto jest atakowane.\n"
 "    \\end{itemize}\n"
-"  \\item Pierwszy gracz, który odwiedzi Smoczą Utopię (po pokonaniu broniących \\azure\\ Jednostek), ciągnie Karty z Talii Neutralnych \\azure\\ Jednostek do momentu, aż wylosuje Smoka niepowiązanego z żadną frakcją.\n"
+"  \\item Pierwszy gracz, który odwiedzi Smoczą Utopię (po pokonaniu broniących \\svg{azure} Jednostek), ciągnie Karty z Talii Neutralnych \\svg{azure} Jednostek do momentu, aż wylosuje Smoka niepowiązanego z żadną frakcją.\n"
 "    Gracz może natychmiastowo zrekrutować tego Smoka za darmo.\n"
 "\\end{itemize}\n"
 "\n"
