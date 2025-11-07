@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-10-23 21:18+0000\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-23 18:55+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -49,7 +49,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -65,10 +65,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\svg{bronze}\n"
 "\n"
 
 #. type: multicols*
@@ -165,15 +165,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few \\bronze\\ Units with the \\textit{highest} Recruitment cost\n"
-"  \\item A Pack of \\bronze\\ Units with the \\textit{lowest} Recruitment cost\n"
+"  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Quelques \\bronze\\ avec le coût de Recrutement le plus \\textit{élevé}\n"
-"  \\item Une Unité Groupe \\bronze\\ avec le coût de Recrutement le plus \\textit{faible}\n"
+"  \\item Une Unité Quelques \\svg{bronze} avec le coût de Recrutement le plus \\textit{élevé}\n"
+"  \\item Une Unité Groupe \\svg{bronze} avec le coût de Recrutement le plus \\textit{faible}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -373,9 +373,9 @@ msgid ""
 "    \\end{enumerate}\n"
 "    \\item \\textbf{[Sacrifice]} Remove a * Faction Unit Card from your Unit Deck in exchange for:\n"
 "    \\begin{enumerate}\n"
-"      \\item *\\bronze\\: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
-"      \\item *\\silver\\: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
-"      \\item *\\golden\\: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic Card Deck. Finally, if the Unit Card was on the Pack side, \\textbf{Search (2)} the \\azure\\ Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
+"      \\item *\\svg{bronze}: Gain 6 \\svg{gold}, 3 \\svg{building_materials}, and 1 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (4)} the Minor Artifact Deck.\n"
+"      \\item *\\svg{silver}: Gain 12 \\svg{gold}, 6 \\svg{building_materials}, and 2 \\svg{valuables}. Additionally, if the Unit Card was on the Pack side, \\textbf{Search (3)} the Major Artifact Deck.\n"
+"      \\item *\\svg{golden}: Gain 18 \\svg{gold}, 9 \\svg{building_materials}, and 3 \\svg{valuables}. Additionally, \\textbf{Search (2)} the Relic Card Deck. Finally, if the Unit Card was on the Pack side, \\textbf{Search (2)} the \\svg{azure} Unit Deck; you may Recruit one of these Units for half the cost (rounded down).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item A player that chooses \\textbf{Sacrifice} at an Obelisk gains the title of ``\\textcolor{darkcandyapplered}{Blood Knight}.'' Place a red Faction Cube on their Hero portrait to mark this effect. A \\textcolor{darkcandyapplered}{Blood Knight} may never choose the \\textbf{Cleanse} option when Visiting an Obelisk.\n"
@@ -384,7 +384,7 @@ msgid ""
 "  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may, after Visiting an Obelisk, Recruit an enemy Unit sacrificed at that Obelisk for half the cost (rounded down); if a Pack was sacrificed, the player may choose to Recruit Few instead.\n"
 "  \\item If a Unit Recruited at an Obelisk is defeated, remove it.\n"
 "  \\item A player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' may not use the Diplomacy Ability Card. If a player who possesses no title or the title of ``\\textcolor{darkcandyapplered}{Blood Knight}'' draws the Diplomacy Ability Card, they may show it to the other players, then discard it and draw a new Ability Card in its stead.\n"
-"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may not use the Diplomacy Ability Card to Recruit Neutral \\azure\\ Units.\n"
+"  \\item A player who possesses the title of ``\\textcolor{cobalt}{Grail Knight}'' may not use the Diplomacy Ability Card to Recruit Neutral \\svg{azure} Units.\n"
 "  \\item Whenever an Astrologers Proclaim or Event Card that allows you to Recruit Neutral Units is drawn, ignore it and draw a new Astrologers Proclaim or Event Card.\n"
 "  \\item Players can use their Deck of Might \\& Magic when paying gold to defend their Faction Town.\n"
 "  \\item Ignore Combat encounters on the Field with the Grail.\n"
@@ -413,9 +413,9 @@ msgstr ""
 "    \\end{enumerate}\n"
 "    \\item \\textbf{[Sacrifier]} Retirez une Unité de Faction * depuis votre Deck d'Unité pour:\n"
 "    \\begin{enumerate}\n"
-"      \\item Gagner *\\bronze{}:  6 \\svg{gold}, 3 \\svg{building_materials}, et 1 \\svg{valuables}. De plus, si l'Unité est sur la face Groupe, \\textbf{Fouillez (4)} le Deck Artefact Mineur.\n"
-"      \\item Gagner *\\silver{}: 12 \\svg{gold}, 6 \\svg{building_materials}, et 2 \\svg{valuables}. De plus, si l'Unité est sur la face Groupe, \\textbf{Fouillez (3)} le Deck Artefact Majeur.\n"
-"      \\item Gagner *\\golden{}: 18 \\svg{gold}, 9 \\svg{building_materials}, et 3 \\svg{valuables}. De plus, \\textbf{Fouillez (2)} le Deck Relique. Enfin, si l'Unité est sur la face Groupe, \\textbf{Fouillez (2)} le Deck d'Unité \\azure{}; vous pouvez en recruter une pour la moitié du coût (arrondi à l'inférieur).\n"
+"      \\item Gagner *\\svg{bronze}:  6 \\svg{gold}, 3 \\svg{building_materials}, et 1 \\svg{valuables}. De plus, si l'Unité est sur la face Groupe, \\textbf{Fouillez (4)} le Deck Artefact Mineur.\n"
+"      \\item Gagner *\\svg{silver}: 12 \\svg{gold}, 6 \\svg{building_materials}, et 2 \\svg{valuables}. De plus, si l'Unité est sur la face Groupe, \\textbf{Fouillez (3)} le Deck Artefact Majeur.\n"
+"      \\item Gagner *\\svg{golden}: 18 \\svg{gold}, 9 \\svg{building_materials}, et 3 \\svg{valuables}. De plus, \\textbf{Fouillez (2)} le Deck Relique. Enfin, si l'Unité est sur la face Groupe, \\textbf{Fouillez (2)} le Deck d'Unité \\svg{azure}; vous pouvez en recruter une pour la moitié du coût (arrondi à l'inférieur).\n"
 "    \\end{enumerate}\n"
 "  \\end{enumerate}\n"
 "  \\item Un Joueur qui choisit \\textbf{Sacrifier} gagne le titre «\\textcolor{darkcandyapplered}{Chevalier Sanglant}». Placez un Cube de Faction rouge sur le portrait du Héros pour indiquer cet effet. Un\\textcolor{darkcandyapplered}{Chevalier Sanglant} ne peut jamais \\textbf{Purifier} en visitant un Obélisque.\n"
@@ -425,7 +425,7 @@ msgstr ""
 "  \\item Si une Unité Recrutée à un Obélisque est battu, retirez-la du jeu.\n"
 "\\columnbreak\n"
 "  \\item Un Joueur sans titre ou avec le titre «\\textcolor{darkcandyapplered}{Chevalier Sanglant}» ne peut pas utiliser la Carte Diplomatie. Si un Joueur sans titre ou avec le titre «\\textcolor{darkcandyapplered}{Chevalier Sanglant}» pioche Diplomatie, il peut la révéler, la défausser et pioche une autre Compétence à la place.\n"
-"  \\item Un Joueur avec le titre «\\textcolor{cobalt}{Chevalier du Graal}» ne peut pas utiliser Diplomatie pour Recruter une Unité Neutre \\azure{}.\n"
+"  \\item Un Joueur avec le titre «\\textcolor{cobalt}{Chevalier du Graal}» ne peut pas utiliser Diplomatie pour Recruter une Unité Neutre \\svg{azure}.\n"
 "  \\item Quand une Proclamation des Astrologues ou une Carte Événement qui permet de Recruter une Unité Neutre est piochée, ignorez-la et pioches en une nouvelle.\n"
 "  \\item Un Joueur peut utiliser son Deck de Might \\& Magic en payant pour défendre sa Ville de Faction.\n"
 "  \\item Ignorez les Combats sur la case du Graal.\n"

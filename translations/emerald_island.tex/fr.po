@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-23 09:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -112,7 +112,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -128,7 +128,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:308
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -153,15 +153,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\bronze\\ Units of your choice\n"
-"  \\item A Few \\bronze\\ Units of your choice\n"
+"  \\item A Pack of \\svg{bronze} Units of your choice\n"
+"  \\item A Few \\svg{bronze} Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Groupe \\bronze\\ de votre choix.\n"
-"  \\item Une Unité Quelques \\bronze\\ de votre choix.\n"
+"  \\item Une Unité Groupe \\svg{bronze} de votre choix.\n"
+"  \\item Une Unité Quelques \\svg{bronze} de votre choix.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -177,23 +177,23 @@ msgstr ""
 "\n"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 1 JOUEUR}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
 
 #.  \linebreak
 #. type: minipage
-#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:244 coops/emerald_island.tex:121
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 
@@ -280,10 +280,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\svg{bronze}\n"
 "\n"
 
 #. type: multicols
@@ -364,10 +364,10 @@ msgstr ""
 #: coops/emerald_island.tex:65
 #, no-wrap
 msgid ""
-"    \\item You can't build a \\golden\\ Dwelling.\n"
+"    \\item You can't build a \\svg{golden} Dwelling.\n"
 "\n"
 msgstr ""
-"    \\item Vous ne pouvez pas construire la Demeure~\\golden{}.\n"
+"    \\item Vous ne pouvez pas construire la Demeure~\\svg{golden}.\n"
 "\n"
 
 #. type: multicols
@@ -414,10 +414,10 @@ msgstr ""
 #: coops/emerald_island.tex:78
 #, no-wrap
 msgid ""
-"    \\item For the last Mine/Settlement battle, add a \\golden\\ Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
+"    \\item For the last Mine/Settlement battle, add a \\svg{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"
 msgstr ""
-"    \\item Pour le dernier combat de Mine/Enclave, ajoutez une Unité Neutre \\golden{}. Les Tours sont illimités et l'utilisation de Diplomatie Expert est interdite pour ce combat!\n"
+"    \\item Pour le dernier combat de Mine/Enclave, ajoutez une Unité Neutre \\svg{golden}. Les Tours sont illimités et l'utilisation de Diplomatie Expert est interdite pour ce combat!\n"
 "\n"
 
 #. type: multicols

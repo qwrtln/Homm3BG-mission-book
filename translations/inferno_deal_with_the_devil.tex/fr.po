@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-08 18:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-03-26 01:04+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -126,7 +126,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -142,7 +142,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -347,10 +347,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:} Demeures \\bronze\\ et \\silver\\, Salle du Conseil, Citadelle\n"
+"\\textbf{Bâtiments de Départ:} Demeures \\svg{bronze} et \\svg{silver}, Salle du Conseil, Citadelle\n"
 "\n"
 
 #. type: multicols
@@ -882,7 +882,7 @@ msgid ""
 "      \\darkcell{Enemy} & \\darkcell{Units} & \\darkcell{AI Deck} & \\darkcell{Artifacts/Abilities} \\\\\n"
 "      \\darkcellleft[2.8]{Rampart Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Unicorns\\\\Pack of Pegasi\\\\Pack of Elves\\\\Pack of Dwarves\\\\Few Centaurs}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg[12]{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Castle Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Pack of Elves\\\\Pack of Marksmen}\n"
@@ -898,7 +898,7 @@ msgid ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Final Charging Army}\n"
 "      & \\lightcellleft[4.4]{Few Archangels\\\\Pack of Unicorns\\\\Pack of Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Ballista War Machine}\n"
-"      & \\lightcellleft[4.4]{3~×~Might \\svg{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
+"      & \\lightcellleft[4.4]{3~×~Might \\svg[12]{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
 "    & \\lightcellleft[4.4]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\1~×~Ballistics \\textit{(Basic effect)}\\\\1~×~First~Aid \\textit{(Expert effect)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"
@@ -914,7 +914,7 @@ msgstr ""
 "      \\darkcell{Ennemi} & \\darkcell{Unités} & \\darkcell{Deck IA} & \\darkcell{Artefacts/Compétences} \\\\\n"
 "      \\darkcellleft[2.8]{Armée Rempart Attaquante \\#1}\n"
 "      & \\lightcellleft[2.8]{Quelques Licornes\\\\Groupe Pégases\\\\Groupe Elfes\\\\Groupe Nains\\\\Quelques Centaures}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Cartes Force \\svg{might-yellow}\\\\2~×~Cartes Capacité \\svg{skill-yellow} \\\\\\phantom{.}\\\\ \\textit{Les Armées utilisent le même Deck. Remélangez après chaque Combat.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Cartes Force \\svg[12]{might-yellow}\\\\2~×~Cartes Capacité \\svg{skill-yellow} \\\\\\phantom{.}\\\\ \\textit{Les Armées utilisent le même Deck. Remélangez après chaque Combat.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Écu des Ténèbres \\textit{(Effet Haut)}\\\\1~×~Lame Ardente \\textit{(Effet Haut)}\\\\\\phantom{.}\\\\ \\textit{Les Armées utilisent le même Deck. Remélangez après chaque Combat.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Armée Château Attaquante \\#1}\n"
 "      & \\lightcellleft[2.8]{Quelques Champions\\\\Groupe Zélotes\\\\Groupe Griffons\\\\Groupe Elfes\\\\Groupe Arbalétriers}\n"
@@ -930,7 +930,7 @@ msgstr ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Armée Finale Attaquante}\n"
 "      & \\lightcellleft[4.4]{Quelques Archanges\\\\Groupe Licornes\\\\Groupe Champions\\\\Groupe Zélotes\\\\Groupe Griffons\\\\Machine de Guerre Baliste}\n"
-"      & \\lightcellleft[4.4]{3~×~Cartes Force \\svg{might-yellow}\\\\3~×~Cartes Capacité \\svg{skill-yellow}}\n"
+"      & \\lightcellleft[4.4]{3~×~Cartes Force \\svg[12]{might-yellow}\\\\3~×~Cartes Capacité \\svg{skill-yellow}}\n"
 "    & \\lightcellleft[4.4]{1~×~Écu des Ténèbres \\textit{(Effet Haut)}\\\\1~×~Lame Ardente \\textit{(Effet Haut)}\\\\1~×~Balistique \\textit{(Effet Basique)}\\\\1~×~Médecine \\textit{(Effet Expert)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"

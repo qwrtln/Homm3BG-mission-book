@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-24 15:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -91,7 +91,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -101,11 +101,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -121,10 +120,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\svg{bronze}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -211,13 +210,13 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × A Few \\bronze\\ Units with the lowest Recruitment cost\n"
+"  \\item 2 × A Few \\svg{bronze} Units with the lowest Recruitment cost\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Unités Quelques \\bronze{} avec le coût de Recrutement le plus faible\n"
+"  \\item 2 × Unités Quelques \\svg{bronze} avec le coût de Recrutement le plus faible\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -323,7 +322,7 @@ msgid ""
 "      \\item Place the Main Hero when defeated.\n"
 "      \\item Temporarily transport the army to, for 8 \\svg{gold}, when the Random Town is attacked.\n"
 "    \\end{itemize}\n"
-"  \\item The first player to Visit the Dragon Utopia (after defeating the defending \\azure\\ Unit(s)) draws Cards from the Neutral Units \\azure\\ Deck until a Dragon not associated with any Faction is drawn.\n"
+"  \\item The first player to Visit the Dragon Utopia (after defeating the defending \\svg{azure} Unit(s)) draws Cards from the Neutral Units \\svg{azure} Deck until a Dragon not associated with any Faction is drawn.\n"
 "    The player may immediately Recruit that Dragon for free.\n"
 "\\end{itemize}\n"
 "\n"
@@ -340,7 +339,7 @@ msgstr ""
 "      \\item Placer le Héros Principal si il est battu.\n"
 "      \\item Transporter temporairement son armée, pour 8 \\svg{gold}, quand la Ville Aléatoire est attaquée.\n"
 "    \\end{itemize}\n"
-"  \\item Le premier Joueur à Visiter les Terres Désolées (après avoir battu les Unités  \\azure{}), piochez du Deck d'Unités Neutres \\azure\\ jusqu'à piocher un Dragon non associé à une Faction.\n"
+"  \\item Le premier Joueur à Visiter les Terres Désolées (après avoir battu les Unités  \\svg{azure}), piochez du Deck d'Unités Neutres \\svg{azure} jusqu'à piocher un Dragon non associé à une Faction.\n"
 "    Le Joueur peut immédiatement le Recruter gratuitement.\n"
 "\\end{itemize}\n"
 "\n"
