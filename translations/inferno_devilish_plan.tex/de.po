@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-02 19:31+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -137,7 +137,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -153,7 +153,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -166,7 +166,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:304
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -180,7 +180,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -217,11 +217,13 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, City Hall\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, City Hall\n"
 "\n"
 msgstr ""
+"\\textbf{Startgebäude:} \\svg{bronze}-Behausung, Zitadelle\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -371,7 +373,7 @@ msgid ""
 "    \\end{itemize}\n"
 "  \\item \\textbf{AI Deck:}\n"
 "    \\begin{itemize}\n"
-"      \\item 1 × Might \\svg{might} Card\n"
+"      \\item 1 × Might \\svg[12]{might} Card\n"
 "      \\item 2 × Magic \\svg{magic} Card\n"
 "      \\item 1 × Skill \\svg{skill} Card\n"
 "    \\end{itemize}\n"
