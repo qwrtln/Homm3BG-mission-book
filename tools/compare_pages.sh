@@ -142,7 +142,7 @@ ensure_base_file() {
   local base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
 
   if ! is_pdf_current "$base_file"; then
-    download_base_file "$language" "$printable"
+    download_base_file "$language" "$printable" "$drafts" "$monochrome"
   fi
 
   echo "$base_file"

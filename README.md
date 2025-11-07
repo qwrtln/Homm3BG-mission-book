@@ -22,6 +22,9 @@ There are two documents, click to download:
 Click on the table to download the most recent builds of the Mission Book in the chosen language.
 If your intention is to **print in black and white**, download the **monochrome** version.
 
+Please fill in the [⭐ **feedback form**](https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform) after playing any scenarios.
+It will help us improve them.
+
 <table>
     <thead>
         <tr>
@@ -468,6 +471,12 @@ Number of players (P) in the brackets.
 </table>
 
 </details>
+
+### ⭐ Playtests feedback
+
+Please fill in the [**feedback form**](https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform) after playing any scenarios.
+Our talented scenario authors spend a lot of time designing and testing them.
+They would really appreciate your kind words and suggestions for improvement.
 
 
 ### 🤔 Why?
