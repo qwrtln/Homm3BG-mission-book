@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-13 20:37+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-09-13 20:37+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -52,7 +52,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -66,11 +66,13 @@ msgstr ""
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
 #: clash/the_fractured_kingdoms.tex:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
+"\\textbf{Городские постройки:} \\svg{bronze} Жилища, Цитадель\n"
+"\n"
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
@@ -164,14 +166,25 @@ msgstr ""
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:24
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × A Few \\bronze\\ Units\n"
+"  \\item 3 × A Few \\svg{bronze} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Раунд 9:}\n"
+"\\begin{itemize}\n"
+"  \\item Повторите события раунда 6.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:36

@@ -105,12 +105,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:8 campaigns/castle_sicilian_dragon.tex:7
 #: campaigns/castle_two_knights_defense.tex:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Auteur:} Tyson Heckert\n"
 "\n"
 
 #. type: multicols*
@@ -125,7 +125,7 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
 #: campaigns/castle_two_knights_defense.tex:13
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario length}}\n"
 "\n"
