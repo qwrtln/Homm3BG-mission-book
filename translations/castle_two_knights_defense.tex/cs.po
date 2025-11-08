@@ -888,7 +888,7 @@ msgid ""
 "\\textbf{A Queen's Lament}\n"
 "\n"
 msgstr ""
-"\\textbf{Královnin Nářek}\n"
+"\\columnbreak\\textbf{Královnin Nářek}\n"
 "\n"
 
 #. type: multicols*
