@@ -2,11 +2,10 @@
 # Copyright (C) 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2025.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-24 22:34+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-03-18 18:53+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -125,7 +124,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -135,11 +134,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:304
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -153,7 +151,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -180,10 +178,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -276,15 +274,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item  1 × A Few cheapest \\bronze\\ Units\n"
-"  \\item  1 × A Few cheapest \\silver\\ Units\n"
+"  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
+"  \\item  1 × A Few cheapest \\svg{silver} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Garstka najtańszych \\bronze\\ Jednostek\n"
-"  \\item 1 × Garstka najtańszych \\silver\\ Jednostek\n"
+"  \\item 1 × Garstka najtańszych \\svg{bronze} Jednostek\n"
+"  \\item 1 × Garstka najtańszych \\svg{silver} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -407,25 +405,25 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Remove both Azure Dragons Cards from the \\azure\\ Neutral Units Deck and set one of them aside for later use.\n"
+"  \\item Remove both Azure Dragons Cards from the \\svg{azure} Neutral Units Deck and set one of them aside for later use.\n"
 "  \\item Players cannot recruit Secondary Heroes.\n"
 "  \\item Level VII Combat cannot be skipped by Diplomacy or any other means.\n"
 "  \\item Players can use their Build Token to initiate trade with one other chosen player. The two players can freely exchange Resources and can exchange Artifacts or Spells from their hand as if their Heroes were adjacent.\n"
 "  \\item During the game, players assemble a shared army. Every player can field Units from the shared army during Combat (shared Units' \\svg{map} abilities can be activated each Round by only one player).  % no-check-caps\n"
-"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\azure{}. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
-"  \\item During Combat at the Dragon Utopia, one of the Neutral \\azure\\ Units is always the Azure Dragon and the Neutral army uses the AI Deck. Reshuffle the AI Deck and AI Spell Deck at the end of Combat.\n"
+"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\svg{azure}. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
+"  \\item During Combat at the Dragon Utopia, one of the Neutral \\svg{azure} Units is always the Azure Dragon and the Neutral army uses the AI Deck. Reshuffle the AI Deck and AI Spell Deck at the end of Combat.\n"
 "  \\item After winning Combat at the Dragon Utopia, no Faction Cube is placed on the Dragon Utopia Field. The victorious player puts one of their surviving Faction Units into the shared army and can redistribute their remaining Resources among other players, after which that player gets removed from the game.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Usuń obie karty Błękitnych Smoków z talii Neutralnych \\azure\\ Jednostek i odłóż jedną z nich na bok.\n"
+"  \\item Usuń obie karty Błękitnych Smoków z talii Neutralnych \\svg{azure} Jednostek i odłóż jedną z nich na bok.\n"
 "  \\item Gracze nie mogą rekrutować Bohaterów Pomocniczych.\n"
 "  \\item Walki Poziomu VII nie można pominąć przez Dyplomację ani w inny sposób.\n"
 "  \\item Gracze mogą użyć swojego Żetonu Budowy, aby handlować z jednym wybranym graczem. Obaj gracze mogą swobodnie wymieniać się Zasobami oraz wymieniać Artefakty lub Zaklęcia z ręki, tak jakby ich Bohaterowie stali obok siebie.\n"
 "  \\item Podczas gry gracze tworzą wspólną armię. Każdy gracz może wystawiać Jednostki ze wspólnej armii podczas Walki (zdolności \\svg{map} wspólnych Jednostek mogą być używane w każdej Rundzie tylko przez jednego gracza).\n"
-"  \\item Po oflagowaniu Obelisku, odrzuć wierzchnią Kartę z każdej talii Neutralnych Jednostek z wyjątkiem \\azure{}. Możesz zrekrutować jedną z tych Jednostek. Jednostki zrekrutowane w ten sposób trafiają do wspólnej armii.\n"
-"  \\item Podczas Walki w Smoczej Utopii jedna z Neutralnych \\azure\\ Jednostek zawsze jest Błękitnym Smokiem, a Neutralna armia używa Talii AI. Przetasuj Talię AI i Talię Zaklęć AI po zakończeniu Walki.\n"
+"  \\item Po oflagowaniu Obelisku, odrzuć wierzchnią Kartę z każdej talii Neutralnych Jednostek z wyjątkiem \\svg{azure}. Możesz zrekrutować jedną z tych Jednostek. Jednostki zrekrutowane w ten sposób trafiają do wspólnej armii.\n"
+"  \\item Podczas Walki w Smoczej Utopii jedna z Neutralnych \\svg{azure} Jednostek zawsze jest Błękitnym Smokiem, a Neutralna armia używa Talii AI. Przetasuj Talię AI i Talię Zaklęć AI po zakończeniu Walki.\n"
 "  \\item Po wygraniu Walki w Smoczej Utopii nie umieszczaj na polu Kostki Frakcji. Zwycięski gracz umieszcza jedną ze swoich ocalałych Jednostek Frakcji we wspólnej armii i może rozdzielić pozostałe Zasoby między innych graczy, po czym ten gracz zostaje usunięty z gry.\n"
 "\\end{itemize}\n"
 "\n"
@@ -456,8 +454,8 @@ msgid ""
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/cove_part.png}\n"
 "  };\n"
 "  \\centering\n"
-"  \\node at (13.5, 1.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"  \\node at (13.5, 2.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, -1.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\n"
 msgstr ""
 "[overlay]\n"
@@ -465,16 +463,16 @@ msgstr ""
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/cove_part.png}\n"
 "  };\n"
 "  \\centering\n"
-"  \\node at (13.5, 1.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"  \\node at (13.5, 2.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, -0.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
 "\n"
 
 #. type: tikzpicture
 #: coops/stand_united.tex:107
 #, no-wrap
 msgid ""
-"  \\node at (5, -5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
-"  \\node at (5, -9.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
+"  \\node at (5, -4) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
+"  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
 "  \\node at (5, -3.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
 "  \\node at (5, -7.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 4-OSOBOWY}}}};"

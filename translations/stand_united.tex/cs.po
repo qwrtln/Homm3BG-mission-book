@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-24 22:34+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -126,7 +126,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -136,11 +136,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:304
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -154,7 +153,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -181,10 +180,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Městské Budovy:} \\bronze\\ Obydlí\n"
+"\\textbf{Městské Budovy:} \\svg{bronze} Obydlí\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -194,7 +193,7 @@ msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
 "interference.png}"
 msgstr ""
-"\\addscenariosection{1}{Cooperative Scenario}{Sjednoťme se}{\\images/"
+"\\addscenariosection{1}{Kooperativní Scéná\\v{r}}{Sjednoťme se}{\\images/"
 "interference.png}"
 
 #. type: multicols
@@ -277,15 +276,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item  1 × A Few cheapest \\bronze\\ Units\n"
-"  \\item  1 × A Few cheapest \\silver\\ Units\n"
+"  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
+"  \\item  1 × A Few cheapest \\svg{silver} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Hrstku nejlevnějších \\bronze\\ Jednotek\n"
-"  \\item 1 × Hrstku nejlevnějších \\silver\\ Jednotek\n"
+"  \\item 1 × Hrstku nejlevnějších \\svg{bronze} Jednotek\n"
+"  \\item 1 × Hrstku nejlevnějších \\svg{silver} Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -408,25 +407,25 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item Remove both Azure Dragons Cards from the \\azure\\ Neutral Units Deck and set one of them aside for later use.\n"
+"  \\item Remove both Azure Dragons Cards from the \\svg{azure} Neutral Units Deck and set one of them aside for later use.\n"
 "  \\item Players cannot recruit Secondary Heroes.\n"
 "  \\item Level VII Combat cannot be skipped by Diplomacy or any other means.\n"
 "  \\item Players can use their Build Token to initiate trade with one other chosen player. The two players can freely exchange Resources and can exchange Artifacts or Spells from their hand as if their Heroes were adjacent.\n"
 "  \\item During the game, players assemble a shared army. Every player can field Units from the shared army during Combat (shared Units' \\svg{map} abilities can be activated each Round by only one player).  % no-check-caps\n"
-"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\azure{}. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
-"  \\item During Combat at the Dragon Utopia, one of the Neutral \\azure\\ Units is always the Azure Dragon and the Neutral army uses the AI Deck. Reshuffle the AI Deck and AI Spell Deck at the end of Combat.\n"
+"  \\item Upon flagging an Obelisk, discard the top Card from each Neutral Units Deck except \\svg{azure}. You can recruit one of these Units. Units recruited this way go into the shared army.\n"
+"  \\item During Combat at the Dragon Utopia, one of the Neutral \\svg{azure} Units is always the Azure Dragon and the Neutral army uses the AI Deck. Reshuffle the AI Deck and AI Spell Deck at the end of Combat.\n"
 "  \\item After winning Combat at the Dragon Utopia, no Faction Cube is placed on the Dragon Utopia Field. The victorious player puts one of their surviving Faction Units into the shared army and can redistribute their remaining Resources among other players, after which that player gets removed from the game.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Odeberte obě karty Azurový Drak z \\azure\\ Balíčku Neutrálních Jednotek a mějte je přichystané pro pozdější použití.\n"
+"  \\item Odeberte obě karty Azurový Drak z \\svg{azure} Balíčku Neutrálních Jednotek a mějte je přichystané pro pozdější použití.\n"
 "  \\item Hráči nemohou najmout Sekundárního Hrdinu.\n"
 "  \\item Souboj VII Úrovně  nemůže být přeskočen žádným způsobem, ani pomocí Diplomacie.\n"
 "  \\item Hráči mohou použít svůj Žeton Stavby k zahájení obchodu s jedním dalším vybraným hráčem. Oba hráči si mohou volně vyměňovat suroviny a mohou si vyměňovat artefakty nebo kouzla z ruky, jako by jejich hrdinové byli vedle sebe.\n"
 "  \\item Během hry hráči sestavují společnou armádu. Každý hráč může během boje nasadit jednotky ze společné armády (schopnosti \\svg{map} společných jednotek může v každém kole aktivovat pouze jeden hráč).  % no-check-caps\n"
-"  \\item Po označení Obelisku vyhoďte vrchní kartu z každého Balíčku Neutrálních Jednotek kromě \\azure{}. Jednu z těchto Jednotek můžete najmout. Takto naverbované Jednotky jdou do společné armády.\n"
-"  \\item Během boje v Dračí Utopii je jednou z neutrálních \\azure\\ jednotek vždy Azurový Drak a Neutrální Armáda používá balíček AI. Na konci boje znovu promíchejte Balíček Jednotek AI a Balíček Kouzel AI.\n"
+"  \\item Po označení Obelisku vyhoďte vrchní kartu z každého Balíčku Neutrálních Jednotek kromě \\svg{azure}. Jednu z těchto Jednotek můžete najmout. Takto naverbované Jednotky jdou do společné armády.\n"
+"  \\item Během boje v Dračí Utopii je jednou z neutrálních \\svg{azure} jednotek vždy Azurový Drak a Neutrální Armáda používá balíček AI. Na konci boje znovu promíchejte Balíček Jednotek AI a Balíček Kouzel AI.\n"
 "  \\item Po vítězství v boji proti Dračí Utopii není na pole Dračí Utopie umístěna žádná Frakční Kostka. Vítězný Hráč umístí jednu ze svých přeživších Jednotek Frakce do společné armády a může přerozdělit své zbývající suroviny mezi ostatní Hráče, načež je tento Hráč odstraněn ze hry.\n"
 "\\end{itemize}\n"
 "\n"
@@ -456,8 +455,8 @@ msgid ""
 "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/cove_part.png}\n"
 "  };\n"
 "  \\centering\n"
-"  \\node at (13.5, 1.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
+"  \\node at (13.5, 2.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
+"  \\node at (13.5, -1.8) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};\n"
 "\n"
 msgstr ""
 "[overlay]\n"
@@ -473,8 +472,8 @@ msgstr ""
 #: coops/stand_united.tex:107
 #, no-wrap
 msgid ""
-"  \\node at (5, -5) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
-"  \\node at (5, -9.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
+"  \\node at (5, -4) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
+"  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
 "  \\node at (5, -3.0) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
 "  \\node at (5, -7.3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNÁŘ PRO 4 HRÁČE}}}};"

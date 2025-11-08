@@ -3,11 +3,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-08 18:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -36,7 +35,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -129,7 +128,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -145,7 +144,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -350,10 +349,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, \\silver\\ Siedlisko, Ratusz, Cytadela\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko, \\svg{silver} Siedlisko, Ratusz, Cytadela\n"
 "\n"
 
 #. type: multicols
@@ -698,13 +697,13 @@ msgstr ""
 "    swoim mieście Inferno Kleesive), lub jeśli Szarżująca Armia zaatakuje Kleesive, a Ty nie jesteś obecny w swoim mieście\n"
 "    Kleesive, natychmiast zostajesz przeniesiony z powrotem do Kleesive, tracisz wszystkie pozostałe Punkty Ruchu,\n"
 "    tracisz 3 \\svg{gold}, otrzymujesz \\svg{morale_negative} i losowo odrzucasz 1 Kartę z ręki.\n"
-"  \\item Szarżujące Armie poruszają się tylko 2 \\svg{movement}. Ostatnia Szarżująca Armia porusza się 4 \\svg{movement}. Podążają najkrótszą\n"
-"    drogą do Kleesive. Jeśli posiadasz Kopalnię na Kafelku mapy, na który wchodzą, przejmą Kopalnię (ale nie ,,wrócą się'' po nią),\n"
-"    a następnie kontynuują najkrótszą drogę do Kleesive. Ignorują wszystko inne. Korzystają także z bonusu 1 Punktu Ruchu ze Stajni.\n"
+"  \\item Szarżujące Armie poruszają się tylko 2~\\svg{movement}. Ostatnia Szarżująca Armia porusza się 4~\\svg{movement}. Podążają najkrótszą\n"
+"    drogą do Kleesive. Jeśli posiadasz kopalnię na Kafelku mapy, na który wchodzą, przejmą ją (ale nie ,,wrócą się'' po nią),\n"
+"    a następnie kontynuują najkrótszą drogą do Kleesive. Ignorują wszystko inne. Korzystają także z bonusu 1 Punktu Ruchu ze Stajni.\n"
 "  \\item Szarżujące Armie zawsze poruszają się tak, aby nie ,,blokować'' sobie nawzajem dróg (spowalniając się nawzajem).\n"
 "    Szarżujący Armia, która jest najbliżej Kleesive, będzie poruszała się przed innymi.\n"
-"  \\item Zamek i Bastion mają już zdobyte wszystkie Kopalnie na swoim terytorium (Kafelki Mapy nie-Inferno). Umieść Kostki wroga na\n"
-"    wszystkich ich Kopalniach.\n"
+"  \\item Zamek i Bastion mają już zdobyte wszystkie kopalnie na swoim terytorium (Kafelki Mapy nie-Inferno). Umieść Kostki wroga na\n"
+"    wszystkich ich kopalniach.\n"
 "  \\item Twoje mury, bramy i wieża łuczicza w Kleesive są odbudowane po każdej bitwie.\n"
 "  \\item Jednostki \\svg{unit_flying} wroga będą przelatywały nad murami i bramami, aby atakować Twoje Jednostki, gdy tylko jest to możliwe.\n"
 "  \\item Jednostki \\svg{unit_ranged} wroga zawsze zaatakują Wieżę Łucziczą, gdy nie ma innych Jednostek \\svg{unit_ranged} do zaatakowania.\n"
@@ -878,7 +877,7 @@ msgid ""
 "      \\darkcell{Enemy} & \\darkcell{Units} & \\darkcell{AI Deck} & \\darkcell{Artifacts/Abilities} \\\\\n"
 "      \\darkcellleft[2.8]{Rampart Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Unicorns\\\\Pack of Pegasi\\\\Pack of Elves\\\\Pack of Dwarves\\\\Few Centaurs}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg[12]{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Castle Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Pack of Elves\\\\Pack of Marksmen}\n"
@@ -894,7 +893,7 @@ msgid ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Final Charging Army}\n"
 "      & \\lightcellleft[4.4]{Few Archangels\\\\Pack of Unicorns\\\\Pack of Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Ballista War Machine}\n"
-"      & \\lightcellleft[4.4]{3~×~Might \\svg{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
+"      & \\lightcellleft[4.4]{3~×~Might \\svg[12]{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
 "    & \\lightcellleft[4.4]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\1~×~Ballistics \\textit{(Basic effect)}\\\\1~×~First~Aid \\textit{(Expert effect)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"
@@ -910,7 +909,7 @@ msgstr ""
 "      \\darkcell{Wróg} & \\darkcell{Jednostki} & \\darkcell{Talia AI} & \\darkcell{Artefakty/Zdolności} \\\\\n"
 "      \\darkcellleft[2.8]{Szarżująca Armia Bastionu \\#1}\n"
 "      & \\lightcellleft[2.8]{Garstka Jednorożców\\\\Grupa Pegazów\\\\Grupa Elfów\\\\Grupa Krasnoludów\\\\Garstka Centaurów}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Karta Mocy \\svg{might-yellow}\\\\2~×~Karta Umiejętności \\svg{skill-yellow} \\\\\\phantom{.}\\\\ \\textit{Armie używają tej samej Talii. Tasuj po każdej Walce.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Karta Mocy \\svg[12]{might-yellow}\\\\2~×~Karta Umiejętności \\svg{skill-yellow} \\\\\\phantom{.}\\\\ \\textit{Armie używają tej samej Talii. Tasuj po każdej Walce.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Tarcza Potępionych \\textit{(Górny efekt)}\\\\1~×~Miecz Ognia Piekielnego \\textit{(Górny efekt)}\\\\\\phantom{.}\\\\ \\textit{Armie używają tej samej Talii. Tasuj po każdej Walce.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Szarżująca Armia Zamku \\\\ \\#1}\n"
 "      & \\lightcellleft[2.8]{Garstka Czempionów\\\\Grupa Kapłanów\\\\Grupa Gryfów\\\\Grupa Elfów\\\\Grupa Kuszników}\n"
@@ -926,7 +925,7 @@ msgstr ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Ostatnia Szarżująca Armia}\n"
 "      & \\lightcellleft[4.4]{Garstka Archaniołów\\\\Grupa Jednorożców\\\\Grupa Czempionów\\\\Grupa Kapłanów\\\\Grupa Gryfów\\\\Machina Wojenna Balista}\n"
-"      & \\lightcellleft[4.4]{3~×~Karta Mocy \\svg{might-yellow}\\\\3~×~Karta Umiejętności \\svg{skill-yellow}}\n"
+"      & \\lightcellleft[4.4]{3~×~Karta Mocy \\svg[12]{might-yellow}\\\\3~×~Karta Umiejętności \\svg{skill-yellow}}\n"
 "    & \\lightcellleft[4.4]{1~×~Tarcza Potępionych \\textit{(Górny efekt)}\\\\1~×~Miecz Ognia Piekielnego \\textit{(Górny efekt)}\\\\1~×~Balistyka \\textit{(Efekt Podstawowy)}\\\\1~×~Pierwsza Pomoc \\textit{(Efekt Mistrzowski)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"

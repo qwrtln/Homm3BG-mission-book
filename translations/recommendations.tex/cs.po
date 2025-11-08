@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -222,14 +222,18 @@ msgstr ""
 
 #. type: multicols*
 #: sections/recommendations.tex:48
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+#| "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
+#| "\n"
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
-"For example, a Level VII Combat on Hard will be against 2 × \\azure\\ Neutral Units.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
 "Souboje úrovně V--VII budou mít o 1 nižší obtížnost při hře na Těžkou nebo Nemožnou obtížnost.\n"
-"Například Souboj Úrovně VII na Těžkou obtížnost bude proti 2 × \\azure\\ Neutrálním Jednotkám.\n"
+"Například Souboj Úrovně VII na Těžkou obtížnost bude proti 2 × \\svg{azure} Neutrálním Jednotkám.\n"
 "\n"
 
 #. type: multicols*

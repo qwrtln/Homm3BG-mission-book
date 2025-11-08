@@ -2,11 +2,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -35,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -226,11 +225,11 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
-"For example, a Level VII Combat on Hard will be against 2 × \\azure\\ Neutral Units.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
 "Grając na poziomie Trudnym lub Niemożliwym, traktuj Walki na poziomie V--VII jako łatwiejsze o jeden stopień trudności.\n"
-"Np. Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\azure\\ Jednostkom Neutralnym.\n"
+"Np. Walka poziomu VII na poziomie Trudnym stoczy się przeciwko 2 × \\svg{azure} Jednostkom Neutralnym.\n"
 "\n"
 
 #. type: multicols*

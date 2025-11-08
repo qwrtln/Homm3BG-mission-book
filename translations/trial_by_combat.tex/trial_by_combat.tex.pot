@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -71,7 +71,7 @@ msgstr ""
 #: clash/trial_by_combat.tex:7
 #, no-wrap
 msgid ""
-"\\textbf{Author:} LAAMAKALA\n"
+"\\textbf{Author:} Laamakala\n"
 "\n"
 msgstr ""
 
@@ -107,8 +107,8 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few cheapest \\silver\\ Units\n"
-"  \\item A chosen Neutral \\bronze\\ Unit matching the player's Faction\n"
+"  \\item A Few cheapest \\svg{silver} Units\n"
+"  \\item A chosen Neutral \\svg{bronze} Unit matching the player's Faction\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -117,7 +117,7 @@ msgstr ""
 #: clash/trial_by_combat.tex:27
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgid ""
 "  \\darkcell[1.4]{-1/0}\n"
 "    & \\lightcell[1.4]{Raining Ash – All \\svg{unit_flying-yellow} Units gain -2 \\svg{initiative-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{-1/+1}\n"
-"    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
+"    & \\lightcell[1.4]{Scorching Earth – All \\svg{silver} and \\svg{golden} Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-yellow} Units move one space less.}\\\\\n"
 "  \\darkcell[1.0]{0/0}\n"
@@ -238,8 +238,8 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item After winning a Neutral Combat, you may sacrifice 2 \\bronze\\ Units to gain 1 \\silver\\ Unit you defeated.\n"
-"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\silver\\ Neutral Deck.\n"
+"  \\item After winning a Neutral Combat, you may sacrifice 2 \\svg{bronze} Units to gain 1 \\svg{silver} Unit you defeated.\n"
+"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\svg{silver} Neutral Deck.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

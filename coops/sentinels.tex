@@ -26,11 +26,11 @@ This Scenario is played over 12 Rounds.
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item A Pack of \bronze\ Units with the \textit{lowest} Recruitment cost
-  \item A Few \bronze\ Units with the \textit{highest} Recruitment cost
+  \item A Pack of \svg{bronze} Units with the \textit{lowest} Recruitment cost
+  \item A Few \svg{bronze} Units with the \textit{highest} Recruitment cost
 \end{itemize}
 
-\textbf{Town Buildings:} \bronze\ Dwelling, Citadel
+\textbf{Town Buildings:} \svg{bronze} Dwelling, Citadel
 
 \textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.
 
@@ -157,36 +157,27 @@ One of your Towns is captured, or a Main Hero is defeated in a battle (retreat d
   \textbf{Strength of Enemy Armies}\\
   \bigskip
 
-  \let\origbronze\bronze
-  \let\origsilver\silver
-  \let\origgolden\golden
-  \let\origazure\azure
-  \renewcommand{\bronze}{\origbronze[12]}
-  \renewcommand{\silver}{\origsilver[12]}
-  \renewcommand{\golden}{\origgolden[12]}
-  \renewcommand{\azure}{\origazure[12]}
-
   \begin{tabularx}{0.95\linewidth}{p{0.15\linewidth}XXXX} & \darkcell{Rounds 6 + 7} & \darkcell{Rounds 8 + 9} & \darkcell{Round 10}\\
   \darkcell[1.4]{Easy}
-    & \lightcell[1.4]{\bronze \silver \silver \silver \golden}
-    & \lightcell[1.4]{\silver \silver \silver \golden \golden}
-    & \lightcell[1.4]{\silver \silver \golden \azure \footref{azure} \linebreak
-      (2\bronze, 4\silver, 3\golden, 1\azure)}\\
+    & \lightcell[1.4]{\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}}
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}}
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{azure}\footref{azure} \linebreak
+      (2\svg[12]{bronze}, 4\svg[12]{silver}, 3\svg[12]{golden}, 1\svg[12]{azure})}\\
   \darkcell[1.4]{Normal}
-    & \lightcell[1.4]{\silver \silver \silver \golden \golden}
-    & \lightcell[1.4]{\silver \silver \silver \golden \azure}
-    & \lightcell[1.4]{\golden \golden \golden \azure \footref{azure} \linebreak
-      (2\silver, 7\golden, 1\azure)}\\
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}}
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{azure}}
+    & \lightcell[1.4]{\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}\footref{azure} \linebreak
+      (2\svg[12]{silver}, 7\svg[12]{golden}, 1\svg[12]{azure})}\\
   \darkcell[1.4]{Hard}
-    & \lightcell[1.4]{\silver \silver \golden \golden \golden}
-    & \lightcell[1.4]{\silver \silver \golden \golden \azure}
-    & \lightcell[1.4]{\golden \golden \azure \azure \footref{azure} \linebreak
-      (2\silver, 6\golden, 2\azure)}\\
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}}
+    & \lightcell[1.4]{\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}\svg[12]{azure}\footref{azure} \linebreak
+      (2\svg[12]{silver}, 6\svg[12]{golden}, 2\svg[12]{azure})}\\
   \darkcell[1.4]{Impossible}
-    & \lightcell[1.4]{\silver \golden \golden \golden \golden}
-    & \lightcell[1.4]{\golden \golden \golden \golden \azure}
-    & \lightcell[1.4]{\golden \azure \azure \azure \footref{azure} \linebreak
-      (7\golden, 3\azure)}\\
+    & \lightcell[1.4]{\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
+    & \lightcell[1.4]{\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}}
+    & \lightcell[1.4]{\svg[12]{golden}\svg[12]{azure}\svg[12]{azure}\svg[12]{azure}\footref{azure} \linebreak
+      (7\svg[12]{golden}, 3\svg[12]{azure})}\\
   \end{tabularx}
 }
 
