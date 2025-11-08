@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -81,7 +81,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -483,7 +483,7 @@ msgid ""
 "  \\item Your Hero's maximum Level is 6.\n"
 "  \\item All buildings are unavailable, building is not possible.\n"
 "  \\item All neutral enemies fight using the Neutral Enemy Deck.\n"
-"  \\item Each time you visit a Trading Post, draw the top Cards from the \\bronze\\ bronze, \\silver\\ silver, and \\golden\\ golden neutral enemy Decks.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\svg{bronze} bronze, \\svg{silver} silver, and \\svg{golden} golden neutral enemy Decks.\n"
 "    You may recruit any, or all of them by paying their cost.\n"
 "    Shuffle any un-hired ones back into their Decks.\n"
 "  \\item The Grail may be sold at a trading post for 30 \\svg{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
@@ -698,7 +698,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item \\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
 "  \\item \\textcolor{darkcandyapplered}{You may now teleport to the enemy town on Tile S1.\n"
-"    If you choose not to, you may in the future by spending one \\svg{movement} at this Obelisk.}\n"
+"    If you choose not to, you may in the future by spending one \\svg{movement-red} at this Obelisk.}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

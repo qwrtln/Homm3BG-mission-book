@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-02 10:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-07-02 00:02+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -80,10 +80,10 @@ msgstr ""
 #: clash/trial_by_combat.tex:7
 #, no-wrap
 msgid ""
-"\\textbf{Author:} LAAMAKALA\n"
+"\\textbf{Author:} Laamakala\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} LAAMAKALA\n"
+"\\textbf{Auteur:} Laamakala\n"
 "\n"
 
 #. type: multicols*
@@ -126,15 +126,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few cheapest \\silver\\ Units\n"
-"  \\item A chosen Neutral \\bronze\\ Unit matching the player's Faction\n"
+"  \\item A Few cheapest \\svg{silver} Units\n"
+"  \\item A chosen Neutral \\svg{bronze} Unit matching the player's Faction\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité \\silver\\ avec le coût de Recrutement le plus faible.\n"
-"  \\item Une Unité Neutre \\bronze{} de sa Faction.\n"
+"  \\item Une Unité \\svg{silver}\\ avec le coût de Recrutement le plus faible.\n"
+"  \\item Une Unité Neutre \\svg{bronze} de sa Faction.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -142,10 +142,10 @@ msgstr ""
 #: clash/trial_by_combat.tex:27
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Mage Guild\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Mage Guild\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de Départ:} Demeure \\bronze{}, Guilde des Mages\n"
+"\\textbf{Bâtiments de Départ:} Demeure \\svg{bronze}, Guilde des Mages\n"
 "\n"
 
 #. type: multicols*
@@ -288,7 +288,7 @@ msgid ""
 "  \\darkcell[1.4]{-1/0}\n"
 "    & \\lightcell[1.4]{Raining Ash – All \\svg{unit_flying-yellow} Units gain -2 \\svg{initiative-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{-1/+1}\n"
-"    & \\lightcell[1.4]{Scorching Earth – All \\silver\\ and \\golden\\ Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
+"    & \\lightcell[1.4]{Scorching Earth – All \\svg{silver} and \\svg{golden} Units start Combat with 1 \\svg{damage-yellow}.}\\\\\n"
 "  \\darkcell[1.4]{0/-1}\n"
 "    & \\lightcell[1.4]{Sinking Mud – All \\svg{unit_ground-yellow} Units move one space less.}\\\\\n"
 "  \\darkcell[1.0]{0/0}\n"
@@ -318,7 +318,7 @@ msgstr ""
 "  \\darkcell[1.4]{-1/0}\n"
 "    & \\lightcell[1.4]{Pluie de Cendres – Chaque Unité \\svg{unit_flying-yellow} gagne -2 \\svg{initiative-yellow}.}\\\\\n"
 "  \\darkcell[1.8]{-1/+1}\n"
-"    & \\lightcell[1.8]{Terre Brulante – Chaque Unité \\silver\\ et \\golden\\ commence le Combat avec 1 \\svg{damage-yellow}.}\\\\\n"
+"    & \\lightcell[1.8]{Terre Brulante – Chaque Unité \\svg{silver} et \\svg{golden} commence le Combat avec 1 \\svg{damage-yellow}.}\\\\\n"
 "  \\darkcell[1.8]{0/-1}\n"
 "    & \\lightcell[1.8]{Coulée de Boue – Chaque Unité \\svg{unit_ground-yellow} se déplace d'une case en moins.}\\\\\n"
 "  \\darkcell[1.0]{0/0}\n"
@@ -340,14 +340,14 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item After winning a Neutral Combat, you may sacrifice 2 \\bronze\\ Units to gain 1 \\silver\\ Unit you defeated.\n"
-"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\silver\\ Neutral Deck.\n"
+"  \\item After winning a Neutral Combat, you may sacrifice 2 \\svg{bronze} Units to gain 1 \\svg{silver} Unit you defeated.\n"
+"  \\item When a Main Hero is defeated, at the start of that player's next turn, they may Empower any Statistic Card from their M\\&M Deck, and Search (2) the \\svg{silver} Neutral Deck.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Après avoir gagné un Combat Neutre, vous pouvez sacrifier 2 Unités \\bronze{} pour gagner 1 Unité \\silver\\ que vous avez vaincue.\n"
-"  \\item Quand un Héros Principal est battu, au prochain tour de ce Joueur, il peut Renforcer une Carte Statistique de son Deck, et Fouiller (2) le Deck Neutre \\silver{}.\n"
+"  \\item Après avoir gagné un Combat Neutre, vous pouvez sacrifier 2 Unités \\svg{bronze} pour gagner 1 Unité \\svg{silver} que vous avez vaincue.\n"
+"  \\item Quand un Héros Principal est battu, au prochain tour de ce Joueur, il peut Renforcer une Carte Statistique de son Deck, et Fouiller (2) le Deck Neutre \\svg{silver}.\n"
 "\\end{itemize}\n"
 "\n"
 

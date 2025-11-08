@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-02 19:31+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-07-30 12:41+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -124,7 +124,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -151,10 +151,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
 "\n"
 msgstr ""
-"\\textbf{Startgebäude:} \\bronze{}-Behausung\n"
+"\\textbf{Startgebäude:} \\svg{bronze}-Behausung\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -251,13 +251,13 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item  1 × A Few \\bronze\\ Units of your choice\n"
+"  \\item  1 × A Few \\svg{bronze} Units of your choice\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item  Wenige \\bronze{}-Einheiten eurer Wahl\n"
+"  \\item  Wenige \\svg{bronze}-Einheiten eurer Wahl\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -571,7 +571,7 @@ msgstr ""
 "BEISPIEL}}"
 
 #. type: table*
-#: coops/close_to_enemies.tex:205
+#: coops/close_to_enemies.tex:195
 #, no-wrap
 msgid ""
 "[b!]\n"
@@ -581,45 +581,35 @@ msgid ""
 "    \\textbf{Enemy Clan Armies}\\\\\n"
 "    \\bigskip\n"
 "\n"
-"    \\let\\origbronze\\bronze\n"
-"    \\let\\origsilver\\silver\n"
-"    \\let\\origgolden\\golden\n"
-"    \\let\\origazure\\azure\n"
-"    \\renewcommand{\\bronze}{\\origbronze[12]}\n"
-"    \\renewcommand{\\silver}{\\origsilver[12]}\n"
-"    \\renewcommand{\\golden}{\\origgolden[12]}\n"
-"    \\renewcommand{\\azure}{\\origazure[12]}\n"
-"\n"
-"      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
+"    \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
 "      \\darkcell{\\textbf{Easy}} &\n"
 "      \\darkcell{\\textbf{Normal}} &\n"
 "      \\darkcell{\\textbf{Hard}} &\n"
 "      \\darkcell{\\textbf{Impossible}}\\\\\n"
 "      \\darkcell[1.2]{First wave}\n"
-"        & \\lightcell[1.2]{\\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Second wave}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Third wave}\n"
-"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Settlement Defenders}\n"
-"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
-"\n"
-"      \\end{tabularx}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{azure}} \\\\\n"
+"    \\end{tabularx}\n"
 "  }"
 msgstr ""
 "[b!]\n"
@@ -629,59 +619,50 @@ msgstr ""
 "    \\textbf{Gegnerische Clanarmeen}\\\\\n"
 "    \\bigskip\n"
 "\n"
-"    \\let\\origbronze\\bronze\n"
-"    \\let\\origsilver\\silver\n"
-"    \\let\\origgolden\\golden\n"
-"    \\let\\origazure\\azure\n"
-"    \\renewcommand{\\bronze}{\\origbronze[12]}\n"
-"    \\renewcommand{\\silver}{\\origsilver[12]}\n"
-"    \\renewcommand{\\golden}{\\origgolden[12]}\n"
-"    \\renewcommand{\\azure}{\\origazure[12]}\n"
-"\n"
 "      \\begin{tabularx}{0.95\\linewidth}{p{0.2\\linewidth}XXXX} &\n"
 "      \\darkcell{\\textbf{Leicht}} &\n"
 "      \\darkcell{\\textbf{Normal}} &\n"
 "      \\darkcell{\\textbf{Experte}} &\n"
 "      \\darkcell{\\textbf{Unmöglich}}\\\\\n"
 "      \\darkcell[1.2]{Erste Welle}\n"
-"        & \\lightcell[1.2]{\\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Zweite Welle}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\silver \\silver \\silver} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Dritte Welle}\n"
-"        & \\lightcell[1.2]{\\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\silver}\n"
-"        & \\lightcell[1.2]{\\bronze \\bronze \\silver \\silver \\golden} \\\\\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{silver}}\n"
+"        & \\lightcell[1.2]{\\svg[12]{bronze}\\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}} \\\\\n"
 "\n"
 "      \\darkcell[1.2]{Verteidiger der Siedlungen}\n"
-"        & \\lightcell[1.2]{ \\bronze \\silver \\silver \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\golden \\golden \\golden \\golden \\golden}\n"
-"        & \\lightcell[1.2]{ \\silver \\golden \\golden \\golden \\azure} \\\\\n"
+"        & \\lightcell[1.2]{ \\svg[12]{bronze}\\svg[12]{silver}\\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{ \\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{ \\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}}\n"
+"        & \\lightcell[1.2]{ \\svg[12]{silver}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{golden}\\svg[12]{azure}} \\\\\n"
 "\n"
 "      \\end{tabularx}\n"
 "  }"
 
 #. type: figure
-#: coops/close_to_enemies.tex:215
+#: coops/close_to_enemies.tex:205
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{3-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:222
+#: coops/close_to_enemies.tex:212
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{4-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: tikzpicture
-#: coops/close_to_enemies.tex:242
+#: coops/close_to_enemies.tex:232
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -690,12 +671,12 @@ msgid ""
 "  };"
 msgstr ""
 "[overlay]\n"
-"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-29em] at (current page.south) {\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-2em, yshift=-12em] at (current page.south) {\n"
 "    \\includegraphics[width=1.1\\paperwidth, keepaspectratio]{\\art/ballista.png}\n"
 "  };"
 
 #. type: figure
-#: coops/close_to_enemies.tex:242
+#: coops/close_to_enemies.tex:232
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
@@ -706,7 +687,7 @@ msgstr ""
 "BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:242
+#: coops/close_to_enemies.tex:232
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "

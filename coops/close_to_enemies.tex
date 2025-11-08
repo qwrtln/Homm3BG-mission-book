@@ -26,10 +26,10 @@ This Scenario is played over 7 Rounds.
 
 \textbf{Starting Units:}
 \begin{itemize}
-  \item  1 × A Few \bronze\ Units of your choice
+  \item  1 × A Few \svg{bronze} Units of your choice
 \end{itemize}
 
-\textbf{Town Buildings:} \bronze\ Dwelling
+\textbf{Town Buildings:} \svg{bronze} Dwelling
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -161,45 +161,35 @@ Prepare an AI Deck for Settlement defenders.
     \textbf{Enemy Clan Armies}\\
     \bigskip
 
-    \let\origbronze\bronze
-    \let\origsilver\silver
-    \let\origgolden\golden
-    \let\origazure\azure
-    \renewcommand{\bronze}{\origbronze[12]}
-    \renewcommand{\silver}{\origsilver[12]}
-    \renewcommand{\golden}{\origgolden[12]}
-    \renewcommand{\azure}{\origazure[12]}
-
-      \begin{tabularx}{0.95\linewidth}{p{0.2\linewidth}XXXX} &
+    \begin{tabularx}{0.95\linewidth}{p{0.2\linewidth}XXXX} &
       \darkcell{\textbf{Easy}} &
       \darkcell{\textbf{Normal}} &
       \darkcell{\textbf{Hard}} &
       \darkcell{\textbf{Impossible}}\\
       \darkcell[1.2]{First wave}
-        & \lightcell[1.2]{\bronze}
-        & \lightcell[1.2]{\bronze \bronze}
-        & \lightcell[1.2]{\bronze \bronze \bronze}
-        & \lightcell[1.2]{\bronze \bronze \silver} \\
+        & \lightcell[1.2]{\svg[12]{bronze}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{bronze}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{silver}} \\
 
       \darkcell[1.2]{Second wave}
-        & \lightcell[1.2]{\bronze \bronze}
-        & \lightcell[1.2]{\bronze \bronze \silver}
-        & \lightcell[1.2]{\bronze \silver \silver}
-        & \lightcell[1.2]{\silver \silver \silver} \\
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{silver}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}}
+        & \lightcell[1.2]{\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}} \\
 
       \darkcell[1.2]{Third wave}
-        & \lightcell[1.2]{\bronze \silver \silver}
-        & \lightcell[1.2]{\bronze \bronze \silver \silver}
-        & \lightcell[1.2]{\bronze \bronze \silver \silver \silver}
-        & \lightcell[1.2]{\bronze \bronze \silver \silver \golden} \\
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}\svg[12]{silver}}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}} \\
 
       \darkcell[1.2]{Settlement Defenders}
-        & \lightcell[1.2]{ \bronze \silver \silver \golden \golden}
-        & \lightcell[1.2]{ \silver \golden \golden \golden \golden}
-        & \lightcell[1.2]{ \golden \golden \golden \golden \golden}
-        & \lightcell[1.2]{ \silver \golden \golden \golden \azure} \\
-
-      \end{tabularx}
+        & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}}
+        & \lightcell[1.2]{\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
+        & \lightcell[1.2]{\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
+        & \lightcell[1.2]{\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}} \\
+    \end{tabularx}
   }
 \end{table*}
 

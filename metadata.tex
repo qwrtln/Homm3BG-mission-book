@@ -116,39 +116,53 @@
 \def\discordurl{https://discord.gg/nMbawQkj9R}
 \def\formurl{https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform}
 
+% LaTeX3 clauses for glyph rendering purposes
+\ExplSyntaxOn
+% List of glyphs that don't look good when dropped below the text line
+\clist_new:N \g_nodrop_list
+\clist_map_inline:nn { movement, expert, reinforce, level1, level4, level6, unit_flying, arrow_right_gray, arrow_right } {
+  \clist_put_right:Nn \g_nodrop_list { #1 }
+% Add the -yellow and -red variants to the list automatically
+  \clist_put_right:Nn \g_nodrop_list { #1-yellow }
+% Add the -red variants to the list too
+  \clist_put_right:Nn \g_nodrop_list { #1-red }
+}
+
+% An "if" defined with LaTeX3 to check if an argument passed to the \svg command is a unit
+\NewDocumentCommand{\ifunit}{mmm}{
+  \clist_if_in:nnTF { bronze, silver, golden, azure } {#1} {#2} {#3}
+}
+
+% Some glyphs don't look good when dropped below the text line - their list is defined above
+\NewDocumentCommand{\ifnodrop}{mmm}{
+  \clist_if_in:NnTF \g_nodrop_list {#1} {#2} {#3}
+}
+\ExplSyntaxOff
+
+% A handy command to render SVG glyphs
+% Argument 1 is the height in pixels (defaults to 10)
+% Argument 2 is the glyph name (matching a file)
 \newcommand{\svg}[2][10]{%
   \iftoggle{noartbackground}{%
+    % In the economy printable build, we want all glyphs to be black, so we strip the "-yellow" suffix
     \IfEndWith{#2}{-yellow}{%
       \StrGobbleRight{#2}{7}[\svgfilename]%
       \edef\svgpath{\svgs/\svgfilename.svg}%
     }{%
-      \edef\svgpath{\svgs/\detokenize{#2}.svg}%
+      % In the economy printable build, we append "-mono" to unit glyphs - those are separate glyphs with letters because in this mode they can't be differentiated by color
+      \ifunit{#2}{\edef\svgpath{\svgs/\detokenize{#2}-mono.svg}}{\edef\svgpath{\svgs/\detokenize{#2}.svg}}%
     }%
   }{%
     \edef\svgpath{\svgs/\detokenize{#2}.svg}%
   }%
-  \IfStrEq{#2}{movement}{%
+  \ifnodrop{#2}{%
+    % Don't drop a selection of glyphs below the text line - they look better that way
     \includesvg[height=#1px]{\svgpath}%
   }{%
-    \raisebox{-0.15\height}{\includesvg[height=#1px]{\svgpath}}%
+    % In all other cases, drop the glyph by 10% of its height if it's a unit, 15% otherwise
+    \ifunit{#2}{{\raisebox{-0.1\height}{\includesvg[height=#1px]{\svgpath}}}}{{\raisebox{-0.15\height}{\includesvg[height=#1px]{\svgpath}}}}%
   }%
 }
-
-\newcommand{\bronze}[1][10]{%
-  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/bronze-mono.svg}{\svgs/bronze.svg}}}}%
-}%
-
-\newcommand{\silver}[1][10]{%
-  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/silver-mono.svg}{\svgs/silver.svg}}}}%
-}%
-
-\newcommand{\golden}[1][10]{%
-  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/golden-mono.svg}{\svgs/golden.svg}}}}%
-}%
-
-\newcommand{\azure}[1][10]{%
-  \leavevmode\hbox{\raisebox{-0.1\height}{\includesvg[height=#1px]{\iftoggle{noartbackground}{\svgs/azure-mono.svg}{\svgs/azure.svg}}}}%
-}%
 
 \renewcommand{\labelitemi}{
   \begin{tikzpicture}

@@ -2,11 +2,10 @@
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Homm package.
 # Automatically generated, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-01-22 14:01+0000\n"
 "Last-Translator: Damian Sobkowiak <sopek1996@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -35,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -50,10 +49,10 @@ msgstr ""
 #: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} \\bronze\\ Siedlisko, Cytadela\n"
+"\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko, Cytadela\n"
 "\n"
 
 #. type: multicols*
@@ -92,7 +91,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -102,11 +101,10 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/close_to_enemies.tex:143
-#: coops/stand_united.tex:87 clash/dragoncurse_castle.tex:85
-#: campaigns/inferno_devilish_plan.tex:224 campaigns/castle_greek_gift.tex:120
-#: campaigns/castle_greek_gift.tex:271 sections/credits.tex:28
-#: sections/random_scenario.tex:306
+#: coops/sentinels.tex:142 coops/stand_united.tex:87
+#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
+#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -885,14 +883,14 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item \\textcolor{darkcandyapplered}{Replace the Ghost Dragons and Dread Knights with \\bronze\\ neutral Zombies and Skeletons.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Replace the Ghost Dragons and Dread Knights with \\svg{bronze} neutral Zombies and Skeletons.}\n"
 "  \\item \\textcolor{darkcandyapplered}{Play ``Cloak of the Undead King IV'' and ``Cloak of the Undead King VI'' onto the packs of Zombies and Skeletons, respectively.}\n"
 "  \\item \\textcolor{darkcandyapplered}{Remove the AI Might and Magic Deck from the game, the undead fight on their own.}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item \\textcolor{darkcandyapplered}{Zamień Upiorne Smoki i Rycerzy Grozy na \\bronze\\ neutralne Zombie i Szkielety.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Zamień Upiorne Smoki i Rycerzy Grozy na \\svg{bronze} neutralne Zombie i Szkielety.}\n"
 "  \\item \\textcolor{darkcandyapplered}{Zagraj ,,Płaszcz Nieumarłego Króla IV'' i ,,Płaszcz Nieumarłego Króla VI'' odpowiednio na grupy Zombie i Szkieletów.}\n"
 "  \\item \\textcolor{darkcandyapplered}{Usuń z gry Talię AI, nieumarli walczą sami.}\n"
 "\\end{itemize}\n"
