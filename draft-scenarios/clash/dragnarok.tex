@@ -50,7 +50,7 @@ If no Victory Condition has been met by the end of Round 12, all players lose.
 
 \subsection*{\MakeUppercase{Victory Points}}
 The player with the most Victory Points (VP) wins.
-In case of a tie, the player controlling more Dragon Utopias wins the game.
+In case of a tie, the tied players draw Cards to their \svg{hand} Limit and engage in a final Combat. The winner of that Combat wins the game.
 \begin{itemize}
   \item 4 VP for Flagging a Dragon Utopia
   \item 3 VP for each enemy Main Town captured \textit{once per enemy}
@@ -79,17 +79,16 @@ In case of a tie, the player controlling more Dragon Utopias wins the game.
 \begin{itemize}
   \item Players may not recruit Secondary Heroes.
   \item Players may use their M\&M Deck while paying to defend their Town.
-  \item If a Hero stands on a removed Tile, move them to the nearest revealed Field and reduce their lowest initiative Unit's \svg{health_points} to 0.
+  \item If a Hero stands on a removed Tile, move them to the nearest revealed Field and reduce their lowest \svg{initiative} Unit's \svg{health_points} to 0.
     That player suffers -1 \svg{movement} this Round.
   \item Level VII Neutral Combats cannot be skipped.
   \columnbreak
-  \item \textbf{Dragon Utopia:} Gain 10 \svg{gold}, 1 \svg{valuables} and Search (2) \svg{artifact} twice.
+  \item \textbf{Dragon Utopia:} Draw Cards up to \svg{hand} Limit, gain 10 \svg{gold}, 1 \svg{valuables} and Search (2) \svg{artifact} twice.
   \item \textbf{Obelisk:} Roll 1 \svg{resource} or \svg{treasure}.
   \item When Tiles are removed, reduce any production provided by mines or settlements on that Tile.
   \item Remove ``Astrologers proclaim week of the Magic Tortoise'' from the Astrologers Proclaim Deck.
 \end{itemize}
 \end{multicols}
-
 
 \begin{tikzpicture}[remember picture, overlay]
   \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-5em] at (current page.center) {
@@ -99,6 +98,6 @@ In case of a tie, the player controlling more Dragon Utopias wins the game.
 
 \begin{center}
   \vspace*{\fill}
-  \includegraphics[width=0.8\linewidth]{\maps/dragnarok.png}
+  \includegraphics[width=0.9\linewidth]{\maps/dragnarok.png}
   \vspace*{\fill}
 \end{center}
