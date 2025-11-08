@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-07-08 18:48+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -127,7 +127,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:285
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -143,7 +143,7 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
-#: sections/random_scenario.tex:306
+#: sections/random_scenario.tex:298
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -348,10 +348,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:42
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, City Hall, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, City Hall, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Městské Budovy:} \\bronze\\ Obydlí, \\silver\\ Obydlí, Radnice, Citadela\n"
+"\\textbf{Městské Budovy:} \\svg{bronze} Obydlí, \\svg{silver} Obydlí, Radnice, Citadela\n"
 "\n"
 
 #. type: multicols
@@ -883,7 +883,7 @@ msgid ""
 "      \\darkcell{Enemy} & \\darkcell{Units} & \\darkcell{AI Deck} & \\darkcell{Artifacts/Abilities} \\\\\n"
 "      \\darkcellleft[2.8]{Rampart Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Unicorns\\\\Pack of Pegasi\\\\Pack of Elves\\\\Pack of Dwarves\\\\Few Centaurs}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Might \\svg[12]{might-yellow} Card\\\\2~×~Skill \\svg{skill-yellow} Card \\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\\\phantom{.}\\\\ \\textit{Armies use the same Deck. Reshuffle after every Combat.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Castle Charging Army \\#1}\n"
 "      & \\lightcellleft[2.8]{Few Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Pack of Elves\\\\Pack of Marksmen}\n"
@@ -899,7 +899,7 @@ msgid ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Final Charging Army}\n"
 "      & \\lightcellleft[4.4]{Few Archangels\\\\Pack of Unicorns\\\\Pack of Champions\\\\Pack of Zealots\\\\Pack of Griffins\\\\Ballista War Machine}\n"
-"      & \\lightcellleft[4.4]{3~×~Might \\svg{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
+"      & \\lightcellleft[4.4]{3~×~Might \\svg[12]{might-yellow} Card\\\\3~×~Skill \\svg{skill-yellow} Card}\n"
 "    & \\lightcellleft[4.4]{1~×~Shield~of~the Damned \\textit{(Top effect)}\\\\1~×~Sword~of~Hellfire \\textit{(Top effect)}\\\\1~×~Ballistics \\textit{(Basic effect)}\\\\1~×~First~Aid \\textit{(Expert effect)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"
@@ -915,7 +915,7 @@ msgstr ""
 "      \\darkcell{Jednotky} & \\darkcell{Nepřítele} & \\darkcell{AI Balíček} & \\darkcell{Artefakty/Schopnosti} \\\\\n"
 "      \\darkcellleft[2.8]{Útočící Armáda Bašty \\#1}\n"
 "      & \\lightcellleft[2.8]{Hrstka Jednorožců\\\\Tlupa Pegasů\\\\Tlupa Elfů\\\\Tlupa Trpaslíků\\\\Hrstka Kentaurů}\n"
-"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Karta~Moci~\\svg{might-yellow}\\\\2~×~Karta~Dovednosti~\\svg{skill-yellow}\\\\\\phantom{.}\\\\ \\textit{Armády používají společný Balíček. Zamíchejte po každém Souboji.}}}}\n"
+"      & \\makebox[129pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{3~×~Karta~Moci~\\svg[12]{might-yellow}\\\\2~×~Karta~Dovednosti~\\svg{skill-yellow}\\\\\\phantom{.}\\\\ \\textit{Armády používají společný Balíček. Zamíchejte po každém Souboji.}}}}\n"
 "      & \\makebox[147pt][r]{\\multirow{4}{*}[12.65ex]{\\lightcellleft[11.75]{1~×~Štít~Zatracených \\textit{(Horní efekt)}\\\\1~×~Meč~Pekelného~Ohně \\textit{(Horní efekt)}\\\\\\phantom{.}\\\\ \\textit{Armády používají společný Balíček. Zamíchejte po každém Souboji.}}}} \\\\\n"
 "      \\darkcellleft[2.8]{Útočící Armáda Hradu \\#1}\n"
 "      & \\lightcellleft[2.8]{Hrstka Šampionů\\\\Tlupa Fanatiků\\\\Tlupa Grifinů\\\\Tlupa Elfů\\\\Tlupa Lučišníků}\n"
@@ -931,7 +931,7 @@ msgstr ""
 "      & \\\\\n"
 "      \\darkcellleft[4.4]{Konečná Útočící Armáda}\n"
 "      & \\lightcellleft[4.4]{Hrstka Archandělů\\\\Tlupa Jednorožců\\\\Tlupa Šampionů\\\\Tlupa Fanatiků\\\\Tlupa Grifinů\\\\Válečná Balista}\n"
-"      & \\lightcellleft[4.4]{3~×~Karta~Moci \\svg{might-yellow}\\\\3~×~Karta~Dovednosti \\svg{skill-yellow}}\n"
+"      & \\lightcellleft[4.4]{3~×~Karta~Moci \\svg[12]{might-yellow}\\\\3~×~Karta~Dovednosti \\svg{skill-yellow}}\n"
 "    & \\lightcellleft[4.4]{1~×~Štít~Zatracených \\textit{(Horní efekt)}\\\\1~×~Meč~Pekelného~Ohně \\textit{(Horní efekt)}\\\\1~×~Balistika \\textit{(Základní efekt)}\\\\1~×~První~Pomoc \\textit{(Expertní efekt)}} \\\\ \\end{tabularx}\n"
 "  }\n"
 "\\vspace*{-5em}"

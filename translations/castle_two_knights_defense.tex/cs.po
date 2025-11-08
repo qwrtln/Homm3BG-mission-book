@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-06-22 00:57+0200\n"
+"POT-Creation-Date: 2025-11-06 23:19+0100\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -34,7 +34,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:285
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -81,7 +81,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:287
+#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -387,10 +387,10 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:29
 #, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} \\bronze\\ Dwelling, \\silver\\ Dwelling, Citadel\n"
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling, \\svg{silver} Dwelling, Citadel\n"
 "\n"
 msgstr ""
-"\\textbf{Městské Budovy:} \\bronze\\ Obydlí, \\silver\\ Obydlí, Citadela\n"
+"\\textbf{Městské Budovy:} \\svg{bronze} Obydlí, \\svg{silver} Obydlí, Citadela\n"
 "\n"
 
 #. type: multicols*
@@ -519,14 +519,14 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item The Glory of Erathia building is unavailable.\n"
-"  \\item Each time you visit a Trading Post, draw the top Cards from the \\bronze\\ bronze, \\silver\\ silver, and \\golden\\ golden neutral enemy Decks.\n"
+"  \\item Each time you visit a Trading Post, draw the top Cards from the \\svg{bronze} bronze, \\svg{silver} silver, and \\svg{golden} golden neutral enemy Decks.\n"
 "  You may recruit any, or all of them by paying their cost.\n"
 "  Shuffle any un-hired ones back into their Decks.\n"
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item Budova Sláva Erathie není dostupná.\n"
-"  \\item Pokaždé, když navštívíte Obchodní Stanici, táhněte horní karty z Balíčků \\bronze\\ Bronzových, \\silver\\ Stříbrných a \\golden\\ Zlatých Neutrálních Nepřátel.\n"
+"  \\item Pokaždé, když navštívíte Obchodní Stanici, táhněte horní karty z Balíčků \\svg{bronze} Bronzových, \\svg{silver} Stříbrných a \\svg{golden} Zlatých Neutrálních Nepřátel.\n"
 "    Můžete si najmout kteroukoli z nich nebo všechny, když zaplatíte jejich cenu.\n"
 "    Zamíchejte všechny nenajaté zpět do jejich Balíčků.\n"
 "\n"
@@ -535,13 +535,13 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:118
 #, no-wrap
 msgid ""
-"  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\azure\\ Azure neutral Deck to your army.\n"
+"  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svg{azure} Azure neutral Deck to your army.\n"
 "  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
 "  \\item If the enemy army reaches the Dragon Utopia before you do, flip the Pack side of Dread Knights to Few and add a Pack of Ghost Dragons.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"  \\item Poté, co zdoláte Neutrální Armádu v Dračí Utopii přidejte jednoho náhodného Draka z \\azure\\ Azurového Neutrálního Balíčku do vaší Armády.\n"
+"  \\item Poté, co zdoláte Neutrální Armádu v Dračí Utopii přidejte jednoho náhodného Draka z \\svg{azure} Azurového Neutrálního Balíčku do vaší Armády.\n"
 "  \\item Nepřítel se pohybuje normálním způsobem, obsazuje všechny Osady a Doly s konečným cílem dobýt Dračí Utopii.\n"
 "  \\item Dosáhne-li nepřítel Dračí Utopie dřív než vy, otočte Tlupu Hrozivých Rytířů na Hrstku a přidejte Tlupu Přízračných Draků.\n"
 "\\end{itemize}\n"
