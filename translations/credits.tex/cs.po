@@ -107,7 +107,7 @@ msgid ""
 "\\textbf{Scenario templating, tooling and automation}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"
 msgstr ""
-"\\textbf{Šablony Scénářů, nástroje a automatizace}: Tomáš Zeman, Andrzej Wiącek, Saveliy Ivanov\n"
+"\\textbf{Šablony Scénářů, nástroje a automatizace}: Andrzej Wiącek, Tomáš Zeman\n"
 "\n"
 
 #. type: multicols*
