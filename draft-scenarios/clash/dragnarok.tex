@@ -10,10 +10,10 @@
 \textit{The ancient dragons have awoken from their septcentennial slumber, unleashing chaos upon Erathia. Age-old enemies must set aside centuries of conflict to confront the draconic threat, lest they see the continent consumed by fire.}  % no-check-caps
 
 \subsection*{\MakeUppercase{Scenario Length}}
-This Scenario plays out over 12 Rounds.
+12 Rounds
 
 \subsection*{\MakeUppercase{Player Setup}}
-\textbf{Player Count:} 4 players.
+\textbf{Player Count:} 4
 
 \textbf{Starting Resources:} 10 \svg{gold}, 2 \svg{building_materials}, 1 \svg{valuables}
 
@@ -22,25 +22,24 @@ This Scenario plays out over 12 Rounds.
 \textbf{Starting Units:}
 
 \begin{itemize}
-  \item 2 × A Pack of cheapest \bronze\ Units.
-  \item A Few chosen \bronze\ Units.
+  \item 2 × A Pack of cheapest \svg{bronze} Units
+  \item A Few chosen \svg{bronze} Units
 \end{itemize}
 
-\textbf{Town Buildings:} \bronze\ Dwelling, Mage Guild \textit{Do not gain ``When Built'' bonus}.
+\textbf{Town Buildings:} \svg{bronze} Dwelling, Mage Guild \textit{(Do not gain ``When Built'' bonus)}
 
 \subsection*{\MakeUppercase{Map Setup}}
 Take the following Map Tiles and arrange them as shown in the Scenario map layout:
 
-
 \begin{itemize}
-  \item 4 × Starting (I) Map Tiles.
-  \item 8 × Far (II–III) Map Tiles.
-  \item 8 × Near (IV–V) Map Tiles.
-  \item 2 × Center (VI–VII) Map Tiles with Dragon Utopia.
+  \item 4 × Starting (I) Map Tiles
+  \item 8 × Far (II–III) Map Tiles
+  \item 8 × Near (IV–V) Map Tiles
+  \item 2 × Center (VI–VII) Map Tiles with Dragon Utopia
 \end{itemize}
 
 \subsection*{\MakeUppercase{Victory Conditions}}
-The game ends at the end of Round when either of these conditions are met:
+The game ends at the end of a Round when either of these conditions is met:
 \begin{itemize}
   \item Both Dragon Utopias have been flagged.
   \item One player has defeated each other player's Main Hero at least once.
@@ -50,10 +49,11 @@ The game ends at the end of Round when either of these conditions are met:
 If no Victory Condition has been met by the end of Round 12, all players lose.
 
 \subsection*{\MakeUppercase{Victory Points}}
-The player with the most Victory Points (VP) wins. In case of a tie, the player controlling more Dragon Utopias wins the game.
+The player with the most Victory Points (VP) wins.
+In case of a tie, the player controlling more Dragon Utopias wins the game.
 \begin{itemize}
   \item 4 VP for Flagging a Dragon Utopia
-  \item 3 VP for each enemy Main Town captured \textit{once per Enemy}
+  \item 3 VP for each enemy Main Town captured \textit{once per enemy}
   \item 2 VP for each enemy Main Hero defeated
 \end{itemize}
 
@@ -64,23 +64,25 @@ The player with the most Victory Points (VP) wins. In case of a tie, the player 
 \end{itemize}
 \textbf{\nth{6} Round:}
 \begin{itemize}
-  \item Remove all Far (II–III) map Tiles.
+  \item Remove all Far (II–III) Map Tiles.
 \end{itemize}
 \textbf{\nth{9} Round:}
 \begin{itemize}
-  \item Remove all Near (IV–V) map Tiles.
+  \item Remove all Near (IV–V) Map Tiles.
 \end{itemize}
 \textbf{\nth{11} Round:}
 \begin{itemize}
-  \item Remove all Starting (I) map Tiles.
+  \item Remove all Starting (I) Map Tiles.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
 \begin{itemize}
   \item Players may not recruit Secondary Heroes.
   \item Players may use their M\&M Deck while paying to defend their Town.
-  \item If a Hero stand on a removed Tile, move them to the nearest revealed Field and reduce their lowest initiative Unit's \svg{health_points} to 0. That player suffers -1 \svg{movement} this Round.
+  \item If a Hero stands on a removed Tile, move them to the nearest revealed Field and reduce their lowest initiative Unit's \svg{health_points} to 0.
+    That player suffers -1 \svg{movement} this Round.
   \item Level VII Neutral Combats cannot be skipped.
+  \columnbreak
   \item \textbf{Dragon Utopia:} Gain 10 \svg{gold}, 1 \svg{valuables} and Search (2) \svg{artifact} twice.
   \item \textbf{Obelisk:} Roll 1 \svg{resource} or \svg{treasure}.
   \item When Tiles are removed, reduce any production provided by mines or settlements on that Tile.
@@ -88,8 +90,15 @@ The player with the most Victory Points (VP) wins. In case of a tie, the player 
 \end{itemize}
 \end{multicols}
 
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-5em] at (current page.center) {
+    \includegraphics[width=1.1\paperwidth, keepaspectratio]{\art/meteor_shower.png}
+  };
+\end{tikzpicture}
+
 \begin{center}
   \vspace*{\fill}
-  \includegraphics[width=\linewidth]{\maps/dragnarok.png}
+  \includegraphics[width=0.8\linewidth]{\maps/dragnarok.png}
   \vspace*{\fill}
 \end{center}
