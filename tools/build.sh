@@ -161,7 +161,13 @@ cleanup_monochrome() {
 cleanup_windows_drafts() {
   if [[ -n "$original_dir" ]]; then
     pushd "$original_dir" || exit
-    git restore draft-scenarios/assets draft-scenarios/latexmkrc draft-scenarios/metadata.tex draft-scenarios/.version
+    git restore \
+      draft-scenarios/.version \
+      draft-scenarios/assets \
+      draft-scenarios/latexmkrc \
+      draft-scenarios/metadata.tex \
+      draft-scenarios/sections/credits.tex \
+      draft-scenarios/sections/language_metadata.tex
     popd || exit
   fi
 }
@@ -237,11 +243,18 @@ fi
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then
   # For Windows only - replace symlink with a copy
   if [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
-      echo "Windows detected, handling symlinks."
-      original_dir=$(pwd)
-      rm "draft-scenarios/assets" "draft-scenarios/latexmkrc" "draft-scenarios/metadata.tex" "draft-scenarios/.version"
-      cp -r "assets" "draft-scenarios/assets"
-      cp "latexmkrc" "metadata.tex" ".version" "draft-scenarios/"
+    echo "Windows detected, handling symlinks."
+    original_dir=$(pwd)
+    rm \
+      "draft-scenarios/.version" \
+      "draft-scenarios/assets" \
+      "draft-scenarios/latexmkrc" \
+      "draft-scenarios/metadata.tex" \
+      "draft-scenarios/sections/credits.tex" \
+      "draft-scenarios/sections/language_metadata.tex"
+    cp -r "assets" "draft-scenarios/assets"
+    cp "latexmkrc" "metadata.tex" ".version" "draft-scenarios/"
+    cp "sections/credits.tex" "sections/language_metadata.tex" "draft-scenarios/sections/"
   fi
 
   # Monochromize maps if it's mono mode
