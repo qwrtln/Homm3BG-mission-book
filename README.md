@@ -443,6 +443,11 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
+            <td>⚔️ Dragnarøk (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
