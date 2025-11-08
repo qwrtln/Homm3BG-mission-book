@@ -13,11 +13,11 @@ Please read the instructions for your operating system (or container).
 
      - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows
 
-     - [**Inkscape**](https://inkscape.org/) - while installing on Windows, make sure to tick `Add Inkscape to the System Path` option, if you're prompted with one
+     - [**Inkscape**](https://inkscape.org/) - download the `.exe` installer, not `.msi`!. While installing tick `Add Inkscape to the System Path` option. Inkscape won't work otherwise.
 
      - [**git**](https://git-scm.com/) to commit files to the repository
 
-     - [**Perl**](https://www.perl.org/get.html) (optional but recommended) to use a build script
+     - [**Perl**](https://www.perl.org/get.html) - download the Strawberry Perl binary release.
 
     Optionally, to edit the TeX files conveniently:
 
