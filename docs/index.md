@@ -13,7 +13,7 @@ Please read the instructions for your operating system (or container).
 
      - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows
 
-     - [**Inkscape**](https://inkscape.org/) - download the `.exe` installer, not `.msi`!. While installing tick `Add Inkscape to the System Path` option. Inkscape won't work otherwise.
+     - [**Inkscape**](https://inkscape.org/) - download the `.exe` installer, not `.msi`. While installing tick `Add Inkscape to the System Path` option. Inkscape won't work otherwise.
 
      - [**git**](https://git-scm.com/) to commit files to the repository
 
@@ -60,6 +60,8 @@ Please read the instructions for your operating system (or container).
 
     This will build the draft scenarios book.
     If the build is successful, you are all set to start working on your scenario.
+
+    If you're seeing an error about a missing file, please configure MiKTeX to [download missing packages automatically](https://yihui.org/en/2018/03/miktex-auto-install/).
 
 === "MacOS"
     ### MacOS

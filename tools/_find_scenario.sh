@@ -36,7 +36,8 @@ find_latex_references() {
     return 0
   else
     # Should never happen
-    echo "No reference found!"
+    directory=$(find . -name "$FILENAME" -print0 | sed 's|^\./||; s|/[^/]*$||')
+    echo -e "No reference found. Did you add your scenario to the \033[1;32m$directory/main.tex\033[0m file?"
     return 1
   fi
 }
