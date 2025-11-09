@@ -1,0 +1,115 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Cooperative Scenario}{The Ambushed Accord}{\images/the_ambushed_accord_banner.png}
+
+\begin{multicols}{2}
+
+\textbf{Author:} Wololoeren
+
+\textit{The war had dragged on far too long. Armies were shattered, lands burned, and hope had thinned to a whisper. At last, the rival lords agreed to set aside their grievances and forge an Accord — a fragile peace born of desperation.\\
+	Messengers rode beneath white banners, oaths were sworn, and for the first time in years, the clash of steel gave way to uneasy silence. Yet peace has its own enemies.\\	
+	As the allied hosts gathered in the valley of Laren’s Cross, dawn broke with the sound of horns — not of welcome, but of war.\\
+	Out of the mist, unseen armies struck with deadly precision. Someone had betrayed the Accord.\\
+	Now, surrounded and outnumbered, the fate of your alliance lies in your hands. Stand together… or fall alone.}  % no-check-caps
+\subsection*{\MakeUppercase{Scenario Length}}
+14 Rounds
+
+\subsection*{\MakeUppercase{Player Setup}}
+\textbf{Player Count:} 2-6
+
+\textbf{Starting Resources:} 2 \svg{gold}, 3 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Units:}
+
+\begin{itemize}
+  \item 2 × Search (2) the \svg{bronze} Neutral deck.
+\end{itemize}
+
+\textbf{Town Buildings:} City-Hall.
+
+\textbf{Map Tile Pool:} Each player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.
+
+\subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:
+
+\begin{itemize}
+  \item $P$ × Starting (I) Map Tiles
+  \item 1 × Center (VI–VII) Map Tile with Dragon Utopia
+\end{itemize}
+
+\subsection*{\MakeUppercase{Victory Conditions}}
+All players must defeat the Level VII Neutral Combat.
+
+\subsection*{\MakeUppercase{Timed Events}}
+\textbf{\nth{2} Round:}
+\begin{itemize}
+	\item Build either Camp (\svg{building_special_tent}) or Workshop (Gears) for free.
+\end{itemize}
+\textbf{\nth{4} Round:}
+\begin{itemize}
+  \item At the end of round 4 \textbf{*One*} player must fight a Timed Event Fight (TEF) of 5x\svg{bronze}.
+\end{itemize}
+\textbf{\nth{8} Round:}
+\begin{itemize}
+  \item At the end of round 8 \textbf{*One*} player must fight a TEF of 4x\svg{silver} 
+\end{itemize}
+\textbf{\nth{10} Round:}
+\begin{itemize}
+	\item At the end of round 10 \textbf{*One*} player must fight a TEF of 3x\svg{golden}.
+\end{itemize}
+\textbf{\nth{12} Round:}
+\begin{itemize}
+	\item At the end of round 12 \textbf{*One*} player must fight a TEF of 2x\svg{azure}.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+\subsubsection*{\MakeUppercase{Difficulty Settings}}
+\textbf{Easy:}
+\begin{itemize}
+  \item Remove a unit from each Timed Event Fight.
+\end{itemize}
+\textbf{Hard:}
+\begin{itemize}
+  \item Add a initiative stack token to a random unit of the TEFs on round 4, 8 and 10.
+\end{itemize}
+\textbf{Impossible:}
+\begin{itemize}
+  \item Add two random stack token to two units of all TEF fights.
+\end{itemize}
+%\columnbreak
+
+\subsubsection*{\MakeUppercase{Timed Event Fights}}
+\begin{itemize}
+  \item Collaboratively pay P×5 \svg{gold}, P×3 \svg{building_materials} and P×1 \svg{valuables} to reveal the Center Map Tile(P is number of players). e.g.: 4 Players must pay 20\svg{gold}, 12\svg{building_materials}, 4\svg{valuables}.
+  \item For less than 4 players only \textbf{*One*} player need to fight the TEF. The players may decide which eligible players will fight.
+  \item For 4 or more players \textbf{*Two*} players must fight a TEF each when the event occur.
+  \item Players are NOT eligible to fight a TEF if they already \textbf{won} more TEF than another player or have no units.
+  \item Defeating a TEF grants a permanent +1 \svg{movement} to your main hero.
+  \item If a player is defeated in a TEF their hero is sent back to their town with no units, the remaining TEF units must be defeated by another player if no player is eligible to fight they all loose the scenario.
+\end{itemize}
+
+
+\subsubsection*{\MakeUppercase{Other Rules}}
+\begin{itemize}
+	\item At the end of every round players must decide one player who get a free Positive morale token.
+	\item Players may exchange artifacts and spells from their hands and units and resources if their main heroes are standing on adjacent fields or both are standing in their own town.
+	\item Once a player defeats the level 7 center-tile field their Heroes are removed from the board and they cannot fight TEF, and are no longer being considered for TEF eligibility.
+\end{itemize}
+\end{multicols}
+\begin{tikzpicture}[overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-17em] at (current page.south) {
+    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/fireball.png}
+  };
+  \centering
+  \node at (3, -1) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_2p.png}};
+  %\node at (3, -4) {\footnotesize{\textbf{\MakeUppercase{2-PLAYER SCENARIO}}}};
+  \node at (3, -7) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_3p.png}};
+  %\node at (3, -10.5) {\footnotesize{\textbf{\MakeUppercase{3-PLAYER SCENARIO}}}};
+  \node at (8, -3) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_4p.png}};
+  %\node at (8, -7) {\footnotesize{\textbf{\MakeUppercase{4-PLAYER SCENARIO}}}};
+  \node at (14, -1.8) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_5p.png}};
+  %\node at (10.5, 0.5) {\footnotesize{\textbf{\MakeUppercase{5-PLAYER SCENARIO}}}};
+  \node at (14.5, -7.5) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_6p.png}};
+  %\node at (10.7, -10.2) {\footnotesize{\textbf{\MakeUppercase{6-PLAYER SCENARIO}}}};
+\end{tikzpicture}
