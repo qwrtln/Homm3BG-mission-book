@@ -39,19 +39,18 @@ help() {
   exit 2
 }
 
-file_type() {
+_file_type() {
   local printable="$1"
   [[ "$printable" -eq 1 ]] && echo "printable" || echo "main"
 }
 
 base_file_path() {
-  local identifier="$1"
+  local language="$1"
   local printable="$2"
   local drafts="$3"
   local monochrome="$4"
   local type
   local file_suffix=""
-
   if [[ "$monochrome" -eq 1 ]]; then
     file_suffix="-mono"
   fi
@@ -59,8 +58,8 @@ base_file_path() {
   if [[ "$drafts" -eq 1 ]]; then
     echo "${cache_dir}/drafts${file_suffix}.pdf"
   else
-    type=$(file_type "$printable")
-    echo "${cache_dir}/${type}_${identifier}${file_suffix}.pdf"
+    type=$(_file_type "$printable")
+    echo "${cache_dir}/${type}_${language}${file_suffix}.pdf"
   fi
 }
 
@@ -111,7 +110,7 @@ _git_branch_from_filename() {
 }
 
 download_base_file() {
-  local identifier="$1"
+  local language="$1"
   local printable="$2"
   local drafts="$3"
   local monochrome="$4"
@@ -126,11 +125,11 @@ download_base_file() {
 
   if [[ "$drafts" -eq 1 ]]; then
     url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts${file_suffix}.pdf"
-    output_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
+    output_file=$(base_file_path "$language" "$printable" "$drafts" "$monochrome")
   else
-    type=$(file_type "$printable")
-    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${identifier}/${type}_${identifier}${file_suffix}.pdf"
-    output_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
+    type=$(_file_type "$printable")
+    url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${language}/${type}_${language}${file_suffix}.pdf"
+    output_file=$(base_file_path "$language" "$printable" "$drafts" "$monochrome")
   fi
 
   mkdir -p "$cache_dir"
@@ -238,11 +237,11 @@ is_scenario_current() {
 # Otherwise we use the cached one to speed-up the workflow.
 ensure_base_file() {
   local base_file
-  local identifier="$1"
+  local language="$1"
   local printable="$2"
   local drafts="$3"
   local monochrome="$4"
-  base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
+  base_file=$(base_file_path "$language" "$printable" "$drafts" "$monochrome")
 
   if ! is_pdf_current "$base_file"; then
     download_base_file "$language" "$printable" "$drafts" "$monochrome"
