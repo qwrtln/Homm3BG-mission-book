@@ -6,14 +6,15 @@ output_dir="screenshots"
 
 help() {
   echo "
-    Usage: ./tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
+    Usage: ./tools/compare_pages.sh (-l <language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
 
     Mandatory Arguments (choose one):
       -l, --language <language>     Specify the language for comparison (en, pl, cs, de, fr).
-      -d, --drafts                  Compare draft scenarios (mutually exclusive with -l).
+      -d, --drafts                  Compare draft scenarios (mutually exclusive with -l and -s).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
 
     Optional Arguments:
+      -s, --scenario                Compare against a single scenario.
       -p, --printable               Compares your build against 'printable' build.
       -s, --single-page             Combines all compared pages into a single image.
       -m, --mono                    Uses monochrome version of files for baseline comparison.
@@ -176,34 +177,40 @@ parse_pages() {
 # MAIN FLOW
 #
 
-language=""
-range=""
-printable=0
-single_page=0
-drafts=0
-monochrome=0
+LANGUAGE=""
+RANGE=""
+PRINTABLE=0
+DRAFTS=0
+MONOCHROME=0
+SCENARIO_SEARCH=""
+SCENARIO_NAME=""
 
 while [[ "$1" != "" ]]; do
   case $1 in
     -l | --language )
       shift
-      language=$1
+      LANGUAGE=$1
       ;;
     -d | --drafts )
-      drafts=1
+      DRAFTS=1
       ;;
     -p | --printable )
-      printable=1
+      PRINTABLE=1
       ;;
     -r | --range )
       shift
-      range=$1
+      RANGE=$1
       ;;
-    -s | --single-page )
-      single_page=1
+    -s | --scenario )
+      shift
+      if [[ $# -lt 1 ]]; then
+        echo "Error: --scenario requires a string argument" >&2
+        usage
+      fi
+      SCENARIO_SEARCH="$1"
       ;;
     -m | --mono )
-      monochrome=1
+      MONOCHROME=1
       ;;
     * )
       help
@@ -213,68 +220,81 @@ while [[ "$1" != "" ]]; do
 done
 
 # Check that we have either language or draft but not both
-if [[ "$drafts" -eq 1 && -n "$language" ]]; then
-  echo "Error: -d/--drafts and -l/--language options are mutually exclusive."
+if [[ "$DRAFTS" -eq 1 && (-n "$LANGUAGE" || -n "$scenario") ]]; then
+  echo "Error: -d/--drafts is mutually exclusive with -l/--language and -s/--scenario options."
   help
 fi
 
-# Check that we have either language or draft
-if [[ "$drafts" -eq 0 && -z "$language" ]]; then
-  echo "Error: You must specify either -l/--language or -d/--drafts option."
-  help
-fi
-
-if [[ -z "$range" ]]; then
+if [[ -z "$RANGE" ]]; then
   echo "Error: You must specify a page range with -r/--range option."
   help
 fi
 
+if [[ -z "$LANGUAGE" ]]; then
+  LANGUAGE="en"
+fi
+
+if [[ "$SCENARIO_SEARCH" ]]; then
+  tools/_find_scenario.sh "$SCENARIO_SEARCH"
+  SCENARIO_NAME=$(grep -o "/[a-z_]*\.tex" structure.tex | sed -e "s@/@@" -e "s@.tex@@")
+  git restore structure.tex
+fi
+
 # Set the identifier for file paths and naming
-identifier="$language"
-if [[ "$drafts" -eq 1 ]]; then
+identifier="$LANGUAGE"
+if [[ "$DRAFTS" -eq 1 ]]; then
   identifier="drafts"
   # Printable option doesn't apply to drafts
-  if [[ "$printable" -eq 1 ]]; then
+  if [[ "$PRINTABLE" -eq 1 ]]; then
     echo "Note: --printable option ignored for drafts."
-    printable=0
+    PRINTABLE=0
+  fi
+fi
+if [[ "$SCENARIO_NAME" ]]; then
+  identifier="${SCENARIO_NAME}_${LANGUAGE}"
+  if [[ "$MONOCHROME" -eq 1 ]]; then
+    identifier="${identifier}_mono"
+  else
+    identifier="${identifier}_color"
   fi
 fi
 
 echo "Checking if there is the base file for comparison..."
-base_file=$(ensure_base_file "$language" "$printable" "$drafts" "$monochrome")
-
-tmp_dir="$(mktemp -d)"
-trap 'rm -rf -- "$tmp_dir"' EXIT
-
-readarray -t pages < <(parse_pages "$range")
-
-for page in "${pages[@]}"; do
-  echo "Making images of ${base_file} and $([ "$drafts" -eq 1 ] && echo "drafts.pdf" || echo "main_${language}.pdf") for page ${page}..."
-  pdftoppm "${base_file}" "${tmp_dir}/aa" -f "${page}" -l "${page}" -png -progress &
-
-  if [[ "$drafts" -eq 1 ]]; then
-    pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
-  else
-    pdftoppm "main_${language}.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
-  fi
-done
-
-wait
-
-for page in "${pages[@]}"; do
-  echo "Combining pages $(printf %02d "$page")..."
-  montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
-  rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
-done
-
-if [[ "$single_page" -eq 1 ]]; then
-  wait
-  montage "${tmp_dir}/${identifier}"* -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
-fi
-
-wait
-
-mkdir -p screenshots
-mv "${tmp_dir}/${identifier}"* screenshots
-
-echo "Done. Images saved to $output_dir directory."
+echo $identifier
+# base_file=$(ensure_base_file "$LANGUAGE" "$PRINTABLE" "$DRAFTS" "$MONOCHROME")
+#
+# tmp_dir="$(mktemp -d)"
+# trap 'rm -rf -- "$tmp_dir"' EXIT
+#
+# readarray -t pages < <(parse_pages "$RANGE")
+#
+# for page in "${pages[@]}"; do
+#   echo "Making images of ${base_file} and $([ "$DRAFTS" -eq 1 ] && echo "drafts.pdf" || echo "main_${LANGUAGE}.pdf") for page ${page}..."
+#   pdftoppm "${base_file}" "${tmp_dir}/aa" -f "${page}" -l "${page}" -png -progress &
+#
+#   if [[ "$DRAFTS" -eq 1 ]]; then
+#     pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
+#   else
+#     pdftoppm "main_${LANGUAGE}.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
+#   fi
+# done
+#
+# wait
+#
+# for page in "${pages[@]}"; do
+#   echo "Combining pages $(printf %02d "$page")..."
+#   montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
+#   rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
+# done
+#
+# if [[ "$single_page" -eq 1 ]]; then
+#   wait
+#   montage "${tmp_dir}/${identifier}"* -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
+# fi
+#
+# wait
+#
+# mkdir -p screenshots
+# mv "${tmp_dir}/${identifier}"* screenshots
+#
+# echo "Done. Images saved to $output_dir directory."
