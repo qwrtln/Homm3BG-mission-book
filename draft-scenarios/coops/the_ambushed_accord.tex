@@ -68,28 +68,8 @@ End of \textbf{\nth{13} Round:}
 \clearpage
 
 \subsection*{\MakeUppercase{Additional Rules}}
-\hommtablemulticol[]{22}{
-  \centering
-  \medskip
-  \textbf{Difficutly Settings}\\
-  \bigskip
-  \begin{tabularx}{0.93\linewidth}{p{0.28\linewidth}X}
-    \darkcell[1.6]{Difficulty} & \darkcell[1.6]{Changes to Timed Event Fights} \\
-    \darkcell[1.6]{Easy}
-    & \lightcell[1.6]{Remove a Unit from every Timed Event Fights.} \\
-    \darkcell[1.6]{Normal}
-    & \lightcell[1.6]{No Change} \\
-    \darkcell[2.2]{Hard}
-    & \lightcell[2.2]{Add an Initiative Stack Token to a random Unit of the fights on Rounds 4, 8 and 10.} \\
-    \darkcell[1.8]{Impossible}
-    & \lightcell[1.8]{Add two random Stack Tokens to two Units in all fights.} \\
-  \end{tabularx}
-  \medskip
-}
-
 \subsubsection*{\MakeUppercase{Timed Event Fights}}
 \begin{itemize}
-  \item Collaboratively pay $P$~×~5~\svg{gold}, $P$~×~3~\svg{building_materials} and $P$~×~\svg{valuables} to reveal the Center Map Tile ($P$ stands for the number of players), e.g., 4 players must pay 20~\svg{gold}, 12~\svg{building_materials}, and 4~\svg{valuables}.
   \item For games with 1--3 players, only one player needs to fight each Timed Event Fight. The players may decide which eligible player will fight.
   \item For games with 4 or more players, \textbf{two players} must each fight a Timed Event Fight when the event occurs.
   \item Players are not eligible to fight a Timed Event Fight if they have already won more Timed Event Fights than another player, or if they have no Units.
@@ -99,16 +79,34 @@ End of \textbf{\nth{13} Round:}
 
 \subsubsection*{\MakeUppercase{Other Rules}}
 \begin{itemize}
+  \item Collaboratively pay $P$~×~5~\svg{gold}, $P$~×~3~\svg{building_materials} and $P$~×~\svg{valuables} to reveal the Center Map Tile ($P$ stands for the number of players), e.g., 4 players must pay 20~\svg{gold}, 12~\svg{building_materials}, and 4~\svg{valuables}.
   \item At the end of every Astrologers Round, players must decide which player gets a free \svg{morale_positive} Token.
   \item Players may exchange Artifacts and Spells from their hands, as well as Units and Resources, if their Main Heroes are standing on adjacent Fields or if both Heroes are in their own Towns.
   \item Once a player defeats the Level VII Center Tile Field, their Heroes are removed from the Map.
     They are no longer eligible to fight Timed Event Fights.
 \end{itemize}
+\hommtablemulticol[]{22}{
+	\centering
+	\medskip
+	\textbf{Difficutly Settings}\\
+	\bigskip
+	\begin{tabularx}{0.93\linewidth}{p{0.28\linewidth}X}
+		\darkcell[1.6]{Difficulty} & \darkcell[1.6]{Changes to Timed Event Fights} \\
+		\darkcell[1.6]{Easy}
+		& \lightcell[1.6]{Remove a Unit from every Timed Event Fights.} \\
+		\darkcell[1.6]{Normal}
+		& \lightcell[1.6]{No Change} \\
+		\darkcell[2.2]{Hard}
+		& \lightcell[2.2]{Add an Initiative Stack Token to a random Unit of the fights on Rounds 4, 8 and 10.} \\
+		\darkcell[1.8]{Impossible}
+		& \lightcell[1.8]{Add two random Stack Tokens to two Units in all fights.} \\
+	\end{tabularx}
+	\medskip
+}
 \end{multicols}
-
 \begin{tikzpicture}[overlay]
   \centering
-  \node at (9, -3) {\includegraphics[scale=0.35]{\maps/the_ambushed_accord_px.png}};
+  \node at (9, -3) {\includegraphics[scale=0.12]{\maps/the_ambushed_accord_px.png}};
   \color{white}
   \node at (10.6, -4) {\footnotesize{\textbf{\MakeUppercase{P1}}}};
   \node at (11, -2) {\footnotesize{\textbf{\MakeUppercase{P2}}}};
