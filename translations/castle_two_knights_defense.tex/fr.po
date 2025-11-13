@@ -80,11 +80,51 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements Programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
 "\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
@@ -121,6 +161,8 @@ msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 msgstr ""
+"\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:16 campaigns/castle_sicilian_dragon.tex:14
@@ -136,18 +178,18 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:18
 #: campaigns/castle_two_knights_defense.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce scénario se joue en 8 Manches.\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:20 campaigns/castle_sicilian_dragon.tex:18
 #: campaigns/castle_two_knights_defense.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player setup}}\n"
 "\n"
@@ -158,40 +200,40 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:22 campaigns/castle_sicilian_dragon.tex:20
 #: campaigns/castle_two_knights_defense.tex:19
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Castle\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur :} Invoceusse\n"
+"\\textbf{Faction:} Château\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{AI Hero setup}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Faction:} Necropolis\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus de départ :} Aucun\n"
+"\\textbf{Bonus de départ :} Nécropole\n"
 "\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map setup}}\n"
 "\n"
@@ -202,12 +244,12 @@ msgstr ""
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Heroes placement}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"\\subsection*{\\MakeUppercase{Placement des Héros}}\n"
 "\n"
 
 #. type: multicols*
@@ -221,16 +263,22 @@ msgid ""
 "  \\item You run out of time at the end of the 8th Round\n"
 "\\end{itemize}"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\begin{itemize}\n"
+"  \\item Vous perdez un Combat\n"
+"  \\item Vous n'avez plus de temps à la fin de la Manche 8\n"
+"\\end{itemize}"
 
 #. type: multicols
 #: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional rules}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
+"\n"
 "\n"
 
 #. type: multicols
@@ -241,16 +289,18 @@ msgid ""
 "During this Castle campaign Scenario, the following rules apply:\n"
 "\n"
 msgstr ""
+"Pendant ce Scénario Campagne Château, les règles suivantes s'appliquent:\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{The story}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{L'Histoire}}\n"
 "\n"
 
 #. type: multicols*
