@@ -68,6 +68,7 @@ scenario_file_path() {
   local language="$1"
   local scenario="$2"
   local monochrome="$3"
+  local file_suffix=""
 
   if [[ "$monochrome" -eq 1 ]]; then
     file_suffix="_mono"
@@ -87,7 +88,8 @@ _sha_from_remote() {
 
 _remote_pdf_file_from_filename() {
   local filename="$1"
-  local sha=$(_sha_from_filename "$filename")
+  local sha
+  sha=$(_sha_from_filename "$filename")
   if [[ $sha == "" ]]; then
     # No SHA - file is absent and its name was already constructed
     echo "$filename"
@@ -147,10 +149,14 @@ download_scenario() {
     filename="${SCENARIO_NAME}_${LANGUAGE}${file_suffix}.pdf"
   fi
 
-  local git_branch=$(_git_branch_from_filename "$filename")
-  local remote_sha=$(_sha_from_remote "$git_branch")
+  local git_branch
+  local remote_sha
+  local remote_filename
 
-  local remote_filename=$(_remote_pdf_file_from_filename "$filename")
+  git_branch=$(_git_branch_from_filename "$filename")
+  remote_sha=$(_sha_from_remote "$git_branch")
+  remote_filename=$(_remote_pdf_file_from_filename "$filename")
+
   local url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/$git_branch/$remote_filename"
   local output_filename="${SCENARIO_NAME}_${LANGUAGE}${file_suffix}_${remote_sha}.pdf"
 
@@ -236,7 +242,7 @@ ensure_base_file() {
   local printable="$2"
   local drafts="$3"
   local monochrome="$4"
-  local base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
+  base_file=$(base_file_path "$identifier" "$printable" "$drafts" "$monochrome")
 
   if ! is_pdf_current "$base_file"; then
     download_base_file "$language" "$printable" "$drafts" "$monochrome"
@@ -250,7 +256,7 @@ ensure_scenario_file() {
   local language="$1"
   local scenario="$2"
   local monochrome="$3"
-  local base_file=$(scenario_file_path "$language" "$scenario" "$monochrome")
+  base_file=$(scenario_file_path "$language" "$scenario" "$monochrome")
 
   if [[ "$base_file" == "" ]] || ! is_scenario_current "$base_file"; then
     base_file=$(download_scenario "$language" "$base_file" "$monochrome")
