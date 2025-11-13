@@ -64,6 +64,50 @@ base_file_path() {
   fi
 }
 
+scenario_file_path() {
+  local language="$1"
+  local scenario="$2"
+  local monochrome="$3"
+
+  if [[ "$monochrome" -eq 1 ]]; then
+    file_suffix="_mono"
+  fi
+  find "${cache_dir}" -name "${scenario}_${language}${file_suffix}*"
+}
+
+_sha_from_filename() {
+  local filename="$1"
+  echo "$filename" | grep -oE '[0-9a-f]{40}'
+}
+
+_sha_from_remote() {
+  local git_branch="$1"
+  curl -s -f -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/qwrtln/Homm3BG-mission-book-build-artifacts/commits/$git_branch" 2>/dev/null
+}
+
+_remote_pdf_file_from_filename() {
+  local filename="$1"
+  local sha=$(_sha_from_filename "$filename")
+  if [[ $sha == "" ]]; then
+    # No SHA - file is absent and its name was already constructed
+    echo "$filename"
+  else
+    # It is a local file with SHA
+    basename "${filename%_"$sha".pdf}.pdf"
+  fi
+}
+
+_git_branch_from_filename() {
+  local filename="$1"
+  remote_pdf_file=$(_remote_pdf_file_from_filename "$filename")
+  git_branch=""
+  if [[ "$remote_pdf_file" == *"_mono.pdf" ]]; then
+    echo "${LANGUAGE}-${remote_pdf_file%_"$LANGUAGE"_mono.pdf}-mono"
+  else
+    echo "${LANGUAGE}-${remote_pdf_file%_"$LANGUAGE".pdf}-color"
+  fi
+}
+
 download_base_file() {
   local identifier="$1"
   local printable="$2"
@@ -89,6 +133,34 @@ download_base_file() {
 
   mkdir -p "$cache_dir"
   curl -o "$output_file" "$url"
+}
+
+download_scenario() {
+  local language="$1"
+  local filename="$2"
+  local monochrome="$3"
+  local file_suffix=""
+  if [[ "$monochrome" -eq 1 ]]; then
+    file_suffix="_mono"
+  fi
+  if [[ "$filename" == "" ]]; then
+    filename="${SCENARIO_NAME}_${LANGUAGE}${file_suffix}.pdf"
+  fi
+
+  local git_branch=$(_git_branch_from_filename "$filename")
+  local remote_sha=$(_sha_from_remote "$git_branch")
+
+  local remote_filename=$(_remote_pdf_file_from_filename "$filename")
+  local url="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/$git_branch/$remote_filename"
+  local output_filename="${SCENARIO_NAME}_${LANGUAGE}${file_suffix}_${remote_sha}.pdf"
+
+  mkdir -p "$cache_dir"
+  curl -o "$cache_dir/$output_filename" "$url"
+
+  # Ensure old file is deleted
+  find "$cache_dir" -maxdepth 1 -name "${SCENARIO_NAME}_${LANGUAGE}${file_suffix}*.pdf" ! -name "$output_filename" -delete &> /dev/null
+
+  echo "$cache_dir/$output_filename"
 }
 
 file_mod_time() {
@@ -132,8 +204,32 @@ is_pdf_current() {
   return 1
 }
 
-# Only download a base file if it's not already present locally or
-# is older than 1 hour. Otherwise we use the cached one to speed-up the workflow.
+is_scenario_current() {
+  local scenario_pdf_file="$1"
+
+  if [[ ! -f "$scenario_pdf_file" ]]; then
+    return 1
+  fi
+
+  # Extract commit SHA from cached PDF file name
+  scenario_git_sha=$(_sha_from_filename "$scenario_pdf_file")
+  # Extract remote PDF file name
+  remote_pdf_file=$(_remote_pdf_file_from_filename "$scenario_pdf_file")
+
+  # Construct git branch name from PDF file name and language
+  git_branch=$(_git_branch_from_filename "$scenario_pdf_file")
+  # Check remote commit SHA using GitHub API
+  local latest_sha
+  latest_sha=$(_sha_from_remote "$git_branch")
+
+  if [[ "$latest_sha" != "$scenario_git_sha" ]]; then
+    return 1
+  fi
+  return 0
+}
+
+# Only download a base files if they are not already present locally or don't match current git ref.
+# Otherwise we use the cached one to speed-up the workflow.
 ensure_base_file() {
   local base_file
   local identifier="$1"
@@ -144,6 +240,20 @@ ensure_base_file() {
 
   if ! is_pdf_current "$base_file"; then
     download_base_file "$language" "$printable" "$drafts" "$monochrome"
+  fi
+
+  echo "$base_file"
+}
+
+ensure_scenario_file() {
+  local base_file
+  local language="$1"
+  local scenario="$2"
+  local monochrome="$3"
+  local base_file=$(scenario_file_path "$language" "$scenario" "$monochrome")
+
+  if [[ "$base_file" == "" ]] || ! is_scenario_current "$base_file"; then
+    base_file=$(download_scenario "$language" "$base_file" "$monochrome")
   fi
 
   echo "$base_file"
@@ -250,51 +360,48 @@ if [[ "$DRAFTS" -eq 1 ]]; then
     PRINTABLE=0
   fi
 fi
-if [[ "$SCENARIO_NAME" ]]; then
-  identifier="${SCENARIO_NAME}_${LANGUAGE}"
-  if [[ "$MONOCHROME" -eq 1 ]]; then
-    identifier="${identifier}_mono"
-  else
-    identifier="${identifier}_color"
-  fi
+
+base_file=""
+echo "Checking if there is the base file for comparison..."
+if [[ "$SCENARIO_NAME" != "" ]]; then
+  base_file=$(ensure_scenario_file "$LANGUAGE" "$SCENARIO_NAME" "$MONOCHROME")
+else
+  base_file=$(ensure_base_file "$LANGUAGE" "$PRINTABLE" "$DRAFTS" "$MONOCHROME")
 fi
 
-echo "Checking if there is the base file for comparison..."
-echo $identifier
-# base_file=$(ensure_base_file "$LANGUAGE" "$PRINTABLE" "$DRAFTS" "$MONOCHROME")
-#
-# tmp_dir="$(mktemp -d)"
-# trap 'rm -rf -- "$tmp_dir"' EXIT
-#
-# readarray -t pages < <(parse_pages "$RANGE")
-#
-# for page in "${pages[@]}"; do
-#   echo "Making images of ${base_file} and $([ "$DRAFTS" -eq 1 ] && echo "drafts.pdf" || echo "main_${LANGUAGE}.pdf") for page ${page}..."
-#   pdftoppm "${base_file}" "${tmp_dir}/aa" -f "${page}" -l "${page}" -png -progress &
-#
-#   if [[ "$DRAFTS" -eq 1 ]]; then
-#     pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
-#   else
-#     pdftoppm "main_${LANGUAGE}.pdf" "${tmp_dir}/bb" -f "${page}" -l "${page}" -png -progress &
-#   fi
-# done
-#
-# wait
-#
-# for page in "${pages[@]}"; do
-#   echo "Combining pages $(printf %02d "$page")..."
-#   montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
-#   rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
-# done
-#
-# if [[ "$single_page" -eq 1 ]]; then
-#   wait
-#   montage "${tmp_dir}/${identifier}"* -tile "1x" -geometry +0+0 "${tmp_dir}/${identifier}-all.png"
-# fi
-#
-# wait
-#
-# mkdir -p screenshots
-# mv "${tmp_dir}/${identifier}"* screenshots
-#
-# echo "Done. Images saved to $output_dir directory."
+tmp_dir="$(mktemp -d)"
+trap 'rm -rf -- "$tmp_dir"' EXIT
+
+readarray -t pages < <(parse_pages "$RANGE")
+
+for page in "${pages[@]}"; do
+  echo "Making images of ${base_file} and $([ "$DRAFTS" -eq 1 ] && echo "drafts.pdf" || [ "$SCENARIO_NAME" != "" ] && echo "${SCENARIO_NAME}.pdf" || echo "main_${LANGUAGE}.pdf") for page ${page}..."
+  pdftoppm "${base_file}" "${tmp_dir}/aa-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+
+  if [[ "$DRAFTS" -eq 1 ]]; then
+    pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+  elif [[ "$SCENARIO_NAME" != "" ]]; then
+    pdftoppm "${SCENARIO_NAME}.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+  else
+    pdftoppm "main_${LANGUAGE}.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+  fi
+done
+
+wait
+
+if [[ "$SCENARIO_NAME" != "" ]]; then
+  identifier="$SCENARIO_NAME"
+fi
+for page in "${pages[@]}"; do
+  echo "Combining pages $(printf %02d "$page")..."
+  echo "${tmp_dir}"/*"$(printf %02d "$page")".png
+  echo "${tmp_dir}/${identifier}-$(printf %02d "$page").png"
+  montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
+  rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
+done
+wait
+
+mkdir -p screenshots
+mv "${tmp_dir}/${identifier}"* screenshots
+
+echo "Done. Images saved to $output_dir directory."
