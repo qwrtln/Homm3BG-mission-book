@@ -11,13 +11,15 @@ Please read the instructions for your operating system (or container).
 
     Download and install the following:
 
-     - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows
+     - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows.
 
-     - [**Inkscape**](https://inkscape.org/) - download the `.exe` installer, not `.msi`. While installing tick `Add Inkscape to the System Path` option. Inkscape won't work otherwise.
+     - [**Inkscape**](https://inkscape.org/) - download the `.exe` installer, not `.msi`. While installing tick `Add Inkscape to the System Path` option. Inkscape won't work otherwise, and the document won't compile.
 
-     - [**git**](https://git-scm.com/) to commit files to the repository
+     - [**git**](https://git-scm.com/) to commit files to the repository and provide command line environment.
 
-     - [**Perl**](https://www.perl.org/get.html) - download the Strawberry Perl binary release.
+     - [**Perl**](https://www.perl.org/get.html) - download the Strawberry Perl binary release, it enables the build script.
+
+     - [**ImageMagick**](https://imagemagick.org/script/download.php#windows) - a tool for processing images.
 
     Optionally, to edit the TeX files conveniently:
 
@@ -59,7 +61,8 @@ Please read the instructions for your operating system (or container).
     ```
 
     This will build the draft scenarios book.
-    If the build is successful, you are all set to start working on your scenario.
+    If the build is successful, it will open the PDF file for you, and you are all set to start working on your scenario.
+    Check out the [**how-to guide**](scenarios.md) for writing your first scenario.
 
     If you're seeing an error about a missing file, please configure MiKTeX to [download missing packages automatically](https://yihui.org/en/2018/03/miktex-auto-install/).
 

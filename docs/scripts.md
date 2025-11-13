@@ -103,12 +103,12 @@ Visually compares pages between your local PDF build and a reference version fro
 
 **Usage:**
 ```bash
-tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
+tools/compare_pages.sh (-l <language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
 ```
 
 **Mandatory Arguments (choose one):**
 
-- `-l, --language <language>`: Specify the language for comparison (e.g., `en`, `pl`)
+- `-l, --language <language>`: Specify the language for comparison (e.g., `pl`, `fr`, defaults to `en` if unspecified)
 - `-d, --drafts`: Compare draft scenarios (mutually exclusive with `-l`)
 
 **Required:**
@@ -117,7 +117,7 @@ tools/compare_pages.sh (-l <language> | -d) -r <range> [OPTIONS]
 
 **Optional:**
 
-- `-s, --single-page`: Combine all compared pages into a single image
+- `-s, --scenario <SEARCH>`: Compare against a single scenario.
 - `-m, --mono`: Use monochrome version for baseline comparison
 
 **Examples:**
@@ -128,6 +128,9 @@ tools/compare_pages.sh -l en -r 11
 
 # Compare pages 1-10 of drafts, combined into a single image
 tools/compare_pages.sh -d -r 1-10 --single-page
+
+# Compare pages 1-2 of the Wandering Dragons scenario
+tools/compare_pages.sh -s wandering -r 1-2
 ```
 
 It is a good practice to attach a screenshot of the comparison to the pull request, while updating scenarios.
