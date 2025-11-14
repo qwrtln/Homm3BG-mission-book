@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2024-10-22 22:57+0200\n"
-"PO-Revision-Date: 2024-10-22 22:57+0200\n"
+"PO-Revision-Date: 2025-11-14 18:13+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
@@ -24,18 +25,12 @@ msgstr ""
 
 #. type: tikzpicture
 #: sections/notes.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\includegraphics[width=\\linewidth]{\\art/dimension_door.png}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "[remember picture, overlay, blend mode=multiply]\n"
 "  \\node[inner sep=0, opacity=0.44] at (current page.center)\n"
 "  {\\includegraphics[width=\\paperwidth, height=\\paperheight]{\\layout/citadel_background.jpg}};"
 msgstr ""
-"\\begin{center}\n"
-"  \\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}\n"
-"\\end{center}\n"
-"\n"
+"[remember picture, overlay, blend mode=multiply]\n"
+"  \\node[inner sep=0, opacity=0.44] at (current page.center)\n"
+"  {\\includegraphics[width=\\paperwidth, height=\\paperheight]{\\layout/citadel_background.jpg}};"
