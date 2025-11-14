@@ -21,6 +21,8 @@ Please read the instructions for your operating system (or container).
 
      - [**ImageMagick**](https://imagemagick.org/script/download.php#windows) - a tool for processing images.
 
+     - [**Ghostscript**](https://www.ghostscript.com/releases/gsdnld.html) - download the 64 bit AGPL release. It will optimize PDF files.
+
     Optionally, to edit the TeX files conveniently:
 
      - [**VSCode**](https://code.visualstudio.com/Download) with [**TeX Workshop extension**](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), or
