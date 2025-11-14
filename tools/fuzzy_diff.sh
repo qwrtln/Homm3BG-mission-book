@@ -25,7 +25,7 @@ trap 'rm -rf -- "$MYTMPDIR"' EXIT
 msgattrib --only-fuzzy "$1" > "$MYTMPDIR/fuzzy_only.po"
 awk '/^#, fuzzy/ {print; found=1; next} found {print; if (/^msgstr/) exit}' "$MYTMPDIR/fuzzy_only.po" > "$MYTMPDIR/fuzzy_first.po"
 awk '/^#\|/,/^msgid/ {if ($0 ~ /^#\|/) print substr($0, 4)}' "$MYTMPDIR/fuzzy_first.po" > "$MYTMPDIR/old.po"
-awk '/^msgid/,/^msgstr/ {print}' "$MYTMPDIR/fuzzy_first.po" > "$MYTMPDIR/new.po"
+awk '/^msgid/ {found=1} found {if (/^msgstr/) exit; print}' "$MYTMPDIR/fuzzy_first.po" > "$MYTMPDIR/new.po"
 diff -u "$MYTMPDIR/old.po" "$MYTMPDIR/new.po" | delta \
   --no-gitconfig \
   --dark \

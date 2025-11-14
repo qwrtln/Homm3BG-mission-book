@@ -95,7 +95,7 @@ msgid ""
 "You should check it out if you haven't seen it yet.\n"
 "\n"
 msgstr ""
-"Ce projet s'inspire sans complexe des meilleures pratiques du projet de réécriture des règles (https://github.com/Heegu-sama/Homm3BG), notamment le code LaTeX, l'ingénierie GitHub et le cadre de traduction.\n"
+"Ce projet s'inspire sans complexe des meilleures pratiques du \\href{https://github.com/Heegu-sama/Homm3BG}{\\textbf{projet de réécriture des règles}}, notamment le code \\LaTeX{}, l'ingénierie GitHub et le cadre de traduction.\n"
 "Si vous ne connaissez pas encore, jetez y un œil.\n"
 "\n"
 
@@ -126,7 +126,7 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
-"\\textbf{Traduction Française}:} Nicolas Matoub\n"
+"\\textbf{Traduction Française:} Nicolas Matoub\n"
 "\n"
 
 #. type: multicols*
