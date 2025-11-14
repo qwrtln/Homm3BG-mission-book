@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-06-22 00:57+0200\n"
-"PO-Revision-Date: 2025-04-14 07:17+0100\n"
+"PO-Revision-Date: 2025-11-14 17:56+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -47,7 +48,7 @@ msgstr ""
 #. type: Plain text
 #: sections/what_to_play.tex:3
 msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
-msgstr ""
+msgstr "\\addsection{Que choisir}{\\images/forgetfulness.png}"
 
 #. type: multicols
 #: sections/what_to_play.tex:7
@@ -56,18 +57,17 @@ msgid ""
 "Follow these suggestions if you're not sure which Scenario is best for you.\n"
 "\n"
 msgstr ""
+"Suiez ces suggestions si vous n'est sur du Scénario à choisir.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Cooperative Mode}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Mode Coopératif}}\n"
 "\n"
 
 #. type: multicols
@@ -79,6 +79,10 @@ msgid ""
 "For more tactical play for two players, try \\pagelink{Sentinels}{Sentinels}.\n"
 "\n"
 msgstr ""
+"Si vous êtes nouveau joueur et voulez essayer \\textbf{d'apprendre les règles}, commencez avec \\pagelink{Emerald Island}{L'Ile d'Emeraude}.\n"
+"Pour une grande aventure \\textbf{jusque 6 joueurs} avec un combat épique à la fin, essayez \\pagelink{Titans' Stronghold}{La Forteresse des Titans}.\n"
+"Pour un jeu plus tactique à deux joueurs, essayez \\pagelink{Sentinels}{Sentinelles}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:15
@@ -87,6 +91,8 @@ msgid ""
 "\\subsection*{Clash Mode}\n"
 "\n"
 msgstr ""
+"\\subsection*{Mode Affrontement}\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:19
@@ -97,18 +103,19 @@ msgid ""
 "For an inevitable epic battle between two players with a possible siege, play \\pagelink{Dragoncurse Castle}{Dragoncurse Castle}.\n"
 "\n"
 msgstr ""
+"Si vous aimez jouer à 2 ou 4 joueurs un Scénario «Capturer le Graal» avec des twists intéressant, essayez \\pagelink{Bloody Grail}{Graal Sanglant}.\n"
+"Pour un combat de Boss excitant pour 2-3 joueurs, choisissez \\pagelink{The Hunt}{La Chasse}.\n"
+"Pour une bataille épique innévitable entre 2 joueurs avec un siège possible, jouez \\pagelink{Dragoncurse Castle}{Château Dragoncurse}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Campaign}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{Campagne}\n"
 "\n"
 
 #. type: multicols
@@ -118,18 +125,17 @@ msgid ""
 "There is a 3-Scenario Inferno \\pagelink{1. A Devilish Plan}{Dungeons and Devils} Campaign at the end if you prefer solo play.\n"
 "\n"
 msgstr ""
+"Il y a une campagne Inferno en 3 Scénarios à la fin si vous préférez jouer solo \\pagelink{1. A Devilish Plan}{Donjons et Diables}.\n"
+"\n"
 
 #. type: multicols
 #: sections/what_to_play.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\subsection*{Recommendations}\n"
 "\n"
 
 #. type: multicols
@@ -139,8 +145,10 @@ msgid ""
 "For information regarding your play time, strategizing, and custom rules, check out \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
 "\n"
 msgstr ""
+"Pour des informations concernant le temps de jeu, la stratégie, et les règles maisons, vérifiez \\pagelink{Recommendations}{Recommendations} à la fin de ce libre\n"
+"\n"
 
 #. type: Plain text
 #: sections/what_to_play.tex:33
 msgid "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
-msgstr ""
+msgstr "\\iftoggle{printable}{ \\enlargethispage{2\\baselineskip} }{}"
