@@ -135,7 +135,7 @@ msgid ""
 "\\subsection*{Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{Recommendations}\n"
+"\\subsection*{Recommandations}\n"
 "\n"
 
 #. type: multicols
@@ -145,7 +145,7 @@ msgid ""
 "For information regarding your play time, strategizing, and custom rules, check out \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
 "\n"
 msgstr ""
-"Pour des informations concernant le temps de jeu, la stratégie, et les règles maisons, vérifiez \\pagelink{Recommendations}{Recommendations} à la fin de ce libre\n"
+"Pour des informations concernant le temps de jeu, la stratégie, et les règles maisons, vérifiez \\pagelink{Recommendations}{Recommandations} à la fin de ce libre\n"
 "\n"
 
 #. type: Plain text
