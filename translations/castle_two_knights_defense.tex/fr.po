@@ -271,6 +271,8 @@ msgid ""
 "\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
 msgstr ""
+"\\textbf{Deck Ennemi:} 3 × Cartes Force, 3 × Cartes Magie, 1 × Carte Capacité\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:42
@@ -280,6 +282,8 @@ msgid ""
 "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
 msgstr ""
+"\\textbf{Sorts Ennemis:} 2 × Foudre, 1 × Malédiction\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:44
@@ -289,6 +293,8 @@ msgid ""
 "\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
 "\n"
 msgstr ""
+"\\textbf{Spécial:} Cape du Roi Mort-Vivant IV et VI, l'ennemi jouera ce qu'il peut\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
@@ -301,6 +307,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{1 × Tuile de Départ (I)}\n"
+"\\begin{itemize}\n"
+"    \\item 1 × Nécropole (S1)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
@@ -314,6 +325,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4 × Tuiles Proches (IV--V)}\n"
+"\\begin{itemize}\n"
+"    \\item 2 × Nécropole (N1, N4)\n"
+"    \\item 2 × Donjon (N2, N5)\n"
+"\\end{itemize}\n"
+"\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
