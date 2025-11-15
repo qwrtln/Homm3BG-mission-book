@@ -146,7 +146,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\\textbf{Nombre de Joueurs:} 2 ou 4\n"
+"\\textbf{Nombre de Joueurs :} 2 ou 4\n"
 "\n"
 
 #. type: multicols*
@@ -297,7 +297,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\columnbreak\n"
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
 "\n"
 
 #. type: multicols*

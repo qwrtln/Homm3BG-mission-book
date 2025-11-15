@@ -165,8 +165,8 @@ msgid ""
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
 "\n"
 msgstr ""
-"A l'exception de Flèche Magique, chaque sort est en double dans le Deck Sort.\n"
-"Après la préparation du Deck de Départ M\\&M des joueurs, il est recommandé de retiré les Flèches Magiques du Deck Sort pour n'en laisser que deux.\n"
+"À l'exception de Flèche Magique, chaque sort est en double dans le Deck Sort.\n"
+"Après la préparation du Deck de Départ M\\&M des joueurs, il est recommandé de retirer les Flèches Magiques du Deck Sort pour n'en laisser que deux.\n"
 "\n"
 
 #. type: multicols*
@@ -186,7 +186,7 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
-"A la distribution des Tuiles Lointaines (II--III), chaque joueur doit avoir au moins une Tuile avec une Enclave.\n"
+"À la distribution des Tuiles Lointaines (II--III), chaque joueur doit avoir au moins une Tuile avec une Enclave.\n"
 "\n"
 
 #. type: multicols*
@@ -227,8 +227,8 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
-"Les Combat de Rang V--VII sont considérés comme un Rang de moins en Difficile ou Impossible\n"
-"Par exemple, un Combat de Rang VII en Difficile serait contre 2 × Unités Neutres \\svg{azure} .\n"
+"Les Combats de Rang V--VII sont considérés comme un Rang de moins en Difficile ou Impossible.\n"
+"Par exemple, un Combat de Rang VII en Difficile serait contre 2 × Unités Neutres \\svg{azure}.\n"
 "\n"
 
 #. type: multicols*
