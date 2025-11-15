@@ -453,6 +453,9 @@ msgid ""
 "  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
 "\n"
 msgstr ""
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (7, -11);\n"
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:132
@@ -465,6 +468,12 @@ msgid ""
 "  \\greenline{10.5}{-13.75}{-65}\n"
 "\n"
 msgstr ""
+"  \\greenline{11.4}{-11.2}{13}\n"
+"  \\greenline{7.0}{-11.15}{162}\n"
+"  \\greenline{9.24}{-9.5}{90}\n"
+"  \\greenline{7.8}{-13.75}{-127}\n"
+"  \\greenline{10.5}{-13.75}{-65}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:135

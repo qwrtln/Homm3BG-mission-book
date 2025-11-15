@@ -401,7 +401,7 @@ for page in "${pages[@]}"; do
   echo "Combining pages $(printf %02d "$page")..."
   echo "${tmp_dir}"/*"$(printf %02d "$page")".png
   echo "${tmp_dir}/${identifier}-$(printf %02d "$page").png"
-  montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
+  magick montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
   rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
 done
 wait

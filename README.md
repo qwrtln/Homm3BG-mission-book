@@ -398,6 +398,11 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
+            <td>🤝 The Ambushed Accord (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-color/the_ambushed_accord_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-mono/the_ambushed_accord_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>⚔️ Arcane Artillery (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
