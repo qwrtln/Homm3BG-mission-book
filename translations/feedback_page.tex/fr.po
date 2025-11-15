@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-10-06 09:47+0000\n"
-"PO-Revision-Date: 2025-09-30 01:09+0200\n"
+"PO-Revision-Date: 2025-11-14 16:51+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,13 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: Plain text
 #: sections/feedback_page.tex:4
-#, fuzzy
-#| msgid "\\addsection{Random Scenario}{\\images/random.png}"
 msgid "\\addsection{Got any feedback?}{\\images/orb_of_the_firmament.png}"
-msgstr "\\addsection{Scénario Aléatoire}{\\images/random.png}"
+msgstr "\\addsection{Avez vous des retours}{\\images/orb_of_the_firmament.png}"
 
 #.  no-check-caps
 #. type: Plain text
@@ -32,16 +31,15 @@ msgid ""
 "there anything that could be improved? The authors would really appreciate "
 "your feedback.  Please reach out using one of the channels below.  Cheers!"
 msgstr ""
+"Nous espérons que ce Scénario vous a plu. Il a été créé par des amateurs "
+"pour des amateurs, sur leur temps libre. Avez vous apprécié y jouer? Avez "
+"vous des suggestions à améliorer? Vos retours sont importants pour les "
+"auteurs. N'hésitez pas à nous contacter via l'un des liens ci-dessous. À "
+"bientôt!"
 
 #. type: multicols
 #: sections/feedback_page.tex:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "{2}\n"
 "  \\bigbreak\n"
@@ -51,42 +49,33 @@ msgid ""
 "  \\href{\\formurl}{https://docs.google.com/forms/...}\n"
 "\n"
 msgstr ""
-"    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Scannez pour ouvrir le dépôt \\textbf{GitHub}. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"{2}\n"
+"  \\bigbreak\n"
+"  \\centering\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
+"  Scanner pour ouvrir le \\textbf{formulaire}.\\\\\n"
+"  \\href{\\formurl}{https://docs.google.com/forms/...}\n"
+"\n"
 
 #. type: multicols
 #: sections/feedback_page.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "  \\columnbreak\n"
 "  \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
 "  Scan to join the Heroes III Board Game community \\textbf{Discord} server.\\\\\n"
 "  \\href{\\discordurl}{\\discordurl}"
 msgstr ""
-"    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Scannez pour ouvrir le dépôt \\textbf{GitHub}. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"  \\columnbreak\n"
+"  \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"  Scanner pour rejoindre le serveur \\textbf{Discord} Heroes III Board Game community.\\\\\n"
+"  \\href{\\discordurl}{\\discordurl}"
 
 #. type: center
 #: sections/feedback_page.tex:30
-#, fuzzy
-#| msgid ""
-#| "\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, "
-#| "keepaspectratio]{\\art/land_mine.png}}"
 msgid ""
 "\\transparent{0.2}{\\includegraphics[width=0.3\\linewidth, keepaspectratio]"
 "{\\art/mirth.png}}"
 msgstr ""
-"\\transparent{0.3}{\\includegraphics[width=0.6\\linewidth, keepaspectratio]"
-"{\\art/land_mine.png}}"
+"\\transparent{0.2}{\\includegraphics[width=0.3\\linewidth, keepaspectratio]"
+"{\\art/mirth.png}}"

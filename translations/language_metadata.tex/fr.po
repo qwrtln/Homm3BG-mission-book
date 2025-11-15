@@ -26,7 +26,7 @@ msgstr ""
 #. type: Plain text
 #: sections/language_metadata.tex:4
 msgid "\\providecommand{\\pageshorthand}{p.}"
-msgstr ""
+msgstr "\\providecommand{\\pageshorthand}{p.}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:6
@@ -61,4 +61,4 @@ msgstr "\\def\\campaignstitle{Campagne}"
 #. type: Plain text
 #: sections/language_metadata.tex:17
 msgid "\\def\\lang_header_adjustment{0px}"
-msgstr ""
+msgstr "\\def\\lang_header_adjustment{0px}"
