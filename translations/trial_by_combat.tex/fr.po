@@ -83,7 +83,7 @@ msgid ""
 "\\textbf{Author:} Laamakala\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur:} Laamakala\n"
+"\\textbf{Auteur :} Laamakala\n"
 "\n"
 
 #. type: multicols*
@@ -117,7 +117,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\\textbf{Nombre de Joueurs:} 2 -- 4\n"
+"\\textbf{Nombre de Joueurs :} 2 -- 4\n"
 "\n"
 
 #. type: multicols*
