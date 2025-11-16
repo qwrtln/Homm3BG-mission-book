@@ -89,6 +89,7 @@ RUN <<EOF
     collection-pictures \
     enumitem \
     etexcmds \
+    fontsetup \
     footmisc \
     fullwidth \
     imakeidx \
