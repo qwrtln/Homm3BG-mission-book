@@ -146,7 +146,7 @@ RUN <<EOF
     /opt/texlive/texdir/bin/*/etex \
     /texlive.profile \
     /texlive_pgp_keys.asc \
-    /tmp/install-tl
+    /tmp/install-tl || true
   cd /
   git config --global --add safe.directory /data
   echo 'alias build="tools/build.sh"' >> /root/.bashrc
