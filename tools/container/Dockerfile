@@ -95,7 +95,9 @@ RUN <<EOF
     listings  \
     listingsutf8  \
     luabidi \
+    lualatex-math \
     multirow \
+    newcomputermodern \
     nth \
     oberdiek \
     outlines \
@@ -148,8 +150,9 @@ RUN <<EOF
   cd /
   git config --global --add safe.directory /data
   echo 'alias build="tools/build.sh"' >> /root/.bashrc
-  echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
+  echo 'alias compare="tools/compare_pages.sh"' >> /root/.bashrc
   echo 'alias cpo4a="tools/po4a_commit.sh"' >> /root/.bashrc
+  echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
 EOF
 
 WORKDIR /data
