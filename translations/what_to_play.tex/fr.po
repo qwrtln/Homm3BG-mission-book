@@ -104,7 +104,7 @@ msgid ""
 "\n"
 msgstr ""
 "Si vous aimez jouer à 2 ou 4 joueurs un Scénario «Capturer le Graal» avec des twists intéressant, essayez \\pagelink{Bloody Grail}{Graal Sanglant}.\n"
-"Pour un combat de boss excitant pour 2-3 joueurs, choisissez \\pagelink{The Hunt}{La Chasse}.\n"
+"Pour un combat de Boss excitant pour 2-3 joueurs, choisissez \\pagelink{The Hunt}{La Chasse}.\n"
 "Pour une bataille épique inévitable entre 2 joueurs avec un siège possible, jouez \\pagelink{Dragoncurse Castle}{Château Dragoncurse}.\n"
 "\n"
 
