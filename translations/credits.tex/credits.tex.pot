@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-30 13:50+0200\n"
+"POT-Creation-Date: 2025-11-15 10:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
 #: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:283
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -45,7 +45,7 @@ msgstr ""
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
 #: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:304
+#: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -57,7 +57,7 @@ msgstr ""
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:314
+#: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -101,7 +101,7 @@ msgstr ""
 #: sections/credits.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Saveliy Ivanov, Tyson Heckert, Justus Törmälehto, Adam Obuchowicz, Vojtěch Růžička.  % no-check-caps\n"
+"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
 "\n"
 msgstr ""
 

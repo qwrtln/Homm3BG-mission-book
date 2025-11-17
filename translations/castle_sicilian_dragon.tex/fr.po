@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
-"PO-Revision-Date: 2025-04-14 07:17+0100\n"
+"POT-Creation-Date: 2025-11-15 10:46+0000\n"
+"PO-Revision-Date: 2025-11-14 16:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -252,6 +253,8 @@ msgid ""
 "\\addscenariosection[subsection]{1}{Castle Campaign $-$ The Queen's Gambit}"
 "{2. Sicilian Dragon}{\\images/catherine.png}"
 msgstr ""
+"\\addscenariosection[subsection]{1}{Campagne Château $-$ Gambit de la Reine}"
+"{2. Sicilienne Dragon}{\\images/catherine.png}"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:12
@@ -261,18 +264,18 @@ msgid ""
 "Following the Archangels to a distant, inhospitable land, she must now navigate her way through.}\n"
 "\n"
 msgstr ""
+"\\textit{Convaincue que le seul moyen de sauver Steadwick est d'attaquer Vhidhax, Catherine lance ses minces troupes à l'assaut.\n"
+"Suivant les Archanges jusqu'à une contrée lointaine et inhospitalière, elle doit désormais se frayer un chemin.}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This Scenario is played over 16 Rounds (15 on Impossible difficulty).\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "This Scenario plays out over 11 Rounds.\n"
 "\n"
 msgstr ""
-"Ce scénario se joue en 16 manches maximum (15 en difficulté impossible).\n"
+"Ce scénario se joue en 11 Manches.\n"
 "\n"
 
 #. type: multicols
@@ -282,6 +285,8 @@ msgid ""
 "\\textbf{Faction Hero:} The same Hero as Scenario 1\n"
 "\n"
 msgstr ""
+"\\textbf{Héros de Faction:} Le même Héros qu'au Scénario 1\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:24
@@ -290,6 +295,8 @@ msgid ""
 "\\textbf{Starting Resources:} The resources you ended with in Scenario 1\n"
 "\n"
 msgstr ""
+"\\textbf{Ressources de Départ:} Les Ressources de la fin du Scénario 1\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:28
@@ -298,6 +305,8 @@ msgid ""
 "\\textbf{Starting Units:} The army you ended with in Scenario 1\n"
 "\n"
 msgstr ""
+"\\textbf{Unités de Départ:} L'armée de la fin du Scénario 1\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:32
@@ -306,6 +315,8 @@ msgid ""
 "\\textbf{Bonus:} Begin the Scenario at Hero Level 2, but do not take new Ability Cards.\n"
 "\n"
 msgstr ""
+"\\textbf{Bonus:} Commencez le Scénario au Niveau 2, mais ne pas prendre de Carte de Compétence.\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:38
@@ -314,6 +325,8 @@ msgid ""
 "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Few Dread Knights, a Few Ghost Dragons\n"
 "\n"
 msgstr ""
+"\\textbf{Armée Ennemie:} Groupe de Squelettes, Groupe de Zombie, Groupe de Liches, Quelques Chevaliers de l'Effroi, Quelques Dragons Fantomes\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:40
@@ -323,6 +336,8 @@ msgid ""
 "\\textbf{Enemy Deck:} 3 × Might Cards, 3 × Magic Cards, 1 × Skill Card\n"
 "\n"
 msgstr ""
+"\\textbf{Deck Ennemi:} 3 × Cartes Force, 3 × Cartes Magie, 1 × Carte Capacité\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:42
@@ -332,6 +347,8 @@ msgid ""
 "\\textbf{Enemy Spells:} 2 × Lightning Bolt, 1 × Curse\n"
 "\n"
 msgstr ""
+"\\textbf{Sorts Ennemis:} 2 × Foudre, 1 × Malédiction\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:44
@@ -341,6 +358,8 @@ msgid ""
 "\\textbf{Enemy Skills:} Cloak of the Undead King IV and VI, the enemy will play whichever it can\n"
 "\n"
 msgstr ""
+"\\textbf{Spécial:} Cape du Roi Mort-Vivant IV et VI, l'ennemi jouera ce qu'il peut\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:46
@@ -349,6 +368,8 @@ msgid ""
 "\\textbf{Neutral Enemy Deck:} 4 × Might Cards\n"
 "\n"
 msgstr ""
+"\\textbf{Deck Ennemi Neutre:} 4 × Cartes Force\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:55
@@ -361,6 +382,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{1 × Tuile de Départ (I)}\n"
+"\\begin{itemize}\n"
+"    \\item 1 × Nécropole (S1)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:60
@@ -372,6 +398,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{3 × Tuiles Lointaines (II--III)}\n"
+"\\begin{itemize}\n"
+"    \\item 3 × Tuiles au hasard Nécropole ou Donjon (F1, F2, F4, F5, F7, F8)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:66
@@ -385,6 +416,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{4 × Tuiles Proches (IV--V)}\n"
+"\\begin{itemize}\n"
+"    \\item 2 × Nécropole (N1, N4)\n"
+"    \\item 2 × Donjon (N2, N5)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:71
@@ -396,6 +433,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{1 × Tuile Centre (VI--VII)}\n"
+"\\begin{itemize}\n"
+"  \\item 1 × Tuile Graal (C2)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:73
@@ -404,6 +446,8 @@ msgid ""
 "\\textbf{\\MakeUppercase{Note:}} Place Tile S1 aside, face up.\n"
 "\n"
 msgstr ""
+"\\textbf{\\MakeUppercase{Note:}} Placez la Tuile S1 de côté, face visible.\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:77
@@ -412,6 +456,8 @@ msgid ""
 "Place your Castle Hero on the empty Field of the rightmost Far Tile.\n"
 "\n"
 msgstr ""
+"Placez votre Héros Château sur la Case Vide sur la Tuile Lointaine la plus à droite.\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:79
@@ -420,6 +466,8 @@ msgid ""
 "Place a Necropolis Hero on the center Field of the S1 Necropolis Tile.\n"
 "\n"
 msgstr ""
+"Placez un Héros Nécropole sur la Case Centrale de la Tuile Nécropole S1.\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:86
@@ -431,6 +479,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Trouver les Archanges\n"
+"  \\item Vaincre l'armée ennemie\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:93
@@ -443,16 +496,16 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
+"\\begin{itemize}\n"
+"  \\item Vous perdez un combat.\n"
+"  \\item Vous arrivez à la fin de la Manche 11\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:100
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, and Mystical Garden on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
 "\\begin{itemize}\n"
@@ -460,9 +513,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{4$^{e}$, 8$^{e}$ et 12$^{e}$ tours :}\n"
+"\\textbf{Manche 1:}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les cubes noirs des moulins à eau, moulin à vent et jardins mystique sur le plateau.\n"
+"  \\item Lisez la section «Dans les Terres Désolées»\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -476,6 +529,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{En visitant le premier Obélisque:}\n"
+"\\begin{itemize}\n"
+"  \\item Lisez la section «La Première Relique»\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:110
@@ -487,6 +545,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{En visitant le second Obélisque:}\n"
+"\\begin{itemize}\n"
+"  \\item Lisez la section «L'Épreuve de Force»\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:115
@@ -498,6 +561,11 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Quand vous complétez le Scénario:}\n"
+"\\begin{itemize}\n"
+"  \\item Lisez la section «La Fuite»\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:132
@@ -511,12 +579,25 @@ msgid ""
 "  \\item Each time you visit a Trading Post, draw the top Cards from the \\svg{bronze} bronze, \\svg{silver} silver, and \\svg{golden} golden neutral enemy Decks.\n"
 "    You may recruit any, or all of them by paying their cost.\n"
 "    Shuffle any un-hired ones back into their Decks.\n"
-"  \\item The Grail may be sold at a trading post for 30 \\svg{gold} \\textit{or} \\textbf{Search (3)} the relic Deck, twice.\n"
+"  \\item The Grail may be sold at a trading post for 30 \\svg{gold} \\textit{or} \\textbf{Search (3)} the Artifact Deck, twice.\n"
 "  \\item When fighting the enemy at their Town, they have a Citadel.\n"
 "    Don't forget to add the walls and arrow tower to make the battle a siege.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item L'armée ennemie ne se déplace pas.\n"
+"  \\item Votre niveau de Héros maximum est 6.\n"
+"  \\item Tous les bâtiments sont indisponibles, construire n'est pas possible.\n"
+"  \\item Tous les ennemis neutres combattent avec le Deck Ennemi Neutre.\n"
+"  \\item À chaque visite du Comptoir, piochez une Carte de chaque Deck Ennemis Neutres \\svg{bronze} bronze, \\svg{silver} argent, et \\svg{golden} or.\n"
+"    Vous pouvez les recruter chacune en payant le coût.\n"
+"    Mélangez les non recrutés dans leurs Decks.\n"
+"  \\item Le Graal peut être vendu au Comptoir pour 30 \\svg{gold} \\textit{ou} \\textbf{Fouiller (3)} le Deck Artefact, deux fois.\n"
+"  \\item L'ennemie dans sa Ville possède une Citadelle .\n"
+"    N'oubliez pas d'ajouter les Murs et la Tourelle pour le siège.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: campaigns/castle_sicilian_dragon.tex:140
@@ -527,6 +608,10 @@ msgid ""
 "    \\includegraphics[width=0.80\\paperwidth]{\\_assets/maps/castle_sicilian_dragon.png}\n"
 "  };"
 msgstr ""
+"[overlay]\n"
+"  \\node at (9.0, -6.0) {\n"
+"    \\includegraphics[width=0.80\\paperwidth]{\\_assets/maps/castle_sicilian_dragon.png}\n"
+"  };"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:148
@@ -535,6 +620,8 @@ msgid ""
 "\\textbf{Into the Badlands}\n"
 "\n"
 msgstr ""
+"\\textbf{Dans les Terres Désolées}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:152
@@ -545,6 +632,9 @@ msgid ""
 "With the enemy stronghold still nowhere in sight, locating it would take time, and the inhospitable landscape would not be kind.\n"
 "\n"
 msgstr ""
+"Catherine croisa les bras et s'appuya sur sa selle en scrutant les Terres Désolées où ils avaient été conduits.\n"
+"Les Archanges avaient devancé le petit groupe qu'elle avait assemblé tant bien que mal, et elle se demanda si elle avait eu tort de les laisser partir.\n"
+"Le fort ennemi étant toujours introuvable, le localiser prendrait du temps, et le paysage hostile ne leur faciliterait pas la tâche.\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:157
@@ -556,6 +646,11 @@ msgid ""
 "Besides the poor conditions, I've heard the locals are known for their particular… ferocity.''\n"
 "\n"
 msgstr ""
+"Rion s'arrêta à côté d'elle après avoir fini le contenu de sa gourde.\n"
+"Il s'essuya le visage de sueur et de bave avant de parler.\n"
+"«Ce n'est pas l'endroit idéal pour se battre.\n"
+"Outre les mauvaises conditions, j'ai entendu que les locaux sont réputés pour leur… férocité particulière.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:160
@@ -565,6 +660,9 @@ msgid ""
 "The truth was she was more worried about that possibility than she let on, but she had to maintain her composure to protect the image of her strength.\n"
 "\n"
 msgstr ""
+"«Eh bien, il va falloir les remettre à leur place.», répondit froidement Catherine.\n"
+"En vérité, cette éventualité l'inquiétait bien plus qu'elle ne le laissait paraître, mais elle devait garder son sang-froid pour préserver l'image de sa force.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:162
@@ -572,7 +670,7 @@ msgstr ""
 msgid ""
 "``You think they'll fight for us?'' Rion asked with a raised eyebrow.\n"
 "\n"
-msgstr ""
+msgstr "« Se battront-il pour nous ?» demanda Rion en haussant un sourcil.\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:166
@@ -583,6 +681,10 @@ msgid ""
 "For the rest, the sword will do.''\n"
 "\n"
 msgstr ""
+"Catherine serra fermement un lourd sac de pièces qu'elle portait à ses côtés et le jeta sur ses genoux, en tintant comme des clochettes pour appuyer ses propos.\n"
+"«Je pense qu'on peut s'arranger généreusement.\n"
+"Pour le reste, l'épée fera l'affaire.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:168
@@ -591,6 +693,8 @@ msgid ""
 "\\textbf{The First Relic}\n"
 "\n"
 msgstr ""
+"\\textbf{La Première Relique}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:172
@@ -601,6 +705,10 @@ msgid ""
 "Throwing an arm forward, she signaled Rion to proceed with an inspection.\n"
 "\n"
 msgstr ""
+"Au loin, une clairière de terre craquelée menait à un grand Obélisque émergeant du sol tel un repère massif.\n"
+"Catherine avait vu nombre d'artefacts magiques dans sa vie pour voir que la structure était un lieu de pouvoir.\n"
+"D'un geste de la main, elle signala à Rion de procéder à l'inspection.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:176
@@ -611,6 +719,10 @@ msgid ""
 "As awe-inspiring as it was, equally apparent was the time-worn damage.\n"
 "\n"
 msgstr ""
+"Le mage s'approcha lentement, pour effleurer de sa main nue la pierre froide aux parois lisses.\n"
+"Des runes complexes y étaient gravées, des écritures de langues oubliées.\n"
+"Aussi impressionnant que cela fut, l'usure était tout aussi apparente.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:182
@@ -623,6 +735,12 @@ msgid ""
 "It's damaged, and where the magic in the runes should be strong, even glowing, they're dark, and any power is long decayed.''\n"
 "\n"
 msgstr ""
+"Après un instant, il se tourna vers Catherine.\n"
+"«C'est une balise de transport», dit-il.\n"
+"«Comme un monolithe, mais à plus courte portée.\n"
+"Du moins… c'en était une.\n"
+"Elle est endommagée, et là où les runes magiques devraient être puissantes, voire luisantes, elles sont sombres, et toute énergie s'est dissipée.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:186
@@ -633,6 +751,10 @@ msgid ""
 "I can still feel residual heat; the Archangels were here.''\n"
 "\n"
 msgstr ""
+"Catherine descendit de cheval et inspecta lentement les lieux avant de parler.\n"
+"«Certains dégâts sont récents.\n"
+"Je ressens encore une chaleur résiduelle; les Archanges étaient ici.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:188
@@ -641,6 +763,8 @@ msgid ""
 "``How can you be sure? Surely, some would have found us by now and notified us of their progress.''\n"
 "\n"
 msgstr ""
+"«Comment pouvez-vous en être sûr? Certains nous auraient déjà trouvés et nous auraient informés de leurs progrès.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:191
@@ -650,18 +774,18 @@ msgid ""
 "``Come, let's see if other such beacons exist.''\n"
 "\n"
 msgstr ""
+"«Ils ne m'ont jamais laissé tomber.», grogna Catherine.\n"
+"«Viens, voyons s'il existe d'autres balises de ce genre.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:193
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Showdown}\n"
 "\n"
 msgstr ""
-"\\textbf{Bâtiments de départ :} Aucun\n"
+"\\textbf{L'Épreuve de Force}\n"
 "\n"
 
 #. type: multicols*
@@ -671,6 +795,8 @@ msgid ""
 "Sounds of battle perked the ears of Catherine's forces, and she urged her steed forward to catch sight of the combatants.\n"
 "\n"
 msgstr ""
+"Des bruits de bataille parvinrent aux oreilles des troupes de Catherine, et elle pressa son destrier pour voir les combattants.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:198
@@ -680,6 +806,9 @@ msgid ""
 "Several Archangels were on the ground, locked in combat with the remains of a larger undead force.\n"
 "\n"
 msgstr ""
+"Au milieu de crêtes escarpées et de rochers déchiquetés, un autre Obélisque se dévoila, les derniers moments d'une bataille se déroulant à ses alentours.\n"
+"Plusieurs archanges étaient au sol, engagés dans un combat contre les restes d'une armée de morts-vivants plus nombreuse.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:200
@@ -688,6 +817,8 @@ msgid ""
 "Approaching at speed, Catherine raised a fist in the air to salute the holy warriors, and several rasped their bronze chestplates in return.\n"
 "\n"
 msgstr ""
+"Approchant à vive allure, Catherine leva son poing pour saluer ces guerriers saints, et en retour ils frappèrent leurs armures de bronze.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:205
@@ -699,6 +830,11 @@ msgid ""
 "We barely managed to intercept them in time to preserve this one.''\n"
 "\n"
 msgstr ""
+"«Reine Catherine, vous nous avez épargné la peine de vous trouver», dit l'ange en chef de sa voix grave.\n"
+"Il désigna l'Obélisque d'un geste, tandis que les bruits de la bataille s'éteignaient enfin.\n"
+"«Les ennemis comptaient nous empêcher d'atteindre ces édifices en les détruisant.\n"
+"Nous avons réussi de justesse à les intercepter à temps pour préserver celui-ci.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:211
@@ -711,6 +847,12 @@ msgid ""
 "With luck, this will take us directly to the enemy stronghold.''\n"
 "\n"
 msgstr ""
+"Rion passa devant eux au trot alors qu'ils parlaient, concentré sur l'examen de l'Obélisque intact.\n"
+"Comme précédemment, il commença à poser la main sur la pierre froide, mais se rétracta avant de la toucher.\n"
+"« Il est actif ! » dit-il avec enthousiasme.\n"
+"« C'est peut-être l'opportunité qu'il nous faut.\n"
+"Avec de la chance, cela nous mènera directement à la forteresse ennemie.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:214
@@ -720,6 +862,9 @@ msgid ""
 "She looked back at the ragtag group of forces she'd gathered and hoped it would be enough for a siege.\n"
 "\n"
 msgstr ""
+"Catherine sourit, en serrant le bras de l'ange pour le remercier de son travail.\n"
+"Elle jeta un dernier regard à la troupe disparate qu'elle avait rassemblée, l'espérant suffisante pour un siège.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:220
@@ -732,6 +877,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textcolor{darkcandyapplered}{Ajoutez Quelques Archanges à votre armée.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Vous pouvez vous téléporter à la Ville ennemie sur la tuile S1.\n"
+"    Sinon, vous pouvez plus tard en payant un \\svg{movement-red} sur cet Obélisque.}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:223
@@ -740,6 +891,8 @@ msgid ""
 "\\textbf{The Escape}\n"
 "\n"
 msgstr ""
+"\\textbf{La Fuite}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:226
@@ -749,6 +902,9 @@ msgid ""
 "It was an eye for an eye, and she relished driving the final blow into the last enemy ranks still in the courtyard herself.\n"
 "\n"
 msgstr ""
+"Les épais murs macabres, démoniaques, mais brisés et la majeure partie des forces du nécromancien anéantie, le château était à Catherine.\n"
+"Œil pour œil, dent pour dent, elle savourait le plaisir d'asséner elle-même le coup de grâce aux derniers ennemis encore dans la cour.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:231
@@ -760,6 +916,11 @@ msgid ""
 "Catherine's campaign wasn't finished yet.\n"
 "\n"
 msgstr ""
+"Malheureusement, après de longues recherches, Vhidhax restait introuvable.\n"
+"Catherine courût aux remparts juste à temps pour apercevoir le nécromancien s'enfuir avec une grande suite qui s'était discrètement éclipsée pendant la bataille.\n"
+"Il se dirigeait vers le nord, s'enfonçant toujours plus profondément dans les terres désolées et s'éloignant de chez elle.\n"
+"La campagne de Catherine n'était pas encore terminée.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:236
@@ -771,6 +932,11 @@ msgid ""
 "Rion caught up with her a minute later, and the two exchanged looks of exhaustion.\n"
 "\n"
 msgstr ""
+"Catherine se retourna pour observer le champ de bataille d'en haut.\n"
+"Le bilan des victimes était lourd.\n"
+"Des corps, frais ou en décomposition, jonchaient le sol, parmi lesquels plusieurs Archanges.\n"
+"Rion la rejoignit une minute plus tard, et ils échangèrent un regard épuisé.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:238
@@ -779,6 +945,8 @@ msgid ""
 "``It's done,'' Rion said through panting breaths.\n"
 "\n"
 msgstr ""
+"«C'est fait», dit Rion entre deux inspirations.\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:241
@@ -788,6 +956,9 @@ msgid ""
 "The necromancer lives, and he flees north.''\n"
 "\n"
 msgstr ""
+"«Non.\n"
+"Le nécromancien vit et a fui vers le nord.»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:244
@@ -797,6 +968,9 @@ msgid ""
 "The Archangels are too few to continue; what hope do we have?''\n"
 "\n"
 msgstr ""
+"«Mais... nos forces.\n"
+"Les Archanges sont trop peu pour continuer; quel espoir avons nous?»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:248
@@ -807,6 +981,10 @@ msgid ""
 "Steadwick will never be safe otherwise!''\n"
 "\n"
 msgstr ""
+"«Il y a toujours de l'espoir, mon ami.\n"
+"Nous utiliserons ce château pour le ravitaillement et les chasserons avant que le démon n'assemble ses forces.\n"
+"Steadwick ne sera pas en sécurité sinon!»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:251
@@ -816,6 +994,9 @@ msgid ""
 "``We don't need to fight this hard; Vhidhax is not your father, Catherine…''\n"
 "\n"
 msgstr ""
+"«C'est insensé», soupira Rion.\n"
+"«Nous n'avons pas à nous battre autant; Vhidhax n'est pas ton père, Catherine…»\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:257
@@ -828,6 +1009,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item \\textcolor{darkcandyapplered}{Retirez les Archanges de votre armée.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Gardez le reste de vos forces et de vos ressources pour le prochain Scénario.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Réinitialisez votre Héros en suivant les règles de campagne.}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:262
@@ -839,6 +1026,7 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\vspace{2em}\n"
 "\\begin{center}\n"
 "  \\framedimage[0.75\\linewidth]{\\art/necropolis_town.jpg}\n"
 "\\end{center}\n"

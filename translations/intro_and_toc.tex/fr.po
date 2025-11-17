@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-10-23 21:18+0000\n"
-"PO-Revision-Date: 2025-09-30 13:50+0200\n"
+"PO-Revision-Date: 2025-11-14 18:12+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,12 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: center
 #: sections/credits.tex:8 sections/intro_and_toc.tex:16
 #: sections/intro_and_toc.tex:21
 msgid "\\bigbreak"
-msgstr ""
+msgstr "\\bigbreak"
 
 #.  !TeX spellcheck = en_US
 #. type: title{#1}
@@ -66,37 +67,28 @@ msgid ""
 "    \\centering\n"
 "\n"
 msgstr ""
+"{3}\n"
+"    \\bigbreak\n"
+"    \\centering\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
 "    Scan to open Scenario \\textbf{feedback form}.\\\\\n"
 "    \\href{\\formurl}{https://docs.google.com/forms/...}\n"
 "\n"
 msgstr ""
-"    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Scannez pour ouvrir le dépôt \\textbf{GitHub}. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
+"    Scannez pour ouvrir le \\textbf{formulaire}.\\\\\n"
+"    \\href{\\formurl}{https://docs.google.com/forms/...}\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\columnbreak\n"
-#| "    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-#| "    Scan to open \\textbf{GitHub} repository. \\\\\n"
-#| "    \\href{\\repourl}{\\repourl}\n"
-#| "  "
+#, no-wrap
 msgid ""
 "    \\columnbreak\n"
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
@@ -105,10 +97,10 @@ msgid ""
 "\n"
 msgstr ""
 "    \\columnbreak\n"
-"    \\includegraphics[width=0.8\\linewidth]{\\qr/github.png} \\\\\n"
-"    Scannez pour ouvrir le dépôt \\textbf{GitHub}. \\\\\n"
-"    \\href{\\repourl}{\\repourl}\n"
-"  "
+"    \\includegraphics[width=0.8\\linewidth]{\\qr/discord.png}\\\\\n"
+"    Scannez pour rejoindre le serveur \\textbf{Discord} Heroes III Board Game community.\\\\\n"
+"    \\href{\\discordurl}{\\discordurl}\n"
+"\n"
 
 #. type: multicols
 #: sections/intro_and_toc.tex:39
