@@ -89,13 +89,16 @@ RUN <<EOF
     collection-pictures \
     enumitem \
     etexcmds \
+    fontsetup \
     footmisc \
     fullwidth \
     imakeidx \
     listings  \
     listingsutf8  \
     luabidi \
+    lualatex-math \
     multirow \
+    newcomputermodern \
     nth \
     oberdiek \
     outlines \
@@ -144,12 +147,13 @@ RUN <<EOF
     /opt/texlive/texdir/bin/*/etex \
     /texlive.profile \
     /texlive_pgp_keys.asc \
-    /tmp/install-tl
+    /tmp/install-tl || true
   cd /
   git config --global --add safe.directory /data
   echo 'alias build="tools/build.sh"' >> /root/.bashrc
-  echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
+  echo 'alias compare="tools/compare_pages.sh"' >> /root/.bashrc
   echo 'alias cpo4a="tools/po4a_commit.sh"' >> /root/.bashrc
+  echo 'alias scrshot="tools/pdf2image.sh"' >> /root/.bashrc
 EOF
 
 WORKDIR /data
