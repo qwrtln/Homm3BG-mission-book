@@ -1,0 +1,105 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Clash Scenario}{Race to Dragon Isle}{\images/dragon.png}
+
+\begin{multicols}{2}
+
+\textbf{Author:} Game kNight Plays
+
+
+\textbf{Source:} \href{https://discord.com/channels/740870068178649108/1248684870696304660}{Archon Studios Discord}
+
+\textit{Flavor text here.}  % no-check-caps
+
+\subsection*{\MakeUppercase{Scenario Length}}
+12 Rounds
+
+\subsection*{\MakeUppercase{Player Setup}}
+\textbf{Player Count:} 2 -- 7
+
+\textbf{Starting Resources:} 15 \svg{gold}, 4 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 2 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Units:}
+
+\begin{itemize}
+  \item A Few of the two cheapest \svg{bronze} Units
+\end{itemize}
+
+\textbf{Town Buildings:} \svg{bronze} Dwelling
+
+\textbf{Map Tile Pool:} Each player takes 2 random Far (II–III) and 2 random Near (IV–V) Map Tiles (one with Obelisk, and one without).
+
+\subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
+
+\begin{itemize}
+  \item P × Starting (I) Map Tile
+  \item 6 × Center (VI–VII) Map Tile
+  \item \#F10 Far Map Tile
+\end{itemize}
+
+\subsection*{\MakeUppercase{Victory Conditions}}
+First player to start their turn while controlling a Dragon Utopia wins the game. If two players control the two Utopias at the end of Round 12, those players draw Cards to their \svg{hand} Limit and engage in a final Combat. The winner of that Combat wins the game.
+
+\subsection*{\MakeUppercase{Defeat Conditions}}
+If no Dragon Utopia has been captured by the end of Round 12, all players lose.
+
+\subsection*{\MakeUppercase{Timed Events}}
+\textbf{\nth{4} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+\textbf{\nth{8} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+\textbf{\nth{12} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+Map:
+\begin{itemize}
+  \item The Map Tile with the Obelisk must be discovered last.
+  \item Turns are played simultaneously until the first player teleports to \#F10.
+  \item First player to teleport is the first player for the rest of the Rounds.
+  \item Players cannot connect to another player's area.
+  \item Blocked Fields on Starting Map Tiles are inactive two-way Portals.
+  \item The Obelisks on the Near Tiles are two-way Portals.
+  \item Each Obelisk is guarded by a Level VI Combat and the Portals are activated when that Combat is defeated.
+\end{itemize}
+Dragon Isle:
+\begin{itemize}
+  \item The Blocked \#F10 Field is a two-way Portal and a Sanctuary. Multiple players can be on the Sanctuary at the same time.
+  \item Draw only Dragons for \svg{golden} and \svg{azure} Units.
+  \item Add 1 × \svg{bronze} and 1 × \svg{silver} Special Dragon Unit to all Level VII Combats.
+\end{itemize}
+
+\columnbreak
+
+\svg{bronze} Young Dragon:
+\begin{itemize}
+  \item 3 \svg{attack}, 1 \svg{defense}, 3 \svg{health_points}, 6 \svg{initiative}
+  \item \svg{permanent} Ignore the Combat penalty against adjacent Units.
+\end{itemize}
+
+\svg{silver} Mature Dragon:
+\begin{itemize}
+  \item 4 \svg{attack}, 1 \svg{defense}, 5 \svg{health_points}, 8 \svg{initiative}
+  \item \svg{unit_attack} After the first attack, attack all other adjacent Units with 2 \svg{attack}.
+\end{itemize}
+
+\end{multicols}
+
+\begin{tikzpicture}[overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-17em] at (current page.south) {
+    \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/haste.png}
+  };
+  \centering
+  \node at (5.7, -12) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle.png}};
+  \node at (5.7, -18.5) {\footnotesize{\textbf{\MakeUppercase{DRAGON ISLE}}}};
+  \node at (14.5, -15.5) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle-start.png}};
+  \node at (14.5, -18.5) {\footnotesize{\textbf{\MakeUppercase{PLAYERS' STARTING TILE}}}};
+\end{tikzpicture}
