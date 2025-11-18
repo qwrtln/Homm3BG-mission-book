@@ -9,10 +9,15 @@
 
 \newcommand{\notefont}[0]{}
 \AtBeginDocument{
-  \liberation
-  \selectfont
+  \setmainfont{LiberationSerif}[
+    Path = ./assets/fonts/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+  ]
 }
-
 \input{metadata.tex}
 
 % TEST_SUBSTRING=Эта книга поддерживается сообществом
