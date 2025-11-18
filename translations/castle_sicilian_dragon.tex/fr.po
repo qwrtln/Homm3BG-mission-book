@@ -121,7 +121,7 @@ msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur:} Tyson Heckert\n"
+"\\textbf{Auteur :} Tyson Heckert\n"
 "\n"
 
 #. type: multicols*
