@@ -144,7 +144,7 @@ msgid ""
 "This Scenario plays out over 8 Rounds.\n"
 "\n"
 msgstr ""
-"Ce Scénario se joue en 8 Manches.\n"
+"Ce scénario se joue en 8 Manches.\n"
 "\n"
 
 #. type: multicols*
