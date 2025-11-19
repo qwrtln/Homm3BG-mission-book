@@ -111,7 +111,7 @@ msgid ""
 "\\textbf{Author:} Tyson Heckert\n"
 "\n"
 msgstr ""
-"\\textbf{Auteur : } Tyson Heckert\n"
+"\\textbf{Auteur :} Tyson Heckert\n"
 "\n"
 
 #. type: multicols*
@@ -122,7 +122,7 @@ msgid ""
 "\\textbf{Source:} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 msgstr ""
-"\\textbf{Source : } \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
+"\\textbf{Source :} \\hrefwithoutfootnote{https://travelledtales.com}{travelledtales.com}\n"
 "\n"
 
 #. type: multicols*
@@ -341,7 +341,8 @@ msgid ""
 "{3. Two Knights Defense}{\\images/catherine.png}"
 msgstr ""
 "\\addscenariosection[subsection]{1}{Campagne Château $-$ Gambit de la Reine}"
-"{3. Défense à Deux Cavaliers}{\\images/catherine.png}"
+"{3. Défense à Deux Cavaliers}{\\images/catherine.png}\n"
+"\\vspace*{-2em}"
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:11
