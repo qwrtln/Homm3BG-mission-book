@@ -106,7 +106,7 @@ Please read the instructions for your operating system (or container).
 
     To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
     ```bash
-    brew install poppler po4a ghostscript imagemagick git-delta
+    brew install poppler po4a ghostscript imagemagick git-delta entr
     ```
 
 === "Linux"
@@ -123,6 +123,7 @@ Please read the instructions for your operating system (or container).
 
     To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
 
+    - entr
     - ghostscript
     - git-delta
     - imagemagick

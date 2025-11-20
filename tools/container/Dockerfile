@@ -24,6 +24,7 @@ RUN <<EOF
     curl \
     delta \
     diffutils \
+    entr \
     fontconfig \
     gettext \
     gettext-dev \
