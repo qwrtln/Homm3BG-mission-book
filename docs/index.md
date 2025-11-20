@@ -1,6 +1,6 @@
 # Local Setup
 
-In order to contribute, you'll need a minimum of [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape ang git.
+In order to contribute, you'll need a minimum of a [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape, Perl, and git.
 Please read the instructions for your operating system (or container).
 
 === "Windows"
@@ -9,7 +9,7 @@ Please read the instructions for your operating system (or container).
 
     #### Install required software
 
-    Download and install the following:
+    To work on the document, download and install the following:
 
      - [**MiKTeX**](https://miktex.org/) - a LaTeX distribution for Windows.
 
@@ -23,7 +23,15 @@ Please read the instructions for your operating system (or container).
 
      - [**Ghostscript**](https://www.ghostscript.com/releases/gsdnld.html) - download the 64 bit AGPL release. It will optimize PDF files.
 
-    Optionally, to edit the TeX files conveniently:
+    To work on **translations**, download and install the following:
+
+     - [**Poedit**](https://poedit.net/) - a translation editor for files in the `translations/` directory.
+
+     - [**GNU gettext**](https://mlocati.github.io/articles/gettext-iconv-windows.html) - download and install the 64-bit static release.
+
+     - [**delta**](https://dandavison.github.io/delta/installation.html) - download the tool, unzip it, and put the `delta.exe` file into the `C:\Program Files\Git\mingw64\bin` directory. It helps you to view updates in the files to translate.
+
+    To edit the TeX files conveniently, install **one** of the following:
 
      - [**VSCode**](https://code.visualstudio.com/Download) with [**TeX Workshop extension**](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), or
 
@@ -98,7 +106,7 @@ Please read the instructions for your operating system (or container).
 
     To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
     ```bash
-    brew install poppler po4a ghostscript imagemagick
+    brew install poppler po4a ghostscript imagemagick git-delta
     ```
 
 === "Linux"
@@ -115,10 +123,11 @@ Please read the instructions for your operating system (or container).
 
     To work on localizations, make screenshots, optimize PDFs, etc., you will need some additional tools:
 
+    - ghostscript
+    - git-delta
+    - imagemagick
     - po4a
     - poppler-utils
-    - ghostscript
-    - imagemagick
 
 === "Container"
     ### Container
