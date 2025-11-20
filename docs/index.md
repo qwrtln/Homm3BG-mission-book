@@ -76,6 +76,10 @@ Please read the instructions for your operating system (or container).
 
     If you're seeing an error about a missing file, please configure MiKTeX to [download missing packages automatically](https://yihui.org/en/2018/03/miktex-auto-install/).
 
+    #### Translate
+
+    Check out the [**translation guide**](translations.md) for translating the scenarios.
+
 === "MacOS"
     ### MacOS
 
