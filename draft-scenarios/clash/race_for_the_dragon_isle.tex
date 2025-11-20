@@ -8,7 +8,7 @@
 
 \textbf{Source:} \href{https://discord.com/channels/740870068178649108/1248684870696304660}{Archon Studios Discord}
 
-\textit{Beyond the shrouded sea lies Dragon Isle, a place whispered of in taverns and feared in legends. Only those reckless enough to chase glory — and foolish enough to disturb dragons — dare to race toward its shores.}  % no-check-caps
+\textit{Slay the dragons, or die trying.}  % no-check-caps
 
 \subsection*{\MakeUppercase{Scenario Length}}
 12 Rounds
@@ -62,22 +62,25 @@ If no Dragon Utopia has been captured by the end of Round 12, all players lose.
 \subsection*{\MakeUppercase{Additional Rules}}
 Map:
 \begin{itemize}
-  \item The Map Tile with the Obelisk must be discovered last.
+  \item The Obelisk Map Tile must be the final tile each player discovers.
   \item Turns are played simultaneously until the first player teleports to \#F10.
   \item First player to teleport becomes the first player for the remainder of the game.
+  \item All players who teleport to \#F10 on the same turn as the first player lose all remaining \svg{movement}.
   \item Players cannot connect to another player's area.
-  \item Blocked Fields on Starting Map Tiles are inactive two-way Portals.
-  \item The Obelisks on the Near Tiles are two-way Portals.
-  \item Each Obelisk is guarded by a Level VI Combat and the Portal is activated when that Combat is defeated.
+  \item Blocked Fields on Starting Tiles count as inactive two-way Portals.
+  \item The Obelisks on the Near Tiles are inactive two-way Portals.
+  \item Each Obelisk is guarded by a Level VI Combat. When a player defeats that Combat, both of that player’s Portals become active.
 \end{itemize}
 Dragon Isle:
 \begin{itemize}
-  \item The Blocked \#F10 Field is a two-way Portal and a Sanctuary. Multiple players can occupy the Sanctuary simultaneously.
-  \item Draw only Dragons for \svg{golden} and \svg{azure} Units.
-  \item Add 1 × \svg{bronze} and 1 × \svg{silver} Special Dragon Unit to all Level VII Combats.
-\end{itemize}
+  \item The Blocked \#F10 Field is a two-way Portal and a Sanctuary. Any number of players may occupy the Sanctuary simultaneously.
+  \item Players may teleport from \#F10 only to their own Town.
+  \item Draw only Dragons for \svg{golden} and \svg{azure} Units in Combats on the Dragon Isle.
 
 \columnbreak
+
+  \item Add 1 × \svg{bronze} and 1 × \svg{silver} Special Dragon Unit to all Level VII Combats.
+\end{itemize}
 
 \svg{bronze} Young Dragon:
 \begin{itemize}
@@ -98,8 +101,8 @@ Dragon Isle:
     \includegraphics[width=0.85\paperwidth, keepaspectratio]{\art/haste.png}
   };
   \centering
-  \node at (5.7, -12) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle.png}};
-  \node at (5.7, -18.5) {\footnotesize{\textbf{\MakeUppercase{DRAGON ISLE}}}};
-  \node at (14.5, -15.5) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle-start.png}};
-  \node at (14.5, -18.5) {\footnotesize{\textbf{\MakeUppercase{PLAYERS' STARTING TILE}}}};
+  \node at (5.7, -9) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle.png}};
+  \node at (5.7, -15.5) {\footnotesize{\textbf{\MakeUppercase{DRAGON ISLE}}}};
+  \node at (14.5, -12.5) {\includegraphics[scale=0.5]{\maps/race-for-the-dragon-isle-start.png}};
+  \node at (14.5, -15.5) {\footnotesize{\textbf{\MakeUppercase{PLAYERS' STARTING TILE}}}};
 \end{tikzpicture}
