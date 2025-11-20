@@ -19,7 +19,7 @@ Run this command:
 ```bash
 tools/continuous_fuzzy_diff.sh translations/titans_stronghold.tex/fr.po
 ```
-Choose a different file, if you're working on a diffrent scenario or section.
+Choose a different file, if you're working on a different scenario or section.
 If there are preexisting translations, it will show you where the updates are.
 Those are called "fuzzy translations".
 Here's an example output indicating what needs to be done:
