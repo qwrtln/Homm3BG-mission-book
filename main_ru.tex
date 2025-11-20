@@ -4,19 +4,20 @@
 % Language setting
 \usepackage[TU]{fontenc}
 \usepackage[russian]{babel}
-\usepackage{fontspec}
-\setmainfont[
-  Path = ./assets/fonts/,
-  Extension = .ttf,
-  UprightFont = *-Regular,
-  ItalicFont = *-Italic,
-  BoldFont = *-Bold,
-  BoldItalicFont = *-BoldItalic]{LiberationSerif}
 
 \def\sections{sections/translated/ru}
 
 \newcommand{\notefont}[0]{}
-
+\AtBeginDocument{
+  \setmainfont{LiberationSerif}[
+    Path = ./assets/fonts/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+  ]
+}
 \input{metadata.tex}
 
 % TEST_SUBSTRING=Эта книга поддерживается сообществом

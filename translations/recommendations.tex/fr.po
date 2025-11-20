@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
 "POT-Creation-Date: 2025-11-06 23:19+0100\n"
-"PO-Revision-Date: 2025-04-01 12:55+0000\n"
+"PO-Revision-Date: 2025-11-14 19:06+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -47,12 +48,12 @@ msgstr ""
 #. type: Plain text
 #: sections/recommendations.tex:3
 msgid "\\addsection{Recommendations}{\\art/haste.png}"
-msgstr ""
+msgstr "\\addsection{Recommandations}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/recommendations.tex:5
 msgid "\\iftoggle{printable}{}{\\bigbreak}"
-msgstr ""
+msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/recommendations.tex:10
@@ -64,18 +65,20 @@ msgid ""
 "Enjoy!\n"
 "\n"
 msgstr ""
+"{2}\n"
+"Nous avons compilé certaines règles maison et des bonnes pratiques pour améliorer votre expérience de jeu.\n"
+"Gardez à l'esprit que ce ne sont que les \\textbf{opinions des auteurs} de ce livre.\n"
+"Amusez vous bien!\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:12
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Play Time}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
+"\\subsection*{Temps de Jeu}\n"
 "\n"
 
 #. type: multicols*
@@ -85,6 +88,8 @@ msgid ""
 "You can estimate your \\textbf{minimal} play time using the following formula:\n"
 "\n"
 msgstr ""
+"Vous pouvez estimer votre temps de jeu \\textbf{minimal} avec la formule suivante:\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:18
@@ -95,6 +100,10 @@ msgid ""
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  Temps de Jeu $= \\boldsymbol{P × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:24
@@ -107,6 +116,12 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"Avec:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{P}$] -- nombre de Joueurs\n"
+"  \\item[$\\textbf{R}$] -- nombre de Manches\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:27
@@ -116,6 +131,9 @@ msgid ""
 "Your expected minimal play time would be around 3 hours.\n"
 "\n"
 msgstr ""
+"Par exemple, si vous jouer un Scénario pour 3 joueurs en 12 Manches, vous pouvez calculer facilement $3 \\times 12 \\times 5 = 180$.\n"
+"Votre temps de jeu supposé est d'environ 3 heures.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:30
@@ -125,6 +143,9 @@ msgid ""
 "In this case, that would be 6 hours.\n"
 "\n"
 msgstr ""
+"Pour calculer la \\textbf{limite supérieure} du temps de jeu (plus réaliste pour les joueurs inexpérimentés), doublez le résultat.\n"
+"Dans ce cas, ce serait 6 heures.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:32
@@ -133,6 +154,8 @@ msgid ""
 "\\subsection*{Magic Arrows}\n"
 "\n"
 msgstr ""
+"\\subsection*{Flèche Magique}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:35
@@ -142,18 +165,18 @@ msgid ""
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
 "\n"
 msgstr ""
+"À l'exception de Flèche Magique, chaque sort est en double dans le Deck Sort.\n"
+"Après la préparation du Deck de Départ M\\&M des joueurs, il est recommandé de retirer les Flèches Magiques du Deck Sort pour n'en laisser que deux.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Guaranteed Settlement}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Événement programmés}}\n"
+"\\subsection*{Enclave Garantie}\n"
 "\n"
 
 #. type: multicols*
@@ -163,6 +186,8 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
+"À la distribution des Tuiles Lointaines (II--III), chaque joueur doit avoir au moins une Tuile avec une Enclave.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:41
@@ -171,6 +196,8 @@ msgid ""
 "\\subsection*{Round One Mulligan}\n"
 "\n"
 msgstr ""
+"\\subsection*{Mulligan Manche 1}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:43
@@ -179,6 +206,8 @@ msgid ""
 "At the start of the \\nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.\n"
 "\n"
 msgstr ""
+"Au début de la Manche 1, chaque joueur peut remélanger sa main de Carte dans son Deck de Might and Magic et piochez une fois une nouvelle main.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:45
@@ -187,6 +216,8 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
+"\\subsection*{Combat Rang V--VII Combat en Difficulté$+$\\\\Difficile}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:48
@@ -196,15 +227,13 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
+"Les Combats de Rang V--VII sont considérés comme un Rang de moins en Difficile ou Impossible.\n"
+"Par exemple, un Combat de Rang VII en Difficile serait contre 2 × Unités Neutres \\svg{azure}.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:54
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{\n"
 "  \\hfill\n"
@@ -213,9 +242,11 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
-"\\end{center}\n"
+"{\n"
+"  \\hfill\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/black_market.png}}\n"
+"  \\vspace{-3em}\n"
+"}\n"
 "\n"
 
 #. type: multicols*
@@ -225,6 +256,8 @@ msgid ""
 "\\subsection*{Trading Post}\n"
 "\n"
 msgstr ""
+"\\subsection*{Comptoir}\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:58
@@ -233,18 +266,17 @@ msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
+"Bien que les règles indiquent que vous pouvez retirer une seule Carte de votre main en Visitant un Comptoir, il est recommandé de permettre d'en retirer autant que l'on veut.\n"
+"\n"
 
 #. type: multicols*
 #: sections/recommendations.tex:60
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{Victory Points}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\\subsection*{Points de Victoire}\n"
 "\n"
 
 #. type: multicols*
@@ -259,6 +291,13 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"En jouant avec les Points de Victoire optionnels du Livre de Tournoi, les règles suivantes s'appliquent (sauf règle contraire du Scénario):\n"
+"\\begin{itemize}\n"
+"  \\item La Ville de Faction donne 1 VP.\n"
+"  \\item Posséder le Graal à la fin de la partie donne 3 VPs. Si le Graal a été déposé dans la Ville de Faction donne à la place 5 VPs .\n"
+"  \\item Capturer les Terres Désolées donne 3 VPs.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:73
@@ -267,6 +306,8 @@ msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
 "\n"
 msgstr ""
+"\\subsection*{Combat avec Unités Neutres}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:75
@@ -275,6 +316,8 @@ msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
+"Durant un Combat avec des Unités Neutres en Scénarios Affrontement, si le joueurs décide de déployer ses Unités d'un seul côté (gauche ou droite) du Plateau de Combat, le joueurs déployant les Unités Neutres doit faire pareil.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:79
@@ -285,15 +328,14 @@ msgid ""
 "See examples that follow.\n"
 "\n"
 msgstr ""
+"Placer les Unités Neutres éloignées ne fait que gaspiller un \\svg{movement} par l'autre joueur, ce qui rallonge le jeu.\n"
+"L'exception à cette règle est lorsqu'il y a trois Unités Neutres \\svg{unit_ground} ou \\svg{unit_flying} à déployer, car elles sont placées en ligne de front.\n"
+"Voir les exemples suivants.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:83
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
@@ -301,7 +343,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.65\\linewidth]{\\art/resurrection.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -327,6 +369,23 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Unités Neutres positionnées correctement.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Ce placement n'est pas bon car le joueur Nécropole a placé ses Unités sur la moitié gauche du Plateau de Combat.\n"
+"      Les Paysans doivent aussi commencer à gauche.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: figure*
 #: sections/recommendations.tex:124
@@ -349,18 +408,31 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Trois Unités non-\\svg{unit_ranged} doivent être en ligne de front.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Les Sangliers doivent occuper une des Cases vertes.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
 
 #. type: multicols
 #: sections/recommendations.tex:128
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
+"\\subsection*{General Recommendations}\n"
 "\n"
 
 #. type: multicols
@@ -370,6 +442,8 @@ msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
 "\n"
 msgstr ""
+"Les règles suivantes ne sont pas personnalisées mais plutôt des recommandations pour aider à tirer le maximum du jeu.\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:137
@@ -383,15 +457,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item La décision de quel bâtiment construire, surtout au début de la partie, la priorité doit être donné \\textit{généralement} aux Unités plutôt que la Salle du Conseil, Citadelle, Guilde des Mages, ou autre bâtiment de Faction.\n"
+"  \\item Si vous ne savez pas quel Sort, Artefact ou compétence choisir, priorisez ce qui vous fera jouer votre Deck.\n"
+"    Cela inclut les Cartes permettant de piocher ou de récupérer des Cartes de votre Défausse.\n"
+"  \\item Evitez d'utiliser votre Héros Principal pour des actions que votre Héros Secondaire peut faire, comme découvrir des Tuiles, Visiter les Moulins etc.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: sections/recommendations.tex:141
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=\\linewidth]{\\art/dimension_door.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
@@ -399,6 +475,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth]{\\art/dimension_door.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.7\\linewidth]{\\art/coin.png}}\n"
 "\\end{center}\n"
 "\n"

@@ -57,6 +57,9 @@
 \usepackage[hang]{footmisc}
 \renewcommand{\footnotemargin}{1em}
 
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
 \newtcolorbox{scaledfigure}[1][]{height fill, space to=\myspace,#1}
 \hypersetup{
   colorlinks=true,
@@ -197,15 +200,14 @@
 {8pt}
 {\Huge\bfseries\filcenter\uppercase}
 
-\newfontfamily{\liberation}{LiberationSerif}
-[
-  Path = ./assets/fonts/,
-  Extension = .ttf,
-  UprightFont = *-Regular,
-  ItalicFont = *-Italic,
-  BoldFont = *-Bold,
-  BoldItalicFont = *-BoldItalic
-]
+\newfontfamily{\liberation}[
+    Path = ./assets/fonts/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic,
+]{LiberationSerif}
 
 \providecommand{\sectionheadertext}[2][antiquewhite]{
   \iftoggle{noartbackground}{}{\color{#1}}\MakeUppercase{\textbf{\liberation #2}}
@@ -263,34 +265,6 @@
       \huge\sectionheadertext[bistre]{#1}
     };
   \end{tikzpicture}
-}
-
-\newcommand\addheadershadow[2][]{
-    % #1: Optional aditional tikz options
-    % #2: Name of the node to "decorate"
-    \begin{pgfonlayer}{background}
-        \path[
-           rounded corners=1pt,
-           blur shadow={shadow xshift=0pt,
-           shadow yshift=0pt,
-           shadow blur steps=10,
-           shadow blur radius=6pt}, #1]
-            ($(#2.north west)+( 0.6pt,0)$) --
-            ($(#2.south west)+( 0.6pt,0)$) --
-            ($(#2.south east)+(-0.6pt,0)$) --
-            ($(#2.north east)+(-0.6pt,0)$) --
-        cycle;
-        \path[rounded corners,
-           blur shadow={shadow xshift=0pt,
-           shadow yshift=0pt,
-           shadow blur steps=10,
-           shadow blur radius=6pt}, #1]
-            ($(#2.north west)+(-1.3pt,-3pt)$) --
-            ($(#2.south west)+(-1.3pt, 3pt)$) --
-            ($(#2.south east)+( 1.3pt, 3pt)$) --
-            ($(#2.north east)+( 1.3pt,-3pt)$) --
-            cycle;
-    \end{pgfonlayer}
 }
 
 % Four mandatory params

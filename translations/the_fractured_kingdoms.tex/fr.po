@@ -175,7 +175,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\\textbf{Nombre de Joueurs:} 5\n"
+"\\textbf{Nombre de Joueurs :} 5\n"
 "\n"
 
 #. type: multicols
@@ -444,6 +444,8 @@ msgid ""
 "  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green borders mean adjacent Tiles.}}}};\n"
 "\n"
 msgstr ""
+"  \\node[text width=4cm] at (2.5, -3.3) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Les Bordures Vertes indiquent des Tuiles adjacentes.}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:126
@@ -453,6 +455,9 @@ msgid ""
 "  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
 "\n"
 msgstr ""
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (2.8, -3.8) -- (7, -11);\n"
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (2.8, -3.8) -- (9.0, -9.5);\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:132
@@ -465,6 +470,12 @@ msgid ""
 "  \\greenline{10.5}{-13.75}{-65}\n"
 "\n"
 msgstr ""
+"  \\greenline{11.4}{-11.2}{13}\n"
+"  \\greenline{7.0}{-11.15}{162}\n"
+"  \\greenline{9.24}{-9.5}{90}\n"
+"  \\greenline{7.8}{-13.75}{-127}\n"
+"  \\greenline{10.5}{-13.75}{-65}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:135
