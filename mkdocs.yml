@@ -33,8 +33,9 @@ repo_name: Fan-Made Mission Book
 nav:
   - Local Setup: index.md
   - Writing Scenarios: scenarios.md
+  - Translations: translations.md
   - Using Scripts: scripts.md
-  - Container-based  setup: container.md
+  - Container-based setup: container.md
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets

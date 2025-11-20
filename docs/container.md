@@ -35,7 +35,7 @@ Compare specific pages in English:
 
 ## Usage without the wrapper script
 
-You can run the comands yourself, if you prefer.
+You can run the commands yourself, if you prefer.
 
 === "Podman"
 
