@@ -444,6 +444,8 @@ msgid ""
 "  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green borders mean adjacent Tiles.}}}};\n"
 "\n"
 msgstr ""
+"  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Les Bordures Vertes indiquent des Tuiles adjacentes.}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:126
