@@ -89,16 +89,13 @@ RUN <<EOF
     collection-pictures \
     enumitem \
     etexcmds \
-    fontsetup \
     footmisc \
     fullwidth \
     imakeidx \
     listings  \
     listingsutf8  \
     luabidi \
-    lualatex-math \
     multirow \
-    newcomputermodern \
     nth \
     oberdiek \
     outlines \
