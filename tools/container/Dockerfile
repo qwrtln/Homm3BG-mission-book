@@ -24,6 +24,7 @@ RUN <<EOF
     curl \
     delta \
     diffutils \
+    entr \
     fontconfig \
     gettext \
     gettext-dev \
@@ -89,16 +90,13 @@ RUN <<EOF
     collection-pictures \
     enumitem \
     etexcmds \
-    fontsetup \
     footmisc \
     fullwidth \
     imakeidx \
     listings  \
     listingsutf8  \
     luabidi \
-    lualatex-math \
     multirow \
-    newcomputermodern \
     nth \
     oberdiek \
     outlines \
