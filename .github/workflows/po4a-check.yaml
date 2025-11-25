@@ -28,14 +28,16 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
+          cache: "pip"
+
+      - run: pip install requests
 
       - name: Parse responses
         run: |
           python .github/scripts/parse-responses.py "${{ env.RESPONSES_FILENAME }}" "${{ env.EXISTING_RESPONSES_FILENAME }}"
         continue-on-error: true
 
-      - name: Move responses
-        run: |
+      - run: |
           mkdir responses
           mv ${{ env.EXISTING_RESPONSES_FILENAME }} responses/
 
