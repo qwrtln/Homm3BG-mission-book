@@ -16,6 +16,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Download all responses
         run: curl -L "${{ env.RESPONSES_SPREADSHEET }}/export?format=csv" > "${{ env.RESPONSES_FILENAME }}"
