@@ -12,8 +12,8 @@ import requests
 
 WEBHOOK = os.getenv("DISCORD_WEBHOOK", "")
 DISCORD_MESSAGE_LENGTH_LIMIT = 2000
-RATE_LIMIT_WAIT = 5
-NEW_RESPONSES_LIMIT = 50
+DELAY_BETWEEN_MESSAGES = 60
+NEW_RESPONSES_LIMIT = 100
 FORM_RESPONSES_FILE = sys.argv[1]
 EXISTING_RESPONSES_FILE = sys.argv[2]
 
@@ -127,6 +127,6 @@ if __name__ == "__main__":
                     sys.exit(1)
             save_response(EXISTING_RESPONSES_FILE, r)
             if len(new_responses) > 1:
-                time.sleep(RATE_LIMIT_WAIT)
+                time.sleep(DELAY_BETWEEN_MESSAGES)
     else:
         print("No new responses, bye.")
