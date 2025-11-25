@@ -1,47 +1,16 @@
 name: Parse new scenario
-
 on:
-  workflow_dispatch:
-
-
-env:
-  RESPONSES_SPREADSHEET: "https://docs.google.com/spreadsheets/d/1wauJGLiLdpXoWb-dFKKNL_74KpaWJh5eNfhGVTtdb1M"
-  RESPONSES_FILENAME: "responses.csv"
-  EXISTING_RESPONSES_FILENAME: "existing.csv"
-  GIT_BRANCH: "form-responses"
+  issues:
+    types: [opened]
 
 jobs:
-  parse:
+  parse-new-scenario:
+    if: ${{ startsWith(github.event.issue.title, 'New Scenario:') }}
+    name: Parsing new scenario
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v5
+      - name: Print issue title
+        run: echo "Hello form ${{ github.event.issue.title }}"
 
-      - name: Download all responses
-        run: curl -L "${{ env.RESPONSES_SPREADSHEET }}/export?format=csv" > "${{ env.RESPONSES_FILENAME }}"
-
-      - name: Download existing responses
-        run: curl -o ${{ env.EXISTING_RESPONSES_FILENAME }} https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/${{ env.GIT_BRANCH }}/${{ env.EXISTING_RESPONSES_FILENAME }}
-
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.14"
-
-      - name: Parse responses
-        run: |
-          python .github/scripts/parse-resoponses.py "${{ env.RESPONSES_FILENAME }}" "${{ env.EXISTING_RESPONSES_FILENAME }}"
-        continue-on-error: true
-
-      - name: Move responses
-        run: |
-          mkdir responses
-          mv ${{ env.EXISTING_RESPONSES_FILENAME }} responses/
-
-      - name: Save responses in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
-          external_repository: qwrtln/Homm3BG-mission-book-build-artifacts
-          publish_branch: ${{ env.GIT_BRANCH }}
-          publish_dir: ./responses
-          force_orphan: true
+      - name: Print issue body
+        run: echo "${{ github.event.issue.body }}"
