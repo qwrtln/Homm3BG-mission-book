@@ -31,7 +31,7 @@ jobs:
 
       - name: Parse responses
         run: |
-          python .github/scripts/parse-resoponses.py "${{ env.RESPONSES_FILENAME }}" "${{ env.EXISTING_RESPONSES_FILENAME }}"
+          python .github/scripts/parse-responses.py "${{ env.RESPONSES_FILENAME }}" "${{ env.EXISTING_RESPONSES_FILENAME }}"
         continue-on-error: true
 
       - name: Move responses

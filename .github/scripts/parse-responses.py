@@ -13,6 +13,7 @@ import requests
 WEBHOOK = os.getenv("DISCORD_WEBHOOK", "")
 DISCORD_MESSAGE_LENGTH_LIMIT = 2000
 RATE_LIMIT_WAIT = 5
+NEW_RESPONSES_LIMIT = 50
 FORM_RESPONSES_FILE = sys.argv[1]
 EXISTING_RESPONSES_FILE = sys.argv[2]
 
@@ -111,6 +112,11 @@ if __name__ == "__main__":
     new_responses = [r for r in responses if r not in existing_responses]
     if new_responses:
         print("New responses:", len(new_responses))
+        if len(new_responses) > NEW_RESPONSES_LIMIT:
+            print(
+                f"Too many new responses: {len(new_responses)}. Check for potential abuse."
+            )
+            sys.exit(1)
         for r in new_responses:
             pprint(r)
             form_response = Response(*r)
