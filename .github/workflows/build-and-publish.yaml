@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches: [main]
+  # pull_request:
+  #   branches: [main]
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
