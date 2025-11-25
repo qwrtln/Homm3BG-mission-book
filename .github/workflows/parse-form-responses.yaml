@@ -11,7 +11,6 @@ env:
   RESPONSES_FILENAME: "responses.csv"
   EXISTING_RESPONSES_FILENAME: "existing.csv"
   GIT_BRANCH: "form-responses"
-  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
 jobs:
   parse:
@@ -19,8 +18,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Download all responses
         run: curl -L "${{ env.RESPONSES_SPREADSHEET }}/export?format=csv" > "${{ env.RESPONSES_FILENAME }}"
@@ -38,6 +35,8 @@ jobs:
         run: |
           python .github/scripts/parse-responses.py "${{ env.RESPONSES_FILENAME }}" "${{ env.EXISTING_RESPONSES_FILENAME }}"
         continue-on-error: true
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
       - run: |
           mkdir responses

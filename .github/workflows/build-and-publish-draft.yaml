@@ -9,12 +9,12 @@ on:
       - '.github/workflows/build-and-publish-draft.yaml'
       - 'sections/feedback_page.tex'
       - 'translations/feedback_page.tex/**'
-  # pull_request:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - 'draft-scenarios/**'
-  #     - '.github/workflows/build-and-publish-draft.yaml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'draft-scenarios/**'
+      - '.github/workflows/build-and-publish-draft.yaml'
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
