@@ -9,6 +9,7 @@ env:
   RESPONSES_FILENAME: "responses.csv"
   EXISTING_RESPONSES_FILENAME: "existing.csv"
   GIT_BRANCH: "form-responses"
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
 jobs:
   parse:
