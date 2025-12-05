@@ -1,7 +1,9 @@
 import collections
 import csv
 import http
+import json
 import os
+import pathlib
 import pprint
 import sys
 import textwrap
@@ -16,6 +18,11 @@ DELAY_BETWEEN_MESSAGES = 60
 NEW_RESPONSES_LIMIT = 100
 FORM_RESPONSES_FILE = sys.argv[1]
 EXISTING_RESPONSES_FILE = sys.argv[2]
+
+
+def load_authors(filename):
+    with open(filename) as f:
+        return json.load(f)
 
 
 def load_responses(filename):
@@ -44,12 +51,22 @@ def horizontal_line(length=200):
     return f"~~{' ' * length}~~"
 
 
-def format_form_response(response):
+def format_form_response(response, scenario_author_mapping):
     messages = []
     messages.append(
         textwrap.dedent(f"""\
         {horizontal_line()}
         # 📝 **{response.Scenario_name}** - New Feedback Submission
+        """)
+    )
+    if response.Scenario_name in scenario_author_mapping:
+        messages.append(
+            textwrap.dedent(f"""
+            **Author:** @{scenario_author_mapping[response.Scenario_name]}
+            """)
+        )
+    messages.append(
+        textwrap.dedent(f"""\
         **Overall Rating:** {format_rating(response.Overall_rating)}
         **Players/Factions:** {response.Factions_used}
         **Play Time:** {response.Play_time__hours} hours
@@ -103,6 +120,12 @@ def format_form_response(response):
 
 
 if __name__ == "__main__":
+    authors = load_authors(pathlib.Path(__file__).parent / "scenario-authors.json")
+    scenario_author_mapping = {
+        scenario: author
+        for author, content in authors.items()
+        for scenario in content["scenarios"]
+    }
     responses, fields = load_responses(FORM_RESPONSES_FILE)
     print("Parsed form fields:")
     pprint(fields)
@@ -120,7 +143,7 @@ if __name__ == "__main__":
         for r in new_responses:
             pprint(r)
             form_response = Response(*r)
-            for m in format_form_response(form_response):
+            for m in format_form_response(form_response, scenario_author_mapping):
                 response = requests.post(WEBHOOK, json={"content": m})
                 if response.status_code != http.HTTPStatus.NO_CONTENT:
                     print(response.content.decode())
