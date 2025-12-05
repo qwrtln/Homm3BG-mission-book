@@ -8,7 +8,8 @@
       "The Obelisk",
       "Shattered Alliance"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "theneuron": {
     "scenarios": [
@@ -16,39 +17,46 @@
       "Stand United",
       "Secret Bomb Stash"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "invoceusse": {
     "scenarios": [
       "Emerald Island",
       "Titans' Stronghold"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "re4xn": {
     "scenarios": [
       "Bloody Grail"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "kelghor": {
     "scenarios": [
       "Close to Enemies"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "qwrtln": {
     "scenarios": [
       "Random Scenario",
       "The Ambushed Accord"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": "",
+    "discord_id": "1195686137054896171"
   },
   "farmaazon": {
     "scenarios": [
       "Gold Rush"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "qwertywarlord": {
     "scenarios": [
@@ -56,24 +64,28 @@
       "Castle: Sicilian Dragon",
       "Castle: Two Knights' Defense"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "silence70011": {
     "scenarios": [
       "Sentinels"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "juhanisalonen": {
     "scenarios": [
       "Wandering Dragons"
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "wololoeren": {
     "scenarios": [
     ],
-    "on_discord": true
+    "on_discord": true,
+    "discord_id": ""
   },
   "2liggett2quit": {
     "scenarios": [

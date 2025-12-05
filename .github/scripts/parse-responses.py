@@ -60,9 +60,10 @@ def format_form_response(response, scenario_author_mapping):
         """)
     )
     if response.Scenario_name in scenario_author_mapping:
+        _, discord_id = scenario_author_mapping[response.Scenario_name]
         messages.append(
             textwrap.dedent(f"""
-            **Author:** @{scenario_author_mapping[response.Scenario_name]}
+            **Author:** <@{discord_id}>
             """)
         )
     messages.append(
@@ -122,34 +123,36 @@ def format_form_response(response, scenario_author_mapping):
 if __name__ == "__main__":
     authors = load_authors(pathlib.Path(__file__).parent / "scenario-authors.json")
     scenario_author_mapping = {
-        scenario: author
+        scenario: (author, content["discord_id"])
         for author, content in authors.items()
         for scenario in content["scenarios"]
+        if content["on_discord"] is True
     }
-    responses, fields = load_responses(FORM_RESPONSES_FILE)
-    print("Parsed form fields:")
-    pprint(fields)
-    Response = collections.namedtuple("Response", fields)
-    existing_responses, _ = load_responses(EXISTING_RESPONSES_FILE)
-
-    new_responses = [r for r in responses if r not in existing_responses]
-    if new_responses:
-        print("New responses:", len(new_responses))
-        if len(new_responses) > NEW_RESPONSES_LIMIT:
-            message = f"Too many new responses: {len(new_responses)}. Check for potential abuse."
-            print(message)
-            requests.post(WEBHOOK, json={"content": message})
-            sys.exit(1)
-        for r in new_responses:
-            pprint(r)
-            form_response = Response(*r)
-            for m in format_form_response(form_response, scenario_author_mapping):
-                response = requests.post(WEBHOOK, json={"content": m})
-                if response.status_code != http.HTTPStatus.NO_CONTENT:
-                    print(response.content.decode())
-                    sys.exit(1)
-            save_response(EXISTING_RESPONSES_FILE, r)
-            if len(new_responses) > 1:
-                time.sleep(DELAY_BETWEEN_MESSAGES)
-    else:
-        print("No new responses, bye.")
+    pprint(scenario_author_mapping)
+    # responses, fields = load_responses(FORM_RESPONSES_FILE)
+    # print("Parsed form fields:")
+    # pprint(fields)
+    # Response = collections.namedtuple("Response", fields)
+    # existing_responses, _ = load_responses(EXISTING_RESPONSES_FILE)
+    #
+    # new_responses = [r for r in responses if r not in existing_responses]
+    # if new_responses:
+    #     print("New responses:", len(new_responses))
+    #     if len(new_responses) > NEW_RESPONSES_LIMIT:
+    #         message = f"Too many new responses: {len(new_responses)}. Check for potential abuse."
+    #         print(message)
+    #         requests.post(WEBHOOK, json={"content": message})
+    #         sys.exit(1)
+    #     for r in new_responses:
+    #         pprint(r)
+    #         form_response = Response(*r)
+    #         for m in format_form_response(form_response, scenario_author_mapping):
+    #             response = requests.post(WEBHOOK, json={"content": m})
+    #             if response.status_code != http.HTTPStatus.NO_CONTENT:
+    #                 print(response.content.decode())
+    #                 sys.exit(1)
+    #         save_response(EXISTING_RESPONSES_FILE, r)
+    #         if len(new_responses) > 1:
+    #             time.sleep(DELAY_BETWEEN_MESSAGES)
+    # else:
+    #     print("No new responses, bye.")
