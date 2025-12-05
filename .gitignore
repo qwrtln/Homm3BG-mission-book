@@ -1,6 +1,7 @@
 **.aux
 *.bbl
 *.blg
+*.csv
 *.fdb_latexmk
 *.fls
 *.idx

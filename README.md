@@ -354,8 +354,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_sicilian_dragon-mono/castle_sicilian_dragon_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon-color/castle_sicilian_dragon_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_sicilian_dragon-mono/castle_sicilian_dragon_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_sicilian_dragon-color/castle_sicilian_dragon_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_sicilian_dragon-mono/castle_sicilian_dragon_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -367,8 +367,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-castle_two_knights_defense-mono/castle_two_knights_defense_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense-color/castle_two_knights_defense_cs.pdf">klikni</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense-mono/castle_two_knights_defense_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense-color/castle_two_knights_defense_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense-mono/castle_two_knights_defense_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -396,6 +396,11 @@ Number of players (P) in the brackets.
             <td>🤝 Wandering Dragons (2)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🤝 The Ambushed Accord (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-color/the_ambushed_accord_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-mono/the_ambushed_accord_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ Arcane Artillery (2-6)</td>
@@ -446,6 +451,11 @@ Number of players (P) in the brackets.
             <td>⚔️ Dragnarøk (4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Race for the Dragon Isle (2-7)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-color/race_for_the_dragon_isle_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-mono/race_for_the_dragon_isle_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>

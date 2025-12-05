@@ -1,0 +1,107 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Clash Scenario}{Race for the Dragon Isle}{\art/haste.png}
+
+\begin{multicols}{2}
+
+\textbf{Author:} Game kNight Plays
+
+
+\textbf{Source:} \href{https://discord.com/channels/740870068178649108/1248684870696304660}{Archon Studios Discord}
+
+\textit{Slay the dragons, or die trying.}  % no-check-caps
+
+\subsection*{\MakeUppercase{Scenario Length}}
+12 Rounds
+
+\subsection*{\MakeUppercase{Player Setup}}
+\textbf{Player Count:} 2--7
+
+\textbf{Starting Resources:} 15 \svg{gold}, 4 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 2 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Units:}
+
+\begin{itemize}
+  \item A Few of the two cheapest \svg{bronze} Units
+\end{itemize}
+
+\textbf{Town Buildings:} \svg{bronze} Dwelling
+
+\textbf{Map Tile Pool:} Each player takes 2 random Far (II–III) and 2 random Near (IV–V) Map Tiles (one with Obelisk and one without).
+
+\subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
+
+\begin{itemize}
+  \item P × Starting (I) Map Tile
+  \item 6 × Center (VI–VII) Map Tile
+  \item \#F10 Far Map Tile
+\end{itemize}
+
+\subsection*{\MakeUppercase{Victory Conditions}}
+First player to start their turn while controlling a Dragon Utopia wins the game. If two players control the two Utopias at the end of Round 12, those players draw Cards up to their \svg{hand} Limit and engage in a final Combat. The winner of that Combat wins the game.
+
+\subsection*{\MakeUppercase{Defeat Conditions}}
+If no Dragon Utopia has been captured by the end of Round 12, all players lose.
+
+\subsection*{\MakeUppercase{Timed Events}}
+\textbf{\nth{4} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+\textbf{\nth{8} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+\textbf{\nth{12} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+Map:
+\begin{itemize}
+  \item The Obelisk Map Tile must be the final Tile each player discovers.
+  \item Turns are played simultaneously until the first player teleports to \#F10.
+  \item First player to teleport becomes the first player for the remainder of the game.
+  \item All players who teleport to \#F10 on the same turn as the first player (including the first player) lose all remaining \svg{movement}.
+  \item Players cannot connect to another player's area.
+  \item Blocked Fields on Starting Tiles count as inactive two-way Portals.
+  \item The Obelisks on the Near Tiles are inactive two-way Portals.
+  \item Each Obelisk is guarded by a Level VI Combat. When a player defeats that Combat, both of that player’s Portals become active.
+\end{itemize}
+Dragon Isle:
+\begin{itemize}
+  \item The Blocked \#F10 Field is a two-way Portal and a Sanctuary. Any number of players may occupy the Sanctuary simultaneously.
+  \item Players may teleport from \#F10 only to their own Town.
+  \item Draw only Dragons for \svg{golden} and \svg{azure} Units in Combats on the Dragon Isle.
+
+\columnbreak
+
+  \item Add 1 × \svg{bronze} and 1 × \svg{silver} Special Dragon Unit to all Level VII Combats.
+\end{itemize}
+
+\svg{bronze} Young Dragon \svg{unit_ranged}:
+\begin{itemize}
+  \item 3 \svg{attack}, 1 \svg{defense}, 3 \svg{health_points}, 6 \svg{initiative}
+  \item \svg{permanent} Ignore the Combat penalty against adjacent Units.
+\end{itemize}
+
+\svg{silver} Mature Dragon \svg{unit_flying}:
+\begin{itemize}
+  \item 4 \svg{attack}, 1 \svg{defense}, 5 \svg{health_points}, 8 \svg{initiative}
+  \item \svg{unit_attack} After the first attack, attack all other adjacent Units with 2 \svg{attack}.
+\end{itemize}
+
+\end{multicols}
+
+\begin{tikzpicture}[overlay]
+  \node(bg)[anchor=center, opacity=0.1, xshift=-3em, yshift=-17em] at (current page.south) {
+    \includegraphics[width=0.87\paperwidth, keepaspectratio]{\art/air_magic.png}
+  };
+  \centering
+  \node at (9, -8) {\includegraphics[width=0.8\paperwidth]{\maps/race-for-the-dragon-isle.png}};
+  \node at (6.7, -15.5) {\footnotesize{\textbf{\MakeUppercase{Dragon Isle}}}};
+  \node at (14.1, -15.5) {\footnotesize{\textbf{\MakeUppercase{Players' Starting Tiles}}}};
+\end{tikzpicture}
