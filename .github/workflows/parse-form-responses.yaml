@@ -1,9 +1,12 @@
 name: Parse Form Responses
 
 on:
-  schedule:
-    - cron: '17 2 * * *'
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  # schedule:
+  #   - cron: '17 2 * * *'
+  # workflow_dispatch:
 
 
 env:

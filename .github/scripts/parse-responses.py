@@ -136,9 +136,9 @@ if __name__ == "__main__":
     if new_responses:
         print("New responses:", len(new_responses))
         if len(new_responses) > NEW_RESPONSES_LIMIT:
-            print(
-                f"Too many new responses: {len(new_responses)}. Check for potential abuse."
-            )
+            message = f"Too many new responses: {len(new_responses)}. Check for potential abuse."
+            print(message)
+            requests.post(WEBHOOK, json={"content": message})
             sys.exit(1)
         for r in new_responses:
             pprint(r)
