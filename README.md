@@ -113,6 +113,114 @@ Or, if you prefer, download <strong>individual scenarios</strong> 👇
 
 Number of players (P) in the brackets.
 
+#### Draft Scenarios
+<table>
+    <thead>
+        <tr>
+            <th>Scenario</th>
+            <th colspan=2 align="center">🇬🇧 English</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">-</td>
+            <td align="center">🎨 color</td>
+            <td align="center">🖨️ <em>mono</em></td>
+        </tr>
+        <tr>
+            <td>🤝 Wandering Dragons (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🤝 The Ambushed Accord (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-color/the_ambushed_accord_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-mono/the_ambushed_accord_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Arcane Artillery (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ The Battle for Treasure Island (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-color/treasure_island_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-mono/treasure_island_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Dragon Valley (2-4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-color/dragon_valley_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-mono/dragon_valley_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Shattered Alliance (3-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-color/shattered_alliance_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-mono/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Astral Run (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ King of the Hill (2-3)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-color/king_of_the_hill_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-mono/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ The Obelisk (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-color/obelisk_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-mono/obelisk_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Blood for Ore (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-color/blood_for_ore_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Dragnarøk (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Race for the Dragon Isle (2-7)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-color/race_for_the_dragon_isle_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-mono/race_for_the_dragon_isle_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🍻 Brothers in Arms (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-color/brothers_in_arms_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-mono/brothers_in_arms_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Graduation Exercise (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-color/rampart_graduation_exercise_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-mono/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Cutthroats (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-color/rampart_cutthroats_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-mono/rampart_cutthroats_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>🗺️ Rampart: Coop Campaign Rules (-)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-color/coop_campaign_rules_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-mono/coop_campaign_rules_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Mission Book Scenarios
 <table>
     <thead>
         <tr>
@@ -374,118 +482,6 @@ Number of players (P) in the brackets.
         </tr>
     </tbody>
 </table>
-
-
-<details>
-<summary>Click to unfold the table with <strong>draft scenarios</strong></summary>
-
-<table>
-    <thead>
-        <tr>
-            <th>Scenario</th>
-            <th colspan=2 align="center">🇬🇧 English</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">-</td>
-            <td align="center">🎨 color</td>
-            <td align="center">🖨️ <em>mono</em></td>
-        </tr>
-        <tr>
-            <td>🤝 Wandering Dragons (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🤝 The Ambushed Accord (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-color/the_ambushed_accord_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_ambushed_accord-mono/the_ambushed_accord_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Arcane Artillery (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ The Battle for Treasure Island (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-color/treasure_island_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-treasure_island-mono/treasure_island_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Dragon Valley (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-color/dragon_valley_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragon_valley-mono/dragon_valley_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Shattered Alliance (3-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-color/shattered_alliance_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-mono/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Astral Run (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ King of the Hill (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-color/king_of_the_hill_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-mono/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ The Obelisk (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-color/obelisk_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-obelisk-mono/obelisk_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Blood for Ore (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-color/blood_for_ore_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Dragnarøk (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>⚔️ Race for the Dragon Isle (2-7)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-color/race_for_the_dragon_isle_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-mono/race_for_the_dragon_isle_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🍻 Brothers in Arms (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-color/brothers_in_arms_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-brothers_in_arms-mono/brothers_in_arms_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🗺️ Rampart: Graduation Exercise (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-color/rampart_graduation_exercise_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_graduation_exercise-mono/rampart_graduation_exercise_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🗺️ Rampart: Cutthroats (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-color/rampart_cutthroats_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rampart_cutthroats-mono/rampart_cutthroats_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
-            <td>🗺️ Rampart: Coop Campaign Rules (-)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-color/coop_campaign_rules_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-coop_campaign_rules-mono/coop_campaign_rules_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-    </tbody>
-</table>
-
-</details>
 
 ### ⭐ Playtests feedback
 
