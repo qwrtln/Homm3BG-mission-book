@@ -1,12 +1,13 @@
 import collections
 import csv
 import http
+import json
 import os
+import pathlib
 import pprint
 import sys
 import textwrap
 import time
-from pprint import pprint
 
 import requests
 
@@ -16,6 +17,11 @@ DELAY_BETWEEN_MESSAGES = 60
 NEW_RESPONSES_LIMIT = 100
 FORM_RESPONSES_FILE = sys.argv[1]
 EXISTING_RESPONSES_FILE = sys.argv[2]
+
+
+def load_authors(filename):
+    with open(filename) as f:
+        return json.load(f)
 
 
 def load_responses(filename):
@@ -37,19 +43,30 @@ def save_response(filename, row):
 
 
 def format_rating(rating):
-    return "🌟" * int(rating)
+    return f"{'🌟' * int(rating)}{'🌑' * (5 - int(rating))}"
 
 
 def horizontal_line(length=200):
     return f"~~{' ' * length}~~"
 
 
-def format_form_response(response):
+def format_form_response(response, scenario_author_mapping):
     messages = []
     messages.append(
         textwrap.dedent(f"""\
         {horizontal_line()}
         # 📝 **{response.Scenario_name}** - New Feedback Submission
+        """)
+    )
+    if response.Scenario_name in scenario_author_mapping:
+        _, discord_id = scenario_author_mapping[response.Scenario_name]
+        messages.append(
+            textwrap.dedent(f"""
+            **Author:** <@{discord_id}>
+            """)
+        )
+    messages.append(
+        textwrap.dedent(f"""\
         **Overall Rating:** {format_rating(response.Overall_rating)}
         **Players/Factions:** {response.Factions_used}
         **Play Time:** {response.Play_time__hours} hours
@@ -103,9 +120,17 @@ def format_form_response(response):
 
 
 if __name__ == "__main__":
+    authors = load_authors(pathlib.Path(__file__).parent / "scenario-authors.json")
+    scenario_author_mapping = {
+        scenario: (author, content["discord_id"])
+        for author, content in authors.items()
+        for scenario in content["scenarios"]
+        if content["on_discord"] is True
+    }
+    pprint.pprint(scenario_author_mapping)
     responses, fields = load_responses(FORM_RESPONSES_FILE)
     print("Parsed form fields:")
-    pprint(fields)
+    pprint.pprint(fields)
     Response = collections.namedtuple("Response", fields)
     existing_responses, _ = load_responses(EXISTING_RESPONSES_FILE)
 
@@ -113,14 +138,14 @@ if __name__ == "__main__":
     if new_responses:
         print("New responses:", len(new_responses))
         if len(new_responses) > NEW_RESPONSES_LIMIT:
-            print(
-                f"Too many new responses: {len(new_responses)}. Check for potential abuse."
-            )
+            message = f"Too many new responses: {len(new_responses)}. Check for potential abuse."
+            print(message)
+            requests.post(WEBHOOK, json={"content": message})
             sys.exit(1)
         for r in new_responses:
-            pprint(r)
+            pprint.pprint(r)
             form_response = Response(*r)
-            for m in format_form_response(form_response):
+            for m in format_form_response(form_response, scenario_author_mapping):
                 response = requests.post(WEBHOOK, json={"content": m})
                 if response.status_code != http.HTTPStatus.NO_CONTENT:
                     print(response.content.decode())

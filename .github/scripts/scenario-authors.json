@@ -1,0 +1,154 @@
+{
+  "jutsus": {
+    "scenarios": [
+      "Astral Run",
+      "Blood for Ore",
+      "Dragon Valley",
+      "Trial by Combat",
+      "The Obelisk",
+      "Shattered Alliance"
+    ],
+    "on_discord": true,
+    "discord_id": "279964882118508547"
+  },
+  "theneuron": {
+    "scenarios": [
+      "Arcane Artillery",
+      "Stand United",
+      "Secret Bomb Stash"
+    ],
+    "on_discord": true,
+    "discord_id": "280344300229754881"
+  },
+  "invoceusse": {
+    "scenarios": [
+      "Emerald Island",
+      "Titans' Stronghold"
+    ],
+    "on_discord": true,
+    "discord_id": "214711807531679744"
+  },
+  "re4xn": {
+    "scenarios": [
+      "Bloody Grail"
+    ],
+    "on_discord": true,
+    "discord_id": "161527439082782720"
+  },
+  "kelghor": {
+    "scenarios": [
+      "Close to Enemies"
+    ],
+    "on_discord": true,
+    "discord_id": "203787060778106880"
+  },
+  "qwrtln": {
+    "scenarios": [
+      "Random Scenario"
+    ],
+    "on_discord": true,
+    "discord_id": "",
+    "discord_id": "1195686137054896171"
+  },
+  "farmaazon": {
+    "scenarios": [
+      "Gold Rush"
+    ],
+    "on_discord": true,
+    "discord_id": "626486628210311208"
+  },
+  "qwertywarlord": {
+    "scenarios": [
+      "Castle: Greek Gift",
+      "Castle: Sicilian Dragon",
+      "Castle: Two Knights' Defense"
+    ],
+    "on_discord": true,
+    "discord_id": "754813410255831111"
+  },
+  "silence70011": {
+    "scenarios": [
+      "Sentinels"
+    ],
+    "on_discord": true,
+    "discord_id": "808823608733990953"
+  },
+  "juhanisalonen": {
+    "scenarios": [
+      "Wandering Dragons"
+    ],
+    "on_discord": true,
+    "discord_id": "272320358986809344"
+  },
+  "wololoeren": {
+    "scenarios": [
+      "The Ambushed Accord"
+    ],
+    "on_discord": true,
+    "discord_id": "295502852011458570"
+  },
+  "2liggett2quit": {
+    "scenarios": [
+      "The Battle for Treasure Island"
+    ],
+    "on_discord": false
+  },
+  "gameknightplays": {
+    "scenarios": [
+      "Race for the Dragon Isle"
+    ],
+    "on_discord": false
+  },
+  "kablamio": {
+    "scenarios": [
+      "King of the Hill"
+    ],
+    "on_discord": false
+  },
+  "mopo":{
+    "scenarios": [
+      "The Fractured Kingdoms"
+    ],
+    "on_discord": false
+  },
+  "matmot" : {
+    "scenarios": [
+      "The Hunt"
+    ],
+    "on_discord": false
+  },
+  "kolarastic": {
+    "scenarios": [
+      "Brothers in Arms"
+    ],
+    "on_discord": false
+  },
+  "da": {
+    "scenarios": [
+      "Dragnarøk"
+    ],
+    "on_discord": false
+  },
+  "profmamadu": {
+    "scenarios": [
+      "Dragoncurse Castle"
+    ],
+    "on_discord": false
+  },
+  "shakajiub": {
+    "scenarios": [
+      "Force of Will"
+    ],
+    "on_discord": false
+  },
+  "tm3356" : {
+    "scenarios": [
+      "Elixir of Life: Graduation Exercise",
+      "Elixir of Life: Cutthroats",
+      "Inferno: 1. A Devilish Plan",
+      "Inferno: 2.Steadwick's Fall",
+      "Inferno: 3. Deal with the Devil"
+    ],
+    "on_discord": false
+  }
+}
