@@ -8,7 +8,6 @@ import pprint
 import sys
 import textwrap
 import time
-from pprint import pprint
 
 import requests
 
@@ -128,10 +127,10 @@ if __name__ == "__main__":
         for scenario in content["scenarios"]
         if content["on_discord"] is True
     }
-    pprint(scenario_author_mapping)
+    pprint.pprint(scenario_author_mapping)
     responses, fields = load_responses(FORM_RESPONSES_FILE)
     print("Parsed form fields:")
-    pprint(fields)
+    pprint.pprint(fields)
     Response = collections.namedtuple("Response", fields)
     existing_responses, _ = load_responses(EXISTING_RESPONSES_FILE)
 
@@ -144,7 +143,7 @@ if __name__ == "__main__":
             requests.post(WEBHOOK, json={"content": message})
             sys.exit(1)
         for r in new_responses:
-            pprint(r)
+            pprint.pprint(r)
             form_response = Response(*r)
             for m in format_form_response(form_response, scenario_author_mapping):
                 response = requests.post(WEBHOOK, json={"content": m})
