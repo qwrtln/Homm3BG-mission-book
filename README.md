@@ -113,6 +113,7 @@ Or, if you prefer, download <strong>individual scenarios</strong> 👇
 
 Number of players (P) in the brackets.
 
+#### Draft Scenarios
 <table>
     <thead>
         <tr>
@@ -219,6 +220,7 @@ Number of players (P) in the brackets.
     </tbody>
 </table>
 
+#### Mission Book Scenarios
 <table>
     <thead>
         <tr>
