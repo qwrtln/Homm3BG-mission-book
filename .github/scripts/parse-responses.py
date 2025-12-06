@@ -44,7 +44,7 @@ def save_response(filename, row):
 
 
 def format_rating(rating):
-    return "🌟" * int(rating)
+    return f"{'🌟' * int(rating)}{'🌑' * (5 - int(rating))}"
 
 
 def horizontal_line(length=200):

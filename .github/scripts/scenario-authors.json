@@ -9,7 +9,7 @@
       "Shattered Alliance"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "279964882118508547"
   },
   "theneuron": {
     "scenarios": [
@@ -18,7 +18,7 @@
       "Secret Bomb Stash"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "280344300229754881"
   },
   "invoceusse": {
     "scenarios": [
@@ -26,26 +26,25 @@
       "Titans' Stronghold"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "214711807531679744"
   },
   "re4xn": {
     "scenarios": [
       "Bloody Grail"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "161527439082782720"
   },
   "kelghor": {
     "scenarios": [
       "Close to Enemies"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "203787060778106880"
   },
   "qwrtln": {
     "scenarios": [
-      "Random Scenario",
-      "The Ambushed Accord"
+      "Random Scenario"
     ],
     "on_discord": true,
     "discord_id": "",
@@ -56,7 +55,7 @@
       "Gold Rush"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "626486628210311208"
   },
   "qwertywarlord": {
     "scenarios": [
@@ -65,27 +64,28 @@
       "Castle: Two Knights' Defense"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "754813410255831111"
   },
   "silence70011": {
     "scenarios": [
       "Sentinels"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "808823608733990953"
   },
   "juhanisalonen": {
     "scenarios": [
       "Wandering Dragons"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "272320358986809344"
   },
   "wololoeren": {
     "scenarios": [
+      "The Ambushed Accord"
     ],
     "on_discord": true,
-    "discord_id": ""
+    "discord_id": "295502852011458570"
   },
   "2liggett2quit": {
     "scenarios": [
