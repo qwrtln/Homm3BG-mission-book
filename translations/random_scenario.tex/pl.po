@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 07:58+0000\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,8 +26,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -45,12 +45,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
@@ -63,7 +63,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:69
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -79,7 +79,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
 #: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
@@ -104,7 +104,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/the_hunt.tex:96 sections/random_scenario.tex:59
+#: clash/the_hunt.tex:97 sections/random_scenario.tex:59
 #, no-wrap
 msgid ""
 "\\medskip\n"
@@ -562,7 +562,43 @@ msgstr "Wybierz \\textbf{warunki początkowe} i \\textbf{siłę Miasta}."
 
 #. type: table*
 #: sections/random_scenario.tex:273
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "  \\hommtable[]{27}{\n"
+#| "    \\centering\n"
+#| "    \\medskip\n"
+#| "    \\textbf{Starting Conditions}\\\\\n"
+#| "    \\bigskip\n"
+#| "\n"
+#| "    \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & \\darkcell{Stingy} & \\darkcell{Fair} & \\darkcell{Generous}\\\\\n"
+#| "    \\darkcell[1.4]{Army}\n"
+#| "      & \\lightcellleft[1.4]{2 × Few cheapest \\svg[12]{bronze} Units}\n"
+#| "      & \\lightcellleft[1.4]{Pack of cheap \\svg[12]{bronze} Units \\linebreak Few chosen \\svg[12]{bronze} Units}\n"
+#| "      & \\lightcellleft[1.4]{Pack of chosen \\svg[12]{bronze} Units \\linebreak Few cheap \\svg[12]{silver} Units}\\\\\n"
+#| "    \\darkcell[1.4]{Starting Resources}\n"
+#| "      & \\lightcellleft[1.4]{10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+#| "      & \\lightcellleft[1.4]{16 \\svg{gold}, 5 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+#| "      & \\lightcellleft[1.4]{20 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}}\\\\\n"
+#| "    \\end{tabularx}\n"
+#| "\n"
+#| "    \\bigskip\n"
+#| "    {\\color{\\iftoggle{noartbackground}{black}{darkyellow}}\\rule{\\textwidth}{0.5pt}}\n"
+#| "\n"
+#| "    \\vspace*{1em}\n"
+#| "    \\textbf{Town Strength}\\\\\n"
+#| "    \\bigskip\n"
+#| "\n"
+#| "    \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & \\darkcell{Settlement} & \\darkcell{City} & \\darkcell{Capitol}\\\\\n"
+#| "    \\darkcell[1.4]{Starting Income}\n"
+#| "      & \\lightcellleft[1.4]{10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}}\n"
+#| "      & \\lightcellleft[1.4]{15 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}}\n"
+#| "      & \\lightcellleft[1.4]{20 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}}\\\\\n"
+#| "    \\darkcell[2.0]{Town Buildings}\n"
+#| "      & \\lightcellleft[2.0]{\\svg[12]{bronze} Dwelling}\n"
+#| "      & \\lightcellleft[2.0]{\\svg[12]{bronze} Dwelling \\linebreak City Hall}\n"
+#| "      & \\lightcellleft[2.0]{\\svg[12]{bronze} Dwelling \\linebreak City Hall \\linebreak Citadel}\\\\\n"
+#| "    \\end{tabularx}\n"
+#| "  }"
 msgid ""
 "  \\hommtable[]{27}{\n"
 "    \\centering\n"
@@ -571,10 +607,10 @@ msgid ""
 "    \\bigskip\n"
 "\n"
 "    \\begin{tabularx}{0.99\\linewidth}{p{0.12\\linewidth}XXXX} & \\darkcell{Stingy} & \\darkcell{Fair} & \\darkcell{Generous}\\\\\n"
-"    \\darkcell[1.4]{Army}\n"
-"      & \\lightcellleft[1.4]{2 × Few cheapest \\svg[12]{bronze} Units}\n"
-"      & \\lightcellleft[1.4]{Pack of cheap \\svg[12]{bronze} Units \\linebreak Few chosen \\svg[12]{bronze} Units}\n"
-"      & \\lightcellleft[1.4]{Pack of chosen \\svg[12]{bronze} Units \\linebreak Few cheap \\svg[12]{silver} Units}\\\\\n"
+"    \\darkcell[1.8]{Army}\n"
+"      & \\lightcellleft[1.8]{2 × ``Few'' cheapest \\svg[12]{bronze} Units}\n"
+"      & \\lightcellleft[1.8]{``Pack'' of cheap \\svg[12]{bronze} Units \\linebreak ``Few'' chosen \\svg[12]{bronze} Units}\n"
+"      & \\lightcellleft[1.8]{``Pack'' of chosen \\svg[12]{bronze} Units \\linebreak ``Few'' cheap \\svg[12]{silver} Units}\\\\\n"
 "    \\darkcell[1.4]{Starting Resources}\n"
 "      & \\lightcellleft[1.4]{10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}}\n"
 "      & \\lightcellleft[1.4]{16 \\svg{gold}, 5 \\svg{building_materials}, 1 \\svg{valuables}}\n"

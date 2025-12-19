@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 07:58+0000\n"
 "PO-Revision-Date: 2025-08-02 19:31+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,8 +27,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -90,7 +90,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
-#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
@@ -106,7 +106,7 @@ msgstr ""
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
@@ -132,12 +132,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
@@ -150,7 +150,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:69
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -166,7 +166,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
 #: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
@@ -315,8 +315,8 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item A Pack of Familiars\n"
-"  \\item A Few Magogs\n"
+"  \\item A ``Pack'' of Familiars\n"
+"  \\item A ``Few'' Magogs\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -342,10 +342,10 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item \\textbf{Army:}\n"
 "    \\begin{itemize}\n"
-"      \\item A Pack of Gold Dragons\n"
-"      \\item A Pack of Unicorns\n"
-"      \\item A Pack of Dendroids\n"
-"      \\item A Pack of Centaurs\n"
+"      \\item A ``Pack'' of Gold Dragons\n"
+"      \\item A ``Pack'' of Unicorns\n"
+"      \\item A ``Pack'' of Dendroids\n"
+"      \\item A ``Pack'' of Centaurs\n"
 "    \\end{itemize}\n"
 "\\end{itemize}\n"
 "\n"
@@ -359,7 +359,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item \\textbf{Army:}\n"
 "    \\begin{itemize}\n"
-"      \\item A Few Elves\n"
+"      \\item A ``Few'' Elves\n"
 "      \\item Neutral Army at the same Level as your Hero\\footnote{See page 35, ``Field Difficulty Level Table'' in the Core Rulebook, for further details on the number of Neutral Units you have to draw for this Neutral Army.}\n"
 "    \\end{itemize}\n"
 "  \\item \\textbf{AI Deck:}\n"
@@ -524,15 +524,26 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:156
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{\\nth{9} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item Reinforce the Few Elves in Ivor's army to a Pack of Elves.\n"
+"  \\item Reinforce the ``Few'' Elves in Ivor's army to a ``Pack'' of Elves.\n"
 "  \\item Add an Ammo Cart to Ivor's Army.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Раунд 9:}\n"
+"\\begin{itemize}\n"
+"  \\item Повторите события раунда 6.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:161

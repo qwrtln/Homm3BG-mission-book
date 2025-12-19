@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 07:58+0000\n"
 "PO-Revision-Date: 2025-06-23 13:01+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,8 +28,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -47,7 +47,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
-#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
@@ -63,7 +63,7 @@ msgstr ""
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
@@ -75,12 +75,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
@@ -171,7 +171,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
+#: campaigns/castle_greek_gift.tex:38 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
 #, no-wrap
 msgid ""
@@ -180,7 +180,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
+#: campaigns/castle_greek_gift.tex:40 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
 #, no-wrap
 msgid ""
@@ -191,7 +191,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
+#: campaigns/castle_greek_gift.tex:48 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
 #, no-wrap
 msgid ""
@@ -202,7 +202,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
+#: campaigns/castle_greek_gift.tex:67 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
 #, no-wrap
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:81
+#: campaigns/castle_greek_gift.tex:82
 #: campaigns/castle_two_knights_defense.tex:89
 #, no-wrap
 msgid ""
@@ -223,7 +223,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
+#: campaigns/castle_greek_gift.tex:110 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
 #, no-wrap
 msgid ""
@@ -232,7 +232,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
+#: campaigns/castle_greek_gift.tex:112 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
 #, no-wrap
 msgid ""
@@ -241,7 +241,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
+#: campaigns/castle_greek_gift.tex:141 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
@@ -366,7 +366,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:37
 #, no-wrap
 msgid ""
-"\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
+"\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Pack'' of Liches, a ``Pack'' of Dread Knights\n"
 "\n"
 msgstr ""
 
@@ -459,7 +459,7 @@ msgstr ""
 msgid ""
 "  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svg{azure} Azure neutral Deck to your army.\n"
 "  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
-"  \\item If the enemy army reaches the Dragon Utopia before you do, flip the Pack side of Dread Knights to Few and add a Pack of Ghost Dragons.\n"
+"  \\item If the enemy army reaches the Dragon Utopia before you do, flip the ``Pack'' side of Dread Knights to ``Few'' and add a ``Pack'' of Ghost Dragons.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -551,7 +551,7 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:163
 #, no-wrap
 msgid ""
-"\\textcolor{darkcandyapplered}{Add a Few Champions to your army.}\n"
+"\\textcolor{darkcandyapplered}{Add a ``Few'' Champions to your army.}\n"
 "\n"
 msgstr ""
 
