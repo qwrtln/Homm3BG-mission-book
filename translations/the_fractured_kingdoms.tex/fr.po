@@ -190,13 +190,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -206,7 +200,7 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Unités Quelques \\svg{bronze}\n"
+"  \\item 3 × Unités «Quelques» \\svg{bronze}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -418,6 +412,13 @@ msgid ""
 "  }\n"
 "\n"
 msgstr ""
+"  \\newcommand{\\greenline}[3]{%\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
+"      \\draw[green!70!black, line width=5pt, line cap=round] (-0.3,0) -- (0.3,0);\n"
+"    \\end{scope}\n"
+"  }\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:119

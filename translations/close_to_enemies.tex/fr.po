@@ -252,13 +252,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -268,7 +262,7 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Unités Quelques \\svg{bronze}\n"
+"  \\item «Quelques» unités \\svg{bronze} choisies\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -372,15 +366,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
 "\n"
 msgstr ""
-"\\textbf{Deck de Sort Défenseurs d'Enclave:} 1~×~Flèche Magique\n"
+"\\textbf{Deck de Sort Défenseurs d'Enclave:}\\\\1~×~Flèche Magique\n"
 "\n"
 
 #. type: multicols

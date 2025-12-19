@@ -122,14 +122,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/trial_by_combat.tex:25
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few cheapest \\svg{silver} Units\n"
-#| "  \\item A chosen Neutral \\svg{bronze} Unit matching the player's Faction\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"

@@ -406,15 +406,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:37
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Pack of Dread Knights\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Pack'' of Liches, a ``Pack'' of Dread Knights\n"
 "\n"
 msgstr ""
-"\\textbf{Armée Ennemie:} Groupe de Squelettes, Groupe de Zombies, Groupe de Liches, Groupe de Chevaliers de l'Effroi\n"
+"\\textbf{Armée Ennemie:} «Groupe» de Squelettes, «Groupe» de Zombies, «Groupe» de Liches, «Groupe» de Chevaliers de l'Effroi\n"
 "\n"
 
 #. type: multicols*
@@ -537,13 +534,7 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_two_knights_defense.tex:118
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svg{azure} Azure neutral Deck to your army.\n"
-#| "  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
-#| "  \\item If the enemy army reaches the Dragon Utopia before you do, flip the Pack side of Dread Knights to Few and add a Pack of Ghost Dragons.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\item After defeating the neutral army at the Dragon Utopia, add a random dragon from the \\svg{azure} Azure neutral Deck to your army.\n"
 "  \\item The enemy army follows the normal AI movement rules, stopping to capture Settlements and Mines, with its ultimate goal to reach the Dragon Utopia.\n"
@@ -553,7 +544,7 @@ msgid ""
 msgstr ""
 "  \\item Après avoir vaincu l'armée neutre des Terres Désolées, ajoutez un Dragon au hasard à votre armée du Deck Unités Neutres \\svg{azure}.\n"
 "  \\item L'armée ennemie suit les règles normales de mouvement IA, capturant les Enclaves et les Mines, et avec comme objectif capturer les Terres Désolées.\n"
-"  \\item Si l'armée ennemie atteint les Terres Désolées avant vous, retournez le Groupe de Chevaliers de l'Effroi du côté Quelques et ajoutez Quelques Dragons Fantômes.\n"
+"  \\item Si l'armée ennemie atteint les Terres Désolées avant vous, retournez le «Groupe» de Chevaliers de l'Effroi du côté «Quelques» et ajoutez «Quelques» Dragons Fantômes.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -677,15 +668,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_two_knights_defense.tex:163
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textcolor{darkcandyapplered}{Add a Few Champions to your army.}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a ``Few'' Champions to your army.}\n"
 "\n"
 msgstr ""
-"\\textcolor{darkcandyapplered}{Ajoutez Quelques Champions à votre armée.}\n"
+"\\textcolor{darkcandyapplered}{Ajoutez «Quelques» Champions à votre armée.}\n"
 "\n"
 
 #. type: multicols*

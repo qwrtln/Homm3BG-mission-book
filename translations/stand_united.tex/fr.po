@@ -271,14 +271,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -289,8 +282,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Quelques \\svg{bronze} avec le plus faible coût de Recrutement.\n"
-"  \\item Une Unité Quelques \\svg{silver} avec le plus faible coût de Recrutement.\n"
+"  \\item «Quelques» unités \\svg{bronze} les moins chères\n"
+"  \\item «Quelques» unités \\svg{silver} les moins chères\n"
 "\\end{itemize}\n"
 "\n"
 

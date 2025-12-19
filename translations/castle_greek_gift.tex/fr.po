@@ -240,13 +240,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few Halberdiers, a Few Marksmen\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -257,7 +251,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de Départ:}\n"
 "\\begin{itemize}\n"
-"  \\item Quelques Hallebardiers, Quelques Arbalétriers\n"
+"  \\item «Quelques» Hallebardiers\n"
+"  \\item «Quelques» Arbalétriers\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -285,15 +280,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
 msgstr ""
-"\\textbf{Armée Ennemie:} Groupe de Squelettes, Groupe de Zombies, Quelques Chevaliers de l'Effroi, Quelques Dragons Fantomes\n"
+"\\textbf{Armée Ennemie:} «Groupe» de Squelettes, «Groupe» de Zombies, «Quelques» Chevaliers de l'Effroi, «Quelques» Dragons Fantomes\n"
 "\n"
 
 #. type: multicols*
@@ -797,15 +789,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:204
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a ``Few'' Archangels to your army.}\n"
 "\n"
 msgstr ""
-"\\textcolor{darkcandyapplered}{Ajoutez Quelques Archanges à votre armée.}\n"
+"\\textcolor{darkcandyapplered}{Ajoutez «Quelques» Archanges à votre armée.}\n"
 "\n"
 
 #. type: multicols*

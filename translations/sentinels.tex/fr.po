@@ -162,7 +162,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -171,10 +171,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Quelques \\svg{bronze} avec le plus faible coût de Recrutement.\n"
-"  \\item Une Unité Quelques \\svg{silver} avec le plus faible coût de Recrutement.\n"
+"  \\item «Groupe» d'unités \\svg{bronze} les moins chères\n"
+"  \\item «Quelques» unités \\svg{bronze} les plus chères\n"
 "\\end{itemize}\n"
 "\n"
 

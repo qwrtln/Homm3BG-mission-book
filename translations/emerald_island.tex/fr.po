@@ -149,7 +149,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -160,8 +160,8 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Groupe \\svg{bronze} de votre choix.\n"
-"  \\item Une Unité Quelques \\svg{bronze} de votre choix.\n"
+"  \\item «Groupe» d'unités \\svg{bronze} choisies\n"
+"  \\item «Quelques» unités \\svg{bronze} choisies\n"
 "\\end{itemize}\n"
 "\n"
 

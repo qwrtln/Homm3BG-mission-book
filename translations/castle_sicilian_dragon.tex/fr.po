@@ -320,15 +320,12 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/castle_sicilian_dragon.tex:38
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Pack of Liches, a Few Dread Knights, a Few Ghost Dragons\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Pack'' of Liches, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
 msgstr ""
-"\\textbf{Armée Ennemie:} Groupe de Squelettes, Groupe de Zombie, Groupe de Liches, Quelques Chevaliers de l'Effroi, Quelques Dragons Fantomes\n"
+"\\textbf{Armée Ennemie:} «Groupe» de Squelettes, «Groupe» de Zombie, «Groupe» de Liches, «Quelques» Chevaliers de l'Effroi, «Quelques» Dragons Fantomes\n"
 "\n"
 
 #. type: multicols*
@@ -871,14 +868,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_sicilian_dragon.tex:220
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item \\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
-#| "  \\item \\textcolor{darkcandyapplered}{You may now teleport to the enemy town on Tile S1.\n"
-#| "    If you choose not to, you may in the future by spending one \\svg{movement-red} at this Obelisk.}\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item \\textcolor{darkcandyapplered}{Add a ``Few'' Archangels to your army.}\n"
@@ -888,7 +878,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item \\textcolor{darkcandyapplered}{Ajoutez Quelques Archanges à votre armée.}\n"
+"  \\item \\textcolor{darkcandyapplered}{Ajoutez «Quelques» Archanges à votre armée.}\n"
 "  \\item \\textcolor{darkcandyapplered}{Vous pouvez vous téléporter à la Ville ennemie sur la tuile S1.\n"
 "    Sinon, vous pouvez plus tard en payant un \\svg{movement-red} sur cet Obélisque.}\n"
 "\\end{itemize}\n"

@@ -217,7 +217,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:29 clash/dragoncurse_castle.tex:32
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -227,7 +227,7 @@ msgid ""
 msgstr ""
 "\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Unités Quelques \\svg{bronze}\n"
+"  \\item 2 × Unités «Quelques» \\svg{bronze}\n"
 "\\end{itemize}\n"
 "\n"
 

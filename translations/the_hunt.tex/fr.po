@@ -58,7 +58,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -67,10 +67,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de départ :}\n"
+"\\textbf{Unités de départ :}\n"
 "\\begin{itemize}\n"
-"  \\item Une Unité Quelques \\svg{bronze} avec le plus faible coût de Recrutement.\n"
-"  \\item Une Unité Quelques \\svg{silver} avec le plus faible coût de Recrutement.\n"
+"  \\item «Groupe» d'unités \\svg{bronze} les moins chères\n"
+"  \\item «Quelques» unités \\svg{bronze} les plus chères\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -230,16 +230,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II--III) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -259,6 +250,7 @@ msgstr ""
 "  \\item 1 × Tuile Centre (VI--VII)\n"
 "\\end{itemize}\n"
 "\n"
+"\\columnbreak\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:54
