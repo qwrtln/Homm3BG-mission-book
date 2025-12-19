@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -55,6 +55,24 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\\begin{itemize}\n"
+"  \\item ,,Grupa'' najtańszych \\svg{bronze} Jednostek\n"
+"  \\item ,,Garstka'' najdroższych \\svg{bronze} Jednostek\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
@@ -190,31 +208,6 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A ``Pack'' of the cheapest\\svg{bronze} Units\n"
-"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Jednostki Początkowe:}\n"
-"\\begin{itemize}\n"
-"  \\item 1 × Garstka najtańszych \\svg{bronze} Jednostek\n"
-"  \\item 1 × Garstka najtańszych \\svg{silver} Jednostek\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
 #, no-wrap
 msgid ""
@@ -236,16 +229,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II--III) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -264,6 +248,7 @@ msgstr ""
 "  \\item 2 × Bliski (IV--V) Kafelek Mapy\n"
 "  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*

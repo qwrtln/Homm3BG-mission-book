@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2025-06-23 13:01+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -55,6 +55,23 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item  Wenige \\svg{bronze}-Einheiten eurer Wahl\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
@@ -180,29 +197,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Startressourcen:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
-"\n"
-
-#. type: multicols*
-#: clash/the_hunt.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few \\svg{bronze} Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A ``Pack'' of the cheapest\\svg{bronze} Units\n"
-"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Starteinheiten:}\n"
-"\\begin{itemize}\n"
-"  \\item  Wenige \\svg{bronze}-Einheiten eurer Wahl\n"
-"\\end{itemize}\n"
 "\n"
 
 #. type: multicols*

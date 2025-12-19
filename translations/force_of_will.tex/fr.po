@@ -218,12 +218,6 @@ msgstr ""
 #. type: multicols*
 #: clash/force_of_will.tex:29 clash/dragoncurse_castle.tex:32
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"

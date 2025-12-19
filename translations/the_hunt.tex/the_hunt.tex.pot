@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,18 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
 "\n"
 msgstr ""
 
@@ -156,18 +168,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: clash/the_hunt.tex:29
-#, no-wrap
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A ``Pack'' of the cheapest\\svg{bronze} Units\n"
-"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-"\\end{itemize}\n"
 "\n"
 msgstr ""
 

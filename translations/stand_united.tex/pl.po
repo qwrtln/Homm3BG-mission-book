@@ -270,14 +270,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -288,8 +281,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Garstka najtańszych \\svg{bronze} Jednostek\n"
-"  \\item 1 × Garstka najtańszych \\svg{silver} Jednostek\n"
+"  \\item ,,Garstka'' najtańszych \\svg{bronze} Jednostek\n"
+"  \\item ,,Garstka'' najtańszych \\svg{silver} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -471,7 +464,7 @@ msgstr ""
 "  };\n"
 "  \\centering\n"
 "  \\node at (13.5, 2.5) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -0.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
+"  \\node at (13.5, -1.8) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};\n"
 "\n"
 
 #. type: tikzpicture

@@ -250,13 +250,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -266,7 +260,7 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Garstka \\svg{bronze} Jednostek\n"
+"  \\item ,,Garstka'' wybranych \\svg{bronze} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -370,15 +364,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
 "\n"
 msgstr ""
-"\\textbf{Talia Zaklęć Obrońców Osad:} 1~×~Magiczna Strzała\n"
+"\\textbf{Talia Zaklęć Obrońców Osad:}\\\\1~×~Magiczna Strzała\n"
 "\n"
 
 #. type: multicols

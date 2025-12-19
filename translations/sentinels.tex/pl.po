@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -161,16 +161,9 @@ msgstr ""
 "\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
-#. type: multicols
-#: coops/sentinels.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -181,8 +174,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Garstka najtańszych \\svg{bronze} Jednostek\n"
-"  \\item 1 × Garstka najtańszych \\svg{silver} Jednostek\n"
+"  \\item ,,Grupa'' najtańszych \\svg{bronze} Jednostek\n"
+"  \\item ,,Garstka'' najdroższych \\svg{bronze} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 

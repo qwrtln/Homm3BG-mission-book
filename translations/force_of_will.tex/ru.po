@@ -192,12 +192,6 @@ msgstr ""
 #. type: multicols*
 #: clash/force_of_will.tex:29 clash/dragoncurse_castle.tex:32
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{9} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Round 6.\n"
-#| "\\end{itemize}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"

@@ -241,13 +241,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few Halberdiers, a Few Marksmen\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -258,7 +252,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Garstka Halabardników, Garstka Kuszników\n"
+"  \\item ,,Garstka'' Halabardników\n"
+"  \\item ,,Garstka'' Kuszników\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -286,15 +281,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
 msgstr ""
-"\\textbf{Armia Wroga:} Grupa Szkieletów, Grupa Zombie, Garstka Rycerzy Grozy, Garstka Upiornych Smoków\n"
+"\\textbf{Armia Wroga:} ,,Grupa'' Szkieletów, ,,Grupa'' Zombie, ,,Garstka'' Rycerzy Grozy, ,,Garstka'' Upiornych Smoków\n"
 "\n"
 
 #. type: multicols*
@@ -796,15 +788,12 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:204
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a ``Few'' Archangels to your army.}\n"
 "\n"
 msgstr ""
-"\\textcolor{darkcandyapplered}{Dodaj Garstkę Archaniołów do swojej armii.}\n"
+"\\textcolor{darkcandyapplered}{Dodaj ,,Garstkę'' Archaniołów do swojej armii.}\n"
 "\n"
 
 #. type: multicols*

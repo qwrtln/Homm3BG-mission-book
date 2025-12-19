@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,8 +135,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
-#: coops/sentinels.tex:32
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"

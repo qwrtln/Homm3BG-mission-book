@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 15:06+0000\n"
 "PO-Revision-Date: 2025-06-23 18:55+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,6 +42,24 @@ msgid ""
 "\n"
 msgstr ""
 "{2}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/bloody_grail.tex:27 clash/the_hunt.tex:29
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Unités de départ :}\n"
+"\\begin{itemize}\n"
+"  \\item Une Unité Quelques \\svg{bronze} avec le plus faible coût de Recrutement.\n"
+"  \\item Une Unité Quelques \\svg{silver} avec le plus faible coût de Recrutement.\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
@@ -157,31 +175,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Ressources de Départ :} 13 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
-
-#. type: multicols*
-#: clash/bloody_grail.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
-#| "  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A ``Few'' \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
-"  \\item A ``Pack'' of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Unités de départ :}\n"
-"\\begin{itemize}\n"
-"  \\item Une Unité Quelques \\svg{bronze} avec le coût de Recrutement le plus \\textit{élevé}\n"
-"  \\item Une Unité Groupe \\svg{bronze} avec le coût de Recrutement le plus \\textit{faible}\n"
-"\\end{itemize}\n"
 "\n"
 
 #. type: multicols*

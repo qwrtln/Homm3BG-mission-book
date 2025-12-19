@@ -189,13 +189,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -205,7 +199,7 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Garstka \\svg{bronze} Jednostek\n"
+"  \\item 3 × ,,Garstka'' \\svg{bronze} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 

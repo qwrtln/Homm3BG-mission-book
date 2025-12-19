@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2025-07-05 00:39+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -54,6 +54,24 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Стартовый доход:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Стартовые отряды:}\n"
+"\\begin{itemize}\n"
+"  \\item «pack» \\svg{bronze} отрядов с \\textit{наименьшей} стоимостью найма\n"
+"  \\item «few» \\svg{bronze} отрядов с \\textit{наибольшей} стоимостью найма\n"
+"\\end{itemize}\n"
 "\n"
 
 #. type: multicols
@@ -169,31 +187,6 @@ msgid ""
 "\\textbf{Starting Resources:} 15 \\svg{gold}, 4 \\svg{building_materials}, 2 \\svg{valuables}\n"
 "\n"
 msgstr ""
-
-#. type: multicols*
-#: clash/the_hunt.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-#| "  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\\begin{itemize}\n"
-"  \\item A ``Pack'' of the cheapest\\svg{bronze} Units\n"
-"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Стартовые отряды:}\n"
-"\\begin{itemize}\n"
-"  \\item «pack» \\svg{bronze} отрядов с \\textit{наименьшей} стоимостью найма\n"
-"  \\item «few» \\svg{bronze} отрядов с \\textit{наибольшей} стоимостью найма\n"
-"\\end{itemize}\n"
-"\n"
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41

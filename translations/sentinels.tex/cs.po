@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -162,16 +162,9 @@ msgstr ""
 "\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
-#. type: multicols
-#: coops/sentinels.tex:32
+#. type: multicols*
+#: coops/sentinels.tex:32 clash/the_hunt.tex:29
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"

@@ -254,13 +254,6 @@ msgstr ""
 #. type: multicols
 #: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\svg{bronze} Units of your choice\n"
-#| "  \\item A Few \\svg{bronze} Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"

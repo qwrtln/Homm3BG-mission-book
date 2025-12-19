@@ -255,14 +255,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/titans_stronghold.tex:34 coops/emerald_island.tex:30
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Pack of \\svg{bronze} Units of your choice\n"
-#| "  \\item A Few \\svg{bronze} Units of your choice\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -273,8 +266,8 @@ msgid ""
 msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
-"  \\item Grupa \\svg{bronze} Jednostek do wyboru\n"
-"  \\item Garstka \\svg{bronze} Jednostek do wyboru\n"
+"  \\item ,,Grupa'' wybranych \\svg{bronze} Jednostek\n"
+"  \\item ,,Garstka'' wybranych \\svg{bronze} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 
