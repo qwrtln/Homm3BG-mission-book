@@ -432,7 +432,7 @@ msgid ""
 "\\subsection*{General Recommendations}\n"
 "\n"
 msgstr ""
-"\\subsection*{General Recommendations}\n"
+"\\subsection*{Recommandations Générales}\n"
 "\n"
 
 #. type: multicols
