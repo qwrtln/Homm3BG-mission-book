@@ -160,7 +160,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -171,7 +171,8 @@ msgid ""
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item  Wenige \\svg{bronze}-Einheiten eurer Wahl\n"
+"  \\item  Ein Rudel der günstigsten \\svg{bronze}-Einheiten\n"
+"  \\item  Wenige der teuersten \\svg{bronze}-Einheiten\n"
 "\\end{itemize}\n"
 "\n"
 
