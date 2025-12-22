@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 14:12+0000\n"
 "PO-Revision-Date: 2025-06-23 13:01+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,8 +28,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -63,15 +63,15 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Pack of \\svg{bronze} Units with the \\textit{lowest} Recruitment cost\n"
-"  \\item A Few \\svg{bronze} Units with the \\textit{highest} Recruitment cost\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item Ein Rudel \\svg{bronze}-Einheiten mit den \\textit{niedrigsten} Rekrutierungskosten\n"
-"  \\item Wenige \\svg{bronze}-Einheiten mit den \\textit{höchsten} Rekrutierungskosten\n"
+"  \\item  Ein Rudel der günstigsten \\svg{bronze}-Einheiten\n"
+"  \\item  Wenige der teuersten \\svg{bronze}-Einheiten\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -92,12 +92,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
@@ -110,7 +110,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:69
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -219,8 +219,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:45
-#, no-wrap
+#: clash/the_hunt.tex:46
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item P × Starting (I) Map Tile\n"
+#| "  \\item 2P × Far (II--III) Map Tile\n"
+#| "  \\item 2P × Near (IV--V) Map Tile\n"
+#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -229,11 +237,19 @@ msgid ""
 "  \\item 2 × Near (IV--V) Map Tile\n"
 "  \\item 1 × Center (VI--VII) Map Tile\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item S × Startgebiete (I)\n"
+"  \\item 2S × Ferne Gebiete (II-III)\n"
+"  \\item 2S × Nahe Gebiete (IV-V)\n"
+"  \\item (S + 1) × Zentrale Gebiete (VI-VII)\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:53
+#: clash/the_hunt.tex:54
 #, no-wrap
 msgid ""
 "\\textbf{For a 3-player Scenario:}\n"
@@ -247,7 +263,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:56
+#: clash/the_hunt.tex:57
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -256,7 +272,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:59
+#: clash/the_hunt.tex:60
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
@@ -265,7 +281,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:66
+#: clash/the_hunt.tex:67
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{4}, \\nth{8} and \\nth{12} Rounds:}\n"
@@ -276,7 +292,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:70
+#: clash/the_hunt.tex:71
 #, no-wrap
 msgid ""
 "Before the start of this Scenario:\n"
@@ -284,7 +300,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:76
+#: clash/the_hunt.tex:77
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -296,7 +312,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:79
+#: clash/the_hunt.tex:80
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -305,7 +321,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:92
+#: clash/the_hunt.tex:93
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -324,7 +340,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:94
+#: clash/the_hunt.tex:95
 #, no-wrap
 msgid ""
 "\\includegraphics[width=\\columnwidth, keepaspectratio]{\\maps/the-hunt-2.png}\n"
@@ -332,7 +348,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: clash/the_hunt.tex:96 sections/random_scenario.tex:59
+#: clash/the_hunt.tex:97 sections/random_scenario.tex:59
 #, no-wrap
 msgid ""
 "\\medskip\n"
@@ -342,7 +358,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/the_hunt.tex:98
+#: clash/the_hunt.tex:99
 #, no-wrap
 msgid ""
 "{\\footnotesize\\centering\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}\\par}\n"
@@ -350,7 +366,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/the_hunt.tex:104
+#: clash/the_hunt.tex:105
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay, anchor=north]\n"
@@ -362,7 +378,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:151
+#: clash/the_hunt.tex:152
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -370,7 +386,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:151
+#: clash/the_hunt.tex:152
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Azure Dragon}} \\medskip \\textit{Little is "
 "known of the Azure Dragon.  It is both rare and mighty, thus few have seen "
@@ -398,7 +414,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: clash/the_hunt.tex:171
+#: clash/the_hunt.tex:172
 #, no-wrap
 msgid ""
 "[h]\n"
@@ -420,7 +436,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:213
+#: clash/the_hunt.tex:215
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -428,7 +444,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:213
+#: clash/the_hunt.tex:215
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Crystal Dragon}} \\medskip \\textit{Made "
 "entirely from red crystal and brought to life through magical means, the "
@@ -456,7 +472,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: clash/the_hunt.tex:234
+#: clash/the_hunt.tex:236
 #, no-wrap
 msgid ""
 "[h]\n"
@@ -478,7 +494,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:275
+#: clash/the_hunt.tex:278
 msgid ""
 "{l}{0.3\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -486,7 +502,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:275
+#: clash/the_hunt.tex:278
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Rust Dragon {\\scriptsize Requires Fortress "
 "Expansion}}} \\medskip \\textit{Rust Dragons are known to hunt Gorgons, and "
@@ -513,7 +529,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: clash/the_hunt.tex:296
+#: clash/the_hunt.tex:299
 #, no-wrap
 msgid ""
 "[h]\n"
@@ -535,7 +551,7 @@ msgid ""
 msgstr ""
 
 #. type: wrapfigure
-#: clash/the_hunt.tex:346
+#: clash/the_hunt.tex:349
 msgid ""
 "{l}{0.28\\textwidth} \\raisebox{0pt}"
 "[\\dimexpr\\height-0.2\\baselineskip\\relax]{\\framedimage[1.1\\linewidth]"
@@ -543,7 +559,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: clash/the_hunt.tex:346
+#: clash/the_hunt.tex:349
 msgid ""
 "{ \\textbf{\\MakeUppercase{Boss: Faerie Dragon {\\scriptsize Requires "
 "Rampart Expansion}}} \\medskip \\textit{Faerie Dragons are deceptively cute, "
@@ -575,7 +591,7 @@ msgid ""
 msgstr ""
 
 #. type: table*
-#: clash/the_hunt.tex:366
+#: clash/the_hunt.tex:369
 #, no-wrap
 msgid ""
 "[h]\n"

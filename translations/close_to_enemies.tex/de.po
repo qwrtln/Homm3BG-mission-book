@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 07:58+0000\n"
 "PO-Revision-Date: 2025-07-30 12:41+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,8 +28,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -93,7 +93,7 @@ msgstr ""
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
-#: clash/force_of_will.tex:74 clash/the_hunt.tex:68
+#: clash/force_of_will.tex:74 clash/the_hunt.tex:69
 #: campaigns/inferno_devilish_plan.tex:174
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
@@ -251,14 +251,13 @@ msgstr ""
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item  1 × A Few \\svg{bronze} Units of your choice\n"
+"  \\item A ``Few'' chosen \\svg{bronze} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 "\\textbf{Starteinheiten:}\n"
 "\\begin{itemize}\n"
-"  \\item  Wenige \\svg{bronze}-Einheiten eurer Wahl\n"
-"\\end{itemize}\n"
+"  \\item Wenige \\svg{bronze}-Einheiten eurer Wahl.\\end{itemize}\n"
 "\n"
 
 #. type: multicols
@@ -360,9 +359,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
+#| "\n"
 msgid ""
-"\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
+"\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
 "\n"
 msgstr ""
 "\\textbf{Bot-Zauberstapel der Verteidiger:} 1 × Magischer Pfeil\n"

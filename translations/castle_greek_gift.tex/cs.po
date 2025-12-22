@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-11-06 23:19+0100\n"
+"POT-Creation-Date: 2025-12-19 07:58+0000\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -28,8 +28,8 @@ msgstr ""
 #: campaigns/inferno_devilish_plan.tex:202
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -46,7 +46,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:35
+#: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
@@ -57,7 +57,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
-#: campaigns/castle_greek_gift.tex:49 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
 msgid ""
@@ -73,7 +73,7 @@ msgstr ""
 #: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:72 campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
@@ -85,12 +85,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:61
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
 #: campaigns/inferno_devilish_plan.tex:140
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:87 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
@@ -103,7 +103,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
 #: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
+#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
 #: sections/credits.tex:28 sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
@@ -240,12 +240,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:33
-#, no-wrap
+#: campaigns/castle_greek_gift.tex:34
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A Few Halberdiers, a Few Marksmen\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
-"  \\item A Few Halberdiers, a Few Marksmen\n"
+"  \\item A ``Few'' Halberdiers\n"
+"  \\item A ``Few'' Marksmen\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -256,7 +263,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:37 campaigns/castle_sicilian_dragon.tex:34
+#: campaigns/castle_greek_gift.tex:38 campaigns/castle_sicilian_dragon.tex:34
 #: campaigns/castle_two_knights_defense.tex:33
 #, no-wrap
 msgid ""
@@ -267,7 +274,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:39 campaigns/castle_sicilian_dragon.tex:36
+#: campaigns/castle_greek_gift.tex:40 campaigns/castle_sicilian_dragon.tex:36
 #: campaigns/castle_two_knights_defense.tex:35
 #, no-wrap
 msgid ""
@@ -278,17 +285,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:41
-#, no-wrap
+#: campaigns/castle_greek_gift.tex:42
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
+#| "\n"
 msgid ""
-"\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
+"\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
 msgstr ""
 "\\textbf{Nepřátelská Armáda:} Tlupa Kostlivců, Tlupa Zombie, Hrstka Hrozivých Rytířů, Hrstka Přízračných Draků\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:43
+#: campaigns/castle_greek_gift.tex:44
 #, no-wrap
 msgid ""
 "\\textbf{Enemy Deck:} 4 × Might Cards\n"
@@ -298,7 +308,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:45
+#: campaigns/castle_greek_gift.tex:46
 #, no-wrap
 msgid ""
 "\\textbf{Special:} Place the Cloak of the Undead King IV and VI Cards aside\n"
@@ -308,7 +318,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:47 campaigns/castle_sicilian_dragon.tex:48
+#: campaigns/castle_greek_gift.tex:48 campaigns/castle_sicilian_dragon.tex:48
 #: campaigns/castle_two_knights_defense.tex:45
 #, no-wrap
 msgid ""
@@ -319,7 +329,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:54
+#: campaigns/castle_greek_gift.tex:55
 #, no-wrap
 msgid ""
 "\\textbf{1 × Starting (I) Map Tile}\n"
@@ -335,7 +345,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:59
+#: campaigns/castle_greek_gift.tex:60
 #, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
@@ -351,7 +361,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:64
+#: campaigns/castle_greek_gift.tex:65
 #, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
@@ -367,7 +377,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:66 campaigns/castle_sicilian_dragon.tex:75
+#: campaigns/castle_greek_gift.tex:67 campaigns/castle_sicilian_dragon.tex:75
 #: campaigns/castle_two_knights_defense.tex:70
 #, no-wrap
 msgid ""
@@ -378,7 +388,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:68
+#: campaigns/castle_greek_gift.tex:69
 #, no-wrap
 msgid ""
 "Place your Castle Hero on the center Field of the S3 Castle starting map Tile.\n"
@@ -388,7 +398,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:70
+#: campaigns/castle_greek_gift.tex:71
 #, no-wrap
 msgid ""
 "Place a Necropolis Hero on the center Field of the N3 Castle Tile.\n"
@@ -398,7 +408,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:74
+#: campaigns/castle_greek_gift.tex:75
 #, no-wrap
 msgid ""
 "Defeat the enemy army.\n"
@@ -408,7 +418,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:81
+#: campaigns/castle_greek_gift.tex:82
 #: campaigns/castle_two_knights_defense.tex:89
 #, no-wrap
 msgid ""
@@ -425,7 +435,7 @@ msgstr ""
 "\\end{itemize}"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:92
+#: campaigns/castle_greek_gift.tex:93
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -440,7 +450,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:97
+#: campaigns/castle_greek_gift.tex:98
 #, no-wrap
 msgid ""
 "\\textbf{If entering the settlement on F3:}\n"
@@ -456,7 +466,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:102
+#: campaigns/castle_greek_gift.tex:103
 #, no-wrap
 msgid ""
 "\\textbf{Before combat with the enemy Hero:}\n"
@@ -472,7 +482,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:107
+#: campaigns/castle_greek_gift.tex:108
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -488,7 +498,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:109 campaigns/castle_sicilian_dragon.tex:117
+#: campaigns/castle_greek_gift.tex:110 campaigns/castle_sicilian_dragon.tex:117
 #: campaigns/castle_two_knights_defense.tex:105
 #, no-wrap
 msgid ""
@@ -499,7 +509,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:111 campaigns/castle_sicilian_dragon.tex:119
+#: campaigns/castle_greek_gift.tex:112 campaigns/castle_sicilian_dragon.tex:119
 #: campaigns/castle_two_knights_defense.tex:107
 #, no-wrap
 msgid ""
@@ -510,7 +520,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:118
+#: campaigns/castle_greek_gift.tex:119
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -530,7 +540,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: campaigns/castle_greek_gift.tex:125
+#: campaigns/castle_greek_gift.tex:126
 #, no-wrap
 msgid ""
 "{\n"
@@ -546,7 +556,7 @@ msgstr ""
 "\n"
 
 #. type: tikzpicture
-#: campaigns/castle_greek_gift.tex:134
+#: campaigns/castle_greek_gift.tex:135
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -562,7 +572,7 @@ msgstr ""
 "  \\node at (10, -2.0) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{F3}}}}};"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:140 campaigns/castle_sicilian_dragon.tex:146
+#: campaigns/castle_greek_gift.tex:141 campaigns/castle_sicilian_dragon.tex:146
 #: campaigns/castle_two_knights_defense.tex:131
 #, no-wrap
 msgid ""
@@ -573,7 +583,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:142
+#: campaigns/castle_greek_gift.tex:143
 #, no-wrap
 msgid ""
 "\\textbf{Distant Threat}\n"
@@ -583,7 +593,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:146
+#: campaigns/castle_greek_gift.tex:147
 #, no-wrap
 msgid ""
 "Catherine Ironfist rubbed her tired, worn thumb across the image of her father, King Gryphonheart, in a locket.\n"
@@ -597,7 +607,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:150
+#: campaigns/castle_greek_gift.tex:151
 #, no-wrap
 msgid ""
 "The weight of Erathia rested on her shoulders.\n"
@@ -611,7 +621,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:155
+#: campaigns/castle_greek_gift.tex:156
 #, no-wrap
 msgid ""
 "One such problem was weighing on her mind.\n"
@@ -627,7 +637,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:158
+#: campaigns/castle_greek_gift.tex:159
 #, no-wrap
 msgid ""
 "Late that evening, Catherine was venting to Rion about the relative drudgery of rebuilding Steadwick.\n"
@@ -639,7 +649,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:162
+#: campaigns/castle_greek_gift.tex:163
 #, no-wrap
 msgid ""
 "The wooden portal flung open before she could spring up, revealing a wide-eyed and panicked guard.\n"
@@ -653,7 +663,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:166
+#: campaigns/castle_greek_gift.tex:167
 #, no-wrap
 msgid ""
 "Catherine shot a look at Rion before the two darted toward the open air of the rectangular window.\n"
@@ -667,7 +677,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:170
+#: campaigns/castle_greek_gift.tex:171
 #, no-wrap
 msgid ""
 "Danger had come to Steadwick again.\n"
@@ -681,7 +691,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:172
+#: campaigns/castle_greek_gift.tex:173
 #, no-wrap
 msgid ""
 "\\textbf{Reverent Allies}\n"
@@ -691,7 +701,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:176
+#: campaigns/castle_greek_gift.tex:177
 #, no-wrap
 msgid ""
 "While Catherine trusted her horse, having fought tooth and nail with the battle-hardened steed for as long as she could remember, it shuddered in hesitation as they approached the majestic, columned main building of the settlement.\n"
@@ -704,7 +714,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:181
+#: campaigns/castle_greek_gift.tex:182
 #, no-wrap
 msgid ""
 "The early morning sun was bright, and the figure that swooped low was in front of it.\n"
@@ -720,7 +730,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:185
+#: campaigns/castle_greek_gift.tex:186
 #, no-wrap
 msgid ""
 "With lightning speed, the figure landed mere feet from them to reveal the stubbled, handsome face of a young man with golden, curled locs and impressively robust bronze armor sculpted to his muscular form.\n"
@@ -734,7 +744,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:189
+#: campaigns/castle_greek_gift.tex:190
 #, no-wrap
 msgid ""
 "With a deeper, and more reverberating voice than any man, the angel was first to speak.\n"
@@ -746,7 +756,7 @@ msgstr ""
 "Čekal jsem, že přijdete, jakmile jsem zahlédl hnilobu formující se v kopcích.}\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:195
+#: campaigns/castle_greek_gift.tex:196
 #, no-wrap
 msgid ""
 "Catherine responded with a smile.\n"
@@ -764,7 +774,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:201
+#: campaigns/castle_greek_gift.tex:202
 #, no-wrap
 msgid ""
 "``Of course, my queen!'' the angel barked.\n"
@@ -781,17 +791,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:203
-#, no-wrap
+#: campaigns/castle_greek_gift.tex:204
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
+#| "\n"
 msgid ""
-"\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
+"\\textcolor{darkcandyapplered}{Add a ``Few'' Archangels to your army.}\n"
 "\n"
 msgstr ""
 "\\textcolor{darkcandyapplered}{Přidejte Hrstku Archandělů do své Armády.}\n"
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:205
+#: campaigns/castle_greek_gift.tex:206
 #, no-wrap
 msgid ""
 "\\textbf{Bait And Switch}\n"
@@ -801,7 +814,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:210
+#: campaigns/castle_greek_gift.tex:211
 #, no-wrap
 msgid ""
 "Catherine couldn't wait to drive her sword through the heart of the Ghost Dragon, then lop the head from the one commanding it.\n"
@@ -817,7 +830,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:217
+#: campaigns/castle_greek_gift.tex:218
 #, no-wrap
 msgid ""
 "Seconds later, she was halfway through the mass of bodies when the stench of rotten flesh and the true immensity of her enemy's numbers hit her.\n"
@@ -837,7 +850,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:221
+#: campaigns/castle_greek_gift.tex:222
 #, no-wrap
 msgid ""
 "Shockingly, instead of slamming into the beast, the angel flew through it like it was made of air.\n"
@@ -851,7 +864,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:224
+#: campaigns/castle_greek_gift.tex:225
 #, no-wrap
 msgid ""
 "Catherine's eyes shot toward what she believed was the necromancer.\n"
@@ -863,7 +876,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:227
+#: campaigns/castle_greek_gift.tex:228
 #, no-wrap
 msgid ""
 "It was a trap.\n"
@@ -875,7 +888,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:233
+#: campaigns/castle_greek_gift.tex:234
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -893,7 +906,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:236
+#: campaigns/castle_greek_gift.tex:237
 #, no-wrap
 msgid ""
 "\\textbf{The Chase Begins}\n"
@@ -903,7 +916,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:240
+#: campaigns/castle_greek_gift.tex:241
 #, no-wrap
 msgid ""
 "Catherine huffed, sweat beading on her forehead as the last undead fell with wet thuds.\n"
@@ -917,7 +930,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:244
+#: campaigns/castle_greek_gift.tex:245
 #, no-wrap
 msgid ""
 "An orange glow, far too bright for torchlight, was coming from the castle.\n"
@@ -931,7 +944,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:248
+#: campaigns/castle_greek_gift.tex:249
 #, no-wrap
 msgid ""
 "Rion quickly caught up to her, his horse panting as hard as he was.\n"
@@ -945,7 +958,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:250
+#: campaigns/castle_greek_gift.tex:251
 #, no-wrap
 msgid ""
 "The necromancer had played his opening move and won.\n"
@@ -953,7 +966,7 @@ msgid ""
 msgstr "Nekromant zahrál své zahájení a vyhrál.\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:253
+#: campaigns/castle_greek_gift.tex:254
 #, no-wrap
 msgid ""
 "Just before Catherine turned to her regrouping forces, she spotted the spectral blue of the real Ghost Dragon in the distance.\n"
@@ -965,7 +978,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:256
+#: campaigns/castle_greek_gift.tex:257
 #, no-wrap
 msgid ""
 "Archangels circled overhead, and Catherine threw her head to the sky, tears welling at the thought of losing what she had worked so hard to build.\n"
@@ -977,7 +990,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:258
+#: campaigns/castle_greek_gift.tex:259
 #, no-wrap
 msgid ""
 "``Is that… wise?'' Rion asked softly.\n"
@@ -987,7 +1000,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:263
+#: campaigns/castle_greek_gift.tex:264
 #, no-wrap
 msgid ""
 "Catherine responded with fire in her eyes.\n"
@@ -1002,7 +1015,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:269
+#: campaigns/castle_greek_gift.tex:270
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -1020,7 +1033,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/castle_greek_gift.tex:275
+#: campaigns/castle_greek_gift.tex:276
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

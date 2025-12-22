@@ -21,7 +21,7 @@ msgstr ""
 #. type: Plain text
 #: sections/notes.tex:3
 msgid "\\addsection{Notes}{\\images/intelligence.png}"
-msgstr ""
+msgstr "\\addsection{Notes}{\\images/intelligence.png}"
 
 #. type: tikzpicture
 #: sections/notes.tex:7
