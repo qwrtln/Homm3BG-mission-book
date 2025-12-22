@@ -46,7 +46,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/bloody_grail.tex:27 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -57,8 +57,8 @@ msgid ""
 msgstr ""
 "\\textbf{Стартовые отряды:}\n"
 "\\begin{itemize}\n"
-"  \\item «pack» \\svg{bronze} отрядов с \\textit{наименьшей} стоимостью найма\n"
-"  \\item «few» \\svg{bronze} отрядов с \\textit{наибольшей} стоимостью найма\n"
+"  \\item «pack» самых дешёвых \\svg{bronze} отрядов\n"
+"  \\item «few» самых дорогих \\svg{bronze} отрядов\n"
 "\\end{itemize}\n"
 "\n"
 
