@@ -78,6 +78,7 @@ RUN <<EOF
   tar --strip-components 1 -zxf /tmp/install-tl/install-tl-unx.tar.gz -C /tmp/install-tl/installer
   /tmp/install-tl/installer/install-tl --profile=/texlive.profile
   /opt/texlive/texdir/bin/*/tlmgr install \
+    accsupp \
     adjustbox \
     bigfoot \
     catchfile \
