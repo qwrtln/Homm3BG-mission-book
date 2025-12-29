@@ -1,0 +1,106 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Clash Scenario}{Sea of Pirates}{\images/pirate.png}
+
+\begin{multicols*}{2}
+
+\textbf{Author:} Laamakala
+
+\textit{Eight rival captains spill into a sea where plunder is currency and heroes are trophies. The waves run red as only one can claim dominion over the Sea of Pirates.}
+
+\subsection*{\MakeUppercase{Scenario Length}}
+This Scenario plays out over 12 Rounds.
+
+\subsection*{\MakeUppercase{Player Setup}}
+\textbf{Player Count:} 8 FFA, 2v2v2v2 Alliance
+
+\textbf{Starting Resources:} 14 \svg{gold}, 2 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Units:}
+
+\begin{itemize}
+  \item A ``Few'' of the cheapest \svg{silver} Units, \textbf{or} \\
+  2 × ``Pack'' of chosen \svg{bronze} Units.
+\end{itemize}
+
+\textbf{Town Buildings:}
+\begin{itemize}
+  \item Each player may build the \svg{building_special_tent} building at a discount of 2~\svg{gold} and 2~\svg{building_materials}, \textbf{or} gain 4~\svg{gold}.
+  \item Citadel and lose 2~\svg{gold}, \textbf{or} \\
+    Mage Guild and gain 2~\svg{valuables}.
+\end{itemize}
+
+\textbf{Map Tile Pool:} Each player takes 3 Far (II–III) Map Tiles (one with each: Settlement, \svg{valuables} mine and \svg{gold} mine).
+
+\subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:
+
+\begin{itemize}
+  \item 8 × Starting (I) Map Tile
+  \item 8 × Near (IV–V) Elemental Map Tiles
+  \item 6 × Near (VI–VII) Sea Map Tiles
+  \item 1 × Center (VI–VII) Sea Map Tiles
+\end{itemize}
+
+\subsection*{\MakeUppercase{Victory Conditions}}
+The game ends at the end of \nth{12} a Round.
+
+\subsection*{\MakeUppercase{Victory Points}}
+The player with the most Victory Points (VP) wins.
+\begin{itemize}
+  \item 4 VP for winning a Level VII Combat
+  \item 3 VP for each far enemy Main Hero defeated
+  \item 2 VP for each close enemy Main Hero defeated in a Sea Tile
+  \item 1 VP for each close enemy Main Hero defeated in a Land Tile
+\end{itemize}
+All players who start from the same side of the water tiles are considered close enemies and the rest are considered far enemies.
+
+In case of a tie, the tied players draw Cards to their \svg{hand} Limit and engage in a final Combat. The winner of that Combat wins the game.
+
+\subsection*{\MakeUppercase{Timed Events}}
+  \textbf{\nth{4} Round:}
+  \begin{itemize}
+    \item Remove all Black Cubes from the Map.
+  \end{itemize}
+  \textbf{\nth{7} Round:}
+  \begin{itemize}
+    \item Remove all Black Cubes from the Map.
+  \end{itemize}
+  \textbf{\nth{10} Round:}
+  \begin{itemize}
+    \item Remove all Black Cubes from the Map.
+  \end{itemize}
+  \textbf{\nth{12} Round:}
+  \begin{itemize}
+    \item All players level up to level 7.
+ \end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+\begin{itemize}
+  \item All heroes starting their movement on a Far (II-III) tile gain +1 \svg{movement}.
+  \item Players may teleport from their last revealed Far tile's mine back to their Starting Town by using 1 \svg{movement}.
+  \item A defeated Main Hero may Empower one Defense Statistic Card from his M\&M Deck and gain +1 \svg{movement} for the next Round.
+  \item After winning a Combat against another player's Main Hero, you may draw Cards up to your \svg{hand} Limit and discard 2 Cards.
+  \item Level VII Neutral Combats cannot be skipped.
+  \item Gain an adjacent Field's reward.
+  \item Upon flagging a \textbf{Level VII Neutral Combat}, choose one option and then put a Black Cube:
+  \begin{itemize}
+    \item Gain 5 \svg{gold} and sacrifice any number of Units, then recruit one of the defeated Units at a discount equal to the total recruitment cost of the sacrificed Units (to a minimum of 0 \svg{gold}).
+    \item Gain 20 \svg{gold} and Search (4) \svg{spellpower} or (4) \svg{artifact}.
+  \end{itemize}
+\end{itemize}
+
+\end{multicols*}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-5em] at (current page.center) {
+    \includegraphics[width=1.1\paperwidth, keepaspectratio]{\art/meteor_shower.png} %this needs another better themed png
+  };
+\end{tikzpicture}
+
+\begin{center}
+  \vspace*{\fill}
+  \includegraphics[width=0.8\linewidth]{\maps/sea_of_pirates.png}
+  \vspace*{\fill}
+\end{center}
