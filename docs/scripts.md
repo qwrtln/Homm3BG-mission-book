@@ -21,7 +21,7 @@ tools/build.sh [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scena
 **Arguments:**
 
 - `language`: Language code (defaults to 'en' if not specified)
-- Valid options: `en`, `pl`, `fr`, `cs`
+- Valid options: `en`, `pl`, `fr`, `cs`, `de`, and `ru`
 - Note: Language selection is incompatible with drafts mode
 
 **Options:**
@@ -66,12 +66,12 @@ Extracts specific pages from a PDF and converts them to high-quality PNG images.
 
 **Usage:**
 ```bash
-tools/pdf2image.sh (-l <language> | -d) -r <range>
+tools/pdf2image.sh (<language> | -d) -r <range>
 ```
 
 **Mandatory Arguments (choose one):**
 
-- `-l, --language <language>`: Specify the language of the PDF to convert
+- `<language>`: Specify the language of the PDF to convert
 - `-d, --drafts`: Use draft scenarios PDF instead of language PDF
 
 **Required:**
@@ -82,7 +82,7 @@ tools/pdf2image.sh (-l <language> | -d) -r <range>
 
 ```bash
 # Convert page 8 of the English PDF to an image
-tools/pdf2image.sh -l en -r 8
+tools/pdf2image.sh en -r 8
 
 # Convert multiple pages (1, 3, 4, 5) from the draft scenarios PDF
 tools/pdf2image.sh -d -r 1,3-5
@@ -103,12 +103,12 @@ Visually compares pages between your local PDF build and a reference version fro
 
 **Usage:**
 ```bash
-tools/compare_pages.sh (-l <language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
+tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
 ```
 
 **Mandatory Arguments (choose one):**
 
-- `-l, --language <language>`: Specify the language for comparison (e.g., `pl`, `fr`, defaults to `en` if unspecified)
+- `<language>`: Specify the language for comparison (e.g., `pl`, `fr`, defaults to `en` if unspecified)
 - `-d, --drafts`: Compare draft scenarios (mutually exclusive with `-l`)
 
 **Required:**
@@ -123,8 +123,8 @@ tools/compare_pages.sh (-l <language> | -d | -s|--scenario SEARCH) -r <range> [O
 **Examples:**
 
 ```bash
-# Compare page 11 of the English version
-tools/compare_pages.sh -l en -r 11
+# Compare page 11 of the French version
+tools/compare_pages.sh fr -r 11
 
 # Compare pages 1-10 of drafts, combined into a single image
 tools/compare_pages.sh -d -r 1-10 --single-page
@@ -134,6 +134,33 @@ tools/compare_pages.sh -s wandering -r 1-2
 ```
 
 It is a good practice to attach a screenshot of the comparison to the pull request, while updating scenarios.
+
+
+## continuous_fuzzy_diff.sh
+
+Show changes in already translated entries in continuous mode.
+Shows no output if all the translations are up-to-date.
+See the [**translation guide**](translations.md) for details.
+
+**Dependencies:**
+
+- [entr](https://eradman.com/entrproject/) on macOS and Linux
+
+**Usage:**
+```bash
+tools/continuous_fuzzy_diff.sh <path_to_po_file>
+```
+
+**Mandatory Arguments:**
+
+- `<path_to_po_file>`: Specify the po file you're working on
+
+**Examples:**
+
+```bash
+# See updates in the French translation of the Sentinels scenario
+tools/continuous_fuzzy_diff.sh translations/sentilens.tex/fr.po
+```
 
 ## **optimize.sh**
 
