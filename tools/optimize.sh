@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Default language to 'en' if not specified
-LANGUAGE="en"
+source tools/.language_base.sh
+
 DRAFT_MODE=false
 CMYK_MODE=false
 CUSTOM_FILE=""
@@ -27,11 +27,8 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     *)
-      # First non-option argument is treated as language (unless it's already set by a flag)
-      if [[ "$LANGUAGE" == "en" && "$1" != "$LANGUAGE" ]]; then
-        LANGUAGE="$1"
-      fi
-      shift
+      echo "Error: Unknown option $1"
+      usage
       ;;
   esac
 done

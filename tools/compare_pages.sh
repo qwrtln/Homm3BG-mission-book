@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
+source tools/.language_base.sh
 
 cache_dir="$(pwd)/cache"
 output_dir="screenshots"
 
 help() {
   echo "
-    Usage: ./tools/compare_pages.sh (-l <language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
+    Usage: ./tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
 
-    Mandatory Arguments (choose one):
-      -l, --language <language>     Specify the language for comparison (en, pl, cs, de, fr).
+    Mandatory Arguments:
+      <language>                    Specify the language for comparison (${valid_languages[*]}). Defaults to en.
       -d, --drafts                  Compare draft scenarios (mutually exclusive with -l and -s).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
 
@@ -21,12 +22,12 @@ help() {
                                     Only affects GitHub downloads, not local files.
 
     Examples:
-      ./tools/compare_pages.sh -l en -r 1
-      ./tools/compare_pages.sh --language en --range 1
+      ./tools/compare_pages.sh en -r 1
+      ./tools/compare_pages.sh --range 1
       ./tools/compare_pages.sh -d -r 1,3-5
       ./tools/compare_pages.sh --drafts --range 1-10 --single-page
 
-      ./tools/compare_pages.sh -l en -r 1,5-7,30 --single-page --mono
+      ./tools/compare_pages.sh -r 1,5-7,30 --single-page --mono
           - This will produce files 'en-01.png, en-05.png, en-06.png, en-07.png and en-30.png'.
           - Then because there is the '--single-page' parameter, it combines them to a single file 'en-all.png'.
           - It will use 'main_en-mono.pdf' from the repository as baseline because '--mono' was specified.
@@ -292,7 +293,6 @@ parse_pages() {
 # MAIN FLOW
 #
 
-LANGUAGE=""
 RANGE=""
 PRINTABLE=0
 DRAFTS=0
@@ -302,10 +302,6 @@ SCENARIO_NAME=""
 
 while [[ "$1" != "" ]]; do
   case $1 in
-    -l | --language )
-      shift
-      LANGUAGE=$1
-      ;;
     -d | --drafts )
       DRAFTS=1
       ;;
@@ -335,18 +331,14 @@ while [[ "$1" != "" ]]; do
 done
 
 # Check that we have either language or draft but not both
-if [[ "$DRAFTS" -eq 1 && (-n "$LANGUAGE" || -n "$scenario") ]]; then
-  echo "Error: -d/--drafts is mutually exclusive with -l/--language and -s/--scenario options."
+if [[ "$DRAFTS" -eq 1 && ("$LANGUAGE" != "en" || -n "$scenario") ]]; then
+  echo "Error: -d/--drafts is mutually exclusive with non-English and -s/--scenario options."
   help
 fi
 
 if [[ -z "$RANGE" ]]; then
   echo "Error: You must specify a page range with -r/--range option."
   help
-fi
-
-if [[ -z "$LANGUAGE" ]]; then
-  LANGUAGE="en"
 fi
 
 if [[ "$SCENARIO_SEARCH" ]]; then

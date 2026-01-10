@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+source tools/.language_base.sh
+
 # Default values
-language=""
 range=""
 drafts=0
 output_dir="screenshots"
@@ -9,10 +10,10 @@ custom_pdf=""
 
 help() {
   echo "
-    Usage: $(basename "$0") (-l <language> | -d | -f <file>) -r <range>
+    Usage: $(basename "$0") (<language> | -d | -f <file>) -r <range>
 
     Mandatory Arguments (choose one):
-      -l, --language <language>     Specify the language for PDF (e.g., en, pl, cs, de, fr).
+      <language>                    Specify the language for PDF (${valid_languages[*]}).
       -d, --drafts                  Use draft scenarios PDF instead of language-specific PDF.
       -f, --file <path>             Use a custom PDF file at the specified path.
       -r, --range <range>           Provide comma-separated list of pages or range of pages.
@@ -55,10 +56,6 @@ parse_pages() {
 # Parse command line arguments
 while [[ "$1" != "" ]]; do
   case $1 in
-    -l | --language )
-      shift
-      language=$1
-      ;;
     -d | --drafts )
       drafts=1
       ;;
@@ -81,13 +78,13 @@ while [[ "$1" != "" ]]; do
 done
 
 # Validate arguments
-if [[ "$drafts" -eq 1 && -n "$language" ]] || [[ "$drafts" -eq 1 && -n "$custom_pdf" ]] || [[ -n "$language" && -n "$custom_pdf" ]]; then
-  echo "Error: -d/--drafts, -l/--language, and -f/--file options are mutually exclusive."
+if [[ "$drafts" -eq 1 && "$LANGUAGE" != "en" ]] || [[ "$drafts" -eq 1 && -n "$custom_pdf" ]] || [[ -n "$LANGUAGE" && -n "$custom_pdf" ]]; then
+  echo "Error: -d/--drafts is mutually exclusive with non-English and -f/--file options."
   help
 fi
 
-if [[ "$drafts" -eq 0 && -z "$language" && -z "$custom_pdf" ]]; then
-  echo "Error: You must specify either -l/--language, -d/--drafts, or -f/--file option."
+if [[ "$drafts" -eq 0 && -z "$LANGUAGE" && -z "$custom_pdf" ]]; then
+  echo "Error: You must specify either language, -d/--drafts, or -f/--file option."
   help
 fi
 
@@ -107,8 +104,8 @@ elif [[ "$drafts" -eq 1 ]]; then
   source_pdf="draft-scenarios/drafts.pdf"
   output_prefix="drafts"
 else
-  source_pdf="main_${language}.pdf"
-  output_prefix="${language}"
+  source_pdf="main_${LANGUAGE}.pdf"
+  output_prefix="${LANGUAGE}"
 fi
 
 # Check if source PDF exists
