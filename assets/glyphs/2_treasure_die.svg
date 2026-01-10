@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="-10 0 1811.1111 1413"
+   id="svg1"
+   sodipodi:docname="2_treasure_die.svg"
+   width="1811.1111"
+   height="1413"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.44329363"
+     inkscape:cx="913.61565"
+     inkscape:cy="688.03154"
+     inkscape:window-width="1440"
+     inkscape:window-height="868"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     fill="currentColor"
+     d="m 1722,211 q 79,120 79,265 1,33 -7,73.5 -8,40.5 -18,66.5 h -13 q 0,-8 -2.5,-20.5 Q 1758,583 1747,545.5 1736,508 1720.5,472 1705,436 1675,389.5 1645,343 1607,305 l -62,51 -14,-14 -248,248 383,383 -74,69 -381,-380 -248,249 -113,151 q -29,-13 -64,-47 -15,-15 -26.5,-31 Q 748,968 744,960 l -4,-8 151,-113 569,-569 -14,-13 51,-62 Q 1459,157 1413,127 1367,97 1328.5,81 1290,65 1257,54.5 1224,44 1205,41 l -19,-3 V 25 Q 1212,15 1252.5,7.5 1293,0 1326,0 q 145,0 265,80 l 33,-40 138,138 z M 994,444 858,579 691,411 Q 671,392 662.5,381 654,370 643,348.5 632,327 627.5,297.5 623,268 623,224 623,170 632.5,124 642,78 652,59 L 662,40 Q 669,36 682.5,29.5 696,23 744,12.5 792,2 845,2 q 44,0 74,4 30,4 51.5,15 21.5,11 32.5,20 11,9 30,28 l 168,168 -136,135 118,117 -72,72 z m -503,805 q 14,-12 35,-49 h 23 l -48,213 H -10 v -12 q 235,-238 285,-320 50,-82 50,-161 0,-57 -41,-95 -42,-37 -102,-37 -99,0 -153,83 L 5,864 Q 40,760 110.5,710 181,660 273,660 q 66,0 120,26 54,26 85,71 31,46 31,86 0,72 -47,147 -65,100 -283,281 h 188 q 69,0 90,-5 21,-5 34,-17 z"
+     id="path1" />
+</svg>
