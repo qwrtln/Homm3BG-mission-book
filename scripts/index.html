@@ -1,0 +1,995 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://qwrtln.github.io/Homm3BG-mission-book/scripts/">
+      
+      
+        <link rel="prev" href="../translations/">
+      
+      
+        <link rel="next" href="../container/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Using Scripts - Fan-Made Mission Book Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-and-utility-scripts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Fan-Made Mission Book Docs" class="md-header__button md-logo" aria-label="Fan-Made Mission Book Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fan-Made Mission Book Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/qwrtln/Homm3BG-mission-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Fan-Made Mission Book
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Fan-Made Mission Book Docs" class="md-nav__button md-logo" aria-label="Fan-Made Mission Book Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Fan-Made Mission Book Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/qwrtln/Homm3BG-mission-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Fan-Made Mission Book
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Scripts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#buildsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf2imagesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pdf2image.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_pagessh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_pages.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous_fuzzy_diffsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        continuous_fuzzy_diff.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        optimize.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find_fuzzysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        find_fuzzy.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to_monochromesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_monochrome.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleansh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clean.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_find_scenariosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _find_scenario.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasesh-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        release.sh (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container-based setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#buildsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf2imagesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pdf2image.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_pagessh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_pages.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous_fuzzy_diffsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        continuous_fuzzy_diff.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        optimize.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find_fuzzysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        find_fuzzy.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to_monochromesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_monochrome.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleansh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clean.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_find_scenariosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _find_scenario.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasesh-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        release.sh (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="build-and-utility-scripts">Build and Utility Scripts</h1>
+<p>This page documents all the available bash scripts for building, optimizing, and managing the Heroes 3 Mission Book project.
+All the scripts are in the <code>tools/</code> directory.
+It is assumed that all the scripts are run from the root directory of the repository.</p>
+<h2 id="buildsh"><strong>build.sh</strong></h2>
+<p>The main script for generating PDF files from source files in different languages and modes.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://www.perl.org/">Perl</a> for running LaTeX build tools</li>
+<li><a href="https://github.com/mquinson/po4a">po4a</a> for translation handling - only if building the Mission Book (not Drafts) in non-English</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tools/build.sh<span class="w"> </span><span class="o">[</span>language<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="p">|</span>--printable<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="p">|</span>--mono<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--drafts<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="p">|</span>--scenario<span class="w"> </span>SEARCH<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="p">|</span>--help<span class="o">]</span>
+</span></code></pre></div></p>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>language</code>: Language code (defaults to 'en' if not specified)</li>
+<li>Valid options: <code>en</code>, <code>pl</code>, <code>fr</code>, <code>cs</code>, <code>de</code>, and <code>ru</code></li>
+<li>Note: Language selection is incompatible with drafts mode</li>
+</ul>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-d, --drafts</code>: Generate draft scenarios</li>
+<li><code>-s, --scenario &lt;SEARCH&gt;</code>: Build only scenario matching the input given (incompatible with <code>-d</code>)</li>
+<li><code>-m, --mono</code>: Monochrome mode (removes colored backgrounds from maps)</li>
+<li><code>-p, --printable</code>: Enable printable mode, currently not used for this project</li>
+<li><code>-h, --help</code>: Show help message</li>
+</ul>
+<p>Short options can be combined, e.g., <code>-dm</code> for drafts and mono.</p>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Build the English version (default)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tools/build.sh
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Build the French version</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tools/build.sh<span class="w"> </span>fr
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Build the Polish version in monochrome mode</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>tools/build.sh<span class="w"> </span>pl<span class="w"> </span>--mono
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Build draft scenarios in monochrome mode</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>tools/build.sh<span class="w"> </span>-dm
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Build Sentinels scenario - this will produce sentinels.pdf file</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>tools/build.sh<span class="w"> </span>-s<span class="w"> </span>sentinels
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Build the 1st scenario of the Inferno campaign (A Devilish Plan) in Czech language and monochrome mode</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>tools/build.sh<span class="w"> </span>cs<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>devilish
+</span></code></pre></div>
+<h2 id="pdf2imagesh"><strong>pdf2image.sh</strong></h2>
+<p>Extracts specific pages from a PDF and converts them to high-quality PNG images.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://poppler.freedesktop.org/">Poppler Utils</a> (pdftoppm) for PDF to image conversion</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tools/pdf2image.sh<span class="w"> </span><span class="o">(</span>&lt;language&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>-d<span class="o">)</span><span class="w"> </span>-r<span class="w"> </span>&lt;range&gt;
+</span></code></pre></div></p>
+<p><strong>Mandatory Arguments (choose one):</strong></p>
+<ul>
+<li><code>&lt;language&gt;</code>: Specify the language of the PDF to convert</li>
+<li><code>-d, --drafts</code>: Use draft scenarios PDF instead of language PDF</li>
+</ul>
+<p><strong>Required:</strong></p>
+<ul>
+<li><code>-r, --range &lt;range&gt;</code>: Page range to convert (e.g., <code>1</code>, <code>1,3,5</code>, <code>1-5</code>)</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Convert page 8 of the English PDF to an image</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tools/pdf2image.sh<span class="w"> </span>en<span class="w"> </span>-r<span class="w"> </span><span class="m">8</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Convert multiple pages (1, 3, 4, 5) from the draft scenarios PDF</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tools/pdf2image.sh<span class="w"> </span>-d<span class="w"> </span>-r<span class="w"> </span><span class="m">1</span>,3-5
+</span></code></pre></div>
+<p>The script saves images to the <code>screenshots</code> directory.
+It is a good practice to attach screenshots of the generated PDFs to PRs with new scenarios.</p>
+<h2 id="compare_pagessh"><strong>compare_pages.sh</strong></h2>
+<p>Visually compares pages between your local PDF build and a reference version from the main branch on GitHub.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://curl.se/">cURL</a> for downloading reference files</li>
+<li><a href="https://poppler.freedesktop.org/">Poppler Utils</a> (pdftoppm) for PDF to image conversion</li>
+<li><a href="https://imagemagick.org/">ImageMagick</a> (montage) for creating comparison images</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tools/compare_pages.sh<span class="w"> </span><span class="o">(</span>&lt;language&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>-s<span class="p">|</span>--scenario<span class="w"> </span>SEARCH<span class="o">)</span><span class="w"> </span>-r<span class="w"> </span>&lt;range&gt;<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</span></code></pre></div></p>
+<p><strong>Mandatory Arguments (choose one):</strong></p>
+<ul>
+<li><code>&lt;language&gt;</code>: Specify the language for comparison (e.g., <code>pl</code>, <code>fr</code>, defaults to <code>en</code> if unspecified)</li>
+<li><code>-d, --drafts</code>: Compare draft scenarios (mutually exclusive with <code>-l</code>)</li>
+</ul>
+<p><strong>Required:</strong></p>
+<ul>
+<li><code>-r, --range &lt;range&gt;</code>: Page range to compare (e.g., <code>1</code>, <code>1,3-5</code>, <code>1-5</code>)</li>
+</ul>
+<p><strong>Optional:</strong></p>
+<ul>
+<li><code>-s, --scenario &lt;SEARCH&gt;</code>: Compare against a single scenario.</li>
+<li><code>-m, --mono</code>: Use monochrome version for baseline comparison</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Compare page 11 of the French version</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tools/compare_pages.sh<span class="w"> </span>fr<span class="w"> </span>-r<span class="w"> </span><span class="m">11</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Compare pages 1-10 of drafts, combined into a single image</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>tools/compare_pages.sh<span class="w"> </span>-d<span class="w"> </span>-r<span class="w"> </span><span class="m">1</span>-10<span class="w"> </span>--single-page
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Compare pages 1-2 of the Wandering Dragons scenario</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>tools/compare_pages.sh<span class="w"> </span>-s<span class="w"> </span>wandering<span class="w"> </span>-r<span class="w"> </span><span class="m">1</span>-2
+</span></code></pre></div>
+<p>It is a good practice to attach a screenshot of the comparison to the pull request, while updating scenarios.</p>
+<h2 id="continuous_fuzzy_diffsh">continuous_fuzzy_diff.sh</h2>
+<p>Show changes in already translated entries in continuous mode.
+Shows no output if all the translations are up-to-date.
+See the <a href="../translations/"><strong>translation guide</strong></a> for details.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://eradman.com/entrproject/">entr</a> on macOS and Linux</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tools/continuous_fuzzy_diff.sh<span class="w"> </span>&lt;path_to_po_file&gt;
+</span></code></pre></div></p>
+<p><strong>Mandatory Arguments:</strong></p>
+<ul>
+<li><code>&lt;path_to_po_file&gt;</code>: Specify the po file you're working on</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># See updates in the French translation of the Sentinels scenario</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tools/continuous_fuzzy_diff.sh<span class="w"> </span>translations/sentilens.tex/fr.po
+</span></code></pre></div>
+<h2 id="optimizesh"><strong>optimize.sh</strong></h2>
+<p>Optimizes PDF files for distribution by significantly reducing file size while maintaining quality.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://www.ghostscript.com/">Ghostscript</a> for PDF processing</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>tools/optimize.sh<span class="w"> </span><span class="o">[</span>language<span class="o">]</span><span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</span></code></pre></div></p>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>language</code>: Language code (defaults to 'en' if not specified)</li>
+</ul>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-d, --drafts</code>: Optimize draft scenarios PDF instead of language PDF</li>
+<li><code>--cmyk</code>: Convert colors to CMYK color space for professional printing</li>
+<li><code>-f FILE</code>: Use arbitrary PDF file</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Optimize the English version (default)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tools/optimize.sh
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Optimize the Polish version with CMYK conversion</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tools/optimize.sh<span class="w"> </span>pl<span class="w"> </span>--cmyk
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Optimize draft scenarios</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>tools/optimize.sh<span class="w"> </span>-d
+</span></code></pre></div>
+<h2 id="find_fuzzysh"><strong>find_fuzzy.sh</strong></h2>
+<p>Locates "fuzzy" translations in the PO files for a specific language.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li>Standard Unix utilities (grep)</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>tools/find_fuzzy.sh<span class="w"> </span>&lt;language&gt;
+</span></code></pre></div></p>
+<p>Where <code>&lt;language&gt;</code> is the language code (e.g., <code>en</code>, <code>pl</code>, <code>fr</code>, <code>cs</code>).</p>
+<p><strong>Example:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>tools/find_fuzzy.sh<span class="w"> </span>cs
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>translations/castle_two_knights_defense.tex/cs.po:129:#,<span class="w"> </span>fuzzy,<span class="w"> </span>no-wrap
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>translations/castle_two_knights_defense.tex/cs.po-130-msgid<span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>translations/castle_two_knights_defense.tex/cs.po-131-<span class="s2">&quot;\\subsection*{\\MakeUppercase{Scenario length}}\n&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>translations/castle_two_knights_defense.tex/cs.po-132-<span class="s2">&quot;\n&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>--
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>translations/castle_two_knights_defense.tex/cs.po:140:#,<span class="w"> </span>fuzzy,<span class="w"> </span>no-wrap
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>translations/castle_two_knights_defense.tex/cs.po-141-msgid<span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>translations/castle_two_knights_defense.tex/cs.po-142-<span class="s2">&quot;This Scenario plays out over 8 Rounds.\n&quot;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>translations/castle_two_knights_defense.tex/cs.po-143-<span class="s2">&quot;\n&quot;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>...
+</span></code></pre></div></p>
+<p>This will search through all Czech translation files and display any translations marked as "fuzzy" with their context.</p>
+<h2 id="to_monochromesh"><strong>to_monochrome.sh</strong></h2>
+<p>Converts color images to a selective monochrome format while preserving important details and transparency.
+Useful for creating black-and-white printer friendly files.
+This script is primarily used by <code>tools/build.sh</code> when the <code>-m</code> or <code>--mono</code> flag is specified.
+It converts the image to selective monochrome and replaces the original file.
+It probably doesn't need to be used standalone.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><a href="https://imagemagick.org/">ImageMagick</a> for image processing</li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>tools/to_monochrome.sh<span class="w"> </span>&lt;input_image&gt;
+</span></code></pre></div></p>
+<p>Where <code>&lt;input_image&gt;</code> is the path to the PNG image you want to convert.</p>
+<p><strong>Example:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>tools/to_monochrome.sh<span class="w"> </span>assets/maps/sentinels.png
+</span></code></pre></div></p>
+<p>All the files are edited in place for the time of building LaTeX files, and then restored to their original state after the build is complete.
+To speed up subsequent runs, a cache of all the images is stored in the <code>cache/</code> directory.</p>
+<h2 id="cleansh"><strong>clean.sh</strong></h2>
+<p>Cleans up the project directory by removing temporary files and restoring original files from Git.</p>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>tools/clean.sh
+</span></code></pre></div></p>
+<p>The script removes all <code>.aux</code> files, temporary directories like <code>translated</code> and <code>svg-inkscape</code>, the <code>cache</code> directory, and generated PDF files.
+It then uses <code>git restore</code> to bring back essential files that might have been modified or removed.</p>
+<h2 id="_find_scenariosh"><strong>_find_scenario.sh</strong></h2>
+<p>Finds a specific file to be build by the <code>tools/build.sh</code> script with the <code>-s</code> flag using an input given.
+Probably should not be used on its own.</p>
+<h2 id="releasesh-legacy"><strong>release.sh</strong> (legacy)</h2>
+<p>Automates the process of building and preparing optimized PDF files for release.
+It is a legacy script and you should probably use <a href="https://github.com/qwrtln/Homm3BG-mission-book/actions/workflows/build-release.yaml">the workflow</a> instead.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li>Requires <code>tools/build.sh</code> and <code>tools/optimize.sh</code></li>
+</ul>
+<p><strong>Usage:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>tools/release.sh<span class="w"> </span>&lt;language&gt;
+</span></code></pre></div></p>
+<p>Where <code>&lt;language&gt;</code> is the language code (e.g., <code>en</code>, <code>pl</code>, <code>cs</code>).</p>
+<p><strong>Example:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>tools/release.sh<span class="w"> </span>en
+</span></code></pre></div></p>
+<p>This builds the English PDF, optimizes it, and creates a file named <code>Heroes3_English_Fan_Made_Mission_Book_&lt;Version&gt;.pdf</code> in a release directory.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.instant", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
