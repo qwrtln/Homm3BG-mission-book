@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2026-01-23 15:40+0000\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -455,10 +455,11 @@ msgstr ""
 msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
 msgstr ""
 
-#. type: table*
+#. type: table
 #: sections/random_scenario.tex:273
 #, no-wrap
 msgid ""
+"[H]\n"
 "  \\hommtable[]{27}{\n"
 "    \\centering\n"
 "    \\medskip\n"
