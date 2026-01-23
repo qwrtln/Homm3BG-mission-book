@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2026-01-23 15:40+0000\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -528,10 +528,11 @@ msgstr ""
 msgid "Choose your \\textbf{starting conditions} and \\textbf{Town strength}."
 msgstr ""
 
-#. type: table*
+#. type: table
 #: sections/random_scenario.tex:273
 #, no-wrap
 msgid ""
+"[H]\n"
 "  \\hommtable[]{27}{\n"
 "    \\centering\n"
 "    \\medskip\n"
