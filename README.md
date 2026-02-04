@@ -545,6 +545,8 @@ Great! Please reach out. We'd love to hear from you.
 ### 🛡️ Other Community Projects
 
 - [Rulebook Rewrite Project](https://github.com/Heegu-sama/Homm3BG)
-- [Board Game Cards Databse](https://github.com/Mirzipan/Homm3_BG_Database)
+- [Game Wiki](https://github.com/Mirzipan/Homm3_BG_Database)
 - [Factory Rule Book](https://github.com/piotrbruzda/Homm3BG-FactoryRulebook)
 - [Scenario Map Editor](https://github.com/zedero/HoMM3Boardgame)
+- [Hero Creator](https://github.com/K-Adam/Homm3_hero_creator)
+- [Music Companion PWA](https://github.com/ExeVirus/h3omm_bgm)
