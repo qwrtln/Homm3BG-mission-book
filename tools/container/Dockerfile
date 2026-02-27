@@ -85,8 +85,8 @@ RUN <<EOF
     changepage \
     collection-binextra \
     collection-fontsrecommended \
-    collection-latex \
     collection-langcyrillic \
+    collection-latex \
     collection-latexrecommended \
     collection-pictures \
     enumitem \
@@ -94,6 +94,7 @@ RUN <<EOF
     footmisc \
     fullwidth \
     imakeidx \
+    koma-script \
     listings  \
     listingsutf8  \
     luabidi \
