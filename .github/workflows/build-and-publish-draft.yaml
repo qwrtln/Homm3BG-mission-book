@@ -29,11 +29,11 @@ jobs:
 
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Cache built PDF
         if: github.event_name == 'pull_request'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-pdf
         with:
           path: |
@@ -44,7 +44,7 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./svg-inkscape
@@ -55,7 +55,7 @@ jobs:
 
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./draft-scenarios/**/*.aux
@@ -84,7 +84,7 @@ jobs:
           file-name: draft-scenarios/drafts.pdf
           quality-level: prepress
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: drafts
           path: draft-scenarios/drafts.pdf
@@ -98,7 +98,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Find map files
         id: set-matrix
@@ -117,7 +117,7 @@ jobs:
       matrix: ${{ fromJson(needs.find_draft_map_files.outputs.matrix) }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate file hash
         id: hash
@@ -127,7 +127,7 @@ jobs:
 
       - name: Check processed map cache
         id: cache-map
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: assets/maps/${{ matrix.map }}
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
@@ -135,7 +135,7 @@ jobs:
       - name: Cache ImageMagick AppImage
         if: steps.cache-map.outputs.cache-hit != 'true'
         id: cache-magick
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
@@ -158,7 +158,7 @@ jobs:
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
           path: assets/maps/${{ matrix.map }}
@@ -173,17 +173,17 @@ jobs:
 
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Download monochrome maps
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: monochrome-map-*
           path: assets/maps
           merge-multiple: true
 
       - name: Cache Inkscape artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./svg-inkscape
@@ -193,7 +193,7 @@ jobs:
             inkscape-
 
       - name: Cache LaTeX build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./draft-scenarios/**/*.aux
@@ -221,7 +221,7 @@ jobs:
           quality-level: prepress
           output-file: draft-scenarios/drafts-mono.pdf
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: drafts-mono
           path: draft-scenarios/drafts-mono.pdf
@@ -235,7 +235,7 @@ jobs:
         run: mkdir drafts
 
       - name: Download regular draft PDF
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: drafts*
           path: drafts
