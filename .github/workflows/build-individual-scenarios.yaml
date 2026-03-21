@@ -27,7 +27,7 @@ jobs:
       scenarios: ${{ steps.find_scenarios.outputs.scenarios }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Find scenarios
         id: find_scenarios
@@ -46,7 +46,7 @@ jobs:
         language: ["${{ inputs.language }}"]
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set filename
         id: set-filename
@@ -61,7 +61,7 @@ jobs:
       - name: Cache po4a entries [${{ inputs.language }}]
         if: ${{ inputs.language != 'en' }}
         id: cache-po4a
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ${{ inputs.scenario_type }}/translated/${{ inputs.language }}/${{ matrix.scenario }}.tex
@@ -117,7 +117,7 @@ jobs:
         run: tools/_find_scenario.sh ${{ matrix.scenario }}
 
       - name: Cache built PDF
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-pdf
         with:
           path: |
@@ -149,7 +149,7 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./svg-inkscape
@@ -160,7 +160,7 @@ jobs:
 
       - name: Cache processed maps
         if: matrix.variant == 'mono' && steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-maps
         with:
           path: assets/maps/

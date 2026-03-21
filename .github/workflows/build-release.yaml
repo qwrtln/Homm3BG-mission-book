@@ -24,7 +24,7 @@ jobs:
             language_name: Cestina
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
@@ -61,7 +61,7 @@ jobs:
           quality-level: prepress
           output-file: ${{ steps.artifact_name.outputs.file_name }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.artifact_name.outputs.artifact_name }}
           path: ${{ steps.artifact_name.outputs.file_name }}
@@ -73,7 +73,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Find map files
         id: set-matrix
@@ -90,7 +90,7 @@ jobs:
       matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate file hash
         id: hash
@@ -100,7 +100,7 @@ jobs:
 
       - name: Check processed map cache
         id: cache-map
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: assets/maps/${{ matrix.map }}
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
@@ -108,7 +108,7 @@ jobs:
       - name: Cache ImageMagick AppImage
         if: steps.cache-map.outputs.cache-hit != 'true'
         id: cache-magick
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
@@ -131,7 +131,7 @@ jobs:
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
           path: assets/maps/${{ matrix.map }}
@@ -156,7 +156,7 @@ jobs:
 
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
@@ -168,7 +168,7 @@ jobs:
           language: ${{ matrix.language }}
 
       - name: Download monochrome maps
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: monochrome-map-*
           path: assets/maps
@@ -201,7 +201,7 @@ jobs:
           quality-level: prepress
           output-file: ${{ steps.names.outputs.file_name }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.names.outputs.artifact_name }}
           path: ${{ steps.names.outputs.file_name }}
