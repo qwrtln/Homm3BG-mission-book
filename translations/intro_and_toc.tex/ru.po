@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-23 21:18+0000\n"
+"POT-Creation-Date: 2026-03-23 23:03+0000\n"
 "PO-Revision-Date: 2025-10-06 10:06+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -146,14 +146,19 @@ msgstr ""
 "  };"
 
 #. type: multicols*
-#: sections/intro_and_toc.tex:61
-#, no-wrap
+#: sections/intro_and_toc.tex:58
+#, fuzzy, no-wrap
+#| msgid ""
+#| "{2}\n"
+#| "\\tableofcontents\n"
+#| "\\vspace*{\\fill}\n"
+#| "\\columnbreak\n"
+#| "\\vspace{-3em}\n"
+#| "\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
+#| "\n"
 msgid ""
 "{2}\n"
 "\\tableofcontents\n"
-"\\vspace*{\\fill}\n"
-"\\columnbreak\n"
-"\\vspace{-3em}\n"
 "\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
 "\n"
 msgstr ""
