@@ -82,9 +82,6 @@ msgstr ""
 #. type: multicols*
 #: clash/trial_by_combat.tex:7 clash/astral_run.tex:7
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Shakajiub\n"
-#| "\n"
 msgid ""
 "\\textbf{Author:} Laamakala\n"
 "\n"
