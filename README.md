@@ -297,7 +297,7 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
         </tr>
         <tr>
-            <td>🤝 Wandering Dragons (2)</td>
+            <td>🤝 Wandering Dragons (2-3)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
             <td align="center">-</td>
