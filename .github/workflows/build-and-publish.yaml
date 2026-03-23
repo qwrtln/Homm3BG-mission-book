@@ -46,12 +46,12 @@ jobs:
       matrix: ${{ fromJson(needs.matrix-setup.outputs.matrix) }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Cache po4a entries [${{ matrix.language }}]
         if: matrix.language != 'en' && github.event_name == 'pull_request'
         id: cache-po4a
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             */translated/${{ matrix.language }}/*.tex
@@ -76,7 +76,7 @@ jobs:
           language: ${{ matrix.language }}
 
       - name: Cache built PDF
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         if: github.event_name == 'pull_request'
         id: cache-pdf
         with:
@@ -110,7 +110,7 @@ jobs:
 
       - name: Cache Inkscape artifacts
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./svg-inkscape
@@ -121,7 +121,7 @@ jobs:
 
       - name: Cache LaTeX build
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./main_${{ matrix.language }}.aux
@@ -200,7 +200,7 @@ jobs:
           fi
           echo "number_of_pages=${NUMBER_OF_PAGES}" > $GITHUB_OUTPUT
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: main_${{ matrix.language }}
           path: main_${{ matrix.language }}.pdf
@@ -213,7 +213,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Find map files
         id: set-matrix
@@ -230,7 +230,7 @@ jobs:
       matrix: ${{ fromJson(needs.find_map_files.outputs.matrix) }}
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate file hash
         id: hash
@@ -240,7 +240,7 @@ jobs:
 
       - name: Check processed map cache
         id: cache-map
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: assets/maps/${{ matrix.map }}
           key: monochrome-map-${{ steps.hash.outputs.file_hash }}
@@ -248,7 +248,7 @@ jobs:
       - name: Cache ImageMagick AppImage
         if: steps.cache-map.outputs.cache-hit != 'true'
         id: cache-magick
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: /usr/local/bin/magick
           key: imagemagick-${{ env.IMAGEMAGICK_URL }}
@@ -271,7 +271,7 @@ jobs:
         run: tools/to_monochrome.sh "assets/maps/${{ matrix.map }}"
 
       - name: Upload processed file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: monochrome-map-${{ hashFiles(format('assets/maps/{0}', matrix.map)) }}
           path: assets/maps/${{ matrix.map }}
@@ -286,7 +286,7 @@ jobs:
 
     steps:
       - name: Set up repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate translations for ${{ matrix.language }}
         if: ${{ matrix.language != 'en' }}
@@ -298,7 +298,7 @@ jobs:
           language: ${{ matrix.language }}
 
       - name: Cache Inkscape artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./svg-inkscape
@@ -308,7 +308,7 @@ jobs:
             inkscape-
 
       - name: Cache LaTeX build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ./main_${{ matrix.language }}.aux
@@ -347,7 +347,7 @@ jobs:
             texlive-mission-mono-${{ matrix.language }}-
 
       - name: Download monochrome maps
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: monochrome-map-*
           path: assets/maps
@@ -369,7 +369,7 @@ jobs:
           quality-level: prepress
           output-file: main_${{ matrix.language }}-mono.pdf
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: main_${{ matrix.language }}-mono
           path: main_${{ matrix.language }}-mono.pdf
@@ -388,7 +388,7 @@ jobs:
       matrix: ${{ fromJson(needs.matrix-setup.outputs.check-pages-matrix) }}
     steps:
       - name: Download PDFs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: "*_${{ matrix.language }}"
 
@@ -415,7 +415,7 @@ jobs:
         run: mkdir ${{ matrix.language }}
 
       - name: Download compiled books
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: main_${{ matrix.language }}*
           path: ${{ matrix.language }}
