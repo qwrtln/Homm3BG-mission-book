@@ -11,7 +11,7 @@ FEEDBACK_PAGE=0
 SCENARIO_SEARCH=""
 
 usage() {
-  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]"
+  echo "Usage: $0 [language] [-p|--printable] [-m|--mono] [-d|--drafts] [-s|--scenario SEARCH]  [--args ARGUMENTS]"
   echo "Example: $0 -d --mono"
   echo
   echo "Positional arguments:"
@@ -33,22 +33,7 @@ usage() {
   exit 1
 }
 
-case "$(uname -s)" in
-  Darwin*)
-    open=open
-    grep_cmd=ggrep
-    ;;
-  Linux*)
-    open=xdg-open
-    grep_cmd=grep
-    ;;
-  MINGW*|MSYS*|CYGWIN*)
-    open=start
-    grep_cmd=grep
-    ;;
-esac
-
-# Parse remaining command line arguments
+# Parse command line arguments
 while [[ $# -gt 0 ]]; do
   arg="$1"
   shift
@@ -69,6 +54,14 @@ while [[ $# -gt 0 ]]; do
         shift
         ;;
       feedback) FEEDBACK_PAGE=1 ;;
+      args)
+        if [[ $# -lt 1 ]]; then
+          echo "Error: --args requires an argument" >&2
+          usage
+        fi
+        ARGS="$1"
+        shift
+        ;;
       help) usage ;;
       *) echo "Error: Unknown option $arg" >&2; usage ;;
     esac
@@ -108,6 +101,22 @@ while [[ $# -gt 0 ]]; do
   echo "Error: Unexpected argument '$arg'" >&2
   usage
 done
+
+case "$(uname -s)" in
+  Darwin*)
+    open=open
+    grep_cmd=ggrep
+    ;;
+  Linux*)
+    open=xdg-open
+    grep_cmd=grep
+    ;;
+  MINGW*|MSYS*|CYGWIN*)
+    open=start
+    grep_cmd=grep
+    ;;
+esac
+
 
 [[ $PRINTABLE_MODE == 1 ]] && export HOMM3_PRINTABLE=1
 [[ $MONO_MODE == 1 ]] && export HOMM3_NO_ART_BACKGROUND=1

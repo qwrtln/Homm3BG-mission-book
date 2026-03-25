@@ -101,14 +101,14 @@ msgstr ""
 #. type: multicols*
 #: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:38
 #: clash/astral_run.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #. type: multicols*

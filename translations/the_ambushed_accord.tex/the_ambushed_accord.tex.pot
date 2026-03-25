@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-24 22:09+0000\n"
+"POT-Creation-Date: 2026-03-25 21:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,8 +43,21 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
+#: coops/stand_united.tex:17 coops/the_ambushed_accord.tex:17
+#: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+
 #. type: multicols*
-#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:21
+#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:23
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
@@ -53,7 +66,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
+#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:25
 #: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
@@ -64,7 +77,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:38
+#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:40
 #: clash/astral_run.tex:34
 #, no-wrap
 msgid ""
@@ -90,24 +103,22 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:14
+#: coops/the_ambushed_accord.tex:12
 #, no-wrap
 msgid ""
 "\\textit{The war had dragged on far too long. Armies were shattered, lands burned, and hope had dwindled to barely a whisper. At last, the rival lords agreed to set aside their grievances and forge an Accord — a fragile peace born of desperation.\\\\\n"
 "Messengers rode beneath white banners, oaths were sworn, and for the first time in years, the clash of steel gave way to uneasy silence. Yet peace has its own enemies.\\\\\n"
 "As the allied hosts gathered in the valley of Laren's Cross, dawn broke with the sound of horns — not of welcome, but of war.\\\\\n"
 "Out of the mist, enemy armies struck with deadly precision. Someone had betrayed the Accord.\\\\Now, surrounded and outnumbered, the fate of your alliance lies in your hands. Stand together — or fall alone.}  % no-check-caps\n"
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"14 Rounds\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:17
+#: coops/the_ambushed_accord.tex:15
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2-6\n"
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"14 Rounds\n"
 "\n"
 msgstr ""
 
@@ -115,12 +126,20 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:19
 #, no-wrap
 msgid ""
+"\\textbf{Player Count:} 2--6\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/the_ambushed_accord.tex:21
+#, no-wrap
+msgid ""
 "\\textbf{Starting Resources:} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:27
+#: coops/the_ambushed_accord.tex:29
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -130,7 +149,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:29
+#: coops/the_ambushed_accord.tex:31
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} 1 x \\svg{morale_positive}\n"
@@ -138,7 +157,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:31
+#: coops/the_ambushed_accord.tex:33
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} City Hall\n"
@@ -146,7 +165,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:33
+#: coops/the_ambushed_accord.tex:35
 #, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Every player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.\n"
@@ -154,7 +173,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:35
+#: coops/the_ambushed_accord.tex:37
 #, no-wrap
 msgid ""
 "\\textbf{Obelisk:} Roll \\svg{resource} and \\svg{treasure} then resolve 1.\n"
@@ -162,7 +181,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:43
+#: coops/the_ambushed_accord.tex:45
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -173,7 +192,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:46
+#: coops/the_ambushed_accord.tex:48
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -182,7 +201,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:74
+#: coops/the_ambushed_accord.tex:76
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -216,7 +235,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:84
+#: coops/the_ambushed_accord.tex:86
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -232,7 +251,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:113
+#: coops/the_ambushed_accord.tex:115
 #, no-wrap
 msgid ""
 "\\subsubsection*{\\MakeUppercase{Other Rules}}\n"
@@ -266,7 +285,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: coops/the_ambushed_accord.tex:124
+#: coops/the_ambushed_accord.tex:126
 #, no-wrap
 msgid ""
 "[overlay]\n"
