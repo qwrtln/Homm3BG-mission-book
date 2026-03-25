@@ -52,6 +52,11 @@
 \usepackage{xparse}
 
 \usepackage{tocloft}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsecnumwidth}{0pt}
+% Scenario sections — indented under the group (clash, coop, etc.)
+\setlength{\cftsubsecindent}{1.5em}
+\setlength{\cftsubsecnumwidth}{0pt}
 \renewcommand{\cftsubsecpagefont}{\bfseries}
 
 \usepackage[hang]{footmisc}
@@ -72,6 +77,9 @@
 % Set the default spacing between paragraphs. Remove indentation.
 \usepackage[skip=6pt, indent=0pt]{parskip}
 \setstretch{1}
+
+% Disable American-style double spcaes between sentences
+\frenchspacing
 
 % Default margins for itemize lists
 \setlist[itemize,2]{leftmargin=15pt, label=$\triangleright$}
@@ -115,7 +123,7 @@
 \def\tables{\_assets/tables}
 \def\qr{\_assets/qr-codes}
 
-\def\repourl{https://github.com/qwrtln/Homm3BG-mission-book}
+\def\repourl{https://github.com/qwrtln/\\Homm3BG-mission-book}
 \def\discordurl{https://discord.gg/nMbawQkj9R}
 \def\formurl{https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform}
 
@@ -274,10 +282,10 @@
 % - Scenario Name
 % - Icon
 %
-% TODO: possibly replace the whole \addsection with this
 \newcommand{\addscenariosection}[5][section]{
   \def\oneliner{\equal{#2}{1}}
 
+  \pagetarget{#4}{}
   \vspace*{-5.72em}
   \hspace*{-1.3em}
   \makebox[0pt][l]{
@@ -302,8 +310,7 @@
       \vspace{-10pt}
       \section*{\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{#1}{\protect\numberline{} {} {} {} {}#4}
-      \pagetarget{#4}{}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{subsection}{\protect\numberline{}#4}
     \end{center}
   \end{fullwidth}
   \ifthenelse{\oneliner}{\vspace{1.75em}}{\vspace{0.75em}}

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 14:12+0000\n"
+"POT-Creation-Date: 2026-03-23 23:03+0000\n"
 "PO-Revision-Date: 2025-07-05 01:26+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,11 +30,13 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
-#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_devilish_plan.tex:204
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
@@ -139,8 +141,8 @@ msgstr ""
 "\\textbf{Число игроков:} 2\n"
 "\n"
 
-#. type: multicols
-#: coops/sentinels.tex:24
+#. type: multicols*
+#: coops/sentinels.tex:24 clash/astral_run.tex:17
 #, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -151,8 +153,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
-#: clash/trial_by_combat.tex:19
+#: coops/wandering_dragons.tex:23 clash/force_of_will.tex:24
+#: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -162,7 +164,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:32 clash/the_hunt.tex:29
+#: coops/sentinels.tex:32 clash/bloody_grail.tex:27 clash/the_hunt.tex:29
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
@@ -180,7 +182,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:34 campaigns/castle_greek_gift.tex:36
+#: coops/sentinels.tex:34 coops/wandering_dragons.tex:31
+#: campaigns/castle_greek_gift.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
@@ -224,7 +227,7 @@ msgstr ""
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:33 clash/the_hunt.tex:35
-#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_devilish_plan.tex:90
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -236,7 +239,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:92
 #: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -268,7 +271,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:123
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
@@ -294,7 +297,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:127
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -329,7 +332,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
-#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
@@ -413,7 +416,7 @@ msgstr ""
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:69
-#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #: sections/random_scenario.tex:298
@@ -591,9 +594,10 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
-#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
-#: sections/credits.tex:28 sections/random_scenario.tex:296
+#: clash/dragoncurse_castle.tex:85 clash/astral_run.tex:100
+#: campaigns/inferno_devilish_plan.tex:226 campaigns/castle_greek_gift.tex:121
+#: campaigns/castle_greek_gift.tex:272 sections/credits.tex:28
+#: sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -606,7 +610,7 @@ msgstr ""
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:30
 #: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""

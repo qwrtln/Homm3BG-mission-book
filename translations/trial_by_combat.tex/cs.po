@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2026-03-23 23:03+0000\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,11 +19,13 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
-#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_devilish_plan.tex:204
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
@@ -45,8 +47,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
-#: clash/trial_by_combat.tex:19
+#: coops/wandering_dragons.tex:23 clash/force_of_will.tex:24
+#: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -77,11 +79,8 @@ msgid ""
 msgstr "\\addscenariosection{1}{Střet}{Lov}{\\images/slayer.png}"
 
 #. type: multicols*
-#: clash/trial_by_combat.tex:7
+#: clash/trial_by_combat.tex:7 clash/astral_run.tex:7
 #, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} Shakajiub\n"
-#| "\n"
 msgid ""
 "\\textbf{Author:} Laamakala\n"
 "\n"
@@ -288,7 +287,7 @@ msgid ""
 "  \\item The blocked Field on the Center Map Tile is a Magic Spring and does not count as blocked.\n"
 "  \\item All Fields on the Center Map Tile are visitable once per Faction.\n"
 "  \\item Players do not lose \\svg{gold} for losing or retreating from any Combat.\n"
-"  \\item After winning a combat against another player’s Main Hero or Level VII Neutrals, you may recruit or reinforce one of your Units that was defeated (reduced to 0 hitpoints) during the battle, at no cost.\n"
+"  \\item After winning Combat against another player’s Main Hero or Level VII Neutrals, you may recruit or reinforce one of your Units that was defeated (reduced to 0 hitpoints) during the battle, at no cost.\n"
 "  \\item \\textbf{Obelisk:} You may spawn your defeated Main Hero on an Obelisk you have flagged. \\textit{Flaggable for all players.}\n"
 "  \\item \\textit{Optional:} At the beginning of each Round, roll two Attack Dice separately and apply the effect from the table below.\n"
 "\\end{itemize}\n"

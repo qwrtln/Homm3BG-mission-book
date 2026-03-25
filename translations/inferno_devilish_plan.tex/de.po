@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-19 07:58+0000\n"
+"POT-Creation-Date: 2026-03-23 23:03+0000\n"
 "PO-Revision-Date: 2025-06-23 13:02+0000\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -21,11 +21,13 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
 #: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
-#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
+#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
 #: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:202
+#: campaigns/inferno_devilish_plan.tex:204
 #: campaigns/inferno_steadwicks_fall.tex:5
 #: campaigns/inferno_deal_with_the_devil.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
@@ -76,7 +78,7 @@ msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
 #: coops/stand_united.tex:33 clash/the_hunt.tex:35
-#: campaigns/inferno_devilish_plan.tex:88
+#: campaigns/inferno_devilish_plan.tex:90
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -88,7 +90,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:90
+#: coops/sentinels.tex:44 campaigns/inferno_devilish_plan.tex:92
 #: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
 #: campaigns/castle_two_knights_defense.tex:47
 #, no-wrap
@@ -102,7 +104,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:121
+#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:123
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
 #: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
@@ -118,7 +120,7 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
 #: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
-#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:125
+#: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:127
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
 #, no-wrap
@@ -133,7 +135,7 @@ msgstr ""
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
 #: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
-#: campaigns/inferno_devilish_plan.tex:140
+#: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
 #: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
@@ -150,7 +152,7 @@ msgstr ""
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
 #: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/the_hunt.tex:69
-#: campaigns/inferno_devilish_plan.tex:174
+#: campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:194
 #: campaigns/inferno_deal_with_the_devil.tex:148
 #: sections/random_scenario.tex:298
@@ -164,9 +166,10 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
-#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
-#: sections/credits.tex:28 sections/random_scenario.tex:296
+#: clash/dragoncurse_castle.tex:85 clash/astral_run.tex:100
+#: campaigns/inferno_devilish_plan.tex:226 campaigns/castle_greek_gift.tex:121
+#: campaigns/castle_greek_gift.tex:272 sections/credits.tex:28
+#: sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -179,7 +182,7 @@ msgstr ""
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
+#: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:30
 #: sections/credits.tex:34 sections/random_scenario.tex:306
 #, no-wrap
 msgid ""
@@ -203,7 +206,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/stand_united.tex:23 clash/bloody_grail.tex:21
-#: clash/the_fractured_kingdoms.tex:19 campaigns/inferno_devilish_plan.tex:32
+#: clash/the_fractured_kingdoms.tex:19 clash/astral_run.tex:19
+#: campaigns/inferno_devilish_plan.tex:32
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
 #: campaigns/castle_two_knights_defense.tex:25
@@ -214,6 +218,17 @@ msgid ""
 msgstr ""
 "\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
+
+#. type: multicols
+#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
+#: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\n"
+msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:31 campaigns/inferno_devilish_plan.tex:41
@@ -309,16 +324,6 @@ msgstr ""
 "\\textbf{Startressourcen:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
-#. type: multicols
-#: campaigns/inferno_devilish_plan.tex:34
-#: campaigns/inferno_steadwicks_fall.tex:30
-#: campaigns/inferno_deal_with_the_devil.tex:34
-#, no-wrap
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\n"
-msgstr ""
-
 #. type: multicols*
 #: campaigns/inferno_devilish_plan.tex:39
 #, fuzzy, no-wrap
@@ -397,7 +402,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:86
+#: campaigns/inferno_devilish_plan.tex:88
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\vfill\n"
@@ -407,7 +412,9 @@ msgstr ""
 #| "\n"
 msgid ""
 "\\begin{center}\n"
+"  \\vfill\n"
 "  {\\transparent{0.2}\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/slayer.png}}\n"
+"  \\vfill\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
@@ -417,7 +424,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:96
+#: campaigns/inferno_devilish_plan.tex:98
 #, no-wrap
 msgid ""
 "\\textbf{2 × Starting (I) Map Tile}\n"
@@ -429,7 +436,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:102
+#: campaigns/inferno_devilish_plan.tex:104
 #, no-wrap
 msgid ""
 "\\textbf{3 × Far (II--III) Map Tile}\n"
@@ -441,7 +448,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:107
+#: campaigns/inferno_devilish_plan.tex:109
 #, no-wrap
 msgid ""
 "\\textbf{2 × Near (IV--V) Map Tile}\n"
@@ -452,7 +459,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:112
+#: campaigns/inferno_devilish_plan.tex:114
 #, no-wrap
 msgid ""
 "\\textbf{1 × Center (VI--VII) Map Tile}\n"
@@ -463,7 +470,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:114
+#: campaigns/inferno_devilish_plan.tex:116
 #: campaigns/inferno_steadwicks_fall.tex:119
 #: campaigns/inferno_deal_with_the_devil.tex:75
 #, no-wrap
@@ -473,7 +480,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:117
+#: campaigns/inferno_devilish_plan.tex:119
 #, no-wrap
 msgid ""
 "The Enemy Hero is represented by one Rampart Faction Hero model of your choice\n"
@@ -482,7 +489,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:119
+#: campaigns/inferno_devilish_plan.tex:121
 #, no-wrap
 msgid ""
 "Place your Hero in the center Field of the Inferno Starting Map Tile.\n"
@@ -490,7 +497,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:123
+#: campaigns/inferno_devilish_plan.tex:125
 #, no-wrap
 msgid ""
 "Defeat the Enemy Hero and the Gold Dragons Armies.\n"
@@ -498,7 +505,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:131
+#: campaigns/inferno_devilish_plan.tex:133
 #, no-wrap
 msgid ""
 "You lose if any of the following occur:\n"
@@ -510,7 +517,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:135
+#: campaigns/inferno_devilish_plan.tex:137
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
@@ -520,7 +527,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:138
+#: campaigns/inferno_devilish_plan.tex:140
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -532,7 +539,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:145
+#: campaigns/inferno_devilish_plan.tex:147
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{1} Round:}\n"
@@ -543,7 +550,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:150
+#: campaigns/inferno_devilish_plan.tex:152
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{2} Round:}\n"
@@ -554,7 +561,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:156
+#: campaigns/inferno_devilish_plan.tex:158
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\textbf{\\nth{9} Round:}\n"
@@ -577,7 +584,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:161
+#: campaigns/inferno_devilish_plan.tex:163
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{10} Round:}\n"
@@ -588,7 +595,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:166
+#: campaigns/inferno_devilish_plan.tex:168
 #, no-wrap
 msgid ""
 "\\textbf{\\nth{13} Round:}\n"
@@ -599,7 +606,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:171
+#: campaigns/inferno_devilish_plan.tex:173
 #, no-wrap
 msgid ""
 "\\textbf{When you complete the Scenario:}\n"
@@ -610,7 +617,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: campaigns/inferno_devilish_plan.tex:176
+#: campaigns/inferno_devilish_plan.tex:178
 #: campaigns/inferno_steadwicks_fall.tex:196
 #: campaigns/inferno_deal_with_the_devil.tex:150
 #, no-wrap
@@ -620,7 +627,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:185
+#: campaigns/inferno_devilish_plan.tex:187
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -635,7 +642,7 @@ msgid ""
 msgstr ""
 
 #. type: tikzpicture
-#: campaigns/inferno_devilish_plan.tex:200
+#: campaigns/inferno_devilish_plan.tex:202
 #, no-wrap
 msgid ""
 "[remember picture]\n"
@@ -650,7 +657,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:206
+#: campaigns/inferno_devilish_plan.tex:208
 #: campaigns/inferno_steadwicks_fall.tex:213
 #, no-wrap
 msgid ""
@@ -659,7 +666,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:210
+#: campaigns/inferno_devilish_plan.tex:212
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
@@ -669,7 +676,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:212
+#: campaigns/inferno_devilish_plan.tex:214
 #, no-wrap
 msgid ""
 "\\textbf{Introduction}\n"
@@ -677,7 +684,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:216
+#: campaigns/inferno_devilish_plan.tex:218
 #, no-wrap
 msgid ""
 "Our underlings have done well.\n"
@@ -687,7 +694,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:218
+#: campaigns/inferno_devilish_plan.tex:220
 #, no-wrap
 msgid ""
 "\\textbf{The Queen}\n"
@@ -695,7 +702,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: campaigns/inferno_devilish_plan.tex:222
+#: campaigns/inferno_devilish_plan.tex:224
 #, no-wrap
 msgid ""
 "The Gold Dragon Queen is a powerful ally of AvLee.\n"
