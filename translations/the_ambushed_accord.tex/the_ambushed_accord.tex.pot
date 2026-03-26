@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-26 12:06+0000\n"
+"POT-Creation-Date: 2026-03-26 19:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:31
 #, no-wrap
 msgid ""
-"\\textbf{Additional Bonus:} 1 x \\svg{morale_positive}\n"
+"\\textbf{Additional Bonus:} 1 × \\svg{morale_positive}\n"
 "\n"
 msgstr ""
 
