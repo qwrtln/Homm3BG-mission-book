@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-14 19:39+0000\n"
+"POT-Creation-Date: 2026-03-26 20:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,6 +59,16 @@ msgid "\\def\\campaignstitle{Campaigns}"
 msgstr ""
 
 #. type: Plain text
-#: sections/language_metadata.tex:17
+#: sections/language_metadata.tex:18
+msgid "\\def\\alliancespath{alliances}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:20
+msgid "\\def\\alliancestitle{Alliances}"
+msgstr ""
+
+#. type: Plain text
+#: sections/language_metadata.tex:21
 msgid "\\def\\lang_header_adjustment{0px}"
 msgstr ""
