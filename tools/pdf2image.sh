@@ -78,7 +78,7 @@ while [[ "$1" != "" ]]; do
 done
 
 # Validate arguments
-if [[ "$drafts" -eq 1 && "$LANGUAGE" != "en" ]] || [[ "$drafts" -eq 1 && -n "$custom_pdf" ]] || [[ -n "$LANGUAGE" && -n "$custom_pdf" ]]; then
+if [[ "$drafts" -eq 1 && "$LANGUAGE" != "en" ]] || [[ "$drafts" -eq 1 && -n "$custom_pdf" ]]; then
   echo "Error: -d/--drafts is mutually exclusive with non-English and -f/--file options."
   help
 fi

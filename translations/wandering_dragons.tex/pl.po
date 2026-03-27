@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-03-27 13:07+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -46,9 +46,24 @@ msgstr ""
 "{2}\n"
 "\n"
 
+#. type: multicols
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
+#: coops/wandering_dragons.tex:15 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"\n"
+
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:23 clash/force_of_will.tex:24
+#: coops/wandering_dragons.tex:24 clash/force_of_will.tex:24
 #: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
@@ -59,7 +74,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:34 coops/wandering_dragons.tex:31
+#: coops/sentinels.tex:34 coops/wandering_dragons.tex:32
 #: campaigns/castle_greek_gift.tex:36
 #, no-wrap
 msgid ""
@@ -72,28 +87,21 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/wandering_dragons.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
-#| "interference.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Wandering Dragons}{\\images/"
 "quiet_eye_of_the_dragon.png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Stańcie Zjednoczeni}{\\images/"
-"interference.png}"
+"\\addscenariosection{1}{Tryb Kooperacyjny}{Wędrowne Smoki}{\\images/"
+"quiet_eye_of_the_dragon.png}"
 
 #. type: multicols
 #: coops/wandering_dragons.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} NeuroN\n"
-#| "\n"
+#, no-wrap
 msgid ""
-"\\textbf{Author:} Niilo Salonen, Juhani Salonen\n"
+"\\textbf{Authors:} Niilo Salonen, Juhani Salonen\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} NeuroN\n"
+"\\textbf{Autorzy:} Niilo Salonen, Juhani Salonen\n"
 "\n"
 
 #. type: multicols
@@ -102,57 +110,52 @@ msgstr ""
 msgid ""
 "\\textit{The dragons of this region have grown increasingly erratic and dangerous.\n"
 "You and your allies have decided that the time has come to end their threat once and for all.\n"
-"Beware, however—some dragons have strayed from the Dragon Utopia and now roam the land.\n"
+"Beware, however --- some dragons have strayed from the Dragon Utopia and now roam the land.\n"
 "They will strike without hesitation if they feel threatened.\n"
 "Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering beyond its borders.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textit{Smoki w tym regionie stają się coraz bardziej nieprzewidywalne i niebezpieczne.\n"
+"Ty i twoi sojusznicy postanowiliście, że nadszedł czas, aby raz na zawsze położyć kres temu zagrożeniu.\n"
+"Uważajcie jednak --- niektóre smoki oddaliły się od Smoczej Utopii i teraz błąkają się po krainie.\n"
+"Zaatakują bez wahania, jeśli poczują się zagrożone.\n"
+"Waszą misją jest wytępienie wszystkich smoków w okolicy, zarówno tych strzegących Utopii, jak i tych wędrujących poza jej murami.}  % no-check-caps\n"
+"\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#: coops/wandering_dragons.tex:17
+#, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "10 Rounds\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"10 Rund\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 or 3\n"
-#| "\n"
+#: coops/wandering_dragons.tex:20
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2-3\n"
+"\\textbf{Player Count:} 2--3\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\\textbf{Liczba Graczy:} 2 lub 3\n"
+"\\textbf{Liczba Graczy:} 2--3\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:21
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#: coops/wandering_dragons.tex:22
+#, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 6 \\svg{gold}, 2 \\svg{building_materials}\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
+#: coops/wandering_dragons.tex:26 coops/the_ambushed_accord.tex:25
 #: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
@@ -165,32 +168,22 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × A ``Few'' of the cheapest \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/wandering_dragons.tex:30
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item 2 × A ``Few'' of the cheapest \\svg{bronze} Units\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × ,,Garstka'' najtańszych \\svg{bronze} Jednostek\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
-#| "\n"
+#: coops/wandering_dragons.tex:34
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II-III) Map Tile.\n"
 "\n"
@@ -199,7 +192,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:38
+#: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
 #: clash/astral_run.tex:34
 #, no-wrap
 msgid ""
@@ -212,15 +205,8 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/wandering_dragons.tex:43
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item $P$ × Starting (I) Map Tiles\n"
@@ -230,52 +216,33 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item 2 × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4 × Daleki (II--III) Kafelek Mapy\n"
-"  \\item 4 × Bliski (IV--V) Kafelek Mapy z Obeliskiem\n"
+"  \\item $G$ × Początkowy (I) Kafelek Mapy\n"
+"  \\item $2G$ × Bliski (IV--V) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek Mapy ze Smoczą Utopią\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:45
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "To win the Scenario, a Hero must Flag the Dragon Utopia Field.\n"
-#| "\n"
+#: coops/wandering_dragons.tex:46
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Defeat the wandering dragons and flag the Dragon Utopia.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki zwycięstwa}}\n"
-"Aby wygrać Scenariusz, Bohater musi oflagować pole Smoczej Utopii.\n"
+"Pokonaj wędrowne smoki i oflaguj Smoczą Utopię.\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\\textbf{\\nth{4} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Roll a \\svg{resource} and resolve the result.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{6} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the event of Round 4.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{8} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the event of Round 4.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/wandering_dragons.tex:57
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black Cubes from all Water Wheels and Windmills on the map.\n"
-"  \\item The Wandering Dragons gain +1 Movement this Round.\n"
+"  \\item The wandering dragons gain $+1$ to the movement dice roll this Round (see Additional Rules below).\n"
 "\\end{itemize}\n"
 "\\textbf{\\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -286,29 +253,29 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
 "\\textbf{4. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Rzuć \\svg{resource} i rozpatrz wynik.\n"
-"\\end{itemize}\n"
-"\\textbf{6. Runda:}\n"
-"\\begin{itemize}\n"
-"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"  \\item Usuń wszystkie Czarne Kostki z każdego Młyna Wodnego i Wiatraka na mapie.\n"
+"  \\item Wędrowne smoki otrzymują $+1$ do rzutu na ruch w tej Rundzie (patrz Dodatkowe Zasady poniżej).\n"
 "\\end{itemize}\n"
 "\\textbf{8. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Powtórz wydarzenie z Rundy 4.\n"
+"  \\item Powtórz wydarzenia z Rundy 4.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:59
+#: coops/wandering_dragons.tex:60
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
 "Randomly draw the following Neutral dragon Unit Cards into two \\textbf{Dragon Decks}: Dragon Utopia (DU) and wandering dragons (WD):\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"Losowo dobierz następujące karty Jednostek Neutralnych smoków do dwóch \\textbf{Talii Smoków}: Smoczej Utopii (SU) i wędrownych \\mbox{smoków}~(WS):\n"
+"\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:81
+#: coops/wandering_dragons.tex:82
 #, no-wrap
 msgid ""
 "\\textbf{Easy:}\n"
@@ -334,9 +301,31 @@ msgid ""
 "\\columnbreak\n"
 "\n"
 msgstr ""
+"\\textbf{Łatwy:}\n"
+"\\begin{itemize}\n"
+"  \\item SU: 2 × \\svg{azure}\n"
+"  \\item WS: 2 × \\svg{golden} (+1 \\svg{golden} przy 3 graczach)\n"
+"\\end{itemize}\n"
+"\\textbf{Normalny:}\n"
+"\\begin{itemize}\n"
+"  \\item SU: 2 × \\svg{azure}, 1 × \\svg{golden}\n"
+"  \\item WS: 1 × \\svg{azure}, 1 × \\svg{golden} (+1 \\svg{golden} przy 3 graczach)\n"
+"\\end{itemize}\n"
+"\\textbf{Trudny:}\n"
+"\\begin{itemize}\n"
+"  \\item SU: 3 × \\svg{azure}\n"
+"  \\item WS: 1 × \\svg{azure}, 2 × \\svg{golden} (+1 \\svg{golden} przy 3 graczach)\n"
+"\\end{itemize}\n"
+"\\textbf{Niemożliwy:}\n"
+"\\begin{itemize}\n"
+"  \\item SU: 3 × \\svg{azure}, 1 × \\svg{golden}\n"
+"  \\item WS: 2 × \\svg{azure}, 1 × \\svg{golden} (+1 \\svg{golden} przy 3 graczach)\n"
+"\\end{itemize}\n"
+"\\columnbreak\n"
+"\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:100
+#: coops/wandering_dragons.tex:102
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -344,34 +333,44 @@ msgid ""
 "  \\item The WD \\textbf{do not discover} Map Tiles they move through.\n"
 "  \\item The WD move at the end of every Round. Roll 2 Attack Dice and add 1 to the result. On a result of:\n"
 "  \\begin{itemize}\n"
-"    \\item +1, +2, or +3, the WD move that amount of Fields toward the player asset (Hero, Town, or Settlement) that is closest to it.\n"
-"    \\item 0, the WD stay in place.\n"
-"    \\item -1, the WD move one Field toward the DU.\n"
+"    \\item \\textbf{1 or more}, the WD move that amount of Fields toward the player asset (Hero, Town, or Settlement) that is closest to them.\n"
+"    \\item \\textbf{0}, the WD stay in place.\n"
+"    \\item \\textbf{--1}, the WD move one Field toward the DU.\n"
 "  \\end {itemize}\n"
+"  \\columnbreak\n"
 "  \\item If two or more player assets are equidistant, the WD prioritize 1)~Heroes, 2)~Towns and 3)~Settlements.\n"
 "    If this does not resolve which direction the WD should move, roll a die to determine the target.\n"
 "  \\item The WD attack if they reach a Field with a Hero, a Town, or a Settlement with a Hero.\n"
-"    In this case, the battle is fought until the end without a chance for retreat or surrender.\n"
+"    In this case, the battle is fought until the end without a chance for retreat.\n"
 "    If the WD reach a Settlement without a Hero in it, remove the Faction Cube from it.\n"
 "  \\item The WD may move through Blocked Fields but cannot end their movement on one.\n"
-"  \\item If the WD are defeated, the player who defeated them gains \\svg{morale_positive}.\n"
+"  \\item The player who defeats the WD gains \\svg{morale_positive}.\n"
 "  \\item \\textbf{Obelisk:} Roll \\svg{treasure} and \\svg{resource} and resolve both.\n"
 "\\end{itemize}"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item WS zaczynają na środkowym polu nieodkrytego Centralnego Kafelka Mapy i są oznaczone żetonem \\svg{morale_negative}.\n"
+"  \\item WS \\textbf{nie odkrywają} Kafelków Mapy, przez które się przemieszczają.\n"
+"  \\item WS poruszają się na końcu każdej Rundy. Rzuć 2 Kości Ataku i dodaj 1 do wyniku. Przy wyniku:\n"
+"  \\begin{itemize}\n"
+"    \\item \\textbf{1 i więcej} WS przemieszczają się o tyle Pól w kierunku obiektu gracza (Bohatera, Miasta lub Osady), który jest najbliżej.\n"
+"    \\item \\textbf{0} WS pozostają na miejscu.\n"
+"    \\item \\textbf{--1} WS przemieszczają się o jedno Pole w kierunku SU.\n"
+"  \\end {itemize}\n"
+"  \\columnbreak\n"
+"  \\item Jeśli dwa lub więcej obiektów gracza jest w równej odległości, WS preferują: 1)~Bohaterów, 2)~Miasta i 3)~Osady.\n"
+"    Jeśli to nie rozstrzyga, w którym kierunku WS powinny się poruszyć, rzuć kością, aby określić cel.\n"
+"  \\item WS atakują, jeśli dotrą do Pola z Bohaterem, Miastem lub Osadą z Bohaterem.\n"
+"    W takim przypadku walka toczy się do końca bez możliwości wycofania się.\n"
+"    Jeśli WS dotrą do Osady bez Bohatera, usuń z niej Kostkę Frakcji.\n"
+"  \\item WS mogą poruszać się przez Zablokowane Pola, ale nie mogą na nich zakończyć ruchu.\n"
+"  \\item Gracz, który pokona WS, otrzymuje \\svg{morale_positive}.\n"
+"  \\item \\textbf{Obelisk:} Rzuć \\svg{treasure} i \\svg{resource} i rozpatrz oba wyniki.\n"
+"\\end{itemize}"
 
 #. type: tikzpicture
-#: coops/wandering_dragons.tex:111
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[overlay]\n"
-#| "  \\node(bg)[anchor=center, opacity=0.07, xshift=0em, yshift=-25em] at (current page.south) {\n"
-#| "    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/quiet_eye_of_the_dragon.png}\n"
-#| "  };\n"
-#| "  \\centering\n"
-#| "  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-#| "  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}}};\n"
-#| "  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-#| "  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
+#: coops/wandering_dragons.tex:113
+#, no-wrap
 msgid ""
 "[overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-17em] at (current page.south) {\n"
@@ -384,11 +383,11 @@ msgid ""
 "  \\node at (10.5, -9.9) {\\footnotesize{\\textbf{\\MakeUppercase{3-PLAYER SCENARIO}}}};"
 msgstr ""
 "[overlay]\n"
-"  \\node(bg)[anchor=center, opacity=0.07, xshift=0em, yshift=-25em] at (current page.south) {\n"
-"    \\includegraphics[width=1.2\\paperwidth, keepaspectratio]{\\art/quiet_eye_of_the_dragon.png}\n"
+"  \\node(bg)[anchor=center, opacity=0.07, xshift=-3em, yshift=-17em] at (current page.south) {\n"
+"    \\includegraphics[width=0.85\\paperwidth, keepaspectratio]{\\art/fireball.png}\n"
 "  };\n"
 "  \\centering\n"
-"  \\node at (4.5, -5) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-2p.png}};\n"
-"  \\node at (4.5, -10) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
-"  \\node at (12.1, -14) {\\includegraphics[scale=0.165]{\\maps/bloody-grail-4p.png}};\n"
-"  \\node at (12.1, -21.6) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 4-OSOBOWY}}}};"
+"  \\node at (11.5, -2.5) {\\includegraphics[scale=0.35]{\\maps/wandering_dragons_2p.png}};\n"
+"  \\node at (14, -4.9) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 2-OSOBOWY}}}};\n"
+"  \\node at (5.7, -9) {\\includegraphics[scale=0.35]{\\maps/wandering_dragons_3p.png}};\n"
+"  \\node at (10.5, -9.9) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIUSZ 3-OSOBOWY}}}};"
