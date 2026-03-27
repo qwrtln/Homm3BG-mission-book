@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-03-27 13:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,9 +43,22 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: multicols
+#: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
+#: coops/wandering_dragons.tex:15 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:20
+#: campaigns/inferno_steadwicks_fall.tex:16
+#: campaigns/inferno_deal_with_the_devil.tex:20
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\n"
+msgstr ""
+
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:23 clash/force_of_will.tex:24
+#: coops/wandering_dragons.tex:24 clash/force_of_will.tex:24
 #: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
@@ -54,7 +67,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/sentinels.tex:34 coops/wandering_dragons.tex:31
+#: coops/sentinels.tex:34 coops/wandering_dragons.tex:32
 #: campaigns/castle_greek_gift.tex:36
 #, no-wrap
 msgid ""
@@ -74,7 +87,7 @@ msgstr ""
 #: coops/wandering_dragons.tex:7
 #, no-wrap
 msgid ""
-"\\textbf{Author:} Niilo Salonen, Juhani Salonen\n"
+"\\textbf{Authors:} Niilo Salonen, Juhani Salonen\n"
 "\n"
 msgstr ""
 
@@ -84,40 +97,39 @@ msgstr ""
 msgid ""
 "\\textit{The dragons of this region have grown increasingly erratic and dangerous.\n"
 "You and your allies have decided that the time has come to end their threat once and for all.\n"
-"Beware, however—some dragons have strayed from the Dragon Utopia and now roam the land.\n"
+"Beware, however --- some dragons have strayed from the Dragon Utopia and now roam the land.\n"
 "They will strike without hesitation if they feel threatened.\n"
 "Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering beyond its borders.}  % no-check-caps\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:16
+#: coops/wandering_dragons.tex:17
 #, no-wrap
 msgid ""
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "10 Rounds\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:19
+#: coops/wandering_dragons.tex:20
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2-3\n"
+"\\textbf{Player Count:} 2--3\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:21
+#: coops/wandering_dragons.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}\n"
 "\n"
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
+#: coops/wandering_dragons.tex:26 coops/the_ambushed_accord.tex:25
 #: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
@@ -128,7 +140,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:29
+#: coops/wandering_dragons.tex:30
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -138,7 +150,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:33
+#: coops/wandering_dragons.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II-III) Map Tile.\n"
@@ -146,7 +158,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:38
+#: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
 #: clash/astral_run.tex:34
 #, no-wrap
 msgid ""
@@ -156,7 +168,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:42
+#: coops/wandering_dragons.tex:43
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -168,7 +180,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:45
+#: coops/wandering_dragons.tex:46
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -177,14 +189,14 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:56
+#: coops/wandering_dragons.tex:57
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\\textbf{\\nth{4} Round:}\n"
 "\\begin{itemize}\n"
 "  \\item Remove all Black Cubes from all Water Wheels and Windmills on the map.\n"
-"  \\item The Wandering Dragons gain +1 Movement this Round.\n"
+"  \\item The wandering dragons gain $+1$ to the movement dice roll this Round (see Additional Rules below).\n"
 "\\end{itemize}\n"
 "\\textbf{\\nth{8} Round:}\n"
 "\\begin{itemize}\n"
@@ -194,7 +206,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:59
+#: coops/wandering_dragons.tex:60
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -203,7 +215,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:81
+#: coops/wandering_dragons.tex:82
 #, no-wrap
 msgid ""
 "\\textbf{Easy:}\n"
@@ -231,7 +243,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/wandering_dragons.tex:100
+#: coops/wandering_dragons.tex:102
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -239,23 +251,24 @@ msgid ""
 "  \\item The WD \\textbf{do not discover} Map Tiles they move through.\n"
 "  \\item The WD move at the end of every Round. Roll 2 Attack Dice and add 1 to the result. On a result of:\n"
 "  \\begin{itemize}\n"
-"    \\item +1, +2, or +3, the WD move that amount of Fields toward the player asset (Hero, Town, or Settlement) that is closest to it.\n"
-"    \\item 0, the WD stay in place.\n"
-"    \\item -1, the WD move one Field toward the DU.\n"
+"    \\item \\textbf{1 or more}, the WD move that amount of Fields toward the player asset (Hero, Town, or Settlement) that is closest to them.\n"
+"    \\item \\textbf{0}, the WD stay in place.\n"
+"    \\item \\textbf{--1}, the WD move one Field toward the DU.\n"
 "  \\end {itemize}\n"
+"  \\columnbreak\n"
 "  \\item If two or more player assets are equidistant, the WD prioritize 1)~Heroes, 2)~Towns and 3)~Settlements.\n"
 "    If this does not resolve which direction the WD should move, roll a die to determine the target.\n"
 "  \\item The WD attack if they reach a Field with a Hero, a Town, or a Settlement with a Hero.\n"
-"    In this case, the battle is fought until the end without a chance for retreat or surrender.\n"
+"    In this case, the battle is fought until the end without a chance for retreat.\n"
 "    If the WD reach a Settlement without a Hero in it, remove the Faction Cube from it.\n"
 "  \\item The WD may move through Blocked Fields but cannot end their movement on one.\n"
-"  \\item If the WD are defeated, the player who defeated them gains \\svg{morale_positive}.\n"
+"  \\item The player who defeats the WD gains \\svg{morale_positive}.\n"
 "  \\item \\textbf{Obelisk:} Roll \\svg{treasure} and \\svg{resource} and resolve both.\n"
 "\\end{itemize}"
 msgstr ""
 
 #. type: tikzpicture
-#: coops/wandering_dragons.tex:111
+#: coops/wandering_dragons.tex:113
 #, no-wrap
 msgid ""
 "[overlay]\n"

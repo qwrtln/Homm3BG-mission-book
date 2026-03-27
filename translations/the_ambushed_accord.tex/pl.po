@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-24 22:09+0000\n"
+"POT-Creation-Date: 2026-03-25 21:37+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -46,8 +46,23 @@ msgstr ""
 "{2}\n"
 "\n"
 
+#. type: multicols
+#: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
+#: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
+#: coops/stand_united.tex:17 coops/the_ambushed_accord.tex:17
+#: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
+#: campaigns/inferno_steadwicks_fall.tex:20
+#: campaigns/inferno_deal_with_the_devil.tex:24
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
+"\n"
+
 #. type: multicols*
-#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:21
+#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:23
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
@@ -58,7 +73,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
+#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:25
 #: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
@@ -71,95 +86,89 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:38
+#: coops/wandering_dragons.tex:36 coops/the_ambushed_accord.tex:40
 #: clash/astral_run.tex:34
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
 "Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
-"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza:\n"
+"Weź następujące Kafelki Mapy i ułóż je zgodnie z układem mapy Scenariusza ($G$ oznacza liczbę graczy):\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: coops/the_ambushed_accord.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Titans' Stronghold}"
-#| "{\\images/earthquake.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{The Ambushed Accord}{\\images/"
 "earth_magic.png}"
 msgstr ""
-"\\addscenariosection{1}{Tryb Kooperacyjny}{Twierdza Tytanów}{\\images/"
-"earthquake.png}"
+"\\addscenariosection{1}{Tryb Kooperacyjny}{Zdradziecki Pakt}{\\images/"
+"earth_magic.png}"
 
 #. type: multicols
 #: coops/the_ambushed_accord.tex:7
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Author:} mopo\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Author:} Wololoeren\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} mopo\n"
+"\\textbf{Autor:} Wololoeren\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:14
+#: coops/the_ambushed_accord.tex:12
 #, no-wrap
 msgid ""
 "\\textit{The war had dragged on far too long. Armies were shattered, lands burned, and hope had dwindled to barely a whisper. At last, the rival lords agreed to set aside their grievances and forge an Accord — a fragile peace born of desperation.\\\\\n"
 "Messengers rode beneath white banners, oaths were sworn, and for the first time in years, the clash of steel gave way to uneasy silence. Yet peace has its own enemies.\\\\\n"
 "As the allied hosts gathered in the valley of Laren's Cross, dawn broke with the sound of horns — not of welcome, but of war.\\\\\n"
 "Out of the mist, enemy armies struck with deadly precision. Someone had betrayed the Accord.\\\\Now, surrounded and outnumbered, the fate of your alliance lies in your hands. Stand together — or fall alone.}  % no-check-caps\n"
+"\n"
+msgstr ""
+"\\textit{Wojna trwała zbyt długo. Armie były rozbite, ziemie spalone, a nadzieja niemal zgasła. Skłóceni lordowie zgodzili się zaniechać sporów i zawrzeć Pakt — kruchy pokój zrodzony z rozpaczy.\\\\\n"
+"Posłańcy jechali pod białymi sztandarami, złożono przysięgi, i po raz pierwszy od lat szczęk stali ustąpił miejsca niespokojnej ciszy. Spokój okazał się złudny.\\\\\n"
+"Gdy sprzymierzone wojska zebrały się w dolinie Larens Cross, świt przywitał ich dźwiękiem rogów — nie powitalnych, lecz wojennych.\\\\\n"
+"Z mgły wyłoniły się wrogie armie, uderzając z zabójczą precyzją. Ktoś zdradził Pakt.\\\\Teraz, w otoczeniu przeważających sił, los waszego sojuszu spoczywa w waszych rękach. Wasza siła w jedności — rozłam was zgubi.}  % no-check-caps\n"
+"\n"
+
+#. type: multicols
+#: coops/the_ambushed_accord.tex:15
+#, no-wrap
+msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "14 Rounds\n"
 "\n"
 msgstr ""
-
-#. type: multicols
-#: coops/the_ambushed_accord.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 -- 4\n"
-#| "\n"
-msgid ""
-"\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2-6\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\\textbf{Liczba Graczy:} 2 -- 4\n"
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"14 Rund\n"
 "\n"
 
 #. type: multicols
 #: coops/the_ambushed_accord.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
+msgid ""
+"\\textbf{Player Count:} 2--6\n"
+"\n"
+msgstr ""
+"\\textbf{Liczba Graczy:} 2--6\n"
+"\n"
+
+#. type: multicols
+#: coops/the_ambushed_accord.tex:21
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:27
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item Defeat the enemy army\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/the_ambushed_accord.tex:29
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item 2 × Search (2) the \\svg{bronze} Neutral Deck.\n"
@@ -167,66 +176,53 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item Pokonaj wrogą armię\n"
+"  \\item 2 × Przeszukaj (2) Talię \\svg{bronze} Jednostek \\mbox{Neutralnych}.\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
-msgid ""
-"\\textbf{Additional Bonus:} 1 x \\svg{morale_positive}\n"
-"\n"
-msgstr ""
-"\\textbf{Dodatkowy Bonus:} Brak\n"
-"\n"
-
-#. type: multicols
 #: coops/the_ambushed_accord.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Town Buildings:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
-"\\textbf{Town Buildings:} City Hall\n"
+"\\textbf{Additional Bonus:} 1 × \\svg{morale_positive}\n"
 "\n"
 msgstr ""
-"\\textbf{Budynki Początkowe:} Brak\n"
+"\\textbf{Dodatkowy Bonus:} 1 × \\svg{morale_positive}\n"
 "\n"
 
 #. type: multicols
 #: coops/the_ambushed_accord.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
-#| "\n"
+#, no-wrap
 msgid ""
-"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.\n"
+"\\textbf{Town Buildings:} City Hall\n"
 "\n"
 msgstr ""
-"\\textbf{Pula Kafelków Mapy:} Każdy gracz losuje 1 Daleki (II--III) Kafelek Mapy\n"
+"\\textbf{Budynki Początkowe:} Ratusz\n"
 "\n"
 
 #. type: multicols
 #: coops/the_ambushed_accord.tex:35
 #, no-wrap
 msgid ""
+"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.\n"
+"\n"
+msgstr ""
+"\\textbf{Pula Kafelków Mapy:} Każdy gracz losuje 2 Dalekie (II--III) i 2 Bliskie (IV--V) Kafelki Mapy.\n"
+"\n"
+
+#. type: multicols
+#: coops/the_ambushed_accord.tex:37
+#, no-wrap
+msgid ""
 "\\textbf{Obelisk:} Roll \\svg{resource} and \\svg{treasure} then resolve 1.\n"
 "\n"
 msgstr ""
+"\\textbf{Obelisk:} Rzuć \\svg{resource} i \\svg{treasure} i rozpatrz jedną z nich.\n"
+"\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 4P × Far (II--III) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/the_ambushed_accord.tex:45
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item $P$ × Starting (I) Map Tiles\n"
@@ -235,53 +231,26 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item G × Początkowy (I) Kafelek Mapy\n"
-"  \\item 4G × Daleki (II--III) Kafelek Mapy\n"
+"  \\item $G$ × Początkowy (I) Kafelek Mapy\n"
+"  \\item 1 × Centralny (VI–VII) Kafelek Mapy\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "Slay the Dragon Boss with your Main Hero.\n"
-#| "\n"
+#: coops/the_ambushed_accord.tex:48
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Every player must defeat the Level VII Neutral Army.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
-"Zabij Smoczego Władcę Bohaterem Głównym.\n"
+"Każdy gracz musi pokonać Neutralną Armię VII Poziomu.\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Timed Events}}\n"
-#| "\\textbf{\\nth{1} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item All Heroes gain +1 \\svg{movement}.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{2} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Players may gain 10 \\svg{gold}, 4 \\svg{building_materials} or 2 \\svg{valuables}.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{4} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Windmill, Water Wheel, Mystical Garden, Camp Fire and Pandora's Box.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{7} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Event of Round 4.\n"
-#| "\\end{itemize}\n"
-#| "\\textbf{\\nth{8} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item All Heroes gain +1 \\svg{movement}.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#: coops/the_ambushed_accord.tex:76
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\\textbf{\\nth{2} Round:}\n"
@@ -313,30 +282,36 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
-"\\textbf{1. Runda:}\n"
-"\\begin{itemize}\n"
-"  \\item Wszyscy Bohaterowie otrzymują +1 \\svg{movement}.\n"
-"\\end{itemize}\n"
 "\\textbf{2. Runda:}\n"
 "\\begin{itemize}\n"
-"  \\item Gracze otrzymują 10~\\svg{gold}, 4~\\svg{building_materials} albo 2~\\svg{valuables}.\n"
+"  \\item Zbuduj \\svg{building_special_tent} albo \\svg[12]{building_special_gears} za darmo, ignorując wymagane budynki.\n"
+"    Wymagane budynki muszą być zbudowane osobno, aby korzystać z ich efektów.\n"
 "\\end{itemize}\n"
-"\\textbf{4. Runda:}\n"
+"\\textbf{Koniec 4. Rundy:}\n"
 "\\begin{itemize}\n"
-"  \\item Usuń wszystkie Czarne Kostki z każdego Wiatraka, Młyna Wodnego, Mistycznego Ogrodu, Ogniska i Puszki Pandory.\n"
+"  \\item \\textbf{Jeden gracz} stacza Wymuszoną Walkę z~5~×~\\svg{bronze}.\n"
 "\\end{itemize}\n"
-"\\textbf{7. Runda:}\n"
+"\\textbf{Koniec 7. Rundy:}\n"
 "\\begin{itemize}\n"
-"  \\item Powtórz Wydarzenie Czasowe z 4. Rundy.\n"
+"  \\item \\textbf{Jeden gracz} stacza Wymuszoną Walkę z~4~×~\\svg{silver}.\n"
 "\\end{itemize}\n"
-"\\textbf{8. Runda:}\n"
+"\\textbf{Koniec 9. Rundy:}\n"
 "\\begin{itemize}\n"
-"  \\item Wszyscy Bohaterowie otrzymują +1 \\svg{movement}.\n"
+"  \\item \\textbf{Jeden gracz} stacza Wymuszoną Walkę z~3~×~\\svg{golden}.\n"
 "\\end{itemize}\n"
+"\\textbf{Koniec 11. Rundy:}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Jeden gracz} stacza Wymuszoną Walkę z~2~×~\\svg{azure}.\n"
+"\\end{itemize}\n"
+"\\textbf{Koniec 13. Rundy:}\n"
+"\\begin{itemize}\n"
+"  \\item \\textbf{Jeden gracz} stacza Wymuszoną Walkę z~3~×~\\svg{azure}.\n"
+"\\end{itemize}\n"
+"\\clearpage\n"
 "\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:84
+#: coops/the_ambushed_accord.tex:86
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -350,9 +325,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"\\subsubsection*{\\MakeUppercase{Wymuszone Walki}}\n"
+"\\begin{itemize}\n"
+"  \\item W grach na 1--3 graczy tylko jeden gracz musi stoczyć każdą Wymuszoną Walkę. Gracze mogą zdecydować, który uprawniony gracz będzie walczył.\n"
+"  \\item W grach na 4 lub więcej graczami \\textbf{dwóch graczy} musi stoczyć każdą Wymuszoną Walkę.\n"
+"  \\item Gracz nie jest uprawniony do stoczenia Wymuszonej Walki, jeśli wygrał już więcej Wymuszonych Walk niż jakikolwiek inny gracz lub jeśli nie ma Jednostek.\n"
+"  \\item Wygranie Wymuszonej Walki daje \\svg{morale_positive}.\n"
+"  \\item Jeśli gracz zostanie pokonany w Wymuszonej Walce, jego Bohater wraca do Miasta bez Jednostek. Pozostałe Jednostki musi pokonać inny gracz. Jeśli żaden gracz nie jest uprawniony do walki, gracze przegrywają Scenariusz.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
-#: coops/the_ambushed_accord.tex:113
+#: coops/the_ambushed_accord.tex:115
 #, no-wrap
 msgid ""
 "\\subsubsection*{\\MakeUppercase{Other Rules}}\n"
@@ -369,7 +354,7 @@ msgid ""
 "  \\textbf{Difficulty Settings}\\\\\n"
 "  \\bigskip\n"
 "  \\begin{tabularx}{0.93\\linewidth}{p{0.28\\linewidth}X}\n"
-"    \\darkcell[1.6]{Difficulty} & \\darkcell[1.6]{Changes to Timed Event Fights} \\\\\n"
+"    \\darkcell[1.6]{Difficulty} & \\darkcell[1.6]{Changes to \\mbox{Timed} Event Fights} \\\\\n"
 "    \\darkcell[1.6]{Easy}\n"
 "    & \\lightcell[1.6]{Remove a Unit from every Timed Event Fight.} \\\\\n"
 "    \\darkcell[1.6]{Normal}\n"
@@ -384,9 +369,38 @@ msgid ""
 "\\stepcounter{footnote}\n"
 "\\footnotetext{\\label{Stack Token} See Naval-Battles Mission Book for details.}"
 msgstr ""
+"\\subsubsection*{\\MakeUppercase{Pozostałe Zasady}}\n"
+"\\begin{itemize}\n"
+"  \\item Wspólnie zapłaćcie $G$~×~5~\\svg{gold}, $G$~×~3~\\svg{building_materials} i $G$~×~\\svg{valuables}, aby odkryć Centralny Kafelek Mapy ($G$ oznacza liczbę graczy), np. 4 graczy musi zapłacić 20~\\svg{gold}, 12~\\svg{building_materials} i 4~\\svg{valuables}.\n"
+"  \\item Na końcu każdej Rundy Astrologów gracze decydują, który gracz otrzymuje \\svg{morale_positive}.\n"
+"  \\columnbreak\n"
+"  \\item Gracze mogą wymieniać Artefakty i Zaklęcia z ręki, a także Jednostki i Zasoby, jeśli ich Bohaterowie Główni stoją na sąsiednich Polach lub jeśli obaj Bohaterowie są we własnych Miastach albo na Obeliskach.\n"
+"  \\item Gdy gracz pokona Neutralną Armię VII Poziomu, jego Bohaterowie zostają usunięci z Mapy.\n"
+"    Nie są już uprawnieni do staczania Wymuszonych Walk.\n"
+"\\end{itemize}\n"
+"\\hommtablemulticol[]{23}{\n"
+"  \\centering\n"
+"  \\medskip\n"
+"  \\textbf{Zasady Poziomów Trudności}\\\\\n"
+"  \\bigskip\n"
+"  \\begin{tabularx}{0.93\\linewidth}{p{0.28\\linewidth}X}\n"
+"    \\darkcell[1.6]{Poziom Trudności} & \\darkcell[1.6]{Zmiany w Wymuszonych Walkach} \\\\\n"
+"    \\darkcell[1.7]{Łatwy}\n"
+"    & \\lightcell[1.7]{Usuń jedną \\mbox{Jednostkę} z~każdej \\mbox{Wymuszonej} Walki.} \\\\\n"
+"    \\darkcell[1.3]{Normalny}\n"
+"    & \\lightcell[1.3]{Bez zmian} \\\\\n"
+"    \\darkcell[2.2]{Trudny}\n"
+"    & \\lightcell[2.2]{Dodaj Żeton Ulepszenia Inicjatywy\\footref{Stack Token} losowej Jednostce w walkach w Rundach 4., 7. i 9.} \\\\\n"
+"    \\darkcell[2.2]{Niemożliwy}\n"
+"    & \\lightcell[2.2]{Dodaj dwa losowe Żetony Ulepszonych Jednostek\\footref{Stack Token} dwóm Jednostkom we wszystkich walkach.} \\\\\n"
+"  \\end{tabularx}\n"
+"  \\medskip\n"
+"}\n"
+"\\stepcounter{footnote}\n"
+"\\footnotetext{\\label{Stack Token} Zob. Księgę Misji rozszerzenia Bitwy Morskie.}"
 
 #. type: tikzpicture
-#: coops/the_ambushed_accord.tex:124
+#: coops/the_ambushed_accord.tex:126
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -400,3 +414,13 @@ msgid ""
 "  \\node at (7, -3.3) {\\footnotesize{\\textbf{\\MakeUppercase{P5}}}};\n"
 "  \\node at (8.6, -4.7) {\\footnotesize{\\textbf{\\MakeUppercase{P6}}}};"
 msgstr ""
+"[overlay]\n"
+"  \\centering\n"
+"  \\node at (9, -2.5) {\\includegraphics[scale=0.12]{\\maps/the_ambushed_accord_px.png}};\n"
+"  \\color{white}\n"
+"  \\node at (10.6, -3.5) {\\footnotesize{\\textbf{\\MakeUppercase{G1}}}};\n"
+"  \\node at (11, -1.5) {\\footnotesize{\\textbf{\\MakeUppercase{G2}}}};\n"
+"  \\node at (9.4, -0.1) {\\footnotesize{\\textbf{\\MakeUppercase{G3}}}};\n"
+"  \\node at (7.4, -0.8) {\\footnotesize{\\textbf{\\MakeUppercase{G4}}}};\n"
+"  \\node at (7, -2.8) {\\footnotesize{\\textbf{\\MakeUppercase{G5}}}};\n"
+"  \\node at (8.6, -4.2) {\\footnotesize{\\textbf{\\MakeUppercase{G6}}}};"
