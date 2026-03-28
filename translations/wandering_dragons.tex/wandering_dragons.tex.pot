@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-28 00:07+0000\n"
+"POT-Creation-Date: 2026-03-28 10:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,10 +159,11 @@ msgstr ""
 
 #. type: multicols
 #: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
+#: clash/trial_by_combat.tex:30
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
 
