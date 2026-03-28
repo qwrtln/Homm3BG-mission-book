@@ -83,7 +83,7 @@ msgid ""
 "\\textbf{Author:} Laamakala\n"
 "\n"
 msgstr ""
-"\\textbf{Autor:} Shakajiub\n"
+"\\textbf{Autor:} Laamakala\n"
 "\n"
 
 #. type: multicols*
