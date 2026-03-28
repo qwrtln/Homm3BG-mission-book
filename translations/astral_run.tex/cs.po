@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-28 10:32+0000\n"
+"POT-Creation-Date: 2026-03-28 10:43+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -221,41 +221,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/astral_run.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Town Buildings:}\n"
-"\\begin{itemize}\n"
-"  \\item \\svg{bronze} Dwelling\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Úvodní Jednotky:}\n"
-"\\begin{itemize}\n"
-"  \\item 3 × Hrstku \\svg{bronze} Jednotek\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols*
-#: clash/astral_run.tex:34
-#, fuzzy, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
-"\n"
-
-#. type: multicols*
-#: clash/astral_run.tex:42
+#: clash/astral_run.tex:40
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"

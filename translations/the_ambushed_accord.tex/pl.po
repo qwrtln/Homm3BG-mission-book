@@ -85,8 +85,9 @@ msgstr ""
 "\\textbf{Jednostki Początkowe:}\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
+#: clash/trial_by_combat.tex:30
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
