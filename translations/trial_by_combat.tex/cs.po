@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-03-28 10:32+0000\n"
 "PO-Revision-Date: 2025-06-22 00:57+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:23 clash/force_of_will.tex:24
+#: coops/wandering_dragons.tex:24 clash/force_of_will.tex:24
 #: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
 #, no-wrap
 msgid ""
@@ -55,6 +55,19 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
+#: clash/trial_by_combat.tex:30
+#, fuzzy, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
+"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\n"
 
 #. type: multicols*
@@ -164,22 +177,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Budovy ve Městě:} \\svg{bronze} Obydlí, Citadela\n"
-"\n"
-
-#. type: multicols*
-#: clash/trial_by_combat.tex:30
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-#| "Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
-#| "\n"
-msgid ""
-"\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava Mapy}}\n"
-"Vezměte následující Dílky Mapy a uspořádejte je, jak je uvedeno ve Scénáři:\n"
 "\n"
 
 #. type: multicols*

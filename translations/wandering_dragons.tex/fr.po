@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-27 13:28+0000\n"
+"POT-Creation-Date: 2026-03-28 10:32+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -208,15 +208,15 @@ msgstr ""
 
 #. type: multicols*
 #: coops/wandering_dragons.tex:37 coops/the_ambushed_accord.tex:40
-#: clash/astral_run.tex:34
-#, fuzzy, no-wrap
+#: clash/trial_by_combat.tex:30
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation du Plateau}}\n"
-"Prenez les Tuiles suivantes et placez-les comme indiqué dans les images de la Préparation du Plateau:\n"
+"Prenez les tuiles suivantes et disposez-les comme indiqué sur le schéma du scénario ($J$ représente le nombre de joueurs):\n"
 "\n"
 
 #. type: multicols
