@@ -271,6 +271,19 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de-emerald_island-mono/emerald_island_de_mono.pdf"><em>klick</em></a></td>
         </tr>
         <tr>
+            <td>🤝 Wandering Dragons (2-3)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-wandering_dragons-color/wandering_dragons_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-wandering_dragons-mono/wandering_dragons_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
             <td>🤝 Close to Enemies (1-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies-color/close_to_enemies_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-close_to_enemies-mono/close_to_enemies_en_mono.pdf"><em>click</em></a></td>
@@ -293,19 +306,6 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-stand_united-mono/stand_united_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united-color/stand_united_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-stand_united-mono/stand_united_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-        </tr>
-        <tr>
-            <td>🤝 Wandering Dragons (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-color/wandering_dragons_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-wandering_dragons-mono/wandering_dragons_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-wandering_dragons-color/wandering_dragons_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-wandering_dragons-mono/wandering_dragons_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -336,28 +336,28 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
         </tr>
         <tr>
-            <td>⚔️ The Hunt (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-color/the_hunt_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-mono/the_hunt_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-color/the_hunt_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-mono/the_hunt_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-color/the_hunt_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-mono/the_hunt_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt-color/the_hunt_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt-mono/the_hunt_fr_mono.pdf"><em>clic</em></a></td>
+            <td>⚔️ Trial by Combat (2-4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-color/trial_by_combat_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-mono/trial_by_combat_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-color/trial_by_combat_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-mono/trial_by_combat_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-color/trial_by_combat_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-mono/trial_by_combat_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
-            <td>⚔️ Dragoncurse Castle (2)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-color/dragoncurse_castle_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-mono/dragoncurse_castle_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-color/dragoncurse_castle_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-mono/dragoncurse_castle_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-color/dragoncurse_castle_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-mono/dragoncurse_castle_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle-color/dragoncurse_castle_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle-mono/dragoncurse_castle_fr_mono.pdf"><em>clic</em></a></td>
+            <td>⚔️ Astral Run (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-color/astral_run_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-mono/astral_run_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -388,28 +388,28 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
         </tr>
         <tr>
-            <td>⚔️ Trial by Combat (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-color/trial_by_combat_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-trial_by_combat-mono/trial_by_combat_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-color/trial_by_combat_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-trial_by_combat-mono/trial_by_combat_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-color/trial_by_combat_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-trial_by_combat-mono/trial_by_combat_fr_mono.pdf"><em>clic</em></a></td>
+            <td>⚔️ Dragoncurse Castle (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-color/dragoncurse_castle_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-mono/dragoncurse_castle_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-color/dragoncurse_castle_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-dragoncurse_castle-mono/dragoncurse_castle_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-color/dragoncurse_castle_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-dragoncurse_castle-mono/dragoncurse_castle_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle-color/dragoncurse_castle_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-dragoncurse_castle-mono/dragoncurse_castle_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
         <tr>
-            <td>⚔️ Astral Run (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-color/astral_run_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-mono/astral_run_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td>⚔️ The Hunt (2-3)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-color/the_hunt_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_hunt-mono/the_hunt_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-color/the_hunt_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_hunt-mono/the_hunt_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-color/the_hunt_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_hunt-mono/the_hunt_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt-color/the_hunt_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_hunt-mono/the_hunt_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -423,45 +423,6 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-color/random_scenario_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-random_scenario-mono/random_scenario_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-        </tr>
-        <tr>
-            <td>🗺️ Inferno: A Devilish Plan (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-color/inferno_devilish_plan_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-mono/inferno_devilish_plan_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-color/inferno_devilish_plan_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-mono/inferno_devilish_plan_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-color/inferno_devilish_plan_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-mono/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-color/inferno_devilish_plan_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-mono/inferno_devilish_plan_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-        </tr>
-        <tr>
-            <td>🗺️ Inferno: Steadwick's Fall (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-color/inferno_steadwicks_fall_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-color/inferno_steadwicks_fall_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-color/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall-color/inferno_steadwicks_fall_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_fr_mono.pdf"><em>clic</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-        </tr>
-        <tr>
-            <td>🗺️ Inferno: Deal with the Devil (1)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_en_mono.pdf"><em>click</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_pl.pdf">klik</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_pl_mono.pdf"><em>klik</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_cs.pdf">klikni</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_fr.pdf">clic</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -501,6 +462,45 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-castle_two_knights_defense-mono/castle_two_knights_defense_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense-color/castle_two_knights_defense_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-castle_two_knights_defense-mono/castle_two_knights_defense_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
+            <td>🗺️ Inferno: A Devilish Plan (1)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-color/inferno_devilish_plan_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_devilish_plan-mono/inferno_devilish_plan_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-color/inferno_devilish_plan_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_devilish_plan-mono/inferno_devilish_plan_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-color/inferno_devilish_plan_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_devilish_plan-mono/inferno_devilish_plan_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-color/inferno_devilish_plan_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_devilish_plan-mono/inferno_devilish_plan_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
+            <td>🗺️ Inferno: Steadwick's Fall (1)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-color/inferno_steadwicks_fall_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-color/inferno_steadwicks_fall_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-color/inferno_steadwicks_fall_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall-color/inferno_steadwicks_fall_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_steadwicks_fall-mono/inferno_steadwicks_fall_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
+            <td>🗺️ Inferno: Deal with the Devil (1)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_cs.pdf">klikni</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_cs_mono.pdf"><em>klikni</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-color/inferno_deal_with_the_devil_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-inferno_deal_with_the_devil-mono/inferno_deal_with_the_devil_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
