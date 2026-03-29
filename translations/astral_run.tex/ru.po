@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-28 10:32+0000\n"
+"POT-Creation-Date: 2026-03-28 10:43+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -57,8 +57,23 @@ msgstr ""
 "\n"
 
 #. type: multicols
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:33 clash/the_hunt.tex:35 clash/astral_run.tex:30
+#: campaigns/inferno_devilish_plan.tex:90
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка карты}}\n"
+"\n"
+
+#. type: multicols
 #: coops/sentinels.tex:142 coops/stand_united.tex:87
-#: clash/dragoncurse_castle.tex:85 clash/astral_run.tex:100
+#: clash/dragoncurse_castle.tex:85 clash/astral_run.tex:98
 #: campaigns/inferno_devilish_plan.tex:226 campaigns/castle_greek_gift.tex:121
 #: campaigns/castle_greek_gift.tex:272 sections/credits.tex:28
 #: sections/random_scenario.tex:296
@@ -68,6 +83,29 @@ msgid ""
 "\n"
 msgstr ""
 "\\columnbreak\n"
+"\n"
+
+#. type: multicols*
+#: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
+#: coops/close_to_enemies.tex:37 coops/stand_united.tex:35
+#: clash/astral_run.tex:32
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
+#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
+#: clash/the_fractured_kingdoms.tex:26 clash/astral_run.tex:28
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Городские постройки:} \\svg{bronze} Жилища, Цитадель\n"
 "\n"
 
 #. type: multicols*
@@ -134,7 +172,7 @@ msgstr ""
 #| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"This Scenario plays out over 15 Rounds.\n"
+"Up to 11 or 15 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Длительность сценария}}\n"
@@ -148,7 +186,7 @@ msgstr ""
 #| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-"\\textbf{Player Count:} 2 -- 6\n"
+"\\textbf{Player Count:} 2--6\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Подготовка игроков}}\n"
@@ -179,40 +217,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/astral_run.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{9} Round:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Repeat the Timed Events of Round 6.\n"
-#| "\\end{itemize}\n"
-#| "\n"
-msgid ""
-"\\textbf{Town Buildings:}\n"
-"\\begin{itemize}\n"
-"  \\item \\svg{bronze} Dwelling\n"
-"\\end{itemize}\n"
-"\n"
-msgstr ""
-"\\textbf{Раунд 9:}\n"
-"\\begin{itemize}\n"
-"  \\item Повторите события раунда 6.\n"
-"\\end{itemize}\n"
-"\n"
-
-#. type: multicols*
-#: clash/astral_run.tex:34
-#, fuzzy, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Map Setup}}\n"
-"Take the following Map Tiles ($P$ stands for the number of players) and arrange them as shown in the Scenario map layout:\n"
-"\n"
-msgstr ""
-"Возьмите следующие фрагменты карты и расположите по схеме карты сценария:\n"
-"\n"
-
-#. type: multicols*
-#: clash/astral_run.tex:42
+#: clash/astral_run.tex:40
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\begin{itemize}\n"
@@ -224,9 +229,9 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item $P$ × Starting (I) Map Tiles\n"
-"  \\item 2$P$ × Far (II-III) Map Tiles\n"
+"  \\item $2P$ × Far (II-III) Map Tiles\n"
 "  \\item $P$ × Near (IV-V) Map Tiles\n"
-"  \\item 6 × Near (IV-V) Map Tiles with Obelisk\n"
+"  \\item 6 × Near (IV-V) Map Tiles with an Obelisk\n"
 "  \\item 1 × Center (VI-VII) Map Tile\n"
 "\\end{itemize}\n"
 "\n"
@@ -239,7 +244,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/astral_run.tex:45
+#: clash/astral_run.tex:43
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -253,19 +258,19 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/astral_run.tex:51
+#: clash/astral_run.tex:49
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item One player has flagged all 6 Obelisks. \\textit{That player wins the game immediately.}\n"
-"  \\item \\textbf{4 -- 6 players:} One player has defeated every opponent's Main Hero at least once. \\textit{That player wins the game immediately.}\n"
+"  \\item \\textbf{4--6 players:} One player has defeated every opponent's Main Hero at least once. \\textit{That player wins the game immediately.}\n"
 "  \\item At the end of Round 15.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:54
+#: clash/astral_run.tex:52
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Points}}\n"
@@ -274,7 +279,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:60
+#: clash/astral_run.tex:58
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -286,7 +291,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:82
+#: clash/astral_run.tex:80
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -314,7 +319,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:92
+#: clash/astral_run.tex:90
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Additional Rules}}\n"
@@ -324,13 +329,13 @@ msgid ""
 "  \\item \\textbf{Obelisk:} Guarded by Level VI Neutral Units. \\\\ \\textbf{First to Flag:} Search (4) \\svg[8]{skill}, \\svg{spellpower} or \\svg{artifact}.\n"
 "  \\item Each \\textbf{blocked Field} adjacent to an Obelisk is a two-way Astral Gate, which only becomes active after that Obelisk has been visited.\n"
 "  \\item \\textbf{Astral Gate:} Cannot be entered from a different Map Tile. When a Hero enters an Astral Gate, they are teleported to the Astral Gate on the Near Tile directly opposite the Center Tile. If that Tile is undiscovered, that player immediately discovers it.\n"
-"  \\item Gain 1 \\svg{experience} after a Combat against an enemy Main Hero, unless one of the players Surrenders or Retreats.\n"
+"  \\item Gain 1 \\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:98
+#: clash/astral_run.tex:96
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -342,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:108
+#: clash/astral_run.tex:106
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -350,13 +355,13 @@ msgid ""
 "  \\item \\textbf{Level VII Settlement:} Increase all incomes by 1 space.\n"
 "  \\item \\textbf{Random Town:} You may recruit one Faction Unit you defeated for half its recruitment cost or increase all incomes by one space.\n"
 "  \\item \\textbf{Dragon Utopia:} Take any Card from your Discard pile. You may recruit one dragon you defeated for half its recruitment cost.\n"
-"  \\item \\textbf{11-Round game:} Remove P × Near (IV-V) Map Tiles and replace the Center (VI-VII) Tile with a Near (IV-V) Map Tile without an Obelisk.\n"
+"  \\item \\textbf{11-Round game:} Remove $P$ × Near (IV--V) Map Tiles and replace the Center (VI--VII) Tile with a Near (IV--V) Map Tile without an Obelisk.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: clash/astral_run.tex:115
+#: clash/astral_run.tex:113
 #, no-wrap
 msgid ""
 "\\begin{center}\n"

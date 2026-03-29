@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-03-28 00:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,11 +58,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#. type: multicols
+#. type: multicols*
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
 #: coops/stand_united.tex:31 clash/bloody_grail.tex:29
 #: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
-#: clash/the_fractured_kingdoms.tex:26
+#: clash/the_fractured_kingdoms.tex:26 clash/astral_run.tex:28
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
