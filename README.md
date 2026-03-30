@@ -404,8 +404,8 @@ Number of players (P) in the brackets.
             <td>⚔️ Astral Run (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-color/astral_run_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-astral_run-mono/astral_run_en_mono.pdf"><em>click</em></a></td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-color/astral_run_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-mono/astral_run_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>

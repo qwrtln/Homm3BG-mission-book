@@ -17,7 +17,6 @@ help() {
     Optional Arguments:
       -s, --scenario                Compare against a single scenario.
       -p, --printable               Compares your build against 'printable' build.
-      -s, --single-page             Combines all compared pages into a single image.
       -m, --mono                    Uses monochrome version of files for baseline comparison.
                                     Only affects GitHub downloads, not local files.
 
@@ -25,11 +24,10 @@ help() {
       ./tools/compare_pages.sh en -r 1
       ./tools/compare_pages.sh --range 1
       ./tools/compare_pages.sh -d -r 1,3-5
-      ./tools/compare_pages.sh --drafts --range 1-10 --single-page
+      ./tools/compare_pages.sh --drafts --range 1-10
 
-      ./tools/compare_pages.sh -r 1,5-7,30 --single-page --mono
+      ./tools/compare_pages.sh -r 1,5-7,30 --mono
           - This will produce files 'en-01.png, en-05.png, en-06.png, en-07.png and en-30.png'.
-          - Then because there is the '--single-page' parameter, it combines them to a single file 'en-all.png'.
           - It will use 'main_en-mono.pdf' from the repository as baseline because '--mono' was specified.
             It would use 'main_en.pdf' if this parameter was omitted.
 

@@ -146,15 +146,7 @@ msgstr ""
 
 #. type: multicols*
 #: sections/intro_and_toc.tex:58
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{2}\n"
-#| "\\tableofcontents\n"
-#| "\\vspace*{\\fill}\n"
-#| "\\columnbreak\n"
-#| "\\vspace{-3em}\n"
-#| "\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{2}\n"
 "\\tableofcontents\n"
@@ -163,8 +155,5 @@ msgid ""
 msgstr ""
 "{2}\n"
 "\\tableofcontents\n"
-"\\vspace*{\\fill}\n"
-"\\columnbreak\n"
-"\\vspace{-3em}\n"
 "\\includegraphics[width=\\linewidth]{\\art/elf.jpg}\n"
 "\n"
