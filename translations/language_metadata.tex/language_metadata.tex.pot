@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-26 20:55+0000\n"
+"POT-Creation-Date: 2026-03-30 20:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,26 @@ msgid "\\def\\alliancestitle{Alliances}"
 msgstr ""
 
 #. type: Plain text
-#: sections/language_metadata.tex:21
+#: sections/language_metadata.tex:22
 msgid "\\def\\lang_header_adjustment{0px}"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:24
+msgid "Community rating: \\svg{azure} Overwhelmingly positive"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:26
+msgid "Community rating: \\svg{golden} Very positive"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:28
+msgid "Community rating: \\svg{silver} Mostly positive"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:29
+msgid "Community rating: \\svg{bronze} Mixed"
 msgstr ""

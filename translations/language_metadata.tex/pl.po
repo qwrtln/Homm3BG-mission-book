@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-26 20:55+0000\n"
+"POT-Creation-Date: 2026-03-30 20:30+0000\n"
 "PO-Revision-Date: 2025-10-13 21:50+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -71,6 +71,26 @@ msgid "\\def\\alliancestitle{Alliances}"
 msgstr "\\def\\alliancestitle{Tryb Sojuszu}"
 
 #. type: Plain text
-#: sections/language_metadata.tex:21
+#: sections/language_metadata.tex:22
 msgid "\\def\\lang_header_adjustment{0px}"
 msgstr "\\def\\lang_header_adjustment{0px}"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:24
+msgid "Community rating: \\svg{azure} Overwhelmingly positive"
+msgstr "Ocena społeczności: \\svg{azure} Przytłaczająco pozytywna"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:26
+msgid "Community rating: \\svg{golden} Very positive"
+msgstr "Ocena społeczności: \\svg{golden} Bardzo pozytywna"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:28
+msgid "Community rating: \\svg{silver} Mostly positive"
+msgstr "Ocena społeczności: \\svg{silver} W większości pozytywna"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:29
+msgid "Community rating: \\svg{bronze} Mixed"
+msgstr "Ocena społeczności: \\svg{bronze} Mieszana"
