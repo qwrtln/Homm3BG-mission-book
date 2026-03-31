@@ -275,6 +275,14 @@
   \end{tikzpicture}
 }
 
+\NewDocumentCommand{\scenariorating}{ m }{
+  \ifstrequal{#1}{azure}{\azurerating}{
+  \ifstrequal{#1}{golden}{\goldenrating}{
+  \ifstrequal{#1}{silver}{\silverrating}{
+  \ifstrequal{#1}{bronze}{\bronzerating}{
+  }}}}
+}
+
 % Four mandatory params
 % - [optional] set to "subsection" or any other Level if you want to have this as a subsection in TOC
 % - Lines of Campaign Name (1-2 according to the name length)
@@ -282,7 +290,7 @@
 % - Scenario Name
 % - Icon
 %
-\newcommand{\addscenariosection}[5][section]{
+\NewDocumentCommand{\addscenariosection}{ O{section} m m m m O{} }{
   \def\oneliner{\equal{#2}{1}}
 
   \pagetarget{#4}{}
@@ -298,6 +306,11 @@
           \draw (0, 0) node[inner sep=0, yscale=\yscale] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         }
         \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#5}};
+        \ifstrequal{#6}{}{}{
+          \node[anchor=south east, yshift=1.6em, xshift=-2em] at (header.south east) {
+            \scriptsize\iftoggle{noartbackground}{}{\color{antiquewhite}}\scenariorating{#6}
+          };
+        }
       \end{tikzpicture}
     }
   }

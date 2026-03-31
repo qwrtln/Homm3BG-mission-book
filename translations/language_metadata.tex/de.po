@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-26 20:55+0000\n"
+"POT-Creation-Date: 2026-03-30 20:30+0000\n"
 "PO-Revision-Date: 2025-10-13 21:50+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -75,6 +75,26 @@ msgid "\\def\\alliancestitle{Alliances}"
 msgstr "\\def\\clashtitle{Die Konflikte}"
 
 #. type: Plain text
-#: sections/language_metadata.tex:21
+#: sections/language_metadata.tex:22
 msgid "\\def\\lang_header_adjustment{0px}"
 msgstr ""
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:24
+msgid "Community rating: \\svg{azure} Overwhelmingly positive"
+msgstr "Spielerbewertungen: \\svg{azure} Äußerst positiv"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:26
+msgid "Community rating: \\svg{golden} Very positive"
+msgstr "Spielerbewertungen: \\svg{golden} Sehr positiv"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:28
+msgid "Community rating: \\svg{silver} Mostly positive"
+msgstr "Spielerbewertungen: \\svg{silver} Größtenteils positiv"
+
+#. type: newcommand{#4}
+#: sections/language_metadata.tex:29
+msgid "Community rating: \\svg{bronze} Mixed"
+msgstr "Spielerbewertungen: \\svg{bronze} Ausgeglichen"
