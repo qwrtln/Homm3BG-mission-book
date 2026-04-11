@@ -15,7 +15,8 @@
     "scenarios": [
       "Arcane Artillery",
       "Stand United",
-      "Secret Bomb Stash"
+      "Secret Bomb Stash",
+      "Chain Link"
     ],
     "on_discord": true,
     "discord_id": "280344300229754881"
