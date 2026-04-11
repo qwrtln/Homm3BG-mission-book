@@ -229,7 +229,7 @@ if [[ -n "${SCENARIO_SEARCH}" ]]; then
   fi
 fi
 
-ERROR="\nFailed to bulid the document. See the error above."
+ERROR="\nFailed to build the document. See the error above."
 
 # Handle drafts
 if [[ "${DRAFTS_MODE}" -eq 1 ]]; then

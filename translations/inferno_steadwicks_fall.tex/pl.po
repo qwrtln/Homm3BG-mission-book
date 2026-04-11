@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-04-11 13:53+0000\n"
 "PO-Revision-Date: 2024-10-30 08:58+0000\n"
 "Last-Translator: qwrtln <qwrtln@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -21,22 +21,22 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
 #: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:204
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
 #: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
@@ -50,8 +50,9 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
-#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
+#: coops/wandering_dragons.tex:15 coops/close_to_enemies.tex:16
+#: coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17
+#: campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
@@ -65,8 +66,8 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:20 coops/titans_stronghold.tex:22
 #: coops/emerald_island.tex:18 coops/close_to_enemies.tex:20
-#: coops/stand_united.tex:17 clash/dragoncurse_castle.tex:21
-#: campaigns/inferno_devilish_plan.tex:24
+#: coops/stand_united.tex:17 coops/the_ambushed_accord.tex:17
+#: clash/dragoncurse_castle.tex:21 campaigns/inferno_devilish_plan.tex:24
 #: campaigns/inferno_steadwicks_fall.tex:20
 #: campaigns/inferno_deal_with_the_devil.tex:24
 #, no-wrap
@@ -80,8 +81,8 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
-#: coops/stand_united.tex:33 clash/the_hunt.tex:35
-#: campaigns/inferno_devilish_plan.tex:90
+#: coops/stand_united.tex:33 clash/astral_run.tex:30 clash/chain_link.tex:30
+#: clash/the_hunt.tex:35 campaigns/inferno_devilish_plan.tex:90
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -92,14 +93,15 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Mapy}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:123
+#: coops/stand_united.tex:52 campaigns/castle_greek_gift.tex:73
+#: campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#: campaigns/inferno_devilish_plan.tex:123
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
-#: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -124,13 +126,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
-#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62
+#: clash/the_fractured_kingdoms.tex:41 clash/dragoncurse_castle.tex:59
+#: clash/the_hunt.tex:62 campaigns/castle_greek_gift.tex:88
+#: campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
 #: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
+#: sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -155,8 +159,22 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
 "\n"
 
+#. type: multicols
+#: coops/wandering_dragons.tex:26 coops/the_ambushed_accord.tex:25
+#: clash/astral_run.tex:21 clash/chain_link.tex:21
+#: campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\n"
+msgstr ""
+"\\textbf{Jednostki Początkowe:}\n"
+"\n"
+
 #. type: multicols*
-#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:21
+#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:23
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
@@ -176,19 +194,6 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-
-#. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:23
-#: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
-#: campaigns/inferno_steadwicks_fall.tex:30
-#: campaigns/inferno_deal_with_the_devil.tex:34
-#, no-wrap
-msgid ""
-"\\textbf{Starting Units:}\n"
-"\n"
-msgstr ""
-"\\textbf{Jednostki Początkowe:}\n"
 "\n"
 
 #. type: multicols
