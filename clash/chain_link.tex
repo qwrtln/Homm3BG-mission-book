@@ -48,7 +48,7 @@ At end of Round 12 the game ends in a draw.
 \subsection*{\MakeUppercase{Timed Events}}
 \textbf{\nth{2}, \nth{6}, and \nth{10} Round:}
 \begin{itemize}
-  \item The \nth{2} player gains +1 \svg{movement}
+  \item The \nth{2} player gains 1~\svg{movement}
 \end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
@@ -68,11 +68,14 @@ At end of Round 12 the game ends in a draw.
 \begin{tikzpicture}[overlay]
   \node (map) at (4, -3.5) [inner sep=0] {\includegraphics[width=1.1\linewidth]{\maps/chain_link.png}};
     \begin{relcoords}{map}
-      \color{deepskyblue}
-      \draw (0.345, 0.62) node {\footnotesize\textbf{Obelisk}};
-      \draw (0.73, 0.8) node {\footnotesize\textbf{Settlement}};
-      \draw (0.27, 0.20) node {\footnotesize\textbf{Settlement}};
-      \draw (0.65, 0.26) node {\footnotesize\textbf{Obelisk}};
+      {
+        \iftoggle{noartbackground}{\def\mapcolor{white}\def\opacity{0.5}}{\def\mapcolor{deepskyblue}\def\opacity{0.3}}
+        \color{\mapcolor}
+        \draw (0.345, 0.62) node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Obelisk}};
+        \draw (0.73, 0.80)   node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Settlement}};
+        \draw (0.27, 0.20)  node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Settlement}};
+        \draw (0.65, 0.38)  node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Obelisk}};
+      }
     \end{relcoords}
 \end{tikzpicture}
 \end{multicols*}

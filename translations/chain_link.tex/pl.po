@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-11 14:19+0000\n"
+"POT-Creation-Date: 2026-04-11 15:51+0000\n"
 "PO-Revision-Date: 2026-04-11 13:53+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -129,13 +129,12 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/chain_link.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Chain Link}{\\images/"
 "shackles_of_war.png}"
-msgstr "\\addscenariosection{1}{Tryb Starcia}{Polowanie}{\\images/slayer.png}"
+msgstr ""
+"\\addscenariosection{1}{Tryb Starcia{} {}}{Ogniwo}{\\images/"
+"shackles_of_war.png}"
 
 #. type: multicols*
 #: clash/chain_link.tex:9
@@ -144,62 +143,46 @@ msgid ""
 "\\textit{Power struggle at the border escalates. This trade route is incredibly important as a supply line, and you cannot allow it to fall into enemy hands.}\n"
 "\n"
 msgstr ""
+"\\textit{Walka o władzę na rubieżach eskaluje. Ten szlak handlowy jest bardzo cenną linią zaopatrzenia. Nie możesz pozwolić, by wpadł w ręce wroga.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:12
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "14 Rounds\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "12 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
-"14 Rund\n"
+"12 Rund\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2--6\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
-"\\textbf{Liczba Graczy:} 2--6\n"
+"\\textbf{Liczba Graczy:} 2\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
-#| "  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
@@ -207,7 +190,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Jednostki Początkowe:}\n"
 "\\begin{itemize}\n"
 "  \\item ,,Grupa'' najtańszych \\svg{bronze} Jednostek\n"
 "  \\item ,,Garstka'' najdroższych \\svg{bronze} Jednostek\n"
@@ -216,16 +198,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/chain_link.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item $P$ × Starting (I) Map Tiles\n"
-#| "  \\item $2P$ × Far (II-III) Map Tiles\n"
-#| "  \\item $P$ × Near (IV-V) Map Tiles\n"
-#| "  \\item 6 × Near (IV-V) Map Tiles with an Obelisk\n"
-#| "  \\item 1 × Center (VI-VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map Tiles\n"
@@ -236,11 +209,10 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item $G$ × Początkowy (I) Kafelek Mapy\n"
-"  \\item $2G$ × Daleki (II--III) Kafelek Mapy\n"
-"  \\item $G$ × Bliski (IV--V) Kafelek Mapy\n"
-"  \\item 6 × Bliski (IV--V) Kafelek Mapy z Obeliskiem\n"
-"  \\item 1 × Centralny (VI--VII) Kafelek Mapy\n"
+"  \\item 1 × Początkowy (I) Kafelek Mapy\n"
+"  \\item 4 × Daleki (II--III) Kafelek Mapy, 2~z nich muszą mieć Osadę\n"
+"  \\item 4 × Bliski (IV--V) Kafelek Mapy: 2~z Obeliskiem, 2~z Osadą\n"
+"  \\item 1 × Centralny (VI--VII) Kafelek z~Graalem\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -251,59 +223,48 @@ msgid ""
 "Place Far and Near Tiles symmetrically, so that Obelisks and Settlements aren't adjacent.\n"
 "\n"
 msgstr ""
+"Rozmieść Dalekie i Bliskie Kafelki symetrycznie, aby Obeliski i Osady nie sąsiadowały ze sobą.\n"
+"\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "Slay the Dragon Boss with your Main Hero.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Take control of the enemy Town.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki Zwycięstwa}}\n"
-"Zabij Smoczego Władcę Bohaterem Głównym.\n"
+"Zdobądź Miasto przeciwnika.\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:47
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "At end of Round 12 the game ends in a draw.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Warunki Przegranej}}\n"
-"Na koniec 12. Rundy, jeśli nie ma zwycięzcy, wszyscy gracze przegrywają Scenariusz.\n"
+"Na koniec 12. Rundy gra kończy się remisem.\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item The second player gains 1 \\svg{movement}.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\\textbf{\\nth{2}, \\nth{6}, and \\nth{10} Round:}\n"
 "\\begin{itemize}\n"
-"  \\item The \\nth{2} player gains +1 \\svg{movement}\n"
+"  \\item The \\nth{2} player gains 1~\\svg{movement}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Rundy 5. i 9. (tylko Scenariusz dla 2 graczy):}\n"
+"\\subsection*{\\MakeUppercase{Wydarzenia Czasowe}}\n"
+"\\textbf{Rundy 2., 6. i 10.:}\n"
 "\\begin{itemize}\n"
-"  \\item Drugi gracz zyskuje 1 \\svg{movement}.\n"
+"  \\item Drugi gracz zyskuje 1~\\svg{movement}.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -326,19 +287,50 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Dodatkowe Zasady}}\n"
+"\\begin{itemize}\n"
+"  \\item Na początku każdej Rundy Zasobów wybierz: bonus 1~\\svg{valuables} albo 2~\\svg{building_materials}.\n"
+"  \\item Nie musisz płacić \\svg{gold}, aby bronić Miasta. Możesz używać Kart podczas oblężenia.\n"
+"  \\item Gdy twój Bohater Główny osiągnie Poziom 5., wszyscy twoi Bohaterowie zyskują +1~\\svg{movement} na każdą Turę.\n"
+"  \\item Odwiedzając Obelisk, wybierz jedną opcję:\n"
+"    \\begin{itemize}\n"
+"      \\item Odrzuć Kartę z ręki\n"
+"      \\item Zyskaj \\svg{morale_positive}\n"
+"      \\item Zyskaj 1~\\svg{movement}\n"
+"    \\end{itemize}\n"
+"  \\item Po wygraniu walki na Polu Graala możesz bezpłatnie zrekrutować jedną z Jednostek, które właśnie pokonałeś.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
-#: clash/chain_link.tex:78
+#: clash/chain_link.tex:81
 #, no-wrap
 msgid ""
 "\\begin{tikzpicture}[overlay]\n"
 "  \\node (map) at (4, -3.5) [inner sep=0] {\\includegraphics[width=1.1\\linewidth]{\\maps/chain_link.png}};\n"
 "    \\begin{relcoords}{map}\n"
-"      \\color{deepskyblue}\n"
-"      \\draw (0.345, 0.62) node {\\footnotesize\\textbf{Obelisk}};\n"
-"      \\draw (0.73, 0.8) node {\\footnotesize\\textbf{Settlement}};\n"
-"      \\draw (0.27, 0.20) node {\\footnotesize\\textbf{Settlement}};\n"
-"      \\draw (0.65, 0.26) node {\\footnotesize\\textbf{Obelisk}};\n"
+"      {\n"
+"        \\iftoggle{noartbackground}{\\def\\mapcolor{white}\\def\\opacity{0.5}}{\\def\\mapcolor{deepskyblue}\\def\\opacity{0.3}}\n"
+"        \\color{\\mapcolor}\n"
+"        \\draw (0.345, 0.62) node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"        \\draw (0.73, 0.80)   node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Settlement}};\n"
+"        \\draw (0.27, 0.20)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Settlement}};\n"
+"        \\draw (0.65, 0.38)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"      }\n"
 "    \\end{relcoords}\n"
 "\\end{tikzpicture}"
 msgstr ""
+"\\vspace*{-0.5em}\n"
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node (map) at (4, -3.5) [inner sep=0] {\\includegraphics[width=1.1\\linewidth]{\\maps/chain_link.png}};\n"
+"    \\begin{relcoords}{map}\n"
+"      {\n"
+"        \\iftoggle{noartbackground}{\\def\\mapcolor{white}\\def\\opacity{0.5}}{\\def\\mapcolor{deepskyblue}\\def\\opacity{0.3}}\n"
+"        \\color{\\mapcolor}\n"
+"        \\draw (0.345, 0.62) node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"        \\draw (0.73, 0.8)   node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Osada}};\n"
+"        \\draw (0.27, 0.20)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Osada}};\n"
+"        \\draw (0.65, 0.38)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"      }\n"
+"    \\end{relcoords}\n"
+"\\end{tikzpicture}"
