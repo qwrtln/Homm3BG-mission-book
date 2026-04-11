@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-28 00:37+0000\n"
+"POT-Creation-Date: 2026-04-11 13:53+0000\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -20,22 +20,22 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
 #: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:204
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
 #: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
@@ -49,8 +49,8 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:24 clash/force_of_will.tex:24
-#: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
+#: coops/wandering_dragons.tex:24 clash/trial_by_combat.tex:19
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -61,13 +61,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
-#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62
+#: clash/the_fractured_kingdoms.tex:41 clash/dragoncurse_castle.tex:59
+#: clash/the_hunt.tex:62 campaigns/castle_greek_gift.tex:88
+#: campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
 #: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
+#: sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -104,9 +106,9 @@ msgstr ""
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
-#: coops/stand_united.tex:31 clash/bloody_grail.tex:29
-#: clash/force_of_will.tex:31 clash/dragoncurse_castle.tex:34
-#: clash/the_fractured_kingdoms.tex:26 clash/astral_run.tex:28
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29 clash/astral_run.tex:28
+#: clash/chain_link.tex:28 clash/force_of_will.tex:31
+#: clash/the_fractured_kingdoms.tex:26 clash/dragoncurse_castle.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
@@ -137,6 +139,16 @@ msgid ""
 "\n"
 msgstr ""
 "Během tohoto Scénáře:\n"
+"\n"
+
+#. type: multicols*
+#: clash/trial_by_combat.tex:17 clash/force_of_will.tex:22
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -204,16 +216,6 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Příprava Hráče}}\n"
 "\\textbf{Počet Hráčů:} 2 nebo 3\n"
-"\n"
-
-#. type: multicols*
-#: clash/force_of_will.tex:22 clash/trial_by_combat.tex:17
-#, no-wrap
-msgid ""
-"\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
-msgstr ""
-"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*

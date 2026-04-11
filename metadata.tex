@@ -496,10 +496,17 @@
 
 % Command for overlay circled text
 \definecolor{goblin}{HTML}{3b7c33}
-\newcommand\encircle[1]{%
-  \tikz[baseline=(X.base)]
-  \node (X) [draw=white, shape=circle, inner sep=0, fill=goblin, text=white, blur shadow={shadow blur steps=5}] {\strut \textbf{#1}};%
-}
+\ExplSyntaxOn
+\NewDocumentEnvironment{relcoords}{ m +b }{
+  \begin{scope}[
+    shift={(#1.south~west)},
+    x={($(#1.east)~-~(#1.west)$)},
+    y={($(#1.north)~-~(#1.south)$)}
+  ]
+    #2
+  \end{scope}
+}{}
+\ExplSyntaxOff
 
 % Background
 \AddToHook{shipout/background}{%
