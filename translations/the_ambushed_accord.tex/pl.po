@@ -205,7 +205,7 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:35
 #, no-wrap
 msgid ""
-"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.\n"
+"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II--III) Map Tiles and 2 random Near (IV--V) Map Tiles.\n"
 "\n"
 msgstr ""
 "\\textbf{Pula Kafelków Mapy:} Każdy gracz losuje 2 Dalekie (II--III) i 2 Bliskie (IV--V) Kafelki Mapy.\n"
