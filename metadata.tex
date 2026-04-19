@@ -241,9 +241,8 @@
   }
   \begin{fullwidth}[leftmargin=0.195\textwidth]
     \begin{center}
-      \vspace{1em}
+      \ifthenelse{\oneliner}{\vspace{1em}}{}
       \vspace{\lang_header_adjustment}
-      \ifthenelse{\oneliner}{\vspace{0.81em}}{\vspace{-0.27em}}
       \section*{\sectionheadertext{#2}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#2}
       \pagetarget{#2}{}
@@ -253,7 +252,7 @@
     \vspace{1.75em}
     \vspace{\lang_header_adjustment}
   }{
-    \vspace{0.66em}
+    \vspace{0.62em}
   }
 }
 %End of create section heading.
