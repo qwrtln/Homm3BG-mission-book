@@ -110,6 +110,7 @@
 % Variables
 \def\_assets{assets}
 
+\def\abilities{\_assets/abilities}
 \def\art{\_assets/art}
 \def\cards{\_assets/cards}
 \def\examples{\_assets/examples}
@@ -222,7 +223,8 @@
 }
 
 %Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
-\newcommand{\addsection}[2]{
+\newcommand{\addsection}[3][1]{
+  \def\oneliner{\equal{#1}{1}}
   \vspace*{-5.72em}
   \hspace*{-1.3em}
   \makebox[0pt][l]{
@@ -233,7 +235,7 @@
         }{
           \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         }
-        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#2}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#3}};
       \end{tikzpicture}
     }
   }
@@ -241,13 +243,18 @@
     \begin{center}
       \vspace{1em}
       \vspace{\lang_header_adjustment}
-      \section*{\sectionheadertext{#1}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
-      \pagetarget{#1}{}
+      \ifthenelse{\oneliner}{\vspace{0.81em}}{\vspace{-0.27em}}
+      \section*{\sectionheadertext{#2}}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#2}
+      \pagetarget{#2}{}
     \end{center}
   \end{fullwidth}
-  \vspace{1.75em}
-  \vspace{\lang_header_adjustment}
+  \ifthenelse{\oneliner}{
+    \vspace{1.75em}
+    \vspace{\lang_header_adjustment}
+  }{
+    \vspace{0.66em}
+  }
 }
 %End of create section heading.
 
@@ -472,10 +479,18 @@
 
 \definecolor{lightcellborder}{HTML}{77543e}
 \definecolor{lightcellbg}{HTML}{20160C}
+\definecolor{lightcellnerfbg}{HTML}{A65A5A}
 
 \newcommand{\lightcell}[2][0.9]{
   \begin{tikzpicture}
     \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\iftoggle{noartbackground}{}{\color{white}}#2};
+  \end{tikzpicture}
+}
+
+\newcommand{\lightcellnerf}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellnerfbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
     \node[text width=\linewidth, align=center] at (current bounding box.center) {\iftoggle{noartbackground}{}{\color{white}}#2};
   \end{tikzpicture}
 }
