@@ -217,6 +217,15 @@
     BoldFont = *-Bold,
     BoldItalicFont = *-BoldItalic,
 ]{LiberationSerif}
+% Sets fonts for subheaders small caps
+\newfontfamily{\newcomputermodern}[
+  Path = ./assets/fonts/newcomputermodern/,
+  Extension = .otf,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+]{NewCM10}
 
 \providecommand{\sectionheadertext}[2][antiquewhite]{
   \iftoggle{noartbackground}{}{\color{#1}}\MakeUppercase{\textbf{\liberation #2}}
@@ -279,6 +288,17 @@
       \huge\sectionheadertext[bistre]{#1}
     };
   \end{tikzpicture}
+}
+
+% Subheaders which appear in the ToC
+% Argument one is the literal text for ToC - defaults to argument two if unspecified
+% Argument two is the text to display
+\newcommand{\subheader}[1]{%
+  \begin{center}
+    {\newcomputermodern\Large\bfseries\addfontfeature{Letters=SmallCaps}#1}
+    \\[0.02em]
+    \includegraphics[width=\linewidth,height=1em,keepaspectratio]{\layout/subsection_separator.png}
+  \end{center}
 }
 
 \NewDocumentCommand{\scenariorating}{ m }{
