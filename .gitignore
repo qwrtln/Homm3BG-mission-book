@@ -24,3 +24,4 @@ coops/translated
 screenshots/
 sections/translated
 **/svg-inkscape/*
+.DS_Store
