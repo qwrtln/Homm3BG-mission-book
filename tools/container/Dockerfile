@@ -83,15 +83,19 @@ RUN <<EOF
     bigfoot \
     catchfile \
     changepage \
+    ccicons \
+    csquotes \
     collection-binextra \
     collection-fontsrecommended \
     collection-langcyrillic \
     collection-latex \
     collection-latexrecommended \
     collection-pictures \
+    doclicense \
     enumitem \
     etexcmds \
     footmisc \
+    fontawesome7 \
     fullwidth \
     imakeidx \
     koma-script \
