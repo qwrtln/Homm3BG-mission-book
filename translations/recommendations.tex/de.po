@@ -182,7 +182,7 @@ msgid ""
 "When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
 "\n"
 msgstr ""
-"Beim Verteilen von Fernen Gebieten (II-III) unter den Fraktionen muss jede Fraktion ein Gebiet mit einer Siedlung enthalten.\n"
+"Beim Verteilen von Fernen Gebieten (II--III) unter den Fraktionen muss jede Fraktion ein Gebiet mit einer Siedlung enthalten.\n"
 "\n"
 
 #. type: multicols*

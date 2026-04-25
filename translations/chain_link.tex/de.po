@@ -1,0 +1,323 @@
+# German translations for PACKAGE package
+# Copyright (C) 2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2026-04-11 16:04+0000\n"
+"PO-Revision-Date: 2026-04-11 13:53+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
+#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
+#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/what_to_play.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
+#: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
+#: coops/stand_united.tex:33 clash/astral_run.tex:30 clash/chain_link.tex:30
+#: clash/the_hunt.tex:35 campaigns/inferno_devilish_plan.tex:90
+#: campaigns/inferno_steadwicks_fall.tex:92
+#: campaigns/inferno_deal_with_the_devil.tex:52
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Vorbereitung der Karte}}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:44 clash/chain_link.tex:32
+#: campaigns/castle_greek_gift.tex:50 campaigns/castle_sicilian_dragon.tex:50
+#: campaigns/castle_two_knights_defense.tex:47
+#: campaigns/inferno_devilish_plan.tex:92
+#, no-wrap
+msgid ""
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+"Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Karte gezeigt:\n"
+"\n"
+
+#. type: multicols*
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29 clash/astral_run.tex:28
+#: clash/chain_link.tex:28 clash/force_of_will.tex:31
+#: clash/the_fractured_kingdoms.tex:26 clash/dragoncurse_castle.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Startgebäude:} \\svg{bronze}-Behausung\n"
+"\n"
+
+#. type: multicols
+#: coops/wandering_dragons.tex:26 coops/the_ambushed_accord.tex:25
+#: clash/astral_run.tex:21 clash/chain_link.tex:21
+#: campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/stand_united.tex:7 clash/chain_link.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} NeuroN\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: coops/stand_united.tex:23 clash/bloody_grail.tex:21 clash/astral_run.tex:19
+#: clash/chain_link.tex:19 clash/the_fractured_kingdoms.tex:19
+#: campaigns/castle_greek_gift.tex:28 campaigns/castle_sicilian_dragon.tex:26
+#: campaigns/castle_two_knights_defense.tex:25
+#: campaigns/inferno_devilish_plan.tex:32
+#: campaigns/inferno_deal_with_the_devil.tex:32
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/chain_link.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
+msgid ""
+"\\addscenariosection{1}{Clash Scenario}{Chain Link}{\\images/"
+"shackles_of_war.png}"
+msgstr "\\addscenariosection{1}{Konfliktmodus}{Die Jagd}{\\images/slayer.png}"
+
+#. type: multicols*
+#: clash/chain_link.tex:9
+#, no-wrap
+msgid ""
+"\\textit{Power struggle at the border escalates. This trade route is incredibly important as a supply line, and you cannot allow it to fall into enemy hands.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/chain_link.tex:12
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"12 Rounds\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:15
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
+#| "\\textbf{Player Count:} 2 -- 4\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 2\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Spielvorbereitung}}\n"
+"\\textbf{Fraktionsanzahl:} 2 -- 4\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:17
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Startressourcen:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:26
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+#| "  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+"  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Starteinheiten:}\n"
+"\\begin{itemize}\n"
+"  \\item  Ein Rudel der günstigsten \\svg{bronze}-Einheiten\n"
+"  \\item  Wenige der teuersten \\svg{bronze}-Einheiten\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:39
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item P × Starting (I) Map Tile\n"
+#| "  \\item 2P × Far (II--III) Map Tile\n"
+#| "  \\item 2P × Near (IV--V) Map Tile\n"
+#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item 2 × Starting (I) Map Tiles\n"
+"  \\item 4 × Far (II--III) Map Tiles, 2 of which must contain a Settlement\n"
+"  \\item 4 × Near (IV--V) Map Tiles: 2 with an Obelisk, 2 with a Settlement\n"
+"  \\item 1 × Center (VI--VII) Map Tile with a Grail\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item S × Startgebiete (I)\n"
+"  \\item 2S × Ferne Gebiete (II--III)\n"
+"  \\item 2S × Nahe Gebiete (IV--V)\n"
+"  \\item (S + 1) × Zentrale Gebiete (VI--VII)\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:41
+#, no-wrap
+msgid ""
+"Place Far and Near Tiles symmetrically, so that Obelisks and Settlements aren't adjacent.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/chain_link.tex:44
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"Take control of the enemy Town.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Sieg}}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:47
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"At end of Round 12 the game ends in a draw.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Niederlage}}\n"
+"\n"
+
+#. type: multicols*
+#: clash/chain_link.tex:53
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\\textbf{\\nth{2}, \\nth{6}, and \\nth{10} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item The \\nth{2} player gains 1~\\svg{movement}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/chain_link.tex:67
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\\begin{itemize}\n"
+"  \\item At the start of each Resource Round, choose either extra 1~\\svg{valuables} or 2~\\svg{building_materials}.\n"
+"  \\item You don't need to pay \\svg{gold} to defend your Town and can use Cards during siege.\n"
+"  \\item Once your Main Hero reaches Level V, all your Heroes gain +1~\\svg{movement} at the start of every Turn.\n"
+"  \\item When visiting an Obelisk, choose one:\n"
+"    \\begin{itemize}\n"
+"      \\item Remove a Card from your hand\n"
+"      \\item Gain \\svg{morale_positive}\n"
+"      \\item Gain 1~\\svg{movement}\n"
+"    \\end{itemize}\n"
+"  \\item After winning a combat on the Grail Field, you may recruit one of the Units you just defeated for free.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/chain_link.tex:81
+#, no-wrap
+msgid ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node (map) at (4, -3.5) [inner sep=0] {\\includegraphics[width=1.1\\linewidth]{\\maps/chain_link.png}};\n"
+"    \\begin{relcoords}{map}\n"
+"      {\n"
+"        \\iftoggle{noartbackground}{\\def\\mapcolor{white}\\def\\opacity{0.5}}{\\def\\mapcolor{deepskyblue}\\def\\opacity{0.3}}\n"
+"        \\color{\\mapcolor}\n"
+"        \\draw (0.345, 0.62) node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"        \\draw (0.73, 0.80)   node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Settlement}};\n"
+"        \\draw (0.27, 0.20)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Settlement}};\n"
+"        \\draw (0.65, 0.38)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obelisk}};\n"
+"      }\n"
+"    \\end{relcoords}\n"
+"\\end{tikzpicture}"
+msgstr ""

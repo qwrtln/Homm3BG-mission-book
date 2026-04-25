@@ -237,7 +237,7 @@
       \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.21\textwidth]
+  \begin{fullwidth}[leftmargin=0.195\textwidth]
     \begin{center}
       \vspace{1em}
       \vspace{\lang_header_adjustment}
@@ -283,14 +283,16 @@
   }}}}
 }
 
-% Four mandatory params
+% Four mandatory params, three optional
 % - [optional] set to "subsection" or any other Level if you want to have this as a subsection in TOC
-% - Lines of Campaign Name (1-2 according to the name length)
-% - Campaign Name
-% - Scenario Name
-% - Icon
-%
-\NewDocumentCommand{\addscenariosection}{ O{section} m m m m O{} }{
+% - Lines for the title (use 2 for longer names)
+% - Scenario type or campaign name
+% - Scenario name
+% - Picture
+% - [optional] Scenario rating
+% - [optional] Horizontal offset applied to the title to compensate for the icon's
+%              left-side visual weight on short titles (e.g. -1.5em). Defaults to 0pt.
+\NewDocumentCommand{\addscenariosection}{ O{section} m m m m O{} O{0pt} }{
   \def\oneliner{\equal{#2}{1}}
 
   \pagetarget{#4}{}
@@ -314,14 +316,14 @@
       \end{tikzpicture}
     }
   }
-  \begin{fullwidth}[leftmargin=0.21\textwidth]
+  \begin{fullwidth}[leftmargin=0.195\textwidth]
     \begin{center}
       \vspace{\lang_header_adjustment}
       \vspace{-12pt}
-      \section*{\sectionheadertext{\small{\textls[200]{\spaceskip=0.6em plus 0.2em minus 0.1em #3}}}}
+      \section*{\hspace{#7}\sectionheadertext{\small{\textls*[200]{\spaceskip=0.6em plus 0.2em minus 0.1em #3}}}}
       \vspace{\lang_header_adjustment}
       \vspace{-10pt}
-      \section*{\sectionheadertext{#4}}
+      \section*{\hspace{#7}\sectionheadertext{#4}}
       \ifthenelse{\oneliner}{}{\vspace{14pt}}
       \cleardoublepage\phantomsection\addcontentsline{toc}{subsection}{\protect\numberline{}#4}
     \end{center}
@@ -496,10 +498,17 @@
 
 % Command for overlay circled text
 \definecolor{goblin}{HTML}{3b7c33}
-\newcommand\encircle[1]{%
-  \tikz[baseline=(X.base)]
-  \node (X) [draw=white, shape=circle, inner sep=0, fill=goblin, text=white, blur shadow={shadow blur steps=5}] {\strut \textbf{#1}};%
-}
+\ExplSyntaxOn
+\NewDocumentEnvironment{relcoords}{ m +b }{
+  \begin{scope}[
+    shift={(#1.south~west)},
+    x={($(#1.east)~-~(#1.west)$)},
+    y={($(#1.north)~-~(#1.south)$)}
+  ]
+    #2
+  \end{scope}
+}{}
+\ExplSyntaxOff
 
 % Background
 \AddToHook{shipout/background}{%

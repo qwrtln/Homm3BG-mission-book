@@ -362,6 +362,19 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
         </tr>
         <tr>
+            <td>⚔️ Chain Link (2)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-chain_link-color/chain_link_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-chain_link-mono/chain_link_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-chain_link-color/chain_link_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-chain_link-mono/chain_link_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
             <td>⚔️ Force of Will (2-3)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will-color/force_of_will_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-force_of_will-mono/force_of_will_en_mono.pdf"><em>click</em></a></td>

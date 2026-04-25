@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-03-28 00:07+0000\n"
+"POT-Creation-Date: 2026-04-11 13:53+0000\n"
 "PO-Revision-Date: 2025-06-28 19:46+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -20,22 +20,22 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
 #: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:204
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
 #: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
@@ -49,8 +49,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
-#: coops/wandering_dragons.tex:15 clash/dragoncurse_castle.tex:17
+#: coops/wandering_dragons.tex:15 coops/close_to_enemies.tex:16
+#: coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17
 #: campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
@@ -77,8 +77,8 @@ msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:24 clash/force_of_will.tex:24
-#: clash/the_hunt.tex:23 clash/trial_by_combat.tex:19
+#: coops/wandering_dragons.tex:24 clash/trial_by_combat.tex:19
+#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -101,8 +101,8 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:42 coops/titans_stronghold.tex:44
 #: coops/emerald_island.tex:36 coops/close_to_enemies.tex:35
-#: coops/stand_united.tex:33 clash/the_hunt.tex:35 clash/astral_run.tex:33
-#: campaigns/inferno_devilish_plan.tex:90
+#: coops/stand_united.tex:33 clash/astral_run.tex:30 clash/chain_link.tex:30
+#: clash/the_hunt.tex:35 campaigns/inferno_devilish_plan.tex:90
 #: campaigns/inferno_steadwicks_fall.tex:92
 #: campaigns/inferno_deal_with_the_devil.tex:52
 #, no-wrap
@@ -113,14 +113,15 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Vorbereitung der Karte}}\n"
 "\n"
 
-#. type: multicols*
+#. type: multicols
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
 #: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
-#: coops/stand_united.tex:52 campaigns/inferno_devilish_plan.tex:123
+#: coops/stand_united.tex:52 campaigns/castle_greek_gift.tex:73
+#: campaigns/castle_sicilian_dragon.tex:81
+#: campaigns/castle_two_knights_defense.tex:77
+#: campaigns/inferno_devilish_plan.tex:123
 #: campaigns/inferno_steadwicks_fall.tex:133
 #: campaigns/inferno_deal_with_the_devil.tex:83
-#: campaigns/castle_greek_gift.tex:73 campaigns/castle_sicilian_dragon.tex:81
-#: campaigns/castle_two_knights_defense.tex:77
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
@@ -145,13 +146,15 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
-#: coops/emerald_island.tex:53 clash/force_of_will.tex:62 clash/the_hunt.tex:62
-#: clash/dragoncurse_castle.tex:59 clash/the_fractured_kingdoms.tex:41
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62
+#: clash/the_fractured_kingdoms.tex:41 clash/dragoncurse_castle.tex:59
+#: clash/the_hunt.tex:62 campaigns/castle_greek_gift.tex:88
+#: campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
 #: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
 #: campaigns/inferno_deal_with_the_devil.tex:97
-#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
-#: campaigns/castle_two_knights_defense.tex:93 sections/random_scenario.tex:277
+#: sections/random_scenario.tex:277
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -305,7 +308,7 @@ msgstr ""
 #. type: multicols*
 #: coops/titans_stronghold.tex:46 coops/emerald_island.tex:38
 #: coops/close_to_enemies.tex:37 coops/stand_united.tex:35
-#: clash/astral_run.tex:35
+#: clash/astral_run.tex:32
 #, no-wrap
 msgid ""
 "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):\n"
@@ -328,9 +331,9 @@ msgid ""
 msgstr ""
 "\\begin{itemize}\n"
 "  \\item S × Startgebiete (I)\n"
-"  \\item 2S × Ferne Gebiete (II-III)\n"
-"  \\item 2S × Nahe Gebiete (IV-V)\n"
-"  \\item (S + 1) × Zentrale Gebiete (VI-VII)\n"
+"  \\item 2S × Ferne Gebiete (II--III)\n"
+"  \\item 2S × Nahe Gebiete (IV--V)\n"
+"  \\item (S + 1) × Zentrale Gebiete (VI--VII)\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -343,7 +346,7 @@ msgid ""
 "Tile is the Titans’ Stronghold.\n"
 "\n"
 msgstr ""
-"\\textbf{\\MakeUppercase{Achtung:}} Habt ihr nicht genug VI-VII-Gebiete, könnt ihr ein anderes Gebiet an die I-Gebiete anlegen.\n"
+"\\textbf{\\MakeUppercase{Achtung:}} Habt ihr nicht genug VI--VII-Gebiete, könnt ihr ein anderes Gebiet an die I-Gebiete anlegen.\n"
 "Das zentrale Feld dieses Gebiets ist die Festung der Titanen.\n"
 "\n"
 
@@ -354,7 +357,7 @@ msgid ""
 "Kill all Units in the Titans' Stronghold (the center of Tile VI--VII next to Tiles I).\n"
 "\n"
 msgstr ""
-"Besiegt alle Einheiten in der Festung der Titanen (das zentrale Feld des VI-VII-Gebiets, das an die I-Gebiete angrenzt).\n"
+"Besiegt alle Einheiten in der Festung der Titanen (das zentrale Feld des VI--VII-Gebiets, das an die I-Gebiete angrenzt).\n"
 "\n"
 
 #. type: multicols*
@@ -411,8 +414,8 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Zusätzliche Regeln}}\n"
 "\\begin{itemize}\n"
-"  \\item Beachtet: das zentrale Feld des VI-VII-Gebiets, das an die I-Gebiete angrenzt, ist die Festung der Titanen.\n"
-"  \\item Niemand kann die Festung der Titanen betreten, bevor alle anderen VI-VII-Gebiete von den anderen Spielern eingenommen wurden.\n"
+"  \\item Beachtet: das zentrale Feld des VI--VII-Gebiets, das an die I-Gebiete angrenzt, ist die Festung der Titanen.\n"
+"  \\item Niemand kann die Festung der Titanen betreten, bevor alle anderen VI--VII-Gebiete von den anderen Spielern eingenommen wurden.\n"
 "\n"
 
 #. type: multicols*
@@ -462,7 +465,7 @@ msgid ""
 "\n"
 msgstr ""
 "  \\item Wenn ein Spieler einen Obelisken besucht, würfelt dieser 1 \\svg{treasure} und 1 \\svg{resource} und handelt 1 davon ab.\n"
-"  \\item Wenn alle VI-VII-Gebiete (außer der Festung der Titanen) eingenommen wurden, zieht zufällig eine Anzahl neutrale Einheiten-Karten (siehe nächste Seite), um einen separaten neutrale Einheiten-Stapel für die Festung der Titanen zu erhalten (das Deck der Festung der Titanen wird manchmal zweigeteilt, da manche Szenarien sonst mit Karten bestimmter Erweiterungen nicht möglich sind).\n"
+"  \\item Wenn alle VI--VII-Gebiete (außer der Festung der Titanen) eingenommen wurden, zieht zufällig eine Anzahl neutrale Einheiten-Karten (siehe nächste Seite), um einen separaten neutrale Einheiten-Stapel für die Festung der Titanen zu erhalten (das Deck der Festung der Titanen wird manchmal zweigeteilt, da manche Szenarien sonst mit Karten bestimmter Erweiterungen nicht möglich sind).\n"
 "\n"
 
 #. type: multicols*

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-28 10:32+0000\n"
+"POT-Creation-Date: 2026-04-11 13:53+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,22 +18,22 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 coops/wandering_dragons.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
 #: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
-#: clash/force_of_will.tex:5 clash/the_hunt.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:204
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
 #: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
@@ -58,20 +58,10 @@ msgid ""
 "\n"
 msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 
-#. type: multicols*
-#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:23
-#: campaigns/inferno_steadwicks_fall.tex:28
-#, no-wrap
-msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
-msgstr ""
-"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
-
 #. type: multicols
 #: coops/wandering_dragons.tex:26 coops/the_ambushed_accord.tex:25
-#: clash/astral_run.tex:21 campaigns/inferno_devilish_plan.tex:34
+#: clash/astral_run.tex:21 clash/chain_link.tex:21
+#: campaigns/inferno_devilish_plan.tex:34
 #: campaigns/inferno_steadwicks_fall.tex:30
 #: campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
@@ -91,6 +81,17 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Vorbereitung der Abenteuerkarte}}\n"
 "Nehmt die folgenden Gebiete und platziert sie wie in der Abbildung der Abenteuerkarte gezeigt ($F$ steht für die Anzahl der Fraktionen):\n"
+"\n"
+
+#. type: multicols*
+#: coops/close_to_enemies.tex:26 coops/the_ambushed_accord.tex:23
+#: campaigns/inferno_steadwicks_fall.tex:28
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -225,7 +226,7 @@ msgstr ""
 #| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
 #| "\n"
 msgid ""
-"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II-III) Map Tiles and 2 random Near (IV-V) Map Tiles.\n"
+"\\textbf{Map Tile Pool:} Every player takes 2 random Far (II--III) Map Tiles and 2 random Near (IV--V) Map Tiles.\n"
 "\n"
 msgstr ""
 "\\textbf{Kartenteilvorrat:} Jede Fraktion erhält 1 zufälligtes Fernes (II--III) Gebiet\n"
@@ -366,7 +367,7 @@ msgid ""
 "[overlay]\n"
 "  \\centering\n"
 "  \\node at (9, -3) {\\includegraphics[scale=0.12]{\\maps/the_ambushed_accord_px.png}};\n"
-"  \\color{white}\n"
+"  \\color{deepskyblue}\n"
 "  \\node at (10.6, -4) {\\footnotesize{\\textbf{\\MakeUppercase{P1}}}};\n"
 "  \\node at (11, -2) {\\footnotesize{\\textbf{\\MakeUppercase{P2}}}};\n"
 "  \\node at (9.4, -0.6) {\\footnotesize{\\textbf{\\MakeUppercase{P3}}}};\n"
