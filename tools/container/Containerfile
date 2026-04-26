@@ -80,90 +80,41 @@ RUN <<EOF
   /opt/texlive/texdir/bin/*/tlmgr install \
     accsupp \
     adjustbox \
-    atbegshi \
-    atveryend \
-    auxhook \
     bigfoot \
-    bigintcalc \
-    bitset \
-    caption \
     catchfile \
-    ccicons \
     changepage \
-    collectbox \
     collection-binextra \
     collection-fontsrecommended \
     collection-langcyrillic \
     collection-latex \
     collection-latexrecommended \
     collection-pictures \
-    csquotes \
-    disser \
-    doclicense \
     enumitem \
-    environ \
-    epstopdf-pkg \
     etexcmds \
-    float \
     footmisc \
     fullwidth \
-    geometry \
-    gettitlestring \
-    graphics \
-    hycolor \
-    hyperref \
-    hyperxmp \
-    ifmtarg \
-    ifoddpage \
-    ifplatform \
     imakeidx \
-    infwarerr \
-    intcalc \
     koma-script \
-    kvdefinekeys \
-    kvoptions \
-    kvsetkeys \
     listings \
     listingsutf8 \
-    ltxcmds \
     luabidi \
-    luacode \
-    luakeyval \
-    moderncv \
     multirow \
     nth \
     oberdiek \
     outlines \
     paracol \
-    parskip \
     pdfcol \
-    pdfescape \
-    pdftexcmds \
-    pgf \
     placeins \
-    polyglossia \
-    refcount \
-    rerunfilecheck \
-    setspace \
     soul \
-    stringenc \
     sttools \
     svg \
     tcolorbox \
-    tikzfill \
     titlesec \
     tocloft \
     tools \
     transparent \
-    trimspaces \
-    unibidi-lua \
-    uniquecounter \
-    url \
     varwidth \
     wrapfig \
-    xcolor \
-    xifthen \
-    xkeyval \
     xstring \
     zref
   /opt/texlive/texdir/bin/*/tlmgr path add
