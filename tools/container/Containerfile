@@ -80,6 +80,8 @@ RUN <<EOF
   /opt/texlive/texdir/bin/*/tlmgr install \
     accsupp \
     adjustbox \
+    atbegshi \
+    atveryend \
     auxhook \
     bigfoot \
     bigintcalc \
@@ -96,6 +98,7 @@ RUN <<EOF
     collection-latexrecommended \
     collection-pictures \
     csquotes \
+    disser \
     doclicense \
     enumitem \
     environ \
@@ -120,13 +123,13 @@ RUN <<EOF
     kvdefinekeys \
     kvoptions \
     kvsetkeys \
-    listings  \
     listings \
-    listingsutf8  \
+    listingsutf8 \
     ltxcmds \
     luabidi \
     luacode \
     luakeyval \
+    moderncv \
     multirow \
     nth \
     oberdiek \
@@ -136,6 +139,7 @@ RUN <<EOF
     pdfcol \
     pdfescape \
     pdftexcmds \
+    pgf \
     placeins \
     polyglossia \
     refcount \
