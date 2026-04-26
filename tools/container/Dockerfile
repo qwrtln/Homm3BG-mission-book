@@ -102,6 +102,7 @@ RUN <<EOF
     listings  \
     listingsutf8  \
     luabidi \
+    luakeyval \
     multirow \
     nth \
     oberdiek \
