@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: tools/container
-          file: ./tools/container/Dockerfile
+          file: ./tools/container/Containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/homm3bg:latest
