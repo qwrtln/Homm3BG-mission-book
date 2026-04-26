@@ -8,7 +8,7 @@ fi
 
 INPUT=$1
 SEARCH_DIRS="campaigns clash coops sections draft-scenarios"
-SEARCH_PATTERN="addscenariosection{\|addsection{\|addscenariosection\[subsection\]{"
+SEARCH_PATTERN="addscenariosection\|addsection\|addscenariosection\[subsection\]"
 
 find_latex_references() {
   local FILENAME="$1"
