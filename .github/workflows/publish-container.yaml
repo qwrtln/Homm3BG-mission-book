@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Container Image
 
 on:
   push:
@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: tools/container
-          file: ./tools/container/Dockerfile
+          file: ./tools/container/Containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/homm3bg:latest

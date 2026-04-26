@@ -52,14 +52,14 @@ RUN <<EOF
       build-base \
       perl-app-cpanminus
 
-  CFLAGS="-I/usr/include" LIBS="-L/usr/lib -lintl" cpanm --no-wget Locale::gettext
-  cpanm --no-wget Text::WrapI18N
-  cpanm --no-wget Term::ReadKey
-  cpanm --no-wget Pod::Parser
-  cpanm --no-wget YAML::Tiny
-  cpanm --no-wget Unicode::GCString
-  cpanm --no-wget Syntax::Keyword::Try
-  cpanm --no-wget Encode::Locale
+  CFLAGS="-I/usr/include" LIBS="-L/usr/lib -lintl" cpanm --notest --no-wget Locale::gettext
+  cpanm --notest --no-wget Text::WrapI18N
+  cpanm --notest --no-wget Term::ReadKey
+  cpanm --notest --no-wget Pod::Parser
+  cpanm --notest --no-wget YAML::Tiny
+  cpanm --notest --no-wget Unicode::GCString
+  cpanm --notest --no-wget Syntax::Keyword::Try
+  cpanm --notest --no-wget Encode::Locale
 
   apk del .build-deps
   rm -rf /var/cache/apk/* /var/tmp/* /root/.cpanm
@@ -82,25 +82,24 @@ RUN <<EOF
     adjustbox \
     bigfoot \
     catchfile \
-    changepage \
     ccicons \
-    csquotes \
+    changepage \
     collection-binextra \
     collection-fontsrecommended \
     collection-langcyrillic \
     collection-latex \
     collection-latexrecommended \
     collection-pictures \
+    csquotes \
     doclicense \
     enumitem \
     etexcmds \
     footmisc \
-    fontawesome7 \
     fullwidth \
     imakeidx \
     koma-script \
-    listings  \
-    listingsutf8  \
+    listings \
+    listingsutf8 \
     luabidi \
     luakeyval \
     multirow \
