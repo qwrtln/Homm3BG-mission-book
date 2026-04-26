@@ -82,6 +82,7 @@ RUN <<EOF
     adjustbox \
     bigfoot \
     catchfile \
+    ccicons \
     changepage \
     collection-binextra \
     collection-fontsrecommended \
@@ -89,6 +90,8 @@ RUN <<EOF
     collection-latex \
     collection-latexrecommended \
     collection-pictures \
+    csquotes \
+    doclicense \
     enumitem \
     etexcmds \
     footmisc \
@@ -98,6 +101,7 @@ RUN <<EOF
     listings \
     listingsutf8 \
     luabidi \
+    luakeyval \
     multirow \
     nth \
     oberdiek \
@@ -113,6 +117,7 @@ RUN <<EOF
     tocloft \
     tools \
     transparent \
+    unibidi-lua \
     varwidth \
     wrapfig \
     xstring \
