@@ -117,6 +117,7 @@ RUN <<EOF
     tocloft \
     tools \
     transparent \
+    unibidi-lua \
     varwidth \
     wrapfig \
     xstring \
