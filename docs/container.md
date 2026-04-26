@@ -49,7 +49,7 @@ You can run the commands yourself, if you prefer.
     podman run --rm -v "$(pwd):/data" homm3bg:latest tools/build.sh -d
     ```
 
-=== "Docker"
+=== "Container"
 
     Pull the image first:
     ```bash
