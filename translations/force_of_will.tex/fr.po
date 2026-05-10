@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-05-10 14:32+0000\n"
+"POT-Creation-Date: 2026-05-10 14:36+0000\n"
 "PO-Revision-Date: 2025-06-30 13:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -81,14 +81,18 @@ msgstr ""
 "\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
 "\n"
 
-#. type: multicols*
-#: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
+#. type: multicols
+#: coops/sentinels.tex:142 coops/stand_united.tex:87 clash/astral_run.tex:98
+#: clash/force_of_will.tex:46 clash/dragoncurse_castle.tex:85
+#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
+#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:28
+#: sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
-"\\textbf{Additional Bonus:} None\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus Additionnel :} Aucun\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*
@@ -117,7 +121,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: clash/bloody_grail.tex:34 clash/force_of_will.tex:38
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:36
 #: clash/the_fractured_kingdoms.tex:29
 #, no-wrap
 msgid ""
@@ -244,7 +248,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/force_of_will.tex:46
+#: clash/force_of_will.tex:44
 #, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
