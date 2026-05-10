@@ -111,13 +111,14 @@ msgstr ""
 
 #. type: multicols*
 #: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "10 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"10 Runden\n"
 "\n"
 
 #. type: multicols

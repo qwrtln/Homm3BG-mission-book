@@ -106,25 +106,30 @@ msgid ""
 "Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering free.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"% vvv DELETE ALL THIS BEFORE TRANSLATING!!! vvv\n"
+"\\vspace*{-1.0em}\n"
+"\\textit{The dragons of this region have grown increasingly erratic and dangerous.\n"
+"You and your allies have decided that the time has come to end their threat once and for all.\n"
+"Beware, however -- some dragons have strayed from the Dragon Utopia and now roam the land.\n"
+"They will strike without hesitation if they feel threatened.\n"
+"Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering free.}  % no-check-caps\n"
+"\n"
 
 #. type: multicols*
 #: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "10 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"10 Runden\n"
 "\n"
 
 #. type: multicols
 #: coops/wandering_dragons.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 or 3\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2--3\n"
