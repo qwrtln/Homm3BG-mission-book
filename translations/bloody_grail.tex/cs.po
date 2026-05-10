@@ -49,7 +49,7 @@ msgstr ""
 
 #. type: multicols*
 #: coops/sentinels.tex:32 clash/bloody_grail.tex:27 clash/the_hunt.tex:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -60,8 +60,8 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Hrstku nejlevnějších \\svg{bronze} Jednotek\n"
-"  \\item 1 × Hrstku nejlevnějších \\svg{silver} Jednotek\n"
+"  \\item Tlupa nejlevnějších \\svg{bronze} Jednotek\n"
+"  \\item Hrstka nejdražších \\svg{bronze} Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 
