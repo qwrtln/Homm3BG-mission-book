@@ -176,14 +176,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/wandering_dragons.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile.\n"
 "\n"
 msgstr ""
+"\\vspace*{-0.5em} % <- delete this after fixing layout\n"
 "\\textbf{Kartenteilvorrat:} Jede Fraktion erhält 1 zufälligtes Fernes (II--III) Gebiet\n"
 "\n"
 
