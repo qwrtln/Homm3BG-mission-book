@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-11 13:53+0000\n"
+"POT-Creation-Date: 2026-05-10 14:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,16 +40,6 @@ msgstr ""
 #, no-wrap
 msgid ""
 "{2}\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:24 clash/trial_by_combat.tex:19
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
-#, no-wrap
-msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -100,6 +90,15 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"10 Rounds\n"
 "\n"
 msgstr ""
 
@@ -165,20 +164,19 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: clash/force_of_will.tex:17
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"This Scenario is played over 12 Rounds.\n"
-"\n"
-msgstr ""
-
-#. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2 or 3\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: clash/force_of_will.tex:24 clash/dragoncurse_castle.tex:27
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
 

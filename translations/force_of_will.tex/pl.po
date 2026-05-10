@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-04-11 13:53+0000\n"
+"POT-Creation-Date: 2026-05-10 14:32+0000\n"
 "PO-Revision-Date: 2024-10-29 15:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -46,18 +46,6 @@ msgid ""
 "\n"
 msgstr ""
 "{2}\n"
-"\n"
-
-#. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:24 clash/trial_by_combat.tex:19
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
-#, no-wrap
-msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
-"\n"
-msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -116,6 +104,18 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Budynki Początkowe:} \\svg{bronze} Siedlisko\n"
+"\n"
+
+#. type: multicols*
+#: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"10 Rounds\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
+"10 Rund\n"
 "\n"
 
 #. type: multicols
@@ -196,18 +196,6 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: clash/force_of_will.tex:17
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-"This Scenario is played over 12 Rounds.\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
-"Ten Scenariusz rozgrywany jest w 12 Rundach.\n"
-"\n"
-
-#. type: multicols*
 #: clash/force_of_will.tex:20 clash/the_hunt.tex:19
 #, no-wrap
 msgid ""
@@ -217,6 +205,16 @@ msgid ""
 msgstr ""
 "\\subsection*{\\MakeUppercase{Przygotowanie Graczy}}\n"
 "\\textbf{Liczba Graczy:} 2 lub 3\n"
+"\n"
+
+#. type: multicols*
+#: clash/force_of_will.tex:24 clash/dragoncurse_castle.tex:27
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Początkowy Przychód:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
