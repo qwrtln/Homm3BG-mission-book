@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-05-04 13:38+0000\n"
+"POT-Creation-Date: 2026-05-10 14:32+0000\n"
 "PO-Revision-Date: 2026-03-23 23:03+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -48,7 +48,7 @@ msgstr ""
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
 #: coops/wandering_dragons.tex:23 clash/trial_by_combat.tex:19
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
+#: clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -106,28 +106,30 @@ msgid ""
 "Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering free.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"% vvv DELETE ALL THIS BEFORE TRANSLATING!!! vvv\n"
+"\\vspace*{-1.0em}\n"
+"\\textit{The dragons of this region have grown increasingly erratic and dangerous.\n"
+"You and your allies have decided that the time has come to end their threat once and for all.\n"
+"Beware, however -- some dragons have strayed from the Dragon Utopia and now roam the land.\n"
+"They will strike without hesitation if they feel threatened.\n"
+"Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering free.}  % no-check-caps\n"
+"\n"
 
-#. type: multicols
-#: coops/wandering_dragons.tex:16
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
-#| "\n"
+#. type: multicols*
+#: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "10 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Szenariolänge}}\n"
+"10 Runden\n"
 "\n"
 
 #. type: multicols
 #: coops/wandering_dragons.tex:19
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 or 3\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2--3\n"
@@ -179,14 +181,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/wandering_dragons.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile.\n"
 "\n"
 msgstr ""
+"\\vspace*{-0.5em} % <- delete this after fixing layout\n"
 "\\textbf{Kartenteilvorrat:} Jede Fraktion erhält 1 zufälligtes Fernes (II--III) Gebiet\n"
 "\n"
 
