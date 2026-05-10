@@ -179,14 +179,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/wandering_dragons.tex:33
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile.\n"
 "\n"
 msgstr ""
+"\\vspace*{-0.5em} % <- delete this after fixing layout\n"
 "\\textbf{Dílky Mapy na ruce:} Každý hráč si vezme 1 náhodný Vzdálený (II--III) Dílek Mapy\n"
 "\n"
 
