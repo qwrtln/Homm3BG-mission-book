@@ -1,0 +1,125 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Clash Scenario}{Lost and Found}{\images/logistics.png}
+
+\begin{multicols*}{2}
+
+\textbf{Author:} Laamakala
+
+\textit{With kingdoms weakened and armies scattered, explorers, mercenaries, and warlords scour the ruined lands for lost wealth and power.}
+
+\subsection*{\MakeUppercase{Scenario Length}}
+This Scenario plays out over 10 Rounds.
+
+\subsection*{\MakeUppercase{Player Setup}}
+\textbf{Player Count:} 2-4
+
+\textbf{Starting Resources:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Units:}
+\begin{itemize}
+  \item A ``Pack'' of the cheapest \svg{bronze} Units with 2 × a chosen Stack Token
+  \item A ``Pack'' of the cheapest \svg{silver} Units
+\end{itemize}
+
+\textbf{Town Buildings:}
+\begin{itemize}
+  \item Mage Guild \textit{or} \svg{building_special_tent} Building
+  \item City Hall
+\end{itemize}
+
+\subsection*{\MakeUppercase{Map Setup}}
+Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
+
+\begin{itemize}
+  \item $P$ × Starting (I) Map Tiles
+  \item 3$P$ × Far (II--III) Map Tiles
+  \item $P$ × Near (IV--V) Map Tiles (with Obelisk)
+  \item 6 × Near (IV--V) Map Tiles (without Obelisk)
+  \item 1 × Center (VI--VII) Map Tile
+\end{itemize}
+
+\subsection*{\MakeUppercase{Victory Condition}}
+\textbf{4 players:} The game ends when one player has defeated every opponents' Main Hero at least once. \textit{That player wins the game immediately.}
+
+\subsection*{\MakeUppercase{Victory Points}}
+If no player has  an immediate victory,
+the player with the most Victory Points (VP) wins.
+\begin{itemize}
+  \item 4 VPs for the first player to flag the Center VII Field.
+  \item 2 VPs for each enemy Main Hero defeated.
+  \item 1 VP for each flagged Obelisk.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Timed Events}}
+\textbf{\nth{1} -- \nth{2} Round:}
+\begin{itemize}
+  \item All Secondary Heroes gain +1 \svg{movement}.
+\end{itemize}
+\textbf{\nth{3} Round:}
+\begin{itemize}
+  \item Build \svg{building_special_tent} \textit{or} \svg{building_special_gears} Building to all uncaptured Starting Towns for free and add a ``few'' \svg{bronze} Units to guards.
+\end{itemize}
+\textbf{\nth{4} Round:}
+\begin{itemize}
+  \item Build Citadel to uncaptured Starting Towns for free and Reinforce guarding \svg{bronze} Units to ``Pack''.
+\end{itemize}
+\textbf{\nth{5}, \nth{7} and \nth{9} Round:}
+\begin{itemize}
+  \item Remove all Black Cubes from the Map except from Learning Stones.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+\begin{itemize}
+  \item All players start with only their Secondary Hero on an empty Field on a Far Map Tile marked \textbf{``S''} that contains a Settlement.
+  \item Secondary Heroes may gain all rewards twice when visiting a Visitable Field until their Starting Town has been captured.
+  \item Secondary Heroes may once per Round discover a Map Tile for 0 \svg{movement}.
+  \item Your M\&M Deck acts as your Secondary Hero's Hand. Discarded Cards remain in the Discard Pile until you capture your Starting Town. After that, use the M\&M Deck normally with your Main Hero.
+  \item After winning a Neutral Combat with your Secondary Hero, you may Recruit one defeated Neutral Unit for its Recruitment cost.
+  \item All Starting Tiles start undiscovered.
+  \item Players may not use/build Buildings or Recruit Units from their Starting Town until they capture it.
+
+\columnbreak
+
+  \item \textbf{Starting Towns} are guarded by:
+  \begin{itemize}
+    \item 2 × A ``Pack'' of the cheapest \svg{bronze} Units
+    \item A ``few'' of the most expensive \svg{silver} Units
+  \end{itemize}
+  \item After capturing their Starting Town, that player immediately gains their Main Hero. Draw Cards to your \svg{hand} Limit and gain Levels equal to the Round number \textit{(max 4)} \textit{and} gain 10 \svg{gold}, 2 \svg{building_materials} and 1 \svg{valuables}.
+  \item \textbf{Corrosion Token:} When an attack deals \svg{damage} equal to the attacked Unit's \svg{defense}, place a Corrosion Token on that Unit. Remove the token after that Unit next takes \svg{damage}.
+  \item \textbf{Obelisk:} Rotate this or an adjacent revealed Map Tile and remove all Black Cubes from that Tile. \textit{or} Search (3) \svg{artifact}.
+  \item Defeated Main Heroes may spawn from a visited Obelisk.
+  \item \textbf{Sanctuary:} Choose 1 \svg{spellpower} from your Discard Pile. Remove it or return it to your hand.
+  \item After winning a Combat against another player's Main Hero, Search (3) \svg{artifact} and draw Cards to your \svg{hand} Limit.
+\end{itemize}
+
+\end{multicols*}
+
+\begin{tikzpicture}[overlay, remember picture]
+
+  \newcommand{\blocked}[3]{%
+    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle
+    \begin{scope}[shift={(#1,#2)}, rotate=#3]
+      \iftoggle{noartbackground}
+    \end{scope}
+  }
+
+  \node at (13.5, -4) {\includegraphics[width=0.5\linewidth]{\maps/lost-and-found-3p.png}};
+
+  \node at (9.82, -0.95) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (17.2, -2.36) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (12.3, -8) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+
+  \node at (13.4, -9.5) {\textbf{3-PLAYER SCENARIO}};
+
+  \node at (4.6, -3.8) {\includegraphics[width=0.5\linewidth]{\maps/lost-and-found.png}};
+
+  \node at (1.6, -1.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (6.37, -0.75) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (2.87, -6.8) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (7.62, -6.4) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+
+  \node at (4.7, -9.0) {\textbf{2- or 4-PLAYER SCENARIO}};
+\end{tikzpicture}
