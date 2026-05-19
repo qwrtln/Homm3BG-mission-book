@@ -9,7 +9,7 @@ on:
 
 env:
   ARTIFACT_RETENTION_DAYS: 1
-  IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-46/ImageMagick-8209e84-gcc-x86_64.AppImage
+  IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-22/ImageMagick-7.1.2-22-gcc-x86_64.AppImage
 
 jobs:
   matrix-setup:
@@ -422,7 +422,7 @@ jobs:
           merge-multiple: true
 
       - name: Publish ${{ matrix.language }} in artifacts repository
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4.1.0
         if: github.event_name != 'pull_request'
         with:
           deploy_key: ${{ secrets.SSH_DEPLOY_KEY_BUILD_ARTIFACTS }}
