@@ -110,6 +110,7 @@
 % Variables
 \def\_assets{assets}
 
+\def\abilities{\_assets/abilities}
 \def\art{\_assets/art}
 \def\cards{\_assets/cards}
 \def\examples{\_assets/examples}
@@ -216,13 +217,23 @@
     BoldFont = *-Bold,
     BoldItalicFont = *-BoldItalic,
 ]{LiberationSerif}
+% Sets fonts for subheaders small caps
+\newfontfamily{\newcomputermodern}[
+  Path = ./assets/fonts/newcomputermodern/,
+  Extension = .otf,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+]{NewCM10}
 
 \providecommand{\sectionheadertext}[2][antiquewhite]{
   \iftoggle{noartbackground}{}{\color{#1}}\MakeUppercase{\textbf{\liberation #2}}
 }
 
 %Create section heading with graphics. Argument one is heading name, argument two is picture to use on the left.
-\newcommand{\addsection}[2]{
+\newcommand{\addsection}[3][1]{
+  \def\oneliner{\equal{#1}{1}}
   \vspace*{-5.72em}
   \hspace*{-1.3em}
   \makebox[0pt][l]{
@@ -233,21 +244,25 @@
         }{
           \draw (0, 0) node[inner sep=0] (header){\makebox[1.015\textwidth][c]{\includegraphics[width=1.055\linewidth, height=0.24\linewidth]{\layout/section_heading.png}}};
         }
-        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#2}};
+        \draw (-6.7, 0) node {\includegraphics[width=0.135\textwidth]{#3}};
       \end{tikzpicture}
     }
   }
   \begin{fullwidth}[leftmargin=0.195\textwidth]
     \begin{center}
-      \vspace{1em}
+      \ifthenelse{\oneliner}{\vspace{1em}}{}
       \vspace{\lang_header_adjustment}
-      \section*{\sectionheadertext{#1}}
-      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#1}
-      \pagetarget{#1}{}
+      \section*{\sectionheadertext{#2}}
+      \cleardoublepage\phantomsection\addcontentsline{toc}{section}{\protect\numberline{}#2}
+      \pagetarget{#2}{}
     \end{center}
   \end{fullwidth}
-  \vspace{1.75em}
-  \vspace{\lang_header_adjustment}
+  \ifthenelse{\oneliner}{
+    \vspace{1.75em}
+    \vspace{\lang_header_adjustment}
+  }{
+    \vspace{0.62em}
+  }
 }
 %End of create section heading.
 
@@ -273,6 +288,17 @@
       \huge\sectionheadertext[bistre]{#1}
     };
   \end{tikzpicture}
+}
+
+% Subheaders which appear in the ToC
+% Argument one is the literal text for ToC - defaults to argument two if unspecified
+% Argument two is the text to display
+\newcommand{\subheader}[1]{%
+  \begin{center}
+    {\newcomputermodern\Large\bfseries\addfontfeature{Letters=SmallCaps}#1}
+    \\[0.02em]
+    \includegraphics[width=\linewidth,height=1em,keepaspectratio]{\layout/subsection_separator.png}
+  \end{center}
 }
 
 \NewDocumentCommand{\scenariorating}{ m }{
@@ -472,10 +498,18 @@
 
 \definecolor{lightcellborder}{HTML}{77543e}
 \definecolor{lightcellbg}{HTML}{20160C}
+\definecolor{lightcellnerfbg}{HTML}{A65A5A}
 
 \newcommand{\lightcell}[2][0.9]{
   \begin{tikzpicture}
     \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
+    \node[text width=\linewidth, align=center] at (current bounding box.center) {\iftoggle{noartbackground}{}{\color{white}}#2};
+  \end{tikzpicture}
+}
+
+\newcommand{\lightcellnerf}[2][0.9]{
+  \begin{tikzpicture}
+    \filldraw[line width=1.0pt, fill=\iftoggle{noartbackground}{white}{lightcellnerfbg}, fill opacity=0.25, draw=lightcellbg, fill opacity=0.25, draw=lightcellborder] (0, 0) rectangle (\linewidth, #1);
     \node[text width=\linewidth, align=center] at (current bounding box.center) {\iftoggle{noartbackground}{}{\color{white}}#2};
   \end{tikzpicture}
 }
