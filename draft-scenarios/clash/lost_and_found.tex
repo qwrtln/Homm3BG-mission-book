@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_US
 \addscenariosection{1}{Clash Scenario}{Lost and Found}{\images/logistics.png}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \textbf{Author:} Laamakala
 
@@ -53,7 +53,7 @@ the player with the most Victory Points (VP) wins.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Timed Events}}
-\textbf{\nth{1} -- \nth{2} Round:}
+\textbf{\nth{1} and \nth{2} Round:}
 \begin{itemize}
   \item All Secondary Heroes gain +1 \svg{movement}.
 \end{itemize}
@@ -70,6 +70,8 @@ the player with the most Victory Points (VP) wins.
   \item Remove all Black Cubes from the Map except from Learning Stones.
 \end{itemize}
 
+\vspace*{\fill}
+\columnbreak
 \subsection*{\MakeUppercase{Additional Rules}}
 \begin{itemize}
   \item All players start with only their Secondary Hero on an empty Field on a Far Map Tile marked \textbf{``S''} that contains a Settlement.
@@ -95,31 +97,23 @@ the player with the most Victory Points (VP) wins.
   \item \textbf{Corrosion Token:} When an attack deals \svg{damage} equal to the attacked Unit's \svg{defense}, place a Corrosion Token on that Unit. Remove the token after that Unit next takes \svg{damage}.
 \end{itemize}
 
-\end{multicols*}
+\end{multicols}
 
 \begin{tikzpicture}[overlay, remember picture]
-
-  \newcommand{\blocked}[3]{%
-    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle
-    \begin{scope}[shift={(#1,#2)}, rotate=#3]
-      \iftoggle{noartbackground}
-    \end{scope}
-  }
-
-  \node at (13.5, -4) {\includegraphics[width=0.5\linewidth]{\maps/lost-and-found-3p.png}};
-
-  \node at (9.82, -0.95) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-  \node at (17.2, -2.36) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-  \node at (12.3, -8) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-
-  \node at (13.4, -9.5) {\textbf{3-PLAYER SCENARIO}};
-
   \node at (4.6, -3.8) {\includegraphics[width=0.5\linewidth]{\maps/lost-and-found.png}};
 
-  \node at (1.6, -1.2) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-  \node at (6.37, -0.75) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-  \node at (2.87, -6.8) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
-  \node at (7.62, -6.4) {\large{{\textbf{\textcolor{darkcandyapplered}{S}}}}};
+  \node at (1.6, -1.55) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (6.37, -1.10) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (2.87, -7.15) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (7.62, -6.75) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
 
   \node at (4.7, -9.0) {\textbf{2- or 4-PLAYER SCENARIO}};
+
+  \node at (13.5, -4) {\includegraphics[width=0.45\linewidth]{\maps/lost-and-found-3p.png}};
+
+  \node at (10.19, -1.61) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (16.83, -2.87) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (12.42, -7.95) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+
+  \node at (13.4, -9.5) {\textbf{3-PLAYER SCENARIO}};
 \end{tikzpicture}
