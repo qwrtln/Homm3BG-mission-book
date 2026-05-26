@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2026-04-11 20:43+0000\n"
-"PO-Revision-Date: 2026-03-23 23:03+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-05-27 12:11+0000\n"
+"Last-Translator: Nohud <nohud@hotmail.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/clash-scenarios/astral_run/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #. type: multicols
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
@@ -167,6 +169,9 @@ msgid ""
 "\\textit{Every move could be your last. Every gate a~gamble. Glory belongs to the bold.}\n"
 "\n"
 msgstr ""
+"\\textit{Chaque mouvement peut être le dernier. Chaque portail est un "
+"risque. La gloire appartient aux téméraires.}\n"
+"\n"
 
 #. type: multicols*
 #: clash/astral_run.tex:12
