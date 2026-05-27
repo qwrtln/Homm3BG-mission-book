@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2026-05-10 14:32+0000\n"
-"PO-Revision-Date: 2026-03-23 23:03+0000\n"
+"PO-Revision-Date: 2026-05-27 16:46+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -15,26 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.9\n"
 
 #. type: multicols
-#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
-#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
-#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
-#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
-#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5 coops/emerald_island.tex:5
+#: coops/wandering_dragons.tex:5 coops/close_to_enemies.tex:5 coops/stand_united.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5 clash/trial_by_combat.tex:5
+#: clash/astral_run.tex:5 clash/chain_link.tex:5 clash/force_of_will.tex:5
+#: clash/the_fractured_kingdoms.tex:5 clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
 #: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
 #: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
-#: campaigns/castle_sicilian_dragon.tex:144
-#: campaigns/castle_two_knights_defense.tex:5
-#: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:204
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
-#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
+#: campaigns/castle_sicilian_dragon.tex:144 campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91 campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6 campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5 campaigns/inferno_deal_with_the_devil.tex:5
+#: sections/credits.tex:10 sections/random_scenario.tex:5 sections/random_scenario.tex:275
 #: sections/recommendations.tex:71 sections/recommendations.tex:126
 #: sections/what_to_play.tex:5
 #, no-wrap
@@ -46,9 +41,8 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:23 clash/trial_by_combat.tex:19
-#: clash/the_hunt.tex:23
+#: coops/sentinels.tex:26 coops/titans_stronghold.tex:28 coops/wandering_dragons.tex:23
+#: clash/trial_by_combat.tex:19 clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -58,8 +52,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/sentinels.tex:34 coops/wandering_dragons.tex:31
-#: campaigns/castle_greek_gift.tex:36
+#: coops/sentinels.tex:34 coops/wandering_dragons.tex:31 campaigns/castle_greek_gift.tex:36
 #, no-wrap
 msgid ""
 "\\textbf{Town Buildings:} \\svg{bronze} Dwelling, Citadel\n"
@@ -73,14 +66,11 @@ msgstr ""
 #: coops/wandering_dragons.tex:3
 #, fuzzy
 #| msgid ""
-#| "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/"
-#| "interference.png}"
+#| "\\addscenariosection{1}{Cooperative Scenario}{Stand United}{\\images/interference.png}"
 msgid ""
 "\\addscenariosection{1}{Cooperative Scenario}{Wandering Dragons}{\\images/"
 "quiet_eye_of_the_dragon.png}"
-msgstr ""
-"\\addscenariosection{1}{Scénario Coopératif}{Fronts Unis}{\\images/"
-"interference.png}"
+msgstr "\\addscenariosection{1}{Scénario Coopératif}{Fronts Unis}{\\images/interference.png}"
 
 #. type: multicols
 #: coops/wandering_dragons.tex:7
@@ -106,6 +96,12 @@ msgid ""
 "Your mission is to slay all dragons in the area, both those guarding the Utopia and those wandering free.}  % no-check-caps\n"
 "\n"
 msgstr ""
+"\\textit{Les dragons de cette région sont devenus de plus en plus imprévisibles et dangereux.\n"
+"Vous et vos alliés avez décidé qu’il était temps de mettre un terme à leur menace une bonne fois pour toutes.\n"
+"Attention toutefois -- certains dragons se sont éloignés de l’Utopie des Dragons et errent désormais à travers le pays.\n"
+"Ils attaqueront sans hésiter s’ils se sentent menacés.\n"
+"Votre mission consiste à éliminer tous les dragons de la région, aussi bien ceux qui gardent l’Utopie que ceux qui vagabondent librement.}  % no-check-caps\n"
+"\n"
 
 #. type: multicols*
 #: coops/wandering_dragons.tex:16 clash/force_of_will.tex:17
@@ -149,11 +145,9 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:25
-#: clash/astral_run.tex:21 clash/chain_link.tex:21
-#: campaigns/inferno_devilish_plan.tex:34
-#: campaigns/inferno_steadwicks_fall.tex:30
-#: campaigns/inferno_deal_with_the_devil.tex:34
+#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:25 clash/astral_run.tex:21
+#: clash/chain_link.tex:21 campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30 campaigns/inferno_deal_with_the_devil.tex:34
 #, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
