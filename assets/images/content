@@ -1,1 +1,0 @@
-{"detail":"File stream access denied."}
