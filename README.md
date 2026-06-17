@@ -153,9 +153,14 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-shattered_alliance-mono/shattered_alliance_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
-            <td>⚔️ King of the Hill (2-3)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-color/king_of_the_hill_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-mono/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
+            <td>⚔️ Dragnarøk (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Race for the Dragon Isle (2-7)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-color/race_for_the_dragon_isle_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-mono/race_for_the_dragon_isle_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>⚔️ The Obelisk (2-6)</td>
@@ -168,14 +173,14 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-blood_for_ore-mono/blood_for_ore_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
-            <td>⚔️ Dragnarøk (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-color/dragnarok_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragnarok-mono/dragnarok_en_mono.pdf"><em>click</em></a></td>
+            <td>⚔️ King of the Hill (2-3)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-color/king_of_the_hill_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-king_of_the_hill-mono/king_of_the_hill_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
-            <td>⚔️ Race for the Dragon Isle (2-7)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-color/race_for_the_dragon_isle_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-race_for_the_dragon_isle-mono/race_for_the_dragon_isle_en_mono.pdf"><em>click</em></a></td>
+            <td>⚔️ Rise from Exile (2-4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise-from-exile-color/rise-from-exile_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-srise-from-exile-mono/rise-from-exile_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
