@@ -179,8 +179,8 @@ Number of players (P) in the brackets.
         </tr>
         <tr>
             <td>⚔️ Rise from Exile (2-4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise-from-exile-color/rise-from-exile_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-srise-from-exile-mono/rise-from-exile_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise_from_exile-color/rise_from_exile_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise_from_exile-mono/rise_from_exile_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
