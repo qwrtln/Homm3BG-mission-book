@@ -11,7 +11,7 @@
 This Scenario plays out over 10 Rounds.
 
 \subsection*{\MakeUppercase{Player Setup}}
-\textbf{Player Count:} 2 -- 4
+\textbf{Player Count:} 2 -- 6
 
 \textbf{Starting Resources:} 18 \svg{gold}
 
@@ -40,10 +40,9 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
   \item 1 × Center (VI--VII) Map Tile
 \end{itemize}
 
-\subsection*{\MakeUppercase{Victory Condition}}
-Score the most Victory Points (VPs) by the end of the \nth{10} Round. In case of a tie, draw Cards to your \svg{hand} Limit and engage in a final Combat -- the winner is the victor.
-
 \subsection*{\MakeUppercase{Victory Points}}
+At the end of the Round 10, the player with the most Victory Points (VP) wins. In case of a tie draw Cards to your \svg{hand} Limit and engage in a final Combat -- the winner is the victor. Players get VPs for:
+
 \begin{itemize}
   \item 4 VPs for the first player to flag the Center VII Field.
   \item 2 VPs for each enemy Main Hero defeated.
@@ -106,22 +105,27 @@ separately to use their effects.
 \end{multicols}
 
 \begin{tikzpicture}[overlay, remember picture]
+
   \node at (4.6, -3.8) {\includegraphics[width=0.5\linewidth]{\maps/rise-from-exile.png}};
 
   \node at (1.6, -1.55) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
-  \node at (8.39, -2.86) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (8.37, -2.86) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
   \node at (0.87, -5.43) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
   \node at (7.63, -6.7) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
 
   \node at (4.7, -9.0) {\textbf{2- or 4-PLAYER SCENARIO}};
 
-  \node at (13.5, -4) {\includegraphics[width=0.45\linewidth]{\maps/rise-from-exile-3p.png}};
+  \node at (13.5, -4) {\includegraphics[width=0.45\linewidth]{\maps/rise-from-exile-6p.png}};
 
-  \node at (10.19, -1.60) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
-  \node at (16.83, -2.86) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
-  \node at (12.42, -7.95) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (10.8, -1.99) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (16.89, -3.14) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (12.84, -7.8) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
 
-  \node at (13.4, -9.5) {\textbf{3-PLAYER SCENARIO}};
+  \node at (10.15, -5.46) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (14.17, -0.81) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (16.22, -6.62) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+
+  \node at (13.4, -9.3) {\textbf{3-PLAYER SCENARIO}};
 \end{tikzpicture}
 
 \clearpage
@@ -165,7 +169,12 @@ Choose one Faction option. Then, you may add any Optional Rules:
   \item When Leveling Up, you may choose which of your Heroes' next Specialty Card to add to your Deck.
 \end{itemize}
 
+\textbf{Optional Rule: Stack Tokens cost:}
+\begin{itemize}
+  \item \svg{attack} = 10 \svg{gold}, \svg{defense} = 9 \svg{gold}, \svg{health_points} = 5 \svg{gold} and \svg{initiative} = 2 \svg{gold}
+\end{itemize}
+
 \end{multicols}
 
 \vspace*{\fill}
-\includegraphics[width=\linewidth]{\art/harpy.jpg}
+\includegraphics[width=\linewidth]{\art/harpy-smaller.jpg}
