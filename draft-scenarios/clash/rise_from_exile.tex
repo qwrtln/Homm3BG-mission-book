@@ -8,7 +8,7 @@
 \textit{Cast out and crownless, Heroes wander the ruined frontier, seeking strength, allies, and the road back to their stolen throne.}
 
 \subsection*{\MakeUppercase{Scenario Length}}
-This Scenario plays out over 10 Rounds.
+This Scenario plays out over 12 Rounds.
 
 \subsection*{\MakeUppercase{Player Setup}}
 \textbf{Player Count:} 2 -- 6
@@ -41,12 +41,11 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 \end{itemize}
 
 \subsection*{\MakeUppercase{Victory Points}}
-At the end of the Round 10, the player with the most Victory Points (VP) wins. In case of a tie draw Cards to your \svg{hand} Limit and engage in a final Combat -- the winner is the victor. Players get VPs for:
+At the end of the Round 12, the player with the most Victory Points (VP) wins. In case of a tie draw Cards to your \svg{hand} Limit and engage in a final Combat -- the winner is the victor. Players get VPs for:
 
 \begin{itemize}
   \item 4 VPs for the first player to flag the Center VII Field.
   \item 2 VPs for each enemy Main Hero defeated.
-  \item 1 VP for each flagged Mine or Settlement
   \item 1 VP for each flagged Obelisk.
 \end{itemize}
 
@@ -138,8 +137,6 @@ separately to use their effects.
 
 \subsection*{\MakeUppercase{Setup options}}
 
-\textbf{Optional:} Add 15 \svg{gold} to Starting Resources and recruit the starting Units by paying their Recruitment \svg{gold} cost.
-
 You may use any Near and Center Tiles.
 
 Choose one Faction option. Then, you may add any Optional Rules:
@@ -155,6 +152,19 @@ Choose one Faction option. Then, you may add any Optional Rules:
   \item Each player chooses any starting Hero from any Faction. Starting Towns remain random.
   \item After capturing their Starting Town, each player chooses their Main Hero from that Town's Faction.
   \item Add the Cards gained by your Secondary Hero to your Main Hero's Deck. You may add your starting Hero's Starting Ability Card, Specialty Card, or both to your Main Hero's Deck.
+\end{itemize}
+
+\textbf{Optional Rule: Starting Unit Recruitment}
+\begin{itemize}
+  \item Add 15 \svg{gold} to Starting Resources and recruit the starting Units by paying their Recruitment \svg{gold} cost.
+\end{itemize}
+
+\textbf{Optional Rule: Starting Stack Tokens cost:}
+\begin{itemize}
+  \item \svg{attack} -- 10 \svg{gold}
+  \item \svg{defense} -- 8 \svg{gold}
+  \item \svg{health_points} -- 5 \svg{gold}
+  \item \svg{initiative} -- 2 \svg{gold}
 \end{itemize}
 
 \columnbreak
@@ -173,12 +183,15 @@ Choose one Faction option. Then, you may add any Optional Rules:
   \item When Leveling Up, you may choose which of your Heroes' next Specialty Card to add to your Deck.
 \end{itemize}
 
-\textbf{Optional Rule: Starting Stack Tokens cost:}
-\begin{itemize}
-  \item \svg{attack} -- 10 \svg{gold}
-  \item \svg{defense} -- 8 \svg{gold}
-  \item \svg{health_points} -- 5 \svg{gold}
-  \item \svg{initiative} -- 2 \svg{gold}
-\end{itemize}
-
 \end{multicols}
+
+\begin{tikzpicture}[overlay, remember picture]
+
+  \node at (14, 0.6) {\includegraphics[width=0.5\linewidth]{\maps/rise-from-exile-short.png}};
+
+  \node at (10.45, 2.85) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (17.6, 2.31) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+  \node at (13.56, -3.53) {\large{{\textbf{\textcolor{deepskyblue}{S}}}}};
+
+  \node at (14, 0.9-5.3) {\textbf{10P ROUND SCENARIO}};
+\end{tikzpicture}
