@@ -176,7 +176,7 @@ msgid ""
 "Up to 11 or 15 Rounds\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"\\subsection*{\\MakeUppercase{Długość Scenariusza}}\n"
 "Do 11 albo 15 Rund\n"
 "\n"
 
