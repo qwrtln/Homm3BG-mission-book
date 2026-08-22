@@ -128,11 +128,6 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
-            <td>⚔️ Arcane Artillery (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
             <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
@@ -402,6 +397,19 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs-the_fractured_kingdoms-mono/the_fractured_kingdoms_cs_mono.pdf"><em>klikni</em></a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms-color/the_fractured_kingdoms_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_fractured_kingdoms-mono/the_fractured_kingdoms_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
+            <td>⚔️ Arcane Artillery (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>

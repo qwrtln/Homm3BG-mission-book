@@ -1,0 +1,504 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2026-08-22 17:34+0000\n"
+"PO-Revision-Date: 2026-08-22 17:01+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/arcane_artillery.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_hunt.tex:5 campaigns/castle_greek_gift.tex:6
+#: campaigns/castle_greek_gift.tex:86 campaigns/castle_greek_gift.tex:139
+#: campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
+#: sections/recommendations.tex:71 sections/recommendations.tex:126
+#: sections/what_to_play.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
+#: coops/emerald_island.tex:53 clash/force_of_will.tex:62
+#: clash/the_fractured_kingdoms.tex:41 clash/arcane_artillery.tex:65
+#: clash/dragoncurse_castle.tex:59 clash/the_hunt.tex:62
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
+#: campaigns/castle_two_knights_defense.tex:93
+#: campaigns/inferno_devilish_plan.tex:142
+#: campaigns/inferno_steadwicks_fall.tex:146
+#: campaigns/inferno_deal_with_the_devil.tex:97
+#: sections/random_scenario.tex:277
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{События по раундам}}\n"
+"\n"
+
+#. type: multicols
+#: coops/sentinels.tex:85 coops/emerald_island.tex:60
+#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: clash/force_of_will.tex:74 clash/arcane_artillery.tex:79
+#: clash/the_hunt.tex:69 campaigns/inferno_devilish_plan.tex:176
+#: campaigns/inferno_steadwicks_fall.tex:194
+#: campaigns/inferno_deal_with_the_devil.tex:148
+#: sections/random_scenario.tex:298
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Дополнительные правила}}\n"
+"\n"
+
+#. type: minipage
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
+msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
+msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
+msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: minipage
+#: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
+msgstr ""
+
+#. type: multicols*
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29 clash/astral_run.tex:28
+#: clash/chain_link.tex:28 clash/force_of_will.tex:31
+#: clash/the_fractured_kingdoms.tex:26 clash/arcane_artillery.tex:30
+#: clash/dragoncurse_castle.tex:34
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Городские постройки:} \\svg{bronze} Жилища, Цитадель\n"
+"\n"
+
+#. type: multicols
+#: coops/stand_united.tex:7 clash/chain_link.tex:7 clash/arcane_artillery.tex:7
+#, no-wrap
+msgid ""
+"\\textbf{Author:} NeuroN\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:36
+#: clash/the_fractured_kingdoms.tex:29 clash/arcane_artillery.tex:35
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/bloody_grail.tex:79 clash/force_of_will.tex:76
+#: clash/the_fractured_kingdoms.tex:62 clash/arcane_artillery.tex:81
+#, no-wrap
+msgid ""
+"During this Scenario:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/chain_link.tex:12 clash/arcane_artillery.tex:15
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"12 Rounds\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Длительность сценария}}\n"
+"\n"
+
+#. type: multicols*
+#: clash/force_of_will.tex:24 clash/arcane_artillery.tex:22
+#: clash/dragoncurse_castle.tex:27
+#, no-wrap
+msgid ""
+"\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/the_fractured_kingdoms.tex:17 clash/arcane_artillery.tex:20
+#, no-wrap
+msgid ""
+"\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/arcane_artillery.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
+#| "sentinel.png}"
+msgid ""
+"\\addscenariosection{1}{Clash Scenario}{Arcane Artillery}{\\images/"
+"precision.png}"
+msgstr ""
+"\\addscenariosection{1}{Кооперативный сценарий}{Стражи}{\\images/"
+"sentinel.png}"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:9
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Archon Studio Discord}\n"
+#| "\n"
+msgid ""
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1279029213839626313}{Archon Studios Discord}\n"
+"\n"
+msgstr ""
+"\\textbf{Источник:} \\href{https://discord.com/channels/740870068178649108/1233112440322002964/1233112440322002964}{Discord Archon Studio}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:12
+#, no-wrap
+msgid ""
+"\\textit{The ancient ruins are filled with arcane magic and technology, we must take control of them before our enemies can.\n"
+"Some pieces of arcane artillery are scattered around the ruins, they can help us kill the dragons resting in them.}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 2--6 Player FFA or 2vs2, 2vs2vs2, 3vs3 Alliance\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка игроков}}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:28
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\\begin{itemize}\n"
+"  \\item A ``Few'' chosen \\svg{bronze} Units\n"
+"  \\item A ``Pack'' of chosen \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Стартовые отряды:}\n"
+"\\begin{itemize}\n"
+"  \\item «pack» \\svg{bronze} отрядов с \\textit{наименьшей} стоимостью найма\n"
+"  \\item «few» \\svg{bronze} отрядов с \\textit{наибольшей} стоимостью найма\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:32
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Map Tile Pool:} Each player takes 1 random Near (IV--V) Map Tile and 1 random Far (II--III) Map Tile. These Tiles should not contain any Obelisks.\n"
+#| "\n"
+msgid ""
+"\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile, it must contain a Settlement\n"
+"\n"
+msgstr ""
+"\\textbf{Набор фрагментов карты:} Каждый игрок берёт 1 случайный ближний (IV--V) фрагмент карты и 1 дальний (II--III) фрагмент карты. Эти фрагменты не должны содержать Обелисков.\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:39
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:46
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{For a 2-player Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item 2 × Starting (I) Map Tile\n"
+"  \\item 4 × Near (IV--V) Map Tile that contains an Obelisk. If not enough are available, treat Witch Huts as Obelisks\n"
+"  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 × Стартовый (I) фрагмент карты\n"
+"  \\item 4 × Дальний  (II--III) фрагмент карты\n"
+"  \\item 4 × Ближний (IV--V) фрагмент карты с полем Обелиска\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:53
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{For a 3-6 player Scenario:}\n"
+"\\begin{itemize}\n"
+"  \\item P × Starting (I) Map Tile\n"
+"  \\item 6 × Near (IV--V) Map Tile that contains an Obelisk. If not enough are available, treat Witch Huts as Obelisks\n"
+"  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 × Стартовый (I) фрагмент карты\n"
+"  \\item 4 × Дальний  (II--III) фрагмент карты\n"
+"  \\item 4 × Ближний (IV--V) фрагмент карты с полем Обелиска\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:56
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"First player to flag Dragon Utopia wins the Scenario.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Условия победы}}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:59
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"At the end of the \\nth{12} Round, if the Dragon Utopia is not flagged by any player, all players lose the Scenario.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Условия поражения}}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:63
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:72
+#, no-wrap
+msgid ""
+"\\textbf{\\nth{1} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item \\nth{1} player gains \\svg{morale_negative} Token (for Necropolis, -1 to hand size this turn).\n"
+"  \\item \\nth{2} player gains +1 \\svg{movement}.\n"
+"  \\item All the remaining players gain +1 \\svg{movement}, and \\svg{morale_positive} Token (for Necropolis, +1 to hand size this turn).\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:77
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{\\nth{9} Round:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item Repeat the Timed Events of Round 6.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\textbf{\\nth{6} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black Cubes from every Tile.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Раунд 9:}\n"
+"\\begin{itemize}\n"
+"  \\item Повторите события раунда 6.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:91
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Heroes cannot enter starting Tiles other than their own.\n"
+"  \\item A player may not use the Diplomacy Card to skip Combat on the Dragon Utopia Field.\n"
+"  \\item Arcane Spikes are represented by Cubes not used by any player's Faction.\n"
+"  \\item Each Obelisk can only be flagged by one player at a time.\n"
+"  \\item Whenever an Obelisk is visited for the first time, the visiting player gains one Arcane Spike.\n"
+"  \\item At the start of their turn, a player gains Arcane Spikes equal to the number of Obelisks they control.\n"
+"  \\item \\textit{In Alliance Mode, add a Gold Unit for each extra alliance member to the Dragon Utopia fight (+1 when 2-people teams, +2 when 3-people teams).}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:93
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\vspace*{\\fill}\n"
+#| "\n"
+msgid ""
+"\\vspace{3em}\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
+
+#. type: multicols
+#: clash/arcane_artillery.tex:97
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/magic_arrow.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:100
+#, no-wrap
+msgid ""
+"\\textbf{Players can spend Arcane Spikes during Combat to cast:}\n"
+"\\medskip\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:109
+#, no-wrap
+msgid ""
+"\\hommtablemulticol[]{16}{\n"
+"  \\begin{tabularx}{\\linewidth}{p{0.24\\linewidth}p{0.66\\linewidth}}\n"
+"    \\multicolumn{2}{p{\\dimexpr0.90\\linewidth+2\\tabcolsep\\relax}}{\\darkcell{\\raisebox{-.2\\height}{} \\textbf{Arcane Artillery}}} \\\\\n"
+"    \\darkcell[1.8]{1 Spike} & \\lightcell[1.8]{\\svg{activation-yellow} Deal 1 \\svg{damage-yellow} to the target Unit.} \\\\\n"
+"    \\darkcell[1.8]{2 Spikes} & \\lightcell[1.8]{\\svg{ongoing-yellow} As above, plus \\mbox{reduce} the Unit's \\svg{defense-yellow} by 1 \\mbox{until} the end of Combat.} \\\\\n"
+"    \\darkcell[1.8]{3 Spikes} & \\lightcell[1.8]{\\svg{ongoing-yellow} As above, plus the Unit has its special ability negated until the end of Combat.} \\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:111
+#, no-wrap
+msgid ""
+"\\textbf{Additionally:}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/arcane_artillery.tex:120
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Arcane Artillery is considered to be a Spell of every school of magic of \\svg{empower} 0.\n"
+"  \\item Arcane Artillery does not count toward your combat Round Spell limit.\n"
+"  \\item Arcane Artillery ignores Units' Special Abilities.\n"
+"  \\item Players can cast Arcane Artillery during combat involving opponent's Heroes \\textbf{during the Neutral Unit's activation}.\n"
+"  \\item Each player can cast only \\textbf{one Arcane Artillery per combat Round}.\n"
+"  \\item \\textit{In Alliance Mode, allies can cast Arcane Artillery on allied Unit's activation.}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/arcane_artillery.tex:130
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[remember picture, overlay]\n"
+#| "  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
+#| "    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
+#| "  };"
+msgid ""
+"[remember picture, overlay]\n"
+"  \\node(bg)[anchor=center, opacity=0.07, yshift=3em] at (current page.center) {\n"
+"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/astrologers.png}\n"
+"  };"
+msgstr ""
+"[remember picture, overlay]\n"
+"  \\node(cover)[anchor=center, yshift=9em] at (current page.south) {\n"
+"    \\includegraphics[width=1.01\\paperwidth, keepaspectratio]{\\layout/rampart_background.png}\n"
+"  };"
