@@ -56,8 +56,8 @@ msgid ""
 msgstr ""
 "Ce projet est distribué sous la licence \\doclicenseLongNameRef. C'est un "
 "projet communautaire doté d'un \\hrefwithoutfootnote{\\repourl}{dépôt "
-"GitHub}. Vous êtes tous invités à apporter vos contributions, "
-"modifications, corrections et traductions."
+"GitHub}. Vous êtes tous invités à apporter vos contributions, modifications, "
+"corrections et traductions."
 
 #. type: multicols
 #: sections/intro_and_toc.tex:27
