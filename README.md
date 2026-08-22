@@ -128,11 +128,6 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
-            <td>⚔️ Arcane Artillery (2-6)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
             <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
@@ -406,6 +401,19 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
         </tr>
         <tr>
+            <td>⚔️ Arcane Artillery (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-color/arcane_artillery_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-arcane_artillery-mono/arcane_artillery_en_mono.pdf"><em>click</em></a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-arcane_artillery-color/arcane_artillery_pl.pdf">klik</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-arcane_artillery-mono/arcane_artillery_pl_mono.pdf"><em>klik</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
             <td>⚔️ Dragoncurse Castle (2)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-color/dragoncurse_castle_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-dragoncurse_castle-mono/dragoncurse_castle_en_mono.pdf"><em>click</em></a></td>
@@ -573,16 +581,6 @@ If you know your way around LaTeX and git, you can open a pull request for the D
 
 Do you have an idea on how to improve the LaTeX code, document layout and design, or GitHub workflows?
 Great! Please reach out. We'd love to hear from you.
-
-### Star History
-
-<a href="https://star-history.com/#qwrtln/Homm3BG-mission-book&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=qwrtln/Homm3BG-mission-book&type=Date" />
-  </picture>
-</a>
 
 ### 🛡️ Other Community Projects
 
