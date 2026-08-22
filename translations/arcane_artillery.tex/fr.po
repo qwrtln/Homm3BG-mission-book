@@ -383,12 +383,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/arcane_artillery.tex:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
@@ -396,7 +391,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.45\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
 "\\end{center}\n"
 "\n"
 
