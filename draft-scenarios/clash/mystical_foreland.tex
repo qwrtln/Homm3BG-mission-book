@@ -1,11 +1,20 @@
 % !TeX spellcheck = en_US
-\addscenariosection{1}{Clash/Alliance Scenario}{Mystical Foreland}{\images/implosion.png}
+\addscenariosection{1}{Clash/Alliance Scenario}{Mystical Foreland}{\images/logistics.png}
 
 \begin{multicols*}{2}
 
 \textbf{Author:} BoberL
 
 \textit{Colonization of the unseen lands has been going well, until your scouts have brought news about unknown horse trails next to the nearby lake. You come to a conclusion, that you're not the only person looking for the Mystical Foreland. Your next move is to double the nightguard and get moving at dawn.}  % no-check-caps
+
+\subsection*{\MakeUppercase{Required Expansions:}}
+
+\begin{itemize}
+  \item{\textcolor{conflux}{\textbf{Conflux Expansion}}}
+  \item{\textcolor{cove}{\textbf{Cove Expansion}} and \textcolor{navalbattles}{\textbf{Naval Battles Expansion}} for tile variety}
+  \item{\textcolor{stronghold}{\textbf{Stronghold Expansion}} and \textcolor{stretchgoals2}{\textbf{Stretch Goals Regular}} for tile variety}
+  \item{\textcolor{inferno}{\textbf{Inferno Expansion}}}
+\end{itemize}
 
 \subsection*{\MakeUppercase{Scenario Length}}
 This Scenario plays out over 14 Rounds.
@@ -42,7 +51,7 @@ The game ends when a player brings the grail back to his town.
 \subsection*{\MakeUppercase{Timed Events}}
 \textbf{\nth{4} Round:}
 \begin{itemize}
-  \item Each player may instantly upgrade a \svg{bronze} Unit of their choice for half the \svg{gold} (Rounded up).
+  \item Each player may instantly \textbf{Reinforce} a \svg{bronze} Unit of their choice for free or a \svg{silver} Unit for 4 \svg{gold} less.
 \end{itemize}
 \textbf{\nth{6} Round:}
 \begin{itemize}
@@ -54,46 +63,53 @@ The game ends when a player brings the grail back to his town.
 \end{itemize}
 \textbf{\nth{12} Round:}
 \begin{itemize}
-  \item 
+  \item Each player can \svg{pay} 5 \svg{gold} to Search(2) the \svg{artifact} Deck, \svg{skill} or \svg{spellpower} up to 3 times.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
 \begin{itemize}
-  \item Players cannot enter Sea tiles from \textbf{Red tiles}.
-  \item \textbf{Blue tiles} are the Underground tiles.
-  \item \textbf{Sanctuary:} Choose 1 \svg{spellpower} from your M\&M Deck and add it to your hand, then reshuffle your Deck. \textit{Visitable once per Faction.}
-  \item \textbf{Obelisk:} Choose 1 \svg{artifact} from your M\&M Deck and add it to your hand, then reshuffle your Deck.
-  \item \textbf{Dragon Utopia:} Defended only by Dragons. Recruit one Neutral Dragon you defeated for half its recruitment cost (rounded up). \textit{Trading Post conversion may be used for this}.
-  \item \textbf{Random Town:} On the next Resource Round, you may recruit one \textbf{Faction Unit} from the defending Faction for free.
-  \item \textbf{Level VII Settlement:} You may Reinforce one Unit for half its Recruitment cost \textbf{and} increase all incomes by one space.
-  \item Level VII Neutral Combats cannot be skipped.
+  \item Players cannot enter Sea tiles from \textcolor{red}{\textbf{Red tiles}}.
+  \item \textcolor{blue}{\textbf{Blue tiles}} are the Underground tiles.
+  \item \textcolor{rampart}{\textbf{Lime tile}} must contain the Grail.
+  \item Tiles that have the \textcolor{inferno}{\textbf{Red cubes}} contain \textbf{Creature Banks}.
+  \item Instead of fighting the regular enemies to conquer the Grail (T7), players instead fight the \textbf{Grail Army}. Besides the regular enemies, it also contains an extra 1 \svg{azure} Unit and 1 \svg{golden} Unit. Eeach of the enemy units gets a permanent \textbf{Upgrade token}.
+  \item \textbf{Sea Temple}: 15 \svg{gold}. Search(3) the \svg{artifact} Deck \textbf{twice} You may replace 2 Stat cards from your Deck or Discard for their upgraded versions.
+  \item \textbf{Level VII Town:} You may Recruit and Reinforce one of the Units from the defending town for half its \svg{gold} (Rounded down). 
+ \item \textbf{Cyclops Stockpile} 10 \svg{building_materials} 5 \svg{valuables}. All of your units now have permanent +1 \svg{attack} and +1 \svg{initiative}.
+  \item Level VII fights cannot be skipped.
+  \item Players that are defeated in combat or surrender drop their Grail at the tile they're currently at.
+  \item Players holding the Grail have their \svg{hand} increased by 2.
+  \item You may Search(2) the Neutral deck at \textbf{any point during your turn} for according prices:
+
 \end{itemize}
 
-\begin{center}
-  \vspace*{\fill}
-  \includegraphics[width=1.0\linewidth]{\maps/shattered_alliance-6p.png}
-  \captionof{figure}{\textbf{SCENARIO MAP LAYOUT}}
-  \vspace*{\fill}
-\end{center}
+3 \svg{gold} 1 \svg{building_materials} for \svg{bronze},
+
+5 \svg{gold} 2 \svg{building_materials} 1 \svg{valuables} for \svg{silver},
+
+9 \svg{gold} 4 \svg{building_materials}2 \svg{valuables} for \svg{golden},
+
+15 \svg{gold} 6 \svg{building_materials} 4 \svg{valuables} for \svg{azure}.
+
+  You can \svg{recruit} these Units for their full cost.
+
+\begin{itemize}
+  \item Remove Diplomancy ability cards, Events that let you recruit Neutral Units and Diplomancy related \svg{artifact} from the game.
+  \item If a Hero with the Grail Token uses Dimension Door, Fly, or Town Portal, the Grail Token is dropped on the origin Field before the Hero moves.
+\end{itemize}
 
 \columnbreak
 
 \begin{itemize}
-  \item \textbf{Grail Token:} When gained, draw Cards up to your \svg{hand} limit. If you start your turn with the Grail Token, gain \svg{morale_positive}, 10 \svg{gold}, and 2 \svg{valuables}. If a Hero carrying the Grail Token is defeated, the Grail Token is given to the winner of that Combat.
-  \item If a Hero with the Grail Token uses Dimension Door, Fly, or Town Portal, the Grail Token is dropped on the origin Field before the Hero moves.
-  \item A defeated Main Hero may Empower one Statistic Card from their Deck of M\&M.
-  \item With fewer than 6 players, the unused Starting Towns are defended exactly as a Random Town.
-  \item Flagging an unused Starting Town increases two separate incomes by 1 space.
-  \item When a Hero moves to a Starting Town, that Hero gains +1 \svg{movement}.
-  \item \textit{"Closest starting player" is the player whose starting Tile is closest to your starting Tile.}
+  \item If you're playing a 2v2 scenario, the opposing teams should have a player each on the opposite sides of the map.
 \end{itemize}
 
-\vspace*{\fill}
-
 \begin{center}
-  \includegraphics[width=1.05\linewidth]{\maps/shattered_alliance_alt-6p.png}
-  \captionof{figure}{\textbf{ALTERNATIVE MAP LAYOUT}}
+  \vspace*{\fill}
+  \includegraphics[width=1.0\linewidth]{\maps/mystical_foreland.png}
+  \captionof{figure}{\textbf{SCENARIO MAP LAYOUT}}
   \vspace*{\fill}
 \end{center}
+
 
 \end{multicols*}
