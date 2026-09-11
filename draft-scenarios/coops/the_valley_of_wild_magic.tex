@@ -1,0 +1,116 @@
+% !TeX spellcheck = en_US
+\addscenariosection{1}{Cooperative Scenario}{The Valley of Wild Magic}{\images/magic_mirror.png}
+
+\begin{multicols}{2}
+
+\textbf{Author:} Wololoeren
+
+\textit{The old ley-lines in the Valley of Wild Magic have ruptured. From each broken seam, hostile life pours forth in ever-thickening tides. Waves come without mercy; the first are a test, the last are intent on annihilation. Form your lines and fight as one -- the valley will not be sealed by lone blades.}
+
+\subsection*{\MakeUppercase{Scenario Length}}
+
+This Scenario is played over 14 Rounds.
+
+\subsection*{\MakeUppercase{Player Setup}}
+
+\textbf{Player Count:} 1--7
+
+\textbf{Starting Resources:} 4 \svg{gold}, 5 \svg{building_materials}, 1 \svg{valuables}
+
+\textbf{Starting Income:} 10 \svg{gold}, 2 \svg{building_materials}, 0 \svg{valuables}
+
+\textbf{Starting Units:}
+\begin{itemize}
+  \item A ``Pack'' of chosen \svg{bronze} Units
+  \item Search (2) the \svg{bronze} Neutral Deck.
+\end{itemize}
+
+\textbf{Town Buildings:} \svg{building_special_tent} Building, City Hall.
+
+\textbf{Map Tile Pool:} Each player takes their Faction's Starting (I) Map Tile and 2 Far (II--III) Map Tiles.
+
+\subsection*{\MakeUppercase{Map Setup}}
+
+Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):
+
+\begin{itemize}
+  \item $P$ × Starting (I) Map Tile
+  \item $2P$ × Far (II--III) Map Tile
+  \item 7 × Near (IV--V) Map Tile, $P$ of which must contain an Obelisk. The remaining $7 - P$ are random.
+\end{itemize}
+
+Arrange the 7 Near (IV--V) Map Tiles into the flower-shaped Cluster shown below, then hand each player their Starting Map Tile and 2 Far Map Tiles.
+
+\subsection*{\MakeUppercase{Victory Conditions}}
+
+Collectively collect $P \times 5$ Gems by the end of Round 14 (see Difficulty Settings for additional requirements).
+
+\subsection*{\MakeUppercase{Defeat Conditions}}
+
+The required number of Gems has not been collected by the end of Round 14.
+
+\subsection*{\MakeUppercase{Timed Events}}
+
+\textbf{\nth{4} and \nth{8} Rounds:}
+\begin{itemize}
+  \item Remove all Black Cubes from every Starting Map Tile.
+\end{itemize}
+\textbf{\nth{13} and \nth{14} Rounds:}
+\begin{itemize}
+  \item Place a Black Cube on every revealed Obelisk.
+\end{itemize}
+
+\subsection*{\MakeUppercase{Additional Rules}}
+
+\subsubsection*{\MakeUppercase{Evoker Spells}}
+\begin{itemize}
+  \item At the beginning of Round 1, before placing Starting Map Tiles, Search (4) the Spell Deck $P$ times. Players collectively decide which of the revealed Spells to keep as \textbf{Evoker Spells}, then place the chosen Spells next to the Map, spread out and face up.
+  \item After drafting the Evoker Spells, each player places their Starting Map Tile and their Main Hero on it.
+  \item Once per Round, any player may pay 1 \svg{building_materials} to cast an Evoker Spell, even while another player is the active player or fighting, treating themselves as the current player for that purpose. An Evoked Spell can only be empowered by Cards from the casting player's hand. Evoked Spells do not count towards the Spell limit.
+  \item Whenever a player would Search (X) the Spell Deck, they may instead take any one Evoker Spell into their hand and Search (X) for its replacement.
+\end{itemize}
+
+\subsubsection*{\MakeUppercase{Obelisk Fights}}
+\begin{itemize}
+  \item Fighting an Obelisk starts a Combat against 1 \svg{azure} Unit, plus 1 additional \svg{azure} Unit for every Black Cube already placed on that Obelisk's Field.
+  \item Obelisks can be fought multiple times.
+  \item After defeating an Obelisk, place a Black Cube on its Field, then move the Hero back to the last Field they visited before the Fight.
+  \item If an Obelisk Fight would have 6 or more Units, replace every Unit above the 5th with an Initiative Stack Token.
+  \item Extending an Obelisk Fight does not require \svg{movement}, but the Hero loses all remaining \svg{movement} after the Fight ends.
+  \item Winning an Obelisk Fight rewards 1 \svg{experience} and 1 Gem for every Unit and Stack Token defeated.
+\end{itemize}
+
+\begin{minipage}{\linewidth}
+  \centering
+  \includegraphics[width=0.48\linewidth]{\maps/the_valley_of_wild_magic.png}
+  \captionof{figure}{\footnotesize\textbf{\MakeUppercase{Map Layout}}}
+\end{minipage}
+
+\subsubsection*{\MakeUppercase{Other Rules}}
+\begin{itemize}
+  \item Use Faction Cubes of a Faction not in play to track Gems.
+  \item Level V Fields cannot be Quick Combated and reward 1 Gem in addition to \svg{experience}.
+  \item Players may exchange Artifacts and Spells from their hands, as well as Units and Resources, if their Main Heroes are standing on adjacent Fields or both are standing in their own Town or Settlement.
+  \item A player standing on a Trading Post may send Resources to any other player.
+\end{itemize}
+
+\hommtablemulticol[]{22}{
+  \centering
+  \medskip
+  \textbf{Difficulty Settings}\\
+  \bigskip
+  \begin{tabularx}{0.93\linewidth}{p{0.2\linewidth}X}
+    \darkcell[1.6]{Difficulty} & \darkcell[1.6]{Changes to the Scenario} \\
+    \darkcell[1.6]{Easy}
+    & \lightcell[1.6]{Obelisk Fights have \svg[12]{golden} Units instead of \svg[12]{azure} Units.} \\
+    \darkcell[1.6]{Normal}
+    & \lightcell[1.6]{No Change.} \\
+    \darkcell[2.2]{Hard}
+    & \lightcell[2.2]{Add 1 \svg[12]{azure} Unit to every Obelisk Fight. Collect an additional 10 Gems.} \\
+    \darkcell[1.8]{Impossible}
+    & \lightcell[1.8]{Add 2 \svg[12]{azure} Units to every Obelisk Fight. Collect an additional 20 Gems.} \\
+  \end{tabularx}
+  \medskip
+}
+
+\end{multicols}
