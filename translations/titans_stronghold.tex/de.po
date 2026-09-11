@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-04-11 13:53+0000\n"
+"POT-Creation-Date: 2026-08-22 17:01+0000\n"
 "PO-Revision-Date: 2025-06-28 19:46+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -25,9 +25,10 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
 #: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
 #: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
-#: clash/dragoncurse_castle.tex:5 clash/the_hunt.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:86
-#: campaigns/castle_greek_gift.tex:139 campaigns/castle_sicilian_dragon.tex:5
+#: clash/arcane_artillery.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_hunt.tex:5 campaigns/castle_greek_gift.tex:6
+#: campaigns/castle_greek_gift.tex:86 campaigns/castle_greek_gift.tex:139
+#: campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
@@ -49,9 +50,8 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:16 coops/titans_stronghold.tex:18
-#: coops/wandering_dragons.tex:15 coops/close_to_enemies.tex:16
-#: coops/stand_united.tex:13 clash/dragoncurse_castle.tex:17
-#: campaigns/inferno_devilish_plan.tex:20
+#: coops/close_to_enemies.tex:16 coops/stand_united.tex:13
+#: clash/dragoncurse_castle.tex:17 campaigns/inferno_devilish_plan.tex:20
 #: campaigns/inferno_steadwicks_fall.tex:16
 #: campaigns/inferno_deal_with_the_devil.tex:20
 #, no-wrap
@@ -77,8 +77,8 @@ msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 
 #. type: multicols*
 #: coops/sentinels.tex:26 coops/titans_stronghold.tex:28
-#: coops/wandering_dragons.tex:24 clash/trial_by_combat.tex:19
-#: clash/force_of_will.tex:24 clash/the_hunt.tex:23
+#: coops/wandering_dragons.tex:23 clash/trial_by_combat.tex:19
+#: clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
 "\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
@@ -147,9 +147,9 @@ msgstr ""
 #. type: multicols
 #: coops/sentinels.tex:62 coops/titans_stronghold.tex:71
 #: coops/emerald_island.tex:53 clash/force_of_will.tex:62
-#: clash/the_fractured_kingdoms.tex:41 clash/dragoncurse_castle.tex:59
-#: clash/the_hunt.tex:62 campaigns/castle_greek_gift.tex:88
-#: campaigns/castle_sicilian_dragon.tex:95
+#: clash/the_fractured_kingdoms.tex:41 clash/arcane_artillery.tex:65
+#: clash/dragoncurse_castle.tex:59 clash/the_hunt.tex:62
+#: campaigns/castle_greek_gift.tex:88 campaigns/castle_sicilian_dragon.tex:95
 #: campaigns/castle_two_knights_defense.tex:93
 #: campaigns/inferno_devilish_plan.tex:142
 #: campaigns/inferno_steadwicks_fall.tex:146
@@ -296,7 +296,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: coops/titans_stronghold.tex:40 clash/force_of_will.tex:35
+#: coops/titans_stronghold.tex:40
 #, no-wrap
 msgid ""
 "\\textbf{Additional Bonus:} None\n"
@@ -668,26 +668,28 @@ msgstr "\\captionof{figure}{\\textbf{1-SPIELER-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{2-SPIELER-SZENARIO}}"
 
-#.  \linebreak
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{3-SPIELER-SZENARIO}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
+#: clash/arcane_artillery.tex:159
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{4-SPIELER-SZENARIO}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:237
+#: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{5-SPIELER-SZENARIO}}"
 
 #. type: minipage
-#: coops/titans_stronghold.tex:237
+#: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
 msgstr "\\captionof{figure}{\\textbf{6-SPIELER-SZENARIO}}"
