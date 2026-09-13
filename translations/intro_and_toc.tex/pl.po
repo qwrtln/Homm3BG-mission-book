@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-03-23 23:03+0000\n"
+"POT-Creation-Date: 2026-08-22 16:06+0000\n"
 "PO-Revision-Date: 2025-09-30 13:50+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,8 +17,8 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #. type: center
-#: sections/credits.tex:8 sections/intro_and_toc.tex:16
-#: sections/intro_and_toc.tex:21
+#: sections/credits.tex:8 sections/intro_and_toc.tex:17
+#: sections/intro_and_toc.tex:23
 msgid "\\bigbreak"
 msgstr "\\bigbreak"
 
@@ -34,31 +34,32 @@ msgid "By The Community"
 msgstr "W Wydaniu Społeczności"
 
 #. type: center
-#: sections/intro_and_toc.tex:14
+#: sections/intro_and_toc.tex:15
 msgid ""
 "\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} This is an "
 "unreleased version built on GitHub from commit "
 "\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Version "
-"\\input{.version} }"
+"\\input{.version} } {\\large\\doclicenseIcon}"
 msgstr ""
 "\\iftoggle{githubbuild}{ \\getenv[\\githubsha]{GITHUB_SHA} To jest "
 "nieopublikowana wersja zbudowana na GitHubie z commita "
 "\\hrefwithoutfootnote{\\repourl}{\\StrLeft{\\githubsha}{7}}.  }{ Wersja "
-"\\input{.version} }"
+"\\input{.version} } {\\large\\doclicenseIcon}"
 
 #. type: center
-#: sections/intro_and_toc.tex:19
+#: sections/intro_and_toc.tex:21
 msgid ""
-"This is a community-driven project, which has a "
-"\\hrefwithoutfootnote{\\repourl}{GitHub repository}.  Everyone is welcome to "
-"contribute Scenarios, make changes, and fix errors."
+"This project is licensed under \\doclicenseLongNameRef.  It is community-"
+"driven, and has a \\hrefwithoutfootnote{\\repourl}{GitHub repository}.  "
+"Everyone is welcome to contribute Scenarios, make changes, and fix errors."
 msgstr ""
-"Niniejszy projekt jest tworzony przez społeczność oraz ma swoje "
+"Niniejszy projekt jest udostępniany na licencji \\doclicenseLongNameRef. "
+"Jest tworzony przez społeczność oraz ma swoje "
 "\\hrefwithoutfootnote{\\repourl}{repozytorium na GitHubie}. Dodawanie nowych "
 "scenariuszy, wprowadzanie zmian oraz poprawki są mile widziane."
 
 #. type: multicols
-#: sections/intro_and_toc.tex:25
+#: sections/intro_and_toc.tex:27
 #, no-wrap
 msgid ""
 "{3}\n"
@@ -72,7 +73,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/intro_and_toc.tex:29
+#: sections/intro_and_toc.tex:31
 #, no-wrap
 msgid ""
 "    \\includegraphics[width=0.8\\linewidth]{\\qr/form.png} \\\\\n"
@@ -86,7 +87,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/intro_and_toc.tex:34
+#: sections/intro_and_toc.tex:36
 #, no-wrap
 msgid ""
 "    \\columnbreak\n"
@@ -102,7 +103,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: sections/intro_and_toc.tex:39
+#: sections/intro_and_toc.tex:41
 #, no-wrap
 msgid ""
 "    \\columnbreak\n"
@@ -118,7 +119,7 @@ msgstr ""
 "  "
 
 #. type: Plain text
-#: sections/intro_and_toc.tex:53
+#: sections/intro_and_toc.tex:55
 msgid ""
 "\\iftoggle{noartbackground}{}{ \\AddToHookNext{shipout/background}{ \\put "
 "(0in,-\\paperheight)"
@@ -131,7 +132,7 @@ msgstr ""
 "tausta.png}} } }"
 
 #. type: tikzpicture
-#: sections/intro_and_toc.tex:53
+#: sections/intro_and_toc.tex:55
 #, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
@@ -145,7 +146,7 @@ msgstr ""
 "  };"
 
 #. type: multicols*
-#: sections/intro_and_toc.tex:58
+#: sections/intro_and_toc.tex:60
 #, no-wrap
 msgid ""
 "{2}\n"

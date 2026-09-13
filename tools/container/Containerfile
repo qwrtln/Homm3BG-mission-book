@@ -42,6 +42,9 @@ RUN <<EOF
     perl-unicode-linebreak \
     perl-yaml \
     poppler-utils \
+    python3 \
+    py3-numpy \
+    py3-opencv \
     tar \
     wget \
     xz
@@ -63,6 +66,11 @@ RUN <<EOF
 
   apk del .build-deps
   rm -rf /var/cache/apk/* /var/tmp/* /root/.cpanm
+
+  UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 \
+    sh -c "$(curl -fsSL https://astral.sh/uv/install.sh)"
+  uv pip install --system --break-system-packages --no-cache pymupdf
+  rm -rf /root/.local/share/uv /root/.cache/uv
 
   mkdir -p /tmp/install-tl
   cd /tmp/install-tl
@@ -165,6 +173,7 @@ WORKDIR /data
 
 ENV PATH="/opt/texlive/texdir/bin/x86_64-linuxmusl:/opt/po4a:${PATH}" \
     PERL5LIB="/opt/po4a/lib" \
-    TERM=xterm-256color
+    TERM=xterm-256color \
+    HOMM3BG_CONTAINER=1
 
 CMD ["/bin/bash"]
