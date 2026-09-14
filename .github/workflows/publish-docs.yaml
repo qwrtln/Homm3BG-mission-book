@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - web-editor # TEMP: testing this workflow from a branch, revert before merge
     paths:
       - 'docs/**'
       - mkdocs.yml
