@@ -6,18 +6,29 @@ on:
     paths:
       - 'docs/**'
       - mkdocs.yml
+      - 'web/**'
+  workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  BUSYTEX_ENGINE_VERSION: 1.4.0
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -29,4 +40,29 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs build --site-dir site
+
+      - name: Copy the app into the site
+        run: |
+          mkdir -p site/web
+          rsync -a --exclude 'prototype-engine-check' web/ site/web/
+
+      - name: Restore the BusyTeX engine payload
+        id: engine-cache
+        uses: actions/cache@v5
+        with:
+          key: busytex-engine-${{ env.BUSYTEX_ENGINE_VERSION }}
+          path: site/web/core/busytex
+
+      - name: Fetch the BusyTeX engine payload
+        if: steps.engine-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p site/web/core/busytex
+          url="https://github.com/TeXlyre/texlyre-busytex/releases/download/assets-v${BUSYTEX_ENGINE_VERSION}/busytex-assets.tar.gz"
+          curl -fsSL "$url" | tar xz -C site/web/core/busytex --strip-components=1
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment

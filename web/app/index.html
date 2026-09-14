@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Heroes III: The Board Game - Scenario Builder</title>
+<link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
+<link rel="stylesheet" href="vendor/codemirror/theme/material-darker.min.css">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --muted: #6b6660;
+    --line: #ddd6cb;
+    --paper: #fbf9f5;
+    --panel: #ffffff;
+    --accent: #8a6a1f;
+    --ok: #2f6b3a;
+    --bad: #97281f;
+    --pdf-bg: #ddd;
+    --error-bg: #fdf1ef;
+    --code-bg: #f4f1ea;
+    --shadow: rgba(27, 26, 23, 0.15);
+  }
+  html[data-theme="dark"] {
+    --ink: #e8e6df;
+    --muted: #9d968a;
+    --line: #3a362e;
+    --paper: #161512;
+    --panel: #201d19;
+    --accent: #d9b34a;
+    --ok: #7fd28a;
+    --bad: #ff7b6b;
+    --pdf-bg: #2a2a2a;
+    --error-bg: #2a1e1c;
+    --code-bg: #1c1a16;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    padding: 0;
+    font: 15px/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.5rem;
+  }
+  header .titles { flex: 1 1 auto; min-width: 0; }
+  header h1 { font-size: 1.1rem; margin: 0; }
+  header p { margin: 0; color: var(--muted); font-size: 0.85rem; }
+  button {
+    font: inherit;
+    font-size: 0.88rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  button.icon { padding: 0.5rem 0.6rem; font-size: 1rem; line-height: 1; }
+  button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  button:disabled { opacity: 0.5; cursor: default; }
+  button.primary {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  button.primary:disabled { background: var(--accent); opacity: 0.5; }
+  button.link {
+    border: none;
+    background: none;
+    padding: 0.2rem 0.3rem;
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .content { flex: 1 1 auto; display: flex; min-height: 0; }
+
+  /* --- Welcome screen -------------------------------------------------- */
+
+  .welcome[hidden], #workspace[hidden] { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .welcome { transition: opacity 0.22s ease, transform 0.22s ease; }
+    .welcome.leaving { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    #workspace.entering { animation: workspace-in 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes workspace-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+  .welcome {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    overflow: auto;
+  }
+  .welcome-inner { max-width: 34rem; width: 100%; }
+  .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
+  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+  .combobox { position: relative; }
+  #search {
+    width: 100%;
+    font: inherit;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+  }
+  #search:focus { border-color: var(--accent); }
+  .combobox-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    max-height: 22rem;
+    overflow: auto;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: 0 8px 20px var(--shadow);
+    z-index: 10;
+  }
+  .combobox-group-label {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+  }
+  .combobox-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.9rem;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .combobox-item:hover, .combobox-item.active { background: var(--line); }
+  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+  .scratch-row {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* --- Header actions (shown once a scenario is chosen) ------------------ */
+
+  .header-actions[hidden] { display: none; }
+  .header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+  .upload-menu { position: relative; }
+  .upload-popover[hidden] { display: none; }
+  .upload-popover {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 21rem;
+    max-width: 88vw;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 10px 26px var(--shadow);
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-size: 0.82rem;
+    z-index: 20;
+  }
+  .upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  .upload-field label { font-weight: 600; }
+  .upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }
+  .upload-status { color: var(--muted); }
+  .upload-status code { font-size: 0.78rem; }
+  .upload-status.bad { color: var(--bad); }
+  input.upload-rename {
+    font: inherit;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    width: 100%;
+  }
+  .upload-rename-list[hidden] { display: none; }
+  .upload-rename-list { display: flex; flex-direction: column; gap: 0.3rem; width: 100%; }
+  .upload-rename-row { display: flex; align-items: center; gap: 0.4rem; }
+  .upload-rename-row .orig-name { color: var(--muted); font-size: 0.76rem; white-space: nowrap; }
+
+  /* --- Workspace --------------------------------------------------------- */
+
+  #workspace { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 0;
+    gap: 1px;
+    background: var(--line);
+  }
+  @media (max-width: 850px) {
+    main { flex-direction: column; overflow-y: auto; }
+    .pane { min-height: 24rem; }
+  }
+  .pane {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+  }
+  .pane-head {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .draft-note { font-size: 0.8rem; color: var(--accent); }
+  .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+  .editor-wrap .CodeMirror {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+  }
+  .pdf-pane-body-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .pdf-pane-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .pdf-pane-body.dimmed { filter: brightness(0.7); }
+  .build-overlay {
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    z-index: 5;
+  }
+  .build-overlay:not([hidden]) { display: flex; }
+  .spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
+  embed.pdf-view {
+    flex: 1 1 auto;
+    width: 100%;
+    border: none;
+    background: var(--pdf-bg);
+  }
+  .empty-pdf {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    padding: 2rem;
+    text-align: center;
+  }
+  .status-bar {
+    padding: 0.65rem 1rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .spinner {
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 2px solid var(--line);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .ok { color: var(--ok); }
+  .bad { color: var(--bad); }
+  .error-panel {
+    margin: 0 1rem 1rem;
+    border: 1px solid var(--bad);
+    background: var(--error-bg);
+    padding: 0.85rem 1rem;
+    border-radius: 3px;
+  }
+  .error-panel .first-error {
+    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+    color: var(--bad);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  details.full-log summary {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+  details.full-log pre {
+    font: 12px/1.5 ui-monospace, monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    padding: 0.7rem;
+    max-height: 20rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    margin: 0.5rem 0 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="titles">
+    <h1>Heroes III: The Board Game - Scenario Builder</h1>
+    <p>Run LaTeX in your web browser</p>
+  </div>
+  <div class="header-actions" id="header-actions" hidden>
+    <div class="upload-menu">
+      <button id="upload-toggle" type="button">Upload images ▾</button>
+      <div class="upload-popover" id="upload-popover" hidden>
+        <div class="upload-field">
+          <label for="upload-header">Header image</label>
+          <input type="file" id="upload-header" accept="image/*">
+          <input type="text" id="upload-header-name" class="upload-rename" placeholder="target filename" hidden>
+          <span class="upload-status" id="upload-header-status">Goes to <code>assets/images/</code>.</span>
+        </div>
+        <div class="upload-field">
+          <label for="upload-maps">Map file(s)</label>
+          <input type="file" id="upload-maps" accept="image/*" multiple>
+          <div class="upload-rename-list" id="upload-maps-names" hidden></div>
+          <span class="upload-status" id="upload-maps-status">One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.</span>
+        </div>
+      </div>
+    </div>
+    <button id="build" class="primary" disabled>Build PDF</button>
+    <button id="download" disabled>Download PDF</button>
+  </div>
+  <button id="theme-toggle" class="icon" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">🌙</button>
+</header>
+
+<div class="content">
+  <section class="welcome" id="welcome">
+    <div class="welcome-inner">
+      <h2>Pick a scenario to start with</h2>
+      <p class="hint">Search the mission book and the draft book by name.</p>
+      <div class="combobox">
+        <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
+        <div class="combobox-list" id="search-results" hidden></div>
+      </div>
+      <div class="scratch-row">
+        <span>Or start from scratch:</span>
+        <button id="scratch-scenario" type="button">Blank scenario</button>
+        <button id="scratch-campaign" type="button">Blank campaign scenario</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="workspace" hidden>
+    <main>
+      <section class="pane" id="editor-pane">
+        <div class="pane-head">
+          <h2>Source</h2>
+          <span class="draft-note" id="draft-note" hidden>Showing your locally saved edits, not the original source.</span>
+        </div>
+        <div class="editor-wrap">
+          <textarea id="editor" spellcheck="false"></textarea>
+        </div>
+      </section>
+
+      <section class="pane" id="pdf-pane">
+        <div class="pane-head">
+          <h2>PDF</h2>
+        </div>
+        <div class="pdf-pane-body-wrap" id="pdf-wrap">
+          <div class="pdf-pane-body" id="pdf-body">
+            <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
+          </div>
+          <div class="build-overlay" id="build-overlay" hidden>
+            <span class="spinner big"></span>
+            <span>Building…</span>
+          </div>
+        </div>
+        <div class="error-panel" id="error-panel" hidden>
+          <div class="first-error" id="first-error"></div>
+          <details class="full-log" id="full-log-details">
+            <summary>Show the full log</summary>
+            <pre id="full-log"></pre>
+          </details>
+        </div>
+        <div class="status-bar" id="status-bar">
+          <span id="status-text">Ready.</span>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="vendor/codemirror/codemirror.min.js"></script>
+<script src="vendor/codemirror/mode/stex/stex.min.js"></script>
+<script type="module">
+import { BusyTexRunner, LuaLatex } from "../shared/vendor/texlyre-busytex.js";
+import {
+  GROUP_FILES, DRAFT_GROUP_FILES, parseScenarioIndex, scenarioHeading, GLYPH_MANIFEST_PATH,
+  ALWAYS_PRELOAD, CARRIED_TEXMF, planScenarioBuild, firstError, pageCount,
+  missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
+} from "../shared/build-plan.js";
+
+// The engine's data-package base path. serve.py (and any static file server
+// rooted at the repository root, per the app's own serving assumption) makes
+// this reachable at a root-relative path, the same way the prototype's own
+// BASE constant works. See web/prototype-engine-check/serve.py. The engine
+// payload itself is not duplicated here. Both pages fetch it from the one
+// web/core/busytex/ location, gitignored locally and populated by the
+// deploy workflow (ticket 12) in production.
+const BASE = "/web/core/busytex";
+const REPO = ""; // the server's root is the repository root
+
+// The two blank-start entry points (ticket 13 / map.md decision 07). Each
+// template file is itself a scenario-shaped .tex file — it uses
+// \addscenariosection, \svg, and \includegraphics exactly like a real
+// scenario — so it can be \include{}d by structure.tex the same way, with
+// no special-casing in planScenarioBuild.
+const TEMPLATES = {
+  scenario: { path: "templates/default.tex", title: "Blank scenario" },
+  campaign: { path: "templates/campaign.tex", title: "Blank campaign scenario" },
+};
+
+// The directory name each group table uses maps to the display category a
+// user actually asked for: coop, clash, alliance, campaign. This is a
+// different grouping than scenarioHeading's "kind" (the gameplay blurb
+// printed in the book itself, e.g. "Clash/Alliance Scenario") — that text
+// is prose, not a stable category, so the picker groups by directory
+// instead.
+const CATEGORY_LABELS = { coops: "Coop", clash: "Clash", campaigns: "Campaign", alliances: "Alliance" };
+const CATEGORY_ORDER = ["Coop", "Clash", "Campaign", "Alliance"];
+
+const el = (id) => document.getElementById(id);
+
+let entries = [];           // every scenario the search can offer (mission + draft, not templates)
+let chosenPath = null;      // path of the entry currently loaded in the editor
+let chosenTitle = "";
+let building = false;
+let runner = null;
+let lastPdf = null;
+let lastResult = null;      // read by the headless capture (window.__probeResults)
+let cm = null;               // CodeMirror instance, created once over #editor
+
+// Files a contributor added from their own machine, not the repository: a
+// new header image or new map art the scenario does not have committed
+// yet. Keyed by the repository path the build should see them at, so a
+// build both fetches around them (never 404s on a path an upload already
+// covers) and prefers them outright when a path collides with a real repo
+// file the scenario source happens to reference.
+let uploadedFiles = new Map(); // path -> Uint8Array
+
+function storageKey(path) {
+  return `wasm-scenario-builder:draft:${path}`;
+}
+
+function loadDraft(path) {
+  try {
+    return localStorage.getItem(storageKey(path));
+  } catch {
+    return null; // private mode, blocked storage: fall back to the pristine source
+  }
+}
+
+function saveDraft(path, text) {
+  try {
+    localStorage.setItem(storageKey(path), text);
+  } catch {
+    // Storage can be full or blocked. Losing autosave is not fatal: the
+    // editor still holds the text until reload.
+  }
+}
+
+let saveTimer = null;
+function scheduleSave() {
+  if (!chosenPath) return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => saveDraft(chosenPath, cm.getValue()), 400);
+}
+
+async function fetchRepoFile(path) {
+  const response = await fetch(`${REPO}/${path}`);
+  if (!response.ok) throw new Error(`${path}: ${response.status}`);
+  const isText = /\.(tex|sty|cls|cfg|txt|map|enc|json|pdf_tex)$/.test(path);
+  return isText
+    ? { path, content: await response.text() }
+    : { path, content: new Uint8Array(await response.arrayBuffer()) };
+}
+
+function setStatus(text, { spinning = false, tone = "" } = {}) {
+  el("status-text").innerHTML = `${spinning ? '<span class="spinner"></span> ' : ""}<span class="${tone}">${escapeHtml(text)}</span>`;
+}
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+}
+
+function setBuilding(value) {
+  building = value;
+  el("build").disabled = value || !chosenPath;
+  el("build-overlay").hidden = !value;
+  el("pdf-body").classList.toggle("dimmed", value);
+}
+
+// --- Dark / light mode -------------------------------------------------
+
+const THEME_KEY = "wasm-scenario-builder:theme";
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  el("theme-toggle").textContent = theme === "dark" ? "☀️" : "🌙";
+  if (cm) cm.setOption("theme", theme === "dark" ? "material-darker" : "default");
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch {
+    // Private mode or blocked storage: the choice just does not persist.
+  }
+}
+
+function initialTheme() {
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "dark" || saved === "light") return saved;
+  } catch {
+    // fall through to the system preference
+  }
+  return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+el("theme-toggle").addEventListener("click", () => {
+  applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+});
+
+// --- Editor (CodeMirror, LaTeX mode) ------------------------------------
+//
+// Vendored, not fetched from a CDN at runtime: web/app/vendor/codemirror/,
+// with its own LICENSE beside it, the same pattern as the vendored engine.
+// This replaces an earlier hand-rolled regex overlay, which only recognized
+// a handful of token shapes; CodeMirror's own "stex" mode understands LaTeX
+// properly (nested groups, math mode, commands with arguments) and gives
+// real editor behavior (line numbers, bracket matching, its own scrolling)
+// for free.
+cm = CodeMirror.fromTextArea(el("editor"), {
+  mode: "stex",
+  lineNumbers: true,
+  lineWrapping: true,
+  indentUnit: 2,
+  tabSize: 2,
+  theme: initialTheme() === "dark" ? "material-darker" : "default",
+});
+cm.on("change", () => {
+  scheduleSave();
+});
+cm.on("blur", () => {
+  if (chosenPath) saveDraft(chosenPath, cm.getValue());
+});
+
+applyTheme(initialTheme());
+
+function basenameNoExt(path) {
+  const base = path.split("/").pop();
+  return base.replace(/\.tex$/, "");
+}
+
+/**
+ * Reads one group of main.tex files (the published book, or the draft book)
+ * and returns every scenario it lists, tagged with the display category the
+ * picker groups by.
+ */
+async function loadGroup(groupFiles, book) {
+  const sources = [];
+  for (const group of groupFiles) {
+    sources.push({ path: group.path, source: (await fetchRepoFile(group.path)).content });
+  }
+  const index = parseScenarioIndex(sources, groupFiles);
+  return Promise.all(index.map(async (item) => {
+    const source = (await fetchRepoFile(item.path)).content;
+    const heading = scenarioHeading(source);
+    const categoryKey = item.dir.split("/").pop();
+    return {
+      path: item.path,
+      book,
+      category: CATEGORY_LABELS[categoryKey] || categoryKey,
+      title: heading ? heading.title : item.path,
+      isTemplate: false,
+    };
+  }));
+}
+
+async function loadEntries() {
+  const [mission, draft] = await Promise.all([
+    loadGroup(GROUP_FILES, "mission"),
+    loadGroup(DRAFT_GROUP_FILES, "draft"),
+  ]);
+  entries = [...mission, ...draft];
+}
+
+// --- Fuzzy search combobox ----------------------------------------------
+//
+// A match is a plain substring (ranked by how early it appears) or, failing
+// that, the query's letters found in order but not together (ranked after
+// every substring match). Good enough for scenario titles a person half
+// remembers; not a scored fuzzy algorithm like fzf's.
+function matchScore(query, text) {
+  const q = query.trim().toLowerCase();
+  if (!q) return 0;
+  const t = text.toLowerCase();
+  const idx = t.indexOf(q);
+  if (idx !== -1) return idx;
+  let qi = 0;
+  let first = -1;
+  let last = -1;
+  for (let i = 0; i < t.length && qi < q.length; i += 1) {
+    if (t[i] === q[qi]) {
+      if (first === -1) first = i;
+      last = i;
+      qi += 1;
+    }
+  }
+  if (qi < q.length) return null;
+  return 1000 + (last - first);
+}
+
+function groupedResults(query) {
+  const groups = new Map(); // "book|category" -> {book, category, items: [{entry, score}]}
+  for (const entry of entries) {
+    const score = matchScore(query, entry.title);
+    if (score === null) continue;
+    const key = `${entry.book}|${entry.category}`;
+    if (!groups.has(key)) groups.set(key, { book: entry.book, category: entry.category, items: [] });
+    groups.get(key).items.push({ entry, score });
+  }
+  for (const group of groups.values()) {
+    group.items.sort((a, b) => a.score - b.score || a.entry.title.localeCompare(b.entry.title));
+  }
+  return [...groups.values()].sort((a, b) => {
+    if (a.book !== b.book) return a.book === "mission" ? -1 : 1;
+    return CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category);
+  });
+}
+
+let activeItem = -1;
+
+function renderResults() {
+  const groups = groupedResults(el("search").value);
+  const list = el("search-results");
+  if (!groups.length) {
+    list.innerHTML = '<div class="combobox-empty">No scenario matches.</div>';
+  } else {
+    list.innerHTML = groups.map((group) => `
+      <div class="combobox-group-label">${group.book === "mission" ? "Mission Book" : "Draft Book"} — ${escapeHtml(group.category)}</div>
+      ${group.items.map(({ entry }) =>
+        `<button type="button" class="combobox-item" data-path="${escapeHtml(entry.path)}">${escapeHtml(entry.title)}</button>`
+      ).join("")}
+    `).join("");
+  }
+  list.hidden = false;
+  activeItem = -1;
+}
+
+function moveActive(delta) {
+  const items = [...el("search-results").querySelectorAll(".combobox-item")];
+  if (!items.length) return;
+  items.forEach((item) => item.classList.remove("active"));
+  activeItem = (activeItem + delta + items.length) % items.length;
+  items[activeItem].classList.add("active");
+  items[activeItem].scrollIntoView({ block: "nearest" });
+}
+
+el("search").addEventListener("focus", renderResults);
+el("search").addEventListener("input", renderResults);
+el("search").addEventListener("keydown", (event) => {
+  const items = () => [...el("search-results").querySelectorAll(".combobox-item")];
+  if (event.key === "ArrowDown") { event.preventDefault(); moveActive(1); }
+  else if (event.key === "ArrowUp") { event.preventDefault(); moveActive(-1); }
+  else if (event.key === "Escape") { el("search-results").hidden = true; }
+  else if (event.key === "Enter") {
+    event.preventDefault();
+    const list = items();
+    const target = activeItem >= 0 ? list[activeItem] : list[0];
+    if (target) commitEntry(target.dataset.path);
+  }
+});
+el("search-results").addEventListener("mousedown", (event) => {
+  // mousedown, not click: fires before the input's blur hides the list.
+  const button = event.target.closest("[data-path]");
+  if (button) commitEntry(button.dataset.path);
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".combobox")) el("search-results").hidden = true;
+});
+
+function confirmScratch(label) {
+  return confirm(`Start a new ${label.toLowerCase()}? It begins empty, from the repository's own template.`);
+}
+
+el("scratch-scenario").addEventListener("click", () => {
+  if (confirmScratch(TEMPLATES.scenario.title)) commitEntry(TEMPLATES.scenario.path);
+});
+el("scratch-campaign").addEventListener("click", () => {
+  if (confirmScratch(TEMPLATES.campaign.title)) commitEntry(TEMPLATES.campaign.path);
+});
+
+// --- Committing to an entry ----------------------------------------------
+//
+// Ticket 13 kept a picker that could be changed mid-edit. This app instead
+// asks once, on a welcome screen, and commits: nothing in the workspace
+// offers a way back to it. Reloading the page returns to the welcome
+// screen, and picking the same entry again restores its autosaved draft, so
+// no work is ever lost by that route either.
+/**
+ * Fades the welcome screen out, then swaps it for the workspace with a
+ * short rise-and-fade-in. The two screens are never both visible at once
+ * (see the [hidden] rule above): this only adds motion around that swap,
+ * skipped entirely for prefers-reduced-motion.
+ */
+function showWorkspace() {
+  return new Promise((resolve) => {
+    const welcome = el("welcome");
+    const workspace = el("workspace");
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      welcome.hidden = true;
+      workspace.hidden = false;
+      resolve();
+      return;
+    }
+    welcome.classList.add("leaving");
+    setTimeout(() => {
+      welcome.hidden = true;
+      welcome.classList.remove("leaving");
+      workspace.hidden = false;
+      workspace.classList.remove("entering");
+      void workspace.offsetWidth; // force reflow, so repeat visits replay the animation
+      workspace.classList.add("entering");
+      resolve();
+    }, 220);
+  });
+}
+
+async function commitEntry(path) {
+  const template = Object.values(TEMPLATES).find((t) => t.path === path);
+  const entry = template
+    ? { path: template.path, title: template.title, isTemplate: true }
+    : entries.find((e) => e.path === path);
+  if (!entry) return;
+
+  await showWorkspace();
+  cm.refresh(); // CodeMirror mismeasures while its host was display:none
+  el("header-actions").hidden = false;
+
+  chosenPath = entry.path;
+  chosenTitle = entry.title;
+  document.title = `${chosenTitle} - Heroes III: The Board Game`;
+  el("build").disabled = building;
+  el("download").disabled = true;
+  setStatus("Loading…");
+
+  const fetched = await fetchRepoFile(entry.path);
+  const pristineSource = fetched.content;
+
+  const draft = loadDraft(entry.path);
+  cm.setValue(draft !== null ? draft : pristineSource);
+  el("draft-note").hidden = draft === null;
+  cm.focus();
+
+  resetUploads();
+  clearPdf();
+  setStatus("Ready.");
+}
+
+// --- Upload popover -------------------------------------------------------
+
+el("upload-toggle").addEventListener("click", (event) => {
+  event.stopPropagation();
+  el("upload-popover").hidden = !el("upload-popover").hidden;
+});
+el("upload-popover").addEventListener("click", (event) => event.stopPropagation());
+document.addEventListener("click", () => { el("upload-popover").hidden = true; });
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") el("upload-popover").hidden = true;
+});
+
+// --- Header and map uploads ---------------------------------------------
+//
+// No server means no real upload: a chosen file never leaves the browser.
+// What it does is join the virtual filesystem the build compiles from,
+// under the repository path the scenario source would reach it at, so a
+// contributor can try out new art before it is ever committed. The target
+// filename defaults to the file's own name but is editable — a contributor
+// picking IMG_4821.png off their phone can stage it as, say,
+// astral_run_p3.png, matching whatever the \includegraphics call in the
+// source expects.
+const MAX_MAP_FILES = 6;
+
+let headerUpload = null;  // {bytes, path} | null
+let mapUploads = [];      // [{bytes, originalName, path}]
+
+function resetUploads() {
+  uploadedFiles.clear();
+  headerUpload = null;
+  mapUploads = [];
+  el("upload-header").value = "";
+  el("upload-header-name").value = "";
+  el("upload-header-name").hidden = true;
+  el("upload-maps").value = "";
+  el("upload-maps-names").innerHTML = "";
+  el("upload-maps-names").hidden = true;
+  setUploadStatus("upload-header-status", "Goes to <code>assets/images/</code>.");
+  setUploadStatus("upload-maps-status", "One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.");
+}
+
+function setUploadStatus(id, html, tone = "") {
+  const span = el(id);
+  span.innerHTML = html;
+  span.classList.toggle("bad", tone === "bad");
+}
+
+async function readAsUint8Array(file) {
+  return new Uint8Array(await file.arrayBuffer());
+}
+
+function restageHeader() {
+  if (!headerUpload) return;
+  if (headerUpload.path) uploadedFiles.delete(headerUpload.path);
+  const name = el("upload-header-name").value.trim() || headerUpload.originalName;
+  const path = `assets/images/${name}`;
+  headerUpload.path = path;
+  uploadedFiles.set(path, headerUpload.bytes);
+  setUploadStatus("upload-header-status", `Staged: <code>${escapeHtml(path)}</code>`);
+}
+
+el("upload-header").addEventListener("change", async () => {
+  const [file] = el("upload-header").files;
+  if (!file) return;
+  if (headerUpload && headerUpload.path) uploadedFiles.delete(headerUpload.path);
+  headerUpload = { bytes: await readAsUint8Array(file), originalName: file.name, path: null };
+  el("upload-header-name").hidden = false;
+  el("upload-header-name").value = file.name;
+  restageHeader();
+});
+el("upload-header-name").addEventListener("input", restageHeader);
+
+function restageMaps() {
+  for (const item of mapUploads) if (item.path) uploadedFiles.delete(item.path);
+  const inputs = [...el("upload-maps-names").querySelectorAll(".upload-rename")];
+  const seen = new Set();
+  let collision = false;
+  mapUploads.forEach((item, i) => {
+    const name = (inputs[i] ? inputs[i].value.trim() : "") || item.originalName;
+    const path = `assets/maps/${name}`;
+    if (seen.has(path)) collision = true;
+    seen.add(path);
+    item.path = path;
+    uploadedFiles.set(path, item.bytes); // a repeated name: the last file staged under it wins
+  });
+  setUploadStatus(
+    "upload-maps-status",
+    collision
+      ? "Two files share the same target name — only the last one staged under it is kept."
+      : `Staged: ${mapUploads.map((m) => `<code>${escapeHtml(m.path)}</code>`).join(", ")}`,
+    collision ? "bad" : "",
+  );
+}
+
+el("upload-maps").addEventListener("change", async () => {
+  const files = [...el("upload-maps").files];
+  if (!files.length) return;
+  if (files.length > MAX_MAP_FILES) {
+    setUploadStatus("upload-maps-status", `Chose ${files.length} files, more than the ${MAX_MAP_FILES}-player limit. None were staged — pick again.`, "bad");
+    el("upload-maps").value = "";
+    return;
+  }
+  for (const item of mapUploads) if (item.path) uploadedFiles.delete(item.path);
+  mapUploads = await Promise.all(files.map(async (file) => ({
+    bytes: await readAsUint8Array(file),
+    originalName: file.name,
+    path: null,
+  })));
+  const list = el("upload-maps-names");
+  list.innerHTML = mapUploads.map((item, i) => `
+    <div class="upload-rename-row">
+      <span class="orig-name">${escapeHtml(item.originalName)} →</span>
+      <input type="text" class="upload-rename" data-index="${i}" value="${escapeHtml(item.originalName)}">
+    </div>
+  `).join("");
+  list.hidden = false;
+  list.querySelectorAll(".upload-rename").forEach((input) => input.addEventListener("input", restageMaps));
+  restageMaps();
+});
+
+function clearPdf() {
+  lastPdf = null;
+  lastResult = null;
+  el("download").disabled = true;
+  el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>';
+  el("error-panel").hidden = true;
+}
+
+function showPdf(blob) {
+  lastPdf = blob;
+  const url = URL.createObjectURL(blob);
+  el("pdf-body").innerHTML = `<embed class="pdf-view" type="application/pdf" src="${url}">`;
+  el("download").disabled = false;
+}
+
+function showError(record) {
+  el("error-panel").hidden = false;
+  el("first-error").textContent = record.firstError || "The build failed, but no specific LaTeX error line was found in the log.";
+  el("full-log").textContent = record.log || "";
+  el("full-log-details").open = false;
+}
+
+async function startEngine() {
+  setStatus("Downloading the engine (first time only, a few minutes)…", { spinning: true });
+  runner = new BusyTexRunner({
+    busytexBasePath: BASE,
+    preloadDataPackages: [`${BASE}/texlive-extra.js`],
+    verbose: true,
+  });
+  try {
+    await runner.initialize(true);
+  } catch (error) {
+    runner = null;
+    throw error;
+  }
+}
+
+/**
+ * Runs the whole build for the currently chosen entry: fetches the plan's
+ * files, compiles, and applies ticket 11's fetch-on-miss retry loop — the
+ * same shape as web/prototype-engine-check/index.html's runStep, reused via
+ * the shared module's missingFiles/newMissingPaths/MAX_FETCH_ON_MISS_ATTEMPTS
+ * rather than reimplemented.
+ */
+async function runBuild() {
+  if (building || !chosenPath) return;
+  setBuilding(true);
+  el("error-panel").hidden = true;
+  try {
+    if (!runner) await startEngine();
+
+    setStatus("Preparing files…", { spinning: true });
+    const source = cm.getValue();
+    const metadata = (await fetchRepoFile("metadata.tex")).content;
+    const manifest = await fetchRepoFile(GLYPH_MANIFEST_PATH);
+    const glyphNames = JSON.parse(manifest.content);
+
+    const plan = planScenarioBuild({
+      metadata,
+      scenario: { path: chosenPath, source },
+      glyphNames,
+    });
+
+    // Built through a path->content map, not straight into an array: an
+    // upload must win over a same-path repository fetch (new art
+    // overriding a committed placeholder), and every staged upload must
+    // reach the engine even if collectReferencedAssets has not yet seen an
+    // \includegraphics call for it in the source (the contributor may add
+    // that line after uploading, or the file may cover more than one page).
+    const staged = new Map();
+    const notFound = [];
+    for (const path of plan.repoFiles) {
+      // The scenario/template itself is being edited in the browser: use the
+      // editor's text, not a re-fetch of the pristine repository copy.
+      if (path === chosenPath) {
+        staged.set(path, { path, content: source });
+        continue;
+      }
+      if (uploadedFiles.has(path)) {
+        staged.set(path, { path, content: uploadedFiles.get(path) });
+        continue;
+      }
+      try {
+        staged.set(path, await fetchRepoFile(path));
+      } catch (error) {
+        notFound.push(path);
+      }
+    }
+    for (const name of plan.carriedTexmf || []) {
+      try {
+        const file = await fetchRepoFile(`web/prototype-engine-check/texmf/${name}`);
+        staged.set(name, { path: name, content: file.content });
+      } catch (error) {
+        notFound.push(`texmf/${name}`);
+      }
+    }
+    for (const [path, content] of Object.entries(plan.generated)) {
+      staged.set(path, { path, content });
+    }
+    for (const [path, content] of uploadedFiles) {
+      if (!staged.has(path)) staged.set(path, { path, content });
+    }
+    const additionalFiles = [...staged.values()];
+
+    setStatus("Compiling (this can take a while the first time)…", { spinning: true });
+    const started = performance.now();
+    const lualatex = new LuaLatex(runner);
+
+    // Ticket 11's fetch-on-miss loop, same shape as the probe's runStep.
+    let result;
+    const tried = new Set();
+    for (let attempt = 0; ; attempt += 1) {
+      try {
+        result = await lualatex.compile({
+          input: plan.input,
+          additionalFiles,
+          verbose: "debug",
+        });
+      } catch (error) {
+        result = { success: false, log: String(error), exitCode: -1 };
+      }
+      if (attempt >= MAX_FETCH_ON_MISS_ATTEMPTS) break;
+      const toFetch = newMissingPaths(missingFiles(result.log), tried);
+      if (!toFetch.length) break;
+      let landed = 0;
+      for (const path of toFetch) {
+        tried.add(path);
+        try {
+          additionalFiles.push(await fetchRepoFile(path));
+          landed += 1;
+        } catch (error) {
+          // genuine miss: not in the repository, left for firstError to report
+        }
+      }
+      if (!landed) break;
+      setStatus(`Retrying with ${landed} more file(s) fetched on demand…`, { spinning: true });
+    }
+    const seconds = (performance.now() - started) / 1000;
+
+    const record = {
+      ok: Boolean(result.success && result.pdf),
+      bytes: result.pdf ? result.pdf.length : 0,
+      pages: pageCount(result.log),
+      seconds: Number(seconds.toFixed(1)),
+      notFound,
+      missing: missingFiles(result.log),
+      firstError: firstError(result.log),
+      log: result.log || "",
+    };
+    lastResult = record;
+    window.__probeResults = { "scenario-svg": record }; // read by the headless capture
+
+    if (record.ok) {
+      showPdf(new Blob([result.pdf], { type: "application/pdf" }));
+      setStatus(`Built ${record.pages} page(s) in ${record.seconds}s.`, { tone: "ok" });
+    } else {
+      el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">The build failed. See the error below.</div>';
+      el("download").disabled = true;
+      showError(record);
+      setStatus("Build failed.", { tone: "bad" });
+    }
+  } catch (error) {
+    lastResult = { ok: false, firstError: null, log: String(error && error.stack || error) };
+    window.__probeResults = { "scenario-svg": lastResult };
+    showError({ firstError: `Unexpected error: ${error.message || error}`, log: String(error && error.stack || error) });
+    setStatus("Build failed.", { tone: "bad" });
+  } finally {
+    setBuilding(false);
+  }
+}
+
+el("build").addEventListener("click", () => {
+  runBuild();
+});
+
+// "Download PDF" — named after the chosen entry's basename, e.g.
+// astral_run.pdf, or default.pdf / campaign.pdf for a blank-start template.
+el("download").addEventListener("click", () => {
+  if (!lastPdf || !chosenPath) return;
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(lastPdf);
+  link.download = `${basenameNoExt(chosenPath)}.pdf`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+});
+
+// Ticket 13: a headless-drivable hook analogous to the prototype's
+// window.__probeRun/window.__probeResults, so tools/render_parity.sh's
+// capture-pdf.mjs can drive this page instead of (or as well as) the probe.
+// The app has no step ladder, so the first argument is accepted and ignored;
+// the second is the scenario path to build, matching capture-pdf.mjs's call
+// shape (window.__probeRun("scenario-svg", scenarioPath)).
+window.__probeRun = async (_stepId, scenarioPath) => {
+  if (scenarioPath) {
+    await commitEntry(scenarioPath);
+  }
+  await runBuild();
+  return window.__probeResults["scenario-svg"];
+};
+
+// capture-pdf.mjs clicks "#save-pdf" to trigger the download it captures.
+// The app's own visible control is named "#download" (clearer to a reader
+// who is not looking at a probe). A hidden alias under the id
+// capture-pdf.mjs expects forwards to it, so no fork of that script is
+// needed — see the PAGE-constant change in capture-pdf.mjs (ticket 13).
+const saveAlias = document.createElement("button");
+saveAlias.id = "save-pdf";
+saveAlias.hidden = true;
+saveAlias.addEventListener("click", () => el("download").click());
+document.body.appendChild(saveAlias);
+
+loadEntries()
+  .then(() => {
+    if (!entries.length) setStatus("No scenarios found.", { tone: "bad" });
+  })
+  .catch((error) => {
+    el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(error.message)}</div>`;
+    el("search-results").hidden = false;
+  });
+</script>
+</body>
+</html>

@@ -36,6 +36,7 @@ nav:
   - Translations: translations.md
   - Using Scripts: scripts.md
   - Container-based setup: container.md
+  - Build a Scenario: https://qwrtln.github.io/Homm3BG-mission-book/web/app/
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
