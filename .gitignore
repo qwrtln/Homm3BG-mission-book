@@ -11,6 +11,7 @@
 *.mo
 *.out
 *.pdf
+!assets/glyphs-inkscape/*.pdf
 *.synctex(busy)
 *.synctex.gz
 *.toc
