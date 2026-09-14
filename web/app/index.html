@@ -451,8 +451,26 @@ import {
 // payload itself is not duplicated here. Both pages fetch it from the one
 // web/core/busytex/ location, gitignored locally and populated by the
 // deploy workflow (ticket 12) in production.
-const BASE = "/web/core/busytex";
-const REPO = ""; // the server's root is the repository root
+// GitHub Pages serves this project under a path prefix
+// (/Homm3BG-mission-book/), so a root-absolute path like "/web/core/busytex"
+// resolves against the wrong origin root and 404s in production, even
+// though it happens to work locally where there is no prefix. Ticket 17
+// found this the hard way, against the real deployed site.
+//
+// BASE crosses into the BusyTeX worker's own script, which resolves it
+// relative to the worker's URL (web/core/busytex/busytex_worker.js), not
+// to this page. A plain relative string breaks there ("../core/busytex"
+// from inside web/core/busytex/ reaches web/core/core/busytex, ticket 17
+// found this too). Resolving it to a full URL up front, on this page,
+// sidesteps the difference: an already-absolute URL resolves the same
+// way wherever it is read from.
+const BASE = new URL("../core/busytex", document.baseURI).href;
+// web/repo/ does not exist as a real directory. Locally, serve.py aliases
+// it to the repository root (ticket 17). In production, the deploy
+// workflow copies the source directories the app reads there directly.
+// REPO only ever resolves on this page, never inside the worker, so a
+// plain relative path is safe here.
+const REPO = "../repo";
 
 // The two blank-start entry points (ticket 13 / map.md decision 07). Each
 // template file is itself a scenario-shaped .tex file — it uses
@@ -521,7 +539,15 @@ function scheduleSave() {
 }
 
 async function fetchRepoFile(path) {
-  const response = await fetch(`${REPO}/${path}`);
+  return fetchAt(`${REPO}/${path}`, path);
+}
+
+// Fetches a file by a URL relative to this page, rather than to REPO.
+// web/shared/texmf/ is one such case: it ships alongside the app under
+// web/, in both the local and the deployed layout, so it never needs
+// REPO's web/repo/ aliasing (ticket 17).
+async function fetchAt(url, path) {
+  const response = await fetch(url);
   if (!response.ok) throw new Error(`${path}: ${response.status}`);
   const isText = /\.(tex|sty|cls|cfg|txt|map|enc|json|pdf_tex)$/.test(path);
   return isText
@@ -1020,7 +1046,7 @@ async function runBuild() {
     }
     for (const name of plan.carriedTexmf || []) {
       try {
-        const file = await fetchRepoFile(`web/prototype-engine-check/texmf/${name}`);
+        const file = await fetchAt(`../shared/texmf/${name}`, `texmf/${name}`);
         staged.set(name, { path: name, content: file.content });
       } catch (error) {
         notFound.push(`texmf/${name}`);

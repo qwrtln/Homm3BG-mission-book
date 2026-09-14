@@ -142,7 +142,10 @@ import {
   MAX_FETCH_ON_MISS_ATTEMPTS, newMissingPaths,
 } from "./probe.js";
 
-const BASE = "/web/core/busytex";
+// Resolved to a full URL, not left as a relative string: BASE crosses into
+// the BusyTeX worker's own script, which would otherwise resolve it
+// relative to itself rather than to this page (ticket 17).
+const BASE = new URL("../core/busytex", document.baseURI).href;
 const REPO = "";          // the server's root is the repository root
 let scenarios = [];           // every scenario in the book, in book order
 let chosenScenario = "clash/astral_run.tex";
@@ -257,7 +260,7 @@ async function runStep(stepId) {
   // searches the working directory before anything else.
   for (const name of plan.carriedTexmf || []) {
     try {
-      const file = await fetchRepoFile(`web/prototype-engine-check/texmf/${name}`);
+      const file = await fetchRepoFile(`web/shared/texmf/${name}`);
       additionalFiles.push({ path: name, content: file.content });
     } catch (error) {
       notFound.push(`texmf/${name} (run fetch-missing-texmf.sh)`);
