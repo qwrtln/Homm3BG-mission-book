@@ -388,6 +388,7 @@
     animation: spin 0.8s linear infinite;
     display: inline-block;
   }
+  .spinner[hidden] { display: none; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .ok { color: var(--ok); }
   .bad { color: var(--bad); }
@@ -427,7 +428,7 @@
 <header>
   <div class="titles">
     <h1>Heroes III: The Board Game - Scenario Builder</h1>
-    <p>Run LaTeX in your web browser</p>
+    <p>Build scenarios with LaTeX in your web browser</p>
   </div>
   <div class="header-actions" id="header-actions" hidden>
     <div class="upload-menu">
@@ -519,6 +520,7 @@
           </details>
         </div>
         <div class="status-bar" id="status-bar">
+          <span class="spinner" id="status-spinner" hidden></span>
           <span id="status-text">Ready.</span>
         </div>
       </section>
@@ -647,8 +649,17 @@ async function fetchAt(url, path) {
     : { path, content: new Uint8Array(await response.arrayBuffer()) };
 }
 
+// The spinner is one persistent element, never rebuilt: an innerHTML
+// replacement on every call (as this used to do) creates a new spinner
+// node each time, and a fresh node restarts its CSS animation from 0deg.
+// That read as a stutter on every fast status change, e.g. once per file
+// while loading. Only its [hidden] state and the text beside it change now,
+// so the spin itself runs continuously across any number of calls.
 function setStatus(text, { spinning = false, tone = "" } = {}) {
-  el("status-text").innerHTML = `${spinning ? '<span class="spinner"></span> ' : ""}<span class="${tone}">${escapeHtml(text)}</span>`;
+  el("status-spinner").hidden = !spinning;
+  const textEl = el("status-text");
+  textEl.textContent = text;
+  textEl.className = tone;
 }
 
 function escapeHtml(text) {
@@ -861,10 +872,12 @@ function sanitizeFilename(name) {
 //
 // A pick (a search result, or a blank-start button) only marks a pending
 // choice. Nothing opens until "Let's go!" fires, which needs both a pick and
-// the mandatory name field filled in. A real pick also fires off the
-// published-PDF download below, on its own timeline: the reader can still
-// type a name and press "Let's go!" while it runs.
+// the mandatory name field filled in. A real pick also fetches its
+// published PDF below, on its own timeline, held in pendingPublishedBlob
+// until "Let's go!" shows it: the reader can still type a name and press
+// "Let's go!" while that fetch runs.
 let pendingPath = null;
+let pendingPublishedBlob = null; // cleared on every new pick; set once that pick's fetch lands
 
 function updateGoButton() {
   el("go").disabled = !pendingPath || !el("scenario-name").value.trim();
@@ -872,11 +885,12 @@ function updateGoButton() {
 
 function selectPending(path, title) {
   pendingPath = path;
+  pendingPublishedBlob = null;
   el("selected-title").textContent = title;
   el("selected-row").hidden = false;
   updateGoButton();
   const isTemplate = Object.values(TEMPLATES).some((t) => t.path === path);
-  if (!isTemplate) triggerPublishedDownload(path); // a template has no published PDF to fetch
+  if (!isTemplate) fetchPublishedPdf(path); // a template has no published PDF to fetch
 }
 
 el("scenario-name").addEventListener("input", updateGoButton);
@@ -976,6 +990,13 @@ async function commitEntry(path, name) {
 
   resetUploads();
   clearPdf();
+  // The pick's already-published PDF, fetched into memory while the reader
+  // was still typing a name: show it now, with no build needed. A stale
+  // blob from an earlier pick never applies here, guarded by path already
+  // inside fetchPublishedPdf; a template, or a fetch that is still running
+  // or failed, leaves pendingPublishedBlob null, so clearPdf's placeholder
+  // stands instead.
+  if (pendingPublishedBlob && pendingPath === path) showPdf(pendingPublishedBlob);
   setStatus("Ready.");
 }
 
@@ -1140,7 +1161,11 @@ function hideShutter() {
   el("shutter-overlay").hidden = true;
 }
 
-async function triggerPublishedDownload(path) {
+// Fetches the scenario's already-published PDF into memory, never to disk.
+// It only ever lands in the app's own preview, through pendingPublishedBlob
+// and commitEntry: no <a download>, no save dialog, nothing on the reader's
+// disk until they actually press Download PDF themselves.
+async function fetchPublishedPdf(path) {
   const basename = basenameNoExt(path);
   const url = publishedPdfUrl(basename);
   showShutter();
@@ -1149,15 +1174,11 @@ async function triggerPublishedDownload(path) {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const blob = await response.blob();
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${basename}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    if (pendingPath === path) pendingPublishedBlob = blob; // still today's pick, not a stale one
   } catch (error) {
     // Not fatal: a scenario without a published PDF yet (or offline) still
-    // lets the reader name it and press "Let's go!" as normal.
+    // lets the reader name it and press "Let's go!" as normal, just without
+    // a preview until they press Build PDF themselves.
     console.warn(`No published PDF fetched for "${basename}":`, error.message);
   }
   await minDelay;
