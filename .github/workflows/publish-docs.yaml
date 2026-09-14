@@ -4,10 +4,10 @@ on:
     branches:
       - main
       - web-editor # TEMP: testing this workflow from a branch, revert before merge
-    paths:
-      - 'docs/**'
-      - mkdocs.yml
-      - 'web/**'
+    # paths:
+      # - 'docs/**'
+      # - mkdocs.yml
+      # - 'web/**'
   workflow_dispatch: {}
 
 permissions:
