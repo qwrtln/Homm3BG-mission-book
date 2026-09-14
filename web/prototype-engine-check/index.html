@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prototype — can a browser build this book?</title>
+<style>
+  :root {
+    --ink: #1b1a17;
+    --muted: #6b6660;
+    --line: #ddd6cb;
+    --paper: #fbf9f5;
+    --accent: #8a6a1f;
+    --ok: #2f6b3a;
+    --bad: #97281f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 5rem;
+    font: 16px/1.6 Georgia, "Liberation Serif", serif;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  main { max-width: 54rem; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin: 0 0 .5rem; }
+  h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; letter-spacing: .02em; }
+  p, li { max-width: 42rem; }
+  .lede { color: var(--muted); }
+  .card {
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 1.1rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: .5rem; }
+  button {
+    font: inherit;
+    font-size: .92rem;
+    padding: .45rem .9rem;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  button:disabled { opacity: .4; cursor: default; }
+  button.primary { border-color: var(--accent); color: var(--accent); font-weight: bold; }
+  dl.state { display: grid; grid-template-columns: 13rem 1fr; gap: .35rem 1rem; margin: 0; }
+  dl.state dt { color: var(--muted); font-size: .9rem; }
+  dl.state dd { margin: 0; }
+  .ok { color: var(--ok); }
+  .bad { color: var(--bad); }
+  .tabs { display: flex; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid var(--line); }
+  .tabs button { border: 1px solid transparent; border-bottom: none; margin-bottom: -1px; }
+  .tabs button[aria-selected="true"] {
+    border-color: var(--line);
+    border-bottom-color: #fff;
+    background: #fff;
+    font-weight: bold;
+  }
+  ol.walk { padding-left: 1.2rem; }
+  ol.walk li { margin: .5rem 0; }
+  pre {
+    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    padding: .75rem;
+    max-height: 22rem;
+    overflow: auto;
+    white-space: pre-wrap;
+  }
+  ul.files { font: 13px/1.6 ui-monospace, monospace; columns: 2; }
+  embed { width: 100%; height: 36rem; border: 1px solid var(--line); }
+  .note { font-size: .9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Can a browser build this book?</h1>
+<p class="lede">
+  Prototype for ticket 01 of the WASM scenario builder map. It is throwaway code
+  that answers one question and nothing else.
+</p>
+
+<div class="card">
+  <p><strong>The question.</strong> A WebAssembly TeX engine runs inside this
+  tab. No server compiles anything. Can that engine build this book's preamble,
+  and then a whole scenario, the way <code>tools/build.sh -s</code> builds it
+  locally? Three steps, smallest first: a trivial document, then
+  <code>metadata.tex</code> with its 40 packages, then one real scenario.</p>
+  <p class="note">Engine: TeXlyre BusyTeX, LuaHBTeX, TeX Live 2026, AGPL-3.0.
+  Data package <code>texlive-extra</code>, which is 326 MB, on top of 31 MB of
+  engine. The smaller <code>texlive-recommended</code> was tried first and is
+  not enough: it has no <code>adjustbox</code> and no <code>pgf-blur</code>.
+  Loading takes a few minutes the first time.</p>
+</div>
+
+<h2>Where the build stands</h2>
+<div class="card">
+  <dl class="state" id="state"></dl>
+</div>
+
+<h2>Press anything, in any order</h2>
+<div class="card">
+  <p>
+    <label for="scenario">Scenario for step 3:</label><br>
+    <select id="scenario"><option>loading the book's scenario list…</option></select>
+  </p>
+  <div class="row" id="freeplay"></div>
+  <p class="note" id="freeplay-note"></p>
+</div>
+
+<h2>Guided walkthroughs</h2>
+<div class="card">
+  <div class="tabs" id="tabs"></div>
+  <div id="walkthrough"></div>
+</div>
+
+<h2>What the engine said</h2>
+<div class="card">
+  <div class="row">
+    <button id="toggle-log">Show the full log</button>
+    <button id="save-pdf" disabled>Save the PDF</button>
+  </div>
+  <div id="summary"></div>
+  <pre id="log" hidden></pre>
+</div>
+
+<h2>The document that was built</h2>
+<div class="card" id="preview-card">
+  <p class="note">No PDF yet.</p>
+</div>
+
+</main>
+
+<script type="module">
+import { BusyTexRunner, LuaLatex } from "../shared/vendor/texlyre-busytex.js";
+import {
+  STEPS, planBuild, initialState, reduce, firstError, missingFiles, pageCount,
+  GROUP_FILES, parseScenarioIndex, scenarioHeading, GLYPH_MANIFEST_PATH,
+  MAX_FETCH_ON_MISS_ATTEMPTS, newMissingPaths,
+} from "./probe.js";
+
+const BASE = "/web/core/busytex";
+const REPO = "";          // the server's root is the repository root
+let scenarios = [];           // every scenario in the book, in book order
+let chosenScenario = "clash/astral_run.tex";
+
+let state = initialState();
+let runner = null;
+let lastPdf = null;
+let activeTab = "ladder";
+
+const ACTIONS = [
+  { id: "engine", label: "Start the engine" },
+  { id: "trivial", label: "Step 1 — trivial document" },
+  { id: "preamble", label: "Step 2 — the book's preamble" },
+  { id: "scenario", label: "Step 3 — one real scenario" },
+  { id: "scenario-svg", label: "Step 4 — same scenario, real glyphs" },
+  { id: "tikz", label: "Just tikz and tcolorbox" },
+  { id: "fonts", label: "Just the book's fonts" },
+  { id: "reset", label: "Start over" },
+];
+
+const WALKTHROUGHS = {
+  ladder: {
+    title: "The ladder",
+    blurb: `Climb one rung at a time. Each rung adds one thing, so when a rung
+      breaks you know what broke it. Watch the package count on step 2 and the
+      page count on step 3.`,
+    steps: ["engine", "trivial", "preamble", "scenario", "scenario-svg"],
+    note: "Step 3 builds whichever scenario the dropdown above is showing, with glyphs stubbed. Step 4 builds it again with real glyphs.",
+  },
+  tikz: {
+    title: "Straight to the suspected failure",
+    blurb: `Earlier research said tikz would be missing, because no bundled data
+      package lists collection-pictures. It is there anyway. What is really
+      missing from the smaller data package is the shadows.blur library, which
+      ships in a package of its own called pgf-blur.`,
+    steps: ["engine", "tikz"],
+  },
+  fonts: {
+    title: "Straight to the fonts",
+    blurb: `The book sets its headings in four Liberation faces, loaded from
+      assets/fonts/ by path. The engine's own documentation says fonts outside
+      texlive-full are unsupported. If this fails, the engine choice changes.`,
+    steps: ["engine", "fonts"],
+  },
+};
+
+const el = (id) => document.getElementById(id);
+
+function dispatch(action) {
+  state = reduce(state, action);
+  render();
+}
+
+async function fetchRepoFile(path) {
+  const response = await fetch(`${REPO}/${path}`);
+  if (!response.ok) throw new Error(`${path}: ${response.status}`);
+  const isText = /\.(tex|sty|cls|cfg|txt|map|enc|json|pdf_tex)$/.test(path);
+  return isText
+    ? { path, content: await response.text() }
+    : { path, content: new Uint8Array(await response.arrayBuffer()) };
+}
+
+async function startEngine() {
+  dispatch({ type: "ENGINE_LOADING" });
+  dispatch({ type: "LOG", line: "Downloading the engine and texlive-extra…" });
+  runner = new BusyTexRunner({
+    busytexBasePath: BASE,
+    preloadDataPackages: [`${BASE}/texlive-extra.js`],
+    verbose: true,
+  });
+  try {
+    await runner.initialize(true);
+  } catch (error) {
+    runner = null; // a half-started runner must not be reused by the next step
+    dispatch({ type: "LOG", line: `Engine failed to start: ${error.message}` });
+    throw error;
+  }
+  dispatch({ type: "ENGINE_READY" });
+  dispatch({ type: "LOG", line: "Engine ready." });
+}
+
+async function runStep(stepId) {
+  if (!runner) await startEngine();
+
+  const sources = {};
+  if (stepId === "preamble" || stepId === "scenario" || stepId === "scenario-svg") {
+    sources.metadata = (await fetchRepoFile("metadata.tex")).content;
+  }
+  if (stepId === "scenario" || stepId === "scenario-svg") {
+    const file = await fetchRepoFile(chosenScenario);
+    sources.scenario = { path: chosenScenario, source: file.content };
+  }
+  if (stepId === "scenario-svg") {
+    const manifest = await fetchRepoFile(GLYPH_MANIFEST_PATH);
+    sources.glyphNames = JSON.parse(manifest.content);
+  }
+
+  const plan = planBuild(stepId, sources);
+  dispatch({ type: "BUILD_STARTED", stepId });
+  dispatch({ type: "LOG", line: `--- ${stepId}: ${plan.repoFiles.length} repository files` });
+
+  const additionalFiles = [];
+  const notFound = [];
+  for (const path of plan.repoFiles) {
+    try {
+      additionalFiles.push(await fetchRepoFile(path));
+    } catch (error) {
+      notFound.push(path);
+    }
+  }
+  // Carried TeX Live files go in flat, beside the document, because kpathsea
+  // searches the working directory before anything else.
+  for (const name of plan.carriedTexmf || []) {
+    try {
+      const file = await fetchRepoFile(`web/prototype-engine-check/texmf/${name}`);
+      additionalFiles.push({ path: name, content: file.content });
+    } catch (error) {
+      notFound.push(`texmf/${name} (run fetch-missing-texmf.sh)`);
+    }
+  }
+  for (const [path, content] of Object.entries(plan.generated)) {
+    additionalFiles.push({ path, content });
+  }
+
+  const started = performance.now();
+  const lualatex = new LuaLatex(runner);
+  // Ticket 11: fetch on miss. A kpathsea "File not found" can be a genuine
+  // gap or an indirection collectReferencedAssets could not see (ticket 09's
+  // \misspicdir/\misspicfile case). Both look identical until fetched, so
+  // every miss gets one fetch attempt: a round that lands new files earns
+  // another compile pass, a round that lands none stops immediately, and the
+  // round count is capped so a genuine miss cannot loop forever.
+  let result;
+  const tried = new Set();
+  const fetchOnMissLog = [];
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      result = await lualatex.compile({
+        input: plan.input,
+        additionalFiles,
+        verbose: "debug",
+      });
+    } catch (error) {
+      result = { success: false, log: String(error), exitCode: -1 };
+    }
+    if (attempt >= MAX_FETCH_ON_MISS_ATTEMPTS) break;
+    const toFetch = newMissingPaths(missingFiles(result.log), tried);
+    if (!toFetch.length) break;
+    let landed = 0;
+    for (const path of toFetch) {
+      tried.add(path);
+      try {
+        additionalFiles.push(await fetchRepoFile(path));
+        landed += 1;
+        fetchOnMissLog.push(`fetched on miss: ${path}`);
+      } catch (error) {
+        fetchOnMissLog.push(`genuine miss, not in repository: ${path}`);
+      }
+    }
+    if (!landed) break; // nothing new to retry with; let the engine's own error stand
+    dispatch({ type: "LOG", line: `Fetch on miss: retrying with ${landed} more file(s).` });
+  }
+  const seconds = (performance.now() - started) / 1000;
+
+  const record = {
+    ok: Boolean(result.success && result.pdf),
+    bytes: result.pdf ? result.pdf.length : 0,
+    pages: pageCount(result.log),
+    seconds: Number(seconds.toFixed(1)),
+    notFound,
+    missing: missingFiles(result.log),
+    firstError: firstError(result.log),
+    log: result.log || "",
+    notes: plan.notes,
+    fileCount: additionalFiles.length,
+    fetchOnMiss: fetchOnMissLog,
+  };
+
+  if (result.pdf) {
+    lastPdf = new Blob([result.pdf], { type: "application/pdf" });
+  }
+  dispatch({ type: "BUILD_FINISHED", stepId, result: record });
+  window.__probeResults = state.results; // read by the headless runner
+}
+
+async function onAction(id) {
+  if (id === "reset") {
+    lastPdf = null;
+    dispatch({ type: "RESET" });
+    return;
+  }
+  if (id === "engine") {
+    await startEngine();
+    return;
+  }
+  await runStep(id);
+}
+
+function render() {
+  const current = state.step ? state.results[state.step] : null;
+
+  el("state").innerHTML = `
+    <dt>Engine</dt><dd>${
+      state.engineReady ? '<span class="ok">ready</span>'
+      : state.engineLoading ? "downloading…" : "not started"
+    }</dd>
+    <dt>Last step run</dt><dd>${state.step || "none"}</dd>
+    <dt>Scenario chosen</dt><dd><code>${chosenScenario}</code></dd>
+    <dt>Building right now</dt><dd>${state.running ? "yes" : "no"}</dd>
+    <dt>Result</dt><dd>${
+      !current ? "—"
+      : current.ok ? `<span class="ok">a PDF came out</span>`
+      : `<span class="bad">no PDF</span>`
+    }</dd>
+    <dt>Pages</dt><dd>${current ? current.pages : "—"}</dd>
+    <dt>Size of the PDF</dt><dd>${current ? `${(current.bytes / 1024).toFixed(0)} kB` : "—"}</dd>
+    <dt>Time taken</dt><dd>${current ? `${current.seconds} s` : "—"}</dd>
+    <dt>Files put in the engine</dt><dd>${current ? current.fileCount : "—"}</dd>
+    <dt>Steps finished</dt><dd>${Object.keys(state.results).join(", ") || "none"}</dd>
+  `;
+
+  el("freeplay").innerHTML = ACTIONS.map((action) =>
+    `<button data-action="${action.id}" ${state.running ? "disabled" : ""}>${action.label}</button>`
+  ).join("");
+  el("freeplay-note").textContent = state.running
+    ? "A build is running. It cannot be stopped."
+    : "Every button works at any time. The engine starts itself if it has to.";
+
+  el("tabs").innerHTML = Object.entries(WALKTHROUGHS).map(([id, walk]) =>
+    `<button data-tab="${id}" aria-selected="${id === activeTab}">${walk.title}</button>`
+  ).join("");
+
+  const walk = WALKTHROUGHS[activeTab];
+  el("walkthrough").innerHTML = `
+    <p>${walk.blurb}</p>
+    ${walk.note ? `<p class="note">${walk.note}</p>` : ""}
+    <ol class="walk">${walk.steps.map((id) => {
+      const label = ACTIONS.find((a) => a.id === id).label;
+      const done = id === "engine" ? state.engineReady : Boolean(state.results[id]);
+      return `<li><button data-action="${id}" ${state.running ? "disabled" : ""}>${label}</button>
+        ${done ? '<span class="ok"> done</span>' : ""}</li>`;
+    }).join("")}</ol>
+  `;
+
+  el("summary").innerHTML = !current ? "<p class='note'>Nothing has been built yet.</p>" : `
+    <ul>
+      ${current.notes.map((note) => `<li>${note}</li>`).join("")}
+      ${current.firstError ? `<li class="bad">First error: <code>${escapeHtml(current.firstError)}</code></li>` : ""}
+      ${current.missing.length ? `<li class="bad">The engine could not find: ${current.missing.map((f) => `<code>${escapeHtml(f)}</code>`).join(", ")}</li>` : ""}
+      ${current.notFound.length ? `<li class="bad">Not in the repository: ${current.notFound.map((f) => `<code>${escapeHtml(f)}</code>`).join(", ")}</li>` : ""}
+      ${(current.fetchOnMiss || []).map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
+    </ul>`;
+
+  el("log").textContent = current ? current.log : state.log.join("\n");
+  el("save-pdf").disabled = !lastPdf;
+
+  if (lastPdf) {
+    el("preview-card").innerHTML = `<embed type="application/pdf" src="${URL.createObjectURL(lastPdf)}">`;
+  }
+}
+
+function escapeHtml(text) {
+  return text.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+}
+
+document.addEventListener("click", (event) => {
+  const action = event.target.closest("[data-action]");
+  if (action) {
+    onAction(action.dataset.action).catch((error) => {
+      dispatch({ type: "LOG", line: `FAILED: ${error.stack || error}` });
+    });
+    return;
+  }
+  const tab = event.target.closest("[data-tab]");
+  if (tab) {
+    activeTab = tab.dataset.tab;
+    render();
+  }
+});
+
+el("toggle-log").addEventListener("click", () => {
+  const log = el("log");
+  log.hidden = !log.hidden;
+  el("toggle-log").textContent = log.hidden ? "Show the full log" : "Hide the log";
+});
+
+el("save-pdf").addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(lastPdf);
+  link.download = `${state.step}.pdf`;
+  link.click();
+});
+
+/**
+ * Fills the dropdown by reading the book, not a generated list: the three
+ * group files name the scenarios, and each scenario names itself.
+ */
+async function loadScenarioList() {
+  const groups = [];
+  for (const group of GROUP_FILES) {
+    groups.push({ path: group.path, source: (await fetchRepoFile(group.path)).content });
+  }
+  const index = parseScenarioIndex(groups);
+  scenarios = await Promise.all(index.map(async (entry) => {
+    const source = (await fetchRepoFile(entry.path)).content;
+    const heading = scenarioHeading(source);
+    return { ...entry, title: heading ? heading.title : entry.path, kind: heading ? heading.kind : entry.dir };
+  }));
+
+  const select = el("scenario");
+  const byKind = new Map();
+  for (const scenario of scenarios) {
+    if (!byKind.has(scenario.kind)) byKind.set(scenario.kind, []);
+    byKind.get(scenario.kind).push(scenario);
+  }
+  select.innerHTML = [...byKind].map(([kind, entries]) =>
+    `<optgroup label="${escapeHtml(kind)}">${entries.map((entry) =>
+      `<option value="${entry.path}" ${entry.path === chosenScenario ? "selected" : ""}>${escapeHtml(entry.title)}</option>`
+    ).join("")}</optgroup>`
+  ).join("");
+  select.addEventListener("change", () => { chosenScenario = select.value; });
+}
+
+// The headless runner calls this to drive the same code path a person drives.
+window.__probeRun = (stepId, scenarioPath) => {
+  if (scenarioPath) chosenScenario = scenarioPath;
+  return runStep(stepId);
+};
+window.__probeScenarios = () => scenarios.map((entry) => entry.path);
+
+render();
+loadScenarioList().catch((error) => {
+  el("scenario").innerHTML = `<option>could not read the scenario list: ${escapeHtml(String(error.message))}</option>`;
+});
+</script>
+</body>
+</html>
