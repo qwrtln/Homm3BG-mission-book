@@ -25,6 +25,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        # web/app/index.html fetches its scenario sources from web/repo/,
+        # so a relative path resolves the same way locally and once deployed
+        # (ticket 17). Locally there is no separate copy to keep in sync:
+        # this alias serves the real repository root at that URL instead.
+        prefix = "/web/repo/"
+        if path == "/web/repo":
+            path = "/"
+        elif path.startswith(prefix):
+            path = "/" + path[len(prefix):]
+        return super().translate_path(path)
+
     def end_headers(self):
         self.send_header("Cross-Origin-Opener-Policy", "same-origin")
         self.send_header("Cross-Origin-Embedder-Policy", "require-corp")

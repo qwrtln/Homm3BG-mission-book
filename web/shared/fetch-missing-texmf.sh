@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# PROTOTYPE — throwaway. Ticket 01 of the WASM scenario builder map.
+# THROWAWAY, run once by hand. Ticket 01 of the WASM scenario builder map;
+# moved here by ticket 17, alongside the texmf/ output it fills, so both the
+# app and the probe fetch it from one shared location.
 #
 # Downloads the TeX Live files that the book needs and that no BusyTeX data
 # package ships. It runs once, by hand, and its output is committed. Nothing
