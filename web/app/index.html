@@ -6,40 +6,46 @@
 <link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
 <link rel="stylesheet" href="vendor/codemirror/theme/material-darker.min.css">
 <style>
+  /* GitHub Primer's own color tokens, light and dark, for consistency with
+     the GitHub-hosted docs site and repository around this app. */
   :root {
-    --ink: #1b1a17;
-    --muted: #6b6660;
-    --line: #ddd6cb;
-    --paper: #fbf9f5;
+    --ink: #1f2328;
+    --muted: #656d76;
+    --line: #d1d9e0;
+    --paper: #f6f8fa;
     --panel: #ffffff;
-    --accent: #8a6a1f;
-    --ok: #2f6b3a;
-    --bad: #97281f;
-    --pdf-bg: #ddd;
-    --error-bg: #fdf1ef;
-    --code-bg: #f4f1ea;
-    --shadow: rgba(27, 26, 23, 0.15);
+    --accent: #0969da;
+    --btn-primary-bg: #1f883d;
+    --btn-primary-hover: #1a7f37;
+    --ok: #1a7f37;
+    --bad: #cf222e;
+    --pdf-bg: #d1d9e0;
+    --error-bg: #ffebe9;
+    --code-bg: #f6f8fa;
+    --shadow: rgba(31, 35, 40, 0.15);
   }
   html[data-theme="dark"] {
-    --ink: #e8e6df;
-    --muted: #9d968a;
-    --line: #3a362e;
-    --paper: #161512;
-    --panel: #201d19;
-    --accent: #d9b34a;
-    --ok: #7fd28a;
-    --bad: #ff7b6b;
-    --pdf-bg: #2a2a2a;
-    --error-bg: #2a1e1c;
-    --code-bg: #1c1a16;
-    --shadow: rgba(0, 0, 0, 0.5);
+    --ink: #e6edf3;
+    --muted: #848d97;
+    --line: #30363d;
+    --paper: #0d1117;
+    --panel: #161b22;
+    --accent: #4493f8;
+    --btn-primary-bg: #238636;
+    --btn-primary-hover: #2ea043;
+    --ok: #3fb950;
+    --bad: #f85149;
+    --pdf-bg: #30363d;
+    --error-bg: #3c1618;
+    --code-bg: #161b22;
+    --shadow: rgba(1, 4, 9, 0.6);
   }
   * { box-sizing: border-box; }
   html, body { height: 100%; }
   body {
     margin: 0;
     padding: 0;
-    font: 15px/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
     color: var(--ink);
     background: var(--paper);
     display: flex;
@@ -71,12 +77,17 @@
   button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
   button:disabled { opacity: 0.5; cursor: default; }
   button.primary {
-    border-color: var(--accent);
-    background: var(--accent);
+    border-color: var(--btn-primary-bg);
+    background: var(--btn-primary-bg);
     color: #fff;
     font-weight: 600;
   }
-  button.primary:disabled { background: var(--accent); opacity: 0.5; }
+  button.primary:hover:not(:disabled) {
+    border-color: var(--btn-primary-hover);
+    background: var(--btn-primary-hover);
+    color: #fff;
+  }
+  button.primary:disabled { background: var(--btn-primary-bg); opacity: 0.5; }
   button.link {
     border: none;
     background: none;
@@ -169,6 +180,18 @@
     color: var(--muted);
     font-size: 0.85rem;
   }
+  #scratch-name {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+    width: 10rem;
+  }
+  #scratch-name:focus { border-color: var(--accent); }
 
   /* --- Header actions (shown once a scenario is chosen) ------------------ */
 
@@ -388,6 +411,7 @@
       </div>
       <div class="scratch-row">
         <span>Or start from scratch:</span>
+        <input type="text" id="scratch-name" placeholder="scenario name" maxlength="60">
         <button id="scratch-scenario" type="button">Blank scenario</button>
         <button id="scratch-campaign" type="button">Blank campaign scenario</button>
       </div>
@@ -762,11 +786,18 @@ function confirmScratch(label) {
   return confirm(`Start a new ${label.toLowerCase()}? It begins empty, from the repository's own template.`);
 }
 
+// Turns the free-text scenario name into a safe .tex basename: lowercase,
+// underscores for anything else, "untitled" if that leaves nothing.
+function sanitizeFilename(name) {
+  const cleaned = name.trim().toLowerCase().replace(/[^a-z0-9_-]+/g, "_").replace(/^_+|_+$/g, "");
+  return cleaned || "untitled";
+}
+
 el("scratch-scenario").addEventListener("click", () => {
-  if (confirmScratch(TEMPLATES.scenario.title)) commitEntry(TEMPLATES.scenario.path);
+  if (confirmScratch(TEMPLATES.scenario.title)) commitEntry(TEMPLATES.scenario.path, el("scratch-name").value);
 });
 el("scratch-campaign").addEventListener("click", () => {
-  if (confirmScratch(TEMPLATES.campaign.title)) commitEntry(TEMPLATES.campaign.path);
+  if (confirmScratch(TEMPLATES.campaign.title)) commitEntry(TEMPLATES.campaign.path, el("scratch-name").value);
 });
 
 // --- Committing to an entry ----------------------------------------------
@@ -805,7 +836,16 @@ function showWorkspace() {
   });
 }
 
-async function commitEntry(path) {
+/**
+ * @param {string} path a real entry's path, or a TEMPLATES path for a
+ *   blank start
+ * @param {string} [scratchName] the typed name for a blank start, ignored
+ *   for a real entry. Becomes the .tex file's own identity: the include
+ *   path baked into structure.tex, the autosave key, and the download's
+ *   filename all follow it, distinct from the template it starts from so
+ *   two differently-named blank starts never share a draft.
+ */
+async function commitEntry(path, scratchName) {
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
   const entry = template
     ? { path: template.path, title: template.title, isTemplate: true }
@@ -816,8 +856,16 @@ async function commitEntry(path) {
   cm.refresh(); // CodeMirror mismeasures while its host was display:none
   el("header-actions").hidden = false;
 
-  chosenPath = entry.path;
-  chosenTitle = entry.title;
+  // template.path itself always stays the fetch path below, real on the
+  // server; identity is what the rest of the app treats this entry as.
+  // Keeping the .tex extension matters: TeX's \input only appends one to
+  // a name that lacks it already, so a name without it would 404 twice.
+  const identity = template
+    ? `templates/${sanitizeFilename(scratchName || "")}.tex`
+    : entry.path;
+
+  chosenPath = identity;
+  chosenTitle = template ? sanitizeFilename(scratchName || "") : entry.title;
   document.title = `${chosenTitle} - Heroes III: The Board Game`;
   el("build").disabled = building;
   el("download").disabled = true;
@@ -826,7 +874,7 @@ async function commitEntry(path) {
   const fetched = await fetchRepoFile(entry.path);
   const pristineSource = fetched.content;
 
-  const draft = loadDraft(entry.path);
+  const draft = loadDraft(identity);
   cm.setValue(draft !== null ? draft : pristineSource);
   el("draft-note").hidden = draft === null;
   cm.focus();
@@ -993,6 +1041,22 @@ async function startEngine() {
   }
 }
 
+// The engine (its ~341 MB data package) is the slow part, not compiling.
+// One in-flight promise, shared by the eager warm-up below and by a build
+// that starts before it finishes, so a reader who presses Build early
+// waits on the same download rather than starting a second one.
+let enginePromise = null;
+async function ensureEngine() {
+  if (runner) return;
+  if (!enginePromise) {
+    enginePromise = startEngine().catch((error) => {
+      enginePromise = null; // let a later call retry instead of staying stuck
+      throw error;
+    });
+  }
+  await enginePromise;
+}
+
 /**
  * Runs the whole build for the currently chosen entry: fetches the plan's
  * files, compiles, and applies ticket 11's fetch-on-miss retry loop — the
@@ -1005,7 +1069,7 @@ async function runBuild() {
   setBuilding(true);
   el("error-panel").hidden = true;
   try {
-    if (!runner) await startEngine();
+    await ensureEngine();
 
     setStatus("Preparing files…", { spinning: true });
     const source = cm.getValue();
@@ -1176,6 +1240,14 @@ loadEntries()
     el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(error.message)}</div>`;
     el("search-results").hidden = false;
   });
+
+// Eager engine warm-up: starts the moment the page opens, not on the first
+// Build click. #status-bar sits inside #workspace, hidden until a scenario
+// is chosen, so this runs silently behind the welcome screen; commitEntry
+// resets the status text to "Ready." regardless of how this finishes.
+// Errors surface for real at Build time instead, through ensureEngine's
+// shared promise: no need to show or act on a failure here.
+ensureEngine().catch(() => {});
 </script>
 </body>
 </html>
