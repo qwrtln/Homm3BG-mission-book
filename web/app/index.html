@@ -118,9 +118,12 @@
     padding: 2rem 1.25rem;
     overflow: auto;
   }
-  .welcome-inner { max-width: 34rem; width: 100%; }
+  .welcome-inner { max-width: 42rem; width: 100%; }
   .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
   .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+  .welcome-picker { display: flex; align-items: flex-start; gap: 1rem; }
+  .welcome-picker .combobox { flex: 1 1 auto; min-width: 0; }
+  .name-field { flex: 0 0 auto; width: 12rem; }
   .combobox { position: relative; }
   #search {
     width: 100%;
@@ -180,18 +183,68 @@
     color: var(--muted);
     font-size: 0.85rem;
   }
-  #scratch-name {
+  .name-field label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  #scenario-name {
+    width: 100%;
     font: inherit;
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
+    font-size: 0.92rem;
+    padding: 0.65rem 0.7rem;
     border: 1px solid var(--line);
     background: var(--panel);
     color: var(--ink);
     border-radius: 4px;
     outline: none;
-    width: 10rem;
   }
-  #scratch-name:focus { border-color: var(--accent); }
+  #scenario-name:focus { border-color: var(--accent); }
+  .selected-row { margin-top: 1rem; font-size: 0.88rem; color: var(--muted); }
+  #go { margin-top: 1rem; }
+
+  /* --- The camera-shutter beat after picking a scenario ------------------- */
+
+  .shutter-flash[hidden], .shutter-overlay[hidden] { display: none; }
+  .shutter-flash {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 90;
+    animation: shutter-flash-pulse 0.9s ease-in-out infinite;
+  }
+  .shutter-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(13, 17, 23, 0.78);
+    color: #fff;
+    font-size: 1rem;
+    z-index: 91;
+  }
+  .shutter-icon { font-size: 4.5rem; display: inline-block; animation: shutter-click 0.9s ease-in-out infinite; }
+  @keyframes shutter-click {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    45% { transform: scale(0.7) rotate(0deg); }
+    50% { transform: scale(0.7) rotate(10deg); }
+    55% { transform: scale(0.7) rotate(0deg); }
+  }
+  @keyframes shutter-flash-pulse {
+    0%, 44%, 56%, 100% { opacity: 0; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .shutter-icon, .shutter-flash { animation: none; }
+  }
 
   /* --- Header actions (shown once a scenario is chosen) ------------------ */
 
@@ -405,18 +458,33 @@
     <div class="welcome-inner">
       <h2>Pick a scenario to start with</h2>
       <p class="hint">Search the mission book and the draft book by name.</p>
-      <div class="combobox">
-        <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
-        <div class="combobox-list" id="search-results" hidden></div>
+      <div class="welcome-picker">
+        <div class="combobox">
+          <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
+          <div class="combobox-list" id="search-results" hidden></div>
+        </div>
+        <div class="name-field">
+          <label for="scenario-name">Name this file</label>
+          <input type="text" id="scenario-name" placeholder="scenario_name" maxlength="60" required>
+        </div>
       </div>
       <div class="scratch-row">
         <span>Or start from scratch:</span>
-        <input type="text" id="scratch-name" placeholder="scenario name" maxlength="60">
         <button id="scratch-scenario" type="button">Blank scenario</button>
         <button id="scratch-campaign" type="button">Blank campaign scenario</button>
       </div>
+      <div class="selected-row" id="selected-row" hidden>
+        Selected: <strong id="selected-title"></strong>
+      </div>
+      <button id="go" class="primary" type="button" disabled>Let's go!</button>
     </div>
   </section>
+
+  <div class="shutter-flash" id="shutter-flash" hidden></div>
+  <div class="shutter-overlay" id="shutter-overlay" hidden>
+    <span class="shutter-icon">📷</span>
+    <p>Fetching the published PDF…</p>
+  </div>
 
   <div id="workspace" hidden>
     <main>
@@ -770,21 +838,17 @@ el("search").addEventListener("keydown", (event) => {
     event.preventDefault();
     const list = items();
     const target = activeItem >= 0 ? list[activeItem] : list[0];
-    if (target) commitEntry(target.dataset.path);
+    if (target) selectPending(target.dataset.path, target.textContent);
   }
 });
 el("search-results").addEventListener("mousedown", (event) => {
   // mousedown, not click: fires before the input's blur hides the list.
   const button = event.target.closest("[data-path]");
-  if (button) commitEntry(button.dataset.path);
+  if (button) selectPending(button.dataset.path, button.textContent);
 });
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".combobox")) el("search-results").hidden = true;
 });
-
-function confirmScratch(label) {
-  return confirm(`Start a new ${label.toLowerCase()}? It begins empty, from the repository's own template.`);
-}
 
 // Turns the free-text scenario name into a safe .tex basename: lowercase,
 // underscores for anything else, "untitled" if that leaves nothing.
@@ -793,11 +857,40 @@ function sanitizeFilename(name) {
   return cleaned || "untitled";
 }
 
+// --- Picking, before committing -------------------------------------------
+//
+// A pick (a search result, or a blank-start button) only marks a pending
+// choice. Nothing opens until "Let's go!" fires, which needs both a pick and
+// the mandatory name field filled in. A real pick also fires off the
+// published-PDF download below, on its own timeline: the reader can still
+// type a name and press "Let's go!" while it runs.
+let pendingPath = null;
+
+function updateGoButton() {
+  el("go").disabled = !pendingPath || !el("scenario-name").value.trim();
+}
+
+function selectPending(path, title) {
+  pendingPath = path;
+  el("selected-title").textContent = title;
+  el("selected-row").hidden = false;
+  updateGoButton();
+  const isTemplate = Object.values(TEMPLATES).some((t) => t.path === path);
+  if (!isTemplate) triggerPublishedDownload(path); // a template has no published PDF to fetch
+}
+
+el("scenario-name").addEventListener("input", updateGoButton);
+
 el("scratch-scenario").addEventListener("click", () => {
-  if (confirmScratch(TEMPLATES.scenario.title)) commitEntry(TEMPLATES.scenario.path, el("scratch-name").value);
+  selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title);
 });
 el("scratch-campaign").addEventListener("click", () => {
-  if (confirmScratch(TEMPLATES.campaign.title)) commitEntry(TEMPLATES.campaign.path, el("scratch-name").value);
+  selectPending(TEMPLATES.campaign.path, TEMPLATES.campaign.title);
+});
+
+el("go").addEventListener("click", () => {
+  if (!pendingPath || !el("scenario-name").value.trim()) return;
+  commitEntry(pendingPath, el("scenario-name").value);
 });
 
 // --- Committing to an entry ----------------------------------------------
@@ -839,13 +932,14 @@ function showWorkspace() {
 /**
  * @param {string} path a real entry's path, or a TEMPLATES path for a
  *   blank start
- * @param {string} [scratchName] the typed name for a blank start, ignored
- *   for a real entry. Becomes the .tex file's own identity: the include
- *   path baked into structure.tex, the autosave key, and the download's
- *   filename all follow it, distinct from the template it starts from so
- *   two differently-named blank starts never share a draft.
+ * @param {string} name the mandatory typed name (the welcome screen's
+ *   "Name this file" field). Becomes the .tex file's own identity: the
+ *   include path baked into structure.tex, the autosave key, and the
+ *   download's filename all follow it, in place of the entry's own name.
+ *   Two different names never share a draft, even from the same starting
+ *   point, real scenario or blank template alike.
  */
-async function commitEntry(path, scratchName) {
+async function commitEntry(path, name) {
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
   const entry = template
     ? { path: template.path, title: template.title, isTemplate: true }
@@ -856,16 +950,17 @@ async function commitEntry(path, scratchName) {
   cm.refresh(); // CodeMirror mismeasures while its host was display:none
   el("header-actions").hidden = false;
 
-  // template.path itself always stays the fetch path below, real on the
+  // entry.path itself always stays the fetch path below, real on the
   // server; identity is what the rest of the app treats this entry as.
   // Keeping the .tex extension matters: TeX's \input only appends one to
   // a name that lacks it already, so a name without it would 404 twice.
-  const identity = template
-    ? `templates/${sanitizeFilename(scratchName || "")}.tex`
-    : entry.path;
+  // The directory follows the entry started from (a real scenario's own
+  // group, or templates/ for a blank start), only the basename changes.
+  const dir = entry.path.split("/").slice(0, -1).join("/") || "templates";
+  const identity = `${dir}/${sanitizeFilename(name)}.tex`;
 
   chosenPath = identity;
-  chosenTitle = template ? sanitizeFilename(scratchName || "") : entry.title;
+  chosenTitle = template ? sanitizeFilename(name) : entry.title;
   document.title = `${chosenTitle} - Heroes III: The Board Game`;
   el("build").disabled = building;
   el("download").disabled = true;
@@ -1019,6 +1114,56 @@ function showPdf(blob) {
   el("download").disabled = false;
 }
 
+// README.md links to these same URLs: one branch per scenario, in a
+// companion repository, built by build-individual-scenarios.yaml. Picking a
+// real scenario or draft fetches its own already-published PDF this way and
+// saves it, with no build of its own; a blank start never calls this, since
+// a template has no such branch to fetch from.
+const PUBLISHED_PDF_REPO = "https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts";
+
+function publishedPdfUrl(basename) {
+  return `${PUBLISHED_PDF_REPO}/en-${basename}-color/${basename}_en.pdf`;
+}
+
+// The shutter beat plays for at least this long, even if the fetch below
+// finishes sooner: long enough to notice and enjoy, per the ask, not just a
+// flicker. It stays up longer still if the fetch itself takes longer.
+const MIN_SHUTTER_MS = 1800;
+
+function showShutter() {
+  el("shutter-flash").hidden = false;
+  el("shutter-overlay").hidden = false;
+}
+
+function hideShutter() {
+  el("shutter-flash").hidden = true;
+  el("shutter-overlay").hidden = true;
+}
+
+async function triggerPublishedDownload(path) {
+  const basename = basenameNoExt(path);
+  const url = publishedPdfUrl(basename);
+  showShutter();
+  const minDelay = new Promise((resolve) => setTimeout(resolve, MIN_SHUTTER_MS));
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const blob = await response.blob();
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${basename}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  } catch (error) {
+    // Not fatal: a scenario without a published PDF yet (or offline) still
+    // lets the reader name it and press "Let's go!" as normal.
+    console.warn(`No published PDF fetched for "${basename}":`, error.message);
+  }
+  await minDelay;
+  hideShutter();
+}
+
 function showError(record) {
   el("error-panel").hidden = false;
   el("first-error").textContent = record.firstError || "The build failed, but no specific LaTeX error line was found in the log.";
@@ -1091,22 +1236,26 @@ async function runBuild() {
     // that line after uploading, or the file may cover more than one page).
     const staged = new Map();
     const notFound = [];
+    const totalFiles = plan.repoFiles.length + (plan.carriedTexmf || []).length;
+    let loadedFiles = 0;
+    const reportFileProgress = () => setStatus(`Loading files… ${loadedFiles}/${totalFiles}`, { spinning: true });
+    reportFileProgress();
     for (const path of plan.repoFiles) {
       // The scenario/template itself is being edited in the browser: use the
       // editor's text, not a re-fetch of the pristine repository copy.
       if (path === chosenPath) {
         staged.set(path, { path, content: source });
-        continue;
-      }
-      if (uploadedFiles.has(path)) {
+      } else if (uploadedFiles.has(path)) {
         staged.set(path, { path, content: uploadedFiles.get(path) });
-        continue;
+      } else {
+        try {
+          staged.set(path, await fetchRepoFile(path));
+        } catch (error) {
+          notFound.push(path);
+        }
       }
-      try {
-        staged.set(path, await fetchRepoFile(path));
-      } catch (error) {
-        notFound.push(path);
-      }
+      loadedFiles += 1;
+      reportFileProgress();
     }
     for (const name of plan.carriedTexmf || []) {
       try {
@@ -1115,6 +1264,8 @@ async function runBuild() {
       } catch (error) {
         notFound.push(`texmf/${name}`);
       }
+      loadedFiles += 1;
+      reportFileProgress();
     }
     for (const [path, content] of Object.entries(plan.generated)) {
       staged.set(path, { path, content });
