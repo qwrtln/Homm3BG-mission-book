@@ -54,10 +54,16 @@ jobs:
         # (ticket 17). This step is that directory's only source: nothing
         # here is served from the site root, so it cannot collide with
         # mkdocs' own site/assets/.
+        # --safe-links: draft-scenarios/ holds symlinks out to repository-root
+        # files this copy does not otherwise include (.version, latexmkrc,
+        # both local-build-only, read by neither the app nor its build
+        # logic). Without this flag those become dangling symlinks in the
+        # copy, and actions/upload-pages-artifact fails outright trying to
+        # archive one, silently, with no clearer error than exit code 1.
         run: |
           mkdir -p site/web/repo
           for dir in clash coops campaigns draft-scenarios templates assets sections; do
-            rsync -a "$dir/" "site/web/repo/$dir/"
+            rsync -a --safe-links "$dir/" "site/web/repo/$dir/"
           done
           cp metadata.tex site/web/repo/metadata.tex
 
