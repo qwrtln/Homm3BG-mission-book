@@ -413,6 +413,7 @@
     <button id="build" class="primary" disabled>Build PDF</button>
     <button id="download" disabled>Download PDF</button>
   </div>
+  <button id="github-signin" type="button">Sign in with GitHub</button>
   <button id="theme-toggle" class="icon" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">🌙</button>
 </header>
 
@@ -503,6 +504,7 @@ import {
   collectReferencedGlyphs, planScenarioBuild, firstError, pageCount,
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
+import { getToken, signIn, completeSignIn } from "../shared/github-auth.js";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root, per the app's own serving assumption) makes
@@ -1479,6 +1481,24 @@ saveAlias.id = "save-pdf";
 saveAlias.hidden = true;
 saveAlias.addEventListener("click", () => el("download").click());
 document.body.appendChild(saveAlias);
+
+// GitHub sign-in (ticket 04 of the GitHub-contribution map). Ticket 05
+// still owns the final header layout for signed-in states (save-to-fork,
+// PR link); this wiring only covers sign-in itself.
+function renderSignInButton() {
+  const btn = el("github-signin");
+  const signedIn = Boolean(getToken());
+  btn.textContent = signedIn ? "Signed in with GitHub" : "Sign in with GitHub";
+  btn.disabled = signedIn;
+}
+
+el("github-signin").addEventListener("click", signIn);
+
+completeSignIn()
+  .catch((error) => {
+    setStatus(`GitHub sign-in failed: ${error.message}`, { tone: "bad" });
+  })
+  .finally(renderSignInButton);
 
 loadEntries()
   .then(() => {
