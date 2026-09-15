@@ -1034,8 +1034,19 @@ async function commitEntry(path, name) {
     showPdfLoading("Fetching the published PDF…");
     try {
       const response = await fetch(publishedPdfUrl(basenameNoExt(entry.path)));
-      if (response.ok) showPdf(await response.blob());
-      else clearPdf();
+      if (response.ok) {
+        // GitHub's raw CDN serves this as application/octet-stream, with
+        // x-content-type-options: nosniff, never application/pdf. showPdf's
+        // <embed> is hardcoded to type="application/pdf", but a browser can
+        // still key its plugin choice off the blob's own reported type, not
+        // that attribute, so the fetched blob needs re-tagging here. The
+        // build's own blob never hits this: it is already constructed with
+        // the right type.
+        const raw = await response.blob();
+        showPdf(raw.type === "application/pdf" ? raw : raw.slice(0, raw.size, "application/pdf"));
+      } else {
+        clearPdf();
+      }
     } catch (error) {
       console.warn(`No published PDF for "${basenameNoExt(entry.path)}":`, error.message);
       clearPdf();
