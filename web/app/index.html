@@ -118,45 +118,17 @@
     padding: 2rem 1.25rem;
     overflow: auto;
   }
-  .welcome-inner { max-width: 42rem; width: 100%; }
+  .welcome-inner { max-width: 62rem; width: 100%; }
   .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
   .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
-  /* Three fixed-width, equal-size slides (search, name, "Let's go!") in a
-     row, none of which ever resizes or reorders: their position relative
-     to each other never changes. #welcome-picker is a window exactly one
-     slide wide, centered under the heading text by margin: auto; nothing
-     clips its contents, so a slide that is not the active one is simply
-     rendered outside that window, off to whichever side, rather than cut
-     off — including #scenario-name, which needs to stay clickable there
-     for a click on it to re-center it. #picker-track holds all three
-     slides and never resizes either: only its own transform: translateX
-     moves, by whole slide-widths, to bring a different slide in line with
-     the window. The reader reads this as the whole strip sliding, not any
-     one piece changing shape, because that is exactly what happens.
-       data-active="0"  the resting position: the search box centered.
-       data-active="1"  the name field centered instead, search off to the
-                         left. Set on a pick (a search result or a blank
-                         start), and again on focusing #scenario-name (a
-                         click, including one that pulls focus back after
-                         data-active="2" took over — see the JS below).
-       data-active="2"  "Let's go!" centered. Set 1 second after the
-                         reader stops typing, or on the next mouse move,
-                         whichever comes first, but only once the name
-                         field actually holds text. */
-  .welcome-picker { width: 22rem; margin: 0 auto; }
-  .picker-track {
-    display: flex;
-    width: calc(22rem * 3);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .picker-slide { flex: 0 0 22rem; width: 22rem; box-sizing: border-box; padding: 0 0.1rem; }
-  .picker-slide-go { display: flex; justify-content: center; }
-  .welcome-picker[data-active="0"] .picker-track { transform: translateX(0); }
-  .welcome-picker[data-active="1"] .picker-track { transform: translateX(-22rem); }
-  .welcome-picker[data-active="2"] .picker-track { transform: translateX(-44rem); }
-  @media (prefers-reduced-motion: reduce) {
-    .picker-track { transition: none; }
-  }
+  /* Three equal-width blocks, side by side, statically: no motion, no
+     state, nothing to animate. Each is a whole self-contained step,
+     heading and hint included, not just its one input or button: "picker"
+     (the heading, the search box, and the blank-start buttons together),
+     "name", and "go". */
+  .welcome-picker { display: flex; align-items: flex-start; gap: 1.5rem; }
+  .picker-slide { flex: 1 1 0; min-width: 0; }
+  .picker-slide-go { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .combobox { position: relative; }
   #search {
     width: 100%;
@@ -216,14 +188,7 @@
     color: var(--muted);
     font-size: 0.85rem;
   }
-  .name-field label {
-    display: block;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    margin-bottom: 0.3rem;
-  }
+  .name-field { max-width: 20rem; margin: 0 auto; }
   #scenario-name {
     width: 100%;
     font: inherit;
@@ -454,34 +419,35 @@
 <div class="content">
   <section class="welcome" id="welcome">
     <div class="welcome-inner">
-      <h2>Pick an existing scenario to start with</h2>
-      <p class="hint">Search the mission book and draft scenarios by name (recommended).</p>
-      <div class="welcome-picker" id="welcome-picker" data-active="0">
-        <div class="picker-track" id="picker-track">
-          <div class="picker-slide">
-            <div class="combobox">
-              <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
-              <div class="combobox-list" id="search-results" hidden></div>
-            </div>
+      <div class="welcome-picker" id="welcome-picker">
+        <div class="picker-slide">
+          <h2>Pick an existing scenario to start with</h2>
+          <p class="hint">Search the mission book and draft scenarios by name (recommended).</p>
+          <div class="combobox">
+            <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
+            <div class="combobox-list" id="search-results" hidden></div>
           </div>
-          <div class="picker-slide">
-            <div class="name-field">
-              <label for="scenario-name">Name your scenario</label>
-              <input type="text" id="scenario-name" placeholder="scenario_name" maxlength="60" required>
-            </div>
-          </div>
-          <div class="picker-slide picker-slide-go">
-            <button id="go" class="primary" type="button" disabled>Let's go!</button>
+          <div class="scratch-row">
+            <span>Or start from scratch:</span>
+            <button id="scratch-scenario" type="button">Blank scenario</button>
+            <button id="scratch-campaign" type="button">Blank campaign scenario</button>
           </div>
         </div>
-      </div>
-      <div class="scratch-row">
-        <span>Or start from scratch:</span>
-        <button id="scratch-scenario" type="button">Blank scenario</button>
-        <button id="scratch-campaign" type="button">Blank campaign scenario</button>
-      </div>
-      <div class="selected-row" id="selected-row" hidden>
-        Selected: <strong id="selected-title"></strong>
+        <div class="picker-slide">
+          <h2>Name your scenario</h2>
+          <p class="hint">This becomes the file's own name: the download, and where its draft autosaves.</p>
+          <div class="name-field">
+            <input type="text" id="scenario-name" aria-label="Name your scenario" placeholder="scenario_name" maxlength="60" required>
+          </div>
+          <div class="selected-row" id="selected-row" hidden>
+            Selected: <strong id="selected-title"></strong>
+          </div>
+        </div>
+        <div class="picker-slide picker-slide-go">
+          <h2>Ready?</h2>
+          <p class="hint">Opens the editor, with this scenario's own source loaded in.</p>
+          <button id="go" class="primary" type="button" disabled>Let's go!</button>
+        </div>
       </div>
     </div>
   </section>
@@ -923,29 +889,18 @@ function sanitizeFilename(name) {
 // --- Picking, before committing -------------------------------------------
 //
 // A pick (a search result, or a blank-start button) only marks a pending
-// choice: no fetch, nothing over the network yet. All three slides are
-// visible throughout, at fixed size and fixed relative position; see the
-// #welcome-picker CSS above for what actually moves, and setPickerActive
-// just below for when. Nothing opens until "Let's go!" fires, which needs
-// both a pick and at least 3 characters in the mandatory name field.
-// "Let's go!" is also the moment the transition to the workspace happens,
-// and the moment this scenario's own pictures and its already-published
-// PDF start downloading, inside commitEntry: never before, on the pick
-// alone.
+// choice: no fetch, nothing over the network yet. All three blocks sit
+// side by side, statically, always visible, none of them moving. Nothing
+// opens until "Let's go!" fires, which needs both a pick and at least 3
+// characters in the mandatory name field. "Let's go!" is also the moment
+// the transition to the workspace happens, and the moment this scenario's
+// own pictures and its already-published PDF start downloading, inside
+// commitEntry: never before, on the pick alone.
 const MIN_NAME_LENGTH = 3;
-const NAME_IDLE_MS = 1000;
 let pendingPath = null;
-let nameIdleTimer = null;
 
 function updateGoButton() {
   el("go").disabled = !pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH;
-}
-
-// index is 0 (search centered, the resting position), 1 (name centered),
-// or 2 ("Let's go!" centered). Just a data attribute for the CSS transform
-// rules above to key off; this function never touches layout directly.
-function setPickerActive(index) {
-  el("welcome-picker").dataset.active = index;
 }
 
 function selectPending(path, title) {
@@ -960,40 +915,9 @@ function selectPending(path, title) {
   // closing for real.
   el("search-results").hidden = true;
   updateGoButton();
-  setPickerActive(1);
 }
 
-// Typing into the name field keeps it centered. 1 second after the reader
-// stops, with something actually typed, focus shifts to "Let's go!"
-// instead, as if the field itself is nudging them toward finishing up.
-el("scenario-name").addEventListener("input", () => {
-  updateGoButton();
-  clearTimeout(nameIdleTimer);
-  if (el("scenario-name").value.trim()) {
-    nameIdleTimer = setTimeout(() => setPickerActive(2), NAME_IDLE_MS);
-  }
-});
-
-// Focusing the field recenters it, canceling that timer. A click needs its
-// own listener alongside focus: once "Let's go!" has already taken over,
-// the field can still hold the browser's actual keyboard focus (nothing
-// above ever blurs it), so a click back into it fires no new focus event
-// to react to, only this one.
-el("scenario-name").addEventListener("focus", () => {
-  clearTimeout(nameIdleTimer);
-  setPickerActive(1);
-});
-el("scenario-name").addEventListener("click", () => {
-  clearTimeout(nameIdleTimer);
-  setPickerActive(1);
-});
-
-// The same nudge as the idle timer above, but from a mouse move instead of
-// a typing pause: either way of stepping back from the keyboard, once the
-// name field actually holds something, reads as "done typing, ready to go."
-document.addEventListener("mousemove", () => {
-  if (el("scenario-name").value.trim()) setPickerActive(2);
-});
+el("scenario-name").addEventListener("input", updateGoButton);
 
 el("scratch-scenario").addEventListener("click", () => {
   selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title);
