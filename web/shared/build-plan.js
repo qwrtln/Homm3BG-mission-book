@@ -231,10 +231,17 @@ export function firstError(log) {
  * The page count, taken from the engine's own log line. Counting "/Type /Page"
  * in the PDF bytes does not work: LuaTeX packs the page objects into compressed
  * object streams, so they are not there to count.
+ *
+ * The engine's own automatic rerun (ticket 06) writes this line once per
+ * pass, not once per build: an early pass, before cross-references settle,
+ * can report a page count the final pass then corrects. Only the last
+ * occurrence matches the PDF actually returned. Taking the first, as this
+ * once did, reported a stale, sometimes too-high count from that first
+ * pass, off by one on a real scenario checked directly against this fix.
  */
 export function pageCount(log) {
-  const match = /Output written on [^(]*\((\d+) pages?,/.exec(log || "");
-  return match ? Number(match[1]) : 0;
+  const matches = [...(log || "").matchAll(/Output written on [^(]*\((\d+) pages?,/g)];
+  return matches.length ? Number(matches[matches.length - 1][1]) : 0;
 }
 
 /**

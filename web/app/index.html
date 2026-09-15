@@ -121,9 +121,42 @@
   .welcome-inner { max-width: 42rem; width: 100%; }
   .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
   .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
-  .welcome-picker { display: flex; align-items: flex-start; gap: 1rem; }
-  .welcome-picker .combobox { flex: 1 1 auto; min-width: 0; }
-  .name-field { flex: 0 0 auto; width: 12rem; }
+  /* Three fixed-width, equal-size slides (search, name, "Let's go!") in a
+     row, none of which ever resizes or reorders: their position relative
+     to each other never changes. #welcome-picker is a window exactly one
+     slide wide, centered under the heading text by margin: auto; nothing
+     clips its contents, so a slide that is not the active one is simply
+     rendered outside that window, off to whichever side, rather than cut
+     off — including #scenario-name, which needs to stay clickable there
+     for a click on it to re-center it. #picker-track holds all three
+     slides and never resizes either: only its own transform: translateX
+     moves, by whole slide-widths, to bring a different slide in line with
+     the window. The reader reads this as the whole strip sliding, not any
+     one piece changing shape, because that is exactly what happens.
+       data-active="0"  the resting position: the search box centered.
+       data-active="1"  the name field centered instead, search off to the
+                         left. Set on a pick (a search result or a blank
+                         start), and again on focusing #scenario-name (a
+                         click, including one that pulls focus back after
+                         data-active="2" took over — see the JS below).
+       data-active="2"  "Let's go!" centered. Set 1 second after the
+                         reader stops typing, or on the next mouse move,
+                         whichever comes first, but only once the name
+                         field actually holds text. */
+  .welcome-picker { width: 22rem; margin: 0 auto; }
+  .picker-track {
+    display: flex;
+    width: calc(22rem * 3);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .picker-slide { flex: 0 0 22rem; width: 22rem; box-sizing: border-box; padding: 0 0.1rem; }
+  .picker-slide-go { display: flex; justify-content: center; }
+  .welcome-picker[data-active="0"] .picker-track { transform: translateX(0); }
+  .welcome-picker[data-active="1"] .picker-track { transform: translateX(-22rem); }
+  .welcome-picker[data-active="2"] .picker-track { transform: translateX(-44rem); }
+  @media (prefers-reduced-motion: reduce) {
+    .picker-track { transition: none; }
+  }
   .combobox { position: relative; }
   #search {
     width: 100%;
@@ -204,47 +237,10 @@
   }
   #scenario-name:focus { border-color: var(--accent); }
   .selected-row { margin-top: 1rem; font-size: 0.88rem; color: var(--muted); }
-  #go { margin-top: 1rem; }
-
-  /* --- The camera-shutter beat after picking a scenario ------------------- */
-
-  .shutter-flash[hidden], .shutter-overlay[hidden] { display: none; }
-  .shutter-flash {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 90;
-    animation: shutter-flash-pulse 0.9s ease-in-out infinite;
-  }
-  .shutter-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background: rgba(13, 17, 23, 0.78);
-    color: #fff;
-    font-size: 1rem;
-    z-index: 91;
-  }
-  .shutter-icon { font-size: 4.5rem; display: inline-block; animation: shutter-click 0.9s ease-in-out infinite; }
-  @keyframes shutter-click {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    45% { transform: scale(0.7) rotate(0deg); }
-    50% { transform: scale(0.7) rotate(10deg); }
-    55% { transform: scale(0.7) rotate(0deg); }
-  }
-  @keyframes shutter-flash-pulse {
-    0%, 44%, 56%, 100% { opacity: 0; }
-    50% { opacity: 0.55; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .shutter-icon, .shutter-flash { animation: none; }
-  }
+  /* Its own slide centers it (see .picker-slide-go); its disabled look
+     (faded, until the name field has 3+ characters and a pick is made) is
+     the plain button:disabled rule already in play elsewhere. */
+  #go { white-space: nowrap; }
 
   /* --- Header actions (shown once a scenario is chosen) ------------------ */
 
@@ -370,6 +366,7 @@
     padding: 2rem;
     text-align: center;
   }
+  .empty-pdf.loading { flex-direction: column; gap: 0.8rem; }
   .status-bar {
     padding: 0.65rem 1rem;
     border-top: 1px solid var(--line);
@@ -457,16 +454,25 @@
 <div class="content">
   <section class="welcome" id="welcome">
     <div class="welcome-inner">
-      <h2>Pick a scenario to start with</h2>
-      <p class="hint">Search the mission book and the draft book by name.</p>
-      <div class="welcome-picker">
-        <div class="combobox">
-          <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
-          <div class="combobox-list" id="search-results" hidden></div>
-        </div>
-        <div class="name-field">
-          <label for="scenario-name">Name this file</label>
-          <input type="text" id="scenario-name" placeholder="scenario_name" maxlength="60" required>
+      <h2>Pick an existing scenario to start with</h2>
+      <p class="hint">Search the mission book and draft scenarios by name (recommended).</p>
+      <div class="welcome-picker" id="welcome-picker" data-active="0">
+        <div class="picker-track" id="picker-track">
+          <div class="picker-slide">
+            <div class="combobox">
+              <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
+              <div class="combobox-list" id="search-results" hidden></div>
+            </div>
+          </div>
+          <div class="picker-slide">
+            <div class="name-field">
+              <label for="scenario-name">Name your scenario</label>
+              <input type="text" id="scenario-name" placeholder="scenario_name" maxlength="60" required>
+            </div>
+          </div>
+          <div class="picker-slide picker-slide-go">
+            <button id="go" class="primary" type="button" disabled>Let's go!</button>
+          </div>
         </div>
       </div>
       <div class="scratch-row">
@@ -477,15 +483,8 @@
       <div class="selected-row" id="selected-row" hidden>
         Selected: <strong id="selected-title"></strong>
       </div>
-      <button id="go" class="primary" type="button" disabled>Let's go!</button>
     </div>
   </section>
-
-  <div class="shutter-flash" id="shutter-flash" hidden></div>
-  <div class="shutter-overlay" id="shutter-overlay" hidden>
-    <span class="shutter-icon">📷</span>
-    <p>Fetching the published PDF…</p>
-  </div>
 
   <div id="workspace" hidden>
     <main>
@@ -534,7 +533,7 @@
 import { BusyTexRunner, LuaLatex } from "../shared/vendor/texlyre-busytex.js";
 import {
   GROUP_FILES, DRAFT_GROUP_FILES, parseScenarioIndex, scenarioHeading, GLYPH_MANIFEST_PATH,
-  ALWAYS_PRELOAD, CARRIED_TEXMF, planScenarioBuild, firstError, pageCount,
+  ALWAYS_PRELOAD, CARRIED_TEXMF, collectReferencedAssets, planScenarioBuild, firstError, pageCount,
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
 
@@ -647,6 +646,59 @@ async function fetchAt(url, path) {
   return isText
     ? { path, content: await response.text() }
     : { path, content: new Uint8Array(await response.arrayBuffer()) };
+}
+
+// --- Shared file cache ------------------------------------------------------
+//
+// Almost every file a build reads is the same no matter which scenario is
+// picked: every font, metadata.tex, the carried texmf packages, and the
+// whole glyph set (every scenario's \svg calls draw from the same 111
+// glyphs). Only a scenario's own referenced pictures, its images, art, and
+// maps, actually vary by pick. This cache holds whichever of those files
+// have already been fetched, by path, so nothing is ever fetched twice:
+// preloadCommonFiles fills the constant part in the background as soon as
+// the page opens, commitEntry fills the scenario-specific part once a pick
+// is actually made, and runBuild reads through the same cache regardless
+// of which of those filled a given entry, or whether Build runs before
+// either finishes.
+const preloadedFiles = new Map(); // path -> {path, content}
+
+async function preloadFile(path) {
+  if (preloadedFiles.has(path)) return preloadedFiles.get(path);
+  const file = await fetchRepoFile(path);
+  preloadedFiles.set(path, file);
+  return file;
+}
+
+async function preloadTexmfFile(name) {
+  const key = `texmf/${name}`;
+  if (preloadedFiles.has(key)) return preloadedFiles.get(key);
+  const file = await fetchAt(`../shared/texmf/${name}`, key);
+  preloadedFiles.set(key, file);
+  return file;
+}
+
+// Runs once, in the background, from the moment the page opens (see the
+// bottom of this script): every file every scenario needs alike, fetched
+// before any scenario is even picked. A failure here is not fatal and
+// raises no error of its own; runBuild's own fetch, through the same
+// cache, surfaces it again if the file is still missing by then.
+async function preloadCommonFiles() {
+  const metadata = (await preloadFile("metadata.tex")).content;
+  const manifest = await preloadFile(GLYPH_MANIFEST_PATH);
+  const glyphNames = JSON.parse(manifest.content);
+  const glyphFiles = glyphNames.flatMap((glyphName) => [
+    `assets/glyphs/${glyphName}.svg`,
+    `assets/glyphs-inkscape/${glyphName}_svg-tex.pdf`,
+    `assets/glyphs-inkscape/${glyphName}_svg-tex.pdf_tex`,
+  ]);
+  const commonPaths = [...ALWAYS_PRELOAD, ...collectReferencedAssets(metadata), ...glyphFiles];
+  for (const path of commonPaths) {
+    try { await preloadFile(path); } catch { /* retried, and surfaced if it matters, at build time */ }
+  }
+  for (const name of CARRIED_TEXMF) {
+    try { await preloadTexmfFile(name); } catch { /* same */ }
+  }
 }
 
 // The spinner is one persistent element, never rebuilt: an innerHTML
@@ -871,29 +923,77 @@ function sanitizeFilename(name) {
 // --- Picking, before committing -------------------------------------------
 //
 // A pick (a search result, or a blank-start button) only marks a pending
-// choice. Nothing opens until "Let's go!" fires, which needs both a pick and
-// the mandatory name field filled in. A real pick also fetches its
-// published PDF below, on its own timeline, held in pendingPublishedBlob
-// until "Let's go!" shows it: the reader can still type a name and press
-// "Let's go!" while that fetch runs.
+// choice: no fetch, nothing over the network yet. All three slides are
+// visible throughout, at fixed size and fixed relative position; see the
+// #welcome-picker CSS above for what actually moves, and setPickerActive
+// just below for when. Nothing opens until "Let's go!" fires, which needs
+// both a pick and at least 3 characters in the mandatory name field.
+// "Let's go!" is also the moment the transition to the workspace happens,
+// and the moment this scenario's own pictures and its already-published
+// PDF start downloading, inside commitEntry: never before, on the pick
+// alone.
+const MIN_NAME_LENGTH = 3;
+const NAME_IDLE_MS = 1000;
 let pendingPath = null;
-let pendingPublishedBlob = null; // cleared on every new pick; set once that pick's fetch lands
+let nameIdleTimer = null;
 
 function updateGoButton() {
-  el("go").disabled = !pendingPath || !el("scenario-name").value.trim();
+  el("go").disabled = !pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH;
+}
+
+// index is 0 (search centered, the resting position), 1 (name centered),
+// or 2 ("Let's go!" centered). Just a data attribute for the CSS transform
+// rules above to key off; this function never touches layout directly.
+function setPickerActive(index) {
+  el("welcome-picker").dataset.active = index;
 }
 
 function selectPending(path, title) {
   pendingPath = path;
-  pendingPublishedBlob = null;
   el("selected-title").textContent = title;
   el("selected-row").hidden = false;
+  // A click on a result is a click inside .combobox, exactly what the
+  // document-level "click outside closes it" handler further down
+  // deliberately leaves alone. Nothing else ever closed it from here: it
+  // stayed open, invisibly, only because the old flow immediately
+  // navigated away to the workspace. This flow does not, so it needs
+  // closing for real.
+  el("search-results").hidden = true;
   updateGoButton();
-  const isTemplate = Object.values(TEMPLATES).some((t) => t.path === path);
-  if (!isTemplate) fetchPublishedPdf(path); // a template has no published PDF to fetch
+  setPickerActive(1);
 }
 
-el("scenario-name").addEventListener("input", updateGoButton);
+// Typing into the name field keeps it centered. 1 second after the reader
+// stops, with something actually typed, focus shifts to "Let's go!"
+// instead, as if the field itself is nudging them toward finishing up.
+el("scenario-name").addEventListener("input", () => {
+  updateGoButton();
+  clearTimeout(nameIdleTimer);
+  if (el("scenario-name").value.trim()) {
+    nameIdleTimer = setTimeout(() => setPickerActive(2), NAME_IDLE_MS);
+  }
+});
+
+// Focusing the field recenters it, canceling that timer. A click needs its
+// own listener alongside focus: once "Let's go!" has already taken over,
+// the field can still hold the browser's actual keyboard focus (nothing
+// above ever blurs it), so a click back into it fires no new focus event
+// to react to, only this one.
+el("scenario-name").addEventListener("focus", () => {
+  clearTimeout(nameIdleTimer);
+  setPickerActive(1);
+});
+el("scenario-name").addEventListener("click", () => {
+  clearTimeout(nameIdleTimer);
+  setPickerActive(1);
+});
+
+// The same nudge as the idle timer above, but from a mouse move instead of
+// a typing pause: either way of stepping back from the keyboard, once the
+// name field actually holds something, reads as "done typing, ready to go."
+document.addEventListener("mousemove", () => {
+  if (el("scenario-name").value.trim()) setPickerActive(2);
+});
 
 el("scratch-scenario").addEventListener("click", () => {
   selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title);
@@ -903,7 +1003,7 @@ el("scratch-campaign").addEventListener("click", () => {
 });
 
 el("go").addEventListener("click", () => {
-  if (!pendingPath || !el("scenario-name").value.trim()) return;
+  if (!pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH) return;
   commitEntry(pendingPath, el("scenario-name").value);
 });
 
@@ -990,13 +1090,34 @@ async function commitEntry(path, name) {
 
   resetUploads();
   clearPdf();
-  // The pick's already-published PDF, fetched into memory while the reader
-  // was still typing a name: show it now, with no build needed. A stale
-  // blob from an earlier pick never applies here, guarded by path already
-  // inside fetchPublishedPdf; a template, or a fetch that is still running
-  // or failed, leaves pendingPublishedBlob null, so clearPdf's placeholder
-  // stands instead.
-  if (pendingPublishedBlob && pendingPath === path) showPdf(pendingPublishedBlob);
+
+  // Everything reused across every scenario (fonts, metadata.tex, the
+  // whole glyph set) preloaded silently as soon as the page opened; only
+  // this scenario's own pictures are specific to it, so only those need
+  // fetching now, for real, the moment it is actually known. A template
+  // has none of its own: templates/default.tex and templates/campaign.tex
+  // reference no pictures.
+  if (!template) {
+    setStatus("Fetching this scenario's pictures…", { spinning: true });
+    showPdfLoading("Fetching this scenario's pictures…");
+    const ownAssets = collectReferencedAssets(pristineSource);
+    await Promise.allSettled(ownAssets.map((assetPath) => preloadFile(assetPath)));
+
+    // Its already-published PDF, if one exists: shown directly, with no
+    // build needed. Not fatal if there is none yet, or the fetch fails;
+    // clearPdf's placeholder above stands instead, once this spinner clears.
+    setStatus("Fetching the published PDF…", { spinning: true });
+    showPdfLoading("Fetching the published PDF…");
+    try {
+      const response = await fetch(publishedPdfUrl(basenameNoExt(entry.path)));
+      if (response.ok) showPdf(await response.blob());
+      else clearPdf();
+    } catch (error) {
+      console.warn(`No published PDF for "${basenameNoExt(entry.path)}":`, error.message);
+      clearPdf();
+    }
+  }
+
   setStatus("Ready.");
 }
 
@@ -1135,6 +1256,14 @@ function showPdf(blob) {
   el("download").disabled = false;
 }
 
+// Shown in the PDF pane itself while commitEntry fetches this scenario's
+// pictures and its published PDF, right after "Let's go!". A plain spinner
+// in the one place that work is actually about to fill, not a separate
+// overlay: the reader can keep reading the source pane meanwhile.
+function showPdfLoading(text) {
+  el("pdf-body").innerHTML = `<div class="empty-pdf loading"><span class="spinner big"></span><p>${escapeHtml(text)}</p></div>`;
+}
+
 // README.md links to these same URLs: one branch per scenario, in a
 // companion repository, built by build-individual-scenarios.yaml. Picking a
 // real scenario or draft fetches its own already-published PDF this way and
@@ -1146,44 +1275,6 @@ function publishedPdfUrl(basename) {
   return `${PUBLISHED_PDF_REPO}/en-${basename}-color/${basename}_en.pdf`;
 }
 
-// The shutter beat plays for at least this long, even if the fetch below
-// finishes sooner: long enough to notice and enjoy, per the ask, not just a
-// flicker. It stays up longer still if the fetch itself takes longer.
-const MIN_SHUTTER_MS = 1800;
-
-function showShutter() {
-  el("shutter-flash").hidden = false;
-  el("shutter-overlay").hidden = false;
-}
-
-function hideShutter() {
-  el("shutter-flash").hidden = true;
-  el("shutter-overlay").hidden = true;
-}
-
-// Fetches the scenario's already-published PDF into memory, never to disk.
-// It only ever lands in the app's own preview, through pendingPublishedBlob
-// and commitEntry: no <a download>, no save dialog, nothing on the reader's
-// disk until they actually press Download PDF themselves.
-async function fetchPublishedPdf(path) {
-  const basename = basenameNoExt(path);
-  const url = publishedPdfUrl(basename);
-  showShutter();
-  const minDelay = new Promise((resolve) => setTimeout(resolve, MIN_SHUTTER_MS));
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const blob = await response.blob();
-    if (pendingPath === path) pendingPublishedBlob = blob; // still today's pick, not a stale one
-  } catch (error) {
-    // Not fatal: a scenario without a published PDF yet (or offline) still
-    // lets the reader name it and press "Let's go!" as normal, just without
-    // a preview until they press Build PDF themselves.
-    console.warn(`No published PDF fetched for "${basename}":`, error.message);
-  }
-  await minDelay;
-  hideShutter();
-}
 
 function showError(record) {
   el("error-panel").hidden = false;
@@ -1239,8 +1330,8 @@ async function runBuild() {
 
     setStatus("Preparing files…", { spinning: true });
     const source = cm.getValue();
-    const metadata = (await fetchRepoFile("metadata.tex")).content;
-    const manifest = await fetchRepoFile(GLYPH_MANIFEST_PATH);
+    const metadata = (await preloadFile("metadata.tex")).content;
+    const manifest = await preloadFile(GLYPH_MANIFEST_PATH);
     const glyphNames = JSON.parse(manifest.content);
 
     const plan = planScenarioBuild({
@@ -1270,7 +1361,10 @@ async function runBuild() {
         staged.set(path, { path, content: uploadedFiles.get(path) });
       } else {
         try {
-          staged.set(path, await fetchRepoFile(path));
+          // Almost always a cache hit by now: preloadCommonFiles filled the
+          // constant part in the background from page load, and commitEntry
+          // filled this scenario's own pictures the moment it was picked.
+          staged.set(path, await preloadFile(path));
         } catch (error) {
           notFound.push(path);
         }
@@ -1280,7 +1374,7 @@ async function runBuild() {
     }
     for (const name of plan.carriedTexmf || []) {
       try {
-        const file = await fetchAt(`../shared/texmf/${name}`, `texmf/${name}`);
+        const file = await preloadTexmfFile(name);
         staged.set(name, { path: name, content: file.content });
       } catch (error) {
         notFound.push(`texmf/${name}`);
@@ -1420,6 +1514,12 @@ loadEntries()
 // Errors surface for real at Build time instead, through ensureEngine's
 // shared promise: no need to show or act on a failure here.
 ensureEngine().catch(() => {});
+
+// Eager common-file preload: the same background timing as the engine
+// warm-up above, and for the same reason. By the time a scenario is
+// picked and built, everything but that scenario's own pictures is
+// already sitting in preloadedFiles.
+preloadCommonFiles().catch(() => {});
 </script>
 </body>
 </html>
