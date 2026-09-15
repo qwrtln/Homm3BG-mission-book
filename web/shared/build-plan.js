@@ -41,6 +41,42 @@ export const ALWAYS_PRELOAD = [
 export const GLYPH_MANIFEST_PATH = "assets/glyphs-inkscape/manifest.json";
 
 /**
+ * Glyphs every scenario draws on regardless of its own text: the
+ * "Starting Resources" / "Starting Income" / "Starting Units" block
+ * metadata.tex generates for every scenario alike uses these directly.
+ * Preloaded once, eagerly, as soon as the page opens, alongside the engine
+ * warm-up — never per scenario.
+ */
+export const CORE_GLYPHS = ["gold", "building_materials", "valuables", "bronze", "silver", "golden", "azure"];
+
+/** The three files one glyph's \svg call needs: the source .svg (kept for
+ * completeness, though \svg itself only ever reads the precompiled pair)
+ * and the precompiled PDF/pdf_tex pair ticket 04 built to skip Inkscape. */
+export function glyphFilesFor(names) {
+  return names.flatMap((name) => [
+    `assets/glyphs/${name}.svg`,
+    `assets/glyphs-inkscape/${name}_svg-tex.pdf`,
+    `assets/glyphs-inkscape/${name}_svg-tex.pdf_tex`,
+  ]);
+}
+
+/**
+ * Every glyph name a source's own \svg{...} calls literally name. Ticket 05
+ * found this cannot be complete in general: a name built from a macro or
+ * chosen by a LaTeX conditional is invisible to a regex. That is fine here,
+ * because it is not this function's job to be complete — a genuine miss
+ * still falls through to ticket 11's fetch-on-miss retry at compile time.
+ * This exists only to preload the common case ahead of that.
+ */
+export function collectReferencedGlyphs(source) {
+  const found = new Set();
+  const pattern = /\\svg\s*(?:\[[^\]]*\])?\{([^}]+)\}/g;
+  let match;
+  while ((match = pattern.exec(source)) !== null) found.add(match[1].trim());
+  return [...found].sort();
+}
+
+/**
  * TeX Live files the book needs that no BusyTeX data package ships. They sit
  * in web/prototype-engine-check/texmf/, put there by fetch-missing-texmf.sh,
  * and are copied flat into the virtual filesystem, where kpathsea looks
@@ -177,19 +213,19 @@ export function resolveMacroPath(raw) {
  * Real glyphs throughout: ticket 04 is done, so there is no glyph stub. This
  * is the app's only path; it does not take a step id.
  *
- * @param {{metadata: string, scenario: {path: string, source: string}, glyphNames: string[]}} sources
+ * @param {{metadata: string, scenario: {path: string, source: string}}} sources
  * @returns {{engine: string, input: string, generated: object, repoFiles: string[], carriedTexmf: string[], dataPackage: string, notes: string[]}}
  */
 export function planScenarioBuild(sources) {
-  const { metadata = "", scenario = null, glyphNames = [] } = sources || {};
+  const { metadata = "", scenario = null } = sources || {};
   if (!scenario) throw new Error("planScenarioBuild needs a scenario");
-  if (!glyphNames.length) throw new Error("planScenarioBuild needs the glyph manifest");
   const assets = collectReferencedAssets(scenario.source);
-  const glyphFiles = glyphNames.flatMap((name) => [
-    `assets/glyphs/${name}.svg`,
-    `assets/glyphs-inkscape/${name}_svg-tex.pdf`,
-    `assets/glyphs-inkscape/${name}_svg-tex.pdf_tex`,
-  ]);
+  // CORE_GLYPHS always, whatever this scenario's own \svg calls name: they
+  // are already sitting in the shared cache from page load regardless, so
+  // asking for them again here costs nothing. Anything beyond that is
+  // this scenario's own, found by scanning its actual \svg calls.
+  const glyphNames = [...new Set([...CORE_GLYPHS, ...collectReferencedGlyphs(scenario.source)])];
+  const glyphFiles = glyphFilesFor(glyphNames);
   return {
     engine: "lualatex",
     input: MAIN_EN,
@@ -207,7 +243,7 @@ export function planScenarioBuild(sources) {
     dataPackage: "texlive-extra",
     notes: [
       `structure.tex holds one \\include, for ${scenario.path}.`,
-      `${glyphNames.length} glyphs preloaded from the committed assets/glyphs-inkscape/ cache: ticket 04's answer.`,
+      `${glyphNames.length} glyphs staged (${CORE_GLYPHS.length} core, always; the rest found by scanning \\svg calls in the source), from the committed assets/glyphs-inkscape/ cache: ticket 04's answer.`,
       `${assets.length} picture files were found by reading the source.`,
     ],
   };

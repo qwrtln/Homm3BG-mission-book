@@ -498,8 +498,9 @@
 <script type="module">
 import { BusyTexRunner, LuaLatex } from "../shared/vendor/texlyre-busytex.js";
 import {
-  GROUP_FILES, DRAFT_GROUP_FILES, parseScenarioIndex, scenarioHeading, GLYPH_MANIFEST_PATH,
-  ALWAYS_PRELOAD, CARRIED_TEXMF, collectReferencedAssets, planScenarioBuild, firstError, pageCount,
+  GROUP_FILES, DRAFT_GROUP_FILES, parseScenarioIndex, scenarioHeading,
+  ALWAYS_PRELOAD, CARRIED_TEXMF, CORE_GLYPHS, glyphFilesFor, collectReferencedAssets,
+  collectReferencedGlyphs, planScenarioBuild, firstError, pageCount,
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
 
@@ -646,19 +647,17 @@ async function preloadTexmfFile(name) {
 
 // Runs once, in the background, from the moment the page opens (see the
 // bottom of this script): every file every scenario needs alike, fetched
-// before any scenario is even picked. A failure here is not fatal and
-// raises no error of its own; runBuild's own fetch, through the same
-// cache, surfaces it again if the file is still missing by then.
+// before any scenario is even picked. That no longer means every glyph:
+// only CORE_GLYPHS (the "Starting Resources"/"Starting Income"/"Starting
+// Units" block every scenario draws, whatever it says) is worth fetching
+// blind. Anything past that is a given scenario's own choice of \svg
+// calls, unknown until it is actually picked — see commitEntry, which
+// preloads those the moment it is. A failure here is not fatal and raises
+// no error of its own; runBuild's own fetch, through the same cache,
+// surfaces it again if the file is still missing by then.
 async function preloadCommonFiles() {
   const metadata = (await preloadFile("metadata.tex")).content;
-  const manifest = await preloadFile(GLYPH_MANIFEST_PATH);
-  const glyphNames = JSON.parse(manifest.content);
-  const glyphFiles = glyphNames.flatMap((glyphName) => [
-    `assets/glyphs/${glyphName}.svg`,
-    `assets/glyphs-inkscape/${glyphName}_svg-tex.pdf`,
-    `assets/glyphs-inkscape/${glyphName}_svg-tex.pdf_tex`,
-  ]);
-  const commonPaths = [...ALWAYS_PRELOAD, ...collectReferencedAssets(metadata), ...glyphFiles];
+  const commonPaths = [...ALWAYS_PRELOAD, ...collectReferencedAssets(metadata), ...glyphFilesFor(CORE_GLYPHS)];
   for (const path of commonPaths) {
     try { await preloadFile(path); } catch { /* retried, and surfaced if it matters, at build time */ }
   }
@@ -1015,17 +1014,18 @@ async function commitEntry(path, name) {
   resetUploads();
   clearPdf();
 
-  // Everything reused across every scenario (fonts, metadata.tex, the
-  // whole glyph set) preloaded silently as soon as the page opened; only
-  // this scenario's own pictures are specific to it, so only those need
-  // fetching now, for real, the moment it is actually known. A template
-  // has none of its own: templates/default.tex and templates/campaign.tex
-  // reference no pictures.
+  // Everything reused across every scenario (fonts, metadata.tex,
+  // CORE_GLYPHS) preloaded silently as soon as the page opened; only this
+  // scenario's own pictures and its own \svg calls beyond CORE_GLYPHS are
+  // specific to it, so only those need fetching now, for real, the moment
+  // it is actually known. A template has none of its own: templates/
+  // default.tex and templates/campaign.tex reference no pictures.
   if (!template) {
     setStatus("Fetching this scenario's pictures…", { spinning: true });
     showPdfLoading("Fetching this scenario's pictures…");
     const ownAssets = collectReferencedAssets(pristineSource);
-    await Promise.allSettled(ownAssets.map((assetPath) => preloadFile(assetPath)));
+    const ownGlyphs = glyphFilesFor(collectReferencedGlyphs(pristineSource));
+    await Promise.allSettled([...ownAssets, ...ownGlyphs].map((path) => preloadFile(path)));
 
     // Its already-published PDF, if one exists: shown directly, with no
     // build needed. Not fatal if there is none yet, or the fetch fails;
@@ -1266,13 +1266,10 @@ async function runBuild() {
     setStatus("Preparing files…", { spinning: true });
     const source = cm.getValue();
     const metadata = (await preloadFile("metadata.tex")).content;
-    const manifest = await preloadFile(GLYPH_MANIFEST_PATH);
-    const glyphNames = JSON.parse(manifest.content);
 
     const plan = planScenarioBuild({
       metadata,
       scenario: { path: chosenPath, source },
-      glyphNames,
     });
 
     // Built through a path->content map, not straight into an array: an
