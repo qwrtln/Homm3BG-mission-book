@@ -1021,11 +1021,32 @@ async function commitEntry(path, name) {
   // it is actually known. A template has none of its own: templates/
   // default.tex and templates/campaign.tex reference no pictures.
   if (!template) {
-    setStatus("Fetching this scenario's pictures…", { spinning: true });
-    showPdfLoading("Fetching this scenario's pictures…");
-    const ownAssets = collectReferencedAssets(pristineSource);
-    const ownGlyphs = glyphFilesFor(collectReferencedGlyphs(pristineSource));
-    await Promise.allSettled([...ownAssets, ...ownGlyphs].map((path) => preloadFile(path)));
+    // A real, counting "Loading files… N/M", the same shape runBuild's own
+    // loop reports, not one static label for the whole batch: this is
+    // already the moment files start downloading, well before Build PDF is
+    // ever pressed, and the spinner needs to say so plainly, not look like
+    // nothing is happening yet.
+    const ownFiles = [
+      ...collectReferencedAssets(pristineSource),
+      ...glyphFilesFor(collectReferencedGlyphs(pristineSource)),
+    ];
+    let ownLoaded = 0;
+    const reportOwnFileProgress = () => {
+      const text = `Loading files… ${ownLoaded}/${ownFiles.length}`;
+      setStatus(text, { spinning: true });
+      showPdfLoading(text);
+    };
+    reportOwnFileProgress();
+    for (const ownPath of ownFiles) {
+      try {
+        await preloadFile(ownPath);
+      } catch (error) {
+        // Not fatal: runBuild's own fetch, through the same cache, surfaces
+        // it again at Build time if it still matters then.
+      }
+      ownLoaded += 1;
+      reportOwnFileProgress();
+    }
 
     // Its already-published PDF, if one exists: shown directly, with no
     // build needed. Not fatal if there is none yet, or the fetch fails;
