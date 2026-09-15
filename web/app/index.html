@@ -598,16 +598,22 @@ function scheduleSave() {
   saveTimer = setTimeout(() => saveDraft(chosenPath, cm.getValue()), 400);
 }
 
-async function fetchRepoFile(path) {
-  return fetchAt(`${REPO}/${path}`, path);
+async function fetchRepoFile(path, signal) {
+  return fetchAt(`${REPO}/${path}`, path, signal);
 }
 
 // Fetches a file by a URL relative to this page, rather than to REPO.
 // web/shared/texmf/ is one such case: it ships alongside the app under
 // web/, in both the local and the deployed layout, so it never needs
 // REPO's web/repo/ aliasing (ticket 17).
-async function fetchAt(url, path) {
-  const response = await fetch(url);
+//
+// signal is optional: pass an AbortController's, and the caller can cancel
+// this fetch mid-flight (see startScenarioPrefetch) without that showing
+// up as a real error. Nothing lands in preloadedFiles below unless a fetch
+// actually finishes, so an aborted one never pollutes the cache; it also
+// never removes whatever an earlier, real fetch already cached there.
+async function fetchAt(url, path, signal) {
+  const response = await fetch(url, { signal });
   if (!response.ok) throw new Error(`${path}: ${response.status}`);
   const isText = /\.(tex|sty|cls|cfg|txt|map|enc|json|pdf_tex)$/.test(path);
   return isText
@@ -630,17 +636,17 @@ async function fetchAt(url, path) {
 // either finishes.
 const preloadedFiles = new Map(); // path -> {path, content}
 
-async function preloadFile(path) {
+async function preloadFile(path, signal) {
   if (preloadedFiles.has(path)) return preloadedFiles.get(path);
-  const file = await fetchRepoFile(path);
+  const file = await fetchRepoFile(path, signal);
   preloadedFiles.set(path, file);
   return file;
 }
 
-async function preloadTexmfFile(name) {
+async function preloadTexmfFile(name, signal) {
   const key = `texmf/${name}`;
   if (preloadedFiles.has(key)) return preloadedFiles.get(key);
-  const file = await fetchAt(`../shared/texmf/${name}`, key);
+  const file = await fetchAt(`../shared/texmf/${name}`, key, signal);
   preloadedFiles.set(key, file);
   return file;
 }
@@ -891,10 +897,10 @@ function sanitizeFilename(name) {
 // choice: no fetch, nothing over the network yet. All three blocks sit
 // side by side, statically, always visible, none of them moving. Nothing
 // opens until "Let's go!" fires, which needs both a pick and at least 3
-// characters in the mandatory name field. "Let's go!" is also the moment
-// the transition to the workspace happens, and the moment this scenario's
-// own pictures and its already-published PDF start downloading, inside
-// commitEntry: never before, on the pick alone.
+// characters in the mandatory name field. Picking a real scenario (not a
+// blank start) already starts downloading its own pictures and its
+// published PDF, though — see startScenarioPrefetch — so by the time
+// "Let's go!" is actually pressed that work is often already done.
 const MIN_NAME_LENGTH = 3;
 let pendingPath = null;
 
@@ -914,6 +920,71 @@ function selectPending(path, title) {
   // closing for real.
   el("search-results").hidden = true;
   updateGoButton();
+  // A template has no pictures and no published branch to fetch.
+  const isTemplate = Object.values(TEMPLATES).some((t) => t.path === path);
+  if (!isTemplate) startScenarioPrefetch(path);
+}
+
+// --- Prefetching a picked scenario, before "Let's go!" ---------------------
+//
+// Starts the instant a real scenario is picked: this scenario's own
+// pictures, its own \svg calls beyond CORE_GLYPHS, and its
+// already-published PDF all begin downloading in the background right
+// away, not gated behind "Let's go!". commitEntry awaits this same promise
+// rather than starting its own fetch, so nothing is ever fetched twice.
+//
+// Picking a second scenario before the first finishes aborts that first
+// one's still-in-flight requests, one AbortController per prefetch. Only
+// requests still in flight at that moment are affected: nothing already
+// finished is discarded, because preloadFile only ever writes a path into
+// the shared cache once its own fetch has actually completed (see the
+// cache's own comment above) — an aborted fetch never reaches that line,
+// and a finished one is already sitting there regardless of what a later
+// abort does.
+let scenarioPrefetch = null; // {path, controller, promise}
+
+function startScenarioPrefetch(path) {
+  if (scenarioPrefetch) {
+    if (scenarioPrefetch.path === path) return; // already running (or done) for this exact pick
+    scenarioPrefetch.controller.abort();
+  }
+  const controller = new AbortController();
+  scenarioPrefetch = { path, controller, promise: prefetchScenario(path, controller.signal) };
+}
+
+async function prefetchScenario(path, signal) {
+  try {
+    const source = (await preloadFile(path, signal)).content;
+    const filePaths = [...collectReferencedAssets(source), ...glyphFilesFor(collectReferencedGlyphs(source))];
+    for (const filePath of filePaths) {
+      if (signal.aborted) return { pdfBlob: null };
+      try {
+        await preloadFile(filePath, signal);
+      } catch (error) {
+        // Tolerated either way: a genuine miss is retried at Build time
+        // through the same cache; an abort is caught for real just below.
+      }
+    }
+    if (signal.aborted) return { pdfBlob: null };
+
+    const response = await fetch(publishedPdfUrl(basenameNoExt(path)), { signal });
+    if (!response.ok) return { pdfBlob: null };
+    // GitHub's raw CDN serves this as application/octet-stream, with
+    // x-content-type-options: nosniff, never application/pdf. showPdf's
+    // <embed> is hardcoded to type="application/pdf", but a browser can
+    // still key its plugin choice off the blob's own reported type, not
+    // that attribute, so the fetched blob needs re-tagging here. The
+    // build's own blob never hits this: it is already constructed with
+    // the right type.
+    const raw = await response.blob();
+    return { pdfBlob: raw.type === "application/pdf" ? raw : raw.slice(0, raw.size, "application/pdf") };
+  } catch (error) {
+    if (signal.aborted) return { pdfBlob: null };
+    // Not fatal: a scenario without a published PDF yet (or offline) still
+    // opens normally, just without a preview until Build PDF is pressed.
+    console.warn(`No published PDF for "${basenameNoExt(path)}":`, error.message);
+    return { pdfBlob: null };
+  }
 }
 
 el("scenario-name").addEventListener("input", updateGoButton);
@@ -1003,7 +1074,7 @@ async function commitEntry(path, name) {
   el("download").disabled = true;
   setStatus("Loading…");
 
-  const fetched = await fetchRepoFile(entry.path);
+  const fetched = await preloadFile(entry.path);
   const pristineSource = fetched.content;
 
   const draft = loadDraft(identity);
@@ -1014,64 +1085,22 @@ async function commitEntry(path, name) {
   resetUploads();
   clearPdf();
 
-  // Everything reused across every scenario (fonts, metadata.tex,
-  // CORE_GLYPHS) preloaded silently as soon as the page opened; only this
-  // scenario's own pictures and its own \svg calls beyond CORE_GLYPHS are
-  // specific to it, so only those need fetching now, for real, the moment
-  // it is actually known. A template has none of its own: templates/
-  // default.tex and templates/campaign.tex reference no pictures.
+  // A real pick always has a prefetch already running (or done) by now,
+  // started the moment it was picked, well before "Let's go!" — see
+  // startScenarioPrefetch. This just waits on that same promise rather
+  // than fetching any of it again. The fallback (starting one fresh here)
+  // is only for a real pick this session somehow never called
+  // selectPending for; a template never has one, having no pictures and no
+  // published branch to fetch.
   if (!template) {
-    // A real, counting "Loading files… N/M", the same shape runBuild's own
-    // loop reports, not one static label for the whole batch: this is
-    // already the moment files start downloading, well before Build PDF is
-    // ever pressed, and the spinner needs to say so plainly, not look like
-    // nothing is happening yet.
-    const ownFiles = [
-      ...collectReferencedAssets(pristineSource),
-      ...glyphFilesFor(collectReferencedGlyphs(pristineSource)),
-    ];
-    let ownLoaded = 0;
-    const reportOwnFileProgress = () => {
-      const text = `Loading files… ${ownLoaded}/${ownFiles.length}`;
-      setStatus(text, { spinning: true });
-      showPdfLoading(text);
-    };
-    reportOwnFileProgress();
-    for (const ownPath of ownFiles) {
-      try {
-        await preloadFile(ownPath);
-      } catch (error) {
-        // Not fatal: runBuild's own fetch, through the same cache, surfaces
-        // it again at Build time if it still matters then.
-      }
-      ownLoaded += 1;
-      reportOwnFileProgress();
-    }
-
-    // Its already-published PDF, if one exists: shown directly, with no
-    // build needed. Not fatal if there is none yet, or the fetch fails;
-    // clearPdf's placeholder above stands instead, once this spinner clears.
-    setStatus("Fetching the published PDF…", { spinning: true });
-    showPdfLoading("Fetching the published PDF…");
-    try {
-      const response = await fetch(publishedPdfUrl(basenameNoExt(entry.path)));
-      if (response.ok) {
-        // GitHub's raw CDN serves this as application/octet-stream, with
-        // x-content-type-options: nosniff, never application/pdf. showPdf's
-        // <embed> is hardcoded to type="application/pdf", but a browser can
-        // still key its plugin choice off the blob's own reported type, not
-        // that attribute, so the fetched blob needs re-tagging here. The
-        // build's own blob never hits this: it is already constructed with
-        // the right type.
-        const raw = await response.blob();
-        showPdf(raw.type === "application/pdf" ? raw : raw.slice(0, raw.size, "application/pdf"));
-      } else {
-        clearPdf();
-      }
-    } catch (error) {
-      console.warn(`No published PDF for "${basenameNoExt(entry.path)}":`, error.message);
-      clearPdf();
-    }
+    setStatus("Finishing this scenario's downloads…", { spinning: true });
+    showPdfLoading("Finishing this scenario's downloads…");
+    const prefetch = scenarioPrefetch && scenarioPrefetch.path === path
+      ? scenarioPrefetch
+      : { path, controller: new AbortController(), promise: null };
+    if (!prefetch.promise) prefetch.promise = prefetchScenario(path, prefetch.controller.signal);
+    const { pdfBlob } = await prefetch.promise;
+    if (pdfBlob) showPdf(pdfBlob); else clearPdf();
   }
 
   setStatus("Ready.");
