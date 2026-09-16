@@ -927,7 +927,52 @@ function renderGithubHeader() {
   el("github-status").hidden = !signedIn;
 }
 
-el("github-signin").addEventListener("click", signIn);
+// Sign-in is a full-page redirect, which drops chosenPath and anything
+// still in the autosave debounce. Flush and remember what was open.
+const REOPEN_KEY = "wasm-scenario-builder:pending-reopen";
+
+el("github-signin").addEventListener("click", () => {
+  if (chosenPath) {
+    clearTimeout(saveTimer);
+    saveDraft(chosenPath, cm.getValue());
+    try {
+      localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: chosenPath, title: chosenTitle }));
+    } catch { /* private mode, blocked storage: sign-in still proceeds */ }
+  }
+  signIn();
+});
+
+// Loads straight from localStorage, no server fetch or entry lookup: for a
+// scenario never yet saved anywhere but here.
+async function reopenLocalDraft(path, title) {
+  const content = loadDraft(path);
+  if (content === null) return false;
+
+  await showWorkspace();
+  cm.refresh();
+  el("header-actions").hidden = false;
+  resetGithubSaveState();
+
+  chosenPath = path;
+  chosenTitle = title || basenameNoExt(path);
+  document.title = `${chosenTitle} - Heroes III: The Board Game`;
+  cm.setValue(content);
+  el("draft-note").hidden = false;
+  resetUploads();
+  clearPdf();
+  setStatus("Ready.");
+  return true;
+}
+
+(() => {
+  let pending = null;
+  try {
+    const raw = localStorage.getItem(REOPEN_KEY);
+    localStorage.removeItem(REOPEN_KEY);
+    if (raw) pending = JSON.parse(raw);
+  } catch { /* nothing to reopen */ }
+  if (pending && pending.path) reopenLocalDraft(pending.path, pending.title);
+})();
 
 let lastSaveTarget = null;
 window.__lastSaveTarget = () => lastSaveTarget;
@@ -951,9 +996,7 @@ el("github-signout").addEventListener("click", () => {
   renderGithubHeader();
 });
 
-// A plain push: writes the branch, nothing else. Opening a PR is a
-// separate, explicit action below, so a save never surprises anyone with
-// a PR they didn't ask for yet.
+// Plain push, nothing else. Opening a PR is a separate action, below.
 el("github-save").addEventListener("click", async () => {
   if (!chosenPath) return;
   const token = getToken();
@@ -1007,10 +1050,6 @@ el("github-open-pr").addEventListener("click", async () => {
   }
 });
 
-// Renders the "Resume your work" list on the welcome screen from
-// discoverGithubContext's drafts, if any. Picking one loads that branch's
-// own copy of its .tex file, straight from GitHub, and points the header's
-// save/PR state at that branch instead of computing a fresh one.
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
   const list = el("resume-list");

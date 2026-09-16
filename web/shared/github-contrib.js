@@ -80,10 +80,8 @@ export async function discoverGithubContext(token) {
   return { username, isMember, fork, drafts };
 }
 
-// This user's own scenario-editor/<username>/* branches, each paired with
-// the .tex file it touches (found by diffing against the default branch),
-// so a resumed session can load straight from the branch instead of the
-// published source.
+// This user's own scenario-editor/<username>/* branches, paired with the
+// .tex file each touches, found by diffing against the default branch.
 async function findResumableDrafts(token, { owner, repo, username, base }) {
   const prefix = `scenario-editor/${username}/`;
   const branches = await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token);
@@ -232,11 +230,8 @@ function draftGroupFor(texPath) {
   return DRAFT_GROUP_FILES.find((g) => texPath.startsWith(`${g.dir}/`)) || null;
 }
 
-// A brand-new scenario under draft-scenarios/ needs a \clearpage + \input
-// line in its category's main.tex, or the book never assembles it. Reads
-// the branch's own copy if the branch already exists, else the default
-// branch's; a no-op (returns null) if the entry is already there, so this
-// is safe to call on every save, not just the first.
+// Adds a \clearpage + \input line to the category's main.tex if missing.
+// No-op if already there, so safe on every save, not just the first.
 async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) {
   const slug = texPath.slice(group.dir.length + 1).replace(/\.tex$/, "");
   const marker = `\\input{\\${group.macro}path/${slug}.tex}`;
