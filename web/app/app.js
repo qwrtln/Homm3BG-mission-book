@@ -9,7 +9,7 @@ import { getToken, signIn, completeSignIn, clearToken } from "../shared/github-a
 import {
   saveScenarioToRepo, ensurePullRequest, discoverGithubContext, getRepoFile,
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
-} from "../shared/github-contrib.js";
+} from "../shared/github-contrib.js?v=1";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root) makes this reachable at a root-relative
@@ -724,7 +724,7 @@ async function startEngine() {
   runner = new BusyTexRunner({
     busytexBasePath: BASE,
     preloadDataPackages: [`${BASE}/texlive-extra.js`],
-    verbose: true,
+    verbose: false,
   });
   try {
     await runner.initialize(true);
@@ -1053,7 +1053,6 @@ el("github-open-pr").addEventListener("click", async () => {
 
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
-  console.log("[app] renderResumeDrafts", drafts);
   const list = el("resume-list");
   el("resume-drafts").hidden = drafts.length === 0;
   if (drafts.length === 0) return;
@@ -1109,7 +1108,6 @@ completeSignIn()
       githubContext = await discoverGithubContext(token);
       renderResumeDrafts();
     } catch (error) {
-      console.error(error);
       setStatus(`Could not read your GitHub account: ${error.message}`, { tone: "bad" });
     }
   })

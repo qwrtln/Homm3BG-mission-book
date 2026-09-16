@@ -76,9 +76,7 @@ export async function discoverGithubContext(token) {
   const fork = isMember ? null : await findExistingFork(token, username);
   const owner = isMember ? UPSTREAM_OWNER : fork ? fork.owner.login : null;
   const repo = isMember ? UPSTREAM_REPO : fork ? fork.name : null;
-  console.log("[github-contrib] discoverGithubContext", { username, isMember, owner, repo, defaultBranch: upstream.default_branch });
   const drafts = owner ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
-  console.log("[github-contrib] drafts", drafts);
   return { username, isMember, fork, drafts };
 }
 
@@ -87,9 +85,7 @@ export async function discoverGithubContext(token) {
 async function findResumableDrafts(token, { owner, repo, username, base }) {
   const prefix = `scenario-editor/${username}/`;
   const branches = await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token);
-  console.log("[github-contrib] branches", branches.map((b) => b.name));
   const own = branches.filter((b) => b.name.startsWith(prefix));
-  console.log("[github-contrib] own branches", { prefix, own: own.map((b) => b.name) });
 
   const drafts = [];
   for (const b of own) {
@@ -98,11 +94,10 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
         `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(b.name)}`,
         token,
       );
-      console.log("[github-contrib] compare", b.name, compare.files && compare.files.map((f) => f.filename));
       const texFile = (compare.files || []).find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
       if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename });
-    } catch (error) {
-      console.error("[github-contrib] compare failed for", b.name, error);
+    } catch {
+      // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
     }
   }
   return drafts;
