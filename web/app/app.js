@@ -6,7 +6,10 @@ import {
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
 import { getToken, signIn, completeSignIn, clearToken } from "../shared/github-auth.js";
-import { saveScenarioToRepo, ensurePullRequest, discoverGithubContext, GithubApiError } from "../shared/github-contrib.js";
+import {
+  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, getRepoFile,
+  UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
+} from "../shared/github-contrib.js";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root) makes this reachable at a root-relative
@@ -372,13 +375,15 @@ function sanitizeFilename(name) {
 // startScenarioPrefetch.
 const MIN_NAME_LENGTH = 3;
 let pendingPath = null;
+let pendingCategory = null; // draft-scenarios subdir for a template pick; null for a real entry
 
 function updateGoButton() {
   el("go").disabled = !pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH;
 }
 
-function selectPending(path, title) {
+function selectPending(path, title, category = null) {
   pendingPath = path;
+  pendingCategory = category;
   el("selected-title").textContent = title;
   el("selected-row").hidden = false;
   el("search-results").hidden = true;
@@ -446,16 +451,18 @@ async function prefetchScenario(path, signal) {
 
 el("scenario-name").addEventListener("input", updateGoButton);
 
-el("scratch-scenario").addEventListener("click", () => {
-  selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title);
+document.querySelectorAll("[data-category]").forEach((button) => {
+  button.addEventListener("click", () => {
+    selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title, button.dataset.category);
+  });
 });
 el("scratch-campaign").addEventListener("click", () => {
-  selectPending(TEMPLATES.campaign.path, TEMPLATES.campaign.title);
+  selectPending(TEMPLATES.campaign.path, TEMPLATES.campaign.title, "campaigns");
 });
 
 el("go").addEventListener("click", () => {
   if (!pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH) return;
-  commitEntry(pendingPath, el("scenario-name").value);
+  commitEntry(pendingPath, el("scenario-name").value, pendingCategory);
 });
 
 // --- Committing to an entry ----------------------------------------------
@@ -500,8 +507,11 @@ function showWorkspace() {
  *   "Name this file" field). Becomes the .tex file's own identity: the
  *   include path baked into structure.tex, the autosave key, and the
  *   download's filename all follow it, in place of the entry's own name.
+ * @param {string} [category] draft-scenarios subdir (clash/coops/alliances/
+ *   campaigns) for a template pick; ignored for a real entry, which keeps
+ *   its own directory.
  */
-async function commitEntry(path, name) {
+async function commitEntry(path, name, category) {
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
   const entry = template
     ? { path: template.path, title: template.title, isTemplate: true }
@@ -516,9 +526,10 @@ async function commitEntry(path, name) {
   // server; identity is what the rest of the app treats this entry as.
   // Keeping the .tex extension matters: TeX's \input only appends one to
   // a name that lacks it already, so a name without it would 404 twice.
-  const dir = entry.path.split("/").slice(0, -1).join("/") || "templates";
+  const dir = template ? `draft-scenarios/${category}` : entry.path.split("/").slice(0, -1).join("/");
   const identity = `${dir}/${sanitizeFilename(name)}.tex`;
 
+  resetGithubSaveState();
   chosenPath = identity;
   chosenTitle = template ? sanitizeFilename(name) : entry.title;
   document.title = `${chosenTitle} - Heroes III: The Board Game`;
@@ -908,7 +919,7 @@ saveAlias.hidden = true;
 saveAlias.addEventListener("click", () => el("download").click());
 document.body.appendChild(saveAlias);
 
-// --- GitHub sign-in, save-to-fork, sign-out ------------------------------
+// --- GitHub sign-in, save (push), open PR, resume, sign-out --------------
 
 function renderGithubHeader() {
   const signedIn = Boolean(getToken());
@@ -918,41 +929,49 @@ function renderGithubHeader() {
 
 el("github-signin").addEventListener("click", signIn);
 
-el("github-signout").addEventListener("click", () => {
-  clearToken();
-  githubContext = null;
-  lastSaveTarget = null;
-  el("github-pr-link").hidden = true;
-  el("github-save").textContent = "💾 Save to my fork";
-  renderGithubHeader();
-});
-
 let lastSaveTarget = null;
 window.__lastSaveTarget = () => lastSaveTarget;
 
 let githubContext = null;
 
+// Called on sign-out and on picking a different scenario: neither carries
+// over a previous scenario's branch, PR link, or button state.
+function resetGithubSaveState() {
+  lastSaveTarget = null;
+  el("github-save").textContent = "💾 Save";
+  el("github-open-pr").hidden = true;
+  el("github-pr-link").hidden = true;
+}
+
+el("github-signout").addEventListener("click", () => {
+  clearToken();
+  githubContext = null;
+  resetGithubSaveState();
+  el("resume-drafts").hidden = true;
+  renderGithubHeader();
+});
+
+// A plain push: writes the branch, nothing else. Opening a PR is a
+// separate, explicit action below, so a save never surprises anyone with
+// a PR they didn't ask for yet.
 el("github-save").addEventListener("click", async () => {
   if (!chosenPath) return;
   const token = getToken();
   if (!token) return;
   const button = el("github-save");
   button.disabled = true;
-  setStatus("Saving to your fork…", { spinning: true });
+  setStatus("Saving…", { spinning: true });
   try {
     if (!githubContext) githubContext = await discoverGithubContext(token);
-    const scenarioName = chosenTitle;
     lastSaveTarget = await saveScenarioToRepo(token, {
-      scenarioName,
+      scenarioName: chosenTitle,
       texPath: chosenPath,
       texContent: cm.getValue(),
       uploadedFiles,
       context: githubContext,
     });
-    const pr = await ensurePullRequest(token, { ...lastSaveTarget, scenarioName });
-    el("github-pr-link").href = pr.html_url;
-    el("github-pr-link").hidden = false;
-    button.textContent = "💾 Saved, save again";
+    button.textContent = "💾 Save again";
+    el("github-open-pr").hidden = false;
     setStatus(
       `Saved to ${lastSaveTarget.owner}/${lastSaveTarget.repo}@${lastSaveTarget.branch}.`,
       { tone: "ok" },
@@ -965,11 +984,89 @@ el("github-save").addEventListener("click", async () => {
   }
 });
 
+// Opens a PR from the last-saved branch, or returns the one already open
+// for it (ensurePullRequest is idempotent) — never a second PR.
+el("github-open-pr").addEventListener("click", async () => {
+  if (!lastSaveTarget) return;
+  const token = getToken();
+  if (!token) return;
+  const button = el("github-open-pr");
+  button.disabled = true;
+  setStatus("Opening PR…", { spinning: true });
+  try {
+    const pr = await ensurePullRequest(token, { ...lastSaveTarget, scenarioName: chosenTitle });
+    el("github-pr-link").href = pr.html_url;
+    el("github-pr-link").hidden = false;
+    button.hidden = true;
+    setStatus(`PR open at ${pr.html_url}.`, { tone: "ok" });
+  } catch (error) {
+    const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${error.message}`;
+    setStatus(message, { tone: "bad" });
+  } finally {
+    button.disabled = false;
+  }
+});
+
+// Renders the "Resume your work" list on the welcome screen from
+// discoverGithubContext's drafts, if any. Picking one loads that branch's
+// own copy of its .tex file, straight from GitHub, and points the header's
+// save/PR state at that branch instead of computing a fresh one.
+function renderResumeDrafts() {
+  const drafts = (githubContext && githubContext.drafts) || [];
+  const list = el("resume-list");
+  el("resume-drafts").hidden = drafts.length === 0;
+  if (drafts.length === 0) return;
+  list.innerHTML = drafts
+    .map((d, i) => `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(d.texPath)} <span class="hint">(${escapeHtml(d.branch)})</span></button>`)
+    .join("");
+}
+
+el("resume-list").addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-draft-index]");
+  if (!button) return;
+  const draft = githubContext.drafts[Number(button.dataset.draftIndex)];
+  if (!draft) return;
+  const token = getToken();
+  if (!token) return;
+
+  const { owner, repo } = githubContext.isMember
+    ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+    : { owner: githubContext.fork.owner.login, repo: githubContext.fork.name };
+
+  setStatus("Loading your draft…", { spinning: true });
+  try {
+    const content = await getRepoFile(token, owner, repo, draft.texPath, draft.branch);
+    if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
+
+    await showWorkspace();
+    cm.refresh();
+    el("header-actions").hidden = false;
+    resetGithubSaveState();
+
+    chosenPath = draft.texPath;
+    chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    document.title = `${chosenTitle} - Heroes III: The Board Game`;
+    cm.setValue(content);
+    el("draft-note").hidden = true;
+    resetUploads();
+    clearPdf();
+
+    lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
+    el("github-open-pr").hidden = false;
+    el("github-save").textContent = "💾 Save again";
+    setStatus("Ready.");
+  } catch (error) {
+    const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${error.message}`;
+    setStatus(message, { tone: "bad" });
+  }
+});
+
 completeSignIn()
   .then(async (token) => {
     if (!token) return;
     try {
       githubContext = await discoverGithubContext(token);
+      renderResumeDrafts();
     } catch (error) {
       setStatus(`Could not read your GitHub account: ${error.message}`, { tone: "bad" });
     }

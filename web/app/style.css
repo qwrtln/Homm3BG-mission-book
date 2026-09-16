@@ -104,6 +104,7 @@ button.link {
 .github-segment button { border: none; border-radius: 0; }
 .github-pr-link[hidden] { display: none; }
 .github-pr-link { color: var(--accent); text-decoration: underline; font-size: 0.85rem; }
+#github-open-pr[hidden] { display: none; }
 
 .content { flex: 1 1 auto; display: flex; min-height: 0; }
 
@@ -128,6 +129,9 @@ button.link {
   overflow: auto;
 }
 .welcome-inner { max-width: 62rem; width: 100%; }
+.resume-drafts[hidden] { display: none; }
+.resume-drafts { margin-bottom: 1.5rem; }
+.resume-list { position: static; max-height: none; box-shadow: none; }
 .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
 .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
 /* Three equal-width blocks, side by side, statically: no motion between

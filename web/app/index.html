@@ -38,7 +38,8 @@
   <button id="github-signin" type="button">Sign in with GitHub</button>
   <span class="github-status" id="github-status" hidden>
     <span class="github-segment">
-      <button id="github-save" type="button">💾 Save to my fork</button>
+      <button id="github-save" type="button">💾 Save</button>
+      <button id="github-open-pr" type="button" hidden>Open PR</button>
     </span>
     <a id="github-pr-link" class="github-pr-link" href="#" target="_blank" rel="noopener" hidden>View PR ↗</a>
     <button id="github-signout" class="icon" title="Sign out of GitHub" aria-label="Sign out of GitHub" type="button">⏻</button>
@@ -49,6 +50,11 @@
 <div class="content">
   <section class="welcome" id="welcome">
     <div class="welcome-inner">
+      <div class="resume-drafts" id="resume-drafts" hidden>
+        <h2>Resume your work</h2>
+        <p class="hint">Branches of yours with unfinished edits.</p>
+        <div class="combobox-list resume-list" id="resume-list"></div>
+      </div>
       <div class="welcome-picker" id="welcome-picker">
         <div class="picker-slide">
           <h2>Pick an existing scenario to start with</h2>
@@ -59,7 +65,9 @@
           </div>
           <div class="scratch-row">
             <span>Or start from scratch:</span>
-            <button id="scratch-scenario" type="button">Blank scenario</button>
+            <button id="scratch-clash" type="button" data-category="clash">Blank Clash scenario</button>
+            <button id="scratch-coop" type="button" data-category="coops">Blank Coop scenario</button>
+            <button id="scratch-alliance" type="button" data-category="alliances">Blank Alliance scenario</button>
             <button id="scratch-campaign" type="button">Blank campaign scenario</button>
           </div>
         </div>
