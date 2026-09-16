@@ -5,7 +5,7 @@ import {
   collectReferencedGlyphs, planScenarioBuild, firstError, pageCount,
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
-import { getToken, signIn, completeSignIn } from "../shared/github-auth.js";
+import { getToken, signIn, completeSignIn, clearToken } from "../shared/github-auth.js";
 import { saveScenarioToRepo, ensurePullRequest, discoverGithubContext, GithubApiError } from "../shared/github-contrib.js";
 
 // The engine's data-package base path. serve.py (and any static file server
@@ -917,6 +917,15 @@ function renderGithubHeader() {
 }
 
 el("github-signin").addEventListener("click", signIn);
+
+el("github-signout").addEventListener("click", () => {
+  clearToken();
+  githubContext = null;
+  lastSaveTarget = null;
+  el("github-pr-link").hidden = true;
+  el("github-save").textContent = "💾 Save to my fork";
+  renderGithubHeader();
+});
 
 let lastSaveTarget = null;
 window.__lastSaveTarget = () => lastSaveTarget; // read by the PR-open/update step
