@@ -94,8 +94,12 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
         `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(b.name)}`,
         token,
       );
-      const texFile = (compare.files || []).find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
-      if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename });
+      const files = (compare.files || []).filter((f) => f.status !== "removed");
+      const texFile = files.find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
+      const assets = files
+        .filter((f) => f.filename.startsWith("assets/images/") || f.filename.startsWith("assets/maps/"))
+        .map((f) => ({ path: f.filename, sha: f.sha }));
+      if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename, assets });
     } catch {
       // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
     }
@@ -103,9 +107,18 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
   return drafts;
 }
 
+function decodeBase64(base64) {
+  return Uint8Array.from(atob(base64.replace(/\n/g, "")), (c) => c.charCodeAt(0));
+}
+
 function decodeBase64Utf8(base64) {
-  const bytes = Uint8Array.from(atob(base64.replace(/\n/g, "")), (c) => c.charCodeAt(0));
-  return new TextDecoder("utf-8").decode(bytes);
+  return new TextDecoder("utf-8").decode(decodeBase64(base64));
+}
+
+// Blobs API, not contents: contents omits the body for files over 1 MB.
+export async function getBlobBytes(token, owner, repo, sha) {
+  const blob = await apiJson(`/repos/${owner}/${repo}/git/blobs/${sha}`, token);
+  return decodeBase64(blob.content);
 }
 
 // Reads one file's text content at a given ref (a branch name, or the
