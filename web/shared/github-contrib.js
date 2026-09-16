@@ -1,3 +1,5 @@
+import { DRAFT_GROUP_FILES } from "./build-plan.js";
+
 export const UPSTREAM_OWNER = "qwrtln";
 export const UPSTREAM_REPO = "Homm3BG-mission-book";
 
@@ -46,11 +48,8 @@ async function apiJson(path, token, options = {}) {
   return response.json();
 }
 
-// GitHub's collaborator-check endpoint 403s under a public_repo-scoped
-// token even for a real collaborator, so read permissions.push instead.
-export async function canPushToUpstream(token) {
-  const repo = await apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token);
-  return Boolean(repo.permissions && repo.permissions.push);
+async function getUpstreamRepo(token) {
+  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token);
 }
 
 export async function currentUser(token) {
@@ -67,11 +66,55 @@ async function findExistingFork(token, username) {
   return response.json();
 }
 
+// GitHub's collaborator-check endpoint 403s under a public_repo-scoped
+// token even for a real collaborator, so permissions.push comes from the
+// repo-info call instead.
 export async function discoverGithubContext(token) {
-  const [user, isMember] = await Promise.all([currentUser(token), canPushToUpstream(token)]);
+  const [user, upstream] = await Promise.all([currentUser(token), getUpstreamRepo(token)]);
   const username = user.login;
+  const isMember = Boolean(upstream.permissions && upstream.permissions.push);
   const fork = isMember ? null : await findExistingFork(token, username);
-  return { username, isMember, fork };
+  const owner = isMember ? UPSTREAM_OWNER : fork ? fork.owner.login : null;
+  const repo = isMember ? UPSTREAM_REPO : fork ? fork.name : null;
+  const drafts = owner ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
+  return { username, isMember, fork, drafts };
+}
+
+// This user's own scenario-editor/<username>/* branches, each paired with
+// the .tex file it touches (found by diffing against the default branch),
+// so a resumed session can load straight from the branch instead of the
+// published source.
+async function findResumableDrafts(token, { owner, repo, username, base }) {
+  const prefix = `scenario-editor/${username}/`;
+  const branches = await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token);
+  const own = branches.filter((b) => b.name.startsWith(prefix));
+
+  const drafts = [];
+  for (const b of own) {
+    const compare = await apiJson(
+      `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(b.name)}`,
+      token,
+    );
+    const texFile = (compare.files || []).find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
+    if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename });
+  }
+  return drafts;
+}
+
+function decodeBase64Utf8(base64) {
+  const bytes = Uint8Array.from(atob(base64.replace(/\n/g, "")), (c) => c.charCodeAt(0));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+// Reads one file's text content at a given ref (a branch name, or the
+// default branch if ref is omitted). Returns null if it doesn't exist there.
+export async function getRepoFile(token, owner, repo, path, ref) {
+  const query = ref ? `?ref=${encodeURIComponent(ref)}` : "";
+  const response = await api(`/repos/${owner}/${repo}/contents/${path}${query}`, token);
+  if (response.status === 404) return null;
+  if (!response.ok) throw new GithubApiError(`Could not read "${path}" (${response.status}).`, { status: response.status });
+  const data = await response.json();
+  return decodeBase64Utf8(data.content);
 }
 
 // Idempotent: returns the existing fork if there is one. A new fork can
@@ -185,8 +228,28 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files)
   return { owner, repo, branch, commitSha: commit.sha };
 }
 
+function draftGroupFor(texPath) {
+  return DRAFT_GROUP_FILES.find((g) => texPath.startsWith(`${g.dir}/`)) || null;
+}
+
+// A brand-new scenario under draft-scenarios/ needs a \clearpage + \input
+// line in its category's main.tex, or the book never assembles it. Reads
+// the branch's own copy if the branch already exists, else the default
+// branch's; a no-op (returns null) if the entry is already there, so this
+// is safe to call on every save, not just the first.
+async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) {
+  const slug = texPath.slice(group.dir.length + 1).replace(/\.tex$/, "");
+  const marker = `\\input{\\${group.macro}path/${slug}.tex}`;
+  const current = (await getRepoFile(token, owner, repo, group.path, branch))
+    ?? (await getRepoFile(token, owner, repo, group.path));
+  if (current == null || current.includes(marker)) return null;
+  const content = `${current.replace(/\s*$/, "")}\n\n\\clearpage\n\n${marker}\n`;
+  return { path: group.path, content };
+}
+
 // Commits to the upstream repo directly for a collaborator, or to the
-// caller's fork otherwise. Fork is created lazily here on first save.
+// caller's fork otherwise. Fork is created lazily here on first save. This
+// is a plain push — it never opens or touches a PR; see ensurePullRequest.
 export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context }) {
   const { username, isMember, fork } = context;
 
@@ -203,8 +266,14 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
     { path: texPath, content: texContent },
     ...[...uploadedFiles.entries()].map(([path, content]) => ({ path, content })),
   ];
-  const message = `Update ${scenarioName}`;
 
+  const group = draftGroupFor(texPath);
+  if (group) {
+    const entryFile = await ensureDraftEntry(token, { owner, repo, branch, group, texPath });
+    if (entryFile) files.push(entryFile);
+  }
+
+  const message = `Update ${scenarioName}`;
   const result = await commitFiles(token, { owner, repo, branch, message, files });
   return { ...result, isMember };
 }
@@ -213,7 +282,7 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
 // only accepts that form for a cross-repo (fork) head, plain branch name
 // for a same-repo (collaborator) head.
 export async function ensurePullRequest(token, { owner, branch, scenarioName, isMember }) {
-  const upstream = await apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token);
+  const upstream = await getUpstreamRepo(token);
   const base = upstream.default_branch;
   const listHead = `${owner}:${branch}`;
 
