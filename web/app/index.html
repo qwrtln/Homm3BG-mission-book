@@ -96,6 +96,24 @@
     text-decoration: underline;
   }
 
+  /* --- GitHub sign-in / save-to-fork / PR link (ticket 05) --------------
+     A single morphing control: one segmented "save" button whose label
+     changes with state, an avatar dropped in once ticket 06/07 have a
+     login to show (see the map's "Not yet specified" on this), a PR link
+     that only appears once a PR exists, and a small sign-out icon. */
+  .github-status[hidden] { display: none; }
+  .github-status { display: flex; align-items: center; gap: 0.5rem; }
+  .github-segment {
+    display: inline-flex;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .github-segment button { border: none; border-radius: 0; }
+  .github-pr-link[hidden] { display: none; }
+  .github-pr-link { color: var(--accent); text-decoration: underline; font-size: 0.85rem; }
+
   .content { flex: 1 1 auto; display: flex; min-height: 0; }
 
   /* --- Welcome screen -------------------------------------------------- */
@@ -414,6 +432,17 @@
     <button id="download" disabled>Download PDF</button>
   </div>
   <button id="github-signin" type="button">Sign in with GitHub</button>
+  <span class="github-status" id="github-status" hidden>
+    <span class="github-segment">
+      <!-- Ticket 06 wires this click to the real fork-and-commit flow;
+           ticket 07 turns its label into "✓ Saved — save again" and
+           reveals #github-pr-link once a PR exists. -->
+      <button id="github-save" type="button">💾 Save to my fork</button>
+    </span>
+    <a id="github-pr-link" class="github-pr-link" href="#" target="_blank" rel="noopener" hidden>View PR ↗</a>
+    <!-- Ticket 08 wires this click to clearToken() and re-renders. -->
+    <button id="github-signout" class="icon" title="Sign out of GitHub" aria-label="Sign out of GitHub" type="button">⏻</button>
+  </span>
   <button id="theme-toggle" class="icon" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">🌙</button>
 </header>
 
@@ -505,6 +534,7 @@ import {
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
 import { getToken, signIn, completeSignIn } from "../shared/github-auth.js";
+import { saveScenarioToRepo, GithubApiError } from "../shared/github-contrib.js";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root, per the app's own serving assumption) makes
@@ -1482,23 +1512,58 @@ saveAlias.hidden = true;
 saveAlias.addEventListener("click", () => el("download").click());
 document.body.appendChild(saveAlias);
 
-// GitHub sign-in (ticket 04 of the GitHub-contribution map). Ticket 05
-// still owns the final header layout for signed-in states (save-to-fork,
-// PR link); this wiring only covers sign-in itself.
-function renderSignInButton() {
-  const btn = el("github-signin");
+// GitHub sign-in (ticket 04) and header layout (ticket 05, morphing
+// segmented control, variant B of that ticket's prototype). Save-to-fork
+// (ticket 06), the PR link (ticket 07), and sign-out (ticket 08) still
+// need their own click handlers; #github-save, #github-pr-link, and
+// #github-signout only get their real wiring in those tickets.
+function renderGithubHeader() {
   const signedIn = Boolean(getToken());
-  btn.textContent = signedIn ? "Signed in with GitHub" : "Sign in with GitHub";
-  btn.disabled = signedIn;
+  el("github-signin").hidden = signedIn;
+  el("github-status").hidden = !signedIn;
 }
 
 el("github-signin").addEventListener("click", signIn);
+
+// Save-to-fork (ticket 06). Ticket 07 reads lastSaveTarget to open or
+// update a PR once a commit lands; ticket 07 also owns the button's label
+// change and revealing #github-pr-link, so this handler only does the
+// underlying save.
+let lastSaveTarget = null;
+window.__lastSaveTarget = () => lastSaveTarget; // read by ticket 07's PR step
+
+el("github-save").addEventListener("click", async () => {
+  if (!chosenPath) return;
+  const token = getToken();
+  if (!token) return;
+  const button = el("github-save");
+  button.disabled = true;
+  setStatus("Saving to your fork…", { spinning: true });
+  try {
+    const scenarioName = basenameNoExt(chosenPath);
+    lastSaveTarget = await saveScenarioToRepo(token, {
+      scenarioName,
+      texPath: chosenPath,
+      texContent: cm.getValue(),
+      uploadedFiles,
+    });
+    setStatus(
+      `Saved to ${lastSaveTarget.owner}/${lastSaveTarget.repo}@${lastSaveTarget.branch}.`,
+      { tone: "ok" },
+    );
+  } catch (error) {
+    const message = error instanceof GithubApiError ? error.message : `Save failed: ${error.message}`;
+    setStatus(message, { tone: "bad" });
+  } finally {
+    button.disabled = false;
+  }
+});
 
 completeSignIn()
   .catch((error) => {
     setStatus(`GitHub sign-in failed: ${error.message}`, { tone: "bad" });
   })
-  .finally(renderSignInButton);
+  .finally(renderGithubHeader);
 
 loadEntries()
   .then(() => {
