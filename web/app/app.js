@@ -531,7 +531,8 @@ async function commitEntry(path, name, category) {
 
   resetGithubSaveState();
   chosenPath = identity;
-  chosenTitle = template ? sanitizeFilename(name) : entry.title;
+  // Always the typed name: a save must never stay tied to the entry it started from.
+  chosenTitle = name.trim();
   document.title = `${chosenTitle} - Heroes III: The Board Game`;
   el("build").disabled = building;
   el("download").disabled = true;
@@ -1052,6 +1053,7 @@ el("github-open-pr").addEventListener("click", async () => {
 
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
+  console.log("[app] renderResumeDrafts", drafts);
   const list = el("resume-list");
   el("resume-drafts").hidden = drafts.length === 0;
   if (drafts.length === 0) return;
@@ -1107,6 +1109,7 @@ completeSignIn()
       githubContext = await discoverGithubContext(token);
       renderResumeDrafts();
     } catch (error) {
+      console.error(error);
       setStatus(`Could not read your GitHub account: ${error.message}`, { tone: "bad" });
     }
   })
