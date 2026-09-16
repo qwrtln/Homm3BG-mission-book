@@ -1,16 +1,7 @@
-// The token-exchange endpoint for the scenario-builder app's GitHub sign-in
-// (ticket 04 of .scratch/scenario-builder-github-contrib/map.md).
-//
-// GitHub's own token endpoint, https://github.com/login/oauth/access_token,
-// sends no CORS headers, so the app's page cannot call it directly (ticket
-// 01). This function is the one small server-side piece that can: it holds
-// the OAuth App's client secret and makes that call on the app's behalf.
-//
-// Deployed as its own Cloudflare Pages project, separate from the app's
-// GitHub Pages hosting (ticket 02: project "mission-book-oauth-relay").
-// GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET are set on that project's
-// dashboard, under Settings, Environment variables (ticket 03); the secret
-// is a "Secret" binding, never committed here.
+// GitHub's token endpoint sends no CORS headers, so the app's page cannot
+// call it directly. This holds the OAuth App's client secret and makes
+// that call server-side. GITHUB_CLIENT_ID/GITHUB_CLIENT_SECRET are set as
+// Cloudflare Pages env vars, never committed here.
 const ALLOWED_ORIGIN = "https://qwrtln.github.io";
 
 export async function onRequestPost(context) {

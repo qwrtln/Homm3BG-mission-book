@@ -1,13 +1,6 @@
-// GitHub OAuth sign-in for the scenario-builder app (ticket 04 of
-// .scratch/scenario-builder-github-contrib/map.md).
-//
-// This page redirects to GitHub's web application flow. GitHub redirects
-// back with `?code=`, and this module trades that code for a token through
-// the Cloudflare Pages Function relay at RELAY_URL (ticket 01's finding:
-// GitHub's own token endpoint sends no CORS headers to a browser, so a
-// server-side call is required either way). The relay holds the OAuth
-// App's client secret (ticket 03); this module only ever sees the token it
-// returns.
+// GitHub's token endpoint sends no CORS headers, so the code-for-token
+// exchange runs through a Cloudflare Pages Function relay, which holds the
+// OAuth App's client secret. This module only ever sees the token it returns.
 const CLIENT_ID = "Ov23liJjzuIkBg8C249t";
 const RELAY_URL = "https://mission-book-oauth-relay.pages.dev/api/callback";
 const SCOPE = "public_repo";
@@ -17,7 +10,6 @@ export function getToken() {
   return localStorage.getItem(TOKEN_KEY);
 }
 
-// Ticket 08 (sign-out) calls this to clear the stored token.
 export function clearToken() {
   localStorage.removeItem(TOKEN_KEY);
 }
@@ -38,10 +30,8 @@ export function signIn() {
   location.href = `https://github.com/login/oauth/authorize?${params}`;
 }
 
-// Runs once at page load. If GitHub just redirected back with a `code`,
-// this trades it for a token through the relay, stores the token, and
-// strips `code`/`state` from the URL so a page refresh cannot resend them.
-// Returns the current token, or null if the user is not signed in.
+// If GitHub just redirected back with `?code=`, trades it for a token and
+// strips code/state from the URL. Returns the token, or null if signed out.
 export async function completeSignIn() {
   const url = new URL(location.href);
   const code = url.searchParams.get("code");
