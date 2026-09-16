@@ -70,6 +70,30 @@ export async function currentUser(token) {
   return apiJson("/user", token);
 }
 
+// Read-only check for an already-existing fork, safe to run at sign-in:
+// unlike ensureFork below, this never creates one. Returns the fork's repo
+// object, or null if the signed-in user has none yet.
+async function findExistingFork(token, username) {
+  const response = await api(`/repos/${username}/${UPSTREAM_REPO}`, token);
+  if (response.status === 404) return null;
+  if (!response.ok) {
+    throw new GithubApiError(`Could not check for your fork (${response.status}).`, { status: response.status });
+  }
+  return response.json();
+}
+
+// Runs at sign-in (not at save time): reads the signed-in user's login,
+// upstream push permission, and whether their fork already exists. Forking
+// itself stays lazy, on first save (ensureFork below) — this only looks,
+// it never creates. The save flow and the header UI both read this once,
+// rather than repeating these calls on every save.
+export async function discoverGithubContext(token) {
+  const [user, isMember] = await Promise.all([currentUser(token), canPushToUpstream(token)]);
+  const username = user.login;
+  const fork = isMember ? null : await findExistingFork(token, username);
+  return { username, isMember, fork };
+}
+
 // Idempotent per GitHub: a user can only have one fork of a given repo, and
 // re-forking an existing fork just returns it. Fork creation is
 // asynchronous on GitHub's side, so the returned repo can 404 for a few
@@ -107,6 +131,17 @@ async function createBranch(token, owner, repo, branch, fromSha) {
     method: "POST",
     body: JSON.stringify({ ref: `refs/heads/${branch}`, sha: fromSha }),
   });
+}
+
+// Lowercase, hyphenated, git-safe. Branch names come from a scenario's
+// human title (e.g. "Dances with Dwarves"), not its filename, so this
+// always runs before a name reaches a branch.
+export function slugify(name) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function toBase64(bytes) {
@@ -194,27 +229,34 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files)
  *
  * @param {string} token
  * @param {object} params
- * @param {string} params.scenarioName used for the branch name and the
- *   commit message
+ * @param {string} params.scenarioName the scenario's human title (e.g.
+ *   "Dances with Dwarves"), used for the branch name and the commit message
  * @param {string} params.texPath repository path of the .tex file, e.g.
  *   "clash/astral_run.tex"
  * @param {string} params.texContent current editor contents
  * @param {Map<string, Uint8Array>} params.uploadedFiles staged images,
  *   keyed by their repository path (already `assets/images/...` or
  *   `assets/maps/...`, per the upload popover)
+ * @param {object} params.context this sign-in's discoverGithubContext()
+ *   result — {username, isMember, fork}. The fork, if any, is reused as-is;
+ *   a missing one is still created lazily here, on first save.
  */
-export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles }) {
-  const isMember = await canPushToUpstream(token);
+export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context }) {
+  const { username, isMember, fork } = context;
 
   let owner = UPSTREAM_OWNER;
   let repo = UPSTREAM_REPO;
   if (!isMember) {
-    const fork = await ensureFork(token);
-    owner = fork.owner.login;
-    repo = fork.name;
+    const forkRepo = fork || await ensureFork(token);
+    owner = forkRepo.owner.login;
+    repo = forkRepo.name;
   }
 
-  const branch = `draft/${scenarioName}`;
+  // scenario-editor/<username>/<slug>, always — both flows, so branches
+  // can be filtered by prefix regardless of which repo they land on. The
+  // username also keeps two collaborators editing the same scenario from
+  // colliding on the same upstream branch.
+  const branch = `scenario-editor/${username}/${slugify(scenarioName)}`;
   const files = [
     { path: texPath, content: texContent },
     ...[...uploadedFiles.entries()].map(([path, content]) => ({ path, content })),
@@ -223,6 +265,35 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
 
   const result = await commitFiles(token, { owner, repo, branch, message, files });
   return { ...result, isMember };
+}
+
+// Opens a PR from the just-written branch to upstream's default branch, or
+// returns the one already open for it (ticket 07). GitHub's "list pulls"
+// endpoint always filters `head` as "owner:branch", cross-repo or not, but
+// the "create pull request" endpoint only accepts that namespaced form for
+// a cross-repo (fork) head — a same-repo (collaborator) head must be the
+// plain branch name, per the map's Notes on the two save flows.
+export async function ensurePullRequest(token, { owner, branch, scenarioName, isMember }) {
+  const upstream = await apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token);
+  const base = upstream.default_branch;
+  const listHead = `${owner}:${branch}`;
+
+  const existing = await apiJson(
+    `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls?head=${encodeURIComponent(listHead)}&state=open`,
+    token,
+  );
+  if (existing.length > 0) return existing[0];
+
+  const head = isMember ? branch : listHead;
+  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, {
+    method: "POST",
+    body: JSON.stringify({
+      title: `Update ${scenarioName}`,
+      head,
+      base,
+      body: `Updates the "${scenarioName}" scenario, edited in the browser mission book editor.`,
+    }),
+  });
 }
 
 export { GithubApiError };

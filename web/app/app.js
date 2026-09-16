@@ -6,7 +6,7 @@ import {
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../shared/build-plan.js";
 import { getToken, signIn, completeSignIn } from "../shared/github-auth.js";
-import { saveScenarioToRepo, GithubApiError } from "../shared/github-contrib.js";
+import { saveScenarioToRepo, ensurePullRequest, discoverGithubContext, GithubApiError } from "../shared/github-contrib.js";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root) makes this reachable at a root-relative
@@ -921,6 +921,12 @@ el("github-signin").addEventListener("click", signIn);
 let lastSaveTarget = null;
 window.__lastSaveTarget = () => lastSaveTarget; // read by the PR-open/update step
 
+// Set once, right after sign-in (see completeSignIn below), by
+// discoverGithubContext: {username, isMember, fork}. Read-only — it never
+// creates the fork, only checks whether one already exists. The save
+// handler still creates it lazily, on first save, if this found none.
+let githubContext = null;
+
 el("github-save").addEventListener("click", async () => {
   if (!chosenPath) return;
   const token = getToken();
@@ -929,13 +935,19 @@ el("github-save").addEventListener("click", async () => {
   button.disabled = true;
   setStatus("Saving to your fork…", { spinning: true });
   try {
-    const scenarioName = basenameNoExt(chosenPath);
+    if (!githubContext) githubContext = await discoverGithubContext(token);
+    const scenarioName = chosenTitle;
     lastSaveTarget = await saveScenarioToRepo(token, {
       scenarioName,
       texPath: chosenPath,
       texContent: cm.getValue(),
       uploadedFiles,
+      context: githubContext,
     });
+    const pr = await ensurePullRequest(token, { ...lastSaveTarget, scenarioName });
+    el("github-pr-link").href = pr.html_url;
+    el("github-pr-link").hidden = false;
+    button.textContent = "💾 Saved, save again";
     setStatus(
       `Saved to ${lastSaveTarget.owner}/${lastSaveTarget.repo}@${lastSaveTarget.branch}.`,
       { tone: "ok" },
@@ -949,6 +961,14 @@ el("github-save").addEventListener("click", async () => {
 });
 
 completeSignIn()
+  .then(async (token) => {
+    if (!token) return;
+    try {
+      githubContext = await discoverGithubContext(token);
+    } catch (error) {
+      setStatus(`Could not read your GitHub account: ${error.message}`, { tone: "bad" });
+    }
+  })
   .catch((error) => {
     setStatus(`GitHub sign-in failed: ${error.message}`, { tone: "bad" });
   })
