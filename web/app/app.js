@@ -928,12 +928,8 @@ el("github-signout").addEventListener("click", () => {
 });
 
 let lastSaveTarget = null;
-window.__lastSaveTarget = () => lastSaveTarget; // read by the PR-open/update step
+window.__lastSaveTarget = () => lastSaveTarget;
 
-// Set once, right after sign-in (see completeSignIn below), by
-// discoverGithubContext: {username, isMember, fork}. Read-only — it never
-// creates the fork, only checks whether one already exists. The save
-// handler still creates it lazily, on first save, if this found none.
 let githubContext = null;
 
 el("github-save").addEventListener("click", async () => {
