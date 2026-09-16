@@ -123,7 +123,7 @@ button.link {
 .welcome {
   flex: 1 1 auto;
   display: flex;
-  align-items: safe center;
+  align-items: center;
   justify-content: center;
   padding: 2rem 1.25rem;
   overflow: auto;
@@ -131,7 +131,7 @@ button.link {
 .welcome-inner { max-width: 62rem; width: 100%; }
 .resume-drafts[hidden] { display: none; }
 .resume-drafts { margin-bottom: 1.5rem; }
-.resume-list { position: static; max-height: none; box-shadow: none; }
+.combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
 .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
 .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
 /* Three equal-width blocks, side by side, statically: no motion between
