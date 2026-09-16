@@ -7,9 +7,9 @@ import {
 } from "../shared/build-plan.js";
 import { getToken, signIn, completeSignIn, clearToken } from "../shared/github-auth.js";
 import {
-  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, getRepoFile,
+  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, getRepoFile, getBlobBytes,
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
-} from "../shared/github-contrib.js?v=1";
+} from "../shared/github-contrib.js?v=2";
 
 // The engine's data-package base path. serve.py (and any static file server
 // rooted at the repository root) makes this reachable at a root-relative
@@ -671,6 +671,10 @@ el("upload-maps").addEventListener("change", async () => {
     originalName: file.name,
     path: null,
   })));
+  renderMapUploads();
+});
+
+function renderMapUploads() {
   const list = el("upload-maps-names");
   list.innerHTML = mapUploads.map((item, i) => `
     <div class="upload-rename-row">
@@ -681,7 +685,25 @@ el("upload-maps").addEventListener("change", async () => {
   list.hidden = false;
   list.querySelectorAll(".upload-rename").forEach((input) => input.addEventListener("input", restageMaps));
   restageMaps();
-});
+}
+
+function restoreUploads(files) {
+  const images = files.filter((f) => f.path.startsWith("assets/images/"));
+  const maps = files.filter((f) => f.path.startsWith("assets/maps/"));
+  const [header, ...extraImages] = images;
+  if (header) {
+    const originalName = header.path.slice("assets/images/".length);
+    headerUpload = { bytes: header.bytes, originalName, path: null };
+    el("upload-header-name").hidden = false;
+    el("upload-header-name").value = originalName;
+    restageHeader();
+  }
+  for (const extra of extraImages) uploadedFiles.set(extra.path, extra.bytes);
+  if (maps.length) {
+    mapUploads = maps.map((f) => ({ bytes: f.bytes, originalName: f.path.slice("assets/maps/".length), path: null }));
+    renderMapUploads();
+  }
+}
 
 function clearPdf() {
   lastPdf = null;
@@ -957,6 +979,8 @@ async function reopenLocalDraft(path, title) {
   chosenPath = path;
   chosenTitle = title || basenameNoExt(path);
   document.title = `${chosenTitle} - Heroes III: The Board Game`;
+  el("build").disabled = building;
+  el("download").disabled = true;
   cm.setValue(content);
   el("draft-note").hidden = false;
   resetUploads();
@@ -1075,7 +1099,10 @@ el("resume-list").addEventListener("click", async (event) => {
 
   setStatus("Loading your draft…", { spinning: true });
   try {
-    const content = await getRepoFile(token, owner, repo, draft.texPath, draft.branch);
+    const [content, assets] = await Promise.all([
+      getRepoFile(token, owner, repo, draft.texPath, draft.branch),
+      Promise.all(draft.assets.map(async (a) => ({ path: a.path, bytes: await getBlobBytes(token, owner, repo, a.sha) }))),
+    ]);
     if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
 
     await showWorkspace();
@@ -1086,9 +1113,12 @@ el("resume-list").addEventListener("click", async (event) => {
     chosenPath = draft.texPath;
     chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     document.title = `${chosenTitle} - Heroes III: The Board Game`;
+    el("build").disabled = building;
+    el("download").disabled = true;
     cm.setValue(content);
     el("draft-note").hidden = true;
     resetUploads();
+    restoreUploads(assets);
     clearPdf();
 
     lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
