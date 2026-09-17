@@ -1,0 +1,22 @@
+name: Test web scenario builder
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/test-web.yaml'
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    name: Unit tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Show Node version
+        run: node --version
+
+      - name: Run unit tests
+        run: node --test web/tests/unit/
