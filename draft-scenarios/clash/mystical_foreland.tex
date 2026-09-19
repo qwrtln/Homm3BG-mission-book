@@ -71,9 +71,8 @@ Obtain the Grail Token and bring it to your Faction Town.
 \textbf{Setup changes:}
 
 \begin{itemize}
-  \item A Hero may not move between a \textcolor{red}{\textbf{Red Tile}} and a Sea Tile.
-  \item \textcolor{blue}{\textbf{Blue Tiles}} are the Subterranean Tiles.
-  \item Tiles that have the \textcolor{inferno}{\textbf{Red Cubes}} contain \textbf{Creature Banks}.
+  \item A Hero may not move between \textcolor{red}{\textbf{Red Borders}} and Sea Tiles.
+  \item Highlighted Tiles in \textcolor{rampart}{\textbf{Green}} contain \textbf{Creature Banks}.
   \item Before the game, remove the \textbf{Diplomacy} Ability, the \textbf{Den of Thieves} and \textbf{Prison} Events, and the \textbf{Ambassador's Sash} and \textbf{Diplomat's Ring} Artifacts.
   \item Level VII Neutral Combats cannot be skipped.
   \item \textbf{Custom Combat Rule}: Neutral \svg{golden} Units gain an extra \textbf{Stack Token} each, except when fighting the \textbf{Grail Army} or another player. Each \textbf{Stack Token} placed allows the Combat to extend an additional Round without spending extra \svg{movement}. Defeating \svg{golden} Unit grants the player 5~\svg{gold} and 2~\svg{building_materials} or 1~'\svg{valuables} each.
@@ -122,13 +121,27 @@ Obtain the Grail Token and bring it to your Faction Town.
   \item In a 2v2 Scenario, each team places one player on a \textcolor{red}{red-outlined} Starting (I) Tile and one player on a Starting (I) Tile that is not outlined.
 \end{itemize}
 
+\pagebreak
 
-\begin{center}
-  \vspace*{\fill}
-  \includegraphics[width=1.0\linewidth]{\maps/mystical_foreland.png}
-  \captionof{figure}{\textbf{SCENARIO MAP LAYOUT}}
-  \vspace*{\fill}
-\end{center}
+\begin{tikzpicture}[overlay]
+  \node(bg)[opacity=0.1] at (9, -10) {
+    \includegraphics[width=1.1\paperwidth, keepaspectratio]{\art/implosion.png}
+  };
+  \centering
+  \foreach \x in {0, 1, ..., 20} {
+    \foreach \y in {0, -1, ..., -25} {
+      \fill (\x, \y) circle (1pt);
+    }
+  }
+  \node at (9, -6) {\includegraphics[scale=0.35]{\maps/mystical_foreland.png}};
+  \node[font=\fontsize{16pt}{8pt}\selectfont] at (17.5 ,-2.6)  {\textbf{\textcolor{cornflowerblue}{Grail Tile}}};
+  \draw[cornflowerblue, line width=2.0pt, -Triangle] (17.5, -3) -- (15, -4.8);
+  \node[font=\fontsize{22pt}{8pt}\selectfont] at (3.49, -0.73) {\textbf{\textcolor{goldyellow}{A}}};
+  \node[font=\fontsize{22pt}{8pt}\selectfont] at (11.12, -2.15) {\textbf{\textcolor{goldyellow}{B}}};
+  \node[font=\fontsize{22pt}{8pt}\selectfont] at (5.58, -11.63) {\textbf{\textcolor{goldyellow}{C}}};
+  \node[font=\fontsize{22pt}{8pt}\selectfont] at (12.83, -8.04) {\textbf{\textcolor{goldyellow}{D}}};
+
+\end{tikzpicture}
 
 
 \end{multicols*}
