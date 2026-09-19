@@ -48,6 +48,21 @@ jobs:
           mkdir -p site/web
           rsync -a --exclude 'prototype-engine-check' web/ site/web/
 
+      - name: Inline the stats script
+        run: |
+          page=site/web/app/index.html
+          curl -fsSL https://scripts.simpleanalyticscdn.com/latest.js -o "$RUNNER_TEMP/sa.js"
+          grep -q '<!-- stats placeholder -->' "$page"
+          awk -v js="$RUNNER_TEMP/sa.js" '
+            /<!-- stats placeholder -->/ {
+              print "<script>"
+              while ((getline line < js) > 0) print line
+              print "</script>"
+              next
+            }
+            { print }
+          ' "$page" > "$page.tmp" && mv "$page.tmp" "$page"
+
       - name: Copy scenario sources into web/repo/
         # web/app/index.html fetches scenarios, templates, and shared
         # assets by a path relative to itself, resolved against web/repo/
