@@ -9,11 +9,16 @@ built-in test runner (`node:test`) and `node:assert`.
 Pure logic, no DOM and no network. Run them from the repository root:
 
 ```sh
-node --test web/tests/unit/
+node --test "web/tests/unit/**/*.test.mjs"
 ```
 
-Node discovers every `*.test.mjs` file under that directory. There is no
-configuration file, and no `npm` step before it.
+Node expands that pattern itself, so quote it and let it through the shell
+unexpanded. There is no configuration file, and no `npm` step before it.
+
+The pattern is spelled out rather than passed as the directory
+(`node --test web/tests/unit/`) because only Node 25 and later expand a
+directory argument. On Node 22 and 24 the directory is taken for a test file
+and the run fails with `Cannot find module`.
 
 ## Tier 2: integration tests
 

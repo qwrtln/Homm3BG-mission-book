@@ -58,6 +58,21 @@ export async function preloadFile(path, signal) {
 }
 
 /**
+ * The text of a repository file, for the callers that need a string rather
+ * than a StagedFile. Only ever called for `.tex` paths, which fetchAt reads
+ * as text; a binary path would be a programming error, so it throws.
+ *
+ * @param {string} path repository-relative path
+ * @param {AbortSignal} [signal]
+ * @returns {Promise<string>}
+ */
+export async function preloadText(path, signal) {
+  const { content } = await preloadFile(path, signal);
+  if (typeof content !== "string") throw new Error(`${path} was fetched as bytes, not text.`);
+  return content;
+}
+
+/**
  * @param {string} name a filename under web/shared/texmf/
  * @param {AbortSignal} [signal]
  * @returns {Promise<StagedFile>}
@@ -79,7 +94,7 @@ export async function preloadTexmfFile(name, signal) {
  * @returns {Promise<void>}
  */
 export async function preloadCommonFiles() {
-  const metadata = /** @type {string} */ ((await preloadFile("metadata.tex")).content);
+  const metadata = await preloadText("metadata.tex");
   const commonPaths = [...ALWAYS_PRELOAD, ...collectReferencedAssets(metadata), ...glyphFilesFor(CORE_GLYPHS)];
   for (const path of commonPaths) {
     try { await preloadFile(path); } catch { /* retried, and surfaced if it matters, at build time */ }

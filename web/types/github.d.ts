@@ -2,6 +2,11 @@
 // Deliberately partial: these describe what the code touches, not the whole
 // API. Adding a field here is cheap; guessing at one the code never reads is
 // noise.
+//
+// Nothing here is asserted onto a payload. Each shape has a parser in
+// shared/github-contrib.js that checks it field by field at the point of
+// entry, so a shape that has drifted fails there rather than travelling on as
+// an undefined.
 
 interface GithubUser {
   login: string;
@@ -32,7 +37,6 @@ interface GithubCompare {
 interface GithubBlob {
   /** Base64, with newlines, as the blobs API returns it. */
   content: string;
-  sha: string;
 }
 
 interface GithubContents {
@@ -48,7 +52,8 @@ interface GithubCommit {
   tree: { sha: string };
 }
 
-interface GithubTree {
+/** A create response this app reads only the sha from: blobs, trees. */
+interface GithubShaOnly {
   sha: string;
 }
 
@@ -87,15 +92,4 @@ interface CommitResult {
   repo: string;
   branch: string;
   commitSha: string;
-}
-
-/**
- * The transport seam FR-006 will inject, so a test can fake the GitHub API
- * without reaching api.github.com. Declared here so the shape is agreed
- * before the refactor lands; nothing is wired to it yet, because
- * shared/github-contrib.js is under concurrent edit by a separate effort
- * (see the PRD's Constraints & Compatibility).
- */
-interface GithubTransport {
-  (path: string, init?: RequestInit): Promise<Response>;
 }

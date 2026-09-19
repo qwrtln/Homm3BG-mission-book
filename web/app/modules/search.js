@@ -1,6 +1,6 @@
 import { CATEGORY_ORDER } from "./config.js";
 import { state } from "./state.js";
-import { el, escapeHtml } from "./dom.js";
+import { el, escapeHtml, closestTo } from "./dom.js";
 import { selectPending } from "./picker.js";
 
 /**
@@ -122,11 +122,11 @@ export function initSearch() {
   });
   el("search-results").addEventListener("mousedown", (event) => {
     // mousedown, not click: fires before the input's blur hides the list.
-    const button = /** @type {HTMLElement} */ (event.target).closest("[data-path]");
-    const path = button instanceof HTMLElement ? button.dataset.path : null;
+    const button = closestTo(event, "[data-path]");
+    const path = button ? button.dataset.path : null;
     if (button && path) selectPending(path, button.textContent ?? "");
   });
   document.addEventListener("click", (event) => {
-    if (!(/** @type {HTMLElement} */ (event.target).closest(".combobox"))) el("search-results").hidden = true;
+    if (!closestTo(event, ".combobox")) el("search-results").hidden = true;
   });
 }

@@ -6,6 +6,9 @@ on:
     paths:
       - 'web/**'
       - '.github/workflows/test-web.yaml'
+  push:
+    branches:
+      - web-editor # TEMP: testing this workflow from a branch, revert before merge
 
 jobs:
   unit:
@@ -26,7 +29,7 @@ jobs:
         run: node --version
 
       - name: Run unit tests
-        run: node --test web/tests/unit/
+        run: node --test "web/tests/unit/**/*.test.mjs"
 
       - name: Type-check
         if: always()

@@ -1,3 +1,4 @@
+import { errorMessage } from "../shared/errors.js";
 import { state } from "./modules/state.js";
 import { el, setStatus, escapeHtml } from "./modules/dom.js";
 import { preloadCommonFiles } from "./modules/files.js";
@@ -23,8 +24,8 @@ loadEntries()
   .then(() => {
     if (!state.entries.length) setStatus("No scenarios found.", { tone: "bad" });
   })
-  .catch((/** @type {Error} */ error) => {
-    el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(error.message)}</div>`;
+  .catch((error) => {
+    el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(errorMessage(error))}</div>`;
     el("search-results").hidden = false;
   });
 

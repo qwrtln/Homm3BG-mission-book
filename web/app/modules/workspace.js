@@ -1,5 +1,5 @@
 import { TEMPLATES } from "./config.js";
-import { state } from "./state.js";
+import { state, requireEditor } from "./state.js";
 import { el, setStatus, sanitizeFilename } from "./dom.js";
 import { loadDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
@@ -60,8 +60,7 @@ export async function commitEntry(path, name, category) {
     : state.entries.find((e) => e.path === path);
   if (!entry) return;
 
-  // initEditor runs before any path can reach this, so cm is never null here.
-  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
+  const cm = requireEditor();
 
   await showWorkspace();
   cm.refresh(); // CodeMirror mismeasures while its host was display:none

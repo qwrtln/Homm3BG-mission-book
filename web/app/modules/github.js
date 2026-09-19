@@ -4,8 +4,9 @@ import {
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
 } from "../../shared/github-contrib.js?v=2";
 
-import { state } from "./state.js";
-import { el, setStatus, escapeHtml, basenameNoExt } from "./dom.js";
+import { errorMessage } from "../../shared/errors.js";
+import { state, requireEditor } from "./state.js";
+import { el, setStatus, escapeHtml, basenameNoExt, closestTo } from "./dom.js";
 import { loadDraft, saveDraft } from "./drafts.js";
 import { clearPdf } from "./pdf-view.js";
 import { showWorkspace } from "./workspace.js";
@@ -34,8 +35,7 @@ async function reopenLocalDraft(path, title) {
   const content = loadDraft(path);
   if (content === null) return false;
 
-  // initEditor runs before this, so cm is never null here.
-  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
+  const cm = requireEditor();
   await showWorkspace();
   cm.refresh();
   el("header-actions").hidden = false;
@@ -115,7 +115,7 @@ export function initGithub() {
       const saved = await saveScenarioToRepo(token, {
         scenarioName: state.chosenTitle,
         texPath: state.chosenPath,
-        texContent: /** @type {CodeMirrorEditor} */ (state.cm).getValue(),
+        texContent: requireEditor().getValue(),
         uploadedFiles: state.uploadedFiles,
         context: githubContext,
       });
@@ -124,7 +124,7 @@ export function initGithub() {
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Save failed: ${/** @type {Error} */ (error).message}`;
+      const message = error instanceof GithubApiError ? error.message : `Save failed: ${errorMessage(error)}`;
       setStatus(message, { tone: "bad" });
     } finally {
       button.disabled = false;
@@ -146,7 +146,7 @@ export function initGithub() {
       button.hidden = true;
       setStatus(`PR open at ${pr.html_url}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${/** @type {Error} */ (error).message}`;
+      const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${errorMessage(error)}`;
       setStatus(message, { tone: "bad" });
     } finally {
       button.disabled = false;
@@ -154,8 +154,8 @@ export function initGithub() {
   });
 
   el("resume-list").addEventListener("click", async (event) => {
-    const button = /** @type {HTMLElement} */ (event.target).closest("[data-draft-index]");
-    if (!(button instanceof HTMLElement) || !githubContext) return;
+    const button = closestTo(event, "[data-draft-index]");
+    if (!button || !githubContext) return;
     const draft = githubContext.drafts[Number(button.dataset.draftIndex)];
     if (!draft) return;
     const token = getToken();
@@ -163,13 +163,13 @@ export function initGithub() {
 
     // A non-member always has a fork by now: the resume list is only drawn
     // from drafts found on one.
-    const fork = /** @type {GithubRepo} */ (githubContext.fork);
-    const { owner, repo } = githubContext.isMember
+    const fork = githubContext.fork;
+    if (!githubContext.isMember && !fork) return;
+    const { owner, repo } = githubContext.isMember || !fork
       ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
       : { owner: fork.owner.login, repo: fork.name };
 
-    // initEditor runs before this, so cm is never null here.
-    const cm = /** @type {CodeMirrorEditor} */ (state.cm);
+    const cm = requireEditor();
 
     setStatus("Loading your draft…", { spinning: true });
     try {
@@ -200,7 +200,7 @@ export function initGithub() {
       el("github-save").textContent = "💾 Save again";
       setStatus("Ready.");
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${/** @type {Error} */ (error).message}`;
+      const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
       setStatus(message, { tone: "bad" });
     }
   });
@@ -212,11 +212,11 @@ export function initGithub() {
         githubContext = await discoverGithubContext(token);
         renderResumeDrafts();
       } catch (error) {
-        setStatus(`Could not read your GitHub account: ${/** @type {Error} */ (error).message}`, { tone: "bad" });
+        setStatus(`Could not read your GitHub account: ${errorMessage(error)}`, { tone: "bad" });
       }
     })
-    .catch((/** @type {Error} */ error) => {
-      setStatus(`GitHub sign-in failed: ${error.message}`, { tone: "bad" });
+    .catch((error) => {
+      setStatus(`GitHub sign-in failed: ${errorMessage(error)}`, { tone: "bad" });
     })
     .finally(renderGithubHeader);
 }
