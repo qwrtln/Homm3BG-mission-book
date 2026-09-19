@@ -6,14 +6,17 @@ const RELAY_URL = "https://mission-book-oauth-relay.pages.dev/api/callback";
 const SCOPE = "public_repo";
 const TOKEN_KEY = "github_token";
 
+/** @returns {string | null} the stored token, or null when signed out */
 export function getToken() {
   return localStorage.getItem(TOKEN_KEY);
 }
 
+/** @returns {void} */
 export function clearToken() {
   localStorage.removeItem(TOKEN_KEY);
 }
 
+/** @returns {string} this page's URL with query and fragment stripped */
 function currentUrlWithoutQuery() {
   const url = new URL(location.href);
   url.search = "";
@@ -21,6 +24,8 @@ function currentUrlWithoutQuery() {
   return url.href;
 }
 
+/** Leaves the page: a full-page redirect to GitHub's authorize screen.
+ * @returns {void} */
 export function signIn() {
   const params = new URLSearchParams({
     client_id: CLIENT_ID,
@@ -30,8 +35,12 @@ export function signIn() {
   location.href = `https://github.com/login/oauth/authorize?${params}`;
 }
 
-// If GitHub just redirected back with `?code=`, trades it for a token and
-// strips code/state from the URL. Returns the token, or null if signed out.
+/**
+ * If GitHub just redirected back with `?code=`, trades it for a token and
+ * strips code/state from the URL.
+ *
+ * @returns {Promise<string | null>} the token, or null if signed out
+ */
 export async function completeSignIn() {
   const url = new URL(location.href);
   const code = url.searchParams.get("code");
@@ -42,7 +51,9 @@ export async function completeSignIn() {
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ code }),
   });
-  const data = await response.json();
+  const data = /** @type {{access_token?: string, error?: string, error_description?: string}} */ (
+    await response.json()
+  );
 
   url.searchParams.delete("code");
   url.searchParams.delete("state");

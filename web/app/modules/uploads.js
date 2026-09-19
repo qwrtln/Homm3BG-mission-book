@@ -5,9 +5,22 @@ import { el, escapeHtml } from "./dom.js";
 // virtual filesystem the build compiles from, under an editable target path.
 const MAX_MAP_FILES = 6;
 
-let headerUpload = null;  // {bytes, path} | null
-let mapUploads = [];      // [{bytes, originalName, path}]
+/**
+ * One file a contributor added from their own machine, before and after it
+ * is staged at a repository path.
+ *
+ * @typedef {object} PendingUpload
+ * @property {Uint8Array} bytes
+ * @property {string} originalName the filename as chosen on their machine
+ * @property {string | null} path where the build sees it; null until staged
+ */
 
+/** @type {PendingUpload | null} */
+let headerUpload = null;
+/** @type {PendingUpload[]} */
+let mapUploads = [];
+
+/** Clears every staged upload and its controls. @returns {void} */
 export function resetUploads() {
   state.uploadedFiles.clear();
   headerUpload = null;
@@ -22,16 +35,32 @@ export function resetUploads() {
   setUploadStatus("upload-maps-status", "One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.");
 }
 
+/**
+ * @param {"upload-header-status" | "upload-maps-status"} id
+ * @param {string} html trusted markup; caller escapes any contributor text
+ * @param {"" | "bad"} [tone]
+ * @returns {void}
+ */
 export function setUploadStatus(id, html, tone = "") {
   const span = el(id);
   span.innerHTML = html;
   span.classList.toggle("bad", tone === "bad");
 }
 
+/**
+ * @param {File} file
+ * @returns {Promise<Uint8Array>}
+ */
 export async function readAsUint8Array(file) {
   return new Uint8Array(await file.arrayBuffer());
 }
 
+/**
+ * Re-stages the header image under whatever target name is in its rename
+ * box, dropping the path it was staged at before.
+ *
+ * @returns {void}
+ */
 export function restageHeader() {
   if (!headerUpload) return;
   if (headerUpload.path) state.uploadedFiles.delete(headerUpload.path);
@@ -42,9 +71,16 @@ export function restageHeader() {
   setUploadStatus("upload-header-status", `Staged: <code>${escapeHtml(path)}</code>`);
 }
 
+/**
+ * Re-stages every map image under the target names in its rename boxes.
+ *
+ * @returns {void}
+ */
 export function restageMaps() {
   for (const item of mapUploads) if (item.path) state.uploadedFiles.delete(item.path);
-  const inputs = [...el("upload-maps-names").querySelectorAll(".upload-rename")];
+  const inputs = /** @type {HTMLInputElement[]} */ (
+    [...el("upload-maps-names").querySelectorAll(".upload-rename")]
+  );
   const seen = new Set();
   let collision = false;
   mapUploads.forEach((item, i) => {
@@ -64,6 +100,7 @@ export function restageMaps() {
   );
 }
 
+/** Draws one rename row per staged map image. @returns {void} */
 export function renderMapUploads() {
   const list = el("upload-maps-names");
   list.innerHTML = mapUploads.map((item, i) => `
@@ -77,6 +114,13 @@ export function renderMapUploads() {
   restageMaps();
 }
 
+/**
+ * Puts a resumed draft's committed assets back into the upload controls, so
+ * "Save again" keeps carrying them.
+ *
+ * @param {{path: string, bytes: Uint8Array}[]} files
+ * @returns {void}
+ */
 export function restoreUploads(files) {
   const images = files.filter((f) => f.path.startsWith("assets/images/"));
   const maps = files.filter((f) => f.path.startsWith("assets/maps/"));
@@ -95,6 +139,7 @@ export function restoreUploads(files) {
   }
 }
 
+/** Wires the uploads popover and its two file inputs. @returns {void} */
 export function initUploads() {
   el("upload-toggle").addEventListener("click", (event) => {
     event.stopPropagation();
@@ -107,7 +152,7 @@ export function initUploads() {
   });
 
   el("upload-header").addEventListener("change", async () => {
-    const [file] = el("upload-header").files;
+    const [file] = el("upload-header").files ?? [];
     if (!file) return;
     if (headerUpload && headerUpload.path) state.uploadedFiles.delete(headerUpload.path);
     headerUpload = { bytes: await readAsUint8Array(file), originalName: file.name, path: null };
@@ -118,7 +163,7 @@ export function initUploads() {
   el("upload-header-name").addEventListener("input", restageHeader);
 
   el("upload-maps").addEventListener("change", async () => {
-    const files = [...el("upload-maps").files];
+    const files = [...(el("upload-maps").files ?? [])];
     if (!files.length) return;
     if (files.length > MAX_MAP_FILES) {
       setUploadStatus("upload-maps-status", `Chose ${files.length} files, more than the ${MAX_MAP_FILES}-player limit. None were staged — pick again.`, "bad");

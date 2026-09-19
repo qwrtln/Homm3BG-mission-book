@@ -1,3 +1,9 @@
+/**
+ * The one shared mutable object the modules read and write. Its shape is
+ * AppState, declared in web/types/app.d.ts.
+ *
+ * @type {AppState}
+ */
 export const state = {
   entries: [],           // every scenario the search can offer (mission + draft, not templates)
   chosenPath: null,      // path of the entry currently loaded in the editor

@@ -8,8 +8,16 @@ import { resetUploads } from "./uploads.js";
 import { resetGithubSaveState } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
 
-// The welcome screen asks once and commits: nothing in the workspace offers
-// a way back. Reloading returns to welcome; picking the same entry again restores its autosaved draft.
+/**
+ * Swaps the welcome screen for the workspace, resolving once the transition
+ * has finished so a caller can measure the editor afterwards.
+ *
+ * The welcome screen asks once and commits: nothing in the workspace offers
+ * a way back. Reloading returns to welcome; picking the same entry again
+ * restores its autosaved draft.
+ *
+ * @returns {Promise<void>}
+ */
 export function showWorkspace() {
   return new Promise((resolve) => {
     const welcome = el("welcome");
@@ -33,17 +41,30 @@ export function showWorkspace() {
   });
 }
 
-// name is mandatory: it becomes the .tex file's identity (include path,
-// autosave key, download filename), replacing the entry's own name.
+/**
+ * Loads a picked entry into the editor and shows the workspace.
+ *
+ * `name` is mandatory: it becomes the .tex file's identity (include path,
+ * autosave key, download filename), replacing the entry's own name.
+ *
+ * @param {string} path the picked entry's repository path
+ * @param {string} name what the contributor typed
+ * @param {string | null} [category] draft-scenarios subdir, template picks only
+ * @returns {Promise<void>}
+ */
 export async function commitEntry(path, name, category) {
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
+  /** @type {ScenarioEntry | TemplateEntry | undefined} */
   const entry = template
     ? { path: template.path, title: template.title, isTemplate: true }
     : state.entries.find((e) => e.path === path);
   if (!entry) return;
 
+  // initEditor runs before any path can reach this, so cm is never null here.
+  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
+
   await showWorkspace();
-  state.cm.refresh(); // CodeMirror mismeasures while its host was display:none
+  cm.refresh(); // CodeMirror mismeasures while its host was display:none
   el("header-actions").hidden = false;
 
   // Keep the .tex extension: TeX's \input only appends one if missing, so a
@@ -61,12 +82,12 @@ export async function commitEntry(path, name, category) {
   setStatus("Loading…");
 
   const fetched = await preloadFile(entry.path);
-  const pristineSource = fetched.content;
+  const pristineSource = /** @type {string} */ (fetched.content);
 
   const draft = loadDraft(identity);
-  state.cm.setValue(draft !== null ? draft : pristineSource);
+  cm.setValue(draft !== null ? draft : pristineSource);
   el("draft-note").hidden = draft === null;
-  state.cm.focus();
+  cm.focus();
 
   resetUploads();
   clearPdf();
@@ -81,8 +102,9 @@ export async function commitEntry(path, name, category) {
     const prefetch = state.scenarioPrefetch && state.scenarioPrefetch.path === path
       ? state.scenarioPrefetch
       : { path, controller: new AbortController(), promise: null };
-    if (!prefetch.promise) prefetch.promise = prefetchScenario(path, prefetch.controller.signal);
-    const { pdfBlob } = await prefetch.promise;
+    const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
+    prefetch.promise = promise;
+    const { pdfBlob } = await promise;
     if (pdfBlob) showPdf(pdfBlob); else clearPdf();
   }
 

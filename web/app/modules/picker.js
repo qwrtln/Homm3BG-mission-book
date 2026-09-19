@@ -9,13 +9,24 @@ import { commitEntry } from "./workspace.js";
 // plus 3+ chars in the name field. Picking a real scenario does already
 // start downloading its pictures/PDF though — see startScenarioPrefetch.
 const MIN_NAME_LENGTH = 3;
+/** @type {string | null} */
 let pendingPath = null;
-let pendingCategory = null; // draft-scenarios subdir for a template pick; null for a real entry
+/** @type {string | null} draft-scenarios subdir for a template pick; null for a real entry */
+let pendingCategory = null;
 
+/** @returns {void} */
 export function updateGoButton() {
   el("go").disabled = !pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH;
 }
 
+/**
+ * Marks a pick without fetching the source yet, and starts its prefetch.
+ *
+ * @param {string} path the entry's repository path
+ * @param {string} title what the picked row says
+ * @param {string | null} [category] template picks only
+ * @returns {void}
+ */
 export function selectPending(path, title, category = null) {
   pendingPath = path;
   pendingCategory = category;
@@ -32,6 +43,10 @@ export function selectPending(path, title, category = null) {
 // second scenario aborts the first's in-flight requests (one AbortController
 // per prefetch); nothing already finished is discarded, since preloadFile
 // only writes to the cache once its own fetch has completed.
+/**
+ * @param {string} path
+ * @returns {void}
+ */
 export function startScenarioPrefetch(path) {
   if (state.scenarioPrefetch) {
     if (state.scenarioPrefetch.path === path) return; // already running (or done) for this exact pick
@@ -41,15 +56,23 @@ export function startScenarioPrefetch(path) {
   state.scenarioPrefetch = { path, controller, promise: prefetchScenario(path, controller.signal) };
 }
 
+/**
+ * Downloads one scenario's pictures and its published PDF, if there is one.
+ * Never throws: a miss here is retried at build time.
+ *
+ * @param {string} path
+ * @param {AbortSignal} signal
+ * @returns {Promise<{pdfBlob: Blob | null}>}
+ */
 export async function prefetchScenario(path, signal) {
   try {
-    const source = (await preloadFile(path, signal)).content;
+    const source = /** @type {string} */ ((await preloadFile(path, signal)).content);
     const filePaths = [...collectReferencedAssets(source), ...glyphFilesFor(collectReferencedGlyphs(source))];
     for (const filePath of filePaths) {
       if (signal.aborted) return { pdfBlob: null };
       try {
         await preloadFile(filePath, signal);
-      } catch (error) {
+      } catch {
         // genuine miss: retried at Build time through the same cache
       }
     }
@@ -64,17 +87,19 @@ export async function prefetchScenario(path, signal) {
   } catch (error) {
     if (signal.aborted) return { pdfBlob: null };
     // Not fatal: opens normally without a preview until Build PDF is pressed.
-    console.warn(`No published PDF for "${basenameNoExt(path)}":`, error.message);
+    console.warn(`No published PDF for "${basenameNoExt(path)}":`, /** @type {Error} */ (error).message);
     return { pdfBlob: null };
   }
 }
 
+/** Wires the welcome screen's picker controls. @returns {void} */
 export function initPicker() {
   el("scenario-name").addEventListener("input", updateGoButton);
 
   document.querySelectorAll("[data-category]").forEach((button) => {
     button.addEventListener("click", () => {
-      selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title, button.dataset.category);
+      const category = /** @type {HTMLElement} */ (button).dataset.category ?? null;
+      selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title, category);
     });
   });
   el("scratch-campaign").addEventListener("click", () => {
