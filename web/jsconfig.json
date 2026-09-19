@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "types/**/*.d.ts",
+    "shared/**/*.js",
+    "shared/**/*.d.ts",
+    "app/app.js",
+    "app/modules/**/*.js"
+  ],
+  "exclude": [
+    "core",
+    "app/vendor",
+    "shared/vendor/*.js",
+    "prototype-engine-check",
+    "tests"
+  ]
+}

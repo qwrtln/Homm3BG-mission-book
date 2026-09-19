@@ -12,6 +12,7 @@ import { showWorkspace } from "./workspace.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
 
+/** Shows either the sign-in button or the signed-in strip. @returns {void} */
 function renderGithubHeader() {
   const signedIn = Boolean(getToken());
   el("github-signin").hidden = signedIn;
@@ -21,13 +22,22 @@ function renderGithubHeader() {
 // Sign-in is a full-page redirect, dropping chosenPath and the autosave debounce. Flush and remember what was open.
 const REOPEN_KEY = "wasm-scenario-builder:pending-reopen";
 
-// From localStorage only, no server fetch: for a scenario never yet saved anywhere but here.
+/**
+ * Reopens what was being edited before a sign-in redirect. From localStorage
+ * only, no server fetch: for a scenario never yet saved anywhere but here.
+ *
+ * @param {string} path
+ * @param {string} [title]
+ * @returns {Promise<boolean>} false when there is nothing stored for it
+ */
 async function reopenLocalDraft(path, title) {
   const content = loadDraft(path);
   if (content === null) return false;
 
+  // initEditor runs before this, so cm is never null here.
+  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
   await showWorkspace();
-  state.cm.refresh();
+  cm.refresh();
   el("header-actions").hidden = false;
   resetGithubSaveState();
 
@@ -36,7 +46,7 @@ async function reopenLocalDraft(path, title) {
   document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
   el("build").disabled = state.building;
   el("download").disabled = true;
-  state.cm.setValue(content);
+  cm.setValue(content);
   el("draft-note").hidden = false;
   resetUploads();
   clearPdf();
@@ -44,8 +54,10 @@ async function reopenLocalDraft(path, title) {
   return true;
 }
 
+/** @type {GithubContext | null} */
 let githubContext = null;
 
+/** Draws the resume list from the signed-in user's own branches. @returns {void} */
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
   const list = el("resume-list");
@@ -56,10 +68,11 @@ function renderResumeDrafts() {
     .join("");
 }
 
+/** Wires every GitHub control, then completes a pending sign-in. @returns {void} */
 export function initGithub() {
   el("github-signin").addEventListener("click", () => {
-    if (state.chosenPath) {
-      clearTimeout(state.saveTimer);
+    if (state.chosenPath && state.cm) {
+      clearTimeout(state.saveTimer ?? undefined);
       saveDraft(state.chosenPath, state.cm.getValue());
       try {
         localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
@@ -69,6 +82,7 @@ export function initGithub() {
   });
 
   (() => {
+    /** @type {{path?: string, title?: string} | null} */
     let pending = null;
     try {
       const raw = localStorage.getItem(REOPEN_KEY);
@@ -98,21 +112,19 @@ export function initGithub() {
     setStatus("Saving…", { spinning: true });
     try {
       if (!githubContext) githubContext = await discoverGithubContext(token);
-      githubSaveState.lastSaveTarget = await saveScenarioToRepo(token, {
+      const saved = await saveScenarioToRepo(token, {
         scenarioName: state.chosenTitle,
         texPath: state.chosenPath,
-        texContent: state.cm.getValue(),
+        texContent: /** @type {CodeMirrorEditor} */ (state.cm).getValue(),
         uploadedFiles: state.uploadedFiles,
         context: githubContext,
       });
+      githubSaveState.lastSaveTarget = saved;
       button.textContent = "💾 Save again";
       el("github-open-pr").hidden = false;
-      setStatus(
-        `Saved to ${githubSaveState.lastSaveTarget.owner}/${githubSaveState.lastSaveTarget.repo}@${githubSaveState.lastSaveTarget.branch}.`,
-        { tone: "ok" },
-      );
+      setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Save failed: ${error.message}`;
+      const message = error instanceof GithubApiError ? error.message : `Save failed: ${/** @type {Error} */ (error).message}`;
       setStatus(message, { tone: "bad" });
     } finally {
       button.disabled = false;
@@ -134,7 +146,7 @@ export function initGithub() {
       button.hidden = true;
       setStatus(`PR open at ${pr.html_url}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${error.message}`;
+      const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${/** @type {Error} */ (error).message}`;
       setStatus(message, { tone: "bad" });
     } finally {
       button.disabled = false;
@@ -142,16 +154,22 @@ export function initGithub() {
   });
 
   el("resume-list").addEventListener("click", async (event) => {
-    const button = event.target.closest("[data-draft-index]");
-    if (!button) return;
+    const button = /** @type {HTMLElement} */ (event.target).closest("[data-draft-index]");
+    if (!(button instanceof HTMLElement) || !githubContext) return;
     const draft = githubContext.drafts[Number(button.dataset.draftIndex)];
     if (!draft) return;
     const token = getToken();
     if (!token) return;
 
+    // A non-member always has a fork by now: the resume list is only drawn
+    // from drafts found on one.
+    const fork = /** @type {GithubRepo} */ (githubContext.fork);
     const { owner, repo } = githubContext.isMember
       ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
-      : { owner: githubContext.fork.owner.login, repo: githubContext.fork.name };
+      : { owner: fork.owner.login, repo: fork.name };
+
+    // initEditor runs before this, so cm is never null here.
+    const cm = /** @type {CodeMirrorEditor} */ (state.cm);
 
     setStatus("Loading your draft…", { spinning: true });
     try {
@@ -162,7 +180,7 @@ export function initGithub() {
       if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
 
       await showWorkspace();
-      state.cm.refresh();
+      cm.refresh();
       el("header-actions").hidden = false;
       resetGithubSaveState();
 
@@ -171,7 +189,7 @@ export function initGithub() {
       document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
       el("build").disabled = state.building;
       el("download").disabled = true;
-      state.cm.setValue(content);
+      cm.setValue(content);
       el("draft-note").hidden = true;
       resetUploads();
       restoreUploads(assets);
@@ -182,7 +200,7 @@ export function initGithub() {
       el("github-save").textContent = "💾 Save again";
       setStatus("Ready.");
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${error.message}`;
+      const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${/** @type {Error} */ (error).message}`;
       setStatus(message, { tone: "bad" });
     }
   });
@@ -194,10 +212,10 @@ export function initGithub() {
         githubContext = await discoverGithubContext(token);
         renderResumeDrafts();
       } catch (error) {
-        setStatus(`Could not read your GitHub account: ${error.message}`, { tone: "bad" });
+        setStatus(`Could not read your GitHub account: ${/** @type {Error} */ (error).message}`, { tone: "bad" });
       }
     })
-    .catch((error) => {
+    .catch((/** @type {Error} */ error) => {
       setStatus(`GitHub sign-in failed: ${error.message}`, { tone: "bad" });
     })
     .finally(renderGithubHeader);

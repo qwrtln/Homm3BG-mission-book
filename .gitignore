@@ -1,3 +1,4 @@
+!assets/glyphs-inkscape/*.pdf
 **.aux
 *.bbl
 *.blg
@@ -11,10 +12,10 @@
 *.mo
 *.out
 *.pdf
-!assets/glyphs-inkscape/*.pdf
 *.synctex(busy)
 *.synctex.gz
 *.toc
+.env
 .idea/
 .venv
 .vs

@@ -11,6 +11,11 @@ import { fetchRepoFile, preloadFile, preloadTexmfFile } from "./files.js";
 import { clearPdf, showPdf, showError } from "./pdf-view.js";
 import { commitEntry } from "./workspace.js";
 
+/**
+ * Downloads and starts the WASM engine, leaving it on state.runner.
+ *
+ * @returns {Promise<void>}
+ */
 async function startEngine() {
   setStatus("Downloading the engine (first time only, a few minutes)…", { spinning: true });
   state.runner = new BusyTexRunner({
@@ -28,7 +33,15 @@ async function startEngine() {
 
 // The engine's ~341 MB data package is the slow part. One shared in-flight
 // promise so a Build pressed before warm-up finishes waits on it instead of starting a second download.
+/** @type {Promise<void> | null} */
 let enginePromise = null;
+
+/**
+ * Resolves once the engine can compile, starting it on the first call and
+ * sharing that one in-flight promise with every later caller.
+ *
+ * @returns {Promise<void>}
+ */
 export async function ensureEngine() {
   if (state.runner) return;
   if (!enginePromise) {
@@ -40,25 +53,36 @@ export async function ensureEngine() {
   await enginePromise;
 }
 
+/**
+ * Compiles whatever is in the editor, staging every file the plan asks for
+ * and retrying around files the engine finds missing.
+ *
+ * @returns {Promise<void>}
+ */
 export async function runBuild() {
   if (state.building || !state.chosenPath) return;
+  const chosenPath = state.chosenPath;
+  // initEditor runs before any path can reach this, so cm is never null here.
+  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
   setBuilding(true);
   el("error-panel").hidden = true;
   try {
     await ensureEngine();
 
     setStatus("Preparing files…", { spinning: true });
-    const source = state.cm.getValue();
-    const metadata = (await preloadFile("metadata.tex")).content;
+    const source = cm.getValue();
+    const metadata = /** @type {string} */ ((await preloadFile("metadata.tex")).content);
 
     const plan = planScenarioBuild({
       metadata,
-      scenario: { path: state.chosenPath, source },
+      scenario: { path: chosenPath, source },
     });
 
     // A path->content map, not an array: an upload must win over a same-path
     // repo fetch, and reach the engine even if collectReferencedAssets missed it.
+    /** @type {Map<string, StagedFile>} */
     const staged = new Map();
+    /** @type {string[]} */
     const notFound = [];
     const totalFiles = plan.repoFiles.length + (plan.carriedTexmf || []).length;
     let loadedFiles = 0;
@@ -66,14 +90,15 @@ export async function runBuild() {
     reportFileProgress();
     for (const path of plan.repoFiles) {
       // Use the editor's text for the scenario itself, not a re-fetch of the pristine copy.
-      if (path === state.chosenPath) {
+      const uploaded = state.uploadedFiles.get(path);
+      if (path === chosenPath) {
         staged.set(path, { path, content: source });
-      } else if (state.uploadedFiles.has(path)) {
-        staged.set(path, { path, content: state.uploadedFiles.get(path) });
+      } else if (uploaded) {
+        staged.set(path, { path, content: uploaded });
       } else {
         try {
           staged.set(path, await preloadFile(path));
-        } catch (error) {
+        } catch {
           notFound.push(path);
         }
       }
@@ -84,7 +109,7 @@ export async function runBuild() {
       try {
         const file = await preloadTexmfFile(name);
         staged.set(name, { path: name, content: file.content });
-      } catch (error) {
+      } catch {
         notFound.push(`texmf/${name}`);
       }
       loadedFiles += 1;
@@ -100,9 +125,12 @@ export async function runBuild() {
 
     setStatus("Compiling (this can take a while the first time)…", { spinning: true });
     const started = performance.now();
-    const lualatex = new LuaLatex(state.runner);
+    // ensureEngine above resolves only once state.runner is set.
+    const lualatex = new LuaLatex(/** @type {BusyTexRunner} */ (state.runner));
 
+    /** @type {import("../../shared/vendor/texlyre-busytex.js").CompileResult} */
     let result;
+    /** @type {Set<string>} */
     const tried = new Set();
     for (let attempt = 0; ; attempt += 1) {
       try {
@@ -123,7 +151,7 @@ export async function runBuild() {
         try {
           additionalFiles.push(await fetchRepoFile(path));
           landed += 1;
-        } catch (error) {
+        } catch {
           // genuine miss: not in the repository, left for firstError to report
         }
       }
@@ -132,6 +160,7 @@ export async function runBuild() {
     }
     const seconds = (performance.now() - started) / 1000;
 
+    /** @type {BuildRecord} */
     const record = {
       ok: Boolean(result.success && result.pdf),
       bytes: result.pdf ? result.pdf.length : 0,
@@ -146,7 +175,8 @@ export async function runBuild() {
     window.__probeResults = { "scenario-svg": record }; // read by the headless capture
 
     if (record.ok) {
-      showPdf(new Blob([result.pdf], { type: "application/pdf" }));
+      // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
+      showPdf(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }));
       setStatus(`Built ${record.pages} page(s) in ${record.seconds}s.`, { tone: "ok" });
     } else {
       el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">The build failed. See the error below.</div>';
@@ -155,15 +185,18 @@ export async function runBuild() {
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
-    state.lastResult = { ok: false, firstError: null, log: String(error && error.stack || error) };
+    const thrown = /** @type {Error} */ (error);
+    const trace = String(thrown && thrown.stack || thrown);
+    state.lastResult = { ok: false, firstError: null, log: trace };
     window.__probeResults = { "scenario-svg": state.lastResult };
-    showError({ firstError: `Unexpected error: ${error.message || error}`, log: String(error && error.stack || error) });
+    showError({ firstError: `Unexpected error: ${thrown.message || thrown}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });
   } finally {
     setBuilding(false);
   }
 }
 
+/** Wires the Build and Download controls, and the capture hooks. @returns {void} */
 export function initBuild() {
   el("build").addEventListener("click", () => {
     runBuild();
@@ -186,7 +219,7 @@ export function initBuild() {
       await commitEntry(scenarioPath, basenameNoExt(scenarioPath));
     }
     await runBuild();
-    return window.__probeResults["scenario-svg"];
+    return (/** @type {Record<string, BuildRecord>} */ (window.__probeResults))["scenario-svg"];
   };
 
   // capture-pdf.mjs clicks "#save-pdf"; forward it to the app's real "#download" control.

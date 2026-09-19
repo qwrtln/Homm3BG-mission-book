@@ -10,7 +10,8 @@
 //   then latexmk -pdflua -jobname=<scenario> main_en.tex
 // Here, JavaScript writes structure.tex instead.
 
-/** Path macros declared in metadata.tex lines 116-129. */
+/** Path macros declared in metadata.tex lines 116-129.
+ * @type {Record<string, string>} */
 export const PATH_MACROS = {
   _assets: "assets",
   art: "assets/art",
@@ -51,7 +52,11 @@ export const CORE_GLYPHS = ["gold", "building_materials", "valuables", "bronze",
 
 /** The three files one glyph's \svg call needs: the source .svg (kept for
  * completeness, though \svg itself only ever reads the precompiled pair)
- * and the precompiled PDF/pdf_tex pair ticket 04 built to skip Inkscape. */
+ * and the precompiled PDF/pdf_tex pair ticket 04 built to skip Inkscape.
+ *
+ * @param {readonly string[]} names glyph basenames, without extension
+ * @returns {string[]} repository paths, three per glyph
+ */
 export function glyphFilesFor(names) {
   return names.flatMap((name) => [
     `assets/glyphs/${name}.svg`,
@@ -67,6 +72,9 @@ export function glyphFilesFor(names) {
  * because it is not this function's job to be complete — a genuine miss
  * still falls through to ticket 11's fetch-on-miss retry at compile time.
  * This exists only to preload the common case ahead of that.
+ *
+ * @param {string} source one .tex file's text
+ * @returns {string[]} glyph basenames, sorted, without duplicates
  */
 export function collectReferencedGlyphs(source) {
   const found = new Set();
@@ -95,7 +103,15 @@ export const CARRIED_TEXMF = [
   "ccicons-u.enc",
 ];
 
-/** The published group files that list the mission book's scenarios. */
+/**
+ * One category's index file: where it lives, the path macro its \input lines
+ * use, and the directory its scenarios sit in.
+ *
+ * @typedef {{path: string, macro: string, dir: string}} GroupFile
+ */
+
+/** The published group files that list the mission book's scenarios.
+ * @type {GroupFile[]} */
 export const GROUP_FILES = [
   { path: "coops/main.tex", macro: "coopspath", dir: "coops" },
   { path: "clash/main.tex", macro: "clashpath", dir: "clash" },
@@ -109,6 +125,8 @@ export const GROUP_FILES = [
  * published directories. A draft and a published scenario can even share a
  * filename with different content (the draft is the one still being
  * worked on).
+ *
+ * @type {GroupFile[]}
  */
 export const DRAFT_GROUP_FILES = [
   { path: "draft-scenarios/coops/main.tex", macro: "coopspath", dir: "draft-scenarios/coops" },
@@ -138,10 +156,11 @@ export const MAIN_EN = String.raw`% !TeX program = lualatex
  * `DRAFT_GROUP_FILES` for the draft book — the app's picker reads both.
  *
  * @param {{path: string, source: string}[]} groupSources the group's main.tex files
- * @param {{path: string, macro: string, dir: string}[]} [groupFiles] which group table `groupSources` was read from
+ * @param {GroupFile[]} [groupFiles] which group table `groupSources` was read from
  * @returns {{path: string, dir: string}[]} scenario paths, in book order
  */
 export function parseScenarioIndex(groupSources, groupFiles = GROUP_FILES) {
+  /** @type {{path: string, dir: string}[]} */
   const scenarios = [];
   for (const { path, source } of groupSources) {
     const group = groupFiles.find((entry) => entry.path === path);
@@ -159,10 +178,14 @@ export function parseScenarioIndex(groupSources, groupFiles = GROUP_FILES) {
  * The heading a scenario gives itself. The third mandatory argument of
  * \addscenariosection is the title; the second is the kind of scenario.
  * Campaign entries pass an optional [subsection] first.
+ *
+ * @param {string} source one .tex file's text
+ * @returns {{kind: string, title: string} | null} null when it declares none
  */
 export function scenarioHeading(source) {
   const match = /\\addscenariosection(?:\[[^\]]*\])?\{[^}]*\}\{([^}]*)\}\{([^}]*)\}/.exec(source);
   if (!match) return null;
+  /** @param {string} text */
   const clean = (text) => text.replace(/\$-\$/g, "—").replace(/\\[a-zA-Z]+/g, "").trim();
   return { kind: clean(match[1]), title: clean(match[2]) };
 }
@@ -170,6 +193,9 @@ export function scenarioHeading(source) {
 /**
  * Reads a source file and returns every repository path it draws a picture
  * from. Handles the \macro/name.ext form that metadata.tex uses everywhere.
+ *
+ * @param {string} source one .tex file's text
+ * @returns {string[]} repository paths, sorted, without duplicates
  */
 export function collectReferencedAssets(source) {
   const found = new Set();
@@ -192,6 +218,12 @@ export function collectReferencedAssets(source) {
   return [...found].sort();
 }
 
+/**
+ * Turns one \macro/name.ext argument into a repository path.
+ *
+ * @param {string} raw the literal argument text
+ * @returns {string | null} null when it is not a file path at all
+ */
 export function resolveMacroPath(raw) {
   const trimmed = raw.trim();
   const macro = /^\\(\w+)\/(.+)$/.exec(trimmed);
@@ -213,8 +245,19 @@ export function resolveMacroPath(raw) {
  * Real glyphs throughout: ticket 04 is done, so there is no glyph stub. This
  * is the app's only path; it does not take a step id.
  *
- * @param {{metadata: string, scenario: {path: string, source: string}}} sources
- * @returns {{engine: string, input: string, generated: object, repoFiles: string[], carriedTexmf: string[], dataPackage: string, notes: string[]}}
+ * @typedef {object} BuildPlan
+ * @property {string} engine the TeX engine the plan compiles with
+ * @property {string} input the root document's source
+ * @property {Record<string, string>} generated files written by JavaScript, by path
+ * @property {string[]} repoFiles repository paths to stage before compiling
+ * @property {string[]} carriedTexmf TeX Live files no data package ships
+ * @property {string} dataPackage the BusyTeX data package to preload
+ * @property {string[]} notes human-readable account of what the plan staged
+ */
+
+/**
+ * @param {{metadata?: string, scenario: {path: string, source: string}}} sources
+ * @returns {BuildPlan}
  */
 export function planScenarioBuild(sources) {
   const { metadata = "", scenario = null } = sources || {};
@@ -252,6 +295,9 @@ export function planScenarioBuild(sources) {
 /**
  * Pulls the first real error out of a TeX log. Contributors who fear LaTeX
  * cannot read 4000 lines; they can read one.
+ *
+ * @param {string | null | undefined} log
+ * @returns {string | null} null when the log holds no error line
  */
 export function firstError(log) {
   if (!log) return null;
@@ -274,6 +320,9 @@ export function firstError(log) {
  * occurrence matches the PDF actually returned. Taking the first, as this
  * once did, reported a stale, sometimes too-high count from that first
  * pass, off by one on a real scenario checked directly against this fix.
+ *
+ * @param {string | null | undefined} log
+ * @returns {number} 0 when the log reports no page count
  */
 export function pageCount(log) {
   const matches = [...(log || "").matchAll(/Output written on [^(]*\((\d+) pages?,/g)];
@@ -308,12 +357,21 @@ export const MAX_FETCH_ON_MISS_ATTEMPTS = 3;
  * `newMissingPaths` then returns nothing for it, so the caller stops
  * retrying and the engine's own "File not found" becomes `firstError`, read
  * as-is by a contributor.
+ *
+ * @param {string[]} missing one attempt's missingFiles(log) list
+ * @param {ReadonlySet<string>} tried every path already reached for
+ * @returns {string[]} the paths worth fetching this round
  */
 export function newMissingPaths(missing, tried) {
   return missing.filter((path) => !tried.has(path));
 }
 
-/** Every "File ... not found" the engine reported. */
+/**
+ * Every "File ... not found" the engine reported.
+ *
+ * @param {string | null | undefined} log
+ * @returns {string[]} the missing paths, sorted, without duplicates
+ */
 export function missingFiles(log) {
   if (!log) return [];
   const found = new Set();

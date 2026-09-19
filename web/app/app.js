@@ -23,7 +23,7 @@ loadEntries()
   .then(() => {
     if (!state.entries.length) setStatus("No scenarios found.", { tone: "bad" });
   })
-  .catch((error) => {
+  .catch((/** @type {Error} */ error) => {
     el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(error.message)}</div>`;
     el("search-results").hidden = false;
   });

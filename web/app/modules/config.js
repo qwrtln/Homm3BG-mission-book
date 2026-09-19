@@ -8,18 +8,27 @@ export const REPO = "../repo";
 
 // Each template is itself a scenario-shaped .tex file, so structure.tex can
 // \include{} it the same way, with no special-casing in planScenarioBuild.
+/** @type {Record<"scenario" | "campaign", {path: string, title: string}>} */
 export const TEMPLATES = {
   scenario: { path: "templates/default.tex", title: "Blank scenario" },
   campaign: { path: "templates/campaign.tex", title: "Blank campaign scenario" },
 };
 
 // Different grouping than scenarioHeading's "kind" (prose, not a stable category).
+/** @type {Record<string, string>} */
 export const CATEGORY_LABELS = { coops: "Coop", clash: "Clash", campaigns: "Campaign", alliances: "Alliance" };
+/** @type {string[]} */
 export const CATEGORY_ORDER = ["Coop", "Clash", "Campaign", "Alliance"];
 
 // README.md links to these: one branch per scenario, built by build-individual-scenarios.yaml.
 export const PUBLISHED_PDF_REPO = "https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts";
 
+/**
+ * Where the nightly build publishes one scenario's PDF.
+ *
+ * @param {string} basename the .tex filename without directory or extension
+ * @returns {string}
+ */
 export function publishedPdfUrl(basename) {
   return `${PUBLISHED_PDF_REPO}/en-${basename}-color/${basename}_en.pdf`;
 }

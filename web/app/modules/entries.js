@@ -3,16 +3,29 @@ import { CATEGORY_LABELS } from "./config.js";
 import { state } from "./state.js";
 import { fetchRepoFile } from "./files.js";
 
+/**
+ * Reads one book's group files and turns every scenario they list into an
+ * entry the search can offer.
+ *
+ * @param {import("../../shared/build-plan.js").GroupFile[]} groupFiles
+ * @param {"mission" | "draft"} book
+ * @returns {Promise<ScenarioEntry[]>}
+ */
 export async function loadGroup(groupFiles, book) {
+  /** @type {{path: string, source: string}[]} */
   const sources = [];
   for (const group of groupFiles) {
-    sources.push({ path: group.path, source: (await fetchRepoFile(group.path)).content });
+    sources.push({
+      path: group.path,
+      source: /** @type {string} */ ((await fetchRepoFile(group.path)).content),
+    });
   }
   const index = parseScenarioIndex(sources, groupFiles);
   return Promise.all(index.map(async (item) => {
-    const source = (await fetchRepoFile(item.path)).content;
+    const source = /** @type {string} */ ((await fetchRepoFile(item.path)).content);
     const heading = scenarioHeading(source);
-    const categoryKey = item.dir.split("/").pop();
+    // split always yields at least one element, so pop never returns undefined.
+    const categoryKey = /** @type {string} */ (item.dir.split("/").pop());
     return {
       path: item.path,
       book,
@@ -23,6 +36,11 @@ export async function loadGroup(groupFiles, book) {
   }));
 }
 
+/**
+ * Loads both books into state.entries, mission first.
+ *
+ * @returns {Promise<void>}
+ */
 export async function loadEntries() {
   const [mission, draft] = await Promise.all([
     loadGroup(GROUP_FILES, "mission"),
