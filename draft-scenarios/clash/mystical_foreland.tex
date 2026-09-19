@@ -71,10 +71,15 @@ Obtain the Grail Token and bring it to your Faction Town.
 \textbf{Setup changes:}
 
 \begin{itemize}
-  \item A Hero may not move between Land and Sea Tiles if there's a \textbf{Red Border} in between.
   \item Green-tinted Tiles contain \textbf{Creature Banks}.
   \item Before the game, remove the \textbf{Diplomacy} Ability, the \textbf{Den of Thieves} and \textbf{Prison} Events, and the \textbf{Ambassador's Sash} and \textbf{Diplomat's Ring} Artifacts.
   \item Level VII Neutral Combats cannot be skipped.
+\end{itemize}
+
+\textbf{Map Constraints:}
+
+\begin{itemize}
+  \item A Hero may not move between Land and Sea Tiles if there's a \textbf{Red Border} in between.
   \item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.
 \end{itemize}
 
@@ -103,8 +108,6 @@ Obtain the Grail Token and bring it to your Faction Town.
     You may then \svg{recruit} one of the Units you found for its full cost.
 \end{itemize}
 
-\columnbreak
-
 \textbf{Field Rewards:}
 
 \begin{itemize}
@@ -115,38 +118,27 @@ Obtain the Grail Token and bring it to your Faction Town.
   \item \textbf{Cyclops Stockpile}: 10~\svg{building_materials}, 5~\svg{valuables}. Your Units gain a permanent +1~\svg{attack} and +1~\svg{initiative}, including Units you Recruit later.
 \end{itemize}
 
-\textbf{Map Constraints:}
-
-\begin{itemize}
-  \item A Hero may not move between Land and Sea Tiles if there's a \textbf{Red Border} in between.
-\end{itemize}
 
 \textbf{Custom Combat Rule:}
+
+ Starting in the \nth{10} Round, the following rules apply:
+
 \begin{itemize}
-  \item Starting in the 10th Round, the following rules apply:
-  \begin{itemize}
-    \item Neutral \svg{golden} Units gain an extra \textbf{Stack Token} each, except when fighting the \textbf{Grail Army} or another player.
-    \item Each \textbf{Stack Token} placed allows the Combat to extend an additional Round without spending extra \svg{movement}.
-    \item Defeating \svg{golden} Unit grants the player 5~\svg{gold} and 2~\svg{building_materials} or 1~'\svg{valuables} each.
-  \end{itemize}
+  \item Place one extra \textbf{Stack Token} on each neutral \svg{golden} Unit. Do not place it in Combat against the \textbf{Grail Army} or another player.
+  \item For each extra \textbf{Stack Token}, you can extend the Combat by one Round. This Round costs no \svg{movement}.
+  \item For every \svg{golden} Unit you defeat in a Neutral Combat always, gain 5~\svg{gold} and either 2~\svg{building_materials} or 1~\svg{valuables}.
 \end{itemize}
 
 \pagebreak
 
-\begin{tikzpicture}[overlay]
-  \node(bg)[opacity=0.1] at (9, -10) {
+\begin{tikzpicture}[remember picture, overlay, shift={(current page.center)}]
+  \node(bg)[opacity=0.1] at (0, 0) {
     \includegraphics[width=1.1\paperwidth, keepaspectratio]{\art/implosion.png}
   };
-  \centering
-%  \foreach \x in {0, 1, ..., 20} { % Guide dots for nodes
-%    \foreach \y in {0, -1, ..., -25} {
-%      \fill (\x, \y) circle (1pt);
-%    }
-%  }
-  \node at (9, -6) {\includegraphics[scale=0.35]{\maps/mystical_foreland.png}};
-  \node[font=\fontsize{10pt}{8pt}\selectfont] at (15 ,-4.4)  {\textbf{\textcolor{cornflowerblue}{Grail}}};
-
+  \node (map) at (0, 0) {
+    \includegraphics[scale=0.35]{\maps/mystical_foreland.png}
+  };
+  \node[font=\fontsize{10pt}{12pt}\selectfont] at (6.0, 1.6) {\textbf{\textcolor{deepskyblue}{Grail}}};
 \end{tikzpicture}
-
 
 \end{multicols*}
