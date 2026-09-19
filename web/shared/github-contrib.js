@@ -41,21 +41,212 @@ async function api(path, token, options = {}) {
   return response;
 }
 
+// --- Point-of-entry validation -------------------------------------------
+//
+// Every payload GitHub sends is checked here, field by field, before anything
+// else in the app can see it. Each parser builds a fresh object carrying only
+// the fields this app reads, so an unchecked shape never travels into
+// app/modules/; the shapes themselves are declared in types/github.d.ts. A
+// payload that has drifted fails as a GithubApiError at the call that fetched
+// it, rather than as an undefined field somewhere far away.
+
 /**
- * A call that must succeed, with its JSON body parsed. Throws GithubApiError
- * on a rate limit or any non-ok status.
+ * @param {unknown} value
+ * @returns {value is Record<string, unknown>}
+ */
+function isObject(value) {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+/**
+ * @param {unknown} payload
+ * @param {string} what names the shape, for the error message
+ * @returns {Record<string, unknown>}
+ */
+function object(payload, what) {
+  if (!isObject(payload)) throw new GithubApiError(`GitHub returned an unexpected ${what}.`);
+  return payload;
+}
+
+/**
+ * @param {unknown} payload
+ * @param {string} what
+ * @returns {unknown[]}
+ */
+function array(payload, what) {
+  if (!Array.isArray(payload)) throw new GithubApiError(`GitHub returned an unexpected ${what}.`);
+  return payload;
+}
+
+/**
+ * @param {Record<string, unknown>} source
+ * @param {string} key
+ * @param {string} what
+ * @returns {string}
+ */
+function stringField(source, key, what) {
+  const value = source[key];
+  if (typeof value !== "string") throw new GithubApiError(`GitHub's ${what} is missing "${key}".`);
+  return value;
+}
+
+/**
+ * @param {Record<string, unknown>} source
+ * @param {string} key
+ * @param {string} what
+ * @returns {number}
+ */
+function numberField(source, key, what) {
+  const value = source[key];
+  if (typeof value !== "number") throw new GithubApiError(`GitHub's ${what} is missing "${key}".`);
+  return value;
+}
+
+/**
+ * @param {Record<string, unknown>} source
+ * @param {string} key
+ * @param {string} what
+ * @returns {Record<string, unknown>}
+ */
+function objectField(source, key, what) {
+  const value = source[key];
+  if (!isObject(value)) throw new GithubApiError(`GitHub's ${what} is missing "${key}".`);
+  return value;
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubUser}
+ */
+function parseUser(payload) {
+  return { login: stringField(object(payload, "user"), "login", "user") };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubRepo}
+ */
+function parseRepo(payload) {
+  const repo = object(payload, "repository");
+  const permissions = repo.permissions;
+  return {
+    name: stringField(repo, "name", "repository"),
+    owner: { login: stringField(objectField(repo, "owner", "repository"), "login", "repository owner") },
+    default_branch: stringField(repo, "default_branch", "repository"),
+    // Absent under a token that cannot see it, which is not an error.
+    ...(isObject(permissions) ? { permissions: { push: permissions.push === true } } : {}),
+  };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubBranch[]}
+ */
+function parseBranches(payload) {
+  return array(payload, "branch list").map((entry) => ({
+    name: stringField(object(entry, "branch"), "name", "branch"),
+  }));
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubCompare}
+ */
+function parseCompare(payload) {
+  const compare = object(payload, "comparison");
+  if (!Array.isArray(compare.files)) return {};
+  return {
+    files: compare.files.map((entry) => {
+      const file = object(entry, "compared file");
+      return {
+        filename: stringField(file, "filename", "compared file"),
+        sha: stringField(file, "sha", "compared file"),
+        status: stringField(file, "status", "compared file"),
+      };
+    }),
+  };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubBlob}
+ */
+function parseBlob(payload) {
+  return { content: stringField(object(payload, "blob"), "content", "blob") };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubContents}
+ */
+function parseContents(payload) {
+  return { content: stringField(object(payload, "file"), "content", "file") };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubRef}
+ */
+function parseRef(payload) {
+  const ref = object(payload, "ref");
+  return { object: { sha: stringField(objectField(ref, "object", "ref"), "sha", "ref") } };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubCommit}
+ */
+function parseCommit(payload) {
+  const commit = object(payload, "commit");
+  return {
+    sha: stringField(commit, "sha", "commit"),
+    tree: { sha: stringField(objectField(commit, "tree", "commit"), "sha", "commit tree") },
+  };
+}
+
+/**
+ * The create-blob and create-tree responses, which this app reads only the
+ * sha from.
  *
- * `T` is inferred from the calling function's own declared return type — each
- * wrapper below names the payload shape it expects, and those shapes live in
- * types/github.d.ts.
+ * @param {string} what
+ * @returns {(payload: unknown) => GithubShaOnly}
+ */
+function shaOnlyParser(what) {
+  return (payload) => ({ sha: stringField(object(payload, what), "sha", what) });
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubPullRequest}
+ */
+function parsePullRequest(payload) {
+  const pull = object(payload, "pull request");
+  return {
+    html_url: stringField(pull, "html_url", "pull request"),
+    number: numberField(pull, "number", "pull request"),
+  };
+}
+
+/**
+ * @param {unknown} payload
+ * @returns {GithubPullRequest[]}
+ */
+function parsePullRequests(payload) {
+  return array(payload, "pull request list").map(parsePullRequest);
+}
+
+// --- Calls ----------------------------------------------------------------
+
+/**
+ * A call that must succeed. Throws GithubApiError on a rate limit or any
+ * non-ok status; hands the Response back otherwise.
  *
- * @template [T=unknown]
  * @param {string} path API path, beginning with "/"
  * @param {string} token
  * @param {RequestInit} [options]
- * @returns {Promise<T>}
+ * @returns {Promise<Response>}
  */
-async function apiJson(path, token, options = {}) {
+async function apiOk(path, token, options = {}) {
   const response = await api(path, token, options);
   if (response.status === 403 && response.headers.get("x-ratelimit-remaining") === "0") {
     const resetAt = new Date(Number(response.headers.get("x-ratelimit-reset")) * 1000);
@@ -67,18 +258,45 @@ async function apiJson(path, token, options = {}) {
   if (!response.ok) {
     let detail = "";
     try {
-      const body = /** @type {{message?: string}} */ (await response.json());
-      detail = body.message || "";
+      const body = await response.json();
+      if (isObject(body) && typeof body.message === "string") detail = body.message;
     } catch { /* no JSON body */ }
     throw new GithubApiError(
       `GitHub API error (${response.status} on ${path}): ${detail || response.statusText}`,
       { status: response.status },
     );
   }
-  // 204 carries no body. Only the callers that ignore their result can get
-  // one, so the null is cast rather than widening every caller's type.
-  if (response.status === 204) return /** @type {T} */ (/** @type {unknown} */ (null));
-  return response.json();
+  return response;
+}
+
+/**
+ * A call that must succeed, with its JSON body parsed and validated. The
+ * parser is what gives the result its type — there is no cast, so no call
+ * can claim a shape the payload was never checked against.
+ *
+ * @template T
+ * @param {string} path API path, beginning with "/"
+ * @param {string} token
+ * @param {(payload: unknown) => T} parse one of the parsers above
+ * @param {RequestInit} [options]
+ * @returns {Promise<T>}
+ */
+async function apiJson(path, token, parse, options = {}) {
+  const response = await apiOk(path, token, options);
+  return parse(await response.json());
+}
+
+/**
+ * A call that must succeed and whose body the caller ignores — including a
+ * 204, which carries none.
+ *
+ * @param {string} path API path, beginning with "/"
+ * @param {string} token
+ * @param {RequestInit} [options]
+ * @returns {Promise<void>}
+ */
+async function apiSend(path, token, options = {}) {
+  await apiOk(path, token, options);
 }
 
 /**
@@ -86,7 +304,7 @@ async function apiJson(path, token, options = {}) {
  * @returns {Promise<GithubRepo>}
  */
 async function getUpstreamRepo(token) {
-  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token);
+  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`, token, parseRepo);
 }
 
 /**
@@ -94,7 +312,7 @@ async function getUpstreamRepo(token) {
  * @returns {Promise<GithubUser>}
  */
 export async function currentUser(token) {
-  return apiJson("/user", token);
+  return apiJson("/user", token, parseUser);
 }
 
 /**
@@ -110,7 +328,7 @@ async function findExistingFork(token, username) {
   if (!response.ok) {
     throw new GithubApiError(`Could not check for your fork (${response.status}).`, { status: response.status });
   }
-  return /** @type {Promise<GithubRepo>} */ (response.json());
+  return parseRepo(await response.json());
 }
 
 /**
@@ -146,19 +364,18 @@ export async function discoverGithubContext(token) {
  */
 async function findResumableDrafts(token, { owner, repo, username, base }) {
   const prefix = `scenario-editor/${username}/`;
-  const branches = /** @type {GithubBranch[]} */ (
-    await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token)
-  );
+  const branches = await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token, parseBranches);
   const own = branches.filter((b) => b.name.startsWith(prefix));
 
   /** @type {ResumableDraft[]} */
   const drafts = [];
   for (const b of own) {
     try {
-      const compare = /** @type {GithubCompare} */ (await apiJson(
+      const compare = await apiJson(
         `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(b.name)}`,
         token,
-      ));
+        parseCompare,
+      );
       const files = (compare.files || []).filter((f) => f.status !== "removed");
       const texFile = files.find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
       const assets = files
@@ -198,9 +415,7 @@ function decodeBase64Utf8(base64) {
  * @returns {Promise<Uint8Array>}
  */
 export async function getBlobBytes(token, owner, repo, sha) {
-  const blob = /** @type {GithubBlob} */ (
-    await apiJson(`/repos/${owner}/${repo}/git/blobs/${sha}`, token)
-  );
+  const blob = await apiJson(`/repos/${owner}/${repo}/git/blobs/${sha}`, token, parseBlob);
   return decodeBase64(blob.content);
 }
 
@@ -219,7 +434,7 @@ export async function getRepoFile(token, owner, repo, path, ref) {
   const response = await api(`/repos/${owner}/${repo}/contents/${path}${query}`, token);
   if (response.status === 404) return null;
   if (!response.ok) throw new GithubApiError(`Could not read "${path}" (${response.status}).`, { status: response.status });
-  const data = /** @type {GithubContents} */ (await response.json());
+  const data = parseContents(await response.json());
   return decodeBase64Utf8(data.content);
 }
 
@@ -231,7 +446,7 @@ export async function getRepoFile(token, owner, repo, path, ref) {
  * @returns {Promise<GithubRepo>}
  */
 export async function ensureFork(token) {
-  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/forks`, token, { method: "POST" });
+  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/forks`, token, parseRepo, { method: "POST" });
 }
 
 /**
@@ -246,7 +461,7 @@ export async function ensureFork(token) {
 async function ensureRepoReady(token, owner, repo, { attempts = 6, delayMs = 1500 } = {}) {
   for (let i = 0; i < attempts; i += 1) {
     const response = await api(`/repos/${owner}/${repo}`, token);
-    if (response.ok) return /** @type {Promise<GithubRepo>} */ (response.json());
+    if (response.ok) return parseRepo(await response.json());
     if (response.status !== 404) {
       throw new GithubApiError(`Could not read the new fork (${response.status}).`, { status: response.status });
     }
@@ -266,7 +481,7 @@ async function getBranchSha(token, owner, repo, branch) {
   const response = await api(`/repos/${owner}/${repo}/git/ref/heads/${encodeURIComponent(branch)}`, token);
   if (response.status === 404) return null;
   if (!response.ok) throw new GithubApiError(`Could not read branch "${branch}" (${response.status}).`, { status: response.status });
-  const data = /** @type {GithubRef} */ (await response.json());
+  const data = parseRef(await response.json());
   return data.object.sha;
 }
 
@@ -279,7 +494,7 @@ async function getBranchSha(token, owner, repo, branch) {
  * @returns {Promise<void>}
  */
 async function createBranch(token, owner, repo, branch, fromSha) {
-  await apiJson(`/repos/${owner}/${repo}/git/refs`, token, {
+  await apiSend(`/repos/${owner}/${repo}/git/refs`, token, {
     method: "POST",
     body: JSON.stringify({ ref: `refs/heads/${branch}`, sha: fromSha }),
   });
@@ -318,14 +533,14 @@ function toBase64(bytes) {
  */
 async function createBlob(token, owner, repo, content) {
   const isBinary = content instanceof Uint8Array;
-  const blob = /** @type {GithubBlob} */ (await apiJson(`/repos/${owner}/${repo}/git/blobs`, token, {
+  const blob = await apiJson(`/repos/${owner}/${repo}/git/blobs`, token, shaOnlyParser("blob"), {
     method: "POST",
     body: JSON.stringify(
       isBinary
         ? { content: toBase64(content), encoding: "base64" }
         : { content, encoding: "utf-8" },
     ),
-  }));
+  });
   return blob.sha;
 }
 
@@ -364,9 +579,7 @@ export async function commitFiles(token, { owner, repo, branch, message, files }
  * @returns {Promise<CommitResult>}
  */
 async function commitOnto(token, owner, repo, branch, parentSha, message, files) {
-  const parentCommit = /** @type {GithubCommit} */ (
-    await apiJson(`/repos/${owner}/${repo}/git/commits/${parentSha}`, token)
-  );
+  const parentCommit = await apiJson(`/repos/${owner}/${repo}/git/commits/${parentSha}`, token, parseCommit);
 
   /** @type {{path: string, mode: string, type: string, sha: string}[]} */
   const entries = [];
@@ -375,15 +588,15 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files)
     entries.push({ path: file.path, mode: "100644", type: "blob", sha });
   }
 
-  const tree = /** @type {GithubTree} */ (await apiJson(`/repos/${owner}/${repo}/git/trees`, token, {
+  const tree = await apiJson(`/repos/${owner}/${repo}/git/trees`, token, shaOnlyParser("tree"), {
     method: "POST",
     body: JSON.stringify({ base_tree: parentCommit.tree.sha, tree: entries }),
-  }));
+  });
 
-  const commit = /** @type {GithubCommit} */ (await apiJson(`/repos/${owner}/${repo}/git/commits`, token, {
+  const commit = await apiJson(`/repos/${owner}/${repo}/git/commits`, token, parseCommit, {
     method: "POST",
     body: JSON.stringify({ message, tree: tree.sha, parents: [parentSha] }),
-  }));
+  });
 
   const updateResponse = await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, {
     method: "PATCH",
@@ -487,14 +700,15 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
   const base = upstream.default_branch;
   const listHead = `${owner}:${branch}`;
 
-  const existing = /** @type {GithubPullRequest[]} */ (await apiJson(
+  const existing = await apiJson(
     `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls?head=${encodeURIComponent(listHead)}&state=open`,
     token,
-  ));
+    parsePullRequests,
+  );
   if (existing.length > 0) return existing[0];
 
   const head = isMember ? branch : listHead;
-  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, {
+  return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, parsePullRequest, {
     method: "POST",
     body: JSON.stringify({
       title: `Update ${scenarioName}`,

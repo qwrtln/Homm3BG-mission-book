@@ -26,3 +26,15 @@ export const state = {
   // {path, controller, promise}
   scenarioPrefetch: null,
 };
+
+/**
+ * The editor instance, for the paths that cannot run before initEditor has
+ * made it. Throws rather than returning null, so no caller has to assert a
+ * shape the type system cannot see.
+ *
+ * @returns {CodeMirrorEditor}
+ */
+export function requireEditor() {
+  if (state.cm === null) throw new Error("The editor is not ready yet.");
+  return state.cm;
+}

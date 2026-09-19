@@ -1,8 +1,9 @@
 import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.js";
 import { TEMPLATES, publishedPdfUrl } from "./config.js";
 import { state } from "./state.js";
+import { errorMessage } from "../../shared/errors.js";
 import { el, basenameNoExt } from "./dom.js";
-import { preloadFile } from "./files.js";
+import { preloadFile, preloadText } from "./files.js";
 import { commitEntry } from "./workspace.js";
 
 // A pick only marks a pending choice, no fetch yet; "Let's go!" needs a pick
@@ -66,7 +67,7 @@ export function startScenarioPrefetch(path) {
  */
 export async function prefetchScenario(path, signal) {
   try {
-    const source = /** @type {string} */ ((await preloadFile(path, signal)).content);
+    const source = await preloadText(path, signal);
     const filePaths = [...collectReferencedAssets(source), ...glyphFilesFor(collectReferencedGlyphs(source))];
     for (const filePath of filePaths) {
       if (signal.aborted) return { pdfBlob: null };
@@ -87,7 +88,7 @@ export async function prefetchScenario(path, signal) {
   } catch (error) {
     if (signal.aborted) return { pdfBlob: null };
     // Not fatal: opens normally without a preview until Build PDF is pressed.
-    console.warn(`No published PDF for "${basenameNoExt(path)}":`, /** @type {Error} */ (error).message);
+    console.warn(`No published PDF for "${basenameNoExt(path)}":`, errorMessage(error));
     return { pdfBlob: null };
   }
 }

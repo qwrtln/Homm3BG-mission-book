@@ -5,9 +5,10 @@ import {
 } from "../../shared/build-plan.js";
 
 import { BASE } from "./config.js";
-import { state } from "./state.js";
+import { errorMessage, errorTrace } from "../../shared/errors.js";
+import { state, requireEditor } from "./state.js";
 import { el, setStatus, setBuilding, basenameNoExt } from "./dom.js";
-import { fetchRepoFile, preloadFile, preloadTexmfFile } from "./files.js";
+import { fetchRepoFile, preloadFile, preloadText, preloadTexmfFile } from "./files.js";
 import { clearPdf, showPdf, showError } from "./pdf-view.js";
 import { commitEntry } from "./workspace.js";
 
@@ -62,8 +63,7 @@ export async function ensureEngine() {
 export async function runBuild() {
   if (state.building || !state.chosenPath) return;
   const chosenPath = state.chosenPath;
-  // initEditor runs before any path can reach this, so cm is never null here.
-  const cm = /** @type {CodeMirrorEditor} */ (state.cm);
+  const cm = requireEditor();
   setBuilding(true);
   el("error-panel").hidden = true;
   try {
@@ -71,7 +71,7 @@ export async function runBuild() {
 
     setStatus("Preparing files…", { spinning: true });
     const source = cm.getValue();
-    const metadata = /** @type {string} */ ((await preloadFile("metadata.tex")).content);
+    const metadata = await preloadText("metadata.tex");
 
     const plan = planScenarioBuild({
       metadata,
@@ -185,11 +185,10 @@ export async function runBuild() {
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
-    const thrown = /** @type {Error} */ (error);
-    const trace = String(thrown && thrown.stack || thrown);
+    const trace = errorTrace(error);
     state.lastResult = { ok: false, firstError: null, log: trace };
     window.__probeResults = { "scenario-svg": state.lastResult };
-    showError({ firstError: `Unexpected error: ${thrown.message || thrown}`, log: trace });
+    showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });
   } finally {
     setBuilding(false);

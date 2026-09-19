@@ -5,15 +5,36 @@ import { state } from "./state.js";
  * HTMLButtonElement, `el("search")` an HTMLInputElement. The mapping lives in
  * web/types/dom-ids.d.ts, so a mistyped id fails the type check.
  *
- * Every id in that map is present in app/index.html, so the result is not
- * treated as nullable. It resolves to null only if the markup and the map
- * have drifted, which is what keeping the map in step prevents.
+ * The result is not nullable, because a missing element throws here instead
+ * of returning null. Nothing checks the map against app/index.html, so drift
+ * between the two is possible; this is where it surfaces, named, rather than
+ * as an undefined property access further on.
  *
  * @template {keyof ElementIdMap} K
  * @param {K} id
  * @returns {ElementIdMap[K]}
  */
-export const el = (id) => /** @type {ElementIdMap[K]} */ (document.getElementById(id));
+export function el(id) {
+  const element = document.getElementById(id);
+  if (element === null) throw new Error(`app/index.html has no element with id "${id}".`);
+  return /** @type {ElementIdMap[K]} */ (element);
+}
+
+/**
+ * The nearest ancestor of an event's target matching `selector`, for
+ * delegated handlers. Null when the event did not start on an element, or
+ * when nothing up the tree matches.
+ *
+ * @param {Event} event
+ * @param {string} selector
+ * @returns {HTMLElement | null}
+ */
+export function closestTo(event, selector) {
+  const { target } = event;
+  if (!(target instanceof Element)) return null;
+  const match = target.closest(selector);
+  return match instanceof HTMLElement ? match : null;
+}
 
 /**
  * Writes the status bar. The spinner element is reused, never rebuilt: a
