@@ -4,7 +4,7 @@ import {
   missingFiles, newMissingPaths, MAX_FETCH_ON_MISS_ATTEMPTS,
 } from "../../shared/build-plan.js";
 
-import { BASE } from "./config.js";
+import { busytexBase } from "./config.js";
 import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
 import { el, setStatus, setBuilding, basenameNoExt } from "./dom.js";
@@ -19,9 +19,10 @@ import { commitEntry } from "./workspace.js";
  */
 async function startEngine() {
   setStatus("Downloading the engine (first time only, a few minutes)…", { spinning: true });
+  const base = busytexBase();
   state.runner = new BusyTexRunner({
-    busytexBasePath: BASE,
-    preloadDataPackages: [`${BASE}/texlive-extra.js`],
+    busytexBasePath: base,
+    preloadDataPackages: [`${base}/texlive-extra.js`],
     verbose: false,
   });
   try {

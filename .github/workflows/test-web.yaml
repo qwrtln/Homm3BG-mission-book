@@ -13,17 +13,25 @@ on:
 jobs:
   unit:
     runs-on: ubuntu-latest
-    name: Unit tests
+    name: Tests
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Cache npx packages
-        if: always()
+      - name: Cache downloads
         uses: actions/cache@v4
         with:
-          path: ~/.npm/_npx
-          key: npx-typescript-5.9.2
+          path: |
+            ~/.npm/_npx
+            ~/.cache/ms-playwright
+          key: web-tests-${{ runner.os }}-ts5.9.2-${{ hashFiles('web/tests/package-lock.json') }}
+          restore-keys: |
+            web-tests-${{ runner.os }}-ts5.9.2-
+            web-tests-${{ runner.os }}-
+
+      - name: Type-check
+        if: always()
+        run: npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
 
       - name: Show Node version
         run: node --version
@@ -31,6 +39,21 @@ jobs:
       - name: Run unit tests
         run: node --test "web/tests/unit/**/*.test.mjs"
 
-      - name: Type-check
-        if: always()
-        run: npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
+      - name: Install Playwright
+        run: npm ci --prefix web/tests
+
+      - name: Install Playwright browser
+        working-directory: web/tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Run integration tests
+        working-directory: web/tests
+        run: npx playwright test
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: web/tests/playwright-report/
+          retention-days: 3

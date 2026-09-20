@@ -1,8 +1,25 @@
-// GitHub Pages serves this project under a path prefix, so a root-absolute
-// path 404s there. BASE also crosses into the BusyTeX worker's own script,
-// which resolves it relative to the worker's URL, not this page — resolving
-// to a full URL here up front sidesteps that difference.
-export const BASE = new URL("../core/busytex", document.baseURI).href;
+/** @type {string | null} the resolved engine base, computed on first use */
+let busytexBaseUrl = null;
+
+/**
+ * Where the BusyTeX build lives, as a full URL.
+ *
+ * GitHub Pages serves this project under a path prefix, so a root-absolute
+ * path 404s there. The value also crosses into the BusyTeX worker's own
+ * script, which resolves it relative to the worker's URL, not this page —
+ * resolving to a full URL here sidesteps that difference.
+ *
+ * A function, not a module-scope constant: `document` is read on first call,
+ * so Node can import this module (and everything that depends on it) without
+ * a DOM. The resolved value is memoised, so the browser still sees one URL
+ * resolved against one `document.baseURI`, exactly as before.
+ *
+ * @returns {string}
+ */
+export function busytexBase() {
+  if (busytexBaseUrl === null) busytexBaseUrl = new URL("../core/busytex", document.baseURI).href;
+  return busytexBaseUrl;
+}
 // REPO only ever resolves on this page, never inside the worker, so a plain relative path is safe.
 export const REPO = "../repo";
 

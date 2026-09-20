@@ -5,6 +5,34 @@ export const UPSTREAM_REPO = "Homm3BG-mission-book";
 
 const API = "https://api.github.com";
 
+/**
+ * The one way out of this module to the network. Every GitHub call in this
+ * file goes through `http.fetch`, so a caller — a test, in practice — can
+ * hand the module a recorded fake instead of reaching api.github.com.
+ *
+ * @typedef {object} HttpClient
+ * @property {(url: string, options?: RequestInit) => Promise<Response>} fetch
+ *   called with an absolute URL and the same options `fetch` takes
+ */
+
+/** @type {HttpClient} */
+const defaultHttpClient = { fetch: (url, options) => fetch(url, options) };
+
+/** @type {HttpClient} */
+let http = defaultHttpClient;
+
+/**
+ * Replaces the HTTP dependency this module calls GitHub through. A seam for
+ * tests: the application never calls this, so no call site in app/modules/
+ * has to carry a client it does not care about.
+ *
+ * @param {HttpClient | null} client null restores the global fetch
+ * @returns {void}
+ */
+export function setHttpClient(client) {
+  http = client || defaultHttpClient;
+}
+
 class GithubApiError extends Error {
   /**
    * @param {string} message
@@ -28,7 +56,7 @@ class GithubApiError extends Error {
  * @returns {Promise<Response>}
  */
 async function api(path, token, options = {}) {
-  const response = await fetch(`${API}${path}`, {
+  const response = await http.fetch(`${API}${path}`, {
     ...options,
     headers: {
       Authorization: `Bearer ${token}`,
@@ -632,7 +660,11 @@ function draftGroupFor(texPath) {
  */
 async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) {
   const slug = texPath.slice(group.dir.length + 1).replace(/\.tex$/, "");
-  const marker = `\\input{\\${group.macro}path/${slug}.tex}`;
+  // `macro` already ends in "path" (clashpath, coopspath): the group files'
+  // own lines read \input{\clashpath/x.tex}, and a second "path" here both
+  // named a macro that does not exist and never matched an existing line, so
+  // every save appended the scenario again.
+  const marker = `\\input{\\${group.macro}/${slug}.tex}`;
   const current = (await getRepoFile(token, owner, repo, group.path, branch))
     ?? (await getRepoFile(token, owner, repo, group.path));
   if (current == null || current.includes(marker)) return null;

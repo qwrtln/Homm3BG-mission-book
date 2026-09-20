@@ -4,3 +4,5 @@ translations/**/*.pot linguist-generated=true
 assets/glyphs-inkscape/** -diff linguist-generated=true
 draft-scenarios/svg-inkscape/** -diff linguist-generated=true
 *.pdf_tex -diff linguist-generated=true
+
+web/tests/package-lock.json -diff linguist-generated=true

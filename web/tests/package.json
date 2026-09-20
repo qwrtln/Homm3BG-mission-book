@@ -1,0 +1,13 @@
+{
+  "name": "homm3bg-web-tests",
+  "private": true,
+  "type": "module",
+  "description": "Tier 2 integration tests only. The application under test has no package.json, no lockfile and no build step, and this package must never become one for it.",
+  "scripts": {
+    "test": "playwright test",
+    "test:install": "playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}
