@@ -84,6 +84,7 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
 \begin{itemize}
   \item A Hero may not cross a \textbf{Red Border}, drawn as a red line between two Tiles in the Scenario map layout, by any means.
   \item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.
+  \item The Grail Tile and the two Sea Tiles adjacent to it are also Subterranean, as marked in the Scenario map layout.
 \end{itemize}
 
 \subsubsection*{Grail Rules}
@@ -146,6 +147,14 @@ Starting in the \nth{10} Round, the following rules apply:
     \color{\mapcolor}
     \draw (5.74, 2.0) node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Grail}};
   }
+  \node(subter) at (5.8, 6.6) {\large{{\textbf{\textcolor{darkcandyapplered}{Subterranean}}}}};
+  \node at (5.8, 6.1) {\large{{\textbf{\textcolor{darkcandyapplered}{Tiles}}}}};
+  \coordinate (subterstart) at (5.7, 5.6);
+
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=250, in=30] (4.25, 3.3);
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=270, in=90] (5.7, 2.5);
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=300, in=60] (7.2, 0.6) to[out=240, in=0] (5.35, -0.2);
+
   \node at ($(map.south) + (0, -1.2)$) {
     \begin{minipage}{0.6\paperwidth}
       \centering
