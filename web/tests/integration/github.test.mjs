@@ -287,3 +287,49 @@ test.describe("saving a scenario", () => {
     });
   });
 });
+
+test.describe("saving a resumed draft", () => {
+  // Deliberately not slugify("Half Written"): the title a resume derives from
+  // the file name must not decide which branch the next save lands on.
+  const BRANCH = `scenario-editor/${LOGIN}/original-name`;
+  const TEX_PATH = "draft-scenarios/clash/half_written.tex";
+
+  test.use({
+    githubRoutes: routes([
+      ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
+      { method: "GET", path: /\/compare\//, body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] } },
+      // The draft's own file exists on the branch; the group file does not.
+      { method: "GET", path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/, body: { content: btoa("% draft\n") } },
+      { method: "GET", path: /\/contents\//, status: 404, body: { message: "Not Found" } },
+      { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+      { method: "GET", path: /\/git\/commits\//, body: { sha: "base-sha", tree: { sha: "base-tree-sha" } } },
+      { method: "POST", path: /\/git\/blobs$/, body: { sha: "blob-sha" } },
+      { method: "POST", path: /\/git\/trees$/, body: { sha: "new-tree-sha" } },
+      { method: "POST", path: /\/git\/commits$/, body: { sha: "new-commit-sha", tree: { sha: "new-tree-sha" } } },
+      { method: "PATCH", path: /\/git\/refs\/heads\//, body: { ref: `refs/heads/${BRANCH}` } },
+    ]),
+  });
+
+  test("goes back to the branch it was resumed from, not a new one", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+    const requests = recordGithubRequests(page);
+    await page.locator("#github-save").click();
+    // Resume already labels the button "Save again", so wait on the result.
+    await expect(page.locator("#status-text")).toContainText(`@${BRANCH}`);
+
+    const updates = requests.filter((r) => r.method === "PATCH");
+    expect(updates.map((r) => r.url), "the save moved a branch other than the resumed one").toEqual([
+      `https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(BRANCH)}`,
+    ]);
+    expect(
+      requests.filter((r) => r.method === "POST" && /\/git\/refs$/.test(r.url)),
+      "the save created a second branch",
+    ).toHaveLength(0);
+  });
+});

@@ -56,6 +56,24 @@ export async function readAsUint8Array(file) {
 }
 
 /**
+ * Repository-safe form of an uploaded file's name: spaces become
+ * underscores and anything TeX or a URL would trip on is dropped. The
+ * extension survives; a name that empties out falls back to "image".
+ *
+ * @param {string} name
+ * @returns {string}
+ */
+export function sanitizeUploadName(name) {
+  const cleaned = name
+    .trim()
+    .replace(/\s+/g, "_")
+    .replace(/[^\w.-]/g, "")
+    .replace(/_{2,}/g, "_")
+    .replace(/^[._-]+/, "");
+  return cleaned || "image";
+}
+
+/**
  * Re-stages the header image under whatever target name is in its rename
  * box, dropping the path it was staged at before.
  *
@@ -64,7 +82,7 @@ export async function readAsUint8Array(file) {
 export function restageHeader() {
   if (!headerUpload) return;
   if (headerUpload.path) state.uploadedFiles.delete(headerUpload.path);
-  const name = el("upload-header-name").value.trim() || headerUpload.originalName;
+  const name = sanitizeUploadName(el("upload-header-name").value || headerUpload.originalName);
   const path = `assets/images/${name}`;
   headerUpload.path = path;
   state.uploadedFiles.set(path, headerUpload.bytes);
@@ -84,7 +102,7 @@ export function restageMaps() {
   const seen = new Set();
   let collision = false;
   mapUploads.forEach((item, i) => {
-    const name = (inputs[i] ? inputs[i].value.trim() : "") || item.originalName;
+    const name = sanitizeUploadName((inputs[i] ? inputs[i].value : "") || item.originalName);
     const path = `assets/maps/${name}`;
     if (seen.has(path)) collision = true;
     seen.add(path);

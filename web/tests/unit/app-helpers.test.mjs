@@ -32,3 +32,11 @@ test("storageKey namespaces a draft by its repository path", () => {
   assert.equal(storageKey("clash/astral_run.tex"), "wasm-scenario-builder:draft:clash/astral_run.tex");
   assert.notEqual(storageKey("clash/x.tex"), storageKey("coops/x.tex"), "two books never share one draft");
 });
+
+test("sanitizeUploadName makes an upload name safe for git paths and TeX", async () => {
+  const { sanitizeUploadName } = await import("../../app/modules/uploads.js");
+  assert.equal(sanitizeUploadName("my cover pic.png"), "my_cover_pic.png");
+  assert.equal(sanitizeUploadName("  a  b (1)#.JPG "), "a_b_1.JPG");
+  assert.equal(sanitizeUploadName("map{1}%.png"), "map1.png");
+  assert.equal(sanitizeUploadName("???"), "image");
+});

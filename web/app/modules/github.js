@@ -118,6 +118,7 @@ export function initGithub() {
         texContent: requireEditor().getValue(),
         uploadedFiles: state.uploadedFiles,
         context: githubContext,
+        branch: githubSaveState.lastSaveTarget?.branch,
       });
       githubSaveState.lastSaveTarget = saved;
       button.textContent = "💾 Save again";

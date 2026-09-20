@@ -684,9 +684,10 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
  * @param {string} request.texContent the editor's current text
  * @param {Map<string, Uint8Array>} request.uploadedFiles path -> bytes
  * @param {GithubContext} request.context from discoverGithubContext
+ * @param {string} [request.branch] the branch a resumed or already-saved draft lives on; overrides the name-derived one
  * @returns {Promise<SaveTarget>}
  */
-export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context }) {
+export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch }) {
   const { username, isMember, fork } = context;
 
   let owner = UPSTREAM_OWNER;
@@ -697,7 +698,7 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
     repo = forkRepo.name;
   }
 
-  const branch = `scenario-editor/${username}/${slugify(scenarioName)}`;
+  const branch = knownBranch || `scenario-editor/${username}/${slugify(scenarioName)}`;
   /** @type {CommitFile[]} */
   const files = [
     { path: texPath, content: texContent },
