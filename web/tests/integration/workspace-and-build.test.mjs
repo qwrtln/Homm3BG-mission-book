@@ -227,6 +227,20 @@ test("the uploads popover opens, closes, and stages a chosen file", async ({ app
   await headerRename.fill("renamed.png");
   await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
 
+  // A name with spaces or TeX-hostile characters is normalized, both for a
+  // fresh pick and for a retyped rename.
+  await headerRename.fill("my cover (1) pic.png");
+  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/my_cover_1_pic.png");
+  await page.locator("#upload-header").setInputFiles({
+    name: "spaced name.png",
+    mimeType: "image/png",
+    buffer: Buffer.from("still not a png"),
+  });
+  await expect(headerRename).toHaveValue("spaced name.png");
+  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/spaced_name.png");
+  await headerRename.fill("renamed.png");
+  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
+
   // Maps get one rename row per file, under assets/maps/.
   const mapName = "probe-map.png";
   await page.locator("#upload-maps").setInputFiles({

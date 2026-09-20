@@ -28,6 +28,8 @@ const ENGINE_STUB_PATH = join(STUB_DIR, "texlyre-busytex-stub.js");
  * @property {number} [status] - HTTP status to respond with. Defaults to 200.
  * @property {unknown} [body] - response body. A non-string value is
  *   JSON-serialized; a string is sent as-is.
+ * @property {Promise<unknown>} [hold] - the response waits until this
+ *   settles, so a test can observe the in-flight state and release it.
  * @property {Record<string, string>} [headers] - extra response headers.
  *   "Content-Type" defaults to "application/json" for a non-string body and
  *   "text/plain" for a string body.
@@ -77,6 +79,7 @@ export async function installGithubStub(page, routes) {
 
       if (match) {
         const { status, headers, body } = renderRoute(match);
+        if (match.hold) await match.hold;
         await route.fulfill({ status, headers, body });
         return;
       }

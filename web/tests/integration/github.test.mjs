@@ -369,3 +369,29 @@ test("a template pick puts the typed name into \\addscenariosection", async ({ a
   const text = await page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue());
   expect(text).toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
 });
+
+test.describe("looking for work to resume", () => {
+  /** @type {() => void} */
+  let release = () => {};
+  const held = new Promise((resolve) => { release = () => resolve(undefined); });
+
+  test.use({
+    githubRoutes: routes([
+      { ...MEMBER_ROUTES[0], hold: held },
+      ...MEMBER_ROUTES.slice(1),
+    ]),
+  });
+
+  test("shows a spinner while GitHub answers, then clears it", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await expect(page.locator("#resume-loading")).toBeVisible();
+    await expect(page.locator("#resume-loading .spinner")).toBeVisible();
+
+    release();
+    // This user has no branches: the whole block goes away.
+    await expect(page.locator("#resume-loading")).toBeHidden();
+    await expect(page.locator("#resume-drafts")).toBeHidden();
+  });
+});
