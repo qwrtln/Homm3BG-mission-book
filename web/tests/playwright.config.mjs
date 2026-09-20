@@ -12,6 +12,9 @@ export default defineConfig({
   testDir: "./integration",
   testMatch: "**/*.test.mjs",
   timeout: 120000,
+  // Each test gets its own context and page, so tests in one file are
+  // independent and may run together.
+  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
   // On CI: "list" for the job log, "github" for inline annotations on the diff,
