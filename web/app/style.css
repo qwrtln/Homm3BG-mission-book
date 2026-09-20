@@ -211,7 +211,10 @@ button.link {
   outline: none;
 }
 #scenario-name:focus { border-color: var(--accent); }
-.selected-row { margin-top: 1rem; font-size: 0.88rem; color: var(--muted); }
+#scenario-name[aria-invalid="true"] { border-color: var(--bad); }
+.name-error[hidden] { display: none; }
+.name-error { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--bad); text-align: left; }
+.go-hint { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
 #go { white-space: nowrap; }
 
 /* --- Header actions (shown once a scenario is chosen) ------------------ */

@@ -38,8 +38,8 @@ interface ElementIdMap {
   "scratch-coop": HTMLButtonElement;
   search: HTMLInputElement;
   "search-results": HTMLDivElement;
-  "selected-row": HTMLDivElement;
-  "selected-title": HTMLElement;
+  "name-error": HTMLParagraphElement;
+  "go-hint": HTMLParagraphElement;
   "status-bar": HTMLDivElement;
   "status-spinner": HTMLSpanElement;
   "status-text": HTMLSpanElement;

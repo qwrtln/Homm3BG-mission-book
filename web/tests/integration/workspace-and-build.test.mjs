@@ -64,7 +64,7 @@ async function enterWorkspace(page) {
   const title = (await first.textContent()).trim();
   // click() dispatches a real mousedown, which is what search.js listens for.
   await first.click();
-  await expect(page.locator("#selected-title")).toHaveText(title);
+  await expect(page.locator("#search")).toHaveValue(title);
 
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await expect(page.locator("#go")).toBeEnabled();

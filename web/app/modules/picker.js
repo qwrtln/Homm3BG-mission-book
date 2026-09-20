@@ -2,22 +2,39 @@ import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from 
 import { TEMPLATES, publishedPdfUrl } from "./config.js";
 import { state } from "./state.js";
 import { errorMessage } from "../../shared/errors.js";
+import { validateScenarioName } from "../../shared/scenario-name.js";
 import { el, basenameNoExt } from "./dom.js";
 import { preloadFile, preloadText } from "./files.js";
 import { commitEntry } from "./workspace.js";
 
 // A pick only marks a pending choice, no fetch yet; "Let's go!" needs a pick
-// plus 3+ chars in the name field. Picking a real scenario does already
-// start downloading its pictures/PDF though — see startScenarioPrefetch.
-const MIN_NAME_LENGTH = 3;
+// plus a valid name — see validateScenarioName. Picking a real scenario does
+// already start downloading its pictures/PDF though — see startScenarioPrefetch.
 /** @type {string | null} */
 let pendingPath = null;
 /** @type {string | null} draft-scenarios subdir for a template pick; null for a real entry */
 let pendingCategory = null;
 
-/** @returns {void} */
+/**
+ * Enables "Let's go!" when there is a pick and a valid name, and says which of
+ * the two is missing rather than leaving a greyed-out button unexplained.
+ *
+ * @returns {void}
+ */
 export function updateGoButton() {
-  el("go").disabled = !pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH;
+  const typed = el("scenario-name").value;
+  const check = validateScenarioName(typed);
+  const nameError = el("name-error");
+  // An empty field is not yet a mistake: the go hint asks for the name instead.
+  const showNameError = !check.valid && typed.trim().length > 0;
+  nameError.textContent = showNameError ? check.message : "";
+  nameError.hidden = !showNameError;
+  el("scenario-name").setAttribute("aria-invalid", showNameError ? "true" : "false");
+
+  el("go").disabled = !pendingPath || !check.valid;
+  el("go-hint").textContent = !pendingPath
+    ? "Pick a scenario or a blank template first."
+    : check.message;
 }
 
 /**
@@ -31,8 +48,8 @@ export function updateGoButton() {
 export function selectPending(path, title, category = null) {
   pendingPath = path;
   pendingCategory = category;
-  el("selected-title").textContent = title;
-  el("selected-row").hidden = false;
+  // The search box itself shows the pick: what was typed to find it is spent.
+  el("search").value = title;
   el("search-results").hidden = true;
   updateGoButton();
   // A template has no pictures and no published branch to fetch.
@@ -96,6 +113,7 @@ export async function prefetchScenario(path, signal) {
 /** Wires the welcome screen's picker controls. @returns {void} */
 export function initPicker() {
   el("scenario-name").addEventListener("input", updateGoButton);
+  updateGoButton(); // the cold-load hint: nothing is picked yet
 
   document.querySelectorAll("[data-category]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -108,7 +126,7 @@ export function initPicker() {
   });
 
   el("go").addEventListener("click", () => {
-    if (!pendingPath || el("scenario-name").value.trim().length < MIN_NAME_LENGTH) return;
+    if (!pendingPath || !validateScenarioName(el("scenario-name").value).valid) return;
     commitEntry(pendingPath, el("scenario-name").value, pendingCategory);
   });
 }

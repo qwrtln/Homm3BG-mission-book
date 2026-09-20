@@ -26,7 +26,7 @@ dependency reach application code.
 
 - `web/shared/` — logic with no DOM access, importable by Node and therefore
   testable in tier 1: `build-plan.js`, `github-contrib.js`, `github-auth.js`,
-  `errors.js`.
+  `errors.js`, `scenario-name.js`.
 - `web/app/modules/` — application concerns, wired by `web/app/app.js`. May
   touch the DOM, but only *inside* a function body — never at import time, or
   tier 1 can no longer import the module.

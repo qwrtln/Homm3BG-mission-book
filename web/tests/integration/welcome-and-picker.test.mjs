@@ -98,8 +98,10 @@ test("a cold load shows the welcome screen, with the workspace and its actions h
   await expect(page.locator("#header-actions")).toBeHidden();
   // Nothing is picked and nothing is named yet.
   await expect(page.locator("#search-results")).toBeHidden();
-  await expect(page.locator("#selected-row")).toBeHidden();
   await expect(page.locator("#go")).toBeDisabled();
+  // A greyed-out button says why it is greyed out.
+  await expect(page.locator("#go-hint")).toHaveText("Pick a scenario or a blank template first.");
+  await expect(page.locator("#name-error")).toBeHidden();
 
   expect(errors, "the page reported errors on a cold load").toEqual([]);
 });
@@ -163,8 +165,7 @@ test("ArrowDown moves the highlight, Escape hides the list, Enter takes the high
   await expect(results.nth(0)).not.toHaveClass(/\bactive\b/);
 
   await search.press("Enter");
-  await expect(page.locator("#selected-row")).toBeVisible();
-  await expect(page.locator("#selected-title")).toHaveText(secondTitle);
+  await expect(search).toHaveValue(secondTitle);
   await expect(page.locator("#search-results")).toBeHidden();
 
   expect(errors, "the page reported errors while driving the list from the keyboard").toEqual([]);
@@ -183,15 +184,19 @@ test("clicking outside the combobox hides the list", async ({ app }) => {
   expect(errors, "the page reported errors while dismissing the list").toEqual([]);
 });
 
-test("Let's go! needs both a pick and a name of three characters", async ({ app }) => {
+test("Let's go! needs both a pick and a valid name, and says which is missing", async ({ app }) => {
   const { page, errors } = app;
   await stubPublishedPdf(page);
   const go = page.locator("#go");
   const name = page.locator("#scenario-name");
 
+  const goHint = page.locator("#go-hint");
+  const nameError = page.locator("#name-error");
+
   // A name on its own is not enough: nothing is picked yet.
   await name.fill("my scenario");
   await expect(go).toBeDisabled();
+  await expect(goHint).toHaveText("Pick a scenario or a blank template first.");
   await name.fill("");
 
   const results = await openScenarioList(page);
@@ -201,17 +206,28 @@ test("Let's go! needs both a pick and a name of three characters", async ({ app 
   // listens for, so the pick lands before the input's blur hides the list.
   await first.click();
 
-  await expect(page.locator("#selected-row")).toBeVisible();
-  await expect(page.locator("#selected-title")).toHaveText(firstTitle);
+  await expect(page.locator("#search")).toHaveValue(firstTitle);
   // Picked, still unnamed.
   await expect(go).toBeDisabled();
+  await expect(goHint).toHaveText("Name your scenario to continue.");
+  // An empty field is not a mistake yet, so no error sits under the input.
+  await expect(nameError).toBeHidden();
 
   await name.fill("ab");
   await expect(go, "two characters were accepted as a name").toBeDisabled();
+  await expect(nameError).toHaveText("Use at least 3 characters.");
   await name.fill("  a  ");
   await expect(go, "a padded single character was accepted as a name").toBeDisabled();
-  await name.fill("abc");
+
+  // Titles only: the file name and the branch are derived from this.
+  await name.fill("bad/name?");
+  await expect(go, "a name with punctuation was accepted").toBeDisabled();
+  await expect(nameError).toHaveText("Use letters, digits, spaces, hyphens and apostrophes only.");
+
+  await name.fill("The Queen's Gambit 2");
   await expect(go).toBeEnabled();
+  await expect(nameError).toBeHidden();
+  await expect(goHint).toHaveText("");
 
   expect(errors, "the page reported errors while picking and naming").toEqual([]);
 });
@@ -246,29 +262,28 @@ test("Let's go! leaves the welcome screen and loads the picked scenario's source
 test("the blank-scenario buttons pick a template, and Let's go! loads that template's source", async ({ app }) => {
   const { page, errors } = app;
   const go = page.locator("#go");
-  const selectedTitle = page.locator("#selected-title");
+  const selectedTitle = page.locator("#search");
 
   // The three category buttons all pick the one scenario template; only the
   // draft-scenarios subdirectory they carry differs.
   await page.locator("#scratch-clash").click();
-  await expect(page.locator("#selected-row")).toBeVisible();
-  const blankTitle = (await selectedTitle.textContent()).trim();
+  const blankTitle = await selectedTitle.inputValue();
   expect(blankTitle.length).toBeGreaterThan(0);
   // A blank pick alone does not open the door either.
   await expect(go).toBeDisabled();
 
   await page.locator("#scratch-coop").click();
-  await expect(selectedTitle).toHaveText(blankTitle);
+  await expect(selectedTitle).toHaveValue(blankTitle);
   await page.locator("#scratch-alliance").click();
-  await expect(selectedTitle).toHaveText(blankTitle);
+  await expect(selectedTitle).toHaveValue(blankTitle);
 
   // The campaign button is the one with a template of its own.
   await page.locator("#scratch-campaign").click();
-  const campaignTitle = (await selectedTitle.textContent()).trim();
+  const campaignTitle = await selectedTitle.inputValue();
   expect(campaignTitle, "the campaign button picked the same template as the others").not.toBe(blankTitle);
 
   await page.locator("#scratch-clash").click();
-  await expect(selectedTitle).toHaveText(blankTitle);
+  await expect(selectedTitle).toHaveValue(blankTitle);
   await page.locator("#scenario-name").fill("blank test");
   await expect(go).toBeEnabled();
   await go.click();

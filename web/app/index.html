@@ -76,16 +76,15 @@
           <h2>Name your scenario</h2>
           <p class="hint">This becomes the file's own name: the download, and where its draft autosaves.</p>
           <div class="name-field">
-            <input type="text" id="scenario-name" aria-label="Name your scenario" placeholder="scenario_name" maxlength="60" required>
-          </div>
-          <div class="selected-row" id="selected-row" hidden>
-            Selected: <strong id="selected-title"></strong>
+            <input type="text" id="scenario-name" aria-label="Name your scenario" placeholder="Scenario name" maxlength="60" required>
+            <p class="name-error" id="name-error" role="alert" hidden></p>
           </div>
         </div>
         <div class="picker-slide picker-slide-go">
           <h2>Ready?</h2>
           <p class="hint">Opens the editor, with this scenario's own source loaded in.</p>
           <button id="go" class="primary" type="button" disabled>Let's go!</button>
+          <p class="go-hint" id="go-hint" role="status"></p>
         </div>
       </div>
     </div>

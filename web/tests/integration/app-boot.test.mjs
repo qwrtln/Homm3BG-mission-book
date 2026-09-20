@@ -55,9 +55,9 @@ test("the app boots, lists the book's scenarios, and selects one", async ({ page
   // before the input's blur hides the list.
   await first.click();
 
-  const selectedRow = page.locator("#selected-row");
-  await expect(selectedRow).toBeVisible();
-  await expect(page.locator("#selected-title")).toHaveText(firstTitle);
+  // The pick replaces what was typed to find it: the search box is the only
+  // place the chosen title is shown.
+  await expect(page.locator("#search")).toHaveValue(firstTitle);
 
   // app.js calls ensureEngine() eagerly on load. The stub records the call,
   // so this proves the app asked for the engine AND that it got the stub.
