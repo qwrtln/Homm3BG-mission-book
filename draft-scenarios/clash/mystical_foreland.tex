@@ -114,10 +114,10 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
 \subsubsection*{Field Rewards}
 
 \begin{itemize}
-  \item \textbf{Sea Temple}: 15~\svg{gold}.
+  \item \textbf{Temple of the Sea}: 15~\svg{gold}.
     Search~(3) the \svg{artifact} Deck \textbf{twice}.
     You may remove 2 Statistic Cards from your Deck or Discard Pile and take their Empowered counterparts into your hand in their stead.
-  \item \textbf{Level VII Town:} You may \svg{recruit} and \svg{reinforce} one of the Units from the defending Town for half its cost, excluding \svg{valuables} (rounded down). \textit{Example: After defeating a Castle Army, you may now \svg{recruit} and \svg{reinforce} Archangels for 25~\svg{gold} and 3~\svg{valuables}}
+  \item \textbf{Level VII Town:} You may \svg{recruit} and \svg{reinforce} one of the Units from the defending Town for half its cost, excluding \svg{valuables} (rounded down). \textit{Example: After defeating a Castle Army, you may now \svg{recruit} and \svg{reinforce} Archangels for 25~\svg{gold} and 3~\svg{valuables}.}
   \item \textbf{Cyclops Stockpile}: 10~\svg{building_materials}, 5~\svg{valuables}. Your Units gain a permanent +1~\svg{attack} and +1~\svg{initiative}, including Units you Recruit later.
 \end{itemize}
 
@@ -126,7 +126,7 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
 Starting in the \nth{10} Round, the following rules apply:
 
 \begin{itemize}
-  \item Place one extra \textbf{Stack Token} on each neutral \svg{golden} Unit. Do not place it in Combat against the \textbf{Grail Army} or another player.
+  \item Place one extra \textbf{Stack Token} on each enemy Neutral \svg{golden} Unit. Do not place it in Combat against the \textbf{Grail Army} or another player.
   \item For each extra \textbf{Stack Token}, you can extend the Combat by one Round. This Round costs no \svg{movement}.
   \item For every \svg{golden} Unit you defeat in a Neutral Combat, gain 5~\svg{gold} and either 2~\svg{building_materials} or 1~\svg{valuables}.
 \end{itemize}
@@ -141,8 +141,12 @@ Starting in the \nth{10} Round, the following rules apply:
   \node (map) at (0, 0) {
     \includegraphics[scale=0.35]{\maps/mystical_foreland.png}
   };
-  \node[font=\fontsize{10pt}{12pt}\selectfont] at (6.0, 1.6) {\textbf{\textcolor{deepskyblue}{Grail}}};
-  \node at ($(map.south) + (0, -0.6)$) {
+  {
+    \iftoggle{noartbackground}{\def\mapcolor{white}\def\opacity{0.5}}{\def\mapcolor{deepskyblue}\def\opacity{0.3}}
+    \color{\mapcolor}
+    \draw (5.74, 2.0) node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Grail}};
+  }
+  \node at ($(map.south) + (0, -1.2)$) {
     \begin{minipage}{0.6\paperwidth}
       \centering
       \captionof{figure}{\textbf{SCENARIO MAP LAYOUT}}
