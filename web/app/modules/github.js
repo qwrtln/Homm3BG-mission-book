@@ -7,7 +7,7 @@ import {
 import { errorMessage } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
 import { el, setStatus, escapeHtml, basenameNoExt, closestTo } from "./dom.js";
-import { loadDraft, saveDraft } from "./drafts.js";
+import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
 import { clearPdf } from "./pdf-view.js";
 import { showWorkspace } from "./workspace.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
@@ -57,15 +57,40 @@ async function reopenLocalDraft(path, title) {
 /** @type {GithubContext | null} */
 let githubContext = null;
 
+const CATEGORY_LABELS = { clash: "Clash", coops: "Cooperative", campaigns: "Campaign", alliances: "Alliance" };
+
+/**
+ * "draft-scenarios/clash/kyrre_link.tex" -> "Clash: Kyrre Link".
+ *
+ * @param {string} texPath
+ * @returns {string}
+ */
+function draftLabel(texPath) {
+  const dir = texPath.split("/").slice(-2, -1)[0] ?? "";
+  const title = basenameNoExt(texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const category = /** @type {Record<string, string>} */ (CATEGORY_LABELS)[dir];
+  return category ? `${category}: ${title}` : title;
+}
+
 /** Draws the resume list from the signed-in user's own branches. @returns {void} */
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
   const list = el("resume-list");
+  el("resume-loading").hidden = true;
+  el("resume-hint").hidden = false;
   el("resume-drafts").hidden = drafts.length === 0;
   if (drafts.length === 0) return;
   list.innerHTML = drafts
-    .map((d, i) => `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(d.texPath)} <span class="hint">(${escapeHtml(d.branch)})</span></button>`)
+    .map((d, i) => `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(d.branch)})</span></button>`)
     .join("");
+}
+
+/** Shows the resume block in its searching state. @returns {void} */
+function showResumeSearching() {
+  el("resume-list").innerHTML = "";
+  el("resume-hint").hidden = true;
+  el("resume-loading").hidden = false;
+  el("resume-drafts").hidden = false;
 }
 
 /** Wires every GitHub control, then completes a pending sign-in. @returns {void} */
@@ -99,6 +124,18 @@ export function initGithub() {
     githubContext = null;
     resetGithubSaveState();
     el("resume-drafts").hidden = true;
+    if (!el("workspace").hidden) {
+      // Signed out mid-edit: the autosaved copy belongs to the account that
+      // just left, so purge it and go back to welcome. A reload is the only
+      // reset that clears the editor, uploads and module state together.
+      clearTimeout(state.saveTimer ?? undefined);
+      if (state.chosenPath) deleteDraft(state.chosenPath);
+      try {
+        localStorage.removeItem(REOPEN_KEY);
+      } catch { /* blocked storage: nothing to remove */ }
+      location.reload();
+      return;
+    }
     renderGithubHeader();
   });
 
@@ -206,9 +243,11 @@ export function initGithub() {
     }
   });
 
+  if (getToken()) showResumeSearching();
   completeSignIn()
     .then(async (token) => {
       if (!token) return;
+      showResumeSearching();
       try {
         githubContext = await discoverGithubContext(token);
         renderResumeDrafts();
@@ -219,5 +258,11 @@ export function initGithub() {
     .catch((error) => {
       setStatus(`GitHub sign-in failed: ${errorMessage(error)}`, { tone: "bad" });
     })
-    .finally(renderGithubHeader);
+    .finally(() => {
+      // Whatever happened, the searching state must not outlive the search.
+      el("resume-loading").hidden = true;
+      el("resume-hint").hidden = false;
+      el("resume-drafts").hidden = !githubContext || githubContext.drafts.length === 0;
+      renderGithubHeader();
+    });
 }

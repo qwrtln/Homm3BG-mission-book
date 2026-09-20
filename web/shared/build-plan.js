@@ -191,6 +191,22 @@ export function scenarioHeading(source) {
 }
 
 /**
+ * Puts a contributor's own name into the title slot of \addscenariosection,
+ * leaving everything else (kind, [subsection], picture) as it was.
+ *
+ * @param {string} source one .tex file's text
+ * @param {string} title plain text; the picker already limits it to letters,
+ *   digits, spaces, hyphens and apostrophes
+ * @returns {string} the source unchanged when it declares no heading
+ */
+export function withScenarioTitle(source, title) {
+  return source.replace(
+    /(\\addscenariosection(?:\[[^\]]*\])?\{[^}]*\}\{[^}]*\}\{)[^}]*(\})/,
+    (_, head, tail) => `${head}${title}${tail}`,
+  );
+}
+
+/**
  * Reads a source file and returns every repository path it draws a picture
  * from. Handles the \macro/name.ext form that metadata.tex uses everywhere.
  *

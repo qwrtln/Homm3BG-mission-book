@@ -30,7 +30,9 @@ interface ElementIdMap {
   "pdf-pane": HTMLElement;
   "pdf-wrap": HTMLDivElement;
   "resume-drafts": HTMLDivElement;
+  "resume-hint": HTMLParagraphElement;
   "resume-list": HTMLDivElement;
+  "resume-loading": HTMLParagraphElement;
   "scenario-name": HTMLInputElement;
   "scratch-alliance": HTMLButtonElement;
   "scratch-campaign": HTMLButtonElement;

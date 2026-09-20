@@ -201,3 +201,16 @@ test("the path macro table matches metadata.tex's own declarations", () => {
   assert.equal(PATH_MACROS.sections, "sections");
   assert.deepEqual(GROUP_FILES.map((group) => group.dir), ["coops", "clash", "campaigns"]);
 });
+
+test("withScenarioTitle swaps only the title slot", async () => {
+  const { withScenarioTitle } = await import("../../shared/build-plan.js");
+  assert.equal(
+    withScenarioTitle("\\addscenariosection{1}{Clash}{Old Name}{\\images/a.png}\nOld Name", "New $& Name"),
+    "\\addscenariosection{1}{Clash}{New $& Name}{\\images/a.png}\nOld Name",
+  );
+  assert.equal(
+    withScenarioTitle("\\addscenariosection[Sub]{1}{Camp}{Old}{\\images/a.png}", "New"),
+    "\\addscenariosection[Sub]{1}{Camp}{New}{\\images/a.png}",
+  );
+  assert.equal(withScenarioTitle("no heading", "New"), "no heading");
+});

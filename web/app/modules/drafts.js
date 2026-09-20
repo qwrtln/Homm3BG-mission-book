@@ -22,6 +22,16 @@ export function loadDraft(path) {
 
 /**
  * @param {string} path
+ * @returns {void}
+ */
+export function deleteDraft(path) {
+  try {
+    localStorage.removeItem(storageKey(path));
+  } catch { /* blocked storage: nothing was stored */ }
+}
+
+/**
+ * @param {string} path
  * @param {string} text
  * @returns {void}
  */

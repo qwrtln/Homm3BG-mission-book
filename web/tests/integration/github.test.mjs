@@ -164,7 +164,7 @@ test.describe("the resume-drafts list", () => {
     await expect(page.locator("#resume-drafts")).toBeVisible();
     const entries = page.locator("#resume-list .combobox-item");
     await expect(entries).toHaveCount(1);
-    await expect(entries.first()).toContainText(TEX_PATH);
+    await expect(entries.first()).toContainText("Clash: Half Written");
     await expect(entries.first()).toContainText(BRANCH);
 
     expect(errors, "the page reported errors while listing drafts").toEqual([]);
@@ -332,4 +332,40 @@ test.describe("saving a resumed draft", () => {
       "the save created a second branch",
     ).toHaveLength(0);
   });
+});
+
+test.describe("signing out mid-edit", () => {
+  test.use({ githubRoutes: routes(MEMBER_ROUTES) });
+
+  test("returns to welcome and purges the autosaved draft", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await expect(page.locator("#github-status")).toBeVisible();
+    await page.locator("#scratch-clash").click();
+    await page.locator("#scenario-name").fill("Purge Probe");
+    await page.locator("#go").click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    // Typing schedules an autosave; wait for it to land.
+    await page.locator(".CodeMirror").click();
+    await page.keyboard.type("x");
+    await expect.poll(() => page.evaluate(() =>
+      Object.keys(localStorage).filter((k) => k.includes(":draft:")).length)).toBe(1);
+
+    await page.locator("#github-signout").click();
+
+    await expect(page.locator("#welcome")).toBeVisible();
+    await expect(page.locator("#workspace")).toBeHidden();
+    expect(await page.evaluate(() =>
+      Object.keys(localStorage).filter((k) => k.includes(":draft:")))).toEqual([]);
+  });
+});
+
+test("a template pick puts the typed name into \\addscenariosection", async ({ app }) => {
+  const { page } = app;
+  await page.locator("#scratch-clash").click();
+  await page.locator("#scenario-name").fill("Kyrre Link");
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  const text = await page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue());
+  expect(text).toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
 });

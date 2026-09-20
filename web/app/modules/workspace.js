@@ -7,6 +7,7 @@ import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { resetUploads } from "./uploads.js";
 import { resetGithubSaveState } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
+import { withScenarioTitle } from "../../shared/build-plan.js";
 
 /**
  * Swaps the welcome screen for the workspace, resolving once the transition
@@ -84,7 +85,7 @@ export async function commitEntry(path, name, category) {
   const pristineSource = /** @type {string} */ (fetched.content);
 
   const draft = loadDraft(identity);
-  cm.setValue(draft !== null ? draft : pristineSource);
+  cm.setValue(draft !== null ? draft : withScenarioTitle(pristineSource, name.trim()));
   el("draft-note").hidden = draft === null;
   cm.focus();
 

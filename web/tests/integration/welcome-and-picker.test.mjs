@@ -6,6 +6,7 @@
 // hand-off from the welcome screen to the workspace.
 
 import { test, expect, openScenarioList } from "./fixtures.mjs";
+import { withScenarioTitle } from "../../shared/build-plan.js";
 
 // config.js's TEMPLATES. These two are the app's own constants, not book
 // content, and nothing in the DOM names them — a blank pick is the only way
@@ -250,7 +251,8 @@ test("Let's go! leaves the welcome screen and loads the picked scenario's source
   await expect(page.locator("#header-actions")).toBeVisible();
   // The source is the picked entry's own file, fetched here the same way the
   // app fetches it rather than pinned to any one scenario.
-  const expected = await repoFile(page, firstPath);
+  // Only its title slot changes: the typed name replaces the entry's own.
+  const expected = withScenarioTitle(await repoFile(page, firstPath), "welcome picker test");
   await expect.poll(() => editorValue(page), { message: "the picked scenario's source never reached the editor" })
     .toBe(expected);
   // Nothing was autosaved for this identity, so the draft note stays hidden.
@@ -291,8 +293,9 @@ test("the blank-scenario buttons pick a template, and Let's go! loads that templ
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#welcome")).toBeHidden();
   const blankSource = await repoFile(page, TEMPLATE_SCENARIO_PATH);
+  const blankExpected = withScenarioTitle(blankSource, "blank test");
   await expect.poll(() => editorValue(page), { message: "the blank template never reached the editor" })
-    .toBe(blankSource);
+    .toBe(blankExpected);
   // A template is not a scenario: it has no published PDF to prefetch, so
   // nothing here needed the CDN stubbed.
   const campaignSource = await repoFile(page, TEMPLATE_CAMPAIGN_PATH);
