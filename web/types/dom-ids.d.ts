@@ -27,7 +27,6 @@ interface ElementIdMap {
   "edit-continue": HTMLButtonElement;
   "edit-start-over": HTMLButtonElement;
   go: HTMLButtonElement;
-  "mode-checking": HTMLParagraphElement;
   "mode-choice": HTMLDivElement;
   "mode-edit": HTMLButtonElement;
   "mode-new": HTMLButtonElement;

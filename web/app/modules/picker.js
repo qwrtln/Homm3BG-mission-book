@@ -85,15 +85,9 @@ function isTemplatePath(path) {
  * @returns {void}
  */
 export function settleModes(isMember) {
-  el("mode-checking").hidden = true;
   el("mode-choice").hidden = !isMember;
   setPickerMode("new");
   if (!isMember) el("mode-new").setAttribute("aria-pressed", "false");
-}
-
-/** Says membership is being checked; the picker stays usable meanwhile. @returns {void} */
-export function showModeChecking() {
-  el("mode-checking").hidden = false;
 }
 
 /**

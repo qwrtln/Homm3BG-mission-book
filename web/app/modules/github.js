@@ -10,7 +10,7 @@ import { el, setStatus, escapeHtml, basenameNoExt, closestTo } from "./dom.js";
 import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
 import { clearPdf } from "./pdf-view.js";
 import { showWorkspace, openForEdit } from "./workspace.js";
-import { onEditPick, settleModes, showModeChecking } from "./picker.js";
+import { onEditPick, settleModes } from "./picker.js";
 import { preloadFile } from "./files.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
@@ -201,7 +201,6 @@ export function initGithub() {
   })();
 
   onEditPick(startEdit);
-  if (getToken()) showModeChecking();
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 

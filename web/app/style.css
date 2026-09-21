@@ -134,7 +134,7 @@ button.link {
 .welcome-top > * { flex: 1 1 20rem; min-width: 0; }
 .welcome-top .resume-drafts { margin-bottom: 0; }
 .edit-branch-prompt { margin-bottom: 1.5rem; }
-.mode-choice[hidden], .edit-branch-prompt[hidden], #mode-checking[hidden] { display: none; }
+.mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
 /* Edit mode keeps the new-scenario controls on screen but out of reach. */
 .dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; transition: opacity 0.2s; }
 .mode-choice .scratch-row { margin-top: 0; }

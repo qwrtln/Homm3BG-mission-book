@@ -14,16 +14,15 @@ const LOGIN = "octotester";
 const REPO_PATH = `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`;
 
 /**
- * @param {{push: boolean, hold?: Promise<unknown>}} options
+ * @param {{push: boolean}} options
  * @returns {import("./fixtures.mjs").GithubRoute[]}
  */
-function identityRoutes({ push, hold }) {
+function identityRoutes({ push }) {
   return [
     { method: "GET", path: "/user", body: { login: LOGIN } },
     {
       method: "GET",
       path: REPO_PATH,
-      hold,
       body: {
         name: UPSTREAM_REPO,
         owner: { login: UPSTREAM_OWNER },
@@ -78,7 +77,6 @@ test("signed out, there is no mode choice and the picker is there", async ({ app
   const { page } = app;
   await expect(page.locator("#welcome-picker")).toBeVisible();
   await expect(page.locator("#mode-choice")).toBeHidden();
-  await expect(page.locator("#mode-checking")).toBeHidden();
 });
 
 test.describe("signed in, but not a member", () => {
@@ -90,30 +88,7 @@ test.describe("signed in, but not a member", () => {
 
     await expect(page.locator("#welcome-picker")).toBeVisible();
     await expect(page.locator("#mode-choice")).toBeHidden();
-    await expect(page.locator("#mode-checking")).toBeHidden();
-  });
-});
-
-test.describe("while membership is being checked", () => {
-  /** @type {() => void} */
-  let release = () => {};
-  const held = new Promise((resolve) => {
-    release = () => resolve(undefined);
-  });
-  test.use({ githubRoutes: routes(identityRoutes({ push: true, hold: held })) });
-
-  test("says so, keeps the picker usable, and offers no choice yet", async ({ app }) => {
-    const { page } = app;
-    await signInAs(page);
-
-    await expect(page.locator("#mode-checking")).toBeVisible();
-    await expect(page.locator("#welcome-picker")).toBeVisible();
-    await expect(page.locator("#mode-choice")).toBeHidden();
-
-    release();
-    await expect(page.locator("#mode-checking")).toBeHidden();
-    await expect(page.locator("#mode-choice")).toBeVisible();
-  });
+    });
 });
 
 test.describe("signed in as a member", () => {
@@ -191,12 +166,12 @@ test.describe("a member with work to resume", () => {
     ]),
   });
 
-  test("sees the resume list, headed \"Or resume your work\", on the same row as the member banner", async ({ app }) => {
+  test("sees the resume list, headed \"Resume your work\", on the same row as the member banner", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
     await expect(page.locator("#resume-drafts")).toBeVisible();
-    await expect(page.locator("#resume-drafts h2")).toHaveText("Or resume your work");
+    await expect(page.locator("#resume-drafts h2")).toHaveText("Resume your work");
     const banner = await page.locator("#mode-choice").boundingBox();
     const resume = await page.locator("#resume-drafts").boundingBox();
     expect(banner && resume && Math.abs(banner.y - resume.y) < 4, "banner and resume list are not side by side").toBe(true);
