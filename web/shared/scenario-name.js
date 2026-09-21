@@ -46,3 +46,21 @@ export function validateScenarioName(name) {
   }
   return { valid: true, message: "" };
 }
+
+const DRAFT_ROOT = "draft-scenarios";
+
+/**
+ * Directory a new scenario's file lands in. A new scenario is always a draft,
+ * so it never goes into a published directory, even when it starts from a
+ * published scenario's source.
+ *
+ * @param {string} pickedPath repository path of the entry the contributor started from
+ * @param {string | null} [category] template picks only: the category button chosen
+ * @returns {string} e.g. "draft-scenarios/coops"
+ */
+export function newScenarioDir(pickedPath, category = null) {
+  if (category) return `${DRAFT_ROOT}/${category}`;
+  const parts = pickedPath.split("/");
+  const start = parts[0] === DRAFT_ROOT ? 1 : 0;
+  return `${DRAFT_ROOT}/${parts[start]}`;
+}

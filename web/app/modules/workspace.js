@@ -7,6 +7,7 @@ import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { resetUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
+import { newScenarioDir } from "../../shared/scenario-name.js";
 import { withScenarioTitle } from "../../shared/build-plan.js";
 
 /**
@@ -69,7 +70,7 @@ export async function commitEntry(path, name, category) {
 
   // Keep the .tex extension: TeX's \input only appends one if missing, so a
   // name without it would 404 twice.
-  const dir = template ? `draft-scenarios/${category}` : entry.path.split("/").slice(0, -1).join("/");
+  const dir = newScenarioDir(entry.path, template ? category : null);
   const identity = `${dir}/${sanitizeFilename(name)}.tex`;
 
   resetGithubSaveState();

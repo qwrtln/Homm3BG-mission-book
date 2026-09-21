@@ -46,3 +46,11 @@ test("the name \"Updates\" is reserved, whatever its case, because its branch wo
   }
   assert.equal(validateScenarioName("Updates to the Valley").valid, true);
 });
+
+test("a new scenario always lands under draft-scenarios", async () => {
+  const { newScenarioDir } = await import("../../shared/scenario-name.js");
+  assert.equal(newScenarioDir("coops/wandering_pretzels.tex"), "draft-scenarios/coops");
+  assert.equal(newScenarioDir("campaigns/inferno_devilish_plan.tex"), "draft-scenarios/campaigns");
+  assert.equal(newScenarioDir("draft-scenarios/clash/x.tex"), "draft-scenarios/clash");
+  assert.equal(newScenarioDir("templates/scenario.tex", "alliances"), "draft-scenarios/alliances");
+});
