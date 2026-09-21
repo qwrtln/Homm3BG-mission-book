@@ -6,12 +6,15 @@ import {
 
 import { errorMessage } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
-import { el, setStatus, escapeHtml, basenameNoExt, closestTo, confirmDelete } from "./dom.js";
+import { el, setStatus, escapeHtml, basenameNoExt, closestTo, confirmDelete, confirmAction } from "./dom.js";
 import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
-import { reflectRoute, clearRoute } from "./route.js";
+import { reflectRoute, clearRoute, endRouteLoading } from "./route.js";
 import { parseRoute, slugToPath } from "../../shared/route.js";
 import { clearPdf } from "./pdf-view.js";
-import { showWorkspace, openForEdit } from "./workspace.js";
+import { markClean, isDirty } from "./dirty.js";
+import { uploadsSignature } from "../../shared/unsaved.js";
+import { loadEntries } from "./entries.js";
+import { showWorkspace, openForEdit, showWelcome } from "./workspace.js";
 import { onEditPick, settleModes } from "./picker.js";
 import { preloadFile } from "./files.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
@@ -58,6 +61,7 @@ async function reopenLocalDraft(path, title) {
   el("draft-note").hidden = false;
   resetUploads();
   clearPdf();
+  markClean(null); // no clean copy here: the draft was never saved anywhere else
   setStatus("Ready.");
   return true;
 }
@@ -116,7 +120,7 @@ function renderResumeDrafts() {
       const label = draftLabel(d.texPath);
       return `<div class="resume-row">`
         + `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(label)} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>`
-        + `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress">🗑</button>`
+        + `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></button>`
         + `</div>`;
     })
     .join("");
@@ -261,6 +265,7 @@ async function openResumableDraft(draft) {
     resetUploads();
     restoreUploads(assets);
     clearPdf();
+    markClean();
 
     githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
     el("github-open-pr").hidden = false;
@@ -280,6 +285,15 @@ async function openResumableDraft(draft) {
  * @returns {Promise<void>}
  */
 export async function openRoute() {
+  try {
+    await resolveRoute();
+  } finally {
+    endRouteLoading(); // whatever happened, the loading screen must not outlive the lookup
+  }
+}
+
+/** @returns {Promise<void>} */
+async function resolveRoute() {
   if (state.chosenPath) return; // a sign-in reopen already opened something
   try {
     const kept = localStorage.getItem(ROUTE_KEY);
@@ -319,6 +333,45 @@ export async function openRoute() {
 }
 
 /**
+ * Brings the welcome screen's data up to date without disturbing it: what is
+ * on screen stays, and is replaced only when the answer arrives. A failure
+ * leaves the old data in place.
+ *
+ * @returns {Promise<void>}
+ */
+async function refreshWelcomeData() {
+  const entries = loadEntries().catch(() => {});
+  const token = getToken();
+  if (token) {
+    try {
+      githubContext = await discoverGithubContext(token);
+      renderResumeDrafts();
+    } catch { /* keep showing what was already known */ }
+  }
+  await entries;
+}
+
+/**
+ * "Back" from the workspace. Asks first when there is something unsaved.
+ *
+ * @returns {Promise<void>}
+ */
+async function leaveWorkspace() {
+  if (isDirty()) {
+    const leave = await confirmAction({
+      title: "Leave with unsaved changes?",
+      message: `"${state.chosenTitle}" has changes that are not saved. A copy stays in this browser's autosave.`,
+      warning: "",
+      okLabel: "Leave",
+      danger: false,
+    });
+    if (!leave) return;
+  }
+  showWelcome();
+  void refreshWelcomeData();
+}
+
+/**
  * Wires every GitHub control, then completes a pending sign-in.
  *
  * @returns {Promise<void>} settles once sign-in and the draft search are done
@@ -350,6 +403,7 @@ export function initGithub() {
   })();
 
   onEditPick(startEdit);
+  el("back-to-welcome").addEventListener("click", () => { void leaveWorkspace(); });
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
@@ -384,10 +438,12 @@ export function initGithub() {
     setStatus("Saving…", { spinning: true });
     try {
       if (!githubContext) githubContext = await discoverGithubContext(token);
+      const savedText = requireEditor().getValue();
+      const savedUploads = uploadsSignature(state.uploadedFiles);
       const saved = await saveScenarioToRepo(token, {
         scenarioName: state.chosenTitle,
         texPath: state.chosenPath,
-        texContent: requireEditor().getValue(),
+        texContent: savedText,
         uploadedFiles: state.uploadedFiles,
         context: githubContext,
         branch: githubSaveState.lastSaveTarget?.branch,
@@ -397,6 +453,7 @@ export function initGithub() {
       // The reset happened with this save; from here on the branch is built upon.
       if (githubSaveState.edit) githubSaveState.edit.startOver = false;
       githubSaveState.lastSaveTarget = saved;
+      markClean(savedText, savedUploads);
       button.textContent = "💾 Save again";
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });

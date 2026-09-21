@@ -22,3 +22,13 @@ export function reflectRoute() {
 export function clearRoute() {
   history.replaceState(null, "", location.pathname + location.search);
 }
+
+/**
+ * Ends the loading screen an address-named scenario shows while it is looked
+ * up. What is left on screen is the workspace, or the welcome screen.
+ *
+ * @returns {void}
+ */
+export function endRouteLoading() {
+  document.documentElement.classList.remove("route-pending");
+}

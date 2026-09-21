@@ -109,8 +109,29 @@ export function sanitizeFilename(name) {
  * @returns {Promise<boolean>} true only when "Delete" was pressed
  */
 export function confirmDelete(message) {
+  return confirmAction({
+    title: "Delete this work in progress?",
+    message,
+    warning: "This cannot be undone.",
+    okLabel: "Delete",
+    danger: true,
+  });
+}
+
+/**
+ * Asks in the page's own modal. Escape and Cancel answer no; Cancel has focus.
+ *
+ * @param {{title: string, message: string, warning: string, okLabel: string, danger: boolean}} options
+ * @returns {Promise<boolean>} true only when the confirming button was pressed
+ */
+export function confirmAction({ title, message, warning, okLabel, danger }) {
   const dialog = el("confirm-dialog");
+  el("confirm-title").textContent = title;
   el("confirm-message").textContent = message;
+  el("confirm-warning").textContent = warning;
+  el("confirm-warning").hidden = warning === "";
+  el("confirm-ok").textContent = okLabel;
+  el("confirm-ok").classList.toggle("danger", danger);
   return new Promise((resolve) => {
     dialog.addEventListener("close", () => resolve(dialog.returnValue === "confirm"), { once: true });
     dialog.returnValue = "cancel";

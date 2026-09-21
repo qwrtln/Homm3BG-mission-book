@@ -1,3 +1,4 @@
+import { refreshUnsavedNote } from "./dirty.js";
 import { state } from "./state.js";
 import { el, escapeHtml } from "./dom.js";
 
@@ -87,6 +88,7 @@ export function restageHeader() {
   headerUpload.path = path;
   state.uploadedFiles.set(path, headerUpload.bytes);
   setUploadStatus("upload-header-status", `Staged: <code>${escapeHtml(path)}</code>`);
+  refreshUnsavedNote();
 }
 
 /**
@@ -116,6 +118,7 @@ export function restageMaps() {
       : `Staged: ${mapUploads.map((m) => `<code>${escapeHtml(m.path)}</code>`).join(", ")}`,
     collision ? "bad" : "",
   );
+  refreshUnsavedNote();
 }
 
 /** Draws one rename row per staged map image. @returns {void} */

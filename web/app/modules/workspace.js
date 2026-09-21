@@ -1,7 +1,7 @@
 import { TEMPLATES } from "./config.js";
 import { state, requireEditor } from "./state.js";
 import { el, setStatus, sanitizeFilename } from "./dom.js";
-import { loadDraft } from "./drafts.js";
+import { loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { resetUploads } from "./uploads.js";
@@ -9,7 +9,8 @@ import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from ".
 import { prefetchScenario } from "./picker.js";
 import { newScenarioDir } from "../../shared/scenario-name.js";
 import { withScenarioTitle } from "../../shared/build-plan.js";
-import { reflectRoute } from "./route.js";
+import { reflectRoute, clearRoute, endRouteLoading } from "./route.js";
+import { markClean, clearClean } from "./dirty.js";
 
 /**
  * Swaps the welcome screen for the workspace, resolving once the transition
@@ -29,6 +30,7 @@ export function showWorkspace() {
       welcome.hidden = true;
       workspace.hidden = false;
       setSaveControlsVisible(true);
+      endRouteLoading();
       resolve();
       return;
     }
@@ -38,6 +40,7 @@ export function showWorkspace() {
       welcome.classList.remove("leaving");
       workspace.hidden = false;
       setSaveControlsVisible(true);
+      endRouteLoading();
       workspace.classList.remove("entering");
       void workspace.offsetWidth; // force reflow, so repeat visits replay the animation
       workspace.classList.add("entering");
@@ -90,12 +93,14 @@ export async function commitEntry(path, name, category) {
   const pristineSource = /** @type {string} */ (fetched.content);
 
   const draft = loadDraft(identity);
-  cm.setValue(draft !== null ? draft : withScenarioTitle(pristineSource, name.trim()));
+  const pristine = withScenarioTitle(pristineSource, name.trim());
+  cm.setValue(draft !== null ? draft : pristine);
   el("draft-note").hidden = draft === null;
   cm.focus();
 
   resetUploads();
   clearPdf();
+  markClean(pristine); // a restored autosave differs from this, and says so
 
   if (!template) await showPrefetchedPdf(path);
 
@@ -159,7 +164,40 @@ export async function openForEdit(path, title, source, edit) {
 
   resetUploads();
   clearPdf();
+  markClean();
 
   await showPrefetchedPdf(path);
   setStatus("Ready.");
+}
+
+/**
+ * Leaves the workspace for the welcome screen. Everything the workspace held
+ * is dropped; a local autosave of the scenario stays in the browser.
+ *
+ * @returns {void}
+ */
+export function showWelcome() {
+  clearTimeout(state.saveTimer ?? undefined);
+  if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
+
+  state.chosenPath = null;
+  state.chosenTitle = "";
+  clearClean();
+  resetGithubSaveState();
+  resetUploads();
+  clearPdf();
+  clearRoute();
+  document.title = "Heroes III: The Board Game - Scenario Builder";
+  el("header-actions").hidden = true;
+  setSaveControlsVisible(false);
+  el("build").disabled = true;
+  el("download").disabled = true;
+  el("draft-note").hidden = true;
+  el("edit-branch-prompt").hidden = true;
+  setStatus("Ready.");
+
+  el("workspace").hidden = true;
+  const welcome = el("welcome");
+  welcome.hidden = false;
+  welcome.classList.remove("leaving");
 }

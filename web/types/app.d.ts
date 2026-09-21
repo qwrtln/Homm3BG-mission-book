@@ -78,4 +78,6 @@ interface AppState {
   /** The pending autosave's timer id, from the DOM's setTimeout. */
   saveTimer: number | null;
   scenarioPrefetch: ScenarioPrefetch | null;
+  /** What "nothing to save" looks like for the open scenario; null when none is open. */
+  clean: import("../shared/unsaved.js").Baseline | null;
 }

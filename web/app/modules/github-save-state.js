@@ -28,7 +28,8 @@ export function resetGithubSaveState() {
 }
 
 /**
- * Save and Open PR act on the open scenario, so they show only while one is open.
+ * Save, Open PR and the way back to scenario selection belong to an open
+ * scenario, so they show only while one is open.
  *
  * @param {boolean} visible
  * @returns {void}
@@ -36,4 +37,5 @@ export function resetGithubSaveState() {
 export function setSaveControlsVisible(visible) {
   const segment = el("github-save").parentElement;
   if (segment) segment.hidden = !visible;
+  el("back-to-welcome").hidden = !visible;
 }

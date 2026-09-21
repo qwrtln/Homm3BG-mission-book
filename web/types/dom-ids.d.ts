@@ -11,6 +11,10 @@ interface ElementIdMap {
   "build-overlay": HTMLDivElement;
   download: HTMLButtonElement;
   "draft-note": HTMLSpanElement;
+  "unsaved-note": HTMLSpanElement;
+  "back-to-welcome": HTMLButtonElement;
+  "route-loading": HTMLDivElement;
+  "confirm-warning": HTMLParagraphElement;
   editor: HTMLTextAreaElement;
   "editor-pane": HTMLElement;
   "error-panel": HTMLDivElement;

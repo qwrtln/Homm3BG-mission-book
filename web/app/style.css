@@ -52,7 +52,12 @@ header {
   align-items: center;
   gap: 0.4rem 1.5rem;
 }
-header .titles { flex: 1 1 auto; min-width: 0; }
+header .header-left { flex: 1 1 0; min-width: min(100%, 26rem); display: flex; align-items: center; gap: 0.4rem 1.25rem; }
+header .header-left #back-to-welcome { flex: none; }
+header .titles { min-width: 0; }
+#back-to-welcome[hidden] { display: none; }
+button.with-icon { display: inline-flex; align-items: center; gap: 0.4rem; }
+.octicon { flex: none; vertical-align: text-bottom; }
 header h1 { font-size: 1.1rem; margin: 0; }
 header p { margin: 0; color: var(--muted); font-size: 0.85rem; }
 button {
@@ -112,6 +117,10 @@ button.link {
 /* --- Welcome screen -------------------------------------------------- */
 
 .welcome[hidden], #workspace[hidden] { display: none; }
+/* An address that names a scenario: the loading screen stands in for the welcome screen until it is known which one to show. */
+.route-loading { display: none; flex: 1 1 auto; align-items: center; justify-content: center; gap: 0.8rem; color: var(--muted); }
+.route-pending .route-loading { display: flex; }
+.route-pending #welcome { display: none; }
 @media (prefers-reduced-motion: no-preference) {
   .welcome { transition: opacity 0.22s ease, transform 0.22s ease; }
   .welcome.leaving { opacity: 0; transform: translateY(-10px) scale(0.98); }
@@ -197,7 +206,7 @@ button.link {
 }
 .resume-row { display: flex; align-items: stretch; }
 .resume-row .combobox-item { flex: 1; min-width: 0; }
-.resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; font-size: 1.1rem; }
+.resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
 .resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
 .combobox-item {
   display: block;
@@ -317,6 +326,8 @@ main {
 }
 .pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 .draft-note { font-size: 0.8rem; color: var(--accent); }
+.unsaved-note { font-size: 0.8rem; color: var(--bad); font-weight: 600; }
+.unsaved-note[hidden] { display: none; }
 .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
 .editor-wrap .CodeMirror {
   position: absolute;

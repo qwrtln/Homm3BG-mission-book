@@ -25,6 +25,8 @@ export const state = {
 
   // {path, controller, promise}
   scenarioPrefetch: null,
+
+  clean: null,
 };
 
 /**

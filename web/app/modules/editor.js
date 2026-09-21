@@ -1,6 +1,7 @@
 import { state } from "./state.js";
 import { el } from "./dom.js";
 import { scheduleSave, saveDraft } from "./drafts.js";
+import { refreshUnsavedNote } from "./dirty.js";
 import { initialTheme } from "./theme.js";
 
 /**
@@ -23,6 +24,7 @@ export function initEditor() {
   state.cm = cm;
   cm.on("change", () => {
     scheduleSave();
+    refreshUnsavedNote();
   });
   cm.on("blur", () => {
     if (state.chosenPath) saveDraft(state.chosenPath, cm.getValue());
