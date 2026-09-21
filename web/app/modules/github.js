@@ -26,6 +26,8 @@ function renderGithubHeader() {
 
 // Sign-in is a full-page redirect, dropping chosenPath and the autosave debounce. Flush and remember what was open.
 const REOPEN_KEY = "wasm-scenario-builder:pending-reopen";
+// The redirect back from GitHub carries no fragment, so the scenario address is kept here across it.
+const ROUTE_KEY = "wasm-scenario-builder:pending-route";
 
 /**
  * Reopens what was being edited before a sign-in redirect. From localStorage
@@ -278,11 +280,18 @@ async function openResumableDraft(draft) {
  */
 export async function openRoute() {
   if (state.chosenPath) return; // a sign-in reopen already opened something
+  try {
+    const kept = localStorage.getItem(ROUTE_KEY);
+    localStorage.removeItem(ROUTE_KEY);
+    if (kept && !parseRoute(location.hash) && parseRoute(kept)) location.hash = kept;
+  } catch { /* blocked storage: nothing was kept */ }
   const route = parseRoute(location.hash);
   if (!route) {
     if (location.hash.startsWith("#/")) clearRoute();
     return;
   }
+  // Signed in but the account lookup failed: the address may still be valid, so keep it.
+  if (getToken() && !githubContext) return;
   const path = slugToPath(route.kind, route.slug);
   const remote = (githubContext?.drafts ?? []).filter((d) => d.texPath === path);
 
@@ -315,6 +324,9 @@ export async function openRoute() {
  */
 export function initGithub() {
   el("github-signin").addEventListener("click", () => {
+    try {
+      if (parseRoute(location.hash)) localStorage.setItem(ROUTE_KEY, location.hash);
+    } catch { /* blocked storage: sign-in still proceeds */ }
     if (state.chosenPath && state.cm) {
       clearTimeout(state.saveTimer ?? undefined);
       saveDraft(state.chosenPath, state.cm.getValue());

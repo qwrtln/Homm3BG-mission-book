@@ -129,9 +129,10 @@ button.link {
   overflow: auto;
 }
 .welcome-inner { max-width: 62rem; width: 100%; }
-/* The member banner and the resume list share a row; alone, either fills it. */
+/* The resume list fills the row. */
 .welcome-top { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
 .welcome-top > * { flex: 1 1 20rem; min-width: 0; }
+.welcome-picker > .mode-choice { flex: 0 0 12rem; }
 .welcome-top .resume-drafts { margin-bottom: 0; }
 .edit-branch-prompt { margin-bottom: 1.5rem; }
 .mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }

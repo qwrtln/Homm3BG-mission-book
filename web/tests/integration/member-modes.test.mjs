@@ -166,16 +166,18 @@ test.describe("a member with work to resume", () => {
     ]),
   });
 
-  test("sees the resume list, headed \"Resume your work\", on the same row as the member banner", async ({ app }) => {
+  test("sees the resume list, headed \"Resume your work\", full width, above the picker", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
     await expect(page.locator("#resume-drafts")).toBeVisible();
     await expect(page.locator("#resume-drafts h2")).toHaveText("Resume your work");
-    const banner = await page.locator("#mode-choice").boundingBox();
     const resume = await page.locator("#resume-drafts").boundingBox();
-    expect(banner && resume && Math.abs(banner.y - resume.y) < 4, "banner and resume list are not side by side").toBe(true);
-    expect(banner && resume && banner.x < resume.x).toBe(true);
+    const top = await page.locator(".welcome-top").boundingBox();
+    expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
+    const banner = await page.locator("#mode-choice").boundingBox();
+    const pick = await page.locator(".picker-slide").first().boundingBox();
+    expect(banner && pick && Math.abs(banner.y - pick.y) < 4 && banner.x < pick.x, "banner is not left of the picker").toBe(true);
   });
 });
 
