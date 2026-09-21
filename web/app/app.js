@@ -9,7 +9,7 @@ import { initSearch } from "./modules/search.js";
 import { initPicker } from "./modules/picker.js";
 import { initUploads } from "./modules/uploads.js";
 import { initBuild, ensureEngine } from "./modules/build.js";
-import { initGithub } from "./modules/github.js";
+import { initGithub, openRoute } from "./modules/github.js";
 
 initTheme();
 initEditor();
@@ -18,9 +18,9 @@ initSearch();
 initPicker();
 initUploads();
 initBuild();
-initGithub();
+const githubReady = initGithub();
 
-loadEntries()
+const entriesReady = loadEntries()
   .then(() => {
     if (!state.entries.length) setStatus("No scenarios found.", { tone: "bad" });
   })
@@ -28,6 +28,9 @@ loadEntries()
     el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(errorMessage(error))}</div>`;
     el("search-results").hidden = false;
   });
+
+// The address may name a scenario; open it once both the entries and GitHub are known.
+Promise.allSettled([githubReady, entriesReady]).then(openRoute);
 
 // Starts on page load, not on Build click; errors surface later via ensureEngine's shared promise.
 ensureEngine().catch(() => {});

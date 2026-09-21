@@ -9,6 +9,7 @@ import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
 import { newScenarioDir } from "../../shared/scenario-name.js";
 import { withScenarioTitle } from "../../shared/build-plan.js";
+import { reflectRoute } from "./route.js";
 
 /**
  * Swaps the welcome screen for the workspace, resolving once the transition
@@ -78,6 +79,7 @@ export async function commitEntry(path, name, category) {
   // Always the typed name: a save must never stay tied to the entry it started from.
   state.chosenTitle = name.trim();
   document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+  reflectRoute();
   el("build").disabled = state.building;
   el("download").disabled = true;
   setStatus("Loading…");
@@ -145,6 +147,7 @@ export async function openForEdit(path, title, source, edit) {
   state.chosenPath = path;
   state.chosenTitle = title;
   document.title = `${title} - Heroes III: The Board Game`;
+  reflectRoute();
   el("build").disabled = state.building;
   el("download").disabled = true;
 

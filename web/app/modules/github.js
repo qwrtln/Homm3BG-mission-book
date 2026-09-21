@@ -8,6 +8,8 @@ import { errorMessage } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
 import { el, setStatus, escapeHtml, basenameNoExt, closestTo, confirmDelete } from "./dom.js";
 import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
+import { reflectRoute, clearRoute } from "./route.js";
+import { parseRoute, slugToPath } from "../../shared/route.js";
 import { clearPdf } from "./pdf-view.js";
 import { showWorkspace, openForEdit } from "./workspace.js";
 import { onEditPick, settleModes } from "./picker.js";
@@ -46,6 +48,7 @@ async function reopenLocalDraft(path, title) {
   state.chosenPath = path;
   state.chosenTitle = title || basenameNoExt(path);
   document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+  reflectRoute();
   el("build").disabled = state.building;
   el("download").disabled = true;
   cm.setValue(content);
@@ -210,7 +213,106 @@ function reportEditError(error) {
   el("go-hint").textContent = message;
 }
 
-/** Wires every GitHub control, then completes a pending sign-in. @returns {void} */
+/**
+ * Opens a work-in-progress branch from GitHub in the editor.
+ *
+ * @param {ResumableDraft} draft
+ * @returns {Promise<void>}
+ */
+async function openResumableDraft(draft) {
+  const token = getToken();
+  if (!token || !githubContext) return;
+
+  // A non-member always has a fork by now: the resume list is only drawn
+  // from drafts found on one.
+  const fork = githubContext.fork;
+  if (!githubContext.isMember && !fork) return;
+  const { owner, repo } = githubContext.isMember || !fork
+    ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+    : { owner: fork.owner.login, repo: fork.name };
+
+  const cm = requireEditor();
+
+  setStatus("Loading your draft…", { spinning: true });
+  try {
+    const [content, assets] = await Promise.all([
+      getRepoFile(token, owner, repo, draft.texPath, draft.branch),
+      Promise.all(draft.assets.map(async (a) => ({ path: a.path, bytes: await getBlobBytes(token, owner, repo, a.sha) }))),
+    ]);
+    if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
+
+    await showWorkspace();
+    cm.refresh();
+    el("header-actions").hidden = false;
+    resetGithubSaveState();
+    githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
+
+    state.chosenPath = draft.texPath;
+    state.chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+    reflectRoute();
+    el("build").disabled = state.building;
+    el("download").disabled = true;
+    cm.setValue(content);
+    el("draft-note").hidden = true;
+    resetUploads();
+    restoreUploads(assets);
+    clearPdf();
+
+    githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
+    el("github-open-pr").hidden = false;
+    el("github-save").textContent = "💾 Save again";
+    setStatus("Ready.");
+  } catch (error) {
+    const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
+    setStatus(message, { tone: "bad" });
+  }
+}
+
+/**
+ * Opens whatever the URL's "#/drafts/<name>" or "#/updates/<name>" names, once
+ * the entries and the GitHub context are known. When nothing matches, the
+ * address is dropped and the welcome screen stays.
+ *
+ * @returns {Promise<void>}
+ */
+export async function openRoute() {
+  if (state.chosenPath) return; // a sign-in reopen already opened something
+  const route = parseRoute(location.hash);
+  if (!route) {
+    if (location.hash.startsWith("#/")) clearRoute();
+    return;
+  }
+  const path = slugToPath(route.kind, route.slug);
+  const remote = (githubContext?.drafts ?? []).filter((d) => d.texPath === path);
+
+  if (route.kind === "drafts") {
+    const branch = remote.find((d) => d.kind === "new");
+    if (branch) {
+      await openResumableDraft(branch);
+      if (state.chosenPath) return;
+    }
+    if (await reopenLocalDraft(path)) return;
+  } else if (githubContext?.isMember) {
+    const branch = remote.find((d) => d.kind === "edit");
+    if (branch) {
+      await openResumableDraft(branch);
+      if (state.chosenPath) return;
+    }
+    const entry = state.entries.find((e) => e.path === path);
+    if (entry) {
+      await startEdit(entry.path, entry.title);
+      if (state.chosenPath) return;
+    }
+  }
+  clearRoute();
+}
+
+/**
+ * Wires every GitHub control, then completes a pending sign-in.
+ *
+ * @returns {Promise<void>} settles once sign-in and the draft search are done
+ */
 export function initGithub() {
   el("github-signin").addEventListener("click", () => {
     if (state.chosenPath && state.cm) {
@@ -328,57 +430,11 @@ export function initGithub() {
     const button = closestTo(event, "[data-draft-index]");
     if (!button || !githubContext) return;
     const draft = githubContext.drafts[Number(button.dataset.draftIndex)];
-    if (!draft) return;
-    const token = getToken();
-    if (!token) return;
-
-    // A non-member always has a fork by now: the resume list is only drawn
-    // from drafts found on one.
-    const fork = githubContext.fork;
-    if (!githubContext.isMember && !fork) return;
-    const { owner, repo } = githubContext.isMember || !fork
-      ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
-      : { owner: fork.owner.login, repo: fork.name };
-
-    const cm = requireEditor();
-
-    setStatus("Loading your draft…", { spinning: true });
-    try {
-      const [content, assets] = await Promise.all([
-        getRepoFile(token, owner, repo, draft.texPath, draft.branch),
-        Promise.all(draft.assets.map(async (a) => ({ path: a.path, bytes: await getBlobBytes(token, owner, repo, a.sha) }))),
-      ]);
-      if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
-
-      await showWorkspace();
-      cm.refresh();
-      el("header-actions").hidden = false;
-      resetGithubSaveState();
-      githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
-
-      state.chosenPath = draft.texPath;
-      state.chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-      document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
-      el("build").disabled = state.building;
-      el("download").disabled = true;
-      cm.setValue(content);
-      el("draft-note").hidden = true;
-      resetUploads();
-      restoreUploads(assets);
-      clearPdf();
-
-      githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
-      el("github-open-pr").hidden = false;
-      el("github-save").textContent = "💾 Save again";
-      setStatus("Ready.");
-    } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
-      setStatus(message, { tone: "bad" });
-    }
+    if (draft) await openResumableDraft(draft);
   });
 
   if (getToken()) showResumeSearching();
-  completeSignIn()
+  return completeSignIn()
     .then(async (token) => {
       if (!token) return;
       showResumeSearching();
