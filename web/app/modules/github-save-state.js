@@ -5,9 +5,13 @@ import { el } from "./dom.js";
  * and "Open PR" opens against. Shared state, so a mutable object, not a
  * plain let.
  *
- * @type {{lastSaveTarget: SaveTarget | null}}
+ * `edit` is set while a member is editing an existing scenario in place, and
+ * `startOver` there means the first save must reset the branch to the default
+ * branch. The save that does it clears it, so later saves build on top.
+ *
+ * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null}}
  */
-export const githubSaveState = { lastSaveTarget: null };
+export const githubSaveState = { lastSaveTarget: null, edit: null };
 
 /**
  * On sign-out or picking a different scenario: neither carries over the
@@ -17,6 +21,7 @@ export const githubSaveState = { lastSaveTarget: null };
  */
 export function resetGithubSaveState() {
   githubSaveState.lastSaveTarget = null;
+  githubSaveState.edit = null;
   el("github-save").textContent = "💾 Save";
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;

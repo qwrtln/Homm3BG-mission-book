@@ -129,6 +129,10 @@ button.link {
   overflow: auto;
 }
 .welcome-inner { max-width: 62rem; width: 100%; }
+.mode-choice, .edit-branch-prompt { margin-bottom: 1.5rem; }
+.mode-choice[hidden], .edit-branch-prompt[hidden], #mode-checking[hidden], .picker-slide[hidden], .welcome-picker[hidden] { display: none; }
+.mode-choice .scratch-row { margin-top: 0; }
+.mode-choice button[aria-pressed="true"] { border-color: var(--accent, currentColor); font-weight: 600; }
 .resume-drafts[hidden] { display: none; }
 .resume-drafts { margin-bottom: 1.5rem; }
 .combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }

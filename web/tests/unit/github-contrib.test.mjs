@@ -12,6 +12,7 @@ import {
   setHttpClient,
   slugify,
   discoverGithubContext,
+  findEditBranch,
   saveScenarioToRepo,
   ensurePullRequest,
   getRepoFile,
@@ -57,6 +58,7 @@ function base64(text) {
  * @param {string} [options.defaultBranch]
  * @param {Record<string, string>} [options.files] default-branch path -> text
  * @param {string[]} [options.branchNames] branches that already exist
+ * @param {Record<string, string[]>} [options.branchTexFiles] branch -> .tex paths its compare against the default branch lists
  * @param {{html_url: string, number: number, head: string}[]} [options.pulls] open pull requests
  * @returns {{
  *   client: {fetch: (url: string, options?: RequestInit) => Promise<Response>},
@@ -191,7 +193,8 @@ function createGithubFake(options = {}) {
       const branch = decodeURIComponent(match[1]);
       const commit = commits.get(body.sha);
       if (!commit) return notFound();
-      const files = branchFiles.get(branch) || new Map(base);
+      // A ref moved off its own history is only accepted with force, as on GitHub.
+      const files = body.force ? new Map(base) : branchFiles.get(branch) || new Map(base);
       const written = commit.entries.map((entry) => ({ path: entry.path, content: blobs.get(entry.sha) || "" }));
       for (const file of written) files.set(file.path, file.content);
       branchFiles.set(branch, files);
@@ -205,7 +208,9 @@ function createGithubFake(options = {}) {
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/compare\//) && method === "GET") {
-      return json({ files: [] });
+      const branch = decodeURIComponent(path.split("...").pop() ?? "");
+      const listed = (options.branchTexFiles || {})[branch] || [];
+      return json({ files: listed.map((filename) => ({ filename, sha: "sha", status: "modified" })) });
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/pulls$/) && method === "GET") {
@@ -412,6 +417,136 @@ test("an edit to a published scenario saves back to its own path and touches no 
   });
 
   assert.deepEqual(lastCommitFiles(fake).map((file) => file.path), ["clash/secret_bomb_stash.tex"]);
+});
+
+// --- editing in place (members) ------------------------------------------
+
+test("an in-place edit pushes to scenario-editor/<username>/updates/<slug of the file's basename>", async () => {
+  const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "old" } });
+  setHttpClient(fake.client);
+
+  const saved = await saveScenarioToRepo("t", {
+    scenarioName: "A title the editor retitled",
+    texPath: "clash/secret_bomb_stash.tex",
+    texContent: "new",
+    uploadedFiles: new Map(),
+    context: context({ isMember: true, fork: null }),
+    mode: "edit",
+  });
+
+  assert.equal(saved.branch, "scenario-editor/octocat/updates/secret-bomb-stash");
+  assert.equal(saved.owner, UPSTREAM_OWNER);
+  assert.equal(fake.fileOn(saved.branch, "clash/secret_bomb_stash.tex"), "new");
+});
+
+test("an in-place edit of a draft never touches its group file, even when it lists no \\input for it", async () => {
+  const fake = createGithubFake({
+    push: true,
+    files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE, "draft-scenarios/clash/unlisted.tex": "old" },
+  });
+  setHttpClient(fake.client);
+
+  await saveScenarioToRepo("t", {
+    scenarioName: "Unlisted",
+    texPath: "draft-scenarios/clash/unlisted.tex",
+    texContent: "new",
+    uploadedFiles: new Map(),
+    context: context({ isMember: true, fork: null }),
+    mode: "edit",
+  });
+
+  assert.deepEqual(lastCommitFiles(fake).map((file) => file.path), ["draft-scenarios/clash/unlisted.tex"]);
+});
+
+test("an in-place edit is committed as \"Edit <name>\"", async () => {
+  const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "old" } });
+  setHttpClient(fake.client);
+
+  await saveScenarioToRepo("t", {
+    scenarioName: "Secret Bomb Stash",
+    texPath: "clash/secret_bomb_stash.tex",
+    texContent: "new",
+    uploadedFiles: new Map(),
+    context: context({ isMember: true, fork: null }),
+    mode: "edit",
+  });
+
+  assert.equal(fake.commits[fake.commits.length - 1].message, "Edit Secret Bomb Stash");
+});
+
+test("findEditBranch answers the branch an earlier session left for that file, and null when there is none", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchNames: ["scenario-editor/octocat/updates/secret-bomb-stash"],
+  });
+  setHttpClient(fake.client);
+
+  assert.equal(
+    await findEditBranch("t", { username: "octocat", texPath: "clash/secret_bomb_stash.tex" }),
+    "scenario-editor/octocat/updates/secret-bomb-stash",
+  );
+  assert.equal(await findEditBranch("t", { username: "octocat", texPath: "clash/other.tex" }), null);
+});
+
+test("a resumable draft says whether it is an in-place edit or a new draft, by its branch name", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchNames: ["scenario-editor/octocat/updates/secret-bomb-stash", "scenario-editor/octocat/valley"],
+    branchTexFiles: {
+      "scenario-editor/octocat/updates/secret-bomb-stash": ["clash/secret_bomb_stash.tex"],
+      "scenario-editor/octocat/valley": ["draft-scenarios/clash/valley.tex"],
+    },
+  });
+  setHttpClient(fake.client);
+
+  const { drafts } = await discoverGithubContext("t");
+
+  assert.deepEqual(
+    drafts.map((draft) => [draft.texPath, draft.kind]),
+    [["clash/secret_bomb_stash.tex", "edit"], ["draft-scenarios/clash/valley.tex", "new"]],
+  );
+});
+
+test("an in-place edit's pull request is titled \"Edit <name>\" and says it edits in place", async () => {
+  const fake = createGithubFake({ push: true });
+  setHttpClient(fake.client);
+
+  await ensurePullRequest("t", {
+    owner: UPSTREAM_OWNER,
+    branch: "scenario-editor/octocat/updates/secret-bomb-stash",
+    scenarioName: "Secret Bomb Stash",
+    isMember: true,
+    mode: "edit",
+  });
+
+  const opened = fake.calls.find((call) => call.method === "POST" && call.path.endsWith("/pulls"));
+  assert.equal(opened?.body.title, "Edit Secret Bomb Stash");
+  assert.match(opened?.body.body, /in place/);
+});
+
+test("startOver resets the edit branch to the default branch and commits the new content on top", async () => {
+  const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "main copy" } });
+  setHttpClient(fake.client);
+  const request = {
+    scenarioName: "Secret Bomb Stash",
+    texPath: "clash/secret_bomb_stash.tex",
+    uploadedFiles: new Map(),
+    context: context({ isMember: true, fork: null }),
+    mode: /** @type {const} */ ("edit"),
+  };
+
+  const first = await saveScenarioToRepo("t", {
+    ...request,
+    texContent: "earlier edit",
+    uploadedFiles: new Map([["assets/images/old.png", new Uint8Array([1])]]),
+  });
+  assert.equal(fake.fileOn(first.branch, "clash/secret_bomb_stash.tex"), "earlier edit");
+
+  const second = await saveScenarioToRepo("t", { ...request, texContent: "fresh edit", startOver: true });
+
+  assert.equal(second.branch, first.branch);
+  assert.equal(fake.fileOn(second.branch, "clash/secret_bomb_stash.tex"), "fresh edit");
+  assert.equal(fake.fileOn(second.branch, "assets/images/old.png"), undefined);
 });
 
 // --- the idempotent main.tex append --------------------------------------

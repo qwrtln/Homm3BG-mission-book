@@ -51,6 +51,15 @@
 <div class="content">
   <section class="welcome" id="welcome">
     <div class="welcome-inner">
+      <p class="hint" id="mode-checking" hidden><span class="spinner"></span> Checking your project membership…</p>
+      <div class="mode-choice" id="mode-choice" hidden>
+        <h2>You're a project member</h2>
+        <p class="hint">Choose the mode: change a scenario that already exists, or add a new one.</p>
+        <div class="scratch-row">
+          <button id="mode-edit" type="button" aria-pressed="false">Edit existing</button>
+          <button id="mode-new" type="button" aria-pressed="false">Add new</button>
+        </div>
+      </div>
       <div class="resume-drafts" id="resume-drafts" hidden>
         <h2>Resume your work</h2>
         <p class="hint" id="resume-loading" hidden><span class="spinner"></span> Looking for work to resume…</p>
@@ -73,7 +82,7 @@
             <button id="scratch-campaign" type="button">Blank campaign scenario</button>
           </div>
         </div>
-        <div class="picker-slide">
+        <div class="picker-slide" id="name-slide">
           <h2>Name your scenario</h2>
           <p class="hint">This becomes the file's own name: the download, and where its draft autosaves.</p>
           <div class="name-field">
@@ -86,6 +95,14 @@
           <p class="hint">Opens the editor, with this scenario's own source loaded in.</p>
           <button id="go" class="primary" type="button" disabled>Let's go!</button>
           <p class="go-hint" id="go-hint" role="status"></p>
+        </div>
+      </div>
+      <div class="edit-branch-prompt" id="edit-branch-prompt" hidden>
+        <h2>You already have an edit of this scenario in progress</h2>
+        <p class="hint">Continue from where you left off, or start over from the current Mission Book copy. Starting over replaces your earlier edit the moment you save.</p>
+        <div class="scratch-row">
+          <button id="edit-continue" class="primary" type="button">Continue my edit</button>
+          <button id="edit-start-over" type="button">Start over from main</button>
         </div>
       </div>
     </div>

@@ -39,3 +39,10 @@ test("punctuation a file name or a branch would swallow is rejected", () => {
     assert.match(check.message, /letters, digits, spaces/);
   }
 });
+
+test("the name \"Updates\" is reserved, whatever its case, because its branch would block every in-place edit branch", () => {
+  for (const name of ["Updates", "updates", "  UPDATES "]) {
+    assert.equal(validateScenarioName(name).valid, false, name);
+  }
+  assert.equal(validateScenarioName("Updates to the Valley").valid, true);
+});

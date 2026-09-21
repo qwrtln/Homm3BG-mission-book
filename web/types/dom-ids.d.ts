@@ -23,7 +23,15 @@ interface ElementIdMap {
   "github-signin": HTMLButtonElement;
   "github-signout": HTMLButtonElement;
   "github-status": HTMLSpanElement;
+  "edit-branch-prompt": HTMLDivElement;
+  "edit-continue": HTMLButtonElement;
+  "edit-start-over": HTMLButtonElement;
   go: HTMLButtonElement;
+  "mode-checking": HTMLParagraphElement;
+  "mode-choice": HTMLDivElement;
+  "mode-edit": HTMLButtonElement;
+  "mode-new": HTMLButtonElement;
+  "name-slide": HTMLDivElement;
   "header-actions": HTMLDivElement;
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;

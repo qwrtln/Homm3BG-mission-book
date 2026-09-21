@@ -5,7 +5,7 @@ import { loadDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { resetUploads } from "./uploads.js";
-import { resetGithubSaveState } from "./github-save-state.js";
+import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
 import { withScenarioTitle } from "../../shared/build-plan.js";
 
@@ -92,21 +92,68 @@ export async function commitEntry(path, name, category) {
   resetUploads();
   clearPdf();
 
-  // A real pick always has a prefetch already running (or done) by now,
-  // started the moment it was picked. This just waits on that same
-  // promise. The fallback (starting one fresh here) is only for a real
-  // pick this session somehow never called selectPending for.
-  if (!template) {
-    setStatus("Finishing this scenario's downloads…", { spinning: true });
-    showPdfLoading("Finishing this scenario's downloads…");
-    const prefetch = state.scenarioPrefetch && state.scenarioPrefetch.path === path
-      ? state.scenarioPrefetch
-      : { path, controller: new AbortController(), promise: null };
-    const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
-    prefetch.promise = promise;
-    const { pdfBlob } = await promise;
-    if (pdfBlob) showPdf(pdfBlob); else clearPdf();
-  }
+  if (!template) await showPrefetchedPdf(path);
 
+  setStatus("Ready.");
+}
+
+/**
+ * A real pick always has a prefetch already running (or done) by now, started
+ * the moment it was picked. This just waits on that same promise. The
+ * fallback (starting one fresh here) is only for a real pick this session
+ * somehow never called selectPending for.
+ *
+ * @param {string} path
+ * @returns {Promise<void>}
+ */
+async function showPrefetchedPdf(path) {
+  setStatus("Finishing this scenario's downloads…", { spinning: true });
+  showPdfLoading("Finishing this scenario's downloads…");
+  const prefetch = state.scenarioPrefetch && state.scenarioPrefetch.path === path
+    ? state.scenarioPrefetch
+    : { path, controller: new AbortController(), promise: null };
+  const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
+  prefetch.promise = promise;
+  const { pdfBlob } = await promise;
+  if (pdfBlob) showPdf(pdfBlob); else clearPdf();
+}
+
+/**
+ * Opens an existing scenario to be changed where it lies: its own path, its
+ * own title, no rename. What it opens is the caller's choice (the Mission
+ * Book's copy, or an earlier edit branch's), so it arrives as `source`.
+ *
+ * A locally autosaved copy is deliberately not offered here: it would hide
+ * the very source the member just chose.
+ *
+ * @param {string} path the scenario's repository path
+ * @param {string} title
+ * @param {string} source the text to put in the editor
+ * @param {{startOver: boolean}} edit what the save must do about an existing edit branch
+ * @returns {Promise<void>}
+ */
+export async function openForEdit(path, title, source, edit) {
+  const cm = requireEditor();
+
+  await showWorkspace();
+  cm.refresh();
+  el("header-actions").hidden = false;
+
+  resetGithubSaveState();
+  githubSaveState.edit = edit;
+  state.chosenPath = path;
+  state.chosenTitle = title;
+  document.title = `${title} - Heroes III: The Board Game`;
+  el("build").disabled = state.building;
+  el("download").disabled = true;
+
+  cm.setValue(source);
+  el("draft-note").hidden = true;
+  cm.focus();
+
+  resetUploads();
+  clearPdf();
+
+  await showPrefetchedPdf(path);
   setStatus("Ready.");
 }

@@ -67,6 +67,8 @@ interface GithubPullRequest {
 /** One of this user's own scenario-editor branches, with the .tex it touches. */
 interface ResumableDraft {
   branch: string;
+  /** "edit" for a member's in-place edit of an existing scenario, "new" for a draft of a new one. */
+  kind: "edit" | "new";
   texPath: string;
   assets: { path: string; sha: string }[];
   /** ISO date of the newest commit on the branch; absent if unknown. */

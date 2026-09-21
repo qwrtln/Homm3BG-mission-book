@@ -207,6 +207,8 @@ test.describe("saving a scenario", () => {
    * @returns {Promise<void>}
    */
   async function openBlankClash(page) {
+    // A member chooses a mode before any picker shows.
+    await page.locator("#mode-new").click();
     await page.locator("#scratch-clash").click();
     await page.locator("#scenario-name").fill(NAME);
     await page.locator("#go").click();
@@ -349,6 +351,7 @@ test.describe("signing out mid-edit", () => {
     const { page } = app;
     await signInAs(page);
     await expect(page.locator("#github-status")).toBeVisible();
+    await page.locator("#mode-new").click();
     await page.locator("#scratch-clash").click();
     await page.locator("#scenario-name").fill("Purge Probe");
     await page.locator("#go").click();

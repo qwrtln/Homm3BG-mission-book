@@ -1,6 +1,6 @@
 import { getToken, signIn, completeSignIn, clearToken } from "../../shared/github-auth.js";
 import {
-  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, getRepoFile, getBlobBytes,
+  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
 } from "../../shared/github-contrib.js?v=2";
 
@@ -9,7 +9,9 @@ import { state, requireEditor } from "./state.js";
 import { el, setStatus, escapeHtml, basenameNoExt, closestTo } from "./dom.js";
 import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
 import { clearPdf } from "./pdf-view.js";
-import { showWorkspace } from "./workspace.js";
+import { showWorkspace, openForEdit } from "./workspace.js";
+import { onEditPick, settleModes, showModeChecking } from "./picker.js";
+import { preloadFile } from "./files.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
 
@@ -104,7 +106,8 @@ function renderResumeDrafts() {
     .map((d, i) => {
       const ago = timeAgo(d.lastEdit);
       const detail = ago ? `${d.branch}, last edit ${ago}` : d.branch;
-      return `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(detail)})</span></button>`;
+      const kind = d.kind === "edit" ? "editing in place" : "new draft";
+      return `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>`;
     })
     .join("");
 }
@@ -115,6 +118,62 @@ function showResumeSearching() {
   el("resume-hint").hidden = true;
   el("resume-loading").hidden = false;
   el("resume-drafts").hidden = false;
+}
+
+/**
+ * "Let's go!" in edit mode. If an earlier session left an edit branch for this
+ * file the member is asked whether to continue it or start over; otherwise the
+ * Mission Book's own copy opens.
+ *
+ * @param {string} path
+ * @param {string} title
+ * @returns {Promise<void>}
+ */
+async function startEdit(path, title) {
+  const token = getToken();
+  if (!token || !githubContext || !githubContext.isMember) return;
+  const context = githubContext;
+  el("edit-branch-prompt").hidden = true;
+  el("go").disabled = true;
+  try {
+    const branch = await findEditBranch(token, { username: context.username, texPath: path });
+
+    /** @param {boolean} startOver @returns {Promise<void>} */
+    const open = async (startOver) => {
+      el("edit-branch-prompt").hidden = true;
+      const source = branch && !startOver
+        ? await getRepoFile(token, UPSTREAM_OWNER, UPSTREAM_REPO, path, branch)
+        : /** @type {string} */ ((await preloadFile(path)).content);
+      if (source == null) throw new Error(`"${path}" is not in the repository.`);
+      await openForEdit(path, title, source, { startOver: branch !== null && startOver });
+      if (branch && !startOver) {
+        githubSaveState.lastSaveTarget = { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO, branch, isMember: true };
+        el("github-open-pr").hidden = false;
+        el("github-save").textContent = "💾 Save again";
+      }
+    };
+
+    if (branch === null) {
+      await open(false);
+      return;
+    }
+    el("edit-branch-prompt").hidden = false;
+    el("edit-continue").onclick = () => open(false).catch(reportEditError);
+    el("edit-start-over").onclick = () => open(true).catch(reportEditError);
+  } catch (error) {
+    reportEditError(error);
+  } finally {
+    el("go").disabled = false;
+  }
+}
+
+/**
+ * @param {unknown} error
+ * @returns {void}
+ */
+function reportEditError(error) {
+  const message = error instanceof GithubApiError ? error.message : `Could not open that scenario: ${errorMessage(error)}`;
+  el("go-hint").textContent = message;
 }
 
 /** Wires every GitHub control, then completes a pending sign-in. @returns {void} */
@@ -141,6 +200,9 @@ export function initGithub() {
     if (pending && pending.path) reopenLocalDraft(pending.path, pending.title);
   })();
 
+  onEditPick(startEdit);
+  if (getToken()) showModeChecking();
+
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
   el("github-signout").addEventListener("click", () => {
@@ -148,6 +210,7 @@ export function initGithub() {
     githubContext = null;
     resetGithubSaveState();
     el("resume-drafts").hidden = true;
+    settleModes(false);
     if (!el("workspace").hidden) {
       // Signed out mid-edit: the autosaved copy belongs to the account that
       // just left, so purge it and go back to welcome. A reload is the only
@@ -180,7 +243,11 @@ export function initGithub() {
         uploadedFiles: state.uploadedFiles,
         context: githubContext,
         branch: githubSaveState.lastSaveTarget?.branch,
+        mode: githubSaveState.edit ? "edit" : "new",
+        startOver: githubSaveState.edit?.startOver ?? false,
       });
+      // The reset happened with this save; from here on the branch is built upon.
+      if (githubSaveState.edit) githubSaveState.edit.startOver = false;
       githubSaveState.lastSaveTarget = saved;
       button.textContent = "💾 Save again";
       el("github-open-pr").hidden = false;
@@ -202,7 +269,11 @@ export function initGithub() {
     button.disabled = true;
     setStatus("Opening PR…", { spinning: true });
     try {
-      const pr = await ensurePullRequest(token, { ...githubSaveState.lastSaveTarget, scenarioName: state.chosenTitle });
+      const pr = await ensurePullRequest(token, {
+        ...githubSaveState.lastSaveTarget,
+        scenarioName: state.chosenTitle,
+        mode: githubSaveState.edit ? "edit" : "new",
+      });
       el("github-pr-link").href = pr.html_url;
       el("github-pr-link").hidden = false;
       button.hidden = true;
@@ -245,6 +316,7 @@ export function initGithub() {
       cm.refresh();
       el("header-actions").hidden = false;
       resetGithubSaveState();
+      githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
 
       state.chosenPath = draft.texPath;
       state.chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -287,6 +359,8 @@ export function initGithub() {
       el("resume-loading").hidden = true;
       el("resume-hint").hidden = false;
       el("resume-drafts").hidden = !githubContext || githubContext.drafts.length === 0;
+      // Whatever happened, the picker must not stay held back by the search.
+      settleModes(Boolean(githubContext && githubContext.isMember));
       renderGithubHeader();
     });
 }

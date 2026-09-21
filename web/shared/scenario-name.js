@@ -8,6 +8,12 @@
 export const MIN_SCENARIO_NAME_LENGTH = 3;
 export const MAX_SCENARIO_NAME_LENGTH = 60;
 
+/**
+ * A new scenario named this would take the branch `scenario-editor/<user>/updates`,
+ * and git cannot also hold `.../updates/<slug>`, where in-place edits live.
+ */
+const RESERVED_SLUG = "updates";
+
 /** Letters (any script), digits, spaces, hyphens and apostrophes. */
 const ALLOWED_NAME_CHARACTERS = /^[\p{L}\p{N} '’-]+$/u;
 
@@ -34,6 +40,9 @@ export function validateScenarioName(name) {
   }
   if (!ALLOWED_NAME_CHARACTERS.test(trimmed)) {
     return { valid: false, message: "Use letters, digits, spaces, hyphens and apostrophes only." };
+  }
+  if (trimmed.toLowerCase() === RESERVED_SLUG) {
+    return { valid: false, message: `"${trimmed}" is reserved. Pick another name.` };
   }
   return { valid: true, message: "" };
 }

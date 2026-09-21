@@ -424,7 +424,10 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
       const assets = files
         .filter((f) => f.filename.startsWith("assets/images/") || f.filename.startsWith("assets/maps/"))
         .map((f) => ({ path: f.filename, sha: f.sha }));
-      if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename, assets, lastEdit: compare.lastCommitDate });
+      if (texFile) {
+        const kind = b.name.startsWith(`${prefix}updates/`) ? "edit" : "new";
+        drafts.push({ branch: b.name, kind, texPath: texFile.filename, assets, lastEdit: compare.lastCommitDate });
+      }
     } catch {
       // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
     }
@@ -593,11 +596,20 @@ async function createBlob(token, owner, repo, content) {
  * branch.
  *
  * @param {string} token
- * @param {{owner: string, repo: string, branch: string, message: string, files: CommitFile[]}} request
+ * @param {{owner: string, repo: string, branch: string, message: string, files: CommitFile[], startOver?: boolean}} request
+ *   `startOver` moves an existing branch back onto the default branch's tip before committing, discarding what it held
  * @returns {Promise<CommitResult>}
  */
-export async function commitFiles(token, { owner, repo, branch, message, files }) {
+export async function commitFiles(token, { owner, repo, branch, message, files, startOver = false }) {
   let branchSha = await getBranchSha(token, owner, repo, branch);
+  if (branchSha !== null && startOver) {
+    const repoInfo = await ensureRepoReady(token, owner, repo);
+    const baseSha = await getBranchSha(token, owner, repo, repoInfo.default_branch);
+    if (baseSha === null) {
+      throw new GithubApiError(`Could not find the default branch "${repoInfo.default_branch}" to start over from.`);
+    }
+    return commitOnto(token, owner, repo, branch, baseSha, message, files, { force: true });
+  }
   if (branchSha === null) {
     const repoInfo = await ensureRepoReady(token, owner, repo);
     const baseSha = await getBranchSha(token, owner, repo, repoInfo.default_branch);
@@ -619,9 +631,10 @@ export async function commitFiles(token, { owner, repo, branch, message, files }
  * @param {string} parentSha the commit to build on
  * @param {string} message
  * @param {CommitFile[]} files
+ * @param {{force?: boolean}} [update] force: the commit does not descend from the branch's tip
  * @returns {Promise<CommitResult>}
  */
-async function commitOnto(token, owner, repo, branch, parentSha, message, files) {
+async function commitOnto(token, owner, repo, branch, parentSha, message, files, { force = false } = {}) {
   const parentCommit = await apiJson(`/repos/${owner}/${repo}/git/commits/${parentSha}`, token, parseCommit);
 
   /** @type {{path: string, mode: string, type: string, sha: string}[]} */
@@ -643,18 +656,44 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files)
 
   const updateResponse = await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, {
     method: "PATCH",
-    body: JSON.stringify({ sha: commit.sha }),
+    body: JSON.stringify(force ? { sha: commit.sha, force: true } : { sha: commit.sha }),
   });
-  if (updateResponse.status === 422) {
+  if (updateResponse.status === 422 && !force) {
     // Branch tip moved (racing save); retry once against the fresh tip.
     const freshSha = await getBranchSha(token, owner, repo, branch);
     if (freshSha && freshSha !== parentSha) return commitOnto(token, owner, repo, branch, freshSha, message, files);
   }
-  if (!updateResponse.ok && updateResponse.status !== 422) {
+  if (!updateResponse.ok && (force || updateResponse.status !== 422)) {
     throw new GithubApiError(`Could not update branch "${branch}" (${updateResponse.status}).`, { status: updateResponse.status });
   }
 
   return { owner, repo, branch, commitSha: commit.sha };
+}
+
+/**
+ * Branch an in-place edit of texPath lives on. Keyed on the file, not on a
+ * typed name, so every session editing that file finds the same branch.
+ *
+ * @param {string} username
+ * @param {string} texPath
+ * @returns {string}
+ */
+export function editBranchName(username, texPath) {
+  const basename = (texPath.split("/").pop() ?? texPath).replace(/\.tex$/, "");
+  return `scenario-editor/${username}/updates/${slugify(basename)}`;
+}
+
+/**
+ * The upstream branch an earlier session left for an in-place edit of texPath.
+ * Only members edit in place, so this only ever looks at the upstream repo.
+ *
+ * @param {string} token
+ * @param {{username: string, texPath: string}} request
+ * @returns {Promise<string | null>} the branch name, or null when none exists
+ */
+export async function findEditBranch(token, { username, texPath }) {
+  const branch = editBranchName(username, texPath);
+  return (await getBranchSha(token, UPSTREAM_OWNER, UPSTREAM_REPO, branch)) === null ? null : branch;
 }
 
 /**
@@ -700,9 +739,11 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
  * @param {Map<string, Uint8Array>} request.uploadedFiles path -> bytes
  * @param {GithubContext} request.context from discoverGithubContext
  * @param {string} [request.branch] the branch a resumed or already-saved draft lives on; overrides the name-derived one
+ * @param {"new" | "edit"} [request.mode] "edit" changes the file at texPath in place: an updates/ branch, no group file
+ * @param {boolean} [request.startOver] edit mode only: discard the branch's earlier work and commit onto the default branch
  * @returns {Promise<SaveTarget>}
  */
-export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch }) {
+export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch, mode = "new", startOver = false }) {
   const { username, isMember, fork } = context;
 
   let owner = UPSTREAM_OWNER;
@@ -713,21 +754,22 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
     repo = forkRepo.name;
   }
 
-  const branch = knownBranch || `scenario-editor/${username}/${slugify(scenarioName)}`;
+  const editing = mode === "edit";
+  const branch = knownBranch || (editing ? editBranchName(username, texPath) : `scenario-editor/${username}/${slugify(scenarioName)}`);
   /** @type {CommitFile[]} */
   const files = [
     { path: texPath, content: texContent },
     ...[...uploadedFiles.entries()].map(([path, content]) => ({ path, content })),
   ];
 
-  const group = draftGroupFor(texPath);
+  const group = editing ? null : draftGroupFor(texPath);
   if (group) {
     const entryFile = await ensureDraftEntry(token, { owner, repo, branch, group, texPath });
     if (entryFile) files.push(entryFile);
   }
 
-  const message = `Update ${scenarioName}`;
-  const result = await commitFiles(token, { owner, repo, branch, message, files });
+  const message = `${editing ? "Edit" : "Update"} ${scenarioName}`;
+  const result = await commitFiles(token, { owner, repo, branch, message, files, startOver: editing && startOver });
   return { ...result, isMember };
 }
 
@@ -740,10 +782,10 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
  * same-repo (collaborator) head.
  *
  * @param {string} token
- * @param {{owner: string, branch: string, scenarioName: string, isMember: boolean}} request
+ * @param {{owner: string, branch: string, scenarioName: string, isMember: boolean, mode?: "new" | "edit"}} request
  * @returns {Promise<GithubPullRequest>}
  */
-export async function ensurePullRequest(token, { owner, branch, scenarioName, isMember }) {
+export async function ensurePullRequest(token, { owner, branch, scenarioName, isMember, mode = "new" }) {
   const upstream = await getUpstreamRepo(token);
   const base = upstream.default_branch;
   const listHead = `${owner}:${branch}`;
@@ -759,10 +801,12 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
   return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, parsePullRequest, {
     method: "POST",
     body: JSON.stringify({
-      title: `Update ${scenarioName}`,
+      title: `${mode === "edit" ? "Edit" : "Update"} ${scenarioName}`,
       head,
       base,
-      body: `Updates the "${scenarioName}" scenario, edited in the browser mission book editor.`,
+      body: mode === "edit"
+        ? `Edits the "${scenarioName}" scenario in place, using the browser mission book editor.`
+        : `Updates the "${scenarioName}" scenario, edited in the browser mission book editor.`,
     }),
   });
 }

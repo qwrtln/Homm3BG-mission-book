@@ -15,6 +15,68 @@ let pendingPath = null;
 /** @type {string | null} draft-scenarios subdir for a template pick; null for a real entry */
 let pendingCategory = null;
 
+/** @type {"new" | "edit"} what "Let's go!" does: start a new scenario, or edit the picked one in place */
+let pickerMode = "new";
+/** @type {((path: string, title: string) => void) | null} set by the GitHub module, which owns the edit flow */
+let editHandler = null;
+/** @type {string} the title of the current pick, for the edit flow */
+let pendingTitle = "";
+
+/**
+ * Registers what "Let's go!" runs in edit mode.
+ *
+ * @param {(path: string, title: string) => void} handler
+ * @returns {void}
+ */
+export function onEditPick(handler) {
+  editHandler = handler;
+}
+
+/**
+ * Switches between adding a new scenario and editing an existing one. Edit
+ * mode has no name step: the scenario keeps its own name and path.
+ *
+ * @param {"new" | "edit"} mode
+ * @returns {void}
+ */
+export function setPickerMode(mode) {
+  pickerMode = mode;
+  el("welcome-picker").hidden = false;
+  el("name-slide").hidden = mode === "edit";
+  el("mode-edit").setAttribute("aria-pressed", String(mode === "edit"));
+  el("mode-new").setAttribute("aria-pressed", String(mode === "new"));
+  el("edit-branch-prompt").hidden = true;
+  updateGoButton();
+}
+
+/**
+ * Settles the welcome screen once membership is known (or known to be
+ * absent): a member is asked to choose a mode before any picker shows,
+ * everyone else gets the picker straight away.
+ *
+ * @param {boolean} isMember
+ * @returns {void}
+ */
+export function settleModes(isMember) {
+  el("mode-checking").hidden = true;
+  el("mode-choice").hidden = !isMember;
+  if (isMember) {
+    const chosen = el("mode-edit").getAttribute("aria-pressed") === "true"
+      || el("mode-new").getAttribute("aria-pressed") === "true";
+    if (!chosen) el("welcome-picker").hidden = true;
+    return;
+  }
+  setPickerMode("new");
+  el("mode-new").setAttribute("aria-pressed", "false");
+}
+
+/** Holds the picker back while membership is unknown. @returns {void} */
+export function showModeChecking() {
+  el("mode-checking").hidden = false;
+  el("mode-choice").hidden = true;
+  el("welcome-picker").hidden = true;
+}
+
 /**
  * Enables "Let's go!" when there is a pick and a valid name, and says which of
  * the two is missing rather than leaving a greyed-out button unexplained.
@@ -22,6 +84,12 @@ let pendingCategory = null;
  * @returns {void}
  */
 export function updateGoButton() {
+  if (pickerMode === "edit") {
+    el("name-error").hidden = true;
+    el("go").disabled = !pendingPath;
+    el("go-hint").textContent = pendingPath ? "" : "Pick the scenario to edit.";
+    return;
+  }
   const typed = el("scenario-name").value;
   const check = validateScenarioName(typed);
   const nameError = el("name-error");
@@ -47,6 +115,7 @@ export function updateGoButton() {
  */
 export function selectPending(path, title, category = null) {
   pendingPath = path;
+  pendingTitle = title;
   pendingCategory = category;
   // The search box itself shows the pick: what was typed to find it is spent.
   el("search").value = title;
@@ -125,7 +194,14 @@ export function initPicker() {
     selectPending(TEMPLATES.campaign.path, TEMPLATES.campaign.title, "campaigns");
   });
 
+  el("mode-edit").addEventListener("click", () => setPickerMode("edit"));
+  el("mode-new").addEventListener("click", () => setPickerMode("new"));
+
   el("go").addEventListener("click", () => {
+    if (pickerMode === "edit") {
+      if (pendingPath && editHandler) editHandler(pendingPath, pendingTitle);
+      return;
+    }
     if (!pendingPath || !validateScenarioName(el("scenario-name").value).valid) return;
     commitEntry(pendingPath, el("scenario-name").value, pendingCategory);
   });
