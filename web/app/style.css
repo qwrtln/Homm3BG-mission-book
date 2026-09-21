@@ -132,16 +132,15 @@ button.link {
 /* The resume list fills the row. */
 .welcome-top { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
 .welcome-top > * { flex: 1 1 20rem; min-width: 0; }
-/* The badge is out of flow, so no pane moves. Wide screens: in the left gutter.
-   Narrow ones have no gutter, so it sits in the gap above the picker instead. */
-.welcome-picker { position: relative; }
-.welcome-picker > .mode-choice { position: absolute; right: 100%; top: 0; width: 12rem; margin-right: 1.5rem; text-align: right; }
-.welcome-picker > .mode-choice .scratch-row { justify-content: flex-end; }
-@media (max-width: 90rem) {
-  .welcome-picker > .mode-choice { right: auto; left: 0; bottom: 100%; top: auto; width: auto; margin: 0 0 0.2rem; text-align: left; display: flex; align-items: center; gap: 0.75rem; }
-  .welcome-picker > .mode-choice[hidden] { display: none; }
-  .welcome-picker > .mode-choice h2 { margin: 0; font-size: 1rem; }
-  .welcome-picker > .mode-choice .hint { display: none; }
+/* The member badge is a fourth column. It grows in from nothing so the panes
+   glide aside instead of jumping when membership is confirmed. */
+.welcome-picker > .mode-choice { flex: 0 0 12rem; overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .welcome-picker > .mode-choice { animation: badge-in 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes badge-in {
+    from { flex-basis: 0; margin-right: -1.5rem; opacity: 0; }
+    to { flex-basis: 12rem; margin-right: 0; opacity: 1; }
+  }
 }
 .welcome-top .resume-drafts { margin-bottom: 0; }
 .edit-branch-prompt { margin-bottom: 1.5rem; }
