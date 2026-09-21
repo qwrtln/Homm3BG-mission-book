@@ -51,20 +51,22 @@
 <div class="content">
   <section class="welcome" id="welcome">
     <div class="welcome-inner">
-      <p class="hint" id="mode-checking" hidden><span class="spinner"></span> Checking your project membership…</p>
-      <div class="mode-choice" id="mode-choice" hidden>
-        <h2>You're a project member</h2>
-        <p class="hint">Choose the mode: change a scenario that already exists, or add a new one.</p>
-        <div class="scratch-row">
-          <button id="mode-edit" type="button" aria-pressed="false">Edit existing</button>
-          <button id="mode-new" type="button" aria-pressed="false">Add new</button>
+      <div class="welcome-top">
+        <p class="hint" id="mode-checking" hidden><span class="spinner"></span> Checking your project membership…</p>
+        <div class="mode-choice" id="mode-choice" hidden>
+          <h2>You're a project member</h2>
+          <p class="hint">Choose the mode: change a scenario that already exists, or add a new one.</p>
+          <div class="scratch-row">
+            <button id="mode-edit" type="button" aria-pressed="false">Edit existing</button>
+            <button id="mode-new" type="button" aria-pressed="false">Add new</button>
+          </div>
         </div>
-      </div>
-      <div class="resume-drafts" id="resume-drafts" hidden>
-        <h2>Resume your work</h2>
-        <p class="hint" id="resume-loading" hidden><span class="spinner"></span> Looking for work to resume…</p>
-        <p class="hint" id="resume-hint">Branches of yours with unfinished edits.</p>
-        <div class="combobox-list resume-list" id="resume-list"></div>
+        <div class="resume-drafts" id="resume-drafts" hidden>
+          <h2>Or resume your work</h2>
+          <p class="hint" id="resume-loading" hidden><span class="spinner"></span> Looking for work to resume…</p>
+          <p class="hint" id="resume-hint">Branches of yours with unfinished edits.</p>
+          <div class="combobox-list resume-list" id="resume-list"></div>
+        </div>
       </div>
       <div class="welcome-picker" id="welcome-picker">
         <div class="picker-slide">
@@ -74,7 +76,7 @@
             <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
             <div class="combobox-list" id="search-results" hidden></div>
           </div>
-          <div class="scratch-row">
+          <div class="scratch-row" id="scratch-row">
             <span>Or start from scratch:</span>
             <button id="scratch-clash" type="button" data-category="clash">Blank Clash scenario</button>
             <button id="scratch-coop" type="button" data-category="coops">Blank Coop scenario</button>

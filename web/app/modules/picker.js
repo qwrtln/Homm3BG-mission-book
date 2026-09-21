@@ -33,26 +33,53 @@ export function onEditPick(handler) {
 }
 
 /**
+ * Greys a control group out and takes it out of reach, keeping it on screen.
+ *
+ * @param {HTMLElement} element
+ * @param {boolean} dimmed
+ * @returns {void}
+ */
+function setDimmed(element, dimmed) {
+  element.classList.toggle("dimmed", dimmed);
+  element.toggleAttribute("inert", dimmed);
+}
+
+/**
  * Switches between adding a new scenario and editing an existing one. Edit
- * mode has no name step: the scenario keeps its own name and path.
+ * mode has no name step and no blank templates: the scenario keeps its own
+ * name and path. Both stay on screen, greyed out, so the picker looks the same
+ * in either mode.
  *
  * @param {"new" | "edit"} mode
  * @returns {void}
  */
 export function setPickerMode(mode) {
   pickerMode = mode;
-  el("welcome-picker").hidden = false;
-  el("name-slide").hidden = mode === "edit";
+  setDimmed(el("name-slide"), mode === "edit");
+  setDimmed(el("scratch-row"), mode === "edit");
   el("mode-edit").setAttribute("aria-pressed", String(mode === "edit"));
   el("mode-new").setAttribute("aria-pressed", String(mode === "new"));
   el("edit-branch-prompt").hidden = true;
+  // A blank template picked in new mode is not something an edit can open.
+  if (mode === "edit" && pendingPath && isTemplatePath(pendingPath)) {
+    pendingPath = null;
+    pendingCategory = null;
+    el("search").value = "";
+  }
   updateGoButton();
 }
 
 /**
- * Settles the welcome screen once membership is known (or known to be
- * absent): a member is asked to choose a mode before any picker shows,
- * everyone else gets the picker straight away.
+ * @param {string} path
+ * @returns {boolean}
+ */
+function isTemplatePath(path) {
+  return Object.values(TEMPLATES).some((t) => t.path === path);
+}
+
+/**
+ * Settles the welcome screen once membership is known: a member gets the mode
+ * choice above the picker, everyone else sees nothing new.
  *
  * @param {boolean} isMember
  * @returns {void}
@@ -60,21 +87,13 @@ export function setPickerMode(mode) {
 export function settleModes(isMember) {
   el("mode-checking").hidden = true;
   el("mode-choice").hidden = !isMember;
-  if (isMember) {
-    const chosen = el("mode-edit").getAttribute("aria-pressed") === "true"
-      || el("mode-new").getAttribute("aria-pressed") === "true";
-    if (!chosen) el("welcome-picker").hidden = true;
-    return;
-  }
   setPickerMode("new");
-  el("mode-new").setAttribute("aria-pressed", "false");
+  if (!isMember) el("mode-new").setAttribute("aria-pressed", "false");
 }
 
-/** Holds the picker back while membership is unknown. @returns {void} */
+/** Says membership is being checked; the picker stays usable meanwhile. @returns {void} */
 export function showModeChecking() {
   el("mode-checking").hidden = false;
-  el("mode-choice").hidden = true;
-  el("welcome-picker").hidden = true;
 }
 
 /**
@@ -122,8 +141,7 @@ export function selectPending(path, title, category = null) {
   el("search-results").hidden = true;
   updateGoButton();
   // A template has no pictures and no published branch to fetch.
-  const isTemplate = Object.values(TEMPLATES).some((t) => t.path === path);
-  if (!isTemplate) startScenarioPrefetch(path);
+  if (!isTemplatePath(path)) startScenarioPrefetch(path);
 }
 
 // commitEntry awaits this same promise rather than fetching again. Picking a

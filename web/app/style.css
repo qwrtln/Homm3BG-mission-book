@@ -129,8 +129,14 @@ button.link {
   overflow: auto;
 }
 .welcome-inner { max-width: 62rem; width: 100%; }
-.mode-choice, .edit-branch-prompt { margin-bottom: 1.5rem; }
-.mode-choice[hidden], .edit-branch-prompt[hidden], #mode-checking[hidden], .picker-slide[hidden], .welcome-picker[hidden] { display: none; }
+/* The member banner and the resume list share a row; alone, either fills it. */
+.welcome-top { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+.welcome-top > * { flex: 1 1 20rem; min-width: 0; }
+.welcome-top .resume-drafts { margin-bottom: 0; }
+.edit-branch-prompt { margin-bottom: 1.5rem; }
+.mode-choice[hidden], .edit-branch-prompt[hidden], #mode-checking[hidden] { display: none; }
+/* Edit mode keeps the new-scenario controls on screen but out of reach. */
+.dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; transition: opacity 0.2s; }
 .mode-choice .scratch-row { margin-top: 0; }
 .mode-choice button[aria-pressed="true"] { border-color: var(--accent, currentColor); font-weight: 600; }
 .resume-drafts[hidden] { display: none; }

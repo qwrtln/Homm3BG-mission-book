@@ -42,6 +42,7 @@ interface ElementIdMap {
   "resume-list": HTMLDivElement;
   "resume-loading": HTMLParagraphElement;
   "scenario-name": HTMLInputElement;
+  "scratch-row": HTMLDivElement;
   "scratch-alliance": HTMLButtonElement;
   "scratch-campaign": HTMLButtonElement;
   "scratch-clash": HTMLButtonElement;

@@ -102,12 +102,12 @@ test.describe("while membership is being checked", () => {
   });
   test.use({ githubRoutes: routes(identityRoutes({ push: true, hold: held })) });
 
-  test("says so, and offers neither the picker nor the choice yet", async ({ app }) => {
+  test("says so, keeps the picker usable, and offers no choice yet", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
     await expect(page.locator("#mode-checking")).toBeVisible();
-    await expect(page.locator("#welcome-picker")).toBeHidden();
+    await expect(page.locator("#welcome-picker")).toBeVisible();
     await expect(page.locator("#mode-choice")).toBeHidden();
 
     release();
@@ -119,7 +119,7 @@ test.describe("while membership is being checked", () => {
 test.describe("signed in as a member", () => {
   test.use({ githubRoutes: routes(identityRoutes({ push: true })) });
 
-  test("is told they are a member and asked to choose, with the picker held back", async ({ app }) => {
+  test("is told they are a member, and still has the picker as it always was", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
@@ -128,33 +128,79 @@ test.describe("signed in as a member", () => {
     await expect(choice).toContainText("project member");
     await expect(page.locator("#mode-edit")).toHaveText("Edit existing");
     await expect(page.locator("#mode-new")).toHaveText("Add new");
-    await expect(page.locator("#welcome-picker")).toBeHidden();
-  });
-
-  test("Add new shows the picker as it always was, with its name step", async ({ app }) => {
-    const { page } = app;
-    await signInAs(page);
-
-    await page.locator("#mode-new").click();
-
+    await expect(page.locator("#mode-new")).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator("#welcome-picker")).toBeVisible();
-    await expect(page.locator("#name-slide")).toBeVisible();
+    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
+    await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#go")).toBeDisabled();
   });
 
-  test("Edit existing shows the picker without a name step, and Let's go! needs only a pick", async ({ app }) => {
+  test("Edit existing greys out the name pane and the blank-template row, and Let's go! needs only a pick", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
     await page.locator("#mode-edit").click();
 
-    await expect(page.locator("#welcome-picker")).toBeVisible();
-    await expect(page.locator("#name-slide")).toBeHidden();
+    for (const id of ["#name-slide", "#scratch-row"]) {
+      await expect(page.locator(id)).toBeVisible();
+      await expect(page.locator(id)).toHaveAttribute("inert", "");
+      await expect(page.locator(id)).toHaveClass(/dimmed/);
+    }
     await expect(page.locator("#go")).toBeDisabled();
 
     const results = await openScenarioList(page);
     await results.first().dispatchEvent("mousedown");
     await expect(page.locator("#go")).toBeEnabled();
+  });
+
+  test("Add new gives the name pane and the templates back", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#mode-edit").click();
+
+    await page.locator("#mode-new").click();
+
+    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
+    await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
+    await expect(page.locator("#go")).toBeDisabled();
+  });
+
+  test("a blank template picked before switching to Edit existing is dropped", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#scratch-clash").click();
+    await page.locator("#scenario-name").fill("Some Name");
+    await expect(page.locator("#go")).toBeEnabled();
+
+    await page.locator("#mode-edit").click();
+
+    await expect(page.locator("#go")).toBeDisabled();
+  });
+});
+
+test.describe("a member with work to resume", () => {
+  test.use({
+    githubRoutes: routes([
+      ...identityRoutes({ push: true }).filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+      },
+    ]),
+  });
+
+  test("sees the resume list, headed \"Or resume your work\", on the same row as the member banner", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await expect(page.locator("#resume-drafts h2")).toHaveText("Or resume your work");
+    const banner = await page.locator("#mode-choice").boundingBox();
+    const resume = await page.locator("#resume-drafts").boundingBox();
+    expect(banner && resume && Math.abs(banner.y - resume.y) < 4, "banner and resume list are not side by side").toBe(true);
+    expect(banner && resume && banner.x < resume.x).toBe(true);
   });
 });
 
