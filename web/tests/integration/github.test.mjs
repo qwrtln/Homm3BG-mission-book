@@ -179,6 +179,55 @@ test.describe("the resume-drafts list", () => {
   });
 });
 
+test.describe("deleting a work in progress", () => {
+  const BRANCH = `scenario-editor/${LOGIN}/half-written`;
+  const TEX_PATH = "draft-scenarios/clash/half_written.tex";
+  const REF = `https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(BRANCH)}`;
+
+  test.use({
+    githubRoutes: routes([
+      ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
+      { method: "GET", path: /\/compare\//, body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] } },
+      { method: "DELETE", path: /\/git\/refs\/heads\//, status: 204, body: null },
+    ]),
+  });
+
+  test("each row has a bin button", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await expect(page.locator("#resume-list .resume-delete")).toHaveCount(1);
+    await expect(page.locator("#resume-list .resume-delete")).toHaveAccessibleName(/Delete/);
+  });
+
+  test("cancelling the confirmation deletes nothing", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    const requests = recordGithubRequests(page);
+    let asked = "";
+    page.once("dialog", (dialog) => { asked = dialog.message(); void dialog.dismiss(); });
+
+    await page.locator("#resume-list .resume-delete").click();
+
+    expect(asked).toContain(BRANCH);
+    expect(requests.filter((r) => r.method === "DELETE")).toHaveLength(0);
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+  });
+
+  test("confirming deletes the branch and removes the row", async ({ app }) => {
+    const { page, errors } = app;
+    await signInAs(page);
+    const requests = recordGithubRequests(page);
+    page.once("dialog", (dialog) => { void dialog.accept(); });
+
+    await page.locator("#resume-list .resume-delete").click();
+
+    await expect(page.locator("#resume-drafts")).toBeHidden();
+    expect(requests.filter((r) => r.method === "DELETE").map((r) => r.url)).toEqual([REF]);
+    expect(errors, "the page reported errors while deleting").toEqual([]);
+  });
+});
+
 test.describe("saving a scenario", () => {
   const NAME = "Tier Two Probe";
   const BRANCH = `scenario-editor/${LOGIN}/${slugify(NAME)}`;

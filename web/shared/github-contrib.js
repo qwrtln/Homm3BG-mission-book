@@ -696,6 +696,29 @@ export async function findEditBranch(token, { username, texPath }) {
   return (await getBranchSha(token, UPSTREAM_OWNER, UPSTREAM_REPO, branch)) === null ? null : branch;
 }
 
+/** Every branch this app creates starts with this; nothing else may be deleted by it. */
+const EDITOR_BRANCH_PREFIX = "scenario-editor/";
+
+/**
+ * Deletes a work-in-progress branch. Refuses any branch the app did not
+ * create, so a bad argument can never remove main or someone else's work.
+ * An already-missing branch counts as deleted.
+ *
+ * @param {string} token
+ * @param {{owner: string, repo: string, branch: string}} request
+ * @returns {Promise<void>}
+ */
+export async function deleteWorkBranch(token, { owner, repo, branch }) {
+  if (!branch.startsWith(EDITOR_BRANCH_PREFIX)) {
+    throw new GithubApiError(`Refusing to delete "${branch}": not a scenario-editor branch.`);
+  }
+  const response = await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, { method: "DELETE" });
+  if (response.status === 404 || response.status === 422) return;
+  if (!response.ok) {
+    throw new GithubApiError(`Could not delete branch "${branch}" (${response.status}).`, { status: response.status });
+  }
+}
+
 /**
  * @param {string} texPath
  * @returns {import("./build-plan.js").GroupFile | null}

@@ -184,6 +184,10 @@ button.link {
   position: sticky;
   top: 0;
 }
+.resume-row { display: flex; align-items: stretch; }
+.resume-row .combobox-item { flex: 1; min-width: 0; }
+.resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; font-size: 1.1rem; }
+.resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
 .combobox-item {
   display: block;
   width: 100%;

@@ -1,6 +1,6 @@
 import { getToken, signIn, completeSignIn, clearToken } from "../../shared/github-auth.js";
 import {
-  saveScenarioToRepo, ensurePullRequest, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
+  saveScenarioToRepo, ensurePullRequest, deleteWorkBranch, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
 } from "../../shared/github-contrib.js?v=2";
 
@@ -107,9 +107,43 @@ function renderResumeDrafts() {
       const ago = timeAgo(d.lastEdit);
       const detail = ago ? `${d.branch}, last edit ${ago}` : d.branch;
       const kind = d.kind === "edit" ? "editing in place" : "new draft";
-      return `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>`;
+      const label = draftLabel(d.texPath);
+      return `<div class="resume-row">`
+        + `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(label)} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>`
+        + `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress">🗑</button>`
+        + `</div>`;
     })
     .join("");
+}
+
+/**
+ * Asks, then deletes a work-in-progress branch and drops it from the list.
+ * Cancelling the dialog changes nothing.
+ *
+ * @param {ResumableDraft | undefined} draft
+ * @returns {Promise<void>}
+ */
+async function deleteResumableDraft(draft) {
+  const token = getToken();
+  if (!draft || !token || !githubContext) return;
+  const label = draftLabel(draft.texPath);
+  if (!window.confirm(`Delete "${label}"?\n\nThis deletes the branch ${draft.branch} and everything saved on it. It cannot be undone.`)) return;
+
+  const fork = githubContext.fork;
+  if (!githubContext.isMember && !fork) return;
+  const { owner, repo } = githubContext.isMember || !fork
+    ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+    : { owner: fork.owner.login, repo: fork.name };
+
+  setStatus("Deleting…", { spinning: true });
+  try {
+    await deleteWorkBranch(token, { owner, repo, branch: draft.branch });
+    githubContext.drafts = githubContext.drafts.filter((d) => d !== draft);
+    renderResumeDrafts();
+    setStatus(`Deleted "${label}".`);
+  } catch (error) {
+    setStatus(error instanceof GithubApiError ? error.message : `Could not delete: ${errorMessage(error)}`, { tone: "bad" });
+  }
 }
 
 /** Shows the resume block in its searching state. @returns {void} */
@@ -286,6 +320,11 @@ export function initGithub() {
   });
 
   el("resume-list").addEventListener("click", async (event) => {
+    const deleteButton = closestTo(event, "[data-delete-index]");
+    if (deleteButton && githubContext) {
+      await deleteResumableDraft(githubContext.drafts[Number(deleteButton.dataset.deleteIndex)]);
+      return;
+    }
     const button = closestTo(event, "[data-draft-index]");
     if (!button || !githubContext) return;
     const draft = githubContext.drafts[Number(button.dataset.draftIndex)];

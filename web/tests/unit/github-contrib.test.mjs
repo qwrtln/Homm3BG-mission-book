@@ -15,6 +15,7 @@ import {
   findEditBranch,
   saveScenarioToRepo,
   ensurePullRequest,
+  deleteWorkBranch,
   getRepoFile,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
@@ -65,6 +66,7 @@ function base64(text) {
  *   calls: {method: string, path: string, query: string, body: any}[],
  *   commits: {branch: string, message: string, files: {path: string, content: string}[]}[],
  *   pulls: {html_url: string, number: number, head: string}[],
+ *   hasBranch: (branch: string) => boolean,
  *   fileOn: (branch: string, path: string) => string | undefined,
  * }}
  */
@@ -203,6 +205,13 @@ function createGithubFake(options = {}) {
       return json({ object: { sha: body.sha } });
     }
 
+    if ((match = path.match(/^\/repos\/[^/]+\/[^/]+\/git\/refs\/heads\/(.+)$/)) && method === "DELETE") {
+      const branch = decodeURIComponent(match[1]);
+      if (!branches.delete(branch)) return json({ message: "Reference does not exist" }, 422);
+      branchFiles.delete(branch);
+      return new Response(null, { status: 204 });
+    }
+
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/branches$/) && method === "GET") {
       return json([...branches.keys()].map((name) => ({ name })));
     }
@@ -232,6 +241,7 @@ function createGithubFake(options = {}) {
     calls,
     commits: applied,
     pulls,
+    hasBranch: (branch) => branches.has(branch),
     fileOn: (branch, path) => {
       const files = branchFiles.get(branch);
       return files ? files.get(path) : undefined;
@@ -665,4 +675,33 @@ test("every GitHub call goes through the injected client", async () => {
   // asserts it handled them all, so nothing reached the global fetch.
   assert.ok(fake.calls.length >= 3);
   assert.ok(fake.calls.every((call) => call.path.startsWith("/")));
+});
+
+test("deleteWorkBranch removes the branch and calls DELETE on that ref only", async () => {
+  const branch = "scenario-editor/octocat/half-written";
+  const fake = createGithubFake({ branchNames: [branch] });
+  setHttpClient(fake.client);
+
+  await deleteWorkBranch("token", { owner: "octocat", repo: UPSTREAM_REPO, branch });
+
+  assert.equal(fake.hasBranch(branch), false);
+  assert.equal(fake.hasBranch("main"), true);
+  const deletes = fake.calls.filter((c) => c.method === "DELETE");
+  assert.deepEqual(deletes.map((c) => c.path), [
+    `/repos/octocat/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(branch)}`,
+  ]);
+});
+
+test("deleteWorkBranch refuses a branch the app did not create", async () => {
+  const fake = createGithubFake();
+  setHttpClient(fake.client);
+
+  await assert.rejects(deleteWorkBranch("token", { owner: "octocat", repo: UPSTREAM_REPO, branch: "main" }));
+  assert.equal(fake.calls.filter((c) => c.method === "DELETE").length, 0);
+  assert.equal(fake.hasBranch("main"), true);
+});
+
+test("deleteWorkBranch treats an already-missing branch as deleted", async () => {
+  setHttpClient(createGithubFake().client);
+  await deleteWorkBranch("token", { owner: "octocat", repo: UPSTREAM_REPO, branch: "scenario-editor/octocat/gone" });
 });
