@@ -152,7 +152,14 @@ test.describe("the resume-drafts list", () => {
       {
         method: "GET",
         path: /\/compare\//,
-        body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] },
+        body: {
+          files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }],
+          // Oldest first, as GitHub lists them: only the last one counts.
+          commits: [
+            { commit: { committer: { date: "2020-01-01T00:00:00Z" } } },
+            { commit: { committer: { date: new Date(Date.now() - 3 * 3600 * 1000).toISOString() } } },
+          ],
+        },
       },
     ]),
   });
@@ -166,6 +173,7 @@ test.describe("the resume-drafts list", () => {
     await expect(entries).toHaveCount(1);
     await expect(entries.first()).toContainText("Clash: Half Written");
     await expect(entries.first()).toContainText(BRANCH);
+    await expect(entries.first()).toContainText("last edit 3 hours ago");
 
     expect(errors, "the page reported errors while listing drafts").toEqual([]);
   });

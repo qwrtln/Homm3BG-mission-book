@@ -32,6 +32,8 @@ interface GithubCompareFile {
 
 interface GithubCompare {
   files?: GithubCompareFile[];
+  /** ISO date of the branch's newest commit, when the response lists commits. */
+  lastCommitDate?: string;
 }
 
 interface GithubBlob {
@@ -67,6 +69,8 @@ interface ResumableDraft {
   branch: string;
   texPath: string;
   assets: { path: string; sha: string }[];
+  /** ISO date of the newest commit on the branch; absent if unknown. */
+  lastEdit?: string;
 }
 
 /** What discoverGithubContext works out once, on sign-in. */

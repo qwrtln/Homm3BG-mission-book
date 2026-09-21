@@ -177,6 +177,20 @@ function parseBranches(payload) {
 }
 
 /**
+ * Compare lists commits oldest first, so the newest is the last entry.
+ *
+ * @param {unknown} commits
+ * @returns {string | undefined}
+ */
+function lastCommitDate(commits) {
+  if (!Array.isArray(commits) || commits.length === 0) return undefined;
+  const commit = object(commits[commits.length - 1], "compared commit").commit;
+  const committer = commit && typeof commit === "object" ? /** @type {Record<string, unknown>} */ (commit).committer : null;
+  const date = committer && typeof committer === "object" ? /** @type {Record<string, unknown>} */ (committer).date : null;
+  return typeof date === "string" ? date : undefined;
+}
+
+/**
  * @param {unknown} payload
  * @returns {GithubCompare}
  */
@@ -184,6 +198,7 @@ function parseCompare(payload) {
   const compare = object(payload, "comparison");
   if (!Array.isArray(compare.files)) return {};
   return {
+    lastCommitDate: lastCommitDate(compare.commits),
     files: compare.files.map((entry) => {
       const file = object(entry, "compared file");
       return {
@@ -409,7 +424,7 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
       const assets = files
         .filter((f) => f.filename.startsWith("assets/images/") || f.filename.startsWith("assets/maps/"))
         .map((f) => ({ path: f.filename, sha: f.sha }));
-      if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename, assets });
+      if (texFile) drafts.push({ branch: b.name, texPath: texFile.filename, assets, lastEdit: compare.lastCommitDate });
     } catch {
       // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
     }

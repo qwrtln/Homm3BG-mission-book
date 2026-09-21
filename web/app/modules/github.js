@@ -72,6 +72,26 @@ function draftLabel(texPath) {
   return category ? `${category}: ${title}` : title;
 }
 
+/**
+ * "3 hours ago", "yesterday", ...; empty when the date is missing or invalid.
+ *
+ * @param {string | undefined} iso
+ * @returns {string}
+ */
+function timeAgo(iso) {
+  const then = iso ? Date.parse(iso) : NaN;
+  if (Number.isNaN(then)) return "";
+  const seconds = Math.min(0, Math.round((then - Date.now()) / 1000));
+  const units = /** @type {[Intl.RelativeTimeFormatUnit, number][]} */ ([
+    ["year", 31536000], ["month", 2592000], ["day", 86400], ["hour", 3600], ["minute", 60],
+  ]);
+  const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+  for (const [unit, size] of units) {
+    if (-seconds >= size) return formatter.format(Math.round(seconds / size), unit);
+  }
+  return "just now";
+}
+
 /** Draws the resume list from the signed-in user's own branches. @returns {void} */
 function renderResumeDrafts() {
   const drafts = (githubContext && githubContext.drafts) || [];
@@ -81,7 +101,11 @@ function renderResumeDrafts() {
   el("resume-drafts").hidden = drafts.length === 0;
   if (drafts.length === 0) return;
   list.innerHTML = drafts
-    .map((d, i) => `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(d.branch)})</span></button>`)
+    .map((d, i) => {
+      const ago = timeAgo(d.lastEdit);
+      const detail = ago ? `${d.branch}, last edit ${ago}` : d.branch;
+      return `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(draftLabel(d.texPath))} <span class="hint">(${escapeHtml(detail)})</span></button>`;
+    })
     .join("");
 }
 
