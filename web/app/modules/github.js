@@ -15,13 +15,14 @@ import { showWorkspace, openForEdit } from "./workspace.js";
 import { onEditPick, settleModes } from "./picker.js";
 import { preloadFile } from "./files.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
-import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
+import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 
 /** Shows either the sign-in button or the signed-in strip. @returns {void} */
 function renderGithubHeader() {
   const signedIn = Boolean(getToken());
   el("github-signin").hidden = signedIn;
   el("github-status").hidden = !signedIn;
+  setSaveControlsVisible(!el("workspace").hidden);
 }
 
 // Sign-in is a full-page redirect, dropping chosenPath and the autosave debounce. Flush and remember what was open.

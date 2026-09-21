@@ -26,3 +26,14 @@ export function resetGithubSaveState() {
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;
 }
+
+/**
+ * Save and Open PR act on the open scenario, so they show only while one is open.
+ *
+ * @param {boolean} visible
+ * @returns {void}
+ */
+export function setSaveControlsVisible(visible) {
+  const segment = el("github-save").parentElement;
+  if (segment) segment.hidden = !visible;
+}

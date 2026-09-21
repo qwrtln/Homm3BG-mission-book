@@ -5,7 +5,7 @@ import { loadDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { resetUploads } from "./uploads.js";
-import { githubSaveState, resetGithubSaveState } from "./github-save-state.js";
+import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { prefetchScenario } from "./picker.js";
 import { newScenarioDir } from "../../shared/scenario-name.js";
 import { withScenarioTitle } from "../../shared/build-plan.js";
@@ -28,6 +28,7 @@ export function showWorkspace() {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
       welcome.hidden = true;
       workspace.hidden = false;
+      setSaveControlsVisible(true);
       resolve();
       return;
     }
@@ -36,6 +37,7 @@ export function showWorkspace() {
       welcome.hidden = true;
       welcome.classList.remove("leaving");
       workspace.hidden = false;
+      setSaveControlsVisible(true);
       workspace.classList.remove("entering");
       void workspace.offsetWidth; // force reflow, so repeat visits replay the animation
       workspace.classList.add("entering");

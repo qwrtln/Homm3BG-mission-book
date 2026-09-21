@@ -110,7 +110,12 @@ test.describe("signed in", () => {
     await expect(page.locator("#github-status")).toBeVisible();
     await expect(page.locator("#github-signin")).toBeHidden();
 
+    // Nothing is open on the welcome screen, so there is nothing to save yet.
     const save = page.locator("#github-save");
+    await expect(save).toBeHidden();
+    await page.locator("[data-category=\"clash\"]").click();
+    await page.locator("#scenario-name").fill("Save Probe");
+    await page.locator("#go").click();
     await expect(save).toBeVisible();
     await expect(save).toBeEnabled();
     await expect(save).toHaveText("💾 Save");

@@ -87,3 +87,11 @@ test.describe("signed in with a branch on GitHub", () => {
     expect(value).toBe("% from branch\n");
   });
 });
+
+test("Save is not offered on the welcome screen when signed in", async ({ app }) => {
+  const { page } = app;
+  await page.evaluate(() => localStorage.setItem("github_token", "t"));
+  await page.reload();
+  await expect(page.locator("#github-status")).toBeVisible();
+  await expect(page.locator("#github-save")).toBeHidden();
+});

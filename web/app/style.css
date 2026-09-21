@@ -102,6 +102,7 @@ button.link {
   overflow: hidden;
 }
 .github-segment button { border: none; border-radius: 0; }
+.github-segment[hidden] { display: none; }
 .github-pr-link[hidden] { display: none; }
 .github-pr-link { color: var(--accent); text-decoration: underline; font-size: 0.85rem; }
 #github-open-pr[hidden] { display: none; }
