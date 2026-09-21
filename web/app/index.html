@@ -150,6 +150,18 @@
   </div>
 </div>
 
+<dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title">
+  <form method="dialog">
+    <h2 id="confirm-title">Delete this work in progress?</h2>
+    <p id="confirm-message"></p>
+    <p class="confirm-warning">This cannot be undone.</p>
+    <div class="confirm-actions">
+      <button id="confirm-cancel" type="submit" value="cancel">Cancel</button>
+      <button id="confirm-ok" class="danger" type="submit" value="confirm">Delete</button>
+    </div>
+  </form>
+</dialog>
+
 <script src="vendor/codemirror/codemirror.min.js"></script>
 <script src="vendor/codemirror/mode/stex/stex.min.js"></script>
 <script type="module" src="app.js?v=3"></script>

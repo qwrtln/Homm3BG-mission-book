@@ -204,23 +204,39 @@ test.describe("deleting a work in progress", () => {
     const { page } = app;
     await signInAs(page);
     const requests = recordGithubRequests(page);
-    let asked = "";
-    page.once("dialog", (dialog) => { asked = dialog.message(); void dialog.dismiss(); });
 
     await page.locator("#resume-list .resume-delete").click();
+    const dialog = page.locator("#confirm-dialog");
+    await expect(dialog).toBeVisible();
+    await expect(dialog).toContainText("Half Written");
+    await expect(dialog).toContainText("This cannot be undone.");
+    await page.locator("#confirm-cancel").click();
 
-    expect(asked).toContain(BRANCH);
+    await expect(dialog).toBeHidden();
     expect(requests.filter((r) => r.method === "DELETE")).toHaveLength(0);
     await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+  });
+
+  test("Escape also cancels", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    const requests = recordGithubRequests(page);
+
+    await page.locator("#resume-list .resume-delete").click();
+    await expect(page.locator("#confirm-dialog")).toBeVisible();
+    await page.keyboard.press("Escape");
+
+    await expect(page.locator("#confirm-dialog")).toBeHidden();
+    expect(requests.filter((r) => r.method === "DELETE")).toHaveLength(0);
   });
 
   test("confirming deletes the branch and removes the row", async ({ app }) => {
     const { page, errors } = app;
     await signInAs(page);
     const requests = recordGithubRequests(page);
-    page.once("dialog", (dialog) => { void dialog.accept(); });
 
     await page.locator("#resume-list .resume-delete").click();
+    await page.locator("#confirm-ok").click();
 
     await expect(page.locator("#resume-drafts")).toBeHidden();
     expect(requests.filter((r) => r.method === "DELETE").map((r) => r.url)).toEqual([REF]);

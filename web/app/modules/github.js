@@ -6,7 +6,7 @@ import {
 
 import { errorMessage } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
-import { el, setStatus, escapeHtml, basenameNoExt, closestTo } from "./dom.js";
+import { el, setStatus, escapeHtml, basenameNoExt, closestTo, confirmDelete } from "./dom.js";
 import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
 import { clearPdf } from "./pdf-view.js";
 import { showWorkspace, openForEdit } from "./workspace.js";
@@ -127,7 +127,7 @@ async function deleteResumableDraft(draft) {
   const token = getToken();
   if (!draft || !token || !githubContext) return;
   const label = draftLabel(draft.texPath);
-  if (!window.confirm(`Delete "${label}"?\n\nThis deletes the branch ${draft.branch} and everything saved on it. It cannot be undone.`)) return;
+  if (!(await confirmDelete(`"${label}" will be deleted.`))) return;
 
   const fork = githubContext.fork;
   if (!githubContext.isMember && !fork) return;

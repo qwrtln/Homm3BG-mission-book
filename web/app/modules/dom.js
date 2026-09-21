@@ -100,3 +100,21 @@ export function sanitizeFilename(name) {
   const cleaned = name.trim().toLowerCase().replace(/[^a-z0-9_-]+/g, "_").replace(/^_+|_+$/g, "");
   return cleaned || "untitled";
 }
+
+/**
+ * Asks the contributor to confirm a destructive action in the page's own
+ * modal. Escape, the backdrop-less Cancel button and closing all answer no.
+ *
+ * @param {string} message what is about to be deleted
+ * @returns {Promise<boolean>} true only when "Delete" was pressed
+ */
+export function confirmDelete(message) {
+  const dialog = el("confirm-dialog");
+  el("confirm-message").textContent = message;
+  return new Promise((resolve) => {
+    dialog.addEventListener("close", () => resolve(dialog.returnValue === "confirm"), { once: true });
+    dialog.returnValue = "cancel";
+    dialog.showModal();
+    el("confirm-cancel").focus(); // the safe default
+  });
+}

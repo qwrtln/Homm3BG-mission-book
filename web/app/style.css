@@ -407,3 +407,20 @@ details.full-log pre {
   white-space: pre-wrap;
   margin: 0.5rem 0 0;
 }
+
+.confirm-dialog {
+  max-width: min(26rem, calc(100vw - 2rem));
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+.confirm-dialog::backdrop { background: rgba(1, 4, 9, 0.5); }
+.confirm-dialog h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.confirm-dialog p { margin: 0 0 0.5rem; }
+.confirm-warning { color: var(--bad); font-weight: 600; }
+.confirm-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
+button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
+button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }

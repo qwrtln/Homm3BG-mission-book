@@ -26,6 +26,11 @@ interface ElementIdMap {
   "edit-branch-prompt": HTMLDivElement;
   "edit-continue": HTMLButtonElement;
   "edit-start-over": HTMLButtonElement;
+  "confirm-cancel": HTMLButtonElement;
+  "confirm-dialog": HTMLDialogElement;
+  "confirm-message": HTMLParagraphElement;
+  "confirm-title": HTMLHeadingElement;
+  "confirm-ok": HTMLButtonElement;
   go: HTMLButtonElement;
   "mode-choice": HTMLDivElement;
   "mode-edit": HTMLButtonElement;
