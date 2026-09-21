@@ -445,7 +445,12 @@ export function initGithub() {
     if (draft) await openResumableDraft(draft);
   });
 
-  if (getToken()) showResumeSearching();
+  // Before the account lookup finishes, not after: a signed-in user must not see "Sign in" while it runs.
+  renderGithubHeader();
+  if (getToken()) {
+    showResumeSearching();
+    if (parseRoute(location.hash)) setStatus("Opening your scenario…", { spinning: true });
+  }
   return completeSignIn()
     .then(async (token) => {
       if (!token) return;

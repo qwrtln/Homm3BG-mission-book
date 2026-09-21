@@ -61,3 +61,29 @@ test("starting a new scenario writes its address", async ({ app }) => {
   await expect(page.locator("#workspace")).toBeVisible();
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
 });
+
+test.describe("signed in with a branch on GitHub", () => {
+  const LOGIN = "octotester";
+  const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
+  test.use({
+    githubRoutes: [[
+      { method: "GET", path: "/user", body: { login: LOGIN } },
+      { method: "GET", path: REPO_PATH, body: { name: "Homm3BG-mission-book", owner: { login: "qwrtln" }, default_branch: "main", permissions: { push: true } } },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      { method: "GET", path: /\/compare\//, body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] } },
+      { method: "GET", path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/, body: { content: btoa("% from branch\n") } },
+    ], { option: true }],
+  });
+
+  test("an address opened in a fresh page, with an OAuth query string, reopens the branch", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.goto("/web/app/?iss=https%3A%2F%2Fgithub.com%2Flogin%2Foauth#/drafts/clash/half_written");
+    await page.reload();
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#github-signin")).toBeHidden();
+    const value = await page.evaluate(() => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue());
+    expect(value).toBe("% from branch\n");
+  });
+});

@@ -110,6 +110,18 @@ test.describe("signed in as a member", () => {
     await expect(page.locator("#go")).toBeDisabled();
   });
 
+  test("the badge does not move any picker pane", async ({ app }) => {
+    const { page } = app;
+    await page.setViewportSize({ width: 1700, height: 900 });
+    await signInAs(page);
+    await expect(page.locator("#mode-choice")).toBeVisible();
+    const panes = page.locator(".welcome-picker > .picker-slide");
+    const withBadge = await panes.evaluateAll((els) => els.map((e) => e.getBoundingClientRect().toJSON()));
+    await page.locator("#mode-choice").evaluate((e) => { e.hidden = true; });
+    const without = await panes.evaluateAll((els) => els.map((e) => e.getBoundingClientRect().toJSON()));
+    expect(withBadge).toEqual(without);
+  });
+
   test("Edit existing greys out the name pane and the blank-template row, and Let's go! needs only a pick", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
@@ -175,6 +187,7 @@ test.describe("a member with work to resume", () => {
     const resume = await page.locator("#resume-drafts").boundingBox();
     const top = await page.locator(".welcome-top").boundingBox();
     expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
+    await page.setViewportSize({ width: 1700, height: 900 });
     const banner = await page.locator("#mode-choice").boundingBox();
     const pick = await page.locator(".picker-slide").first().boundingBox();
     expect(banner && pick && Math.abs(banner.y - pick.y) < 4 && banner.x < pick.x, "banner is not left of the picker").toBe(true);
