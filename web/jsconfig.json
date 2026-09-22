@@ -8,11 +8,6 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    // No @types/node: this is browser code, and pulling Node's globals in
-    // would let `process` or `Buffer` resolve in a module the browser runs.
-    // That is also why "tests" and "prototype-engine-check" are excluded
-    // below — both are Node programs, and checking them needs @types/node,
-    // which web/ has no manifest to declare.
     "types": [],
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
@@ -28,7 +23,6 @@
     "core",
     "app/vendor",
     "shared/vendor/*.js",
-    "prototype-engine-check",
     "tests"
   ]
 }

@@ -2,13 +2,12 @@
   "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
   "files": {
     "includes": [
-      "web/**/*.js",
-      "web/**/*.mjs",
-      "!web/core/**",
-      "!web/app/vendor/**",
-      "!web/shared/vendor/**",
-      "!web/prototype-engine-check/out/**",
-      "!web/tests/node_modules/**"
+      "**/*.js",
+      "**/*.mjs",
+      "!core",
+      "!app/vendor",
+      "!shared/vendor",
+      "!tests/node_modules"
     ]
   },
   "formatter": {

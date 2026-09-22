@@ -4,7 +4,6 @@ import { el, escapeHtml } from "./dom.js";
 /** Empties the PDF pane and the error panel. @returns {void} */
 export function clearPdf() {
   state.lastPdf = null;
-  state.lastResult = null;
   el("download").disabled = true;
   el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>';
   el("error-panel").hidden = true;

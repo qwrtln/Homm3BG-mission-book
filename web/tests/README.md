@@ -51,8 +51,8 @@ Tier 1 does not use it either, and is never gated behind tier 2.
   waits on `/web/app/`, not on `/`: the server 404s at the root, so a
   health-check against `baseURL` alone times out.
 - `driver/static-server.mjs` and `driver/serve.mjs` — a dependency-free
-  `node:http` port of `web/prototype-engine-check/serve.py`, kept because the
-  app needs its `/web/repo/` alias and its COOP/COEP headers. A stock static
+  `node:http` server. The app needs its `/web/repo/` alias and its COOP/COEP
+  headers. A stock static
   server will not do. `serve.mjs` is the entry point `webServer` runs; `PORT`
   overrides the default 8322.
 - `stubs/` — `installEngineStub(page)` and `installGithubStub(page, routes)`,

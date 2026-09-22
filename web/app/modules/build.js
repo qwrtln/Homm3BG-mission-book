@@ -10,7 +10,6 @@ import { state, requireEditor } from "./state.js";
 import { el, setStatus, setBuilding, basenameNoExt } from "./dom.js";
 import { fetchRepoFile, preloadFile, preloadText, preloadTexmfFile } from "./files.js";
 import { showPdf, showError } from "./pdf-view.js";
-import { commitEntry } from "./workspace.js";
 
 /**
  * Downloads and starts the WASM engine, leaving it on state.runner.
@@ -172,8 +171,6 @@ export async function runBuild() {
       firstError: firstError(result.log),
       log: result.log || "",
     };
-    state.lastResult = record;
-    window.__probeResults = { "scenario-svg": record }; // read by the headless capture
 
     if (record.ok) {
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
@@ -187,8 +184,6 @@ export async function runBuild() {
     }
   } catch (error) {
     const trace = errorTrace(error);
-    state.lastResult = { ok: false, firstError: null, log: trace };
-    window.__probeResults = { "scenario-svg": state.lastResult };
     showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });
   } finally {
@@ -196,7 +191,7 @@ export async function runBuild() {
   }
 }
 
-/** Wires the Build and Download controls, and the capture hooks. @returns {void} */
+/** Wires the Build and Download controls. @returns {void} */
 export function initBuild() {
   el("build").addEventListener("click", () => {
     runBuild();
@@ -211,21 +206,4 @@ export function initBuild() {
     link.click();
     link.remove();
   });
-
-  // Drives tools/render_parity.sh's capture-pdf.mjs; no step ladder here so the first arg is unused.
-  window.__probeRun = async (_stepId, scenarioPath) => {
-    if (scenarioPath) {
-      // Basename as name keeps identity == scenarioPath, matching what tools/build.sh -s builds.
-      await commitEntry(scenarioPath, basenameNoExt(scenarioPath));
-    }
-    await runBuild();
-    return (/** @type {Record<string, BuildRecord>} */ (window.__probeResults))["scenario-svg"];
-  };
-
-  // capture-pdf.mjs clicks "#save-pdf"; forward it to the app's real "#download" control.
-  const saveAlias = document.createElement("button");
-  saveAlias.id = "save-pdf";
-  saveAlias.hidden = true;
-  saveAlias.addEventListener("click", () => el("download").click());
-  document.body.appendChild(saveAlias);
 }

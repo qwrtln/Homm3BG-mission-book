@@ -1,6 +1,5 @@
-// Static file server for tier-2 tests, replacing prototype-engine-check's
-// serve.py. Reproduces its behaviour exactly: the same headers, the same
-// /web/repo alias, the same cache policy for engine payloads.
+// Static file server for tier-2 tests and local runs of the app: COOP/COEP
+// headers, the /web/repo alias, and a cache policy for engine payloads.
 //
 // No dependencies. node:http only.
 
@@ -75,8 +74,8 @@ function isCacheable(requestPath) {
  */
 
 /**
- * Start a static file server over the repository root, reproducing
- * serve.py's headers, cache policy and /web/repo alias.
+ * Start a static file server over the repository root, with the app's
+ * headers, cache policy and /web/repo alias.
  * @param {{ port?: number }} [options] - port to bind, defaulting to 0 (let
  *   the OS pick a free port).
  * @returns {Promise<StaticServer>} the running server.

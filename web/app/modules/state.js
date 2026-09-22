@@ -11,7 +11,6 @@ export const state = {
   building: false,
   runner: null,
   lastPdf: null,
-  lastResult: null,      // read by the headless capture (window.__probeResults)
   cm: null,               // CodeMirror instance, created once over #editor
 
   // Files a contributor added from their own machine, not the repository: a

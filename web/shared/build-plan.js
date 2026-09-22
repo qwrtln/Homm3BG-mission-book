@@ -1,9 +1,7 @@
 // Shared module. Ticket 13 of the WASM scenario builder map.
 //
-// Pure logic, with no DOM and no engine calls, moved out of
-// web/prototype-engine-check/probe.js so both the probe and the real app in
-// web/app/ import one copy instead of forking it. See map.md's "Two homes
-// under web/" note.
+// Pure logic, with no DOM and no engine calls, imported by the app in
+// web/app/.
 //
 // The local build this mirrors:
 //   tools/_find_scenario.sh rewrites structure.tex to one \include{...},
@@ -86,7 +84,7 @@ export function collectReferencedGlyphs(source) {
 
 /**
  * TeX Live files the book needs that no BusyTeX data package ships. They sit
- * in web/prototype-engine-check/texmf/, put there by fetch-missing-texmf.sh,
+ * in web/shared/texmf/, put there by fetch-missing-texmf.sh,
  * and are copied flat into the virtual filesystem, where kpathsea looks
  * first.
  *

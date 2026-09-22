@@ -34,7 +34,8 @@ jobs:
 
       - name: Lint and format check
         if: always()
-        run: npx -y @biomejs/biome@2.5.14 check web/
+        working-directory: web
+        run: npx -y @biomejs/biome@2.5.14 check .
 
       - name: Show Node version
         run: node --version

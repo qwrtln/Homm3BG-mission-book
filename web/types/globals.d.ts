@@ -30,20 +30,6 @@ interface CodeMirrorStatic {
 declare const CodeMirror: CodeMirrorStatic;
 
 interface Window {
-  /**
-   * The last build's record, keyed by step id. Read by
-   * prototype-engine-check/capture-pdf.mjs; written by app/modules/build.js.
-   * Only ever carries the single "scenario-svg" key — the app has no step
-   * ladder.
-   */
-  __probeResults?: Record<string, BuildRecord>;
-
-  /**
-   * Drives tools/render_parity.sh. The step id is accepted and ignored; the
-   * scenario path, when given, is committed into the editor first.
-   */
-  __probeRun?: (stepId: string | null, scenarioPath?: string) => Promise<BuildRecord>;
-
-  /** Reads back where the last save landed. Used by the capture drivers. */
+  /** Reads back where the last save landed. Used by the integration tests. */
   __lastSaveTarget?: () => SaveTarget | null;
 }

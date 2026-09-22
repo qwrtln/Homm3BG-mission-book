@@ -71,7 +71,6 @@ interface AppState {
   building: boolean;
   runner: import("../shared/vendor/texlyre-busytex.js").BusyTexRunner | null;
   lastPdf: Blob | null;
-  lastResult: BuildRecord | null;
   cm: CodeMirrorEditor | null;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;
