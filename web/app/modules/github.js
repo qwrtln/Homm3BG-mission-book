@@ -1,6 +1,6 @@
 import { getToken, signIn, completeSignIn, clearToken } from "../../shared/github-auth.js";
 import {
-  saveScenarioToRepo, ensurePullRequest, deleteWorkBranch, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
+  saveScenarioToRepo, ensurePullRequest, findPullRequest, deleteWorkBranch, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
   UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
 } from "../../shared/github-contrib.js?v=2";
 
@@ -68,6 +68,27 @@ async function reopenLocalDraft(path, title) {
 
 /** @type {GithubContext | null} */
 let githubContext = null;
+
+/**
+ * Silent background check for a branch that already has an open pull request
+ * (typically a resumed draft, after a page refresh): swaps "Open PR" for the
+ * "View PR" link without the member having to click anything. Never creates
+ * a PR itself; a failure just leaves "Open PR" showing.
+ *
+ * @returns {Promise<void>}
+ */
+async function checkExistingPullRequest() {
+  const target = githubSaveState.lastSaveTarget;
+  const token = getToken();
+  if (!target || !token) return;
+  try {
+    const pr = await findPullRequest(token, { owner: target.owner, branch: target.branch });
+    if (!pr || githubSaveState.lastSaveTarget !== target) return; // superseded while this was in flight
+    el("github-pr-link").href = pr.html_url;
+    el("github-pr-link").hidden = false;
+    el("github-open-pr").hidden = true;
+  } catch { /* best-effort: leave "Open PR" showing */ }
+}
 
 const CATEGORY_LABELS = { clash: "Clash", coops: "Cooperative", campaigns: "Campaign", alliances: "Alliance" };
 
@@ -193,7 +214,7 @@ async function startEdit(path, title) {
       if (branch && !startOver) {
         githubSaveState.lastSaveTarget = { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO, branch, isMember: true };
         el("github-open-pr").hidden = false;
-        el("github-save").textContent = "💾 Save again";
+        void checkExistingPullRequest();
       }
     };
 
@@ -269,7 +290,7 @@ async function openResumableDraft(draft) {
 
     githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
     el("github-open-pr").hidden = false;
-    el("github-save").textContent = "💾 Save again";
+    void checkExistingPullRequest();
     setStatus("Ready.");
   } catch (error) {
     const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
@@ -454,7 +475,6 @@ export function initGithub() {
       if (githubSaveState.edit) githubSaveState.edit.startOver = false;
       githubSaveState.lastSaveTarget = saved;
       markClean(savedText, savedUploads);
-      button.textContent = "💾 Save again";
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
     } catch (error) {

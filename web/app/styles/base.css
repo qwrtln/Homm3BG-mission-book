@@ -21,7 +21,6 @@ header {
   gap: 0.4rem 1.5rem;
 }
 header .header-left { flex: 1 1 0; min-width: min(100%, 26rem); display: flex; align-items: center; gap: 0.4rem 1.25rem; }
-header .header-left #back-to-welcome { flex: none; }
 header .titles { min-width: 0; }
 #back-to-welcome[hidden] { display: none; }
 button.with-icon { display: inline-flex; align-items: center; gap: 0.4rem; }

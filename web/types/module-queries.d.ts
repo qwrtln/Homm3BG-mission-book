@@ -30,6 +30,7 @@ declare module "*/github-contrib.js?v=2" {
   export const commitFiles: GithubContribModule["commitFiles"];
   export const saveScenarioToRepo: GithubContribModule["saveScenarioToRepo"];
   export const ensurePullRequest: GithubContribModule["ensurePullRequest"];
+  export const findPullRequest: GithubContribModule["findPullRequest"];
   export const deleteWorkBranch: GithubContribModule["deleteWorkBranch"];
   export const setHttpClient: GithubContribModule["setHttpClient"];
 }

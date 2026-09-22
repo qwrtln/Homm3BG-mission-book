@@ -303,7 +303,7 @@ test.describe("saving a scenario", () => {
     expect(disabledOnClick, "the save button stayed clickable while a save was in flight").toBe(true);
 
     const save = page.locator("#github-save");
-    await expect(save).toHaveText("💾 Save again");
+    await expect(save).toHaveText("💾 Save");
     await expect(save).toBeEnabled();
     await expect(page.locator("#github-open-pr")).toBeVisible();
     await expect(page.locator("#status-text")).toContainText(`${UPSTREAM_OWNER}/${UPSTREAM_REPO}@${BRANCH}`);
@@ -327,7 +327,7 @@ test.describe("saving a scenario", () => {
     ]);
     expect(JSON.parse(updates[0].body).sha).toBe("new-commit-sha");
 
-    // Where "Save again" and "Open PR" will aim.
+    // Where the next save and "Open PR" will aim.
     expect(await page.evaluate(() => window.__lastSaveTarget())).toEqual({
       owner: UPSTREAM_OWNER,
       repo: UPSTREAM_REPO,
@@ -398,7 +398,6 @@ test.describe("saving a resumed draft", () => {
 
     const requests = recordGithubRequests(page);
     await page.locator("#github-save").click();
-    // Resume already labels the button "Save again", so wait on the result.
     await expect(page.locator("#status-text")).toContainText(`@${BRANCH}`);
 
     const updates = requests.filter((r) => r.method === "PATCH");

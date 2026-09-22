@@ -797,12 +797,31 @@ export async function saveScenarioToRepo(token, { scenarioName, texPath, texCont
 }
 
 /**
+ * Looks up a branch's already-open pull request, without creating one.
+ *
+ * list-pulls always filters head as "owner:branch".
+ *
+ * @param {string} token
+ * @param {{owner: string, branch: string}} request
+ * @returns {Promise<GithubPullRequest | null>}
+ */
+export async function findPullRequest(token, { owner, branch }) {
+  const listHead = `${owner}:${branch}`;
+  const existing = await apiJson(
+    `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls?head=${encodeURIComponent(listHead)}&state=open`,
+    token,
+    parsePullRequests,
+  );
+  return existing[0] ?? null;
+}
+
+/**
  * Opens a pull request for a saved branch, or returns the one already open
  * for it.
  *
- * list-pulls always filters head as "owner:branch"; create-pull-request only
- * accepts that form for a cross-repo (fork) head, plain branch name for a
- * same-repo (collaborator) head.
+ * create-pull-request only accepts the "owner:branch" head form for a
+ * cross-repo (fork) head, plain branch name for a same-repo (collaborator)
+ * head.
  *
  * @param {string} token
  * @param {{owner: string, branch: string, scenarioName: string, isMember: boolean, mode?: "new" | "edit"}} request
@@ -813,12 +832,8 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
   const base = upstream.default_branch;
   const listHead = `${owner}:${branch}`;
 
-  const existing = await apiJson(
-    `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls?head=${encodeURIComponent(listHead)}&state=open`,
-    token,
-    parsePullRequests,
-  );
-  if (existing.length > 0) return existing[0];
+  const existing = await findPullRequest(token, { owner, branch });
+  if (existing) return existing;
 
   const head = isMember ? branch : listHead;
   return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, parsePullRequest, {
