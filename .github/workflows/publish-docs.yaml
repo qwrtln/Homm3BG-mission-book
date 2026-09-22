@@ -44,10 +44,24 @@ jobs:
       - run: pip install mkdocs-material
       - run: mkdocs build --site-dir site
 
+      # An allow-list: only what the browser loads is deployed. Tests, types,
+      # configs and scripts under web/ stay out, including any added later.
+      # The LICENSE files ship with the code they cover.
       - name: Copy the app into the site
         run: |
           mkdir -p site/web
-          rsync -a web/ site/web/
+          rsync -a \
+            --include='/index.html' \
+            --include='/LICENSE' \
+            --include='/app/***' \
+            --include='/shared/' \
+            --include='/shared/*.js' \
+            --include='/shared/texmf/***' \
+            --include='/shared/vendor/' \
+            --include='/shared/vendor/texlyre-busytex.js' \
+            --include='/shared/vendor/texlyre-busytex.LICENSE' \
+            --exclude='*' \
+            web/ site/web/
 
       - name: Inline the stats script
         run: |
