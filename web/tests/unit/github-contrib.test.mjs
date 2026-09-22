@@ -596,7 +596,7 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
   );
 });
 
-test("an in-place edit's pull request is titled \"Update <name>\" and says it edits in place", async () => {
+test("an in-place edit's pull request is titled \"Update <name>\"", async () => {
   const fake = createGithubFake({ push: true });
   setHttpClient(fake.client);
 
@@ -610,7 +610,6 @@ test("an in-place edit's pull request is titled \"Update <name>\" and says it ed
 
   const opened = fake.calls.find((call) => call.method === "POST" && call.path.endsWith("/pulls"));
   assert.equal(opened?.body.title, "Update Secret Bomb Stash");
-  assert.match(opened?.body.body, /in place/);
 });
 
 test("startOver resets the edit branch to the default branch and commits the new content on top", async () => {
