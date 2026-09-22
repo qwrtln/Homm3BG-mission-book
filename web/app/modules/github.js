@@ -454,6 +454,10 @@ export function initGithub() {
     if (!state.chosenPath) return;
     const token = getToken();
     if (!token) return;
+    if (githubSaveState.lastSaveTarget && !isDirty()) {
+      setStatus("Saved.", { tone: "ok" });
+      return;
+    }
     const button = el("github-save");
     button.disabled = true;
     setStatus("Saving…", { spinning: true });

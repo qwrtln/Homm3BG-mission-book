@@ -396,6 +396,11 @@ test.describe("saving a resumed draft", () => {
     await expect(page.locator("#workspace")).toBeVisible();
     await expect(page.locator("#status-text")).toHaveText("Ready.");
 
+    // A resumed draft with no edits has nothing to push; make one so this
+    // save actually goes out.
+    await page.locator(".CodeMirror").click();
+    await page.keyboard.type("x");
+
     const requests = recordGithubRequests(page);
     await page.locator("#github-save").click();
     await expect(page.locator("#status-text")).toContainText(`@${BRANCH}`);

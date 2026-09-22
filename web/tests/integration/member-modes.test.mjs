@@ -281,7 +281,10 @@ test.describe("editing in place", () => {
       await expect(page.locator("#github-open-pr")).toBeVisible();
       expect(JSON.parse(seen.find((r) => r.method === "PATCH")?.body ?? "{}").force).toBe(true);
 
-      // A second save builds on the first: only the first one resets.
+      // A second save builds on the first: only the first one resets. A
+      // save with nothing changed since is a no-op, so make an edit first.
+      await page.locator(".CodeMirror").click();
+      await page.keyboard.type("x");
       seen.length = 0;
       await page.locator("#github-save").click();
       await expect.poll(() => seen.some((r) => r.method === "PATCH")).toBe(true);
