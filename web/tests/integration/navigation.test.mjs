@@ -2,7 +2,7 @@
 // the unsaved-changes note and prompt, the loading screen for an address, and
 // the welcome screen's data surviving a round trip.
 
-import { test, expect } from "./fixtures.mjs";
+import { expect, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";
 const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
@@ -53,11 +53,23 @@ test("an untouched scenario leaves without asking, and shows no unsaved note", a
 // would just be noise. See dirty.js's refreshUnsavedNote.
 test.describe("signed in", () => {
   test.use({
-    githubRoutes: [[
-      { method: "GET", path: "/user", body: { login: LOGIN } },
-      { method: "GET", path: REPO_PATH, body: { name: "Homm3BG-mission-book", owner: { login: "qwrtln" }, default_branch: "main", permissions: { push: true } } },
-      { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
-    ], { option: true }],
+    githubRoutes: [
+      [
+        { method: "GET", path: "/user", body: { login: LOGIN } },
+        {
+          method: "GET",
+          path: REPO_PATH,
+          body: {
+            name: "Homm3BG-mission-book",
+            owner: { login: "qwrtln" },
+            default_branch: "main",
+            permissions: { push: true },
+          },
+        },
+        { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
+      ],
+      { option: true },
+    ],
   });
 
   test("editing shows the unsaved note; Back asks, Cancel stays, Leave goes", async ({ app }) => {
@@ -111,23 +123,47 @@ test("the same scenario can be opened again after going back", async ({ app }) =
 
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  const value = await page.evaluate(() => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue());
+  const value = await page.evaluate(() =>
+    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
+  );
   expect(value).toContain("% keep me");
 });
 
 /** @type {(value?: unknown) => void} */
 let releaseUser = () => {};
-const userHeld = new Promise((resolve) => { releaseUser = resolve; });
+const userHeld = new Promise((resolve) => {
+  releaseUser = resolve;
+});
 
 test.describe("an address opened while GitHub is slow", () => {
   test.use({
-    githubRoutes: [[
-      { method: "GET", path: "/user", body: { login: LOGIN }, hold: userHeld },
-      { method: "GET", path: REPO_PATH, body: { name: "Homm3BG-mission-book", owner: { login: "qwrtln" }, default_branch: "main", permissions: { push: true } } },
-      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
-      { method: "GET", path: /\/compare\//, body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] } },
-      { method: "GET", path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/, body: { content: btoa("% from branch\n") } },
-    ], { option: true }],
+    githubRoutes: [
+      [
+        { method: "GET", path: "/user", body: { login: LOGIN }, hold: userHeld },
+        {
+          method: "GET",
+          path: REPO_PATH,
+          body: {
+            name: "Homm3BG-mission-book",
+            owner: { login: "qwrtln" },
+            default_branch: "main",
+            permissions: { push: true },
+          },
+        },
+        { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+        {
+          method: "GET",
+          path: /\/compare\//,
+          body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+        },
+        {
+          method: "GET",
+          path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+          body: { content: btoa("% from branch\n") },
+        },
+      ],
+      { option: true },
+    ],
   });
 
   test("shows a loading screen, never the welcome screen, then the editor", async ({ app }) => {
@@ -163,12 +199,28 @@ test("the plain address shows welcome at once, with no loading screen", async ({
 
 test.describe("going back to a welcome screen that already has data", () => {
   test.use({
-    githubRoutes: [[
-      { method: "GET", path: "/user", body: { login: LOGIN } },
-      { method: "GET", path: REPO_PATH, body: { name: "Homm3BG-mission-book", owner: { login: "qwrtln" }, default_branch: "main", permissions: { push: true } } },
-      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
-      { method: "GET", path: /\/compare\//, body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] } },
-    ], { option: true }],
+    githubRoutes: [
+      [
+        { method: "GET", path: "/user", body: { login: LOGIN } },
+        {
+          method: "GET",
+          path: REPO_PATH,
+          body: {
+            name: "Homm3BG-mission-book",
+            owner: { login: "qwrtln" },
+            default_branch: "main",
+            permissions: { push: true },
+          },
+        },
+        { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+        {
+          method: "GET",
+          path: /\/compare\//,
+          body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+        },
+      ],
+      { option: true },
+    ],
   });
 
   test("shows the resume list instantly, without a loading state, and refreshes quietly", async ({ app }) => {

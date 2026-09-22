@@ -1,15 +1,15 @@
 import { errorMessage } from "../shared/errors.js";
-import { state } from "./modules/state.js";
-import { el, setStatus, escapeHtml } from "./modules/dom.js";
-import { preloadCommonFiles } from "./modules/files.js";
-import { initTheme, applyTheme, initialTheme } from "./modules/theme.js";
+import { ensureEngine, initBuild } from "./modules/build.js";
+import { el, escapeHtml, setStatus } from "./modules/dom.js";
 import { initEditor } from "./modules/editor.js";
 import { loadEntries } from "./modules/entries.js";
-import { initSearch } from "./modules/search.js";
-import { initPicker } from "./modules/picker.js";
-import { initUploads } from "./modules/uploads.js";
-import { initBuild, ensureEngine } from "./modules/build.js";
+import { preloadCommonFiles } from "./modules/files.js";
 import { initGithub, openRoute } from "./modules/github.js";
+import { initPicker } from "./modules/picker.js";
+import { initSearch } from "./modules/search.js";
+import { state } from "./modules/state.js";
+import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
+import { initUploads } from "./modules/uploads.js";
 
 initTheme();
 initEditor();
@@ -25,7 +25,8 @@ const entriesReady = loadEntries()
     if (!state.entries.length) setStatus("No scenarios found.", { tone: "bad" });
   })
   .catch((error) => {
-    el("search-results").innerHTML = `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(errorMessage(error))}</div>`;
+    el("search-results").innerHTML =
+      `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(errorMessage(error))}</div>`;
     el("search-results").hidden = false;
   });
 

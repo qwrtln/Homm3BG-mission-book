@@ -13,8 +13,8 @@
 // needed.
 
 import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const STUB_DIR = dirname(fileURLToPath(import.meta.url));
 const ENGINE_STUB_PATH = join(STUB_DIR, "texlyre-busytex-stub.js");

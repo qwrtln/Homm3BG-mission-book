@@ -1,8 +1,9 @@
 // Tier 1 unit tests for the pure helpers already exported from
 // web/app/modules/. These modules touch the DOM inside their functions, but
 // not at import time, so Node loads them without a DOM.
-import test from "node:test";
+
 import assert from "node:assert/strict";
+import test from "node:test";
 
 import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../app/modules/dom.js";
 import { storageKey } from "../../app/modules/drafts.js";

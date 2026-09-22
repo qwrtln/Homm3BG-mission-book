@@ -1,5 +1,5 @@
-import { test } from "node:test";
 import assert from "node:assert/strict";
+import { test } from "node:test";
 import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.js";
 
 const bytes = (n) => new Uint8Array(n);
@@ -9,8 +9,14 @@ test("an empty upload set has an empty signature", () => {
 });
 
 test("the signature ignores insertion order and tells files apart by size", () => {
-  const a = new Map([["assets/images/a.png", bytes(3)], ["assets/maps/b.png", bytes(5)]]);
-  const b = new Map([["assets/maps/b.png", bytes(5)], ["assets/images/a.png", bytes(3)]]);
+  const a = new Map([
+    ["assets/images/a.png", bytes(3)],
+    ["assets/maps/b.png", bytes(5)],
+  ]);
+  const b = new Map([
+    ["assets/maps/b.png", bytes(5)],
+    ["assets/images/a.png", bytes(3)],
+  ]);
   assert.equal(uploadsSignature(a), uploadsSignature(b));
   assert.notEqual(uploadsSignature(a), uploadsSignature(new Map([["assets/images/a.png", bytes(4)]])));
 });

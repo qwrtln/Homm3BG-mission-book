@@ -7,9 +7,8 @@
 // Seeding that key through page.addInitScript is therefore the whole of the
 // sign-in this file needs. See web/tests/README.md for the stubbing contract.
 
-import { test, expect, openScenarioList } from "./fixtures.mjs";
-
-import { UPSTREAM_OWNER, UPSTREAM_REPO, slugify } from "../../shared/github-contrib.js";
+import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 // The localStorage key github-auth.js persists the token in. It is a private
 // constant there, so it is repeated here rather than imported; if it changes,
@@ -113,7 +112,7 @@ test.describe("signed in", () => {
     // Nothing is open on the welcome screen, so there is nothing to save yet.
     const save = page.locator("#github-save");
     await expect(save).toBeHidden();
-    await page.locator("[data-category=\"clash\"]").click();
+    await page.locator('[data-category="clash"]').click();
     await page.locator("#scenario-name").fill("Save Probe");
     await page.locator("#go").click();
     await expect(save).toBeVisible();
@@ -193,7 +192,11 @@ test.describe("deleting a work in progress", () => {
     githubRoutes: routes([
       ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
       { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
-      { method: "GET", path: /\/compare\//, body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] } },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] },
+      },
       { method: "DELETE", path: /\/git\/refs\/heads\//, status: 204, body: null },
     ]),
   });
@@ -322,7 +325,10 @@ test.describe("saving a scenario", () => {
     expect(commits, "the save created no commit").toHaveLength(1);
     expect(JSON.parse(commits[0].body).parents).toEqual(["base-sha"]);
     const updates = requests.filter((r) => r.method === "PATCH");
-    expect(updates.map((r) => r.url), "the branch tip was not moved exactly once").toEqual([
+    expect(
+      updates.map((r) => r.url),
+      "the branch tip was not moved exactly once",
+    ).toEqual([
       `https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(BRANCH)}`,
     ]);
     expect(JSON.parse(updates[0].body).sha).toBe("new-commit-sha");
@@ -376,9 +382,17 @@ test.describe("saving a resumed draft", () => {
     githubRoutes: routes([
       ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
       { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
-      { method: "GET", path: /\/compare\//, body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] } },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: TEX_PATH, sha: "tex-sha", status: "added" }] },
+      },
       // The draft's own file exists on the branch; the group file does not.
-      { method: "GET", path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/, body: { content: btoa("% draft\n") } },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa("% draft\n") },
+      },
       { method: "GET", path: /\/contents\//, status: 404, body: { message: "Not Found" } },
       { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
       { method: "GET", path: /\/git\/commits\//, body: { sha: "base-sha", tree: { sha: "base-tree-sha" } } },
@@ -406,7 +420,10 @@ test.describe("saving a resumed draft", () => {
     await expect(page.locator("#status-text")).toContainText(`@${BRANCH}`);
 
     const updates = requests.filter((r) => r.method === "PATCH");
-    expect(updates.map((r) => r.url), "the save moved a branch other than the resumed one").toEqual([
+    expect(
+      updates.map((r) => r.url),
+      "the save moved a branch other than the resumed one",
+    ).toEqual([
       `https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(BRANCH)}`,
     ]);
     expect(
@@ -430,15 +447,15 @@ test.describe("signing out mid-edit", () => {
     // Typing schedules an autosave; wait for it to land.
     await page.locator(".CodeMirror").click();
     await page.keyboard.type("x");
-    await expect.poll(() => page.evaluate(() =>
-      Object.keys(localStorage).filter((k) => k.includes(":draft:")).length)).toBe(1);
+    await expect
+      .poll(() => page.evaluate(() => Object.keys(localStorage).filter((k) => k.includes(":draft:")).length))
+      .toBe(1);
 
     await page.locator("#github-signout").click();
 
     await expect(page.locator("#welcome")).toBeVisible();
     await expect(page.locator("#workspace")).toBeHidden();
-    expect(await page.evaluate(() =>
-      Object.keys(localStorage).filter((k) => k.includes(":draft:")))).toEqual([]);
+    expect(await page.evaluate(() => Object.keys(localStorage).filter((k) => k.includes(":draft:")))).toEqual([]);
   });
 });
 
@@ -455,13 +472,12 @@ test("a template pick puts the typed name into \\addscenariosection", async ({ a
 test.describe("looking for work to resume", () => {
   /** @type {() => void} */
   let release = () => {};
-  const held = new Promise((resolve) => { release = () => resolve(undefined); });
+  const held = new Promise((resolve) => {
+    release = () => resolve(undefined);
+  });
 
   test.use({
-    githubRoutes: routes([
-      { ...MEMBER_ROUTES[0], hold: held },
-      ...MEMBER_ROUTES.slice(1),
-    ]),
+    githubRoutes: routes([{ ...MEMBER_ROUTES[0], hold: held }, ...MEMBER_ROUTES.slice(1)]),
   });
 
   test("shows a spinner while GitHub answers, then clears it", async ({ app }) => {

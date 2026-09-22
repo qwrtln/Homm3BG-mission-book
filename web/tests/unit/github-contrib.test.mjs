@@ -5,22 +5,22 @@
 // api.github.com. The fake keeps real state — branches, files, blobs, trees,
 // commits — so a second save genuinely sees what the first one committed,
 // which is what makes the main.tex idempotency test mean anything.
-import test, { afterEach } from "node:test";
-import assert from "node:assert/strict";
 
+import assert from "node:assert/strict";
+import test, { afterEach } from "node:test";
+import { DRAFT_GROUP_FILES } from "../../shared/build-plan.js";
 import {
+  deleteWorkBranch,
+  discoverGithubContext,
+  ensurePullRequest,
+  findEditBranch,
+  getRepoFile,
+  saveScenarioToRepo,
   setHttpClient,
   slugify,
-  discoverGithubContext,
-  findEditBranch,
-  saveScenarioToRepo,
-  ensurePullRequest,
-  deleteWorkBranch,
-  getRepoFile,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
 } from "../../shared/github-contrib.js";
-import { DRAFT_GROUP_FILES } from "../../shared/build-plan.js";
 
 const API = "https://api.github.com";
 
@@ -285,7 +285,11 @@ function createGithubFake(options = {}) {
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/pulls$/) && method === "POST") {
-      const created = { html_url: `https://github.com/pull/${pulls.length + 1}`, number: pulls.length + 1, head: body.head };
+      const created = {
+        html_url: `https://github.com/pull/${pulls.length + 1}`,
+        number: pulls.length + 1,
+        head: body.head,
+      };
       pulls.push(created);
       return json(created, 201);
     }
@@ -376,7 +380,10 @@ test("permissions.push decides membership, and a collaborator is not asked for a
   assert.equal(discovered.isMember, true);
   assert.equal(discovered.fork, null);
   assert.equal(discovered.username, "octocat");
-  assert.equal(fake.calls.some((call) => call.path === "/repos/octocat/Homm3BG-mission-book"), false);
+  assert.equal(
+    fake.calls.some((call) => call.path === "/repos/octocat/Homm3BG-mission-book"),
+    false,
+  );
 });
 
 test("without permissions.push the user is a contributor, and their existing fork is found", async () => {
@@ -404,7 +411,10 @@ test("a collaborator's save lands on the upstream repository", async () => {
   assert.equal(saved.owner, UPSTREAM_OWNER);
   assert.equal(saved.repo, UPSTREAM_REPO);
   assert.equal(saved.isMember, true);
-  assert.equal(fake.calls.some((call) => call.path.endsWith("/forks")), false);
+  assert.equal(
+    fake.calls.some((call) => call.path.endsWith("/forks")),
+    false,
+  );
 });
 
 test("a contributor's save lands on their fork, created lazily when they have none", async () => {
@@ -438,7 +448,10 @@ test("a contributor who already has a fork is not asked to create another", asyn
   });
 
   assert.equal(saved.owner, "octocat");
-  assert.equal(fake.calls.some((call) => call.path.endsWith("/forks")), false);
+  assert.equal(
+    fake.calls.some((call) => call.path.endsWith("/forks")),
+    false,
+  );
 });
 
 // --- the new-scenario path rule ------------------------------------------
@@ -463,12 +476,11 @@ test("a new scenario is committed at draft-scenarios/<category>/<slug>.tex, with
   });
 
   const paths = lastCommitFiles(fake).map((file) => file.path);
-  assert.deepEqual(paths, [
-    "draft-scenarios/clash/dragon-valley.tex",
-    "assets/images/dragon.png",
-    CLASH_MAIN,
-  ]);
-  assert.equal(paths.some((path) => path.startsWith("clash/")), false);
+  assert.deepEqual(paths, ["draft-scenarios/clash/dragon-valley.tex", "assets/images/dragon.png", CLASH_MAIN]);
+  assert.equal(
+    paths.some((path) => path.startsWith("clash/")),
+    false,
+  );
 });
 
 test("an edit to a published scenario saves back to its own path and touches no group file", async () => {
@@ -483,7 +495,10 @@ test("an edit to a published scenario saves back to its own path and touches no 
     context: context(),
   });
 
-  assert.deepEqual(lastCommitFiles(fake).map((file) => file.path), ["clash/secret_bomb_stash.tex"]);
+  assert.deepEqual(
+    lastCommitFiles(fake).map((file) => file.path),
+    ["clash/secret_bomb_stash.tex"],
+  );
 });
 
 // --- editing in place (members) ------------------------------------------
@@ -544,10 +559,13 @@ test("an in-place edit of a draft never touches its group file, even when it lis
     mode: "edit",
   });
 
-  assert.deepEqual(lastCommitFiles(fake).map((file) => file.path), ["draft-scenarios/clash/unlisted.tex"]);
+  assert.deepEqual(
+    lastCommitFiles(fake).map((file) => file.path),
+    ["draft-scenarios/clash/unlisted.tex"],
+  );
 });
 
-test("an in-place edit is committed as \"Edit <name>\"", async () => {
+test('an in-place edit is committed as "Edit <name>"', async () => {
   const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "old" } });
   setHttpClient(fake.client);
 
@@ -592,11 +610,14 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
 
   assert.deepEqual(
     drafts.map((draft) => [draft.texPath, draft.kind]),
-    [["clash/secret_bomb_stash.tex", "edit"], ["draft-scenarios/clash/valley.tex", "new"]],
+    [
+      ["clash/secret_bomb_stash.tex", "edit"],
+      ["draft-scenarios/clash/valley.tex", "new"],
+    ],
   );
 });
 
-test("an in-place edit's pull request is titled \"Update <name>\"", async () => {
+test('an in-place edit\'s pull request is titled "Update <name>"', async () => {
   const fake = createGithubFake({ push: true });
   setHttpClient(fake.client);
 
@@ -663,13 +684,14 @@ test("a second save of the same scenario does not append the \\input line again"
   const fake = createGithubFake({ files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE } });
   setHttpClient(fake.client);
 
-  const save = (texContent) => saveScenarioToRepo("t", {
-    scenarioName: "Dragon Valley",
-    texPath: "draft-scenarios/clash/dragon-valley.tex",
-    texContent,
-    uploadedFiles: new Map(),
-    context: context(),
-  });
+  const save = (texContent) =>
+    saveScenarioToRepo("t", {
+      scenarioName: "Dragon Valley",
+      texPath: "draft-scenarios/clash/dragon-valley.tex",
+      texContent,
+      uploadedFiles: new Map(),
+      context: context(),
+    });
 
   const first = await save("\\section{Dragons}");
   // A genuine edit, not a repeat of the first save's content, so this second
@@ -705,11 +727,19 @@ test("an already-open pull request is returned instead of a second one being ope
   });
   setHttpClient(fake.client);
 
-  const pull = await ensurePullRequest("t", { owner: "octocat", branch, scenarioName: "Dragon Valley", isMember: false });
+  const pull = await ensurePullRequest("t", {
+    owner: "octocat",
+    branch,
+    scenarioName: "Dragon Valley",
+    isMember: false,
+  });
 
   assert.equal(pull.number, 7);
   assert.equal(pull.html_url, "https://github.com/pull/7");
-  assert.equal(fake.calls.some((call) => call.method === "POST" && call.path.endsWith("/pulls")), false);
+  assert.equal(
+    fake.calls.some((call) => call.method === "POST" && call.path.endsWith("/pulls")),
+    false,
+  );
 });
 
 test("a contributor's pull request is opened with an owner:branch head", async () => {
@@ -767,9 +797,10 @@ test("deleteWorkBranch removes the branch and calls DELETE on that ref only", as
   assert.equal(fake.hasBranch(branch), false);
   assert.equal(fake.hasBranch("main"), true);
   const deletes = fake.calls.filter((c) => c.method === "DELETE");
-  assert.deepEqual(deletes.map((c) => c.path), [
-    `/repos/octocat/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(branch)}`,
-  ]);
+  assert.deepEqual(
+    deletes.map((c) => c.path),
+    [`/repos/octocat/${UPSTREAM_REPO}/git/refs/heads/${encodeURIComponent(branch)}`],
+  );
 });
 
 test("deleteWorkBranch refuses a branch the app did not create", async () => {

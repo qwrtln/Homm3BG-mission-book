@@ -1,5 +1,9 @@
 import {
-  ALWAYS_PRELOAD, CARRIED_TEXMF, CORE_GLYPHS, glyphFilesFor, collectReferencedAssets,
+  ALWAYS_PRELOAD,
+  CARRIED_TEXMF,
+  CORE_GLYPHS,
+  collectReferencedAssets,
+  glyphFilesFor,
 } from "../../shared/build-plan.js";
 import { REPO } from "./config.js";
 
@@ -97,9 +101,17 @@ export async function preloadCommonFiles() {
   const metadata = await preloadText("metadata.tex");
   const commonPaths = [...ALWAYS_PRELOAD, ...collectReferencedAssets(metadata), ...glyphFilesFor(CORE_GLYPHS)];
   for (const path of commonPaths) {
-    try { await preloadFile(path); } catch { /* retried, and surfaced if it matters, at build time */ }
+    try {
+      await preloadFile(path);
+    } catch {
+      /* retried, and surfaced if it matters, at build time */
+    }
   }
   for (const name of CARRIED_TEXMF) {
-    try { await preloadTexmfFile(name); } catch { /* same */ }
+    try {
+      await preloadTexmfFile(name);
+    } catch {
+      /* same */
+    }
   }
 }

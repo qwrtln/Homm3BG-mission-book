@@ -1,7 +1,7 @@
-import { state } from "./state.js";
-import { el } from "./dom.js";
-import { scheduleSave, saveDraft } from "./drafts.js";
 import { refreshUnsavedNote } from "./dirty.js";
+import { el } from "./dom.js";
+import { saveDraft, scheduleSave } from "./drafts.js";
+import { state } from "./state.js";
 import { initialTheme } from "./theme.js";
 
 /**

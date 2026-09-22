@@ -185,8 +185,10 @@ function parseBranches(payload) {
 function lastCommitDate(commits) {
   if (!Array.isArray(commits) || commits.length === 0) return undefined;
   const commit = object(commits[commits.length - 1], "compared commit").commit;
-  const committer = commit && typeof commit === "object" ? /** @type {Record<string, unknown>} */ (commit).committer : null;
-  const date = committer && typeof committer === "object" ? /** @type {Record<string, unknown>} */ (committer).date : null;
+  const committer =
+    commit && typeof commit === "object" ? /** @type {Record<string, unknown>} */ (commit).committer : null;
+  const date =
+    committer && typeof committer === "object" ? /** @type {Record<string, unknown>} */ (committer).date : null;
   return typeof date === "string" ? date : undefined;
 }
 
@@ -293,21 +295,22 @@ async function apiOk(path, token, options = {}) {
   const response = await api(path, token, options);
   if (response.status === 403 && response.headers.get("x-ratelimit-remaining") === "0") {
     const resetAt = new Date(Number(response.headers.get("x-ratelimit-reset")) * 1000);
-    throw new GithubApiError(
-      `GitHub API rate limit reached. It resets at ${resetAt.toLocaleTimeString()}.`,
-      { status: 403, rateLimited: true },
-    );
+    throw new GithubApiError(`GitHub API rate limit reached. It resets at ${resetAt.toLocaleTimeString()}.`, {
+      status: 403,
+      rateLimited: true,
+    });
   }
   if (!response.ok) {
     let detail = "";
     try {
       const body = await response.json();
       if (isObject(body) && typeof body.message === "string") detail = body.message;
-    } catch { /* no JSON body */ }
-    throw new GithubApiError(
-      `GitHub API error (${response.status} on ${path}): ${detail || response.statusText}`,
-      { status: response.status },
-    );
+    } catch {
+      /* no JSON body */
+    }
+    throw new GithubApiError(`GitHub API error (${response.status} on ${path}): ${detail || response.statusText}`, {
+      status: response.status,
+    });
   }
   return response;
 }
@@ -393,7 +396,8 @@ export async function discoverGithubContext(token) {
   const repo = isMember ? UPSTREAM_REPO : fork ? fork.name : null;
   // `owner` and `repo` are always set together or both null; testing both
   // changes nothing at run time and lets the checker narrow each to a string.
-  const drafts = owner && repo ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
+  const drafts =
+    owner && repo ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
   return { username, isMember, fork, drafts };
 }
 
@@ -479,7 +483,8 @@ export async function getRepoFile(token, owner, repo, path, ref) {
   const query = ref ? `?ref=${encodeURIComponent(ref)}` : "";
   const response = await api(`/repos/${owner}/${repo}/contents/${path}${query}`, token);
   if (response.status === 404) return null;
-  if (!response.ok) throw new GithubApiError(`Could not read "${path}" (${response.status}).`, { status: response.status });
+  if (!response.ok)
+    throw new GithubApiError(`Could not read "${path}" (${response.status}).`, { status: response.status });
   const data = parseContents(await response.json());
   return decodeBase64Utf8(data.content);
 }
@@ -526,7 +531,8 @@ async function ensureRepoReady(token, owner, repo, { attempts = 6, delayMs = 150
 async function getBranchSha(token, owner, repo, branch) {
   const response = await api(`/repos/${owner}/${repo}/git/ref/heads/${encodeURIComponent(branch)}`, token);
   if (response.status === 404) return null;
-  if (!response.ok) throw new GithubApiError(`Could not read branch "${branch}" (${response.status}).`, { status: response.status });
+  if (!response.ok)
+    throw new GithubApiError(`Could not read branch "${branch}" (${response.status}).`, { status: response.status });
   const data = parseRef(await response.json());
   return data.object.sha;
 }
@@ -582,9 +588,7 @@ async function createBlob(token, owner, repo, content) {
   const blob = await apiJson(`/repos/${owner}/${repo}/git/blobs`, token, shaOnlyParser("blob"), {
     method: "POST",
     body: JSON.stringify(
-      isBinary
-        ? { content: toBase64(content), encoding: "base64" }
-        : { content, encoding: "utf-8" },
+      isBinary ? { content: toBase64(content), encoding: "base64" } : { content, encoding: "utf-8" },
     ),
   });
   return blob.sha;
@@ -678,7 +682,9 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files,
     if (freshSha && freshSha !== parentSha) return commitOnto(token, owner, repo, branch, freshSha, message, files);
   }
   if (!updateResponse.ok && (force || updateResponse.status !== 422)) {
-    throw new GithubApiError(`Could not update branch "${branch}" (${updateResponse.status}).`, { status: updateResponse.status });
+    throw new GithubApiError(`Could not update branch "${branch}" (${updateResponse.status}).`, {
+      status: updateResponse.status,
+    });
   }
 
   return { owner, repo, branch, commitSha: commit.sha };
@@ -726,7 +732,9 @@ export async function deleteWorkBranch(token, { owner, repo, branch }) {
   if (!branch.startsWith(EDITOR_BRANCH_PREFIX)) {
     throw new GithubApiError(`Refusing to delete "${branch}": not a scenario-editor branch.`);
   }
-  const response = await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, { method: "DELETE" });
+  const response = await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, {
+    method: "DELETE",
+  });
   if (response.status === 404 || response.status === 422) return;
   if (!response.ok) {
     throw new GithubApiError(`Could not delete branch "${branch}" (${response.status}).`, { status: response.status });
@@ -756,8 +764,8 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
   // named a macro that does not exist and never matched an existing line, so
   // every save appended the scenario again.
   const marker = `\\input{\\${group.macro}/${slug}.tex}`;
-  const current = (await getRepoFile(token, owner, repo, group.path, branch))
-    ?? (await getRepoFile(token, owner, repo, group.path));
+  const current =
+    (await getRepoFile(token, owner, repo, group.path, branch)) ?? (await getRepoFile(token, owner, repo, group.path));
   if (current == null || current.includes(marker)) return null;
   const content = `${current.replace(/\s*$/, "")}\n\n\\clearpage\n\n${marker}\n`;
   return { path: group.path, content };
@@ -780,19 +788,24 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
  * @param {boolean} [request.startOver] edit mode only: discard the branch's earlier work and commit onto the default branch
  * @returns {Promise<SaveTarget>}
  */
-export async function saveScenarioToRepo(token, { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch, mode = "new", startOver = false }) {
+export async function saveScenarioToRepo(
+  token,
+  { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch, mode = "new", startOver = false },
+) {
   const { username, isMember, fork } = context;
 
   let owner = UPSTREAM_OWNER;
   let repo = UPSTREAM_REPO;
   if (!isMember) {
-    const forkRepo = fork || await ensureFork(token);
+    const forkRepo = fork || (await ensureFork(token));
     owner = forkRepo.owner.login;
     repo = forkRepo.name;
   }
 
   const editing = mode === "edit";
-  const branch = knownBranch || (editing ? editBranchName(username, texPath) : `scenario-editor/${username}/${slugify(scenarioName)}`);
+  const branch =
+    knownBranch ||
+    (editing ? editBranchName(username, texPath) : `scenario-editor/${username}/${slugify(scenarioName)}`);
   /** @type {CommitFile[]} */
   const files = [
     { path: texPath, content: texContent },

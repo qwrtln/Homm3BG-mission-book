@@ -1,7 +1,7 @@
-import { GROUP_FILES, DRAFT_GROUP_FILES, parseScenarioIndex, scenarioHeading } from "../../shared/build-plan.js";
+import { DRAFT_GROUP_FILES, GROUP_FILES, parseScenarioIndex, scenarioHeading } from "../../shared/build-plan.js";
 import { CATEGORY_LABELS } from "./config.js";
-import { state } from "./state.js";
 import { fetchRepoFile } from "./files.js";
+import { state } from "./state.js";
 
 /**
  * Reads one book's group files and turns every scenario they list into an
@@ -21,19 +21,21 @@ export async function loadGroup(groupFiles, book) {
     });
   }
   const index = parseScenarioIndex(sources, groupFiles);
-  return Promise.all(index.map(async (item) => {
-    const source = /** @type {string} */ ((await fetchRepoFile(item.path)).content);
-    const heading = scenarioHeading(source);
-    // split always yields at least one element, so pop never returns undefined.
-    const categoryKey = /** @type {string} */ (item.dir.split("/").pop());
-    return {
-      path: item.path,
-      book,
-      category: CATEGORY_LABELS[categoryKey] || categoryKey,
-      title: heading ? heading.title : item.path,
-      isTemplate: false,
-    };
-  }));
+  return Promise.all(
+    index.map(async (item) => {
+      const source = /** @type {string} */ ((await fetchRepoFile(item.path)).content);
+      const heading = scenarioHeading(source);
+      // split always yields at least one element, so pop never returns undefined.
+      const categoryKey = /** @type {string} */ (item.dir.split("/").pop());
+      return {
+        path: item.path,
+        book,
+        category: CATEGORY_LABELS[categoryKey] || categoryKey,
+        title: heading ? heading.title : item.path,
+        isTemplate: false,
+      };
+    }),
+  );
 }
 
 /**

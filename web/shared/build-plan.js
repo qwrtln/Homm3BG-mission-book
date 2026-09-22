@@ -184,7 +184,11 @@ export function scenarioHeading(source) {
   const match = /\\addscenariosection(?:\[[^\]]*\])?\{[^}]*\}\{([^}]*)\}\{([^}]*)\}/.exec(source);
   if (!match) return null;
   /** @param {string} text */
-  const clean = (text) => text.replace(/\$-\$/g, "—").replace(/\\[a-zA-Z]+/g, "").trim();
+  const clean = (text) =>
+    text
+      .replace(/\$-\$/g, "—")
+      .replace(/\\[a-zA-Z]+/g, "")
+      .trim();
   return { kind: clean(match[1]), title: clean(match[2]) };
 }
 
@@ -289,13 +293,7 @@ export function planScenarioBuild(sources) {
     generated: {
       "structure.tex": `\\include{${scenario.path}}\n`,
     },
-    repoFiles: [
-      ...ALWAYS_PRELOAD,
-      scenario.path,
-      ...collectReferencedAssets(metadata),
-      ...assets,
-      ...glyphFiles,
-    ],
+    repoFiles: [...ALWAYS_PRELOAD, scenario.path, ...collectReferencedAssets(metadata), ...assets, ...glyphFiles],
     carriedTexmf: [...CARRIED_TEXMF],
     dataPackage: "texlive-extra",
     notes: [

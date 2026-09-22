@@ -4,7 +4,7 @@
 // WASM is fetched and no texlive-*.data is downloaded. See
 // web/tests/README.md.
 
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 import { installEngineStub, installGithubStub } from "../stubs/install-stubs.mjs";
 

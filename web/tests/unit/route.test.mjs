@@ -1,6 +1,6 @@
-import { test } from "node:test";
 import assert from "node:assert/strict";
-import { parseRoute, buildRoute, pathToSlug, slugToPath } from "../../shared/route.js";
+import { test } from "node:test";
+import { buildRoute, parseRoute, pathToSlug, slugToPath } from "../../shared/route.js";
 
 test("parses drafts and updates addresses", () => {
   assert.deepEqual(parseRoute("#/drafts/my_scenario"), { kind: "drafts", slug: "my_scenario" });

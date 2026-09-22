@@ -1,6 +1,7 @@
 // Tier 1 check of the welcome screen's name rule.
-import test from "node:test";
+
 import assert from "node:assert/strict";
+import test from "node:test";
 
 import {
   MAX_SCENARIO_NAME_LENGTH,
@@ -40,7 +41,7 @@ test("punctuation a file name or a branch would swallow is rejected", () => {
   }
 });
 
-test("the name \"Updates\" is reserved, whatever its case, because its branch would block every in-place edit branch", () => {
+test('the name "Updates" is reserved, whatever its case, because its branch would block every in-place edit branch', () => {
   for (const name of ["Updates", "updates", "  UPDATES "]) {
     assert.equal(validateScenarioName(name).valid, false, name);
   }

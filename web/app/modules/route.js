@@ -1,6 +1,6 @@
-import { state } from "./state.js";
-import { githubSaveState } from "./github-save-state.js";
 import { buildRoute, pathToSlug } from "../../shared/route.js";
+import { githubSaveState } from "./github-save-state.js";
+import { state } from "./state.js";
 
 /**
  * Puts the open scenario's address in the URL, without adding a history entry.

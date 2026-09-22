@@ -1,16 +1,16 @@
+import { withScenarioTitle } from "../../shared/build-plan.js";
+import { newScenarioDir } from "../../shared/scenario-name.js";
 import { TEMPLATES } from "./config.js";
-import { state, requireEditor } from "./state.js";
-import { el, setStatus, sanitizeFilename } from "./dom.js";
+import { clearClean, markClean } from "./dirty.js";
+import { el, sanitizeFilename, setStatus } from "./dom.js";
 import { loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
-import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
-import { resetUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
+import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
-import { newScenarioDir } from "../../shared/scenario-name.js";
-import { withScenarioTitle } from "../../shared/build-plan.js";
-import { reflectRoute, clearRoute, endRouteLoading } from "./route.js";
-import { markClean, clearClean } from "./dirty.js";
+import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
+import { requireEditor, state } from "./state.js";
+import { resetUploads } from "./uploads.js";
 
 /**
  * Swaps the welcome screen for the workspace, resolving once the transition
@@ -119,13 +119,15 @@ export async function commitEntry(path, name, category) {
 async function showPrefetchedPdf(path) {
   setStatus("Finishing this scenario's downloads…", { spinning: true });
   showPdfLoading("Finishing this scenario's downloads…");
-  const prefetch = state.scenarioPrefetch && state.scenarioPrefetch.path === path
-    ? state.scenarioPrefetch
-    : { path, controller: new AbortController(), promise: null };
+  const prefetch =
+    state.scenarioPrefetch && state.scenarioPrefetch.path === path
+      ? state.scenarioPrefetch
+      : { path, controller: new AbortController(), promise: null };
   const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
   prefetch.promise = promise;
   const { pdfBlob } = await promise;
-  if (pdfBlob) showPdf(pdfBlob); else clearPdf();
+  if (pdfBlob) showPdf(pdfBlob);
+  else clearPdf();
 }
 
 /**

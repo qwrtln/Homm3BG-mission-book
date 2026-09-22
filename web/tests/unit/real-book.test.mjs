@@ -1,10 +1,11 @@
 // Tier 1 tests against the repository's own .tex files. They assert
 // invariants, never specific scenario titles, so adding or renaming a
 // scenario does not break them — but a parser regression does.
-import test from "node:test";
+
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import test from "node:test";
 
 import {
   DRAFT_GROUP_FILES,

@@ -20,9 +20,7 @@ export default defineConfig({
   // On CI: "list" for the job log, "github" for inline annotations on the diff,
   // and an html report uploaded as an artifact, so a red run is diagnosable
   // without a rerun.
-  reporter: process.env.CI
-    ? [["list"], ["github"], ["html", { open: "never" }]]
-    : "list",
+  reporter: process.env.CI ? [["list"], ["github"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: BASE_URL,
     trace: "retain-on-failure",

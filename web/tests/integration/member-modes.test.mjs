@@ -4,9 +4,8 @@
 // github.test.mjs, the sign-in itself is a token seeded into localStorage, and
 // api.github.com is stubbed.
 
-import { test, expect, openScenarioList } from "./fixtures.mjs";
-
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
 const TOKEN = "gh-tier2-token";
@@ -88,7 +87,7 @@ test.describe("signed in, but not a member", () => {
 
     await expect(page.locator("#welcome-picker")).toBeVisible();
     await expect(page.locator("#mode-choice")).toBeHidden();
-    });
+  });
 });
 
 test.describe("signed in as a member", () => {
@@ -110,7 +109,9 @@ test.describe("signed in as a member", () => {
     await expect(page.locator("#go")).toBeDisabled();
   });
 
-  test("Edit existing greys out the name pane and the blank-template row, and Let's go! needs only a pick", async ({ app }) => {
+  test("Edit existing greys out the name pane and the blank-template row, and Let's go! needs only a pick", async ({
+    app,
+  }) => {
     const { page } = app;
     await signInAs(page);
 
@@ -166,7 +167,7 @@ test.describe("a member with work to resume", () => {
     ]),
   });
 
-  test("sees the resume list, headed \"Resume your work\", full width, above the picker", async ({ app }) => {
+  test('sees the resume list, headed "Resume your work", full width, above the picker', async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
@@ -177,7 +178,10 @@ test.describe("a member with work to resume", () => {
     expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
     const banner = await page.locator("#mode-choice").boundingBox();
     const pick = await page.locator(".picker-slide").first().boundingBox();
-    expect(banner && pick && Math.abs(banner.y - pick.y) < 4 && banner.x < pick.x, "banner is not left of the picker").toBe(true);
+    expect(
+      banner && pick && Math.abs(banner.y - pick.y) < 4 && banner.x < pick.x,
+      "banner is not left of the picker",
+    ).toBe(true);
   });
 });
 
@@ -217,7 +221,9 @@ test.describe("editing in place", () => {
       ]),
     });
 
-    test("opens the file's own source, saves it at its own path on an updates/ branch, and offers the PR", async ({ app }) => {
+    test("opens the file's own source, saves it at its own path on an updates/ branch, and offers the PR", async ({
+      app,
+    }) => {
       const { page } = app;
       const path = await pickFirstScenario(page);
       await page.locator("#go").click();
@@ -231,7 +237,9 @@ test.describe("editing in place", () => {
       await expect(page.locator("#github-open-pr")).toBeVisible();
 
       const trees = seen.filter((r) => r.method === "POST" && r.url.endsWith("/git/trees"));
-      expect(JSON.parse(trees[0].body ?? "{}").tree.map((/** @type {{path: string}} */ entry) => entry.path)).toEqual([path]);
+      expect(JSON.parse(trees[0].body ?? "{}").tree.map((/** @type {{path: string}} */ entry) => entry.path)).toEqual([
+        path,
+      ]);
       const patch = seen.find((r) => r.method === "PATCH");
       expect(decodeURIComponent(patch?.url ?? "")).toContain(`/scenario-editor/${LOGIN}/updates/`);
       expect(JSON.parse(patch?.body ?? "{}").force, "a plain edit must not force-move the branch").toBeUndefined();
@@ -264,7 +272,9 @@ test.describe("editing in place", () => {
       await expect(page.locator(".CodeMirror")).toContainText("the copy on the earlier edit branch");
     });
 
-    test("asks, and Start over opens main's copy and force-resets the branch only on the first save", async ({ app }) => {
+    test("asks, and Start over opens main's copy and force-resets the branch only on the first save", async ({
+      app,
+    }) => {
       const { page } = app;
       await pickFirstScenario(page);
       await page.locator("#go").click();
@@ -275,7 +285,10 @@ test.describe("editing in place", () => {
 
       await expect(page.locator("#workspace")).toBeVisible();
       await expect(page.locator(".CodeMirror")).not.toContainText("the copy on the earlier edit branch");
-      expect(seen.filter((r) => r.method !== "GET"), "starting over changed the branch before any save").toEqual([]);
+      expect(
+        seen.filter((r) => r.method !== "GET"),
+        "starting over changed the branch before any save",
+      ).toEqual([]);
 
       await page.locator("#github-save").click();
       await expect(page.locator("#github-open-pr")).toBeVisible();

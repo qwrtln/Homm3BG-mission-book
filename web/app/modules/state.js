@@ -5,13 +5,13 @@
  * @type {AppState}
  */
 export const state = {
-  entries: [],           // every scenario the search can offer (mission + draft, not templates)
-  chosenPath: null,      // path of the entry currently loaded in the editor
+  entries: [], // every scenario the search can offer (mission + draft, not templates)
+  chosenPath: null, // path of the entry currently loaded in the editor
   chosenTitle: "",
   building: false,
   runner: null,
   lastPdf: null,
-  cm: null,               // CodeMirror instance, created once over #editor
+  cm: null, // CodeMirror instance, created once over #editor
 
   // Files a contributor added from their own machine, not the repository: a
   // new header image or new map art the scenario does not have committed

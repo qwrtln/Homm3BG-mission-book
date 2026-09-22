@@ -3,10 +3,10 @@
 //
 // No dependencies. node:http only.
 
-import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
+import { createServer } from "node:http";
 import { dirname, extname, join, normalize, sep } from "node:path";
+import { fileURLToPath } from "node:url";
 
 // web/tests/driver/static-server.mjs -> repository root is three levels up.
 const REPO_ROOT = dirname(dirname(dirname(dirname(fileURLToPath(import.meta.url)))));
@@ -59,9 +59,7 @@ function resolveRequestPath(requestPath) {
  * @returns {boolean} true if the response may carry a long cache lifetime.
  */
 function isCacheable(requestPath) {
-  return requestPath.endsWith(".data") ||
-    requestPath.endsWith(".wasm") ||
-    requestPath.includes("/busytex/");
+  return requestPath.endsWith(".data") || requestPath.endsWith(".wasm") || requestPath.includes("/busytex/");
 }
 
 /**
@@ -107,9 +105,10 @@ export async function startStaticServer(options = {}) {
   return {
     origin,
     port,
-    close: () => new Promise((resolve, reject) => {
-      server.close((error) => (error ? reject(error) : resolve(undefined)));
-    }),
+    close: () =>
+      new Promise((resolve, reject) => {
+        server.close((error) => (error ? reject(error) : resolve(undefined)));
+      }),
   };
 }
 

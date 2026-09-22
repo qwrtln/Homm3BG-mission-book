@@ -1,7 +1,7 @@
-import { state } from "./state.js";
-import { el } from "./dom.js";
-import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.js";
 import { getToken } from "../../shared/github-auth.js";
+import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.js";
+import { el } from "./dom.js";
+import { state } from "./state.js";
 
 /**
  * Records what "nothing to save" looks like: the source as it was opened or

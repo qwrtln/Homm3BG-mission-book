@@ -4,18 +4,21 @@
 // `document` inside the function instead of at module scope. That is what this
 // file's very existence proves; busytexBase() itself is browser-only and is
 // covered by tier 2, not here.
-import test from "node:test";
+
 import assert from "node:assert/strict";
+import test from "node:test";
 
 import {
-  publishedPdfUrl, PUBLISHED_PDF_REPO, CATEGORY_LABELS, CATEGORY_ORDER, TEMPLATES, REPO,
+  CATEGORY_LABELS,
+  CATEGORY_ORDER,
+  PUBLISHED_PDF_REPO,
+  publishedPdfUrl,
+  REPO,
+  TEMPLATES,
 } from "../../app/modules/config.js";
 
 test("publishedPdfUrl points at the branch the nightly build publishes to", () => {
-  assert.equal(
-    publishedPdfUrl("astral_run"),
-    `${PUBLISHED_PDF_REPO}/en-astral_run-color/astral_run_en.pdf`,
-  );
+  assert.equal(publishedPdfUrl("astral_run"), `${PUBLISHED_PDF_REPO}/en-astral_run-color/astral_run_en.pdf`);
 });
 
 test("publishedPdfUrl takes a bare basename, not a path and not a .tex name", () => {
@@ -23,8 +26,8 @@ test("publishedPdfUrl takes a bare basename, not a path and not a .tex name", ()
   // names below are what a path or an extension would produce.
   assert.equal(
     publishedPdfUrl("gold_rush"),
-    "https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts"
-      + "/en-gold_rush-color/gold_rush_en.pdf",
+    "https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts" +
+      "/en-gold_rush-color/gold_rush_en.pdf",
   );
   assert.ok(
     publishedPdfUrl("clash/gold_rush").includes("en-clash/gold_rush-color"),

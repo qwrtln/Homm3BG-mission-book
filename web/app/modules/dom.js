@@ -97,7 +97,11 @@ export function basenameNoExt(path) {
  * @returns {string}
  */
 export function sanitizeFilename(name) {
-  const cleaned = name.trim().toLowerCase().replace(/[^a-z0-9_-]+/g, "_").replace(/^_+|_+$/g, "");
+  const cleaned = name
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, "_")
+    .replace(/^_+|_+$/g, "");
   return cleaned || "untitled";
 }
 

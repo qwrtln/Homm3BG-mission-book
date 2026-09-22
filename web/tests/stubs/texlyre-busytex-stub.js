@@ -298,12 +298,12 @@ async function ensureCacheVersion() {
 
 export {
   BusyTexRunner,
-  Logger,
-  LuaLatex,
-  PdfLatex,
-  XeLatex,
   clearAllPackageCache,
   deletePackageCache,
   ensureCacheVersion,
   isPackageCached,
+  Logger,
+  LuaLatex,
+  PdfLatex,
+  XeLatex,
 };

@@ -5,8 +5,8 @@
 // outside-click handlers, the selected row, the Let's go! gate, and the
 // hand-off from the welcome screen to the workspace.
 
-import { test, expect, openScenarioList } from "./fixtures.mjs";
 import { withScenarioTitle } from "../../shared/build-plan.js";
+import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 // config.js's TEMPLATES. These two are the app's own constants, not book
 // content, and nothing in the DOM names them — a blank pick is the only way
@@ -128,8 +128,7 @@ test("typing a query filters the dropdown to the rows that match", async ({ app 
 
   await search.fill(query);
 
-  await expect.poll(() => titlesOf(results), { message: "the query's own row was filtered out" })
-    .toContain(query);
+  await expect.poll(() => titlesOf(results), { message: "the query's own row was filtered out" }).toContain(query);
   const filtered = await titlesOf(results);
   expect(filtered, "a row that cannot match the query was still drawn").not.toContain(control);
   expect(filtered.length, "the query drew as many rows as the empty search did").toBeLessThan(allTitles.length);
@@ -253,7 +252,8 @@ test("Let's go! leaves the welcome screen and loads the picked scenario's source
   // app fetches it rather than pinned to any one scenario.
   // Only its title slot changes: the typed name replaces the entry's own.
   const expected = withScenarioTitle(await repoFile(page, firstPath), "welcome picker test");
-  await expect.poll(() => editorValue(page), { message: "the picked scenario's source never reached the editor" })
+  await expect
+    .poll(() => editorValue(page), { message: "the picked scenario's source never reached the editor" })
     .toBe(expected);
   // Nothing was autosaved for this identity, so the draft note stays hidden.
   await expect(page.locator("#draft-note")).toBeHidden();
@@ -294,7 +294,8 @@ test("the blank-scenario buttons pick a template, and Let's go! loads that templ
   await expect(page.locator("#welcome")).toBeHidden();
   const blankSource = await repoFile(page, TEMPLATE_SCENARIO_PATH);
   const blankExpected = withScenarioTitle(blankSource, "blank test");
-  await expect.poll(() => editorValue(page), { message: "the blank template never reached the editor" })
+  await expect
+    .poll(() => editorValue(page), { message: "the blank template never reached the editor" })
     .toBe(blankExpected);
   // A template is not a scenario: it has no published PDF to prefetch, so
   // nothing here needed the CDN stubbed.

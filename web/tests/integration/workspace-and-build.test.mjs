@@ -3,7 +3,7 @@
 // theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
 // which installs the engine and GitHub stubs before navigating.
 
-import { test, expect, openScenarioList, engineCalls } from "./fixtures.mjs";
+import { engineCalls, expect, openScenarioList, test } from "./fixtures.mjs";
 
 // Long enough to pass picker.js's MIN_NAME_LENGTH, and not a real scenario
 // name: commitEntry uses it as the file's own identity, never the entry's.
@@ -132,7 +132,10 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
 
   const calls = await engineCalls(page);
   const compile = calls.find((call) => call.method === "LuaLatex.compile");
-  expect(compile, `the app never asked the engine to compile; recorded calls: ${JSON.stringify(calls.map((c) => c.method))}`).toBeTruthy();
+  expect(
+    compile,
+    `the app never asked the engine to compile; recorded calls: ${JSON.stringify(calls.map((c) => c.method))}`,
+  ).toBeTruthy();
   // What build.js passes: the plan's entry point, plus every staged file.
   expect(typeof compile.args[0].input).toBe("string");
   expect(compile.args[0].additionalFiles.length).toBeGreaterThan(0);
@@ -278,9 +281,7 @@ test("the theme toggle flips the theme and the choice survives a reload", async 
   // The toggle offers the *other* theme, so its glyph is the opposite one.
   await expect(page.locator("#theme-toggle")).toHaveText(after === "dark" ? "☀️" : "🌙");
   // CodeMirror is themed along with the document.
-  await expect(page.locator(".CodeMirror")).toHaveClass(
-    after === "dark" ? /cm-s-github-dark/ : /cm-s-github-light/,
-  );
+  await expect(page.locator(".CodeMirror")).toHaveClass(after === "dark" ? /cm-s-github-dark/ : /cm-s-github-light/);
 
   expect(await page.evaluate((key) => localStorage.getItem(key), THEME_KEY)).toBe(after);
 

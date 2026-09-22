@@ -1,10 +1,10 @@
 import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.js";
-import { TEMPLATES, publishedPdfUrl } from "./config.js";
-import { state } from "./state.js";
 import { errorMessage } from "../../shared/errors.js";
 import { validateScenarioName } from "../../shared/scenario-name.js";
-import { el, basenameNoExt } from "./dom.js";
+import { publishedPdfUrl, TEMPLATES } from "./config.js";
+import { basenameNoExt, el } from "./dom.js";
 import { preloadFile, preloadText } from "./files.js";
+import { state } from "./state.js";
 import { commitEntry } from "./workspace.js";
 
 // A pick only marks a pending choice, no fetch yet; "Let's go!" needs a pick
@@ -113,9 +113,7 @@ export function updateGoButton() {
   el("scenario-name").setAttribute("aria-invalid", showNameError ? "true" : "false");
 
   el("go").disabled = !pendingPath || !check.valid;
-  el("go-hint").textContent = !pendingPath
-    ? "Pick a scenario or a blank template first."
-    : check.message;
+  el("go-hint").textContent = !pendingPath ? "Pick a scenario or a blank template first." : check.message;
 }
 
 /**

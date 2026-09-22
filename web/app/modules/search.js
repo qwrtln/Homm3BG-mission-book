@@ -1,7 +1,7 @@
 import { CATEGORY_ORDER } from "./config.js";
-import { state } from "./state.js";
-import { el, escapeHtml, closestTo } from "./dom.js";
+import { closestTo, el, escapeHtml } from "./dom.js";
 import { selectPending } from "./picker.js";
+import { state } from "./state.js";
 
 /**
  * Substring match ranked by position, else letters found in order (ranked
@@ -78,12 +78,19 @@ export function renderResults() {
   if (!groups.length) {
     list.innerHTML = '<div class="combobox-empty">No scenario matches.</div>';
   } else {
-    list.innerHTML = groups.map((group) => `
+    list.innerHTML = groups
+      .map(
+        (group) => `
       <div class="combobox-group-label">${group.book === "mission" ? "Mission Book" : "Draft Book"} — ${escapeHtml(group.category)}</div>
-      ${group.items.map(({ entry }) =>
-        `<button type="button" class="combobox-item" data-path="${escapeHtml(entry.path)}">${escapeHtml(entry.title)}</button>`
-      ).join("")}
-    `).join("");
+      ${group.items
+        .map(
+          ({ entry }) =>
+            `<button type="button" class="combobox-item" data-path="${escapeHtml(entry.path)}">${escapeHtml(entry.title)}</button>`,
+        )
+        .join("")}
+    `,
+      )
+      .join("");
   }
   list.hidden = false;
   activeItem = -1;
@@ -110,10 +117,15 @@ export function initSearch() {
   el("search").addEventListener("input", renderResults);
   el("search").addEventListener("keydown", (event) => {
     const items = () => /** @type {HTMLElement[]} */ ([...el("search-results").querySelectorAll(".combobox-item")]);
-    if (event.key === "ArrowDown") { event.preventDefault(); moveActive(1); }
-    else if (event.key === "ArrowUp") { event.preventDefault(); moveActive(-1); }
-    else if (event.key === "Escape") { el("search-results").hidden = true; }
-    else if (event.key === "Enter") {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      moveActive(1);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      moveActive(-1);
+    } else if (event.key === "Escape") {
+      el("search-results").hidden = true;
+    } else if (event.key === "Enter") {
       event.preventDefault();
       const list = items();
       const target = activeItem >= 0 ? list[activeItem] : list[0];

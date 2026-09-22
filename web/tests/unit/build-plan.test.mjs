@@ -1,22 +1,23 @@
 // Tier 1 unit tests for web/shared/build-plan.js, the app's only piece of
 // substantial logic with no DOM and no network in it.
-import test from "node:test";
+
 import assert from "node:assert/strict";
+import test from "node:test";
 
 import {
   ALWAYS_PRELOAD,
   CARRIED_TEXMF,
   CORE_GLYPHS,
-  DRAFT_GROUP_FILES,
-  GROUP_FILES,
-  MAIN_EN,
-  PATH_MACROS,
   collectReferencedAssets,
   collectReferencedGlyphs,
+  DRAFT_GROUP_FILES,
   firstError,
+  GROUP_FILES,
   glyphFilesFor,
+  MAIN_EN,
   missingFiles,
   newMissingPaths,
+  PATH_MACROS,
   pageCount,
   parseScenarioIndex,
   planScenarioBuild,
@@ -105,9 +106,7 @@ test("parseScenarioIndex ignores a group file the table does not list", () => {
 });
 
 test("parseScenarioIndex reads the draft book from the draft table", () => {
-  const sources = [
-    { path: "draft-scenarios/alliances/main.tex", source: String.raw`\input{\alliancespath/pact.tex}` },
-  ];
+  const sources = [{ path: "draft-scenarios/alliances/main.tex", source: String.raw`\input{\alliancespath/pact.tex}` }];
   assert.deepEqual(parseScenarioIndex(sources, DRAFT_GROUP_FILES), [
     { path: "draft-scenarios/alliances/pact.tex", dir: "draft-scenarios/alliances" },
   ]);
@@ -199,7 +198,10 @@ test("the path macro table matches metadata.tex's own declarations", () => {
   assert.equal(PATH_MACROS.svgs, "assets/glyphs", "the svgs macro does not point at assets/svgs");
   assert.equal(PATH_MACROS.qr, "assets/qr-codes");
   assert.equal(PATH_MACROS.sections, "sections");
-  assert.deepEqual(GROUP_FILES.map((group) => group.dir), ["coops", "clash", "campaigns"]);
+  assert.deepEqual(
+    GROUP_FILES.map((group) => group.dir),
+    ["coops", "clash", "campaigns"],
+  );
 });
 
 test("withScenarioTitle swaps only the title slot", async () => {

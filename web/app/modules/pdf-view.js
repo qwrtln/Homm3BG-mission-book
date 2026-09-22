@@ -1,5 +1,5 @@
-import { state } from "./state.js";
 import { el, escapeHtml } from "./dom.js";
+import { state } from "./state.js";
 
 /** Empties the PDF pane and the error panel. @returns {void} */
 export function clearPdf() {
@@ -25,7 +25,8 @@ export function showPdf(blob) {
  * @returns {void}
  */
 export function showPdfLoading(text) {
-  el("pdf-body").innerHTML = `<div class="empty-pdf loading"><span class="spinner big"></span><p>${escapeHtml(text)}</p></div>`;
+  el("pdf-body").innerHTML =
+    `<div class="empty-pdf loading"><span class="spinner big"></span><p>${escapeHtml(text)}</p></div>`;
 }
 
 /**
@@ -34,7 +35,8 @@ export function showPdfLoading(text) {
  */
 export function showError(record) {
   el("error-panel").hidden = false;
-  el("first-error").textContent = record.firstError || "The build failed, but no specific LaTeX error line was found in the log.";
+  el("first-error").textContent =
+    record.firstError || "The build failed, but no specific LaTeX error line was found in the log.";
   el("full-log").textContent = record.log || "";
   el("full-log-details").open = false;
 }

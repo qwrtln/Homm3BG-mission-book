@@ -3,10 +3,11 @@
 // The module touches the DOM only inside renderResults, moveActive and
 // initSearch, never at import time, so Node loads it without a DOM. It became
 // importable once config.js stopped resolving BASE at module scope.
-import test from "node:test";
-import assert from "node:assert/strict";
 
-import { matchScore, groupedResults } from "../../app/modules/search.js";
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { groupedResults, matchScore } from "../../app/modules/search.js";
 import { state } from "../../app/modules/state.js";
 
 /**
@@ -44,11 +45,7 @@ function resultsFor(entries, query) {
 test("matchScore ranks a substring match by where it starts", () => {
   assert.equal(matchScore("astral", "Astral Run"), 0);
   assert.equal(matchScore("run", "Astral Run"), 7);
-  assert.equal(
-    matchScore("run", "Run of the Astral Run"),
-    0,
-    "the first occurrence wins, not the last",
-  );
+  assert.equal(matchScore("run", "Run of the Astral Run"), 0, "the first occurrence wins, not the last");
 });
 
 test("matchScore is case-insensitive and ignores surrounding whitespace", () => {
@@ -83,59 +80,82 @@ test("matchScore scores an empty query zero, so everything matches equally", () 
 });
 
 test("groupedResults groups entries by book and category", () => {
-  const groups = resultsFor([
-    entry("mission", "Clash", "Astral Run"),
-    entry("mission", "Clash", "Astral Rise"),
-    entry("mission", "Coop", "Astral Pact"),
-    entry("draft", "Clash", "Astral Draft"),
-  ], "astral");
+  const groups = resultsFor(
+    [
+      entry("mission", "Clash", "Astral Run"),
+      entry("mission", "Clash", "Astral Rise"),
+      entry("mission", "Coop", "Astral Pact"),
+      entry("draft", "Clash", "Astral Draft"),
+    ],
+    "astral",
+  );
   assert.deepEqual(
     groups.map((group) => `${group.book}|${group.category}`),
     ["mission|Coop", "mission|Clash", "draft|Clash"],
   );
-  assert.deepEqual(groups.map((group) => group.items.length), [1, 2, 1]);
+  assert.deepEqual(
+    groups.map((group) => group.items.length),
+    [1, 2, 1],
+  );
 });
 
 test("groupedResults drops entries that do not match at all", () => {
-  const groups = resultsFor([
-    entry("mission", "Clash", "Astral Run"),
-    entry("mission", "Coop", "Gold Rush"),
-  ], "astral");
+  const groups = resultsFor([entry("mission", "Clash", "Astral Run"), entry("mission", "Coop", "Gold Rush")], "astral");
   assert.equal(groups.length, 1);
-  assert.deepEqual(groups[0].items.map(({ entry: e }) => e.title), ["Astral Run"]);
+  assert.deepEqual(
+    groups[0].items.map(({ entry: e }) => e.title),
+    ["Astral Run"],
+  );
 });
 
 test("groupedResults sorts a group by score, then by title", () => {
-  const groups = resultsFor([
-    // "run" at index 7, 0 and 11: the middle one wins.
-    entry("mission", "Clash", "Astral Run"),
-    entry("mission", "Clash", "Run of Gold"),
-    entry("mission", "Clash", "The Silver Run"),
-    // Same score as "Astral Run" (index 7), so the title breaks the tie.
-    entry("mission", "Clash", "Aaaaaa Run"),
-  ], "run");
+  const groups = resultsFor(
+    [
+      // "run" at index 7, 0 and 11: the middle one wins.
+      entry("mission", "Clash", "Astral Run"),
+      entry("mission", "Clash", "Run of Gold"),
+      entry("mission", "Clash", "The Silver Run"),
+      // Same score as "Astral Run" (index 7), so the title breaks the tie.
+      entry("mission", "Clash", "Aaaaaa Run"),
+    ],
+    "run",
+  );
   assert.deepEqual(
     groups[0].items.map(({ entry: e, score }) => [e.title, score]),
-    [["Run of Gold", 0], ["Aaaaaa Run", 7], ["Astral Run", 7], ["The Silver Run", 11]],
+    [
+      ["Run of Gold", 0],
+      ["Aaaaaa Run", 7],
+      ["Astral Run", 7],
+      ["The Silver Run", 11],
+    ],
   );
 });
 
 test("groupedResults puts every mission book group before every draft book group", () => {
-  const groups = resultsFor([
-    // The draft entry is listed first and scores better, and still comes last.
-    entry("draft", "Coop", "Run"),
-    entry("mission", "Alliance", "Astral Run"),
-  ], "run");
-  assert.deepEqual(groups.map((group) => group.book), ["mission", "draft"]);
+  const groups = resultsFor(
+    [
+      // The draft entry is listed first and scores better, and still comes last.
+      entry("draft", "Coop", "Run"),
+      entry("mission", "Alliance", "Astral Run"),
+    ],
+    "run",
+  );
+  assert.deepEqual(
+    groups.map((group) => group.book),
+    ["mission", "draft"],
+  );
 });
 
 test("groupedResults orders groups of one book by CATEGORY_ORDER", () => {
-  const groups = resultsFor([
-    entry("mission", "Alliance", "Run A"),
-    entry("mission", "Campaign", "Run B"),
-    entry("mission", "Clash", "Run C"),
-    entry("mission", "Coop", "Run D"),
-  ], "run");
+  const groups = resultsFor(
+    [
+      entry("mission", "Alliance", "Run A"),
+      entry("mission", "Campaign", "Run B"),
+      entry("mission", "Clash", "Run C"),
+      entry("mission", "Coop", "Run D"),
+    ],
+    "run",
+  );
   assert.deepEqual(
     groups.map((group) => group.category),
     ["Coop", "Clash", "Campaign", "Alliance"],
@@ -144,11 +164,11 @@ test("groupedResults orders groups of one book by CATEGORY_ORDER", () => {
 });
 
 test("groupedResults returns every entry for an empty query", () => {
-  const groups = resultsFor([
-    entry("mission", "Clash", "Astral Run"),
-    entry("draft", "Coop", "Gold Rush"),
-  ], "");
-  assert.deepEqual(groups.map((group) => group.items.length), [1, 1]);
+  const groups = resultsFor([entry("mission", "Clash", "Astral Run"), entry("draft", "Coop", "Gold Rush")], "");
+  assert.deepEqual(
+    groups.map((group) => group.items.length),
+    [1, 1],
+  );
 });
 
 test("groupedResults leaves state.entries as it found it", () => {

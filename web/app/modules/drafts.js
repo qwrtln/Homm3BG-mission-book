@@ -27,7 +27,9 @@ export function loadDraft(path) {
 export function deleteDraft(path) {
   try {
     localStorage.removeItem(storageKey(path));
-  } catch { /* blocked storage: nothing was stored */ }
+  } catch {
+    /* blocked storage: nothing was stored */
+  }
 }
 
 /**

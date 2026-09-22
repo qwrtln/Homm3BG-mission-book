@@ -1,6 +1,6 @@
 import { refreshUnsavedNote } from "./dirty.js";
-import { state } from "./state.js";
 import { el, escapeHtml } from "./dom.js";
+import { state } from "./state.js";
 
 // No server: a chosen file never leaves the browser, it just joins the
 // virtual filesystem the build compiles from, under an editable target path.
@@ -33,7 +33,10 @@ export function resetUploads() {
   el("upload-maps-names").innerHTML = "";
   el("upload-maps-names").hidden = true;
   setUploadStatus("upload-header-status", "Goes to <code>assets/images/</code>.");
-  setUploadStatus("upload-maps-status", "One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.");
+  setUploadStatus(
+    "upload-maps-status",
+    "One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.",
+  );
 }
 
 /**
@@ -98,9 +101,7 @@ export function restageHeader() {
  */
 export function restageMaps() {
   for (const item of mapUploads) if (item.path) state.uploadedFiles.delete(item.path);
-  const inputs = /** @type {HTMLInputElement[]} */ (
-    [...el("upload-maps-names").querySelectorAll(".upload-rename")]
-  );
+  const inputs = /** @type {HTMLInputElement[]} */ ([...el("upload-maps-names").querySelectorAll(".upload-rename")]);
   const seen = new Set();
   let collision = false;
   mapUploads.forEach((item, i) => {
@@ -124,12 +125,16 @@ export function restageMaps() {
 /** Draws one rename row per staged map image. @returns {void} */
 export function renderMapUploads() {
   const list = el("upload-maps-names");
-  list.innerHTML = mapUploads.map((item, i) => `
+  list.innerHTML = mapUploads
+    .map(
+      (item, i) => `
     <div class="upload-rename-row">
       <span class="orig-name">${escapeHtml(item.originalName)} →</span>
       <input type="text" class="upload-rename" data-index="${i}" value="${escapeHtml(item.originalName)}">
     </div>
-  `).join("");
+  `,
+    )
+    .join("");
   list.hidden = false;
   list.querySelectorAll(".upload-rename").forEach((input) => input.addEventListener("input", restageMaps));
   restageMaps();
@@ -167,7 +172,9 @@ export function initUploads() {
     el("upload-popover").hidden = !el("upload-popover").hidden;
   });
   el("upload-popover").addEventListener("click", (event) => event.stopPropagation());
-  document.addEventListener("click", () => { el("upload-popover").hidden = true; });
+  document.addEventListener("click", () => {
+    el("upload-popover").hidden = true;
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") el("upload-popover").hidden = true;
   });
@@ -187,16 +194,22 @@ export function initUploads() {
     const files = [...(el("upload-maps").files ?? [])];
     if (!files.length) return;
     if (files.length > MAX_MAP_FILES) {
-      setUploadStatus("upload-maps-status", `Chose ${files.length} files, more than the ${MAX_MAP_FILES}-player limit. None were staged — pick again.`, "bad");
+      setUploadStatus(
+        "upload-maps-status",
+        `Chose ${files.length} files, more than the ${MAX_MAP_FILES}-player limit. None were staged — pick again.`,
+        "bad",
+      );
       el("upload-maps").value = "";
       return;
     }
     for (const item of mapUploads) if (item.path) state.uploadedFiles.delete(item.path);
-    mapUploads = await Promise.all(files.map(async (file) => ({
-      bytes: await readAsUint8Array(file),
-      originalName: file.name,
-      path: null,
-    })));
+    mapUploads = await Promise.all(
+      files.map(async (file) => ({
+        bytes: await readAsUint8Array(file),
+        originalName: file.name,
+        path: null,
+      })),
+    );
     renderMapUploads();
   });
 }

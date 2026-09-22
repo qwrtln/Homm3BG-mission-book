@@ -1,24 +1,32 @@
-import { getToken, signIn, completeSignIn, clearToken } from "../../shared/github-auth.js";
-import {
-  saveScenarioToRepo, ensurePullRequest, findPullRequest, deleteWorkBranch, discoverGithubContext, findEditBranch, getRepoFile, getBlobBytes,
-  UPSTREAM_OWNER, UPSTREAM_REPO, GithubApiError,
-} from "../../shared/github-contrib.js?v=2";
-
 import { errorMessage } from "../../shared/errors.js";
-import { state, requireEditor } from "./state.js";
-import { el, setStatus, escapeHtml, basenameNoExt, closestTo, confirmDelete, confirmAction } from "./dom.js";
-import { loadDraft, saveDraft, deleteDraft } from "./drafts.js";
-import { reflectRoute, clearRoute, endRouteLoading } from "./route.js";
+import { clearToken, completeSignIn, getToken, signIn } from "../../shared/github-auth.js";
+import {
+  deleteWorkBranch,
+  discoverGithubContext,
+  ensurePullRequest,
+  findEditBranch,
+  findPullRequest,
+  GithubApiError,
+  getBlobBytes,
+  getRepoFile,
+  saveScenarioToRepo,
+  UPSTREAM_OWNER,
+  UPSTREAM_REPO,
+} from "../../shared/github-contrib.js?v=2";
 import { parseRoute, slugToPath } from "../../shared/route.js";
-import { clearPdf } from "./pdf-view.js";
-import { markClean, isDirty } from "./dirty.js";
 import { uploadsSignature } from "../../shared/unsaved.js";
+import { isDirty, markClean } from "./dirty.js";
+import { basenameNoExt, closestTo, confirmAction, confirmDelete, el, escapeHtml, setStatus } from "./dom.js";
+import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
 import { loadEntries } from "./entries.js";
-import { showWorkspace, openForEdit, showWelcome } from "./workspace.js";
-import { onEditPick, settleModes } from "./picker.js";
 import { preloadFile } from "./files.js";
-import { resetUploads, restoreUploads } from "./uploads.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
+import { clearPdf } from "./pdf-view.js";
+import { onEditPick, settleModes } from "./picker.js";
+import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
+import { requireEditor, state } from "./state.js";
+import { resetUploads, restoreUploads } from "./uploads.js";
+import { openForEdit, showWelcome, showWorkspace } from "./workspace.js";
 
 /** Shows either the sign-in button or the signed-in strip. @returns {void} */
 function renderGithubHeader() {
@@ -87,7 +95,9 @@ async function checkExistingPullRequest() {
     el("github-pr-link").href = pr.html_url;
     el("github-pr-link").hidden = false;
     el("github-open-pr").hidden = true;
-  } catch { /* best-effort: leave "Open PR" showing */ }
+  } catch {
+    /* best-effort: leave "Open PR" showing */
+  }
 }
 
 const CATEGORY_LABELS = { clash: "Clash", coops: "Cooperative", campaigns: "Campaign", alliances: "Alliance" };
@@ -100,7 +110,9 @@ const CATEGORY_LABELS = { clash: "Clash", coops: "Cooperative", campaigns: "Camp
  */
 function draftLabel(texPath) {
   const dir = texPath.split("/").slice(-2, -1)[0] ?? "";
-  const title = basenameNoExt(texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const title = basenameNoExt(texPath)
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
   const category = /** @type {Record<string, string>} */ (CATEGORY_LABELS)[dir];
   return category ? `${category}: ${title}` : title;
 }
@@ -116,7 +128,11 @@ function timeAgo(iso) {
   if (Number.isNaN(then)) return "";
   const seconds = Math.min(0, Math.round((then - Date.now()) / 1000));
   const units = /** @type {[Intl.RelativeTimeFormatUnit, number][]} */ ([
-    ["year", 31536000], ["month", 2592000], ["day", 86400], ["hour", 3600], ["minute", 60],
+    ["year", 31536000],
+    ["month", 2592000],
+    ["day", 86400],
+    ["hour", 3600],
+    ["minute", 60],
   ]);
   const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
   for (const [unit, size] of units) {
@@ -127,7 +143,7 @@ function timeAgo(iso) {
 
 /** Draws the resume list from the signed-in user's own branches. @returns {void} */
 function renderResumeDrafts() {
-  const drafts = (githubContext?.drafts) || [];
+  const drafts = githubContext?.drafts || [];
   const list = el("resume-list");
   el("resume-loading").hidden = true;
   el("resume-hint").hidden = false;
@@ -139,10 +155,12 @@ function renderResumeDrafts() {
       const detail = ago ? `${d.branch}, last edit ${ago}` : d.branch;
       const kind = d.kind === "edit" ? "editing in place" : "new draft";
       const label = draftLabel(d.texPath);
-      return `<div class="resume-row">`
-        + `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(label)} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>`
-        + `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></button>`
-        + `</div>`;
+      return (
+        `<div class="resume-row">` +
+        `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(label)} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>` +
+        `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></button>` +
+        `</div>`
+      );
     })
     .join("");
 }
@@ -162,9 +180,10 @@ async function deleteResumableDraft(draft) {
 
   const fork = githubContext.fork;
   if (!githubContext.isMember && !fork) return;
-  const { owner, repo } = githubContext.isMember || !fork
-    ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
-    : { owner: fork.owner.login, repo: fork.name };
+  const { owner, repo } =
+    githubContext.isMember || !fork
+      ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+      : { owner: fork.owner.login, repo: fork.name };
 
   setStatus("Deleting…", { spinning: true });
   try {
@@ -173,7 +192,9 @@ async function deleteResumableDraft(draft) {
     renderResumeDrafts();
     setStatus(`Deleted "${label}".`);
   } catch (error) {
-    setStatus(error instanceof GithubApiError ? error.message : `Could not delete: ${errorMessage(error)}`, { tone: "bad" });
+    setStatus(error instanceof GithubApiError ? error.message : `Could not delete: ${errorMessage(error)}`, {
+      tone: "bad",
+    });
   }
 }
 
@@ -206,9 +227,10 @@ async function startEdit(path, title) {
     /** @param {boolean} startOver @returns {Promise<void>} */
     const open = async (startOver) => {
       el("edit-branch-prompt").hidden = true;
-      const source = branch && !startOver
-        ? await getRepoFile(token, UPSTREAM_OWNER, UPSTREAM_REPO, path, branch)
-        : /** @type {string} */ ((await preloadFile(path)).content);
+      const source =
+        branch && !startOver
+          ? await getRepoFile(token, UPSTREAM_OWNER, UPSTREAM_REPO, path, branch)
+          : /** @type {string} */ ((await preloadFile(path)).content);
       if (source == null) throw new Error(`"${path}" is not in the repository.`);
       await openForEdit(path, title, source, { startOver: branch !== null && startOver });
       if (branch && !startOver) {
@@ -237,7 +259,8 @@ async function startEdit(path, title) {
  * @returns {void}
  */
 function reportEditError(error) {
-  const message = error instanceof GithubApiError ? error.message : `Could not open that scenario: ${errorMessage(error)}`;
+  const message =
+    error instanceof GithubApiError ? error.message : `Could not open that scenario: ${errorMessage(error)}`;
   el("go-hint").textContent = message;
 }
 
@@ -255,9 +278,10 @@ async function openResumableDraft(draft) {
   // from drafts found on one.
   const fork = githubContext.fork;
   if (!githubContext.isMember && !fork) return;
-  const { owner, repo } = githubContext.isMember || !fork
-    ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
-    : { owner: fork.owner.login, repo: fork.name };
+  const { owner, repo } =
+    githubContext.isMember || !fork
+      ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+      : { owner: fork.owner.login, repo: fork.name };
 
   const cm = requireEditor();
 
@@ -265,7 +289,9 @@ async function openResumableDraft(draft) {
   try {
     const [content, assets] = await Promise.all([
       getRepoFile(token, owner, repo, draft.texPath, draft.branch),
-      Promise.all(draft.assets.map(async (a) => ({ path: a.path, bytes: await getBlobBytes(token, owner, repo, a.sha) }))),
+      Promise.all(
+        draft.assets.map(async (a) => ({ path: a.path, bytes: await getBlobBytes(token, owner, repo, a.sha) })),
+      ),
     ]);
     if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
 
@@ -276,7 +302,9 @@ async function openResumableDraft(draft) {
     githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
 
     state.chosenPath = draft.texPath;
-    state.chosenTitle = basenameNoExt(draft.texPath).replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    state.chosenTitle = basenameNoExt(draft.texPath)
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
     document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
     reflectRoute();
     el("build").disabled = state.building;
@@ -293,7 +321,8 @@ async function openResumableDraft(draft) {
     void checkExistingPullRequest();
     setStatus("Ready.");
   } catch (error) {
-    const message = error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
+    const message =
+      error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
     setStatus(message, { tone: "bad" });
   }
 }
@@ -320,7 +349,9 @@ async function resolveRoute() {
     const kept = localStorage.getItem(ROUTE_KEY);
     localStorage.removeItem(ROUTE_KEY);
     if (kept && !parseRoute(location.hash) && parseRoute(kept)) location.hash = kept;
-  } catch { /* blocked storage: nothing was kept */ }
+  } catch {
+    /* blocked storage: nothing was kept */
+  }
   const route = parseRoute(location.hash);
   if (!route) {
     if (location.hash.startsWith("#/")) clearRoute();
@@ -367,7 +398,9 @@ async function refreshWelcomeData() {
     try {
       githubContext = await discoverGithubContext(token);
       renderResumeDrafts();
-    } catch { /* keep showing what was already known */ }
+    } catch {
+      /* keep showing what was already known */
+    }
   }
   await entries;
 }
@@ -401,13 +434,17 @@ export function initGithub() {
   el("github-signin").addEventListener("click", () => {
     try {
       if (parseRoute(location.hash)) localStorage.setItem(ROUTE_KEY, location.hash);
-    } catch { /* blocked storage: sign-in still proceeds */ }
+    } catch {
+      /* blocked storage: sign-in still proceeds */
+    }
     if (state.chosenPath && state.cm) {
       clearTimeout(state.saveTimer ?? undefined);
       saveDraft(state.chosenPath, state.cm.getValue());
       try {
         localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
-      } catch { /* private mode, blocked storage: sign-in still proceeds */ }
+      } catch {
+        /* private mode, blocked storage: sign-in still proceeds */
+      }
     }
     signIn();
   });
@@ -419,12 +456,16 @@ export function initGithub() {
       const raw = localStorage.getItem(REOPEN_KEY);
       localStorage.removeItem(REOPEN_KEY);
       if (raw) pending = JSON.parse(raw);
-    } catch { /* nothing to reopen */ }
+    } catch {
+      /* nothing to reopen */
+    }
     if (pending?.path) reopenLocalDraft(pending.path, pending.title);
   })();
 
   onEditPick(startEdit);
-  el("back-to-welcome").addEventListener("click", () => { void leaveWorkspace(); });
+  el("back-to-welcome").addEventListener("click", () => {
+    void leaveWorkspace();
+  });
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
@@ -442,7 +483,9 @@ export function initGithub() {
       if (state.chosenPath) deleteDraft(state.chosenPath);
       try {
         localStorage.removeItem(REOPEN_KEY);
-      } catch { /* blocked storage: nothing to remove */ }
+      } catch {
+        /* blocked storage: nothing to remove */
+      }
       location.reload();
       return;
     }
