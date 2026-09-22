@@ -858,7 +858,7 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
       base,
       body: mode === "edit"
         ? `Edits the "${scenarioName}" scenario in place, using the browser mission book editor.`
-        : `Updates the "${scenarioName}" scenario, edited in the browser mission book editor.`,
+        : `Adds the "${scenarioName}" scenario, written in the browser mission book editor.`,
     }),
   });
 }
