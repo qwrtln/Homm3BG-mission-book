@@ -649,6 +649,20 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files,
     body: JSON.stringify({ base_tree: parentCommit.tree.sha, tree: entries }),
   });
 
+  if (tree.sha === parentCommit.tree.sha) {
+    // Nothing actually changed against parentSha; an empty commit would only
+    // clutter history. A plain save can just leave the branch as it is, but
+    // a startOver still has to force the ref onto parentSha (it may be
+    // sitting on discarded content).
+    if (force) {
+      await api(`/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`, token, {
+        method: "PATCH",
+        body: JSON.stringify({ sha: parentSha, force: true }),
+      });
+    }
+    return { owner, repo, branch, commitSha: parentSha };
+  }
+
   const commit = await apiJson(`/repos/${owner}/${repo}/git/commits`, token, parseCommit, {
     method: "POST",
     body: JSON.stringify({ message, tree: tree.sha, parents: [parentSha] }),

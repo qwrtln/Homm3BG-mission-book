@@ -91,6 +91,52 @@ function createGithubFake(options = {}) {
   const blobs = new Map();
   /** @type {Map<string, {path: string, sha: string}[]>} */
   const trees = new Map();
+  /** @type {Map<string, string>} */
+  const treeShaByContent = new Map();
+  /** @type {Map<string, string>} */
+  const blobShaByContent = new Map();
+  /** @type {Map<string, Map<string, string>>} tree sha -> path -> blob sha, fully resolved */
+  const resolvedTrees = new Map();
+
+  /**
+   * @param {string} content
+   * @returns {string}
+   */
+  function blobShaFor(content) {
+    const key = `raw:${content}`;
+    let sha = blobShaByContent.get(key);
+    if (!sha) {
+      counter += 1;
+      sha = `blob-${counter}`;
+      blobShaByContent.set(key, sha);
+      blobs.set(sha, content);
+    }
+    return sha;
+  }
+
+  /**
+   * @param {string} path
+   * @returns {[string, string][]}
+   */
+  function canonicalEntries(entriesMap) {
+    return [...entriesMap.entries()].sort(([a], [b]) => a.localeCompare(b));
+  }
+
+  /**
+   * @param {string} sha
+   * @returns {Map<string, string>}
+   */
+  function resolveTree(sha) {
+    if (resolvedTrees.has(sha)) return /** @type {Map<string, string>} */ (resolvedTrees.get(sha));
+    if (sha === "base-tree") {
+      const resolved = new Map();
+      for (const [filePath, content] of base) resolved.set(filePath, blobShaFor(content));
+      resolvedTrees.set(sha, resolved);
+      treeShaByContent.set(JSON.stringify(canonicalEntries(resolved)), sha);
+      return resolved;
+    }
+    return new Map();
+  }
 
   const calls = [];
   /** @type {{branch: string, message: string, files: {path: string, content: string}[]}[]} */
@@ -171,15 +217,26 @@ function createGithubFake(options = {}) {
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/git\/blobs$/) && method === "POST") {
-      counter += 1;
-      const sha = `blob-${counter}`;
-      blobs.set(sha, body.encoding === "base64" ? Buffer.from(body.content, "base64").toString("utf8") : body.content);
-      return json({ sha }, 201);
+      // Content-addressed like the real API, so an unchanged file reuses its
+      // existing blob sha instead of minting a new one.
+      const content = body.encoding === "base64" ? Buffer.from(body.content, "base64").toString("utf8") : body.content;
+      return json({ sha: blobShaFor(content) }, 201);
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/git\/trees$/) && method === "POST") {
-      counter += 1;
-      const sha = `tree-${counter}`;
+      // Content-addressed like the real API: base_tree overlaid with entries
+      // that leave every path unchanged resolves back to base_tree's own
+      // sha, which is what lets commitOnto notice a save changed nothing.
+      const merged = new Map(resolveTree(body.base_tree));
+      for (const entry of body.tree) merged.set(entry.path, entry.sha);
+      const key = JSON.stringify(canonicalEntries(merged));
+      let sha = treeShaByContent.get(key);
+      if (!sha) {
+        counter += 1;
+        sha = `tree-${counter}`;
+        treeShaByContent.set(key, sha);
+        resolvedTrees.set(sha, merged);
+      }
       trees.set(sha, body.tree);
       return json({ sha }, 201);
     }
@@ -449,6 +506,28 @@ test("an in-place edit pushes to scenario-editor/<username>/updates/<slug of the
   assert.equal(fake.fileOn(saved.branch, "clash/secret_bomb_stash.tex"), "new");
 });
 
+test("saving content identical to the branch tip commits nothing, but still reports success", async () => {
+  const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "old" } });
+  setHttpClient(fake.client);
+  const request = {
+    scenarioName: "Secret Bomb Stash",
+    texPath: "clash/secret_bomb_stash.tex",
+    texContent: "new",
+    uploadedFiles: new Map(),
+    context: context({ isMember: true, fork: null }),
+    mode: /** @type {const} */ ("edit"),
+  };
+
+  const first = await saveScenarioToRepo("t", request);
+  assert.equal(fake.commits.length, 1, "the real edit was committed");
+
+  const second = await saveScenarioToRepo("t", { ...request, branch: first.branch });
+
+  assert.equal(fake.commits.length, 1, "no second commit was pushed for unchanged content");
+  assert.equal(second.commitSha, first.commitSha);
+  assert.equal(fake.fileOn(first.branch, "clash/secret_bomb_stash.tex"), "new");
+});
+
 test("an in-place edit of a draft never touches its group file, even when it lists no \\input for it", async () => {
   const fake = createGithubFake({
     push: true,
@@ -585,16 +664,18 @@ test("a second save of the same scenario does not append the \\input line again"
   const fake = createGithubFake({ files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE } });
   setHttpClient(fake.client);
 
-  const save = () => saveScenarioToRepo("t", {
+  const save = (texContent) => saveScenarioToRepo("t", {
     scenarioName: "Dragon Valley",
     texPath: "draft-scenarios/clash/dragon-valley.tex",
-    texContent: "\\section{Dragons}",
+    texContent,
     uploadedFiles: new Map(),
     context: context(),
   });
 
-  const first = await save();
-  await save();
+  const first = await save("\\section{Dragons}");
+  // A genuine edit, not a repeat of the first save's content, so this second
+  // save still pushes a real commit and exercises the append-once logic.
+  await save("\\section{Dragons, again}");
 
   assert.equal(fake.commits.length, 2);
   assert.deepEqual(
