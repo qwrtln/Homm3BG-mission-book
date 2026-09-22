@@ -19,7 +19,7 @@ export function initEditor() {
     lineWrapping: true,
     indentUnit: 2,
     tabSize: 2,
-    theme: initialTheme() === "dark" ? "material-darker" : "default",
+    theme: initialTheme() === "dark" ? "github-dark" : "github-light",
   });
   state.cm = cm;
   cm.on("change", () => {

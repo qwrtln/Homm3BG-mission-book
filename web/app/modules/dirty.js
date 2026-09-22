@@ -1,6 +1,7 @@
 import { state } from "./state.js";
 import { el } from "./dom.js";
 import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.js";
+import { getToken } from "../../shared/github-auth.js";
 
 /**
  * Records what "nothing to save" looks like: the source as it was opened or
@@ -29,9 +30,15 @@ export function isDirty() {
   });
 }
 
-/** Shows or hides the source bar's "unsaved changes" note. @returns {void} */
+/**
+ * Shows or hides the source bar's "unsaved changes" note. Signed out, there
+ * is no pull request to lose the changes to, only the browser's own
+ * autosave (see leaveWorkspace's warning), so the note would just be noise.
+ *
+ * @returns {void}
+ */
 export function refreshUnsavedNote() {
-  el("unsaved-note").hidden = !isDirty();
+  el("unsaved-note").hidden = !isDirty() || !getToken();
 }
 
 /**

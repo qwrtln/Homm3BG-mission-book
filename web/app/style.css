@@ -11,6 +11,7 @@
   --btn-primary-hover: #1a7f37;
   --ok: #1a7f37;
   --bad: #cf222e;
+  --warn: #9a6700;
   --pdf-bg: #d1d9e0;
   --error-bg: #ffebe9;
   --code-bg: #f6f8fa;
@@ -27,6 +28,7 @@ html[data-theme="dark"] {
   --btn-primary-hover: #2ea043;
   --ok: #3fb950;
   --bad: #f85149;
+  --warn: #d29922;
   --pdf-bg: #30363d;
   --error-bg: #3c1618;
   --code-bg: #161b22;
@@ -326,7 +328,7 @@ main {
 }
 .pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 .draft-note { font-size: 0.8rem; color: var(--accent); }
-.unsaved-note { font-size: 0.8rem; color: var(--bad); font-weight: 600; }
+.unsaved-note { font-size: 0.8rem; color: var(--warn); font-weight: 600; }
 .unsaved-note[hidden] { display: none; }
 .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
 .editor-wrap .CodeMirror {

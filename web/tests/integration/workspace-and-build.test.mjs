@@ -279,7 +279,7 @@ test("the theme toggle flips the theme and the choice survives a reload", async 
   await expect(page.locator("#theme-toggle")).toHaveText(after === "dark" ? "☀️" : "🌙");
   // CodeMirror is themed along with the document.
   await expect(page.locator(".CodeMirror")).toHaveClass(
-    after === "dark" ? /cm-s-material-darker/ : /cm-s-default/,
+    after === "dark" ? /cm-s-github-dark/ : /cm-s-github-light/,
   );
 
   expect(await page.evaluate((key) => localStorage.getItem(key), THEME_KEY)).toBe(after);

@@ -17,7 +17,7 @@ export const THEME_KEY = "wasm-scenario-builder:theme";
 export function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   el("theme-toggle").textContent = theme === "dark" ? "☀️" : "🌙";
-  if (state.cm) state.cm.setOption("theme", theme === "dark" ? "material-darker" : "default");
+  if (state.cm) state.cm.setOption("theme", theme === "dark" ? "github-dark" : "github-light");
   try {
     localStorage.setItem(THEME_KEY, theme);
   } catch {
