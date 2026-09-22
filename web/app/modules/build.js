@@ -9,7 +9,7 @@ import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { state, requireEditor } from "./state.js";
 import { el, setStatus, setBuilding, basenameNoExt } from "./dom.js";
 import { fetchRepoFile, preloadFile, preloadText, preloadTexmfFile } from "./files.js";
-import { clearPdf, showPdf, showError } from "./pdf-view.js";
+import { showPdf, showError } from "./pdf-view.js";
 import { commitEntry } from "./workspace.js";
 
 /**

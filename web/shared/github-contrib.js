@@ -387,7 +387,7 @@ async function findExistingFork(token, username) {
 export async function discoverGithubContext(token) {
   const [user, upstream] = await Promise.all([currentUser(token), getUpstreamRepo(token)]);
   const username = user.login;
-  const isMember = Boolean(upstream.permissions && upstream.permissions.push);
+  const isMember = Boolean(upstream.permissions?.push);
   const fork = isMember ? null : await findExistingFork(token, username);
   const owner = isMember ? UPSTREAM_OWNER : fork ? fork.owner.login : null;
   const repo = isMember ? UPSTREAM_REPO : fork ? fork.name : null;

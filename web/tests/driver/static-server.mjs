@@ -42,11 +42,11 @@ function resolveRequestPath(requestPath) {
   if (path === "/web/repo") {
     path = "/";
   } else if (path.startsWith(prefix)) {
-    path = "/" + path.slice(prefix.length);
+    path = `/${path.slice(prefix.length)}`;
   }
 
   const decoded = decodeURIComponent(path.split("?")[0].split("#")[0]);
-  const resolved = normalize(join(REPO_ROOT, "." + decoded));
+  const resolved = normalize(join(REPO_ROOT, `.${decoded}`));
   if (resolved !== REPO_ROOT && !resolved.startsWith(REPO_ROOT + sep)) {
     return null;
   }
@@ -89,7 +89,7 @@ export async function startStaticServer(options = {}) {
       if (!res.headersSent) {
         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
       }
-      res.end(`Internal error: ${error && error.message || error}`);
+      res.end(`Internal error: ${error?.message || error}`);
     });
   });
 

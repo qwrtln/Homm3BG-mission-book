@@ -178,6 +178,6 @@ try {
   console.log(JSON.stringify({ ok: true, pages: record.pages, bytes: record.bytes, out: outFile }));
   await cleanup(0);
 } catch (error) {
-  console.error(String(error && error.stack || error));
+  console.error(String(error?.stack || error));
   await cleanup(1);
 }

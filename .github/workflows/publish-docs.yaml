@@ -19,9 +19,6 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  BUSYTEX_ENGINE_VERSION: 1.4.0
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,6 +27,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+
+      - name: Load vendored versions
+        run: cat web/vendor.env >> $GITHUB_ENV
+
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -64,17 +65,6 @@ jobs:
           ' "$page" > "$page.tmp" && mv "$page.tmp" "$page"
 
       - name: Copy scenario sources into web/repo/
-        # web/app/index.html fetches scenarios, templates, and shared
-        # assets by a path relative to itself, resolved against web/repo/
-        # (ticket 17). This step is that directory's only source: nothing
-        # here is served from the site root, so it cannot collide with
-        # mkdocs' own site/assets/.
-        # --safe-links: draft-scenarios/ holds symlinks out to repository-root
-        # files this copy does not otherwise include (.version, latexmkrc,
-        # both local-build-only, read by neither the app nor its build
-        # logic). Without this flag those become dangling symlinks in the
-        # copy, and actions/upload-pages-artifact fails outright trying to
-        # archive one, silently, with no clearer error than exit code 1.
         run: |
           mkdir -p site/web/repo
           for dir in clash coops campaigns draft-scenarios templates assets sections; do

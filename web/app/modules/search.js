@@ -117,7 +117,7 @@ export function initSearch() {
       event.preventDefault();
       const list = items();
       const target = activeItem >= 0 ? list[activeItem] : list[0];
-      if (target && target.dataset.path) selectPending(target.dataset.path, target.textContent ?? "");
+      if (target?.dataset.path) selectPending(target.dataset.path, target.textContent ?? "");
     }
   });
   el("search-results").addEventListener("mousedown", (event) => {

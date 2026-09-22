@@ -127,7 +127,7 @@ function timeAgo(iso) {
 
 /** Draws the resume list from the signed-in user's own branches. @returns {void} */
 function renderResumeDrafts() {
-  const drafts = (githubContext && githubContext.drafts) || [];
+  const drafts = (githubContext?.drafts) || [];
   const list = el("resume-list");
   el("resume-loading").hidden = true;
   el("resume-hint").hidden = false;
@@ -196,7 +196,7 @@ function showResumeSearching() {
  */
 async function startEdit(path, title) {
   const token = getToken();
-  if (!token || !githubContext || !githubContext.isMember) return;
+  if (!token || !githubContext?.isMember) return;
   const context = githubContext;
   el("edit-branch-prompt").hidden = true;
   el("go").disabled = true;
@@ -420,7 +420,7 @@ export function initGithub() {
       localStorage.removeItem(REOPEN_KEY);
       if (raw) pending = JSON.parse(raw);
     } catch { /* nothing to reopen */ }
-    if (pending && pending.path) reopenLocalDraft(pending.path, pending.title);
+    if (pending?.path) reopenLocalDraft(pending.path, pending.title);
   })();
 
   onEditPick(startEdit);
@@ -553,7 +553,7 @@ export function initGithub() {
       el("resume-hint").hidden = false;
       el("resume-drafts").hidden = !githubContext || githubContext.drafts.length === 0;
       // Whatever happened, the picker must not stay held back by the search.
-      settleModes(Boolean(githubContext && githubContext.isMember));
+      settleModes(Boolean(githubContext?.isMember));
       renderGithubHeader();
     });
 }

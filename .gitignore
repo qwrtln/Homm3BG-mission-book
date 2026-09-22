@@ -26,6 +26,7 @@ coops/translated
 screenshots/
 sections/translated
 **/svg-inkscape/*
+.wrangler/
 node_modules/
 playwright-report/
 test-results/

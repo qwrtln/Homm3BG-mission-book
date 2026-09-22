@@ -24,14 +24,17 @@ jobs:
           path: |
             ~/.npm/_npx
             ~/.cache/ms-playwright
-          key: web-tests-${{ runner.os }}-ts5.9.2-${{ hashFiles('web/tests/package-lock.json') }}
+          key: web-tests-${{ hashFiles('web/tests/package-lock.json', 'web/vendor.env', 'web/biome.json') }}
           restore-keys: |
-            web-tests-${{ runner.os }}-ts5.9.2-
-            web-tests-${{ runner.os }}-
+            web-tests-
 
       - name: Type-check
         if: always()
         run: npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
+
+      - name: Lint and format check
+        if: always()
+        run: npx -y @biomejs/biome@2.5.14 check web/
 
       - name: Show Node version
         run: node --version

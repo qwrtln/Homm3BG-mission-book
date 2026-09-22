@@ -4,7 +4,7 @@
 // github.test.mjs, the sign-in itself is a token seeded into localStorage, and
 // api.github.com is stubbed.
 
-import { test, expect, openScenarioList } from "./fixtures.mjs";
+import { test, expect, } from "./fixtures.mjs";
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
 
@@ -62,7 +62,7 @@ async function signInAs(page) {
  * @param {import("@playwright/test").Page} page
  * @returns {{method: string, url: string, body: string | null}[]} filled as they happen
  */
-function recordGithubRequests(page) {
+function _recordGithubRequests(page) {
   /** @type {{method: string, url: string, body: string | null}[]} */
   const seen = [];
   page.on("request", (request) => {
@@ -94,12 +94,12 @@ test.describe("signed in, but not a member", () => {
 test.describe("shot", () => {
   test.use({ githubRoutes: routes(identityRoutes({ push: true })) });
   for (const w of [1000, 1500]) {
-    test("w"+w, async ({ app }) => {
+    test(`w${w}`, async ({ app }) => {
       const { page } = app;
       await page.setViewportSize({ width: w, height: 800 });
       await signInAs(page);
       await expect(page.locator("#mode-choice")).toBeVisible();
-      await page.screenshot({ path: "/tmp/claude-1000/-home-qwrtln-Workspace-Homm3BG-mission-book/fa0160b6-d270-40f3-a339-f8311ba832e5/scratchpad/w"+w+".png" });
+      await page.screenshot({ path: `/tmp/claude-1000/-home-qwrtln-Workspace-Homm3BG-mission-book/fa0160b6-d270-40f3-a339-f8311ba832e5/scratchpad/w${w}.png` });
     });
   }
 });

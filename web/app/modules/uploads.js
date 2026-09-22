@@ -175,7 +175,7 @@ export function initUploads() {
   el("upload-header").addEventListener("change", async () => {
     const [file] = el("upload-header").files ?? [];
     if (!file) return;
-    if (headerUpload && headerUpload.path) state.uploadedFiles.delete(headerUpload.path);
+    if (headerUpload?.path) state.uploadedFiles.delete(headerUpload.path);
     headerUpload = { bytes: await readAsUint8Array(file), originalName: file.name, path: null };
     el("upload-header-name").hidden = false;
     el("upload-header-name").value = file.name;

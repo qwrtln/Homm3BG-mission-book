@@ -192,7 +192,7 @@ function createGithubFake(options = {}) {
       const ref = new URLSearchParams(query).get("ref");
       if (ref !== null && !branches.has(ref)) return notFound();
       const source = ref !== null ? branchFiles.get(ref) : base;
-      const content = source && source.get(filePath);
+      const content = source?.get(filePath);
       if (content === undefined) return notFound();
       return json({ content: base64(content) });
     }
@@ -275,7 +275,7 @@ function createGithubFake(options = {}) {
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/compare\//) && method === "GET") {
       const branch = decodeURIComponent(path.split("...").pop() ?? "");
-      const listed = (options.branchTexFiles || {})[branch] || [];
+      const listed = options.branchTexFiles?.[branch] || [];
       return json({ files: listed.map((filename) => ({ filename, sha: "sha", status: "modified" })) });
     }
 
@@ -386,7 +386,7 @@ test("without permissions.push the user is a contributor, and their existing for
   const discovered = await discoverGithubContext("t");
 
   assert.equal(discovered.isMember, false);
-  assert.equal(discovered.fork && discovered.fork.owner.login, "octocat");
+  assert.equal(discovered.fork?.owner.login, "octocat");
 });
 
 test("a collaborator's save lands on the upstream repository", async () => {
