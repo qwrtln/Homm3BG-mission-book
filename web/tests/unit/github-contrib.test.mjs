@@ -517,7 +517,7 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
   );
 });
 
-test("an in-place edit's pull request is titled \"Edit <name>\" and says it edits in place", async () => {
+test("an in-place edit's pull request is titled \"Update <name>\" and says it edits in place", async () => {
   const fake = createGithubFake({ push: true });
   setHttpClient(fake.client);
 
@@ -530,7 +530,7 @@ test("an in-place edit's pull request is titled \"Edit <name>\" and says it edit
   });
 
   const opened = fake.calls.find((call) => call.method === "POST" && call.path.endsWith("/pulls"));
-  assert.equal(opened?.body.title, "Edit Secret Bomb Stash");
+  assert.equal(opened?.body.title, "Update Secret Bomb Stash");
   assert.match(opened?.body.body, /in place/);
 });
 
@@ -646,7 +646,7 @@ test("a contributor's pull request is opened with an owner:branch head", async (
   assert.equal(new URLSearchParams(list.query).get("head"), `octocat:${branch}`);
   assert.equal(create.body.head, `octocat:${branch}`);
   assert.equal(create.body.base, "main");
-  assert.equal(create.body.title, "Update Dragon Valley");
+  assert.equal(create.body.title, "New scenario: Dragon Valley");
 });
 
 test("a collaborator's pull request is opened with a plain branch name as its head", async () => {

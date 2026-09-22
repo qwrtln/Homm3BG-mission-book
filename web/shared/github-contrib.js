@@ -839,7 +839,7 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
   return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, parsePullRequest, {
     method: "POST",
     body: JSON.stringify({
-      title: `${mode === "edit" ? "Edit" : "Update"} ${scenarioName}`,
+      title: mode === "edit" ? `Update ${scenarioName}` : `New scenario: ${scenarioName}`,
       head,
       base,
       body: mode === "edit"
