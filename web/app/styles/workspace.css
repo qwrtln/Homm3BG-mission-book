@@ -1,0 +1,135 @@
+/* --- Workspace --------------------------------------------------------- */
+
+#workspace { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+main {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+  gap: 1px;
+  background: var(--line);
+}
+@media (max-width: 850px) {
+  main { flex-direction: column; overflow-y: auto; }
+  .pane { min-height: 24rem; }
+}
+.pane {
+  flex: 1 1 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+}
+.pane-head {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.draft-note { font-size: 0.8rem; color: var(--accent); }
+.unsaved-note { font-size: 0.8rem; color: var(--warn); font-weight: 600; }
+.unsaved-note[hidden] { display: none; }
+.editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+.editor-wrap .CodeMirror {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+}
+.pdf-pane-body-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.pdf-pane-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.pdf-pane-body.dimmed { filter: brightness(0.7); }
+.build-overlay {
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  z-index: 5;
+}
+.build-overlay:not([hidden]) { display: flex; }
+.spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
+embed.pdf-view {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+  background: var(--pdf-bg);
+}
+.empty-pdf {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  padding: 2rem;
+  text-align: center;
+}
+.empty-pdf.loading { flex-direction: column; gap: 0.8rem; }
+.status-bar {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.spinner {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+.spinner[hidden] { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ok { color: var(--ok); }
+.bad { color: var(--bad); }
+.error-panel {
+  margin: 0 1rem 1rem;
+  border: 1px solid var(--bad);
+  background: var(--error-bg);
+  padding: 0.85rem 1rem;
+  border-radius: 3px;
+}
+.error-panel .first-error {
+  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+  color: var(--bad);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+details.full-log summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+details.full-log pre {
+  font: 12px/1.5 ui-monospace, monospace;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  padding: 0.7rem;
+  max-height: 20rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  margin: 0.5rem 0 0;
+}

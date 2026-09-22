@@ -1,0 +1,42 @@
+/* --- Header actions (shown once a scenario is chosen) ------------------ */
+
+.header-actions[hidden] { display: none; }
+.header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.upload-menu { position: relative; }
+.upload-popover[hidden] { display: none; }
+.upload-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 21rem;
+  max-width: 88vw;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 10px 26px var(--shadow);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.82rem;
+  z-index: 20;
+}
+.upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+.upload-field label { font-weight: 600; }
+.upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }
+.upload-status { color: var(--muted); }
+.upload-status code { font-size: 0.78rem; }
+.upload-status.bad { color: var(--bad); }
+input.upload-rename {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  width: 100%;
+}
+.upload-rename-list[hidden] { display: none; }
+.upload-rename-list { display: flex; flex-direction: column; gap: 0.3rem; width: 100%; }
+.upload-rename-row { display: flex; align-items: center; gap: 0.4rem; }
+.upload-rename-row .orig-name { color: var(--muted); font-size: 0.76rem; white-space: nowrap; }

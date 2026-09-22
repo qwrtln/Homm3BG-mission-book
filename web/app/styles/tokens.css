@@ -1,0 +1,36 @@
+/* GitHub Primer's own color tokens, light and dark, for consistency with
+   the GitHub-hosted docs site and repository around this app. */
+:root {
+  --ink: #1f2328;
+  --muted: #656d76;
+  --line: #d1d9e0;
+  --paper: #f6f8fa;
+  --panel: #ffffff;
+  --accent: #0969da;
+  --btn-primary-bg: #1f883d;
+  --btn-primary-hover: #1a7f37;
+  --ok: #1a7f37;
+  --bad: #cf222e;
+  --warn: #9a6700;
+  --pdf-bg: #d1d9e0;
+  --error-bg: #ffebe9;
+  --code-bg: #f6f8fa;
+  --shadow: rgba(31, 35, 40, 0.15);
+}
+html[data-theme="dark"] {
+  --ink: #e6edf3;
+  --muted: #848d97;
+  --line: #30363d;
+  --paper: #0d1117;
+  --panel: #161b22;
+  --accent: #4493f8;
+  --btn-primary-bg: #238636;
+  --btn-primary-hover: #2ea043;
+  --ok: #3fb950;
+  --bad: #f85149;
+  --warn: #d29922;
+  --pdf-bg: #30363d;
+  --error-bg: #3c1618;
+  --code-bg: #161b22;
+  --shadow: rgba(1, 4, 9, 0.6);
+}

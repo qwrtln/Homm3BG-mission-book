@@ -1,0 +1,136 @@
+/* --- Welcome screen -------------------------------------------------- */
+
+.welcome[hidden], #workspace[hidden] { display: none; }
+/* An address that names a scenario: the loading screen stands in for the welcome screen until it is known which one to show. */
+.route-loading { display: none; flex: 1 1 auto; align-items: center; justify-content: center; gap: 0.8rem; color: var(--muted); }
+.route-pending .route-loading { display: flex; }
+.route-pending #welcome { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .welcome { transition: opacity 0.22s ease, transform 0.22s ease; }
+  .welcome.leaving { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  #workspace.entering { animation: workspace-in 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes workspace-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+.welcome {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  overflow: auto;
+}
+.welcome-inner { max-width: 62rem; width: 100%; }
+/* The resume list fills the row. */
+.welcome-top { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+.welcome-top > * { flex: 1 1 20rem; min-width: 0; }
+/* The member badge is a fourth column. It grows in from nothing so the panes
+   glide aside instead of jumping when membership is confirmed. */
+.welcome-picker > .mode-choice { flex: 0 0 12rem; overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .welcome-picker > .mode-choice { animation: badge-in 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes badge-in {
+    from { flex-basis: 0; margin-right: -1.5rem; opacity: 0; }
+    to { flex-basis: 12rem; margin-right: 0; opacity: 1; }
+  }
+}
+.welcome-top .resume-drafts { margin-bottom: 0; }
+.edit-branch-prompt { margin-bottom: 1.5rem; }
+.mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
+/* Edit mode keeps the new-scenario controls on screen but out of reach. */
+.dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; transition: opacity 0.2s; }
+.mode-choice .scratch-row { margin-top: 0; }
+.mode-choice button[aria-pressed="true"] { border-color: var(--accent, currentColor); font-weight: 600; }
+.resume-drafts[hidden] { display: none; }
+.resume-drafts { margin-bottom: 1.5rem; }
+.combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
+.welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
+.welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+/* Three equal-width blocks, side by side, statically: no motion between
+   them, nothing to animate. */
+.welcome-picker { display: flex; align-items: flex-start; gap: 1.5rem; }
+.picker-slide { flex: 1 1 0; min-width: 0; }
+.picker-slide-go { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.combobox { position: relative; }
+#search {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 4px;
+  outline: none;
+}
+#search:focus { border-color: var(--accent); }
+.combobox-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 22rem;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px var(--shadow);
+  z-index: 10;
+}
+.combobox-group-label {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+}
+.resume-row { display: flex; align-items: stretch; }
+.resume-row .combobox-item { flex: 1; min-width: 0; }
+.resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
+.resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
+.combobox-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.combobox-item:hover, .combobox-item.active { background: var(--line); }
+.combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+.scratch-row {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.name-field { max-width: 20rem; margin: 0 auto; }
+#scenario-name {
+  width: 100%;
+  font: inherit;
+  font-size: 0.92rem;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 4px;
+  outline: none;
+}
+#scenario-name:focus { border-color: var(--accent); }
+#scenario-name[aria-invalid="true"] { border-color: var(--bad); }
+.name-error[hidden] { display: none; }
+.name-error { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--bad); text-align: left; }
+.go-hint { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
+#go { white-space: nowrap; }

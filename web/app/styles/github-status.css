@@ -1,0 +1,18 @@
+/* --- GitHub sign-in / save-to-fork / PR link ---------------------------
+   A single morphing control: one segmented "save" button whose label
+   changes with state, a PR link that only appears once a PR exists, and a
+   small sign-out icon. */
+.github-status[hidden] { display: none; }
+.github-status { display: flex; align-items: center; gap: 0.5rem; }
+.github-segment {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.github-segment button { border: none; border-radius: 0; }
+.github-segment[hidden] { display: none; }
+.github-pr-link[hidden] { display: none; }
+.github-pr-link { color: var(--accent); text-decoration: underline; font-size: 0.85rem; }
+#github-open-pr[hidden] { display: none; }
