@@ -30,7 +30,7 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 
 \begin{itemize}
   \item $P$ × Starting (I) Map Tiles
-  \item $P$ × Far (II--III) Map Tiles with Settlements
+  \item $P$ × Far (II--III) Map Tiles with Settlements of unused Factions
   \item $P$+1 × Near (IV--V) Map Tiles for 2--3 players
   \item $P$+2 × Near (IV--V) Map Tiles for 4 players
   \item $P$+3 × Near (IV--V) Map Tiles for 5--6 players
@@ -56,19 +56,19 @@ If no player has achieved an immediate victory, the player with the most Victory
 \subsection*{\MakeUppercase{Timed Events}}
 \textbf{\nth{1} Round:}
 \begin{itemize}
-  \item Gain an Empowered Defense Statistic Card.
+  \item All players may gain an Empowered Defense Statistic Card.
 \end{itemize}
 \textbf{\nth{2} Round:}
 \begin{itemize}
-  \item Search (3) \svg{artifact}, \svg{skill}, \svg{spellpower}.
+  \item Search (3) \svg{artifact}, \svg{skill}, or \svg{spellpower}.
 \end{itemize}
 \textbf{\nth{3} Round:}
 \begin{itemize}
-  \item Search (3) \svg{artifact}, \svg{skill}, \svg{spellpower}, or your Deck. Gain a Spell Scroll.
+  \item Search (3) \svg{artifact}, \svg{skill}, \svg{spellpower}, or your Deck, \textit{and} Gain a Spell Scroll
 \end{itemize}
 \textbf{\nth{5}, \nth{6} \& \nth{7} Round:}
 \begin{itemize}
-  \item The Player(s) with least \svg{experience}, gain 1 \svg{experience}.
+  \item The player(s) with least \svg{experience}, gain 1 \svg{experience}.
 \end{itemize}
 \textbf{\nth{8} Round:}
 \begin{itemize}
@@ -81,22 +81,24 @@ If no player has achieved an immediate victory, the player with the most Victory
   \begin{itemize}
     \item 3 \svg{gold} \svg{arrows_gray} 2 \svg{building_materials} \svg{arrows_gray} 1 \svg{valuables}
   \end{itemize}
+  \item Once per round, during your turn, you may discard 1 \svg{valuables} to draw 2 cards.
   \item Each player may build Mage Guild at any time for free without spending their Build Token.
   \item City Hall and Special Buildings can be built for half price. (Cost in \svg{gold} is Rounded up; \svg{building_materials} and \svg{valuables} are rounded down.)
   \item Gain 5 \svg{gold} and draw Cards up to your \svg{hand} Limit after winning a Neutral Combat.
-  \item After capturing a Settlement, that player may recruit Units of that Settlement's Faction when using Population Token. If that Faction is already in play, randomly choose an unused Faction instead.
-  \item Players may remove one Black Cube from the Map at the start of their turn.
-  \item After a Combat against another players Main Hero:
+  \item \textbf{Settlement:} Add the Settlement's Faction Units to your available Recruitable Units.
+  \item \textbf{Near Tiles \& Portals:} When revealing a Near Map Tile, gain a Pandora's Box Card and place a Portal to the Blocked Field on that Tile.
+  \item When using a Portal for the first time, gain a Pandora's Box Card.
+  \item All IV--VI Neutral Combats in the Center Island are considered +1 level.
+  \item You may use Center (VI-VII) Map Tiles on the Center Island.
+  \item Players may remove 1 Black Cube from the Center Island at the start of their turn.
+  \item \textbf{PvP Combat:} After a Combat against another player's Main Hero:
   \begin{itemize}
-    \item The winner gains 2 \svg{experience} \& Search (4) \svg{artifact}; the loser gains 1 \svg{experience} \& Empowered Token.
+    \item The winner: gain 2 \svg{experience} \& Search (4) \svg{artifact}
+    \item The loser: gain 1 \svg{experience} \& an Empowered Token.
     \item Both players draw Cards up to their \svg{hand} Limit.
     \item Both players gain \svg{gold} equal to half the total value of their defeated Units Rounded down.
   \end{itemize}
-  \item When revealing a Near Map Tile, gain a Pandora's Box Card and place a Portal to the Blocked Field on that Tile.
-  \item When using a Portal for the first time, gain a Pandora's Box Card.
-  \item All Neutral Combats in the Center Island are considered +1 level.
-  \item You may use Center (VI-VII) Map Tiles on the Center Island.
-  \item You may teleport your Main Hero to defend your Town by paying 8 \svg{gold} and discarding 1 Card.
+  \item You may teleport your Main Hero to defend your Town by discarding 2 Cards.
   \item After capturing an enemy Town, increase all incomes by one space.
 \end{itemize}
 
@@ -113,9 +115,9 @@ If no player has achieved an immediate victory, the player with the most Victory
   \includegraphics[width=0.8\linewidth]{\maps/controlled-chaos.png}
   \captionof{figure}{\textbf{STARTING ISLANDS}}
 
-  \hspace*{-1em}\includegraphics[width=0.7\linewidth]{\maps/controlled-chaos-center.png}
+  \hspace*{1em}\includegraphics[width=0.7\linewidth]{\maps/controlled-chaos-center.png}
   %\vspace*{-1em}
-  \hspace*{2em}\captionof{figure}{\textbf{CENTER ISLAND}}
+  \hspace*{-4em}\captionof{figure}{\textbf{CENTER ISLAND}}
 \end{center}
 
 \end{multicols*}
