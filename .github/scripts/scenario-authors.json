@@ -48,8 +48,14 @@
       "Random Scenario"
     ],
     "on_discord": true,
-    "discord_id": "",
     "discord_id": "1195686137054896171"
+  },
+  "bober1984": {
+    "scenarios": [
+      "Mystical Foreland"
+    ],
+    "on_discord": true,
+    "discord_id": "439023506374524928"
   },
   "farmaazon": {
     "scenarios": [
