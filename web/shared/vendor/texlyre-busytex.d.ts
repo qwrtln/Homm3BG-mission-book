@@ -19,6 +19,12 @@ export declare class BusyTexRunner {
   constructor(options: BusyTexRunnerOptions);
   /** Downloads and starts the WASM engine. Resolves once it can compile. */
   initialize(preloadData?: boolean): Promise<void>;
+  /**
+   * Kills the worker at once, mid-compile included. A compile in flight then
+   * never settles until its own timeout. The runner cannot compile again
+   * until initialize() runs anew.
+   */
+  terminate(): void;
 }
 
 export interface CompileRequest {

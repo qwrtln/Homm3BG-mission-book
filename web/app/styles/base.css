@@ -52,6 +52,9 @@ button.primary:hover:not(:disabled) {
   color: #fff;
 }
 button.primary:disabled { background: var(--btn-primary-bg); opacity: 0.5; }
+/* The Build button mid-build: red, the conventional colour for a stop. */
+button.primary.stop { border-color: var(--bad); background: var(--bad); }
+button.primary.stop:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); filter: brightness(0.9); }
 button.link {
   border: none;
   background: none;

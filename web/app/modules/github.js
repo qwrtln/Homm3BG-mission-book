@@ -63,7 +63,7 @@ async function reopenLocalDraft(path, title) {
   state.chosenTitle = title || basenameNoExt(path);
   document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
   reflectRoute();
-  el("build").disabled = state.building;
+  el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
   cm.setValue(content);
   el("draft-note").hidden = false;
@@ -307,7 +307,7 @@ async function openResumableDraft(draft) {
       .replace(/\b\w/g, (c) => c.toUpperCase());
     document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
     reflectRoute();
-    el("build").disabled = state.building;
+    el("build").disabled = false; // Build, or Stop mid-build: both apply
     el("download").disabled = true;
     cm.setValue(content);
     el("draft-note").hidden = true;

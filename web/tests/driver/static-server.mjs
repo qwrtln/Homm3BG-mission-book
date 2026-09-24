@@ -138,6 +138,14 @@ async function handleRequest(req, res) {
   try {
     const stats = await stat(filePath);
     if (stats.isDirectory()) {
+      // Without the trailing slash, the page's relative URLs resolve one
+      // level up and every stylesheet and script 404s.
+      const url = new URL(requestPath, "http://localhost");
+      if (!url.pathname.endsWith("/")) {
+        res.writeHead(301, { ...headers, Location: `${url.pathname}/${url.search}` });
+        res.end();
+        return;
+      }
       filePath = join(filePath, "index.html");
     }
   } catch {

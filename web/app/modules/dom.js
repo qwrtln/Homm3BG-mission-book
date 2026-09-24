@@ -66,13 +66,17 @@ export function escapeHtml(text) {
 
 /**
  * Enters or leaves the building state: button, overlay and dimming together.
+ * While building, the Build button turns into Stop.
  *
  * @param {boolean} value
  * @returns {void}
  */
 export function setBuilding(value) {
   state.building = value;
-  el("build").disabled = value || !state.chosenPath;
+  const build = el("build");
+  build.disabled = !value && !state.chosenPath;
+  build.textContent = value ? "Stop" : "Build PDF";
+  build.classList.toggle("stop", value);
   el("build-overlay").hidden = !value;
   el("pdf-body").classList.toggle("dimmed", value);
 }

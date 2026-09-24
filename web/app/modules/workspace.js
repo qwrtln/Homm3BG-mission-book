@@ -85,7 +85,7 @@ export async function commitEntry(path, name, category) {
   state.chosenTitle = name.trim();
   document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
   reflectRoute();
-  el("build").disabled = state.building;
+  el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
   setStatus("Loading…");
 
@@ -157,7 +157,7 @@ export async function openForEdit(path, title, source, edit) {
   state.chosenTitle = title;
   document.title = `${title} - Heroes III: The Board Game`;
   reflectRoute();
-  el("build").disabled = state.building;
+  el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
 
   cm.setValue(source);

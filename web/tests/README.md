@@ -66,7 +66,9 @@ No test compiles a real PDF, and no test downloads `texlive-*.data`.
 `stubs/texlyre-busytex-stub.js`. The app's own code is not changed, not
 branched, and not aware of it. The stub records every call on
 `globalThis.__stubEngineCalls`, so a test can assert the app asked the engine to
-compile without a compile happening.
+compile without a compile happening. A test that needs a compile in flight,
+to press Stop on, sets `globalThis.__stubCompileHold` to a promise, and every
+compile waits on it.
 
 **Install the stubs before `page.goto`.** Navigate first and the real engine
 wrapper is already in flight, and a large engine payload starts downloading.

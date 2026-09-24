@@ -10,6 +10,10 @@
 // Every call this stub receives is recorded on globalThis.__stubEngineCalls
 // so a test can assert the app drove the engine correctly without a real
 // engine ever running.
+//
+// A test that needs a compile in flight sets globalThis.__stubCompileHold to
+// a promise; every compile then waits on it before answering. A promise that
+// never settles makes a compile that only a stop can end.
 
 /**
  * @typedef {object} StubEngineCall
@@ -182,6 +186,7 @@ class BusyTexRunner {
  */
 async function stubToolCompile(runner, label, options) {
   recordCall(`${label}.compile`, [options]);
+  if (globalThis.__stubCompileHold) await globalThis.__stubCompileHold;
   if (!runner.isInitialized()) {
     await runner.initialize();
   }

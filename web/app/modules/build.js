@@ -1,3 +1,4 @@
+import { untilAborted } from "../../shared/abort.js";
 import {
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
@@ -58,8 +59,40 @@ export async function ensureEngine() {
 }
 
 /**
+ * Throws the engine away mid-compile: the worker is killed, so the compile
+ * stops using the CPU, and a fresh engine starts warming for the next Build.
+ * The data package is cached by then, so the restart skips the big download.
+ *
+ * @param {BusyTexRunner} runner the runner the stopped compile was using
+ * @returns {void}
+ */
+function discardEngine(runner) {
+  runner.terminate();
+  if (state.runner === runner) {
+    state.runner = null;
+    enginePromise = null;
+  }
+  ensureEngine().catch(() => {}); // errors surface at the next Build, as on page load
+}
+
+// The running build's controller; null when no build runs.
+/** @type {AbortController | null} */
+let buildController = null;
+
+/**
+ * Stops the running build, if any. The build ends at once with the PDF pane
+ * as it was before Build was pressed.
+ *
+ * @returns {void}
+ */
+export function stopBuild() {
+  buildController?.abort();
+}
+
+/**
  * Compiles whatever is in the editor, staging every file the plan asks for
- * and retrying around files the engine finds missing.
+ * and retrying around files the engine finds missing. stopBuild() ends it
+ * early.
  *
  * @returns {Promise<void>}
  */
@@ -67,14 +100,18 @@ export async function runBuild() {
   if (state.building || !state.chosenPath) return;
   const chosenPath = state.chosenPath;
   const cm = requireEditor();
+  const controller = new AbortController();
+  const { signal } = controller;
+  buildController = controller;
   setBuilding(true);
   el("error-panel").hidden = true;
   try {
-    await ensureEngine();
+    // A stop here leaves the engine warming: page load started it, not this build.
+    await untilAborted(ensureEngine(), signal);
 
     setStatus("Preparing files…", { spinning: true });
     const source = cm.getValue();
-    const metadata = await preloadText("metadata.tex");
+    const metadata = await untilAborted(preloadText("metadata.tex"), signal);
 
     const plan = planScenarioBuild({
       metadata,
@@ -105,6 +142,7 @@ export async function runBuild() {
           notFound.push(path);
         }
       }
+      signal.throwIfAborted();
       loadedFiles += 1;
       reportFileProgress();
     }
@@ -115,6 +153,7 @@ export async function runBuild() {
       } catch {
         notFound.push(`texmf/${name}`);
       }
+      signal.throwIfAborted();
       loadedFiles += 1;
       reportFileProgress();
     }
@@ -129,7 +168,11 @@ export async function runBuild() {
     setStatus("Compiling (this can take a while the first time)…", { spinning: true });
     const started = performance.now();
     // ensureEngine above resolves only once state.runner is set.
-    const lualatex = new LuaLatex(/** @type {BusyTexRunner} */ (state.runner));
+    const runner = /** @type {BusyTexRunner} */ (state.runner);
+    const lualatex = new LuaLatex(runner);
+    // Only the engine can end a compile, so a stop from here on kills it.
+    const onStop = () => discardEngine(runner);
+    signal.addEventListener("abort", onStop, { once: true });
 
     /** @type {import("../../shared/vendor/texlyre-busytex.js").CompileResult} */
     let result;
@@ -137,12 +180,16 @@ export async function runBuild() {
     const tried = new Set();
     for (let attempt = 0; ; attempt += 1) {
       try {
-        result = await lualatex.compile({
-          input: plan.input,
-          additionalFiles,
-          verbose: "debug",
-        });
+        result = await untilAborted(
+          lualatex.compile({
+            input: plan.input,
+            additionalFiles,
+            verbose: "debug",
+          }),
+          signal,
+        );
       } catch (error) {
+        if (signal.aborted) throw error;
         result = { success: false, log: String(error), exitCode: -1 };
       }
       if (attempt >= MAX_FETCH_ON_MISS_ATTEMPTS) break;
@@ -157,6 +204,7 @@ export async function runBuild() {
         } catch {
           // genuine miss: not in the repository, left for firstError to report
         }
+        signal.throwIfAborted();
       }
       if (!landed) break;
       setStatus(`Retrying with ${landed} more file(s) fetched on demand…`, { spinning: true });
@@ -186,18 +234,24 @@ export async function runBuild() {
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
+    if (signal.aborted) {
+      setStatus("Build stopped.");
+      return;
+    }
     const trace = errorTrace(error);
     showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });
   } finally {
+    buildController = null;
     setBuilding(false);
   }
 }
 
-/** Wires the Build and Download controls. @returns {void} */
+/** Wires the Build/Stop and Download controls. @returns {void} */
 export function initBuild() {
   el("build").addEventListener("click", () => {
-    runBuild();
+    if (state.building) stopBuild();
+    else runBuild();
   });
 
   el("download").addEventListener("click", () => {

@@ -79,8 +79,8 @@ async function enterWorkspace(page) {
 }
 
 /**
- * Starts recording #build's disabled flag and #build-overlay's hidden flag,
- * every time either changes.
+ * Starts recording #build's disabled flag, label and stop styling, and
+ * #build-overlay's hidden flag, every time any of them changes.
  *
  * A build against the stub engine finishes in milliseconds, so polling for
  * the mid-build state is a race. Recording the transitions and asserting over
@@ -95,19 +95,26 @@ async function recordBuildStates(page) {
     const overlay = document.getElementById("build-overlay");
     const seen = [];
     globalThis.__buildStates = seen;
-    const snapshot = () => seen.push({ disabled: build.disabled, overlayShown: !overlay.hidden });
+    const snapshot = () =>
+      seen.push({
+        disabled: build.disabled,
+        label: build.textContent,
+        stop: build.classList.contains("stop"),
+        overlayShown: !overlay.hidden,
+      });
     snapshot();
     new MutationObserver(snapshot).observe(document.body, {
       subtree: true,
+      childList: true,
       attributes: true,
-      attributeFilter: ["disabled", "hidden"],
+      attributeFilter: ["class", "disabled", "hidden"],
     });
   });
 }
 
 /**
  * @param {import("@playwright/test").Page} page
- * @returns {Promise<{disabled: boolean, overlayShown: boolean}[]>}
+ * @returns {Promise<{disabled: boolean, label: string, stop: boolean, overlayShown: boolean}[]>}
  */
 async function buildStates(page) {
   return page.evaluate(() => globalThis.__buildStates || []);
@@ -148,7 +155,7 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });
 
-test("Build is disabled and the overlay is up while a build runs", async ({ app }) => {
+test("Build turns into an enabled Stop with the overlay up while a build runs", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);
 
@@ -158,12 +165,153 @@ test("Build is disabled and the overlay is up while a build runs", async ({ app 
 
   const states = await buildStates(page);
   expect(
-    states.some((s) => s.disabled && s.overlayShown),
-    `#build was never disabled with the build overlay up; recorded: ${JSON.stringify(states)}`,
+    states.some((s) => !s.disabled && s.label === "Stop" && s.stop && s.overlayShown),
+    `#build never became an enabled Stop with the build overlay up; recorded: ${JSON.stringify(states)}`,
   ).toBe(true);
   // And it came back: setBuilding(false) runs in runBuild's finally.
-  expect(states[states.length - 1]).toEqual({ disabled: false, overlayShown: false });
+  expect(states[states.length - 1]).toEqual({ disabled: false, label: "Build PDF", stop: false, overlayShown: false });
   await expect(page.locator("#build-overlay")).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
+ * Makes every stub compile hang until a stop ends it. See
+ * texlyre-busytex-stub.js.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function holdCompiles(page) {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = new Promise(() => {});
+  });
+}
+
+/**
+ * Lets stub compiles answer at once again.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function releaseCompiles(page) {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = null;
+  });
+}
+
+/**
+ * The recorded engine calls with the given method name.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} method
+ * @returns {Promise<unknown[]>}
+ */
+async function callsTo(page, method) {
+  return (await engineCalls(page)).filter((call) => call.method === method);
+}
+
+/**
+ * The glyph #build draws before its label, and its width.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<{glyph: string, width: number}>}
+ */
+async function buildLook(page) {
+  return page.locator("#build").evaluate((button) => ({
+    glyph: getComputedStyle(button, "::before").content,
+    width: button.getBoundingClientRect().width,
+  }));
+}
+
+test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  const build = page.locator("#build");
+  const idle = await buildLook(page);
+  expect(idle.glyph).toContain("\u25B6");
+
+  await holdCompiles(page);
+  await build.click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(1);
+
+  // Mid-compile: the button is a red, clickable Stop.
+  await expect(build).toHaveText("Stop");
+  await expect(build).toHaveClass(/\bstop\b/);
+  await expect(build).toBeEnabled();
+  await expect(build).toHaveCSS(
+    "background-color",
+    await page.evaluate(() => {
+      // --bad, resolved the way the browser resolves it, so the theme does not matter.
+      const probe = document.createElement("span");
+      probe.style.color = "var(--bad)";
+      document.body.append(probe);
+      const colour = getComputedStyle(probe).color;
+      probe.remove();
+      return colour;
+    }),
+  );
+  await expect(page.locator("#build-overlay")).toBeVisible();
+  const busy = await buildLook(page);
+  expect(busy.glyph).toContain("\u25A0");
+  // The label swap must not move the buttons beside it under the pointer.
+  expect(busy.width).toBe(idle.width);
+
+  await build.click();
+
+  await expect(page.locator("#status-text")).toHaveText("Build stopped.");
+  await expect(build).toHaveText("Build PDF");
+  await expect(build).not.toHaveClass(/\bstop\b/);
+  await expect(build).toBeEnabled();
+  await expect(page.locator("#build-overlay")).toBeHidden();
+  await expect(page.locator("#error-panel")).toBeHidden();
+  // A stop is not a failure: the pane keeps what it showed before the build.
+  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
+  await expect(page.locator("#download")).toBeDisabled();
+
+  // The worker is the only way to end a compile, so it was killed, and a
+  // fresh engine started warming for the next Build.
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(1);
+  await expect.poll(async () => (await callsTo(page, "BusyTexRunner.initialize")).length).toBe(2);
+
+  expect(appErrors(errors), "the page reported errors around the stop").toEqual([]);
+});
+
+test("a build after a stop compiles on the fresh engine", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  const build = page.locator("#build");
+
+  await holdCompiles(page);
+  await build.click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(1);
+  await build.click();
+  await expect(page.locator("#status-text")).toHaveText("Build stopped.");
+
+  await releaseCompiles(page);
+  await build.click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator('#pdf-body embed[type="application/pdf"]')).toHaveCount(1);
+  await expect(page.locator("#download")).toBeEnabled();
+
+  // The second compile ran on the runner built after the stop, not the dead one.
+  const constructed = await callsTo(page, "LuaLatex.constructor");
+  expect(constructed).toHaveLength(2);
+  expect(await callsTo(page, "BusyTexRunner.constructor")).toHaveLength(2);
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(1);
+
+  expect(appErrors(errors), "the page reported errors across stop and rebuild").toEqual([]);
+});
+
+test("a finished build leaves the engine running", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(0);
+  expect(await callsTo(page, "BusyTexRunner.constructor")).toHaveLength(1);
 
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });

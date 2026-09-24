@@ -59,6 +59,20 @@ npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
 - Validate external payloads (GitHub responses, parsed `.tex`) at entry. No
   unchecked shape reaches `web/app/modules/`.
 
+## Running locally
+
+```sh
+web/serve.sh [PORT]    # http://127.0.0.1:8000/web/app/
+```
+
+Fetches the engine into `web/core/busytex/` on first run (and when
+`BUSYTEX_ENGINE_VERSION` changes), then serves through
+`tests/driver/serve.mjs`. Needs curl, tar and Node; installs nothing.
+
+The deploy copies `web/` through an allow-list in
+`.github/workflows/publish-docs.yaml`, so tooling like this script stays out of
+the site without an exclude. Anything the browser must load goes on that list.
+
 ## Lint and format
 
 Biome, pinned, no install. Config is `web/biome.json`, so run from `web/`:
