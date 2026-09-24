@@ -103,3 +103,5 @@ English is the only source. `po4a.cfg` maps each `.tex` file to
 - `graduate-scenario` — promote a draft into the Mission Book.
 - `review-scenario` — review a draft `.tex` for language, terminology and
   rules-section structure.
+- `editor-update` — implement a feature or bugfix in the `web/` scenario builder,
+  with tests and every `test-web.yaml` gate.
