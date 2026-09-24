@@ -13,17 +13,13 @@ build. Work on one at a time.
 
 ## The book
 
-Community-driven, styled after "The Rewritten Rule Book", assembled from
-community-submitted scenarios.
-
 ### Vocabulary
 
 - **Mission Book** — the finished, community-vetted, playtested document
   (`main_<lang>.tex`, assembled from `structure.tex`).
 - **Draft Scenarios** — the companion booklet (`draft-scenarios/`), where a
   scenario incubates before it graduates into the Mission Book. Use the
-  `graduate-scenario` skill to promote one; it moves the file, updates both
-  `structure.tex` files, adds the `po4a.cfg` entry and runs po4a.
+  `graduate-scenario` skill to promote one.
 - **Scenario categories** — three top-level modes, each a directory and a book
   section:
   - **Clash** (`clash/`) — competitive, player-vs-player.
@@ -35,17 +31,16 @@ community-submitted scenarios.
   generating an ad-hoc scenario instead of playing a fixed one. Every type it
   generates (Free-for-All, Grail, King of the Hill) is Clash-style; it has no
   Coop or Campaign equivalent.
-- **Recommendations** (`sections/recommendations.tex`) — custom rules and best
-  practices for *fair competitive play*: Magic Arrows, Guaranteed Settlement,
-  Round One Mulligan, Tier V–VII Combat difficulty, Trading Post, Victory
-  Points, Combat with Neutral Units.
+- **Recommendations** (@sections/recommendations.tex) — custom rules for *fair
+  competitive play*. That file lists them; do not restate them here.
 
 ### Structure
 
 `structure.tex` fixes the assembly order: title page → intro/ToC → What to Play
 → Coop → Clash → Random Scenario → Campaign → Recommendations → Credits → back
-cover. Each category's `main.tex` `\input`s its scenarios in book order, so a
-new scenario is two edits: the file, and its category's `main.tex`.
+cover. Each category's `main.tex` `\input`s its scenarios in book order. For
+adding a scenario (templates, registration, campaign `[subsection]` quirk) see
+`docs/scenarios.md`.
 
 A scenario file opens with `\addscenariosection{...}` and carries an Author, a
 Source link, an italic flavor-text blurb, and Player Setup (including Player
@@ -57,17 +52,9 @@ precompiled into `svg-inkscape/`.
 
 ### Building
 
-Never run LaTeX directly. `./run.sh` mounts the repository into
-`ghcr.io/qwrtln/homm3bg:latest` (podman, else docker) — the same image CI uses,
-built from `tools/container/Containerfile` — and runs a script inside it:
-
-```sh
-./run.sh tools/build.sh                     # English Mission Book
-./run.sh tools/build.sh pl                  # a translation
-./run.sh tools/build.sh -d                  # the Draft Scenarios booklet
-./run.sh tools/build.sh -s "bloody grail"   # one scenario, by fuzzy search
-./run.sh tools/compare_pages.sh -l en -r 5-9
-```
+Never run LaTeX directly. Run every `tools/` script through the container
+wrapper: `./run.sh tools/build.sh [args]` (see `docs/container.md`). Script
+flags and examples are in `docs/scripts.md`.
 
 `latexmkrc` turns `HOMM3_*` environment variables into LaTeX toggles
 (`printable`, `noartbackground`, `githubbuild`, `individualscenario`); the
@@ -89,19 +76,8 @@ English is the only source. `po4a.cfg` maps each `.tex` file to
 
 `.github/workflows/lint-files.yaml` runs on every pull request and fails on:
 
-- A tab character in any tracked file. Indent with spaces.
-- A file that does not end with a newline.
-- Trailing whitespace on any line.
+- Whitespace @.editorconfig already fixes: a tab character, a missing final
+  newline, trailing whitespace. Applies to every tracked file.
 - In `.tex` files, an uncapitalized book term: Card, Cube, Deck, Faction,
   Field, Grail, Hero, Level, Round, Scenario, Tile, Unit. Append
   `% no-check-caps` to exempt a line.
-
-`.editorconfig` sets 2-space indent everywhere, 4 for `*.py`.
-
-## Skills
-
-- `graduate-scenario` — promote a draft into the Mission Book.
-- `review-scenario` — review a draft `.tex` for language, terminology and
-  rules-section structure.
-- `editor-update` — implement a feature or bugfix in the `web/` scenario builder,
-  with tests and every `test-web.yaml` gate.

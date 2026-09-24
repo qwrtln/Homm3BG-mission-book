@@ -6,16 +6,11 @@ browser (BusyTeX/WASM), open a pull request. No local LaTeX toolchain.
 Static and unbuilt. `web/index.html` redirects to `web/app/index.html`, which
 loads `web/app/app.js` as an ES module. No bundler, transpiler or framework.
 
-Separate project from the book at the repository root. Only the root
-`CLAUDE.md`'s repository-wide lint rules apply here.
-
 ## No dependencies in the application
 
 No `package.json`, no lockfile, no build step — `web/app/` must open off a
-static server with nothing installed. Never add one.
-
-- `web/tests/package.json` is the only exception: Playwright, nothing else.
-- Never let a test dependency reach application code.
+static server with nothing installed. Never add one. The only exception is
+`web/tests/package.json` (Playwright only); never let it reach application code.
 
 ## Layout
 
@@ -61,13 +56,8 @@ npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
 
 ## Running locally
 
-```sh
-web/serve.sh [PORT]    # http://127.0.0.1:8000/web/app/
-```
-
-Fetches the engine into `web/core/busytex/` on first run (and when
-`BUSYTEX_ENGINE_VERSION` changes), then serves through
-`tests/driver/serve.mjs`. Needs curl, tar and Node; installs nothing.
+@web/serve.sh — its header comment holds the URL, the prerequisites and the
+usage.
 
 The deploy copies `web/` through an allow-list in
 `.github/workflows/publish-docs.yaml`, so tooling like this script stays out of
@@ -85,8 +75,8 @@ npx -y @biomejs/biome@2.5.14 check --write .  # apply safe fixes
 - Running from the repository root fails: Biome 2.x treats the invocation
   directory as an implicit root and refuses a nested config. CI uses
   `working-directory: web`.
-- 2-space indent, LF, double quotes, semicolons, 120 columns. Indent style is
-  explicit — Biome defaults to tabs, which the root lint rules reject.
+- Formatting settings live in @web/biome.json. Indent style is explicit there —
+  Biome defaults to tabs, which the root lint rules reject.
 - Two recommended rules are off, both firing on correct code here:
   `suspicious/noAssignInExpressions` (the `while ((m = re.exec(s)))` loop in
   `shared/build-plan.js`) and `suspicious/useIterableCallbackReturn` (concise
@@ -95,41 +85,17 @@ npx -y @biomejs/biome@2.5.14 check --write .  # apply safe fixes
 
 ## Tests
 
-Two tiers. Read `web/tests/README.md` before adding one.
-
-**Tier 1 — unit.** From the repository root:
-
-```sh
-node --test "web/tests/unit/**/*.test.mjs"
-```
-
-`node:test` and `node:assert`. No config, no install, no npm. Must keep working
-exactly as written, and never be gated behind tier 2. Keep the quotes and the
-glob — only Node 25+ expands a bare directory argument, so the directory form
-fails on Node 22 and 24.
-
-**Tier 2 — integration.** The real app in headless Chromium, from `web/tests/`:
+Two tiers. Read `web/tests/README.md` before writing a test — it holds the
+conventions (file naming, `.mjs`, imports, fixtures, stubs, first-run setup).
 
 ```sh
-npx playwright test
+node --test "web/tests/unit/**/*.test.mjs"   # tier 1, from the repository root
+cd web/tests && npx playwright test          # tier 2
 ```
 
-Once before the first run: `npm install` in `web/tests/` (not `web/`), then
-`npx playwright install chromium`. Playwright serves the app with
-`tests/driver/static-server.mjs`, a dependency-free server — the app needs its
-`/web/repo/` alias and COOP/COEP headers, so a stock static server will not do.
-
-**Both tiers.**
-
-- Test files are `<subject>.test.mjs`. The `.mjs` is mandatory for tier 1: it
-  sits outside any `package.json`, so `.js` there parses as CommonJS.
-- Import application modules by relative path, as the browser does. No loader,
-  no transform, no import map.
-- Fixtures are inline strings. `real-book.test.mjs` is the exception: it reads
-  the repository's `.tex` files and asserts invariants only, never a title.
-- Never load the LaTeX engine. `web/tests/stubs/` intercepts the request for
-  `shared/vendor/texlyre-busytex.js` and fulfills it with a stub, so no
-  production code is changed, branched or aware of the test.
+- Keep tier 1's quotes and glob: the directory form fails on Node 22 and 24.
+  Never gate tier 1 behind tier 2.
+- Never load the LaTeX engine; `web/tests/stubs/` stubs it.
 - **Install the stubs before `page.goto`, never after** — navigate first and the
   real wrapper is already in flight.
 
@@ -138,14 +104,14 @@ type-check, lint and format, tier 1, tier 2.
 
 ## Vendored versions
 
-`web/vendor.env` records every vendored or fetched version. Not a manifest;
-nothing installs from it. `.github/workflows/publish-docs.yaml` reads it into
-`$GITHUB_ENV`, so every line stays `KEY=value` with no comments. Edit it first
-when re-vendoring, then the prose here.
+`web/vendor.env` is the single source for every vendored or fetched version —
+never hardcode one elsewhere. Not a manifest; nothing installs from it.
+`.github/workflows/publish-docs.yaml` reads it into `$GITHUB_ENV`, so every line
+stays `KEY=value` with no comments.
 
 ## Editor library — CodeMirror 5, not 6
 
-`web/app/vendor/codemirror/` is CodeMirror 5.65.16, loaded by
+`web/app/vendor/codemirror/` is CodeMirror 5 (`CODEMIRROR_VERSION`), loaded by
 `web/app/index.html` as classic `<script>` tags defining a global `CodeMirror`.
 LaTeX mode: `mode/stex/stex.min.js`.
 
@@ -158,8 +124,7 @@ LaTeX mode: `mode/stex/stex.min.js`.
 
 ## LaTeX engine (BusyTeX) — do not test, do not touch
 
-- BusyTeX 1.4.0, release `assets-v1.4.0` of `TeXlyre/texlyre-busytex`. Canonical
-  value: `BUSYTEX_ENGINE_VERSION` in `web/vendor.env`.
+- Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.
 - WASM build in `web/core/busytex/`, wrapper in
   `web/shared/vendor/texlyre-busytex.js`. Both vendored and trusted.
 - `web/core/` is gitignored, fetched at deploy time — a fresh clone has no
