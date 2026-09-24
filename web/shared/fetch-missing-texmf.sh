@@ -33,4 +33,8 @@ unzip -o -j "$work/ccicons.tds.zip" \
   'fonts/map/dvips/ccicons/*' \
   -d texmf > /dev/null
 
+# Upstream leaves trailing spaces on comment lines, which the repository lint
+# rejects. TeX drops trailing spaces from every input line, so this is inert.
+sed -i 's/[[:space:]]*$//' texmf/*.sty
+
 ls -l texmf

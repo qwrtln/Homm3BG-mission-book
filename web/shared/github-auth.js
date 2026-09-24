@@ -39,6 +39,10 @@ export function signIn() {
  * If GitHub just redirected back with `?code=`, trades it for a token and
  * strips code/state from the URL.
  *
+ * A code is single-use, so an address reopened from history or a bookmark
+ * carries one that no longer trades. When a token is already stored, that
+ * failure is not a failed sign-in: the stored token is kept and returned.
+ *
  * @returns {Promise<string | null>} the token, or null if signed out
  */
 export async function completeSignIn() {
@@ -46,22 +50,28 @@ export async function completeSignIn() {
   const code = url.searchParams.get("code");
   if (!code) return getToken();
 
-  const response = await fetch(RELAY_URL, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ code }),
-  });
-  const data = /** @type {{access_token?: string, error?: string, error_description?: string}} */ (
-    await response.json()
-  );
-
+  // Stripped first, so neither a failed exchange nor a reload trades the same code again.
   url.searchParams.delete("code");
   url.searchParams.delete("state");
   history.replaceState({}, "", url.pathname + url.search + url.hash);
 
-  if (!data.access_token) {
-    throw new Error(data.error_description || data.error || "GitHub sign-in failed.");
+  const stored = getToken();
+  try {
+    const response = await fetch(RELAY_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    const data = /** @type {{access_token?: string, error?: string, error_description?: string}} */ (
+      await response.json()
+    );
+    if (!data.access_token) {
+      throw new Error(data.error_description || data.error || "GitHub sign-in failed.");
+    }
+    localStorage.setItem(TOKEN_KEY, data.access_token);
+    return data.access_token;
+  } catch (error) {
+    if (stored) return stored;
+    throw error;
   }
-  localStorage.setItem(TOKEN_KEY, data.access_token);
-  return data.access_token;
 }

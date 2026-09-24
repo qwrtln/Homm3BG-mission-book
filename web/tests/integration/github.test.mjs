@@ -493,3 +493,53 @@ test.describe("looking for work to resume", () => {
     await expect(page.locator("#resume-drafts")).toBeHidden();
   });
 });
+
+test.describe("opening the app already signed in", () => {
+  test.use({ githubRoutes: routes(MEMBER_ROUTES) });
+
+  // An address kept from an earlier sign-in (browser history, a bookmark)
+  // still carries GitHub's one-time ?code=. Trading it again fails; the token
+  // already stored is still good and must be used, not dropped.
+  test("a stale ?code= in the address does not hide this user's work", async ({ app }) => {
+    const { page } = app;
+    await page.route("https://mission-book-oauth-relay.pages.dev/**", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          error: "bad_verification_code",
+          error_description: "The code passed is incorrect or expired.",
+        }),
+      }),
+    );
+    await page.addInitScript(([key, token]) => localStorage.setItem(key, token), [TOKEN_KEY, TOKEN]);
+    await page.goto("/web/app/?code=stale-code");
+
+    await expect(page.locator("#github-status")).toBeVisible();
+    await expect(page.locator("#mode-choice")).toBeVisible();
+    await expect(page.locator("#status-text")).not.toContainText("sign-in failed");
+    expect(new URL(page.url()).search).toBe("");
+  });
+});
+
+test.describe("opening the app with a revoked token", () => {
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", status: 401, body: { message: "Bad credentials" } },
+      ...MEMBER_ROUTES.slice(1),
+    ]),
+  });
+
+  // GitHub revokes a token on its own (the oldest past ten per user and app,
+  // or one unused for a year). The app must not keep showing "signed in".
+  test("drops the token and offers sign-in again", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await expect(page.locator("#github-signin")).toBeVisible();
+    await expect(page.locator("#github-status")).toBeHidden();
+    await expect(page.locator("#status-text")).toContainText("Sign in again");
+    // addInitScript seeds the token on every load, so check before any reload.
+    expect(await page.evaluate((key) => localStorage.getItem(key), TOKEN_KEY)).toBeNull();
+  });
+});

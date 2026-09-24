@@ -584,7 +584,14 @@ export function initGithub() {
         githubContext = await discoverGithubContext(token);
         renderResumeDrafts();
       } catch (error) {
-        setStatus(`Could not read your GitHub account: ${errorMessage(error)}`, { tone: "bad" });
+        if (error instanceof GithubApiError && error.status === 401) {
+          // GitHub revoked the token (the oldest past ten per user and app, or a year unused).
+          // Signed-in chrome over a dead token would hide the account's work; offer sign-in instead.
+          clearToken();
+          setStatus("Your GitHub sign-in has expired. Sign in again.", { tone: "bad" });
+        } else {
+          setStatus(`Could not read your GitHub account: ${errorMessage(error)}`, { tone: "bad" });
+        }
       }
     })
     .catch((error) => {
