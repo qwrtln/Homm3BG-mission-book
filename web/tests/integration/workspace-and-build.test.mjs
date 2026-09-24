@@ -224,10 +224,32 @@ async function buildLook(page) {
   }));
 }
 
+/**
+ * A colour token, resolved the way the browser resolves it, so the theme
+ * does not matter.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} token a custom property, e.g. "--btn-danger-bg"
+ * @returns {Promise<string>} the computed colour, e.g. "rgb(246, 248, 250)"
+ */
+async function tokenColour(page, token) {
+  return page.evaluate((name) => {
+    const probe = document.createElement("span");
+    probe.style.color = `var(${name})`;
+    document.body.append(probe);
+    const colour = getComputedStyle(probe).color;
+    probe.remove();
+    return colour;
+  }, token);
+}
+
 test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);
   const build = page.locator("#build");
+  // Widen the label past any fixed width a stylesheet might guess, as CI's
+  // fonts once did: the width must be measured, not assumed.
+  await page.addStyleTag({ content: "#build { letter-spacing: 0.37px; }" });
   const idle = await buildLook(page);
   expect(idle.glyph).toContain("\u25B6");
 
@@ -239,18 +261,13 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(build).toHaveText("Stop");
   await expect(build).toHaveClass(/\bstop\b/);
   await expect(build).toBeEnabled();
-  await expect(build).toHaveCSS(
-    "background-color",
-    await page.evaluate(() => {
-      // --bad, resolved the way the browser resolves it, so the theme does not matter.
-      const probe = document.createElement("span");
-      probe.style.color = "var(--bad)";
-      document.body.append(probe);
-      const colour = getComputedStyle(probe).color;
-      probe.remove();
-      return colour;
-    }),
-  );
+  // Primer's danger button, whatever the theme: neutral at rest, red text,
+  // solid red under the pointer. The click left the pointer on it, so move off first.
+  await page.mouse.move(0, 0);
+  await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-bg"));
+  await expect(build).toHaveCSS("color", await tokenColour(page, "--btn-danger-fg"));
+  await build.hover();
+  await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-hover-bg"));
   await expect(page.locator("#build-overlay")).toBeVisible();
   const busy = await buildLook(page);
   expect(busy.glyph).toContain("\u25A0");

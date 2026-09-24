@@ -75,6 +75,9 @@ export function setBuilding(value) {
   state.building = value;
   const build = el("build");
   build.disabled = !value && !state.chosenPath;
+  // Pin the Build width while the shorter "Stop" shows, measured, not guessed:
+  // fonts differ, and a shrinking button slides its neighbours under the pointer.
+  build.style.minWidth = value ? `${build.getBoundingClientRect().width}px` : "";
   build.textContent = value ? "Stop" : "Build PDF";
   build.classList.toggle("stop", value);
   el("build-overlay").hidden = !value;

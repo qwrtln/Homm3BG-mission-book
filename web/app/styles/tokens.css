@@ -9,6 +9,14 @@
   --accent: #0969da;
   --btn-primary-bg: #1f883d;
   --btn-primary-hover: #1a7f37;
+  /* Primer's danger button, from @primer/primitives 11.10.0 (button-danger-*):
+     neutral at rest, red text, solid red on hover, deeper red when pressed. */
+  --btn-danger-bg: #f6f8fa;
+  --btn-danger-border: #d1d9e0;
+  --btn-danger-fg: #d1242f;
+  --btn-danger-hover-bg: #cf222e;
+  --btn-danger-hover-border: #1f232826;
+  --btn-danger-active-bg: #a40e26;
   --ok: #1a7f37;
   --bad: #cf222e;
   --warn: #9a6700;
@@ -26,6 +34,12 @@ html[data-theme="dark"] {
   --accent: #4493f8;
   --btn-primary-bg: #238636;
   --btn-primary-hover: #2ea043;
+  --btn-danger-bg: #212830;
+  --btn-danger-border: #3d444d;
+  --btn-danger-fg: #fa5e55;
+  --btn-danger-hover-bg: #b62324;
+  --btn-danger-hover-border: #ffffff26;
+  --btn-danger-active-bg: #da3633;
   --ok: #3fb950;
   --bad: #f85149;
   --warn: #d29922;

@@ -2,8 +2,6 @@
 
 .header-actions[hidden] { display: none; }
 .header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-/* Holds its width when "Build PDF" turns into "Stop", so the buttons beside it do not slide under the pointer. */
-#build { min-width: 7.5rem; }
 /* Play and stop glyphs, decorative: the "/ ''" alt text keeps them out of the
    accessible name. U+FE0E asks for the text glyph, not the emoji. The first
    declaration is the fallback for browsers without alt text. */

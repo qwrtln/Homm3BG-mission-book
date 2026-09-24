@@ -52,9 +52,19 @@ button.primary:hover:not(:disabled) {
   color: #fff;
 }
 button.primary:disabled { background: var(--btn-primary-bg); opacity: 0.5; }
-/* The Build button mid-build: red, the conventional colour for a stop. */
-button.primary.stop { border-color: var(--bad); background: var(--bad); }
-button.primary.stop:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); filter: brightness(0.9); }
+/* The Build button mid-build, styled as Primer's danger button: red, the
+   conventional colour for a stop, but quiet until hovered. */
+button.primary.stop {
+  border-color: var(--btn-danger-border);
+  background: var(--btn-danger-bg);
+  color: var(--btn-danger-fg);
+}
+button.primary.stop:hover:not(:disabled) {
+  border-color: var(--btn-danger-hover-border);
+  background: var(--btn-danger-hover-bg);
+  color: #fff;
+}
+button.primary.stop:active:not(:disabled) { background: var(--btn-danger-active-bg); }
 button.link {
   border: none;
   background: none;
