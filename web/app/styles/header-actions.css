@@ -102,7 +102,7 @@ header button.icon { padding: 0.3rem 0.5rem; }
 .upload-status { color: var(--muted); }
 .upload-status code { font-size: 0.78rem; }
 .upload-status.bad { color: var(--bad); }
-input.upload-rename {
+input.upload-rename, input.upload-mapfile-input {
   font: inherit;
   font-size: 0.8rem;
   padding: 0.2rem 0.4rem;
@@ -113,23 +113,39 @@ input.upload-rename {
 }
 .upload-rename-list[hidden] { display: none; }
 .upload-rename-list { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
-.upload-map {
+/* A staged image: its fields on the left, its thumbnail on the right. */
+.upload-card[hidden] { display: none; }
+.upload-card {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.6rem 0.7rem;
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: 4px;
   background: var(--paper);
 }
-.upload-map-head { display: flex; align-items: center; gap: 0.5rem; }
-.upload-map-title { font-weight: 600; }
-.upload-map-head .orig-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.upload-map .orig-name { color: var(--muted); font-size: 0.76rem; }
+.upload-card-body { display: flex; flex-direction: column; gap: 0.4rem; flex: 1 1 auto; min-width: 0; }
+.upload-card-head { display: flex; align-items: center; gap: 0.5rem; }
+.upload-card-title { font-weight: 600; }
+.upload-card-head .orig-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-card .orig-name { color: var(--muted); font-size: 0.76rem; }
+.upload-preview {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+}
 .upload-players { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; border: 0; padding: 0; margin: 0; }
 .upload-players legend { float: left; padding: 0; margin-right: 0.2rem; color: var(--muted); }
 .upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
-.upload-mapfile { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; }
-.upload-mapfile button.link { padding: 0; font-size: 0.8rem; }
+.upload-field label.upload-mapfile { display: flex; flex-direction: column; gap: 0.2rem; font-weight: normal; color: var(--muted); }
+.upload-mapfile .optional { font-size: 0.76rem; }
+input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
 button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }

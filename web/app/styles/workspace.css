@@ -130,3 +130,33 @@ details.full-log pre {
   white-space: pre-wrap;
   margin: 0.5rem 0 0;
 }
+
+/* --- Image-path suggestions under the editor's cursor (image-autocomplete.js) --- */
+
+.autocomplete-list[hidden] { display: none; }
+.autocomplete-list {
+  position: fixed;
+  z-index: 20;
+  min-width: 14rem;
+  max-width: min(32rem, calc(100vw - 1rem));
+  max-height: 14rem;
+  overflow: auto;
+  margin: 0;
+  padding: 0.2rem 0;
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.autocomplete-item {
+  padding: 0.25rem 0.7rem;
+  font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.autocomplete-item.active { background: var(--accent); color: #fff; }
+.autocomplete-item mark { background: none; color: inherit; font-weight: 700; }

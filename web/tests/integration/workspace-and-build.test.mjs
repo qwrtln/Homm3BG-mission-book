@@ -389,6 +389,24 @@ async function stagedPaths(page) {
 }
 
 /**
+ * A staged file's contents as text, read from the app's own state module.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} path
+ * @returns {Promise<string | null>}
+ */
+async function stagedText(page, path) {
+  return page.evaluate(async (path) => {
+    const { state } = await import("/web/app/modules/state.js");
+    const bytes = state.uploadedFiles.get(path);
+    return bytes ? new TextDecoder().decode(bytes) : null;
+  }, path);
+}
+
+// A map editor save string, in the shape of the files in assets/map-files/.
+const MAP_CODE = "eJy10z1LhDEMAOD/0vkNpGmbNrc1bQMuLo7i4MeBB+IL54mD+N89pcMhjnd0CAkZHpL09tPt1w==";
+
+/**
  * An in-memory file: nothing is added to the repository, and the bytes never
  * leave the browser — uploads.js stages them in the virtual filesystem the
  * build compiles from.
@@ -424,13 +442,21 @@ test("the uploads dialog opens from the header, closes, and names the header aft
   await expect(page.locator("#upload-header-status")).not.toContainText("assets/");
   await expect(page.locator("#upload-maps-status")).not.toContainText("assets/");
 
-  // The rename box appears carrying the scenario's name and the file's own
-  // extension, whatever the file was called.
+  // The header card appears carrying the scenario's name and the file's own
+  // extension, whatever the file was called, with a thumbnail of the image
+  // and a toast confirming the upload.
+  const headerCard = page.locator("#upload-header-card");
   const headerRename = page.locator("#upload-header-name");
-  await expect(headerRename).toBeHidden();
+  await expect(headerCard).toBeHidden();
+  await expect(page.locator("#upload-header-add")).toHaveText("+ Add header image");
   await page.locator("#upload-header").setInputFiles(fakeFile("probe-header.png"));
-  await expect(headerRename).toBeVisible();
+  await expect(headerCard).toBeVisible();
+  await expect(headerCard).toContainText("probe-header.png");
   await expect(headerRename).toHaveValue(`${SLUG}.png`);
+  await expect(page.locator("#upload-header-preview")).toHaveAttribute("src", /^blob:/);
+  await expect(page.locator("#toast")).toBeVisible();
+  await expect(page.locator("#toast")).toHaveText(`Header image uploaded as ${SLUG}.png.`);
+  await expect(page.locator("#upload-header-add")).toHaveText("Replace header image");
   expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.png`]);
 
   // Retyping the target name re-stages it; a name with spaces or TeX-hostile
@@ -458,6 +484,12 @@ test("the uploads dialog opens from the header, closes, and names the header aft
   await expect(headerRename).toHaveValue(`${SLUG}.jpg`);
   expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
 
+  // The card's remove button unstages the header and puts the add button back.
+  await page.getByRole("button", { name: "Remove header image" }).click();
+  await expect(headerCard).toBeHidden();
+  await expect(page.locator("#upload-header-add")).toHaveText("+ Add header image");
+  expect(await stagedPaths(page)).toEqual([]);
+
   expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
 });
 
@@ -479,6 +511,8 @@ test("map layouts are named after the scenario and the player counts ticked for 
   const rows = page.locator("#upload-maps-names .upload-map");
   await expect(rows).toHaveCount(1);
   await expect(rows.first().locator(".upload-rename")).toHaveValue(`${SLUG}.png`);
+  await expect(rows.first().locator(".upload-preview")).toHaveAttribute("src", /^blob:/);
+  await expect(page.locator("#toast")).toHaveText("Map image export.png uploaded.");
   expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}.png`]);
 
   // Two layouts share a name until their player counts are ticked.
@@ -489,6 +523,7 @@ test("map layouts are named after the scenario and the player counts ticked for 
   await expect(rows).toHaveCount(0);
   await maps.setInputFiles([fakeFile("small.png"), fakeFile("big.png")]);
   await expect(rows).toHaveCount(2);
+  await expect(page.locator("#toast")).toHaveText("2 map images uploaded.");
   await expect(status).toHaveClass(/bad/);
   const small = rows.nth(0);
   const big = rows.nth(1);
@@ -500,13 +535,15 @@ test("map layouts are named after the scenario and the player counts ticked for 
   await expect(status).not.toHaveClass(/bad/);
   expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2-3p.png`, `assets/maps/${SLUG}_4p.png`]);
 
-  // The map editor's own file is optional and travels under its layout's name.
-  await big.locator(".upload-mapfile-input").setInputFiles(fakeFile("export.map", "application/octet-stream"));
+  // The map editor's save string is optional, and travels as a one-line
+  // .map file under its layout's name.
+  await big.locator(".upload-mapfile-input").fill(MAP_CODE);
   expect(await stagedPaths(page)).toEqual([
     `assets/map-files/${SLUG}_4p.map`,
     `assets/maps/${SLUG}_2-3p.png`,
     `assets/maps/${SLUG}_4p.png`,
   ]);
+  expect(await stagedText(page, `assets/map-files/${SLUG}_4p.map`)).toBe(`${MAP_CODE}\n`);
 
   // A typed name sticks, even when the counts change afterwards, and the
   // map-editor file follows it.
@@ -539,14 +576,22 @@ test("map images add up across picks, skip the map-editor file, and can be remov
   await rows.nth(1).getByRole("checkbox", { name: "3", exact: true }).check();
   expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
 
-  // The map-editor file is added through a link, and removed the same way.
+  // The save string is pasted into a text box, joined back into one line,
+  // and unstaged by emptying the box. Anything that is not base64 is flagged
+  // and staged as no map file at all.
   const second = rows.nth(1);
-  await expect(second.getByRole("button", { name: /add map editor file/i })).toBeVisible();
-  await second.locator(".upload-mapfile-input").setInputFiles(fakeFile("export.map", "application/octet-stream"));
-  await expect(second.locator(".upload-mapfile")).toContainText("export.map");
-  expect(await stagedPaths(page)).toContain(`assets/map-files/${SLUG}_3p.map`);
-  await second.locator(".upload-mapfile-remove").click();
-  await expect(second.getByRole("button", { name: /add map editor file/i })).toBeVisible();
+  const mapCode = second.getByRole("textbox", { name: "Map editor string for layout 2" });
+  await mapCode.fill(`  ${MAP_CODE.slice(0, 20)}\n${MAP_CODE.slice(20)}  `);
+  await mapCode.blur();
+  await expect(mapCode).toHaveValue(MAP_CODE);
+  expect(await stagedText(page, `assets/map-files/${SLUG}_3p.map`)).toBe(`${MAP_CODE}\n`);
+  await mapCode.fill("<not a save string>");
+  await expect(mapCode).toHaveAttribute("aria-invalid", "true");
+  await expect(page.locator("#upload-maps-status")).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+  await mapCode.fill("");
+  await expect(mapCode).not.toHaveAttribute("aria-invalid", "true");
+  await expect(page.locator("#upload-maps-status")).not.toHaveClass(/bad/);
   expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
 
   // The add button says there is already a layout.
@@ -562,6 +607,111 @@ test("map images add up across picks, skip the map-editor file, and can be remov
   expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_3p.png`]);
 
   expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+/**
+ * Puts text in the editor and the cursor after the first "|" in it.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} marked
+ * @returns {Promise<void>}
+ */
+async function setEditor(page, marked) {
+  await page.evaluate((marked) => {
+    const cm = /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror;
+    const at = marked.indexOf("|");
+    cm.setValue(marked.replace("|", ""));
+    cm.focus();
+    cm.setCursor(cm.posFromIndex(at));
+  }, marked);
+}
+
+/**
+ * @param {import("@playwright/test").Page} page
+ * @param {number} line
+ * @returns {Promise<string>}
+ */
+async function editorLine(page, line) {
+  return page.evaluate(
+    (line) => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getLine(line),
+    line,
+  );
+}
+
+test("the editor suggests uploaded image paths, by keyboard and by mouse", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+  await page.locator("#upload-header").setInputFiles(fakeFile("cover.png"));
+  await page.locator("#upload-maps").setInputFiles([fakeFile("small.png"), fakeFile("big.png")]);
+  const rows = page.locator("#upload-maps-names .upload-map");
+  await rows.nth(0).getByRole("checkbox", { name: "2", exact: true }).check();
+  await rows.nth(1).getByRole("checkbox", { name: "4", exact: true }).check();
+  await page.locator("#upload-done").click();
+
+  const list = page.locator("#image-autocomplete");
+  const options = list.getByRole("option");
+  const header = "\\addscenariosection{1}{Clash Scenario}{Probe}";
+  const graphics = "\\includegraphics[width=\\linewidth]";
+
+  // Ctrl-Space in the header's image argument offers the header image only;
+  // Enter writes it in.
+  await setEditor(page, `${header}{|}\n${graphics}{}\n`);
+  await expect(list).toBeHidden();
+  await page.keyboard.press("Control+Space");
+  await expect(options).toHaveText([`\\images/${SLUG}.png`]);
+  await page.keyboard.press("Enter");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${header}{\\images/${SLUG}.png}`);
+
+  // Typing inside \includegraphics opens the list by itself, narrowed to what
+  // was typed. Arrows move the highlight and wrap; Escape closes it.
+  await setEditor(page, `${graphics}{|}`);
+  await page.keyboard.type("\\maps/");
+  await expect(options).toHaveText([`\\maps/${SLUG}_2p.png`, `\\maps/${SLUG}_4p.png`]);
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowDown");
+  await expect(options.nth(1)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowDown");
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowUp");
+  await expect(options.nth(1)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("Escape");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/}`);
+
+  // Typing on narrows the list; the Tab key picks as Enter does.
+  await page.keyboard.type("tier_two_probe_4");
+  await expect(options).toHaveText([`\\maps/${SLUG}_4p.png`]);
+  await page.keyboard.press("Tab");
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/${SLUG}_4p.png}`);
+
+  // A click picks too, replacing the whole path the cursor was in, and
+  // leaves the editor focused.
+  await setEditor(page, `${graphics}{\\maps/|old.png}`);
+  await page.keyboard.press("Control+Space");
+  await expect(options).toHaveCount(2);
+  await options.nth(0).hover();
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await options.nth(1).click();
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/${SLUG}_4p.png}`);
+  await expect(page.locator(".CodeMirror textarea")).toBeFocused();
+
+  // Deleting inside an argument opens the list too, after a short pause,
+  // with no character typed: the path left over is what it narrows by.
+  await setEditor(page, `${header}{\\images/old|.png}`);
+  for (let i = 0; i < 3; i++) await page.keyboard.press("Backspace");
+  await expect(options).toHaveText([`\\images/${SLUG}.png`]);
+  await page.keyboard.press("Enter");
+  expect(await editorLine(page, 0)).toBe(`${header}{\\images/${SLUG}.png}`);
+
+  // Outside an image argument, Ctrl-Space offers nothing.
+  await setEditor(page, "Plain text|");
+  await page.keyboard.press("Control+Space");
+  await expect(list).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while completing").toEqual([]);
 });
 
 test("the theme toggle flips the theme and the choice survives a reload", async ({ app }) => {

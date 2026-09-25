@@ -96,3 +96,29 @@ export function parsePlayerCounts(name) {
   }
   return [...counts].sort((a, b) => a - b);
 }
+
+/**
+ * A map editor save string as the repository keeps it, or null when it is
+ * not one. The editor exports its layout as a single line of base64; a paste
+ * split over lines, or padded with spaces, is joined back into that line.
+ * An empty paste is "": the layout simply has no save string.
+ *
+ * @param {string} text what was pasted
+ * @returns {string | null}
+ */
+export function normalizeMapCode(text) {
+  const code = text.replace(/\s+/g, "");
+  if (!code) return "";
+  return /^[A-Za-z0-9+/]+={0,2}$/.test(code) ? code : null;
+}
+
+/**
+ * The contents of a map file in assets/map-files/: the save string on one
+ * line, ending in a newline like every file in the repository.
+ *
+ * @param {string} code a string normalizeMapCode accepted
+ * @returns {string}
+ */
+export function mapFileContents(code) {
+  return `${code}\n`;
+}

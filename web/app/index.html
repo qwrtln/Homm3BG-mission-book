@@ -189,8 +189,19 @@
     <h2 id="upload-title">Upload images</h2>
     <div class="upload-field">
       <label for="upload-header">Header image</label>
-      <input type="file" id="upload-header" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
-      <input type="text" id="upload-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename" hidden>
+      <input type="file" id="upload-header" accept=".png,.jpg,.jpeg,image/png,image/jpeg" hidden>
+      <div class="upload-card" id="upload-header-card" hidden>
+        <div class="upload-card-body">
+          <div class="upload-card-head">
+            <span class="upload-card-title">Header</span>
+            <span class="orig-name" id="upload-header-orig"></span>
+            <button type="button" id="upload-header-remove" class="upload-remove" aria-label="Remove header image" title="Remove the header image">×</button>
+          </div>
+          <input type="text" id="upload-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename">
+        </div>
+        <img class="upload-preview" id="upload-header-preview" alt="Header image preview">
+      </div>
+      <button type="button" id="upload-header-add">+ Add header image</button>
       <span class="upload-status" id="upload-header-status">PNG or JPG. Named after the scenario; rename it if you like.</span>
     </div>
     <div class="upload-field">
@@ -205,6 +216,12 @@
     </div>
   </form>
 </dialog>
+
+<!-- styles/workspace.css. The image-path suggestions under the .tex editor's cursor. -->
+<ul id="image-autocomplete" class="autocomplete-list" role="listbox" aria-label="Uploaded images" hidden></ul>
+
+<!-- styles/dialog.css. A popover, so a notice shows above an open modal dialog too. -->
+<div id="toast" class="toast" popover="manual" role="status" aria-live="polite"></div>
 
 <script src="vendor/codemirror/codemirror.min.js"></script>
 <script src="vendor/codemirror/mode/stex/stex.min.js"></script>

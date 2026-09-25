@@ -5,7 +5,9 @@ import test from "node:test";
 
 import {
   fileExtension,
+  mapFileContents,
   mapImageName,
+  normalizeMapCode,
   parsePlayerCounts,
   playerCountSuffix,
   withExtension,
@@ -54,4 +56,22 @@ test("a count parsed back from a derived name derives the same name", () => {
     const name = mapImageName("say_no_more", counts);
     assert.deepEqual(parsePlayerCounts(name), counts, name);
   }
+});
+
+test("normalizeMapCode joins a pasted save string back into one base64 line", () => {
+  assert.equal(normalizeMapCode("eJy10z1LhDEMAOD/0vkN=="), "eJy10z1LhDEMAOD/0vkN==");
+  assert.equal(normalizeMapCode("  eJy10z\n1LhD+/  \n"), "eJy10z1LhD+/", "line breaks and padding are dropped");
+  assert.equal(normalizeMapCode(""), "", "no string is no map file, not an error");
+  assert.equal(normalizeMapCode("   \n"), "");
+  assert.equal(
+    normalizeMapCode("not really a map"),
+    "not really a map".replace(/\s+/g, ""),
+    "spaces alone do not make it invalid",
+  );
+  assert.equal(normalizeMapCode("eJy1<script>"), null);
+  assert.equal(normalizeMapCode("eJy=1"), null, "padding only at the end");
+});
+
+test("a map file holds the save string on one line, ending in a newline", () => {
+  assert.equal(mapFileContents("eJy10z"), "eJy10z\n");
 });

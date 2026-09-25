@@ -4,13 +4,16 @@ import {
   MAP_EXTENSION,
   MAP_FILE_EXTENSION,
   MAX_PLAYERS,
+  mapFileContents,
   mapImageName,
+  normalizeMapCode,
   parsePlayerCounts,
   withExtension,
 } from "../../shared/upload-names.js";
 import { refreshUnsavedNote } from "./dirty.js";
 import { el, escapeHtml, sanitizeFilename } from "./dom.js";
 import { state } from "./state.js";
+import { showToast } from "./toast.js";
 
 // No server: a chosen file never leaves the browser, it just joins the
 // virtual filesystem the build compiles from, under an editable target name.
@@ -23,7 +26,10 @@ const MAP_FILES_DIR = "assets/map-files/";
 const HEADER_HINT = "PNG or JPG. Named after the scenario; rename it if you like.";
 const MAPS_HINT =
   "PNG exported from the map editor. Add one image for the whole scenario, or one per player-count layout and tick the counts it is for.";
+const MAP_CODE_BAD =
+  "A map editor save string is one line of letters, digits, <code>+</code>, <code>/</code> and <code>=</code>. Paste it again.";
 const ADD_FIRST_MAP = "+ Add map image";
+const ADD_FIRST_HEADER = "+ Add header image";
 
 /**
  * One file a contributor added from their own machine, before and after it
@@ -33,16 +39,19 @@ const ADD_FIRST_MAP = "+ Add map image";
  * @property {Uint8Array} bytes
  * @property {string} originalName the filename as chosen on their machine
  * @property {string | null} path where the build sees it; null until staged
+ * @property {string | null} preview object URL of the bytes, for the
+ *   thumbnail; made on first draw, revoked with the upload
  */
 
 /**
  * A map layout: its image, the player counts it is for, and the map editor's
- * optional save file that travels under the same name.
+ * optional save string, which travels as a .map file under the same name.
  *
  * @typedef {PendingUpload & {
  *   counts: Set<number>,
  *   customName: string | null,
- *   mapFile: PendingUpload | null,
+ *   mapCode: string,
+ *   mapFilePath: string | null,
  * }} MapUpload
  */
 
@@ -56,6 +65,32 @@ function scenarioSlug() {
   return sanitizeFilename(state.chosenTitle);
 }
 
+/**
+ * Object URL for an upload's thumbnail, made once and kept on the upload.
+ *
+ * @param {PendingUpload} upload
+ * @returns {string}
+ */
+function previewUrl(upload) {
+  if (upload.preview === null) {
+    const ext = fileExtension(upload.originalName);
+    const type = ext === ".png" ? "image/png" : "image/jpeg";
+    upload.preview = URL.createObjectURL(new Blob([new Uint8Array(upload.bytes)], { type }));
+  }
+  return upload.preview;
+}
+
+/**
+ * Frees an upload's thumbnail once nothing draws it any more.
+ *
+ * @param {PendingUpload | null} upload
+ * @returns {void}
+ */
+function releasePreview(upload) {
+  if (upload?.preview) URL.revokeObjectURL(upload.preview);
+  if (upload) upload.preview = null;
+}
+
 /** Empties the map rows, once the last layout is gone. @returns {void} */
 function resetMapList() {
   el("upload-maps-add").textContent = ADD_FIRST_MAP;
@@ -65,14 +100,34 @@ function resetMapList() {
   refreshUnsavedNote();
 }
 
+/**
+ * Shows the header card for the staged header image, or the add button
+ * alone when there is none.
+ *
+ * @returns {void}
+ */
+function renderHeaderCard() {
+  el("upload-header-card").hidden = headerUpload === null;
+  el("upload-header-add").textContent = headerUpload ? "Replace header image" : ADD_FIRST_HEADER;
+  if (headerUpload) {
+    el("upload-header-orig").textContent = headerUpload.originalName;
+    el("upload-header-preview").src = previewUrl(headerUpload);
+  } else {
+    el("upload-header-name").value = "";
+    el("upload-header-orig").textContent = "";
+    el("upload-header-preview").removeAttribute("src");
+  }
+}
+
 /** Clears every staged upload and its controls. @returns {void} */
 export function resetUploads() {
   state.uploadedFiles.clear();
+  releasePreview(headerUpload);
+  for (const item of mapUploads) releasePreview(item);
   headerUpload = null;
   mapUploads = [];
   el("upload-header").value = "";
-  el("upload-header-name").value = "";
-  el("upload-header-name").hidden = true;
+  renderHeaderCard();
   el("upload-maps").value = "";
   el("upload-maps-names").innerHTML = "";
   el("upload-maps-names").hidden = true;
@@ -160,18 +215,29 @@ function mapTargetName(item) {
 }
 
 /**
- * Re-stages every map image, and each one's map-editor file, under its
- * target name.
+ * Unstages a map layout's image and its map file.
+ *
+ * @param {MapUpload} item
+ * @returns {void}
+ */
+function unstageMap(item) {
+  if (item.path) state.uploadedFiles.delete(item.path);
+  if (item.mapFilePath) state.uploadedFiles.delete(item.mapFilePath);
+  item.mapFilePath = null;
+}
+
+/**
+ * Re-stages every map image, and each one's map file, under its target
+ * name. A save string that is not base64 stages no map file until fixed.
  *
  * @returns {void}
  */
 export function restageMaps() {
-  for (const item of mapUploads) {
-    if (item.path) state.uploadedFiles.delete(item.path);
-    if (item.mapFile?.path) state.uploadedFiles.delete(item.mapFile.path);
-  }
+  for (const item of mapUploads) unstageMap(item);
   const seen = new Set();
   let collision = false;
+  let badCode = false;
+  const encoder = new TextEncoder();
   for (const item of mapUploads) {
     const name = mapTargetName(item);
     const path = `${MAPS_DIR}${name}`;
@@ -179,16 +245,19 @@ export function restageMaps() {
     seen.add(path);
     item.path = path;
     state.uploadedFiles.set(path, item.bytes); // a repeated name: the last file staged under it wins
-    if (item.mapFile) {
-      item.mapFile.path = `${MAP_FILES_DIR}${withExtension(name, MAP_FILE_EXTENSION)}`;
-      state.uploadedFiles.set(item.mapFile.path, item.mapFile.bytes);
+    const code = normalizeMapCode(item.mapCode);
+    if (code === null) badCode = true;
+    if (code) {
+      item.mapFilePath = `${MAP_FILES_DIR}${withExtension(name, MAP_FILE_EXTENSION)}`;
+      state.uploadedFiles.set(item.mapFilePath, encoder.encode(mapFileContents(code)));
     }
   }
-  setUploadStatus(
-    "upload-maps-status",
-    collision ? "Two layouts share the same name — tick the player counts each one is for, or rename one." : MAPS_HINT,
-    collision ? "bad" : "",
-  );
+  const problem = collision
+    ? "Two layouts share the same name — tick the player counts each one is for, or rename one."
+    : badCode
+      ? MAP_CODE_BAD
+      : "";
+  setUploadStatus("upload-maps-status", problem || MAPS_HINT, problem ? "bad" : "");
   refreshUnsavedNote();
 }
 
@@ -204,23 +273,25 @@ function mapRowHtml(item, i) {
         `<label><input type="checkbox" class="upload-player" value="${n}"${item.counts.has(n) ? " checked" : ""}>${n}</label>`,
     )
     .join("");
-  const mapFile = item.mapFile
-    ? `<span class="orig-name">Map editor file: ${escapeHtml(item.mapFile.originalName)}</span>
-       <button type="button" class="link upload-mapfile-remove">Remove</button>`
-    : `<button type="button" class="link upload-mapfile-add">Add map editor file (.map, optional)</button>`;
+  const badCode = normalizeMapCode(item.mapCode) === null;
   return `
-    <div class="upload-map" data-index="${i}">
-      <div class="upload-map-head">
-        <span class="upload-map-title">Layout ${i + 1}</span>
-        <span class="orig-name">${escapeHtml(item.originalName)}</span>
-        <button type="button" class="upload-remove" aria-label="Remove layout ${i + 1}" title="Remove this layout">×</button>
+    <div class="upload-card upload-map" data-index="${i}">
+      <div class="upload-card-body">
+        <div class="upload-card-head">
+          <span class="upload-card-title">Layout ${i + 1}</span>
+          <span class="orig-name">${escapeHtml(item.originalName)}</span>
+          <button type="button" class="upload-remove" aria-label="Remove layout ${i + 1}" title="Remove this layout">×</button>
+        </div>
+        <input type="text" class="upload-rename" aria-label="Target filename for layout ${i + 1}" value="${escapeHtml(mapTargetName(item))}">
+        <fieldset class="upload-players"><legend>Players</legend>${boxes}</fieldset>
+        <label class="upload-mapfile">
+          <span>Map editor string <span class="optional">(optional)</span></span>
+          <input type="text" class="upload-mapfile-input" spellcheck="false" autocomplete="off"
+            placeholder="Paste the string the map editor exports" aria-label="Map editor string for layout ${i + 1}"
+            value="${escapeHtml(item.mapCode)}"${badCode ? ' aria-invalid="true"' : ""}>
+        </label>
       </div>
-      <input type="text" class="upload-rename" aria-label="Target filename for layout ${i + 1}" value="${escapeHtml(mapTargetName(item))}">
-      <fieldset class="upload-players"><legend>Players</legend>${boxes}</fieldset>
-      <div class="upload-mapfile">
-        <input type="file" class="upload-mapfile-input" accept=".map" hidden>
-        ${mapFile}
-      </div>
+      <img class="upload-preview" src="${previewUrl(item)}" alt="Layout ${i + 1} preview">
     </div>
   `;
 }
@@ -253,34 +324,26 @@ export function renderMapUploads() {
       });
     });
     row.querySelector(".upload-remove")?.addEventListener("click", () => {
-      if (item.path) state.uploadedFiles.delete(item.path);
-      if (item.mapFile?.path) state.uploadedFiles.delete(item.mapFile.path);
+      unstageMap(item);
+      releasePreview(item);
       mapUploads = mapUploads.filter((other) => other !== item);
       if (mapUploads.length) renderMapUploads();
       else resetMapList();
     });
-    const mapFileInput = /** @type {HTMLInputElement} */ (row.querySelector(".upload-mapfile-input"));
-    row.querySelector(".upload-mapfile-add")?.addEventListener("click", () => mapFileInput.click());
-    row.querySelector(".upload-mapfile-remove")?.addEventListener("click", () => {
-      if (item.mapFile?.path) state.uploadedFiles.delete(item.mapFile.path);
-      item.mapFile = null;
-      renderMapUploads();
+    const mapCode = /** @type {HTMLInputElement} */ (row.querySelector(".upload-mapfile-input"));
+    mapCode.addEventListener("input", () => {
+      item.mapCode = mapCode.value;
+      const bad = normalizeMapCode(item.mapCode) === null;
+      if (bad) mapCode.setAttribute("aria-invalid", "true");
+      else mapCode.removeAttribute("aria-invalid");
+      restageMaps();
     });
-    mapFileInput.addEventListener("change", async () => {
-      const [file] = mapFileInput.files ?? [];
-      if (!file) return;
-      if (fileExtension(file.name) !== MAP_FILE_EXTENSION) {
-        setUploadStatus(
-          "upload-maps-status",
-          `${escapeHtml(file.name)} is not a <code>.map</code> file from the map editor.`,
-          "bad",
-        );
-        mapFileInput.value = "";
-        return;
-      }
-      if (item.mapFile?.path) state.uploadedFiles.delete(item.mapFile.path);
-      item.mapFile = { bytes: await readAsUint8Array(file), originalName: file.name, path: null };
-      renderMapUploads();
+    // Leaving the box shows the string as it is actually saved.
+    mapCode.addEventListener("change", () => {
+      const code = normalizeMapCode(item.mapCode);
+      if (code === null) return;
+      item.mapCode = code;
+      mapCode.value = code;
     });
   });
   restageMaps();
@@ -296,7 +359,7 @@ export function renderMapUploads() {
  */
 function newMapUpload(bytes, originalName) {
   const counts = new Set(parsePlayerCounts(originalName));
-  return { bytes, originalName, path: null, counts, customName: null, mapFile: null };
+  return { bytes, originalName, path: null, preview: null, counts, customName: null, mapCode: "", mapFilePath: null };
 }
 
 /**
@@ -313,9 +376,9 @@ export function restoreUploads(files) {
   const [header, ...extraImages] = images;
   if (header) {
     const originalName = header.path.slice(IMAGES_DIR.length);
-    headerUpload = { bytes: header.bytes, originalName, path: null };
-    el("upload-header-name").hidden = false;
+    headerUpload = { bytes: header.bytes, originalName, path: null, preview: null };
     el("upload-header-name").value = originalName;
+    renderHeaderCard();
     restageHeader();
   }
   for (const extra of extraImages) state.uploadedFiles.set(extra.path, extra.bytes);
@@ -328,7 +391,7 @@ export function restoreUploads(files) {
       const mapFilePath = `${MAP_FILES_DIR}${withExtension(name, MAP_FILE_EXTENSION)}`;
       const mapFile = mapFiles.find((m) => m.path === mapFilePath);
       if (mapFile) {
-        item.mapFile = { bytes: mapFile.bytes, originalName: mapFilePath.slice(MAP_FILES_DIR.length), path: null };
+        item.mapCode = new TextDecoder().decode(mapFile.bytes).trim();
         pairedMapFiles.add(mapFile.path);
       }
       return item;
@@ -342,6 +405,16 @@ export function restoreUploads(files) {
 export function initUploads() {
   el("upload-open").addEventListener("click", () => el("upload-dialog").showModal());
   el("upload-maps-add").addEventListener("click", () => el("upload-maps").click());
+  el("upload-header-add").addEventListener("click", () => el("upload-header").click());
+  el("upload-header-remove").addEventListener("click", () => {
+    if (headerUpload?.path) state.uploadedFiles.delete(headerUpload.path);
+    releasePreview(headerUpload);
+    headerUpload = null;
+    el("upload-header").value = "";
+    renderHeaderCard();
+    setUploadStatus("upload-header-status", HEADER_HINT);
+    refreshUnsavedNote();
+  });
 
   el("upload-header").addEventListener("change", async () => {
     const [file] = el("upload-header").files ?? [];
@@ -356,10 +429,13 @@ export function initUploads() {
       return;
     }
     if (headerUpload?.path) state.uploadedFiles.delete(headerUpload.path);
-    headerUpload = { bytes: await readAsUint8Array(file), originalName: file.name, path: null };
-    el("upload-header-name").hidden = false;
+    releasePreview(headerUpload);
+    headerUpload = { bytes: await readAsUint8Array(file), originalName: file.name, path: null, preview: null };
+    el("upload-header").value = "";
     el("upload-header-name").value = withExtension(scenarioSlug(), fileExtension(file.name));
+    renderHeaderCard();
     restageHeader();
+    showToast(`Header image uploaded as ${headerTargetName(headerUpload)}.`);
   });
   el("upload-header-name").addEventListener("input", restageHeader);
   // Leaving the box shows the name as it is actually staged.
@@ -385,5 +461,8 @@ export function initUploads() {
     const added = await Promise.all(files.map(async (file) => newMapUpload(await readAsUint8Array(file), file.name)));
     mapUploads = [...mapUploads, ...added];
     renderMapUploads();
+    showToast(
+      added.length === 1 ? `Map image ${added[0].originalName} uploaded.` : `${added.length} map images uploaded.`,
+    );
   });
 }

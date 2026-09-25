@@ -16,3 +16,20 @@
 .confirm-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
 button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
 button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }
+
+/* --- Toast (toast.js). A popover: resets the UA's centered box. ---------- */
+
+.toast {
+  inset: auto 1rem 1rem auto;
+  margin: 0;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ok);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.85rem;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.toast.bad { border-left-color: var(--bad); }

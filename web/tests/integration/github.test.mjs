@@ -487,7 +487,8 @@ test.describe("saving a resumed draft after removing an upload", () => {
     const layouts = page.locator("#upload-maps-names .upload-map");
     await expect(layouts).toHaveCount(2);
     await expect(layouts.nth(0).locator(".upload-rename")).toHaveValue("half_written_2p.png");
-    await expect(layouts.nth(0).locator(".upload-mapfile")).toContainText("half_written_2p.map");
+    // The committed map file comes back as its save string: every blob here reads "not really a png".
+    await expect(layouts.nth(0).locator(".upload-mapfile-input")).toHaveValue("not really a png");
     await layouts.nth(0).locator(".upload-remove").click();
     await page.locator("#upload-done").click();
 
