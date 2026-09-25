@@ -649,7 +649,7 @@ test("the editor suggests uploaded image paths, by keyboard and by mouse", async
   await rows.nth(1).getByRole("checkbox", { name: "4", exact: true }).check();
   await page.locator("#upload-done").click();
 
-  const list = page.locator("#image-autocomplete");
+  const list = page.locator("#editor-autocomplete");
   const options = list.getByRole("option");
   const header = "\\addscenariosection{1}{Clash Scenario}{Probe}";
   const graphics = "\\includegraphics[width=\\linewidth]";
@@ -712,6 +712,88 @@ test("the editor suggests uploaded image paths, by keyboard and by mouse", async
   await expect(list).toBeHidden();
 
   expect(appErrors(errors), "the page reported errors while completing").toEqual([]);
+});
+
+test("the editor suggests glyph names with their pictures after \\svg", async ({ app }) => {
+  const { page, errors } = app;
+  // The use counts are generated, never committed: stub them so the order
+  // does not hang on whether web/glyph-usage.mjs has run here.
+  let usageRequests = 0;
+  await page.route("**/web/repo/assets/glyphs-inkscape/glyph-usage.json", (route) => {
+    usageRequests += 1;
+    return route.fulfill({ json: { ongoing: 99, "attack-yellow": 5, "3_gold": 2 } });
+  });
+  await enterWorkspace(page);
+  expect(usageRequests, "the catalog loads on the first \\svg, not on page load").toBe(0);
+
+  const list = page.locator("#editor-autocomplete");
+  const options = list.getByRole("option");
+
+  // Typing \svg{go opens the list. A prefix match beats a more used
+  // substring match, and every row shows the glyph's picture.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg{go");
+  await expect(list).toHaveAttribute("aria-label", "Glyphs");
+  await expect(options.first()).toHaveText("gold");
+  await expect(options.first().locator("img")).toHaveAttribute("src", "../repo/assets/glyphs/gold.svg");
+  await expect(options.filter({ hasText: "ongoing" })).toHaveCount(1);
+  // Enter writes the name and closes the brace.
+  await page.keyboard.press("Enter");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{gold}");
+
+  // With nothing typed, the most used glyph leads; colored uses count for
+  // the plain glyph, and -mono and colored variants are never offered. A
+  // variant with no plain glyph, such as arrows_gray, is offered as itself.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg");
+  await expect(options.first()).toHaveText("ongoing");
+  await expect(options.nth(1)).toHaveText("attack");
+  const offered = await options.allTextContents();
+  expect(offered.filter((name) => /(-mono|-yellow|-red)$/.test(name) || name === "arrow_right_gray")).toEqual([]);
+  // Letters in order narrow it too, and a click picks, braces included.
+  await page.keyboard.press("Escape");
+  await setEditor(page, "Gain \\svg{|");
+  await page.keyboard.type("mrlp");
+  await expect(options).toHaveText(["morale_positive"]);
+  await options.first().click();
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{morale_positive}");
+  await expect(page.locator(".CodeMirror textarea")).toBeFocused();
+
+  // Right after \svg, Tab picks and writes the braces.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg");
+  await expect(options.first()).toHaveText("ongoing");
+  await page.keyboard.press("Tab");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{ongoing}");
+
+  // Typing the name straight after \svg, with no brace, writes the braces
+  // around it and narrows on; Enter picks inside them.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svggo");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{go}");
+  await expect(options.first()).toHaveText("gold");
+  await page.keyboard.press("Enter");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{gold}");
+
+  // One Ctrl-Z takes the braces back out, for a command that only starts
+  // with \svg.
+  await setEditor(page, "|");
+  await page.keyboard.type("\\svgs");
+  expect(await editorLine(page, 0)).toBe("\\svg{s}");
+  await page.keyboard.press("Control+z");
+  expect(await editorLine(page, 0)).toBe("\\svgs");
+
+  // The dark theme draws a glyph's yellow variant, where it has one.
+  await setEditor(page, "Gain \\svg{|");
+  await page.keyboard.type("attack");
+  const attack = options.filter({ hasText: /^attack$/ });
+  await page.evaluate(() => document.documentElement.setAttribute("data-theme", "light"));
+  await expect(attack.locator("img:visible")).toHaveAttribute("src", "../repo/assets/glyphs/attack.svg");
+  await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+  await expect(attack.locator("img:visible")).toHaveAttribute("src", "../repo/assets/glyphs/attack-yellow.svg");
+
+  expect(appErrors(errors), "the page reported errors while completing glyphs").toEqual([]);
 });
 
 test("the theme toggle flips the theme and the choice survives a reload", async ({ app }) => {

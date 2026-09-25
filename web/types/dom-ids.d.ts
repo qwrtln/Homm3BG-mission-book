@@ -64,7 +64,7 @@ interface ElementIdMap {
   "scratch-coop": HTMLButtonElement;
   search: HTMLInputElement;
   "search-results": HTMLDivElement;
-  "image-autocomplete": HTMLUListElement;
+  "editor-autocomplete": HTMLUListElement;
   "name-error": HTMLParagraphElement;
   "go-hint": HTMLParagraphElement;
   "status-bar": HTMLDivElement;

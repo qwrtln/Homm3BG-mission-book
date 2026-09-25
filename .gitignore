@@ -27,6 +27,7 @@ coops/translated
 sections/translated
 
 # Web editor
+assets/glyphs-inkscape/glyph-usage.json
 .wrangler/
 node_modules/
 playwright-report/

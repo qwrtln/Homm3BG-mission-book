@@ -86,6 +86,11 @@ jobs:
           done
           cp metadata.tex site/web/repo/metadata.tex
 
+      # Generated, not committed: how often the book uses each glyph, so the
+      # editor's \svg{} suggestions offer common glyphs first.
+      - name: Count glyph uses for the editor
+        run: node web/glyph-usage.mjs site/web/repo/assets/glyphs-inkscape/glyph-usage.json
+
       - name: Restore the BusyTeX engine payload
         id: engine-cache
         uses: actions/cache@v5

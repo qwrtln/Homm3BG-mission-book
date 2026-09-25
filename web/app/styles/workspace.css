@@ -131,7 +131,7 @@ details.full-log pre {
   margin: 0.5rem 0 0;
 }
 
-/* --- Image-path suggestions under the editor's cursor (image-autocomplete.js) --- */
+/* --- Image-path and glyph suggestions under the editor's cursor (autocomplete.js) --- */
 
 .autocomplete-list[hidden] { display: none; }
 .autocomplete-list {
@@ -160,3 +160,19 @@ details.full-log pre {
 }
 .autocomplete-item.active { background: var(--accent); color: #fff; }
 .autocomplete-item mark { background: none; color: inherit; font-weight: 700; }
+/* Glyphs are drawn for the book's light pages, some in black: a light chip keeps them visible in the dark theme. */
+.autocomplete-item:has(.autocomplete-icon) { display: flex; align-items: center; gap: 0.5rem; }
+.autocomplete-item:has(.autocomplete-icon) span { overflow: hidden; text-overflow: ellipsis; }
+.autocomplete-icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.25rem;
+  padding: 1px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 3px;
+}
+/* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
+.autocomplete-icon.dark { display: none; }
+html[data-theme="dark"] .autocomplete-icon.dark { display: block; background: none; }
+html[data-theme="dark"] .autocomplete-icon:has(+ .autocomplete-icon.dark) { display: none; }

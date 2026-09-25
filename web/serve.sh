@@ -5,9 +5,11 @@
 # release the deploy fetches (BUSYTEX_ENGINE_VERSION in web/vendor.env), and
 # again whenever that version changes. Then serves the repository with the
 # dependency-free server the tests use: it sends the COOP/COEP headers the
-# engine needs and maps /web/repo/ to the repository root.
+# engine needs and maps /web/repo/ to the repository root. Before that, counts
+# the book's glyph uses into assets/glyphs-inkscape/glyph-usage.json
+# (gitignored) for the editor's \svg{} suggestions.
 #
-# Needs curl, tar and Node. Nothing is installed.
+# Needs curl, tar, git and Node. Nothing is installed.
 #
 # Usage: web/serve.sh [PORT]    (default 8000)
 
@@ -31,6 +33,9 @@ if [[ "$(cat "$stamp" 2>/dev/null)" != "$BUSYTEX_ENGINE_VERSION" ]]; then
   curl -fL --progress-bar "$url" | tar xz -C "$engine" --strip-components=1
   echo "$BUSYTEX_ENGINE_VERSION" > "$stamp"
 fi
+
+# How often the book uses each glyph, so the editor offers common ones first.
+node "$web/glyph-usage.mjs"
 
 echo "Open http://127.0.0.1:$port/web/app/ (Ctrl+C to stop)"
 PORT=$port exec node "$web/tests/driver/serve.mjs"

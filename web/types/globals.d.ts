@@ -23,13 +23,15 @@ interface CodeMirrorEditor {
   refresh(): void;
   focus(): void;
   getCursor(): CodeMirrorPosition;
+  setCursor(pos: CodeMirrorPosition): void;
   getLine(line: number): string;
-  replaceRange(text: string, from: CodeMirrorPosition, to?: CodeMirrorPosition): void;
+  replaceRange(text: string, from: CodeMirrorPosition, to?: CodeMirrorPosition, origin?: string): void;
   cursorCoords(pos: CodeMirrorPosition, mode: "window"): { left: number; right: number; top: number; bottom: number };
   somethingSelected(): boolean;
   addKeyMap(map: CodeMirrorKeyMap): void;
   removeKeyMap(map: CodeMirrorKeyMap): void;
   getInputField(): HTMLTextAreaElement;
+  hasFocus(): boolean;
 }
 
 interface CodeMirrorOptions {
