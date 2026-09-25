@@ -129,7 +129,9 @@ async function showPrefetchedPdf(path) {
   const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
   prefetch.promise = promise;
   const { pdfBlob } = await promise;
-  if (pdfBlob) await showPdf(pdfBlob, source);
+  // The nightly build behind it appends a feedback page; drop it, so the
+  // pages match what Build PDF makes from the same source.
+  if (pdfBlob) await showPdf(pdfBlob, source, { dropLastPage: true });
   else clearPdf();
 }
 

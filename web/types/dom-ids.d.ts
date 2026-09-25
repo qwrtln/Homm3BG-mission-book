@@ -54,7 +54,8 @@ interface ElementIdMap {
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;
-  "pdf-toolbar": HTMLDivElement;
+  "pdf-controls": HTMLDivElement;
+  "pdf-page-count": HTMLSpanElement;
   "pdf-zoom-in": HTMLButtonElement;
   "pdf-zoom-level": HTMLButtonElement;
   "pdf-zoom-out": HTMLButtonElement;
@@ -78,7 +79,7 @@ interface ElementIdMap {
   "editor-autocomplete": HTMLUListElement;
   "name-error": HTMLParagraphElement;
   "go-hint": HTMLParagraphElement;
-  "status-bar": HTMLDivElement;
+  "status-bar": HTMLElement;
   "status-spinner": HTMLSpanElement;
   "status-text": HTMLSpanElement;
   "theme-toggle": HTMLButtonElement;

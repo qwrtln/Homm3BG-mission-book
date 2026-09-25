@@ -42,22 +42,6 @@ main.resizing { cursor: col-resize; user-select: none; }
   height: 100%;
   font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
 }
-/* Zoom controls over the pages (pdf-view.js). Hidden until a PDF shows. */
-.pdf-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  border-bottom: 1px solid var(--line);
-}
-.pdf-toolbar[hidden] { display: none; }
-.pdf-toolbar button {
-  min-width: 2rem;
-  padding: 0.15rem 0.45rem;
-  font-variant-numeric: tabular-nums;
-}
-.pdf-toolbar .pdf-zoom-level { min-width: 3.75rem; }
 .pdf-pane-body-wrap {
   position: relative;
   flex: 1 1 auto;
@@ -129,15 +113,34 @@ main.resizing { cursor: col-resize; user-select: none; }
   text-align: center;
 }
 .empty-pdf.loading { flex-direction: column; gap: 0.8rem; }
+/* The footer under both panes, so the two end on one line. */
 .status-bar {
-  padding: 0.65rem 1rem;
+  flex: 0 0 auto;
+  padding: 0.4rem 1rem;
   border-top: 1px solid var(--line);
+  background: var(--panel);
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
   flex-wrap: wrap;
 }
+/* Page count and zoom (pdf-view.js), pushed right. Hidden until a PDF shows. */
+.pdf-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.pdf-controls[hidden] { display: none; }
+.pdf-page-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.pdf-zoom-controls { display: flex; gap: 0.25rem; }
+.pdf-zoom-controls button {
+  min-width: 2rem;
+  padding: 0.15rem 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+.pdf-zoom-controls .pdf-zoom-level { min-width: 3.75rem; }
 .spinner {
   width: 0.9rem;
   height: 0.9rem;

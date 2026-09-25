@@ -18,10 +18,10 @@ let pdfjsReady = null;
 
 /**
  * The document the pane shows, or is about to show, with the task that
- * loaded it: destroying the task is what frees the document. Null for a
- * placeholder.
+ * loaded it: destroying the task is what frees the document, and the number
+ * of its pages the pane draws. Null for a placeholder.
  *
- * @type {{task: PdfLoadingTask, doc: PdfDocument} | null}
+ * @type {{task: PdfLoadingTask, doc: PdfDocument, pageCount: number} | null}
  */
 let shown = null;
 
@@ -60,7 +60,7 @@ function forgetDocument() {
   renderTicket += 1;
   shown?.task.destroy();
   shown = null;
-  el("pdf-toolbar").hidden = true;
+  el("pdf-controls").hidden = true;
 }
 
 /**
@@ -146,9 +146,12 @@ function jumpToLine(line) {
  * @param {Blob} blob PDF bytes, tagged application/pdf
  * @param {string} source the editor source the PDF stands for; an edit away
  *   from it makes the PDF stale
+ * @param {{dropLastPage?: boolean}} [options] dropLastPage leaves the last
+ *   page undrawn and uncounted, never the only one: the published PDF ends
+ *   on a feedback page an in-browser build does not make
  * @returns {Promise<void>}
  */
-export async function showPdf(blob, source) {
+export async function showPdf(blob, source, { dropLastPage = false } = {}) {
   state.lastPdf = blob;
   state.pdfSource = source;
   el("download").disabled = false;
@@ -167,7 +170,8 @@ export async function showPdf(blob, source) {
     }
     // The old pages are already drawn, so the old document can go now.
     shown?.task.destroy();
-    shown = { task, doc };
+    const pageCount = dropLastPage ? Math.max(doc.numPages - 1, 1) : doc.numPages;
+    shown = { task, doc, pageCount };
     await renderPages();
   } catch (error) {
     if (ticket !== loadTicket) return;
@@ -190,7 +194,7 @@ function pageBoxes(pages) {
 }
 
 /**
- * Draws every page of the shown document at the current zoom into fresh
+ * Draws the shown document's pages at the current zoom into fresh
  * canvases, then swaps them in at once and scrolls back to the reader's
  * place. Dropped unfinished when a newer render starts.
  *
@@ -198,7 +202,7 @@ function pageBoxes(pages) {
  */
 async function renderPages() {
   if (!shown) return;
-  const { doc } = shown;
+  const { doc, pageCount } = shown;
   renderTicket += 1;
   const ticket = renderTicket;
   const body = el("pdf-body");
@@ -209,7 +213,7 @@ async function renderPages() {
   container.className = "pdf-pages";
 
   try {
-    for (let number = 1; number <= doc.numPages; number += 1) {
+    for (let number = 1; number <= pageCount; number += 1) {
       const page = await doc.getPage(number);
       if (ticket !== renderTicket) return;
       const scale = (fitWidth / page.getViewport({ scale: 1 }).width) * zoom;
@@ -237,7 +241,8 @@ async function renderPages() {
   const anchor = old instanceof HTMLElement ? scrollAnchor(pageBoxes(old), body.scrollTop) : { page: 0, offset: 0 };
   const across = body.scrollWidth > 0 ? (body.scrollLeft + body.clientWidth / 2) / body.scrollWidth : 0.5;
   body.replaceChildren(container);
-  el("pdf-toolbar").hidden = false;
+  el("pdf-page-count").textContent = pageCount === 1 ? "1 page" : `${pageCount} pages`;
+  el("pdf-controls").hidden = false;
   body.scrollTop = anchorScrollTop(pageBoxes(container), anchor);
   body.scrollLeft = across * body.scrollWidth - body.clientWidth / 2;
 }
@@ -262,7 +267,8 @@ function redraw() {
  */
 function setZoom(value) {
   zoom = value;
-  el("pdf-zoom-level").textContent = `${Math.round(zoom * 100)}%`;
+  // Fit, not 100%: the default is a share of the pane's width, not actual size.
+  el("pdf-zoom-level").textContent = zoom === 1 ? "Fit" : `${Math.round(zoom * 100)}%`;
   el("pdf-zoom-out").disabled = zoom <= ZOOM_STEPS[0];
   el("pdf-zoom-in").disabled = zoom >= ZOOM_STEPS[ZOOM_STEPS.length - 1];
   redraw();

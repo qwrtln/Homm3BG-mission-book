@@ -161,7 +161,7 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   await expect(page.locator("#pdf-empty")).toHaveCount(0);
   await expect(PAGES(page)).toHaveCount(3);
   await expect(PAGES(page).first()).toBeVisible();
-  await expect(page.locator("#pdf-zoom-level")).toHaveText("100%");
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("Fit");
   await expect(page.locator("#error-panel")).toBeHidden();
 
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
@@ -489,7 +489,7 @@ test("a rebuild keeps the page and the zoom the reader was at", async ({ app }) 
 
   // "Fit to width" puts the zoom back, and zoom out stops at its last step.
   await page.locator("#pdf-zoom-level").click();
-  await expect(page.locator("#pdf-zoom-level")).toHaveText("100%");
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("Fit");
   for (let i = 0; i < 3; i += 1) await page.locator("#pdf-zoom-out").click();
   await expect(page.locator("#pdf-zoom-level")).toHaveText("50%");
   await expect(page.locator("#pdf-zoom-out")).toBeDisabled();

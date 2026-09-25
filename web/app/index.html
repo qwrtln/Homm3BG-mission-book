@@ -144,11 +144,6 @@
            title="Drag to resize. Double-click to reset."></div>
 
       <section class="pane" id="pdf-pane" aria-label="PDF">
-        <div class="pdf-toolbar" id="pdf-toolbar" role="toolbar" aria-label="Zoom" hidden>
-          <button type="button" class="pdf-zoom" id="pdf-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
-          <button type="button" class="pdf-zoom-level" id="pdf-zoom-level" title="Fit to width">100%</button>
-          <button type="button" class="pdf-zoom" id="pdf-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
-        </div>
         <div class="pdf-pane-body-wrap" id="pdf-wrap">
           <div class="build-progress" id="build-progress" role="progressbar" aria-label="Building the PDF" hidden></div>
           <div class="pdf-pane-body" id="pdf-body">
@@ -162,12 +157,23 @@
             <pre id="full-log"></pre>
           </details>
         </div>
-        <div class="status-bar" id="status-bar">
-          <span class="spinner" id="status-spinner" hidden></span>
-          <span id="status-text">Ready.</span>
-        </div>
       </section>
     </main>
+
+    <!-- One bar under both panes: the status on the left, the shown PDF's
+         page count and zoom on the right (pdf-view.js). -->
+    <footer class="status-bar" id="status-bar">
+      <span class="spinner" id="status-spinner" hidden></span>
+      <span id="status-text">Ready.</span>
+      <div class="pdf-controls" id="pdf-controls" hidden>
+        <span class="pdf-page-count" id="pdf-page-count"></span>
+        <div class="pdf-zoom-controls" role="toolbar" aria-label="Zoom">
+          <button type="button" class="pdf-zoom" id="pdf-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+          <button type="button" class="pdf-zoom-level" id="pdf-zoom-level" title="Fit to width">Fit</button>
+          <button type="button" class="pdf-zoom" id="pdf-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+    </footer>
   </div>
 </div>
 
