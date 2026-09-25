@@ -230,6 +230,14 @@ function parseContents(payload) {
 
 /**
  * @param {unknown} payload
+ * @returns {GithubBlobRef}
+ */
+function parseBlobRef(payload) {
+  return { sha: stringField(object(payload, "file"), "sha", "file") };
+}
+
+/**
+ * @param {unknown} payload
  * @returns {GithubRef}
  */
 function parseRef(payload) {
@@ -426,7 +434,9 @@ async function findResumableDrafts(token, { owner, repo, username, base }) {
       const files = (compare.files || []).filter((f) => f.status !== "removed");
       const texFile = files.find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
       const assets = files
-        .filter((f) => f.filename.startsWith("assets/images/") || f.filename.startsWith("assets/maps/"))
+        .filter((f) =>
+          ["assets/images/", "assets/maps/", "assets/map-files/"].some((dir) => f.filename.startsWith(dir)),
+        )
         .map((f) => ({ path: f.filename, sha: f.sha }));
       if (texFile) {
         const kind = b.name.startsWith(`${prefix}updates/`) ? "edit" : "new";
@@ -467,6 +477,24 @@ function decodeBase64Utf8(base64) {
 export async function getBlobBytes(token, owner, repo, sha) {
   const blob = await apiJson(`/repos/${owner}/${repo}/git/blobs/${sha}`, token, parseBlob);
   return decodeBase64(blob.content);
+}
+
+/**
+ * Blob sha of a file on the repository's default branch, without its
+ * content: what a removed upload reverts to when the path predates the draft.
+ *
+ * @param {string} token
+ * @param {string} owner
+ * @param {string} repo
+ * @param {string} path repository-relative path
+ * @returns {Promise<string | null>} null if the default branch has no such file
+ */
+async function getDefaultBlobSha(token, owner, repo, path) {
+  const response = await api(`/repos/${owner}/${repo}/contents/${path}`, token);
+  if (response.status === 404) return null;
+  if (!response.ok)
+    throw new GithubApiError(`Could not read "${path}" (${response.status}).`, { status: response.status });
+  return parseBlobRef(await response.json()).sha;
 }
 
 /**
@@ -597,14 +625,16 @@ async function createBlob(token, owner, repo, content) {
 /**
  * Pushes one commit, creating the branch from the default branch if it does
  * not exist yet. base_tree keeps a save from disturbing files already on the
- * branch.
+ * branch, except the ones named in `removed`.
  *
  * @param {string} token
- * @param {{owner: string, repo: string, branch: string, message: string, files: CommitFile[], startOver?: boolean}} request
+ * @param {{owner: string, repo: string, branch: string, message: string, files: CommitFile[], removed?: string[], startOver?: boolean}} request
+ *   `removed` lists paths this branch committed before and no longer wants: each goes back to the default
+ *   branch's version, or is deleted when the default branch has none.
  *   `startOver` moves an existing branch back onto the default branch's tip before committing, discarding what it held
  * @returns {Promise<CommitResult>}
  */
-export async function commitFiles(token, { owner, repo, branch, message, files, startOver = false }) {
+export async function commitFiles(token, { owner, repo, branch, message, files, removed = [], startOver = false }) {
   let branchSha = await getBranchSha(token, owner, repo, branch);
   if (branchSha !== null && startOver) {
     const repoInfo = await ensureRepoReady(token, owner, repo);
@@ -612,7 +642,7 @@ export async function commitFiles(token, { owner, repo, branch, message, files, 
     if (baseSha === null) {
       throw new GithubApiError(`Could not find the default branch "${repoInfo.default_branch}" to start over from.`);
     }
-    return commitOnto(token, owner, repo, branch, baseSha, message, files, { force: true });
+    return commitOnto(token, owner, repo, branch, baseSha, message, files, [], { force: true });
   }
   if (branchSha === null) {
     const repoInfo = await ensureRepoReady(token, owner, repo);
@@ -624,7 +654,7 @@ export async function commitFiles(token, { owner, repo, branch, message, files, 
     branchSha = baseSha;
   }
 
-  return commitOnto(token, owner, repo, branch, branchSha, message, files);
+  return commitOnto(token, owner, repo, branch, branchSha, message, files, removed);
 }
 
 /**
@@ -635,17 +665,26 @@ export async function commitFiles(token, { owner, repo, branch, message, files, 
  * @param {string} parentSha the commit to build on
  * @param {string} message
  * @param {CommitFile[]} files
+ * @param {string[]} removed paths to take back off the branch; see commitFiles
  * @param {{force?: boolean}} [update] force: the commit does not descend from the branch's tip
  * @returns {Promise<CommitResult>}
  */
-async function commitOnto(token, owner, repo, branch, parentSha, message, files, { force = false } = {}) {
+async function commitOnto(token, owner, repo, branch, parentSha, message, files, removed, { force = false } = {}) {
   const parentCommit = await apiJson(`/repos/${owner}/${repo}/git/commits/${parentSha}`, token, parseCommit);
 
-  /** @type {{path: string, mode: string, type: string, sha: string}[]} */
+  /** @type {{path: string, mode: string, type: string, sha: string | null}[]} */
   const entries = [];
   for (const file of files) {
     const sha = await createBlob(token, owner, repo, file.content);
     entries.push({ path: file.path, mode: "100644", type: "blob", sha });
+  }
+  // A null sha deletes the path from base_tree. A path the default branch
+  // also has is put back to that version instead, so the pull request does
+  // not delete a file the draft only overwrote.
+  const written = new Set(files.map((file) => file.path));
+  for (const path of removed) {
+    if (written.has(path)) continue;
+    entries.push({ path, mode: "100644", type: "blob", sha: await getDefaultBlobSha(token, owner, repo, path) });
   }
 
   const tree = await apiJson(`/repos/${owner}/${repo}/git/trees`, token, shaOnlyParser("tree"), {
@@ -679,7 +718,8 @@ async function commitOnto(token, owner, repo, branch, parentSha, message, files,
   if (updateResponse.status === 422 && !force) {
     // Branch tip moved (racing save); retry once against the fresh tip.
     const freshSha = await getBranchSha(token, owner, repo, branch);
-    if (freshSha && freshSha !== parentSha) return commitOnto(token, owner, repo, branch, freshSha, message, files);
+    if (freshSha && freshSha !== parentSha)
+      return commitOnto(token, owner, repo, branch, freshSha, message, files, removed);
   }
   if (!updateResponse.ok && (force || updateResponse.status !== 422)) {
     throw new GithubApiError(`Could not update branch "${branch}" (${updateResponse.status}).`, {
@@ -782,6 +822,7 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
  * @param {string} request.texPath repository path the .tex lands at
  * @param {string} request.texContent the editor's current text
  * @param {Map<string, Uint8Array>} request.uploadedFiles path -> bytes
+ * @param {string[]} [request.removedUploads] uploads an earlier save committed that the contributor has since dropped or renamed
  * @param {GithubContext} request.context from discoverGithubContext
  * @param {string} [request.branch] the branch a resumed or already-saved draft lives on; overrides the name-derived one
  * @param {"new" | "edit"} [request.mode] "edit" changes the file at texPath in place: an updates/ branch, no group file
@@ -790,7 +831,17 @@ async function ensureDraftEntry(token, { owner, repo, branch, group, texPath }) 
  */
 export async function saveScenarioToRepo(
   token,
-  { scenarioName, texPath, texContent, uploadedFiles, context, branch: knownBranch, mode = "new", startOver = false },
+  {
+    scenarioName,
+    texPath,
+    texContent,
+    uploadedFiles,
+    removedUploads = [],
+    context,
+    branch: knownBranch,
+    mode = "new",
+    startOver = false,
+  },
 ) {
   const { username, isMember, fork } = context;
 
@@ -819,7 +870,10 @@ export async function saveScenarioToRepo(
   }
 
   const message = `${editing ? "Edit" : "Update"} ${scenarioName}`;
-  const result = await commitFiles(token, { owner, repo, branch, message, files, startOver: editing && startOver });
+  const reset = editing && startOver;
+  // A reset branch starts from the default branch, so nothing earlier is left to remove.
+  const removed = reset ? [] : removedUploads.filter((path) => !uploadedFiles.has(path));
+  const result = await commitFiles(token, { owner, repo, branch, message, files, removed, startOver: reset });
   return { ...result, isMember };
 }
 

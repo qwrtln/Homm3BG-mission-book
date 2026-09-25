@@ -45,6 +45,10 @@ interface GithubContents {
   content: string;
 }
 
+interface GithubBlobRef {
+  sha: string;
+}
+
 interface GithubRef {
   object: { sha: string };
 }

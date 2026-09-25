@@ -9,9 +9,14 @@ import { el } from "./dom.js";
  * `startOver` there means the first save must reset the branch to the default
  * branch. The save that does it clears it, so later saves build on top.
  *
- * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null}}
+ * `committedUploads` holds the upload paths the branch carries: a resumed
+ * draft's assets, then whatever the last save pushed. One missing from the
+ * uploads dialog at the next save was dropped or renamed, and comes off the
+ * branch.
+ *
+ * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null, committedUploads: Set<string>}}
  */
-export const githubSaveState = { lastSaveTarget: null, edit: null };
+export const githubSaveState = { lastSaveTarget: null, edit: null, committedUploads: new Set() };
 
 /**
  * On sign-out or picking a different scenario: neither carries over the
@@ -22,6 +27,7 @@ export const githubSaveState = { lastSaveTarget: null, edit: null };
 export function resetGithubSaveState() {
   githubSaveState.lastSaveTarget = null;
   githubSaveState.edit = null;
+  githubSaveState.committedUploads = new Set();
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;
 }

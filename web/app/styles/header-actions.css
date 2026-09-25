@@ -112,6 +112,24 @@ input.upload-rename {
   width: 100%;
 }
 .upload-rename-list[hidden] { display: none; }
-.upload-rename-list { display: flex; flex-direction: column; gap: 0.3rem; width: 100%; }
-.upload-rename-row { display: flex; align-items: center; gap: 0.4rem; }
-.upload-rename-row .orig-name { color: var(--muted); font-size: 0.76rem; white-space: nowrap; }
+.upload-rename-list { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+.upload-map {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--paper);
+}
+.upload-map-head { display: flex; align-items: center; gap: 0.5rem; }
+.upload-map-title { font-weight: 600; }
+.upload-map-head .orig-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-map .orig-name { color: var(--muted); font-size: 0.76rem; }
+.upload-players { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; border: 0; padding: 0; margin: 0; }
+.upload-players legend { float: left; padding: 0; margin-right: 0.2rem; color: var(--muted); }
+.upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
+.upload-mapfile { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; }
+.upload-mapfile button.link { padding: 0; font-size: 0.8rem; }
+button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }

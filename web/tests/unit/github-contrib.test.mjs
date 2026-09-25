@@ -194,7 +194,7 @@ function createGithubFake(options = {}) {
       const source = ref !== null ? branchFiles.get(ref) : base;
       const content = source?.get(filePath);
       if (content === undefined) return notFound();
-      return json({ content: base64(content) });
+      return json({ content: base64(content), sha: blobShaFor(content) });
     }
 
     if ((match = path.match(/^\/repos\/[^/]+\/[^/]+\/git\/ref\/heads\/(.+)$/)) && method === "GET") {
@@ -228,7 +228,11 @@ function createGithubFake(options = {}) {
       // that leave every path unchanged resolves back to base_tree's own
       // sha, which is what lets commitOnto notice a save changed nothing.
       const merged = new Map(resolveTree(body.base_tree));
-      for (const entry of body.tree) merged.set(entry.path, entry.sha);
+      // A null sha deletes the path, as on GitHub.
+      for (const entry of body.tree) {
+        if (entry.sha === null) merged.delete(entry.path);
+        else merged.set(entry.path, entry.sha);
+      }
       const key = JSON.stringify(canonicalEntries(merged));
       let sha = treeShaByContent.get(key);
       if (!sha) {
@@ -254,8 +258,11 @@ function createGithubFake(options = {}) {
       if (!commit) return notFound();
       // A ref moved off its own history is only accepted with force, as on GitHub.
       const files = body.force ? new Map(base) : branchFiles.get(branch) || new Map(base);
-      const written = commit.entries.map((entry) => ({ path: entry.path, content: blobs.get(entry.sha) || "" }));
+      const written = commit.entries
+        .filter((entry) => entry.sha !== null)
+        .map((entry) => ({ path: entry.path, content: blobs.get(entry.sha) || "" }));
       for (const file of written) files.set(file.path, file.content);
+      for (const entry of commit.entries) if (entry.sha === null) files.delete(entry.path);
       branchFiles.set(branch, files);
       branches.set(branch, body.sha);
       applied.push({ branch, message: commit.message, files: written });
@@ -463,6 +470,104 @@ test("every draft group file lives under draft-scenarios/, never a published dir
   }
 });
 
+test("a dropped upload comes off the branch on the next save; a kept or re-added one stays", async () => {
+  const fake = createGithubFake({ files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE } });
+  setHttpClient(fake.client);
+  const texPath = "draft-scenarios/clash/valley.tex";
+  const first = await saveScenarioToRepo("t", {
+    scenarioName: "Valley",
+    texPath,
+    texContent: "one",
+    uploadedFiles: new Map([
+      ["assets/images/valley.png", new Uint8Array([1])],
+      ["assets/maps/valley_2p.png", new Uint8Array([2])],
+      ["assets/map-files/valley_2p.map", new Uint8Array([3])],
+      ["assets/maps/valley_3p.png", new Uint8Array([4])],
+    ]),
+    context: context(),
+  });
+
+  // The header was replaced by a JPG, the two-player layout and its map file
+  // were removed, and the three-player layout stayed.
+  await saveScenarioToRepo("t", {
+    scenarioName: "Valley",
+    texPath,
+    texContent: "two",
+    uploadedFiles: new Map([
+      ["assets/images/valley.jpg", new Uint8Array([5])],
+      ["assets/maps/valley_3p.png", new Uint8Array([4])],
+    ]),
+    removedUploads: [
+      "assets/images/valley.png",
+      "assets/maps/valley_2p.png",
+      "assets/map-files/valley_2p.map",
+      "assets/maps/valley_3p.png",
+    ],
+    context: context(),
+    branch: first.branch,
+  });
+
+  assert.equal(fake.fileOn(first.branch, "assets/images/valley.png"), undefined);
+  assert.equal(fake.fileOn(first.branch, "assets/maps/valley_2p.png"), undefined);
+  assert.equal(fake.fileOn(first.branch, "assets/map-files/valley_2p.map"), undefined);
+  assert.ok(fake.fileOn(first.branch, "assets/images/valley.jpg") !== undefined);
+  assert.ok(fake.fileOn(first.branch, "assets/maps/valley_3p.png") !== undefined, "a kept upload was deleted");
+});
+
+test("a dropped upload that overwrote a default-branch file goes back to that file, not deleted", async () => {
+  const fake = createGithubFake({
+    files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE, "assets/images/crusader.png": "original" },
+  });
+  setHttpClient(fake.client);
+  const texPath = "draft-scenarios/clash/valley.tex";
+  const first = await saveScenarioToRepo("t", {
+    scenarioName: "Valley",
+    texPath,
+    texContent: "one",
+    uploadedFiles: new Map([["assets/images/crusader.png", new TextEncoder().encode("mine")]]),
+    context: context(),
+  });
+  assert.equal(fake.fileOn(first.branch, "assets/images/crusader.png"), "mine");
+
+  await saveScenarioToRepo("t", {
+    scenarioName: "Valley",
+    texPath,
+    texContent: "two",
+    uploadedFiles: new Map(),
+    removedUploads: ["assets/images/crusader.png"],
+    context: context(),
+    branch: first.branch,
+  });
+
+  assert.equal(fake.fileOn(first.branch, "assets/images/crusader.png"), "original");
+});
+
+test("starting an in-place edit over removes nothing: the reset branch has nothing earlier", async () => {
+  const fake = createGithubFake({
+    push: true,
+    files: { "clash/secret_bomb_stash.tex": "old" },
+    branchNames: ["scenario-editor/octocat/updates/secret-bomb-stash"],
+  });
+  setHttpClient(fake.client);
+
+  await saveScenarioToRepo("t", {
+    scenarioName: "Secret Bomb Stash",
+    texPath: "clash/secret_bomb_stash.tex",
+    texContent: "new",
+    uploadedFiles: new Map(),
+    removedUploads: ["assets/images/gone.png"],
+    context: context({ isMember: true, fork: null }),
+    mode: "edit",
+    startOver: true,
+  });
+
+  const trees = fake.calls.filter((call) => call.method === "POST" && call.path.endsWith("/git/trees"));
+  assert.deepEqual(
+    trees.flatMap((call) => call.body.tree.filter((entry) => entry.sha === null)),
+    [],
+  );
+});
+
 test("a new scenario is committed at draft-scenarios/<category>/<slug>.tex, with its group file", async () => {
   const fake = createGithubFake({ files: { [CLASH_MAIN]: CLASH_MAIN_SOURCE } });
   setHttpClient(fake.client);
@@ -614,6 +719,30 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
       ["clash/secret_bomb_stash.tex", "edit"],
       ["draft-scenarios/clash/valley.tex", "new"],
     ],
+  );
+});
+
+test("a resumable draft carries its header, map images and map-editor files, and nothing else", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchNames: ["scenario-editor/octocat/valley"],
+    branchTexFiles: {
+      "scenario-editor/octocat/valley": [
+        "draft-scenarios/clash/valley.tex",
+        "assets/images/valley.png",
+        "assets/maps/valley_2p.png",
+        "assets/map-files/valley_2p.map",
+        "README.md",
+      ],
+    },
+  });
+  setHttpClient(fake.client);
+
+  const { drafts } = await discoverGithubContext("t");
+
+  assert.deepEqual(
+    drafts[0].assets.map((asset) => asset.path),
+    ["assets/images/valley.png", "assets/maps/valley_2p.png", "assets/map-files/valley_2p.map"],
   );
 });
 

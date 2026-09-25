@@ -320,6 +320,7 @@ async function openResumableDraft(draft) {
     markClean();
 
     githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
+    githubSaveState.committedUploads = new Set(draft.assets.map((asset) => asset.path));
     el("github-open-pr").hidden = false;
     void checkExistingPullRequest();
     setStatus("Ready.");
@@ -511,11 +512,13 @@ export function initGithub() {
       if (!githubContext) githubContext = await discoverGithubContext(token);
       const savedText = requireEditor().getValue();
       const savedUploads = uploadsSignature(state.uploadedFiles);
+      const savedPaths = new Set(state.uploadedFiles.keys());
       const saved = await saveScenarioToRepo(token, {
         scenarioName: state.chosenTitle,
         texPath: state.chosenPath,
         texContent: savedText,
         uploadedFiles: state.uploadedFiles,
+        removedUploads: [...githubSaveState.committedUploads],
         context: githubContext,
         branch: githubSaveState.lastSaveTarget?.branch,
         mode: githubSaveState.edit ? "edit" : "new",
@@ -524,6 +527,7 @@ export function initGithub() {
       // The reset happened with this save; from here on the branch is built upon.
       if (githubSaveState.edit) githubSaveState.edit.startOver = false;
       githubSaveState.lastSaveTarget = saved;
+      githubSaveState.committedUploads = savedPaths;
       markClean(savedText, savedUploads);
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });

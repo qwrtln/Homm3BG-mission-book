@@ -438,6 +438,76 @@ test.describe("saving a resumed draft", () => {
   });
 });
 
+test.describe("saving a resumed draft after removing an upload", () => {
+  const BRANCH = `scenario-editor/${LOGIN}/half-written`;
+  const TEX_PATH = "draft-scenarios/clash/half_written.tex";
+  const MAP_2P = "assets/maps/half_written_2p.png";
+  const MAP_FILE_2P = "assets/map-files/half_written_2p.map";
+  const MAP_3P = "assets/maps/half_written_3p.png";
+
+  test.use({
+    githubRoutes: routes([
+      ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: {
+          files: [TEX_PATH, MAP_2P, MAP_FILE_2P, MAP_3P].map((filename) => ({
+            filename,
+            sha: `${filename}-sha`,
+            status: "added",
+          })),
+        },
+      },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa("% draft\n") },
+      },
+      // Neither the removed layout nor its map file exists on the default branch.
+      { method: "GET", path: /\/contents\//, status: 404, body: { message: "Not Found" } },
+      { method: "GET", path: /\/git\/blobs\//, body: { content: btoa("not really a png") } },
+      { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+      { method: "GET", path: /\/git\/commits\//, body: { sha: "base-sha", tree: { sha: "base-tree-sha" } } },
+      { method: "POST", path: /\/git\/blobs$/, body: { sha: "blob-sha" } },
+      { method: "POST", path: /\/git\/trees$/, body: { sha: "new-tree-sha" } },
+      { method: "POST", path: /\/git\/commits$/, body: { sha: "new-commit-sha", tree: { sha: "new-tree-sha" } } },
+      { method: "PATCH", path: /\/git\/refs\/heads\//, body: { ref: `refs/heads/${BRANCH}` } },
+    ]),
+  });
+
+  test("the dialog shows the committed layouts, and a removed one is deleted from the branch", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+    await page.locator("#upload-open").click();
+    const layouts = page.locator("#upload-maps-names .upload-map");
+    await expect(layouts).toHaveCount(2);
+    await expect(layouts.nth(0).locator(".upload-rename")).toHaveValue("half_written_2p.png");
+    await expect(layouts.nth(0).locator(".upload-mapfile")).toContainText("half_written_2p.map");
+    await layouts.nth(0).locator(".upload-remove").click();
+    await page.locator("#upload-done").click();
+
+    const requests = recordGithubRequests(page);
+    await page.locator("#github-save").click();
+    await expect(page.locator("#status-text")).toContainText(`@${BRANCH}`);
+
+    const treePost = requests.find((r) => r.method === "POST" && /\/git\/trees$/.test(r.url));
+    expect(treePost, "the save sent no tree").toBeTruthy();
+    const entries = JSON.parse(treePost?.body ?? "{}").tree;
+    expect(
+      entries
+        .filter((entry) => entry.sha === null)
+        .map((entry) => entry.path)
+        .sort(),
+    ).toEqual([MAP_FILE_2P, MAP_2P]);
+    expect(entries.map((entry) => entry.path)).toContain(MAP_3P);
+  });
+});
+
 test.describe("signing out mid-edit", () => {
   test.use({ githubRoutes: routes(MEMBER_ROUTES) });
 

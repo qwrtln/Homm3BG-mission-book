@@ -189,15 +189,16 @@
     <h2 id="upload-title">Upload images</h2>
     <div class="upload-field">
       <label for="upload-header">Header image</label>
-      <input type="file" id="upload-header" accept="image/*">
+      <input type="file" id="upload-header" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
       <input type="text" id="upload-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename" hidden>
-      <span class="upload-status" id="upload-header-status">Goes to <code>assets/images/</code>.</span>
+      <span class="upload-status" id="upload-header-status">PNG or JPG. Named after the scenario; rename it if you like.</span>
     </div>
     <div class="upload-field">
-      <label for="upload-maps">Map file(s)</label>
-      <input type="file" id="upload-maps" accept="image/*" multiple>
+      <label for="upload-maps">Map images</label>
+      <input type="file" id="upload-maps" accept=".png,image/png" multiple hidden>
       <div class="upload-rename-list" id="upload-maps-names" hidden></div>
-      <span class="upload-status" id="upload-maps-status">One file for the whole scenario, or up to six — one per player. Goes to <code>assets/maps/</code>.</span>
+      <button type="button" id="upload-maps-add">+ Add map image</button>
+      <span class="upload-status" id="upload-maps-status">PNG exported from the map editor. Add one image for the whole scenario, or one per player-count layout and tick the counts it is for.</span>
     </div>
     <div class="confirm-actions">
       <button id="upload-done" class="primary" type="submit" value="done">Done</button>

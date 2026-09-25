@@ -74,6 +74,7 @@ interface ElementIdMap {
   "upload-header-name": HTMLInputElement;
   "upload-header-status": HTMLSpanElement;
   "upload-maps": HTMLInputElement;
+  "upload-maps-add": HTMLButtonElement;
   "upload-maps-names": HTMLDivElement;
   "upload-maps-status": HTMLSpanElement;
   "upload-dialog": HTMLDialogElement;

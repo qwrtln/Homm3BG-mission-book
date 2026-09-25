@@ -374,7 +374,37 @@ test("Build and Download follow the pick and the build", async ({ app }) => {
   expect(appErrors(errors), "the page reported errors across the build").toEqual([]);
 });
 
-test("the uploads dialog opens from the header, closes, and stages a chosen file", async ({ app }) => {
+/**
+ * Repository paths the uploads dialog has staged for the build, read from the
+ * app's own state module: the dialog no longer prints them.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<string[]>}
+ */
+async function stagedPaths(page) {
+  return page.evaluate(async () => {
+    const { state } = await import("/web/app/modules/state.js");
+    return [...state.uploadedFiles.keys()].sort();
+  });
+}
+
+/**
+ * An in-memory file: nothing is added to the repository, and the bytes never
+ * leave the browser — uploads.js stages them in the virtual filesystem the
+ * build compiles from.
+ *
+ * @param {string} name
+ * @param {string} [mimeType]
+ * @returns {{name: string, mimeType: string, buffer: Buffer}}
+ */
+function fakeFile(name, mimeType = "image/png") {
+  return { name, mimeType, buffer: Buffer.from("not really an image, and never decoded") };
+}
+
+// SCENARIO_NAME's file-safe form, which the dialog names uploads after.
+const SLUG = "tier_two_probe";
+
+test("the uploads dialog opens from the header, closes, and names the header after the scenario", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);
 
@@ -390,53 +420,34 @@ test("the uploads dialog opens from the header, closes, and stages a chosen file
   await open.click();
   await expect(dialog).toBeVisible();
 
-  // An in-memory file: nothing is added to the repository, and the bytes
-  // never leave the browser — uploads.js stages them in the virtual
-  // filesystem the build compiles from.
-  const headerName = "probe-header.png";
+  // The status never shows where in the repository a file goes.
+  await expect(page.locator("#upload-header-status")).not.toContainText("assets/");
+  await expect(page.locator("#upload-maps-status")).not.toContainText("assets/");
+
+  // The rename box appears carrying the scenario's name and the file's own
+  // extension, whatever the file was called.
   const headerRename = page.locator("#upload-header-name");
   await expect(headerRename).toBeHidden();
-  await page.locator("#upload-header").setInputFiles({
-    name: headerName,
-    mimeType: "image/png",
-    buffer: Buffer.from("not really a png, and never decoded"),
-  });
-
-  // The rename box appears carrying the chosen name, and the status says
-  // where the build will see the file.
+  await page.locator("#upload-header").setInputFiles(fakeFile("probe-header.png"));
   await expect(headerRename).toBeVisible();
-  await expect(headerRename).toHaveValue(headerName);
-  await expect(page.locator("#upload-header-status")).toHaveText(`Staged: assets/images/${headerName}`);
+  await expect(headerRename).toHaveValue(`${SLUG}.png`);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.png`]);
 
-  // Retyping the target name re-stages it under the new path.
-  await headerRename.fill("renamed.png");
-  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
+  // Retyping the target name re-stages it; a name with spaces or TeX-hostile
+  // characters is normalized, and the box shows the result once left.
+  await headerRename.fill("my cover (1) pic");
+  await headerRename.blur();
+  await expect(headerRename).toHaveValue("my_cover_1_pic.png");
+  expect(await stagedPaths(page)).toEqual(["assets/images/my_cover_1_pic.png"]);
 
-  // A name with spaces or TeX-hostile characters is normalized, both for a
-  // fresh pick and for a retyped rename.
-  await headerRename.fill("my cover (1) pic.png");
-  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/my_cover_1_pic.png");
-  await page.locator("#upload-header").setInputFiles({
-    name: "spaced name.png",
-    mimeType: "image/png",
-    buffer: Buffer.from("still not a png"),
-  });
-  await expect(headerRename).toHaveValue("spaced name.png");
-  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/spaced_name.png");
-  await headerRename.fill("renamed.png");
-  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
-
-  // Maps get one rename row per file, under assets/maps/.
-  const mapName = "probe-map.png";
-  await page.locator("#upload-maps").setInputFiles({
-    name: mapName,
-    mimeType: "image/png",
-    buffer: Buffer.from("also not really a png"),
-  });
-  const mapRows = page.locator("#upload-maps-names .upload-rename-row");
-  await expect(mapRows).toHaveCount(1);
-  await expect(page.locator("#upload-maps-names .upload-rename")).toHaveValue(mapName);
-  await expect(page.locator("#upload-maps-status")).toHaveText(`Staged: assets/maps/${mapName}`);
+  // A JPG keeps its extension; anything LaTeX cannot include is refused and
+  // the staged header stays.
+  await page.locator("#upload-header").setInputFiles(fakeFile("Photo.JPG", "image/jpeg"));
+  await expect(headerRename).toHaveValue(`${SLUG}.jpg`);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
+  await page.locator("#upload-header").setInputFiles(fakeFile("art.webp", "image/webp"));
+  await expect(page.locator("#upload-header-status")).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
 
   // Done closes it and hands focus back to the button that opened it; the
   // staged files survive that.
@@ -444,7 +455,111 @@ test("the uploads dialog opens from the header, closes, and stages a chosen file
   await expect(dialog).toBeHidden();
   await expect(open).toBeFocused();
   await open.click();
-  await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
+  await expect(headerRename).toHaveValue(`${SLUG}.jpg`);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
+
+  expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+test("map layouts are named after the scenario and the player counts ticked for each", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+
+  const status = page.locator("#upload-maps-status");
+  const maps = page.locator("#upload-maps");
+
+  // Only PNG is accepted; one bad file stages none of the selection.
+  await maps.setInputFiles([fakeFile("a.png"), fakeFile("b.jpg", "image/jpeg")]);
+  await expect(status).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([]);
+
+  // One layout: the scenario's plain name.
+  await maps.setInputFiles([fakeFile("export.png")]);
+  const rows = page.locator("#upload-maps-names .upload-map");
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first().locator(".upload-rename")).toHaveValue(`${SLUG}.png`);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}.png`]);
+
+  // Two layouts share a name until their player counts are ticked.
+  await rows
+    .first()
+    .getByRole("button", { name: /remove/i })
+    .click();
+  await expect(rows).toHaveCount(0);
+  await maps.setInputFiles([fakeFile("small.png"), fakeFile("big.png")]);
+  await expect(rows).toHaveCount(2);
+  await expect(status).toHaveClass(/bad/);
+  const small = rows.nth(0);
+  const big = rows.nth(1);
+  await small.getByRole("checkbox", { name: "2", exact: true }).check();
+  await small.getByRole("checkbox", { name: "3", exact: true }).check();
+  await big.getByRole("checkbox", { name: "4", exact: true }).check();
+  await expect(small.locator(".upload-rename")).toHaveValue(`${SLUG}_2-3p.png`);
+  await expect(big.locator(".upload-rename")).toHaveValue(`${SLUG}_4p.png`);
+  await expect(status).not.toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2-3p.png`, `assets/maps/${SLUG}_4p.png`]);
+
+  // The map editor's own file is optional and travels under its layout's name.
+  await big.locator(".upload-mapfile-input").setInputFiles(fakeFile("export.map", "application/octet-stream"));
+  expect(await stagedPaths(page)).toEqual([
+    `assets/map-files/${SLUG}_4p.map`,
+    `assets/maps/${SLUG}_2-3p.png`,
+    `assets/maps/${SLUG}_4p.png`,
+  ]);
+
+  // A typed name sticks, even when the counts change afterwards, and the
+  // map-editor file follows it.
+  await big.locator(".upload-rename").fill(`${SLUG}_short`);
+  await big.getByRole("checkbox", { name: "5", exact: true }).check();
+  await expect(big.locator(".upload-rename")).toHaveValue(`${SLUG}_short.png`);
+  expect(await stagedPaths(page)).toEqual([
+    `assets/map-files/${SLUG}_short.map`,
+    `assets/maps/${SLUG}_2-3p.png`,
+    `assets/maps/${SLUG}_short.png`,
+  ]);
+
+  expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+test("map images add up across picks, skip the map-editor file, and can be removed", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+
+  const maps = page.locator("#upload-maps");
+  const rows = page.locator("#upload-maps-names .upload-map");
+
+  // A second pick adds to the first, with no map-editor file on either.
+  await maps.setInputFiles([fakeFile("two.png")]);
+  await expect(rows).toHaveCount(1);
+  await rows.first().getByRole("checkbox", { name: "2", exact: true }).check();
+  await maps.setInputFiles([fakeFile("three.png")]);
+  await expect(rows).toHaveCount(2);
+  await rows.nth(1).getByRole("checkbox", { name: "3", exact: true }).check();
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+
+  // The map-editor file is added through a link, and removed the same way.
+  const second = rows.nth(1);
+  await expect(second.getByRole("button", { name: /add map editor file/i })).toBeVisible();
+  await second.locator(".upload-mapfile-input").setInputFiles(fakeFile("export.map", "application/octet-stream"));
+  await expect(second.locator(".upload-mapfile")).toContainText("export.map");
+  expect(await stagedPaths(page)).toContain(`assets/map-files/${SLUG}_3p.map`);
+  await second.locator(".upload-mapfile-remove").click();
+  await expect(second.getByRole("button", { name: /add map editor file/i })).toBeVisible();
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+
+  // The add button says there is already a layout.
+  await expect(page.locator("#upload-maps-add")).toHaveText("+ Add another map image");
+
+  // Removing a layout unstages it and keeps the other as it was.
+  await rows
+    .first()
+    .getByRole("button", { name: /remove/i })
+    .click();
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first().locator(".upload-rename")).toHaveValue(`${SLUG}_3p.png`);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_3p.png`]);
 
   expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
 });
