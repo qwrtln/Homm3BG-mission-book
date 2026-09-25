@@ -8,6 +8,7 @@
 
 interface ElementIdMap {
   build: HTMLButtonElement;
+  "build-label": HTMLSpanElement;
   "build-overlay": HTMLDivElement;
   download: HTMLButtonElement;
   "draft-note": HTMLSpanElement;
@@ -41,6 +42,12 @@ interface ElementIdMap {
   "mode-new": HTMLButtonElement;
   "name-slide": HTMLDivElement;
   "header-actions": HTMLDivElement;
+  "header-menu": HTMLDivElement;
+  "header-menu-separator": HTMLDivElement;
+  "header-menu-toggle": HTMLButtonElement;
+  "header-scenario": HTMLDivElement;
+  "header-titles": HTMLDivElement;
+  "scenario-title": HTMLSpanElement;
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;
@@ -69,8 +76,10 @@ interface ElementIdMap {
   "upload-maps": HTMLInputElement;
   "upload-maps-names": HTMLDivElement;
   "upload-maps-status": HTMLSpanElement;
-  "upload-popover": HTMLDivElement;
-  "upload-toggle": HTMLButtonElement;
+  "upload-dialog": HTMLDialogElement;
+  "upload-done": HTMLButtonElement;
+  "upload-open": HTMLButtonElement;
+  "upload-title": HTMLHeadingElement;
   welcome: HTMLElement;
   "welcome-picker": HTMLDivElement;
   workspace: HTMLDivElement;

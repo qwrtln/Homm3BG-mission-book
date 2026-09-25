@@ -21,6 +21,7 @@ import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
 import { loadEntries } from "./entries.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
+import { setScenarioTitle } from "./header.js";
 import { clearPdf } from "./pdf-view.js";
 import { onEditPick, settleModes } from "./picker.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
@@ -28,11 +29,13 @@ import { requireEditor, state } from "./state.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { openForEdit, showWelcome, showWorkspace } from "./workspace.js";
 
-/** Shows either the sign-in button or the signed-in strip. @returns {void} */
+/** Shows either the sign-in button or the signed-in strip and menu item. @returns {void} */
 function renderGithubHeader() {
   const signedIn = Boolean(getToken());
   el("github-signin").hidden = signedIn;
   el("github-status").hidden = !signedIn;
+  el("github-signout").hidden = !signedIn;
+  el("header-menu-separator").hidden = !signedIn;
   setSaveControlsVisible(!el("workspace").hidden);
 }
 
@@ -60,8 +63,7 @@ async function reopenLocalDraft(path, title) {
   resetGithubSaveState();
 
   state.chosenPath = path;
-  state.chosenTitle = title || basenameNoExt(path);
-  document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+  setScenarioTitle(title || basenameNoExt(path));
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -302,10 +304,11 @@ async function openResumableDraft(draft) {
     githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
 
     state.chosenPath = draft.texPath;
-    state.chosenTitle = basenameNoExt(draft.texPath)
-      .replace(/[-_]+/g, " ")
-      .replace(/\b\w/g, (c) => c.toUpperCase());
-    document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+    setScenarioTitle(
+      basenameNoExt(draft.texPath)
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase()),
+    );
     reflectRoute();
     el("build").disabled = false; // Build, or Stop mid-build: both apply
     el("download").disabled = true;

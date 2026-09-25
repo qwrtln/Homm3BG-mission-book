@@ -8,7 +8,7 @@
 // sign-in this file needs. See web/tests/README.md for the stubbing contract.
 
 import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
-import { expect, openScenarioList, test } from "./fixtures.mjs";
+import { chooseFromMenu, expect, openScenarioList, test } from "./fixtures.mjs";
 
 // The localStorage key github-auth.js persists the token in. It is a private
 // constant there, so it is repeated here rather than imported; if it changes,
@@ -106,7 +106,8 @@ test.describe("signed in", () => {
     const { page, errors } = app;
     await signInAs(page);
 
-    await expect(page.locator("#github-status")).toBeVisible();
+    // Shown, though empty on the welcome screen: Save waits for an open scenario.
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
     await expect(page.locator("#github-signin")).toBeHidden();
 
     // Nothing is open on the welcome screen, so there is nothing to save yet.
@@ -117,7 +118,7 @@ test.describe("signed in", () => {
     await page.locator("#go").click();
     await expect(save).toBeVisible();
     await expect(save).toBeEnabled();
-    await expect(save).toHaveText("💾 Save");
+    await expect(save).toHaveText("Save");
     // Nothing has been pushed, so there is nothing to open a PR against.
     await expect(page.locator("#github-open-pr")).toBeHidden();
     await expect(page.locator("#github-pr-link")).toBeHidden();
@@ -130,12 +131,16 @@ test.describe("signed in", () => {
   test("signing out puts the signed-out header back", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
-    await expect(page.locator("#github-status")).toBeVisible();
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
 
-    await page.locator("#github-signout").click();
+    await chooseFromMenu(page, "github-signout");
 
     await expect(page.locator("#github-signin")).toBeVisible();
     await expect(page.locator("#github-status")).toBeHidden();
+    // Signed out, the menu has nothing to sign out of.
+    await page.locator("#header-menu-toggle").click();
+    await expect(page.locator("#theme-toggle")).toBeVisible();
+    await expect(page.locator("#github-signout")).toBeHidden();
   });
 });
 
@@ -290,7 +295,7 @@ test.describe("saving a scenario", () => {
   test("pushes one commit to this user's own branch, and offers the PR after", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
-    await expect(page.locator("#github-status")).toBeVisible();
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
     await openBlankClash(page);
 
     const requests = recordGithubRequests(page);
@@ -306,7 +311,7 @@ test.describe("saving a scenario", () => {
     expect(disabledOnClick, "the save button stayed clickable while a save was in flight").toBe(true);
 
     const save = page.locator("#github-save");
-    await expect(save).toHaveText("💾 Save");
+    await expect(save).toHaveText("Save");
     await expect(save).toBeEnabled();
     await expect(page.locator("#github-open-pr")).toBeVisible();
     await expect(page.locator("#status-text")).toContainText(`${UPSTREAM_OWNER}/${UPSTREAM_REPO}@${BRANCH}`);
@@ -357,7 +362,7 @@ test.describe("saving a scenario", () => {
     test("says so and hands the button back", async ({ app }) => {
       const { page } = app;
       await signInAs(page);
-      await expect(page.locator("#github-status")).toBeVisible();
+      await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
       await openBlankClash(page);
 
       await page.locator("#github-save").click();
@@ -366,7 +371,7 @@ test.describe("saving a scenario", () => {
       // The failure path must re-enable the button, or a save can never be
       // retried without a reload.
       await expect(page.locator("#github-save")).toBeEnabled();
-      await expect(page.locator("#github-save")).toHaveText("💾 Save");
+      await expect(page.locator("#github-save")).toHaveText("Save");
       await expect(page.locator("#github-open-pr")).toBeHidden();
     });
   });
@@ -439,7 +444,7 @@ test.describe("signing out mid-edit", () => {
   test("returns to welcome and purges the autosaved draft", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
-    await expect(page.locator("#github-status")).toBeVisible();
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
     await page.locator("#scratch-clash").click();
     await page.locator("#scenario-name").fill("Purge Probe");
     await page.locator("#go").click();
@@ -451,7 +456,7 @@ test.describe("signing out mid-edit", () => {
       .poll(() => page.evaluate(() => Object.keys(localStorage).filter((k) => k.includes(":draft:")).length))
       .toBe(1);
 
-    await page.locator("#github-signout").click();
+    await chooseFromMenu(page, "github-signout");
 
     await expect(page.locator("#welcome")).toBeVisible();
     await expect(page.locator("#workspace")).toBeHidden();
@@ -515,7 +520,7 @@ test.describe("opening the app already signed in", () => {
     await page.addInitScript(([key, token]) => localStorage.setItem(key, token), [TOKEN_KEY, TOKEN]);
     await page.goto("/web/app/?code=stale-code");
 
-    await expect(page.locator("#github-status")).toBeVisible();
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
     await expect(page.locator("#mode-choice")).toBeVisible();
     await expect(page.locator("#status-text")).not.toContainText("sign-in failed");
     expect(new URL(page.url()).search).toBe("");

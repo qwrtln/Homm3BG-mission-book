@@ -78,7 +78,7 @@ export function setBuilding(value) {
   // Pin the Build width while the shorter "Stop" shows, measured, not guessed:
   // fonts differ, and a shrinking button slides its neighbours under the pointer.
   build.style.minWidth = value ? `${build.getBoundingClientRect().width}px` : "";
-  build.textContent = value ? "Stop" : "Build PDF";
+  el("build-label").textContent = value ? "Stop" : "Build PDF";
   build.classList.toggle("stop", value);
   el("build-overlay").hidden = !value;
   el("pdf-body").classList.toggle("dimmed", value);

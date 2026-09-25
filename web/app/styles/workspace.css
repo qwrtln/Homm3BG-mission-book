@@ -29,9 +29,6 @@ main {
   flex-wrap: wrap;
 }
 .pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
-.draft-note { font-size: 0.8rem; color: var(--accent); }
-.unsaved-note { font-size: 0.8rem; color: var(--warn); font-weight: 600; }
-.unsaved-note[hidden] { display: none; }
 .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
 .editor-wrap .CodeMirror {
   position: absolute;

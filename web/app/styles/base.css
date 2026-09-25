@@ -12,21 +12,24 @@ body {
   flex-direction: column;
 }
 header {
-  padding: 1rem 1.25rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--line);
   background: var(--panel);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem 1.5rem;
+  gap: 0.4rem 0.75rem;
 }
-header .header-left { flex: 1 1 0; min-width: min(100%, 26rem); display: flex; align-items: center; gap: 0.4rem 1.25rem; }
-header .titles { min-width: 0; }
-#back-to-welcome[hidden] { display: none; }
-button.with-icon { display: inline-flex; align-items: center; gap: 0.4rem; }
+/* Whichever of the app title or the scenario name shows takes the spare
+   width, pushing the actions to the right. */
+header .header-titles, header .header-scenario { flex: 1 1 0; min-width: 0; }
+header .header-titles[hidden], header .header-scenario[hidden] { display: none; }
+button.with-icon, a.with-icon { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
+.with-icon[hidden] { display: none; }
 .octicon { flex: none; vertical-align: text-bottom; }
 header h1 { font-size: 1.1rem; margin: 0; }
 header p { margin: 0; color: var(--muted); font-size: 0.85rem; }
+header :is(button, a):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 button {
   font: inherit;
   font-size: 0.88rem;

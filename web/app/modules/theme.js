@@ -8,15 +8,15 @@ export const THEME_KEY = "wasm-scenario-builder:theme";
  */
 
 /**
- * Applies a theme to the document, the editor and the toggle, and remembers
- * it.
+ * Applies a theme to the document, the editor and the menu's "Dark mode"
+ * checkbox, and remembers it.
  *
  * @param {Theme} theme
  * @returns {void}
  */
 export function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  el("theme-toggle").textContent = theme === "dark" ? "☀️" : "🌙";
+  el("theme-toggle").setAttribute("aria-checked", String(theme === "dark"));
   if (state.cm) state.cm.setOption("theme", theme === "dark" ? "github-dark" : "github-light");
   try {
     localStorage.setItem(THEME_KEY, theme);

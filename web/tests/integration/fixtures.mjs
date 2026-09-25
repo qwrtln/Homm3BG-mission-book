@@ -89,3 +89,17 @@ export async function openScenarioList(page, options = {}) {
 export async function engineCalls(page) {
   return page.evaluate(() => globalThis.__stubEngineCalls || []);
 }
+
+/**
+ * Picks an item from the header's overflow menu, the way a contributor does:
+ * open the menu, then click the item. The items are hidden until it opens.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} id the item's element id, e.g. "theme-toggle"
+ * @returns {Promise<void>}
+ */
+export async function chooseFromMenu(page, id) {
+  await page.locator("#header-menu-toggle").click();
+  await expect(page.locator("#header-menu")).toBeVisible();
+  await page.locator(`#${id}`).click();
+}

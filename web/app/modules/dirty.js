@@ -31,7 +31,7 @@ export function isDirty() {
 }
 
 /**
- * Shows or hides the source bar's "unsaved changes" note. Signed out, there
+ * Shows or hides the header's "Unsaved" note. Signed out, there
  * is no pull request to lose the changes to, only the browser's own
  * autosave (see leaveWorkspace's warning), so the note would just be noise.
  *

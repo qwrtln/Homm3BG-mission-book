@@ -1,41 +1,101 @@
-/* --- Header actions (shown once a scenario is chosen) ------------------ */
+/* --- Header groups, shown once a scenario is chosen ---------------------
+   Left: back, the scenario's name and its notes. Then Upload images; Build
+   and Download as one group; the GitHub group; the overflow menu. */
+
+header button, header .github-pr-link { padding: 0.3rem 0.75rem; min-height: 2rem; }
+header button.icon { padding: 0.3rem 0.5rem; }
+.header-scenario { display: flex; align-items: center; gap: 0.5rem; }
+.scenario-title {
+  min-width: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.draft-note[hidden], .unsaved-note[hidden] { display: none; }
+.draft-note, .unsaved-note { flex: none; font-size: 0.78rem; white-space: nowrap; }
+.draft-note {
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 2em;
+  color: var(--muted);
+  cursor: help;
+}
+.unsaved-note { color: var(--warn); font-weight: 600; }
 
 .header-actions[hidden] { display: none; }
-.header-actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-/* Play and stop glyphs, decorative: the "/ ''" alt text keeps them out of the
-   accessible name. U+FE0E asks for the text glyph, not the emoji. The first
-   declaration is the fallback for browsers without alt text. */
-#build::before {
-  content: "\25B6\FE0E";
-  content: "\25B6\FE0E" / "";
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.35em;
-}
-#build.stop::before {
-  content: "\25A0";
-  content: "\25A0" / "";
-  transform: scale(1.4); /* most fonts draw the square smaller than the triangle */
-}
-.upload-menu { position: relative; }
-.upload-popover[hidden] { display: none; }
-.upload-popover {
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+/* Buttons that belong together, joined into one segmented control. */
+.button-group { display: inline-flex; align-items: stretch; }
+.button-group > * + * { margin-left: -1px; }
+.button-group > :not(:first-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.button-group > :not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+/* Open PR hidden: Save is the visible end of its group, so keeps its corners. */
+.button-group > :has(+ [hidden]:last-child) { border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.button-group > :focus-visible { position: relative; z-index: 1; }
+/* Play while idle, a stop square mid-build (dom.js setBuilding). */
+#build .stop-icon, #build.stop .build-icon { display: none; }
+#build.stop .stop-icon { display: inline-block; }
+
+/* --- Overflow menu -------------------------------------------------------- */
+
+.header-menu { position: relative; }
+.header-menu-list[hidden] { display: none; }
+.header-menu-list {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   right: 0;
-  width: 21rem;
-  max-width: 88vw;
+  min-width: 12rem;
+  padding: 0.3rem 0;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: 0 10px 26px var(--shadow);
-  padding: 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  font-size: 0.82rem;
   z-index: 20;
 }
+.header-menu-list button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+}
+.header-menu-list button[hidden] { display: none; }
+.header-menu-list button:hover:not(:disabled), .header-menu-list button:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+}
+.header-menu-list button:focus-visible { outline-offset: -2px; }
+.menu-check { margin-left: auto; visibility: hidden; }
+[aria-checked="true"] > .menu-check { visibility: visible; }
+.menu-separator[hidden] { display: none; }
+.menu-separator { margin: 0.3rem 0; border-top: 1px solid var(--line); }
+
+/* --- Narrow screens ---------------------------------------------------------
+   One row down to 1024px. Below that, labels collapse and the buttons show
+   their icons only; the label stays the accessible name. */
+@media (max-width: 1023px) {
+  header .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  header button.with-icon, header .github-pr-link { padding: 0.3rem 0.5rem; }
+}
+
+/* --- Upload images dialog (styles/dialog.css draws the dialog itself) ---- */
+
+.upload-dialog form { display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.82rem; }
+.upload-dialog .confirm-actions { margin-top: 0; }
 .upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
 .upload-field label { font-weight: 600; }
 .upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }

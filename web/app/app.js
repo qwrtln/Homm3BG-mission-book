@@ -5,6 +5,7 @@ import { initEditor } from "./modules/editor.js";
 import { loadEntries } from "./modules/entries.js";
 import { preloadCommonFiles } from "./modules/files.js";
 import { initGithub, openRoute } from "./modules/github.js";
+import { initHeaderMenu } from "./modules/header.js";
 import { initPicker } from "./modules/picker.js";
 import { initSearch } from "./modules/search.js";
 import { state } from "./modules/state.js";
@@ -12,6 +13,7 @@ import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
 import { initUploads } from "./modules/uploads.js";
 
 initTheme();
+initHeaderMenu();
 initEditor();
 applyTheme(initialTheme());
 initSearch();

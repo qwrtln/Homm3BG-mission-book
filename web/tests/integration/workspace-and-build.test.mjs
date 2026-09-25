@@ -1,9 +1,9 @@
 // Tier 2. The workspace the picker hands off to: the build path against the
-// stub engine, the Build/Download state machine, the uploads popover, and the
-// theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
+// stub engine, the Build/Download state machine, the header bar and its
+// overflow menu, the uploads dialog, and the theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
 // which installs the engine and GitHub stubs before navigating.
 
-import { engineCalls, expect, openScenarioList, test } from "./fixtures.mjs";
+import { chooseFromMenu, engineCalls, expect, openScenarioList, test } from "./fixtures.mjs";
 
 // Long enough to pass picker.js's MIN_NAME_LENGTH, and not a real scenario
 // name: commitEntry uses it as the file's own identity, never the entry's.
@@ -212,16 +212,22 @@ async function callsTo(page, method) {
 }
 
 /**
- * The glyph #build draws before its label, and its width.
+ * Which octicon #build shows before its label, and its width.
  *
  * @param {import("@playwright/test").Page} page
- * @returns {Promise<{glyph: string, width: number}>}
+ * @returns {Promise<{glyph: string, width: number}>} glyph is "play", "stop" or ""
  */
 async function buildLook(page) {
-  return page.locator("#build").evaluate((button) => ({
-    glyph: getComputedStyle(button, "::before").content,
-    width: button.getBoundingClientRect().width,
-  }));
+  return page.locator("#build").evaluate((button) => {
+    const shown = (/** @type {string} */ selector) => {
+      const icon = button.querySelector(selector);
+      return icon !== null && getComputedStyle(icon).display !== "none";
+    };
+    return {
+      glyph: shown(".build-icon") ? "play" : shown(".stop-icon") ? "stop" : "",
+      width: button.getBoundingClientRect().width,
+    };
+  });
 }
 
 /**
@@ -251,7 +257,7 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   // fonts once did: the width must be measured, not assumed.
   await page.addStyleTag({ content: "#build { letter-spacing: 0.37px; }" });
   const idle = await buildLook(page);
-  expect(idle.glyph).toContain("\u25B6");
+  expect(idle.glyph).toBe("play");
 
   await holdCompiles(page);
   await build.click();
@@ -270,9 +276,20 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-hover-bg"));
   await expect(page.locator("#build-overlay")).toBeVisible();
   const busy = await buildLook(page);
-  expect(busy.glyph).toContain("\u25A0");
+  expect(busy.glyph).toBe("stop");
   // The label swap must not move the buttons beside it under the pointer.
   expect(busy.width).toBe(idle.width);
+  // The pinned width is wider than "Stop" needs: the icon and label stay centred in it.
+  const margins = await build.evaluate((button) => {
+    const outer = button.getBoundingClientRect();
+    const shown = [...button.children].filter((child) => getComputedStyle(child).display !== "none");
+    const boxes = shown.map((child) => child.getBoundingClientRect());
+    return {
+      left: Math.min(...boxes.map((box) => box.left)) - outer.left,
+      right: outer.right - Math.max(...boxes.map((box) => box.right)),
+    };
+  });
+  expect(Math.abs(margins.left - margins.right), `Stop sits off centre: ${JSON.stringify(margins)}`).toBeLessThan(2);
 
   await build.click();
 
@@ -357,21 +374,21 @@ test("Build and Download follow the pick and the build", async ({ app }) => {
   expect(appErrors(errors), "the page reported errors across the build").toEqual([]);
 });
 
-test("the uploads popover opens, closes, and stages a chosen file", async ({ app }) => {
+test("the uploads dialog opens from the header, closes, and stages a chosen file", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);
 
-  const popover = page.locator("#upload-popover");
-  const toggle = page.locator("#upload-toggle");
-  await expect(popover).toBeHidden();
+  const dialog = page.locator("#upload-dialog");
+  const open = page.locator("#upload-open");
+  await expect(dialog).toBeHidden();
 
-  await toggle.click();
-  await expect(popover).toBeVisible();
-  await toggle.click();
-  await expect(popover).toBeHidden();
+  await open.click();
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
 
-  await toggle.click();
-  await expect(popover).toBeVisible();
+  await open.click();
+  await expect(dialog).toBeVisible();
 
   // An in-memory file: nothing is added to the repository, and the bytes
   // never leave the browser — uploads.js stages them in the virtual
@@ -421,10 +438,12 @@ test("the uploads popover opens, closes, and stages a chosen file", async ({ app
   await expect(page.locator("#upload-maps-names .upload-rename")).toHaveValue(mapName);
   await expect(page.locator("#upload-maps-status")).toHaveText(`Staged: assets/maps/${mapName}`);
 
-  // A click outside closes it; the staged files survive that.
-  await page.locator("h1").click();
-  await expect(popover).toBeHidden();
-  await toggle.click();
+  // Done closes it and hands focus back to the button that opened it; the
+  // staged files survive that.
+  await page.locator("#upload-done").click();
+  await expect(dialog).toBeHidden();
+  await expect(open).toBeFocused();
+  await open.click();
   await expect(page.locator("#upload-header-status")).toHaveText("Staged: assets/images/renamed.png");
 
   expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
@@ -441,10 +460,12 @@ test("the theme toggle flips the theme and the choice survives a reload", async 
   expect(["dark", "light"]).toContain(before);
   const after = before === "dark" ? "light" : "dark";
 
-  await page.locator("#theme-toggle").click();
+  const toggle = page.locator("#theme-toggle");
+  await expect(toggle).toHaveAttribute("aria-checked", String(before === "dark"));
+  await chooseFromMenu(page, "theme-toggle");
   await expect(html).toHaveAttribute("data-theme", after);
-  // The toggle offers the *other* theme, so its glyph is the opposite one.
-  await expect(page.locator("#theme-toggle")).toHaveText(after === "dark" ? "☀️" : "🌙");
+  // "Dark mode" is a checkbox item: checked exactly when the theme is dark.
+  await expect(toggle).toHaveAttribute("aria-checked", String(after === "dark"));
   // CodeMirror is themed along with the document.
   await expect(page.locator(".CodeMirror")).toHaveClass(after === "dark" ? /cm-s-github-dark/ : /cm-s-github-light/);
 
@@ -452,7 +473,116 @@ test("the theme toggle flips the theme and the choice survives a reload", async 
 
   await page.reload();
   await expect(html).toHaveAttribute("data-theme", after);
-  await expect(page.locator("#theme-toggle")).toHaveText(after === "dark" ? "☀️" : "🌙");
+  await expect(toggle).toHaveAttribute("aria-checked", String(after === "dark"));
 
   expect(appErrors(errors), "the page reported errors around the theme toggle").toEqual([]);
+});
+
+test.describe("signed in", () => {
+  const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
+  test.use({
+    githubRoutes: [
+      [
+        { method: "GET", path: "/user", body: { login: "octotester" } },
+        {
+          method: "GET",
+          path: REPO_PATH,
+          body: {
+            name: "Homm3BG-mission-book",
+            owner: { login: "qwrtln" },
+            default_branch: "main",
+            permissions: { push: true },
+          },
+        },
+        { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
+      ],
+      { option: true },
+    ],
+  });
+
+  test("the overflow menu works from the keyboard", async ({ app }) => {
+    const { page, errors } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await enterWorkspace(page);
+
+    const toggle = page.locator("#header-menu-toggle");
+    const menu = page.locator("#header-menu");
+    await toggle.focus();
+    await page.keyboard.press("Enter");
+    await expect(menu).toBeVisible();
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    // Signed in: Dark mode, then Sign out. Arrows move and wrap.
+    await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#github-signout")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowUp");
+    await expect(page.locator("#github-signout")).toBeFocused();
+
+    // Escape closes and returns focus to the button.
+    await page.keyboard.press("Escape");
+    await expect(menu).toBeHidden();
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await expect(toggle).toBeFocused();
+
+    // A click outside closes it too.
+    await toggle.click();
+    await expect(menu).toBeVisible();
+    await page.locator("#status-bar").click();
+    await expect(menu).toBeHidden();
+
+    expect(appErrors(errors), "the page reported errors in the menu").toEqual([]);
+  });
+});
+
+test("the header names the open scenario, and follows a different one", async ({ app }) => {
+  const { page, errors } = app;
+  await expect(page.locator("#header-titles")).toBeVisible();
+  await expect(page.locator("#header-scenario")).toBeHidden();
+
+  await enterWorkspace(page);
+  await expect(page.locator("#scenario-title")).toHaveText(SCENARIO_NAME);
+  // The app title is for the welcome screen only.
+  await expect(page.locator("#header-titles")).toBeHidden();
+
+  await page.locator("#back-to-welcome").click();
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#header-titles")).toBeVisible();
+
+  await page.locator("#scratch-coop").click();
+  await page.locator("#scenario-name").fill("Another Probe");
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-title")).toHaveText("Another Probe");
+
+  expect(appErrors(errors), "the page reported errors while switching scenarios").toEqual([]);
+});
+
+test.describe("at 1024×700", () => {
+  test.use({ viewport: { width: 1024, height: 700 } });
+
+  test("the workspace header is one row", async ({ app }) => {
+    const { page, errors } = app;
+    await enterWorkspace(page);
+
+    // Every shown control's vertical centre is on one line, give or take the
+    // pixel that differing heights round to.
+    const centres = await page.evaluate(() =>
+      [...document.querySelectorAll("header button, header a, #scenario-title")]
+        .filter((node) => node instanceof HTMLElement && node.offsetParent !== null && !node.closest("[role=menu]"))
+        .map((node) => {
+          const box = node.getBoundingClientRect();
+          return box.top + box.height / 2;
+        }),
+    );
+    expect(centres.length).toBeGreaterThan(3);
+    const spread = Math.max(...centres) - Math.min(...centres);
+    expect(spread, `header controls sit at centres ${JSON.stringify(centres)}`).toBeLessThan(4);
+    const header = await page.locator("header").boundingBox();
+    expect(header?.height).toBeLessThan(60);
+
+    expect(appErrors(errors), "the page reported errors at 1024px").toEqual([]);
+  });
 });

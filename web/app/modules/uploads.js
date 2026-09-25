@@ -165,19 +165,9 @@ export function restoreUploads(files) {
   }
 }
 
-/** Wires the uploads popover and its two file inputs. @returns {void} */
+/** Wires the uploads dialog and its two file inputs. @returns {void} */
 export function initUploads() {
-  el("upload-toggle").addEventListener("click", (event) => {
-    event.stopPropagation();
-    el("upload-popover").hidden = !el("upload-popover").hidden;
-  });
-  el("upload-popover").addEventListener("click", (event) => event.stopPropagation());
-  document.addEventListener("click", () => {
-    el("upload-popover").hidden = true;
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") el("upload-popover").hidden = true;
-  });
+  el("upload-open").addEventListener("click", () => el("upload-dialog").showModal());
 
   el("upload-header").addEventListener("change", async () => {
     const [file] = el("upload-header").files ?? [];

@@ -6,6 +6,7 @@ import { el, sanitizeFilename, setStatus } from "./dom.js";
 import { loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
+import { setScenarioTitle } from "./header.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
@@ -82,8 +83,7 @@ export async function commitEntry(path, name, category) {
   resetGithubSaveState();
   state.chosenPath = identity;
   // Always the typed name: a save must never stay tied to the entry it started from.
-  state.chosenTitle = name.trim();
-  document.title = `${state.chosenTitle} - Heroes III: The Board Game`;
+  setScenarioTitle(name.trim());
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -154,8 +154,7 @@ export async function openForEdit(path, title, source, edit) {
   resetGithubSaveState();
   githubSaveState.edit = edit;
   state.chosenPath = path;
-  state.chosenTitle = title;
-  document.title = `${title} - Heroes III: The Board Game`;
+  setScenarioTitle(title);
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -183,13 +182,12 @@ export function showWelcome() {
   if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
 
   state.chosenPath = null;
-  state.chosenTitle = "";
+  setScenarioTitle("");
   clearClean();
   resetGithubSaveState();
   resetUploads();
   clearPdf();
   clearRoute();
-  document.title = "Heroes III: The Board Game - Scenario Builder";
   el("header-actions").hidden = true;
   setSaveControlsVisible(false);
   el("build").disabled = true;

@@ -22,14 +22,13 @@ export const githubSaveState = { lastSaveTarget: null, edit: null };
 export function resetGithubSaveState() {
   githubSaveState.lastSaveTarget = null;
   githubSaveState.edit = null;
-  el("github-save").textContent = "💾 Save";
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;
 }
 
 /**
- * Save, Open PR and the way back to scenario selection belong to an open
- * scenario, so they show only while one is open.
+ * Save, Open PR, the way back to scenario selection and the scenario's name
+ * belong to an open scenario, so they show only while one is open. The app's own title shows only while none is.
  *
  * @param {boolean} visible
  * @returns {void}
@@ -37,5 +36,6 @@ export function resetGithubSaveState() {
 export function setSaveControlsVisible(visible) {
   const segment = el("github-save").parentElement;
   if (segment) segment.hidden = !visible;
-  el("back-to-welcome").hidden = !visible;
+  el("header-scenario").hidden = !visible;
+  el("header-titles").hidden = visible;
 }
