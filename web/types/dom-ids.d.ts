@@ -40,7 +40,9 @@ interface ElementIdMap {
   go: HTMLButtonElement;
   "mode-choice": HTMLDivElement;
   "mode-edit": HTMLButtonElement;
+  "mode-label": HTMLParagraphElement;
   "mode-new": HTMLButtonElement;
+  "name-heading": HTMLHeadingElement;
   "name-slide": HTMLDivElement;
   "header-actions": HTMLDivElement;
   "header-menu": HTMLDivElement;
@@ -63,9 +65,9 @@ interface ElementIdMap {
   "resume-list": HTMLDivElement;
   "resume-loading": HTMLParagraphElement;
   "scenario-name": HTMLInputElement;
-  "pick-heading": HTMLSpanElement;
+  "pick-heading": HTMLHeadingElement;
   "pick-hint": HTMLParagraphElement;
-  "scratch-row": HTMLDivElement;
+  "scratch-row": HTMLParagraphElement;
   "scratch-alliance": HTMLButtonElement;
   "scratch-campaign": HTMLButtonElement;
   "scratch-clash": HTMLButtonElement;

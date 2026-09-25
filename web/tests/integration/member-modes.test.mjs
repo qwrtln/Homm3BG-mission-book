@@ -104,12 +104,13 @@ test.describe("signed in as a member", () => {
     await expect(page.locator("#mode-new")).toHaveText("Add new");
     await expect(page.locator("#mode-new")).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator("#welcome-picker")).toBeVisible();
-    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
+    // The name step waits for a pick, as it does for everyone.
+    await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
     await expect(page.locator("#go")).toBeDisabled();
   });
 
-  test("Edit existing greys out the name pane and the blank-template row, and Let's go! needs only a pick", async ({
+  test("Edit existing greys out the name pane and the blank-template row, and Open editor needs only a pick", async ({
     app,
   }) => {
     const { page } = app;
@@ -136,6 +137,19 @@ test.describe("signed in as a member", () => {
     const results = await openScenarioList(page);
     await results.first().dispatchEvent("mousedown");
     await expect(page.locator("#go")).toBeEnabled();
+    // A pick does not bring the name step back: an edit keeps the scenario's own name.
+    await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
+  });
+
+  test("the mode toggle comes before the search box in Tab order", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await page.locator("#mode-edit").focus();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#mode-new")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#search")).toBeFocused();
   });
 
   test("Add new gives the name pane and the templates back", async ({ app }) => {
@@ -146,9 +160,10 @@ test.describe("signed in as a member", () => {
     await page.locator("#mode-new").click();
 
     await expect(page.locator("#pick-heading")).toHaveText("Start from an existing scenario");
-    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#go")).toBeDisabled();
+    await page.locator("#scratch-clash").click();
+    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
   });
 
   test("a blank template picked before switching to Edit existing is dropped", async ({ app }) => {
@@ -188,10 +203,10 @@ test.describe("a member with work to resume", () => {
     const top = await page.locator(".welcome-top").boundingBox();
     expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
     const banner = await page.locator("#mode-choice").boundingBox();
-    const pick = await page.locator(".picker-slide").first().boundingBox();
+    const pick = await page.locator(".pick-step").boundingBox();
     expect(
-      banner && pick && Math.abs(banner.y - pick.y) < 4 && banner.x < pick.x,
-      "banner is not left of the picker",
+      banner && pick && banner.y + banner.height <= pick.y && Math.abs(banner.x - pick.x) < 2,
+      "the mode choice is not above the search, on the same left edge",
     ).toBe(true);
   });
 });

@@ -23,60 +23,34 @@
   padding: clamp(2rem, 6vh, 4rem) 1.25rem 2rem;
   overflow: auto;
 }
-.welcome-inner { max-width: 62rem; width: 100%; }
-/* The resume list fills the row. */
-.welcome-top { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
-.welcome-top > * { flex: 1 1 20rem; min-width: 0; }
-/* The member badge is a fourth column. It grows in from nothing so the panes
-   glide aside instead of jumping when membership is confirmed. */
-.welcome-picker > .mode-choice { flex: 0 0 12rem; overflow: hidden; }
-@media (prefers-reduced-motion: no-preference) {
-  .welcome-picker > .mode-choice { animation: badge-in 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
-  @keyframes badge-in {
-    from { flex-basis: 0; margin-right: -1.5rem; opacity: 0; }
-    to { flex-basis: 12rem; margin-right: 0; opacity: 1; }
-  }
+/* One column, top to bottom: every heading shares its left edge. */
+.welcome-inner { max-width: 36rem; width: 100%; }
+/* The resume list sits above the picker, divided from it by a rule. */
+.welcome-top:has(.resume-drafts:not([hidden])) {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line);
 }
 .welcome-top .resume-drafts { margin-bottom: 0; }
-.edit-branch-prompt { margin-bottom: 1.5rem; }
+.edit-branch-prompt { margin-top: 1.75rem; }
 .mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
-/* Edit mode keeps the new-scenario controls on screen but out of reach. */
-.dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; transition: opacity 0.2s; }
-.mode-choice .scratch-row { margin-top: 0; }
-.mode-choice button[aria-pressed="true"] { border-color: var(--accent, currentColor); font-weight: 600; }
+/* A control group that is on screen but out of reach: the name step before a
+   pick, and the new-scenario controls in edit mode. */
+.dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .name-step, .scratch-row { transition: opacity 0.2s, filter 0.2s; }
+}
+/* The member's mode choice changes what search is for, so it comes first. */
+.mode-choice { margin-bottom: 1.5rem; }
+.mode-label { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
 .resume-drafts[hidden] { display: none; }
 .resume-drafts { margin-bottom: 1.5rem; }
 .combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
 .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
 .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
-/* Three equal-width blocks, side by side, statically: no motion between
-   them, nothing to animate. They are steps in order, so each heading carries
-   its number and a chevron leads from one block to the next. */
-.welcome-picker { display: flex; align-items: flex-start; gap: 1.5rem; }
-.picker-slide { flex: 1 1 0; min-width: 0; position: relative; }
-.picker-slide + .picker-slide::before {
-  content: "›";
-  position: absolute;
-  left: -1.15rem;
-  top: 0;
-  font-size: 1.5rem;
-  line-height: 1.6rem;
-  color: var(--muted);
-}
-.step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6rem;
-  height: 1.6rem;
-  margin-right: 0.3rem;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--panel);
-  font-size: 0.9rem;
-  vertical-align: 0.15em;
-}
-.picker-slide-go { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.name-step { margin-top: 2rem; }
+.go-row { margin-top: 1rem; }
+.welcome-picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .combobox { position: relative; }
 #search {
   width: 100%;
@@ -144,16 +118,12 @@
   cursor: pointer;
 }
 .combobox-blank:hover, .combobox-blank:focus-visible { background: var(--line); }
-.scratch-row {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-/* The blank templates: one compact row of joined buttons. */
+/* The blank templates: one quiet line of links, secondary to search. */
+.scratch-row { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.blank-links button.link { padding: 0.1rem 0.15rem; font-size: inherit; }
+.blank-links button.link:hover:not(:disabled) { color: var(--ink); }
+.blank-links button.link[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration-thickness: 2px; }
+/* The member's mode choice: one row of joined buttons. */
 .segmented { display: inline-flex; }
 .segmented button { border-radius: 0; margin-left: -1px; padding: 0.35rem 0.75rem; }
 .segmented button:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
@@ -166,7 +136,7 @@
   color: var(--accent);
   font-weight: 600;
 }
-.name-field { max-width: 20rem; margin: 0 auto; }
+.name-field { max-width: 24rem; }
 #scenario-name {
   width: 100%;
   font: inherit;

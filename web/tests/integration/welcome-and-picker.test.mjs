@@ -2,7 +2,7 @@
 // driven in headless Chromium through the shared fixtures. Ranking itself
 // (matchScore, groupedResults) belongs to tier 1; what is asserted here is the
 // wiring tier 1 cannot see: which rows the dropdown draws, the keyboard and
-// outside-click handlers, the selected row, the Let's go! gate, and the
+// outside-click handlers, the selected row, the Open editor gate, and the
 // hand-off from the welcome screen to the workspace.
 
 import { withScenarioTitle } from "../../shared/build-plan.js";
@@ -220,7 +220,7 @@ test("clicking outside the combobox hides the list", async ({ app }) => {
   expect(errors, "the page reported errors while dismissing the list").toEqual([]);
 });
 
-test("Let's go! needs both a pick and a valid name, and says which is missing", async ({ app }) => {
+test("Open editor needs both a pick and a valid name, and says which is missing", async ({ app }) => {
   const { page, errors } = app;
   await stubPublishedPdf(page);
   const go = page.locator("#go");
@@ -229,11 +229,9 @@ test("Let's go! needs both a pick and a valid name, and says which is missing", 
   const goHint = page.locator("#go-hint");
   const nameError = page.locator("#name-error");
 
-  // A name on its own is not enough: nothing is picked yet.
-  await name.fill("my scenario");
+  // Nothing is picked yet, so there is nothing to name.
   await expect(go).toBeDisabled();
   await expect(goHint).toHaveText("Pick a scenario or a blank template first.");
-  await name.fill("");
 
   const results = await openScenarioList(page);
   const first = results.first();
@@ -268,7 +266,7 @@ test("Let's go! needs both a pick and a valid name, and says which is missing", 
   expect(errors, "the page reported errors while picking and naming").toEqual([]);
 });
 
-test("Let's go! leaves the welcome screen and loads the picked scenario's source", async ({ app }) => {
+test("Open editor leaves the welcome screen and loads the picked scenario's source", async ({ app }) => {
   const { page, errors } = app;
   await stubPublishedPdf(page);
 
@@ -297,12 +295,12 @@ test("Let's go! leaves the welcome screen and loads the picked scenario's source
   expect(errors, "the page reported errors while opening a scenario").toEqual([]);
 });
 
-test("the blank-scenario buttons pick a template, and Let's go! loads that template's source", async ({ app }) => {
+test("the blank-scenario links pick a template, and Open editor loads that template's source", async ({ app }) => {
   const { page, errors } = app;
   const go = page.locator("#go");
   const selectedTitle = page.locator("#search");
 
-  // The three category buttons all pick the one scenario template; only the
+  // The three category links all pick the one scenario template; only the
   // draft-scenarios subdirectory they carry differs.
   await page.locator("#scratch-clash").click();
   const blankTitle = await selectedTitle.inputValue();
@@ -315,14 +313,14 @@ test("the blank-scenario buttons pick a template, and Let's go! loads that templ
   await page.locator("#scratch-alliance").click();
   await expect(selectedTitle).toHaveValue(blankTitle);
 
-  // The campaign button is the one with a template of its own.
+  // The campaign link is the one with a template of its own.
   await page.locator("#scratch-campaign").click();
   const campaignTitle = await selectedTitle.inputValue();
   expect(campaignTitle, "the campaign button picked the same template as the others").not.toBe(blankTitle);
 
   await page.locator("#scratch-clash").click();
   await expect(selectedTitle).toHaveValue(blankTitle);
-  // The row is one control: only the picked category shows as chosen.
+  // The line is one control: only the picked category shows as chosen.
   await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#scratch-campaign")).toHaveAttribute("aria-pressed", "false");
   await page.locator("#scenario-name").fill("blank test");
@@ -342,4 +340,78 @@ test("the blank-scenario buttons pick a template, and Let's go! loads that templ
   expect(blankSource, "the two templates are indistinguishable").not.toBe(campaignSource);
 
   expect(errors, "the page reported errors while starting from a blank scenario").toEqual([]);
+});
+
+test("the name step is dimmed and out of reach until there is a pick", async ({ app }) => {
+  const { page, errors } = app;
+  const step = page.locator("#name-slide");
+  const name = page.locator("#scenario-name");
+
+  await expect(step).toBeVisible();
+  await expect(step).toHaveAttribute("inert", "");
+  await expect(step).toHaveClass(/dimmed/);
+  await name.evaluate((input) => input.focus());
+  await expect(name, "the name field took focus before a pick").not.toBeFocused();
+
+  await page.locator("#scratch-clash").click();
+
+  await expect(step).not.toHaveAttribute("inert", "");
+  await expect(step).not.toHaveClass(/dimmed/);
+  await name.focus();
+  await expect(name).toBeFocused();
+
+  expect(errors, "the page reported errors while gating the name step").toEqual([]);
+});
+
+test("at 1440×900 the picker is one centred column, with blank starts quieter than search", async ({ app }) => {
+  const { page } = app;
+  await page.setViewportSize({ width: 1440, height: 900 });
+
+  const column = await page.locator("#welcome-picker").boundingBox();
+  expect(column, "the picker has no box").not.toBeNull();
+  if (!column) return;
+  expect(Math.abs(column.x + column.width / 2 - 720), "the column is not centred").toBeLessThan(2);
+  expect(column.width, "the column is not a single narrow column").toBeLessThan(720);
+
+  const lefts = await Promise.all(
+    ["#pick-heading", "#name-heading", "#search", "#scenario-name", "#go"].map(async (selector) => {
+      const box = await page.locator(selector).boundingBox();
+      return box?.x;
+    }),
+  );
+  for (const left of lefts) expect(left, "the steps do not share one left edge").toBeCloseTo(column.x, 0);
+
+  const fontSize = (/** @type {string} */ selector) =>
+    page.locator(selector).evaluate((node) => Number.parseFloat(getComputedStyle(node).fontSize));
+  expect(await fontSize("#scratch-clash"), "the blank links are as loud as the search box").toBeLessThan(
+    await fontSize("#search"),
+  );
+});
+
+test("Tab walks search, the blank links, the name and Open editor, and shows where focus is", async ({ app }) => {
+  const { page } = app;
+  await page.locator("#scratch-clash").click();
+  await page.locator("#scenario-name").fill("Tab Probe");
+
+  await page.locator("#search").focus();
+  // Focusing the search box opens its dropdown; closed, Tab leaves the box.
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#search-results")).toBeHidden();
+
+  for (const id of ["scratch-clash", "scratch-coop", "scratch-alliance", "scratch-campaign"]) {
+    await page.keyboard.press("Tab");
+    const link = page.locator(`#${id}`);
+    await expect(link).toBeFocused();
+    expect(await link.evaluate((node) => getComputedStyle(node).outlineStyle), `#${id} shows no focus`).not.toBe(
+      "none",
+    );
+  }
+  await page.keyboard.press("Tab");
+  await expect(page.locator("#scenario-name")).toBeFocused();
+  await page.keyboard.press("Tab");
+  const go = page.locator("#go");
+  await expect(go).toBeFocused();
+  expect(await go.evaluate((node) => getComputedStyle(node).outlineStyle), "Open editor shows no focus").not.toBe(
+    "none",
+  );
 });

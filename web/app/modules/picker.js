@@ -7,7 +7,7 @@ import { preloadFile, preloadText } from "./files.js";
 import { state } from "./state.js";
 import { commitEntry } from "./workspace.js";
 
-// A pick only marks a pending choice, no fetch yet; "Let's go!" needs a pick
+// A pick only marks a pending choice, no fetch yet; "Open editor" needs a pick
 // plus a valid name — see validateScenarioName. Picking a real scenario does
 // already start downloading its pictures/PDF though — see startScenarioPrefetch.
 /** @type {string | null} */
@@ -15,7 +15,7 @@ let pendingPath = null;
 /** @type {string | null} draft-scenarios subdir for a template pick; null for a real entry */
 let pendingCategory = null;
 
-/** @type {"new" | "edit"} what "Let's go!" does: start a new scenario, or edit the picked one in place */
+/** @type {"new" | "edit"} what "Open editor" does: start a new scenario, or edit the picked one in place */
 let pickerMode = "new";
 /** @type {((path: string, title: string) => void) | null} set by the GitHub module, which owns the edit flow */
 let editHandler = null;
@@ -23,7 +23,7 @@ let editHandler = null;
 let pendingTitle = "";
 
 /**
- * Registers what "Let's go!" runs in edit mode.
+ * Registers what "Open editor" runs in edit mode.
  *
  * @param {(path: string, title: string) => void} handler
  * @returns {void}
@@ -55,7 +55,6 @@ function setDimmed(element, dimmed) {
  */
 export function setPickerMode(mode) {
   pickerMode = mode;
-  setDimmed(el("name-slide"), mode === "edit");
   setDimmed(el("scratch-row"), mode === "edit");
   el("mode-edit").setAttribute("aria-pressed", String(mode === "edit"));
   el("mode-new").setAttribute("aria-pressed", String(mode === "new"));
@@ -134,12 +133,14 @@ export function settleModes(isMember) {
 }
 
 /**
- * Enables "Let's go!" when there is a pick and a valid name, and says which of
- * the two is missing rather than leaving a greyed-out button unexplained.
+ * Enables "Open editor" when there is a pick and a valid name, and says which
+ * of the two is missing rather than leaving a greyed-out button unexplained.
+ * The name step stays out of reach until there is a pick to name.
  *
  * @returns {void}
  */
 export function updateGoButton() {
+  setDimmed(el("name-slide"), pickerMode === "edit" || !pendingPath);
   if (pickerMode === "edit") {
     el("name-error").hidden = true;
     el("go").disabled = !pendingPath;

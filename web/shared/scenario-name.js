@@ -3,7 +3,7 @@
 // The name is a title, not a path: sanitizeFilename() and slugify() derive the
 // file name and the branch from it later, and both would happily fold "@#$"
 // into "untitled". Rejecting those characters here keeps the derived name
-// recognisable, and keeps the reason for a disabled "Let's go!" sayable.
+// recognisable, and keeps the reason for a disabled "Open editor" sayable.
 
 export const MIN_SCENARIO_NAME_LENGTH = 3;
 export const MAX_SCENARIO_NAME_LENGTH = 60;

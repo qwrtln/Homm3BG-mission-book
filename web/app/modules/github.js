@@ -209,7 +209,7 @@ function showResumeSearching() {
 }
 
 /**
- * "Let's go!" in edit mode. If an earlier session left an edit branch for this
+ * "Open editor" in edit mode. If an earlier session left an edit branch for this
  * file the member is asked whether to continue it or start over; otherwise the
  * Mission Book's own copy opens.
  *

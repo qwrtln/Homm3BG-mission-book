@@ -81,42 +81,39 @@
       </div>
       <div class="welcome-picker" id="welcome-picker">
         <div class="mode-choice" id="mode-choice" hidden>
-          <h2>You're a project member</h2>
-          <p class="hint">Choose the mode: change a scenario that already exists, or add a new one.</p>
-          <div class="scratch-row">
+          <p class="mode-label" id="mode-label">You're a project member. Change a scenario that already exists, or add a new one:</p>
+          <div class="segmented" role="group" aria-labelledby="mode-label">
             <button id="mode-edit" type="button" aria-pressed="false">Edit existing</button>
             <button id="mode-new" type="button" aria-pressed="false">Add new</button>
           </div>
         </div>
-        <div class="picker-slide">
-          <h2><span class="step-number">1</span> <span id="pick-heading">Start from an existing scenario</span></h2>
+        <div class="pick-step">
+          <h2 id="pick-heading">Start from an existing scenario</h2>
           <p class="hint" id="pick-hint">Your new scenario starts as a copy of it. Search the Mission Book and the Draft Scenarios by name.</p>
           <div class="combobox">
-            <input type="text" id="search" placeholder="Type a scenario name…" autocomplete="off">
+            <input type="text" id="search" aria-labelledby="pick-heading" placeholder="Type a scenario name…" autocomplete="off">
             <div class="combobox-list" id="search-results" hidden></div>
           </div>
-          <div class="scratch-row" id="scratch-row">
-            <span id="scratch-label">Or start from a blank scenario:</span>
-            <div class="segmented" role="group" aria-labelledby="scratch-label">
-              <button id="scratch-clash" type="button" data-category="clash" aria-pressed="false">Clash</button>
-              <button id="scratch-coop" type="button" data-category="coops" aria-pressed="false">Coop</button>
-              <button id="scratch-alliance" type="button" data-category="alliances" aria-pressed="false">Alliance</button>
-              <button id="scratch-campaign" type="button" data-category="campaigns" aria-pressed="false">Campaign</button>
-            </div>
-          </div>
+          <p class="scratch-row" id="scratch-row">
+            <span id="scratch-label">No close match? Start blank:</span>
+            <span class="blank-links" role="group" aria-labelledby="scratch-label">
+              <button id="scratch-clash" class="link" type="button" data-category="clash" aria-pressed="false">Clash</button> <span aria-hidden="true">·</span>
+              <button id="scratch-coop" class="link" type="button" data-category="coops" aria-pressed="false">Coop</button> <span aria-hidden="true">·</span>
+              <button id="scratch-alliance" class="link" type="button" data-category="alliances" aria-pressed="false">Alliance</button> <span aria-hidden="true">·</span>
+              <button id="scratch-campaign" class="link" type="button" data-category="campaigns" aria-pressed="false">Campaign</button>
+            </span>
+          </p>
         </div>
-        <div class="picker-slide" id="name-slide">
-          <h2><span class="step-number">2</span> Name your new scenario</h2>
+        <div class="name-step dimmed" id="name-slide" inert>
+          <h2 id="name-heading">Name your new scenario</h2>
           <p class="hint">This becomes the file's own name: the download, and where its draft autosaves.</p>
           <div class="name-field">
-            <input type="text" id="scenario-name" aria-label="Name your new scenario" placeholder="Your new scenario's name" maxlength="60" required>
+            <input type="text" id="scenario-name" aria-labelledby="name-heading" placeholder="Your new scenario's name" maxlength="60" required>
             <p class="name-error" id="name-error" role="alert" hidden></p>
           </div>
         </div>
-        <div class="picker-slide picker-slide-go">
-          <h2><span class="step-number">3</span> Ready?</h2>
-          <p class="hint">Opens the editor, with this scenario's own source loaded in.</p>
-          <button id="go" class="primary" type="button" disabled>Let's go!</button>
+        <div class="go-row">
+          <button id="go" class="primary" type="button" disabled>Open editor</button>
           <p class="go-hint" id="go-hint" role="status"></p>
         </div>
       </div>
