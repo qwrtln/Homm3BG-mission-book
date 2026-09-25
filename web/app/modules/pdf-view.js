@@ -1,5 +1,5 @@
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
-import { el, escapeHtml } from "./dom.js";
+import { el, escapeHtml, setStatus } from "./dom.js";
 import { requireEditor, state } from "./state.js";
 
 // pdf.js is imported by URL, when the first PDF shows, so a page load that
@@ -85,10 +85,27 @@ export function showPdfMessage(text) {
 /** Empties the PDF pane and the error panel. @returns {void} */
 export function clearPdf() {
   state.lastPdf = null;
+  state.pdfSource = null;
   el("download").disabled = true;
   showPdfMessage("No PDF yet. Press Build PDF.");
   el("error-panel").hidden = true;
   clearErrorLine();
+}
+
+export const STALE_MESSAGE = "Source changed since last build.";
+
+/**
+ * Says in the status bar that the shown PDF no longer matches the editor.
+ * Silent when no PDF is shown, and while the status bar reports an action
+ * still under way (it spins): the next edit says it instead.
+ *
+ * @returns {void}
+ */
+export function refreshStaleStatus() {
+  if (!state.lastPdf || state.pdfSource === null || !state.cm) return;
+  if (state.cm.getValue() === state.pdfSource) return;
+  if (!el("status-spinner").hidden) return;
+  setStatus(STALE_MESSAGE);
 }
 
 const ERROR_LINE_CLASS = "build-error-line";
@@ -127,10 +144,13 @@ function jumpToLine(line) {
  * drawn leaves a message in the pane, and Download still offers its bytes.
  *
  * @param {Blob} blob PDF bytes, tagged application/pdf
+ * @param {string} source the editor source the PDF stands for; an edit away
+ *   from it makes the PDF stale
  * @returns {Promise<void>}
  */
-export async function showPdf(blob) {
+export async function showPdf(blob, source) {
   state.lastPdf = blob;
+  state.pdfSource = source;
   el("download").disabled = false;
   loadTicket += 1;
   const ticket = loadTicket;

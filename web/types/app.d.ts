@@ -73,6 +73,8 @@ interface AppState {
   building: boolean;
   runner: import("../shared/vendor/texlyre-busytex.js").BusyTexRunner | null;
   lastPdf: Blob | null;
+  /** The editor source lastPdf was made from; null when no PDF is shown. */
+  pdfSource: string | null;
   cm: CodeMirrorEditor | null;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;

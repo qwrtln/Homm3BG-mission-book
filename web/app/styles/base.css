@@ -42,7 +42,6 @@ button {
 }
 button.icon { padding: 0.5rem 0.6rem; font-size: 1rem; line-height: 1; }
 button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
-button:disabled { opacity: 0.5; cursor: default; }
 button.primary {
   border-color: var(--btn-primary-bg);
   background: var(--btn-primary-bg);
@@ -54,7 +53,6 @@ button.primary:hover:not(:disabled) {
   background: var(--btn-primary-hover);
   color: #fff;
 }
-button.primary:disabled { background: var(--btn-primary-bg); opacity: 0.5; }
 /* The Build button mid-build, styled as Primer's danger button: red, the
    conventional colour for a stop, but quiet until hovered. */
 button.primary.stop {
@@ -68,6 +66,16 @@ button.primary.stop:hover:not(:disabled) {
   color: #fff;
 }
 button.primary.stop:active:not(:disabled) { background: var(--btn-danger-active-bg); }
+/* Every disabled button, primary and danger included, in Primer's neutral
+   disabled look: grey reads as unavailable, where a faded colour reads as
+   merely faint. The :is() lifts it over button.danger in dialog.css. */
+button:disabled,
+button:is(.primary, .danger):disabled {
+  border-color: var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  cursor: default;
+}
 button.link {
   border: none;
   background: none;

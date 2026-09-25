@@ -230,7 +230,10 @@ export async function runBuild() {
 
     if (record.ok) {
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
-      await showPdf(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }));
+      await showPdf(
+        new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }),
+        source,
+      );
       setStatus(`Built ${record.pages} page(s) in ${record.seconds}s.`, { tone: "ok" });
     } else {
       // A last good PDF stays on screen, and downloadable, above the error.

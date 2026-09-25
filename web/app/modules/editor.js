@@ -1,6 +1,7 @@
 import { refreshUnsavedNote } from "./dirty.js";
 import { el } from "./dom.js";
 import { saveDraft, scheduleSave } from "./drafts.js";
+import { refreshStaleStatus } from "./pdf-view.js";
 import { state } from "./state.js";
 import { initialTheme } from "./theme.js";
 
@@ -25,6 +26,7 @@ export function initEditor() {
   cm.on("change", () => {
     scheduleSave();
     refreshUnsavedNote();
+    refreshStaleStatus();
   });
   cm.on("blur", () => {
     if (state.chosenPath) saveDraft(state.chosenPath, cm.getValue());

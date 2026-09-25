@@ -35,6 +35,8 @@ export function resetGithubSaveState() {
 /**
  * Save, Open PR, the way back to scenario selection and the scenario's name
  * belong to an open scenario, so they show only while one is open. The app's own title shows only while none is.
+ * Signed out, the sign-in button stands where Save would, so with a scenario
+ * open it says that signing in is how to save.
  *
  * @param {boolean} visible
  * @returns {void}
@@ -44,4 +46,6 @@ export function setSaveControlsVisible(visible) {
   if (segment) segment.hidden = !visible;
   el("header-scenario").hidden = !visible;
   el("header-titles").hidden = visible;
+  const signinLabel = el("github-signin").querySelector(".label");
+  if (signinLabel) signinLabel.textContent = visible ? "Sign in to save" : "Sign in with GitHub";
 }

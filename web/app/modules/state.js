@@ -11,6 +11,7 @@ export const state = {
   building: false,
   runner: null,
   lastPdf: null,
+  pdfSource: null, // the editor source lastPdf was made from
   cm: null, // CodeMirror instance, created once over #editor
 
   // Files a contributor added from their own machine, not the repository: a

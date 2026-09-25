@@ -117,6 +117,9 @@ export async function commitEntry(path, name, category) {
  * @returns {Promise<void>}
  */
 async function showPrefetchedPdf(path) {
+  // The published PDF stands for what the editor holds now, before any edit
+  // made while the download finishes.
+  const source = requireEditor().getValue();
   setStatus("Finishing this scenario's downloads…", { spinning: true });
   showPdfLoading("Finishing this scenario's downloads…");
   const prefetch =
@@ -126,7 +129,7 @@ async function showPrefetchedPdf(path) {
   const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
   prefetch.promise = promise;
   const { pdfBlob } = await promise;
-  if (pdfBlob) await showPdf(pdfBlob);
+  if (pdfBlob) await showPdf(pdfBlob, source);
   else clearPdf();
 }
 
