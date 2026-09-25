@@ -2,33 +2,40 @@
 
 #workspace { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
 main {
+  --divider: 5px;
   flex: 1 1 auto;
   display: flex;
   min-height: 0;
-  gap: 1px;
   background: var(--line);
 }
-@media (max-width: 850px) {
-  main { flex-direction: column; overflow-y: auto; }
-  .pane { min-height: 24rem; }
-}
 .pane {
-  flex: 1 1 50%;
-  min-width: 0;
+  min-width: 20rem; /* MIN_PANE_REM in modules/panes.js */
   display: flex;
   flex-direction: column;
   background: var(--panel);
 }
-.pane-head {
-  padding: 0.6rem 1rem;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+/* --split is the source pane's share in percent, set by modules/panes.js. */
+#editor-pane { flex: 0 1 calc((100% - var(--divider)) * var(--split, 50) / 100); }
+#pdf-pane { flex: 1 1 0; }
+.pane-divider {
+  flex: 0 0 var(--divider);
+  cursor: col-resize;
+  touch-action: none;
+  /* A 1px rule like the other borders, on a grab area wide enough to hit. */
+  background: linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat var(--panel);
 }
-.pane-head h2 { font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.pane-divider:hover,
+.pane-divider:focus-visible,
+main.resizing .pane-divider { background: var(--accent); outline: none; }
+/* The PDF embed would take the pointer mid-drag, and a drag would select text. */
+main.resizing { cursor: col-resize; user-select: none; }
+main.resizing embed { pointer-events: none; }
+@media (max-width: 850px) {
+  main { flex-direction: column; overflow-y: auto; gap: 1px; }
+  .pane { min-width: 0; min-height: 24rem; }
+  #editor-pane, #pdf-pane { flex: 1 1 50%; }
+  .pane-divider { display: none; }
+}
 .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
 .editor-wrap .CodeMirror {
   position: absolute;

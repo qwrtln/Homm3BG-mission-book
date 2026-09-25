@@ -18,6 +18,7 @@ interface ElementIdMap {
   "confirm-warning": HTMLParagraphElement;
   editor: HTMLTextAreaElement;
   "editor-pane": HTMLElement;
+  "workspace-main": HTMLElement;
   "error-panel": HTMLDivElement;
   "first-error": HTMLDivElement;
   "full-log": HTMLPreElement;
@@ -51,6 +52,7 @@ interface ElementIdMap {
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;
+  "pane-divider": HTMLDivElement;
   "pdf-wrap": HTMLDivElement;
   "resume-drafts": HTMLDivElement;
   "resume-hint": HTMLParagraphElement;

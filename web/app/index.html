@@ -131,20 +131,20 @@
 
   <!-- styles/workspace.css -->
   <div id="workspace" hidden>
-    <main>
-      <section class="pane" id="editor-pane">
-        <div class="pane-head">
-          <h2>Source</h2>
-        </div>
+    <main id="workspace-main">
+      <section class="pane" id="editor-pane" aria-label="Source">
         <div class="editor-wrap">
           <textarea id="editor" spellcheck="false"></textarea>
         </div>
       </section>
 
-      <section class="pane" id="pdf-pane">
-        <div class="pane-head">
-          <h2>PDF</h2>
-        </div>
+      <div class="pane-divider" id="pane-divider" role="separator" tabindex="0"
+           aria-orientation="vertical" aria-controls="editor-pane"
+           aria-label="Resize the source and PDF panes"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+           title="Drag to resize. Double-click to reset."></div>
+
+      <section class="pane" id="pdf-pane" aria-label="PDF">
         <div class="pdf-pane-body-wrap" id="pdf-wrap">
           <div class="pdf-pane-body" id="pdf-body">
             <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
