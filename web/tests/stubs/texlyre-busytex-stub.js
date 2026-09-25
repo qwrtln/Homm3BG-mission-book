@@ -14,6 +14,10 @@
 // A test that needs a compile in flight sets globalThis.__stubCompileHold to
 // a promise; every compile then waits on it before answering. A promise that
 // never settles makes a compile that only a stop can end.
+//
+// A test that needs a particular result (a failed build, a given log) sets
+// globalThis.__stubCompileResult to a function; every compile then answers
+// with what it returns for the options build.js passed.
 
 /**
  * @typedef {object} StubEngineCall
@@ -190,6 +194,7 @@ async function stubToolCompile(runner, label, options) {
   if (!runner.isInitialized()) {
     await runner.initialize();
   }
+  if (typeof globalThis.__stubCompileResult === "function") return globalThis.__stubCompileResult(options);
   return {
     success: true,
     pdf: fakePdfBytes(),

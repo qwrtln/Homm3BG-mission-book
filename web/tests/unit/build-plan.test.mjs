@@ -11,6 +11,7 @@ import {
   collectReferencedAssets,
   collectReferencedGlyphs,
   DRAFT_GROUP_FILES,
+  errorLine,
   firstError,
   GROUP_FILES,
   glyphFilesFor,
@@ -162,6 +163,101 @@ test("firstError pulls out the first real error line and nothing else", () => {
   assert.equal(firstError("nothing wrong here"), null);
   assert.equal(firstError(""), null);
   assert.equal(firstError(null), null);
+});
+
+// A LuaLaTeX log as the engine writes it: no -file-line-error, so the error
+// names no file. The open-file parentheses say which file TeX was reading.
+const LOG_HEAD = [
+  "This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (INITEX)",
+  " restricted system commands enabled.",
+  "(./main_en.tex",
+  "LaTeX2e <2023-11-01> patch level 1",
+  "(/texlive/texmf-dist/tex/latex/base/book.cls",
+  "Document Class: book 2023/05/17 v1.4n Standard LaTeX document class",
+  "(/texlive/texmf-dist/tex/latex/base/bk10.clo",
+  "File: bk10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)",
+  "))",
+  "(./metadata.tex) (./main_en.aux) (./structure.tex",
+];
+
+test("errorLine reads l.<n> when the scenario is the file TeX was reading", () => {
+  const log = [
+    ...LOG_HEAD,
+    "(./clash/x.tex (/texlive/texmf-dist/tex/latex/lm/t1lmr.fd)",
+    "! Undefined control sequence.",
+    "l.12 \\foo",
+    "         {bar}",
+    "The control sequence at the end of the top line",
+  ].join("\n");
+  assert.equal(errorLine(log, "clash/x.tex", 40), 12);
+  assert.equal(errorLine(log, "./clash/x.tex", 40), 12);
+});
+
+test("errorLine gives no line for an error in a file the user cannot edit", () => {
+  const inMacros = [
+    ...LOG_HEAD,
+    "(./clash/x.tex (./sections/macros.tex",
+    "! Missing $ inserted.",
+    "l.3 \\newcommand",
+  ].join("\n");
+  assert.equal(errorLine(inMacros, "clash/x.tex", 40), null);
+
+  // The scenario has closed; the error is in main_en.tex after it.
+  const afterScenario = [
+    ...LOG_HEAD,
+    "(./clash/x.tex) (see the transcript file for additional information))",
+    "! LaTeX Error: \\begin{document} ended by \\end{foo}.",
+    "l.40 \\end{foo}",
+  ].join("\n");
+  assert.equal(errorLine(afterScenario, "clash/x.tex", 100), null);
+});
+
+test("errorLine follows only the first error, the one the panel shows", () => {
+  const log = [
+    ...LOG_HEAD,
+    "(./clash/x.tex (./sections/macros.tex",
+    "! Missing $ inserted.",
+    "l.3 \\newcommand",
+    ")",
+    "! Undefined control sequence.",
+    "l.12 \\foo",
+  ].join("\n");
+  assert.equal(errorLine(log, "clash/x.tex", 40), null);
+});
+
+test("errorLine needs a line number inside the document", () => {
+  const withLine = (n) => [...LOG_HEAD, "(./clash/x.tex", "! Undefined control sequence.", `l.${n} \\foo`].join("\n");
+  assert.equal(errorLine(withLine(12), "clash/x.tex", 12), 12);
+  assert.equal(errorLine(withLine(13), "clash/x.tex", 12), null);
+  assert.equal(errorLine(withLine(0), "clash/x.tex", 12), null);
+
+  const noLine = [...LOG_HEAD, "(./clash/x.tex", "! Emergency stop.", "*** (job aborted, no legal \\end found)"].join(
+    "\n",
+  );
+  assert.equal(errorLine(noLine, "clash/x.tex", 40), null);
+  assert.equal(errorLine("nothing wrong here", "clash/x.tex", 40), null);
+  assert.equal(errorLine("", "clash/x.tex", 40), null);
+  assert.equal(errorLine(null, "clash/x.tex", 40), null);
+});
+
+test("errorLine rejoins a file path TeX wrapped at 79 characters", () => {
+  const path = "campaigns/the_queens_gambit/a_rather_long_scenario_file_name_for_wrapping.tex";
+  const opened = `(./structure.tex (./${path}`;
+  const cut = 79;
+  assert.ok(opened.length > cut, "the fixture must actually wrap");
+  const log = [
+    ...LOG_HEAD.slice(0, -1),
+    opened.slice(0, cut),
+    opened.slice(cut),
+    "! Undefined control sequence.",
+    "l.7 \\foo",
+  ].join("\n");
+  assert.equal(errorLine(log, path, 40), 7);
+});
+
+test("errorLine reads the file:line: form too", () => {
+  assert.equal(errorLine("./clash/x.tex:7: Undefined control sequence.", "clash/x.tex", 40), 7);
+  assert.equal(errorLine("./sections/macros.tex:7: Undefined control sequence.", "clash/x.tex", 40), null);
 });
 
 test("pageCount takes the last Output-written line, not the first", () => {

@@ -32,6 +32,15 @@ interface CodeMirrorEditor {
   removeKeyMap(map: CodeMirrorKeyMap): void;
   getInputField(): HTMLTextAreaElement;
   hasFocus(): boolean;
+  lineCount(): number;
+  addLineClass(line: number, where: "text" | "background" | "gutter" | "wrap", cls: string): CodeMirrorLineHandle;
+  removeLineClass(line: CodeMirrorLineHandle, where: "text" | "background" | "gutter" | "wrap", cls: string): void;
+  scrollIntoView(pos: CodeMirrorPosition, margin?: number): void;
+}
+
+/** CodeMirror 5's handle on one line; it follows the line through edits. */
+interface CodeMirrorLineHandle {
+  readonly text: string;
 }
 
 interface CodeMirrorOptions {

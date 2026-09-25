@@ -1,5 +1,6 @@
 import { untilAborted } from "../../shared/abort.js";
 import {
+  errorLine,
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
   missingFiles,
@@ -12,7 +13,7 @@ import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js"
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setStatus } from "./dom.js";
 import { fetchRepoFile, preloadFile, preloadTexmfFile, preloadText } from "./files.js";
-import { showError, showPdf } from "./pdf-view.js";
+import { clearErrorLine, showError, showPdf } from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
 
 /**
@@ -105,6 +106,7 @@ export async function runBuild() {
   buildController = controller;
   setBuilding(true);
   el("error-panel").hidden = true;
+  clearErrorLine();
   try {
     // A stop here leaves the engine warming: page load started it, not this build.
     await untilAborted(ensureEngine(), signal);
@@ -220,6 +222,7 @@ export async function runBuild() {
       notFound,
       missing: missingFiles(result.log),
       firstError: firstError(result.log),
+      errorLine: errorLine(result.log, chosenPath, source.split("\n").length),
       log: result.log || "",
     };
 

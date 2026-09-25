@@ -350,6 +350,97 @@ test("a finished build leaves the engine running", async ({ app }) => {
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });
 
+/**
+ * Makes every stub compile fail with a LuaLaTeX-style log whose one error
+ * sits on `line` of whichever file `inside` names: "scenario" is the file the
+ * build staged from the editor, read back from the generated structure.tex.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {{line: number, inside: "scenario" | "macros"}} error
+ * @returns {Promise<void>}
+ */
+async function failCompiles(page, error) {
+  await page.evaluate(({ line, inside }) => {
+    globalThis.__stubCompileResult = (options) => {
+      const structure = options.additionalFiles.find((file) => file.path === "structure.tex");
+      const scenario = /\\include\{([^}]+)\}/.exec(structure.content)[1];
+      const opened = inside === "scenario" ? `(./${scenario}` : `(./${scenario} (./sections/macros.tex`;
+      return {
+        success: false,
+        pdf: null,
+        synctex: null,
+        log: ["(./main_en.tex (./structure.tex", opened, "! Undefined control sequence.", `l.${line} \\foo`].join("\n"),
+        exitCode: 1,
+        logs: [],
+      };
+    };
+  }, error);
+}
+
+/**
+ * The editor's cursor line, 1-based, and every line carrying the build-error
+ * mark, read from CodeMirror 5's own instance on its wrapper element.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<{cursor: number, focused: boolean, lineCount: number, marked: number[]}>}
+ */
+async function editorState(page) {
+  return page.evaluate(() => {
+    const cm = document.querySelector(".CodeMirror").CodeMirror;
+    const marked = [];
+    cm.eachLine((handle) => {
+      if (/\bbuild-error-line\b/.test(handle.bgClass || "")) marked.push(cm.getLineNumber(handle) + 1);
+    });
+    return { cursor: cm.getCursor().line + 1, focused: cm.hasFocus(), lineCount: cm.lineCount(), marked };
+  });
+}
+
+test("a build error in the scenario jumps the editor to its line", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  // The last line: far enough down that the jump has to scroll.
+  const { lineCount } = await editorState(page);
+  expect(lineCount, "the picked scenario is too short to test a jump").toBeGreaterThan(5);
+  await failCompiles(page, { line: lineCount, inside: "scenario" });
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  const jump = page.locator("#first-error button.error-jump");
+  await expect(jump).toHaveText(`Line ${lineCount}! Undefined control sequence.`);
+  expect((await editorState(page)).marked).toEqual([lineCount]);
+
+  await jump.click();
+  const after = await editorState(page);
+  expect(after.cursor).toBe(lineCount);
+  expect(after.focused).toBe(true);
+  // CodeMirror renders only the lines in view, so the mark showing means it scrolled there.
+  await expect(page.locator(".CodeMirror .build-error-line")).toBeInViewport();
+
+  // The next build clears the mark.
+  await page.evaluate(() => {
+    delete globalThis.__stubCompileResult;
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  expect((await editorState(page)).marked).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
+test("a build error outside the scenario offers no jump", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await failCompiles(page, { line: 3, inside: "macros" });
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  await expect(page.locator("#first-error")).toHaveText("! Undefined control sequence.");
+  await expect(page.locator("#first-error button")).toHaveCount(0);
+  expect((await editorState(page)).marked).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
 test("Build and Download follow the pick and the build", async ({ app }) => {
   const { page, errors } = app;
 

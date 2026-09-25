@@ -321,6 +321,72 @@ export function firstError(log) {
   return null;
 }
 
+// TeX breaks every log line at max_print_line (79 by default), file paths
+// included, so a line exactly this long continues on the next one.
+const LOG_LINE_WIDTH = 79;
+
+/**
+ * The files TeX had open at the end of `lines`, innermost last, read from
+ * the log's parentheses: "(./clash/x.tex" opens one, ")" closes it. Prose in
+ * parentheses opens and closes a non-path entry, which never matters.
+ *
+ * @param {string[]} lines the log up to, not including, the error line
+ * @returns {string[]}
+ */
+function openFiles(lines) {
+  let text = "";
+  for (const line of lines) text += line.length === LOG_LINE_WIDTH ? line : `${line}\n`;
+  /** @type {string[]} */
+  const stack = [];
+  const re = /\(([^()\s]*)|\)/g;
+  let m;
+  while ((m = re.exec(text))) {
+    if (m[0] === ")") stack.pop();
+    else stack.push(m[1]);
+  }
+  return stack;
+}
+
+/**
+ * The scenario line behind the log's first error, the one firstError shows,
+ * so the panel can jump to it. Null unless TeX was reading the scenario
+ * itself: an error in the book's shared files names a line the user cannot
+ * edit here.
+ *
+ * @param {string | null | undefined} log
+ * @param {string} scenarioPath repository path of the scenario, e.g. "clash/x.tex"
+ * @param {number} lineCount lines in the editor; a line past the end is no line
+ * @returns {number | null} a 1-based line number, or null
+ */
+export function errorLine(log, scenarioPath, lineCount) {
+  if (!log) return null;
+  const lines = log.split("\n");
+  const index = lines.findIndex((line) => /^!/.test(line) || /^.+:\d+: /.test(line));
+  if (index < 0) return null;
+  const bare = (/** @type {string} */ path) => path.replace(/^\.\//, "");
+  const target = bare(scenarioPath);
+
+  let file = null;
+  let line = null;
+  const located = /^(.+):(\d+): /.exec(lines[index]);
+  if (located) {
+    file = located[1];
+    line = Number(located[2]);
+  } else {
+    file = openFiles(lines.slice(0, index)).at(-1) ?? null;
+    for (const next of lines.slice(index + 1)) {
+      if (/^!/.test(next)) break;
+      const at = /^l\.(\d+)(?: |$)/.exec(next);
+      if (at) {
+        line = Number(at[1]);
+        break;
+      }
+    }
+  }
+  if (file === null || line === null || bare(file) !== target) return null;
+  return line >= 1 && line <= lineCount ? line : null;
+}
+
 /**
  * The page count, taken from the engine's own log line. Counting "/Type /Page"
  * in the PDF bytes does not work: LuaTeX packs the page objects into compressed

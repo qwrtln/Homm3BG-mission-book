@@ -41,6 +41,8 @@ interface BuildRecord {
   missing?: string[];
   /** The first real LaTeX error line, or null when none was found. */
   firstError: string | null;
+  /** The scenario line behind firstError, 1-based; null when the error is elsewhere or has no line. */
+  errorLine?: number | null;
   log: string;
 }
 
