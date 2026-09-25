@@ -122,6 +122,18 @@ LaTeX mode: `mode/stex/stex.min.js`.
 - Docs: https://codemirror.net/5/doc/manual.html
 - Re-vendor from https://cdnjs.com/libraries/codemirror/
 
+## PDF viewer — pdf.js
+
+`web/app/vendor/pdfjs/` is pdf.js (`PDFJS_VERSION`): `pdf.min.mjs`,
+`pdf.worker.min.mjs` and `LICENSE` from the `build/` directory of the
+`pdfjs-dist` npm tarball. The two `.mjs` files get a final newline for the lint rules.
+`app/modules/pdf-view.js` is the only module that loads it, by URL at run time;
+`web/types/pdfjs.d.ts` names the part of its API the app calls.
+
+- A `PDFDocumentProxy` has no `destroy()`. Destroy the loading task instead.
+- Fonts, CMaps and WASM decoders are not vendored. LaTeX embeds its fonts, so
+  the book's PDFs do not need them.
+
 ## LaTeX engine (BusyTeX) — do not test, do not touch
 
 - Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.

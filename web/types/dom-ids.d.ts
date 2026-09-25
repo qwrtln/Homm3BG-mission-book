@@ -9,7 +9,7 @@
 interface ElementIdMap {
   build: HTMLButtonElement;
   "build-label": HTMLSpanElement;
-  "build-overlay": HTMLDivElement;
+  "build-progress": HTMLDivElement;
   download: HTMLButtonElement;
   "draft-note": HTMLSpanElement;
   "unsaved-note": HTMLSpanElement;
@@ -52,6 +52,10 @@ interface ElementIdMap {
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;
+  "pdf-toolbar": HTMLDivElement;
+  "pdf-zoom-in": HTMLButtonElement;
+  "pdf-zoom-level": HTMLButtonElement;
+  "pdf-zoom-out": HTMLButtonElement;
   "pane-divider": HTMLDivElement;
   "pdf-wrap": HTMLDivElement;
   "resume-drafts": HTMLDivElement;

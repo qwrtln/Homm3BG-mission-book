@@ -1,11 +1,92 @@
+import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
 import { el, escapeHtml } from "./dom.js";
 import { requireEditor, state } from "./state.js";
+
+// pdf.js is imported by URL, when the first PDF shows, so a page load that
+// never reaches a PDF never fetches it, and the type checker never reads it.
+const PDFJS_URL = new URL("../vendor/pdfjs/pdf.min.mjs", import.meta.url).href;
+const PDFJS_WORKER_URL = new URL("../vendor/pdfjs/pdf.worker.min.mjs", import.meta.url).href;
+
+/** Space around and between pages, in px. Matches .pdf-pages in workspace.css. */
+const PAGE_MARGIN = 12;
+
+/** How long a pane resize must settle before the pages redraw, in ms. */
+const RESIZE_SETTLE_MS = 150;
+
+/** @type {Promise<PdfJsModule> | null} */
+let pdfjsReady = null;
+
+/**
+ * The document the pane shows, or is about to show, with the task that
+ * loaded it: destroying the task is what frees the document. Null for a
+ * placeholder.
+ *
+ * @type {{task: PdfLoadingTask, doc: PdfDocument} | null}
+ */
+let shown = null;
+
+/** Share of the fit-to-width size the pages draw at. Kept across rebuilds and scenarios. */
+let zoom = 1;
+
+// Tickets let the newest request win. A document load that finishes after a
+// newer showPdf or clearPdf is dropped; a render that finishes after a newer
+// render (a zoom, a resize, the next build) is dropped before it swaps in.
+let loadTicket = 0;
+let renderTicket = 0;
+
+/** @returns {Promise<PdfJsModule>} */
+function loadPdfJs() {
+  pdfjsReady ??= import(PDFJS_URL).then(
+    (module) => {
+      const pdfjs = /** @type {PdfJsModule} */ (module);
+      pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_URL;
+      return pdfjs;
+    },
+    (error) => {
+      pdfjsReady = null; // let the next PDF try again
+      throw error;
+    },
+  );
+  return pdfjsReady;
+}
+
+/**
+ * Drops the shown document and whatever render or load is in flight.
+ *
+ * @returns {void}
+ */
+function forgetDocument() {
+  loadTicket += 1;
+  renderTicket += 1;
+  shown?.task.destroy();
+  shown = null;
+  el("pdf-toolbar").hidden = true;
+}
+
+/**
+ * Replaces the pages with a centred message.
+ *
+ * @param {string} html trusted markup for the message
+ * @returns {void}
+ */
+function showPlaceholder(html) {
+  forgetDocument();
+  el("pdf-body").innerHTML = html;
+}
+
+/**
+ * @param {string} text what the pane says instead of a PDF
+ * @returns {void}
+ */
+export function showPdfMessage(text) {
+  showPlaceholder(`<div class="empty-pdf" id="pdf-empty">${escapeHtml(text)}</div>`);
+}
 
 /** Empties the PDF pane and the error panel. @returns {void} */
 export function clearPdf() {
   state.lastPdf = null;
   el("download").disabled = true;
-  el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>';
+  showPdfMessage("No PDF yet. Press Build PDF.");
   el("error-panel").hidden = true;
   clearErrorLine();
 }
@@ -38,14 +119,151 @@ function jumpToLine(line) {
 }
 
 /**
+ * Shows a PDF in the pane. The pages it replaces stay on screen until the
+ * new ones are drawn, and the new ones open where the reader was: the same
+ * page, the same spot on it, the same zoom.
+ *
+ * Resolves once the pages are drawn. Never rejects: a PDF that cannot be
+ * drawn leaves a message in the pane, and Download still offers its bytes.
+ *
  * @param {Blob} blob PDF bytes, tagged application/pdf
+ * @returns {Promise<void>}
+ */
+export async function showPdf(blob) {
+  state.lastPdf = blob;
+  el("download").disabled = false;
+  loadTicket += 1;
+  const ticket = loadTicket;
+  try {
+    const pdfjs = await loadPdfJs();
+    // pdf.js hands its data to a worker, which detaches it; this copy is its
+    // own, and the blob Download reads stays whole.
+    const data = new Uint8Array(await blob.arrayBuffer());
+    const task = pdfjs.getDocument({ data, verbosity: 0 });
+    const doc = await task.promise;
+    if (ticket !== loadTicket) {
+      task.destroy();
+      return;
+    }
+    // The old pages are already drawn, so the old document can go now.
+    shown?.task.destroy();
+    shown = { task, doc };
+    await renderPages();
+  } catch (error) {
+    if (ticket !== loadTicket) return;
+    console.warn("The PDF could not be drawn:", error);
+    showPdfMessage("This PDF cannot be shown here. Download it to read it.");
+  }
+}
+
+/**
+ * The top and height of every page in the pane's scrolled content.
+ *
+ * @param {HTMLElement} pages the .pdf-pages container
+ * @returns {import("../../shared/pdf-viewport.js").PageBox[]}
+ */
+function pageBoxes(pages) {
+  return [...pages.children].map((page) => {
+    const box = /** @type {HTMLElement} */ (page);
+    return { top: box.offsetTop, height: box.offsetHeight };
+  });
+}
+
+/**
+ * Draws every page of the shown document at the current zoom into fresh
+ * canvases, then swaps them in at once and scrolls back to the reader's
+ * place. Dropped unfinished when a newer render starts.
+ *
+ * @returns {Promise<void>}
+ */
+async function renderPages() {
+  if (!shown) return;
+  const { doc } = shown;
+  renderTicket += 1;
+  const ticket = renderTicket;
+  const body = el("pdf-body");
+  // A hidden pane has no width yet; the resize observer redraws once it has one.
+  const fitWidth = Math.max(body.clientWidth - 2 * PAGE_MARGIN, 100);
+  const pixelRatio = window.devicePixelRatio || 1;
+  const container = document.createElement("div");
+  container.className = "pdf-pages";
+
+  try {
+    for (let number = 1; number <= doc.numPages; number += 1) {
+      const page = await doc.getPage(number);
+      if (ticket !== renderTicket) return;
+      const scale = (fitWidth / page.getViewport({ scale: 1 }).width) * zoom;
+      const viewport = page.getViewport({ scale });
+      const canvas = document.createElement("canvas");
+      canvas.className = "pdf-page";
+      canvas.setAttribute("role", "img");
+      canvas.setAttribute("aria-label", `Page ${number}`);
+      canvas.width = Math.floor(viewport.width * pixelRatio);
+      canvas.height = Math.floor(viewport.height * pixelRatio);
+      canvas.style.width = `${Math.floor(viewport.width)}px`;
+      canvas.style.height = `${Math.floor(viewport.height)}px`;
+      const transform = pixelRatio === 1 ? undefined : [pixelRatio, 0, 0, pixelRatio, 0, 0];
+      await page.render({ canvas, viewport, transform }).promise;
+      if (ticket !== renderTicket) return;
+      container.append(canvas);
+    }
+  } catch (error) {
+    if (ticket !== renderTicket) return; // the document went while drawing
+    throw error;
+  }
+
+  // Read the place only now: the reader may have scrolled while this drew.
+  const old = body.querySelector(".pdf-pages");
+  const anchor = old instanceof HTMLElement ? scrollAnchor(pageBoxes(old), body.scrollTop) : { page: 0, offset: 0 };
+  const across = body.scrollWidth > 0 ? (body.scrollLeft + body.clientWidth / 2) / body.scrollWidth : 0.5;
+  body.replaceChildren(container);
+  el("pdf-toolbar").hidden = false;
+  body.scrollTop = anchorScrollTop(pageBoxes(container), anchor);
+  body.scrollLeft = across * body.scrollWidth - body.clientWidth / 2;
+}
+
+/**
+ * Redraws the shown pages, if any, keeping the reader's place.
+ *
  * @returns {void}
  */
-export function showPdf(blob) {
-  state.lastPdf = blob;
-  const url = URL.createObjectURL(blob);
-  el("pdf-body").innerHTML = `<embed class="pdf-view" type="application/pdf" src="${url}">`;
-  el("download").disabled = false;
+function redraw() {
+  if (!shown) return;
+  const ticket = loadTicket;
+  renderPages().catch((error) => {
+    if (ticket !== loadTicket) return;
+    console.warn("The PDF could not be redrawn:", error);
+  });
+}
+
+/**
+ * @param {number} value share of the fit-to-width size
+ * @returns {void}
+ */
+function setZoom(value) {
+  zoom = value;
+  el("pdf-zoom-level").textContent = `${Math.round(zoom * 100)}%`;
+  el("pdf-zoom-out").disabled = zoom <= ZOOM_STEPS[0];
+  el("pdf-zoom-in").disabled = zoom >= ZOOM_STEPS[ZOOM_STEPS.length - 1];
+  redraw();
+}
+
+/** Wires the zoom controls, and redraws the pages when the pane's width changes. @returns {void} */
+export function initPdfView() {
+  el("pdf-zoom-in").addEventListener("click", () => setZoom(zoomStep(zoom, 1)));
+  el("pdf-zoom-out").addEventListener("click", () => setZoom(zoomStep(zoom, -1)));
+  el("pdf-zoom-level").addEventListener("click", () => setZoom(1));
+
+  const body = el("pdf-body");
+  let width = body.clientWidth;
+  /** @type {number | undefined} */
+  let settle;
+  new ResizeObserver(() => {
+    if (body.clientWidth === width) return; // a height change leaves the fit alone
+    width = body.clientWidth;
+    clearTimeout(settle);
+    settle = window.setTimeout(redraw, RESIZE_SETTLE_MS);
+  }).observe(body);
 }
 
 /**
@@ -53,8 +271,7 @@ export function showPdf(blob) {
  * @returns {void}
  */
 export function showPdfLoading(text) {
-  el("pdf-body").innerHTML =
-    `<div class="empty-pdf loading"><span class="spinner big"></span><p>${escapeHtml(text)}</p></div>`;
+  showPlaceholder(`<div class="empty-pdf loading"><span class="spinner big"></span><p>${escapeHtml(text)}</p></div>`);
 }
 
 /**

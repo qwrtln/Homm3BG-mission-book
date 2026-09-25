@@ -13,7 +13,7 @@ import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js"
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setStatus } from "./dom.js";
 import { fetchRepoFile, preloadFile, preloadTexmfFile, preloadText } from "./files.js";
-import { clearErrorLine, showError, showPdf } from "./pdf-view.js";
+import { clearErrorLine, clearPdf, showError, showPdf, showPdfLoading, showPdfMessage } from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
 
 /**
@@ -107,6 +107,8 @@ export async function runBuild() {
   setBuilding(true);
   el("error-panel").hidden = true;
   clearErrorLine();
+  // The last PDF stays readable while this builds; with none, the pane says why it waits.
+  if (!state.lastPdf) showPdfLoading("Building…");
   try {
     // A stop here leaves the engine warming: page load started it, not this build.
     await untilAborted(ensureEngine(), signal);
@@ -228,19 +230,22 @@ export async function runBuild() {
 
     if (record.ok) {
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
-      showPdf(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }));
+      await showPdf(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }));
       setStatus(`Built ${record.pages} page(s) in ${record.seconds}s.`, { tone: "ok" });
     } else {
-      el("pdf-body").innerHTML = '<div class="empty-pdf" id="pdf-empty">The build failed. See the error below.</div>';
-      el("download").disabled = true;
+      // A last good PDF stays on screen, and downloadable, above the error.
+      if (!state.lastPdf) showPdfMessage("The build failed. See the error below.");
       showError(record);
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
     if (signal.aborted) {
+      // A stop is not a failure: the pane goes back to what it showed before.
+      if (!state.lastPdf) clearPdf();
       setStatus("Build stopped.");
       return;
     }
+    if (!state.lastPdf) showPdfMessage("The build failed. See the error below.");
     const trace = errorTrace(error);
     showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });

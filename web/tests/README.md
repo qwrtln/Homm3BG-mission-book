@@ -68,7 +68,8 @@ branched, and not aware of it. The stub records every call on
 `globalThis.__stubEngineCalls`, so a test can assert the app asked the engine to
 compile without a compile happening. A test that needs a compile in flight,
 to press Stop on, sets `globalThis.__stubCompileHold` to a promise, and every
-compile waits on it.
+compile waits on it. A compile answers with a real three-page PDF that pdf.js
+can draw; its bytes are on `globalThis.__stubPdfBytes`.
 
 **Install the stubs before `page.goto`.** Navigate first and the real engine
 wrapper is already in flight, and a large engine payload starts downloading.

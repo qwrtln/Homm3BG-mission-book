@@ -27,9 +27,8 @@ main {
 .pane-divider:hover,
 .pane-divider:focus-visible,
 main.resizing .pane-divider { background: var(--accent); outline: none; }
-/* The PDF embed would take the pointer mid-drag, and a drag would select text. */
+/* A drag would select text. */
 main.resizing { cursor: col-resize; user-select: none; }
-main.resizing embed { pointer-events: none; }
 @media (max-width: 850px) {
   main { flex-direction: column; overflow-y: auto; gap: 1px; }
   .pane { min-width: 0; min-height: 24rem; }
@@ -43,6 +42,22 @@ main.resizing embed { pointer-events: none; }
   height: 100%;
   font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
 }
+/* Zoom controls over the pages (pdf-view.js). Hidden until a PDF shows. */
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.pdf-toolbar[hidden] { display: none; }
+.pdf-toolbar button {
+  min-width: 2rem;
+  padding: 0.15rem 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+.pdf-toolbar .pdf-zoom-level { min-width: 3.75rem; }
 .pdf-pane-body-wrap {
   position: relative;
   flex: 1 1 auto;
@@ -50,32 +65,60 @@ main.resizing embed { pointer-events: none; }
   flex-direction: column;
   min-height: 0;
 }
+/* position: relative makes this the offsetParent the scroll anchor measures pages against. */
 .pdf-pane-body {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow: auto;
 }
-.pdf-pane-body.dimmed { filter: brightness(0.7); }
-.build-overlay {
-  position: absolute;
-  inset: 0;
+.pdf-pane-body:has(> .pdf-pages) { background: var(--pdf-bg); }
+/* 12px margins: PAGE_MARGIN in modules/pdf-view.js. */
+.pdf-pages {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  background: rgba(0, 0, 0, 0.35);
-  color: #fff;
+  gap: 12px;
+  padding: 12px;
+  min-width: max-content;
+}
+.pdf-page {
+  display: block;
+  flex: none;
+  background: #fff;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+/* A build in progress: a thin bar on the pane's top edge, leaving the PDF under it readable. */
+.build-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
   z-index: 5;
+  pointer-events: none;
 }
-.build-overlay:not([hidden]) { display: flex; }
+.build-progress[hidden] { display: none; }
+.build-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: var(--accent);
+  animation: build-progress 1.2s ease-in-out infinite;
+}
+@keyframes build-progress {
+  from { left: -35%; }
+  to { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .build-progress::before { width: 100%; left: 0; animation: none; opacity: 0.6; }
+}
 .spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
-embed.pdf-view {
-  flex: 1 1 auto;
-  width: 100%;
-  border: none;
-  background: var(--pdf-bg);
-}
 .empty-pdf {
   flex: 1 1 auto;
   display: flex;

@@ -80,7 +80,7 @@ async function enterWorkspace(page) {
 
 /**
  * Starts recording #build's disabled flag, label and stop styling, and
- * #build-overlay's hidden flag, every time any of them changes.
+ * #build-progress's hidden flag, every time any of them changes.
  *
  * A build against the stub engine finishes in milliseconds, so polling for
  * the mid-build state is a race. Recording the transitions and asserting over
@@ -92,7 +92,7 @@ async function enterWorkspace(page) {
 async function recordBuildStates(page) {
   await page.evaluate(() => {
     const build = document.getElementById("build");
-    const overlay = document.getElementById("build-overlay");
+    const progress = document.getElementById("build-progress");
     const seen = [];
     globalThis.__buildStates = seen;
     const snapshot = () =>
@@ -100,7 +100,7 @@ async function recordBuildStates(page) {
         disabled: build.disabled,
         label: build.textContent,
         stop: build.classList.contains("stop"),
-        overlayShown: !overlay.hidden,
+        progressShown: !progress.hidden,
       });
     snapshot();
     new MutationObserver(snapshot).observe(document.body, {
@@ -114,10 +114,20 @@ async function recordBuildStates(page) {
 
 /**
  * @param {import("@playwright/test").Page} page
- * @returns {Promise<{disabled: boolean, label: string, stop: boolean, overlayShown: boolean}[]>}
+ * @returns {Promise<{disabled: boolean, label: string, stop: boolean, progressShown: boolean}[]>}
  */
 async function buildStates(page) {
   return page.evaluate(() => globalThis.__buildStates || []);
+}
+
+/**
+ * The drawn pages in the PDF pane.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {import("@playwright/test").Locator}
+ */
+function PAGES(page) {
+  return page.locator("#pdf-body canvas.pdf-page");
 }
 
 test("a build drives the stub engine and fills the PDF pane", async ({ app }) => {
@@ -147,15 +157,17 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   expect(typeof compile.args[0].input).toBe("string");
   expect(compile.args[0].additionalFiles.length).toBeGreaterThan(0);
 
-  // The pane replaced its placeholder with the embed showPdf() writes.
+  // The pane replaced its placeholder with the pages pdf.js drew: the stub's PDF has three.
   await expect(page.locator("#pdf-empty")).toHaveCount(0);
-  await expect(page.locator('#pdf-body embed[type="application/pdf"]')).toHaveCount(1);
+  await expect(PAGES(page)).toHaveCount(3);
+  await expect(PAGES(page).first()).toBeVisible();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("100%");
   await expect(page.locator("#error-panel")).toBeHidden();
 
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });
 
-test("Build turns into an enabled Stop with the overlay up while a build runs", async ({ app }) => {
+test("Build turns into an enabled Stop with the progress bar up while a build runs", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);
 
@@ -165,12 +177,12 @@ test("Build turns into an enabled Stop with the overlay up while a build runs", 
 
   const states = await buildStates(page);
   expect(
-    states.some((s) => !s.disabled && s.label === "Stop" && s.stop && s.overlayShown),
-    `#build never became an enabled Stop with the build overlay up; recorded: ${JSON.stringify(states)}`,
+    states.some((s) => !s.disabled && s.label === "Stop" && s.stop && s.progressShown),
+    `#build never became an enabled Stop with the progress bar up; recorded: ${JSON.stringify(states)}`,
   ).toBe(true);
   // And it came back: setBuilding(false) runs in runBuild's finally.
-  expect(states[states.length - 1]).toEqual({ disabled: false, label: "Build PDF", stop: false, overlayShown: false });
-  await expect(page.locator("#build-overlay")).toBeHidden();
+  expect(states[states.length - 1]).toEqual({ disabled: false, label: "Build PDF", stop: false, progressShown: false });
+  await expect(page.locator("#build-progress")).toBeHidden();
 
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });
@@ -274,7 +286,9 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(build).toHaveCSS("color", await tokenColour(page, "--btn-danger-fg"));
   await build.hover();
   await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-hover-bg"));
-  await expect(page.locator("#build-overlay")).toBeVisible();
+  await expect(page.locator("#build-progress")).toBeVisible();
+  // With no PDF yet to keep readable, the empty pane shows a spinner.
+  await expect(page.locator("#pdf-body .spinner.big")).toBeVisible();
   const busy = await buildLook(page);
   expect(busy.glyph).toBe("stop");
   // The label swap must not move the buttons beside it under the pointer.
@@ -297,7 +311,7 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(build).toHaveText("Build PDF");
   await expect(build).not.toHaveClass(/\bstop\b/);
   await expect(build).toBeEnabled();
-  await expect(page.locator("#build-overlay")).toBeHidden();
+  await expect(page.locator("#build-progress")).toBeHidden();
   await expect(page.locator("#error-panel")).toBeHidden();
   // A stop is not a failure: the pane keeps what it showed before the build.
   await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
@@ -325,7 +339,7 @@ test("a build after a stop compiles on the fresh engine", async ({ app }) => {
   await releaseCompiles(page);
   await build.click();
   await expect(page.locator("#status-text")).toHaveText(/^Built /);
-  await expect(page.locator('#pdf-body embed[type="application/pdf"]')).toHaveCount(1);
+  await expect(PAGES(page)).toHaveCount(3);
   await expect(page.locator("#download")).toBeEnabled();
 
   // The second compile ran on the runner built after the stop, not the dead one.
@@ -348,6 +362,171 @@ test("a finished build leaves the engine running", async ({ app }) => {
   expect(await callsTo(page, "BusyTexRunner.constructor")).toHaveLength(1);
 
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
+ * Makes every stub compile wait until releaseHeldCompiles() lets it finish.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function holdCompilesUntilReleased(page) {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = new Promise((resolve) => {
+      globalThis.__releaseCompileHold = resolve;
+    });
+  });
+}
+
+/**
+ * Lets the compiles holdCompilesUntilReleased() held finish, and the next
+ * ones answer at once.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function releaseHeldCompiles(page) {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = null;
+    globalThis.__releaseCompileHold();
+  });
+}
+
+/**
+ * Builds once and waits for the stub's pages to be drawn.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function buildFirstPdf(page) {
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+}
+
+test("the last PDF stays readable and scrollable while the next one builds", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  await holdCompilesUntilReleased(page);
+  await page.locator("#build").click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(2);
+  await expect(page.locator("#build-progress")).toBeVisible();
+
+  // Nothing sits over the pages: the element under their centre is the page itself.
+  const first = PAGES(page).first();
+  await expect(first).toBeVisible();
+  const hit = await first.evaluate((canvas) => {
+    const box = canvas.getBoundingClientRect();
+    return document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2) === canvas;
+  });
+  expect(hit, "an element covers the PDF during the build").toBe(true);
+  // The pages are not dimmed either.
+  await expect(page.locator("#pdf-body")).toHaveCSS("filter", "none");
+  await expect(page.locator("#pdf-body")).toHaveCSS("opacity", "1");
+  // And the wheel still scrolls them.
+  await first.hover();
+  await page.mouse.wheel(0, 200);
+  await expect.poll(() => page.locator("#pdf-body").evaluate((body) => body.scrollTop)).toBeGreaterThan(0);
+
+  await releaseHeldCompiles(page);
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#build-progress")).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while rebuilding").toEqual([]);
+});
+
+test("a rebuild keeps the page and the zoom the reader was at", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  const body = page.locator("#pdf-body");
+  const fitWidth = await PAGES(page)
+    .first()
+    .evaluate((canvas) => canvas.getBoundingClientRect().width);
+  await page.locator("#pdf-zoom-in").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("125%");
+  await expect
+    .poll(() =>
+      PAGES(page)
+        .first()
+        .evaluate((canvas) => canvas.getBoundingClientRect().width),
+    )
+    .toBeCloseTo(fitWidth * 1.25, -1);
+
+  // A third of the way down page 2, measured from the pane's top edge.
+  await body.evaluate((pane) => {
+    const second = /** @type {HTMLElement} */ (pane.querySelectorAll("canvas.pdf-page")[1]);
+    pane.scrollTop = second.offsetTop + second.offsetHeight / 3;
+  });
+  /** @returns {Promise<number>} page 2's top relative to the pane's top edge */
+  const secondPageTop = () =>
+    body.evaluate(
+      (pane) =>
+        pane.querySelectorAll("canvas.pdf-page")[1].getBoundingClientRect().top - pane.getBoundingClientRect().top,
+    );
+  const before = await secondPageTop();
+  expect(before).toBeLessThan(0);
+
+  // Mark the pages drawn now, to see the rebuild replace them.
+  await PAGES(page).evaluateAll((canvases) => {
+    for (const canvas of canvases) canvas.dataset.old = "";
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#pdf-body canvas[data-old]")).toHaveCount(0);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("125%");
+  expect(
+    await PAGES(page)
+      .first()
+      .evaluate((canvas) => canvas.getBoundingClientRect().width),
+  ).toBeCloseTo(fitWidth * 1.25, -1);
+  expect(Math.abs((await secondPageTop()) - before)).toBeLessThan(2);
+
+  // "Fit to width" puts the zoom back, and zoom out stops at its last step.
+  await page.locator("#pdf-zoom-level").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("100%");
+  for (let i = 0; i < 3; i += 1) await page.locator("#pdf-zoom-out").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("50%");
+  await expect(page.locator("#pdf-zoom-out")).toBeDisabled();
+
+  expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
+});
+
+test("a failed build keeps the last good PDF above the error", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  await failCompiles(page, { line: 3, inside: "macros" });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  await expect(page.locator("#error-panel")).toBeVisible();
+  await expect(PAGES(page)).toHaveCount(3);
+  await expect(PAGES(page).first()).toBeVisible();
+  await expect(page.locator("#download")).toBeEnabled();
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
+test("Download saves the PDF's own bytes", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download").click()]);
+  expect(download.suggestedFilename()).toMatch(/\.pdf$/);
+  const saved = await download.createReadStream();
+  const chunks = [];
+  for await (const chunk of saved) chunks.push(chunk);
+  const expected = await page.evaluate(() => globalThis.__stubPdfBytes);
+  expect([...Buffer.concat(chunks)]).toEqual(expected);
+
+  expect(appErrors(errors), "the page reported errors around the download").toEqual([]);
 });
 
 /**

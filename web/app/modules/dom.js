@@ -65,8 +65,9 @@ export function escapeHtml(text) {
 }
 
 /**
- * Enters or leaves the building state: button, overlay and dimming together.
- * While building, the Build button turns into Stop.
+ * Enters or leaves the building state: the button and the progress bar
+ * together. While building, the Build button turns into Stop. The PDF pane
+ * stays readable under the bar.
  *
  * @param {boolean} value
  * @returns {void}
@@ -80,8 +81,7 @@ export function setBuilding(value) {
   build.style.minWidth = value ? `${build.getBoundingClientRect().width}px` : "";
   el("build-label").textContent = value ? "Stop" : "Build PDF";
   build.classList.toggle("stop", value);
-  el("build-overlay").hidden = !value;
-  el("pdf-body").classList.toggle("dimmed", value);
+  el("build-progress").hidden = !value;
 }
 
 /**

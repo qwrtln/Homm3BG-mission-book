@@ -177,8 +177,8 @@ export async function prefetchScenario(path, signal) {
 
     const response = await fetch(publishedPdfUrl(basenameNoExt(path)), { signal });
     if (!response.ok) return { pdfBlob: null };
-    // GitHub's raw CDN serves this as octet-stream; showPdf's <embed> needs
-    // it tagged application/pdf for the browser to pick a plugin for it.
+    // GitHub's raw CDN serves this as octet-stream. pdf.js reads the bytes
+    // either way; the tag is for Download, so the saved file opens as a PDF.
     const raw = await response.blob();
     return { pdfBlob: raw.type === "application/pdf" ? raw : raw.slice(0, raw.size, "application/pdf") };
   } catch (error) {

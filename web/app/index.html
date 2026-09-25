@@ -145,13 +145,15 @@
            title="Drag to resize. Double-click to reset."></div>
 
       <section class="pane" id="pdf-pane" aria-label="PDF">
+        <div class="pdf-toolbar" id="pdf-toolbar" role="toolbar" aria-label="Zoom" hidden>
+          <button type="button" class="pdf-zoom" id="pdf-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+          <button type="button" class="pdf-zoom-level" id="pdf-zoom-level" title="Fit to width">100%</button>
+          <button type="button" class="pdf-zoom" id="pdf-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+        </div>
         <div class="pdf-pane-body-wrap" id="pdf-wrap">
+          <div class="build-progress" id="build-progress" role="progressbar" aria-label="Building the PDF" hidden></div>
           <div class="pdf-pane-body" id="pdf-body">
             <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
-          </div>
-          <div class="build-overlay" id="build-overlay" hidden>
-            <span class="spinner big"></span>
-            <span>Building…</span>
           </div>
         </div>
         <div class="error-panel" id="error-panel" hidden>

@@ -126,7 +126,7 @@ async function showPrefetchedPdf(path) {
   const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
   prefetch.promise = promise;
   const { pdfBlob } = await promise;
-  if (pdfBlob) showPdf(pdfBlob);
+  if (pdfBlob) await showPdf(pdfBlob);
   else clearPdf();
 }
 

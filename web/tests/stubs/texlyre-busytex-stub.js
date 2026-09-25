@@ -44,19 +44,51 @@ function recordCall(method, args) {
   globalThis.__stubEngineCalls.push({ method, args });
 }
 
+// How many pages the stub PDF has: enough that a test can scroll to one
+// that is not the first.
+const STUB_PAGE_COUNT = 3;
+
 /**
- * Builds a tiny, deterministic byte array that looks like a minimal PDF.
- * Never rendered, never opened — just non-empty bytes with a real PDF
- * header, since build.js checks `result.pdf` for truthiness and reads its
- * length.
- * @returns {Uint8Array} fake PDF bytes.
+ * Builds a small, deterministic, valid PDF: STUB_PAGE_COUNT A6 pages, each a
+ * filled rectangle, with no fonts, so pdf.js draws it without fetching
+ * anything. The same bytes every call, so a test can compare Download's
+ * output against globalThis.__stubPdfBytes.
+ * @returns {Uint8Array} PDF bytes.
  */
 function fakePdfBytes() {
-  const text = "%PDF-1.4\n% stub build, no real compile ran\n%%EOF";
+  const objects = ["<< /Type /Catalog /Pages 2 0 R >>"];
+  const kids = [];
+  const pages = [];
+  for (let page = 0; page < STUB_PAGE_COUNT; page += 1) {
+    const pageId = 3 + 2 * page;
+    const contentId = pageId + 1;
+    const shade = (0.2 + 0.3 * page).toFixed(1);
+    const content = `${shade} 0.4 0.8 rg 20 20 257 380 re f`;
+    kids.push(`${pageId} 0 R`);
+    pages.push(
+      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 297 420] /Contents ${contentId} 0 R /Resources << >> >>`,
+      `<< /Length ${content.length} >>\nstream\n${content}\nendstream`,
+    );
+  }
+  objects.push(`<< /Type /Pages /Kids [${kids.join(" ")}] /Count ${STUB_PAGE_COUNT} >>`, ...pages);
+
+  let text = "%PDF-1.4\n";
+  const offsets = [];
+  objects.forEach((body, index) => {
+    offsets.push(text.length);
+    text += `${index + 1} 0 obj\n${body}\nendobj\n`;
+  });
+  const xref = text.length;
+  text += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (const offset of offsets) text += `${String(offset).padStart(10, "0")} 00000 n \n`;
+  text += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+
   const bytes = new Uint8Array(text.length);
   for (let i = 0; i < text.length; i += 1) bytes[i] = text.charCodeAt(i);
   return bytes;
 }
+
+globalThis.__stubPdfBytes = Array.from(fakePdfBytes());
 
 /**
  * Console-only stand-in for the real module's Logger. build.js never talks
