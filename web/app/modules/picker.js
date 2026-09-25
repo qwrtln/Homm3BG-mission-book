@@ -59,14 +59,57 @@ export function setPickerMode(mode) {
   setDimmed(el("scratch-row"), mode === "edit");
   el("mode-edit").setAttribute("aria-pressed", String(mode === "edit"));
   el("mode-new").setAttribute("aria-pressed", String(mode === "new"));
+  el("pick-heading").textContent = mode === "edit" ? "Pick the scenario to edit" : "Start from an existing scenario";
+  el("pick-hint").textContent =
+    mode === "edit"
+      ? "Your changes go into this scenario itself. Search the Mission Book and the Draft Scenarios by name."
+      : "Your new scenario starts as a copy of it. Search the Mission Book and the Draft Scenarios by name.";
   el("edit-branch-prompt").hidden = true;
   // A blank template picked in new mode is not something an edit can open.
   if (mode === "edit" && pendingPath && isTemplatePath(pendingPath)) {
     pendingPath = null;
     pendingCategory = null;
     el("search").value = "";
+    markBlankButton(null);
   }
   updateGoButton();
+}
+
+/**
+ * Whether a blank template can be picked now. Edit mode opens an existing
+ * scenario, so it has no blank templates.
+ *
+ * @returns {boolean}
+ */
+export function blanksAllowed() {
+  return pickerMode === "new";
+}
+
+/**
+ * Picks the blank template for one category. The campaign has a template of
+ * its own; every other category shares the scenario template.
+ *
+ * @param {string} category draft-scenarios subdirectory, e.g. "clash" or "campaigns"
+ * @returns {void}
+ */
+export function pickBlank(category) {
+  const template = category === "campaigns" ? TEMPLATES.campaign : TEMPLATES.scenario;
+  selectPending(template.path, template.title, category);
+}
+
+/**
+ * Shows which blank-template button is the current pick, if any.
+ *
+ * @param {string | null} category
+ * @returns {void}
+ */
+function markBlankButton(category) {
+  el("scratch-row")
+    .querySelectorAll("[data-category]")
+    .forEach((button) => {
+      const pressed = /** @type {HTMLElement} */ (button).dataset.category === category;
+      button.setAttribute("aria-pressed", String(pressed));
+    });
 }
 
 /**
@@ -131,6 +174,7 @@ export function selectPending(path, title, category = null) {
   // The search box itself shows the pick: what was typed to find it is spent.
   el("search").value = title;
   el("search-results").hidden = true;
+  markBlankButton(isTemplatePath(path) ? category : null);
   updateGoButton();
   // A template has no pictures and no published branch to fetch.
   if (!isTemplatePath(path)) startScenarioPrefetch(path);
@@ -194,15 +238,12 @@ export function initPicker() {
   el("scenario-name").addEventListener("input", updateGoButton);
   updateGoButton(); // the cold-load hint: nothing is picked yet
 
-  document.querySelectorAll("[data-category]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = /** @type {HTMLElement} */ (button).dataset.category ?? null;
-      selectPending(TEMPLATES.scenario.path, TEMPLATES.scenario.title, category);
+  el("scratch-row")
+    .querySelectorAll("[data-category]")
+    .forEach((button) => {
+      const category = /** @type {HTMLElement} */ (button).dataset.category;
+      if (category) button.addEventListener("click", () => pickBlank(category));
     });
-  });
-  el("scratch-campaign").addEventListener("click", () => {
-    selectPending(TEMPLATES.campaign.path, TEMPLATES.campaign.title, "campaigns");
-  });
 
   el("mode-edit").addEventListener("click", () => setPickerMode("edit"));
   el("mode-new").addEventListener("click", () => setPickerMode("new"));

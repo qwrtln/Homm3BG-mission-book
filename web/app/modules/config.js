@@ -28,7 +28,7 @@ export const REPO = "../repo";
 /** @type {Record<"scenario" | "campaign", {path: string, title: string}>} */
 export const TEMPLATES = {
   scenario: { path: "templates/default.tex", title: "Blank scenario" },
-  campaign: { path: "templates/campaign.tex", title: "Blank campaign scenario" },
+  campaign: { path: "templates/campaign.tex", title: "Blank Campaign scenario" },
 };
 
 // Different grouping than scenarioHeading's "kind" (prose, not a stable category).

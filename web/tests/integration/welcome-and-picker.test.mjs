@@ -142,6 +142,42 @@ test("typing a query filters the dropdown to the rows that match", async ({ app 
   expect(errors, "the page reported errors while filtering").toEqual([]);
 });
 
+test("a search that finds nothing offers the blank templates, and one of them picks it", async ({ app }) => {
+  const { page, errors } = app;
+  const search = page.locator("#search");
+  await openScenarioList(page);
+
+  await search.fill("qqzzxxjj");
+  const blanks = page.locator("#search-results [data-blank]");
+  // One per category, named the way the book names them.
+  await expect(blanks).toHaveText([
+    "Start a blank Clash scenario",
+    "Start a blank Coop scenario",
+    "Start a blank Alliance scenario",
+    "Start a blank Campaign scenario",
+  ]);
+
+  // The same pick the blank-template row makes: the same title in the search
+  // box, and the matching button in that row shows as chosen.
+  await page.locator("#search-results").getByRole("button", { name: "Start a blank Coop scenario" }).click();
+  await expect(page.locator("#search-results")).toBeHidden();
+  await expect(page.locator("#scratch-coop")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "false");
+  const blankTitle = await search.inputValue();
+  await page.locator("#scratch-clash").click();
+  await expect(search).toHaveValue(blankTitle);
+  await expect(page.locator("#go-hint")).toHaveText("Name your scenario to continue.");
+
+  // From the keyboard too: Tab reaches the action, Enter presses it.
+  await search.fill("qqzzxxjj");
+  await page.locator("#search-results [data-blank='campaigns']").focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#scratch-campaign")).toHaveAttribute("aria-pressed", "true");
+  await expect(search, "the campaign action picked the scenario template").not.toHaveValue(blankTitle);
+
+  expect(errors, "the page reported errors while starting from a no-match search").toEqual([]);
+});
+
 test("ArrowDown moves the highlight, Escape hides the list, Enter takes the highlighted row", async ({ app }) => {
   const { page, errors } = app;
   await stubPublishedPdf(page);
@@ -286,6 +322,9 @@ test("the blank-scenario buttons pick a template, and Let's go! loads that templ
 
   await page.locator("#scratch-clash").click();
   await expect(selectedTitle).toHaveValue(blankTitle);
+  // The row is one control: only the picked category shows as chosen.
+  await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#scratch-campaign")).toHaveAttribute("aria-pressed", "false");
   await page.locator("#scenario-name").fill("blank test");
   await expect(go).toBeEnabled();
   await go.click();

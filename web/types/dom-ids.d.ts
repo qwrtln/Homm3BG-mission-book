@@ -63,11 +63,14 @@ interface ElementIdMap {
   "resume-list": HTMLDivElement;
   "resume-loading": HTMLParagraphElement;
   "scenario-name": HTMLInputElement;
+  "pick-heading": HTMLSpanElement;
+  "pick-hint": HTMLParagraphElement;
   "scratch-row": HTMLDivElement;
   "scratch-alliance": HTMLButtonElement;
   "scratch-campaign": HTMLButtonElement;
   "scratch-clash": HTMLButtonElement;
   "scratch-coop": HTMLButtonElement;
+  "scratch-label": HTMLSpanElement;
   search: HTMLInputElement;
   "search-results": HTMLDivElement;
   "editor-autocomplete": HTMLUListElement;

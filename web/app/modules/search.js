@@ -1,6 +1,6 @@
-import { CATEGORY_ORDER } from "./config.js";
+import { CATEGORY_LABELS, CATEGORY_ORDER } from "./config.js";
 import { closestTo, el, escapeHtml } from "./dom.js";
-import { selectPending } from "./picker.js";
+import { blanksAllowed, pickBlank, selectPending } from "./picker.js";
 import { state } from "./state.js";
 
 /**
@@ -68,6 +68,25 @@ export function groupedResults(query) {
   });
 }
 
+/** The blank-template categories, in the order the welcome screen lists them. */
+const BLANK_CATEGORIES = ["clash", "coops", "alliances", "campaigns"];
+
+/**
+ * The empty state: nothing matched, so offer a blank template instead of a
+ * dead end. Edit mode opens an existing scenario only, so it offers none.
+ *
+ * @returns {string} HTML
+ */
+function noMatchHtml() {
+  const message = '<div class="combobox-empty">No scenario matches.</div>';
+  if (!blanksAllowed()) return message;
+  const buttons = BLANK_CATEGORIES.map(
+    (category) =>
+      `<button type="button" class="combobox-blank" data-blank="${category}">Start a blank ${escapeHtml(CATEGORY_LABELS[category])} scenario</button>`,
+  ).join("");
+  return `${message}<div class="combobox-blanks">${buttons}</div>`;
+}
+
 /** Index of the keyboard-highlighted row, or -1 for none. */
 let activeItem = -1;
 
@@ -76,7 +95,7 @@ export function renderResults() {
   const groups = groupedResults(el("search").value);
   const list = el("search-results");
   if (!groups.length) {
-    list.innerHTML = '<div class="combobox-empty">No scenario matches.</div>';
+    list.innerHTML = noMatchHtml();
   } else {
     list.innerHTML = groups
       .map(
@@ -137,6 +156,12 @@ export function initSearch() {
     const button = closestTo(event, "[data-path]");
     const path = button ? button.dataset.path : null;
     if (button && path) selectPending(path, button.textContent ?? "");
+  });
+  // click, not mousedown: a blank-template button is also reached with Tab and
+  // pressed with Enter or Space, which fire click only.
+  el("search-results").addEventListener("click", (event) => {
+    const category = closestTo(event, "[data-blank]")?.dataset.blank;
+    if (category) pickBlank(category);
   });
   document.addEventListener("click", (event) => {
     if (!closestTo(event, ".combobox")) el("search-results").hidden = true;

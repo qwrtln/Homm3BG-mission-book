@@ -123,6 +123,15 @@ test.describe("signed in as a member", () => {
       await expect(page.locator(id)).toHaveClass(/dimmed/);
     }
     await expect(page.locator("#go")).toBeDisabled();
+    // The step-1 copy says the pick is edited in place, not copied.
+    await expect(page.locator("#pick-heading")).toHaveText("Pick the scenario to edit");
+
+    // A search that finds nothing offers no blank template: an edit opens an
+    // existing scenario only.
+    await page.locator("#search").fill("qqzzxxjj");
+    await expect(page.locator("#search-results .combobox-empty")).toBeVisible();
+    await expect(page.locator("#search-results [data-blank]")).toHaveCount(0);
+    await page.locator("#search").fill("");
 
     const results = await openScenarioList(page);
     await results.first().dispatchEvent("mousedown");
@@ -136,6 +145,7 @@ test.describe("signed in as a member", () => {
 
     await page.locator("#mode-new").click();
 
+    await expect(page.locator("#pick-heading")).toHaveText("Start from an existing scenario");
     await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
     await expect(page.locator("#go")).toBeDisabled();
@@ -151,6 +161,7 @@ test.describe("signed in as a member", () => {
     await page.locator("#mode-edit").click();
 
     await expect(page.locator("#go")).toBeDisabled();
+    await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "false");
   });
 });
 

@@ -13,6 +13,9 @@ async function startClash(page, name = "Nav Probe") {
   await page.locator("#scenario-name").fill(name);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
+  // The workspace shows before the template's source arrives; typing earlier
+  // is overwritten when it lands.
+  await expect(page.locator("#status-text")).toHaveText("Ready.");
 }
 
 /** @param {import("@playwright/test").Page} page @param {string} text */

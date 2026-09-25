@@ -14,12 +14,13 @@
     to { opacity: 1; transform: translateY(0); }
   }
 }
+/* Top-aligned: centring left a band of blank space above a short picker. */
 .welcome {
   flex: 1 1 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem 1.25rem;
+  padding: clamp(2rem, 6vh, 4rem) 1.25rem 2rem;
   overflow: auto;
 }
 .welcome-inner { max-width: 62rem; width: 100%; }
@@ -49,9 +50,32 @@
 .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
 .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
 /* Three equal-width blocks, side by side, statically: no motion between
-   them, nothing to animate. */
+   them, nothing to animate. They are steps in order, so each heading carries
+   its number and a chevron leads from one block to the next. */
 .welcome-picker { display: flex; align-items: flex-start; gap: 1.5rem; }
-.picker-slide { flex: 1 1 0; min-width: 0; }
+.picker-slide { flex: 1 1 0; min-width: 0; position: relative; }
+.picker-slide + .picker-slide::before {
+  content: "›";
+  position: absolute;
+  left: -1.15rem;
+  top: 0;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  color: var(--muted);
+}
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--panel);
+  font-size: 0.9rem;
+  vertical-align: 0.15em;
+}
 .picker-slide-go { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .combobox { position: relative; }
 #search {
@@ -107,6 +131,19 @@
 }
 .combobox-item:hover, .combobox-item.active { background: var(--line); }
 .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+.combobox-blanks { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.combobox-blank {
+  text-align: left;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.combobox-blank:hover, .combobox-blank:focus-visible { background: var(--line); }
 .scratch-row {
   margin-top: 1.5rem;
   display: flex;
@@ -115,6 +152,19 @@
   gap: 0.6rem;
   color: var(--muted);
   font-size: 0.85rem;
+}
+/* The blank templates: one compact row of joined buttons. */
+.segmented { display: inline-flex; }
+.segmented button { border-radius: 0; margin-left: -1px; padding: 0.35rem 0.75rem; }
+.segmented button:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
+.segmented button:last-child { border-radius: 0 4px 4px 0; }
+.segmented button:hover, .segmented button:focus-visible { position: relative; z-index: 1; }
+.segmented button[aria-pressed="true"] {
+  position: relative;
+  z-index: 2;
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
 }
 .name-field { max-width: 20rem; margin: 0 auto; }
 #scenario-name {
