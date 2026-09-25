@@ -1,5 +1,6 @@
 import { untilAborted } from "../../shared/abort.js";
 import {
+  builtStatus,
   errorLine,
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
@@ -211,16 +212,20 @@ export async function runBuild() {
         signal.throwIfAborted();
       }
       if (!landed) break;
-      setStatus(`Retrying with ${landed} more file(s) fetched on demand…`, { spinning: true });
+      setStatus(`Retrying with ${landed} more ${landed === 1 ? "file" : "files"} fetched on demand…`, {
+        spinning: true,
+      });
     }
     const seconds = (performance.now() - started) / 1000;
 
+    const pages = pageCount(result.log);
+    const roundedSeconds = Number(seconds.toFixed(1));
     /** @type {BuildRecord} */
     const record = {
       ok: Boolean(result.success && result.pdf),
       bytes: result.pdf ? result.pdf.length : 0,
-      pages: pageCount(result.log),
-      seconds: Number(seconds.toFixed(1)),
+      pages,
+      seconds: roundedSeconds,
       notFound,
       missing: missingFiles(result.log),
       firstError: firstError(result.log),
@@ -234,7 +239,7 @@ export async function runBuild() {
         new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }),
         source,
       );
-      setStatus(`Built ${record.pages} page(s) in ${record.seconds}s.`, { tone: "ok" });
+      setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
     } else {
       // A last good PDF stays on screen, and downloadable, above the error.
       if (!state.lastPdf) showPdfMessage("The build failed. See the error below.");

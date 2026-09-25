@@ -408,6 +408,17 @@ export function pageCount(log) {
 }
 
 /**
+ * The status line after a successful build.
+ *
+ * @param {number} pages
+ * @param {number} seconds
+ * @returns {string}
+ */
+export function builtStatus(pages, seconds) {
+  return `Built ${pages} ${pages === 1 ? "page" : "pages"} in ${seconds}s.`;
+}
+
+/**
  * Ticket 11: how many extra compile passes the fetch-on-miss layer allows
  * itself before it gives up and lets the engine's own error stand. The
  * engine wrapper exposes no mid-pass kpathsea hook (BaseTool.compile runs

@@ -79,8 +79,6 @@
 .combobox-group-label {
   padding: 0.4rem 0.75rem;
   font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   color: var(--muted);
   background: var(--paper);
   position: sticky;

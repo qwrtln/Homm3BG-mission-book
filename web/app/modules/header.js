@@ -1,7 +1,7 @@
 import { el } from "./dom.js";
 import { state } from "./state.js";
 
-const APP_TITLE = "Heroes III: The Board Game - Scenario Builder";
+const APP_TITLE = "Heroes III: The Board Game – Scenario Builder";
 
 /**
  * Names the open scenario: the shared state, the header and the tab title.
@@ -13,7 +13,7 @@ const APP_TITLE = "Heroes III: The Board Game - Scenario Builder";
 export function setScenarioTitle(title) {
   state.chosenTitle = title;
   el("scenario-title").textContent = title;
-  document.title = title ? `${title} - Heroes III: The Board Game` : APP_TITLE;
+  document.title = title ? `${title} – Heroes III: The Board Game` : APP_TITLE;
 }
 
 /**

@@ -100,7 +100,7 @@ export function renderResults() {
     list.innerHTML = groups
       .map(
         (group) => `
-      <div class="combobox-group-label">${group.book === "mission" ? "Mission Book" : "Draft Book"} — ${escapeHtml(group.category)}</div>
+      <div class="combobox-group-label">${group.book === "mission" ? "Mission Book" : "Draft Book"}: ${escapeHtml(group.category)}</div>
       ${group.items
         .map(
           ({ entry }) =>

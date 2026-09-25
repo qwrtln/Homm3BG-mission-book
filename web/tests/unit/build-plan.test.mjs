@@ -6,6 +6,7 @@ import test from "node:test";
 
 import {
   ALWAYS_PRELOAD,
+  builtStatus,
   CARRIED_TEXMF,
   CORE_GLYPHS,
   collectReferencedAssets,
@@ -311,4 +312,10 @@ test("withScenarioTitle swaps only the title slot", async () => {
     "\\addscenariosection[Sub]{1}{Camp}{New}{\\images/a.png}",
   );
   assert.equal(withScenarioTitle("no heading", "New"), "no heading");
+});
+
+test("builtStatus: singular for one page, plural otherwise", () => {
+  assert.equal(builtStatus(1, 2.5), "Built 1 page in 2.5s.");
+  assert.equal(builtStatus(4, 3), "Built 4 pages in 3s.");
+  assert.equal(builtStatus(0, 0.4), "Built 0 pages in 0.4s.");
 });

@@ -145,7 +145,7 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
 
   // pageCount() finds no "Output written on" line in the stub's log, so the
   // count is 0; the status line is still the app's own success wording.
-  await expect(page.locator("#status-text")).toHaveText(/^Built \d+ page\(s\) in \d+(\.\d+)?s\.$/);
+  await expect(page.locator("#status-text")).toHaveText(/^Built 0 pages in \d+(\.\d+)?s\.$/);
 
   const calls = await engineCalls(page);
   const compile = calls.find((call) => call.method === "LuaLatex.compile");
