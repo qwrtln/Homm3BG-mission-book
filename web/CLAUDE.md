@@ -20,7 +20,7 @@ static server with nothing installed. Never add one. The only exception is
 | `web/app/modules/` | App concerns, wired by `app.js`; DOM allowed |
 | `web/types/` | Ambient `.d.ts` shared across the app |
 | `web/core/`, `web/*/vendor/` | Vendored. Do not edit. |
-| `oauth-relay/` (repo root) | Cloudflare Pages function for GitHub OAuth |
+| `web/oauth-relay/` | Cloudflare Pages function for GitHub OAuth; deployed by `deploy-oauth-relay.yaml` |
 
 - Logic that does not need the DOM goes in `web/shared/`.
 - Touch the DOM only inside a function body, never at import time — tier 1
