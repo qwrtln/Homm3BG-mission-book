@@ -1,6 +1,6 @@
 /* --- Header groups, shown once a scenario is chosen ---------------------
-   Left: back, the scenario's name and its notes. Then Upload images; Build
-   and Download as one group; the GitHub group; the overflow menu. */
+   Left: back, the scenario's name and its notes. Then Build and Download as
+   one group; Upload images; the GitHub group; the overflow menu. */
 
 header button, header .github-pr-link { padding: 0.3rem 0.75rem; min-height: 2rem; }
 header button.icon { padding: 0.3rem 0.5rem; }

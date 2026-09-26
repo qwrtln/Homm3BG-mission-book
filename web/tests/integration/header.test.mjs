@@ -102,3 +102,12 @@ test("at 800px every label collapses, and each stays the accessible name", async
   }
   await expectOneRow(page);
 });
+
+test("Build and Download come first, then Upload images", async ({ app }) => {
+  const { page } = app;
+  await page.setViewportSize({ width: 1024, height: 800 });
+  await openLongScenario(page);
+  const left = async (id) => (await page.locator(`#${id}`).boundingBox()).x;
+  expect(await left("build")).toBeLessThan(await left("download"));
+  expect(await left("download")).toBeLessThan(await left("upload-open"));
+});

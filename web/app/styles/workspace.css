@@ -155,7 +155,7 @@ main.resizing { cursor: col-resize; user-select: none; }
 .ok { color: var(--ok); }
 .bad { color: var(--bad); }
 .error-panel {
-  margin: 0 1rem 1rem;
+  margin: 1rem;
   border: 1px solid var(--bad);
   background: var(--error-bg);
   padding: 0.85rem 1rem;
