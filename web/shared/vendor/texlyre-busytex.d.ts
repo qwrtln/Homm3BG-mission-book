@@ -56,6 +56,12 @@ export interface CompileResult {
    * never a SharedArrayBuffer, so the bytes can go straight into a Blob.
    */
   pdf?: Uint8Array<ArrayBuffer>;
+  /**
+   * The gzipped SyncTeX file (main.synctex.gz): where each source line
+   * landed on the pages. The engine runs every compile with -synctex=1 and
+   * reads the file back only on success; null or absent otherwise.
+   */
+  synctex?: Uint8Array | null;
   exitCode?: number;
 }
 

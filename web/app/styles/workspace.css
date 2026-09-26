@@ -74,6 +74,30 @@ main.resizing { cursor: col-resize; user-select: none; }
   background: #fff;
   box-shadow: 0 1px 4px var(--shadow);
 }
+/* What the last build changed, marked over the pages and fading out. Pages
+   are white in either theme, so the colour is fixed. The marks are opaque
+   and the layer holding them carries the transparency, so overlapping marks
+   read as one shape of one shade. pdf-view.js removes the layer when its
+   animation ends. */
+.pdf-changes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  animation: pdf-change-fade 1.8s ease-in forwards;
+}
+.pdf-change {
+  position: absolute;
+  background: rgb(255, 200, 0);
+}
+@keyframes pdf-change-fade {
+  0%, 50% { opacity: 0.4; }
+  to { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Shown whole, then gone, with no fade between. */
+  .pdf-changes { animation-timing-function: steps(1, end); }
+}
 /* A build in progress: a thin bar on the pane's top edge, leaving the PDF under it readable. */
 .build-progress {
   position: absolute;

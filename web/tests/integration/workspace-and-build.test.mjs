@@ -640,6 +640,110 @@ test("a rebuild keeps the page and the zoom the reader was at", async ({ app }) 
   expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
 });
 
+/**
+ * Makes every compile answer with a SyncTeX file, gzipped as the engine
+ * sends it. It puts one box on page 2 for the scenario's line 2, and one on
+ * page 1 for its line 1: 200pt by 12pt, 40pt from the left and 102pt down.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function compileWithSynctex(page) {
+  await page.evaluate(() => {
+    globalThis.__stubCompileResult = async (options) => {
+      const structure = options.additionalFiles.find((file) => file.path === "structure.tex");
+      const scenario = /\\include\{([^}]+)\}/.exec(structure.content)[1];
+      const sp = (/** @type {number} */ points) => Math.round(points * 65781.76);
+      /** @param {number} number @param {number} line */
+      const sheet = (number, line) => [
+        `{${number}`,
+        `(1,9:${sp(40)},${sp(112)}:${sp(200)},${sp(10)},${sp(2)}`,
+        `x1,${line}:${sp(40)},${sp(112)}`,
+        ")",
+        `}${number}`,
+      ];
+      const text = [
+        "SyncTeX Version:1",
+        `Input:1:/home/web_user/project_dir/./${scenario}`,
+        "Magnification:1000",
+        "Unit:1",
+        "X Offset:0",
+        "Y Offset:0",
+        "Content:",
+        ...sheet(1, 1),
+        ...sheet(2, 2),
+        "Postamble:",
+      ].join("\n");
+      const gzipped = new Blob([text]).stream().pipeThrough(new CompressionStream("gzip"));
+      return {
+        success: true,
+        pdf: Uint8Array.from(globalThis.__stubPdfBytes),
+        synctex: new Uint8Array(await new Response(gzipped).arrayBuffer()),
+        log: "settled",
+        exitCode: 0,
+      };
+    };
+  });
+}
+
+test("a rebuild briefly marks on the pages where the edited lines landed", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  const marks = page.locator("#pdf-body .pdf-change");
+
+  // The first build has nothing to compare against.
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(marks).toHaveCount(0);
+
+  await page.evaluate(() => {
+    const cm = document.querySelector(".CodeMirror").CodeMirror;
+    cm.replaceRange(" % edited", { line: 1, ch: cm.getLine(1).length });
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(marks).toHaveCount(1);
+
+  // Over page 2's box, 2px wider each way; the stub's pages are 297pt wide.
+  const placed = await page.evaluate(() => {
+    const canvas = document.querySelectorAll("#pdf-body canvas.pdf-page")[1].getBoundingClientRect();
+    const mark = document.querySelector("#pdf-body .pdf-change").getBoundingClientRect();
+    const ratio = canvas.width / 297;
+    return {
+      left: mark.left - canvas.left - (40 * ratio - 2),
+      top: mark.top - canvas.top - (102 * ratio - 2),
+      width: mark.width - (200 * ratio + 4),
+      height: mark.height - (12 * ratio + 4),
+    };
+  });
+  for (const [side, off] of Object.entries(placed)) expect(Math.abs(off), side).toBeLessThan(1);
+
+  // One shape: opaque marks with no frame, in one layer that alone is see-through,
+  // so where marks overlap the shade stays the same.
+  const look = await page.evaluate(() => {
+    const mark = document.querySelector("#pdf-body .pdf-change");
+    const style = getComputedStyle(mark);
+    return {
+      background: style.backgroundColor,
+      shadow: style.boxShadow,
+      border: style.borderTopWidth,
+      opacity: style.opacity,
+      layer: mark.parentElement.className,
+      layerOpacity: Number(getComputedStyle(mark.parentElement).opacity),
+    };
+  });
+  expect(look).toMatchObject({ background: "rgb(255, 200, 0)", shadow: "none", border: "0px", opacity: "1" });
+  expect(look.layer).toBe("pdf-changes");
+  expect(look.layerOpacity).toBeGreaterThan(0);
+  expect(look.layerOpacity).toBeLessThan(1);
+
+  // The mark fades and goes.
+  await expect(marks).toHaveCount(0);
+
+  expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
+});
+
 test("a failed build keeps the last good PDF above the error", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);

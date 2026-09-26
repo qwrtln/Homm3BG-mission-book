@@ -15,6 +15,8 @@ import {
   planScenarioBuild,
 } from "../../shared/build-plan.js";
 import { errorMessage, errorTrace } from "../../shared/errors.js";
+import { changedLines } from "../../shared/line-diff.js";
+import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.js";
 import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
@@ -86,6 +88,34 @@ function discardEngine(runner) {
 // rebuild that starts from them usually settles in one TeX pass.
 /** @type {Map<string, StagedFile[]>} */
 const auxByScenario = new Map();
+
+// Each scenario's source at its last good build, by repository path. The
+// next build marks on its pages what changed since.
+/** @type {Map<string, string>} */
+const sourceByScenario = new Map();
+
+/**
+ * Where on the new PDF's pages the lines changed since the last build
+ * landed, read from the compile's SyncTeX file. Empty when there is nothing
+ * to compare against or to read: the marks are a courtesy, never a failure.
+ *
+ * @param {Uint8Array | null | undefined} synctex the compile's .synctex.gz bytes
+ * @param {string} path the scenario's repository path
+ * @param {string | undefined} before its source at the last good build
+ * @param {string} after its source now
+ * @returns {Promise<Map<number, import("../../shared/synctex.js").PageRect[]>>}
+ */
+async function changeMarks(synctex, path, before, after) {
+  if (!synctex || before === undefined) return new Map();
+  const lines = changedLines(before, after);
+  if (lines.size === 0) return new Map();
+  try {
+    return lineRects(parseSynctex(await gunzipText(synctex)), path, lines);
+  } catch (error) {
+    console.warn("The SyncTeX file could not be read:", error);
+    return new Map();
+  }
+}
 
 /**
  * Reports a build step twice: short on the PDF pane, where the reader looks,
@@ -279,10 +309,13 @@ export async function runBuild() {
     };
 
     if (record.ok) {
+      const changes = await changeMarks(result.synctex, chosenPath, sourceByScenario.get(chosenPath), source);
+      sourceByScenario.set(chosenPath, source);
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
       await showPdf(
         new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }),
         source,
+        { changes },
       );
       setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
     } else {

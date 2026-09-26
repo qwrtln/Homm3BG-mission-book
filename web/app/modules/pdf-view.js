@@ -1,4 +1,5 @@
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
+import { pageHighlights } from "../../shared/synctex.js";
 import { el, escapeHtml, setStatus } from "./dom.js";
 import { requireEditor, state } from "./state.js";
 
@@ -30,6 +31,13 @@ let zoom = 1;
 
 /** The pane width the shown pages were fitted to; 0 when drawn while hidden. */
 let drawnWidth = 0;
+
+/** Each drawn page's size in PDF points, in page order. */
+/** @type {{width: number, height: number}[]} */
+let drawnSizes = [];
+
+/** How far a change mark reaches past the box it marks, in px. */
+const CHANGE_MARK_OUTSET = 2;
 
 // Tickets let the newest request win. A document load that finishes after a
 // newer showPdf or clearPdf is dropped; a render that finishes after a newer
@@ -150,14 +158,15 @@ function jumpToLine(line) {
  * @param {Blob} blob PDF bytes, tagged application/pdf
  * @param {string} source the editor source the PDF stands for; an edit away
  *   from it makes the PDF stale
- * @param {{dropLastPage?: boolean, path?: string | null}} [options]
+ * @param {{dropLastPage?: boolean, path?: string | null, changes?: Map<number, import("../../shared/synctex.js").PageRect[]>}} [options]
  *   dropLastPage leaves the last page undrawn and uncounted, never the only
  *   one: the published PDF ends on a feedback page an in-browser build does
  *   not make. path is the scenario the PDF shows, which names the download;
- *   it defaults to the one in the editor
+ *   it defaults to the one in the editor. changes are the places, by 1-based
+ *   page, to mark briefly once the pages are drawn
  * @returns {Promise<void>}
  */
-export async function showPdf(blob, source, { dropLastPage = false, path = state.chosenPath } = {}) {
+export async function showPdf(blob, source, { dropLastPage = false, path = state.chosenPath, changes } = {}) {
   state.lastPdf = blob;
   state.pdfSource = source;
   state.pdfPath = path;
@@ -179,7 +188,8 @@ export async function showPdf(blob, source, { dropLastPage = false, path = state
     shown?.task.destroy();
     const pageCount = dropLastPage ? Math.max(doc.numPages - 1, 1) : doc.numPages;
     shown = { task, doc, pageCount };
-    await renderPages();
+    const drawn = await renderPages();
+    if (drawn && changes) markChanges(changes);
   } catch (error) {
     if (ticket !== loadTicket) return;
     console.warn("The PDF could not be drawn:", error);
@@ -194,7 +204,7 @@ export async function showPdf(blob, source, { dropLastPage = false, path = state
  * @returns {import("../../shared/pdf-viewport.js").PageBox[]}
  */
 function pageBoxes(pages) {
-  return [...pages.children].map((page) => {
+  return [...pages.querySelectorAll(".pdf-page")].map((page) => {
     const box = /** @type {HTMLElement} */ (page);
     return { top: box.offsetTop, height: box.offsetHeight };
   });
@@ -205,10 +215,10 @@ function pageBoxes(pages) {
  * canvases, then swaps them in at once and scrolls back to the reader's
  * place. Dropped unfinished when a newer render starts.
  *
- * @returns {Promise<void>}
+ * @returns {Promise<boolean>} whether these pages are the ones on screen
  */
 async function renderPages() {
-  if (!shown) return;
+  if (!shown) return false;
   const { doc, pageCount } = shown;
   renderTicket += 1;
   const ticket = renderTicket;
@@ -219,12 +229,16 @@ async function renderPages() {
   const pixelRatio = window.devicePixelRatio || 1;
   const container = document.createElement("div");
   container.className = "pdf-pages";
+  /** @type {{width: number, height: number}[]} */
+  const sizes = [];
 
   try {
     for (let number = 1; number <= pageCount; number += 1) {
       const page = await doc.getPage(number);
-      if (ticket !== renderTicket) return;
-      const scale = (fitWidth / page.getViewport({ scale: 1 }).width) * zoom;
+      if (ticket !== renderTicket) return false;
+      const natural = page.getViewport({ scale: 1 });
+      sizes.push({ width: natural.width, height: natural.height });
+      const scale = (fitWidth / natural.width) * zoom;
       const viewport = page.getViewport({ scale });
       const canvas = document.createElement("canvas");
       canvas.className = "pdf-page";
@@ -236,11 +250,11 @@ async function renderPages() {
       canvas.style.height = `${Math.floor(viewport.height)}px`;
       const transform = pixelRatio === 1 ? undefined : [pixelRatio, 0, 0, pixelRatio, 0, 0];
       await page.render({ canvas, viewport, transform }).promise;
-      if (ticket !== renderTicket) return;
+      if (ticket !== renderTicket) return false;
       container.append(canvas);
     }
   } catch (error) {
-    if (ticket !== renderTicket) return; // the document went while drawing
+    if (ticket !== renderTicket) return false; // the document went while drawing
     throw error;
   }
 
@@ -250,10 +264,47 @@ async function renderPages() {
   const across = body.scrollWidth > 0 ? (body.scrollLeft + body.clientWidth / 2) / body.scrollWidth : 0.5;
   body.replaceChildren(container);
   drawnWidth = paneWidth;
+  drawnSizes = sizes;
   el("pdf-page-count").textContent = pageCount === 1 ? "1 page" : `${pageCount} pages`;
   el("pdf-controls").hidden = false;
   body.scrollTop = anchorScrollTop(pageBoxes(container), anchor);
   body.scrollLeft = across * body.scrollWidth - body.clientWidth / 2;
+  return true;
+}
+
+/**
+ * Marks places on the drawn pages for a moment. The marks share one layer,
+ * which fades out and removes itself; a redraw drops it if still showing.
+ *
+ * @param {Map<number, import("../../shared/synctex.js").PageRect[]>} changes rects in PDF points, by 1-based page
+ * @returns {void}
+ */
+function markChanges(changes) {
+  const container = el("pdf-body").querySelector(".pdf-pages");
+  if (!container) return;
+  const pages = container.querySelectorAll(".pdf-page");
+  const layer = document.createElement("div");
+  layer.className = "pdf-changes";
+  for (const [number, rects] of changes) {
+    const page = pages[number - 1];
+    const size = drawnSizes[number - 1];
+    if (!(page instanceof HTMLElement) || !size) continue;
+    // The pages are the positioned pane's children's children, and the layer
+    // sits at the pane's origin: page offsets place the marks in it as they are.
+    const ratio = page.offsetWidth / size.width;
+    for (const rect of pageHighlights(rects, size.width, size.height)) {
+      const mark = document.createElement("div");
+      mark.className = "pdf-change";
+      mark.style.left = `${page.offsetLeft + rect.left * ratio - CHANGE_MARK_OUTSET}px`;
+      mark.style.top = `${page.offsetTop + rect.top * ratio - CHANGE_MARK_OUTSET}px`;
+      mark.style.width = `${rect.width * ratio + 2 * CHANGE_MARK_OUTSET}px`;
+      mark.style.height = `${rect.height * ratio + 2 * CHANGE_MARK_OUTSET}px`;
+      layer.append(mark);
+    }
+  }
+  if (!layer.childElementCount) return;
+  layer.addEventListener("animationend", () => layer.remove(), { once: true });
+  container.append(layer);
 }
 
 /**
