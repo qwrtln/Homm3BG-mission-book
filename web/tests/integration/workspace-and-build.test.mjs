@@ -167,6 +167,35 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   expect(appErrors(errors), "the page reported errors while building").toEqual([]);
 });
 
+test("a build preloads texlive-basic and stages the carried TeX Live files from one bundle", async ({ app }) => {
+  const { page, errors } = app;
+  /** @type {string[]} */
+  const texmfRequests = [];
+  page.on("request", (request) => {
+    if (request.url().includes("/shared/texmf/")) texmfRequests.push(new URL(request.url()).pathname);
+  });
+  await enterWorkspace(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  const { packages, staged } = await page.evaluate(() => {
+    const calls = globalThis.__stubEngineCalls || [];
+    const runner = calls.find((call) => call.method === "BusyTexRunner.constructor");
+    const compile = calls.find((call) => call.method === "LuaLatex.compile");
+    return {
+      packages: runner?.args[0].preloadDataPackages ?? [],
+      staged: (compile?.args[0].additionalFiles ?? []).map((/** @type {{path: string}} */ file) => file.path),
+    };
+  });
+  expect(packages).toHaveLength(1);
+  expect(packages[0]).toMatch(/\/core\/busytex\/texlive-basic\.js$/);
+  // Flat, by basename: one from each source carried.txt names, and binaries too.
+  expect(staged).toEqual(expect.arrayContaining(["tcolorbox.sty", "pgfcore.code.tex", "nth.sty", "ccicons.pfb"]));
+  // Page load and the build share one fetch of the bundle, and nothing else under texmf/.
+  expect(texmfRequests).toEqual(["/web/shared/texmf/carried-texmf.bin"]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
 test("Build turns into an enabled Stop with the progress bar up while a build runs", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);

@@ -150,3 +150,19 @@ LaTeX mode: `mode/stex/stex.min.js`.
 - `web/app/app.js` calls `ensureEngine()` eagerly on page load, so every
   browser-driven test is affected.
 - No test compiles a real PDF or downloads `texlive-*.data`. Stub it.
+
+### Carried TeX Live files
+
+The app preloads `texlive-basic` only (`DATA_PACKAGE` in
+`web/shared/build-plan.js`). The ~170 files the book needs beyond it ship in
+one bundle, `web/shared/texmf/carried-texmf.bin`, built from
+`web/shared/texmf/carried.txt` — the manifest, which says why each file is
+carried. `web/shared/carry-texmf.mjs` has the full procedure in its header.
+
+- After bumping `BUSYTEX_ENGINE_VERSION` or editing `carried.txt`, run
+  `node web/shared/carry-texmf.mjs build`. Tier 1 fails until you do.
+- Review a rebuild through `carried.lock.json`: one line per file with its
+  SHA-256. The bundle itself is binary.
+- Check a rebuild on the real engine with
+  `node web/tests/tools/probe-carried-texmf.mjs`. It prints any `carried.txt`
+  lines still missing. It is a hand-run tool, not a test.

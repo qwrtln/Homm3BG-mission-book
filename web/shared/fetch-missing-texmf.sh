@@ -8,20 +8,21 @@
 # here runs in the browser and nothing here runs at build time, so the app
 # still depends on no third-party host.
 #
-# Two packages are missing from texlive-extra:
+# Two packages are missing from every data package:
 #   nth     an ordinal number macro, loaded by metadata.tex:31
 #   ccicons the Creative Commons icon font, pulled in by doclicense
 #
-# The files land flat in texmf/, because kpathsea searches the working
-# directory of the virtual filesystem first.
+# The files land in texmf/ctan/, listed as "ctan" lines in texmf/carried.txt.
+# Run carry-texmf.mjs build afterwards: it packs them into the bundle the app
+# fetches, with the files copied out of texlive-extra.
 
 set -euo pipefail
 cd "$(dirname "$0")"
-mkdir -p texmf
+mkdir -p texmf/ctan
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 
-curl -fsSL -o texmf/nth.sty https://mirrors.ctan.org/macros/generic/misc/nth.sty
+curl -fsSL -o texmf/ctan/nth.sty https://mirrors.ctan.org/macros/generic/misc/nth.sty
 
 curl -fsSL -o "$work/ccicons.tds.zip" https://mirrors.ctan.org/install/fonts/ccicons.tds.zip
 unzip -o -j "$work/ccicons.tds.zip" \
@@ -31,10 +32,10 @@ unzip -o -j "$work/ccicons.tds.zip" \
   'fonts/type1/public/ccicons/*' \
   'fonts/enc/dvips/ccicons/*' \
   'fonts/map/dvips/ccicons/*' \
-  -d texmf > /dev/null
+  -d texmf/ctan > /dev/null
 
 # Upstream leaves trailing spaces on comment lines, which the repository lint
 # rejects. TeX drops trailing spaces from every input line, so this is inert.
-sed -i 's/[[:space:]]*$//' texmf/*.sty
+sed -i 's/[[:space:]]*$//' texmf/ctan/*.sty
 
-ls -l texmf
+ls -l texmf/ctan

@@ -1,0 +1,1195 @@
+{
+  "engine": "1.4.0",
+  "files": [
+    {
+      "name": "nth.sty",
+      "source": "ctan",
+      "path": "nth.sty",
+      "bytes": 1840,
+      "sha256": "9aae065f79a9a136410d9cd51194e5af86c44f6e0d095772d5e17c5218269ebe"
+    },
+    {
+      "name": "ccicons.sty",
+      "source": "ctan",
+      "path": "ccicons.sty",
+      "bytes": 4318,
+      "sha256": "ab55c757ed03b9e4821547e583af081e05e151f1a90d74b0e65286b6a4c723f9"
+    },
+    {
+      "name": "ccicons.tfm",
+      "source": "ctan",
+      "path": "ccicons.tfm",
+      "bytes": 212,
+      "sha256": "eeb6f4647bf7af9cf47bed0ea465b311d8ac7f4da1caef730ae0c5d953b6e678"
+    },
+    {
+      "name": "ccicons.otf",
+      "source": "ctan",
+      "path": "ccicons.otf",
+      "bytes": 4960,
+      "sha256": "5da88ade531feaeeaadc64cb49b99c8d4fa31f41dc14707ea83db4b7cbb4e853"
+    },
+    {
+      "name": "ccicons.pfb",
+      "source": "ctan",
+      "path": "ccicons.pfb",
+      "bytes": 11767,
+      "sha256": "43a80eaf1b84e0048e56e57b36346670bbf0d25c31d3194ba96ce703aae8f8b3"
+    },
+    {
+      "name": "ccicons.map",
+      "source": "ctan",
+      "path": "ccicons.map",
+      "bytes": 29,
+      "sha256": "dce4b784468bd75a6c5e906c7100b463bfd8f8845f91e32acd77e3c1a2af0eba"
+    },
+    {
+      "name": "ccicons-u.enc",
+      "source": "ctan",
+      "path": "ccicons-u.enc",
+      "bytes": 2428,
+      "sha256": "8d6b016535e62a55ca30c7f3b638577e403b27edfbb2942fdab4d817f726bb4b"
+    },
+    {
+      "name": "catchfile.sty",
+      "source": "texlive-extra",
+      "path": "tex/generic/catchfile/catchfile.sty",
+      "bytes": 8622,
+      "sha256": "0b07b21dca086a1306a86b5ab48764f20e52f913e61c91ae12b34cde5db61d6a"
+    },
+    {
+      "name": "pgfcore.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcore.code.tex",
+      "bytes": 1016,
+      "sha256": "ec94fcfeeda3204c4e43d2008be50b6005da0e642deafaead137284d66e82926"
+    },
+    {
+      "name": "pgfcorearrows.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorearrows.code.tex",
+      "bytes": 43906,
+      "sha256": "ffabc47530ac7058f6dff74bf3325ab114049dcedc51b2d8556f578b03311799"
+    },
+    {
+      "name": "pgfcoreexternal.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex",
+      "bytes": 19324,
+      "sha256": "545c4616f93c5f5d25bc04090a0b7ef869bab84b3952fadfd539d71187c83fe0"
+    },
+    {
+      "name": "pgfcoregraphicstate.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex",
+      "bytes": 6038,
+      "sha256": "81862c3425e8aa2a82e605eb8fde07b1b7b47862b981922393d4f54ca9fa6250"
+    },
+    {
+      "name": "pgfcoreimage.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoreimage.code.tex",
+      "bytes": 6911,
+      "sha256": "758e504e9c194cf9bbed098700b1d7969420e9a87552222d3000084a9d095571"
+    },
+    {
+      "name": "pgfcorelayers.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorelayers.code.tex",
+      "bytes": 4883,
+      "sha256": "743e89ac1e529af45751fa85fde4b3438284a63dfd53ff52c94c2f229b20beff"
+    },
+    {
+      "name": "pgfcoreobjects.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex",
+      "bytes": 2544,
+      "sha256": "541e41626d66e0e8bc8b5249805c9efbb134dfe0dc85c63102eea3c2d21da6f0"
+    },
+    {
+      "name": "pgfcorepathconstruct.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex",
+      "bytes": 44195,
+      "sha256": "64b0b4193616b937a2b4520c678f8863ae06ab38385bb58db437b39a8f27719b"
+    },
+    {
+      "name": "pgfcorepathprocessing.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex",
+      "bytes": 17311,
+      "sha256": "359d413e7bb9d37f0fddc6ea5827415f6c73db584e781f6b2e2521059b595285"
+    },
+    {
+      "name": "pgfcorepathusage.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex",
+      "bytes": 21302,
+      "sha256": "165569c2ffb6a80272d2853c3d3c4373c386391e8cbb81ed9683ae2a810dd28c"
+    },
+    {
+      "name": "pgfcorepatterns.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex",
+      "bytes": 9691,
+      "sha256": "f91d37fcda30e70ae85fbd9030682bc64df4424fc1260704def57dc6c444a63a"
+    },
+    {
+      "name": "pgfcorepoints.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorepoints.code.tex",
+      "bytes": 33335,
+      "sha256": "7533dd80c95a5124726b0a617a5f458226d4a7490bcd209e3fd7e717e24dc127"
+    },
+    {
+      "name": "pgfcorequick.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorequick.code.tex",
+      "bytes": 2965,
+      "sha256": "6143371709342ea83dcdb1744a229d18f4c1ee670e1e31b496046a708bfa3e66"
+    },
+    {
+      "name": "pgfcorerdf.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorerdf.code.tex",
+      "bytes": 5196,
+      "sha256": "0bc32a855862a83b7ece27d2ebf6bfeace759d6b64fb776394eee13d62401350"
+    },
+    {
+      "name": "pgfcorescopes.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcorescopes.code.tex",
+      "bytes": 20821,
+      "sha256": "cd9bb9fbaac3f5bca5bedd77ca07a8c4457467869e2303fdf2b446a30dca9f9f"
+    },
+    {
+      "name": "pgfcoreshade.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoreshade.code.tex",
+      "bytes": 35251,
+      "sha256": "42ff3f6524037f73b44d16fe0abeae93a72407950b6a9b176f4d6a2a3f6e9fdb"
+    },
+    {
+      "name": "pgfcoretransformations.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex",
+      "bytes": 22012,
+      "sha256": "bdea875774b4ad7a1e12debc67c46286245031f5c2e287c9e192f3ca4b6193b6"
+    },
+    {
+      "name": "pgfcoretransparency.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex",
+      "bytes": 8893,
+      "sha256": "ea5e14f7fade556cee79636a6824710e97db928542fc1b23dfa618ff6448688e"
+    },
+    {
+      "name": "tikzlibrarybabel.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex",
+      "bytes": 380,
+      "sha256": "24da474854ae07695ff449692c7de7e2da9e8eedbcb8e5cfca3702d98a274995"
+    },
+    {
+      "name": "tikzlibrarybackgrounds.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex",
+      "bytes": 4572,
+      "sha256": "0c4e46d2d58280a8065ffced4920337e86617fddba3092a25954d09c80db8dca"
+    },
+    {
+      "name": "tikzlibrarycalc.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex",
+      "bytes": 15929,
+      "sha256": "8207f9fe44c55f382b943c0d9ed3e61571825585318111ad1e357746712e6079"
+    },
+    {
+      "name": "tikzlibraryfadings.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex",
+      "bytes": 1179,
+      "sha256": "ffdc1dc998e6801842dc045fc232173cc3fa883152025a6699089e4675c9e86b"
+    },
+    {
+      "name": "tikzlibrarypatterns.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex",
+      "bytes": 770,
+      "sha256": "27327333540a339d82b43b8cf717c063e9bd62e8816cd5050b72a665ae332551"
+    },
+    {
+      "name": "tikzlibraryshadows.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex",
+      "bytes": 2889,
+      "sha256": "79842e34846abdbfbe1d5e075e9fa2dff1be8246d662a93bb5c1b69cd8deaee4"
+    },
+    {
+      "name": "tikzlibrarytopaths.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex",
+      "bytes": 11518,
+      "sha256": "992706da31e055cdbecf5b1bf1b9c267383e3b4d4385773448f868e1cabf17f2"
+    },
+    {
+      "name": "tikz.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/frontendlayer/tikz/tikz.code.tex",
+      "bytes": 186859,
+      "sha256": "5cf22e53ee27e044a06a4aebdd77924101a491915021428a61cd6ff3ff2c8e0e"
+    },
+    {
+      "name": "pgflibraryarrows.meta.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex",
+      "bytes": 58801,
+      "sha256": "df116c22bd614af5154bb957850a3f6d5252234c00df3198a1d8f063e1468519"
+    },
+    {
+      "name": "pgflibraryfadings.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/libraries/pgflibraryfadings.code.tex",
+      "bytes": 2563,
+      "sha256": "f0f7166465ba4f2e5ccdc81dd2153d241d01963c091c2a5ad42239d0f6596a53"
+    },
+    {
+      "name": "pgflibrarypatterns.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/libraries/pgflibrarypatterns.code.tex",
+      "bytes": 7936,
+      "sha256": "0a0a790434c4064847cd05249bc93bd08cdf903e892b06e57a7688ebd0a29ea5"
+    },
+    {
+      "name": "pgflibraryplothandlers.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex",
+      "bytes": 32995,
+      "sha256": "b3db772dd8eb595d8a5c8ef8d232862f9cef97d4ac9dedee283ad7b6e83361dd"
+    },
+    {
+      "name": "pgfint.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfint.code.tex",
+      "bytes": 3063,
+      "sha256": "95f8053efeeb2267d543d8d1afb10195d6114765eea7b90755b4e0c359324d64"
+    },
+    {
+      "name": "pgfmath.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmath.code.tex",
+      "bytes": 949,
+      "sha256": "7fa0ff434e9cdeb14c40f326d53e6ea0273ef2046daf28987992e2488d186c85"
+    },
+    {
+      "name": "pgfmathcalc.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathcalc.code.tex",
+      "bytes": 13272,
+      "sha256": "58fcc94547646458470315a6d10953a9729e7962e3def5273633b06fb444a5aa"
+    },
+    {
+      "name": "pgfmathfloat.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfloat.code.tex",
+      "bytes": 104717,
+      "sha256": "ccd576f7cebab3a0c5d5cdef41fc44e638d7bb4a20e0a0465160eba1757795e5"
+    },
+    {
+      "name": "pgfmathfunctions.base.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.base.code.tex",
+      "bytes": 10165,
+      "sha256": "f83601dd74e8c166162cb3daf926744c44ccf15a0122e17613658f82fa64c6a9"
+    },
+    {
+      "name": "pgfmathfunctions.basic.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.basic.code.tex",
+      "bytes": 28178,
+      "sha256": "c94abbd89ad0556546d9e5053af16b58ce7f38d19c379b27309e5fefd23908f8"
+    },
+    {
+      "name": "pgfmathfunctions.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.code.tex",
+      "bytes": 9649,
+      "sha256": "9758185623cce6b2a8d4a504d10dfd0a01ef6d3480794fa4c466384f4c08540c"
+    },
+    {
+      "name": "pgfmathfunctions.comparison.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex",
+      "bytes": 3865,
+      "sha256": "ea5ff35778088d94d8d2f1a20075ec57cc4ecd22844f9c288625a6db59ba7818"
+    },
+    {
+      "name": "pgfmathfunctions.integerarithmetics.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex",
+      "bytes": 3177,
+      "sha256": "6e9383c1e63a6dbcfd2d95369905df566bdb6e7374c06e28c15a25eb782dc46b"
+    },
+    {
+      "name": "pgfmathfunctions.misc.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.misc.code.tex",
+      "bytes": 11024,
+      "sha256": "51038be668b2083ac5e8ae38a1da6f75091ee9471d71f33749d01a8bff1a9aa6"
+    },
+    {
+      "name": "pgfmathfunctions.random.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.random.code.tex",
+      "bytes": 7889,
+      "sha256": "968308d364b4f31f2a787adf32c3df7d87959a519c4eb5c8b47bedde4311ab95"
+    },
+    {
+      "name": "pgfmathfunctions.round.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.round.code.tex",
+      "bytes": 3379,
+      "sha256": "9b980e1373f9451da75cc6030a5b4c1671b88a1b14b45ed172cfb7cf2607fe1f"
+    },
+    {
+      "name": "pgfmathfunctions.trigonometric.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex",
+      "bytes": 92405,
+      "sha256": "1c8834abe00807467a52d31ef96032d5084b2560eea45995018084d13a3cde3c"
+    },
+    {
+      "name": "pgfmathparser.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathparser.code.tex",
+      "bytes": 37733,
+      "sha256": "317b4a8059ee9afd04b052dd2974c1c9a059d1b8e301f9578efa9ac0b9984990"
+    },
+    {
+      "name": "pgfmathutil.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/math/pgfmathutil.code.tex",
+      "bytes": 8471,
+      "sha256": "cda208d98bdc556a06f5915571c6ce4d98c18aa639c4782a56c6d32a6ba68055"
+    },
+    {
+      "name": "pgfmodulematrix.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/modules/pgfmodulematrix.code.tex",
+      "bytes": 21211,
+      "sha256": "ceafd7c1de02bde3d5a7570489ed6a150db51aabd658c1c78acf1ee5b5f89c6e"
+    },
+    {
+      "name": "pgfmoduleplot.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/modules/pgfmoduleplot.code.tex",
+      "bytes": 16218,
+      "sha256": "58a2c1ff27de97cb32b19ce95a4182d85369304980da9f1b21e4a1fddf4d666d"
+    },
+    {
+      "name": "pgfmoduleshapes.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/modules/pgfmoduleshapes.code.tex",
+      "bytes": 44792,
+      "sha256": "01dd81e3f2c56a8db7864916ada1a5036964aff2e8176aafd4773244e236bb27"
+    },
+    {
+      "name": "pgf.revision.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/pgf.revision.tex",
+      "bytes": 116,
+      "sha256": "8c056cfd919cca2dc5e398c776865e1af6a8605ab9d715f452aa68327164b52d"
+    },
+    {
+      "name": "pgf.cfg",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgf.cfg",
+      "bytes": 926,
+      "sha256": "eb308ac3d665db8dd3c03b18328c551609346c659c2ce0e5029223fbcc339cb3"
+    },
+    {
+      "name": "pgfsys-common-pdf.def",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgfsys-common-pdf.def",
+      "bytes": 5542,
+      "sha256": "babfe19163bca9c6fa5b1abb6b6154cd0d1ca98888f08f1bf7d06a74de5fd330"
+    },
+    {
+      "name": "pgfsys-luatex.def",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgfsys-luatex.def",
+      "bytes": 13367,
+      "sha256": "6b950cad5613b1b8bad260abf397eba070f01ebbe73e4c4f9ac0986b6b5597ec"
+    },
+    {
+      "name": "pgfsys.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgfsys.code.tex",
+      "bytes": 61355,
+      "sha256": "97d841d782de156f192fb9866c76ec65d28dabdf186cb4700094d0a5a13eadab"
+    },
+    {
+      "name": "pgfsysprotocol.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex",
+      "bytes": 1896,
+      "sha256": "818b8e3cd0606bdb8ac7fbaccc5f80033672fa817537536f76bc67bc3942928c"
+    },
+    {
+      "name": "pgfsyssoftpath.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex",
+      "bytes": 7778,
+      "sha256": "6ea4caeea5bcb6cd60b80ef4607e8a79824ec0cdcebb47424c1bdbe0c2ea6671"
+    },
+    {
+      "name": "pgffor.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgffor.code.tex",
+      "bytes": 24033,
+      "sha256": "5787859fab7c72cc3dfd7134e78bbb0e770a43e7da39f93732c24232249fdde8"
+    },
+    {
+      "name": "pgfkeys.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgfkeys.code.tex",
+      "bytes": 39784,
+      "sha256": "212f64f8641fb944a006a3c0825e78d30b0a2c5e3b4c4d62ff59ef61214caeed"
+    },
+    {
+      "name": "pgfkeyslibraryfiltered.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex",
+      "bytes": 37436,
+      "sha256": "68cd7046c23f0c5d5775e5f481d14577f1d62bfe1dce1605387d46490edf7e5c"
+    },
+    {
+      "name": "pgfrcs.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgfrcs.code.tex",
+      "bytes": 4385,
+      "sha256": "6d28f51c1b4cb933969339982286f86bb1c9af70ed34535482321de4cd491664"
+    },
+    {
+      "name": "pgfutil-common.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgfutil-common.tex",
+      "bytes": 30029,
+      "sha256": "ff576d97434040185004b8be9b40804b9e9f95ae225719583c4376d8718e9f06"
+    },
+    {
+      "name": "pgfutil-latex.def",
+      "source": "texlive-extra",
+      "path": "tex/generic/pgf/utilities/pgfutil-latex.def",
+      "bytes": 7067,
+      "sha256": "72036598130f2477df66608d26ab7008eb87a18b09fbe0c7eed9c63188720c77"
+    },
+    {
+      "name": "pgf.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/basiclayer/pgf.sty",
+      "bytes": 1090,
+      "sha256": "99e08946749446e0b9b7faa985f8202740a94476f9e99bab5286cca5ce4766e9"
+    },
+    {
+      "name": "pgfcore.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/basiclayer/pgfcore.sty",
+      "bytes": 373,
+      "sha256": "3a52a05062a74a763ee604b4a3d20f0be4a4b99fe8182373e30ccea0abafc96e"
+    },
+    {
+      "name": "pgfcomp-version-0-65.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty",
+      "bytes": 21013,
+      "sha256": "7df38d1bb03d0bf642b3f53c38d86641765d950f82d481ebd63c67838bc78ee7"
+    },
+    {
+      "name": "pgfcomp-version-1-18.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty",
+      "bytes": 989,
+      "sha256": "b5a95ba245bb51ce01e5ead16e818a0024f16cd208df3386b30ba0798a911344"
+    },
+    {
+      "name": "tikz.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/frontendlayer/tikz.sty",
+      "bytes": 339,
+      "sha256": "6e39ff4fdf9f126aff28880a7dd59fccc0e6735409d92ca455cdd2a4f2b4db53"
+    },
+    {
+      "name": "pgfmath.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/math/pgfmath.sty",
+      "bytes": 306,
+      "sha256": "4abed7d8c88642201dd1a932a435ae05a1f2659f1f7e95c72d6b5347c83d232a"
+    },
+    {
+      "name": "pgfsys.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/systemlayer/pgfsys.sty",
+      "bytes": 443,
+      "sha256": "cc7121c5706c5c52807aea879ca0a9083a8dc81b04d96303d0d398804d9d3d52"
+    },
+    {
+      "name": "pgffor.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/utilities/pgffor.sty",
+      "bytes": 348,
+      "sha256": "5ae03317ea221a6f68d807775bd06a10625aa9fb1f590dbe2114688f735c447d"
+    },
+    {
+      "name": "pgfkeys.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/utilities/pgfkeys.sty",
+      "bytes": 274,
+      "sha256": "b90072b20d0590f23fd0ad273d059e3b7737319b3fb61e3bea6102fd77f24b3d"
+    },
+    {
+      "name": "pgfrcs.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf/utilities/pgfrcs.sty",
+      "bytes": 325,
+      "sha256": "9653b8fae6bba95bec40ffbedd7d6c2b8f3be4a85b8b39580ab3ee6c3590041a"
+    },
+    {
+      "name": "soul-ori.sty",
+      "source": "texlive-extra",
+      "path": "tex/generic/soul/soul-ori.sty",
+      "bytes": 25449,
+      "sha256": "2333c944ca8f9d5cb9f63fa7663aefed5cb4d7458966be617e140bad2a1705da"
+    },
+    {
+      "name": "soul.sty",
+      "source": "texlive-extra",
+      "path": "tex/generic/soul/soul.sty",
+      "bytes": 16881,
+      "sha256": "6cde62ec6cd4b61636249824625270778bf3e29d647e9af1eb76645771cc436c"
+    },
+    {
+      "name": "xkeyval.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/xkeyval/xkeyval.tex",
+      "bytes": 19299,
+      "sha256": "adec9c8e36d791b131d9eefd00726d58f531a5a4b8c0ef8f87ffa497d4b16cb8"
+    },
+    {
+      "name": "xkvutils.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/xkeyval/xkvutils.tex",
+      "bytes": 7787,
+      "sha256": "a49b792fa91181b8965091bca36e4e25d54f3e95d5ff7aac7c2f6a425ed7df0e"
+    },
+    {
+      "name": "xstring.sty",
+      "source": "texlive-extra",
+      "path": "tex/generic/xstring/xstring.sty",
+      "bytes": 123,
+      "sha256": "6b2fdbe2c3a1f873a6c19fc8da67001e269580be2827040b152cc59216b022c4"
+    },
+    {
+      "name": "xstring.tex",
+      "source": "texlive-extra",
+      "path": "tex/generic/xstring/xstring.tex",
+      "bytes": 49397,
+      "sha256": "5cfb52e795a80a1e8f06280a8f968046a6fa05d5dae2313933d36b8e6eaf8c35"
+    },
+    {
+      "name": "adjcalc.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/adjustbox/adjcalc.sty",
+      "bytes": 5598,
+      "sha256": "75d6edb0bd96e79629697ff1827a3e68607942861813c15fd09d2e5225c71b51"
+    },
+    {
+      "name": "adjustbox.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/adjustbox/adjustbox.sty",
+      "bytes": 56907,
+      "sha256": "b285ef690622d2ab730d3223878b8844696ed69bd75407991844a0584ceef4ca"
+    },
+    {
+      "name": "tc-luatex.def",
+      "source": "texlive-extra",
+      "path": "tex/latex/adjustbox/tc-luatex.def",
+      "bytes": 1190,
+      "sha256": "6327c9e42e960b0fcfecd7c47e06ef06c05b78cd69d055a383abf64bfa399301"
+    },
+    {
+      "name": "tc-pdftex.def",
+      "source": "texlive-extra",
+      "path": "tex/latex/adjustbox/tc-pdftex.def",
+      "bytes": 4304,
+      "sha256": "c1d7cc2168d8ecac020a5f4ca0b0a80006bfeaff40d0fdebdb618d0eeb4d5ba4"
+    },
+    {
+      "name": "trimclip.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/adjustbox/trimclip.sty",
+      "bytes": 7245,
+      "sha256": "55431f3a196c221cfd69a9006c4c4b59bf60a6aba3af09eefa156d770fe8ed81"
+    },
+    {
+      "name": "caption.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/caption/caption.sty",
+      "bytes": 56128,
+      "sha256": "94b3a07d83bfdc9171d3fcb5ea510e6a9ce01ff9bebac37a1dc066e55f6ad48f"
+    },
+    {
+      "name": "caption3.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/caption/caption3.sty",
+      "bytes": 72619,
+      "sha256": "73f00aabd0be454c9e552841856c573e096ef42d032fe9fd1801763b1b37bea5"
+    },
+    {
+      "name": "subcaption.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/caption/subcaption.sty",
+      "bytes": 12494,
+      "sha256": "5b6b3644307e6db3b04f0f3e2bd0709b8a84add87094da9e5395285e0b705d7e"
+    },
+    {
+      "name": "changepage.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/changepage/changepage.sty",
+      "bytes": 4523,
+      "sha256": "c26adc410847658bbb8ddcadfb5fee6fa71254f07df5f007d2126760d6715a02"
+    },
+    {
+      "name": "collectbox.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/collectbox/collectbox.sty",
+      "bytes": 9124,
+      "sha256": "e2f8b5c38a97b6149ee589abbce92ef89c26246185a05ca3f314ec104748e1a8"
+    },
+    {
+      "name": "csquotes.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/csquotes/csquotes.cfg",
+      "bytes": 7068,
+      "sha256": "6c4c4d52a8117e65570915c88318609bfc01ff47ef7fc00f49c9bfc8fa798296"
+    },
+    {
+      "name": "csquotes.def",
+      "source": "texlive-extra",
+      "path": "tex/latex/csquotes/csquotes.def",
+      "bytes": 22135,
+      "sha256": "d5f4dd253ee1ace1354db5f89cbcc799d71b90ee57606a63c438cc20becefe8a"
+    },
+    {
+      "name": "csquotes.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/csquotes/csquotes.sty",
+      "bytes": 62767,
+      "sha256": "ad897da11bac0ccb052bc88d96ec3ffdf9fd3d9c98584ec0a40a7c819f0836a7"
+    },
+    {
+      "name": "doclicense-english.ldf",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense-english.ldf",
+      "bytes": 1613,
+      "sha256": "fa3021d449c9a279dec95b6f021e9d25442bba1fc4c1500d69e060bf9062481d"
+    },
+    {
+      "name": "doclicense-french.ldf",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense-french.ldf",
+      "bytes": 2246,
+      "sha256": "61f3b5b672c4db81d30db4541aa77c6d6f40719b9e62a96c6c038bd1597a051e"
+    },
+    {
+      "name": "doclicense-german.ldf",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense-german.ldf",
+      "bytes": 2057,
+      "sha256": "94c427a9ad9ab201c537ab05d4da061c4cd16e84f36536371e06b888219f23a0"
+    },
+    {
+      "name": "doclicense-polish.ldf",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense-polish.ldf",
+      "bytes": 2990,
+      "sha256": "2092283c3a93e50a1ad26b8483d0b8539fbc44ff78b2b12392a29d99d70927a9"
+    },
+    {
+      "name": "doclicense-russian.ldf",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense-russian.ldf",
+      "bytes": 2810,
+      "sha256": "78fa305f62b1e93bce412fda7e8f08d6346a0c9ff1a314292743d4c19d119457"
+    },
+    {
+      "name": "doclicense.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/doclicense/doclicense.sty",
+      "bytes": 14209,
+      "sha256": "aa95060c6f414e65fa9e75b17980a483f05a0526d09c2427dbd28f171e0f5902"
+    },
+    {
+      "name": "enumitem.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/enumitem/enumitem.sty",
+      "bytes": 52272,
+      "sha256": "628ef5b6916c682f586a066e735ceb6191e73fe3216dfb2fb4aa8e2f4c819dba"
+    },
+    {
+      "name": "environ.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/environ/environ.sty",
+      "bytes": 4378,
+      "sha256": "2efd7043a5a2ec8d495bd7575408b118ba737b9303259cffa74572d28b0da608"
+    },
+    {
+      "name": "float.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/float/float.sty",
+      "bytes": 6749,
+      "sha256": "be4a09ab7ded44b4ce97ba20a3a3efbb061d186327d5db61f8de6a3cab5019aa"
+    },
+    {
+      "name": "fontspec-luatex.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/fontspec/fontspec-luatex.sty",
+      "bytes": 153606,
+      "sha256": "beceaaba2b84dd57ced7aa4422175d055a75dc7ecb6f88a426938f60230b17c7"
+    },
+    {
+      "name": "fontspec.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/fontspec/fontspec.cfg",
+      "bytes": 549,
+      "sha256": "f31d038ca5322ef4fc3fbe391f42695bf1305567a04b6ac1005964703dd1232a"
+    },
+    {
+      "name": "fontspec.lua",
+      "source": "texlive-extra",
+      "path": "tex/latex/fontspec/fontspec.lua",
+      "bytes": 3093,
+      "sha256": "5bc51ce944431e87d9f5f0a753bc9efa673803cd19136f2c95538e69c6fefe90"
+    },
+    {
+      "name": "fontspec.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/fontspec/fontspec.sty",
+      "bytes": 3804,
+      "sha256": "14fdcaeea0c2f2278c03ecf0ccea5dc383a045b3d60cb4373ff2bbd800771fe6"
+    },
+    {
+      "name": "footmisc.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/footmisc/footmisc.sty",
+      "bytes": 18109,
+      "sha256": "27ff1a961099c4e24e8b5793ea2f4c2bbc6140b6bcb99ae78024cbdfdf7e5ffd"
+    },
+    {
+      "name": "fullwidth.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/fullwidth/fullwidth.sty",
+      "bytes": 13157,
+      "sha256": "317207658796b974e5d75ebac6f6e68275b6320f60633190ff523da580a82b16"
+    },
+    {
+      "name": "ifmtarg.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/ifmtarg/ifmtarg.sty",
+      "bytes": 318,
+      "sha256": "5d0da2d74bfd71ec185ff07bfb20eeef6e3191cd6cea7d426bd3d607ae664ca7"
+    },
+    {
+      "name": "imakeidx.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/imakeidx/imakeidx.sty",
+      "bytes": 13125,
+      "sha256": "4d3fbe493d8b5c2b4298febaabf4f8ed88d81202c29428651b960dc61a632e31"
+    },
+    {
+      "name": "scrbase.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/koma-script/scrbase.sty",
+      "bytes": 101071,
+      "sha256": "4c572f6c20b6fb3c1dd7f5d2e7a32397c4db2740cc7e0c51cd6e5250b0750881"
+    },
+    {
+      "name": "scrlfile-hook.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/koma-script/scrlfile-hook.sty",
+      "bytes": 11187,
+      "sha256": "06c55e5b9ea8704ec9bfa952b33300c75c1f88bdb9bce0940d467c2550fcf806"
+    },
+    {
+      "name": "scrlfile.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/koma-script/scrlfile.sty",
+      "bytes": 3330,
+      "sha256": "fb883b421470eb0217d5e2b7f20bf1271a0f79cd6fd624f7f6ecc685f5479893"
+    },
+    {
+      "name": "scrlogo.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/koma-script/scrlogo.sty",
+      "bytes": 2164,
+      "sha256": "c3b4364e7c3a73c54b3d0c3f21f8ff1e5fd8f6b707cd2139391e91211d2ad2f2"
+    },
+    {
+      "name": "listings.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/listings/listings.cfg",
+      "bytes": 1865,
+      "sha256": "5464ab55dadb072fe38c20205ca8ef35e76ac59292b44b366370edf926a231fd"
+    },
+    {
+      "name": "listings.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/listings/listings.sty",
+      "bytes": 81627,
+      "sha256": "574c30237aa72d0fe7021d1388ce04a911fa785023a4470a8bc2d29c0cc8342a"
+    },
+    {
+      "name": "lstmisc.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/listings/lstmisc.sty",
+      "bytes": 77105,
+      "sha256": "5411c733b2fdd7cc57a59e050d2a23bc9cace435a5de08bc49a910562db0ceba"
+    },
+    {
+      "name": "lstpatch.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/listings/lstpatch.sty",
+      "bytes": 353,
+      "sha256": "0a9bb48acb234c19a096611de95f23429de2d1c4e14f4b6e27410c0a795a5754"
+    },
+    {
+      "name": "microtype-luatex.def",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/microtype-luatex.def",
+      "bytes": 42030,
+      "sha256": "37c46edf406c2e609f446ba263569db5f4db9fbc14a077df387575141d568d47"
+    },
+    {
+      "name": "microtype.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/microtype.cfg",
+      "bytes": 27642,
+      "sha256": "38ed6ed6c40d85163281b6d45ad9949c9566acf5f9fa03b1363e42f18b5e1258"
+    },
+    {
+      "name": "microtype.lua",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/microtype.lua",
+      "bytes": 6658,
+      "sha256": "9b8649bc77892b89d5f20ffd7e0393101b36e1a0191c94255709bae2b6a3de69"
+    },
+    {
+      "name": "microtype.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/microtype.sty",
+      "bytes": 102845,
+      "sha256": "49f84ac779174f3295733b64fcf382fde6178b09c2c67c198fdf0167c2f3e71d"
+    },
+    {
+      "name": "mt-LatinModernRoman.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/mt-LatinModernRoman.cfg",
+      "bytes": 10016,
+      "sha256": "1c4b8811b46ff22b107ce00048bba8008bdf731dcabdd91da3e08eb78d130101"
+    },
+    {
+      "name": "mt-cmr.cfg",
+      "source": "texlive-extra",
+      "path": "tex/latex/microtype/mt-cmr.cfg",
+      "bytes": 22906,
+      "sha256": "302d0751b785aff3eafd8fa714fd19548cc5669c562d3d6545175dec4095b30a"
+    },
+    {
+      "name": "multirow.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/multirow/multirow.sty",
+      "bytes": 6696,
+      "sha256": "1ad428e46dc0b736132d2c6e87eccbf0947091ca7581733165cfee765cd0992c"
+    },
+    {
+      "name": "outlines.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/outlines/outlines.sty",
+      "bytes": 4614,
+      "sha256": "93a84a6ed0fab9a2445fd6f4b8bc4d97e2c59e7f79f5118824b4709eedd89fc6"
+    },
+    {
+      "name": "paracol.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/paracol/paracol.sty",
+      "bytes": 106685,
+      "sha256": "67eb4d0fc34e2e76bb6f07e2a4d498030300369b6e26ff261999c1032a9d2c2d"
+    },
+    {
+      "name": "parskip.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/parskip/parskip.sty",
+      "bytes": 4288,
+      "sha256": "606938ea06d5e3c2063fb58816ab83acdcb94ff6d463293779f6475f200701b7"
+    },
+    {
+      "name": "pdfcol.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/pdfcol/pdfcol.sty",
+      "bytes": 8086,
+      "sha256": "6cc14d80f768a19c0ae12d489edf67bd1cf7a3acbb16a3b35b88d891270e57f1"
+    },
+    {
+      "name": "tikzlibraryshadows.blur.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/pgf-blur/tikzlibraryshadows.blur.code.tex",
+      "bytes": 10370,
+      "sha256": "62817858c2c63334912a5a2003971eb211eca68e607906b9bb92f8f3db6e3a62"
+    },
+    {
+      "name": "placeins.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/placeins/placeins.sty",
+      "bytes": 4087,
+      "sha256": "e6c6c01e0c057e360c07238cd765117e5d415c26c2ea1cdf141b7ddfaf151b0c"
+    },
+    {
+      "name": "setspace.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/setspace/setspace.sty",
+      "bytes": 22490,
+      "sha256": "40037cd787ed53ada6be53a814203a37d0c00616e2894ec34675f1817543d8f8"
+    },
+    {
+      "name": "stfloats.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/sttools/stfloats.sty",
+      "bytes": 19135,
+      "sha256": "c7103528ae9965d61de38876dfe8a75c6724cab6e14120cd389304ce0d1e1abb"
+    },
+    {
+      "name": "svg.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/svg/svg.sty",
+      "bytes": 43468,
+      "sha256": "c2cb308eea1f0f8991e9cabbaba88122dc546507dab45cbe57163ac709fd7205"
+    },
+    {
+      "name": "tcbbreakable.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbbreakable.code.tex",
+      "bytes": 34681,
+      "sha256": "939d0a379d2267eea520d82c4fd51c385f5fb52d687c26770272d3f12af98ede"
+    },
+    {
+      "name": "tcbexternal.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbexternal.code.tex",
+      "bytes": 9105,
+      "sha256": "6f99df50b5246d6bc6f9f3cfeeb734f5953cc0cb6e6a8c1d39db27e1f0efdced"
+    },
+    {
+      "name": "tcbfitting.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbfitting.code.tex",
+      "bytes": 17164,
+      "sha256": "fd3b265ccbce955db1b846883dbc33a0b592158a9687335bdbc96711f7451bb5"
+    },
+    {
+      "name": "tcbhooks.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbhooks.code.tex",
+      "bytes": 10373,
+      "sha256": "a21244237512661d961ef80ab723c9fc76eb00f12c54f6ef9da32087af4c1035"
+    },
+    {
+      "name": "tcblistings.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcblistings.code.tex",
+      "bytes": 3414,
+      "sha256": "3955a6066f17332258148bd03dd24ad7d5c508bb581b7d1dcc24aca5165b4928"
+    },
+    {
+      "name": "tcblistingscore.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcblistingscore.code.tex",
+      "bytes": 16469,
+      "sha256": "7b4507e25422c998793b70123572be5f472c5420afff046628984feb9c099b2d"
+    },
+    {
+      "name": "tcblistingsutf8.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcblistingsutf8.code.tex",
+      "bytes": 1414,
+      "sha256": "3e03a24110c171b44950e7681218463251e159c90dc3d7788f2abf322d9e2604"
+    },
+    {
+      "name": "tcbmagazine.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbmagazine.code.tex",
+      "bytes": 5636,
+      "sha256": "80f0991f62885a5af5514c655e7de576aa213f62cb22aaa6aa856dfb411a9a52"
+    },
+    {
+      "name": "tcbposter.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbposter.code.tex",
+      "bytes": 12459,
+      "sha256": "1ae0a9e188b14d03a10b59230668a959bb1087c02a5f6088b911fba9cfe2ef7c"
+    },
+    {
+      "name": "tcbprocessing.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbprocessing.code.tex",
+      "bytes": 2349,
+      "sha256": "7f18ae2e995c99f15e08f9ff66002c61fee57f483774b90d73bb3b4af265392d"
+    },
+    {
+      "name": "tcbraster.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbraster.code.tex",
+      "bytes": 9344,
+      "sha256": "721bda7e5d2835714ed3e17e6fdd0eef498c670d4048b6ff2937d045950e6431"
+    },
+    {
+      "name": "tcbskins.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbskins.code.tex",
+      "bytes": 84938,
+      "sha256": "dbf5e70f931b1ea682cfe5511a12726192827d9a0591bf5b497edf0c7c088201"
+    },
+    {
+      "name": "tcbskinsjigsaw.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbskinsjigsaw.code.tex",
+      "bytes": 10086,
+      "sha256": "814a34aac042a2c07df94a751b128d334d823b9a18aaa8897447d9f910792ffd"
+    },
+    {
+      "name": "tcbtheorems.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbtheorems.code.tex",
+      "bytes": 13125,
+      "sha256": "a9fc613bbd1a787e21e7184188544e53b5ab8e7ed9bc5ebc6708bcf5e0244dd4"
+    },
+    {
+      "name": "tcbvignette.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcbvignette.code.tex",
+      "bytes": 12747,
+      "sha256": "315d951662b0a22fa7d7f0434ee32b3ef5ca7abe7afb9e52ef97babc677c1adf"
+    },
+    {
+      "name": "tcolorbox.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/tcolorbox/tcolorbox.sty",
+      "bytes": 108907,
+      "sha256": "c9387a7bb3ae0cb2b7d2e445f02e7edaa71e0dfde8999bb1a7218df4638de755"
+    },
+    {
+      "name": "tikzfill-common.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/tikzfill/tikzfill-common.sty",
+      "bytes": 2573,
+      "sha256": "611a5fe9efa3a46bba533b4e669dc3442f9c78a6e3c4af27d7df3263ba394283"
+    },
+    {
+      "name": "tikzfill.image.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/tikzfill/tikzfill.image.sty",
+      "bytes": 1120,
+      "sha256": "232017bdd1a4b8caa0a05ab46a6ac9eba82fbefdb2cbc50eff5edb610f89bfed"
+    },
+    {
+      "name": "tikzlibraryfill.image.code.tex",
+      "source": "texlive-extra",
+      "path": "tex/latex/tikzfill/tikzlibraryfill.image.code.tex",
+      "bytes": 10931,
+      "sha256": "0335dd68cf62eb8e7e721f494189c96b6814b6c0e27f1bf9a61d587be945dff8"
+    },
+    {
+      "name": "titlesec.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/titlesec/titlesec.sty",
+      "bytes": 48766,
+      "sha256": "82a440377f90231b37433ae1ab7d8b16479be7bc47f302064b53e85d70d59a39"
+    },
+    {
+      "name": "tocloft.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/tocloft/tocloft.sty",
+      "bytes": 36103,
+      "sha256": "26f057c1673e58d8ee6ce0031c795e24ed638db9a342ca75b7234ec0de439682"
+    },
+    {
+      "name": "transparent-nometadata.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/transparent/transparent-nometadata.sty",
+      "bytes": 4218,
+      "sha256": "515d69571e051c1a75a163f6963e680c7efeee53be2dac213473620a77583050"
+    },
+    {
+      "name": "transparent.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/transparent/transparent.sty",
+      "bytes": 1797,
+      "sha256": "0b8a9bcd1d83970950b1b2c5eaf57b4ad9c9e3f9dbe94711414e53fc2b09bff0"
+    },
+    {
+      "name": "trimspaces.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/trimspaces/trimspaces.sty",
+      "bytes": 1380,
+      "sha256": "8e9907a5787d119339d60775c68d4a42e84f0b3993acf567600440dd161c52f8"
+    },
+    {
+      "name": "varwidth.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/varwidth/varwidth.sty",
+      "bytes": 10894,
+      "sha256": "28625bec96f2e01f6a8c7ec2c77004c71d148e0a9567b29b5c826f8bd248db8b"
+    },
+    {
+      "name": "wrapfig.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/wrapfig/wrapfig.sty",
+      "bytes": 26220,
+      "sha256": "4695b760c84ded2507b1ddc33e15e299c718f9a556cd330983f0a000f0d10de7"
+    },
+    {
+      "name": "xcolor.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/xcolor/xcolor.sty",
+      "bytes": 55384,
+      "sha256": "478888f8e8f00345fd645b6cdd6fa7db1e9efdd6f585b25c89bb3665d9029295"
+    },
+    {
+      "name": "xifthen.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/xifthen/xifthen.sty",
+      "bytes": 5689,
+      "sha256": "300700cab3af032c4240a40fc002866b8e72eb421ad17e4b64980495def78532"
+    },
+    {
+      "name": "xkeyval.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/xkeyval/xkeyval.sty",
+      "bytes": 5006,
+      "sha256": "efd9fb88373975a6d1c669eb343c12abb5e51a0d2eb6ca18670b944a78635999"
+    },
+    {
+      "name": "zref-abspage.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/zref/zref-abspage.sty",
+      "bytes": 2269,
+      "sha256": "bea4977e09df71ca0a594a2dbf15c0b21468a2263eba6b210a376b38f3470992"
+    },
+    {
+      "name": "zref-base.sty",
+      "source": "texlive-extra",
+      "path": "tex/latex/zref/zref-base.sty",
+      "bytes": 20785,
+      "sha256": "f0da70f5ffc95b6b21267f037281c2483aee0fd946417861b5210dad15f676f6"
+    }
+  ]
+}

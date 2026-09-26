@@ -83,23 +83,19 @@ export function collectReferencedGlyphs(source) {
 }
 
 /**
- * TeX Live files the book needs that no BusyTeX data package ships. They sit
- * in web/shared/texmf/, put there by fetch-missing-texmf.sh,
- * and are copied flat into the virtual filesystem, where kpathsea looks
- * first.
- *
- * `nth` is loaded by metadata.tex:31. The ccicons font is pulled in by
- * `doclicense`, which metadata.tex:15 loads for the book's licence notice.
+ * The BusyTeX data package the engine preloads. texlive-basic (88 MB), not
+ * texlive-extra (326 MB): the book reads about 160 files only texlive-extra
+ * ships, and the app carries those itself in CARRIED_TEXMF_BUNDLE.
  */
-export const CARRIED_TEXMF = [
-  "nth.sty",
-  "ccicons.sty",
-  "ccicons.tfm",
-  "ccicons.otf",
-  "ccicons.pfb",
-  "ccicons.map",
-  "ccicons-u.enc",
-];
+export const DATA_PACKAGE = "texlive-basic";
+
+/**
+ * The TeX Live files the book needs that DATA_PACKAGE lacks, in one gzipped
+ * bundle under web/shared/texmf/, built by carry-texmf.mjs from carried.txt
+ * (which records why each file is carried). The build copies them flat into
+ * the virtual filesystem, where kpathsea looks first.
+ */
+export const CARRIED_TEXMF_BUNDLE = "carried-texmf.bin";
 
 /**
  * One category's index file: where it lives, the path macro its \input lines
@@ -268,7 +264,8 @@ export function resolveMacroPath(raw) {
  * @property {string} input the root document's source
  * @property {Record<string, string>} generated files written by JavaScript, by path
  * @property {string[]} repoFiles repository paths to stage before compiling
- * @property {string[]} carriedTexmf TeX Live files no data package ships
+ * @property {string} carriedBundle the bundle under web/shared/texmf/ of
+ *   TeX Live files dataPackage lacks
  * @property {string} dataPackage the BusyTeX data package to preload
  * @property {string[]} notes human-readable account of what the plan staged
  */
@@ -294,8 +291,8 @@ export function planScenarioBuild(sources) {
       "structure.tex": `\\include{${scenario.path}}\n`,
     },
     repoFiles: [...ALWAYS_PRELOAD, scenario.path, ...collectReferencedAssets(metadata), ...assets, ...glyphFiles],
-    carriedTexmf: [...CARRIED_TEXMF],
-    dataPackage: "texlive-extra",
+    carriedBundle: CARRIED_TEXMF_BUNDLE,
+    dataPackage: DATA_PACKAGE,
     notes: [
       `structure.tex holds one \\include, for ${scenario.path}.`,
       `${glyphNames.length} glyphs staged (${CORE_GLYPHS.length} core, always; the rest found by scanning \\svg calls in the source), from the committed assets/glyphs-inkscape/ cache: ticket 04's answer.`,

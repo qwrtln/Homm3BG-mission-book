@@ -1,6 +1,7 @@
 import { untilAborted } from "../../shared/abort.js";
 import {
   builtStatus,
+  DATA_PACKAGE,
   errorLine,
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
@@ -13,7 +14,7 @@ import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setStatus } from "./dom.js";
-import { fetchRepoFile, preloadFile, preloadTexmfFile, preloadText } from "./files.js";
+import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
 import { clearErrorLine, clearPdf, showError, showPdf, showPdfLoading, showPdfMessage } from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
 
@@ -23,11 +24,11 @@ import { requireEditor, state } from "./state.js";
  * @returns {Promise<void>}
  */
 async function startEngine() {
-  setStatus("Downloading the engine (first time only, a few minutes)…", { spinning: true });
+  setStatus("Downloading the engine (first time only, about a minute)…", { spinning: true });
   const base = busytexBase();
   state.runner = new BusyTexRunner({
     busytexBasePath: base,
-    preloadDataPackages: [`${base}/texlive-extra.js`],
+    preloadDataPackages: [`${base}/${DATA_PACKAGE}.js`],
     verbose: false,
   });
   try {
@@ -38,7 +39,7 @@ async function startEngine() {
   }
 }
 
-// The engine's ~341 MB data package is the slow part. One shared in-flight
+// The engine's ~93 MB data package is the slow part. One shared in-flight
 // promise so a Build pressed before warm-up finishes waits on it instead of starting a second download.
 /** @type {Promise<void> | null} */
 let enginePromise = null;
@@ -129,7 +130,7 @@ export async function runBuild() {
     const staged = new Map();
     /** @type {string[]} */
     const notFound = [];
-    const totalFiles = plan.repoFiles.length + (plan.carriedTexmf || []).length;
+    const totalFiles = plan.repoFiles.length + 1; // + the carried TeX Live bundle
     let loadedFiles = 0;
     const reportFileProgress = () => setStatus(`Loading files… ${loadedFiles}/${totalFiles}`, { spinning: true });
     reportFileProgress();
@@ -151,17 +152,14 @@ export async function runBuild() {
       loadedFiles += 1;
       reportFileProgress();
     }
-    for (const name of plan.carriedTexmf || []) {
-      try {
-        const file = await preloadTexmfFile(name);
-        staged.set(name, { path: name, content: file.content });
-      } catch {
-        notFound.push(`texmf/${name}`);
-      }
-      signal.throwIfAborted();
-      loadedFiles += 1;
-      reportFileProgress();
+    try {
+      for (const file of await untilAborted(loadCarriedTexmf(), signal)) staged.set(file.path, file);
+    } catch (error) {
+      if (signal.aborted) throw error;
+      notFound.push(`texmf/${plan.carriedBundle}`);
     }
+    loadedFiles += 1;
+    reportFileProgress();
     for (const [path, content] of Object.entries(plan.generated)) {
       staged.set(path, { path, content });
     }

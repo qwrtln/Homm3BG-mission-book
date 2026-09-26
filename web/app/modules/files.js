@@ -1,10 +1,11 @@
 import {
   ALWAYS_PRELOAD,
-  CARRIED_TEXMF,
+  CARRIED_TEXMF_BUNDLE,
   CORE_GLYPHS,
   collectReferencedAssets,
   glyphFilesFor,
 } from "../../shared/build-plan.js";
+import { unpackBundle } from "../../shared/texmf-carry.js";
 import { REPO } from "./config.js";
 
 /**
@@ -19,11 +20,8 @@ export async function fetchRepoFile(path, signal) {
 }
 
 /**
- * For a file relative to this page rather than REPO, e.g. web/shared/texmf/
- * which ships alongside the app in both layouts and needs no aliasing.
- *
- * Text files come back as strings and everything else as bytes, decided by
- * extension — the engine needs each in its own form.
+ * Fetches one file for the build. Text files come back as strings and
+ * everything else as bytes; see staged().
  *
  * @param {string} url where to fetch from
  * @param {string} path the path the build should see the file at
@@ -34,10 +32,20 @@ export async function fetchRepoFile(path, signal) {
 export async function fetchAt(url, path, signal) {
   const response = await fetch(url, { signal });
   if (!response.ok) throw new Error(`${path}: ${response.status}`);
+  return staged(path, new Uint8Array(await response.arrayBuffer()));
+}
+
+/**
+ * Text files as strings and everything else as bytes, decided by extension —
+ * the engine needs each in its own form.
+ *
+ * @param {string} path
+ * @param {Uint8Array} bytes
+ * @returns {StagedFile}
+ */
+function staged(path, bytes) {
   const isText = /\.(tex|sty|cls|cfg|txt|map|enc|json|pdf_tex)$/.test(path);
-  return isText
-    ? { path, content: await response.text() }
-    : { path, content: new Uint8Array(await response.arrayBuffer()) };
+  return isText ? { path, content: new TextDecoder().decode(bytes) } : { path, content: bytes };
 }
 
 /**
@@ -76,18 +84,33 @@ export async function preloadText(path, signal) {
   return content;
 }
 
+// One fetch per page, shared by page-load warm-up and every Build.
+/** @type {Promise<StagedFile[]> | null} */
+let carriedTexmf = null;
+
 /**
- * @param {string} name a filename under web/shared/texmf/
- * @param {AbortSignal} [signal]
- * @returns {Promise<StagedFile>}
+ * The TeX Live files the data package lacks, from the one gzipped bundle
+ * carry-texmf.mjs builds, named flat for the working directory.
+ *
+ * @returns {Promise<StagedFile[]>}
  */
-export async function preloadTexmfFile(name, signal) {
-  const key = `texmf/${name}`;
-  const cached = preloadedFiles.get(key);
-  if (cached) return cached;
-  const file = await fetchAt(`../shared/texmf/${name}`, key, signal);
-  preloadedFiles.set(key, file);
-  return file;
+export function loadCarriedTexmf() {
+  if (!carriedTexmf) {
+    carriedTexmf = fetchCarriedTexmf().catch((error) => {
+      carriedTexmf = null; // let the next Build retry instead of staying stuck
+      throw error;
+    });
+  }
+  return carriedTexmf;
+}
+
+/** @returns {Promise<StagedFile[]>} */
+async function fetchCarriedTexmf() {
+  const response = await fetch(`../shared/texmf/${CARRIED_TEXMF_BUNDLE}`);
+  if (!response.ok || !response.body) throw new Error(`texmf/${CARRIED_TEXMF_BUNDLE}: ${response.status}`);
+  const gunzipped = response.body.pipeThrough(new DecompressionStream("gzip"));
+  const bundle = new Uint8Array(await new Response(gunzipped).arrayBuffer());
+  return unpackBundle(bundle).map((file) => staged(file.name, file.content));
 }
 
 /**
@@ -107,11 +130,7 @@ export async function preloadCommonFiles() {
       /* retried, and surfaced if it matters, at build time */
     }
   }
-  for (const name of CARRIED_TEXMF) {
-    try {
-      await preloadTexmfFile(name);
-    } catch {
-      /* same */
-    }
-  }
+  await loadCarriedTexmf().catch(() => {
+    /* same */
+  });
 }

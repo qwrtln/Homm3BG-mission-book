@@ -56,7 +56,8 @@ jobs:
             --include='/app/***' \
             --include='/shared/' \
             --include='/shared/*.js' \
-            --include='/shared/texmf/***' \
+            --include='/shared/texmf/' \
+            --include='/shared/texmf/carried-texmf.bin' \
             --include='/shared/vendor/' \
             --include='/shared/vendor/texlyre-busytex.js' \
             --include='/shared/vendor/texlyre-busytex.LICENSE' \
@@ -104,6 +105,20 @@ jobs:
           mkdir -p site/web/core/busytex
           url="https://github.com/TeXlyre/texlyre-busytex/releases/download/assets-v${BUSYTEX_ENGINE_VERSION}/busytex-assets.tar.gz"
           curl -fsSL "$url" | tar xz -C site/web/core/busytex --strip-components=1
+
+      # The app preloads one data package (DATA_PACKAGE in
+      # web/shared/build-plan.js) and the book never runs biber, so the other
+      # packages would only eat into the 1 GB site limit.
+      - name: Keep only the engine files the app loads
+        working-directory: site/web/core/busytex
+        run: |
+          package=$(sed -n 's/^export const DATA_PACKAGE = "\(.*\)";$/\1/p' "$GITHUB_WORKSPACE/web/shared/build-plan.js")
+          [[ -n "$package" && -f "$package.data" ]] || { echo "No data package named by DATA_PACKAGE: '$package'" >&2; exit 1; }
+          find . -maxdepth 1 -type f ! \( \
+            -name busytex.js -o -name busytex.wasm -o -name busytex_pipeline.js \
+            -o -name busytex_worker.js -o -name busytex_biber.js \
+            -o -name "$package.js" -o -name "$package.data" \) -delete
+          du -sh .
 
       - uses: actions/upload-pages-artifact@v3
         with:

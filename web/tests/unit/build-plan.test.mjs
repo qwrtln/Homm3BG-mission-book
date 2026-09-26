@@ -7,7 +7,7 @@ import test from "node:test";
 import {
   ALWAYS_PRELOAD,
   builtStatus,
-  CARRIED_TEXMF,
+  CARRIED_TEXMF_BUNDLE,
   CORE_GLYPHS,
   collectReferencedAssets,
   collectReferencedGlyphs,
@@ -125,9 +125,8 @@ test("planScenarioBuild writes one include into structure.tex", () => {
   assert.equal(plan.generated["structure.tex"], "\\include{clash/astral_run.tex}\n");
   assert.equal(plan.engine, "lualatex");
   assert.equal(plan.input, MAIN_EN);
-  assert.equal(plan.dataPackage, "texlive-extra");
-  assert.deepEqual(plan.carriedTexmf, CARRIED_TEXMF);
-  assert.notEqual(plan.carriedTexmf, CARRIED_TEXMF, "carriedTexmf is a copy, not the shared array");
+  assert.equal(plan.dataPackage, "texlive-basic");
+  assert.equal(plan.carriedBundle, CARRIED_TEXMF_BUNDLE);
 });
 
 test("planScenarioBuild stages the preloads, the scenario, its pictures, and its glyphs", () => {

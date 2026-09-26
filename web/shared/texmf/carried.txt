@@ -1,0 +1,282 @@
+# TeX Live files the scenario builder carries, because texlive-basic, the
+# data package the app preloads, lacks them. carry-texmf.mjs builds
+# carried-texmf.bin and carried.lock.json from this list; see its header.
+#
+# One "<source> <path>" per line:
+#   texlive-extra <path>  copied out of the pinned engine's texlive-extra.data,
+#                         so it matches the TeX Live release of texlive-basic
+#   ctan <file>           a file under ctan/, which no data package ships;
+#                         fetch-missing-texmf.sh downloads it
+#
+# Found by building scenarios from every category, plus a Russian one, on the
+# real engine, and adding every file a build missed. Each group says why the
+# book reads it; the metadata.tex line numbers name the \usepackage.
+#
+# Each file lands flat in the working directory, so two entries must never
+# share a basename.
+
+# nth (metadata.tex:31): in no data package
+ctan nth.sty
+
+# ccicons, pulled in by doclicense for the licence icons: in no data package
+ctan ccicons.sty
+ctan ccicons.tfm
+ctan ccicons.otf
+ctan ccicons.pfb
+ctan ccicons.map
+ctan ccicons-u.enc
+
+# catchfile (metadata.tex:48)
+texlive-extra tex/generic/catchfile/catchfile.sty
+
+# tikz (metadata.tex:41): pgf and the TikZ libraries metadata.tex:107 loads
+texlive-extra tex/generic/pgf/basiclayer/pgfcore.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+texlive-extra tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+texlive-extra tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+texlive-extra tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+texlive-extra tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+texlive-extra tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+texlive-extra tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+texlive-extra tex/generic/pgf/math/pgfint.code.tex
+texlive-extra tex/generic/pgf/math/pgfmath.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathcalc.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfloat.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathparser.code.tex
+texlive-extra tex/generic/pgf/math/pgfmathutil.code.tex
+texlive-extra tex/generic/pgf/modules/pgfmodulematrix.code.tex
+texlive-extra tex/generic/pgf/modules/pgfmoduleplot.code.tex
+texlive-extra tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+texlive-extra tex/generic/pgf/pgf.revision.tex
+texlive-extra tex/generic/pgf/systemlayer/pgf.cfg
+texlive-extra tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+texlive-extra tex/generic/pgf/systemlayer/pgfsys-luatex.def
+texlive-extra tex/generic/pgf/systemlayer/pgfsys.code.tex
+texlive-extra tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+texlive-extra tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+texlive-extra tex/generic/pgf/utilities/pgffor.code.tex
+texlive-extra tex/generic/pgf/utilities/pgfkeys.code.tex
+texlive-extra tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+texlive-extra tex/generic/pgf/utilities/pgfrcs.code.tex
+texlive-extra tex/generic/pgf/utilities/pgfutil-common.tex
+texlive-extra tex/generic/pgf/utilities/pgfutil-latex.def
+texlive-extra tex/latex/pgf/basiclayer/pgf.sty
+texlive-extra tex/latex/pgf/basiclayer/pgfcore.sty
+texlive-extra tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+texlive-extra tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+texlive-extra tex/latex/pgf/frontendlayer/tikz.sty
+texlive-extra tex/latex/pgf/math/pgfmath.sty
+texlive-extra tex/latex/pgf/systemlayer/pgfsys.sty
+texlive-extra tex/latex/pgf/utilities/pgffor.sty
+texlive-extra tex/latex/pgf/utilities/pgfkeys.sty
+texlive-extra tex/latex/pgf/utilities/pgfrcs.sty
+
+# soul (metadata.tex:50)
+texlive-extra tex/generic/soul/soul-ori.sty
+texlive-extra tex/generic/soul/soul.sty
+
+# xkeyval, pulled in by adjustbox and imakeidx
+texlive-extra tex/generic/xkeyval/xkeyval.tex
+texlive-extra tex/generic/xkeyval/xkvutils.tex
+
+# xstring (metadata.tex:49)
+texlive-extra tex/generic/xstring/xstring.sty
+texlive-extra tex/generic/xstring/xstring.tex
+
+# adjustbox (metadata.tex:15)
+texlive-extra tex/latex/adjustbox/adjcalc.sty
+texlive-extra tex/latex/adjustbox/adjustbox.sty
+texlive-extra tex/latex/adjustbox/tc-luatex.def
+texlive-extra tex/latex/adjustbox/tc-pdftex.def
+texlive-extra tex/latex/adjustbox/trimclip.sty
+
+# caption (metadata.tex:18)
+texlive-extra tex/latex/caption/caption.sty
+texlive-extra tex/latex/caption/caption3.sty
+texlive-extra tex/latex/caption/subcaption.sty
+
+# changepage (metadata.tex:19)
+texlive-extra tex/latex/changepage/changepage.sty
+
+# collectbox, pulled in by adjustbox
+texlive-extra tex/latex/collectbox/collectbox.sty
+
+# csquotes, loaded by doclicense
+texlive-extra tex/latex/csquotes/csquotes.cfg
+texlive-extra tex/latex/csquotes/csquotes.def
+texlive-extra tex/latex/csquotes/csquotes.sty
+
+# doclicense (metadata.tex:53-57), the book's licence notice, plus the .ldf
+# of every book language doclicense has (it has no Czech one). hyperxmp,
+# which doclicense loads only if present, is left out on purpose: the
+# container build lacks it too, so the published PDFs carry no XMP metadata.
+texlive-extra tex/latex/doclicense/doclicense-english.ldf
+texlive-extra tex/latex/doclicense/doclicense-french.ldf
+texlive-extra tex/latex/doclicense/doclicense-german.ldf
+texlive-extra tex/latex/doclicense/doclicense-polish.ldf
+texlive-extra tex/latex/doclicense/doclicense-russian.ldf
+texlive-extra tex/latex/doclicense/doclicense.sty
+
+# enumitem (metadata.tex:20)
+texlive-extra tex/latex/enumitem/enumitem.sty
+
+# environ, pulled in by tcolorbox
+texlive-extra tex/latex/environ/environ.sty
+
+# float (metadata.tex:22)
+texlive-extra tex/latex/float/float.sty
+
+# fontspec (metadata.tex:70), for Liberation Serif
+texlive-extra tex/latex/fontspec/fontspec-luatex.sty
+texlive-extra tex/latex/fontspec/fontspec.cfg
+texlive-extra tex/latex/fontspec/fontspec.lua
+texlive-extra tex/latex/fontspec/fontspec.sty
+
+# footmisc (metadata.tex:67)
+texlive-extra tex/latex/footmisc/footmisc.sty
+
+# fullwidth (metadata.tex:23)
+texlive-extra tex/latex/fullwidth/fullwidth.sty
+
+# ifmtarg, pulled in by xifthen
+texlive-extra tex/latex/ifmtarg/ifmtarg.sty
+
+# imakeidx (metadata.tex:27)
+texlive-extra tex/latex/imakeidx/imakeidx.sty
+
+# scrbase and scrlfile (KOMA-Script), pulled in by svg
+texlive-extra tex/latex/koma-script/scrbase.sty
+texlive-extra tex/latex/koma-script/scrlfile-hook.sty
+texlive-extra tex/latex/koma-script/scrlfile.sty
+texlive-extra tex/latex/koma-script/scrlogo.sty
+
+# listings, pulled in by tcolorbox's listings library, which "most" loads
+texlive-extra tex/latex/listings/listings.cfg
+texlive-extra tex/latex/listings/listings.sty
+texlive-extra tex/latex/listings/lstmisc.sty
+texlive-extra tex/latex/listings/lstpatch.sty
+
+# microtype (metadata.tex:28), plus mt-LatinModernRoman.cfg, which a TU-encoded
+# (Russian) build reads
+texlive-extra tex/latex/microtype/microtype-luatex.def
+texlive-extra tex/latex/microtype/microtype.cfg
+texlive-extra tex/latex/microtype/microtype.lua
+texlive-extra tex/latex/microtype/microtype.sty
+texlive-extra tex/latex/microtype/mt-LatinModernRoman.cfg
+texlive-extra tex/latex/microtype/mt-cmr.cfg
+
+# multirow (metadata.tex:30)
+texlive-extra tex/latex/multirow/multirow.sty
+
+# outlines (metadata.tex:32)
+texlive-extra tex/latex/outlines/outlines.sty
+
+# paracol (metadata.tex:33)
+texlive-extra tex/latex/paracol/paracol.sty
+
+# parskip (metadata.tex:83)
+texlive-extra tex/latex/parskip/parskip.sty
+
+# pdfcol, pulled in by tcolorbox's breakable library
+texlive-extra tex/latex/pdfcol/pdfcol.sty
+
+# shadows.blur, loaded at metadata.tex:107 for the tables' blur shadow
+texlive-extra tex/latex/pgf-blur/tikzlibraryshadows.blur.code.tex
+
+# placeins (metadata.tex:34)
+texlive-extra tex/latex/placeins/placeins.sty
+
+# setspace (metadata.tex:35)
+texlive-extra tex/latex/setspace/setspace.sty
+
+# sttools: stfloats (metadata.tex:36)
+texlive-extra tex/latex/sttools/stfloats.sty
+
+# svg (metadata.tex:38)
+texlive-extra tex/latex/svg/svg.sty
+
+# tcolorbox[most] (metadata.tex:47) and the libraries "most" loads
+texlive-extra tex/latex/tcolorbox/tcbbreakable.code.tex
+texlive-extra tex/latex/tcolorbox/tcbexternal.code.tex
+texlive-extra tex/latex/tcolorbox/tcbfitting.code.tex
+texlive-extra tex/latex/tcolorbox/tcbhooks.code.tex
+texlive-extra tex/latex/tcolorbox/tcblistings.code.tex
+texlive-extra tex/latex/tcolorbox/tcblistingscore.code.tex
+texlive-extra tex/latex/tcolorbox/tcblistingsutf8.code.tex
+texlive-extra tex/latex/tcolorbox/tcbmagazine.code.tex
+texlive-extra tex/latex/tcolorbox/tcbposter.code.tex
+texlive-extra tex/latex/tcolorbox/tcbprocessing.code.tex
+texlive-extra tex/latex/tcolorbox/tcbraster.code.tex
+texlive-extra tex/latex/tcolorbox/tcbskins.code.tex
+texlive-extra tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+texlive-extra tex/latex/tcolorbox/tcbtheorems.code.tex
+texlive-extra tex/latex/tcolorbox/tcbvignette.code.tex
+texlive-extra tex/latex/tcolorbox/tcolorbox.sty
+
+# tikzfill, pulled in by tcolorbox's skins library
+texlive-extra tex/latex/tikzfill/tikzfill-common.sty
+texlive-extra tex/latex/tikzfill/tikzfill.image.sty
+texlive-extra tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+
+# titlesec (metadata.tex:42)
+texlive-extra tex/latex/titlesec/titlesec.sty
+
+# tocloft (metadata.tex:40)
+texlive-extra tex/latex/tocloft/tocloft.sty
+
+# transparent (metadata.tex:43)
+texlive-extra tex/latex/transparent/transparent-nometadata.sty
+texlive-extra tex/latex/transparent/transparent.sty
+
+# trimspaces, pulled in by environ and svg
+texlive-extra tex/latex/trimspaces/trimspaces.sty
+
+# varwidth (metadata.tex:45)
+texlive-extra tex/latex/varwidth/varwidth.sty
+
+# wrapfig (metadata.tex:46)
+texlive-extra tex/latex/wrapfig/wrapfig.sty
+
+# xcolor, pulled in by tikz and tcolorbox
+texlive-extra tex/latex/xcolor/xcolor.sty
+
+# xifthen (metadata.tex:51)
+texlive-extra tex/latex/xifthen/xifthen.sty
+
+# xkeyval, pulled in by adjustbox and imakeidx
+texlive-extra tex/latex/xkeyval/xkeyval.sty
+
+# zref, pulled in by fullwidth
+texlive-extra tex/latex/zref/zref-abspage.sty
+texlive-extra tex/latex/zref/zref-base.sty
