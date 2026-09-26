@@ -244,3 +244,128 @@ test.describe("going back to a welcome screen that already has data", () => {
     await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
   });
 });
+
+/** @param {import("@playwright/test").Page} page */
+async function buildPdf(page) {
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+}
+
+test("Back to editing returns to the scenario just left, with its built PDF", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator("#back-to-editing")).toBeHidden();
+  await startClash(page);
+  await typeInEditor(page, "% keep me\n");
+  await buildPdf(page);
+  await page.locator("#back-to-welcome").click();
+  await page.locator("#confirm-ok").click();
+
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Nav Probe”");
+
+  await page.locator("#back-to-editing").click();
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-title")).toHaveText("Nav Probe");
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+  await expect(page.locator("#download")).toBeEnabled();
+  await expect(page.locator("#build")).toBeEnabled();
+  expect(new URL(page.url()).hash).toBe("#/drafts/clash/nav_probe");
+  const value = await page.evaluate(() =>
+    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
+  );
+  expect(value).toContain("% keep me");
+});
+
+test("Back to editing keeps the PDF's pages and scroll place, with no redraw", async ({ app }) => {
+  const { page } = app;
+  await startClash(page);
+  await buildPdf(page);
+  const body = page.locator("#pdf-body");
+  await body.evaluate((pane) => {
+    pane.scrollTop = pane.scrollHeight / 2;
+    /** @type {HTMLElement} */ (pane.querySelector("canvas.pdf-page")).dataset.probe = "kept";
+  });
+  const place = await body.evaluate((pane) => pane.scrollTop);
+  expect(place).toBeGreaterThan(0);
+
+  await page.locator("#back-to-welcome").click();
+  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await page.waitForTimeout(400); // longer than the pane's resize settle
+  await page.locator("#back-to-editing").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await page.waitForTimeout(400);
+
+  await expect(page.locator('#pdf-body canvas.pdf-page[data-probe="kept"]')).toHaveCount(1);
+  expect(await body.evaluate((pane) => pane.scrollTop)).toBe(place);
+});
+
+test("opening another scenario replaces the one Back to editing returns to", async ({ app }) => {
+  const { page } = app;
+  await startClash(page, "First One");
+  await page.locator("#back-to-welcome").click();
+  await startClash(page, "Second One");
+  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
+  await page.locator("#back-to-welcome").click();
+
+  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Second One”");
+});
+
+test.describe("resuming the branch just left", () => {
+  test.use({
+    githubRoutes: [
+      [
+        { method: "GET", path: "/user", body: { login: LOGIN } },
+        {
+          method: "GET",
+          path: REPO_PATH,
+          body: {
+            name: "Homm3BG-mission-book",
+            owner: { login: "qwrtln" },
+            default_branch: "main",
+            permissions: { push: true },
+          },
+        },
+        { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+        {
+          method: "GET",
+          path: /\/compare\//,
+          body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+        },
+        {
+          method: "GET",
+          path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+          body: { content: btoa("% from branch\n") },
+        },
+        { method: "GET", path: /\/pulls/, body: [] },
+      ],
+      { option: true },
+    ],
+  });
+
+  test("picking it again from Resume your work keeps its built PDF", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await buildPdf(page);
+
+    await page.locator("#back-to-welcome").click();
+    await expect(page.locator("#back-to-editing")).toBeVisible();
+    /** @type {string[]} */
+    const fetched = [];
+    page.on("request", (request) => {
+      if (request.url().includes("/contents/")) fetched.push(request.url());
+    });
+    await page.locator("#resume-list .combobox-item").first().click();
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+    await expect(page.locator("#download")).toBeEnabled();
+    expect(fetched, "the branch was fetched again instead of returning to the open copy").toEqual([]);
+  });
+});

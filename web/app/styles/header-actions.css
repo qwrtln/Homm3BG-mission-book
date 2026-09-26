@@ -37,6 +37,20 @@ header button.icon { padding: 0.3rem 0.5rem; }
 #build .stop-icon, #build.stop .build-icon { display: none; }
 #build.stop .stop-icon { display: inline-block; }
 
+/* The way back to a scenario left open behind the welcome screen: Primer's
+   attention colors, as on GitHub's "had recent pushes" banner. Louder than a
+   plain button, quieter than the green primary. */
+button.attention {
+  border-color: var(--attention-border);
+  color: var(--warn);
+  background: var(--attention-bg);
+}
+button.attention:hover:not(:disabled) {
+  border-color: var(--warn);
+  color: var(--warn);
+  background: var(--attention-hover-bg);
+}
+
 /* --- Overflow menu -------------------------------------------------------- */
 
 .header-menu { position: relative; }

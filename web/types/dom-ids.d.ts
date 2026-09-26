@@ -71,6 +71,7 @@ interface ElementIdMap {
   "pdf-zoom-out": HTMLButtonElement;
   "pane-divider": HTMLDivElement;
   "pdf-wrap": HTMLDivElement;
+  "back-to-editing": HTMLButtonElement;
   "resume-drafts": HTMLDivElement;
   "resume-hint": HTMLParagraphElement;
   "resume-list": HTMLDivElement;

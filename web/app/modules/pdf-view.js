@@ -28,6 +28,9 @@ let shown = null;
 /** Share of the fit-to-width size the pages draw at. Kept across rebuilds and scenarios. */
 let zoom = 1;
 
+/** The pane width the shown pages were fitted to; 0 when drawn while hidden. */
+let drawnWidth = 0;
+
 // Tickets let the newest request win. A document load that finishes after a
 // newer showPdf or clearPdf is dropped; a render that finishes after a newer
 // render (a zoom, a resize, the next build) is dropped before it swaps in.
@@ -211,7 +214,8 @@ async function renderPages() {
   const ticket = renderTicket;
   const body = el("pdf-body");
   // A hidden pane has no width yet; the resize observer redraws once it has one.
-  const fitWidth = Math.max(body.clientWidth - 2 * PAGE_MARGIN, 100);
+  const paneWidth = body.clientWidth;
+  const fitWidth = Math.max(paneWidth - 2 * PAGE_MARGIN, 100);
   const pixelRatio = window.devicePixelRatio || 1;
   const container = document.createElement("div");
   container.className = "pdf-pages";
@@ -245,6 +249,7 @@ async function renderPages() {
   const anchor = old instanceof HTMLElement ? scrollAnchor(pageBoxes(old), body.scrollTop) : { page: 0, offset: 0 };
   const across = body.scrollWidth > 0 ? (body.scrollLeft + body.clientWidth / 2) / body.scrollWidth : 0.5;
   body.replaceChildren(container);
+  drawnWidth = paneWidth;
   el("pdf-page-count").textContent = pageCount === 1 ? "1 page" : `${pageCount} pages`;
   el("pdf-controls").hidden = false;
   body.scrollTop = anchorScrollTop(pageBoxes(container), anchor);
@@ -285,14 +290,32 @@ export function initPdfView() {
   el("pdf-zoom-level").addEventListener("click", () => setZoom(1));
 
   const body = el("pdf-body");
-  let width = body.clientWidth;
+  // Hiding the pane (the welcome screen over a scenario left open) takes its
+  // width to 0 and its scroll to the top. Neither is the reader's doing: the
+  // pages stay as drawn, and the place comes back with the pane.
+  let place = { top: 0, left: 0 };
+  let hidden = false;
+  body.addEventListener("scroll", () => {
+    if (body.clientWidth > 0) place = { top: body.scrollTop, left: body.scrollLeft };
+  });
   /** @type {number | undefined} */
   let settle;
   new ResizeObserver(() => {
-    if (body.clientWidth === width) return; // a height change leaves the fit alone
-    width = body.clientWidth;
+    const width = body.clientWidth;
+    if (width === 0) {
+      hidden = true;
+      clearTimeout(settle);
+      return;
+    }
+    if (hidden) {
+      hidden = false;
+      body.scrollTop = place.top;
+      body.scrollLeft = place.left;
+    }
+    if (width === drawnWidth) return; // a height change leaves the fit alone
     clearTimeout(settle);
-    settle = window.setTimeout(redraw, RESIZE_SETTLE_MS);
+    // Pages drawn while hidden are at the smallest size: replace them at once.
+    settle = window.setTimeout(redraw, drawnWidth === 0 ? 0 : RESIZE_SETTLE_MS);
   }).observe(body);
 }
 

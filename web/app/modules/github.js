@@ -27,7 +27,7 @@ import { onEditPick, settleModes } from "./picker.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
-import { openForEdit, showWelcome, showWorkspace } from "./workspace.js";
+import { isParked, openForEdit, returnToParked, showWelcome, showWorkspace } from "./workspace.js";
 
 /** Shows either the sign-in button or the signed-in strip and menu item. @returns {void} */
 function renderGithubHeader() {
@@ -441,7 +441,8 @@ export function initGithub() {
     } catch {
       /* blocked storage: sign-in still proceeds */
     }
-    if (state.chosenPath && state.cm) {
+    // A scenario left behind the welcome screen is not reopened: the member left it.
+    if (state.chosenPath && state.cm && !isParked()) {
       clearTimeout(state.saveTimer ?? undefined);
       saveDraft(state.chosenPath, state.cm.getValue());
       try {
@@ -470,6 +471,9 @@ export function initGithub() {
   el("back-to-welcome").addEventListener("click", () => {
     void leaveWorkspace();
   });
+  el("back-to-editing").addEventListener("click", () => {
+    void returnToParked();
+  });
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
@@ -479,7 +483,7 @@ export function initGithub() {
     resetGithubSaveState();
     el("resume-drafts").hidden = true;
     settleModes(false);
-    if (!el("workspace").hidden) {
+    if (!el("workspace").hidden || isParked()) {
       // Signed out mid-edit: the autosaved copy belongs to the account that
       // just left, so purge it and go back to welcome. A reload is the only
       // reset that clears the editor, uploads and module state together.
@@ -574,7 +578,13 @@ export function initGithub() {
     const button = closestTo(event, "[data-draft-index]");
     if (!button || !githubContext) return;
     const draft = githubContext.drafts[Number(button.dataset.draftIndex)];
-    if (draft) await openResumableDraft(draft);
+    if (!draft) return;
+    // The scenario just left: its open copy is newer than the branch, and has its PDF.
+    if (isParked() && draft.texPath === state.chosenPath && (draft.kind === "edit") === Boolean(githubSaveState.edit)) {
+      await returnToParked();
+      return;
+    }
+    await openResumableDraft(draft);
   });
 
   // Before the account lookup finishes, not after: a signed-in user must not see "Sign in" while it runs.

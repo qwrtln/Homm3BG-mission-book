@@ -1,7 +1,7 @@
 import { withScenarioTitle } from "../../shared/build-plan.js";
 import { newScenarioDir } from "../../shared/scenario-name.js";
 import { TEMPLATES } from "./config.js";
-import { clearClean, markClean } from "./dirty.js";
+import { markClean } from "./dirty.js";
 import { el, sanitizeFilename, setStatus } from "./dom.js";
 import { loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
@@ -14,16 +14,28 @@ import { requireEditor, state } from "./state.js";
 import { resetUploads } from "./uploads.js";
 
 /**
+ * Whether the welcome screen shows over a scenario left open behind it: its
+ * editor, uploads, save target and PDF all kept for "Back to editing".
+ */
+let parked = false;
+
+/**
+ * @returns {boolean} true while a scenario waits behind the welcome screen
+ */
+export function isParked() {
+  return parked;
+}
+
+/**
  * Swaps the welcome screen for the workspace, resolving once the transition
- * has finished so a caller can measure the editor afterwards.
- *
- * The welcome screen asks once and commits: nothing in the workspace offers
- * a way back. Reloading returns to welcome; picking the same entry again
- * restores its autosaved draft.
+ * has finished so a caller can measure the editor afterwards. Whatever the
+ * caller opens next replaces the scenario left behind the welcome screen.
  *
  * @returns {Promise<void>}
  */
 export function showWorkspace() {
+  parked = false;
+  el("back-to-editing").hidden = true;
   return new Promise((resolve) => {
     const welcome = el("welcome");
     const workspace = el("workspace");
@@ -182,8 +194,9 @@ export async function openForEdit(path, title, source, edit) {
 }
 
 /**
- * Leaves the workspace for the welcome screen. Everything the workspace held
- * is dropped; a local autosave of the scenario stays in the browser.
+ * Leaves the workspace for the welcome screen. The scenario stays open behind
+ * it, untouched, until another one is opened: "Back to editing" returns to
+ * it. Its autosave is flushed now, as a reload drops what the page holds.
  *
  * @returns {void}
  */
@@ -191,23 +204,34 @@ export function showWelcome() {
   clearTimeout(state.saveTimer ?? undefined);
   if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
 
-  state.chosenPath = null;
-  setScenarioTitle("");
-  clearClean();
-  resetGithubSaveState();
-  resetUploads();
-  clearPdf();
+  parked = state.chosenPath !== null;
+  const back = el("back-to-editing");
+  back.title = `Back to editing “${state.chosenTitle}”`;
+  back.setAttribute("aria-label", back.title);
+  back.hidden = !parked;
   clearRoute();
   el("header-actions").hidden = true;
   setSaveControlsVisible(false);
-  el("build").disabled = true;
-  el("download").disabled = true;
-  el("draft-note").hidden = true;
   el("edit-branch-prompt").hidden = true;
-  setStatus("Ready.");
 
   el("workspace").hidden = true;
   const welcome = el("welcome");
   welcome.hidden = false;
   welcome.classList.remove("leaving");
+}
+
+/**
+ * Returns to the scenario left behind the welcome screen, as it was: the
+ * editor, its uploads, its save target and its PDF.
+ *
+ * @returns {Promise<void>}
+ */
+export async function returnToParked() {
+  if (!parked) return;
+  const cm = requireEditor();
+  await showWorkspace();
+  cm.refresh(); // CodeMirror mismeasures while its host was display:none
+  el("header-actions").hidden = false;
+  reflectRoute();
+  cm.focus();
 }
