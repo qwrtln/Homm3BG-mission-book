@@ -10,6 +10,8 @@ interface ElementIdMap {
   build: HTMLButtonElement;
   "build-label": HTMLSpanElement;
   "build-progress": HTMLDivElement;
+  "build-phase": HTMLDivElement;
+  "build-phase-text": HTMLSpanElement;
   download: HTMLButtonElement;
   "draft-note": HTMLSpanElement;
   "unsaved-note": HTMLSpanElement;

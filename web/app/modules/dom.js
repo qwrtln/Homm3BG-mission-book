@@ -82,6 +82,20 @@ export function setBuilding(value) {
   el("build-label").textContent = value ? "Stop" : "Build PDF";
   build.classList.toggle("stop", value);
   el("build-progress").hidden = !value;
+  el("build-phase").hidden = !value;
+}
+
+/**
+ * Names the build's current step on the PDF pane: in the label over the
+ * pages, and in the caption under the spinner when the pane has no PDF yet.
+ *
+ * @param {string} text short: it sits over the PDF
+ * @returns {void}
+ */
+export function setBuildPhase(text) {
+  el("build-phase-text").textContent = text;
+  const caption = document.querySelector("#pdf-body .empty-pdf.loading p");
+  if (caption) caption.textContent = text;
 }
 
 /**

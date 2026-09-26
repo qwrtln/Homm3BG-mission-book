@@ -316,8 +316,11 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await build.hover();
   await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-hover-bg"));
   await expect(page.locator("#build-progress")).toBeVisible();
-  // With no PDF yet to keep readable, the empty pane shows a spinner.
+  // With no PDF yet to keep readable, the empty pane shows a spinner, captioned
+  // with the build's current step; the label for over a PDF stays out of its way.
   await expect(page.locator("#pdf-body .spinner.big")).toBeVisible();
+  await expect(page.locator("#pdf-body .empty-pdf.loading p")).toHaveText("Compiling…");
+  await expect(page.locator("#build-phase")).toBeHidden();
   const busy = await buildLook(page);
   expect(busy.glyph).toBe("stop");
   // The label swap must not move the buttons beside it under the pointer.
@@ -543,6 +546,15 @@ test("the last PDF stays readable and scrollable while the next one builds", asy
   await page.locator("#build").click();
   await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(2);
   await expect(page.locator("#build-progress")).toBeVisible();
+  // The step shows on the PDF pane, where the reader looks, not only in the status bar.
+  await expect(page.locator("#build-phase")).toBeVisible();
+  await expect(page.locator("#build-phase")).toHaveText("Compiling…");
+  const phaseBox = await page.locator("#build-phase").boundingBox();
+  const paneBox = await page.locator("#pdf-pane").boundingBox();
+  if (!phaseBox || !paneBox) throw new Error("the build step label or the PDF pane has no box");
+  expect(phaseBox.x).toBeGreaterThanOrEqual(paneBox.x);
+  expect(phaseBox.x + phaseBox.width).toBeLessThanOrEqual(paneBox.x + paneBox.width);
+  expect(phaseBox.y - paneBox.y, "the build step label sits away from the pane's top").toBeLessThan(40);
 
   // Nothing sits over the pages: the element under their centre is the page itself.
   const first = PAGES(page).first();
@@ -563,6 +575,7 @@ test("the last PDF stays readable and scrollable while the next one builds", asy
   await releaseHeldCompiles(page);
   await expect(page.locator("#status-text")).toHaveText(/^Built /);
   await expect(page.locator("#build-progress")).toBeHidden();
+  await expect(page.locator("#build-phase")).toBeHidden();
 
   expect(appErrors(errors), "the page reported errors while rebuilding").toEqual([]);
 });

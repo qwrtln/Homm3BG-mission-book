@@ -17,7 +17,7 @@ import {
 import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
-import { basenameNoExt, el, setBuilding, setStatus } from "./dom.js";
+import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
 import { clearErrorLine, clearPdf, showError, showPdf, showPdfLoading, showPdfMessage } from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
@@ -87,6 +87,19 @@ function discardEngine(runner) {
 /** @type {Map<string, StagedFile[]>} */
 const auxByScenario = new Map();
 
+/**
+ * Reports a build step twice: short on the PDF pane, where the reader looks,
+ * and in full in the status bar.
+ *
+ * @param {string} short
+ * @param {string} [full] the status bar's wording, when it differs
+ * @returns {void}
+ */
+function reportPhase(short, full = short) {
+  setBuildPhase(short);
+  setStatus(full, { spinning: true });
+}
+
 // The running build's controller; null when no build runs.
 /** @type {AbortController | null} */
 let buildController = null;
@@ -119,12 +132,15 @@ export async function runBuild() {
   el("error-panel").hidden = true;
   clearErrorLine();
   // The last PDF stays readable while this builds; with none, the pane says why it waits.
-  if (!state.lastPdf) showPdfLoading("Building…");
+  // The status bar keeps the engine download's own wording until the first step.
+  const firstPhase = state.runner ? "Preparing files…" : "Waiting for the engine…";
+  if (!state.lastPdf) showPdfLoading(firstPhase);
+  setBuildPhase(firstPhase);
   try {
     // A stop here leaves the engine warming: page load started it, not this build.
     await untilAborted(ensureEngine(), signal);
 
-    setStatus("Preparing files…", { spinning: true });
+    reportPhase("Preparing files…");
     const source = cm.getValue();
     const metadata = await untilAborted(preloadText("metadata.tex"), signal);
 
@@ -141,7 +157,7 @@ export async function runBuild() {
     const notFound = [];
     const totalFiles = plan.repoFiles.length + 1; // + the carried TeX Live bundle
     let loadedFiles = 0;
-    const reportFileProgress = () => setStatus(`Loading files… ${loadedFiles}/${totalFiles}`, { spinning: true });
+    const reportFileProgress = () => reportPhase(`Loading files… ${loadedFiles}/${totalFiles}`);
     reportFileProgress();
     for (const path of plan.repoFiles) {
       // Use the editor's text for the scenario itself, not a re-fetch of the pristine copy.
@@ -177,7 +193,7 @@ export async function runBuild() {
     }
     const additionalFiles = [...staged.values()];
 
-    setStatus("Compiling (this can take a while the first time)…", { spinning: true });
+    reportPhase("Compiling…", "Compiling (this can take a while the first time)…");
     const started = performance.now();
     // ensureEngine above resolves only once state.runner is set.
     const runner = /** @type {BusyTexRunner} */ (state.runner);
@@ -224,16 +240,15 @@ export async function runBuild() {
       }
       if (landed) {
         fetchRounds += 1;
-        setStatus(`Retrying with ${landed} more ${landed === 1 ? "file" : "files"} fetched on demand…`, {
-          spinning: true,
-        });
+        const more = `${landed} more ${landed === 1 ? "file" : "files"}`;
+        reportPhase(`Retrying with ${more}…`, `Retrying with ${more} fetched on demand…`);
         continue;
       }
       if (result.success) {
         aux = auxState(await untilAborted(runner.readProjectFiles(), signal));
         passes += 1;
         if (passes >= MAX_TEX_PASSES || !needsRerun(result.log)) break;
-        setStatus("Compiling again to update references…", { spinning: true });
+        reportPhase("Updating references…", "Compiling again to update references…");
         continue;
       }
       // Stale state from an earlier build can break a sound source: drop it and try once more.

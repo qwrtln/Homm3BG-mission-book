@@ -102,6 +102,31 @@ main.resizing { cursor: col-resize; user-select: none; }
 @media (prefers-reduced-motion: reduce) {
   .build-progress::before { width: 100%; left: 0; animation: none; opacity: 0.6; }
 }
+/* The build's current step, over the top of the pages and clear of their middle.
+   An empty pane says it under its own spinner instead. */
+.build-phase {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.build-phase[hidden],
+.pdf-pane-body-wrap:has(.empty-pdf.loading) .build-phase { display: none; }
+#build-phase-text { overflow: hidden; text-overflow: ellipsis; }
+.build-phase .spinner { flex: none; }
 .spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
 .empty-pdf {
   flex: 1 1 auto;

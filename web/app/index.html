@@ -146,6 +146,12 @@
       <section class="pane" id="pdf-pane" aria-label="PDF">
         <div class="pdf-pane-body-wrap" id="pdf-wrap">
           <div class="build-progress" id="build-progress" role="progressbar" aria-label="Building the PDF" hidden></div>
+          <!-- The build's current step, short, where the reader is looking. The status
+               bar carries the full text, so screen readers skip this copy. -->
+          <div class="build-phase" id="build-phase" aria-hidden="true" hidden>
+            <span class="spinner"></span>
+            <span id="build-phase-text"></span>
+          </div>
           <div class="pdf-pane-body" id="pdf-body">
             <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
           </div>
