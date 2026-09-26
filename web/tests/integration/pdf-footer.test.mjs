@@ -78,6 +78,18 @@ async function box(page, selector) {
 
 const PAGES = "#pdf-body canvas.pdf-page";
 
+/**
+ * The first page's drawn width, read in one step inside the page. A zoom
+ * swaps in new canvases, so a locator can find a canvas that is gone by the
+ * time it measures it; 0 while no page is drawn.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<number>}
+ */
+function firstPageWidth(page) {
+  return page.evaluate((selector) => document.querySelector(selector)?.getBoundingClientRect().width ?? 0, PAGES);
+}
+
 test("the published PDF shows without its feedback page, and a build shows every page", async ({ app }) => {
   const { page, errors } = app;
   await stubPublishedPdf(page, 4);
@@ -122,13 +134,14 @@ test("the zoom level reads Fit at the default zoom, and clicking it returns ther
 
   const level = page.locator("#pdf-zoom-level");
   await expect(level).toHaveText("Fit");
-  const fitWidth = (await box(page, `${PAGES} >> nth=0`)).width;
+  const fitWidth = await firstPageWidth(page);
+  expect(fitWidth).toBeGreaterThan(0);
 
   await page.locator("#pdf-zoom-in").click();
   await expect(level).toHaveText("125%");
   await level.click();
   await expect(level).toHaveText("Fit");
-  await expect.poll(async () => (await box(page, `${PAGES} >> nth=0`)).width).toBeCloseTo(fitWidth, 0);
+  await expect.poll(() => firstPageWidth(page)).toBeCloseTo(fitWidth, 0);
 });
 
 test("the footer spans both panes, and both panes end on its top edge", async ({ app }) => {
@@ -163,6 +176,7 @@ test("stacked under 850px, the footer stays below both panes", async ({ app }) =
   const pdf = await box(page, "#pdf-pane");
   expect(pdf.y).toBeGreaterThan((await box(page, "#editor-pane")).y);
   expect(main.y + main.height).toBeCloseTo(footer.y, 0);
-  expect(footer.y + footer.height).toBeLessThanOrEqual(900);
+  // Layout rounds to fractions of a pixel: 900.001 is still the viewport's bottom edge.
+  expect(footer.y + footer.height).toBeLessThan(900.5);
   await expect(page.locator("#pdf-zoom-in")).toBeInViewport();
 });
