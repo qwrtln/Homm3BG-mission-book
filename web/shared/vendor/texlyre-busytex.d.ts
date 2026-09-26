@@ -25,6 +25,11 @@ export declare class BusyTexRunner {
    * until initialize() runs anew.
    */
   terminate(): void;
+  /**
+   * Every file the last compile left in its project directory, the staged
+   * inputs included, by path relative to it.
+   */
+  readProjectFiles(dir?: string): Promise<{ path: string; content: Uint8Array }[]>;
 }
 
 export interface CompileRequest {
@@ -32,6 +37,13 @@ export interface CompileRequest {
   input: string;
   /** Every other file the compile needs, in a flat virtual filesystem. */
   additionalFiles: StagedFile[];
+  /**
+   * Whether the engine reruns TeX on its own. Left out, it does, and its
+   * check matches the rerunfilecheck package's name, so every book build
+   * ran four passes. False runs exactly one.
+   */
+  rerun?: boolean;
+  /** "silent", "info" or "debug": how much kpathsea tracing the log carries. */
   verbose?: string;
 }
 

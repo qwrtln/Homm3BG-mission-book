@@ -384,6 +384,66 @@ export function errorLine(log, scenarioPath, lineCount) {
   return line >= 1 && line <= lineCount ? line : null;
 }
 
+// The files one TeX pass writes for the next to read: cross-references, PDF
+// outlines, the table of contents.
+const AUX_STATE = /\.(aux|out|toc|lof|lot)$/;
+
+/**
+ * The files from a finished pass that the next pass, or the next build of
+ * the same scenario, should start from.
+ *
+ * @template {{path: string}} F
+ * @param {F[]} files everything the engine left in its project directory
+ * @returns {F[]}
+ */
+export function auxState(files) {
+  return files.filter((file) => AUX_STATE.test(file.path));
+}
+
+/**
+ * Whether the log's first error came from reading carried aux state rather
+ * than the source: TeX was inside a .aux or .toc when it stopped. Stale
+ * state can break a build the source alone would not.
+ *
+ * @param {string | null | undefined} log
+ * @returns {boolean}
+ */
+export function errorInAuxState(log) {
+  if (!log) return false;
+  const lines = log.split("\n");
+  const index = lines.findIndex((line) => /^!/.test(line) || /^.+:\d+: /.test(line));
+  if (index < 0) return false;
+  const located = /^(.+):\d+: /.exec(lines[index]);
+  const file = located ? located[1] : openFiles(lines.slice(0, index)).at(-1);
+  return file !== undefined && AUX_STATE.test(file);
+}
+
+// What TeX writes when this pass's output is stale. Not a bare
+// "rerunfilecheck": that package's name is in every log of the book, and
+// the engine's own rerun check matching it is why it always ran four passes.
+const RERUN_REQUESTS = [
+  /Rerun to get /,
+  /Label\(s\) may have changed/,
+  /Warning: File `[^']+' has changed/,
+  /Rerun LaTeX/,
+];
+
+/**
+ * Whether TeX asked for another pass.
+ *
+ * @param {string | null | undefined} log
+ * @returns {boolean}
+ */
+export function needsRerun(log) {
+  return Boolean(log) && RERUN_REQUESTS.some((pattern) => pattern.test(/** @type {string} */ (log)));
+}
+
+/**
+ * The most TeX passes one build runs. A scenario built with no carried state
+ * settles in two: the first writes the aux files, the second reads them.
+ */
+export const MAX_TEX_PASSES = 3;
+
 /**
  * The page count, taken from the engine's own log line. Counting "/Type /Page"
  * in the PDF bytes does not work: LuaTeX packs the page objects into compressed

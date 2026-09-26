@@ -18,6 +18,9 @@
 // A test that needs a particular result (a failed build, a given log) sets
 // globalThis.__stubCompileResult to a function; every compile then answers
 // with what it returns for the options build.js passed.
+//
+// The stub leaves no files behind unless a test sets
+// globalThis.__stubProjectFiles; readProjectFiles() then returns it.
 
 /**
  * @typedef {object} StubEngineCall
@@ -183,6 +186,20 @@ class BusyTexRunner {
       exitCode: 0,
       logs: [],
     };
+  }
+
+  /**
+   * What the last compile left in its project directory. The stub writes
+   * nothing, so this is `globalThis.__stubProjectFiles` if a test set it
+   * (an array, or a function returning one), else an empty list.
+   * @param {string} [dir] - accepted for signature parity, ignored.
+   * @returns {Promise<{path: string, content: Uint8Array | string}[]>}
+   */
+  async readProjectFiles(dir) {
+    recordCall("BusyTexRunner.readProjectFiles", [dir]);
+    const files = globalThis.__stubProjectFiles;
+    if (typeof files === "function") return files();
+    return files ?? [];
   }
 
   /** @returns {void} */

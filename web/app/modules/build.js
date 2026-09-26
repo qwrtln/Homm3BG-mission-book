@@ -1,11 +1,15 @@
 import { untilAborted } from "../../shared/abort.js";
 import {
+  auxState,
   builtStatus,
   DATA_PACKAGE,
+  errorInAuxState,
   errorLine,
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
+  MAX_TEX_PASSES,
   missingFiles,
+  needsRerun,
   newMissingPaths,
   pageCount,
   planScenarioBuild,
@@ -77,6 +81,11 @@ function discardEngine(runner) {
   }
   ensureEngine().catch(() => {}); // errors surface at the next Build, as on page load
 }
+
+// Each scenario's aux files from its last good build, by repository path. A
+// rebuild that starts from them usually settles in one TeX pass.
+/** @type {Map<string, StagedFile[]>} */
+const auxByScenario = new Map();
 
 // The running build's controller; null when no build runs.
 /** @type {AbortController | null} */
@@ -181,13 +190,19 @@ export async function runBuild() {
     let result;
     /** @type {Set<string>} */
     const tried = new Set();
-    for (let attempt = 0; ; attempt += 1) {
+    let aux = auxByScenario.get(chosenPath) ?? [];
+    let fetchRounds = 0;
+    let passes = 0;
+    let retriedClean = false;
+    // One TeX pass per compile: the engine's own rerun loop always ran four.
+    for (;;) {
       try {
         result = await untilAborted(
           lualatex.compile({
             input: plan.input,
-            additionalFiles,
-            verbose: "debug",
+            additionalFiles: [...additionalFiles, ...aux],
+            rerun: false,
+            verbose: "silent",
           }),
           signal,
         );
@@ -195,9 +210,7 @@ export async function runBuild() {
         if (signal.aborted) throw error;
         result = { success: false, log: String(error), exitCode: -1 };
       }
-      if (attempt >= MAX_FETCH_ON_MISS_ATTEMPTS) break;
-      const toFetch = newMissingPaths(missingFiles(result.log), tried);
-      if (!toFetch.length) break;
+      const toFetch = fetchRounds < MAX_FETCH_ON_MISS_ATTEMPTS ? newMissingPaths(missingFiles(result.log), tried) : [];
       let landed = 0;
       for (const path of toFetch) {
         tried.add(path);
@@ -209,11 +222,30 @@ export async function runBuild() {
         }
         signal.throwIfAborted();
       }
-      if (!landed) break;
-      setStatus(`Retrying with ${landed} more ${landed === 1 ? "file" : "files"} fetched on demand…`, {
-        spinning: true,
-      });
+      if (landed) {
+        fetchRounds += 1;
+        setStatus(`Retrying with ${landed} more ${landed === 1 ? "file" : "files"} fetched on demand…`, {
+          spinning: true,
+        });
+        continue;
+      }
+      if (result.success) {
+        aux = auxState(await untilAborted(runner.readProjectFiles(), signal));
+        passes += 1;
+        if (passes >= MAX_TEX_PASSES || !needsRerun(result.log)) break;
+        setStatus("Compiling again to update references…", { spinning: true });
+        continue;
+      }
+      // Stale state from an earlier build can break a sound source: drop it and try once more.
+      if (aux.length && !retriedClean && errorInAuxState(result.log)) {
+        aux = [];
+        retriedClean = true;
+        continue;
+      }
+      break;
     }
+    if (result.success) auxByScenario.set(chosenPath, aux);
+    else auxByScenario.delete(chosenPath);
     const seconds = (performance.now() - started) / 1000;
 
     const pages = pageCount(result.log);

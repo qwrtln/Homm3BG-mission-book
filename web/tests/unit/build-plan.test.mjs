@@ -6,18 +6,21 @@ import test from "node:test";
 
 import {
   ALWAYS_PRELOAD,
+  auxState,
   builtStatus,
   CARRIED_TEXMF_BUNDLE,
   CORE_GLYPHS,
   collectReferencedAssets,
   collectReferencedGlyphs,
   DRAFT_GROUP_FILES,
+  errorInAuxState,
   errorLine,
   firstError,
   GROUP_FILES,
   glyphFilesFor,
   MAIN_EN,
   missingFiles,
+  needsRerun,
   newMissingPaths,
   PATH_MACROS,
   pageCount,
@@ -288,6 +291,65 @@ test("newMissingPaths only returns what no round has reached for yet", () => {
   assert.deepEqual(newMissingPaths(missing, new Set()), ["a.png", "b.png"]);
   assert.deepEqual(newMissingPaths(missing, new Set(["a.png"])), ["b.png"]);
   assert.deepEqual(newMissingPaths(missing, new Set(["a.png", "b.png"])), [], "a repeat is a genuine miss: stop");
+});
+
+// Lines copied from a real LuaLaTeX log of clash/astral_run.tex.
+const PACKAGE_LOADED = [
+  "(/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty",
+  "Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)",
+  "Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2",
+  "Package rerunfilecheck Info: File `main.out' has not changed.",
+].join("\n");
+
+test("needsRerun ignores the rerunfilecheck package merely loading", () => {
+  assert.equal(needsRerun(PACKAGE_LOADED), false, "every book log names rerunfilecheck; that alone asks for nothing");
+  assert.equal(needsRerun(""), false);
+  assert.equal(needsRerun(null), false);
+});
+
+test("needsRerun answers TeX's own requests for another pass", () => {
+  const outlines = [
+    "Package rerunfilecheck Warning: File `main.out' has changed.",
+    "(rerunfilecheck)                Rerun to get outlines right",
+  ].join("\n");
+  assert.equal(needsRerun(`${PACKAGE_LOADED}\n${outlines}`), true);
+  assert.equal(needsRerun("LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right."), true);
+  assert.equal(needsRerun("Package rerunfilecheck Warning: File `main.out' has changed."), true);
+});
+
+test("auxState keeps the files one pass hands the next, and nothing else", () => {
+  const files = [
+    { path: "main.aux", content: "a" },
+    { path: "main.out", content: "o" },
+    { path: "main.toc", content: "t" },
+    { path: "clash/astral_run.aux", content: "s" },
+    { path: "main.pdf", content: "p" },
+    { path: "main.log", content: "l" },
+    { path: "main.synctex.gz", content: "z" },
+    { path: "clash/astral_run.tex", content: "x" },
+    { path: "assets/images/aux.png", content: "i" },
+  ];
+  assert.deepEqual(
+    auxState(files).map((file) => file.path),
+    ["main.aux", "main.out", "main.toc", "clash/astral_run.aux"],
+  );
+});
+
+test("errorInAuxState tells an error read from carried state from one in the source", () => {
+  const fromAux = [
+    "(./main_en.tex (./metadata.tex) (./main.aux (./clash/x.aux",
+    "! Undefined control sequence.",
+    "l.3 \\foo",
+  ];
+  assert.equal(errorInAuxState(fromAux.join("\n")), true);
+  const fromToc = ["(./main_en.tex (./main.toc", "! Undefined control sequence."];
+  assert.equal(errorInAuxState(fromToc.join("\n")), true);
+  const fromSource = ["(./main_en.tex (./main.aux) (./clash/x.tex", "! Undefined control sequence.", "l.7 \\foo"];
+  assert.equal(errorInAuxState(fromSource.join("\n")), false, "the aux file closed before the error");
+  assert.equal(errorInAuxState("./clash/x.tex:7: Undefined control sequence."), false);
+  assert.equal(errorInAuxState("./main.aux:3: Undefined control sequence."), true);
+  assert.equal(errorInAuxState("no error at all"), false);
+  assert.equal(errorInAuxState(null), false);
 });
 
 test("the path macro table matches metadata.tex's own declarations", () => {

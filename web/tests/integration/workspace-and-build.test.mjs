@@ -394,6 +394,107 @@ test("a finished build leaves the engine running", async ({ app }) => {
 });
 
 /**
+ * Makes the stub engine leave a main.aux behind after every compile, and
+ * answer each compile through `answer`, which learns whether that compile
+ * was handed a main.aux.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {"rerun-until-aux" | "always-rerun" | "aux-breaks"} mode
+ * @returns {Promise<void>}
+ */
+async function engineWithAux(page, mode) {
+  await page.evaluate((mode) => {
+    globalThis.__stubProjectFiles = [
+      { path: "main.aux", content: "\\relax" },
+      { path: "main.pdf", content: "%PDF" },
+      { path: "main.log", content: "log" },
+    ];
+    const rerun = "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.";
+    globalThis.__stubCompileResult = (options) => {
+      const hasAux = options.additionalFiles.some((/** @type {{path: string}} */ file) => file.path === "main.aux");
+      const ok = (/** @type {string} */ log) => ({
+        success: true,
+        pdf: Uint8Array.from(globalThis.__stubPdfBytes),
+        log,
+        exitCode: 0,
+      });
+      if (mode === "always-rerun") return ok(rerun);
+      if (mode === "aux-breaks") {
+        if (!hasAux) return ok("settled");
+        return { success: false, log: "(./main_en.tex (./main.aux\n! Undefined control sequence.", exitCode: 1 };
+      }
+      return ok(hasAux ? "settled" : rerun);
+    };
+  }, mode);
+}
+
+/**
+ * What each LuaLatex.compile call so far was handed: its rerun flag and
+ * whether a main.aux was among its files.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<{rerun: unknown, aux: boolean}[]>}
+ */
+async function compiles(page) {
+  return (await callsTo(page, "LuaLatex.compile")).map((call) => ({
+    rerun: call.args[0].rerun,
+    aux: call.args[0].additionalFiles.some((/** @type {{path: string}} */ file) => file.path === "main.aux"),
+  }));
+}
+
+test("a first build runs a second pass when TeX asks, and a rebuild starts from its aux files", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "rerun-until-aux");
+
+  await buildFirstPdf(page);
+  // The engine's own rerun loop stays off: the app runs each pass itself.
+  expect(await compiles(page)).toEqual([
+    { rerun: false, aux: false },
+    { rerun: false, aux: true },
+  ]);
+  const staged = (await callsTo(page, "LuaLatex.compile"))[1].args[0].additionalFiles.map(
+    (/** @type {{path: string}} */ file) => file.path,
+  );
+  expect(staged).not.toContain("main.pdf");
+  expect(staged).not.toContain("main.log");
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  expect((await compiles(page)).slice(2), "a rebuild with settled aux files takes one pass").toEqual([
+    { rerun: false, aux: true },
+  ]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("a build stops rerunning after three passes", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "always-rerun");
+
+  await buildFirstPdf(page);
+  expect(await compiles(page)).toHaveLength(3);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("aux files that break a rebuild are dropped and the build runs clean", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "rerun-until-aux");
+  await buildFirstPdf(page);
+  await engineWithAux(page, "aux-breaks");
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#error-panel")).toBeHidden();
+  expect((await compiles(page)).slice(2)).toEqual([
+    { rerun: false, aux: true },
+    { rerun: false, aux: false },
+  ]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
  * Makes every stub compile wait until releaseHeldCompiles() lets it finish.
  *
  * @param {import("@playwright/test").Page} page
