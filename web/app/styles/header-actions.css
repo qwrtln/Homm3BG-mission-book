@@ -78,9 +78,21 @@ header button.icon { padding: 0.3rem 0.5rem; }
 .menu-separator { margin: 0.3rem 0; border-top: 1px solid var(--line); }
 
 /* --- Narrow screens ---------------------------------------------------------
-   One row down to 1024px. Below that, labels collapse and the buttons show
-   their icons only; the label stays the accessible name. */
+   Every label shows down to 1024px. Below that, Download PDF goes icon-only;
+   Build, Upload images and Save/Sign in keep theirs. From 860px down every
+   label collapses. A collapsed label stays the accessible name. */
 @media (max-width: 1023px) {
+  #download .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  header button#download { padding: 0.3rem 0.5rem; }
+}
+@media (max-width: 860px) {
   header .label {
     position: absolute;
     width: 1px;
