@@ -75,6 +75,8 @@ interface AppState {
   lastPdf: Blob | null;
   /** The editor source lastPdf was made from; null when no PDF is shown. */
   pdfSource: string | null;
+  /** Repository path of the scenario lastPdf shows; names its download. */
+  pdfPath: string | null;
   cm: CodeMirrorEditor | null;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;

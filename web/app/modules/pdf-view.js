@@ -86,6 +86,7 @@ export function showPdfMessage(text) {
 export function clearPdf() {
   state.lastPdf = null;
   state.pdfSource = null;
+  state.pdfPath = null;
   el("download").disabled = true;
   showPdfMessage("No PDF yet. Press Build PDF.");
   el("error-panel").hidden = true;
@@ -146,14 +147,17 @@ function jumpToLine(line) {
  * @param {Blob} blob PDF bytes, tagged application/pdf
  * @param {string} source the editor source the PDF stands for; an edit away
  *   from it makes the PDF stale
- * @param {{dropLastPage?: boolean}} [options] dropLastPage leaves the last
- *   page undrawn and uncounted, never the only one: the published PDF ends
- *   on a feedback page an in-browser build does not make
+ * @param {{dropLastPage?: boolean, path?: string | null}} [options]
+ *   dropLastPage leaves the last page undrawn and uncounted, never the only
+ *   one: the published PDF ends on a feedback page an in-browser build does
+ *   not make. path is the scenario the PDF shows, which names the download;
+ *   it defaults to the one in the editor
  * @returns {Promise<void>}
  */
-export async function showPdf(blob, source, { dropLastPage = false } = {}) {
+export async function showPdf(blob, source, { dropLastPage = false, path = state.chosenPath } = {}) {
   state.lastPdf = blob;
   state.pdfSource = source;
+  state.pdfPath = path;
   el("download").disabled = false;
   loadTicket += 1;
   const ticket = loadTicket;

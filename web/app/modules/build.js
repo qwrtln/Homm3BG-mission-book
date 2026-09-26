@@ -301,10 +301,13 @@ export function initBuild() {
   });
 
   el("download").addEventListener("click", () => {
-    if (!state.lastPdf || !state.chosenPath) return;
+    // Named after the scenario the PDF shows: a published PDF is the
+    // original's, not the renamed copy's.
+    const path = state.pdfPath ?? state.chosenPath;
+    if (!state.lastPdf || !path) return;
     const link = document.createElement("a");
     link.href = URL.createObjectURL(state.lastPdf);
-    link.download = `${basenameNoExt(state.chosenPath)}.pdf`;
+    link.download = `${basenameNoExt(path)}.pdf`;
     document.body.appendChild(link);
     link.click();
     link.remove();

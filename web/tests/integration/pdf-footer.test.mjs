@@ -59,7 +59,10 @@ async function openFirstScenario(page) {
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  // A published PDF is the original's, so the renamed pick says so instead.
+  await expect(page.locator("#status-text")).toHaveText(
+    /^(Ready\.|Published PDF of .+\. Build to see your changes\.)$/,
+  );
 }
 
 /**

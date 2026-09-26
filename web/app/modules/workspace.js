@@ -102,9 +102,11 @@ export async function commitEntry(path, name, category) {
   clearPdf();
   markClean(pristine); // a restored autosave differs from this, and says so
 
-  if (!template) await showPrefetchedPdf(path);
+  const shown = !template && (await showPrefetchedPdf(path, pristineSource));
 
-  setStatus("Ready.");
+  // The published PDF is the entry's own, never the renamed copy in the editor.
+  const differs = shown && cm.getValue() !== pristineSource;
+  setStatus(differs ? `Published PDF of ${entry.title}. Build to see your changes.` : "Ready.");
 }
 
 /**
@@ -114,12 +116,11 @@ export async function commitEntry(path, name, category) {
  * somehow never called selectPending for.
  *
  * @param {string} path
- * @returns {Promise<void>}
+ * @param {string} source the text the published PDF was built from, before
+ *   any rename or edit
+ * @returns {Promise<boolean>} whether a published PDF is shown
  */
-async function showPrefetchedPdf(path) {
-  // The published PDF stands for what the editor holds now, before any edit
-  // made while the download finishes.
-  const source = requireEditor().getValue();
+async function showPrefetchedPdf(path, source) {
   setStatus("Finishing this scenario's downloads…", { spinning: true });
   showPdfLoading("Finishing this scenario's downloads…");
   const prefetch =
@@ -131,8 +132,12 @@ async function showPrefetchedPdf(path) {
   const { pdfBlob } = await promise;
   // The nightly build behind it appends a feedback page; drop it, so the
   // pages match what Build PDF makes from the same source.
-  if (pdfBlob) await showPdf(pdfBlob, source, { dropLastPage: true });
-  else clearPdf();
+  if (!pdfBlob) {
+    clearPdf();
+    return false;
+  }
+  await showPdf(pdfBlob, source, { dropLastPage: true, path });
+  return true;
 }
 
 /**
@@ -172,7 +177,7 @@ export async function openForEdit(path, title, source, edit) {
   clearPdf();
   markClean();
 
-  await showPrefetchedPdf(path);
+  await showPrefetchedPdf(path, source);
   setStatus("Ready.");
 }
 

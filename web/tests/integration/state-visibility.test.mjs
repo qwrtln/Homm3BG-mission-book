@@ -48,7 +48,10 @@ async function openFirstScenario(page) {
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  // A published PDF is the original's, so the renamed pick says so instead.
+  await expect(page.locator("#status-text")).toHaveText(
+    /^(Ready\.|Published PDF of .+\. Build to see your changes\.)$/,
+  );
 }
 
 /**
@@ -89,6 +92,34 @@ test("an edit after the published PDF shows flags it stale", async ({ app }) => 
 
   await editOnce(page);
   await expect(page.locator("#status-text")).toHaveText(STALE);
+});
+
+test("a renamed pick says the published PDF is the original's, and Download names it so", async ({ app }) => {
+  const { page } = app;
+  /** @type {string[]} */
+  const requested = [];
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.hostname === "raw.githubusercontent.com") requested.push(url.pathname);
+  });
+  await stubPublishedPdf(page, true);
+  const results = await openScenarioList(page);
+  const title = (await results.first().textContent()).trim();
+  await results.first().click();
+  await page.locator("#scenario-name").fill(SCENARIO_NAME);
+  await page.locator("#go").click();
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
+
+  // The editor holds the renamed copy; the PDF still shows the original.
+  await expect(page.locator("#status-text")).toHaveText(`Published PDF of ${title}. Build to see your changes.`);
+
+  const published = requested.find((pathname) => pathname.endsWith(".pdf"));
+  expect(published, "the pick fetched a published PDF").toBeTruthy();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download").click()]);
+  const stem = download.suggestedFilename().replace(/\.pdf$/, "");
+  expect(stem).not.toBe("tier_two_probe");
+  // The CDN names the file after the scenario, plus a language suffix.
+  expect(String(published).split("/").pop()).toMatch(new RegExp(`^${stem}_[a-z]+\\.pdf$`));
 });
 
 test("an edit with no PDF shown says nothing about staleness", async ({ app }) => {
