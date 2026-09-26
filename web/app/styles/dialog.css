@@ -17,6 +17,43 @@
 button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
 button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }
 
+/* --- About dialog (about.js). Wider than a confirm: license text is
+       set at its own line length, and each row scrolls on its own. ------ */
+
+.about-dialog { max-width: min(38rem, calc(100vw - 2rem)); }
+.about-dialog a { color: var(--accent); }
+.about-dialog h3 { margin: 1.25rem 0 0.25rem; font-size: 0.95rem; }
+.about-hint { color: var(--muted); font-size: 0.9rem; }
+.license-group { margin-top: 0.75rem; }
+.license-group h4 { margin: 0 0 0.25rem; color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+.license { border-top: 1px solid var(--line); }
+.license:last-child { border-bottom: 1px solid var(--line); }
+.license summary {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.45rem 0.25rem;
+  cursor: pointer;
+}
+.license summary::before { content: "\25B8"; color: var(--muted); }
+.license[open] summary::before { content: "\25BE"; }
+.license summary::-webkit-details-marker { display: none; }
+.license summary { list-style: none; }
+.license summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.license-name { flex: 1; }
+.license-kind { color: var(--muted); font-size: 0.85rem; }
+.license-home { margin: 0 0 0.4rem 1.25rem; font-size: 0.85rem; }
+.license-text {
+  max-height: 14rem;
+  overflow: auto;
+  margin: 0 0 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  background: var(--code-bg);
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+}
+
 /* --- Toast (toast.js). A popover: resets the UA's centered box. ---------- */
 
 .toast {

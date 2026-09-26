@@ -1,4 +1,5 @@
 import { errorMessage } from "../shared/errors.js";
+import { initAbout } from "./modules/about.js";
 import { initAutocomplete } from "./modules/autocomplete.js";
 import { ensureEngine, initBuild } from "./modules/build.js";
 import { el, escapeHtml, setStatus } from "./modules/dom.js";
@@ -17,6 +18,7 @@ import { initUploads } from "./modules/uploads.js";
 
 initTheme();
 initHeaderMenu();
+initAbout();
 initEditor();
 initPanes();
 initPdfView();

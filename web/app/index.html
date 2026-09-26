@@ -57,6 +57,7 @@
     <button id="header-menu-toggle" class="icon" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="header-menu" aria-label="More actions" title="More actions"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></button>
     <div class="header-menu-list" id="header-menu" role="menu" aria-label="More actions" hidden>
       <button id="theme-toggle" role="menuitemcheckbox" aria-checked="false" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M9.598 1.591a.75.75 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786m1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678"/></svg>Dark mode<svg class="octicon menu-check" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg></button>
+      <button id="about-open" role="menuitem" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>About</button>
       <div class="menu-separator" id="header-menu-separator" role="separator" hidden></div>
       <button id="github-signout" role="menuitem" type="button" tabindex="-1" hidden><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z"/></svg>Sign out</button>
     </div>
@@ -192,6 +193,52 @@
     <div class="confirm-actions">
       <button id="confirm-cancel" type="submit" value="cancel">Cancel</button>
       <button id="confirm-ok" class="danger" type="submit" value="confirm">Delete</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- styles/dialog.css; about.js loads each license text when its row opens.
+     Every href points at a file the deploy ships (publish-docs.yaml). -->
+<dialog id="about-dialog" class="confirm-dialog about-dialog" aria-labelledby="about-title">
+  <form method="dialog">
+    <h2 id="about-title">About the scenario builder</h2>
+    <p>The scenario builder is free software under the GNU Affero General Public License v3.0. You can read, copy and change its <a id="about-source" href="https://github.com/qwrtln/Homm3BG-mission-book/tree/main/web" target="_blank" rel="noopener">source code on GitHub</a>.</p>
+    <h3>Open-source licenses</h3>
+    <p class="about-hint">It is built with these projects. Open one to read its license.</p>
+    <div class="license-group" role="group" aria-labelledby="license-group-app">
+      <h4 id="license-group-app">This app</h4>
+      <details class="license" data-src="../LICENSE">
+        <summary><span class="license-name">Scenario builder</span><span class="license-kind">AGPL-3.0</span></summary>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="license-group" role="group" aria-labelledby="license-group-editor">
+      <h4 id="license-group-editor">Editor and viewer</h4>
+      <details class="license" data-src="vendor/codemirror/LICENSE">
+        <summary><span class="license-name">CodeMirror 5</span><span class="license-kind">MIT</span></summary>
+        <p class="license-home"><a href="https://codemirror.net/5/" target="_blank" rel="noopener">codemirror.net</a></p>
+        <pre class="license-text"></pre>
+      </details>
+      <details class="license" data-src="vendor/pdfjs/LICENSE">
+        <summary><span class="license-name">PDF.js</span><span class="license-kind">Apache-2.0</span></summary>
+        <p class="license-home"><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener">github.com/mozilla/pdf.js</a></p>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="license-group" role="group" aria-labelledby="license-group-engine">
+      <h4 id="license-group-engine">LaTeX engine</h4>
+      <details class="license" data-src="../shared/vendor/texlyre-busytex.LICENSE">
+        <summary><span class="license-name">TeXlyre BusyTeX</span><span class="license-kind">AGPL-3.0</span></summary>
+        <p class="license-home"><a href="https://github.com/TeXlyre/texlyre-busytex" target="_blank" rel="noopener">github.com/TeXlyre/texlyre-busytex</a></p>
+        <pre class="license-text"></pre>
+      </details>
+      <details class="license" data-src="../LATEX-ENGINE-NOTICE">
+        <summary><span class="license-name">BusyTeX and TeX Live</span><span class="license-kind">Several licenses</span></summary>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="confirm-actions">
+      <button id="about-close" type="submit" value="close">Close</button>
     </div>
   </form>
 </dialog>

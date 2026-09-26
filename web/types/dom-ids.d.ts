@@ -7,6 +7,14 @@
 // id here makes `el("new-id")` fail to compile.
 
 interface ElementIdMap {
+  "about-close": HTMLButtonElement;
+  "about-dialog": HTMLDialogElement;
+  "about-open": HTMLButtonElement;
+  "about-source": HTMLAnchorElement;
+  "about-title": HTMLHeadingElement;
+  "license-group-app": HTMLHeadingElement;
+  "license-group-editor": HTMLHeadingElement;
+  "license-group-engine": HTMLHeadingElement;
   build: HTMLButtonElement;
   "build-label": HTMLSpanElement;
   "build-progress": HTMLDivElement;

@@ -1272,8 +1272,10 @@ test.describe("signed in", () => {
     await page.keyboard.press("Enter");
     await expect(menu).toBeVisible();
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
-    // Signed in: Dark mode, then Sign out. Arrows move and wrap.
+    // Signed in: Dark mode, About, then Sign out. Arrows move and wrap.
     await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#about-open")).toBeFocused();
     await page.keyboard.press("ArrowDown");
     await expect(page.locator("#github-signout")).toBeFocused();
     await page.keyboard.press("ArrowDown");

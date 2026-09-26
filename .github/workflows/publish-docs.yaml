@@ -53,6 +53,7 @@ jobs:
           rsync -a \
             --include='/index.html' \
             --include='/LICENSE' \
+            --include='/LATEX-ENGINE-NOTICE' \
             --include='/app/***' \
             --include='/shared/' \
             --include='/shared/*.js' \
