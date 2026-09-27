@@ -25,6 +25,16 @@
 }
 /* One column, top to bottom: every heading shares its left edge. */
 .welcome-inner { max-width: 36rem; width: 100%; }
+/* The greeting opens the screen, divided from the work below it by a rule. */
+.welcome-intro {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.welcome-intro p { margin: 0 0 0.6rem; line-height: 1.5; }
+.welcome-intro p:last-child { margin-bottom: 0; }
+.welcome-intro a { color: var(--accent); }
+.welcome-intro a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* The resume list sits above the picker, divided from it by a rule. */
 .welcome-top:has(.resume-drafts:not([hidden])) {
   margin-bottom: 1.75rem;

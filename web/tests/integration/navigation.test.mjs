@@ -25,6 +25,25 @@ async function typeInEditor(page, text) {
   }, text);
 }
 
+test("the welcome screen greets first and links to the Mission Book", async ({ app }) => {
+  const { page } = app;
+  const intro = page.locator(".welcome-intro");
+  await expect(intro.locator("h2")).toHaveText("Welcome to the Scenario Builder");
+  const link = intro.getByRole("link", { name: "Fan-Made Mission Book" });
+  await expect(link).toHaveAttribute(
+    "href",
+    "https://github.com/qwrtln/Homm3BG-mission-book#heroes-of-might--magic-iii-the-board-gamefan-made-mission-book",
+  );
+  await expect(link).toHaveAttribute("target", "_blank");
+  // The greeting comes before the picker in reading order.
+  const introFirst = await page.evaluate(() => {
+    const introEl = /** @type {Element} */ (document.querySelector(".welcome-intro"));
+    const pick = /** @type {Element} */ (document.getElementById("pick-heading"));
+    return Boolean(introEl.compareDocumentPosition(pick) & Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  expect(introFirst).toBe(true);
+});
+
 test("Back is only on the editor screen, and returns to welcome", async ({ app }) => {
   const { page } = app;
   await expect(page.locator("#back-to-welcome")).toBeHidden();
