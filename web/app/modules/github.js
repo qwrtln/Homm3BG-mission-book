@@ -79,6 +79,39 @@ async function reopenLocalDraft(path, title) {
 /** @type {GithubContext | null} */
 let githubContext = null;
 
+const SIGN_IN_EXPIRED = "Your GitHub sign-in has expired. Sign in again.";
+
+/**
+ * GitHub revokes a token on its own (the oldest past ten per user and app, or
+ * a year unused), so any call can meet a 401, not only the one at page load.
+ * Signed-in chrome over a dead token would hide the account's work; drop the
+ * token and offer sign-in instead. Unsaved editor work is left alone.
+ *
+ * @param {unknown} error
+ * @returns {boolean} true when the error was a revoked sign-in, now handled
+ */
+function dropRevokedToken(error) {
+  if (!(error instanceof GithubApiError && error.status === 401)) return false;
+  clearToken();
+  githubContext = null;
+  el("resume-drafts").hidden = true;
+  settleModes(false);
+  renderGithubHeader();
+  return true;
+}
+
+/**
+ * What to tell the user about a failed GitHub call.
+ *
+ * @param {unknown} error
+ * @param {string} prefix leads the message for a failure that is not GitHub's
+ * @returns {string}
+ */
+function githubFailure(error, prefix) {
+  if (dropRevokedToken(error)) return SIGN_IN_EXPIRED;
+  return error instanceof GithubApiError ? error.message : `${prefix}: ${errorMessage(error)}`;
+}
+
 /**
  * Silent background check for a branch that already has an open pull request
  * (typically a resumed draft, after a page refresh): swaps "Open PR" for the
@@ -194,9 +227,7 @@ async function deleteResumableDraft(draft) {
     renderResumeDrafts();
     setStatus(`Deleted "${label}".`);
   } catch (error) {
-    setStatus(error instanceof GithubApiError ? error.message : `Could not delete: ${errorMessage(error)}`, {
-      tone: "bad",
-    });
+    setStatus(githubFailure(error, "Could not delete"), { tone: "bad" });
   }
 }
 
@@ -261,9 +292,7 @@ async function startEdit(path, title) {
  * @returns {void}
  */
 function reportEditError(error) {
-  const message =
-    error instanceof GithubApiError ? error.message : `Could not open that scenario: ${errorMessage(error)}`;
-  el("go-hint").textContent = message;
+  el("go-hint").textContent = githubFailure(error, "Could not open that scenario");
 }
 
 /**
@@ -325,9 +354,7 @@ async function openResumableDraft(draft) {
     void checkExistingPullRequest();
     setStatus("Ready.");
   } catch (error) {
-    const message =
-      error instanceof GithubApiError ? error.message : `Could not load that draft: ${errorMessage(error)}`;
-    setStatus(message, { tone: "bad" });
+    setStatus(githubFailure(error, "Could not load that draft"), { tone: "bad" });
   }
 }
 
@@ -402,8 +429,9 @@ async function refreshWelcomeData() {
     try {
       githubContext = await discoverGithubContext(token);
       renderResumeDrafts();
-    } catch {
-      /* keep showing what was already known */
+    } catch (error) {
+      // A revoked sign-in is not "known": drop it. Anything else keeps what is on screen.
+      if (dropRevokedToken(error)) setStatus(SIGN_IN_EXPIRED, { tone: "bad" });
     }
   }
   await entries;
@@ -536,8 +564,7 @@ export function initGithub() {
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Save failed: ${errorMessage(error)}`;
-      setStatus(message, { tone: "bad" });
+      setStatus(githubFailure(error, "Save failed"), { tone: "bad" });
     } finally {
       button.disabled = false;
     }
@@ -562,8 +589,7 @@ export function initGithub() {
       button.hidden = true;
       setStatus(`PR open at ${pr.html_url}.`, { tone: "ok" });
     } catch (error) {
-      const message = error instanceof GithubApiError ? error.message : `Could not open the PR: ${errorMessage(error)}`;
-      setStatus(message, { tone: "bad" });
+      setStatus(githubFailure(error, "Could not open the PR"), { tone: "bad" });
     } finally {
       button.disabled = false;
     }
@@ -601,14 +627,10 @@ export function initGithub() {
         githubContext = await discoverGithubContext(token);
         renderResumeDrafts();
       } catch (error) {
-        if (error instanceof GithubApiError && error.status === 401) {
-          // GitHub revoked the token (the oldest past ten per user and app, or a year unused).
-          // Signed-in chrome over a dead token would hide the account's work; offer sign-in instead.
-          clearToken();
-          setStatus("Your GitHub sign-in has expired. Sign in again.", { tone: "bad" });
-        } else {
-          setStatus(`Could not read your GitHub account: ${errorMessage(error)}`, { tone: "bad" });
-        }
+        const message = dropRevokedToken(error)
+          ? SIGN_IN_EXPIRED
+          : `Could not read your GitHub account: ${errorMessage(error)}`;
+        setStatus(message, { tone: "bad" });
       }
     })
     .catch((error) => {

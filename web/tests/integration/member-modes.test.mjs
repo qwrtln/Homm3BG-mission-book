@@ -272,6 +272,30 @@ test.describe("editing in place", () => {
     });
   });
 
+  test.describe("after GitHub has revoked the sign-in", () => {
+    test.use({
+      githubRoutes: routes([
+        ...identityRoutes({ push: true }),
+        { method: "GET", path: /\/git\/ref\/heads\//, status: 401, body: { message: "Bad credentials" } },
+      ]),
+    });
+
+    // The token was good when the page loaded and died before Open editor.
+    // The member is told to sign in again, not shown a bare status code.
+    test("Open editor drops the token and offers sign-in again", async ({ app }) => {
+      const { page } = app;
+      await pickFirstScenario(page);
+      await page.locator("#go").click();
+
+      await expect(page.locator("#go-hint")).toHaveText("Your GitHub sign-in has expired. Sign in again.");
+      await expect(page.locator("#github-signin")).toBeVisible();
+      await expect(page.locator("#github-status")).toBeHidden();
+      await expect(page.locator("#workspace")).toBeHidden();
+      // addInitScript seeds the token on every load, so check before any reload.
+      expect(await page.evaluate((key) => localStorage.getItem(key), TOKEN_KEY)).toBeNull();
+    });
+  });
+
   test.describe("with an earlier edit branch", () => {
     const BRANCH_COPY = "% the copy on the earlier edit branch\n";
 
