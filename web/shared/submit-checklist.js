@@ -42,14 +42,14 @@ export const CHECKLIST_ITEMS = Object.freeze([
 const FIXED_BODY_LINE = "Edited in the browser mission book editor.";
 
 /**
- * Which checks stand between the contributor and a new pull request.
+ * Which checks stand between the contributor and a new pull request. Project
+ * members and outside contributors get the same checks.
  *
- * @param {{mode: "new" | "edit", isMember: boolean}} context
+ * @param {{mode: "new" | "edit"}} context
  * @returns {{checklist: boolean, gates: boolean}} checklist: the items must be ticked; gates: the scenario must be saved and built
  */
-export function submitRequirements({ mode, isMember }) {
+export function submitRequirements({ mode }) {
   if (mode === "edit") return { checklist: false, gates: false };
-  if (isMember) return { checklist: false, gates: true };
   return { checklist: true, gates: true };
 }
 

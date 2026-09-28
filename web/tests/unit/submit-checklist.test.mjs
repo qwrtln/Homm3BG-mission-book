@@ -15,17 +15,12 @@ test("the checklist holds the four items in order, frozen", () => {
 
 // --- submitRequirements -------------------------------------------------------
 
-test("an outside contributor's new scenario needs the checklist and the gates", () => {
-  assert.deepEqual(submitRequirements({ mode: "new", isMember: false }), { checklist: true, gates: true });
+test("a new scenario needs the checklist and the gates", () => {
+  assert.deepEqual(submitRequirements({ mode: "new" }), { checklist: true, gates: true });
 });
 
-test("a member's new scenario needs the gates only", () => {
-  assert.deepEqual(submitRequirements({ mode: "new", isMember: true }), { checklist: false, gates: true });
-});
-
-test("an in-place edit needs neither, for members and outside contributors alike", () => {
-  assert.deepEqual(submitRequirements({ mode: "edit", isMember: false }), { checklist: false, gates: false });
-  assert.deepEqual(submitRequirements({ mode: "edit", isMember: true }), { checklist: false, gates: false });
+test("an in-place edit needs neither", () => {
+  assert.deepEqual(submitRequirements({ mode: "edit" }), { checklist: false, gates: false });
 });
 
 // --- submitBlockers -----------------------------------------------------------

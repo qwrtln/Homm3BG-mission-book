@@ -591,10 +591,9 @@ export function initGithub() {
     const token = getToken();
     if (!token) return;
     const mode = githubSaveState.edit ? "edit" : "new";
-    const { checklist, gates } = submitRequirements({ mode, isMember: target.isMember });
+    const { checklist, gates } = submitRequirements({ mode });
     let body = pullRequestBody([]);
-    // A member's new scenario that is saved and built needs no dialog; a
-    // contributor always gets one, for the checklist.
+    // A new scenario always gets the dialog, for the checklist.
     if (gates && (checklist || currentSubmitBlockers().length > 0)) {
       const items = await askToSubmit({ checklist });
       if (items === null) return;

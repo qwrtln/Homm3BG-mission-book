@@ -1,6 +1,6 @@
 // Tier 2. The gate in front of "Open PR": a new scenario must be saved and
-// built from its saved text, and a contributor who is not a project member
-// ticks the pre-submit checklist first. The engine is stubbed and GitHub is
+// built from its saved text, and whoever opens the pull request, project
+// member or not, ticks the pre-submit checklist first. The engine is stubbed and GitHub is
 // faked, as in github.test.mjs and member-modes.test.mjs; the sign-in is a
 // token seeded into localStorage.
 
@@ -366,7 +366,7 @@ test.describe("a contributor opening a new scenario's pull request", () => {
 test.describe("a member opening a new scenario's pull request", () => {
   test.use({ githubRoutes: routes([...identityRoutes({ push: true }), ...SAVE_AND_PR_ROUTES]) });
 
-  test("saved and built: no dialog, and the body is the fixed line", async ({ app }) => {
+  test("saved and built: the checklist is asked for, and the pull request carries it", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
     await openBlankClash(page);
@@ -374,16 +374,20 @@ test.describe("a member opening a new scenario's pull request", () => {
     await build(page);
     const seen = recordGithubRequests(page);
 
-    await page.locator("#github-open-pr").click();
+    await openDialog(page);
+    await expectBlockers(page, []);
+    await expect(boxes(page)).toHaveCount(CHECKLIST_ITEMS.length);
+    await expect(page.locator("#submit-confirm")).toBeDisabled();
+    await tickAll(page);
+    await page.locator("#submit-confirm").click();
 
     await expect(page.locator("#github-pr-link")).toBeVisible();
-    await expect(page.locator("#submit-dialog")).toBeHidden();
     const pulls = createdPulls(seen);
     expect(pulls).toHaveLength(1);
-    expect(pulls[0].body).toBe(pullRequestBody([]));
+    expect(pulls[0].body).toBe(pullRequestBody(CHECKLIST_ITEMS));
   });
 
-  test("unbuilt: the dialog lists the build condition, with no checkboxes", async ({ app }) => {
+  test("unbuilt: the dialog lists the build condition and the checklist cannot be ticked", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
     await openBlankClash(page);
@@ -391,7 +395,9 @@ test.describe("a member opening a new scenario's pull request", () => {
 
     await openDialog(page);
     await expectBlockers(page, [UNBUILT]);
-    await expect(page.locator("#submit-checklist")).toBeHidden();
+    await expect(page.locator("#submit-checklist")).toBeVisible();
+    await expect(boxes(page)).toHaveCount(CHECKLIST_ITEMS.length);
+    for (const box of await boxes(page).all()) await expect(box).toBeDisabled();
     await expect(page.locator("#submit-confirm")).toBeDisabled();
   });
 });
