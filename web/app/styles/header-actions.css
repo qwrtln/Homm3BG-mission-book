@@ -12,6 +12,29 @@ header button.icon { padding: 0.3rem 0.5rem; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* The category the scenario is filed under: compact, so the header stays one
+   row. Disabled once the scenario is on GitHub. */
+.scenario-category {
+  flex: none;
+  padding: 0.15rem 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+}
+.scenario-category:disabled { color: var(--muted); cursor: help; opacity: 1; }
+.category-note[hidden] { display: none; }
+.category-note {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--warn);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .draft-note[hidden], .unsaved-note[hidden] { display: none; }
 .draft-note, .unsaved-note { flex: none; font-size: 0.78rem; white-space: nowrap; }
 .draft-note {

@@ -50,17 +50,83 @@ export function validateScenarioName(name) {
 const DRAFT_ROOT = "draft-scenarios";
 
 /**
- * Directory a new scenario's file lands in. A new scenario is always a draft,
- * so it never goes into a published directory, even when it starts from a
- * published scenario's source.
+ * The categories a new scenario can be filed under, as draft-scenarios/
+ * subdirectory names, in the order the welcome screen lists them. A test
+ * keeps this in step with DRAFT_GROUP_FILES in build-plan.js.
  *
- * @param {string} pickedPath repository path of the entry the contributor started from
- * @param {string | null} [category] template picks only: the category button chosen
+ * @type {readonly string[]}
+ */
+export const DRAFT_CATEGORIES = Object.freeze(["clash", "coops", "alliances", "campaigns"]);
+
+/**
+ * The category a scenario's file sits in, published or draft.
+ *
+ * @param {string} path repository path, e.g. "clash/x.tex" or "draft-scenarios/coops/x.tex"
+ * @returns {string | null} the category key, or null for a path outside every category
+ */
+export function categoryOfPath(path) {
+  const parts = path.split("/");
+  const start = parts[0] === DRAFT_ROOT ? 1 : 0;
+  if (parts.length !== start + 2) return null;
+  const category = parts[start];
+  return DRAFT_CATEGORIES.includes(category) ? category : null;
+}
+
+/**
+ * Directory a new scenario's file lands in. A new scenario is always a draft,
+ * so it never goes into a published directory, whatever it starts from.
+ *
+ * @param {string} category one of DRAFT_CATEGORIES
  * @returns {string} e.g. "draft-scenarios/coops"
  */
-export function newScenarioDir(pickedPath, category = null) {
-  if (category) return `${DRAFT_ROOT}/${category}`;
-  const parts = pickedPath.split("/");
-  const start = parts[0] === DRAFT_ROOT ? 1 : 0;
-  return `${DRAFT_ROOT}/${parts[start]}`;
+export function newScenarioDir(category) {
+  if (!DRAFT_CATEGORIES.includes(category)) throw new Error(`Unknown scenario category "${category}".`);
+  return `${DRAFT_ROOT}/${category}`;
+}
+
+/**
+ * The kind a scenario names in the second argument of \addscenariosection,
+ * for each category with one fixed kind. A campaign's kind names the
+ * campaign itself, so it has no entry.
+ *
+ * @type {Readonly<Record<string, string>>}
+ */
+export const SCENARIO_KINDS = Object.freeze({
+  clash: "Clash Scenario",
+  coops: "Cooperative Scenario",
+  alliances: "Alliance Scenario",
+});
+
+/**
+ * Makes a scenario's heading name the kind of its category. Only a standard
+ * kind is replaced: a hand-written one such as "Clash/Alliance Scenario" and
+ * every campaign heading stay as they are, as does any source filed under
+ * campaigns.
+ *
+ * @param {string} source one .tex file's text
+ * @param {string} category one of DRAFT_CATEGORIES
+ * @returns {string} the source, with at most the heading's kind changed
+ */
+export function withScenarioKind(source, category) {
+  const kind = SCENARIO_KINDS[category];
+  if (!kind) return source;
+  const standard = Object.values(SCENARIO_KINDS);
+  return source.replace(/(\\addscenariosection(?:\[[^\]]*\])?\{[^}]*\}\{)([^}]*)(\})/, (whole, head, current, tail) =>
+    standard.includes(current) ? `${head}${kind}${tail}` : whole,
+  );
+}
+
+/**
+ * Moves a draft scenario's path into another category, keeping its file name.
+ *
+ * @param {string} path a draft path, "draft-scenarios/<category>/<file>.tex"
+ * @param {string} category one of DRAFT_CATEGORIES
+ * @returns {string} "draft-scenarios/<category>/<file>.tex"
+ */
+export function withCategory(path, category) {
+  const parts = path.split("/");
+  if (parts[0] !== DRAFT_ROOT || categoryOfPath(path) === null) {
+    throw new Error(`"${path}" is not a draft scenario path.`);
+  }
+  return `${newScenarioDir(category)}/${parts[2]}`;
 }

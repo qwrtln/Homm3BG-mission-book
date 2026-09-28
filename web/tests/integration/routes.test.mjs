@@ -70,6 +70,127 @@ test("starting a new scenario writes its address", async ({ app }) => {
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
 });
 
+/**
+ * Opens a new blank Clash scenario named "Route Probe", signed out.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function openBlankClash(page) {
+  await page.locator('[data-category="clash"]').click();
+  await page.locator("#scenario-name").fill("Route Probe");
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#status-text")).toHaveText("Ready.");
+}
+
+/**
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<string>} the editor's text
+ */
+function editorValue(page) {
+  return page.evaluate(() => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue());
+}
+
+/**
+ * @param {import("@playwright/test").Page} page
+ * @param {string} path
+ * @returns {Promise<string | null>} the autosave stored for that path
+ */
+function storedDraft(page, path) {
+  return page.evaluate((p) => localStorage.getItem(`wasm-scenario-builder:draft:${p}`), path);
+}
+
+const CLASH_PATH = "draft-scenarios/clash/route_probe.tex";
+const COOPS_PATH = "draft-scenarios/coops/route_probe.tex";
+
+test("changing the category before saving moves the autosave and the address", async ({ app }) => {
+  const { page } = app;
+  await openBlankClash(page);
+  const category = page.locator("#scenario-category");
+  await expect(category).toHaveValue("clash");
+  await expect(category).toBeEnabled();
+  expect(await editorValue(page)).toContain("{Clash Scenario}");
+
+  await category.selectOption("coops");
+
+  await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
+  const text = await editorValue(page);
+  // The standard heading kind follows the category.
+  expect(text).toContain("{Cooperative Scenario}");
+  expect(text).not.toContain("{Clash Scenario}");
+  expect(await storedDraft(page, CLASH_PATH)).toBeNull();
+  expect(await storedDraft(page, COOPS_PATH)).toBe(text);
+  await expect(page.locator("#category-note")).toBeHidden();
+
+  await page.reload();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-category")).toHaveValue("coops");
+  expect(await editorValue(page)).toBe(text);
+  expect(new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
+});
+
+test("a hand-written heading kind survives a category change", async ({ app }) => {
+  const { page } = app;
+  await openBlankClash(page);
+  await page.evaluate(() => {
+    const cm = /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror;
+    cm.setValue(cm.getValue().replace("{Clash Scenario}", "{Clash/Alliance Scenario}"));
+  });
+
+  await page.locator("#scenario-category").selectOption("coops");
+
+  await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
+  const text = await editorValue(page);
+  expect(text).toContain("{Clash/Alliance Scenario}");
+  expect(await storedDraft(page, COOPS_PATH)).toBe(text);
+});
+
+test("a category change is refused when a local draft already sits there", async ({ app }) => {
+  const { page } = app;
+  const theirs = "% another draft of the same name\n";
+  await page.evaluate(
+    ([path, text]) => localStorage.setItem(`wasm-scenario-builder:draft:${path}`, text),
+    [COOPS_PATH, theirs],
+  );
+  await openBlankClash(page);
+  const mine = await editorValue(page);
+
+  await page.locator("#scenario-category").selectOption("coops");
+
+  await expect(page.locator("#scenario-category")).toHaveValue("clash");
+  await expect(page.locator("#category-note")).toBeVisible();
+  await expect(page.locator("#category-note")).toHaveText(
+    "You already have a local draft with this name under Coop. Rename it or open that draft instead.",
+  );
+  expect(await editorValue(page)).toBe(mine);
+  expect(await storedDraft(page, COOPS_PATH)).toBe(theirs);
+  expect(await storedDraft(page, CLASH_PATH)).toBe(mine);
+  expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
+});
+
+test("the sign-in round trip reopens at the moved path", async ({ app }) => {
+  const { page } = app;
+  await openBlankClash(page);
+  await page.locator("#scenario-category").selectOption("campaigns");
+  await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/campaigns/route_probe");
+  const text = await editorValue(page);
+
+  // GitHub itself is never reached: its authorize page answers blank, and the
+  // way back is a plain load of the app, as a sign-in that was abandoned.
+  await page.route("https://github.com/**", (route) =>
+    route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>GitHub</title>" }),
+  );
+  await page.locator("#github-signin").click();
+  await page.waitForURL(/github\.com/);
+  await page.goto("/web/app/");
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-category")).toHaveValue("campaigns");
+  expect(await editorValue(page)).toBe(text);
+  await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/campaigns/route_probe");
+});
+
 test.describe("signed in with a branch on GitHub", () => {
   const LOGIN = "octotester";
   const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
@@ -115,6 +236,9 @@ test.describe("signed in with a branch on GitHub", () => {
       /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
     );
     expect(value).toBe("% from branch\n");
+    // The branch names the category now: it shows, read-only.
+    await expect(page.locator("#scenario-category")).toHaveValue("clash");
+    await expect(page.locator("#scenario-category")).toBeDisabled();
   });
 });
 

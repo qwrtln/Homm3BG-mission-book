@@ -18,6 +18,21 @@ import { el } from "./dom.js";
  */
 export const githubSaveState = { lastSaveTarget: null, edit: null, committedUploads: new Set() };
 
+/** @type {(() => void) | null} */
+let resetListener = null;
+
+/**
+ * Registers what runs after every resetGithubSaveState, so a control that
+ * reads the save state (the header's category) follows it without this
+ * module importing a DOM module back.
+ *
+ * @param {() => void} listener
+ * @returns {void}
+ */
+export function onSaveStateReset(listener) {
+  resetListener = listener;
+}
+
 /**
  * On sign-out or picking a different scenario: neither carries over the
  * previous branch/PR/button state.
@@ -30,6 +45,7 @@ export function resetGithubSaveState() {
   githubSaveState.committedUploads = new Set();
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;
+  resetListener?.();
 }
 
 /**

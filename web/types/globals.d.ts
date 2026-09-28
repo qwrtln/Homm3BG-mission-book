@@ -26,6 +26,7 @@ interface CodeMirrorEditor {
   setCursor(pos: CodeMirrorPosition): void;
   getLine(line: number): string;
   replaceRange(text: string, from: CodeMirrorPosition, to?: CodeMirrorPosition, origin?: string): void;
+  posFromIndex(index: number): CodeMirrorPosition;
   cursorCoords(pos: CodeMirrorPosition, mode: "window"): { left: number; right: number; top: number; bottom: number };
   somethingSelected(): boolean;
   addKeyMap(map: CodeMirrorKeyMap): void;

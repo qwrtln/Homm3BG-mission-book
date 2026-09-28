@@ -1,5 +1,6 @@
 import { withScenarioTitle } from "../../shared/build-plan.js";
-import { newScenarioDir } from "../../shared/scenario-name.js";
+import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.js";
+import { syncCategoryControl } from "./category.js";
 import { TEMPLATES } from "./config.js";
 import { markClean } from "./dirty.js";
 import { el, sanitizeFilename, setStatus } from "./dom.js";
@@ -70,7 +71,7 @@ export function showWorkspace() {
  *
  * @param {string} path the picked entry's repository path
  * @param {string} name what the contributor typed
- * @param {string | null} [category] draft-scenarios subdir, template picks only
+ * @param {string} category draft-scenarios subdir the new scenario lands in
  * @returns {Promise<void>}
  */
 export async function commitEntry(path, name, category) {
@@ -89,13 +90,14 @@ export async function commitEntry(path, name, category) {
 
   // Keep the .tex extension: TeX's \input only appends one if missing, so a
   // name without it would 404 twice.
-  const dir = newScenarioDir(entry.path, template ? category : null);
+  const dir = newScenarioDir(category);
   const identity = `${dir}/${sanitizeFilename(name)}.tex`;
 
   resetGithubSaveState();
   state.chosenPath = identity;
   // Always the typed name: a save must never stay tied to the entry it started from.
   setScenarioTitle(name.trim());
+  syncCategoryControl();
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -105,7 +107,8 @@ export async function commitEntry(path, name, category) {
   const pristineSource = /** @type {string} */ (fetched.content);
 
   const draft = loadDraft(identity);
-  const pristine = withScenarioTitle(pristineSource, name.trim());
+  // The heading names the kind of the category it is filed under, not its source's.
+  const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
   cm.setValue(draft !== null ? draft : pristine);
   el("draft-note").hidden = draft === null;
   cm.focus();
@@ -177,6 +180,7 @@ export async function openForEdit(path, title, source, edit) {
   githubSaveState.edit = edit;
   state.chosenPath = path;
   setScenarioTitle(title);
+  syncCategoryControl();
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -232,6 +236,7 @@ export async function returnToParked() {
   await showWorkspace();
   cm.refresh(); // CodeMirror mismeasures while its host was display:none
   el("header-actions").hidden = false;
+  syncCategoryControl();
   reflectRoute();
   cm.focus();
 }

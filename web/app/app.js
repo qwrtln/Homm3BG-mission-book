@@ -2,6 +2,7 @@ import { errorMessage } from "../shared/errors.js";
 import { initAbout } from "./modules/about.js";
 import { initAutocomplete } from "./modules/autocomplete.js";
 import { ensureEngine, initBuild } from "./modules/build.js";
+import { initCategory } from "./modules/category.js";
 import { el, escapeHtml, setStatus } from "./modules/dom.js";
 import { initEditor } from "./modules/editor.js";
 import { loadEntries } from "./modules/entries.js";
@@ -18,6 +19,7 @@ import { initUploads } from "./modules/uploads.js";
 
 initTheme();
 initHeaderMenu();
+initCategory();
 initAbout();
 initEditor();
 initPanes();

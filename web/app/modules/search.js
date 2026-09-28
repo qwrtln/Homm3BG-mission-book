@@ -1,3 +1,4 @@
+import { DRAFT_CATEGORIES } from "../../shared/scenario-name.js";
 import { CATEGORY_LABELS, CATEGORY_ORDER } from "./config.js";
 import { closestTo, el, escapeHtml } from "./dom.js";
 import { blanksAllowed, pickBlank, selectPending } from "./picker.js";
@@ -68,9 +69,6 @@ export function groupedResults(query) {
   });
 }
 
-/** The blank-template categories, in the order the welcome screen lists them. */
-const BLANK_CATEGORIES = ["clash", "coops", "alliances", "campaigns"];
-
 /**
  * The empty state: nothing matched, so offer a blank template instead of a
  * dead end. Edit mode opens an existing scenario only, so it offers none.
@@ -80,7 +78,7 @@ const BLANK_CATEGORIES = ["clash", "coops", "alliances", "campaigns"];
 function noMatchHtml() {
   const message = '<div class="combobox-empty">No scenario matches.</div>';
   if (!blanksAllowed()) return message;
-  const buttons = BLANK_CATEGORIES.map(
+  const buttons = DRAFT_CATEGORIES.map(
     (category) =>
       `<button type="button" class="combobox-blank" data-blank="${category}">Start a blank ${escapeHtml(CATEGORY_LABELS[category])} scenario</button>`,
   ).join("");

@@ -1,7 +1,7 @@
 import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.js";
 import { errorMessage } from "../../shared/errors.js";
-import { validateScenarioName } from "../../shared/scenario-name.js";
-import { publishedPdfUrl, TEMPLATES } from "./config.js";
+import { categoryOfPath, validateScenarioName } from "../../shared/scenario-name.js";
+import { CATEGORY_LABELS, publishedPdfUrl, TEMPLATES } from "./config.js";
 import { basenameNoExt, el } from "./dom.js";
 import { preloadFile, preloadText } from "./files.js";
 import { state } from "./state.js";
@@ -12,8 +12,8 @@ import { commitEntry } from "./workspace.js";
 // already start downloading its pictures/PDF though — see startScenarioPrefetch.
 /** @type {string | null} */
 let pendingPath = null;
-/** @type {string | null} draft-scenarios subdir for a template pick; null for a real entry */
-let pendingCategory = null;
+/** @type {string | null} the category the new scenario is filed under: preset by every pick, overridden by the radio group */
+let chosenCategory = null;
 
 /** @type {"new" | "edit"} what "Open editor" does: start a new scenario, or edit the picked one in place */
 let pickerMode = "new";
@@ -67,7 +67,7 @@ export function setPickerMode(mode) {
   // A blank template picked in new mode is not something an edit can open.
   if (mode === "edit" && pendingPath && isTemplatePath(pendingPath)) {
     pendingPath = null;
-    pendingCategory = null;
+    showCategory(null);
     el("search").value = "";
     markBlankButton(null);
   }
@@ -109,6 +109,40 @@ function markBlankButton(category) {
       const pressed = /** @type {HTMLElement} */ (button).dataset.category === category;
       button.setAttribute("aria-pressed", String(pressed));
     });
+}
+
+/**
+ * Sets the category the new scenario is filed under, and shows it: the
+ * matching radio checked, and the hint naming where the file lands.
+ *
+ * @param {string | null} category one of DRAFT_CATEGORIES, or null for none
+ * @returns {void}
+ */
+function showCategory(category) {
+  chosenCategory = category;
+  el("category-choice")
+    .querySelectorAll("input[name=category]")
+    .forEach((radio) => {
+      const input = /** @type {HTMLInputElement} */ (radio);
+      input.checked = input.value === category;
+    });
+  el("category-hint").textContent = category ? `Filed in the Draft Scenarios under ${CATEGORY_LABELS[category]}.` : "";
+}
+
+/**
+ * A radio in the "Game mode" group was checked. A blank pick follows it,
+ * since the campaign has a template of its own; a copy keeps its source.
+ *
+ * @param {string} category
+ * @returns {void}
+ */
+function chooseCategory(category) {
+  if (pendingPath && isTemplatePath(pendingPath)) {
+    pickBlank(category);
+    return;
+  }
+  showCategory(category);
+  updateGoButton();
 }
 
 /**
@@ -156,8 +190,12 @@ export function updateGoButton() {
   nameError.hidden = !showNameError;
   el("scenario-name").setAttribute("aria-invalid", showNameError ? "true" : "false");
 
-  el("go").disabled = !pendingPath || !check.valid;
-  el("go-hint").textContent = !pendingPath ? "Pick a scenario or a blank template first." : check.message;
+  el("go").disabled = !pendingPath || chosenCategory === null || !check.valid;
+  el("go-hint").textContent = !pendingPath
+    ? "Pick a scenario or a blank template first."
+    : chosenCategory === null
+      ? "Choose where to file your scenario."
+      : check.message;
 }
 
 /**
@@ -165,13 +203,13 @@ export function updateGoButton() {
  *
  * @param {string} path the entry's repository path
  * @param {string} title what the picked row says
- * @param {string | null} [category] template picks only
+ * @param {string | null} [category] the category to file under; a copy defaults to its source's own
  * @returns {void}
  */
 export function selectPending(path, title, category = null) {
   pendingPath = path;
   pendingTitle = title;
-  pendingCategory = category;
+  showCategory(category ?? categoryOfPath(path));
   // The search box itself shows the pick: what was typed to find it is spent.
   el("search").value = title;
   el("search-results").hidden = true;
@@ -246,6 +284,11 @@ export function initPicker() {
       if (category) button.addEventListener("click", () => pickBlank(category));
     });
 
+  el("category-choice").addEventListener("change", (event) => {
+    const radio = /** @type {HTMLInputElement} */ (event.target);
+    if (radio.name === "category" && radio.checked) chooseCategory(radio.value);
+  });
+
   el("mode-edit").addEventListener("click", () => setPickerMode("edit"));
   el("mode-new").addEventListener("click", () => setPickerMode("new"));
 
@@ -255,6 +298,7 @@ export function initPicker() {
       return;
     }
     if (!pendingPath || !validateScenarioName(el("scenario-name").value).valid) return;
-    commitEntry(pendingPath, el("scenario-name").value, pendingCategory);
+    if (!chosenCategory) return;
+    commitEntry(pendingPath, el("scenario-name").value, chosenCategory);
   });
 }

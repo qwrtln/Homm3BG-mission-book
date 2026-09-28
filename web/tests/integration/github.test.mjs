@@ -350,6 +350,34 @@ test.describe("saving a scenario", () => {
     // file, and Chromium logs every 404 as a console error.
   });
 
+  test("a save commits under the chosen category and then locks it", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
+    await openBlankClash(page);
+
+    const category = page.locator("#scenario-category");
+    await expect(category).toBeEnabled();
+    await category.selectOption("coops");
+    await expect.poll(() => new URL(page.url()).hash).toMatch(/^#\/drafts\/coops\//);
+    // The heading's rewrite is an edit like any other: it is not saved yet.
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+
+    const requests = recordGithubRequests(page);
+    await page.locator("#github-save").click();
+    await expect(page.locator("#github-open-pr")).toBeVisible();
+
+    const trees = requests.filter((r) => r.method === "POST" && r.url.endsWith("/git/trees"));
+    expect(JSON.parse(trees[0].body).tree.map((entry) => entry.path)).toEqual([
+      expect.stringMatching(/^draft-scenarios\/coops\/[a-z0-9_-]+\.tex$/),
+    ]);
+    const blobs = requests.filter((r) => r.method === "POST" && r.url.endsWith("/git/blobs"));
+    expect(JSON.parse(blobs[0].body).content).toContain("{Cooperative Scenario}");
+    await expect(category).toHaveValue("coops");
+    await expect(category).toBeDisabled();
+    await expect(category).toHaveAttribute("title", "The category is fixed once the scenario is saved to GitHub.");
+  });
+
   test.describe("when GitHub refuses", () => {
     test.use({
       githubRoutes: routes([
@@ -406,6 +434,17 @@ test.describe("saving a resumed draft", () => {
       { method: "POST", path: /\/git\/commits$/, body: { sha: "new-commit-sha", tree: { sha: "new-tree-sha" } } },
       { method: "PATCH", path: /\/git\/refs\/heads\//, body: { ref: `refs/heads/${BRANCH}` } },
     ]),
+  });
+
+  test("a resumed GitHub draft shows its category read-only", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+    await expect(page.locator("#scenario-category")).toHaveValue("clash");
+    await expect(page.locator("#scenario-category")).toBeDisabled();
   });
 
   test("goes back to the branch it was resumed from, not a new one", async ({ app }) => {

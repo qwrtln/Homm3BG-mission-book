@@ -6,6 +6,7 @@
 // hand-off from the welcome screen to the workspace.
 
 import { withScenarioTitle } from "../../shared/build-plan.js";
+import { withScenarioKind } from "../../shared/scenario-name.js";
 import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 // config.js's TEMPLATES. These two are the app's own constants, not book
@@ -330,7 +331,9 @@ test("the blank-scenario links pick a template, and Open editor loads that templ
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#welcome")).toBeHidden();
   const blankSource = await repoFile(page, TEMPLATE_SCENARIO_PATH);
-  const blankExpected = withScenarioTitle(blankSource, "blank test");
+  // Filed under Clash, so the template's heading names a Clash scenario.
+  const blankExpected = withScenarioKind(withScenarioTitle(blankSource, "blank test"), "clash");
+  expect(blankExpected).toContain("{Clash Scenario}{blank test}");
   await expect
     .poll(() => editorValue(page), { message: "the blank template never reached the editor" })
     .toBe(blankExpected);
@@ -388,7 +391,7 @@ test("at 1440×900 the picker is one centred column, with blank starts quieter t
   );
 });
 
-test("Tab walks search, the blank links, the name and Open editor, and shows where focus is", async ({ app }) => {
+test("Tab walks search, the blank links, the name, the category and Open editor, showing focus", async ({ app }) => {
   const { page } = app;
   await page.locator("#scratch-clash").click();
   await page.locator("#scenario-name").fill("Tab Probe");
@@ -408,10 +411,105 @@ test("Tab walks search, the blank links, the name and Open editor, and shows whe
   }
   await page.keyboard.press("Tab");
   await expect(page.locator("#scenario-name")).toBeFocused();
+  // A radio group is one Tab stop: the checked radio. Its label draws the ring.
+  await page.keyboard.press("Tab");
+  const radio = page.locator("#category-choice input[value='clash']");
+  await expect(radio).toBeFocused();
+  expect(
+    await radio.evaluate((node) => getComputedStyle(/** @type {Element} */ (node.closest("label"))).outlineStyle),
+    "the category choice shows no focus",
+  ).not.toBe("none");
   await page.keyboard.press("Tab");
   const go = page.locator("#go");
   await expect(go).toBeFocused();
   expect(await go.evaluate((node) => getComputedStyle(node).outlineStyle), "Open editor shows no focus").not.toBe(
     "none",
   );
+});
+
+test("copying a scenario preselects its category, and a switch files the copy elsewhere", async ({ app }) => {
+  const { page, errors } = app;
+  await stubPublishedPdf(page);
+
+  const results = await openScenarioList(page);
+  const clash = results.and(page.locator("[data-path^='clash/']")).first();
+  const clashPath = await clash.getAttribute("data-path");
+  expect(clashPath, "the book has no Clash scenario to copy").toBeTruthy();
+  await clash.click();
+
+  await expect(page.locator("#category-choice input[value='clash']")).toBeChecked();
+  await expect(page.locator("#category-hint")).toHaveText("Filed in the Draft Scenarios under Clash.");
+
+  await page.locator("#category-choice").getByLabel("Coop").check();
+  await expect(page.locator("#category-choice input[value='clash']")).not.toBeChecked();
+  await expect(page.locator("#category-hint")).toHaveText("Filed in the Draft Scenarios under Coop.");
+  // A copy keeps its source whatever it is filed under.
+  await expect(page.locator("#search")).toHaveValue((await clash.textContent())?.trim() ?? "");
+
+  await page.locator("#scenario-name").fill("Filed Elsewhere");
+  await page.locator("#go").click();
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page).toHaveURL(/#\/drafts\/coops\/[^/]+$/);
+  // The heading names the kind it is filed under, not the Clash it came from.
+  await expect
+    .poll(() => editorValue(page), { message: "the copy's heading never named its new kind" })
+    .toMatch(/\\addscenariosection\{1\}\{Cooperative Scenario\}\{Filed Elsewhere\}/);
+
+  expect(errors, "the page reported errors while filing a copy elsewhere").toEqual([]);
+});
+
+test("a blank pick follows the category, swapping to the campaign template and back", async ({ app }) => {
+  const { page, errors } = app;
+  const search = page.locator("#search");
+
+  await page.locator("#scratch-clash").click();
+  const blankTitle = await search.inputValue();
+  await expect(page.locator("#category-choice input[value='clash']")).toBeChecked();
+
+  await page.locator("#category-choice").getByLabel("Campaign").check();
+  await expect(page.locator("#scratch-campaign")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "false");
+  await expect(search).not.toHaveValue(blankTitle);
+
+  // And back: the other categories share the default template.
+  await page.locator("#category-choice").getByLabel("Alliance").check();
+  await expect(page.locator("#scratch-alliance")).toHaveAttribute("aria-pressed", "true");
+  await expect(search).toHaveValue(blankTitle);
+
+  await page.locator("#category-choice").getByLabel("Campaign").check();
+  await page.locator("#scenario-name").fill("Blank Campaign Test");
+  await page.locator("#go").click();
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  const expected = withScenarioTitle(await repoFile(page, TEMPLATE_CAMPAIGN_PATH), "Blank Campaign Test");
+  await expect
+    .poll(() => editorValue(page), { message: "the campaign template never reached the editor" })
+    .toBe(expected);
+  await expect(page).toHaveURL(/#\/drafts\/campaigns\/[^/]+$/);
+
+  expect(errors, "the page reported errors while swapping blank templates").toEqual([]);
+});
+
+test("the category choice is dimmed until there is a pick", async ({ app }) => {
+  const { page, errors } = app;
+  const choice = page.locator("#category-choice");
+  const radio = choice.locator("input[value='coops']");
+
+  await expect(choice).toBeVisible();
+  // It sits inside the name step and shares its dimming.
+  await expect(page.locator("#name-slide #category-choice")).toHaveCount(1);
+  await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
+  await expect(choice.locator("input:checked")).toHaveCount(0);
+  await radio.evaluate((input) => input.focus());
+  await expect(radio, "a category took focus before a pick").not.toBeFocused();
+
+  await page.locator("#scratch-coop").click();
+
+  await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
+  await expect(radio).toBeChecked();
+  await radio.focus();
+  await expect(radio).toBeFocused();
+
+  expect(errors, "the page reported errors while gating the category choice").toEqual([]);
 });

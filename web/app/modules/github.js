@@ -15,6 +15,7 @@ import {
 } from "../../shared/github-contrib.js?v=2";
 import { parseRoute, slugToPath } from "../../shared/route.js";
 import { uploadsSignature } from "../../shared/unsaved.js";
+import { syncCategoryControl } from "./category.js";
 import { isDirty, markClean } from "./dirty.js";
 import { basenameNoExt, closestTo, confirmAction, confirmDelete, el, escapeHtml, setStatus } from "./dom.js";
 import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
@@ -64,6 +65,7 @@ async function reopenLocalDraft(path, title) {
 
   state.chosenPath = path;
   setScenarioTitle(title || basenameNoExt(path));
+  syncCategoryControl();
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -268,6 +270,7 @@ async function startEdit(path, title) {
       await openForEdit(path, title, source, { startOver: branch !== null && startOver });
       if (branch && !startOver) {
         githubSaveState.lastSaveTarget = { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO, branch, isMember: true };
+        syncCategoryControl();
         el("github-open-pr").hidden = false;
         void checkExistingPullRequest();
       }
@@ -349,6 +352,7 @@ async function openResumableDraft(draft) {
     markClean();
 
     githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
+    syncCategoryControl();
     githubSaveState.committedUploads = new Set(draft.assets.map((asset) => asset.path));
     el("github-open-pr").hidden = false;
     void checkExistingPullRequest();
@@ -559,6 +563,7 @@ export function initGithub() {
       // The reset happened with this save; from here on the branch is built upon.
       if (githubSaveState.edit) githubSaveState.edit.startOver = false;
       githubSaveState.lastSaveTarget = saved;
+      syncCategoryControl();
       githubSaveState.committedUploads = savedPaths;
       markClean(savedText, savedUploads);
       el("github-open-pr").hidden = false;

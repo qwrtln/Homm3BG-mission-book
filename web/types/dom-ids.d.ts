@@ -47,6 +47,8 @@ interface ElementIdMap {
   "confirm-message": HTMLParagraphElement;
   "confirm-title": HTMLHeadingElement;
   "confirm-ok": HTMLButtonElement;
+  "category-choice": HTMLFieldSetElement;
+  "category-hint": HTMLParagraphElement;
   go: HTMLButtonElement;
   "mode-choice": HTMLDivElement;
   "mode-edit": HTMLButtonElement;
@@ -61,6 +63,8 @@ interface ElementIdMap {
   "header-scenario": HTMLDivElement;
   "header-titles": HTMLDivElement;
   "scenario-title": HTMLSpanElement;
+  "scenario-category": HTMLSelectElement;
+  "category-note": HTMLSpanElement;
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;

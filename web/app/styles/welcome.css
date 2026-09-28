@@ -144,6 +144,32 @@
   color: var(--accent);
   font-weight: 600;
 }
+/* Where the new scenario is filed: a radio group dressed as the same joined
+   buttons. The radios stay in the tab order, hidden behind their labels. */
+#name-slide .category-choice { margin: 1.25rem 0 0; padding: 0; border: 0; min-width: 0; }
+#name-slide .category-choice legend { margin: 0 0 0.5rem; padding: 0; color: var(--muted); font-size: 0.85rem; }
+#name-slide .category-choice label {
+  position: relative;
+  margin-left: -1px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+#name-slide .category-choice label:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
+#name-slide .category-choice label:last-child { border-radius: 0 4px 4px 0; }
+#name-slide .category-choice input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+#name-slide .category-choice label:hover { z-index: 1; border-color: var(--accent); color: var(--accent); }
+#name-slide .category-choice label:has(input:focus-visible) { z-index: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
+#name-slide .category-choice label:has(input:checked) {
+  z-index: 2;
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+#name-slide .category-hint { margin: 0.5rem 0 0; min-height: 1.2em; }
 .name-field { max-width: 24rem; }
 #scenario-name {
   width: 100%;

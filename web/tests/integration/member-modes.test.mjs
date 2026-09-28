@@ -5,6 +5,7 @@
 // api.github.com is stubbed.
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { categoryOfPath } from "../../shared/scenario-name.js";
 import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
@@ -269,6 +270,20 @@ test.describe("editing in place", () => {
       const patch = seen.find((r) => r.method === "PATCH");
       expect(decodeURIComponent(patch?.url ?? "")).toContain(`/scenario-editor/${LOGIN}/updates/`);
       expect(JSON.parse(patch?.body ?? "{}").force, "a plain edit must not force-move the branch").toBeUndefined();
+    });
+
+    test("edit mode shows the category read-only", async ({ app }) => {
+      const { page } = app;
+      const path = await pickFirstScenario(page);
+      await page.locator("#go").click();
+      await expect(page.locator("#workspace")).toBeVisible();
+      await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+      const category = page.locator("#scenario-category");
+      await expect(category).toBeDisabled();
+      // The picked scenario's own category, whichever the book lists first.
+      await expect(category).toHaveValue(categoryOfPath(path) ?? "");
+      await expect(category).toHaveAttribute("title", "The category is fixed once the scenario is saved to GitHub.");
     });
   });
 
