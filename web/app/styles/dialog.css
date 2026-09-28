@@ -17,6 +17,19 @@
 button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
 button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }
 
+/* --- Submit dialog (submit.js): unmet conditions, then the checklist. --- */
+
+.submit-dialog { max-width: min(32rem, calc(100vw - 2rem)); }
+.submit-blockers { margin: 0 0 0.75rem; padding-left: 1.25rem; color: var(--bad); font-weight: 600; }
+.submit-blockers li + li { margin-top: 0.25rem; }
+.submit-checklist { min-width: 0; margin: 0; padding: 0; border: 0; }
+.submit-checklist legend { margin-bottom: 0.5rem; padding: 0; color: var(--muted); font-size: 0.9rem; }
+.submit-item { display: flex; gap: 0.5rem; align-items: flex-start; cursor: pointer; }
+.submit-item + .submit-item { margin-top: 0.6rem; }
+.submit-item input { flex: none; margin: 0.2rem 0 0; }
+.submit-checklist:disabled { opacity: 0.5; }
+.submit-checklist:disabled .submit-item { cursor: not-allowed; }
+
 /* --- About dialog (about.js). Wider than a confirm: license text is
        set at its own line length, and each row scrolls on its own. ------ */
 

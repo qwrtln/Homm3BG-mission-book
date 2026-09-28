@@ -762,6 +762,37 @@ test('an in-place edit\'s pull request is titled "Update <name>"', async () => {
   assert.equal(opened?.body.title, "Update Secret Bomb Stash");
 });
 
+test("a new pull request carries the body the caller passes", async () => {
+  const fake = createGithubFake({ push: true });
+  setHttpClient(fake.client);
+
+  await ensurePullRequest("t", {
+    owner: UPSTREAM_OWNER,
+    branch: "scenario-editor/octocat/valley",
+    scenarioName: "Valley",
+    isMember: true,
+    body: "### Pre-submit checklist\n\n- [x] **Playtested:** yes",
+  });
+
+  const opened = fake.calls.find((call) => call.method === "POST" && call.path.endsWith("/pulls"));
+  assert.equal(opened?.body.body, "### Pre-submit checklist\n\n- [x] **Playtested:** yes");
+});
+
+test("a new pull request without a body gets the fixed editor line", async () => {
+  const fake = createGithubFake({ push: true });
+  setHttpClient(fake.client);
+
+  await ensurePullRequest("t", {
+    owner: UPSTREAM_OWNER,
+    branch: "scenario-editor/octocat/valley",
+    scenarioName: "Valley",
+    isMember: true,
+  });
+
+  const opened = fake.calls.find((call) => call.method === "POST" && call.path.endsWith("/pulls"));
+  assert.equal(opened?.body.body, "Edited in the browser mission book editor.");
+});
+
 test("startOver resets the edit branch to the default branch and commits the new content on top", async () => {
   const fake = createGithubFake({ push: true, files: { "clash/secret_bomb_stash.tex": "main copy" } });
   setHttpClient(fake.client);

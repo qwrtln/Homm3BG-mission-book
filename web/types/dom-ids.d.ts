@@ -47,6 +47,12 @@ interface ElementIdMap {
   "confirm-message": HTMLParagraphElement;
   "confirm-title": HTMLHeadingElement;
   "confirm-ok": HTMLButtonElement;
+  "submit-blockers": HTMLUListElement;
+  "submit-cancel": HTMLButtonElement;
+  "submit-checklist": HTMLFieldSetElement;
+  "submit-confirm": HTMLButtonElement;
+  "submit-dialog": HTMLDialogElement;
+  "submit-title": HTMLHeadingElement;
   "category-choice": HTMLFieldSetElement;
   "category-hint": HTMLParagraphElement;
   go: HTMLButtonElement;

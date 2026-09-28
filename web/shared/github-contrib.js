@@ -1,4 +1,5 @@
 import { DRAFT_GROUP_FILES } from "./build-plan.js";
+import { pullRequestBody } from "./submit-checklist.js";
 
 export const UPSTREAM_OWNER = "qwrtln";
 export const UPSTREAM_REPO = "Homm3BG-mission-book";
@@ -904,11 +905,17 @@ export async function findPullRequest(token, { owner, branch }) {
  * cross-repo (fork) head, plain branch name for a same-repo (collaborator)
  * head.
  *
+ * An existing pull request is returned as it is; its body is not updated.
+ *
  * @param {string} token
- * @param {{owner: string, branch: string, scenarioName: string, isMember: boolean, mode?: "new" | "edit"}} request
+ * @param {{owner: string, branch: string, scenarioName: string, isMember: boolean, mode?: "new" | "edit", body?: string}} request
+ *   body: the pull request description; defaults to the fixed line with no checklist
  * @returns {Promise<GithubPullRequest>}
  */
-export async function ensurePullRequest(token, { owner, branch, scenarioName, isMember, mode = "new" }) {
+export async function ensurePullRequest(
+  token,
+  { owner, branch, scenarioName, isMember, mode = "new", body = pullRequestBody([]) },
+) {
   const upstream = await getUpstreamRepo(token);
   const base = upstream.default_branch;
   const listHead = `${owner}:${branch}`;
@@ -923,7 +930,7 @@ export async function ensurePullRequest(token, { owner, branch, scenarioName, is
       title: mode === "edit" ? `Update ${scenarioName}` : `New scenario: ${scenarioName}`,
       head,
       base,
-      body: `Edited in the browser mission book editor.`,
+      body,
     }),
   });
 }

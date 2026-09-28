@@ -12,6 +12,7 @@ export const state = {
   runner: null,
   lastPdf: null,
   pdfSource: null, // the editor source lastPdf was made from
+  pdfUploads: null, // the uploadsSignature of the in-app build lastPdf came from
   pdfPath: null, // the scenario lastPdf shows, which names its download
   cm: null, // CodeMirror instance, created once over #editor
 

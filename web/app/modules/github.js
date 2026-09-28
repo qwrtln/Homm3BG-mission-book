@@ -12,8 +12,9 @@ import {
   saveScenarioToRepo,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
-} from "../../shared/github-contrib.js?v=2";
+} from "../../shared/github-contrib.js?v=3";
 import { parseRoute, slugToPath } from "../../shared/route.js";
+import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.js";
 import { uploadsSignature } from "../../shared/unsaved.js";
 import { syncCategoryControl } from "./category.js";
 import { isDirty, markClean } from "./dirty.js";
@@ -27,6 +28,7 @@ import { clearPdf } from "./pdf-view.js";
 import { onEditPick, settleModes } from "./picker.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
+import { askToSubmit, currentSubmitBlockers, refreshSubmitDialog } from "./submit.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { isParked, openForEdit, returnToParked, showWelcome, showWorkspace } from "./workspace.js";
 
@@ -577,22 +579,36 @@ export function initGithub() {
       button.disabled = false;
       githubSaveState.saving = false;
       syncCategoryControl();
+      // A save that was running when the submit dialog opened changes what it must say.
+      refreshSubmitDialog();
     }
   });
 
   // ensurePullRequest is idempotent: returns the existing PR for this branch instead of opening a second one.
   el("github-open-pr").addEventListener("click", async () => {
-    if (!githubSaveState.lastSaveTarget) return;
+    const target = githubSaveState.lastSaveTarget;
+    if (!target) return;
     const token = getToken();
     if (!token) return;
+    const mode = githubSaveState.edit ? "edit" : "new";
+    const { checklist, gates } = submitRequirements({ mode, isMember: target.isMember });
+    let body = pullRequestBody([]);
+    // A member's new scenario that is saved and built needs no dialog; a
+    // contributor always gets one, for the checklist.
+    if (gates && (checklist || currentSubmitBlockers().length > 0)) {
+      const items = await askToSubmit({ checklist });
+      if (items === null) return;
+      body = pullRequestBody(items);
+    }
     const button = el("github-open-pr");
     button.disabled = true;
     setStatus("Opening PR…", { spinning: true });
     try {
       const pr = await ensurePullRequest(token, {
-        ...githubSaveState.lastSaveTarget,
+        ...target,
         scenarioName: state.chosenTitle,
-        mode: githubSaveState.edit ? "edit" : "new",
+        mode,
+        body,
       });
       el("github-pr-link").href = pr.html_url;
       el("github-pr-link").hidden = false;

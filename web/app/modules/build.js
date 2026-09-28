@@ -17,12 +17,14 @@ import {
 import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { changedLines } from "../../shared/line-diff.js";
 import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.js";
+import { uploadsSignature } from "../../shared/unsaved.js";
 import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
 import { clearErrorLine, clearPdf, showError, showPdf, showPdfLoading, showPdfMessage } from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
+import { refreshSubmitDialog } from "./submit.js";
 
 /**
  * Downloads and starts the WASM engine, leaving it on state.runner.
@@ -171,7 +173,10 @@ export async function runBuild() {
     await untilAborted(ensureEngine(), signal);
 
     reportPhase("Preparing files…");
+    // One snapshot of text and uploads: an upload changed mid-build must not
+    // reach this compile, or the PDF would not match the proof it records.
     const source = cm.getValue();
+    const uploads = new Map(state.uploadedFiles);
     const metadata = await untilAborted(preloadText("metadata.tex"), signal);
 
     const plan = planScenarioBuild({
@@ -191,7 +196,7 @@ export async function runBuild() {
     reportFileProgress();
     for (const path of plan.repoFiles) {
       // Use the editor's text for the scenario itself, not a re-fetch of the pristine copy.
-      const uploaded = state.uploadedFiles.get(path);
+      const uploaded = uploads.get(path);
       if (path === chosenPath) {
         staged.set(path, { path, content: source });
       } else if (uploaded) {
@@ -218,7 +223,7 @@ export async function runBuild() {
     for (const [path, content] of Object.entries(plan.generated)) {
       staged.set(path, { path, content });
     }
-    for (const [path, content] of state.uploadedFiles) {
+    for (const [path, content] of uploads) {
       if (!staged.has(path)) staged.set(path, { path, content });
     }
     const additionalFiles = [...staged.values()];
@@ -315,7 +320,7 @@ export async function runBuild() {
       await showPdf(
         new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }),
         source,
-        { changes },
+        { changes, uploads: uploadsSignature(uploads) },
       );
       setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
     } else {
@@ -338,6 +343,8 @@ export async function runBuild() {
   } finally {
     buildController = null;
     setBuilding(false);
+    // A build that was running when the submit dialog opened changes what it must say.
+    refreshSubmitDialog();
   }
 }
 

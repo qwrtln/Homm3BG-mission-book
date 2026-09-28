@@ -75,6 +75,8 @@ interface AppState {
   lastPdf: Blob | null;
   /** The editor source lastPdf was made from; null when no PDF is shown. */
   pdfSource: string | null;
+  /** The uploadsSignature of the in-app build lastPdf came from; null for a published PDF or none. */
+  pdfUploads: string | null;
   /** Repository path of the scenario lastPdf shows; names its download. */
   pdfPath: string | null;
   cm: CodeMirrorEditor | null;

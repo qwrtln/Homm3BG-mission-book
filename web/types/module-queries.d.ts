@@ -1,4 +1,4 @@
-// app/modules/github.js imports shared/github-contrib.js with a "?v=2"
+// app/modules/github.js imports shared/github-contrib.js with a "?v=3"
 // cache-busting query. The browser treats that as a distinct URL, which is
 // the point; TypeScript treats it as a module specifier it cannot resolve.
 //
@@ -15,7 +15,7 @@
 
 type GithubContribModule = typeof import("../shared/github-contrib.js");
 
-declare module "*/github-contrib.js?v=2" {
+declare module "*/github-contrib.js?v=3" {
   export const UPSTREAM_OWNER: GithubContribModule["UPSTREAM_OWNER"];
   export const UPSTREAM_REPO: GithubContribModule["UPSTREAM_REPO"];
   export const GithubApiError: GithubContribModule["GithubApiError"];

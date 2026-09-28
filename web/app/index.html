@@ -215,6 +215,21 @@
   </form>
 </dialog>
 
+<!-- styles/dialog.css; submit.js draws the checkboxes from shared/submit-checklist.js -->
+<dialog id="submit-dialog" class="confirm-dialog submit-dialog" aria-labelledby="submit-title">
+  <form method="dialog">
+    <h2 id="submit-title">Before you open a pull request</h2>
+    <ul id="submit-blockers" class="submit-blockers" hidden></ul>
+    <fieldset id="submit-checklist" class="submit-checklist">
+      <legend>Tick each one to confirm it.</legend>
+    </fieldset>
+    <div class="confirm-actions">
+      <button id="submit-cancel" type="button">Cancel</button>
+      <button id="submit-confirm" class="primary" type="button" disabled>Open pull request</button>
+    </div>
+  </form>
+</dialog>
+
 <!-- styles/dialog.css; about.js loads each license text when its row opens.
      Every href points at a file the deploy ships (publish-docs.yaml). -->
 <dialog id="about-dialog" class="confirm-dialog about-dialog" aria-labelledby="about-title">

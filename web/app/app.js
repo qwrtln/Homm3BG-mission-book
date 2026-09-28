@@ -14,6 +14,7 @@ import { initPdfView } from "./modules/pdf-view.js";
 import { initPicker } from "./modules/picker.js";
 import { initSearch } from "./modules/search.js";
 import { state } from "./modules/state.js";
+import { initSubmit } from "./modules/submit.js";
 import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
 import { initUploads } from "./modules/uploads.js";
 
@@ -30,6 +31,7 @@ initSearch();
 initPicker();
 initUploads();
 initBuild();
+initSubmit();
 const githubReady = initGithub();
 
 const entriesReady = loadEntries()

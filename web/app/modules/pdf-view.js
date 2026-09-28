@@ -97,11 +97,25 @@ export function showPdfMessage(text) {
 export function clearPdf() {
   state.lastPdf = null;
   state.pdfSource = null;
+  state.pdfUploads = null;
   state.pdfPath = null;
   el("download").disabled = true;
   showPdfMessage("No PDF yet. Press Build PDF.");
   el("error-panel").hidden = true;
   clearErrorLine();
+}
+
+/**
+ * What the shown PDF was built from, as submitBlockers takes it: the text
+ * and the uploads of an in-app build. Null when no PDF is shown, or when the
+ * shown one is the published PDF, which proves nothing about this copy.
+ *
+ * @returns {{text: string, uploads: string} | null}
+ */
+export function builtFingerprint() {
+  // An empty text or an empty uploads signature (no uploads) is still set.
+  if (!state.lastPdf || state.pdfSource === null || state.pdfUploads === null) return null;
+  return { text: state.pdfSource, uploads: state.pdfUploads };
 }
 
 export const STALE_MESSAGE = "Source changed since last build.";
@@ -158,17 +172,19 @@ function jumpToLine(line) {
  * @param {Blob} blob PDF bytes, tagged application/pdf
  * @param {string} source the editor source the PDF stands for; an edit away
  *   from it makes the PDF stale
- * @param {{dropLastPage?: boolean, path?: string | null, changes?: Map<number, import("../../shared/synctex.js").PageRect[]>}} [options]
+ * @param {{dropLastPage?: boolean, path?: string | null, changes?: Map<number, import("../../shared/synctex.js").PageRect[]>, uploads?: string}} [options]
  *   dropLastPage leaves the last page undrawn and uncounted, never the only
  *   one: the published PDF ends on a feedback page an in-browser build does
  *   not make. path is the scenario the PDF shows, which names the download;
  *   it defaults to the one in the editor. changes are the places, by 1-based
- *   page, to mark briefly once the pages are drawn
+ *   page, to mark briefly once the pages are drawn. uploads is the
+ *   uploadsSignature an in-app build compiled with; a published PDF has none
  * @returns {Promise<void>}
  */
-export async function showPdf(blob, source, { dropLastPage = false, path = state.chosenPath, changes } = {}) {
+export async function showPdf(blob, source, { dropLastPage = false, path = state.chosenPath, changes, uploads } = {}) {
   state.lastPdf = blob;
   state.pdfSource = source;
+  state.pdfUploads = uploads ?? null;
   state.pdfPath = path;
   el("download").disabled = false;
   loadTicket += 1;
