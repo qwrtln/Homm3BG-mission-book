@@ -1,0 +1,380 @@
+// Tier 2. The welcome screen's modes: who is offered "Edit existing", and what
+// that mode does. Only a signed-in repo member (upstream permissions.push) is
+// offered the choice; everyone else keeps the picker they had. As in
+// github.test.mjs, the sign-in itself is a token seeded into localStorage, and
+// api.github.com is stubbed.
+
+import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { categoryOfPath } from "../../shared/scenario-name.js";
+import { expect, openScenarioList, test } from "./fixtures.mjs";
+
+const TOKEN_KEY = "github_token";
+const TOKEN = "gh-tier2-token";
+const LOGIN = "octotester";
+const REPO_PATH = `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}`;
+
+/**
+ * @param {{push: boolean}} options
+ * @returns {import("./fixtures.mjs").GithubRoute[]}
+ */
+function identityRoutes({ push }) {
+  return [
+    { method: "GET", path: "/user", body: { login: LOGIN } },
+    {
+      method: "GET",
+      path: REPO_PATH,
+      body: {
+        name: UPSTREAM_REPO,
+        owner: { login: UPSTREAM_OWNER },
+        default_branch: "main",
+        permissions: { push },
+      },
+    },
+    { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
+    // A non-member's fork lookup: they have none, and are not asked to make one here.
+    { method: "GET", path: `/repos/${LOGIN}/${UPSTREAM_REPO}`, status: 404, body: { message: "Not Found" } },
+  ];
+}
+
+/**
+ * Playwright reads a bare array given to test.use() as a [value, options]
+ * tuple, so a route list has to be wrapped. See github.test.mjs.
+ *
+ * @param {import("./fixtures.mjs").GithubRoute[]} list
+ * @returns {[import("./fixtures.mjs").GithubRoute[], {option: true}]}
+ */
+function routes(list) {
+  return [list, { option: true }];
+}
+
+/**
+ * @param {import("@playwright/test").Page} page
+ * @returns {Promise<void>}
+ */
+async function signInAs(page) {
+  await page.addInitScript(([key, token]) => localStorage.setItem(key, token), [TOKEN_KEY, TOKEN]);
+  await page.reload();
+}
+
+/**
+ * Records every api.github.com request the page makes from now on.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @returns {{method: string, url: string, body: string | null}[]} filled as they happen
+ */
+function recordGithubRequests(page) {
+  /** @type {{method: string, url: string, body: string | null}[]} */
+  const seen = [];
+  page.on("request", (request) => {
+    if (new URL(request.url()).hostname === "api.github.com") {
+      seen.push({ method: request.method(), url: request.url(), body: request.postData() });
+    }
+  });
+  return seen;
+}
+
+test("signed out, there is no mode choice and the picker is there", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator("#welcome-picker")).toBeVisible();
+  await expect(page.locator("#mode-choice")).toBeHidden();
+});
+
+test.describe("signed in, but not a member", () => {
+  test.use({ githubRoutes: routes(identityRoutes({ push: false })) });
+
+  test("gets no mode choice, and the picker is there once membership is known", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await expect(page.locator("#welcome-picker")).toBeVisible();
+    await expect(page.locator("#mode-choice")).toBeHidden();
+  });
+});
+
+test.describe("signed in as a member", () => {
+  test.use({ githubRoutes: routes(identityRoutes({ push: true })) });
+
+  test("is told they are a member, and still has the picker as it always was", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    const choice = page.locator("#mode-choice");
+    await expect(choice).toBeVisible();
+    await expect(choice).toContainText("project member");
+    await expect(page.locator("#mode-edit")).toHaveText("Edit existing");
+    await expect(page.locator("#mode-new")).toHaveText("Add new");
+    await expect(page.locator("#mode-new")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#welcome-picker")).toBeVisible();
+    await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
+    // The name step waits for a pick, as it does for everyone.
+    await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
+    await expect(page.locator("#go")).toBeDisabled();
+  });
+
+  test("Edit existing greys out the name pane and the blank-template row, and Open editor needs only a pick", async ({
+    app,
+  }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await page.locator("#mode-edit").click();
+
+    for (const id of ["#name-slide", "#scratch-row"]) {
+      await expect(page.locator(id)).toBeVisible();
+      await expect(page.locator(id)).toHaveAttribute("inert", "");
+      await expect(page.locator(id)).toHaveClass(/dimmed/);
+    }
+    await expect(page.locator("#go")).toBeDisabled();
+    // The wizard only starts new scenarios.
+    await expect(page.locator("#start-choice")).toBeHidden();
+    // The step-1 copy says the pick is edited in place, not copied.
+    await expect(page.locator("#pick-heading")).toHaveText("Pick the scenario to edit");
+
+    // A search that finds nothing offers no blank template: an edit opens an
+    // existing scenario only.
+    await page.locator("#search").fill("qqzzxxjj");
+    await expect(page.locator("#search-results .combobox-empty")).toBeVisible();
+    await expect(page.locator("#search-results [data-blank]")).toHaveCount(0);
+    await page.locator("#search").fill("");
+
+    const results = await openScenarioList(page);
+    await results.first().dispatchEvent("mousedown");
+    await expect(page.locator("#go")).toBeEnabled();
+    // A pick does not bring the name step back: an edit keeps the scenario's own name.
+    await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
+  });
+
+  test("the mode toggle comes before the search box in Tab order", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await page.locator("#mode-edit").focus();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#mode-new")).toBeFocused();
+    // The start choice follows, in new mode.
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#start-copy")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#start-wizard")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#search")).toBeFocused();
+  });
+
+  test("Add new gives the name pane and the templates back", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#mode-edit").click();
+
+    await page.locator("#mode-new").click();
+
+    await expect(page.locator("#pick-heading")).toHaveText("Start from an existing scenario");
+    await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
+    await expect(page.locator("#start-choice")).toBeVisible();
+    await expect(page.locator("#go")).toBeDisabled();
+    await page.locator("#scratch-clash").click();
+    await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
+  });
+
+  test("a blank template picked before switching to Edit existing is dropped", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#scratch-clash").click();
+    await page.locator("#scenario-name").fill("Some Name");
+    await expect(page.locator("#go")).toBeEnabled();
+
+    await page.locator("#mode-edit").click();
+
+    await expect(page.locator("#go")).toBeDisabled();
+    await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "false");
+  });
+});
+
+test.describe("a member with work to resume", () => {
+  test.use({
+    githubRoutes: routes([
+      ...identityRoutes({ push: true }).filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+      },
+    ]),
+  });
+
+  test('sees the resume list, headed "Resume your work", full width, above the picker', async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await expect(page.locator("#resume-drafts h2")).toHaveText("Resume your work");
+    const resume = await page.locator("#resume-drafts").boundingBox();
+    const top = await page.locator(".welcome-top").boundingBox();
+    expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
+    const banner = await page.locator("#mode-choice").boundingBox();
+    const pick = await page.locator(".pick-step").boundingBox();
+    expect(
+      banner && pick && banner.y + banner.height <= pick.y && Math.abs(banner.x - pick.x) < 2,
+      "the mode choice is not above the search, on the same left edge",
+    ).toBe(true);
+  });
+});
+
+test.describe("editing in place", () => {
+  const NEW_TREE = "new-tree-sha";
+  const BASE_ROUTES = [
+    { method: "GET", path: /\/git\/commits\//, body: { sha: "base-sha", tree: { sha: "base-tree-sha" } } },
+    { method: "POST", path: /\/git\/blobs$/, body: { sha: "blob-sha" } },
+    { method: "POST", path: /\/git\/trees$/, body: { sha: NEW_TREE } },
+    { method: "POST", path: /\/git\/commits$/, body: { sha: "new-commit-sha", tree: { sha: NEW_TREE } } },
+    { method: "POST", path: /\/git\/refs$/, body: { ref: "refs/heads/x" } },
+    { method: "PATCH", path: /\/git\/refs\/heads\//, body: { ref: "refs/heads/x" } },
+  ];
+
+  /**
+   * Opens Edit existing and picks the first scenario the book lists.
+   *
+   * @param {import("@playwright/test").Page} page
+   * @returns {Promise<string>} the picked scenario's repository path
+   */
+  async function pickFirstScenario(page) {
+    await signInAs(page);
+    await page.locator("#mode-edit").click();
+    const results = await openScenarioList(page);
+    const path = /** @type {string} */ (await results.first().getAttribute("data-path"));
+    await results.first().dispatchEvent("mousedown");
+    return path;
+  }
+
+  test.describe("with no earlier edit branch", () => {
+    test.use({
+      githubRoutes: routes([
+        ...identityRoutes({ push: true }),
+        { method: "GET", path: /\/git\/ref\/heads\/.*updates/, status: 404, body: { message: "Not Found" } },
+        { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+        ...BASE_ROUTES,
+      ]),
+    });
+
+    test("opens the file's own source, saves it at its own path on an updates/ branch, and offers the PR", async ({
+      app,
+    }) => {
+      const { page } = app;
+      const path = await pickFirstScenario(page);
+      await page.locator("#go").click();
+
+      await expect(page.locator("#workspace")).toBeVisible();
+      await expect(page.locator("#edit-branch-prompt")).toBeHidden();
+      await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+      const seen = recordGithubRequests(page);
+      await page.locator("#github-save").click();
+      await expect(page.locator("#github-open-pr")).toBeVisible();
+
+      const trees = seen.filter((r) => r.method === "POST" && r.url.endsWith("/git/trees"));
+      expect(JSON.parse(trees[0].body ?? "{}").tree.map((/** @type {{path: string}} */ entry) => entry.path)).toEqual([
+        path,
+      ]);
+      const patch = seen.find((r) => r.method === "PATCH");
+      expect(decodeURIComponent(patch?.url ?? "")).toContain(`/scenario-editor/${LOGIN}/updates/`);
+      expect(JSON.parse(patch?.body ?? "{}").force, "a plain edit must not force-move the branch").toBeUndefined();
+    });
+
+    test("edit mode shows the category read-only", async ({ app }) => {
+      const { page } = app;
+      const path = await pickFirstScenario(page);
+      await page.locator("#go").click();
+      await expect(page.locator("#workspace")).toBeVisible();
+      await expect(page.locator("#status-text")).toHaveText("Ready.");
+
+      const category = page.locator("#scenario-category");
+      await expect(category).toBeDisabled();
+      // The picked scenario's own category, whichever the book lists first.
+      await expect(category).toHaveValue(categoryOfPath(path) ?? "");
+      await expect(category).toHaveAttribute("title", "The category is fixed once the scenario is saved to GitHub.");
+    });
+  });
+
+  test.describe("after GitHub has revoked the sign-in", () => {
+    test.use({
+      githubRoutes: routes([
+        ...identityRoutes({ push: true }),
+        { method: "GET", path: /\/git\/ref\/heads\//, status: 401, body: { message: "Bad credentials" } },
+      ]),
+    });
+
+    // The token was good when the page loaded and died before Open editor.
+    // The member is told to sign in again, not shown a bare status code.
+    test("Open editor drops the token and offers sign-in again", async ({ app }) => {
+      const { page } = app;
+      await pickFirstScenario(page);
+      await page.locator("#go").click();
+
+      await expect(page.locator("#go-hint")).toHaveText("Your GitHub sign-in has expired. Sign in again.");
+      await expect(page.locator("#github-signin")).toBeVisible();
+      await expect(page.locator("#github-status")).toBeHidden();
+      await expect(page.locator("#workspace")).toBeHidden();
+      // addInitScript seeds the token on every load, so check before any reload.
+      expect(await page.evaluate((key) => localStorage.getItem(key), TOKEN_KEY)).toBeNull();
+    });
+  });
+
+  test.describe("with an earlier edit branch", () => {
+    const BRANCH_COPY = "% the copy on the earlier edit branch\n";
+
+    test.use({
+      githubRoutes: routes([
+        ...identityRoutes({ push: true }),
+        { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+        { method: "GET", path: /\/contents\/.*ref=.*updates/, body: { content: btoa(BRANCH_COPY) } },
+        ...BASE_ROUTES,
+      ]),
+    });
+
+    test("asks, and Continue opens the branch's copy", async ({ app }) => {
+      const { page } = app;
+      await pickFirstScenario(page);
+      await page.locator("#go").click();
+
+      await expect(page.locator("#edit-branch-prompt")).toBeVisible();
+      await expect(page.locator("#workspace")).toBeHidden();
+
+      await page.locator("#edit-continue").click();
+
+      await expect(page.locator("#workspace")).toBeVisible();
+      await expect(page.locator(".CodeMirror")).toContainText("the copy on the earlier edit branch");
+    });
+
+    test("asks, and Start over opens main's copy and force-resets the branch only on the first save", async ({
+      app,
+    }) => {
+      const { page } = app;
+      await pickFirstScenario(page);
+      await page.locator("#go").click();
+      await expect(page.locator("#edit-branch-prompt")).toBeVisible();
+
+      const seen = recordGithubRequests(page);
+      await page.locator("#edit-start-over").click();
+
+      await expect(page.locator("#workspace")).toBeVisible();
+      await expect(page.locator(".CodeMirror")).not.toContainText("the copy on the earlier edit branch");
+      expect(
+        seen.filter((r) => r.method !== "GET"),
+        "starting over changed the branch before any save",
+      ).toEqual([]);
+
+      await page.locator("#github-save").click();
+      await expect(page.locator("#github-open-pr")).toBeVisible();
+      expect(JSON.parse(seen.find((r) => r.method === "PATCH")?.body ?? "{}").force).toBe(true);
+
+      // A second save builds on the first: only the first one resets. A
+      // save with nothing changed since is a no-op, so make an edit first.
+      await page.locator(".CodeMirror").click();
+      await page.keyboard.type("x");
+      seen.length = 0;
+      await page.locator("#github-save").click();
+      await expect.poll(() => seen.some((r) => r.method === "PATCH")).toBe(true);
+      expect(JSON.parse(seen.find((r) => r.method === "PATCH")?.body ?? "{}").force).toBeUndefined();
+    });
+  });
+});

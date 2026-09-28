@@ -1,0 +1,21 @@
+/* --- GitHub sign-in / save-to-fork / PR link ---------------------------
+   A segmented "Save"/"Open PR" pair (a .button-group, header-actions.css)
+   and a "View PR" link that swaps in once a PR exists, styled as a plain
+   button, not an underlined link. Sign out lives in the overflow menu. */
+.github-status[hidden] { display: none; }
+.github-status { display: flex; align-items: center; gap: 0.5rem; }
+.github-segment[hidden] { display: none; }
+.github-pr-link[hidden] { display: none; }
+/* Looks like every other header button (base.css), not an underlined link. */
+.github-pr-link {
+  font: inherit;
+  font-size: 0.88rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.github-pr-link:hover { border-color: var(--accent); color: var(--accent); }
+#github-open-pr[hidden] { display: none; }

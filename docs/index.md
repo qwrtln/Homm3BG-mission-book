@@ -1,7 +1,32 @@
-# Local Setup
+# Getting Started
 
-In order to contribute, you'll need a minimum of a [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape, Perl, and git.
-Please read the instructions for your operating system (or container).
+There are three ways to work on a scenario.
+Pick the first one that fits you.
+
+1. **The Scenario Builder** (recommended) — works in your browser, nothing to install.
+2. **Your operating system's packages** — install LaTeX and the other tools on your computer.
+3. **A container** — one image with all the tools, if you prefer not to install them one by one.
+
+## 1. Scenario Builder
+
+Open the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) in your browser.
+It lets you:
+
+- start a new scenario from a guided setup, or edit an existing one,
+- compile the scenario and preview the PDF in the browser,
+- sign in with GitHub and open a pull request with your scenario.
+
+You don't need LaTeX, git, or a copy of the repository.
+You only need a [GitHub account](https://github.com/signup) to send your scenario.
+Read the [**how-to guide**](scenarios.md) for what a good scenario contains.
+
+Use a local setup (below) only if you want to work on the book itself, run the [**scripts**](scripts.md), or translate.
+
+## 2. Operating system packages
+
+To build the book on your computer, you'll need a minimum of a [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX) distribution, Inkscape, Perl, and git.
+Please read the instructions for your operating system.
+If you'd rather not install these tools, use the [**container**](#3-container) instead.
 
 === "Windows"
 
@@ -134,7 +159,7 @@ Please read the instructions for your operating system (or container).
     - po4a
     - poppler-utils
 
-=== "Container"
-    ### Container
+## 3. Container
 
-    There is also a [**container**](container.md) available, which contains all the necessary tools.
+There is also a [**container**](container.md) available, which contains all the necessary tools.
+You only need Podman or Docker installed.

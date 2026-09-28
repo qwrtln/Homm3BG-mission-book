@@ -1,3 +1,6 @@
+# LaTeX artifacts
+*.pdf
+!assets/glyphs-inkscape/*.pdf
 **.aux
 *.bbl
 *.blg
@@ -8,19 +11,30 @@
 *.ilg
 *.ind
 *.log
-*.mo
 *.out
-*.pdf
 *.synctex(busy)
 *.synctex.gz
 *.toc
-.idea/
-.venv
-.vs
+**/svg-inkscape/*
 cache
+screenshots/
+
+# po4a artifacts
+*.mo
 campaigns/translated
 clash/translated
 coops/translated
-screenshots/
 sections/translated
-**/svg-inkscape/*
+
+# Web editor
+assets/glyphs-inkscape/glyph-usage.json
+.wrangler/
+node_modules/
+playwright-report/
+test-results/
+
+# Editors and local environment
+.env
+.idea/
+.venv
+.vs

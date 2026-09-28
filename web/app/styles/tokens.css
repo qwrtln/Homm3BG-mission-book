@@ -1,0 +1,57 @@
+/* GitHub Primer's own color tokens, light and dark, for consistency with
+   the GitHub-hosted docs site and repository around this app. */
+:root {
+  --ink: #1f2328;
+  --muted: #656d76;
+  --line: #d1d9e0;
+  --paper: #f6f8fa;
+  --panel: #ffffff;
+  --accent: #0969da;
+  --btn-primary-bg: #1f883d;
+  --btn-primary-hover: #1a7f37;
+  /* Primer's danger button, from @primer/primitives 11.10.0 (button-danger-*):
+     neutral at rest, red text, solid red on hover, deeper red when pressed. */
+  --btn-danger-bg: #f6f8fa;
+  --btn-danger-border: #d1d9e0;
+  --btn-danger-fg: #d1242f;
+  --btn-danger-hover-bg: #cf222e;
+  --btn-danger-hover-border: #1f232826;
+  --btn-danger-active-bg: #a40e26;
+  --ok: #1a7f37;
+  --bad: #cf222e;
+  --warn: #9a6700;
+  /* Primer's attention-subtle and attention-muted: a banner's fill and border. */
+  --attention-bg: #fff8c5;
+  --attention-hover-bg: #fff1a8;
+  --attention-border: #d4a72c66;
+  --pdf-bg: #d1d9e0;
+  --error-bg: #ffebe9;
+  --code-bg: #f6f8fa;
+  --shadow: rgba(31, 35, 40, 0.15);
+}
+html[data-theme="dark"] {
+  --ink: #e6edf3;
+  --muted: #848d97;
+  --line: #30363d;
+  --paper: #0d1117;
+  --panel: #161b22;
+  --accent: #4493f8;
+  --btn-primary-bg: #238636;
+  --btn-primary-hover: #2ea043;
+  --btn-danger-bg: #212830;
+  --btn-danger-border: #3d444d;
+  --btn-danger-fg: #fa5e55;
+  --btn-danger-hover-bg: #b62324;
+  --btn-danger-hover-border: #ffffff26;
+  --btn-danger-active-bg: #da3633;
+  --ok: #3fb950;
+  --bad: #f85149;
+  --warn: #d29922;
+  --attention-bg: #bb800926;
+  --attention-hover-bg: #bb80093d;
+  --attention-border: #bb800966;
+  --pdf-bg: #30363d;
+  --error-bg: #3c1618;
+  --code-bg: #161b22;
+  --shadow: rgba(1, 4, 9, 0.6);
+}

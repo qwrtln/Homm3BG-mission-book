@@ -1,0 +1,203 @@
+/* --- Header groups, shown once a scenario is chosen ---------------------
+   Left: back, the scenario's name and its notes. Then Build and Download as
+   one group; Upload images; the GitHub group; the overflow menu. */
+
+header button, header .github-pr-link { padding: 0.3rem 0.75rem; min-height: 2rem; }
+header button.icon { padding: 0.3rem 0.5rem; }
+.header-scenario { display: flex; align-items: center; gap: 0.5rem; }
+.scenario-title {
+  min-width: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* The category the scenario is filed under: compact, so the header stays one
+   row. Disabled once the scenario is on GitHub. */
+.scenario-category {
+  flex: none;
+  padding: 0.15rem 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+}
+.scenario-category:disabled { color: var(--muted); cursor: help; opacity: 1; }
+.category-note[hidden] { display: none; }
+.category-note {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--warn);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.draft-note[hidden], .unsaved-note[hidden] { display: none; }
+.draft-note, .unsaved-note { flex: none; font-size: 0.78rem; white-space: nowrap; }
+.draft-note {
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 2em;
+  color: var(--muted);
+  cursor: help;
+}
+.unsaved-note { color: var(--warn); font-weight: 600; }
+
+.header-actions[hidden] { display: none; }
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+/* Buttons that belong together, joined into one segmented control. */
+.button-group { display: inline-flex; align-items: stretch; }
+.button-group > * + * { margin-left: -1px; }
+.button-group > :not(:first-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.button-group > :not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+/* Open PR hidden: Save is the visible end of its group, so keeps its corners. */
+.button-group > :has(+ [hidden]:last-child) { border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.button-group > :focus-visible { position: relative; z-index: 1; }
+/* Play while idle, a stop square mid-build (dom.js setBuilding). */
+#build .stop-icon, #build.stop .build-icon { display: none; }
+#build.stop .stop-icon { display: inline-block; }
+
+/* The way back to a scenario left open behind the welcome screen: Primer's
+   attention colors, as on GitHub's "had recent pushes" banner. Louder than a
+   plain button, quieter than the green primary. */
+button.attention {
+  border-color: var(--attention-border);
+  color: var(--warn);
+  background: var(--attention-bg);
+}
+button.attention:hover:not(:disabled) {
+  border-color: var(--warn);
+  color: var(--warn);
+  background: var(--attention-hover-bg);
+}
+
+/* --- Overflow menu -------------------------------------------------------- */
+
+.header-menu { position: relative; }
+.header-menu-list[hidden] { display: none; }
+.header-menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 12rem;
+  padding: 0.3rem 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 10px 26px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+.header-menu-list button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+}
+.header-menu-list button[hidden] { display: none; }
+.header-menu-list button:hover:not(:disabled), .header-menu-list button:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+}
+.header-menu-list button:focus-visible { outline-offset: -2px; }
+.menu-check { margin-left: auto; visibility: hidden; }
+[aria-checked="true"] > .menu-check { visibility: visible; }
+.menu-separator[hidden] { display: none; }
+.menu-separator { margin: 0.3rem 0; border-top: 1px solid var(--line); }
+
+/* --- Narrow screens ---------------------------------------------------------
+   Every label shows down to 1024px. Below that, Download PDF goes icon-only;
+   Build, Upload images and Save/Sign in keep theirs. From 860px down every
+   label collapses. A collapsed label stays the accessible name. */
+@media (max-width: 1023px) {
+  #download .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  header button#download { padding: 0.3rem 0.5rem; }
+}
+@media (max-width: 860px) {
+  header .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  header button.with-icon, header .github-pr-link { padding: 0.3rem 0.5rem; }
+}
+
+/* --- Upload images dialog (styles/dialog.css draws the dialog itself) ---- */
+
+.upload-dialog form { display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.82rem; }
+.upload-dialog .confirm-actions { margin-top: 0; }
+.upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+/* A drop zone (the popover's own fields, and the wizard's header and maps
+   fields) while a dragged file is over it. */
+.drop-target { outline: 2px dashed var(--accent); outline-offset: 4px; border-radius: 4px; }
+.upload-field label { font-weight: 600; }
+.upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }
+.upload-status { color: var(--muted); }
+.upload-status code { font-size: 0.78rem; }
+.upload-status.bad { color: var(--bad); }
+input.upload-rename, input.upload-mapfile-input {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  width: 100%;
+}
+.upload-rename-list[hidden] { display: none; }
+.upload-rename-list { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+/* A staged image: its fields on the left, its thumbnail on the right. */
+.upload-card[hidden] { display: none; }
+.upload-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--paper);
+}
+.upload-card-body { display: flex; flex-direction: column; gap: 0.4rem; flex: 1 1 auto; min-width: 0; }
+.upload-card-head { display: flex; align-items: center; gap: 0.5rem; }
+.upload-card-title { font-weight: 600; }
+.upload-card-head .orig-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-card .orig-name { color: var(--muted); font-size: 0.76rem; }
+.upload-preview {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+}
+.upload-players { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; border: 0; padding: 0; margin: 0; }
+.upload-players legend { float: left; padding: 0; margin-right: 0.2rem; color: var(--muted); }
+.upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
+.upload-field label.upload-mapfile { display: flex; flex-direction: column; gap: 0.2rem; font-weight: normal; color: var(--muted); }
+.upload-mapfile .optional { font-size: 0.76rem; }
+input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
+button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }
