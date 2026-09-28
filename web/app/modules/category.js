@@ -17,7 +17,7 @@ const OPEN_TITLE = "The category this scenario is filed under in the Draft Scena
  * @returns {boolean}
  */
 function categoryLocked() {
-  if (githubSaveState.lastSaveTarget !== null || githubSaveState.edit !== null) return true;
+  if (githubSaveState.saving || githubSaveState.lastSaveTarget !== null || githubSaveState.edit !== null) return true;
   const path = state.chosenPath;
   if (path === null) return true;
   return !path.startsWith("draft-scenarios/") || categoryOfPath(path) === null;
@@ -60,6 +60,20 @@ function replaceChangedPart(cm, before, after) {
 }
 
 /**
+ * Leaves the scenario where it is, and says why the move did not happen.
+ *
+ * @param {string} message
+ * @returns {void}
+ */
+function refuseMove(message) {
+  syncCategoryControl(); // reverts the select, then the note says why
+  const note = el("category-note");
+  note.textContent = message;
+  note.title = message;
+  note.hidden = false;
+}
+
+/**
  * Files the open scenario under another category. Before its first save it
  * lives only in this browser, so moving it is moving its autosave and its
  * address; the branch, the commit and the \input line all follow the path at
@@ -81,11 +95,9 @@ function moveToCategory(category) {
   saveDraft(old, cm.getValue());
   const next = withCategory(old, category);
   if (loadDraft(next) !== null) {
-    syncCategoryControl(); // reverts the select, then the note says why
-    const note = el("category-note");
-    note.textContent = `You already have a local draft with this name under ${CATEGORY_LABELS[category]}. Rename it or open that draft instead.`;
-    note.title = note.textContent;
-    note.hidden = false;
+    refuseMove(
+      `You already have a local draft with this name under ${CATEGORY_LABELS[category]}. Rename it or open that draft instead.`,
+    );
     return;
   }
 
@@ -93,6 +105,14 @@ function moveToCategory(category) {
   const moved = withScenarioKind(text, category);
   // Written under the new key before the old one goes, so no step loses it.
   saveDraft(next, moved);
+  // saveDraft swallows a full storage: the old copy goes only once the new one
+  // is really there. With storage blocked outright neither key holds anything,
+  // and the move goes ahead as a change of address alone.
+  if (loadDraft(old) !== null && loadDraft(next) !== moved) {
+    deleteDraft(next);
+    refuseMove("Could not move the scenario: this browser's storage is full.");
+    return;
+  }
   deleteDraft(old);
   state.chosenPath = next;
   if (moved !== text) replaceChangedPart(cm, text, moved);

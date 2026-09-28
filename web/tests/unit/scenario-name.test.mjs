@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+import { CATEGORY_LABELS } from "../../app/modules/config.js";
 import { DRAFT_GROUP_FILES } from "../../shared/build-plan.js";
 import {
   categoryOfPath,
@@ -15,6 +16,7 @@ import {
   withCategory,
   withScenarioKind,
 } from "../../shared/scenario-name.js";
+import { readRepoFile } from "../helpers/repo.mjs";
 
 test("a title of letters, digits, spaces, hyphens and apostrophes is valid", () => {
   for (const name of ["The Queen's Gambit", "Bloody Grail 2", "Half-Way House", "Zażółć gęślą jaźń"]) {
@@ -59,6 +61,17 @@ test("the draft categories are exactly the draft book's group directories", () =
   const dirs = DRAFT_GROUP_FILES.map((group) => group.dir.replace(/^draft-scenarios\//, ""));
   assert.deepEqual(new Set(DRAFT_CATEGORIES), new Set(dirs));
   assert.equal(DRAFT_CATEGORIES.length, dirs.length);
+});
+
+test("the welcome screen offers the draft categories, in order, under their labels", () => {
+  const html = readRepoFile("web/app/index.html");
+  const radios = [...html.matchAll(/<input type="radio" name="category" value="([^"]+)"><span>([^<]+)<\/span>/g)].map(
+    (match) => [match[1], match[2]],
+  );
+  assert.deepEqual(
+    radios,
+    DRAFT_CATEGORIES.map((category) => [category, CATEGORY_LABELS[category]]),
+  );
 });
 
 test("a published or draft scenario's path names its category", () => {

@@ -98,6 +98,9 @@ export async function commitEntry(path, name, category) {
   // Always the typed name: a save must never stay tied to the entry it started from.
   setScenarioTitle(name.trim());
   syncCategoryControl();
+  // Not movable until the text below is in the editor: a move now would carry
+  // whatever the editor held before.
+  el("scenario-category").disabled = true;
   reflectRoute();
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
@@ -111,6 +114,7 @@ export async function commitEntry(path, name, category) {
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
   cm.setValue(draft !== null ? draft : pristine);
   el("draft-note").hidden = draft === null;
+  syncCategoryControl();
   cm.focus();
 
   resetUploads();

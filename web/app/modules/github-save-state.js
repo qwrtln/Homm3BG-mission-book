@@ -14,9 +14,11 @@ import { el } from "./dom.js";
  * uploads dialog at the next save was dropped or renamed, and comes off the
  * branch.
  *
- * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null, committedUploads: Set<string>}}
+ * `saving` is true while a save is on its way to GitHub.
+ *
+ * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null, committedUploads: Set<string>, saving: boolean}}
  */
-export const githubSaveState = { lastSaveTarget: null, edit: null, committedUploads: new Set() };
+export const githubSaveState = { lastSaveTarget: null, edit: null, committedUploads: new Set(), saving: false };
 
 /** @type {(() => void) | null} */
 let resetListener = null;

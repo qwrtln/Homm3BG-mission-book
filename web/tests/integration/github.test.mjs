@@ -364,7 +364,13 @@ test.describe("saving a scenario", () => {
     await expect(page.locator("#unsaved-note")).toBeVisible();
 
     const requests = recordGithubRequests(page);
-    await page.locator("#github-save").click();
+    // Clicked from inside the page, as above: the save has taken its path by
+    // the time click() returns, so the category must already be fixed.
+    const lockedOnClick = await page.evaluate(() => {
+      document.getElementById("github-save")?.click();
+      return /** @type {HTMLSelectElement} */ (document.getElementById("scenario-category")).disabled;
+    });
+    expect(lockedOnClick, "the category stayed changeable while a save was in flight").toBe(true);
     await expect(page.locator("#github-open-pr")).toBeVisible();
 
     const trees = requests.filter((r) => r.method === "POST" && r.url.endsWith("/git/trees"));
@@ -401,6 +407,8 @@ test.describe("saving a scenario", () => {
       await expect(page.locator("#github-save")).toBeEnabled();
       await expect(page.locator("#github-save")).toHaveText("Save");
       await expect(page.locator("#github-open-pr")).toBeHidden();
+      // Nothing reached GitHub, so the category is still the contributor's to change.
+      await expect(page.locator("#scenario-category")).toBeEnabled();
     });
   });
 });

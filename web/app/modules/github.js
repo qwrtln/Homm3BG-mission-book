@@ -543,6 +543,9 @@ export function initGithub() {
     }
     const button = el("github-save");
     button.disabled = true;
+    // A save in flight took its path already: the category must not move under it.
+    githubSaveState.saving = true;
+    syncCategoryControl();
     setStatus("Saving…", { spinning: true });
     try {
       if (!githubContext) githubContext = await discoverGithubContext(token);
@@ -572,6 +575,8 @@ export function initGithub() {
       setStatus(githubFailure(error, "Save failed"), { tone: "bad" });
     } finally {
       button.disabled = false;
+      githubSaveState.saving = false;
+      syncCategoryControl();
     }
   });
 

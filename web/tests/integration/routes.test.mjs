@@ -169,6 +169,56 @@ test("a category change is refused when a local draft already sits there", async
   expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
 });
 
+test("the category cannot move until the new scenario's text is in the editor", async ({ app }) => {
+  const { page } = app;
+  /** @type {() => void} */
+  let release = () => {};
+  const held = new Promise((resolve) => {
+    release = () => resolve(undefined);
+  });
+  await page.route("**/templates/default.tex", async (route) => {
+    await held;
+    await route.continue();
+  });
+
+  await page.locator('[data-category="clash"]').click();
+  await page.locator("#scenario-name").fill("Route Probe");
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#status-text")).toHaveText("Loading…");
+  await expect(page.locator("#scenario-category")).toHaveValue("clash");
+  await expect(page.locator("#scenario-category")).toBeDisabled();
+
+  release();
+  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#scenario-category")).toBeEnabled();
+});
+
+test("a category change is refused when the storage cannot take the moved copy", async ({ app }) => {
+  const { page } = app;
+  await openBlankClash(page);
+  const mine = await editorValue(page);
+  // A full storage, for the new key only: the flush under the old key still lands.
+  await page.evaluate((path) => {
+    const setItem = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (key, value) {
+      if (key === `wasm-scenario-builder:draft:${path}`) throw new DOMException("full", "QuotaExceededError");
+      return setItem.call(this, key, value);
+    };
+  }, COOPS_PATH);
+
+  await page.locator("#scenario-category").selectOption("coops");
+
+  await expect(page.locator("#scenario-category")).toHaveValue("clash");
+  await expect(page.locator("#category-note")).toHaveText(
+    "Could not move the scenario: this browser's storage is full.",
+  );
+  expect(await editorValue(page)).toBe(mine);
+  expect(await storedDraft(page, CLASH_PATH)).toBe(mine);
+  expect(await storedDraft(page, COOPS_PATH)).toBeNull();
+  expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
+});
+
 test("the sign-in round trip reopens at the moved path", async ({ app }) => {
   const { page } = app;
   await openBlankClash(page);
