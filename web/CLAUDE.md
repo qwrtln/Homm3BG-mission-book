@@ -59,9 +59,10 @@ npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
 @web/serve.sh — its header comment holds the URL, the prerequisites and the
 usage.
 
-The deploy copies `web/` through an allow-list in
-`.github/workflows/publish-docs.yaml`, so tooling like this script stays out of
-the site without an exclude. Anything the browser must load goes on that list.
+The deploy copies `web/app/` to `site/builder/` (served at `/builder/`) and
+the rest of `web/` through an allow-list to the site root, in
+`.github/workflows/publish-docs.yaml`. Tooling like this script stays out of the
+site without an exclude. Anything else the browser must load goes on that list.
 
 ## Lint and format
 

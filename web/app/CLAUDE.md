@@ -1,7 +1,7 @@
 # web/app/ — page, modules, styles
 
-Everything under `web/app/` deploys (`--include='/app/***'` in
-`.github/workflows/publish-docs.yaml`), so a file added here ships.
+Everything under `web/app/` deploys as `site/builder/`, served at `/builder/`
+(`.github/workflows/publish-docs.yaml`), so a file added here ships.
 
 ## index.html
 

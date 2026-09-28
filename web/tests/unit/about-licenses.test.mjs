@@ -19,10 +19,15 @@ function licensePaths() {
   return sources.map((src) => posix.normalize(posix.join("app", src)));
 }
 
-/** The rsync --include patterns of the step that copies web/ into the site. */
+/**
+ * The rsync --include patterns of the step that copies web/ into the site,
+ * plus "app/***" when that step copies the whole of web/app/ to site/builder/.
+ */
 function deployIncludes() {
   const workflow = readRepoFile(".github/workflows/publish-docs.yaml");
-  return [...workflow.matchAll(/--include='\/([^']+)'/g)].map((match) => match[1]);
+  const patterns = [...workflow.matchAll(/--include='\/([^']+)'/g)].map((match) => match[1]);
+  if (/rsync -a web\/app\/ site\/builder\//.test(workflow)) patterns.push("app/***");
+  return patterns;
 }
 
 /**
