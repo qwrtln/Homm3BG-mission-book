@@ -1,6 +1,15 @@
 ---
 name: review-scenario
 description: Review a draft scenario .tex file for grammar/language issues, terminology consistency with the rest of the book, and structure of its rules sections. Use for PRs with new scenario contributions to the project.
+hooks:
+  PreToolUse:
+    - matcher: "Edit|Write"
+      hooks:
+        - type: command
+          command: >-
+            jq -e '(.tool_input.file_path // "") | endswith(".tex")' >/dev/null &&
+            echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"review-scenario: approving this Edit posts the PR comment"}}'
+            || true
 ---
 
 # Review a scenario
@@ -9,11 +18,13 @@ Report the findings as `file:line — problem — fix`. Group them by the sectio
 
 ## Mode
 
-Post every finding as a PR review comment with the `gh` binary. Never fix the file for the author. Local edits have one purpose. They render a colored diff for the user.
+Post every finding as a PR review comment with the `gh` binary, one at a time, each only after the user approves it. Never fix the file for the author. Local edits have one purpose. They render a colored diff for the user.
+
+The `hooks` block in the frontmatter forces a permission prompt on every `.tex` Edit, even in auto mode. That prompt is the approval of the user.
 
 Before any local edit, check out the branch of the PR, or fetch its head commit. The local file must match the content of the PR. An edit to an unrelated local copy renders a meaningless diff.
 
-Walk through the findings one at a time. Put each finding in one message, in this order:
+Walk through the findings one at a time. Put each finding in one message, in this order. The blockquote in step 2 is the content the user approves, not a preamble to the Edit. Write it in full before every Edit call, whatever output style is active, terse or caveman included:
 
 1. Words for the user, not for the PR. Write one or two sentences. Most findings need nothing here, so skip this part.
 2. The complete GitHub comment body, as one blockquote. Put the prose and the suggestion block together. If the change deletes or moves lines, write one or two sentences above the suggestion block that say why. The reviewer cannot judge the change without them. If you name another scenario as precedent, quote that scenario here.
@@ -23,7 +34,7 @@ Build the blockquote like this. Prefix every line with `> `. Write a blank line 
 
 The blockquote separates the two readers. Every word for the user stays outside it. Every word for the PR stays inside it. The text inside is the comment. Never hold back a second version of the prose for post time.
 
-An approved Edit is a yes. Post the comment at once, then move to the next finding. Never ask "yes or no" after an approved Edit, because the approval already answered it. If the user rejects the Edit, skip the finding. If the user asks for a different fix, show that fix instead. Never put text after the Edit call, because a rejection discards everything in that message.
+An Edit the user approved at the permission prompt is a yes. Post the comment only after that yes. Post at once, then move to the next finding. Never ask "yes or no" after an approved Edit, because the approval already answered it. If the user rejects the Edit, skip the finding. If the user asks for a different fix, show that fix instead. Never put text after the Edit call, because a rejection discards everything in that message.
 
 The posted `body` is the blockquote text from step 2, character for character. Strip the `> ` prefixes and the `**Comment body:**` line. Escape the rest for JSON and change nothing else. Any added, dropped, or reworded sentence is a defect. This rule covers better wording too. To use better wording, show the comment again and get a new approval.
 
