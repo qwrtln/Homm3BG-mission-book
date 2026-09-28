@@ -17,6 +17,7 @@ import { state } from "./modules/state.js";
 import { initSubmit } from "./modules/submit.js";
 import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
 import { initUploads } from "./modules/uploads.js";
+import { initWizard } from "./modules/wizard.js";
 
 initTheme();
 initHeaderMenu();
@@ -29,6 +30,7 @@ initAutocomplete();
 applyTheme(initialTheme());
 initSearch();
 initPicker();
+initWizard();
 initUploads();
 initBuild();
 initSubmit();

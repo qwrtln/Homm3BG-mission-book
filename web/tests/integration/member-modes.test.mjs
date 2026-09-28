@@ -125,6 +125,8 @@ test.describe("signed in as a member", () => {
       await expect(page.locator(id)).toHaveClass(/dimmed/);
     }
     await expect(page.locator("#go")).toBeDisabled();
+    // The wizard only starts new scenarios.
+    await expect(page.locator("#start-choice")).toBeHidden();
     // The step-1 copy says the pick is edited in place, not copied.
     await expect(page.locator("#pick-heading")).toHaveText("Pick the scenario to edit");
 
@@ -149,6 +151,11 @@ test.describe("signed in as a member", () => {
     await page.locator("#mode-edit").focus();
     await page.keyboard.press("Tab");
     await expect(page.locator("#mode-new")).toBeFocused();
+    // The start choice follows, in new mode.
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#start-copy")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#start-wizard")).toBeFocused();
     await page.keyboard.press("Tab");
     await expect(page.locator("#search")).toBeFocused();
   });
@@ -162,6 +169,7 @@ test.describe("signed in as a member", () => {
 
     await expect(page.locator("#pick-heading")).toHaveText("Start from an existing scenario");
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
+    await expect(page.locator("#start-choice")).toBeVisible();
     await expect(page.locator("#go")).toBeDisabled();
     await page.locator("#scratch-clash").click();
     await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");

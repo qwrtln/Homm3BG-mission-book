@@ -391,12 +391,23 @@ test("at 1440×900 the picker is one centred column, with blank starts quieter t
   );
 });
 
-test("Tab walks search, the blank links, the name, the category and Open editor, showing focus", async ({ app }) => {
+test("Tab walks the start choice, search, the blank links, the name, the category and Open editor, showing focus", async ({
+  app,
+}) => {
   const { page } = app;
   await page.locator("#scratch-clash").click();
   await page.locator("#scenario-name").fill("Tab Probe");
 
-  await page.locator("#search").focus();
+  // The start choice comes before search.
+  await page.locator("#start-copy").focus();
+  await page.keyboard.press("Tab");
+  await expect(page.locator("#start-wizard")).toBeFocused();
+  expect(
+    await page.locator("#start-wizard").evaluate((node) => getComputedStyle(node).outlineStyle),
+    "#start-wizard shows no focus",
+  ).not.toBe("none");
+  await page.keyboard.press("Tab");
+  await expect(page.locator("#search")).toBeFocused();
   // Focusing the search box opens its dropdown; closed, Tab leaves the box.
   await page.keyboard.press("Escape");
   await expect(page.locator("#search-results")).toBeHidden();

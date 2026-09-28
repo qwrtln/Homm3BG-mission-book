@@ -5,6 +5,7 @@ import { CATEGORY_LABELS, publishedPdfUrl, TEMPLATES } from "./config.js";
 import { basenameNoExt, el } from "./dom.js";
 import { preloadFile, preloadText } from "./files.js";
 import { state } from "./state.js";
+import { showPicker } from "./wizard.js";
 import { commitEntry } from "./workspace.js";
 
 // A pick only marks a pending choice, no fetch yet; "Open editor" needs a pick
@@ -56,6 +57,9 @@ function setDimmed(element, dimmed) {
 export function setPickerMode(mode) {
   pickerMode = mode;
   setDimmed(el("scratch-row"), mode === "edit");
+  // The wizard only starts new scenarios, so edit mode has no use for it.
+  el("start-choice").hidden = mode === "edit";
+  if (mode === "edit") showPicker();
   el("mode-edit").setAttribute("aria-pressed", String(mode === "edit"));
   el("mode-new").setAttribute("aria-pressed", String(mode === "new"));
   el("pick-heading").textContent = mode === "edit" ? "Pick the scenario to edit" : "Start from an existing scenario";

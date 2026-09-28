@@ -52,7 +52,8 @@ export function setStatus(text, { spinning = false, tone = "" } = {}) {
 }
 
 /**
- * Escapes the three characters that could break out of an HTML text node.
+ * Escapes the characters that could break out of an HTML text node or a
+ * quoted attribute value.
  *
  * @param {unknown} text anything; stringified first, as call sites pass
  *   element textContent, which is nullable
@@ -60,8 +61,8 @@ export function setStatus(text, { spinning = false, tone = "" } = {}) {
  */
 export function escapeHtml(text) {
   /** @type {Record<string, string>} */
-  const replacements = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
-  return String(text).replace(/[&<>]/g, (c) => replacements[c]);
+  const replacements = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  return String(text).replace(/[&<>"']/g, (c) => replacements[c]);
 }
 
 /**

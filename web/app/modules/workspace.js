@@ -12,7 +12,7 @@ import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
-import { resetUploads } from "./uploads.js";
+import { resetUploads, restoreUploads } from "./uploads.js";
 
 /**
  * Whether the welcome screen shows over a scenario left open behind it: its
@@ -64,6 +64,52 @@ export function showWorkspace() {
 }
 
 /**
+ * The opening steps every new scenario shares, whatever its text comes from:
+ * the workspace shown, the identity derived from the typed name and the
+ * category, the title, the category control and the route set. The editor
+ * still holds whatever it held before; the caller puts the text in.
+ *
+ * @param {string} name what the contributor typed
+ * @param {string} category draft-scenarios subdir the new scenario lands in
+ * @returns {Promise<{cm: CodeMirrorEditor, identity: string}>}
+ */
+async function openNewScenario(name, category) {
+  const cm = requireEditor();
+
+  await showWorkspace();
+  cm.refresh(); // CodeMirror mismeasures while its host was display:none
+  el("header-actions").hidden = false;
+
+  // Keep the .tex extension: TeX's \input only appends one if missing, so a
+  // name without it would 404 twice.
+  const identity = newScenarioPath(name, category);
+
+  resetGithubSaveState();
+  state.chosenPath = identity;
+  // Always the typed name: a save must never stay tied to the entry it started from.
+  setScenarioTitle(name.trim());
+  syncCategoryControl();
+  // Not movable until the text is in the editor: a move now would carry
+  // whatever the editor held before.
+  el("scenario-category").disabled = true;
+  reflectRoute();
+  el("build").disabled = false; // Build, or Stop mid-build: both apply
+  el("download").disabled = true;
+  return { cm, identity };
+}
+
+/**
+ * The repository path a new scenario with this name is filed at.
+ *
+ * @param {string} name what the contributor typed
+ * @param {string} category one of DRAFT_CATEGORIES
+ * @returns {string} "draft-scenarios/<category>/<file>.tex"
+ */
+export function newScenarioPath(name, category) {
+  return `${newScenarioDir(category)}/${sanitizeFilename(name)}.tex`;
+}
+
+/**
  * Loads a picked entry into the editor and shows the workspace.
  *
  * `name` is mandatory: it becomes the .tex file's identity (include path,
@@ -82,28 +128,7 @@ export async function commitEntry(path, name, category) {
     : state.entries.find((e) => e.path === path);
   if (!entry) return;
 
-  const cm = requireEditor();
-
-  await showWorkspace();
-  cm.refresh(); // CodeMirror mismeasures while its host was display:none
-  el("header-actions").hidden = false;
-
-  // Keep the .tex extension: TeX's \input only appends one if missing, so a
-  // name without it would 404 twice.
-  const dir = newScenarioDir(category);
-  const identity = `${dir}/${sanitizeFilename(name)}.tex`;
-
-  resetGithubSaveState();
-  state.chosenPath = identity;
-  // Always the typed name: a save must never stay tied to the entry it started from.
-  setScenarioTitle(name.trim());
-  syncCategoryControl();
-  // Not movable until the text below is in the editor: a move now would carry
-  // whatever the editor held before.
-  el("scenario-category").disabled = true;
-  reflectRoute();
-  el("build").disabled = false; // Build, or Stop mid-build: both apply
-  el("download").disabled = true;
+  const { cm, identity } = await openNewScenario(name, category);
   setStatus("Loading…");
 
   const fetched = await preloadFile(entry.path);
@@ -126,6 +151,35 @@ export async function commitEntry(path, name, category) {
   // The published PDF is the entry's own, never the renamed copy in the editor.
   const differs = shown && cm.getValue() !== pristineSource;
   setStatus(differs ? `Published PDF of ${entry.title}. Build to see your changes.` : "Ready.");
+}
+
+/**
+ * Opens a new scenario whose text was made here, by the start wizard, rather
+ * than fetched. It exists nowhere else, so it is saved to the local draft at
+ * once and counts as unsaved work; the files the wizard collected are staged
+ * through the upload popover, which then lists them.
+ *
+ * @param {string} name what the contributor typed
+ * @param {string} category draft-scenarios subdir the new scenario lands in
+ * @param {string} source the scenario's complete .tex text
+ * @param {{path: string, bytes: Uint8Array}[]} uploads files to stage, at the paths the text references
+ * @returns {Promise<void>}
+ */
+export async function commitGeneratedEntry(name, category, source, uploads) {
+  const { cm, identity } = await openNewScenario(name, category);
+  cm.setValue(source);
+  el("draft-note").hidden = true;
+  syncCategoryControl();
+  cm.focus();
+
+  // In this order: resetUploads() would wipe anything staged before it, and
+  // the clean state must see the staged files.
+  resetUploads();
+  restoreUploads(uploads);
+  clearPdf();
+  saveDraft(identity, source);
+  markClean(null); // no clean copy anywhere: the text was never saved anywhere else
+  setStatus("Ready.");
 }
 
 /**

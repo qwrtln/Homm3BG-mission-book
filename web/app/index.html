@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/github-status.css">
 <link rel="stylesheet" href="styles/welcome.css">
+<link rel="stylesheet" href="styles/wizard.css">
 <link rel="stylesheet" href="styles/header-actions.css">
 <link rel="stylesheet" href="styles/workspace.css">
 <link rel="stylesheet" href="styles/dialog.css">
@@ -96,6 +97,19 @@
             <button id="mode-new" type="button" aria-pressed="false">Add new</button>
           </div>
         </div>
+        <div class="start-choice" id="start-choice">
+          <p class="mode-label" id="start-choice-label">How do you want to start?</p>
+          <div class="start-options" role="group" aria-labelledby="start-choice-label">
+            <button id="start-copy" type="button" aria-pressed="true">
+              <strong>Start from an existing scenario</strong>
+              <span>Copy a scenario from the book, or begin with the empty template.</span>
+            </button>
+            <button id="start-wizard" type="button" aria-pressed="false">
+              <strong>Use the setup wizard</strong>
+              <span>Answer a few questions and get a scenario file already filled in.</span>
+            </button>
+          </div>
+        </div>
         <div class="pick-step">
           <h2 id="pick-heading">Start from an existing scenario</h2>
           <p class="hint" id="pick-hint">Your new scenario starts as a copy of it. Search the Mission Book and the Draft Scenarios by name.</p>
@@ -135,6 +149,207 @@
           <button id="go" class="primary" type="button" disabled>Open editor</button>
           <p class="go-hint" id="go-hint" role="status"></p>
         </div>
+        <!-- styles/wizard.css; modules/wizard.js drives the panes, one shown at a time. -->
+        <section class="wizard" id="wizard" aria-labelledby="wizard-title" hidden>
+          <div class="wizard-head">
+            <h2 id="wizard-title">Set up a new scenario</h2>
+            <p class="wizard-step" id="wizard-step" aria-live="polite"></p>
+          </div>
+          <div class="wizard-panes" id="wizard-panes">
+            <div class="wizard-pane" id="wizard-pane-basics" hidden>
+              <fieldset class="wizard-choice" id="wizard-category">
+                <legend class="wizard-heading">Game mode</legend>
+                <p class="hint">Who plays against whom.</p>
+                <span class="wizard-radios" id="wizard-category-options"></span>
+              </fieldset>
+              <h3><label for="wizard-name">Scenario name</label></h3>
+              <p class="hint">It names the file too.</p>
+              <div class="wizard-field">
+                <input type="text" id="wizard-name" placeholder="Your new scenario's name" maxlength="60" autocomplete="off" required>
+                <p class="name-error" id="wizard-name-error" role="alert" hidden></p>
+              </div>
+              <h3><label for="wizard-author">Author</label></h3>
+              <p class="hint">Printed under the title. It can wait.</p>
+              <div class="wizard-field">
+                <input type="text" id="wizard-author" placeholder="Your name or nickname" autocomplete="off">
+              </div>
+              <h3 id="wizard-header-label">Header image</h3>
+              <!-- The upload popover's header field, drawn by the same upload-panel.js. -->
+              <div class="wizard-field wizard-upload" id="wizard-header-field">
+                <input type="file" id="wizard-header" aria-labelledby="wizard-header-label" accept=".png,.jpg,.jpeg,image/png,image/jpeg" hidden>
+                <div class="upload-card" id="wizard-header-card" hidden>
+                  <div class="upload-card-body">
+                    <div class="upload-card-head">
+                      <span class="upload-card-title">Header</span>
+                      <span class="orig-name" id="wizard-header-orig"></span>
+                      <button type="button" id="wizard-header-remove" class="upload-remove" aria-label="Remove header image" title="Remove the header image">×</button>
+                    </div>
+                    <input type="text" id="wizard-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename">
+                  </div>
+                  <img class="upload-preview" id="wizard-header-preview" alt="Header image preview">
+                </div>
+                <button type="button" id="wizard-header-add">+ Add header image</button>
+                <span class="wizard-status" id="wizard-header-status">PNG or JPG. It shows at the top of the scenario. Drop it here, or add it.</span>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-lore" hidden>
+              <h3>Lore</h3>
+              <p class="hint">A short story to set the mood. It is printed in italics under the author.</p>
+              <div class="wizard-field">
+                <label for="wizard-lore">Flavor text</label>
+                <textarea id="wizard-lore" rows="6" placeholder="Power struggle at the border escalates. This trade route is incredibly important as a supply line, and you cannot allow it to fall into enemy hands."></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-length" hidden>
+              <h3 id="wizard-rounds-label">Scenario length</h3>
+              <p class="hint">How many Rounds the game lasts.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-rounds" role="group" aria-labelledby="wizard-rounds-label"></div>
+              </div>
+              <h3 id="wizard-players-label">Player count</h3>
+              <p class="hint">Pick all that apply.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-players" role="group" aria-labelledby="wizard-players-label"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-resources" hidden>
+              <h3>Starting income and resources</h3>
+              <p class="hint">What each player earns every Round, and what they start with. Income starts at the bottom of each track; an empty resource starts at 0.</p>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-income-label">Starting income</p>
+                <div class="wizard-row" id="wizard-income" role="group" aria-labelledby="wizard-income-label"></div>
+              </div>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-resources-label">Starting resources</p>
+                <div class="wizard-row" id="wizard-resources" role="group" aria-labelledby="wizard-resources-label"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-units" hidden>
+              <h3>Starting units</h3>
+              <p class="hint">One Unit per line. Glyphs are kept as typed: the Unit glyphs are <img class="wizard-glyph wizard-glyph-inline" data-glyph="bronze" alt=""> <code>\svg{bronze}</code>, <img class="wizard-glyph wizard-glyph-inline" data-glyph="silver" alt=""> <code>\svg{silver}</code> and <img class="wizard-glyph wizard-glyph-inline" data-glyph="golden" alt=""> <code>\svg{golden}</code>.</p>
+              <div class="wizard-field">
+                <label for="wizard-units">Starting units</label>
+                <textarea id="wizard-units" rows="4" spellcheck="false"></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-buildings" hidden>
+              <h3>Town buildings</h3>
+              <p class="hint">The buildings each player starts with. Tick none for a Town with no buildings.</p>
+              <fieldset class="wizard-choice">
+                <legend>Town buildings</legend>
+                <div class="wizard-checks" id="wizard-buildings"></div>
+              </fieldset>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-pool" hidden>
+              <h3>Map tile pool</h3>
+              <p class="hint">Whether each player takes random Map Tiles to place during the game.</p>
+              <fieldset class="wizard-choice" id="wizard-pool">
+                <legend>Map tile pool</legend>
+                <span class="wizard-radios">
+                  <label><input type="radio" name="wizard-pool" value="yes"><span>Yes</span></label>
+                  <label><input type="radio" name="wizard-pool" value="no"><span>No</span></label>
+                </span>
+              </fieldset>
+              <div class="wizard-counts" id="wizard-pool-counts" hidden>
+                <div class="wizard-count"><label for="wizard-pool-far">Far (II–III)</label><input type="number" id="wizard-pool-far" min="0" max="6" step="1" placeholder="0"></div>
+                <div class="wizard-count"><label for="wizard-pool-near">Near (IV–V)</label><input type="number" id="wizard-pool-near" min="0" max="6" step="1" placeholder="0"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-map" hidden>
+              <h3>Map setup</h3>
+              <p class="hint">How many Map Tiles of each type the map is built from: a fixed number, or a multiple of the number of players (P, 2P … 6P).</p>
+              <div class="wizard-counts" id="wizard-map" role="group" aria-label="Map Tiles">
+                <div class="wizard-count" data-tile="starting">
+                  <label for="wizard-map-starting">Starting (I)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Starting (I): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-starting" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="far">
+                  <label for="wizard-map-far">Far (II–III)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Far (II–III): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-far" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="near">
+                  <label for="wizard-map-near">Near (IV–V)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Near (IV–V): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-near" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="center">
+                  <label for="wizard-map-center">Center (VI–VII)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Center (VI–VII): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-center" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-conditions" hidden>
+              <h3>Victory and defeat</h3>
+              <p class="hint">How the Scenario is won, and how it is lost. A blank line starts a new paragraph.</p>
+              <div class="wizard-field">
+                <label for="wizard-victory">Victory conditions</label>
+                <textarea id="wizard-victory" rows="4" placeholder="Take control of the enemy Town."></textarea>
+              </div>
+              <div class="wizard-field">
+                <label for="wizard-defeat">Defeat conditions</label>
+                <textarea id="wizard-defeat" rows="4" placeholder="At end of Round 12 the game ends in a draw."></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-events" hidden>
+              <h3 id="wizard-events-label">Timed events</h3>
+              <p class="hint">Pick the Rounds that have events. One event per line; glyphs such as <code>\svg{gold}</code> are kept as typed.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-event-rounds" role="group" aria-labelledby="wizard-events-label"></div>
+              </div>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-chips-label">Common events</p>
+                <div class="wizard-chips" id="wizard-chips" role="group" aria-labelledby="wizard-chips-label" aria-describedby="wizard-chips-hint"></div>
+                <p class="wizard-status" id="wizard-chips-hint"></p>
+              </div>
+              <div class="wizard-events" id="wizard-events" role="group" aria-labelledby="wizard-events-label"></div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-rules" hidden>
+              <h3 id="wizard-rules-label">Additional rules</h3>
+              <p class="hint">One rule per field. Glyphs such as <code>\svg{gold}</code> are kept as typed.</p>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-rule-chips-label">Common rules</p>
+                <div class="wizard-chips" id="wizard-rule-chips" role="group" aria-labelledby="wizard-rule-chips-label" aria-describedby="wizard-rule-chips-hint"></div>
+                <p class="wizard-status" id="wizard-rule-chips-hint"></p>
+              </div>
+              <div class="wizard-rules" id="wizard-rules" role="group" aria-labelledby="wizard-rules-label"></div>
+              <button class="wizard-rules-add" id="wizard-rules-add" type="button" aria-label="Add another rule">+</button>
+              <p class="hint wizard-rules-limit" id="wizard-rules-limit" hidden>That's the limit here. You can add more rules in the editor.</p>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-maps" hidden>
+              <h3>Map images</h3>
+              <p class="hint">PNG exported from the <a href="http://homm3bgmapeditor.zedero.nl/" target="_blank" rel="noopener">map editor</a>, up to 6. Add one image for the whole Scenario, or one per player-count layout and tick the counts it is for.</p>
+              <!-- The upload popover's map field, drawn by the same upload-panel.js. -->
+              <div class="wizard-field wizard-upload" id="wizard-maps-field">
+                <input type="file" id="wizard-maps" aria-label="Map images" accept=".png,image/png" multiple hidden>
+                <div class="upload-rename-list" id="wizard-maps-names" hidden></div>
+                <button type="button" id="wizard-maps-add">+ Add map image</button>
+                <span class="wizard-status" id="wizard-maps-status">PNG only, up to 6. Drop them here, or add them.</span>
+              </div>
+            </div>
+          </div>
+          <p class="wizard-hint" id="wizard-hint" role="status"></p>
+          <div class="wizard-nav">
+            <span class="wizard-nav-end">
+              <button id="wizard-back" type="button">Back</button>
+              <button id="wizard-next" type="button">Next</button>
+            </span>
+          </div>
+        </section>
       </div>
       <div class="edit-branch-prompt" id="edit-branch-prompt" hidden>
         <h2>You already have an edit of this scenario in progress</h2>
@@ -280,7 +495,7 @@
 <dialog id="upload-dialog" class="confirm-dialog upload-dialog" aria-labelledby="upload-title">
   <form method="dialog">
     <h2 id="upload-title">Upload images</h2>
-    <div class="upload-field">
+    <div class="upload-field" id="upload-header-field">
       <label for="upload-header">Header image</label>
       <input type="file" id="upload-header" accept=".png,.jpg,.jpeg,image/png,image/jpeg" hidden>
       <div class="upload-card" id="upload-header-card" hidden>
@@ -297,12 +512,12 @@
       <button type="button" id="upload-header-add">+ Add header image</button>
       <span class="upload-status" id="upload-header-status">PNG or JPG. Named after the scenario; rename it if you like.</span>
     </div>
-    <div class="upload-field">
+    <div class="upload-field" id="upload-maps-field">
       <label for="upload-maps">Map images</label>
       <input type="file" id="upload-maps" accept=".png,image/png" multiple hidden>
       <div class="upload-rename-list" id="upload-maps-names" hidden></div>
       <button type="button" id="upload-maps-add">+ Add map image</button>
-      <span class="upload-status" id="upload-maps-status">PNG exported from the map editor. Add one image for the whole scenario, or one per player-count layout and tick the counts it is for.</span>
+      <span class="upload-status" id="upload-maps-status">PNG exported from the <a href="http://homm3bgmapeditor.zedero.nl/" target="_blank" rel="noopener">map editor</a>. Add one image for the whole scenario, or one per player-count layout and tick the counts it is for.</span>
     </div>
     <div class="confirm-actions">
       <button id="upload-done" class="primary" type="submit" value="done">Done</button>
