@@ -6,9 +6,6 @@ on:
     paths:
       - 'web/**'
       - '.github/workflows/test-web.yaml'
-  push:
-    branches:
-      - web-editor # TEMP: testing this workflow from a branch, revert before merge
 
 jobs:
   unit:
