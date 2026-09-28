@@ -81,3 +81,9 @@ English is the only source. `po4a.cfg` maps each `.tex` file to
 - In `.tex` files, an uncapitalized book term: Card, Cube, Deck, Faction,
   Field, Grail, Hero, Level, Round, Scenario, Tile, Unit. Append
   `% no-check-caps` to exempt a line.
+
+## Subagents
+
+When you spin up a subagent, run it on the `sonnet` model. If the `herdr`
+skill is available (`HERDR_ENV=1`), launch the subagent through it, in its own
+Herdr pane. Otherwise, use the Agent tool with `model: "sonnet"`.
