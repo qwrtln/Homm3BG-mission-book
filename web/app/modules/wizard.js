@@ -1118,7 +1118,7 @@ const FIRST_COLUMN = new Set(["bronze", "silver", "golden", "citadel"]);
 function drawBuildings() {
   /** @param {import("../../shared/scenario-wizard.js").Building} building */
   const box = (building) =>
-    `<label class="wizard-check"><input type="checkbox" value="${escapeHtml(building.key)}">${glyphImage(building.glyph, building.darkGlyph)}<span>${escapeHtml(building.label)}</span></label>`;
+    `<label class="wizard-check"><input class="check" type="checkbox" value="${escapeHtml(building.key)}">${glyphImage(building.glyph, building.darkGlyph)}<span>${escapeHtml(building.label)}</span></label>`;
   /** @param {boolean} first */
   const column = (first) =>
     `<div class="wizard-check-column">${BUILDINGS.filter((building) => FIRST_COLUMN.has(building.key) === first)

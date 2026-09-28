@@ -146,6 +146,7 @@ export function initSubmit() {
     label.className = "submit-item";
     const box = document.createElement("input");
     box.type = "checkbox";
+    box.className = "check";
     box.value = item.id;
     const text = document.createElement("span");
     const heading = document.createElement("strong");

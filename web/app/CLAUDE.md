@@ -38,3 +38,25 @@ Everything under `web/app/` deploys (`--include='/app/***'` in
   `modules/theme.js` — not a `prefers-color-scheme` query in each sheet.
 - A new stylesheet needs its own `<link>` in `index.html`; nothing bundles or
   imports them.
+
+## Controls match the app
+
+Every control a contributor sees is dressed in the app's GitHub Primer look,
+in both themes. The browser's default rendering of a control never reaches the
+page. Reuse the existing pattern:
+
+| Control | Use |
+| --- | --- |
+| Button | `button` plus `primary`, `link`, `with-icon`, `icon`, `danger` or `attention` (`styles/base.css`, `header-actions.css`, `dialog.css`) |
+| Checkbox | `class="check"` on the `<input>`, inside its `<label>` (`styles/base.css`) |
+| Radio group | Joined buttons over hidden radios: `.wizard-radios` in `styles/wizard.css` |
+| Hyperlink | `color: var(--accent)` plus a `:focus-visible` outline, set by the container's rule (`.about-dialog a`, `.welcome-intro a`). No global `a` rule exists. |
+| Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.js`, the page's own `<dialog>` |
+| Notice | `showToast()` in `modules/toast.js`, or `setStatus()` in `modules/dom.js` |
+
+- Several of these rules are scoped to one screen. When a second screen needs
+  one, widen its selector into a shared class; keep the one definition.
+- A control with no pattern here gets new rules first, built from
+  `tokens.css`. Check it in light and dark mode before it ships.
+- `alert()`, `confirm()` and `prompt()` stay out of the app. They are the
+  browser's own UI and ignore the theme.
