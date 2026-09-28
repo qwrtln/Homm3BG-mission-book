@@ -497,9 +497,7 @@ test("the starting resources fields are prefilled 10/0/0 and answered by default
 
   await runSetup(page, { resources: async () => {} });
   const text = await editorValue(page);
-  expect(text).toContain(
-    String.raw`\textbf{Starting Resources:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}`,
-  );
+  expect(text).toContain(String.raw`\textbf{Starting Resources:} 10 \svg{gold}`);
 
   expect(errors, "the page reported errors on the prefilled resources pane").toEqual([]);
 });
@@ -772,9 +770,7 @@ test("skipping panes 5 and 8 leaves their template text unchanged, skipping pane
   });
   await expect.poll(() => editorValue(page)).toBe(expected);
   const text = await editorValue(page);
-  expect(text).toContain(
-    String.raw`\textbf{Starting Resources:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}`,
-  );
+  expect(text).toContain(String.raw`\textbf{Starting Resources:} 10 \svg{gold}`);
   expect(text).toContain(
     String.raw`\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}`,
   );

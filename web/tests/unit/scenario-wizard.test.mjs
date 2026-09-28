@@ -286,9 +286,7 @@ test("with every field answered, each answer lands in its section", () => {
 
   const setup = section(output, "Player Setup");
   assert.ok(setup.includes("\\textbf{Player Count:} 2--4\n"));
-  assert.ok(
-    setup.includes("\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 0 \\svg{valuables}\n"),
-  );
+  assert.ok(setup.includes("\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}\n"));
   assert.ok(
     setup.includes("\\textbf{Starting Income:} 15 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"),
   );
@@ -401,6 +399,28 @@ test("a lore text with a blank line becomes one single-line \\textit", () => {
   });
   const lines = output.split("\n").filter((line) => line.startsWith("\\textit{"));
   assert.deepEqual(lines, ["\\textit{First paragraph. Second paragraph. Still second.}"]);
+});
+
+test("a Starting Resource of 0 is left out, while a 0 Starting Income is written", () => {
+  const output = fillScenarioTemplate(template, {
+    name: "Iron Pass",
+    category: "clash",
+    resources: { gold: 10, building_materials: 0, valuables: 2 },
+    income: { gold: 10, building_materials: 0, valuables: 0 },
+  });
+  assert.ok(output.includes("\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{valuables}\n"));
+  assert.ok(
+    output.includes("\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"),
+  );
+});
+
+test("Starting Resources of all 0 write None", () => {
+  const output = fillScenarioTemplate(template, {
+    name: "Iron Pass",
+    category: "clash",
+    resources: { gold: 0, building_materials: 0, valuables: null },
+  });
+  assert.ok(output.includes("\\textbf{Starting Resources:} None\n"));
 });
 
 test("tilePool false or skipped removes the Map Tile Pool line and keeps one blank line", () => {

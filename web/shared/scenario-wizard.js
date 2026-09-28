@@ -429,12 +429,19 @@ function anySet(values) {
 /**
  * @param {ResourceValues} values
  * @param {ResourceValues} unset what an unset value writes
+ * @param {boolean} [skipZero] leave a 0 out, as Starting Resources do; the
+ *   line reads None when every value is 0. Income keeps its 0s: each is a
+ *   position on its track.
  * @returns {string}
  */
-function resourceLine(values, unset) {
-  /** @param {"gold" | "building_materials" | "valuables"} key */
-  const value = (key) => (typeof values[key] === "number" ? values[key] : unset[key]);
-  return String.raw`${value("gold")} \svg{gold}, ${value("building_materials")} \svg{building_materials}, ${value("valuables")} \svg{valuables}`;
+function resourceLine(values, unset, skipZero = false) {
+  /** @type {("gold" | "building_materials" | "valuables")[]} */
+  const keys = ["gold", "building_materials", "valuables"];
+  const parts = keys
+    .map((key) => ({ key, value: typeof values[key] === "number" ? values[key] : unset[key] }))
+    .filter(({ value }) => !skipZero || value !== 0)
+    .map(({ key, value }) => String.raw`${value} \svg{${key}}`);
+  return parts.length ? parts.join(", ") : "None";
 }
 
 /**
@@ -577,7 +584,7 @@ export function fillScenarioTemplate(template, answers) {
 
   if (answers.resources && anySet(answers.resources)) {
     const zero = { gold: 0, building_materials: 0, valuables: 0 };
-    fill("resources", String.raw`\textbf{Starting Resources:} ${resourceLine(answers.resources, zero)}`);
+    fill("resources", String.raw`\textbf{Starting Resources:} ${resourceLine(answers.resources, zero, true)}`);
   }
   if (answers.income && anySet(answers.income)) {
     const minimum = {
