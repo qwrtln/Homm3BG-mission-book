@@ -9,6 +9,7 @@ import { expect, test } from "./fixtures.mjs";
 
 const NAME = "Wizard Probe";
 const SLUG = "wizard_probe";
+const MAP_EDITOR = "https://zedero.github.io/homm3boardgame/";
 
 /**
  * The editor's text, read off the CodeMirror instance: it renders only the
@@ -1410,9 +1411,27 @@ test("the map editor link opens in a new tab from the wizard's hint and the popo
   await reachSetup(page);
   await moveTo(page, "maps");
   const wizardLink = page.locator("#wizard-pane-maps .hint a");
-  await expect(wizardLink).toHaveAttribute("href", "http://homm3bgmapeditor.zedero.nl/");
+  await expect(wizardLink).toHaveAttribute("href", MAP_EDITOR);
   await expect(wizardLink).toHaveAttribute("target", "_blank");
   await expect(wizardLink).toHaveAttribute("rel", "noopener");
+
+  await page.locator("#wizard-next").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await page.locator("#upload-open").click();
+  const popoverLink = page.locator("#upload-maps-status a");
+  await expect(popoverLink).toHaveAttribute("href", MAP_EDITOR);
+  await expect(popoverLink).toHaveAttribute("target", "_blank");
+  await expect(popoverLink).toHaveAttribute("rel", "noopener");
+  // Drawn in the accent, like the wizard's link, not the browser's default link blue.
+  const accent = await page.evaluate(() => {
+    const probe = document.createElement("span");
+    probe.style.color = "var(--accent)";
+    document.body.append(probe);
+    const color = getComputedStyle(probe).color;
+    probe.remove();
+    return color;
+  });
+  await expect(popoverLink).toHaveCSS("color", accent);
 
   expect(errors, "the page reported errors checking the map editor link").toEqual([]);
 });
