@@ -1,7 +1,10 @@
 # Container-based Setup
 
+If you only want to add a scenario, try the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) first.
+It needs no setup at all.
+
 Instead of installing all the dependencies directly on your system, you can use our container-based setup that works across all operating systems (see the [Containerfile](https://github.com/qwrtln/Homm3BG-mission-book/blob/main/tools/container/Containerfile)).
-The built image weighs ~1.18 GB.
+The built image weighs ~1.82 GB.
 You only need [Podman](https://podman.io/getting-started/installation) (recommended) or [Docker](https://www.docker.com/get-started) container engine to be installed.
 
 ## Wrapper Script

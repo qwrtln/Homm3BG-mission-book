@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heroes III: The Board Game – Scenario Builder</title>
+<link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
+<link rel="stylesheet" href="codemirror-github-theme.css">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/github-status.css">
+<link rel="stylesheet" href="styles/welcome.css">
+<link rel="stylesheet" href="styles/wizard.css">
+<link rel="stylesheet" href="styles/header-actions.css">
+<link rel="stylesheet" href="styles/workspace.css">
+<link rel="stylesheet" href="styles/dialog.css">
+<!-- stats placeholder -->
+</head>
+<body>
+<script>
+  // Before first paint: an address that names a scenario shows a loading screen, never the welcome screen.
+  try {
+    var pendingRoute = /^#\/(drafts|updates)\//.test(location.hash)
+      || (/[?&]code=/.test(location.search) && localStorage.getItem("wasm-scenario-builder:pending-route"));
+    if (pendingRoute) document.documentElement.classList.add("route-pending");
+  } catch (e) { /* blocked storage: the welcome screen shows */ }
+</script>
+
+<!-- styles/header-actions.css owns the header's groups and the overflow menu;
+     styles/github-status.css owns #github-signin/#github-status; styles/base.css the header bar itself.
+     A button's .label collapses to icon-only on narrow screens, and stays its accessible name. -->
+<header>
+  <div class="header-titles" id="header-titles">
+    <h1>Heroes III: The Board Game – Scenario Builder</h1>
+    <p>Build scenarios with LaTeX in your web browser</p>
+  </div>
+  <div class="header-scenario" id="header-scenario" hidden>
+    <button id="back-to-welcome" class="icon" type="button" title="Back to choosing a scenario" aria-label="Back to choosing a scenario"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06"/></svg></button>
+    <span class="scenario-title" id="scenario-title"></span>
+    <select class="scenario-category" id="scenario-category" aria-label="Category"></select>
+    <span class="category-note" id="category-note" role="status" hidden></span>
+    <span class="draft-note" id="draft-note" title="Showing your locally saved edits, not the original source." hidden>Local draft</span>
+    <span class="unsaved-note" id="unsaved-note" hidden><span aria-hidden="true">●</span> Unsaved</span>
+  </div>
+  <div class="header-actions" id="header-actions" hidden>
+    <span class="button-group">
+      <button id="build" class="primary with-icon" type="button" disabled><svg class="octicon build-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0m4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215"/></svg><svg class="octicon stop-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M5.75 4h4.5c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 10.25 12h-4.5A1.75 1.75 0 0 1 4 10.25v-4.5C4 4.784 4.784 4 5.75 4"/></svg><span class="label" id="build-label">Build PDF</span></button>
+      <button id="download" class="with-icon" type="button" disabled><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06z"/></svg><span class="label">Download PDF</span></button>
+    </span>
+    <button id="upload-open" class="with-icon" type="button"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6M5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0"/></svg><span class="label">Upload images</span></button>
+  </div>
+  <button id="back-to-editing" class="with-icon attention" type="button" hidden><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg><span class="label">Back to editing</span></button>
+  <button id="github-signin" class="with-icon" type="button"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg><span class="label">Sign in with GitHub</span></button>
+  <span class="github-status" id="github-status" hidden>
+    <span class="button-group github-segment">
+      <button id="github-save" class="with-icon" type="button"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M11.78 4.72a.749.749 0 1 1-1.06 1.06L8.75 3.811V9.5a.75.75 0 0 1-1.5 0V3.811L5.28 5.78a.749.749 0 1 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0z"/></svg><span class="label">Save</span></button>
+      <button id="github-open-pr" class="with-icon" type="button" hidden><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg><span class="label">Open PR</span></button>
+    </span>
+    <a id="github-pr-link" class="github-pr-link with-icon" href="#" target="_blank" rel="noopener" hidden><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg><span class="label">View PR</span><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></a>
+  </span>
+  <div class="header-menu">
+    <button id="header-menu-toggle" class="icon" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="header-menu" aria-label="More actions" title="More actions"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></button>
+    <div class="header-menu-list" id="header-menu" role="menu" aria-label="More actions" hidden>
+      <button id="theme-toggle" role="menuitemcheckbox" aria-checked="false" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M9.598 1.591a.75.75 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786m1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678"/></svg>Dark mode<svg class="octicon menu-check" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg></button>
+      <button id="about-open" role="menuitem" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>About</button>
+      <div class="menu-separator" id="header-menu-separator" role="separator" hidden></div>
+      <button id="github-signout" role="menuitem" type="button" tabindex="-1" hidden><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z"/></svg>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<!-- styles/base.css owns .content; styles/welcome.css owns .route-loading and everything under #welcome. -->
+<div class="content">
+  <div class="route-loading" id="route-loading" role="status" aria-label="Opening your scenario">
+    <span class="spinner big"></span>
+  </div>
+
+  <section class="welcome" id="welcome">
+    <div class="welcome-inner">
+      <div class="welcome-intro">
+        <h2>Welcome to the Scenario Builder</h2>
+        <p>Want to build a nicely styled PDF scenario for the Heroes of Might &amp; Magic III board game? You've come to the right place. You can do it right here, in your web browser, without installing any software.</p>
+        <p>Every scenario you build here is styled after the <a href="https://github.com/qwrtln/Homm3BG-mission-book#heroes-of-might--magic-iii-the-board-gamefan-made-mission-book" target="_blank" rel="noopener">Fan-Made Mission Book</a>, a community collection of scenarios for the game. If you're new here, we highly recommend checking it out first.</p>
+      </div>
+      <div class="welcome-top">
+        <div class="resume-drafts" id="resume-drafts" hidden>
+          <h2>Resume your work</h2>
+          <p class="hint" id="resume-loading" hidden><span class="spinner"></span> Looking for work to resume…</p>
+          <p class="hint" id="resume-hint">Branches of yours with unfinished edits.</p>
+          <div class="combobox-list resume-list" id="resume-list"></div>
+        </div>
+      </div>
+      <div class="welcome-picker" id="welcome-picker">
+        <div class="mode-choice" id="mode-choice" hidden>
+          <p class="mode-label" id="mode-label">You're a project member. Change a scenario that already exists, or add a new one:</p>
+          <div class="segmented" role="group" aria-labelledby="mode-label">
+            <button id="mode-edit" type="button" aria-pressed="false">Edit existing</button>
+            <button id="mode-new" type="button" aria-pressed="false">Add new</button>
+          </div>
+        </div>
+        <div class="start-choice" id="start-choice">
+          <p class="mode-label" id="start-choice-label">How do you want to start?</p>
+          <div class="start-options" role="group" aria-labelledby="start-choice-label">
+            <button id="start-copy" type="button" aria-pressed="true">
+              <strong>Start from an existing scenario</strong>
+              <span>Copy a scenario from the book, or begin with the empty template.</span>
+            </button>
+            <button id="start-wizard" type="button" aria-pressed="false">
+              <strong>Use the setup wizard</strong>
+              <span>Answer a few questions and get a scenario file already filled in.</span>
+            </button>
+          </div>
+        </div>
+        <div class="pick-step">
+          <h2 id="pick-heading">Start from an existing scenario</h2>
+          <p class="hint" id="pick-hint">Your new scenario starts as a copy of it. Search the Mission Book and the Draft Scenarios by name.</p>
+          <div class="combobox">
+            <input type="text" id="search" aria-labelledby="pick-heading" placeholder="Type a scenario name…" autocomplete="off">
+            <div class="combobox-list" id="search-results" hidden></div>
+          </div>
+          <p class="scratch-row" id="scratch-row">
+            <span id="scratch-label">No close match? Start blank:</span>
+            <span class="blank-links" role="group" aria-labelledby="scratch-label">
+              <button id="scratch-clash" class="link" type="button" data-category="clash" aria-pressed="false">Clash</button> <span aria-hidden="true">·</span>
+              <button id="scratch-coop" class="link" type="button" data-category="coops" aria-pressed="false">Coop</button> <span aria-hidden="true">·</span>
+              <button id="scratch-alliance" class="link" type="button" data-category="alliances" aria-pressed="false">Alliance</button> <span aria-hidden="true">·</span>
+              <button id="scratch-campaign" class="link" type="button" data-category="campaigns" aria-pressed="false">Campaign</button>
+            </span>
+          </p>
+        </div>
+        <div class="name-step dimmed" id="name-slide" inert>
+          <h2 id="name-heading">Name your new scenario</h2>
+          <p class="hint">Used for the file name and the download.</p>
+          <div class="name-field">
+            <input type="text" id="scenario-name" aria-labelledby="name-heading" placeholder="Your new scenario's name" maxlength="60" required>
+            <p class="name-error" id="name-error" role="alert" hidden></p>
+          </div>
+          <fieldset class="category-choice" id="category-choice" aria-describedby="category-hint">
+            <legend>Game mode</legend>
+            <span class="segmented">
+              <label><input type="radio" name="category" value="clash"><span>Clash</span></label>
+              <label><input type="radio" name="category" value="coops"><span>Coop</span></label>
+              <label><input type="radio" name="category" value="alliances"><span>Alliance</span></label>
+              <label><input type="radio" name="category" value="campaigns"><span>Campaign</span></label>
+            </span>
+            <p class="hint category-hint" id="category-hint"></p>
+          </fieldset>
+        </div>
+        <div class="go-row">
+          <button id="go" class="primary" type="button" disabled>Open editor</button>
+          <p class="go-hint" id="go-hint" role="status"></p>
+        </div>
+        <!-- styles/wizard.css; modules/wizard.js drives the panes, one shown at a time. -->
+        <section class="wizard" id="wizard" aria-labelledby="wizard-title" hidden>
+          <div class="wizard-head">
+            <h2 id="wizard-title">Set up a new scenario</h2>
+            <p class="wizard-step" id="wizard-step" aria-live="polite"></p>
+          </div>
+          <div class="wizard-panes" id="wizard-panes">
+            <div class="wizard-pane" id="wizard-pane-basics" hidden>
+              <fieldset class="wizard-choice" id="wizard-category">
+                <legend class="wizard-heading">Game mode</legend>
+                <p class="hint">Who plays against whom.</p>
+                <span class="wizard-radios" id="wizard-category-options"></span>
+              </fieldset>
+              <h3><label for="wizard-name">Scenario name</label></h3>
+              <p class="hint">It names the file too.</p>
+              <div class="wizard-field">
+                <input type="text" id="wizard-name" placeholder="Your new scenario's name" maxlength="60" autocomplete="off" required>
+                <p class="name-error" id="wizard-name-error" role="alert" hidden></p>
+              </div>
+              <h3><label for="wizard-author">Author</label></h3>
+              <p class="hint">Printed under the title. It can wait.</p>
+              <div class="wizard-field">
+                <input type="text" id="wizard-author" placeholder="Your name or nickname" autocomplete="off">
+              </div>
+              <h3 id="wizard-header-label">Header image</h3>
+              <!-- The upload popover's header field, drawn by the same upload-panel.js. -->
+              <div class="wizard-field wizard-upload" id="wizard-header-field">
+                <input type="file" id="wizard-header" aria-labelledby="wizard-header-label" accept=".png,.jpg,.jpeg,image/png,image/jpeg" hidden>
+                <div class="upload-card" id="wizard-header-card" hidden>
+                  <div class="upload-card-body">
+                    <div class="upload-card-head">
+                      <span class="upload-card-title">Header</span>
+                      <span class="orig-name" id="wizard-header-orig"></span>
+                      <button type="button" id="wizard-header-remove" class="upload-remove" aria-label="Remove header image" title="Remove the header image">×</button>
+                    </div>
+                    <input type="text" id="wizard-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename">
+                  </div>
+                  <img class="upload-preview" id="wizard-header-preview" alt="Header image preview">
+                </div>
+                <button type="button" id="wizard-header-add">+ Add header image</button>
+                <span class="wizard-status" id="wizard-header-status">PNG or JPG. It shows at the top of the scenario. Drop it here, or add it.</span>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-lore" hidden>
+              <h3>Lore</h3>
+              <p class="hint">A short story to set the mood. It is printed in italics under the author.</p>
+              <div class="wizard-field">
+                <label for="wizard-lore">Flavor text</label>
+                <textarea id="wizard-lore" rows="6" placeholder="Power struggle at the border escalates. This trade route is incredibly important as a supply line, and you cannot allow it to fall into enemy hands."></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-length" hidden>
+              <h3 id="wizard-rounds-label">Scenario length</h3>
+              <p class="hint">How many Rounds the game lasts.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-rounds" role="group" aria-labelledby="wizard-rounds-label"></div>
+              </div>
+              <h3 id="wizard-players-label">Player count</h3>
+              <p class="hint">Pick all that apply.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-players" role="group" aria-labelledby="wizard-players-label"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-resources" hidden>
+              <h3>Starting income and resources</h3>
+              <p class="hint">What each player earns every Round, and what they start with. Income starts at the bottom of each track; an empty resource starts at 0.</p>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-income-label">Starting income</p>
+                <div class="wizard-row" id="wizard-income" role="group" aria-labelledby="wizard-income-label"></div>
+              </div>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-resources-label">Starting resources</p>
+                <div class="wizard-row" id="wizard-resources" role="group" aria-labelledby="wizard-resources-label"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-units" hidden>
+              <h3>Starting units</h3>
+              <p class="hint">One Unit per line. Glyphs are kept as typed: the Unit glyphs are <img class="wizard-glyph wizard-glyph-inline" data-glyph="bronze" alt=""> <code>\svg{bronze}</code>, <img class="wizard-glyph wizard-glyph-inline" data-glyph="silver" alt=""> <code>\svg{silver}</code> and <img class="wizard-glyph wizard-glyph-inline" data-glyph="golden" alt=""> <code>\svg{golden}</code>.</p>
+              <div class="wizard-field">
+                <label for="wizard-units">Starting units</label>
+                <textarea id="wizard-units" rows="4" spellcheck="false"></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-buildings" hidden>
+              <h3>Town buildings</h3>
+              <p class="hint">The buildings each player starts with. Tick none for a Town with no buildings.</p>
+              <fieldset class="wizard-choice">
+                <legend>Town buildings</legend>
+                <div class="wizard-checks" id="wizard-buildings"></div>
+              </fieldset>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-pool" hidden>
+              <h3>Map tile pool</h3>
+              <p class="hint">Whether each player takes random Map Tiles to place during the game.</p>
+              <fieldset class="wizard-choice" id="wizard-pool">
+                <legend>Map tile pool</legend>
+                <span class="wizard-radios">
+                  <label><input type="radio" name="wizard-pool" value="yes"><span>Yes</span></label>
+                  <label><input type="radio" name="wizard-pool" value="no"><span>No</span></label>
+                </span>
+              </fieldset>
+              <div class="wizard-counts" id="wizard-pool-counts" hidden>
+                <div class="wizard-count"><label for="wizard-pool-far">Far (II–III)</label><input type="number" id="wizard-pool-far" min="0" max="6" step="1" placeholder="0"></div>
+                <div class="wizard-count"><label for="wizard-pool-near">Near (IV–V)</label><input type="number" id="wizard-pool-near" min="0" max="6" step="1" placeholder="0"></div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-map" hidden>
+              <h3>Map setup</h3>
+              <p class="hint">How many Map Tiles of each type the map is built from: a fixed number, or a multiple of the number of players (P, 2P … 6P).</p>
+              <div class="wizard-counts" id="wizard-map" role="group" aria-label="Map Tiles">
+                <div class="wizard-count" data-tile="starting">
+                  <label for="wizard-map-starting">Starting (I)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Starting (I): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-starting" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="far">
+                  <label for="wizard-map-far">Far (II–III)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Far (II–III): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-far" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="near">
+                  <label for="wizard-map-near">Near (IV–V)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Near (IV–V): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-near" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="wizard-count" data-tile="center">
+                  <label for="wizard-map-center">Center (VI–VII)</label>
+                  <div class="wizard-tile-mode segmented" role="group" aria-label="Center (VI–VII): fixed count or multiple of players">
+                    <button type="button" data-mode="fixed" aria-pressed="true">Fixed</button>
+                    <button type="button" data-mode="perplayer" aria-pressed="false">× Players</button>
+                  </div>
+                  <input type="text" id="wizard-map-center" maxlength="2" placeholder="0" autocomplete="off" spellcheck="false">
+                </div>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-conditions" hidden>
+              <h3>Victory and defeat</h3>
+              <p class="hint">How the Scenario is won, and how it is lost. A blank line starts a new paragraph.</p>
+              <div class="wizard-field">
+                <label for="wizard-victory">Victory conditions</label>
+                <textarea id="wizard-victory" rows="4" placeholder="Take control of the enemy Town."></textarea>
+              </div>
+              <div class="wizard-field">
+                <label for="wizard-defeat">Defeat conditions</label>
+                <textarea id="wizard-defeat" rows="4" placeholder="At end of Round 12 the game ends in a draw."></textarea>
+              </div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-events" hidden>
+              <h3 id="wizard-events-label">Timed events</h3>
+              <p class="hint">Pick the Rounds that have events. One event per line; glyphs such as <code>\svg{gold}</code> are kept as typed.</p>
+              <div class="wizard-field">
+                <div class="segmented wizard-segmented" id="wizard-event-rounds" role="group" aria-labelledby="wizard-events-label"></div>
+              </div>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-chips-label">Common events</p>
+                <div class="wizard-chips" id="wizard-chips" role="group" aria-labelledby="wizard-chips-label" aria-describedby="wizard-chips-hint"></div>
+                <p class="wizard-status" id="wizard-chips-hint"></p>
+              </div>
+              <div class="wizard-events" id="wizard-events" role="group" aria-labelledby="wizard-events-label"></div>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-rules" hidden>
+              <h3 id="wizard-rules-label">Additional rules</h3>
+              <p class="hint">One rule per field. Glyphs such as <code>\svg{gold}</code> are kept as typed.</p>
+              <div class="wizard-field">
+                <p class="wizard-label" id="wizard-rule-chips-label">Common rules</p>
+                <div class="wizard-chips" id="wizard-rule-chips" role="group" aria-labelledby="wizard-rule-chips-label" aria-describedby="wizard-rule-chips-hint"></div>
+                <p class="wizard-status" id="wizard-rule-chips-hint"></p>
+              </div>
+              <div class="wizard-rules" id="wizard-rules" role="group" aria-labelledby="wizard-rules-label"></div>
+              <button class="wizard-rules-add" id="wizard-rules-add" type="button" aria-label="Add another rule">+</button>
+              <p class="hint wizard-rules-limit" id="wizard-rules-limit" hidden>That's the limit here. You can add more rules in the editor.</p>
+            </div>
+            <div class="wizard-pane" id="wizard-pane-maps" hidden>
+              <h3>Map images</h3>
+              <p class="hint">PNG exported from the <a href="https://zedero.github.io/homm3boardgame/" target="_blank" rel="noopener">map editor</a>, up to 6. Add one image for the whole Scenario, or one per player-count layout and tick the counts it is for.</p>
+              <!-- The upload popover's map field, drawn by the same upload-panel.js. -->
+              <div class="wizard-field wizard-upload" id="wizard-maps-field">
+                <input type="file" id="wizard-maps" aria-label="Map images" accept=".png,image/png" multiple hidden>
+                <div class="upload-rename-list" id="wizard-maps-names" hidden></div>
+                <button type="button" id="wizard-maps-add">+ Add map image</button>
+                <span class="wizard-status" id="wizard-maps-status">PNG only, up to 6. Drop them here, or add them.</span>
+              </div>
+            </div>
+          </div>
+          <p class="wizard-hint" id="wizard-hint" role="status"></p>
+          <div class="wizard-nav">
+            <span class="wizard-nav-end">
+              <button id="wizard-back" type="button">Back</button>
+              <button id="wizard-next" type="button">Next</button>
+            </span>
+          </div>
+        </section>
+      </div>
+      <div class="edit-branch-prompt" id="edit-branch-prompt" hidden>
+        <h2>You already have an edit of this scenario in progress</h2>
+        <p class="hint">Continue from where you left off, or start over from the current Mission Book copy. Starting over replaces your earlier edit the moment you save.</p>
+        <div class="scratch-row">
+          <button id="edit-continue" class="primary" type="button">Continue my edit</button>
+          <button id="edit-start-over" type="button">Start over from main</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- styles/workspace.css -->
+  <div id="workspace" hidden>
+    <main id="workspace-main">
+      <section class="pane" id="editor-pane" aria-label="Source">
+        <div class="editor-wrap">
+          <textarea id="editor" spellcheck="false"></textarea>
+        </div>
+      </section>
+
+      <div class="pane-divider" id="pane-divider" role="separator" tabindex="0"
+           aria-orientation="vertical" aria-controls="editor-pane"
+           aria-label="Resize the source and PDF panes"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+           title="Drag to resize. Double-click to reset."></div>
+
+      <section class="pane" id="pdf-pane" aria-label="PDF">
+        <div class="pdf-pane-body-wrap" id="pdf-wrap">
+          <div class="build-progress" id="build-progress" role="progressbar" aria-label="Building the PDF" hidden></div>
+          <!-- The build's current step, short, where the reader is looking. The status
+               bar carries the full text, so screen readers skip this copy. -->
+          <div class="build-phase" id="build-phase" aria-hidden="true" hidden>
+            <span class="spinner"></span>
+            <span id="build-phase-text"></span>
+          </div>
+          <div class="pdf-pane-body" id="pdf-body">
+            <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
+          </div>
+        </div>
+        <div class="error-panel" id="error-panel" hidden>
+          <div class="first-error" id="first-error"></div>
+          <details class="full-log" id="full-log-details">
+            <summary>Show the full log</summary>
+            <pre id="full-log"></pre>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- One bar under both panes: the status on the left, the shown PDF's
+         page count and zoom on the right (pdf-view.js). -->
+    <footer class="status-bar" id="status-bar">
+      <span class="spinner" id="status-spinner" hidden></span>
+      <span id="status-text">Ready.</span>
+      <div class="pdf-controls" id="pdf-controls" hidden>
+        <span class="pdf-page-count" id="pdf-page-count"></span>
+        <div class="pdf-zoom-controls" role="toolbar" aria-label="Zoom">
+          <button type="button" class="pdf-zoom" id="pdf-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+          <button type="button" class="pdf-zoom-level" id="pdf-zoom-level" title="Fit to width">Fit</button>
+          <button type="button" class="pdf-zoom" id="pdf-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- styles/dialog.css -->
+<dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title">
+  <form method="dialog">
+    <h2 id="confirm-title">Delete this work in progress?</h2>
+    <p id="confirm-message"></p>
+    <p class="confirm-warning" id="confirm-warning">This cannot be undone.</p>
+    <div class="confirm-actions">
+      <button id="confirm-cancel" type="submit" value="cancel">Cancel</button>
+      <button id="confirm-ok" class="danger" type="submit" value="confirm">Delete</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- styles/dialog.css; submit.js draws the checkboxes from shared/submit-checklist.js -->
+<dialog id="submit-dialog" class="confirm-dialog submit-dialog" aria-labelledby="submit-title">
+  <form method="dialog">
+    <h2 id="submit-title">Before you open a pull request</h2>
+    <ul id="submit-blockers" class="submit-blockers" hidden></ul>
+    <fieldset id="submit-checklist" class="submit-checklist">
+      <legend>Tick each one to confirm it.</legend>
+    </fieldset>
+    <div class="confirm-actions">
+      <button id="submit-cancel" type="button">Cancel</button>
+      <button id="submit-confirm" class="primary" type="button" disabled>Open pull request</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- styles/dialog.css; about.js loads each license text when its row opens.
+     Every href points at a file the deploy ships (publish-docs.yaml). -->
+<dialog id="about-dialog" class="confirm-dialog about-dialog" aria-labelledby="about-title">
+  <form method="dialog">
+    <h2 id="about-title">About the scenario builder</h2>
+    <p>The scenario builder is free software under the GNU Affero General Public License v3.0. You can read, copy and change its <a id="about-source" href="https://github.com/qwrtln/Homm3BG-mission-book/tree/main/web" target="_blank" rel="noopener">source code on GitHub</a>.</p>
+    <h3>Open-source licenses</h3>
+    <p class="about-hint">It is built with these projects. Open one to read its license.</p>
+    <div class="license-group" role="group" aria-labelledby="license-group-app">
+      <h4 id="license-group-app">This app</h4>
+      <details class="license" data-src="../LICENSE">
+        <summary><span class="license-name">Scenario builder</span><span class="license-kind">AGPL-3.0</span></summary>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="license-group" role="group" aria-labelledby="license-group-editor">
+      <h4 id="license-group-editor">Editor and viewer</h4>
+      <details class="license" data-src="vendor/codemirror/LICENSE">
+        <summary><span class="license-name">CodeMirror 5</span><span class="license-kind">MIT</span></summary>
+        <p class="license-home"><a href="https://codemirror.net/5/" target="_blank" rel="noopener">codemirror.net</a></p>
+        <pre class="license-text"></pre>
+      </details>
+      <details class="license" data-src="vendor/pdfjs/LICENSE">
+        <summary><span class="license-name">PDF.js</span><span class="license-kind">Apache-2.0</span></summary>
+        <p class="license-home"><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener">github.com/mozilla/pdf.js</a></p>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="license-group" role="group" aria-labelledby="license-group-engine">
+      <h4 id="license-group-engine">LaTeX engine</h4>
+      <details class="license" data-src="../shared/vendor/texlyre-busytex.LICENSE">
+        <summary><span class="license-name">TeXlyre BusyTeX</span><span class="license-kind">AGPL-3.0</span></summary>
+        <p class="license-home"><a href="https://github.com/TeXlyre/texlyre-busytex" target="_blank" rel="noopener">github.com/TeXlyre/texlyre-busytex</a></p>
+        <pre class="license-text"></pre>
+      </details>
+      <details class="license" data-src="../LATEX-ENGINE-NOTICE">
+        <summary><span class="license-name">BusyTeX and TeX Live</span><span class="license-kind">Several licenses</span></summary>
+        <pre class="license-text"></pre>
+      </details>
+    </div>
+    <div class="confirm-actions">
+      <button id="about-close" type="submit" value="close">Close</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- styles/dialog.css; the fields' own rules are in styles/header-actions.css -->
+<dialog id="upload-dialog" class="confirm-dialog upload-dialog" aria-labelledby="upload-title">
+  <form method="dialog">
+    <h2 id="upload-title">Upload images</h2>
+    <div class="upload-field" id="upload-header-field">
+      <label for="upload-header">Header image</label>
+      <input type="file" id="upload-header" accept=".png,.jpg,.jpeg,image/png,image/jpeg" hidden>
+      <div class="upload-card" id="upload-header-card" hidden>
+        <div class="upload-card-body">
+          <div class="upload-card-head">
+            <span class="upload-card-title">Header</span>
+            <span class="orig-name" id="upload-header-orig"></span>
+            <button type="button" id="upload-header-remove" class="upload-remove" aria-label="Remove header image" title="Remove the header image">×</button>
+          </div>
+          <input type="text" id="upload-header-name" class="upload-rename" placeholder="target filename" aria-label="Header image target filename">
+        </div>
+        <img class="upload-preview" id="upload-header-preview" alt="Header image preview">
+      </div>
+      <button type="button" id="upload-header-add">+ Add header image</button>
+      <span class="upload-status" id="upload-header-status">PNG or JPG. Named after the scenario; rename it if you like.</span>
+    </div>
+    <div class="upload-field" id="upload-maps-field">
+      <label for="upload-maps">Map images</label>
+      <input type="file" id="upload-maps" accept=".png,image/png" multiple hidden>
+      <div class="upload-rename-list" id="upload-maps-names" hidden></div>
+      <button type="button" id="upload-maps-add">+ Add map image</button>
+      <span class="upload-status" id="upload-maps-status">PNG exported from the <a href="https://zedero.github.io/homm3boardgame/" target="_blank" rel="noopener">map editor</a>. Add one image for the whole scenario, or one per player-count layout and tick the counts it is for.</span>
+    </div>
+    <div class="confirm-actions">
+      <button id="upload-done" class="primary" type="submit" value="done">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- styles/workspace.css. The suggestions under the .tex editor's cursor: image paths and glyph names. -->
+<ul id="editor-autocomplete" class="autocomplete-list" role="listbox" aria-label="Suggestions" hidden></ul>
+
+<!-- styles/dialog.css. A popover, so a notice shows above an open modal dialog too. -->
+<div id="toast" class="toast" popover="manual" role="status" aria-live="polite"></div>
+
+<script src="vendor/codemirror/codemirror.min.js"></script>
+<script src="vendor/codemirror/mode/stex/stex.min.js"></script>
+<script type="module" src="app.js?v=3"></script>
+</body>
+</html>

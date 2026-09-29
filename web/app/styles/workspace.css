@@ -1,0 +1,304 @@
+/* --- Workspace --------------------------------------------------------- */
+
+#workspace { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+main {
+  --divider: 5px;
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+  background: var(--line);
+}
+.pane {
+  min-width: 20rem; /* MIN_PANE_REM in modules/panes.js */
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+}
+/* --split is the source pane's share in percent, set by modules/panes.js. */
+#editor-pane { flex: 0 1 calc((100% - var(--divider)) * var(--split, 50) / 100); }
+#pdf-pane { flex: 1 1 0; }
+.pane-divider {
+  flex: 0 0 var(--divider);
+  cursor: col-resize;
+  touch-action: none;
+  /* A 1px rule like the other borders, on a grab area wide enough to hit. */
+  background: linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat var(--panel);
+}
+.pane-divider:hover,
+.pane-divider:focus-visible,
+main.resizing .pane-divider { background: var(--accent); outline: none; }
+/* A drag would select text. */
+main.resizing { cursor: col-resize; user-select: none; }
+@media (max-width: 850px) {
+  main { flex-direction: column; overflow-y: auto; gap: 1px; }
+  .pane { min-width: 0; min-height: 24rem; }
+  #editor-pane, #pdf-pane { flex: 1 1 50%; }
+  .pane-divider { display: none; }
+}
+.editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+.editor-wrap .CodeMirror {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+}
+.pdf-pane-body-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+/* position: relative makes this the offsetParent the scroll anchor measures pages against. */
+.pdf-pane-body {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: auto;
+}
+.pdf-pane-body:has(> .pdf-pages) { background: var(--pdf-bg); }
+/* 12px margins: PAGE_MARGIN in modules/pdf-view.js. */
+.pdf-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  min-width: max-content;
+}
+.pdf-page {
+  display: block;
+  flex: none;
+  background: #fff;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+/* What the last build changed, marked over the pages and fading out. Pages
+   are white in either theme, so the colour is fixed. The marks are opaque
+   and the layer holding them carries the transparency, so overlapping marks
+   read as one shape of one shade. pdf-view.js removes the layer when its
+   animation ends. */
+.pdf-changes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  animation: pdf-change-fade 1.8s ease-in forwards;
+}
+.pdf-change {
+  position: absolute;
+  background: rgb(255, 200, 0);
+}
+@keyframes pdf-change-fade {
+  0%, 50% { opacity: 0.4; }
+  to { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Shown whole, then gone, with no fade between. */
+  .pdf-changes { animation-timing-function: steps(1, end); }
+}
+/* A build in progress: a thin bar on the pane's top edge, leaving the PDF under it readable. */
+.build-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+.build-progress[hidden] { display: none; }
+.build-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: var(--accent);
+  animation: build-progress 1.2s ease-in-out infinite;
+}
+@keyframes build-progress {
+  from { left: -35%; }
+  to { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .build-progress::before { width: 100%; left: 0; animation: none; opacity: 0.6; }
+}
+/* The build's current step, over the top of the pages and clear of their middle.
+   An empty pane says it under its own spinner instead. */
+.build-phase {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.build-phase[hidden],
+.pdf-pane-body-wrap:has(.empty-pdf.loading) .build-phase { display: none; }
+#build-phase-text { overflow: hidden; text-overflow: ellipsis; }
+.build-phase .spinner { flex: none; }
+.spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
+.empty-pdf {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  padding: 2rem;
+  text-align: center;
+}
+.empty-pdf.loading { flex-direction: column; gap: 0.8rem; }
+/* The footer under both panes, so the two end on one line. */
+.status-bar {
+  flex: 0 0 auto;
+  padding: 0.4rem 1rem;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+/* Page count and zoom (pdf-view.js), pushed right. Hidden until a PDF shows. */
+.pdf-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.pdf-controls[hidden] { display: none; }
+.pdf-page-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.pdf-zoom-controls { display: flex; gap: 0.25rem; }
+.pdf-zoom-controls button {
+  min-width: 2rem;
+  padding: 0.15rem 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+.pdf-zoom-controls .pdf-zoom-level { min-width: 3.75rem; }
+.spinner {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+.spinner[hidden] { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ok { color: var(--ok); }
+.bad { color: var(--bad); }
+.error-panel {
+  margin: 1rem;
+  border: 1px solid var(--bad);
+  background: var(--error-bg);
+  padding: 0.85rem 1rem;
+  border-radius: 3px;
+}
+.error-panel .first-error {
+  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+  color: var(--bad);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+/* A first error with a scenario line: the whole message jumps the editor there. */
+.error-panel button.error-jump {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  white-space: inherit;
+  cursor: pointer;
+}
+.error-panel button.error-jump:hover:not(:disabled) { color: inherit; text-decoration: underline; }
+.error-panel button.error-jump:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.error-jump-line {
+  display: inline-block;
+  margin-right: 0.6rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--bad);
+  border-radius: 3px;
+  font-weight: 600;
+}
+.CodeMirror .build-error-line { background: var(--error-bg); }
+details.full-log summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+details.full-log pre {
+  font: 12px/1.5 ui-monospace, monospace;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  padding: 0.7rem;
+  max-height: 20rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  margin: 0.5rem 0 0;
+}
+
+/* --- Image-path and glyph suggestions under the editor's cursor (autocomplete.js) --- */
+
+.autocomplete-list[hidden] { display: none; }
+.autocomplete-list {
+  position: fixed;
+  z-index: 20;
+  min-width: 14rem;
+  max-width: min(32rem, calc(100vw - 1rem));
+  max-height: 14rem;
+  overflow: auto;
+  margin: 0;
+  padding: 0.2rem 0;
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.autocomplete-item {
+  padding: 0.25rem 0.7rem;
+  font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.autocomplete-item.active { background: var(--accent); color: #fff; }
+.autocomplete-item mark { background: none; color: inherit; font-weight: 700; }
+/* Glyphs are drawn for the book's light pages, some in black: a light chip keeps them visible in the dark theme. */
+.autocomplete-item:has(.autocomplete-icon) { display: flex; align-items: center; gap: 0.5rem; }
+.autocomplete-item:has(.autocomplete-icon) span { overflow: hidden; text-overflow: ellipsis; }
+.autocomplete-icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.25rem;
+  padding: 1px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 3px;
+}
+/* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
+.autocomplete-icon.dark { display: none; }
+html[data-theme="dark"] .autocomplete-icon.dark { display: block; background: none; }
+html[data-theme="dark"] .autocomplete-icon:has(+ .autocomplete-icon.dark) { display: none; }

@@ -25,6 +25,11 @@ If your intention is to **print in black and white**, download the **monochrome*
 Please fill in the [⭐ **feedback form**](https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform) after playing any scenarios.
 It will help us improve them.
 
+> [!TIP]
+> **Have a scenario of your own?** Write it in the [🧙 **Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+> It runs in your browser: fill in your scenario, see the PDF right away, and send it to us as a pull request.
+> You don't need to install LaTeX or know git.
+
 <table>
     <thead>
         <tr>
@@ -176,6 +181,11 @@ Number of players (P) in the brackets.
             <td>⚔️ Rise from Exile (2-4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise_from_exile-color/rise_from_exile_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise_from_exile-mono/rise_from_exile_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Mystical Foreland (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-color/mystical_foreland_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-mono/mystical_foreland_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
@@ -553,8 +563,11 @@ This repository serves as a means to version the scenarios and for the community
 
 ### 💪 Contributing
 
-We have compiled some documents to help you get started.
-If you're new to Git and LaTeX, see the [local setup](https://qwrtln.github.io/Homm3BG-mission-book/) document.
+The easiest way to add a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+It works in your browser and opens the pull request for you.
+
+If you prefer to work on your own computer, we have compiled some documents to help you get started.
+See the [local setup](https://qwrtln.github.io/Homm3BG-mission-book/) document to install the tools with your operating system's packages.
 There's also zero-hassle [container-based](https://qwrtln.github.io/Homm3BG-mission-book/container/) setup available.
 Read our [guidelines](https://qwrtln.github.io/Homm3BG-mission-book/scenarios/) on the technicalities of starting with adding your scenario before opening a PR.
 To learn how to use the scripts that facilitate the process, see the [scripts](https://qwrtln.github.io/Homm3BG-mission-book/scripts/) document.
@@ -574,8 +587,9 @@ Your language is missing? Let us know on [our Discord server](https://discord.gg
 
 #### 🗺️ Scenarios
 
-Reach out to us on [our Discord server](https://discord.gg/nMbawQkj9R), if you'd like to add your scenario.
-If you know your way around LaTeX and git, you can open a pull request for the Draft Scenarios.
+Write your scenario in the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) and send it to the Draft Scenarios from there.
+If you know your way around LaTeX and git, you can also open a pull request yourself.
+Questions? Reach out to us on [our Discord server](https://discord.gg/nMbawQkj9R).
 
 #### 💻 Code
 
