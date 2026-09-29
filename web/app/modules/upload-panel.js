@@ -28,7 +28,7 @@ export const MAPS_DIR = "assets/maps/";
 export const MAP_FILES_DIR = "assets/map-files/";
 
 /** The map editor contributors export their map images from. */
-export const MAP_EDITOR_URL = "http://homm3bgmapeditor.zedero.nl/";
+export const MAP_EDITOR_URL = "https://zedero.github.io/homm3boardgame/";
 
 const MAP_CODE_BAD =
   "A map editor save string is one line of letters, digits, <code>+</code>, <code>/</code> and <code>=</code>. Paste it again.";

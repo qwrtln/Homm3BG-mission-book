@@ -153,6 +153,8 @@ button.attention:hover:not(:disabled) {
 .upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }
 .upload-status { color: var(--muted); }
 .upload-status code { font-size: 0.78rem; }
+.upload-status a { color: var(--accent); }
+.upload-status a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .upload-status.bad { color: var(--bad); }
 input.upload-rename, input.upload-mapfile-input {
   font: inherit;
