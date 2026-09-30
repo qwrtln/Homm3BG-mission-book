@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-09-30 12:28+0000\n"
+"POT-Creation-Date: 2026-09-30 17:31+0000\n"
 "PO-Revision-Date: 2025-11-14 19:06+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -77,9 +77,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/competitive_play.tex:18
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Guaranteed Settlement}\n"
+#| "\n"
 msgid ""
-"\\subsection*{Guaranteed Settlement}\n"
+"\\subsection*{\\textit{(Optional)} Guaranteed Settlement}\n"
 "\n"
 msgstr ""
 "\\subsection*{Enclave Garantie}\n"
@@ -99,6 +102,22 @@ msgstr ""
 #: sections/competitive_play.tex:22
 #, no-wrap
 msgid ""
+"\\subsection*{\\textit{(Optional)} War Machines as Artifacts}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:24
+#, no-wrap
+msgid ""
+"Before the match, shuffle one Card of each War Machine into the Artifact Deck (or the Major Artifact Deck, if you split it as in Tournament Mode).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:26
+#, no-wrap
+msgid ""
 "\\subsection*{Round One Mulligan}\n"
 "\n"
 msgstr ""
@@ -106,18 +125,38 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:27
+#: sections/competitive_play.tex:28
 #, no-wrap
 msgid ""
-"On your turn in the \\nth{1} Round, discard any number of Cards from your hand, then draw up to your draw limit as normal.\n"
-"After that, you may discard your whole hand and draw up to your draw limit again.\n"
-"You can do this only once.\n"
-"Unlike the Mulligan in Tournament Mode, you do not shuffle any Cards back into your Deck.\n"
+"At the start of your turn in the \\nth{1} Round, you may once reshuffle your hand back into your M\\&M Deck and draw a new starting hand.\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: sections/competitive_play.tex:29
+#: sections/competitive_play.tex:30
+#, no-wrap
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+"\\subsection*{Comptoir}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:32
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+#| "\n"
+msgid ""
+"Although rules as written state that you can remove only one Card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+"Bien que les règles indiquent que vous pouvez retirer une seule Carte de votre main en Visitant un Comptoir, il est recommandé de permettre d'en retirer autant que l'on veut.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:34
 #, no-wrap
 msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
@@ -127,7 +166,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:32
+#: sections/competitive_play.tex:37
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
@@ -139,27 +178,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:34
-#, no-wrap
-msgid ""
-"\\subsection*{Trading Post}\n"
-"\n"
-msgstr ""
-"\\subsection*{Comptoir}\n"
-"\n"
-
-#. type: multicols*
-#: sections/competitive_play.tex:36
-#, no-wrap
-msgid ""
-"Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
-"\n"
-msgstr ""
-"Bien que les règles indiquent que vous pouvez retirer une seule Carte de votre main en Visitant un Comptoir, il est recommandé de permettre d'en retirer autant que l'on veut.\n"
-"\n"
-
-#. type: multicols*
-#: sections/competitive_play.tex:38
+#: sections/competitive_play.tex:39
 #, no-wrap
 msgid ""
 "\\subsection*{Victory Points}\n"
@@ -169,7 +188,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:45
+#: sections/competitive_play.tex:46
 #, no-wrap
 msgid ""
 "When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
@@ -189,7 +208,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:47
+#: sections/competitive_play.tex:48
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -199,7 +218,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:49
+#: sections/competitive_play.tex:50
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
@@ -209,7 +228,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:53
+#: sections/competitive_play.tex:54
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste \\svg{movement}, which slows the game down.\n"
@@ -223,7 +242,7 @@ msgstr ""
 "\n"
 
 #. type: figure*
-#: sections/competitive_play.tex:72
+#: sections/competitive_play.tex:73
 #, fuzzy, no-wrap
 #| msgid ""
 #| "[!h]\n"
@@ -281,7 +300,7 @@ msgstr ""
 "  \\mbox{}"
 
 #. type: figure*
-#: sections/competitive_play.tex:74
+#: sections/competitive_play.tex:75
 #, fuzzy, no-wrap
 #| msgid ""
 #| "\\vspace*{\\fill}\n"
@@ -294,7 +313,7 @@ msgstr ""
 "\n"
 
 #. type: figure*
-#: sections/competitive_play.tex:91
+#: sections/competitive_play.tex:92
 #, fuzzy, no-wrap
 #| msgid ""
 #| "[!h]\n"

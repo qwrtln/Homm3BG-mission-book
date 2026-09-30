@@ -456,6 +456,7 @@ jobs:
           - cs
           - fr
           # - de
+          # - ru
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}
