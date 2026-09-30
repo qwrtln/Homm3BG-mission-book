@@ -19,9 +19,6 @@ There are two documents, click to download:
 | [![image](docs/assets/mission-book-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf) | [![image](docs/assets/draft-scenarios-title.png)](https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf) |
 | A set of **community-vetted** and **well-playtested** scenarios. | An **incubation phase** before scenarios graduate to the Mission Book. |
 
-Click on the table to download the most recent builds of the Mission Book in the chosen language.
-If your intention is to **print in black and white**, download the **monochrome** version.
-
 Please fill in the [⭐ **feedback form**](https://docs.google.com/forms/d/e/1FAIpQLSceRQ8iWucXIyB_2GsCm0_du6rq_wU8iKay2R1dedJ0q7XPVw/viewform) after playing any scenarios.
 It will help us improve them.
 
@@ -30,11 +27,178 @@ It will help us improve them.
 > It runs in your browser: fill in your scenario, see the PDF right away, and send it to us as a pull request.
 > You don't need to install LaTeX or know git.
 
+If your intention is to **print in black and white**, download the **monochrome** version.
+
+### 🪨 Stable releases
+
+These builds are officially released, with a specific cutoff point in time, to give translators time to create localized versions.
+
+#### ⭐ Version 1.2 <sub>(01.04.2025)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+            <th align="center">🖨️<br>Monochrome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_English_Fan_Made_Mission_Book_1_2.pdf">download</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_English_Fan_Made_Mission_Book_1_2-monochrome.pdf">download</a></td>
+        </tr>
+        <tr>
+            <td>🇵🇱 Polski</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_Polski_Fan_Made_Mission_Book_1_2.pdf">pobierz</a></td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_Polski_Fan_Made_Mission_Book_1_2-monochrome.pdf">pobierz</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<details>
+<summary>🗄️ Click to see older releases</summary>
+
+#### Version 1.1 <sub>(14.01.2025)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_English_Fan_Made_Mission_Book_1_1.pdf">download</a></td>
+        </tr>
+        <tr>
+            <td>🇵🇱 Polski</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.1/Heroes3_Polski_Fan_Made_Mission_Book_1_1.pdf">pobierz</a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Version 1.0 <sub>(02.10.2024)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.0/Heroes3_English_Fan_Made_Mission_Book_1_0.pdf">download</a></td>
+        </tr>
+        <tr>
+            <td>🇵🇱 Polski</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.0/Heroes3_Polski_Fan_Made_Mission_Book_1_0.pdf">pobierz</a></td>
+        </tr>
+        <tr>
+            <td>🇨🇿 Čeština</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.0/Heroes3_Cestina_Fan_Made_Mission_Book_1_0.pdf">stáhnout</a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Version 0.4 <sub>(08.08.2024)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_English_Fan_Made_Mission_Book_0_4.pdf">download</a></td>
+        </tr>
+        <tr>
+            <td>🇵🇱 Polski</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Polski_Fan_Made_Mission_Book_0_4.pdf">pobierz</a></td>
+        </tr>
+        <tr>
+            <td>🇨🇿 Čeština</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.4/Heroes3_Cestina_Fan_Made_Mission_Book_0_4.pdf">stáhnout</a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Version 0.3 <sub>(02.08.2024)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.3/Heroes3_English_Fan_Made_Mission_Book_0_3.pdf">download</a></td>
+        </tr>
+        <tr>
+            <td>🇵🇱 Polski</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.3/Heroes3_Polski_Fan_Made_Mission_Book_0_3.pdf">pobierz</a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Version 0.2 <sub>(05.07.2024)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.2/Heroes3_English_Fan_Made_Mission_Book_0_2.pdf">download</a></td>
+        </tr>
+    </tbody>
+</table>
+
+#### Version 0.1 <sub>(02.07.2024)</sub>
+
+<table>
+    <thead>
+        <tr>
+            <th>🌍 Language</th>
+            <th align="center">🎨<br>Full color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇬🇧 English</td>
+            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v0.1/Heroes3_English_Fan_Made_Mission_Book_0_1.pdf">download</a></td>
+        </tr>
+    </tbody>
+</table>
+
+</details>
+
+---
+
+### ⚗️ Experimental builds
+
+These are made from the main branch every time a new change is introduced.
+You can expect things to break, like having incorrect layout or not all the text translated.
+
 <table>
     <thead>
         <tr>
             <th>Language</th>
-            <th align="center">Version 1.2 🪨<br>(Stable)</th>
             <th align="center">Latest Build ⚗️<br>(Experimental)</th>
             <th align="center">Latest Build 🖨️ <br>(Monochrome)</th>
             <th align="center">Draft Scenarios 🏗️</th>
@@ -44,7 +208,6 @@ It will help us improve them.
     <tbody>
         <tr>
             <td>🇬🇧 English</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_English_Fan_Made_Mission_Book_1_2.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en/main_en-mono.pdf">download</a></td>
             <td align="center">️<a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf">download</a></td>
@@ -55,7 +218,6 @@ It will help us improve them.
             🇵🇱 Polski<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/pl/svg-badge.svg">
             </td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v1.2/Heroes3_Polski_Fan_Made_Mission_Book_1_2.pdf">pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl.pdf">️pobierz</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl/main_pl-mono.pdf">️pobierz</a></td>
             <td align="center">—</td>
@@ -64,7 +226,6 @@ It will help us improve them.
         <tr>
             <td>🇨🇿 Čeština<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/cs/svg-badge.svg"></td>
-            <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs.pdf">stáhnout</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/cs/main_cs-mono.pdf">stáhnout</a></td>
             <td align="center">—</td>
@@ -73,7 +234,6 @@ It will help us improve them.
         <tr>
             <td>🇫🇷 Français<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/fr/svg-badge.svg"></td>
-            <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr.pdf">télécharger</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr/main_fr-mono.pdf">télécharger</a></td>
             <td align="center">—</td>
@@ -82,7 +242,6 @@ It will help us improve them.
         <tr>
             <td>🇩🇪 Deutsch<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/de/svg-badge.svg"></td>
-            <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de.pdf">speichern</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/de/main_de-mono.pdf">speichern</a></td>
             <td align="center">—</td>
@@ -93,7 +252,6 @@ It will help us improve them.
             🇷🇺 Русский<br>
             <img src="https://hosted.weblate.org/widgets/homm3bg-fan-made-mission-book/ru/svg-badge.svg">
             </td>
-            <td align="center">—</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/ru/main_ru.pdf">️скачать</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/ru/main_ru-mono.pdf">️скачать</a></td>
             <td align="center">—</td>

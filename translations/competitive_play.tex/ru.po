@@ -1,0 +1,367 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2026-09-30 17:31+0000\n"
+"PO-Revision-Date: 2025-07-02 10:48+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/competitive_play.tex:3
+#, fuzzy
+#| msgid "\\addsection{Recommendations}{\\art/haste.png}"
+msgid "\\addsection{Competitive Play}{\\art/haste.png}"
+msgstr " \addsection{Рекомендации}{\art/haste.png}"
+
+#. type: Plain text
+#: sections/competitive_play.tex:5
+msgid "\\iftoggle{printable}{}{\\bigbreak}"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:11
+#, fuzzy, no-wrap
+#| msgid ""
+#| "{2}\n"
+#| "We've compiled some custom rules and best practices to enhance your gaming experience.\n"
+#| "Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+#| "Enjoy!\n"
+#| "\n"
+msgid ""
+"{2}\n"
+"We've compiled some custom rules and best practices for fair competitive play.\n"
+"They are intended for Clash Scenarios, where they reduce randomness and the luck factor.\n"
+"Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+"Enjoy!\n"
+"\n"
+msgstr ""
+"{2}\n"
+"Мы собрали несколько пользовательских правил и лучших практик для лучшего игрового опыта.\n"
+"Помните, что это лишь \\textbf{мнения авторов} этой книги.\n"
+"Приятной игры!\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:13
+#, no-wrap
+msgid ""
+"\\subsection*{Magic Arrows}\n"
+"\n"
+msgstr ""
+"\\subsection*{Волшебные стрелы}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:16
+#, no-wrap
+msgid ""
+"Except for the Magic Arrow, each Spell appears exactly twice in the Spell Deck.\n"
+"After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
+"\n"
+msgstr ""
+"За исключением Волшебной стрелы, все заклинания встречаются в колоде заклинаний ровно два раза.\n"
+"После того как игроки подготовят свои стартовые колоды, рекомендуется убрать Волшебные стрелы из колоды заклинаний, пока их останется не более двух.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Guaranteed Settlement}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\textit{(Optional)} Guaranteed Settlement}\n"
+"\n"
+msgstr ""
+"\\subsection*{Гарантированный посёлок}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:20
+#, no-wrap
+msgid ""
+"When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
+"\n"
+msgstr ""
+"При распределении дальних фрагментов (II--III) между игроками, набор фрагментов карты каждого игрока должен включать один посёлок.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:22
+#, no-wrap
+msgid ""
+"\\subsection*{\\textit{(Optional)} War Machines as Artifacts}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:24
+#, no-wrap
+msgid ""
+"Before the match, shuffle one Card of each War Machine into the Artifact Deck (or the Major Artifact Deck, if you split it as in Tournament Mode).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:26
+#, no-wrap
+msgid ""
+"\\subsection*{Round One Mulligan}\n"
+"\n"
+msgstr ""
+"\\subsection*{Пересдача в первом раунде}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:28
+#, no-wrap
+msgid ""
+"At the start of your turn in the \\nth{1} Round, you may once reshuffle your hand back into your M\\&M Deck and draw a new starting hand.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:30
+#, no-wrap
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+"\\subsection*{Рынок}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:32
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+#| "\n"
+msgid ""
+"Although rules as written state that you can remove only one Card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+"Хотя по базовым правилам вы можете убрать только одну карту из руки при посещении Рынка, рекомендуется разрешить убирать любое количество карт.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:34
+#, no-wrap
+msgid ""
+"\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
+"\n"
+msgstr ""
+"\\subsection*{Сражение V--VII на уровне\\\\тяжелый и выше}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:37
+#, no-wrap
+msgid ""
+"Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
+"\n"
+msgstr ""
+"Играя на уровнях тяжёлый или невозможный, считайте сражения уровней V–VII на одну ступень сложности ниже.\n"
+"Например, сражение уровня VII на тяжёлом будет против 2 × \\svg{azure} нейтральных отрядов.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:39
+#, no-wrap
+msgid ""
+"\\subsection*{Victory Points}\n"
+"\n"
+msgstr ""
+"\\subsection*{Победные очки}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:46
+#, no-wrap
+msgid ""
+"When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
+"\\begin{itemize}\n"
+"  \\item Faction Towns grant 1 VP.\n"
+"  \\item Possessing the Grail at the end of the match grants 3 VPs. If the Grail was transported to that player's Faction Town, it grants 5 VPs instead.\n"
+"  \\item Capturing a Dragon Utopia grants 3 VPs.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"При использовании опциональных победных очков из турнирной книги действуют правила (если cценарий не предписывает иное):\n"
+"\\begin{itemize}\n"
+"  \\item Города фракций дают 1 ПО.\n"
+"  \\item Обладание Граалем в конце матча даёт 3 ПО. Если Грааль был доставлен в город фракции этого игрока, то даётся 5, а не 3.\n"
+"  \\item Захват Утопии драконов даёт 3 ПО.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:48
+#, no-wrap
+msgid ""
+"\\subsection*{Combat with Neutral Units}\n"
+"\n"
+msgstr ""
+"\\subsection*{Сражение с нейтральными отрядами}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:50
+#, no-wrap
+msgid ""
+"During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
+"\n"
+msgstr ""
+"В сражении с нейтральными отрядами в сценариях столкновений, если игрок располагает свои отряды только на одной половине (левой или правой) доски сражения, игрок, располагающий нейтральные отряды, должен поступить так же.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:54
+#, no-wrap
+msgid ""
+"Placing Neutral Units far apart only makes the other player waste \\svg{movement}, which slows the game down.\n"
+"The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
+"See examples that follow.\n"
+"\n"
+msgstr ""
+"Расположение нейтральных отрядов далеко друг от друга лишь заставляет другого игрока тратить \\svg{movement}, что замедляет игру.\n"
+"Исключением из этого правила является случай, когда нужно раcположить трёх нейтральных \\svg{unit_ground} или \\svg{unit_flying}, поскольку все они должны занять переднюю линию.\n"
+"Смотрите следующие примеры.\n"
+"\n"
+
+#. type: figure*
+#: sections/competitive_play.tex:73
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[!h]\n"
+#| "  \\mbox{}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+#| "    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+#| "    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
+#| "      The Peasants must also start the Combat on the left side.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\mbox{}"
+msgid ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Not allowed: the Necropolis Units are on the left half, so the Peasants must start there too.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}\n"
+"\n"
+msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Нейтральные отряды расположены\\\\правильно.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Такое расположение не разрешено, потому что игрок за Некрополис расположил свои отряды в левой половине доски сражений.\n"
+"      Крестьяне также должны начать сражение с левой стороны.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+
+#. type: figure*
+#: sections/competitive_play.tex:75
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\vspace*{\\fill}\n"
+#| "\n"
+msgid ""
+"  \\vspace{0.5em}\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
+
+#. type: figure*
+#: sections/competitive_play.tex:92
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[!h]\n"
+#| "  \\mbox{}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+#| "    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+#| "    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\mbox{}"
+msgid ""
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Исключение:} Три не-\\svg{unit_ranged} отряда должны быть расположены на передней линии.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Наездники на кабанах должны занять одно из зелёных полей.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
