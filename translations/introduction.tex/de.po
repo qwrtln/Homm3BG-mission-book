@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"POT-Creation-Date: 2026-09-30 12:02+0000\n"
 "PO-Revision-Date: 2025-06-24 15:03+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -45,6 +45,21 @@ msgid ""
 "\n"
 msgstr ""
 "{2}\n"
+"\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
+#: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
+#: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
+#: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:32
+#: sections/credits.tex:36 sections/random_scenario.tex:306
+#: sections/introduction.tex:95 sections/introduction.tex:101
+#, no-wrap
+msgid ""
+"\\vspace*{\\fill}\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -203,7 +218,7 @@ msgid ""
 "This mode is truly competitive and unforgiving.\n"
 "In this mode, games tend to get lengthy, especially on table top.\n"
 "Don't start them too late, unless you're prepared to play all night, or you can spare more than one day.\n"
-"Luck can decide a competitive game, so check out the custom rules in \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
+"Luck can decide a competitive game, so check out the custom rules in \\pagelink{Competitive Play}{Competitive Play} at the end of this book.\n"
 "They reduce randomness and keep the game fair.\n"
 "\n"
 msgstr ""
@@ -272,17 +287,18 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/introduction.tex:78
+#: sections/introduction.tex:79
 #, no-wrap
 msgid ""
 "Check out the \\href{https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf}{Draft Scenarios} booklet.\n"
 "It collects new Scenarios that wait for playtests before they graduate into this book.\n"
 "Play them and share your feedback to help them get here.\n"
+"\\columnbreak\n"
 "\n"
 msgstr ""
 
 #. type: multicols*
-#: sections/introduction.tex:80
+#: sections/introduction.tex:81
 #, no-wrap
 msgid ""
 "\\subsection*{General Recommendations}\n"
@@ -290,7 +306,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/introduction.tex:82
+#: sections/introduction.tex:83
 #, no-wrap
 msgid ""
 "The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
@@ -298,7 +314,7 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/introduction.tex:92
+#: sections/introduction.tex:93
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -312,3 +328,22 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:99
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
+msgid ""
+"\\begin{center}\n"
+"  \\hfill\\transparent{0.2}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/hourglass.png}}\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.45\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
+"\\end{center}\n"
+"\n"
