@@ -444,7 +444,8 @@ jobs:
 
   call_build:
     needs: publish
-    if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
+    # TODO: restore `&& github.event_name != 'pull_request'` after testing translation filtering
+    if: ${{ needs.publish.outputs.should_trigger == 'true' }}
     uses: ./.github/workflows/build-individual-scenarios.yaml
     strategy:
       fail-fast: false
