@@ -219,7 +219,7 @@ msgstr ""
 msgid ""
 "This is the only mode with zero downtime.\n"
 "The game flows very smoothly.\n"
-"The downside is that you can enjoy it only by yourself, or maybe with your minors.\n"
+"The downside is that you can enjoy it only by yourself, or maybe with your kids.\n"
 "\n"
 msgstr ""
 
