@@ -444,9 +444,7 @@ jobs:
 
   call_build:
     needs: publish
-    # TODO: restore `if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}`
-    # after testing translation filtering. On PRs, publish is skipped (build_monochrome is skipped).
-    if: ${{ !cancelled() && (github.event_name == 'pull_request' || needs.publish.outputs.should_trigger == 'true') }}
+    if: ${{ needs.publish.outputs.should_trigger == 'true' && github.event_name != 'pull_request' }}
     uses: ./.github/workflows/build-individual-scenarios.yaml
     strategy:
       fail-fast: false
