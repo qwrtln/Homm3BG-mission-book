@@ -280,14 +280,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/stand_united.tex:29
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item  1 × A Few cheapest \\svg{bronze} Units\n"
-#| "  \\item  1 × A Few cheapest \\svg{silver} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -298,8 +291,8 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 1 × Hrstku nejlevnějších \\svg{bronze} Jednotek\n"
-"  \\item 1 × Hrstku nejlevnějších \\svg{silver} Jednotek\n"
+"  \\item Hrstka nejlevnějších \\svg{bronze} Jednotek\n"
+"  \\item Hrstka nejlevnějších \\svg{silver} Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 

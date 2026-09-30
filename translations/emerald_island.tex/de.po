@@ -370,10 +370,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\item You can't build a \\svg{golden} Dwelling.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "    \\item You can't build a \\svg{golden} Dwelling.\n"
 "\n"
@@ -423,10 +420,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/emerald_island.tex:78
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    \\item For the last Mine/Settlement battle, add a \\svg{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "    \\item For the last Mine/Settlement battle, add a \\svg{golden} Neutral Unit. You have unlimited Turns for this battle. You can't use Expert Diplomacy to skip this battle!\n"
 "\n"

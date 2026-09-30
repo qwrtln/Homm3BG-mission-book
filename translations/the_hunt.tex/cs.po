@@ -233,16 +233,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/the_hunt.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Far (II--III) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -257,10 +248,11 @@ msgstr ""
 "\\textbf{Scénář pro 2 hráče:}\n"
 "\\begin{itemize}\n"
 "  \\item 2 × Startovní (I) Dílek Mapy\n"
-"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
 "  \\item 2 × Vzdálený (II--III) Dílek Mapy\n"
+"  \\item 2 × Blízký (IV--V) Dílek Mapy\n"
 "  \\item 1 × Středový (VI--VII) Dílek Mapy\n"
 "\\end{itemize}\n"
+"\\columnbreak\n"
 "\n"
 
 #. type: multicols*

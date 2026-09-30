@@ -259,13 +259,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:31
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -275,7 +269,7 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Hrstku \\svg{bronze} Jednotek\n"
+"  \\item Hrstka vybraných \\svg{bronze} Jednotek\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -379,15 +373,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
 "\n"
 msgstr ""
-"\\textbf{Balíček kouzel Obránců Osady:} 1~×~Magický Šíp\n"
+"\\textbf{Balíček kouzel Obránců Osady:}\\\\1~×~Magický Šíp\n"
 "\n"
 
 #. type: multicols

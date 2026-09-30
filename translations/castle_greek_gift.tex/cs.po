@@ -250,13 +250,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A Few Halberdiers, a Few Marksmen\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -267,7 +261,8 @@ msgid ""
 msgstr ""
 "\\textbf{Úvodní Jednotky:}\n"
 "\\begin{itemize}\n"
-"  \\item Hrstka Halapartníků, Hrstka Lučišníků\n"
+"  \\item Hrstka Halapartníků\n"
+"  \\item Hrstka Lučišníků\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -295,10 +290,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:42
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Enemy Army:} A Pack of Skeletons, a Pack of Zombies, a Few Dread Knights, a Few Ghost Dragons\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
@@ -801,10 +793,7 @@ msgstr ""
 
 #. type: multicols*
 #: campaigns/castle_greek_gift.tex:204
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textcolor{darkcandyapplered}{Add a Few Archangels to your army.}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textcolor{darkcandyapplered}{Add a ``Few'' Archangels to your army.}\n"
 "\n"
