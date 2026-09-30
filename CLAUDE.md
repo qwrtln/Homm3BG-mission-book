@@ -36,7 +36,7 @@ build. Work on one at a time.
 
 ### Structure
 
-`structure.tex` fixes the assembly order: title page → intro/ToC → What to Play
+`structure.tex` fixes the assembly order: title page → intro/ToC → Introduction
 → Coop → Clash → Random Scenario → Campaign → Competitive Play → Credits → back
 cover. Each category's `main.tex` `\input`s its scenarios in book order. For
 adding a scenario (templates, registration, campaign `[subsection]` quirk) see

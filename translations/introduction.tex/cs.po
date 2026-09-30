@@ -1,0 +1,333 @@
+# Czech translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"PO-Revision-Date: 2025-03-29 17:21+0000\n"
+"Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/sections/what_to_play/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+#. type: multicols*
+#: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/arcane_artillery.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_hunt.tex:5 campaigns/castle_greek_gift.tex:6
+#: campaigns/castle_greek_gift.tex:86 campaigns/castle_greek_gift.tex:139
+#: campaigns/castle_sicilian_dragon.tex:5
+#: campaigns/castle_sicilian_dragon.tex:144
+#: campaigns/castle_two_knights_defense.tex:5
+#: campaigns/castle_two_knights_defense.tex:91
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
+#: sections/random_scenario.tex:5 sections/random_scenario.tex:275
+#: sections/introduction.tex:5
+#, no-wrap
+msgid ""
+"{2}\n"
+"\n"
+msgstr ""
+"{2}\n"
+"\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/introduction.tex:3
+#, fuzzy
+#| msgid "\\addsection{What to Play}{\\images/forgetfulness.png}"
+msgid "\\addsection{Introduction}{\\images/forgetfulness.png}"
+msgstr "\\addsection{Co si zahrát}{\\images/forgetfulness.png}"
+
+#. type: multicols*
+#: sections/introduction.tex:10
+#, no-wrap
+msgid ""
+"This booklet is a labor of love made for players, by players.\n"
+"We decided to gather some of the awesome Scenarios the community has created, and put them in a single place.\n"
+"Whether you're playing solo or with friends, cooperatively or competetively, we've got you covered.\n"
+"Keep reading to learn how to make the most out of your game, or jump straight into a Scenario of your choice.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:12
+#, no-wrap
+msgid ""
+"\\subsection*{Play Time}\n"
+"\n"
+msgstr ""
+"\\subsection*{Herní Doba}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:14
+#, no-wrap
+msgid ""
+"You can estimate your \\textbf{minimal} play time using the following formula:\n"
+"\n"
+msgstr ""
+"\\textbf{Minimální} herní dobu můžete odhadnout pomocí následujícího vzorce:\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:18
+#, no-wrap
+msgid ""
+"\\begin{center}\n"
+"  Play Time $= \\boldsymbol{P × R × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
+msgstr ""
+"\\begin{center}\n"
+"  Herní Doba $= \\boldsymbol{H × K × 5}$ [min]\n"
+"\\end{center}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:24
+#, no-wrap
+msgid ""
+"Where:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{P}$] -- number of players\n"
+"  \\item[$\\textbf{R}$] -- number of Rounds\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"Kde:\n"
+"\\begin{itemize}\n"
+"  \\item[$\\textbf{H}$] -- počet hráčů\n"
+"  \\item[$\\textbf{K}$] -- počet Kol\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:28
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For example, if you're playing a 3-player Scenario consisting of 12 Rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
+#| "Your expected minimal play time would be around 3 hours.\n"
+#| "\n"
+msgid ""
+"For example, if you're playing a 3-player Scenario consisting of 12 Rounds, you can easily calculate that $3 \\times 12 \\times 5 = 180$.\n"
+"Your expected minimal play time would be around 3 hours.\n"
+"One hour per player for 12 Rounds (roughly 5 min for every turn) is possible with competent players.\n"
+"\n"
+msgstr ""
+"Například pokud hrajete Scénář pro 3 hráče skládající se z 12 Kol, můžete snadno vypočítat, že $3 \\times 12 \\times 5 = 180$.\n"
+"Vaše očekávaná minimální herní doba bude kolem 3 hodin.\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:31
+#, fuzzy, no-wrap
+#| msgid ""
+#| "To calculate the \\textbf{upper bound} of your play time (more realistic if there are inexperienced players), simply double the result.\n"
+#| "In this case, that would be 6 hours.\n"
+#| "\n"
+msgid ""
+"To calculate the \\textbf{upper bound} of your play time (more realistic if there are people playing for the first time), simply double the result.\n"
+"In this case, that would be 6 hours.\n"
+"\n"
+msgstr ""
+"Pro výpočet \\textbf{horní hranice} herní doby (reálnější, pokud jsou mezi hráči nezkušení hráči) jednoduše výsledek zdvojnásobte.\n"
+"V tomto případě by to bylo kolem 6 hodin.\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:33
+#, no-wrap
+msgid ""
+"\\subsection*{Cooperative Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Kooperativní Mód}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:38
+#, no-wrap
+msgid ""
+"In our experience, this is the best mode to enjoy with friends on table top.\n"
+"It makes for a relaxed game, where you strategize together how to achieve the victory conditions.\n"
+"Every cooperative Scenario in this book brings its own unique mechanics to the game.\n"
+"\\columnbreak\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:46
+#, no-wrap
+msgid ""
+"If you're new to the game and want to try \\textbf{learning the rules}, start with a gentle treasure hunt in \\pagelink{Emerald Island}{Emerald Island}.\n"
+"In \\pagelink{Close to Enemies}{Close to Enemies}, enemy Settlements regularly besiege every player's Town, and you must conquer all of them before time runs out.\n"
+"In the two-player \\pagelink{Sentinels}{Sentinels}, enemy armies spawn on random Obelisks and move each Round, destroying every Field they pass through.\n"
+"In \\pagelink{Stand United}{Stand United}, players build a shared army that everyone can use in Combat, and each player must defeat the Dragon Utopia.\n"
+"In \\pagelink{Wandering Dragons}{Wandering Dragons}, an army of dragons moves erratically on the map, and you must defeat it.\n"
+"In \\pagelink{The Ambushed Accord}{The Ambushed Accord}, players take turns fighting increasingly strong ambushes, pool Resources to reveal the Center Map Tile, and each must defeat its Level VII Neutral Army.\n"
+"In \\pagelink{Titans' Stronghold}{Titans' Stronghold}, for \\textbf{up to 6 players}, you flag every Level VII Field to unlock a Titans' fortress, then defeat its garrison in an epic final battle over several attacks.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:48
+#, no-wrap
+msgid ""
+"\\subsection*{Clash Mode}\n"
+"\n"
+msgstr ""
+"\\subsection*{Střet}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:54
+#, no-wrap
+msgid ""
+"This mode is truly competitive and unforgiving.\n"
+"In this mode, games tend to get lengthy, especially on table top.\n"
+"Don't start them too late, unless you're prepared to play all night, or you can spare more than one day.\n"
+"Luck can decide a competitive game, so check out the custom rules in \\pagelink{Recommendations}{Recommendations} at the end of this book.\n"
+"They reduce randomness and keep the game fair.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:62
+#, no-wrap
+msgid ""
+"In the 2- or 4-player \\pagelink{Bloody Grail}{Bloody Grail}, Obelisks offer you a boon or a bloody sacrifice, and you must bring the Grail to your Faction Town.\n"
+"In the King of the Hill \\pagelink{Trial by Combat}{Trial by Combat}, for 2--4 players, the first flag on the Hill starts a countdown of two turns, and the player who controls the Hill at its end wins.\n"
+"In \\pagelink{Astral Run}{Astral Run}, for 2--6 players, Obelisks open Astral Gates across the map, and you win by flagging all 6 Obelisks or by scoring the most Victory Points.\n"
+"In the two-player \\pagelink{Chain Link}{Chain Link}, a Level V Main Hero gives all your Heroes extra Movement Points, and you must capture the enemy Town before the game ends in a draw.\n"
+"In \\pagelink{Force of Will}{Force of Will}, for 2 or 3 players, you race to flag the Dragon Utopia, where Neutral Units attack your army from all four corners of the Combat Board.\n"
+"\\pagelink{The Fractured Kingdoms}{The Fractured Kingdoms} offers a balanced map for 5 players, where the borders between Starting Tiles fall in the \\nth{4} Round, one-way monoliths connect the map, and you must score the most Victory Points.\n"
+"In \\pagelink{Arcane Artillery}{Arcane Artillery}, for 2--6 players free-for-all or in teams, your Obelisks give you Arcane Spikes, which you can spend to disrupt even your opponents' Combats, and the first player to flag the Dragon Utopia wins.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:64
+#, no-wrap
+msgid ""
+"Can't decide on a specific Scenario? The \\pagelink{Random Scenario}{Random Scenario generator} gives you plenty of options to build your own Clash on the fly.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:66
+#, no-wrap
+msgid ""
+"\\subsection*{Campaign}\n"
+"\n"
+msgstr ""
+"\\subsection*{Kampaň}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:70
+#, no-wrap
+msgid ""
+"This is the only mode with zero downtime.\n"
+"The game flows very smoothly.\n"
+"The downside is that you can enjoy it only by yourself, or maybe with your minors.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:72
+#, no-wrap
+msgid ""
+"If you enjoy a well-written story, follow Catherine Ironfist across the 3-Scenario Castle Campaign \\pagelink{1. Greek Gift}{The Queen's Gambit} which blends well with the game lore, or fight through the 3-Scenario Inferno Campaign \\pagelink{1. A Devilish Plan}{Dungeons and Devils}, which predates the official one (Inferno expansion was released without its own capmaign).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:74
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Recommendations}\n"
+#| "\n"
+msgid ""
+"\\subsection*{More Scenarios}\n"
+"\n"
+msgstr ""
+"\\subsection*{Doporučení}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:78
+#, no-wrap
+msgid ""
+"Check out the \\href{https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf}{Draft Scenarios} booklet.\n"
+"It collects new Scenarios that wait for playtests before they graduate into this book.\n"
+"Play them and share your feedback to help them get here.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/introduction.tex:80
+#, no-wrap
+msgid ""
+"\\subsection*{General Recommendations}\n"
+"\n"
+msgstr ""
+"\\subsection*{Obecná Doporučení}\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:82
+#, no-wrap
+msgid ""
+"The following are not custom rules, but rather recommendations to help you get the most out of your game:\n"
+"\n"
+msgstr ""
+"Následující body nejsou vlastní pravidla, ale spíše doporučení, která vám pomohou získat z vaší hry co nejvíce:\n"
+"\n"
+
+#. type: multicols*
+#: sections/introduction.tex:92
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
+#| "  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
+#| "    This includes any Cards that allow you to draw Cards or retrieve Cards from your Discard Pile.\n"
+#| "  \\item Try to avoid using your Main Hero's Movement Points for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, Visiting Water Wheels, and so on.\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item When deciding which building to construct in your Town, especially in the early game, it is \\textit{usually} best to prioritize Units over the City Hall, Citadel, Mage Guild, or other Faction-specific buildings.\n"
+"  \\item If you're unsure which Spell, Artifact, or Ability to choose, prioritize those that help you cycle through your Deck.\n"
+"    This includes any Cards that allow you to draw Cards or retrieve Cards from your Discard Pile.\n"
+"  \\item As Movement Points \\svg[12]{movement_token_green} are the most precious resources in the game, try to avoid using your Main Hero's MPs for Actions that your Secondary Hero can handle, such as flipping the Map Tiles, visiting Water Wheels, and so on.\n"
+"  \\item Economy Cards (especially those granting \\svg{gold} and \\svg{valuables}) are some of the most powerful Cards in the game.\n"
+"  \\item More often than not, it's not worth holding to a Card for too long.\n"
+"    It's better to cycle through your Deck quickly rather than keep that special Card for multiple Rounds for the best occasion.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item Při rozhodování, kterou budovu postavit ve vašem Městě, zejména na začátku hry, je \\textit{obvykle} nejlepší upřednostnit Jednotky před Radnicí, Citadelou, Cechem Mágů nebo jinými budovami Frakce.\n"
+"  \\item Pokud si nejste jisti, které Kouzlo, Artefakt nebo Dovednost zvolit, upřednostněte ty, které vám pomohou procházet vaším Balíčkem.\n"
+"    To zahrnuje jakékoliv Karty, které vám umožňují dobrat Karty nebo získat Karty z vaší Odhazovací Hromádky.\n"
+"  \\item Snažte se vyhnout používání Bodů Pohybu vašeho Hlavního Hrdiny na akce, které může zvládnout váš Sekundární Hrdina, jako je otáčení Dílků Mapy, návštěva Vodních Kol a podobně.\n"
+"\\end{itemize}\n"
+"\n"
