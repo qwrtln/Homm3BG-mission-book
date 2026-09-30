@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"POT-Creation-Date: 2026-09-30 12:28+0000\n"
 "PO-Revision-Date: 2024-10-29 23:06+0000\n"
 "Last-Translator: krazanas <krazi321@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -99,33 +99,23 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:26
+#: sections/competitive_play.tex:27
 #, no-wrap
 msgid ""
 "On your turn in the \\nth{1} Round, discard any number of Cards from your hand, then draw up to your draw limit as normal.\n"
-"After that, you may shuffle your hand back into your Deck of Might and Magic, then draw up to your draw limit again.\n"
-"You can use this Mulligan only once.\n"
+"After that, you may discard your whole hand and draw up to your draw limit again.\n"
+"You can do this only once.\n"
+"Unlike the Mulligan in Tournament Mode, you do not shuffle any Cards back into your Deck.\n"
 "\n"
 msgstr ""
-"W swojej turze w \\nth{1} Rundzie odrzuć dowolną liczbę Kart z ręki, a następnie dobierz Karty do swojego limitu, jak zwykle.\n"
-"Następnie możesz wtasować Karty z ręki z powrotem do Talii Mocy i Magii i ponownie dobrać Karty do swojego limitu dobierania.\n"
-"Z tego Mulligana możesz skorzystać tylko raz.\n"
+"W swojej turze w pierwszej Rundzie odrzuć dowolną liczbę Kart z ręki, a następnie dobierz Karty do swojego limitu, jak zwykle.\n"
+"Następnie możesz odrzucić wszystkie Karty z ręki i ponownie dobrać Karty do swojego limitu dobierania.\n"
+"Możesz to zrobić tylko raz.\n"
+"W przeciwieństwie do Mulligana w Trybie Turnieju, nie wtasowujesz żadnych Kart z powrotem do Talii.\n"
 "\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:29
-#, no-wrap
-msgid ""
-"Unlike the Round One Mulligan in Tournament Mode, do not shuffle your Discard Pile back into your Deck.\n"
-"The Cards you discarded stay out of your new hand.\n"
-"\n"
-msgstr ""
-"W przeciwieństwie do Mulligana w pierwszej Rundzie w Trybie Turniejowym, nie wtasowuj stosu Kart odrzuconych z powrotem do Talii.\n"
-"Odrzucone Karty nie trafią do twojej nowej ręki.\n"
-"\n"
-
-#. type: multicols*
-#: sections/competitive_play.tex:31
 #, no-wrap
 msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
@@ -135,7 +125,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:34
+#: sections/competitive_play.tex:32
 #, no-wrap
 msgid ""
 "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
@@ -147,7 +137,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:36
+#: sections/competitive_play.tex:34
 #, no-wrap
 msgid ""
 "\\subsection*{Trading Post}\n"
@@ -157,7 +147,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:38
+#: sections/competitive_play.tex:36
 #, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
@@ -167,7 +157,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:40
+#: sections/competitive_play.tex:38
 #, no-wrap
 msgid ""
 "\\subsection*{Victory Points}\n"
@@ -177,7 +167,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:47
+#: sections/competitive_play.tex:45
 #, no-wrap
 msgid ""
 "When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
@@ -197,7 +187,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:49
+#: sections/competitive_play.tex:47
 #, no-wrap
 msgid ""
 "\\subsection*{Combat with Neutral Units}\n"
@@ -207,7 +197,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:51
+#: sections/competitive_play.tex:49
 #, no-wrap
 msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
@@ -217,7 +207,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/competitive_play.tex:55
+#: sections/competitive_play.tex:53
 #, no-wrap
 msgid ""
 "Placing Neutral Units far apart only makes the other player waste \\svg{movement}, which slows the game down.\n"
@@ -231,7 +221,7 @@ msgstr ""
 "\n"
 
 #. type: figure*
-#: sections/competitive_play.tex:74
+#: sections/competitive_play.tex:72
 #, no-wrap
 msgid ""
 "[!h]\n"
@@ -271,7 +261,7 @@ msgstr ""
 "\n"
 
 #. type: figure*
-#: sections/competitive_play.tex:76
+#: sections/competitive_play.tex:74
 #, no-wrap
 msgid ""
 "  \\vspace{0.5em}\n"
@@ -281,7 +271,7 @@ msgstr ""
 "\n"
 
 #. type: figure*
-#: sections/competitive_play.tex:93
+#: sections/competitive_play.tex:91
 #, no-wrap
 msgid ""
 "  \\mbox{}\n"
