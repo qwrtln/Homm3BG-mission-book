@@ -33,34 +33,7 @@ If your intention is to **print in black and white**, download the **monochrome*
 
 These builds are officially released, with a specific cutoff point in time, to give translators time to create localized versions.
 
-#### ⭐ Version 2.0 <sub>(30.09.2026)</sub>
-
-<table>
-    <thead>
-        <tr>
-            <th>🌍 Language</th>
-            <th align="center">🎨<br>Full color</th>
-            <th align="center">🖨️<br>Monochrome</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🇬🇧 English</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v2.0/Heroes3_English_Fan_Made_Mission_Book_2_0.pdf">download</a></td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v2.0/Heroes3_English_Fan_Made_Mission_Book_2_0-monochrome.pdf">download</a></td>
-        </tr>
-        <tr>
-            <td>🇵🇱 Polski</td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v2.0/Heroes3_Polski_Fan_Made_Mission_Book_2_0.pdf">pobierz</a></td>
-            <td align="center"><a href="https://github.com/qwrtln/Homm3BG-mission-book/releases/download/v2.0/Heroes3_Polski_Fan_Made_Mission_Book_2_0-monochrome.pdf">pobierz</a></td>
-        </tr>
-    </tbody>
-</table>
-
-<details>
-<summary>🗄️ Click to see older releases</summary>
-
-#### Version 1.2 <sub>(01.04.2025)</sub>
+#### ⭐ Version 1.2 <sub>(01.04.2025)</sub>
 
 <table>
     <thead>
@@ -83,6 +56,9 @@ These builds are officially released, with a specific cutoff point in time, to g
         </tr>
     </tbody>
 </table>
+
+<details>
+<summary>🗄️ Click to see older releases</summary>
 
 #### Version 1.1 <sub>(14.01.2025)</sub>
 
