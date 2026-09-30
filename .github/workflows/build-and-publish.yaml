@@ -20,15 +20,16 @@ jobs:
     steps:
     - id: set-matrix
       run: |
-        cat << 'EOF' > matrix.json
+        # Lines starting with '#' are stripped before parsing
+        cat << 'EOF' | grep -Ev '^\s*#' > matrix.json
         {
           "include": [
             { "language": "en", "display": "🇺🇸 English" },
             { "language": "pl", "display": "🇵🇱 Polski" },
             { "language": "cs", "display": "🇨🇿 Čeština" },
-            { "language": "fr", "display": "🇫🇷 Français" },
-            { "language": "de", "display": "🇩🇪 Deutsch" },
-            { "language": "ru", "display": "🇷🇺 Русский" }
+            { "language": "fr", "display": "🇫🇷 Français" }
+            # { "language": "de", "display": "🇩🇪 Deutsch" },
+            # { "language": "ru", "display": "🇷🇺 Русский" }
           ]
         }
         EOF
@@ -449,7 +450,12 @@ jobs:
       fail-fast: false
       matrix:
         scenario_type: ["clash", "coops", "campaigns", "sections"]
-        language: ["en", "pl", "cs", "fr", "de"]
+        language:
+          - en
+          - pl
+          - cs
+          - fr
+          # - de
     with:
       scenario_type: ${{ matrix.scenario_type }}
       language: ${{ matrix.language }}

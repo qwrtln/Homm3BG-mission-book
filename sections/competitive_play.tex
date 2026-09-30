@@ -1,10 +1,11 @@
 % !TeX spellcheck = en_US
-\addsection{Recommendations}{\art/haste.png}
+\addsection{Competitive Play}{\art/haste.png}
 
 \iftoggle{printable}{}{\bigbreak}
 
 \begin{multicols*}{2}
 We've compiled some custom rules and best practices for fair competitive play.
+They are intended for Clash Scenarios, where they reduce randomness and the luck factor.
 Keep in mind that these are just the \textbf{opinions of the authors} of this book.
 Enjoy!
 
@@ -19,18 +20,17 @@ When distributing Far Tiles (II--III) between players, each player's pool of Map
 
 \subsection*{Round One Mulligan}
 
-At the start of the \nth{1} Round, each player may reshuffle their hand of Cards back into their Deck of Might and Magic and draw a new starting hand of Cards once.
+On your turn in the \nth{1} Round, discard any number of Cards from your hand, then draw up to your draw limit as normal.
+After that, you may shuffle your hand back into your Deck of Might and Magic, then draw up to your draw limit again.
+You can use this Mulligan only once.
+
+Unlike the Round One Mulligan in Tournament Mode, do not shuffle your Discard Pile back into your Deck.
+The Cards you discarded stay out of your new hand.
 
 \subsection*{Tier V--VII Combat on Hard$+$\\Difficulty}
 
 Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.
 For example, a Level VII Combat on Hard will be against 2 × \svg{azure} Neutral Units.
-
-{
-  \hfill
-  \transparent{0.2}{\includegraphics[width=0.7\linewidth]{\art/black_market.png}}
-  \vspace{-3em}
-}
 
 \subsection*{Trading Post}
 
@@ -45,10 +45,6 @@ When playing with the optional Victory Points from the Tournament book, the foll
   \item Capturing a Dragon Utopia grants 3 VPs.
 \end{itemize}
 
-\end{multicols*}
-
-\begin{multicols}{2}
-
 \subsection*{Combat with Neutral Units}
 
 During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.
@@ -57,43 +53,36 @@ Placing Neutral Units far apart only makes the other player waste \svg{movement}
 The exception to this rule is when there are three Neutral \svg{unit_ground} or \svg{unit_flying} Units to position, as all of them must go to the front line.
 See examples that follow.
 
-\begin{center}
-  \transparent{0.2}{\includegraphics[width=0.65\linewidth]{\art/resurrection.png}}
-\end{center}
-
-\end{multicols}
+\end{multicols*}
 
 \begin{figure*}[!h]
   \mbox{}
   \hfill
-  \begin{minipage}[t]{0.44\textwidth}
+  \begin{minipage}[t]{0.36\textwidth}
     \centering
     \includegraphics[width=\linewidth]{\examples/battle_good.png}
     \caption[good protected]{\textit{Neutral Units are positioned correctly.}}
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.44\textwidth}
+  \begin{minipage}[t]{0.36\textwidth}
     \centering
     \includegraphics[width=\linewidth]{\examples/battle_bad.png}
-    \caption[bad protected]{\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.
-      The Peasants must also start the Combat on the left side.}}
+    \caption[bad protected]{\textit{Not allowed: the Necropolis Units are on the left half, so the Peasants must start there too.}}
   \end{minipage}
   \hfill
   \mbox{}
-\end{figure*}
 
-\clearpage
+  \vspace{0.5em}
 
-\begin{figure*}[!h]
   \mbox{}
   \hfill
-  \begin{minipage}[t]{0.44\textwidth}
+  \begin{minipage}[t]{0.36\textwidth}
     \centering
     \includegraphics[width=\linewidth]{\examples/battle_exception.png}
     \caption[exception protected]{\textit{\textbf{Exception:} Three non-\svg{unit_ranged} Units must be positioned on the front line.}}
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.44\textwidth}
+  \begin{minipage}[t]{0.36\textwidth}
     \centering
     \includegraphics[width=\linewidth]{\examples/battle_ranged_bad.png}
     \caption[ranged protected]{\textit{The Boars must occupy one of the green Fields.}}

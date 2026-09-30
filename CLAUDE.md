@@ -31,13 +31,13 @@ build. Work on one at a time.
   generating an ad-hoc scenario instead of playing a fixed one. Every type it
   generates (Free-for-All, Grail, King of the Hill) is Clash-style; it has no
   Coop or Campaign equivalent.
-- **Recommendations** (@sections/recommendations.tex) — custom rules for *fair
-  competitive play*. That file lists them; do not restate them here.
+- **Competitive Play** (@sections/competitive_play.tex) — custom rules for
+  *fair competitive play*.
 
 ### Structure
 
 `structure.tex` fixes the assembly order: title page → intro/ToC → What to Play
-→ Coop → Clash → Random Scenario → Campaign → Recommendations → Credits → back
+→ Coop → Clash → Random Scenario → Campaign → Competitive Play → Credits → back
 cover. Each category's `main.tex` `\input`s its scenarios in book order. For
 adding a scenario (templates, registration, campaign `[subsection]` quirk) see
 `docs/scenarios.md`.
