@@ -21,10 +21,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/competitive_play.tex:3
-#, fuzzy
-#| msgid "\\addsection{Recommendations}{\\art/haste.png}"
 msgid "\\addsection{Competitive Play}{\\art/haste.png}"
-msgstr "\\addsection{Zalecenia}{\\art/haste.png}"
+msgstr "\\addsection{Gra rywalizacyjna}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/competitive_play.tex:5
@@ -33,13 +31,7 @@ msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/competitive_play.tex:11
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{2}\n"
-#| "We've compiled some custom rules and best practices to enhance your gaming experience.\n"
-#| "Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
-#| "Enjoy!\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{2}\n"
 "We've compiled some custom rules and best practices for fair competitive play.\n"
@@ -49,9 +41,9 @@ msgid ""
 "\n"
 msgstr ""
 "{2}\n"
-"Zebraliśmy kilka niestandardowych zasad i najlepszych praktyk, aby usprawnić grę.\n"
+"Zebraliśmy kilka niestandardowych zasad i najlepszych praktyk zapewniających uczciwą rywalizację.\n"
+"Są przeznaczone do Scenariuszy w Trybie Starcia, gdzie ograniczają losowość.\n"
 "Pamiętaj, że są to tylko \\textbf{opinie autorów} tej księgi.\n"
-"Miłej zabawy!\n"
 "\n"
 
 #. type: multicols*
@@ -73,7 +65,7 @@ msgid ""
 "\n"
 msgstr ""
 "Z wyjątkiem Magicznej Strzały każde zaklęcie pojawia się dokładnie dwa razy w Talii Zaklęć.\n"
-"Po przygotowaniu początkowych Talii M\\&M przez graczy, zaleca się usunięcie Magicznych Strzał z Talii Zaklęć, aż pozostaną nie więcej niż dwie.\n"
+"Po przygotowaniu początkowych Talii M\\&M przez graczy, usuń tyle Magicznych Strzał z Talii Zaklęć, aż pozostaną nie więcej niż dwie.\n"
 "\n"
 
 #. type: multicols*
@@ -115,6 +107,10 @@ msgid ""
 "You can use this Mulligan only once.\n"
 "\n"
 msgstr ""
+"W swojej turze w \\nth{1} Rundzie odrzuć dowolną liczbę Kart z ręki, a następnie dobierz Karty do swojego limitu, jak zwykle.\n"
+"Następnie możesz wtasować Karty z ręki z powrotem do Talii Mocy i Magii i ponownie dobrać Karty do swojego limitu dobierania.\n"
+"Z tego Mulligana możesz skorzystać tylko raz.\n"
+"\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:29
@@ -124,6 +120,9 @@ msgid ""
 "The Cards you discarded stay out of your new hand.\n"
 "\n"
 msgstr ""
+"W przeciwieństwie do Mulligana w pierwszej Rundzie w Trybie Turniejowym, nie wtasowuj stosu Kart odrzuconych z powrotem do Talii.\n"
+"Odrzucone Karty nie trafią do twojej nowej ręki.\n"
+"\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:31
@@ -214,7 +213,7 @@ msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
-"Podczas walki z Jednostkami Neutralnymi w trybie starcia, jeśli gracz zdecyduje się rozmieścić swoje Jednostki tylko na jednej połowie (lewej lub prawej) Planszy Walki, gracz rozmieszczający Jednostki Neutralne musi postąpić tak samo.\n"
+"Podczas walki z Jednostkami Neutralnymi w trybie starcia, jeśli gracz zdecyduje się rozmieścić swoje Jednostki tylko na jednej połowie (lewej lub prawej) Planszy Walki, gracz rozmieszczający Jednostki Neutralne robi tak samo.\n"
 "\n"
 
 #. type: multicols*
@@ -233,25 +232,7 @@ msgstr ""
 
 #. type: figure*
 #: sections/competitive_play.tex:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[!h]\n"
-#| "  \\mbox{}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
-#| "    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
-#| "    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
-#| "      The Peasants must also start the Combat on the left side.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\mbox{}"
+#, no-wrap
 msgid ""
 "[!h]\n"
 "  \\mbox{}\n"
@@ -274,54 +255,34 @@ msgstr ""
 "[!h]\n"
 "  \\mbox{}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
 "    \\caption[good protected]{\\textit{Jednostki Neutralne są rozmieszczone prawidłowo.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
-"    \\caption[bad protected]{\\textit{Takie rozmieszczenie jest niedozwolone, ponieważ gracz Nekropolii umieścił swoje Jednostki w lewej połowie Planszy Walki.\n"
-"      Chłopi również muszą rozpocząć Walkę po lewej stronie.}}\n"
+"    \\caption[bad protected]{\\textit{Niedozwolone: Jednostki Nekropolii stoją w lewej połowie, więc Chłopi również muszą tam zacząć.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\mbox{}"
+"  \\mbox{}\n"
+"\n"
 
 #. type: figure*
 #: sections/competitive_play.tex:76
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\vspace{3em}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\vspace{0.5em}\n"
 "\n"
 msgstr ""
-"\\vspace{3em}\n"
+"  \\vspace{0.5em}\n"
 "\n"
 
 #. type: figure*
 #: sections/competitive_play.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[!h]\n"
-#| "  \\mbox{}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
-#| "    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
-#| "    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\mbox{}"
+#, no-wrap
 msgid ""
 "  \\mbox{}\n"
 "  \\hfill\n"
@@ -339,16 +300,15 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
-"[!h]\n"
 "  \\mbox{}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
 "    \\caption[exception protected]{\\textit{\\textbf{Wyjątek:} Trzy Jednostki niestrzelające muszą być rozmieszczone w pierwszej linii.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
 "    \\caption[ranged protected]{\\textit{Dziki muszą zająć jedno z zielonych Pól.}}\n"
