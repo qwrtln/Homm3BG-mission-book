@@ -365,15 +365,12 @@ msgstr ""
 
 #. type: multicols
 #: coops/close_to_enemies.tex:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Settlement defenders Spell Deck:} 1~×~Magic Arrow\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
 "\n"
 msgstr ""
-"\\textbf{Bot-Zauberstapel der Verteidiger:} 1 × Magischer Pfeil\n"
+"\\textbf{Bot-Zauberstapel der Verteidiger:}\\\\1~×~Magischer Pfeil\n"
 "\n"
 
 #. type: multicols

@@ -197,13 +197,7 @@ msgstr ""
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × A Few \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -425,6 +419,13 @@ msgid ""
 "  }\n"
 "\n"
 msgstr ""
+"  \\newcommand{\\greenline}[3]{%\n"
+"    % Parameters: #1 = x-coordinate, #2 = y-coordinate, #3 = rotation angle\n"
+"    \\begin{scope}[shift={(#1,#2)}, rotate=#3]\n"
+"      \\draw[green!70!black, line width=5pt, line cap=round] (-0.3,0) -- (0.3,0);\n"
+"    \\end{scope}\n"
+"  }\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:120
@@ -457,6 +458,8 @@ msgid ""
 "  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Green borders mean adjacent Tiles.}}}};\n"
 "\n"
 msgstr ""
+"  \\node[text width=4cm] at (2.5, -3.5) {\\footnotesize{\\textbf{\\textcolor{green!70!black}{Zelené hranice značí sousední Dílky.}}}};\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:127
@@ -466,6 +469,9 @@ msgid ""
 "  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
 "\n"
 msgstr ""
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (7, -11);\n"
+"  \\draw[-Triangle, green!70!black, line width=1.5pt] (3.2, -3.7) -- (9.0, -9.5);\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:133
@@ -478,6 +484,12 @@ msgid ""
 "  \\greenline{10.5}{-13.75}{-65}\n"
 "\n"
 msgstr ""
+"  \\greenline{11.4}{-11.2}{13}\n"
+"  \\greenline{7.0}{-11.15}{162}\n"
+"  \\greenline{9.24}{-9.5}{90}\n"
+"  \\greenline{7.8}{-13.75}{-127}\n"
+"  \\greenline{10.5}{-13.75}{-65}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/the_fractured_kingdoms.tex:136
