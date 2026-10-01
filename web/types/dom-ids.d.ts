@@ -12,6 +12,12 @@ interface ElementIdMap {
   "about-open": HTMLButtonElement;
   "about-source": HTMLAnchorElement;
   "about-title": HTMLHeadingElement;
+  "feedback-close": HTMLButtonElement;
+  "feedback-dialog": HTMLDialogElement;
+  "feedback-discord": HTMLAnchorElement;
+  "feedback-github": HTMLAnchorElement;
+  "feedback-open": HTMLButtonElement;
+  "feedback-title": HTMLHeadingElement;
   "license-group-app": HTMLHeadingElement;
   "license-group-editor": HTMLHeadingElement;
   "license-group-engine": HTMLHeadingElement;
