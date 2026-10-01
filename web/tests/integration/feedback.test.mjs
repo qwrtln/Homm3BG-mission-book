@@ -1,5 +1,6 @@
 // Tier 2. The overflow menu's Send feedback item: it opens a dialog that
-// links to a new GitHub issue and to the Discord server, both in a new tab.
+// links to a new GitHub issue, to the Discord server and to a BoardGameGeek
+// thread, all in a new tab.
 
 import { chooseFromMenu, expect, test } from "./fixtures.mjs";
 
@@ -12,6 +13,10 @@ const LINKS = {
   "feedback-discord": {
     text: "Chat on Discord",
     href: "https://discord.gg/nMbawQkj9R",
+  },
+  "feedback-bgg": {
+    text: "Discuss on BoardGameGeek",
+    href: "https://boardgamegeek.com/thread/3775763/the-fan-made-mission-book-20-and-the-scenario-buil",
   },
 };
 
@@ -67,6 +72,21 @@ test("clicking a link closes the dialog", async ({ app }) => {
   await page.context().route("https://github.com/**", (route) => route.abort());
   const popup = page.waitForEvent("popup");
   await dialog.locator("#feedback-github").click();
+  await (await popup).close();
+
+  await expect(dialog).toBeHidden();
+  expect(errors).toEqual([]);
+});
+
+test("clicking the BoardGameGeek link closes the dialog", async ({ app }) => {
+  const { page, errors } = app;
+  const dialog = await openFeedback(page);
+
+  // target="_blank" opens a new tab in this context. Abort its request, so
+  // the test stays off the real network, then close the tab.
+  await page.context().route("https://boardgamegeek.com/**", (route) => route.abort());
+  const popup = page.waitForEvent("popup");
+  await dialog.locator("#feedback-bgg").click();
   await (await popup).close();
 
   await expect(dialog).toBeHidden();

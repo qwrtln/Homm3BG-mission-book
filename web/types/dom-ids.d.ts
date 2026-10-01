@@ -12,6 +12,7 @@ interface ElementIdMap {
   "about-open": HTMLButtonElement;
   "about-source": HTMLAnchorElement;
   "about-title": HTMLHeadingElement;
+  "feedback-bgg": HTMLAnchorElement;
   "feedback-close": HTMLButtonElement;
   "feedback-dialog": HTMLDialogElement;
   "feedback-discord": HTMLAnchorElement;
