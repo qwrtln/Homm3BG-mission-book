@@ -8,8 +8,10 @@ import { loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
+import { clearUploads, loadRecord, saveText, saveUploads } from "./local-store.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
+import { offerLocalDraft } from "./recovery.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
@@ -134,7 +136,8 @@ export async function commitEntry(path, name, category) {
   const fetched = await preloadFile(entry.path);
   const pristineSource = /** @type {string} */ (fetched.content);
 
-  const draft = loadDraft(identity);
+  const record = await loadRecord(identity);
+  const draft = record.text ?? loadDraft(identity);
   // The heading names the kind of the category it is filed under, not its source's.
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
   cm.setValue(draft !== null ? draft : pristine);
@@ -143,6 +146,7 @@ export async function commitEntry(path, name, category) {
   cm.focus();
 
   resetUploads();
+  restoreUploads(record.uploads ?? []);
   clearPdf();
   markClean(pristine); // a restored autosave differs from this, and says so
 
@@ -178,6 +182,8 @@ export async function commitGeneratedEntry(name, category, source, uploads) {
   restoreUploads(uploads);
   clearPdf();
   saveDraft(identity, source);
+  await saveText(identity, source);
+  await saveUploads(identity, uploads);
   markClean(null); // no clean copy anywhere: the text was never saved anywhere else
   setStatus("Ready.");
 }
@@ -218,8 +224,9 @@ async function showPrefetchedPdf(path, source) {
  * own title, no rename. What it opens is the caller's choice (the Mission
  * Book's copy, or an earlier edit branch's), so it arrives as `source`.
  *
- * A locally autosaved copy is deliberately not offered here: it would hide
- * the very source the member just chose.
+ * A locally autosaved copy that differs from `source` is offered before it
+ * would replace that copy, so edits left over from a crash or an earlier
+ * session are never silently lost.
  *
  * @param {string} path the scenario's repository path
  * @param {string} title
@@ -243,13 +250,24 @@ export async function openForEdit(path, title, source, edit) {
   el("build").disabled = false; // Build, or Stop mid-build: both apply
   el("download").disabled = true;
 
-  cm.setValue(source);
-  el("draft-note").hidden = true;
+  const local = await offerLocalDraft(path, title, source);
+  cm.setValue(local ? local.text : source);
+  el("draft-note").hidden = local === null;
   cm.focus();
 
   resetUploads();
+  restoreUploads(local ? local.uploads : []);
   clearPdf();
-  markClean();
+  if (local !== null) {
+    markClean(source, "");
+  } else {
+    // Gone from the editor; written at once so a crash within the next 400
+    // ms cannot leave the old local text under this key.
+    saveDraft(path, source);
+    await saveText(path, source);
+    await clearUploads(path);
+    markClean();
+  }
 
   await showPrefetchedPdf(path, source);
   setStatus("Ready.");

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.js";
+import { assetsSignature, hasUnsavedChanges, shouldOfferLocalDraft, uploadsSignature } from "../../shared/unsaved.js";
 
 const bytes = (n) => new Uint8Array(n);
 
@@ -35,4 +35,29 @@ test("changed uploads are unsaved", () => {
 
 test("no clean copy counts as unsaved", () => {
   assert.equal(hasUnsavedChanges({ text: null, uploads: "" }, { text: "", uploads: "" }), true);
+});
+
+test("shouldOfferLocalDraft: equal text is not offered", () => {
+  assert.equal(shouldOfferLocalDraft({ text: "x", uploads: "" }, { text: "x", uploads: null }), false);
+});
+
+test("shouldOfferLocalDraft: differing text is offered", () => {
+  assert.equal(shouldOfferLocalDraft({ text: "x", uploads: "" }, { text: "y", uploads: null }), true);
+});
+
+test("shouldOfferLocalDraft: no stored local text has no opinion", () => {
+  assert.equal(shouldOfferLocalDraft({ text: "x", uploads: "" }, { text: null, uploads: null }), false);
+});
+
+test("assetsSignature matches uploadsSignature over the same files", () => {
+  const assets = [
+    { path: "assets/images/a.png", bytes: bytes(3) },
+    { path: "assets/maps/b.png", bytes: bytes(5) },
+  ];
+  const map = new Map(assets.map((a) => [a.path, a.bytes]));
+  assert.equal(assetsSignature(assets), uploadsSignature(map));
+});
+
+test("assetsSignature of an empty list is the empty signature", () => {
+  assert.equal(assetsSignature([]), "");
 });

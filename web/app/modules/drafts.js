@@ -1,3 +1,4 @@
+import { saveText } from "./local-store.js";
 import { state } from "./state.js";
 
 /**
@@ -59,6 +60,10 @@ export function scheduleSave() {
     // Re-checked here, not just above: 400 ms is long enough for either to
     // have been cleared, and writing a draft under the key "null" is worse
     // than skipping the save.
-    if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
+    if (state.chosenPath && state.cm) {
+      const text = state.cm.getValue();
+      saveDraft(state.chosenPath, text);
+      void saveText(state.chosenPath, text);
+    }
   }, 400);
 }

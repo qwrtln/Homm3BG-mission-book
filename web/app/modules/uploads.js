@@ -1,5 +1,6 @@
 import { refreshUnsavedNote } from "./dirty.js";
 import { el, sanitizeFilename } from "./dom.js";
+import { saveUploads } from "./local-store.js";
 import { state } from "./state.js";
 import { showToast } from "./toast.js";
 import {
@@ -28,8 +29,16 @@ function panel() {
   return popover;
 }
 
+// True between resetUploads() and the matching restoreUploads() of an open
+// path. The panel's own reset/restore can each fire onChange while the
+// staged map is in a transitional state (emptied, or only half restored);
+// persisting then would store that transitional set over the one about to
+// be offered, rather than a real user change.
+let restoring = false;
+
 /** Clears every staged upload and its controls. @returns {void} */
 export function resetUploads() {
+  restoring = true;
   state.uploadedFiles.clear();
   panel().reset();
 }
@@ -43,6 +52,20 @@ export function resetUploads() {
  */
 export function restoreUploads(files) {
   panel().restore(files);
+  restoring = false;
+}
+
+/**
+ * Persists the staged map at once, as the uploads panel's own autosave.
+ * Skipped while an open path is between resetUploads() and restoreUploads().
+ *
+ * @returns {void}
+ */
+function persistStagedUploads() {
+  refreshUnsavedNote();
+  if (restoring || !state.chosenPath) return;
+  const assets = [...state.uploadedFiles].map(([path, bytes]) => ({ path, bytes }));
+  void saveUploads(state.chosenPath, assets);
 }
 
 /** Wires the uploads dialog and its two file inputs. @returns {void} */
@@ -70,7 +93,7 @@ export function initUploads() {
     mapCodes: true,
     headerHint: HEADER_HINT,
     mapsHint: MAPS_HINT,
-    onChange: refreshUnsavedNote,
+    onChange: persistStagedUploads,
     notify: showToast,
   });
 }
