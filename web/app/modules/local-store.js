@@ -96,6 +96,7 @@ async function mergeWrite(path, patch) {
         };
         tx.oncomplete = () => resolve();
         tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error);
       })
     );
   } catch {
@@ -149,6 +150,7 @@ export async function deleteRecord(path) {
         tx.objectStore(STORE_NAME).delete(path);
         tx.oncomplete = () => resolve();
         tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error);
       })
     );
   } catch {
@@ -182,6 +184,7 @@ export async function moveRecord(oldPath, newPath) {
         };
         tx.oncomplete = () => resolve();
         tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error);
       })
     );
   } catch {

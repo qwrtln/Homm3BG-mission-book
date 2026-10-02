@@ -588,8 +588,10 @@ test("a template pick puts the typed name into \\addscenariosection", async ({ a
   await page.locator("#scenario-name").fill("Kyrre Link");
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  const text = await page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue());
-  expect(text).toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
+  // Polled: the workspace shows before the template text lands in the editor.
+  await expect
+    .poll(() => page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue()))
+    .toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
 });
 
 test.describe("looking for work to resume", () => {

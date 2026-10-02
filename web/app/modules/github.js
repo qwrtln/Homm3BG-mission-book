@@ -19,7 +19,7 @@ import { assetsSignature, uploadsSignature } from "../../shared/unsaved.js";
 import { syncCategoryControl } from "./category.js";
 import { isDirty, markClean } from "./dirty.js";
 import { basenameNoExt, closestTo, confirmAction, confirmDelete, el, escapeHtml, setStatus } from "./dom.js";
-import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
+import { deleteDraft, flushDraft, loadDraft, saveDraft } from "./drafts.js";
 import { loadEntries } from "./entries.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
@@ -483,7 +483,7 @@ async function leaveWorkspace() {
  * @returns {Promise<void>} settles once sign-in and the draft search are done
  */
 export function initGithub() {
-  el("github-signin").addEventListener("click", () => {
+  el("github-signin").addEventListener("click", async () => {
     try {
       if (parseRoute(location.hash)) localStorage.setItem(ROUTE_KEY, location.hash);
     } catch {
@@ -492,7 +492,9 @@ export function initGithub() {
     // A scenario left behind the welcome screen is not reopened: the member left it.
     if (state.chosenPath && state.cm && !isParked()) {
       clearTimeout(state.saveTimer ?? undefined);
-      saveDraft(state.chosenPath, state.cm.getValue());
+      // Awaited: the redirect below unloads the page, which can abort an
+      // IndexedDB write still in flight.
+      await flushDraft(state.chosenPath, state.cm.getValue());
       try {
         localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
       } catch {

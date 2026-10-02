@@ -4,7 +4,7 @@ import { syncCategoryControl } from "./category.js";
 import { TEMPLATES } from "./config.js";
 import { markClean } from "./dirty.js";
 import { el, sanitizeFilename, setStatus } from "./dom.js";
-import { loadDraft, saveDraft } from "./drafts.js";
+import { flushDraft, loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
@@ -282,7 +282,7 @@ export async function openForEdit(path, title, source, edit) {
  */
 export function showWelcome() {
   clearTimeout(state.saveTimer ?? undefined);
-  if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
+  if (state.chosenPath && state.cm) void flushDraft(state.chosenPath, state.cm.getValue());
 
   parked = state.chosenPath !== null;
   const back = el("back-to-editing");
