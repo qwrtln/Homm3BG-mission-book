@@ -3,6 +3,7 @@ import { CATEGORY_LABELS } from "./config.js";
 import { el } from "./dom.js";
 import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
 import { githubSaveState, onSaveStateReset } from "./github-save-state.js";
+import { moveRecord, saveText } from "./local-store.js";
 import { reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
 
@@ -114,6 +115,9 @@ function moveToCategory(category) {
     return;
   }
   deleteDraft(old);
+  // Best effort, not awaited: the IndexedDB copy is a second line of
+  // defense, not the source of truth the move's own checks run against.
+  void moveRecord(old, next).then(() => saveText(next, moved));
   state.chosenPath = next;
   if (moved !== text) replaceChangedPart(cm, text, moved);
   syncCategoryControl();

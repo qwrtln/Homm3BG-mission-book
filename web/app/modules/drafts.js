@@ -1,3 +1,4 @@
+import { saveText } from "./local-store.js";
 import { state } from "./state.js";
 
 /**
@@ -46,6 +47,20 @@ export function saveDraft(path, text) {
 }
 
 /**
+ * Writes the draft to both local stores at once: localStorage, and the
+ * IndexedDB copy every read prefers. A flush that skipped IndexedDB would
+ * leave an older text there to win on the next open.
+ *
+ * @param {string} path
+ * @param {string} text
+ * @returns {Promise<void>} settles once the IndexedDB write has landed or failed
+ */
+export function flushDraft(path, text) {
+  saveDraft(path, text);
+  return saveText(path, text);
+}
+
+/**
  * Debounces an autosave 400 ms out. Deliberately re-reads state when it
  * fires rather than closing over the path, so a save always writes whatever
  * is open at that moment.
@@ -59,6 +74,10 @@ export function scheduleSave() {
     // Re-checked here, not just above: 400 ms is long enough for either to
     // have been cleared, and writing a draft under the key "null" is worse
     // than skipping the save.
-    if (state.chosenPath && state.cm) saveDraft(state.chosenPath, state.cm.getValue());
+    if (state.chosenPath && state.cm) {
+      const text = state.cm.getValue();
+      saveDraft(state.chosenPath, text);
+      void saveText(state.chosenPath, text);
+    }
   }, 400);
 }

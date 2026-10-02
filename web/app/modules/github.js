@@ -15,17 +15,19 @@ import {
 } from "../../shared/github-contrib.js?v=3";
 import { parseRoute, slugToPath } from "../../shared/route.js";
 import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.js";
-import { uploadsSignature } from "../../shared/unsaved.js";
+import { assetsSignature, uploadsSignature } from "../../shared/unsaved.js";
 import { syncCategoryControl } from "./category.js";
 import { isDirty, markClean } from "./dirty.js";
 import { basenameNoExt, closestTo, confirmAction, confirmDelete, el, escapeHtml, setStatus } from "./dom.js";
-import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
+import { deleteDraft, flushDraft, loadDraft, saveDraft } from "./drafts.js";
 import { loadEntries } from "./entries.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
+import { clearUploads, deleteRecord, loadRecord, saveText } from "./local-store.js";
 import { clearPdf } from "./pdf-view.js";
 import { onEditPick, settleModes } from "./picker.js";
+import { offerLocalDraft } from "./recovery.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
 import { askToSubmit, currentSubmitBlockers, refreshSubmitDialog } from "./submit.js";
@@ -56,7 +58,8 @@ const ROUTE_KEY = "wasm-scenario-builder:pending-route";
  * @returns {Promise<boolean>} false when there is nothing stored for it
  */
 async function reopenLocalDraft(path, title) {
-  const content = loadDraft(path);
+  const record = await loadRecord(path);
+  const content = record.text ?? loadDraft(path);
   if (content === null) return false;
 
   const cm = requireEditor();
@@ -74,6 +77,7 @@ async function reopenLocalDraft(path, title) {
   cm.setValue(content);
   el("draft-note").hidden = false;
   resetUploads();
+  restoreUploads(record.uploads ?? []);
   clearPdf();
   markClean(null); // no clean copy here: the draft was never saved anywhere else
   setStatus("Ready.");
@@ -338,20 +342,30 @@ async function openResumableDraft(draft) {
     githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
 
     state.chosenPath = draft.texPath;
-    setScenarioTitle(
-      basenameNoExt(draft.texPath)
-        .replace(/[-_]+/g, " ")
-        .replace(/\b\w/g, (c) => c.toUpperCase()),
-    );
+    const title = basenameNoExt(draft.texPath)
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    setScenarioTitle(title);
     reflectRoute();
     el("build").disabled = false; // Build, or Stop mid-build: both apply
     el("download").disabled = true;
-    cm.setValue(content);
-    el("draft-note").hidden = true;
+
+    const local = await offerLocalDraft(draft.texPath, title, content, assets);
+    cm.setValue(local ? local.text : content);
+    el("draft-note").hidden = local === null;
     resetUploads();
-    restoreUploads(assets);
+    restoreUploads(local ? local.uploads : assets);
     clearPdf();
-    markClean();
+    if (local !== null) {
+      markClean(content, assetsSignature(assets));
+    } else {
+      // Gone from the editor; written at once so a crash within the next 400
+      // ms cannot leave the old local text under this key.
+      saveDraft(draft.texPath, content);
+      await saveText(draft.texPath, content);
+      await clearUploads(draft.texPath);
+      markClean();
+    }
 
     githubSaveState.lastSaveTarget = { owner, repo, branch: draft.branch, isMember: githubContext.isMember };
     syncCategoryControl();
@@ -469,7 +483,7 @@ async function leaveWorkspace() {
  * @returns {Promise<void>} settles once sign-in and the draft search are done
  */
 export function initGithub() {
-  el("github-signin").addEventListener("click", () => {
+  el("github-signin").addEventListener("click", async () => {
     try {
       if (parseRoute(location.hash)) localStorage.setItem(ROUTE_KEY, location.hash);
     } catch {
@@ -478,7 +492,9 @@ export function initGithub() {
     // A scenario left behind the welcome screen is not reopened: the member left it.
     if (state.chosenPath && state.cm && !isParked()) {
       clearTimeout(state.saveTimer ?? undefined);
-      saveDraft(state.chosenPath, state.cm.getValue());
+      // Awaited: the redirect below unloads the page, which can abort an
+      // IndexedDB write still in flight.
+      await flushDraft(state.chosenPath, state.cm.getValue());
       try {
         localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
       } catch {
@@ -512,27 +528,39 @@ export function initGithub() {
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
   el("github-signout").addEventListener("click", () => {
+    void handleSignOut();
+  });
+
+  /**
+   * Signed out mid-edit: the autosaved copy belongs to the account that just
+   * left, so purge it and go back to welcome. A reload is the only reset
+   * that clears the editor, uploads and module state together. The
+   * IndexedDB delete is awaited before it, as a delete started just before
+   * an unload can abort.
+   *
+   * @returns {Promise<void>}
+   */
+  async function handleSignOut() {
     clearToken();
     githubContext = null;
     resetGithubSaveState();
     el("resume-drafts").hidden = true;
     settleModes(false);
     if (!el("workspace").hidden || isParked()) {
-      // Signed out mid-edit: the autosaved copy belongs to the account that
-      // just left, so purge it and go back to welcome. A reload is the only
-      // reset that clears the editor, uploads and module state together.
       clearTimeout(state.saveTimer ?? undefined);
-      if (state.chosenPath) deleteDraft(state.chosenPath);
+      const path = state.chosenPath;
+      if (path) deleteDraft(path);
       try {
         localStorage.removeItem(REOPEN_KEY);
       } catch {
         /* blocked storage: nothing to remove */
       }
+      if (path) await deleteRecord(path);
       location.reload();
       return;
     }
     renderGithubHeader();
-  });
+  }
 
   // Push only; opening a PR is a separate action, below.
   el("github-save").addEventListener("click", async () => {
@@ -571,6 +599,10 @@ export function initGithub() {
       syncCategoryControl();
       githubSaveState.committedUploads = savedPaths;
       markClean(savedText, savedUploads);
+      // The staged uploads are committed now, same as the branch's own: no
+      // local opinion is left to offer on a later reload. The text draft
+      // stays, unaffected by a save (unchanged non-goal).
+      await clearUploads(state.chosenPath);
       el("github-open-pr").hidden = false;
       setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
     } catch (error) {
