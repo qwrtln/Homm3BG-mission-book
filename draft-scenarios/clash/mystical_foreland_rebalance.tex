@@ -17,7 +17,7 @@ Double the nightguard and move out at dawn.}  % no-check-caps
 
 \textbf{Starting Resources:} 13~\svg{gold}, 3~\svg{building_materials}, 1~\svg{valuables}
 
-\textbf{Starting Income:} 10~\svg{gold}, 0~\svg{building_materials}, 0~\svg{valuables}
+\textbf{Starting Income:} 15~\svg{gold}, 0~\svg{building_materials}, 0~\svg{valuables}
 
 \textbf{Starting Units:}
 
@@ -34,27 +34,33 @@ Take the following Map Tiles and arrange them as shown in the Scenario map layou
 \begin{itemize}
   \item 4 × Starting (I) Map Tiles
   \item 8 × Far (II--III) Map Tiles
-  \item 10 × Near (IV--V) Map Tiles (2 Land, 6 Sea, 2 Subterranean). These Tiles should not contain any Obelisks.
+  \item 14 × Near (IV--V) Map Tiles (6 Land, 6 Sea, 2 Subterranean). These Tiles should not contain any Obelisks.
   \item 3 × Center (VI--VII) Map Tiles (1 Grail, 1 Sea, 1 Subterranean)
 \end{itemize}
 
 Green-tinted Tiles in the Scenario map layout contain \textbf{Creature Banks}.
 
 \subsection*{\MakeUppercase{Victory Conditions}}
-Obtain the Grail Token and bring it to your Faction Town.
+\begin{itemize}
+  \item Obtain the Grail Token and bring it to your Faction Town.
+  \item Defeat all remaining Players.
+\end{itemize}
 
 \subsection*{\MakeUppercase{Defeat Conditions}}
-If no player obtains the Grail Token by the end of the \nth{14} Round, all players lose the Scenario.
-If a player obtains the Grail Token but no player brings it to their Faction Town by the end of the \nth{16} Round, all players lose the Scenario.
+If no player brings the Grail Token to their Town, all players lose the Scenario.
 
 \subsection*{\MakeUppercase{Timed Events}}
 \textbf{\nth{4} Round:}
 \begin{itemize}
   \item Each player may immediately \svg{reinforce} one \svg{bronze} Unit of their choice for free, or one \svg{silver} Unit of their choice at a cost reduced by 4~\svg{gold}.
 \end{itemize}
-\textbf{\nth{6} Round:}
+\textbf{\nth{6}, \nth{10}, \nth{14} Rounds:}
 \begin{itemize}
   \item Remove all Black Cubes from the map except those on Learning Stones.
+\end{itemize}
+\textbf{\nth{8} Round:}
+\begin{itemize}
+  \item Increase your \svg{gold}, \svg{building_materials} or \svg{valuables} income by 1 Cube.
 \end{itemize}
 \textbf{\nth{9} Round:}
 \begin{itemize}
@@ -75,17 +81,27 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
 \subsubsection*{Setup Changes}
 
 \begin{itemize}
-  \item Before the game, remove the \textbf{Diplomacy} Ability, the \textbf{Den of Thieves} and \textbf{Prison} Events, and the \textbf{Ambassador's Sash} and \textbf{Diplomat's Ring} Artifacts.
+  \item Before the game, remove the \textbf{Diplomacy} and \textbf{Pathfinding} Abilities, the \textbf{Den of Thieves}, \textbf{Mercenary Camp} and \textbf{Prison} Events, the \textbf{Ambassador's Sash} and \textbf{Diplomat's Ring} Artifacts.
   \item Level VII Neutral Combats cannot be skipped.
   \item Stepping on a Sanctuary Tile lets you Search(2) your Deck.
+  \item Defeating an enemy Hero grants the winning Player 1~\svg{experience} and allows to Search(2) the Ability or Artifact Deck.
+  \item Depending on the difficulty, players can choose their starting bonus:
+  \begin{itemize}
+    \item \textbf{Easy}: Roll 2~\svg{resource} or 2~\svg{treasure} and gain both bonuses \textbf{OR} Search(4) the \svg{artifact} Deck.
+      \item \textbf{Normal}: Roll 2~\svg{resource} or 2~\svg{treasure} and gain one chosen bonus \textbf{OR} Draw 3 \svg{artifact} Cards and take one into your Hand. If any Relic is drawn this way, discard it and draw another.
+      \item \textbf{Hard}: Roll 2~\svg{resource} Dice and gain one chosen bonus \textbf{OR} Search(2) the \svg{artifact} Deck. If any Relic \svg{artifact} is drawn this way, discard it and draw another.
+      \item \textbf{Impossible}: Roll 1~\svg{resource} Die and gain its bonus \textbf{OR} Search(2) the \svg{artifact} Deck. If any Relic or Major \svg{artifact} is drawn this way, discard it and draw another.
+    \end{itemize}
 \end{itemize}
 
 \subsubsection*{Map Constraints}
 
 \begin{itemize}
   \item A Hero may not cross a \textbf{Red Border}, drawn as a red line between two Tiles in the Scenario map layout, by any means.
-  \item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.
   \item The Grail Tile and the two Sea Tiles adjacent to it are also Subterranean, as marked in the Scenario map layout.
+  \item Entering or exiting a Sea Tile only takes up an extra 1 \svg{movement}.
+  \item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.
+  \item If playing Alliance mode, the team that's being attacked may \svg{pay} 10~\svg{gold} to move either Player to the defending town and allow them to use their Deck.
 \end{itemize}
 
 \subsubsection*{Grail Rules}
@@ -97,8 +113,8 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
     \begin{itemize}
       \item \textbf{Easy}: 1~\textbf{Stack Token} placed on any \svg{golden} Unit.
       \item \textbf{Normal}: 1~\textbf{Stack Token} placed on any \svg{azure} Unit.
-      \item \textbf{Easy}: 2~\textbf{Stack Tokens} placed on 1~\svg{golden} Unit and 1~\svg{azure} Unit.
-      \item \textbf{Easy}: 2~\textbf{Stack Token} placed on any \svg{azure} Units.
+      \item \textbf{Hard}: 2~\textbf{Stack Tokens} placed on 1~\svg{golden} Unit and 1~\svg{azure} Unit.
+      \item \textbf{Impossible}: 2~\textbf{Stack Tokens} placed on any \svg{azure} Units.
     \end{itemize}
   \item A player who is defeated in Combat or surrenders drops the Grail Token on the Field where the Hero was defeated or surrendered.
   \item A player holding the Grail can move by an extra Tile.
@@ -109,14 +125,14 @@ If a player obtains the Grail Token but no player brings it to their Faction Tow
 \subsubsection*{Neutral Unit Recruitment}
 
 \begin{itemize}
-  \item Once at any point during your Turn, you may \svg{pay} one of the following to Search~(2) the Neutral Units Deck:
+  \item Only if you meet the requirements below, once at any point during your Turn, you may \svg{pay} one of the following to Search~(2) the Neutral Units Deck:
     \begin{itemize}
-      \item 3~\svg{gold}, 1~\svg{building_materials} for \svg{bronze}
-      \item 4~\svg{gold}, 2~\svg{building_materials} for \svg{silver}
-      \item 5~\svg{gold}, 3~\svg{building_materials}, 1~\svg{valuables} for \svg{golden}
-      \item 8~\svg{gold}, 4~\svg{building_materials}, 2~\svg{valuables} for \svg{azure}
+      \item \svg{bronze} \textbf{Dwelling}: 3~\svg{gold}, 1~\svg{building_materials} for \svg{bronze}
+      \item \svg{silver} \textbf{Dwelling}: 4~\svg{gold}, 2~\svg{building_materials} for \svg{silver}
+      \item \svg{golden} \textbf{Dwelling}: 5~\svg{gold}, 3~\svg{building_materials}, 1~\svg{valuables} for \svg{golden}
+      \item \svg{golden} \textbf{Dwelling}, \textbf{Citadel}: 8~\svg{gold}, 4~\svg{building_materials}, 2~\svg{valuables} for \svg{azure}
     \end{itemize}
-    You may then \svg{recruit} one of the Units you found for its full cost.
+    You may then choose one of the Units \svg{pay} and pay its full cost to recruit it.
 \end{itemize}
 
 \subsubsection*{Field Rewards}
@@ -152,15 +168,15 @@ Starting in the \nth{10} Round, the following rules apply:
   {
     \iftoggle{noartbackground}{\def\mapcolor{white}\def\opacity{0.5}}{\def\mapcolor{deepskyblue}\def\opacity{0.3}}
     \color{\mapcolor}
-    \draw (5.74, 2.0) node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Grail}};
+    \draw (6.44, 2.0) node [fill=black, fill opacity=\opacity, text opacity=1, inner sep=2pt] {\footnotesize\textbf{Grail}};
   }
   \node(subter) at (5.8, 6.6) {\large{{\textbf{\textcolor{darkcandyapplered}{Subterranean}}}}};
   \node at (5.8, 6.1) {\large{{\textbf{\textcolor{darkcandyapplered}{Tiles}}}}};
-  \coordinate (subterstart) at (5.7, 5.6);
+  \coordinate (subterstart) at (6.4, 5.6);
 
-  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=250, in=30] (4.25, 3.3);
-  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=270, in=90] (5.7, 2.5);
-  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=300, in=60] (7.2, 0.6) to[out=240, in=0] (5.35, -0.2);
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=250, in=30] (5, 3.3);
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=270, in=90] (6.4, 2.5);
+  \draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=300, in=60] (7.9, 0.6) to[out=240, in=0] (6, -0.2);
 
   \node at ($(map.south) + (0, -1.2)$) {
     \begin{minipage}{0.6\paperwidth}
