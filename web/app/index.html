@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heroes III: The Board Game – Scenario Builder</title>
 <link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
+<link rel="stylesheet" href="vendor/codemirror/addon/dialog/dialog.min.css">
 <link rel="stylesheet" href="codemirror-github-theme.css">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/base.css">
@@ -62,6 +63,7 @@
     <button id="header-menu-toggle" class="icon" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="header-menu" aria-label="More actions" title="More actions"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></button>
     <div class="header-menu-list" id="header-menu" role="menu" aria-label="More actions" hidden>
       <button id="theme-toggle" role="menuitemcheckbox" aria-checked="false" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M9.598 1.591a.75.75 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786m1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678"/></svg>Dark mode<svg class="octicon menu-check" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg></button>
+      <button id="help-open" role="menuitem" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM6.92 6.085h.001a.749.749 0 1 1-1.343-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.968 2.968 0 0 1 1.713.526c.472.325.787.828.787 1.474 0 .54-.235.864-.459 1.096-.157.162-.376.323-.59.532l-.24.235c-.317.316-.374.564-.374 1.137a.75.75 0 0 1-1.5 0c0-.75.198-1.299.715-1.806l.355-.336c.117-.101.183-.164.246-.231.185-.191.199-.321.199-.436 0-.191-.109-.364-.317-.504a1.456 1.456 0 0 0-.839-.242c-.376 0-.705.09-.995.283a1.964 1.964 0 0 0-.569.605ZM8 9a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5A.75.75 0 0 1 8 9Z"/></svg>Help</button>
       <button id="about-open" role="menuitem" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>About</button>
       <button id="feedback-open" role="menuitem" type="button" tabindex="-1"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>Send feedback</button>
       <div class="menu-separator" id="header-menu-separator" role="separator" hidden></div>
@@ -493,6 +495,27 @@
   </form>
 </dialog>
 
+<!-- styles/dialog.css; help.js renders the keyboard shortcuts table from
+     web/shared/keymap.js. Each section is its own <section>, so a later
+     section adds without restructuring. -->
+<dialog id="help-dialog" class="confirm-dialog help-dialog" aria-labelledby="help-title">
+  <form method="dialog">
+    <h2 id="help-title">Help</h2>
+    <section>
+      <h3>Keyboard shortcuts</h3>
+      <table class="help-shortcuts-table">
+        <thead>
+          <tr><th>Action</th><th>Keys</th></tr>
+        </thead>
+        <tbody id="help-shortcuts"></tbody>
+      </table>
+    </section>
+    <div class="confirm-actions">
+      <button id="help-close" type="submit" value="close">Close</button>
+    </div>
+  </form>
+</dialog>
+
 <!-- styles/dialog.css; feedback.js closes the dialog when a link opens.
      The GitHub link uses .github/ISSUE_TEMPLATE/bug_report.md: keep its name. -->
 <dialog id="feedback-dialog" class="confirm-dialog feedback-dialog" aria-labelledby="feedback-title">
@@ -552,6 +575,10 @@
 
 <script src="vendor/codemirror/codemirror.min.js"></script>
 <script src="vendor/codemirror/mode/stex/stex.min.js"></script>
+<script src="vendor/codemirror/addon/search/searchcursor.min.js"></script>
+<script src="vendor/codemirror/addon/dialog/dialog.min.js"></script>
+<script src="vendor/codemirror/addon/search/search.min.js"></script>
+<script src="vendor/codemirror/addon/comment/comment.min.js"></script>
 <script type="module" src="app.js?v=5"></script>
 </body>
 </html>

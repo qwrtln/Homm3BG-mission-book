@@ -326,7 +326,7 @@ test("opening another scenario replaces the one Back to editing returns to", asy
   await startClash(page, "First One");
   await page.locator("#back-to-welcome").click();
   await startClash(page, "Second One");
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
+  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
   await page.locator("#back-to-welcome").click();
 
   await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Second One”");

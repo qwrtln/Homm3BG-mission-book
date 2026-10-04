@@ -60,7 +60,8 @@ test("About comes before the separator, so it shows while signed out", async ({ 
   await expect(page.locator("#github-signout")).toBeHidden();
   await expect(page.getByRole("menuitem", { name: "About" })).toBeVisible();
 
-  // Keyboard: Dark mode first, About next.
+  // Keyboard: Dark mode first, Help next, About next.
+  await page.keyboard.press("ArrowDown");
   await page.keyboard.press("ArrowDown");
   await expect(page.getByRole("menuitem", { name: "About" })).toBeFocused();
 });

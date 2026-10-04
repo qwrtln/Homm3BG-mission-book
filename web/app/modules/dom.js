@@ -1,4 +1,32 @@
+import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.js";
 import { state } from "./state.js";
+
+/**
+ * Whether the browser is running on macOS or iOS, read from the platform the
+ * browser itself reports.
+ *
+ * @returns {boolean}
+ */
+export function isMac() {
+  return isMacPlatform(navigator.userAgentData?.platform || navigator.platform);
+}
+
+/** The idle Build button's title, once computed. Empty until initBuildTitle() runs. */
+let idleBuildTitle = "";
+
+/**
+ * Computes and sets the Build button's idle title, naming the build key for
+ * this platform (e.g. "Build PDF (Ctrl+Enter)"). Call once at init, since
+ * setBuilding may not run before the first build.
+ *
+ * @param {boolean} mac true to name the macOS key alternative
+ * @returns {void}
+ */
+export function initBuildTitle(mac) {
+  const label = keyLabel(shortcutKeys("build", mac)[0], mac);
+  idleBuildTitle = `Build PDF (${label})`;
+  el("build").title = idleBuildTitle;
+}
 
 /**
  * One element by id, typed from the id itself: `el("build")` is an
@@ -81,6 +109,7 @@ export function setBuilding(value) {
   // fonts differ, and a shrinking button slides its neighbours under the pointer.
   build.style.minWidth = value ? `${build.getBoundingClientRect().width}px` : "";
   el("build-label").textContent = value ? "Stop" : "Build PDF";
+  build.title = value ? "Stop the build" : idleBuildTitle;
   build.classList.toggle("stop", value);
   el("build-progress").hidden = !value;
   el("build-phase").hidden = !value;
