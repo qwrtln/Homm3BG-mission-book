@@ -5,7 +5,7 @@
 import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "tier two probe";
-const STALE = "Source changed since last build.";
+const STALE = "Source changed since last build. Press Ctrl+Enter to rebuild.";
 
 // A one-page PDF pdf.js can draw with no fonts: the stand-in published PDF.
 const TINY_PDF = [

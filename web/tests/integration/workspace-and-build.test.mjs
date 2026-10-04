@@ -138,7 +138,7 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   const download = page.locator("#download");
   await expect(build).toBeEnabled();
   await expect(download).toBeDisabled();
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
+  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
 
   await recordBuildStates(page);
   await build.click();
@@ -346,7 +346,7 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(page.locator("#build-progress")).toBeHidden();
   await expect(page.locator("#error-panel")).toBeHidden();
   // A stop is not a failure: the pane keeps what it showed before the build.
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF.");
+  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
   await expect(page.locator("#download")).toBeDisabled();
 
   // The worker is the only way to end a compile, so it was killed, and a
@@ -1376,8 +1376,10 @@ test.describe("signed in", () => {
     await page.keyboard.press("Enter");
     await expect(menu).toBeVisible();
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
-    // Signed in: Dark mode, About, Send feedback, then Sign out. Arrows move and wrap.
+    // Signed in: Dark mode, Help, About, Send feedback, then Sign out. Arrows move and wrap.
     await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#help-open")).toBeFocused();
     await page.keyboard.press("ArrowDown");
     await expect(page.locator("#about-open")).toBeFocused();
     await page.keyboard.press("ArrowDown");

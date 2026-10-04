@@ -19,6 +19,11 @@ interface ElementIdMap {
   "feedback-github": HTMLAnchorElement;
   "feedback-open": HTMLButtonElement;
   "feedback-title": HTMLHeadingElement;
+  "help-close": HTMLButtonElement;
+  "help-dialog": HTMLDialogElement;
+  "help-open": HTMLButtonElement;
+  "help-shortcuts": HTMLTableSectionElement;
+  "help-title": HTMLHeadingElement;
   "license-group-app": HTMLHeadingElement;
   "license-group-editor": HTMLHeadingElement;
   "license-group-engine": HTMLHeadingElement;

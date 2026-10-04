@@ -1,7 +1,24 @@
+import { keyLabel, shortcutKeys } from "../../shared/keymap.js";
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
 import { pageHighlights } from "../../shared/synctex.js";
-import { el, escapeHtml, setStatus } from "./dom.js";
+import { el, escapeHtml, isMac, setStatus } from "./dom.js";
 import { requireEditor, state } from "./state.js";
+
+/**
+ * The build key's label for this platform, named in the empty and stale PDF
+ * texts.
+ *
+ * @returns {string}
+ */
+function buildKeyLabel() {
+  const mac = isMac();
+  return keyLabel(shortcutKeys("build", mac)[0], mac);
+}
+
+/** @returns {string} what the PDF pane says with nothing built yet */
+function emptyMessage() {
+  return `No PDF yet. Press Build PDF or ${buildKeyLabel()}.`;
+}
 
 // pdf.js is imported by URL, when the first PDF shows, so a page load that
 // never reaches a PDF never fetches it, and the type checker never reads it.
@@ -100,7 +117,7 @@ export function clearPdf() {
   state.pdfUploads = null;
   state.pdfPath = null;
   el("download").disabled = true;
-  showPdfMessage("No PDF yet. Press Build PDF.");
+  showPdfMessage(emptyMessage());
   el("error-panel").hidden = true;
   clearErrorLine();
 }
@@ -118,7 +135,14 @@ export function builtFingerprint() {
   return { text: state.pdfSource, uploads: state.pdfUploads };
 }
 
-export const STALE_MESSAGE = "Source changed since last build.";
+/**
+ * What the status bar says when the shown PDF no longer matches the editor.
+ *
+ * @returns {string}
+ */
+export function staleMessage() {
+  return `Source changed since last build. Press ${buildKeyLabel()} to rebuild.`;
+}
 
 /**
  * Says in the status bar that the shown PDF no longer matches the editor.
@@ -131,7 +155,7 @@ export function refreshStaleStatus() {
   if (!state.lastPdf || state.pdfSource === null || !state.cm) return;
   if (state.cm.getValue() === state.pdfSource) return;
   if (!el("status-spinner").hidden) return;
-  setStatus(STALE_MESSAGE);
+  setStatus(staleMessage());
 }
 
 const ERROR_LINE_CLASS = "build-error-line";
@@ -352,6 +376,9 @@ function setZoom(value) {
 
 /** Wires the zoom controls, and redraws the pages when the pane's width changes. @returns {void} */
 export function initPdfView() {
+  // index.html's static #pdf-empty text has no key label; replace it once the platform is known.
+  el("pdf-empty").textContent = emptyMessage();
+
   el("pdf-zoom-in").addEventListener("click", () => setZoom(zoomStep(zoom, 1)));
   el("pdf-zoom-out").addEventListener("click", () => setZoom(zoomStep(zoom, -1)));
   el("pdf-zoom-level").addEventListener("click", () => setZoom(1));

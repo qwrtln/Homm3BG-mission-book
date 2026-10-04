@@ -99,7 +99,8 @@ test("Send feedback comes before the separator, so it shows while signed out", a
   await expect(page.locator("#github-signout")).toBeHidden();
   await expect(page.getByRole("menuitem", { name: "Send feedback" })).toBeVisible();
 
-  // Keyboard: Dark mode first, About next, Send feedback after that.
+  // Keyboard: Dark mode first, then Help, About, and Send feedback after that.
+  await page.keyboard.press("ArrowDown");
   await page.keyboard.press("ArrowDown");
   await page.keyboard.press("ArrowDown");
   await expect(page.getByRole("menuitem", { name: "Send feedback" })).toBeFocused();

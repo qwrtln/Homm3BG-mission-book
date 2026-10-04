@@ -68,6 +68,30 @@ button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(-
   white-space: pre-wrap;
 }
 
+/* --- Help dialog (help.js). Lists SHORTCUTS from web/shared/keymap.js. - */
+
+.help-dialog { max-width: min(30rem, calc(100vw - 2rem)); }
+.help-shortcuts-table { width: 100%; border-collapse: collapse; }
+.help-shortcuts-table th {
+  padding: 0.3rem 0.5rem 0.3rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+}
+.help-shortcuts-table td { padding: 0.4rem 0.5rem 0.4rem 0; border-bottom: 1px solid var(--line); }
+.help-shortcuts-table tr:last-child td { border-bottom: 0; }
+.help-shortcuts-table kbd {
+  display: inline-block;
+  margin: 0 0.2rem 0.2rem 0;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--code-bg);
+  font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 /* --- Feedback dialog (feedback.js). Each link is a full-width row, tall
        enough to hit on a phone. ------------------------------------------ */
 

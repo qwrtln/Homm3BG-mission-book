@@ -42,6 +42,20 @@ main.resizing { cursor: col-resize; user-select: none; }
   height: 100%;
   font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
 }
+/* addon/dialog/dialog.css's search and replace bar, restyled to Primer tokens. */
+.CodeMirror-dialog {
+  background: var(--panel);
+  color: var(--ink);
+  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+}
+.CodeMirror-dialog-top { border-bottom: 1px solid var(--line); }
+.CodeMirror-dialog-bottom { border-top: 1px solid var(--line); }
+.CodeMirror-dialog input {
+  background: var(--panel);
+  color: var(--ink);
+}
+/* The find bar nests its input in the label with no space; replace has one. */
+.CodeMirror-search-label > input { margin-left: 1ch; }
 .pdf-pane-body-wrap {
   position: relative;
   flex: 1 1 auto;
