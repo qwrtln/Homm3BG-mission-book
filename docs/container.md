@@ -1,6 +1,6 @@
 # Container-based Setup
 
-If you only want to add a scenario, try the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) first.
+If you only want to add a scenario, try the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=docs&utm_medium=referral) first.
 It needs no setup at all.
 
 Instead of installing all the dependencies directly on your system, you can use our container-based setup that works across all operating systems (see the [Containerfile](https://github.com/qwrtln/Homm3BG-mission-book/blob/main/tools/container/Containerfile)).

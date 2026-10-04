@@ -23,7 +23,7 @@ Please fill in the [⭐ **feedback form**](https://docs.google.com/forms/d/e/1FA
 It will help us improve them.
 
 > [!TIP]
-> **Have a scenario of your own?** Write it in the [🧙 **Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+> **Have a scenario of your own?** Write it in the [🧙 **Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme).
 > It runs in your browser: fill in your scenario, see the PDF right away, and send it to us as a pull request.
 > You don't need to install LaTeX or know git.
 
@@ -745,7 +745,7 @@ This repository serves as a means to version the scenarios and for the community
 
 ### 💪 Contributing
 
-The easiest way to add a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+The easiest way to add a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme).
 It works in your browser and opens the pull request for you.
 
 If you prefer to work on your own computer, we have compiled some documents to help you get started.
@@ -769,7 +769,7 @@ Your language is missing? Let us know on [our Discord server](https://discord.gg
 
 #### 🗺️ Scenarios
 
-Write your scenario in the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) and send it to the Draft Scenarios from there.
+Write your scenario in the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme) and send it to the Draft Scenarios from there.
 If you know your way around LaTeX and git, you can also open a pull request yourself.
 Questions? Reach out to us on [our Discord server](https://discord.gg/nMbawQkj9R).
 

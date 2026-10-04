@@ -1,6 +1,6 @@
 # How to write scenarios
 
-The fastest way to write a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+The fastest way to write a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=docs&utm_medium=referral).
 It runs in your browser, compiles the PDF for you, and opens the pull request.
 The guidelines below apply to it too.
 
