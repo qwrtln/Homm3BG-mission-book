@@ -2,7 +2,7 @@
 // the editor has moved on from, disabled buttons look unavailable in both
 // themes, and the signed-out header says what signing in is for.
 
-import { expect, openScenarioList, test } from "./fixtures.mjs";
+import { expect, OPENED_STATUS, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "tier two probe";
 const STALE = "Source changed since last build. Press Ctrl+Enter to rebuild.";
@@ -49,9 +49,7 @@ async function openFirstScenario(page) {
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
   // A published PDF is the original's, so the renamed pick says so instead.
-  await expect(page.locator("#status-text")).toHaveText(
-    /^(Ready\.|Published PDF of .+\. Build to see your changes\.)$/,
-  );
+  await expect(page.locator("#status-text")).toHaveText(OPENED_STATUS);
 }
 
 /**
@@ -111,7 +109,9 @@ test("a renamed pick says the published PDF is the original's, and Download name
   await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
 
   // The editor holds the renamed copy; the PDF still shows the original.
-  await expect(page.locator("#status-text")).toHaveText(`Published PDF of ${title}. Build to see your changes.`);
+  await expect(page.locator("#status-text")).toHaveText(
+    `Published PDF of ${title}. Press Build PDF or Ctrl+Enter to see your changes.`,
+  );
 
   const published = requested.find((pathname) => pathname.endsWith(".pdf"));
   expect(published, "the pick fetched a published PDF").toBeTruthy();
@@ -127,12 +127,12 @@ test("an edit with no PDF shown says nothing about staleness", async ({ app }) =
   await page.locator("#scratch-clash").click();
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
   await expect(page.locator("#pdf-empty")).toBeVisible();
 
   await editOnce(page);
   await expect(page.locator(".CodeMirror")).toContainText("x");
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 });
 
 for (const theme of ["light", "dark"]) {

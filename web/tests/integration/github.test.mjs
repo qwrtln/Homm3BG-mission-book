@@ -8,7 +8,7 @@
 // sign-in this file needs. See web/tests/README.md for the stubbing contract.
 
 import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
-import { chooseFromMenu, expect, openScenarioList, test } from "./fixtures.mjs";
+import { chooseFromMenu, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 // The localStorage key github-auth.js persists the token in. It is a private
 // constant there, so it is repeated here rather than imported; if it changes,
@@ -289,7 +289,7 @@ test.describe("saving a scenario", () => {
     await page.locator("#scenario-name").fill(NAME);
     await page.locator("#go").click();
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
   }
 
   test("pushes one commit to this user's own branch, and offers the PR after", async ({ app }) => {
@@ -449,7 +449,7 @@ test.describe("saving a resumed draft", () => {
     await signInAs(page);
     await page.locator("#resume-list .combobox-item").first().click();
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 
     await expect(page.locator("#scenario-category")).toHaveValue("clash");
     await expect(page.locator("#scenario-category")).toBeDisabled();
@@ -460,7 +460,7 @@ test.describe("saving a resumed draft", () => {
     await signInAs(page);
     await page.locator("#resume-list .combobox-item").first().click();
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 
     // A resumed draft with no edits has nothing to push; make one so this
     // save actually goes out.
@@ -528,7 +528,7 @@ test.describe("saving a resumed draft after removing an upload", () => {
     const { page } = app;
     await signInAs(page);
     await page.locator("#resume-list .combobox-item").first().click();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 
     await page.locator("#upload-open").click();
     const layouts = page.locator("#upload-maps-names .upload-map");

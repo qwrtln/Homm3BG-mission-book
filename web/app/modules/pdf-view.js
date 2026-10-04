@@ -1,19 +1,7 @@
-import { keyLabel, shortcutKeys } from "../../shared/keymap.js";
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
 import { pageHighlights } from "../../shared/synctex.js";
-import { el, escapeHtml, isMac, setStatus } from "./dom.js";
+import { buildKeyLabel, el, escapeHtml, setStatus } from "./dom.js";
 import { requireEditor, state } from "./state.js";
-
-/**
- * The build key's label for this platform, named in the empty and stale PDF
- * texts.
- *
- * @returns {string}
- */
-function buildKeyLabel() {
-  const mac = isMac();
-  return keyLabel(shortcutKeys("build", mac)[0], mac);
-}
 
 /** @returns {string} what the PDF pane says with nothing built yet */
 function emptyMessage() {

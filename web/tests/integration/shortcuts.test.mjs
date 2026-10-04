@@ -1,9 +1,10 @@
 // Tier 2. The build shortcut (Ctrl/Cmd+Enter, Ctrl/Cmd+S): it works from
 // anywhere in the workspace, never fires over a modal dialog or the welcome
-// screen, never starts a second compile while one runs, and the three hint
-// sites (the Build button's title, the empty and stale PDF texts) name it.
+// screen, never starts a second compile while one runs, and the four hint
+// sites (the Build button's title, the empty and stale PDF texts, the Ready
+// status) name it.
 
-import { chooseFromMenu, engineCalls, expect, test } from "./fixtures.mjs";
+import { chooseFromMenu, EMPTY_PDF_TEXT, engineCalls, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "shortcut probe";
 
@@ -18,7 +19,7 @@ async function openWorkspace(page) {
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**
@@ -206,7 +207,26 @@ test.describe("the build key is named where a contributor looks for it", () => {
   test("the empty PDF text names the build key", async ({ app }) => {
     const { page } = app;
     await openWorkspace(page);
-    await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
+    await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
+  });
+
+  test("the Ready status names the build key", async ({ app }) => {
+    const { page } = app;
+    await openWorkspace(page);
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+  });
+
+  test("on macOS the Ready status names the Cmd key", async ({ app }) => {
+    const { page } = app;
+    await page.addInitScript(() => {
+      Object.defineProperty(Navigator.prototype, "userAgentData", { get: () => undefined });
+      Object.defineProperty(Navigator.prototype, "platform", { get: () => "MacIntel" });
+    });
+    await page.reload();
+    await page.locator("#scratch-clash").click();
+    await page.locator("#scenario-name").fill(SCENARIO_NAME);
+    await page.locator("#go").click();
+    await expect(page.locator("#status-text")).toHaveText("Ready. Press Build PDF or ⌘↩ to start.");
   });
 
   test("the stale PDF status names the build key", async ({ app }) => {

@@ -6,7 +6,7 @@
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
 import { CHECKLIST_ITEMS, pullRequestBody } from "../../shared/submit-checklist.js";
-import { engineCalls, expect, openScenarioList, test } from "./fixtures.mjs";
+import { engineCalls, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
 const TOKEN = "gh-tier2-token";
@@ -114,7 +114,7 @@ async function openBlankClash(page) {
   await page.locator("#scenario-name").fill("Checklist Probe");
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**
@@ -420,7 +420,7 @@ test.describe("a member editing a scenario in place", () => {
     await results.first().dispatchEvent("mousedown");
     await page.locator("#go").click();
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
     await save(page);
     await edit(page);
     const seen = recordGithubRequests(page);

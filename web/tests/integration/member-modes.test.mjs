@@ -6,7 +6,7 @@
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
 import { categoryOfPath } from "../../shared/scenario-name.js";
-import { expect, openScenarioList, test } from "./fixtures.mjs";
+import { expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
 const TOKEN = "gh-tier2-token";
@@ -265,7 +265,7 @@ test.describe("editing in place", () => {
 
       await expect(page.locator("#workspace")).toBeVisible();
       await expect(page.locator("#edit-branch-prompt")).toBeHidden();
-      await expect(page.locator("#status-text")).toHaveText("Ready.");
+      await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 
       const seen = recordGithubRequests(page);
       await page.locator("#github-save").click();
@@ -285,7 +285,7 @@ test.describe("editing in place", () => {
       const path = await pickFirstScenario(page);
       await page.locator("#go").click();
       await expect(page.locator("#workspace")).toBeVisible();
-      await expect(page.locator("#status-text")).toHaveText("Ready.");
+      await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 
       const category = page.locator("#scenario-category");
       await expect(category).toBeDisabled();

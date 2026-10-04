@@ -3,7 +3,7 @@
 // tab crash) loses neither. See web/app/modules/local-store.js.
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
-import { expect, test } from "./fixtures.mjs";
+import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";
 const TOKEN_KEY = "github_token";
@@ -58,7 +58,7 @@ async function openBlankClash(page, name) {
   await page.locator("#scenario-name").fill(name);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**

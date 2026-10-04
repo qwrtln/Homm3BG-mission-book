@@ -3,7 +3,7 @@ import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.js"
 import { syncCategoryControl } from "./category.js";
 import { TEMPLATES } from "./config.js";
 import { markClean } from "./dirty.js";
-import { el, sanitizeFilename, setStatus } from "./dom.js";
+import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
 import { flushDraft, loadDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
@@ -154,7 +154,11 @@ export async function commitEntry(path, name, category) {
 
   // The published PDF is the entry's own, never the renamed copy in the editor.
   const differs = shown && cm.getValue() !== pristineSource;
-  setStatus(differs ? `Published PDF of ${entry.title}. Build to see your changes.` : "Ready.");
+  setStatus(
+    differs
+      ? `Published PDF of ${entry.title}. Press Build PDF or ${buildKeyLabel()} to see your changes.`
+      : readyStatus(),
+  );
 }
 
 /**
@@ -185,7 +189,7 @@ export async function commitGeneratedEntry(name, category, source, uploads) {
   await saveText(identity, source);
   await saveUploads(identity, uploads);
   markClean(null); // no clean copy anywhere: the text was never saved anywhere else
-  setStatus("Ready.");
+  setStatus(readyStatus());
 }
 
 /**
@@ -270,7 +274,7 @@ export async function openForEdit(path, title, source, edit) {
   }
 
   await showPrefetchedPdf(path, source);
-  setStatus("Ready.");
+  setStatus(readyStatus());
 }
 
 /**

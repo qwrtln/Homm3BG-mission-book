@@ -17,7 +17,7 @@
 
 import { devices } from "@playwright/test";
 
-import { chooseFromMenu, expect, test } from "./fixtures.mjs";
+import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 test.use({ ...devices["Pixel 7"] });
 
@@ -60,7 +60,7 @@ async function openLongScenario(page, name = "The Unbearably Long Siege of the C
   await page.locator("#scenario-name").fill(name);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 test("the welcome screen has no horizontal page scroll", async ({ app }) => {

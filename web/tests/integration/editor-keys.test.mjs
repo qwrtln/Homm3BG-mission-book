@@ -2,7 +2,7 @@
 // toggle comment, find, replace, delete line, indent/outdent with spaces
 // only, and the Esc-then-Tab escape out of the keyboard trap.
 
-import { expect, test } from "./fixtures.mjs";
+import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "editor keys probe";
 
@@ -17,7 +17,7 @@ async function openWorkspace(page) {
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**

@@ -11,6 +11,26 @@ export function isMac() {
   return isMacPlatform(navigator.userAgentData?.platform || navigator.platform);
 }
 
+/**
+ * The build key's label for this platform, e.g. "Ctrl+Enter" or "⌘↩".
+ *
+ * @returns {string}
+ */
+export function buildKeyLabel() {
+  const mac = isMac();
+  return keyLabel(shortcutKeys("build", mac)[0], mac);
+}
+
+/**
+ * The status shown once a scenario is open and nothing differs from what is
+ * shown, naming how to start a build.
+ *
+ * @returns {string}
+ */
+export function readyStatus() {
+  return `Ready. Press Build PDF or ${buildKeyLabel()} to start.`;
+}
+
 /** The idle Build button's title, once computed. Empty until initBuildTitle() runs. */
 let idleBuildTitle = "";
 

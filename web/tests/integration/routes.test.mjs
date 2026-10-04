@@ -2,7 +2,7 @@
 // address that matches nothing is dropped, and opening a scenario writes its
 // address. Signed out, so only local autosaves can match.
 
-import { expect, test } from "./fixtures.mjs";
+import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const DRAFT_PATH = "draft-scenarios/clash/route_probe.tex";
 const DRAFT_TEXT = "% route probe draft\n";
@@ -81,7 +81,7 @@ async function openBlankClash(page) {
   await page.locator("#scenario-name").fill("Route Probe");
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**
@@ -190,7 +190,7 @@ test("the category cannot move until the new scenario's text is in the editor", 
   await expect(page.locator("#scenario-category")).toBeDisabled();
 
   release();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
   await expect(page.locator("#scenario-category")).toBeEnabled();
 });
 
