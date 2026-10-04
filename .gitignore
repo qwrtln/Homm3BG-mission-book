@@ -28,6 +28,7 @@ sections/translated
 
 # Web editor
 assets/glyphs-inkscape/glyph-usage.json
+/web/app/vendor/
 .wrangler/
 node_modules/
 playwright-report/

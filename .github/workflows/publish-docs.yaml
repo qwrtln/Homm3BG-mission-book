@@ -39,6 +39,9 @@ jobs:
       - run: pip install mkdocs-material
       - run: mkdocs build --site-dir site
 
+      - name: Fetch browser libraries
+        run: bash web/fetch-vendor.sh
+
       # The app is served at /builder/: web/app/ becomes site/builder/. It
       # finds shared/, core/, repo/ and the LICENSE files one level up, so
       # those land at the site root, next to the MkDocs output.

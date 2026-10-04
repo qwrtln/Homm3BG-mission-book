@@ -1,7 +1,9 @@
 // Playwright configuration for the tier-2 integration suite. Chromium only,
 // headless by default, backed by the repository's own dependency-free static
 // server (driver/serve.mjs -> driver/static-server.mjs) rather than any
-// Playwright-managed web server implementation.
+// Playwright-managed web server implementation. The webServer command fetches
+// the browser libraries (../fetch-vendor.sh) before serving, since a fresh
+// clone or CI checkout has no web/app/vendor/.
 
 import { defineConfig, devices } from "@playwright/test";
 
@@ -33,7 +35,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "node driver/serve.mjs",
+    command: "bash ../fetch-vendor.sh && node driver/serve.mjs",
     url: `${BASE_URL}/web/app/`,
     reuseExistingServer: !process.env.CI,
     env: { PORT: String(PORT) },
