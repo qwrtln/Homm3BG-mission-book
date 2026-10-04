@@ -50,6 +50,16 @@ export const test = base.extend({
 
 export { expect };
 
+/** The status bar once a scenario opens with nothing to rebuild, on the tests' non-macOS platform. */
+export const READY_STATUS = "Ready. Press Build PDF or Ctrl+Enter to start.";
+
+/** The PDF pane's text with nothing built yet, on the tests' non-macOS platform. */
+export const EMPTY_PDF_TEXT = "No PDF yet. Press Build PDF or Ctrl+Enter.";
+
+/** The status bar once a picked scenario opens: Ready, or the published PDF's staleness note. */
+export const OPENED_STATUS =
+  /^(Ready\. Press Build PDF or Ctrl\+Enter to start\.|Published PDF of .+\. Press Build PDF or Ctrl\+Enter to see your changes\.)$/;
+
 /**
  * Waits for the scenario list to arrive and the dropdown to draw it.
  *

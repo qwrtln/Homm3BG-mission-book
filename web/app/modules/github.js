@@ -18,7 +18,16 @@ import { pullRequestBody, submitRequirements } from "../../shared/submit-checkli
 import { assetsSignature, uploadsSignature } from "../../shared/unsaved.js";
 import { syncCategoryControl } from "./category.js";
 import { isDirty, markClean } from "./dirty.js";
-import { basenameNoExt, closestTo, confirmAction, confirmDelete, el, escapeHtml, setStatus } from "./dom.js";
+import {
+  basenameNoExt,
+  closestTo,
+  confirmAction,
+  confirmDelete,
+  el,
+  escapeHtml,
+  readyStatus,
+  setStatus,
+} from "./dom.js";
 import { deleteDraft, flushDraft, loadDraft, saveDraft } from "./drafts.js";
 import { loadEntries } from "./entries.js";
 import { preloadFile } from "./files.js";
@@ -80,7 +89,7 @@ async function reopenLocalDraft(path, title) {
   restoreUploads(record.uploads ?? []);
   clearPdf();
   markClean(null); // no clean copy here: the draft was never saved anywhere else
-  setStatus("Ready.");
+  setStatus(readyStatus());
   return true;
 }
 
@@ -372,7 +381,7 @@ async function openResumableDraft(draft) {
     githubSaveState.committedUploads = new Set(draft.assets.map((asset) => asset.path));
     el("github-open-pr").hidden = false;
     void checkExistingPullRequest();
-    setStatus("Ready.");
+    setStatus(readyStatus());
   } catch (error) {
     setStatus(githubFailure(error, "Could not load that draft"), { tone: "bad" });
   }

@@ -3,7 +3,15 @@
 // overflow menu, the uploads dialog, and the theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
 // which installs the engine and GitHub stubs before navigating.
 
-import { chooseFromMenu, engineCalls, expect, openScenarioList, test } from "./fixtures.mjs";
+import {
+  chooseFromMenu,
+  EMPTY_PDF_TEXT,
+  engineCalls,
+  expect,
+  openScenarioList,
+  READY_STATUS,
+  test,
+} from "./fixtures.mjs";
 
 // Long enough to pass picker.js's MIN_NAME_LENGTH, and not a real scenario
 // name: commitEntry uses it as the file's own identity, never the entry's.
@@ -74,7 +82,7 @@ async function enterWorkspace(page) {
   await expect(page.locator("#header-actions")).toBeVisible();
   // commitEntry writes this last, after the prefetch it awaits has settled,
   // so it is the one point at which the workspace is fully settled.
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
   return title;
 }
 
@@ -138,7 +146,7 @@ test("a build drives the stub engine and fills the PDF pane", async ({ app }) =>
   const download = page.locator("#download");
   await expect(build).toBeEnabled();
   await expect(download).toBeDisabled();
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
 
   await recordBuildStates(page);
   await build.click();
@@ -346,7 +354,7 @@ test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
   await expect(page.locator("#build-progress")).toBeHidden();
   await expect(page.locator("#error-panel")).toBeHidden();
   // A stop is not a failure: the pane keeps what it showed before the build.
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
   await expect(page.locator("#download")).toBeDisabled();
 
   // The worker is the only way to end a compile, so it was killed, and a

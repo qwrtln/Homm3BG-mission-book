@@ -2,7 +2,7 @@
 // PDF's page count and zoom on the right. The published PDF ends on a
 // feedback page an in-browser build does not make, so the pane drops it.
 
-import { expect, openScenarioList, test } from "./fixtures.mjs";
+import { expect, OPENED_STATUS, openScenarioList, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "tier two probe";
 
@@ -60,9 +60,7 @@ async function openFirstScenario(page) {
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
   // A published PDF is the original's, so the renamed pick says so instead.
-  await expect(page.locator("#status-text")).toHaveText(
-    /^(Ready\.|Published PDF of .+\. Build to see your changes\.)$/,
-  );
+  await expect(page.locator("#status-text")).toHaveText(OPENED_STATUS);
 }
 
 /**

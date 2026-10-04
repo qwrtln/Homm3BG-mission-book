@@ -2,7 +2,7 @@
 // the unsaved-changes note and prompt, the loading screen for an address, and
 // the welcome screen's data surviving a round trip.
 
-import { expect, test } from "./fixtures.mjs";
+import { EMPTY_PDF_TEXT, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";
 const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
@@ -15,7 +15,7 @@ async function startClash(page, name = "Nav Probe") {
   await expect(page.locator("#workspace")).toBeVisible();
   // The workspace shows before the template's source arrives; typing earlier
   // is overwritten when it lands.
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /** @param {import("@playwright/test").Page} page @param {string} text */
@@ -326,7 +326,7 @@ test("opening another scenario replaces the one Back to editing returns to", asy
   await startClash(page, "First One");
   await page.locator("#back-to-welcome").click();
   await startClash(page, "Second One");
-  await expect(page.locator("#pdf-empty")).toHaveText("No PDF yet. Press Build PDF or Ctrl+Enter.");
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
   await page.locator("#back-to-welcome").click();
 
   await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Second One”");
@@ -370,7 +370,7 @@ test.describe("resuming the branch just left", () => {
     await page.reload();
     await page.locator("#resume-list .combobox-item").first().click();
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect(page.locator("#status-text")).toHaveText("Ready.");
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
     await buildPdf(page);
 
     await page.locator("#back-to-welcome").click();

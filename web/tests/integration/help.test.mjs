@@ -3,7 +3,7 @@
 // closing it never closes a dialog underneath it.
 
 import { keyLabel, SHORTCUTS } from "../../shared/keymap.js";
-import { chooseFromMenu, expect, test } from "./fixtures.mjs";
+import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "help probe";
 
@@ -18,7 +18,7 @@ async function openWorkspace(page) {
   await page.locator("#scenario-name").fill(SCENARIO_NAME);
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect(page.locator("#status-text")).toHaveText("Ready.");
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 }
 
 /**
