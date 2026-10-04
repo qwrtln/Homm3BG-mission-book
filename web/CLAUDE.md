@@ -19,7 +19,8 @@ static server with nothing installed. Never add one. The only exception is
 | `web/shared/` | DOM-free logic, importable by Node, testable in tier 1 |
 | `web/app/modules/` | App concerns, wired by `app.js`; DOM allowed |
 | `web/types/` | Ambient `.d.ts` shared across the app |
-| `web/core/`, `web/*/vendor/` | Vendored. Do not edit. |
+| `web/core/`, `web/app/vendor/` | Fetched and gitignored (`serve.sh` / `fetch-vendor.sh`). Do not edit. |
+| `web/shared/vendor/` | Committed. Do not edit. |
 | `web/oauth-relay/` | Cloudflare Pages function for GitHub OAuth; deployed by `deploy-oauth-relay.yaml` |
 
 - Logic that does not need the DOM goes in `web/shared/`.
@@ -110,6 +111,11 @@ never hardcode one elsewhere. Not a manifest; nothing installs from it.
 `.github/workflows/publish-docs.yaml` reads it into `$GITHUB_ENV`, so every line
 stays `KEY=value` with no comments.
 
+`web/fetch-vendor.sh` fetches the browser libraries into `web/app/vendor/`.
+Each library also has a `<LIB>_SHA256` pin in `vendor.env`. To bump one,
+change its version, run `web/fetch-vendor.sh` and copy the actual hash it
+prints into the `_SHA256` line.
+
 ## Editor library — CodeMirror 5, not 6
 
 `web/app/vendor/codemirror/` is CodeMirror 5 (`CODEMIRROR_VERSION`), loaded by
@@ -121,13 +127,14 @@ LaTeX mode: `mode/stex/stex.min.js`.
 - Never import `@codemirror/state`, `@codemirror/view`, `EditorState` or
   `EditorView`. That is CodeMirror 6 — not vendored, uninstallable here.
 - Docs: https://codemirror.net/5/doc/manual.html
-- Re-vendor from https://cdnjs.com/libraries/codemirror/
+- `fetch-vendor.sh` takes the `.min` files from cdnjs and `LICENSE` from the
+  `codemirror` npm tarball.
 
 ## PDF viewer — pdf.js
 
 `web/app/vendor/pdfjs/` is pdf.js (`PDFJS_VERSION`): `pdf.min.mjs`,
 `pdf.worker.min.mjs` and `LICENSE` from the `build/` directory of the
-`pdfjs-dist` npm tarball. The two `.mjs` files get a final newline for the lint rules.
+`pdfjs-dist` npm tarball, fetched by `fetch-vendor.sh`.
 `app/modules/pdf-view.js` is the only module that loads it, by URL at run time;
 `web/types/pdfjs.d.ts` names the part of its API the app calls.
 
@@ -139,7 +146,8 @@ LaTeX mode: `mode/stex/stex.min.js`.
 
 - Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.
 - WASM build in `web/core/busytex/`, wrapper in
-  `web/shared/vendor/texlyre-busytex.js`. Both vendored and trusted.
+  `web/shared/vendor/texlyre-busytex.js`. Both trusted. The wrapper stays
+  committed: no published file matches it.
 - `web/core/` is gitignored, fetched at deploy time — a fresh clone has no
   engine.
 - No upstream documentation exists. Do not infer the API: read

@@ -40,6 +40,9 @@ jobs:
       - name: Run unit tests
         run: node --test "web/tests/unit/**/*.test.mjs"
 
+      - name: Fetch browser libraries
+        run: bash web/fetch-vendor.sh
+
       - name: Install Playwright
         run: npm ci --prefix web/tests
 
