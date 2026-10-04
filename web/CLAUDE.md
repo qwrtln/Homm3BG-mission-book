@@ -142,6 +142,13 @@ LaTeX mode: `mode/stex/stex.min.js`.
 - Fonts, CMaps and WASM decoders are not vendored. LaTeX embeds its fonts, so
   the book's PDFs do not need them.
 
+## Zip writer — client-zip
+
+`web/app/vendor/client-zip/` is client-zip (`CLIENT_ZIP_VERSION`): `index.js`
+and `LICENSE.txt`, fetched by `fetch-vendor.sh`. Only the PNG export loads it,
+by URL at run time, so a session that never exports PNGs never fetches it.
+`web/types/client-zip.d.ts` names the part of its API the app calls.
+
 ## LaTeX engine (BusyTeX) — do not test, do not touch
 
 - Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.

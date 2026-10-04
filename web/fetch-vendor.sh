@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Fetches pdf.js and CodeMirror 5 into web/app/vendor/<lib>/, the browser
-# libraries the scenario builder loads by plain <script>/<link> tag with no
-# bundler. Versions are pinned in web/vendor.env (CODEMIRROR_VERSION,
-# PDFJS_VERSION) alongside a content hash for each (CODEMIRROR_SHA256,
-# PDFJS_SHA256).
+# Fetches pdf.js, CodeMirror 5 and client-zip into web/app/vendor/<lib>/, the
+# browser libraries the scenario builder loads by plain <script>/<link> tag
+# or by URL import, with no bundler. Versions are pinned in web/vendor.env
+# (CODEMIRROR_VERSION, PDFJS_VERSION, CLIENT_ZIP_VERSION) alongside a content
+# hash for each (CODEMIRROR_SHA256, PDFJS_SHA256, CLIENT_ZIP_SHA256).
 #
 # Each library is downloaded into a temporary directory beside its
 # destination, hashed as a whole (see hash_dir below) and swapped into place
@@ -51,6 +51,11 @@ codemirror_files=(
   "codemirror/addon/comment/comment.min.js"
   "codemirror/theme/material-darker.min.css"
   "codemirror/LICENSE"
+)
+
+client_zip_files=(
+  "client-zip/index.js"
+  "client-zip/LICENSE.txt"
 )
 
 # The content hash of a fetched library directory: the SHA-256 of a sorted,
@@ -104,6 +109,16 @@ fetch_codemirror() {
   rm -f "$tarball"
 }
 
+# Populates $1 (a temporary directory) with client-zip: index.js and
+# LICENSE.txt out of the client-zip npm tarball, unchanged.
+fetch_client_zip() {
+  local tmp=$1 version=$2
+  local tarball="$tmp/client-zip.tgz"
+  fetch_file client-zip "https://registry.npmjs.org/client-zip/-/client-zip-${version}.tgz" "$tarball"
+  tar xzf "$tarball" -C "$tmp" --strip-components=1 package/index.js package/LICENSE.txt
+  rm -f "$tarball"
+}
+
 # Fetches one library into a temporary directory, verifies its hash against
 # the pin, then atomically swaps it into place and writes the stamp. Skips
 # entirely when the existing stamp already matches.
@@ -140,3 +155,4 @@ fetch_lib() {
 
 fetch_lib pdfjs "$PDFJS_VERSION" "$PDFJS_SHA256" fetch_pdfjs
 fetch_lib codemirror "$CODEMIRROR_VERSION" "$CODEMIRROR_SHA256" fetch_codemirror
+fetch_lib client-zip "$CLIENT_ZIP_VERSION" "$CLIENT_ZIP_SHA256" fetch_client_zip

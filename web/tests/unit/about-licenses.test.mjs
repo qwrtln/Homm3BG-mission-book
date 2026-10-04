@@ -31,7 +31,7 @@ function licensePaths() {
  */
 function fetchedVendorPaths() {
   const script = readRepoFile("web/fetch-vendor.sh");
-  const destinations = [...script.matchAll(/"((?:pdfjs|codemirror)\/[^"]+)"/g)].map((match) => match[1]);
+  const destinations = [...script.matchAll(/"((?:pdfjs|codemirror|client-zip)\/[^"]+)"/g)].map((match) => match[1]);
   return new Set(destinations.map((dest) => posix.join("app", "vendor", dest)));
 }
 

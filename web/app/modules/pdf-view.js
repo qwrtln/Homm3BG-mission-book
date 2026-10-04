@@ -1,3 +1,4 @@
+import { PNG_DPI } from "../../shared/page-images.js";
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
 import { pageHighlights } from "../../shared/synctex.js";
 import { buildKeyLabel, el, escapeHtml, setStatus } from "./dom.js";
@@ -104,6 +105,7 @@ export function clearPdf() {
   state.pdfSource = null;
   state.pdfUploads = null;
   state.pdfPath = null;
+  state.pdfDropsLastPage = false;
   el("download").disabled = true;
   showPdfMessage(emptyMessage());
   el("error-panel").hidden = true;
@@ -198,6 +200,7 @@ export async function showPdf(blob, source, { dropLastPage = false, path = state
   state.pdfSource = source;
   state.pdfUploads = uploads ?? null;
   state.pdfPath = path;
+  state.pdfDropsLastPage = dropLastPage;
   el("download").disabled = false;
   loadTicket += 1;
   const ticket = loadTicket;
@@ -222,6 +225,69 @@ export async function showPdf(blob, source, { dropLastPage = false, path = state
     if (ticket !== loadTicket) return;
     console.warn("The PDF could not be drawn:", error);
     showPdfMessage("This PDF cannot be shown here. Download it to read it.");
+  }
+}
+
+/**
+ * Encodes a canvas as PNG bytes.
+ *
+ * @param {HTMLCanvasElement} canvas
+ * @returns {Promise<Uint8Array>}
+ */
+function canvasToPng(canvas) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        reject(new Error("The page could not be encoded as a PNG."));
+        return;
+      }
+      blob.arrayBuffer().then((buffer) => resolve(new Uint8Array(buffer)), reject);
+    }, "image/png");
+  });
+}
+
+/**
+ * Renders a PDF's pages to PNG bytes at PNG_DPI, through a loading task of
+ * its own: it never touches the pane's shown document, its tickets, or its
+ * zoom. Used by the PNG export, independently of what the pane currently
+ * draws.
+ *
+ * @param {Blob} blob PDF bytes, tagged application/pdf
+ * @param {{dropLastPage?: boolean, onPage?: (page: number, total: number) => void}} [options]
+ *   dropLastPage excludes the last page, never the only one, the same rule
+ *   showPdf uses to exclude a published PDF's feedback page. onPage reports
+ *   progress before each page renders, 1-based, against the total exported.
+ * @returns {Promise<Uint8Array[]>} one PNG per exported page, in page order
+ */
+export async function renderPngPages(blob, { dropLastPage = false, onPage } = {}) {
+  const pdfjs = await loadPdfJs();
+  // pdf.js hands its data to a worker, which detaches it; this copy is its
+  // own, and the blob the export reads stays whole.
+  const data = new Uint8Array(await blob.arrayBuffer());
+  const task = pdfjs.getDocument({ data, verbosity: 0 });
+  try {
+    const doc = await task.promise;
+    const total = dropLastPage ? Math.max(doc.numPages - 1, 1) : doc.numPages;
+    const scale = PNG_DPI / 72;
+    /** @type {Uint8Array[]} */
+    const pages = [];
+    for (let number = 1; number <= total; number += 1) {
+      onPage?.(number, total);
+      const page = await doc.getPage(number);
+      const viewport = page.getViewport({ scale });
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      await page.render({ canvas, viewport }).promise;
+      pages.push(await canvasToPng(canvas));
+      // Frees the backing store now rather than at the next collection: at
+      // PNG_DPI an A6 page alone is several megabytes.
+      canvas.width = 0;
+      canvas.height = 0;
+    }
+    return pages;
+  } finally {
+    task.destroy();
   }
 }
 

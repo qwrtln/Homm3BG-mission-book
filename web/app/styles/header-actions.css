@@ -60,6 +60,17 @@ header button.icon { padding: 0.3rem 0.5rem; }
 #build .stop-icon, #build.stop .build-icon { display: none; }
 #build.stop .stop-icon { display: inline-block; }
 
+/* Download's menu wraps the button, so the button-group's own corner rules
+   land on this span instead of on #download; give #download the corners it
+   would have had as the group's plain last button. */
+.download-group { position: relative; display: inline-flex; align-items: stretch; }
+#download {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 /* The way back to a scenario left open behind the welcome screen: Primer's
    attention colors, as on GitHub's "had recent pushes" banner. Louder than a
    plain button, quieter than the green primary. */
@@ -115,7 +126,7 @@ button.attention:hover:not(:disabled) {
 .menu-separator { margin: 0.3rem 0; border-top: 1px solid var(--line); }
 
 /* --- Narrow screens ---------------------------------------------------------
-   Every label shows down to 1024px. Below that, Download PDF goes icon-only;
+   Every label shows down to 1024px. Below that, Download goes icon-only;
    Build, Upload images and Save/Sign in keep theirs. From 860px down every
    label collapses. A collapsed label stays the accessible name. */
 @media (max-width: 1023px) {

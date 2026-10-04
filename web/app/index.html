@@ -46,7 +46,13 @@
   <div class="header-actions" id="header-actions" hidden>
     <span class="button-group">
       <button id="build" class="primary with-icon" type="button" disabled><svg class="octicon build-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0m4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215"/></svg><svg class="octicon stop-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M5.75 4h4.5c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 10.25 12h-4.5A1.75 1.75 0 0 1 4 10.25v-4.5C4 4.784 4.784 4 5.75 4"/></svg><span class="label" id="build-label">Build PDF</span></button>
-      <button id="download" class="with-icon" type="button" disabled><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06z"/></svg><span class="label">Download PDF</span></button>
+      <span class="download-group">
+        <button id="download" class="with-icon" type="button" disabled aria-haspopup="menu" aria-expanded="false" aria-controls="download-menu"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06z"/></svg><span class="label">Download</span></button>
+        <div class="header-menu-list" id="download-menu" role="menu" aria-label="Download" hidden>
+          <button id="download-pdf" role="menuitem" type="button" tabindex="-1">PDF</button>
+          <button id="download-png" role="menuitem" type="button" tabindex="-1">PNG</button>
+        </div>
+      </span>
     </span>
     <button id="upload-open" class="with-icon" type="button"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6M5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0"/></svg><span class="label">Upload images</span></button>
   </div>
@@ -474,6 +480,11 @@
       <details class="license" data-src="vendor/pdfjs/LICENSE">
         <summary><span class="license-name">PDF.js</span><span class="license-kind">Apache-2.0</span></summary>
         <p class="license-home"><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener">github.com/mozilla/pdf.js</a></p>
+        <pre class="license-text"></pre>
+      </details>
+      <details class="license" data-src="vendor/client-zip/LICENSE.txt">
+        <summary><span class="license-name">client-zip</span><span class="license-kind">MIT</span></summary>
+        <p class="license-home"><a href="https://github.com/Touffy/client-zip" target="_blank" rel="noopener">github.com/Touffy/client-zip</a></p>
         <pre class="license-text"></pre>
       </details>
     </div>

@@ -79,6 +79,8 @@ interface AppState {
   pdfUploads: string | null;
   /** Repository path of the scenario lastPdf shows; names its download. */
   pdfPath: string | null;
+  /** Whether the pane drops lastPdf's last page (a published PDF's feedback page). */
+  pdfDropsLastPage: boolean;
   cm: CodeMirrorEditor | null;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;

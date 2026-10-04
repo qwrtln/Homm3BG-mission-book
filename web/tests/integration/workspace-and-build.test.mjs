@@ -3,6 +3,9 @@
 // overflow menu, the uploads dialog, and the theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
 // which installs the engine and GitHub stubs before navigating.
 
+import { PNG_DPI } from "../../shared/page-images.js";
+import { pngPixel } from "../helpers/png.mjs";
+import { assertValidCrc32, readZipEntries } from "../helpers/zip.mjs";
 import {
   chooseFromMenu,
   EMPTY_PDF_TEXT,
@@ -12,6 +15,22 @@ import {
   READY_STATUS,
   test,
 } from "./fixtures.mjs";
+
+// The stub engine's PDF pages (tests/stubs/texlyre-busytex-stub.js), in
+// points: the PNG export's pages must come out at PNG_DPI / 72 of this.
+const STUB_PAGE_WIDTH_PT = 297;
+const STUB_PAGE_HEIGHT_PT = 420;
+
+/**
+ * The red channel the stub fills page `index` (0-based) with: its content
+ * stream sets `rg` to 0.2 + 0.3 * index.
+ *
+ * @param {number} index
+ * @returns {number} 0 to 255
+ */
+function stubPageRed(index) {
+  return Math.round((0.2 + 0.3 * index) * 255);
+}
 
 // Long enough to pass picker.js's MIN_NAME_LENGTH, and not a real scenario
 // name: commitEntry uses it as the file's own identity, never the entry's.
@@ -773,7 +792,8 @@ test("Download saves the PDF's own bytes", async ({ app }) => {
   await enterWorkspace(page);
   await buildFirstPdf(page);
 
-  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download").click()]);
+  await page.locator("#download").click();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download-pdf").click()]);
   expect(download.suggestedFilename()).toMatch(/\.pdf$/);
   const saved = await download.createReadStream();
   const chunks = [];
@@ -782,6 +802,43 @@ test("Download saves the PDF's own bytes", async ({ app }) => {
   expect([...Buffer.concat(chunks)]).toEqual(expected);
 
   expect(appErrors(errors), "the page reported errors around the download").toEqual([]);
+});
+
+test("Download → PNG saves a zip of the three pages", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  // The PDF download names the zip's stem the same way: capture it from there.
+  await page.locator("#download").click();
+  const [pdfDownload] = await Promise.all([page.waitForEvent("download"), page.locator("#download-pdf").click()]);
+  const stem = pdfDownload.suggestedFilename().replace(/\.pdf$/, "");
+
+  await page.locator("#download").click();
+  const [pngDownload] = await Promise.all([page.waitForEvent("download"), page.locator("#download-png").click()]);
+  expect(pngDownload.suggestedFilename()).toBe(`${stem}.zip`);
+
+  const stream = await pngDownload.createReadStream();
+  const chunks = [];
+  for await (const chunk of stream) chunks.push(chunk);
+  const entries = readZipEntries(Buffer.concat(chunks));
+
+  expect(entries.map((entry) => entry.name)).toEqual([`${stem}_1.png`, `${stem}_2.png`, `${stem}_3.png`]);
+  assertValidCrc32(entries);
+  const expectedWidth = Math.floor((STUB_PAGE_WIDTH_PT * PNG_DPI) / 72);
+  const expectedHeight = Math.floor((STUB_PAGE_HEIGHT_PT * PNG_DPI) / 72);
+  entries.forEach((entry, index) => {
+    const bytes = Buffer.from(entry.data);
+    expect([...bytes.subarray(0, 4)]).toEqual([0x89, 0x50, 0x4e, 0x47]);
+    expect(bytes.readUInt32BE(16)).toBe(expectedWidth);
+    expect(bytes.readUInt32BE(20)).toBe(expectedHeight);
+    // Each stub page fills its middle with its own red, so a page saved under
+    // another page's name shows here.
+    const [red] = pngPixel(entry.data, Math.floor(expectedWidth / 2), Math.floor(expectedHeight / 2));
+    expect(Math.abs(red - stubPageRed(index)), `${entry.name} is not page ${index + 1}`).toBeLessThanOrEqual(2);
+  });
+
+  expect(appErrors(errors), "the page reported errors around the PNG export").toEqual([]);
 });
 
 /**

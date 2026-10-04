@@ -9,6 +9,7 @@ const LICENSES = {
   "Scenario builder": "GNU AFFERO GENERAL PUBLIC LICENSE",
   "CodeMirror 5": "MIT License",
   "PDF.js": "Apache License",
+  "client-zip": "Permission is hereby granted",
   "TeXlyre BusyTeX": "GNU AFFERO GENERAL PUBLIC LICENSE",
   "BusyTeX and TeX Live": "LaTeX engine: third-party notices",
 };
