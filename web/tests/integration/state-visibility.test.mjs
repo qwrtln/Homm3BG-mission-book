@@ -18,6 +18,18 @@ const TINY_PDF = [
   "",
 ].join("\n");
 
+// A two-page PDF: the published PDF's feedback page, which showPdf drops.
+const TWO_PAGE_PDF = [
+  "%PDF-1.4",
+  "1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj",
+  "2 0 obj<</Type/Pages/Kids[3 0 R 4 0 R]/Count 2>>endobj",
+  "3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>endobj",
+  "4 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>endobj",
+  "trailer<</Root 1 0 R>>",
+  "%%EOF",
+  "",
+].join("\n");
+
 /**
  * Answers the published-PDF CDN: with TINY_PDF, or with a 404 so the pick
  * opens with no PDF shown. Either way the real network is never reached.
@@ -115,11 +127,44 @@ test("a renamed pick says the published PDF is the original's, and Download name
 
   const published = requested.find((pathname) => pathname.endsWith(".pdf"));
   expect(published, "the pick fetched a published PDF").toBeTruthy();
-  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download").click()]);
+  await page.locator("#download").click();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download-pdf").click()]);
   const stem = download.suggestedFilename().replace(/\.pdf$/, "");
   expect(stem).not.toBe("tier_two_probe");
   // The CDN names the file after the scenario, plus a language suffix.
   expect(String(published).split("/").pop()).toMatch(new RegExp(`^${stem}_[a-z]+\\.pdf$`));
+});
+
+test("Download → PNG saves one PNG, not a zip, for a one-page PDF", async ({ app }) => {
+  const { page, errors } = app;
+  await stubPublishedPdf(page, true);
+  await openFirstScenario(page);
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
+
+  await page.locator("#download").click();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download-png").click()]);
+  expect(download.suggestedFilename()).toMatch(/_1\.png$/);
+  expect(download.suggestedFilename()).not.toMatch(/\.zip$/);
+
+  expect(errors, "the page reported errors around the PNG export").toEqual([]);
+});
+
+test("Download → PNG drops a published PDF's feedback page too", async ({ app }) => {
+  const { page, errors } = app;
+  await page.route(
+    (url) => url.hostname === "raw.githubusercontent.com",
+    (route) => route.fulfill({ status: 200, contentType: "application/pdf", body: TWO_PAGE_PDF }),
+  );
+  await openFirstScenario(page);
+  // The published PDF has two pages; the pane drops the feedback page.
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
+
+  await page.locator("#download").click();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download-png").click()]);
+  expect(download.suggestedFilename()).toMatch(/_1\.png$/);
+  expect(download.suggestedFilename()).not.toMatch(/\.zip$/);
+
+  expect(errors, "the page reported errors around the PNG export").toEqual([]);
 });
 
 test("an edit with no PDF shown says nothing about staleness", async ({ app }) => {

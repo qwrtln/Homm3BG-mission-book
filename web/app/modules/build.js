@@ -16,15 +16,45 @@ import {
 } from "../../shared/build-plan.js";
 import { errorMessage, errorTrace } from "../../shared/errors.js";
 import { changedLines } from "../../shared/line-diff.js";
+import { pageArchiveName, pageImageName } from "../../shared/page-images.js";
 import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.js";
 import { uploadsSignature } from "../../shared/unsaved.js";
 import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
-import { clearErrorLine, clearPdf, showError, showPdf, showPdfLoading, showPdfMessage } from "./pdf-view.js";
+import {
+  clearErrorLine,
+  clearPdf,
+  renderPngPages,
+  showError,
+  showPdf,
+  showPdfLoading,
+  showPdfMessage,
+} from "./pdf-view.js";
 import { requireEditor, state } from "./state.js";
 import { refreshSubmitDialog } from "./submit.js";
+
+// client-zip is imported by URL, when the first PNG export with more than one
+// page runs, so a session that exports no PNG, or exports only one page,
+// never fetches it.
+const CLIENT_ZIP_URL = new URL("../vendor/client-zip/index.js", import.meta.url).href;
+
+/** @type {Promise<ClientZipModule> | null} */
+let clientZipReady = null;
+
+/** @returns {Promise<ClientZipModule>} */
+function loadClientZip() {
+  clientZipReady ??= import(CLIENT_ZIP_URL).catch((error) => {
+    clientZipReady = null; // let the next export try again
+    throw error;
+  });
+  return clientZipReady;
+}
+
+// Set while a PNG export runs. A build that ends meanwhile re-enables
+// Download (showPdf), so the menu alone cannot keep a second export out.
+let exporting = false;
 
 /**
  * Downloads and starts the WASM engine, leaving it on state.runner.
@@ -348,6 +378,66 @@ export async function runBuild() {
   }
 }
 
+/**
+ * Saves a blob to disk through a temporary, clicked `<a download>`. The
+ * object URL is revoked right after the click starts the save.
+ *
+ * @param {Blob} blob
+ * @param {string} name
+ * @returns {void}
+ */
+function saveBlob(blob, name) {
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  link.href = url;
+  link.download = name;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+/**
+ * Renders the shown PDF to PNG and saves the pages: one PNG file when there
+ * is only one page, a zip of them when there are more. Download stays
+ * disabled for the run, and is re-enabled afterwards only if a PDF is still
+ * shown — a build or a scenario switch during the export may have cleared it.
+ *
+ * @param {Blob} blob captured up front, so a later build cannot change what this run exports
+ * @param {string} stem the download's base name, without extension
+ * @param {boolean} dropLastPage whether to exclude the shown PDF's last page
+ * @returns {Promise<void>}
+ */
+async function exportPng(blob, stem, dropLastPage) {
+  exporting = true;
+  el("download").disabled = true;
+  try {
+    const pages = await renderPngPages(blob, {
+      dropLastPage,
+      onPage: (page, total) => setStatus(`Rendering page ${page} of ${total}…`, { spinning: true }),
+    });
+    let name;
+    if (pages.length === 1) {
+      name = pageImageName(stem, 1);
+      saveBlob(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (pages[0])], { type: "image/png" }), name);
+    } else {
+      const { downloadZip } = await loadClientZip();
+      const files = pages.map((bytes, index) => ({ name: pageImageName(stem, index + 1), input: bytes }));
+      const zipBlob = await downloadZip(files).blob();
+      name = pageArchiveName(stem);
+      const typed = zipBlob.type === "application/zip" ? zipBlob : new Blob([zipBlob], { type: "application/zip" });
+      saveBlob(typed, name);
+    }
+    setStatus(`Saved ${name}.`, { tone: "ok" });
+  } catch (error) {
+    console.error("The PNG export failed:", error);
+    setStatus(`The PNG export failed: ${errorMessage(error)}`, { tone: "bad" });
+  } finally {
+    exporting = false;
+    el("download").disabled = !state.lastPdf;
+  }
+}
+
 /** Wires the Build/Stop and Download controls. @returns {void} */
 export function initBuild() {
   el("build").addEventListener("click", () => {
@@ -355,16 +445,17 @@ export function initBuild() {
     else runBuild();
   });
 
-  el("download").addEventListener("click", () => {
+  el("download-pdf").addEventListener("click", () => {
     // Named after the scenario the PDF shows: a published PDF is the
     // original's, not the renamed copy's.
     const path = state.pdfPath ?? state.chosenPath;
     if (!state.lastPdf || !path) return;
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(state.lastPdf);
-    link.download = `${basenameNoExt(path)}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    saveBlob(state.lastPdf, `${basenameNoExt(path)}.pdf`);
+  });
+
+  el("download-png").addEventListener("click", () => {
+    const path = state.pdfPath ?? state.chosenPath;
+    if (exporting || !state.lastPdf || !path) return;
+    exportPng(state.lastPdf, basenameNoExt(path), state.pdfDropsLastPage);
   });
 }

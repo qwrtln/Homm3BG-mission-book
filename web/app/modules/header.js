@@ -19,57 +19,61 @@ export function setScenarioTitle(title) {
 /**
  * The menu's items a contributor can reach now: hidden ones are skipped.
  *
+ * @param {HTMLElement} menu
  * @returns {HTMLElement[]}
  */
-function menuItems() {
-  const items = el("header-menu").querySelectorAll('[role="menuitem"], [role="menuitemcheckbox"]');
+function menuItems(menu) {
+  const items = menu.querySelectorAll('[role="menuitem"], [role="menuitemcheckbox"]');
   return /** @type {HTMLElement[]} */ ([...items]).filter((item) => !item.hidden);
 }
 
 /**
+ * @param {HTMLElement} toggle
+ * @param {HTMLElement} menu
  * @param {boolean} open
  * @param {{focus?: "first" | "last" | "toggle" | "none"}} [options] where focus goes
  * @returns {void}
  */
-function setMenuOpen(open, { focus = "none" } = {}) {
-  el("header-menu").hidden = !open;
-  el("header-menu-toggle").setAttribute("aria-expanded", String(open));
-  const items = menuItems();
+function setMenuOpen(toggle, menu, open, { focus = "none" } = {}) {
+  menu.hidden = !open;
+  toggle.setAttribute("aria-expanded", String(open));
+  const items = menuItems(menu);
   if (focus === "first") items[0]?.focus();
   if (focus === "last") items[items.length - 1]?.focus();
-  if (focus === "toggle") el("header-menu-toggle").focus();
+  if (focus === "toggle") toggle.focus();
 }
 
 /**
  * Moves focus to the item `step` places from the focused one, wrapping.
  *
+ * @param {HTMLElement} menu
  * @param {number} step
  * @returns {void}
  */
-function moveFocus(step) {
-  const items = menuItems();
+function moveFocus(menu, step) {
+  const items = menuItems(menu);
   if (!items.length) return;
   const current = items.indexOf(/** @type {HTMLElement} */ (document.activeElement));
   items[(current + step + items.length) % items.length].focus();
 }
 
 /**
- * Wires the overflow menu: the kebab button opens it, arrow keys move
- * through it, and Escape, Tab, a pick or a click outside close it.
+ * Wires one ARIA menu: its toggle opens and closes it, arrow keys move
+ * through it, and Escape, Tab, a pick or a click outside close it. Used for
+ * both the overflow (kebab) menu and the download menu.
  *
+ * @param {HTMLElement} toggle
+ * @param {HTMLElement} menu
  * @returns {void}
  */
-export function initHeaderMenu() {
-  const toggle = el("header-menu-toggle");
-  const menu = el("header-menu");
-
+export function initMenu(toggle, menu) {
   toggle.addEventListener("click", () => {
-    setMenuOpen(menu.hidden, { focus: menu.hidden ? "first" : "none" });
+    setMenuOpen(toggle, menu, menu.hidden, { focus: menu.hidden ? "first" : "none" });
   });
   toggle.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
       event.preventDefault();
-      setMenuOpen(true, { focus: event.key === "ArrowDown" ? "first" : "last" });
+      setMenuOpen(toggle, menu, true, { focus: event.key === "ArrowDown" ? "first" : "last" });
     }
   });
 
@@ -77,16 +81,16 @@ export function initHeaderMenu() {
     const moves = { ArrowDown: 1, ArrowUp: -1 };
     if (event.key in moves) {
       event.preventDefault();
-      moveFocus(moves[/** @type {"ArrowDown" | "ArrowUp"} */ (event.key)]);
+      moveFocus(menu, moves[/** @type {"ArrowDown" | "ArrowUp"} */ (event.key)]);
     } else if (event.key === "Home" || event.key === "End") {
       event.preventDefault();
-      const items = menuItems();
+      const items = menuItems(menu);
       items[event.key === "Home" ? 0 : items.length - 1]?.focus();
     } else if (event.key === "Escape") {
       event.preventDefault();
-      setMenuOpen(false, { focus: "toggle" });
+      setMenuOpen(toggle, menu, false, { focus: "toggle" });
     } else if (event.key === "Tab") {
-      setMenuOpen(false);
+      setMenuOpen(toggle, menu, false);
     }
   });
 
@@ -97,7 +101,7 @@ export function initHeaderMenu() {
     "click",
     (event) => {
       if (event.target instanceof Element && event.target.closest("[role^='menuitem']")) {
-        setMenuOpen(false, { focus: "toggle" });
+        setMenuOpen(toggle, menu, false, { focus: "toggle" });
       }
     },
     true,
@@ -106,6 +110,17 @@ export function initHeaderMenu() {
   document.addEventListener("click", (event) => {
     if (menu.hidden) return;
     if (event.target instanceof Node && (menu.contains(event.target) || toggle.contains(event.target))) return;
-    setMenuOpen(false);
+    setMenuOpen(toggle, menu, false);
   });
+}
+
+/**
+ * Wires the overflow menu and the download menu, each its own ARIA menu
+ * sharing initMenu's open/close/keyboard behaviour.
+ *
+ * @returns {void}
+ */
+export function initHeaderMenu() {
+  initMenu(el("header-menu-toggle"), el("header-menu"));
+  initMenu(el("download"), el("download-menu"));
 }

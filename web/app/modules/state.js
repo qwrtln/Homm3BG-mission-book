@@ -14,6 +14,7 @@ export const state = {
   pdfSource: null, // the editor source lastPdf was made from
   pdfUploads: null, // the uploadsSignature of the in-app build lastPdf came from
   pdfPath: null, // the scenario lastPdf shows, which names its download
+  pdfDropsLastPage: false, // whether the pane drops lastPdf's last page
   cm: null, // CodeMirror instance, created once over #editor
 
   // Files a contributor added from their own machine, not the repository: a

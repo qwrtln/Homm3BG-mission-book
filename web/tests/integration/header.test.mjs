@@ -1,5 +1,5 @@
 // Tier 2. Which header buttons keep their labels as the window narrows. Build,
-// Upload images and Sign in keep theirs down to 861px; Download PDF goes
+// Upload images and Sign in keep theirs down to 861px; Download goes
 // icon-only first, below 1024px. From 860px down every label collapses, and
 // each stays the button's accessible name.
 
@@ -12,7 +12,7 @@ const LONG_NAME = "The Unbearably Long Siege of the Crimson Citadel at Dawn";
 const LABELLED = {
   "upload-open": "Upload images",
   build: "Build PDF",
-  download: "Download PDF",
+  download: "Download",
   "github-signin": "Sign in to save",
 };
 
@@ -74,7 +74,7 @@ for (const width of [861, 900]) {
       expect(await labelShown(page, id), `#${id} label`).toBe(true);
     }
     expect(await labelShown(page, "download"), "#download label").toBe(false);
-    await expect(page.locator("#download")).toHaveAccessibleName("Download PDF");
+    await expect(page.locator("#download")).toHaveAccessibleName("Download");
 
     await expectOneRow(page);
     // The title gives way: it ellipsises rather than pushing the buttons.
@@ -110,4 +110,31 @@ test("Build and Download come first, then Upload images", async ({ app }) => {
   const left = async (id) => (await page.locator(`#${id}`).boundingBox()).x;
   expect(await left("build")).toBeLessThan(await left("download"));
   expect(await left("download")).toBeLessThan(await left("upload-open"));
+});
+
+test("Escape closes the download menu and returns focus to #download", async ({ app }) => {
+  const { page } = app;
+  await openLongScenario(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  await page.locator("#download").click();
+  await expect(page.locator("#download-menu")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#download-menu")).toBeHidden();
+  await expect(page.locator("#download")).toBeFocused();
+});
+
+test("the arrow keys move between PDF and PNG in the download menu", async ({ app }) => {
+  const { page } = app;
+  await openLongScenario(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  await page.locator("#download").click();
+  await expect(page.locator("#download-pdf")).toBeFocused();
+  await page.keyboard.press("ArrowDown");
+  await expect(page.locator("#download-png")).toBeFocused();
+  await page.keyboard.press("ArrowUp");
+  await expect(page.locator("#download-pdf")).toBeFocused();
 });

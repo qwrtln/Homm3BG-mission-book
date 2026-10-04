@@ -33,6 +33,9 @@ interface ElementIdMap {
   "build-phase": HTMLDivElement;
   "build-phase-text": HTMLSpanElement;
   download: HTMLButtonElement;
+  "download-menu": HTMLDivElement;
+  "download-pdf": HTMLButtonElement;
+  "download-png": HTMLButtonElement;
   "draft-note": HTMLSpanElement;
   "unsaved-note": HTMLSpanElement;
   "back-to-welcome": HTMLButtonElement;
