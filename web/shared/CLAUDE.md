@@ -20,6 +20,6 @@ allow-list.
 
 ## github-contrib.ts
 
-`app/modules/github.js` imports `github-contrib.ts` by its `.ts` specifier, so
+`app/github/` imports `github-contrib.ts` by its `.ts` specifier, so
 `tsc` resolves its exports directly. There is no cache-buster and no
 hand-written `declare module`: the build hashes the bundle's file name.

@@ -1,6 +1,5 @@
-import { getToken } from "../../shared/github-auth.ts";
 import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.ts";
-import { el } from "./dom.js";
+import { store } from "../store.ts";
 import { state } from "./state.ts";
 
 /**
@@ -28,12 +27,16 @@ export function isDirty(): boolean {
 }
 
 /**
- * Shows or hides the header's "Unsaved" note. Signed out, there
- * is no pull request to lose the changes to, only the browser's own
- * autosave (see leaveWorkspace's warning), so the note would just be noise.
+ * Brings the store's `dirty` flag, which the header's "Unsaved" note renders
+ * from, up to date. The editor's text is not in the store, so call it after
+ * an edit, an upload change or a new clean state. The note itself also needs
+ * a sign-in: signed out, there is no pull request to lose the changes to,
+ * only the browser's own autosave (see leaveWorkspace's warning), so it would
+ * just be noise.
  */
 export function refreshUnsavedNote(): void {
-  el("unsaved-note").hidden = !isDirty() || !getToken();
+  const dirty = isDirty();
+  if (store.getState().dirty !== dirty) store.setState({ dirty });
 }
 
 /** Forgets the clean state, when no scenario is open any more. */

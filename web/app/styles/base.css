@@ -20,16 +20,9 @@ header {
   align-items: center;
   gap: 0.4rem 0.75rem;
 }
-/* Whichever of the app title or the scenario name shows takes the spare
-   width, pushing the actions to the right. */
-header .header-titles, header .header-scenario { flex: 1 1 0; min-width: 0; }
-header .header-titles[hidden], header .header-scenario[hidden] { display: none; }
 button.with-icon, a.with-icon { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
 .with-icon[hidden] { display: none; }
 .octicon { flex: none; vertical-align: text-bottom; }
-header h1 { font-size: 1.1rem; margin: 0; }
-header p { margin: 0; color: var(--muted); font-size: 0.85rem; }
-header :is(button, a):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 button {
   font: inherit;
   font-size: 0.88rem;
@@ -53,19 +46,6 @@ button.primary:hover:not(:disabled) {
   background: var(--btn-primary-hover);
   color: #fff;
 }
-/* The Build button mid-build, styled as Primer's danger button: red, the
-   conventional colour for a stop, but quiet until hovered. */
-button.primary.stop {
-  border-color: var(--btn-danger-border);
-  background: var(--btn-danger-bg);
-  color: var(--btn-danger-fg);
-}
-button.primary.stop:hover:not(:disabled) {
-  border-color: var(--btn-danger-hover-border);
-  background: var(--btn-danger-hover-bg);
-  color: #fff;
-}
-button.primary.stop:active:not(:disabled) { background: var(--btn-danger-active-bg); }
 /* Every disabled button, primary and danger included, in Primer's neutral
    disabled look: grey reads as unavailable, where a faded colour reads as
    merely faint. The :is() lifts it over button.danger in dialog.css. */

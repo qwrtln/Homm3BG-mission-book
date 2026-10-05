@@ -1,6 +1,5 @@
 import { type ReactNode, type SyntheticEvent, useEffect, useState } from "react";
-import { el } from "../modules/dom.js";
-import { dialogClosed, openDialog, useAppStore } from "../store.ts";
+import { dialogClosed, useAppStore } from "../store.ts";
 import { LICENSE_GROUPS, type StaticLicense } from "./licenses.ts";
 import { Button } from "./ui/Button.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
@@ -136,13 +135,6 @@ function useBundledNotices(open: boolean): Notice[] {
 export function AboutDialog() {
   const open = useAppStore((state) => state.dialogs.about);
   const notices = useBundledNotices(open);
-
-  useEffect(() => {
-    const trigger = el("about-open");
-    const show = () => openDialog("about");
-    trigger.addEventListener("click", show);
-    return () => trigger.removeEventListener("click", show);
-  }, []);
 
   return (
     <Dialog id="about-dialog" labelledBy="about-title" size="lg" open={open} onClose={() => dialogClosed("about")}>

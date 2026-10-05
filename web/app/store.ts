@@ -77,8 +77,41 @@ export interface ToastNotice {
   tone: "ok" | "bad";
 }
 
+/** What the header renders from. The modules that open, build and save write it; the header components read it. */
+export interface HeaderState {
+  theme: "dark" | "light";
+  /** Whether a GitHub token is held: the sign-in button, or the save controls and Sign out. */
+  signedIn: boolean;
+  /** Whether the header names the open scenario (with Save) instead of the app. */
+  scenarioHeaderVisible: boolean;
+  /** Whether Build, Download and Upload images show: a scenario is open and its workspace is up. */
+  actionsVisible: boolean;
+  /** Whether a scenario waits behind the welcome screen, so "Back to editing" shows. */
+  parked: boolean;
+  buildDisabled: boolean;
+  /** The idle Build button's title, naming the build key for this platform. Empty until initBuildTitle() runs. */
+  buildIdleTitle: string;
+  /** The Build button's width while it reads "Stop", pinned so a shrinking button does not slide its neighbours; null when idle. */
+  buildMinWidth: number | null;
+  downloadDisabled: boolean;
+  /** Whether the open scenario shows a locally saved copy, not the original source. */
+  draftNote: boolean;
+  /** Whether the open scenario differs from its last clean state; the note also needs a sign-in. */
+  dirty: boolean;
+  /** The category select stays locked until the first text is in the editor: a move now would carry the previous text. */
+  categoryHold: boolean;
+  /** Why the last category move was refused; null when there is nothing to say. */
+  categoryNote: string | null;
+  /** Whether "Open PR" shows beside Save. */
+  openPrVisible: boolean;
+  /** The pull request "View PR" links to; null while there is none. */
+  prUrl: string | null;
+  /** True while the pull request is being opened. */
+  openingPr: boolean;
+}
+
 /** What React components render from; the old modules reach it through the dialog helpers below. */
-export interface UiState {
+export interface UiState extends HeaderState {
   /** Which of the menu's dialogs are open. Independent, so Help can open over About. */
   dialogs: Record<DialogName, boolean>;
   confirm: ConfirmRequest | null;
@@ -120,6 +153,23 @@ export function initialState(): StoreState {
     edit: null,
     committedUploads: new Set(),
     saving: false,
+
+    theme: "light",
+    signedIn: false,
+    scenarioHeaderVisible: false,
+    actionsVisible: false,
+    parked: false,
+    buildDisabled: true,
+    buildIdleTitle: "",
+    buildMinWidth: null,
+    downloadDisabled: true,
+    draftNote: false,
+    dirty: false,
+    categoryHold: false,
+    categoryNote: null,
+    openPrVisible: false,
+    prUrl: null,
+    openingPr: false,
 
     dialogs: { about: false, help: false, feedback: false },
     confirm: null,

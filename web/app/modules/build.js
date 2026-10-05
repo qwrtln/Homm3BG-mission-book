@@ -19,6 +19,7 @@ import { changedLines } from "../../shared/line-diff.ts";
 import { pageArchiveName, pageImageName } from "../../shared/page-images.ts";
 import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.ts";
 import { uploadsSignature } from "../../shared/unsaved.ts";
+import { store } from "../store.ts";
 import { busytexBase } from "./config.ts";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
@@ -432,7 +433,7 @@ function saveBlob(blob, name) {
  */
 async function exportPng(blob, stem, dropLastPage) {
   exporting = true;
-  el("download").disabled = true;
+  store.setState({ downloadDisabled: true });
   try {
     const pages = await renderPngPages(blob, {
       dropLastPage,
@@ -456,28 +457,28 @@ async function exportPng(blob, stem, dropLastPage) {
     setStatus(`The PNG export failed: ${errorMessage(error)}`, { tone: "bad" });
   } finally {
     exporting = false;
-    el("download").disabled = !state.lastPdf;
+    store.setState({ downloadDisabled: !state.lastPdf });
   }
 }
 
-/** Wires the Build/Stop and Download controls. @returns {void} */
-export function initBuild() {
-  el("build").addEventListener("click", () => {
-    if (state.building) stopBuild();
-    else runBuild();
-  });
+/** The Build button's action: Stop while a build runs, Build PDF otherwise. @returns {void} */
+export function toggleBuild() {
+  if (state.building) stopBuild();
+  else runBuild();
+}
 
-  el("download-pdf").addEventListener("click", () => {
-    // Named after the scenario the PDF shows: a published PDF is the
-    // original's, not the renamed copy's.
-    const path = state.pdfPath ?? state.chosenPath;
-    if (!state.lastPdf || !path) return;
-    saveBlob(state.lastPdf, `${basenameNoExt(path)}.pdf`);
-  });
+/** Download > PDF: saves the shown PDF. @returns {void} */
+export function downloadPdf() {
+  // Named after the scenario the PDF shows: a published PDF is the
+  // original's, not the renamed copy's.
+  const path = state.pdfPath ?? state.chosenPath;
+  if (!state.lastPdf || !path) return;
+  saveBlob(state.lastPdf, `${basenameNoExt(path)}.pdf`);
+}
 
-  el("download-png").addEventListener("click", () => {
-    const path = state.pdfPath ?? state.chosenPath;
-    if (exporting || !state.lastPdf || !path) return;
-    exportPng(state.lastPdf, basenameNoExt(path), state.pdfDropsLastPage);
-  });
+/** Download > PNG: saves the shown PDF's pages as PNG. @returns {void} */
+export function downloadPng() {
+  const path = state.pdfPath ?? state.chosenPath;
+  if (exporting || !state.lastPdf || !path) return;
+  exportPng(state.lastPdf, basenameNoExt(path), state.pdfDropsLastPage);
 }

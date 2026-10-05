@@ -1,13 +1,14 @@
 import { withScenarioTitle } from "../../shared/build-plan.ts";
 import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.ts";
-import { syncCategoryControl } from "./category.js";
+import { store } from "../store.ts";
+import { syncCategoryControl } from "./category.ts";
 import { TEMPLATES } from "./config.ts";
 import { markClean } from "./dirty.ts";
 import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
 import { flushDraft, saveDraft } from "./drafts.ts";
 import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
-import { setScenarioTitle } from "./header.js";
+import { setScenarioTitle } from "./header.ts";
 import { clearUploads, saveText, saveUploads } from "./local-store.ts";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
@@ -18,15 +19,13 @@ import { resetUploads, restoreUploads } from "./uploads.js";
 
 /**
  * Whether the welcome screen shows over a scenario left open behind it: its
- * editor, uploads, save target and PDF all kept for "Back to editing".
- */
-let parked = false;
-
-/**
+ * editor, uploads, save target and PDF all kept for "Back to editing". The
+ * header renders its "Back to editing" button from the same store field.
+ *
  * @returns {boolean} true while a scenario waits behind the welcome screen
  */
 export function isParked() {
-  return parked;
+  return store.getState().parked;
 }
 
 /**
@@ -37,8 +36,7 @@ export function isParked() {
  * @returns {Promise<void>}
  */
 export function showWorkspace() {
-  parked = false;
-  el("back-to-editing").hidden = true;
+  store.setState({ parked: false });
   return new Promise((resolve) => {
     const welcome = el("welcome");
     const workspace = el("workspace");
@@ -80,7 +78,7 @@ async function openNewScenario(name, category) {
 
   await showWorkspace();
   cm.refresh(); // CodeMirror mismeasures while its host was display:none
-  el("header-actions").hidden = false;
+  store.setState({ actionsVisible: true });
 
   // Keep the .tex extension: TeX's \input only appends one if missing, so a
   // name without it would 404 twice.
@@ -93,10 +91,9 @@ async function openNewScenario(name, category) {
   syncCategoryControl();
   // Not movable until the text is in the editor: a move now would carry
   // whatever the editor held before.
-  el("scenario-category").disabled = true;
+  store.setState({ categoryHold: true });
   reflectRoute();
-  el("build").disabled = false; // Build, or Stop mid-build: both apply
-  el("download").disabled = true;
+  store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
   return { cm, identity };
 }
 
@@ -140,7 +137,7 @@ export async function commitEntry(path, name, category) {
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
   const local = await offerDraftOverCopy(identity, name.trim(), entry.title, pristine);
   cm.setValue(local ? local.text : pristine);
-  el("draft-note").hidden = local === null;
+  store.setState({ draftNote: local !== null });
   syncCategoryControl();
   cm.focus();
 
@@ -184,7 +181,7 @@ export async function commitEntry(path, name, category) {
 export async function commitGeneratedEntry(name, category, source, uploads) {
   const { cm, identity } = await openNewScenario(name, category);
   cm.setValue(source);
-  el("draft-note").hidden = true;
+  store.setState({ draftNote: false });
   syncCategoryControl();
   cm.focus();
 
@@ -251,7 +248,7 @@ export async function openForEdit(path, title, source, edit) {
 
   await showWorkspace();
   cm.refresh();
-  el("header-actions").hidden = false;
+  store.setState({ actionsVisible: true });
 
   resetGithubSaveState();
   githubSaveState.edit = edit;
@@ -259,12 +256,11 @@ export async function openForEdit(path, title, source, edit) {
   setScenarioTitle(title);
   syncCategoryControl();
   reflectRoute();
-  el("build").disabled = false; // Build, or Stop mid-build: both apply
-  el("download").disabled = true;
+  store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
 
   const local = await offerLocalDraft(path, title, source);
   cm.setValue(local ? local.text : source);
-  el("draft-note").hidden = local === null;
+  store.setState({ draftNote: local !== null });
   cm.focus();
 
   resetUploads();
@@ -296,13 +292,8 @@ export function showWelcome() {
   clearTimeout(state.saveTimer ?? undefined);
   if (state.chosenPath && state.cm) void flushDraft(state.chosenPath, state.cm.getValue());
 
-  parked = state.chosenPath !== null;
-  const back = el("back-to-editing");
-  back.title = `Back to editing “${state.chosenTitle}”`;
-  back.setAttribute("aria-label", back.title);
-  back.hidden = !parked;
   clearRoute();
-  el("header-actions").hidden = true;
+  store.setState({ parked: state.chosenPath !== null, actionsVisible: false });
   setSaveControlsVisible(false);
   el("edit-branch-prompt").hidden = true;
 
@@ -319,11 +310,11 @@ export function showWelcome() {
  * @returns {Promise<void>}
  */
 export async function returnToParked() {
-  if (!parked) return;
+  if (!isParked()) return;
   const cm = requireEditor();
   await showWorkspace();
   cm.refresh(); // CodeMirror mismeasures while its host was display:none
-  el("header-actions").hidden = false;
+  store.setState({ actionsVisible: true });
   syncCategoryControl();
   reflectRoute();
   cm.focus();

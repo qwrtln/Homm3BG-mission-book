@@ -17,7 +17,7 @@ or the deploy allow-list names it.
   there; without it the deploy fails.
 - The inline pre-paint `<script>` in `<body>` reads the literal
   `"wasm-scenario-builder:pending-route"`, which is `ROUTE_KEY` in
-  `modules/github.js`. Rename both together. It is classic script, outside
+  `github/context.ts`. Rename both together. It is classic script, outside
   `tsc` and Biome.
 - The script entry is plain `main.tsx`. The build gives the bundle a hashed name,
   so no `?v=N` cache-buster exists. Never add one.
@@ -58,7 +58,11 @@ or the deploy allow-list names it.
 - `components/ui/` holds the primitives (`Button`, `Checkbox`, `RadioGroup`,
   `Dialog`, `Link`, `Toast`): generic, no store, no app text.
 - `components/` holds one file per region or dialog (`AboutDialog.tsx`,
-  `Toaster.tsx`), which reads the store and composes primitives.
+  `Toaster.tsx`), which reads the store and composes primitives. A region with
+  several parts has a folder: `components/header/` renders the page header.
+- A region's logic stays out of its components. The header buttons call
+  functions in `github/` (sign in, save, open PR) and `modules/`, which write
+  the store; the components render from it.
 - A component keeps the ids, `data-testid`s and accessible names tier 2 uses.
 - A new dialog or region goes in `components/` and mounts through
   `mountRegion`. Delete its static markup and old module in the same change.
@@ -73,7 +77,7 @@ or the deploy allow-list names it.
 - Colors come from custom properties in `styles/tokens.css` (GitHub Primer
   values). A new color goes in `tokens.css`, once under `:root` and once under
   `html[data-theme="dark"]`, plus a `--color-*` line in the `@theme inline`
-  block of `app.css`. Dark mode is that attribute, set by `modules/theme.js`:
+  block of `app.css`. Dark mode is that attribute, set by `modules/theme.ts`:
   Tailwind's `dark:` variant follows it. Never use a `prefers-color-scheme`
   query.
 - Radius, type and shadow come from the `@theme` scales in `app.css`
@@ -90,10 +94,12 @@ page. Reuse the primitive:
 
 | Control | Use |
 | --- | --- |
-| Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `withIcon`, `icon`, `danger`, `attention`, or none |
+| Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `withIcon`, `icon`, `danger`, `attention`, `stop`, or none; `size="compact"` is the header row, `iconed` lays an icon and label out on one line |
 | Checkbox | `<Checkbox label=...>` in `components/ui/Checkbox.tsx` |
 | Radio group | `<RadioGroup>` in `components/ui/RadioGroup.tsx`: joined buttons over hidden radios |
 | Hyperlink | `<Link>` in `components/ui/Link.tsx`: accent color, visible focus ring, `external` for a new tab |
+| Drop-down | `<Select>` in `components/ui/Select.tsx` |
+| Menu | `<MenuList>`, `<MenuItem>` and `useMenu()` in `components/ui/Menu.tsx` and `useMenu.ts`: the ARIA menu behavior |
 | Dialog | `<Dialog>` in `components/ui/Dialog.tsx`, a native `<dialog>` |
 | Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.js`, shown by `ConfirmDialog` |
 | Notice | `showToast()` in `modules/toast.ts`, or `setStatus()` in `modules/dom.js` |

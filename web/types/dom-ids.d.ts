@@ -7,22 +7,11 @@
 // id here makes `el("new-id")` fail to compile.
 
 interface ElementIdMap {
+  header: HTMLElement;
   overlays: HTMLDivElement;
-  "about-open": HTMLButtonElement;
-  "feedback-open": HTMLButtonElement;
-  "help-open": HTMLButtonElement;
-  build: HTMLButtonElement;
-  "build-label": HTMLSpanElement;
   "build-progress": HTMLDivElement;
   "build-phase": HTMLDivElement;
   "build-phase-text": HTMLSpanElement;
-  download: HTMLButtonElement;
-  "download-menu": HTMLDivElement;
-  "download-pdf": HTMLButtonElement;
-  "download-png": HTMLButtonElement;
-  "draft-note": HTMLSpanElement;
-  "unsaved-note": HTMLSpanElement;
-  "back-to-welcome": HTMLButtonElement;
   "route-loading": HTMLDivElement;
   editor: HTMLTextAreaElement;
   "editor-pane": HTMLElement;
@@ -31,12 +20,6 @@ interface ElementIdMap {
   "first-error": HTMLDivElement;
   "full-log": HTMLPreElement;
   "full-log-details": HTMLDetailsElement;
-  "github-open-pr": HTMLButtonElement;
-  "github-pr-link": HTMLAnchorElement;
-  "github-save": HTMLButtonElement;
-  "github-signin": HTMLButtonElement;
-  "github-signout": HTMLButtonElement;
-  "github-status": HTMLSpanElement;
   "edit-branch-prompt": HTMLDivElement;
   "edit-continue": HTMLButtonElement;
   "edit-start-over": HTMLButtonElement;
@@ -55,15 +38,6 @@ interface ElementIdMap {
   "mode-new": HTMLButtonElement;
   "name-heading": HTMLHeadingElement;
   "name-slide": HTMLDivElement;
-  "header-actions": HTMLDivElement;
-  "header-menu": HTMLDivElement;
-  "header-menu-separator": HTMLDivElement;
-  "header-menu-toggle": HTMLButtonElement;
-  "header-scenario": HTMLDivElement;
-  "header-titles": HTMLDivElement;
-  "scenario-title": HTMLSpanElement;
-  "scenario-category": HTMLSelectElement;
-  "category-note": HTMLSpanElement;
   "pdf-body": HTMLDivElement;
   "pdf-empty": HTMLDivElement;
   "pdf-pane": HTMLElement;
@@ -74,7 +48,6 @@ interface ElementIdMap {
   "pdf-zoom-out": HTMLButtonElement;
   "pane-divider": HTMLDivElement;
   "pdf-wrap": HTMLDivElement;
-  "back-to-editing": HTMLButtonElement;
   "resume-drafts": HTMLDivElement;
   "resume-hint": HTMLParagraphElement;
   "resume-list": HTMLDivElement;
@@ -96,7 +69,6 @@ interface ElementIdMap {
   "status-bar": HTMLElement;
   "status-spinner": HTMLSpanElement;
   "status-text": HTMLSpanElement;
-  "theme-toggle": HTMLButtonElement;
   "upload-header": HTMLInputElement;
   "upload-header-add": HTMLButtonElement;
   "upload-header-card": HTMLDivElement;
@@ -113,7 +85,6 @@ interface ElementIdMap {
   "upload-maps-status": HTMLSpanElement;
   "upload-dialog": HTMLDialogElement;
   "upload-done": HTMLButtonElement;
-  "upload-open": HTMLButtonElement;
   "upload-title": HTMLHeadingElement;
   welcome: HTMLElement;
   "welcome-picker": HTMLDivElement;

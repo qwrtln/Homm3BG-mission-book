@@ -1,5 +1,4 @@
 import { store } from "../store.ts";
-import { el } from "./dom.js";
 
 /** @typedef {import("../store.ts").SaveState} SaveState */
 
@@ -22,31 +21,25 @@ export const githubSaveState = new Proxy(/** @type {SaveState} */ ({}), {
 
 /**
  * On sign-out or picking a different scenario: neither carries over the
- * previous branch/PR/button state. Subscribers of the store (the header's
- * category) see the cleared fields.
+ * previous branch/PR/button state. Subscribers of the store (the header)
+ * see the cleared fields.
  *
  * @returns {void}
  */
 export function resetGithubSaveState() {
-  el("github-open-pr").hidden = true;
-  el("github-pr-link").hidden = true;
-  store.setState({ lastSaveTarget: null, edit: null, committedUploads: new Set() });
+  store.setState({ lastSaveTarget: null, edit: null, committedUploads: new Set(), openPrVisible: false, prUrl: null });
 }
 
 /**
  * Save, Open PR, the way back to scenario selection and the scenario's name
  * belong to an open scenario, so they show only while one is open. The app's own title shows only while none is.
  * Signed out, the sign-in button stands where Save would, so with a scenario
- * open it says that signing in is how to save.
+ * open it says that signing in is how to save. The header renders all of this
+ * from the store.
  *
  * @param {boolean} visible
  * @returns {void}
  */
 export function setSaveControlsVisible(visible) {
-  const segment = el("github-save").parentElement;
-  if (segment) segment.hidden = !visible;
-  el("header-scenario").hidden = !visible;
-  el("header-titles").hidden = visible;
-  const signinLabel = el("github-signin").querySelector(".label");
-  if (signinLabel) signinLabel.textContent = visible ? "Sign in to save" : "Sign in with GitHub";
+  store.setState({ scenarioHeaderVisible: visible });
 }

@@ -4,7 +4,7 @@ import { saveDraft, scheduleSave } from "./drafts.ts";
 import { saveText } from "./local-store.ts";
 import { refreshStaleStatus } from "./pdf-view.js";
 import { state } from "./state.ts";
-import { initialTheme } from "./theme.js";
+import { initialTheme } from "./theme.ts";
 
 /**
  * Creates the CodeMirror instance over #editor and wires autosave to it.

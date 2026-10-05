@@ -80,6 +80,7 @@ because the engine's worker resolves paths itself and the files are large:
 | --- | --- |
 | `web/shared/` | DOM-free logic, importable by Node, testable in tier 1 |
 | `web/app/modules/` | App concerns, wired by `main.tsx`; DOM allowed |
+| `web/app/github/` | The GitHub flow (sign-in, save, pull request, resume, `openRoute`); writes the store, wired by `initGithub()` |
 | `web/types/` | Ambient `.d.ts` shared across the app |
 | `web/core/`, `web/app/vendor/` | Fetched and gitignored (`serve.sh` / `fetch-vendor.sh`). Do not edit. |
 | `web/shared/vendor/` | Committed, loaded at run time, not bundled. Do not edit. |
@@ -95,7 +96,8 @@ because the engine's worker resolves paths itself and the files are large:
 `web/app/main.tsx` is the only wiring point. A module exports `init<Name>()`;
 nothing self-registers. Order is load-bearing:
 
-1. `initTheme()` before `applyTheme(initialTheme())`.
+1. The `header` mount (and `initCategory()`) before `applyTheme(initialTheme())`: the
+   menu renders the theme from the store.
 2. Synchronous: editor, search, picker, uploads, build.
 3. `initGithub()` and `loadEntries()` return promises. Anything needing both
    waits on `Promise.allSettled([githubReady, entriesReady])` — see `openRoute`.

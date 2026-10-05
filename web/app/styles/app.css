@@ -17,7 +17,6 @@
 @import "../codemirror-github-theme.css" layer(legacy);
 @import "./tokens.css" layer(legacy);
 @import "./base.css" layer(legacy);
-@import "./github-status.css" layer(legacy);
 @import "./welcome.css" layer(legacy);
 @import "./wizard.css" layer(legacy);
 @import "./header-actions.css" layer(legacy);

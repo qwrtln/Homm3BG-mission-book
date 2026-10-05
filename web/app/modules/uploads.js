@@ -69,9 +69,13 @@ function persistStagedUploads() {
   void saveUploads(state.chosenPath, assets);
 }
 
+/** The header's "Upload images" button: opens the uploads dialog. @returns {void} */
+export function openUploadDialog() {
+  el("upload-dialog").showModal();
+}
+
 /** Wires the uploads dialog and its two file inputs. @returns {void} */
 export function initUploads() {
-  el("upload-open").addEventListener("click", () => el("upload-dialog").showModal());
   popover = createUploadPanel({
     elements: {
       headerInput: el("upload-header"),

@@ -1,6 +1,7 @@
 import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
 import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.ts";
-import { requestConfirm } from "../store.ts";
+import { requestConfirm, store } from "../store.ts";
+import { buildButtonWidth } from "./build-button.ts";
 import { state } from "./state.ts";
 
 export { basenameNoExt, escapeHtml, sanitizeFilename };
@@ -35,21 +36,18 @@ export function readyStatus() {
   return `Ready. Press Build PDF or ${buildKeyLabel()} to start.`;
 }
 
-/** The idle Build button's title, once computed. Empty until initBuildTitle() runs. */
-let idleBuildTitle = "";
-
 /**
- * Computes and sets the Build button's idle title, naming the build key for
- * this platform (e.g. "Build PDF (Ctrl+Enter)"). Call once at init, since
- * setBuilding may not run before the first build.
+ * Records the Build button's idle title, naming the build key for this
+ * platform (e.g. "Build PDF (Ctrl+Enter)"). The header renders it from the
+ * store. Call once at init, since setBuilding may not run before the first
+ * build.
  *
  * @param {boolean} mac true to name the macOS key alternative
  * @returns {void}
  */
 export function initBuildTitle(mac) {
   const label = keyLabel(shortcutKeys("build", mac)[0], mac);
-  idleBuildTitle = `Build PDF (${label})`;
-  el("build").title = idleBuildTitle;
+  store.setState({ buildIdleTitle: `Build PDF (${label})` });
 }
 
 /**
@@ -112,15 +110,12 @@ export function setStatus(text, { spinning = false, tone = "" } = {}) {
  * @returns {void}
  */
 export function setBuilding(value) {
-  state.building = value;
-  const build = el("build");
-  build.disabled = !value && !state.chosenPath;
   // Pin the Build width while the shorter "Stop" shows, measured, not guessed:
   // fonts differ, and a shrinking button slides its neighbours under the pointer.
-  build.style.minWidth = value ? `${build.getBoundingClientRect().width}px` : "";
-  el("build-label").textContent = value ? "Stop" : "Build PDF";
-  build.title = value ? "Stop the build" : idleBuildTitle;
-  build.classList.toggle("stop", value);
+  // Measured before the store changes: the header re-renders the label from it.
+  const minWidth = value ? buildButtonWidth() : null;
+  state.building = value;
+  store.setState({ buildDisabled: !value && !state.chosenPath, buildMinWidth: minWidth });
   el("build-progress").hidden = !value;
   el("build-phase").hidden = !value;
 }

@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { el } from "../modules/dom.js";
-import { dialogClosed, openDialog, useAppStore } from "../store.ts";
+import { dialogClosed, useAppStore } from "../store.ts";
 import { Button } from "./ui/Button.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
 import { Link } from "./ui/Link.tsx";
@@ -47,13 +45,6 @@ const DESTINATIONS: Destination[] = [
  */
 export function FeedbackDialog() {
   const open = useAppStore((state) => state.dialogs.feedback);
-
-  useEffect(() => {
-    const trigger = el("feedback-open");
-    const show = () => openDialog("feedback");
-    trigger.addEventListener("click", show);
-    return () => trigger.removeEventListener("click", show);
-  }, []);
 
   return (
     <Dialog id="feedback-dialog" labelledBy="feedback-title" open={open} onClose={() => dialogClosed("feedback")}>

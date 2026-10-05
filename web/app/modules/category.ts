@@ -1,55 +1,47 @@
-import { categoryOfPath, DRAFT_CATEGORIES, withCategory, withScenarioKind } from "../../shared/scenario-name.ts";
-import { store } from "../store.ts";
+import { categoryOfPath, withCategory, withScenarioKind } from "../../shared/scenario-name.ts";
+import { type StoreState, store } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
-import { el } from "./dom.js";
 import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
-import { githubSaveState } from "./github-save-state.js";
 import { moveRecord, saveText } from "./local-store.ts";
 import { reflectRoute } from "./route.ts";
 import { requireEditor, state } from "./state.ts";
 
-const LOCKED_TITLE = "The category is fixed once the scenario is saved to GitHub.";
-const OPEN_TITLE = "The category this scenario is filed under in the Draft Scenarios.";
+export const LOCKED_TITLE = "The category is fixed once the scenario is saved to GitHub.";
+export const OPEN_TITLE = "The category this scenario is filed under in the Draft Scenarios.";
 
 /**
  * Whether the open scenario's category can still change: only a draft path
  * that has never reached GitHub. Once a branch carries it, the branch's file
  * path and \input line name the category.
- *
- * @returns {boolean}
  */
-function categoryLocked() {
-  if (githubSaveState.saving || githubSaveState.lastSaveTarget !== null || githubSaveState.edit !== null) return true;
-  const path = state.chosenPath;
+export function categoryLocked(
+  current: Pick<StoreState, "saving" | "lastSaveTarget" | "edit" | "chosenPath" | "categoryHold">,
+): boolean {
+  if (current.categoryHold || current.saving || current.lastSaveTarget !== null || current.edit !== null) return true;
+  const path = current.chosenPath;
   if (path === null) return true;
   return !path.startsWith("draft-scenarios/") || categoryOfPath(path) === null;
 }
 
 /**
- * Shows the open scenario's category in the header, and locks it when the
- * scenario is already on GitHub or is not a draft. Call it after every
- * change to state.chosenPath or githubSaveState.
- *
- * @returns {void}
+ * Lets the header's category control follow the open scenario: it ends the
+ * hold a new scenario starts with and clears the last refusal's note. The
+ * select itself renders from state.chosenPath and the save fields. Call it
+ * after every change to state.chosenPath or the save fields.
  */
-export function syncCategoryControl() {
-  const select = el("scenario-category");
-  select.value = (state.chosenPath && categoryOfPath(state.chosenPath)) ?? "";
-  select.disabled = categoryLocked();
-  select.title = select.disabled ? LOCKED_TITLE : OPEN_TITLE;
-  el("category-note").hidden = true;
+export function syncCategoryControl(): void {
+  const { categoryHold, categoryNote } = store.getState();
+  if (categoryHold || categoryNote !== null) store.setState({ categoryHold: false, categoryNote: null });
 }
 
 /**
  * Replaces only the part of the editor's text that differs, so the cursor
  * and scroll position outside it stay where they were.
  *
- * @param {CodeMirrorEditor} cm
- * @param {string} before the editor's current text
- * @param {string} after the text it should hold
- * @returns {void}
+ * @param before the editor's current text
+ * @param after the text it should hold
  */
-function replaceChangedPart(cm, before, after) {
+function replaceChangedPart(cm: CodeMirrorEditor, before: string, after: string): void {
   let start = 0;
   while (start < before.length && start < after.length && before[start] === after[start]) start++;
   let endBefore = before.length;
@@ -61,18 +53,10 @@ function replaceChangedPart(cm, before, after) {
   cm.replaceRange(after.slice(start, endAfter), cm.posFromIndex(start), cm.posFromIndex(endBefore), "+category");
 }
 
-/**
- * Leaves the scenario where it is, and says why the move did not happen.
- *
- * @param {string} message
- * @returns {void}
- */
-function refuseMove(message) {
-  syncCategoryControl(); // reverts the select, then the note says why
-  const note = el("category-note");
-  note.textContent = message;
-  note.title = message;
-  note.hidden = false;
+/** Leaves the scenario where it is, and says why the move did not happen. */
+function refuseMove(message: string): void {
+  syncCategoryControl(); // the select stays on the old category, then the note says why
+  store.setState({ categoryNote: message });
 }
 
 /**
@@ -82,12 +66,11 @@ function refuseMove(message) {
  * save time. A standard heading kind follows the category too, as a real
  * edit: it counts as unsaved like any typed change.
  *
- * @param {string} category one of DRAFT_CATEGORIES
- * @returns {void}
+ * @param category one of DRAFT_CATEGORIES
  */
-function moveToCategory(category) {
+export function moveToCategory(category: string): void {
   const old = state.chosenPath;
-  if (!old || categoryLocked() || categoryOfPath(old) === category) {
+  if (!old || categoryLocked(store.getState()) || categoryOfPath(old) === category) {
     syncCategoryControl();
     return;
   }
@@ -125,22 +108,8 @@ function moveToCategory(category) {
   reflectRoute();
 }
 
-/**
- * Fills the header's category select and wires it.
- *
- * @returns {void}
- */
-export function initCategory() {
-  const select = el("scenario-category");
-  select.replaceChildren(
-    ...DRAFT_CATEGORIES.map((category) => {
-      const option = document.createElement("option");
-      option.value = category;
-      option.textContent = CATEGORY_LABELS[category];
-      return option;
-    }),
-  );
-  select.addEventListener("change", () => moveToCategory(select.value));
+/** Wires the category control: a change to where the scenario is saved ends the hold and clears the note. */
+export function initCategory(): void {
   store.subscribe((current, previous) => {
     if (
       current.lastSaveTarget !== previous.lastSaveTarget ||

@@ -1,6 +1,7 @@
 import { PNG_DPI } from "../../shared/page-images.ts";
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.ts";
 import { pageHighlights } from "../../shared/synctex.ts";
+import { store } from "../store.ts";
 import { buildKeyLabel, el, escapeHtml, setStatus } from "./dom.js";
 import { requireEditor, state } from "./state.ts";
 
@@ -106,7 +107,7 @@ export function clearPdf() {
   state.pdfUploads = null;
   state.pdfPath = null;
   state.pdfDropsLastPage = false;
-  el("download").disabled = true;
+  store.setState({ downloadDisabled: true });
   showPdfMessage(emptyMessage());
   el("error-panel").hidden = true;
   clearErrorLine();
@@ -201,7 +202,7 @@ export async function showPdf(blob, source, { dropLastPage = false, path = state
   state.pdfUploads = uploads ?? null;
   state.pdfPath = path;
   state.pdfDropsLastPage = dropLastPage;
-  el("download").disabled = false;
+  store.setState({ downloadDisabled: false });
   loadTicket += 1;
   const ticket = loadTicket;
   try {

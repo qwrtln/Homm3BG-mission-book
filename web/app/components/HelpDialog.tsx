@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
-import { el, isMac } from "../modules/dom.js";
+import { isMac } from "../modules/dom.js";
 import { dialogClosed, openDialog, useAppStore } from "../store.ts";
 import { Button } from "./ui/Button.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
@@ -16,19 +16,13 @@ export function HelpDialog() {
   const mac = isMac();
 
   useEffect(() => {
-    const trigger = el("help-open");
-    const show = () => openDialog("help");
     const onKeydown = (event: KeyboardEvent) => {
       if (!shortcutKeys("help", mac).some((key) => matchesKey(event, key))) return;
       event.preventDefault();
-      show();
+      openDialog("help");
     };
-    trigger.addEventListener("click", show);
     document.addEventListener("keydown", onKeydown);
-    return () => {
-      trigger.removeEventListener("click", show);
-      document.removeEventListener("keydown", onKeydown);
-    };
+    return () => document.removeEventListener("keydown", onKeydown);
   }, [mac]);
 
   return (
