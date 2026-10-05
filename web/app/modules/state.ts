@@ -1,34 +1,18 @@
+import { type AppState, store } from "../store.ts";
+
 /**
- * The one shared mutable object the modules read and write. Its shape is
- * AppState, declared in web/types/app.d.ts.
+ * The old modules' view of the store: reading `state.chosenPath` reads the
+ * store, assigning to it sets the store, so one source of state exists. Its
+ * shape is AppState in app/store.ts. A mutation inside a field (a Map's
+ * `set`) does not notify subscribers, as before; assign a new value to do so.
  */
-export const state: AppState = {
-  entries: [], // every scenario the search can offer (mission + draft, not templates)
-  chosenPath: null, // path of the entry currently loaded in the editor
-  chosenTitle: "",
-  building: false,
-  runner: null,
-  lastPdf: null,
-  pdfSource: null, // the editor source lastPdf was made from
-  pdfUploads: null, // the uploadsSignature of the in-app build lastPdf came from
-  pdfPath: null, // the scenario lastPdf shows, which names its download
-  pdfDropsLastPage: false, // whether the pane drops lastPdf's last page
-  cm: null, // CodeMirror instance, created once over #editor
-
-  // Files a contributor added from their own machine, not the repository: a
-  // new header image or new map art the scenario does not have committed
-  // yet. Keyed by the repository path the build should see them at, so a
-  // build both fetches around them and prefers them outright when a path
-  // collides with a real repo file.
-  uploadedFiles: new Map(), // path -> Uint8Array
-
-  saveTimer: null,
-
-  // {path, controller, promise}
-  scenarioPrefetch: null,
-
-  clean: null,
-};
+export const state: AppState = new Proxy({} as AppState, {
+  get: (_target, key: string) => store.getState()[key as keyof AppState],
+  set: (_target, key: string, value) => {
+    store.setState({ [key]: value });
+    return true;
+  },
+});
 
 /**
  * The editor instance, for the paths that cannot run before initEditor has

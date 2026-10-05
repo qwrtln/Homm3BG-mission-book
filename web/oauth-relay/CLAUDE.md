@@ -1,7 +1,7 @@
 # web/oauth-relay/ — GitHub OAuth token exchange
 
 A Cloudflare Pages Function, not part of the browser app. It runs on the
-Workers runtime, so it sits outside `web/jsconfig.json` and has no JSDoc
+Workers runtime, so it sits outside `web/tsconfig.json` and has no type
 contract. Biome still lints it.
 
 - It exists only because GitHub's token endpoint sends no CORS headers. It

@@ -7,28 +7,10 @@
 // id here makes `el("new-id")` fail to compile.
 
 interface ElementIdMap {
-  "about-close": HTMLButtonElement;
-  "about-dialog": HTMLDialogElement;
+  overlays: HTMLDivElement;
   "about-open": HTMLButtonElement;
-  "about-source": HTMLAnchorElement;
-  "about-title": HTMLHeadingElement;
-  "feedback-bgg": HTMLAnchorElement;
-  "feedback-close": HTMLButtonElement;
-  "feedback-dialog": HTMLDialogElement;
-  "feedback-discord": HTMLAnchorElement;
-  "feedback-github": HTMLAnchorElement;
   "feedback-open": HTMLButtonElement;
-  "feedback-title": HTMLHeadingElement;
-  "help-close": HTMLButtonElement;
-  "help-dialog": HTMLDialogElement;
   "help-open": HTMLButtonElement;
-  "help-shortcuts": HTMLTableSectionElement;
-  "help-title": HTMLHeadingElement;
-  "license-bundled": HTMLDivElement;
-  "license-group-app": HTMLHeadingElement;
-  "license-group-bundled": HTMLHeadingElement;
-  "license-group-editor": HTMLHeadingElement;
-  "license-group-engine": HTMLHeadingElement;
   build: HTMLButtonElement;
   "build-label": HTMLSpanElement;
   "build-progress": HTMLDivElement;
@@ -42,7 +24,6 @@ interface ElementIdMap {
   "unsaved-note": HTMLSpanElement;
   "back-to-welcome": HTMLButtonElement;
   "route-loading": HTMLDivElement;
-  "confirm-warning": HTMLParagraphElement;
   editor: HTMLTextAreaElement;
   "editor-pane": HTMLElement;
   "workspace-main": HTMLElement;
@@ -59,11 +40,6 @@ interface ElementIdMap {
   "edit-branch-prompt": HTMLDivElement;
   "edit-continue": HTMLButtonElement;
   "edit-start-over": HTMLButtonElement;
-  "confirm-cancel": HTMLButtonElement;
-  "confirm-dialog": HTMLDialogElement;
-  "confirm-message": HTMLParagraphElement;
-  "confirm-title": HTMLHeadingElement;
-  "confirm-ok": HTMLButtonElement;
   "submit-blockers": HTMLUListElement;
   "submit-cancel": HTMLButtonElement;
   "submit-checklist": HTMLFieldSetElement;
@@ -121,7 +97,6 @@ interface ElementIdMap {
   "status-spinner": HTMLSpanElement;
   "status-text": HTMLSpanElement;
   "theme-toggle": HTMLButtonElement;
-  toast: HTMLDivElement;
   "upload-header": HTMLInputElement;
   "upload-header-add": HTMLButtonElement;
   "upload-header-card": HTMLDivElement;

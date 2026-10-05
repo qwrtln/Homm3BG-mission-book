@@ -1,16 +1,18 @@
 import { errorMessage } from "../shared/errors.ts";
-import { initAbout } from "./modules/about.js";
+import { AboutDialog } from "./components/AboutDialog.tsx";
+import { ConfirmDialog } from "./components/ConfirmDialog.tsx";
+import { FeedbackDialog } from "./components/FeedbackDialog.tsx";
+import { HelpDialog } from "./components/HelpDialog.tsx";
+import { Toaster } from "./components/Toaster.tsx";
 import { initAutocomplete } from "./modules/autocomplete.js";
 import { ensureEngine, initBuild } from "./modules/build.js";
 import { initCategory } from "./modules/category.js";
 import { el, escapeHtml, setStatus } from "./modules/dom.js";
 import { initEditor } from "./modules/editor.js";
 import { loadEntries } from "./modules/entries.ts";
-import { initFeedback } from "./modules/feedback.js";
 import { preloadCommonFiles } from "./modules/files.ts";
 import { initGithub, openRoute } from "./modules/github.js";
 import { initHeaderMenu } from "./modules/header.js";
-import { initHelp } from "./modules/help.js";
 import { loadRecord, saveText, saveUploads } from "./modules/local-store.ts";
 import { initPanes } from "./modules/panes.js";
 import { initPdfView } from "./modules/pdf-view.js";
@@ -22,6 +24,7 @@ import { initSubmit } from "./modules/submit.js";
 import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
 import { initUploads } from "./modules/uploads.js";
 import { initWizard } from "./modules/wizard.js";
+import { mountRegion } from "./mount.tsx";
 
 // Test hooks, like __lastSaveTarget: the build bundles the modules, so a test
 // cannot import its own copy of them from the page.
@@ -31,9 +34,16 @@ window.__localStore = { loadRecord, saveText, saveUploads };
 initTheme();
 initHeaderMenu();
 initCategory();
-initAbout();
-initHelp();
-initFeedback();
+mountRegion(
+  "overlays",
+  <>
+    <AboutDialog />
+    <HelpDialog />
+    <FeedbackDialog />
+    <ConfirmDialog />
+    <Toaster />
+  </>,
+);
 initEditor();
 initPanes();
 initPdfView();

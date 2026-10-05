@@ -10,6 +10,10 @@ const LICENSES = {
   "CodeMirror 5": "MIT License",
   "pdfjs-dist": "Apache License",
   "client-zip": "Permission is hereby granted",
+  react: "Permission is hereby granted",
+  "react-dom": "Permission is hereby granted",
+  scheduler: "Permission is hereby granted",
+  zustand: "Permission is hereby granted",
   "TeXlyre BusyTeX": "GNU AFFERO GENERAL PUBLIC LICENSE",
   "BusyTeX and TeX Live": "LaTeX engine: third-party notices",
 };
@@ -48,7 +52,9 @@ test("each license row loads its text when opened", async ({ app }) => {
   await expect(rows).toHaveCount(Object.keys(LICENSES).length);
 
   for (const [name, line] of Object.entries(LICENSES)) {
-    const row = rows.filter({ has: page.locator(".license-name", { hasText: name }) });
+    // Whole-name match: "react" must not also match the "react-dom" row.
+    const exact = new RegExp(`^${name}$`);
+    const row = rows.filter({ has: page.locator(".license-name", { hasText: exact }) });
     await row.locator("summary").click();
     await expect(row.locator(".license-text")).toContainText(line);
   }

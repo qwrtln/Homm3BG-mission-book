@@ -91,9 +91,9 @@ declare const CodeMirror: CodeMirrorStatic;
 interface Window {
   /** Reads back where the last save landed. Used by the integration tests. */
   __lastSaveTarget?: () => SaveTarget | null;
-  /** The app's shared state object. Installed by app/app.js for the integration tests. */
-  __state?: AppState;
-  /** The local-store functions the integration tests seed and read. Installed by app/app.js. */
+  /** The app's state facade over the store. Installed by app/main.tsx for the integration tests. */
+  __state?: import("../app/store.ts").AppState;
+  /** The local-store functions the integration tests seed and read. Installed by app/main.tsx. */
   __localStore?: Pick<typeof import("../app/modules/local-store.ts"), "loadRecord" | "saveText" | "saveUploads">;
 }
 

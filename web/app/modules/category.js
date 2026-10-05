@@ -1,8 +1,9 @@
 import { categoryOfPath, DRAFT_CATEGORIES, withCategory, withScenarioKind } from "../../shared/scenario-name.ts";
+import { store } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
 import { el } from "./dom.js";
 import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
-import { githubSaveState, onSaveStateReset } from "./github-save-state.js";
+import { githubSaveState } from "./github-save-state.js";
 import { moveRecord, saveText } from "./local-store.ts";
 import { reflectRoute } from "./route.ts";
 import { requireEditor, state } from "./state.ts";
@@ -140,5 +141,14 @@ export function initCategory() {
     }),
   );
   select.addEventListener("change", () => moveToCategory(select.value));
-  onSaveStateReset(syncCategoryControl);
+  store.subscribe((current, previous) => {
+    if (
+      current.lastSaveTarget !== previous.lastSaveTarget ||
+      current.edit !== previous.edit ||
+      current.committedUploads !== previous.committedUploads ||
+      current.saving !== previous.saving
+    ) {
+      syncCategoryControl();
+    }
+  });
 }

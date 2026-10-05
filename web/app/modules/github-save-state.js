@@ -1,53 +1,36 @@
+import { store } from "../store.ts";
 import { el } from "./dom.js";
 
-/**
- * Where the last save or resumed draft landed: what "Save again" pushes to
- * and "Open PR" opens against. Shared state, so a mutable object, not a
- * plain let.
- *
- * `edit` is set while a member is editing an existing scenario in place, and
- * `startOver` there means the first save must reset the branch to the default
- * branch. The save that does it clears it, so later saves build on top.
- *
- * `committedUploads` holds the upload paths the branch carries: a resumed
- * draft's assets, then whatever the last save pushed. One missing from the
- * uploads dialog at the next save was dropped or renamed, and comes off the
- * branch.
- *
- * `saving` is true while a save is on its way to GitHub.
- *
- * @type {{lastSaveTarget: SaveTarget | null, edit: {startOver: boolean} | null, committedUploads: Set<string>, saving: boolean}}
- */
-export const githubSaveState = { lastSaveTarget: null, edit: null, committedUploads: new Set(), saving: false };
-
-/** @type {(() => void) | null} */
-let resetListener = null;
+/** @typedef {import("../store.ts").SaveState} SaveState */
 
 /**
- * Registers what runs after every resetGithubSaveState, so a control that
- * reads the save state (the header's category) follows it without this
- * module importing a DOM module back.
+ * The save fields of the store, as the old modules read and write them:
+ * where the last save landed, the in-place edit, the upload paths the branch
+ * carries, and whether a save is on its way. The fields are documented on
+ * SaveState in app/store.ts. A mutation inside one (`edit.startOver = false`)
+ * does not notify subscribers; assign a new value to do so.
  *
- * @param {() => void} listener
- * @returns {void}
+ * @type {SaveState}
  */
-export function onSaveStateReset(listener) {
-  resetListener = listener;
-}
+export const githubSaveState = new Proxy(/** @type {SaveState} */ ({}), {
+  get: (_target, key) => store.getState()[/** @type {keyof SaveState} */ (key)],
+  set: (_target, key, value) => {
+    store.setState({ [key]: value });
+    return true;
+  },
+});
 
 /**
  * On sign-out or picking a different scenario: neither carries over the
- * previous branch/PR/button state.
+ * previous branch/PR/button state. Subscribers of the store (the header's
+ * category) see the cleared fields.
  *
  * @returns {void}
  */
 export function resetGithubSaveState() {
-  githubSaveState.lastSaveTarget = null;
-  githubSaveState.edit = null;
-  githubSaveState.committedUploads = new Set();
   el("github-open-pr").hidden = true;
   el("github-pr-link").hidden = true;
-  resetListener?.();
+  store.setState({ lastSaveTarget: null, edit: null, committedUploads: new Set() });
 }
 
 /**

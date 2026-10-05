@@ -91,7 +91,7 @@ Playwright runs the newest route first, so it overrides the default.
   `"type": "module"`).
 - **App internals in tier 2**: the page is bundled, so a test cannot `import()`
   a module from it. Read `globalThis.__state` and `globalThis.__localStore`
-  (installed by `app/app.js`) inside `page.evaluate`.
+  (installed by `app/main.tsx`) inside `page.evaluate`.
 - **What belongs in tier 1**: a module Node can import without a DOM. Today that
   means `web/shared/build-plan.ts`, plus helpers in `web/app/modules/` that only
   touch the DOM *inside* a function body, never at import time.

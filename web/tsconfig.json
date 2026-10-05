@@ -6,6 +6,7 @@
     "strict": true,
     "target": "ES2022",
     "module": "ESNext",
+    "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": [],

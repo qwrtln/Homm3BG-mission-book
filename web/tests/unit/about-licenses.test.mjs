@@ -1,7 +1,7 @@
 // Tier 1 check that every license the About dialog offers is a file the
 // deploy ships, and that the build lists the bundled npm packages' licenses.
 //
-// The dialog loads each static row's license from a data-src relative to the
+// The dialog loads each static row's license from a src relative to the
 // page, which the deploy serves as site/builder/. The integration server
 // serves the whole repository, so a file left off the allow-list in
 // publish-docs.yaml would pass tier 2 and 404 on the live site. Packages in
@@ -18,10 +18,10 @@ import test from "node:test";
 
 import { readRepoFile, repoRoot } from "../helpers/repo.mjs";
 
-/** Each static license row's data-src, resolved to a path under web/. */
+/** Each static license row's src in components/licenses.ts, resolved to a path under web/. */
 function licensePaths() {
-  const html = readRepoFile("web/app/index.html");
-  const sources = [...html.matchAll(/<details class="license" data-src="([^"]+)"/g)].map((match) => match[1]);
+  const source = readRepoFile("web/app/components/licenses.ts");
+  const sources = [...source.matchAll(/\bsrc: "([^"]+)"/g)].map((match) => match[1]);
   return sources.map((src) => posix.normalize(posix.join("app", src)));
 }
 
@@ -92,5 +92,5 @@ test("the build emits the notices the About dialog reads", () => {
   const config = readRepoFile("web/vite.config.ts");
   assert.match(config, /const NOTICES_FILE = "licenses\.json"/);
   assert.match(config, /emitFile\(\{[^}]*fileName: NOTICES_FILE/s, "vite.config.ts does not emit the notices file");
-  assert.match(readRepoFile("web/app/modules/about.js"), /new URL\("licenses\.json"/);
+  assert.match(readRepoFile("web/app/components/AboutDialog.tsx"), /new URL\("licenses\.json"/);
 });

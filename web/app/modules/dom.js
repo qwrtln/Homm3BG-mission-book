@@ -1,5 +1,6 @@
 import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
 import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.ts";
+import { requestConfirm } from "../store.ts";
 import { state } from "./state.ts";
 
 export { basenameNoExt, escapeHtml, sanitizeFilename };
@@ -155,24 +156,12 @@ export function confirmDelete(message) {
 }
 
 /**
- * Asks in the page's own modal. Escape and Cancel answer no; Cancel has focus.
+ * Asks in the page's own modal, the ConfirmDialog component. Escape and
+ * Cancel answer no; Cancel has focus.
  *
- * @param {{title: string, message: string, warning: string, okLabel: string, cancelLabel?: string, danger: boolean}} options
+ * @param {import("../store.ts").ConfirmOptions} options
  * @returns {Promise<boolean>} true only when the confirming button was pressed
  */
-export function confirmAction({ title, message, warning, okLabel, cancelLabel = "Cancel", danger }) {
-  const dialog = el("confirm-dialog");
-  el("confirm-title").textContent = title;
-  el("confirm-message").textContent = message;
-  el("confirm-warning").textContent = warning;
-  el("confirm-warning").hidden = warning === "";
-  el("confirm-ok").textContent = okLabel;
-  el("confirm-cancel").textContent = cancelLabel;
-  el("confirm-ok").classList.toggle("danger", danger);
-  return new Promise((resolve) => {
-    dialog.addEventListener("close", () => resolve(dialog.returnValue === "confirm"), { once: true });
-    dialog.returnValue = "cancel";
-    dialog.showModal();
-    el("confirm-cancel").focus(); // the safe default
-  });
+export function confirmAction(options) {
+  return requestConfirm(options);
 }

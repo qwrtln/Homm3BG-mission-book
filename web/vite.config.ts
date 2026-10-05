@@ -11,6 +11,8 @@ import { cpSync, existsSync, readdirSync, readFileSync } from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { dirname, extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
 
 const WEB = dirname(fileURLToPath(import.meta.url));
@@ -174,7 +176,7 @@ export default defineConfig(({ command }) => ({
   // The dev server mounts the page where the tests and serve.sh expect it. The
   // build uses relative URLs, so the same files work under /builder/.
   base: command === "serve" ? "/web/app/" : "./",
-  plugins: [outOfBundleAssets(), copyCodemirror(), licenseNotices()],
+  plugins: [react(), tailwindcss(), outOfBundleAssets(), copyCodemirror(), licenseNotices()],
   server: {
     headers: ISOLATION_HEADERS,
   },

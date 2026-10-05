@@ -19,52 +19,89 @@ or the deploy allow-list names it.
   `"wasm-scenario-builder:pending-route"`, which is `ROUTE_KEY` in
   `modules/github.js`. Rename both together. It is classic script, outside
   `tsc` and Biome.
-- The script entry is plain `app.js`. The build gives the bundle a hashed name,
+- The script entry is plain `main.tsx`. The build gives the bundle a hashed name,
   so no `?v=N` cache-buster exists. Never add one.
 - A license row with a `data-src` is for a file outside npm. Bundled npm
   packages are listed from `licenses.json`, which the build writes.
 
 ## Modules
 
-- Shared mutable state lives in the one `state` object in `modules/state.ts`;
-  its shape is `AppState` in `web/types/app.d.ts`. Add a field in both.
+- Shared mutable state lives in one Zustand store, `app/store.ts`. `AppState`
+  (the app's fields) and `SaveState` (the GitHub save fields) are declared
+  there, with the UI fields components read (open dialogs, the pending
+  confirmation, the toast). Add a field to its interface and to
+  `initialState()`.
+- A React component reads it with `useAppStore((s) => s.field)`. A
+  module not yet migrated reads and writes through the `state` facade in
+  `modules/state.ts` and `githubSaveState` in `modules/github-save-state.js`,
+  which proxy to `store.getState()` / `store.setState()`. A change made inside
+  a field (`map.set(...)`) does not notify subscribers; assign a new value.
+  `store.subscribe` replaces a single-slot listener.
+- `main.tsx` is the wiring point (order in `web/CLAUDE.md`). `mountRegion(id,
+  element)` in `mount.tsx` renders a React subtree into an `index.html` region
+  synchronously. The `overlays` region holds the dialogs and the toast.
 - Reach elements through `el("id")`, which throws on a missing id and returns
   a non-null typed element. Reserve `document.querySelector` for class or
-  structural selectors.
+  structural selectors. A component renders its own ids; they are not in
+  `index.html` or `dom-ids.d.ts`, so a component never reads them through `el()`.
 - Tests reach `state` and the local store through `window.__state` and
-  `window.__localStore`, installed at the top of `app.js` (typed in
+  `window.__localStore`, installed at the top of `main.tsx` (typed in
   `web/types/globals.d.ts`). Keep them in step with what the tests read.
 - `localStorage` keys carry the `wasm-scenario-builder:` prefix. The one
   exception, `github_token` in `web/shared/github-auth.js`, stays as it is:
   renaming it signs every contributor out.
+- A module tier 1 imports stays `.ts` or `.js`: Node cannot load `.tsx`. That
+  is why `showToast()` lives in `modules/toast.ts`, not in a component.
+
+## Components
+
+- `components/ui/` holds the primitives (`Button`, `Checkbox`, `RadioGroup`,
+  `Dialog`, `Link`, `Toast`): generic, no store, no app text.
+- `components/` holds one file per region or dialog (`AboutDialog.tsx`,
+  `Toaster.tsx`), which reads the store and composes primitives.
+- A component keeps the ids, `data-testid`s and accessible names tier 2 uses.
+- A new dialog or region goes in `components/` and mounts through
+  `mountRegion`. Delete its static markup and old module in the same change.
 
 ## Styles
 
+- `styles/app.css` is the one stylesheet `index.html` links. It imports
+  Tailwind's theme and utilities (no preflight, which would restyle the
+  legacy regions) and puts the legacy sheets and CodeMirror 5's in a `legacy`
+  layer, which the utilities layer beats. Delete a sheet's import there when
+  its last region migrates.
 - Colors come from custom properties in `styles/tokens.css` (GitHub Primer
-  values). Define a new color there, once under `:root` and once under
-  `html[data-theme="dark"]`. Dark mode is that attribute, set by
-  `modules/theme.js` — not a `prefers-color-scheme` query in each sheet.
-- A new stylesheet needs its own `<link>` in `index.html`; Vite bundles the
-  linked sheets into one hashed file, in link order.
+  values). A new color goes in `tokens.css`, once under `:root` and once under
+  `html[data-theme="dark"]`, plus a `--color-*` line in the `@theme inline`
+  block of `app.css`. Dark mode is that attribute, set by `modules/theme.js`:
+  Tailwind's `dark:` variant follows it. Never use a `prefers-color-scheme`
+  query.
+- Radius, type and shadow come from the `@theme` scales in `app.css`
+  (`rounded-sm|md|lg`, `text-small|ui|body|heading`). No raw px or rem
+  in a component when a scale step fits.
+- Tailwind orders utilities by property, not by class order: two classes
+  for one property on one element conflict. Pick one per variant.
 
 ## Controls match the app
 
 Every control a contributor sees is dressed in the app's GitHub Primer look,
 in both themes. The browser's default rendering of a control never reaches the
-page. Reuse the existing pattern:
+page. Reuse the primitive:
 
 | Control | Use |
 | --- | --- |
-| Button | `button` plus `primary`, `link`, `with-icon`, `icon`, `danger` or `attention` (`styles/base.css`, `header-actions.css`, `dialog.css`) |
-| Checkbox | `class="check"` on the `<input>`, inside its `<label>` (`styles/base.css`) |
-| Radio group | Joined buttons over hidden radios: `.wizard-radios` in `styles/wizard.css` |
-| Hyperlink | `color: var(--accent)` plus a `:focus-visible` outline, set by the container's rule (`.about-dialog a`, `.welcome-intro a`). No global `a` rule exists. |
-| Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.js`, the page's own `<dialog>` |
-| Notice | `showToast()` in `modules/toast.js`, or `setStatus()` in `modules/dom.js` |
+| Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `withIcon`, `icon`, `danger`, `attention`, or none |
+| Checkbox | `<Checkbox label=...>` in `components/ui/Checkbox.tsx` |
+| Radio group | `<RadioGroup>` in `components/ui/RadioGroup.tsx`: joined buttons over hidden radios |
+| Hyperlink | `<Link>` in `components/ui/Link.tsx`: accent color, visible focus ring, `external` for a new tab |
+| Dialog | `<Dialog>` in `components/ui/Dialog.tsx`, a native `<dialog>` |
+| Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.js`, shown by `ConfirmDialog` |
+| Notice | `showToast()` in `modules/toast.ts`, or `setStatus()` in `modules/dom.js` |
 
-- Several of these rules are scoped to one screen. When a second screen needs
-  one, widen its selector into a shared class; keep the one definition.
-- A control with no pattern here gets new rules first, built from
-  `tokens.css`. Check it in light and dark mode before it ships.
+- Markup in `index.html` not yet migrated still uses the legacy classes
+  (`button.primary`, `input.check`, `.wizard-radios`); they move to the
+  primitives with their region.
+- A control with no primitive here gets one first, built from the theme. Check
+  it in light and dark mode before it ships.
 - `alert()`, `confirm()` and `prompt()` stay out of the app. They are the
   browser's own UI and ignore the theme.

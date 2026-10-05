@@ -1,0 +1,75 @@
+/* The stylesheet entry: Tailwind's theme and utilities, over the legacy
+   sheets until each region that uses one migrates to components.
+
+   Tailwind's preflight is not imported: it would restyle every legacy
+   region. Instead the legacy sheets (and the CodeMirror 5 ones) sit in one
+   `legacy` layer, in the order the page used to link them, and the
+   utilities layer comes after it, so a utility on a migrated component
+   beats a legacy rule. Delete a sheet's import here when its last region
+   migrates. Colors are not defined here: tokens.css stays the single
+   source, light and dark, and @theme maps each one to a utility name. */
+
+@layer theme, legacy, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "../vendor/codemirror/codemirror.min.css" layer(legacy);
+@import "../vendor/codemirror/addon/dialog/dialog.min.css" layer(legacy);
+@import "../codemirror-github-theme.css" layer(legacy);
+@import "./tokens.css" layer(legacy);
+@import "./base.css" layer(legacy);
+@import "./github-status.css" layer(legacy);
+@import "./welcome.css" layer(legacy);
+@import "./wizard.css" layer(legacy);
+@import "./header-actions.css" layer(legacy);
+@import "./workspace.css" layer(legacy);
+@import "./dialog.css" layer(legacy);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Dark mode is the data-theme attribute modules/theme.js sets, never a media query. */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-panel: var(--panel);
+  --color-accent: var(--accent);
+  --color-primary: var(--btn-primary-bg);
+  --color-primary-hover: var(--btn-primary-hover);
+  --color-danger-bg: var(--btn-danger-bg);
+  --color-danger-border: var(--btn-danger-border);
+  --color-danger-fg: var(--btn-danger-fg);
+  --color-danger-hover-bg: var(--btn-danger-hover-bg);
+  --color-danger-hover-border: var(--btn-danger-hover-border);
+  --color-danger-active-bg: var(--btn-danger-active-bg);
+  --color-ok: var(--ok);
+  --color-bad: var(--bad);
+  --color-warn: var(--warn);
+  --color-attention-bg: var(--attention-bg);
+  --color-attention-hover-bg: var(--attention-hover-bg);
+  --color-attention-border: var(--attention-border);
+  --color-pdf-bg: var(--pdf-bg);
+  --color-error-bg: var(--error-bg);
+  --color-code-bg: var(--code-bg);
+  --color-shadow: var(--shadow);
+}
+
+/* Radius and type scales that replace the raw values the legacy sheets repeat.
+   Spacing keeps Tailwind's 0.25rem step. */
+@theme {
+  --radius-*: initial;
+  --radius-sm: 4px; /* controls, keys */
+  --radius-md: 6px; /* notices, code blocks */
+  --radius-lg: 8px; /* dialogs */
+
+  --text-*: initial;
+  --text-small: 0.85rem;
+  --text-ui: 0.88rem;
+  --text-body: 0.95rem;
+  --text-heading: 1.1rem;
+  --text-icon: 1rem;
+
+  --shadow-dialog: 0 8px 32px var(--shadow);
+  --shadow-toast: 0 8px 24px var(--shadow);
+}

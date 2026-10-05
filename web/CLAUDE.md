@@ -4,8 +4,9 @@ Browser app: write a Mission Book scenario in LaTeX, compile it to PDF in the
 browser (BusyTeX/WASM), open a pull request. No local LaTeX toolchain.
 
 Built with Vite. `web/index.html` redirects to `web/app/index.html`, which
-loads `web/app/app.js` as an ES module; `npm run build` bundles it into
-`web/dist/`. No framework yet.
+loads `web/app/main.tsx` as an ES module; `npm run build` bundles it into
+`web/dist/`. React, Zustand and Tailwind are in, region by region (see
+`web/app/CLAUDE.md`); the rest is still plain modules.
 
 ## Dependencies and build
 
@@ -27,7 +28,7 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
 - Add a browser library with `npm install`, import it, and let the bundler
   place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
   the first load. Do not vendor it by hand.
-- `web/vite.config.ts` has three plugins: `out-of-bundle-assets` (dev only,
+- `web/vite.config.ts` has five plugins, `react` and `tailwindcss` plus three of its own: `out-of-bundle-assets` (dev only,
   serves the paths below from disk), `copy-codemirror` (copies the fetched
   CodeMirror 5 files into `dist/`, because they are classic `<script>` tags the
   bundler leaves alone) and `license-notices` (writes `dist/licenses.json`, the
@@ -78,7 +79,7 @@ because the engine's worker resolves paths itself and the files are large:
 | Path | Holds |
 | --- | --- |
 | `web/shared/` | DOM-free logic, importable by Node, testable in tier 1 |
-| `web/app/modules/` | App concerns, wired by `app.js`; DOM allowed |
+| `web/app/modules/` | App concerns, wired by `main.tsx`; DOM allowed |
 | `web/types/` | Ambient `.d.ts` shared across the app |
 | `web/core/`, `web/app/vendor/` | Fetched and gitignored (`serve.sh` / `fetch-vendor.sh`). Do not edit. |
 | `web/shared/vendor/` | Committed, loaded at run time, not bundled. Do not edit. |
@@ -91,7 +92,7 @@ because the engine's worker resolves paths itself and the files are large:
 
 ## Module wiring
 
-`web/app/app.js` is the only wiring point. A module exports `init<Name>()`;
+`web/app/main.tsx` is the only wiring point. A module exports `init<Name>()`;
 nothing self-registers. Order is load-bearing:
 
 1. `initTheme()` before `applyTheme(initialTheme())`.
@@ -156,7 +157,7 @@ npx biome check --write .     # apply safe fixes
 - Running from the repository root fails: Biome 2.x treats the invocation
   directory as an implicit root and refuses a nested config. CI uses
   `working-directory: web`.
-- It covers `*.js`, `*.mjs` and `vite.config.ts`. `dist/`, `node_modules/`,
+- It covers `*.js`, `*.mjs`, `*.ts` and `*.tsx`. `dist/`, `node_modules/`,
   `core/`, `app/vendor/` and `shared/vendor/` are excluded.
 - Formatting settings live in @web/biome.json. Indent style is explicit there —
   Biome defaults to tabs, which the root lint rules reject.
@@ -180,7 +181,7 @@ npm run test:e2e    # tier 2: builds, then serves web/dist/
   Node 22 and 24. Never gate tier 1 behind tier 2.
 - Tier 2 runs against the production build, so the page's modules are bundled.
   A test cannot `import()` an app module from the page: it reads the hooks
-  `window.__state` and `window.__localStore` (installed in `app/app.js`), like
+  `window.__state` and `window.__localStore` (installed in `app/main.tsx`), like
   `window.__lastSaveTarget`.
 - Never load the LaTeX engine; `web/tests/stubs/` stubs it.
 - **Install the stubs before `page.goto`, never after** — navigate first and the
@@ -252,7 +253,7 @@ the chunk. Types are the package's own.
 - `web/app/modules/build.js` is the only module loading the wrapper, by runtime
   URL (see "Out-of-bundle runtime assets"). Everything else goes through
   `ensureEngine()`.
-- `web/app/app.js` calls `ensureEngine()` eagerly on page load, so every
+- `web/app/main.tsx` calls `ensureEngine()` eagerly on page load, so every
   browser-driven test is affected.
 - No test compiles a real PDF or downloads `texlive-*.data`. Stub it.
 

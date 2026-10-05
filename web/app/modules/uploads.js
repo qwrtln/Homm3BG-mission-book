@@ -2,7 +2,8 @@ import { refreshUnsavedNote } from "./dirty.ts";
 import { el, sanitizeFilename } from "./dom.js";
 import { saveUploads } from "./local-store.ts";
 import { state } from "./state.ts";
-import { showToast } from "./toast.js";
+import { showToast } from "./toast.ts";
+
 import {
   createUploadPanel,
   MAP_EDITOR_URL,
