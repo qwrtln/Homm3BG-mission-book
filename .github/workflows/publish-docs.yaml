@@ -39,24 +39,35 @@ jobs:
       - run: pip install mkdocs-material
       - run: mkdocs build --site-dir site
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: web/.nvmrc
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
       - name: Fetch browser libraries
         run: bash web/fetch-vendor.sh
 
-      # The app is served at /builder/: web/app/ becomes site/builder/. It
-      # finds shared/, core/, repo/ and the LICENSE files one level up, so
-      # those land at the site root, next to the MkDocs output.
+      - name: Build the app
+        working-directory: web
+        run: npm ci && npm run build
+
+      # The app is served at /builder/: web/dist/, the build of web/app/,
+      # becomes site/builder/. It finds core/, repo/, the engine wrapper, the
+      # carried texmf bundle and the LICENSE files one level up, so those land
+      # at the site root, next to the MkDocs output. The rest of web/shared/
+      # is code the build already bundled, so it stays out.
       # An allow-list: only what the browser loads is deployed. Tests, types,
       # configs and scripts under web/ stay out, including any added later.
       # web/index.html stays out too: at the site root it would replace the
       # MkDocs home page. The LICENSE files ship with the code they cover.
       - name: Copy the app into the site
         run: |
-          rsync -a web/app/ site/builder/
+          rsync -a web/dist/ site/builder/
           rsync -a \
             --include='/LICENSE' \
             --include='/LATEX-ENGINE-NOTICE' \
             --include='/shared/' \
-            --include='/shared/*.js' \
             --include='/shared/texmf/' \
             --include='/shared/texmf/carried-texmf.bin' \
             --include='/shared/vendor/' \

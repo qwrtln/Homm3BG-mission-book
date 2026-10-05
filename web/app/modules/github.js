@@ -12,7 +12,7 @@ import {
   saveScenarioToRepo,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
-} from "../../shared/github-contrib.js?v=3";
+} from "../../shared/github-contrib.js";
 import { parseRoute, slugToPath } from "../../shared/route.js";
 import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.js";
 import { assetsSignature, uploadsSignature } from "../../shared/unsaved.js";

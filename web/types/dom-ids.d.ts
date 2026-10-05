@@ -24,7 +24,9 @@ interface ElementIdMap {
   "help-open": HTMLButtonElement;
   "help-shortcuts": HTMLTableSectionElement;
   "help-title": HTMLHeadingElement;
+  "license-bundled": HTMLDivElement;
   "license-group-app": HTMLHeadingElement;
+  "license-group-bundled": HTMLHeadingElement;
   "license-group-editor": HTMLHeadingElement;
   "license-group-engine": HTMLHeadingElement;
   build: HTMLButtonElement;

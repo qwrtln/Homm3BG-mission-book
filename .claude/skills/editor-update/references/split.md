@@ -48,7 +48,7 @@ from other slices — they may not exist yet; code against the signature>
 - the type-check and Biome commands in
   .claude/skills/editor-update/scripts/verify.sh pass for your files
   (run Biome from web/ on your files only);
-- your own tests pass: node --test <file> / (from web/tests) npx playwright test <file>;
+- your own tests pass: (from web/) node --test <file> / npx playwright test --config tests/playwright.config.mjs <file>;
 - you wrote a short report to <scratchpad>/report-<slice>.md: files changed,
   decisions not in the brief, anything left undone. Then stop.
 

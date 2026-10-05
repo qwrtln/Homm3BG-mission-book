@@ -456,7 +456,9 @@
 </dialog>
 
 <!-- styles/dialog.css; about.js loads each license text when its row opens.
-     Every href points at a file the deploy ships (publish-docs.yaml). -->
+     Every href points at a file the deploy ships (publish-docs.yaml). The npm
+     packages in the bundle are listed from licenses.json, which the build
+     writes next to this page (vite.config.ts). -->
 <dialog id="about-dialog" class="confirm-dialog about-dialog" aria-labelledby="about-title">
   <form method="dialog">
     <h2 id="about-title">About the scenario builder</h2>
@@ -477,16 +479,9 @@
         <p class="license-home"><a href="https://codemirror.net/5/" target="_blank" rel="noopener">codemirror.net</a></p>
         <pre class="license-text"></pre>
       </details>
-      <details class="license" data-src="vendor/pdfjs/LICENSE">
-        <summary><span class="license-name">PDF.js</span><span class="license-kind">Apache-2.0</span></summary>
-        <p class="license-home"><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener">github.com/mozilla/pdf.js</a></p>
-        <pre class="license-text"></pre>
-      </details>
-      <details class="license" data-src="vendor/client-zip/LICENSE.txt">
-        <summary><span class="license-name">client-zip</span><span class="license-kind">MIT</span></summary>
-        <p class="license-home"><a href="https://github.com/Touffy/client-zip" target="_blank" rel="noopener">github.com/Touffy/client-zip</a></p>
-        <pre class="license-text"></pre>
-      </details>
+    </div>
+    <div class="license-group" id="license-bundled" role="group" aria-labelledby="license-group-bundled" hidden>
+      <h4 id="license-group-bundled">Bundled libraries</h4>
     </div>
     <div class="license-group" role="group" aria-labelledby="license-group-engine">
       <h4 id="license-group-engine">LaTeX engine</h4>
@@ -590,6 +585,6 @@
 <script src="vendor/codemirror/addon/dialog/dialog.min.js"></script>
 <script src="vendor/codemirror/addon/search/search.min.js"></script>
 <script src="vendor/codemirror/addon/comment/comment.min.js"></script>
-<script type="module" src="app.js?v=5"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>

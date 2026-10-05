@@ -1,7 +1,10 @@
 # web/app/ — page, modules, styles
 
-Everything under `web/app/` deploys as `site/builder/`, served at `/builder/`
-(`.github/workflows/publish-docs.yaml`), so a file added here ships.
+`web/app/` is the Vite root. `npm run build` bundles it into `web/dist/`, which
+deploys as `site/builder/`, served at `/builder/`
+(`.github/workflows/publish-docs.yaml`). A file Vite does not reach (a classic
+`<script>`, a runtime `fetch`) does not ship unless `vite.config.ts` copies it
+or the deploy allow-list names it.
 
 ## index.html
 
@@ -10,14 +13,16 @@ Everything under `web/app/` deploys as `site/builder/`, served at `/builder/`
   `el()` in `modules/dom.js` is keyed on that map; `tests/unit/dom-ids.test.mjs`
   fails when the two drift.
 - Keep the `<!-- stats placeholder -->` comment in `<head>`. The deploy
-  `grep -q`s for it and inlines the analytics script there; without it the
-  deploy fails.
+  `grep -q`s for it in the built `index.html` and inlines the analytics script
+  there; without it the deploy fails.
 - The inline pre-paint `<script>` in `<body>` reads the literal
   `"wasm-scenario-builder:pending-route"`, which is `ROUTE_KEY` in
   `modules/github.js`. Rename both together. It is classic script, outside
   `tsc` and Biome.
-- `app.js?v=N` is a cache-buster for GitHub Pages. Bump `N` when a change to
-  the module graph must reach returning visitors at once.
+- The script entry is plain `app.js`. The build gives the bundle a hashed name,
+  so no `?v=N` cache-buster exists. Never add one.
+- A license row with a `data-src` is for a file outside npm. Bundled npm
+  packages are listed from `licenses.json`, which the build writes.
 
 ## Modules
 
@@ -26,6 +31,9 @@ Everything under `web/app/` deploys as `site/builder/`, served at `/builder/`
 - Reach elements through `el("id")`, which throws on a missing id and returns
   a non-null typed element. Reserve `document.querySelector` for class or
   structural selectors.
+- Tests reach `state` and the local store through `window.__state` and
+  `window.__localStore`, installed at the top of `app.js` (typed in
+  `web/types/globals.d.ts`). Keep them in step with what the tests read.
 - `localStorage` keys carry the `wasm-scenario-builder:` prefix. The one
   exception, `github_token` in `web/shared/github-auth.js`, stays as it is:
   renaming it signs every contributor out.
@@ -36,8 +44,8 @@ Everything under `web/app/` deploys as `site/builder/`, served at `/builder/`
   values). Define a new color there, once under `:root` and once under
   `html[data-theme="dark"]`. Dark mode is that attribute, set by
   `modules/theme.js` — not a `prefers-color-scheme` query in each sheet.
-- A new stylesheet needs its own `<link>` in `index.html`; nothing bundles or
-  imports them.
+- A new stylesheet needs its own `<link>` in `index.html`; Vite bundles the
+  linked sheets into one hashed file, in link order.
 
 ## Controls match the app
 

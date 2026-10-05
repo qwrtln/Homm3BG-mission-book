@@ -1,5 +1,7 @@
-// Static file server for tier-2 tests and local runs of the app: COOP/COEP
-// headers, the /web/repo alias, and a cache policy for engine payloads.
+// Static file server for the tier-2 tests: COOP/COEP headers, the /web/repo
+// alias, /web/app/ mapped to the build output (web/dist/), and a cache policy
+// for engine payloads. The rest of web/ (shared/, core/) is served from where
+// it sits, which is where the page's ../ URLs land.
 //
 // No dependencies. node:http only.
 
@@ -10,6 +12,9 @@ import { fileURLToPath } from "node:url";
 
 // web/tests/driver/static-server.mjs -> repository root is three levels up.
 const REPO_ROOT = dirname(dirname(dirname(dirname(fileURLToPath(import.meta.url)))));
+
+/** Where the app is built to: the files /web/app/ serves. */
+const DEFAULT_APP_ROOT = join(REPO_ROOT, "web", "dist");
 
 const CONTENT_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -30,23 +35,29 @@ const CONTENT_TYPES = {
 
 /**
  * Resolve a request path against the repository root, applying the
- * /web/repo alias and rejecting any path that escapes the root.
+ * /web/repo alias and the /web/app/ mapping to the build output, and
+ * rejecting any path that escapes its root.
  * @param {string} requestPath - the raw pathname portion of the request URL.
+ * @param {string} appRoot - the directory /web/app/ is served from.
  * @returns {string | null} an absolute filesystem path inside the repository
- *   root, or null if the resolved path would escape it.
+ *   root or the app root, or null if the resolved path would escape it.
  */
-function resolveRequestPath(requestPath) {
+function resolveRequestPath(requestPath, appRoot) {
   let path = requestPath;
+  let root = REPO_ROOT;
   const prefix = "/web/repo/";
   if (path === "/web/repo") {
     path = "/";
   } else if (path.startsWith(prefix)) {
     path = `/${path.slice(prefix.length)}`;
+  } else if (path === "/web/app" || path.startsWith("/web/app/") || path.startsWith("/web/app?")) {
+    root = appRoot;
+    path = path.slice("/web/app".length) || "/";
   }
 
   const decoded = decodeURIComponent(path.split("?")[0].split("#")[0]);
-  const resolved = normalize(join(REPO_ROOT, `.${decoded}`));
-  if (resolved !== REPO_ROOT && !resolved.startsWith(REPO_ROOT + sep)) {
+  const resolved = normalize(join(root, `.${decoded}`));
+  if (resolved !== root && !resolved.startsWith(root + sep)) {
     return null;
   }
   return resolved;
@@ -73,16 +84,19 @@ function isCacheable(requestPath) {
 
 /**
  * Start a static file server over the repository root, with the app's
- * headers, cache policy and /web/repo alias.
- * @param {{ port?: number }} [options] - port to bind, defaulting to 0 (let
- *   the OS pick a free port).
+ * headers, cache policy and /web/repo alias, and /web/app/ served from the
+ * build output.
+ * @param {{ port?: number, appRoot?: string }} [options] - port to bind,
+ *   defaulting to 0 (let the OS pick a free port); and the directory
+ *   /web/app/ is served from, defaulting to web/dist/.
  * @returns {Promise<StaticServer>} the running server.
  */
 export async function startStaticServer(options = {}) {
   const requestedPort = options.port ?? 0;
+  const appRoot = options.appRoot ?? DEFAULT_APP_ROOT;
 
   const server = createServer((req, res) => {
-    handleRequest(req, res).catch((error) => {
+    handleRequest(req, res, appRoot).catch((error) => {
       if (!res.headersSent) {
         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
       }
@@ -116,11 +130,12 @@ export async function startStaticServer(options = {}) {
  * Serve a single HTTP request from the repository root.
  * @param {import("node:http").IncomingMessage} req - the incoming request.
  * @param {import("node:http").ServerResponse} res - the response to write.
+ * @param {string} appRoot - the directory /web/app/ is served from.
  * @returns {Promise<void>} resolves once the response has ended.
  */
-async function handleRequest(req, res) {
+async function handleRequest(req, res, appRoot) {
   const requestPath = req.url || "/";
-  const resolved = resolveRequestPath(requestPath);
+  const resolved = resolveRequestPath(requestPath, appRoot);
 
   const headers = {
     "Cross-Origin-Opener-Policy": "same-origin",

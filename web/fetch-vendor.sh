@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Fetches pdf.js, CodeMirror 5 and client-zip into web/app/vendor/<lib>/, the
-# browser libraries the scenario builder loads by plain <script>/<link> tag
-# or by URL import, with no bundler. Versions are pinned in web/vendor.env
-# (CODEMIRROR_VERSION, PDFJS_VERSION, CLIENT_ZIP_VERSION) alongside a content
-# hash for each (CODEMIRROR_SHA256, PDFJS_SHA256, CLIENT_ZIP_SHA256).
+# Fetches CodeMirror 5 into web/app/vendor/codemirror/, the one browser library
+# the scenario builder still loads by plain <script>/<link> tag instead of
+# through npm. It goes when the editor moves to CodeMirror 6. The version is
+# pinned in web/vendor.env (CODEMIRROR_VERSION) alongside a content hash
+# (CODEMIRROR_SHA256).
 #
 # Each library is downloaded into a temporary directory beside its
 # destination, hashed as a whole (see hash_dir below) and swapped into place
@@ -34,12 +34,6 @@ trap 'rm -rf "$vendor"/.*.tmp' EXIT
 # Every file fetch-vendor.sh writes, as "<lib>/<path under web/app/vendor/>".
 # Literal so the license test (web/tests/unit/about-licenses.test.mjs) can
 # read this script and know which files are fetched rather than committed.
-pdfjs_files=(
-  "pdfjs/pdf.min.mjs"
-  "pdfjs/pdf.worker.min.mjs"
-  "pdfjs/LICENSE"
-)
-
 codemirror_files=(
   "codemirror/codemirror.min.js"
   "codemirror/codemirror.min.css"
@@ -51,11 +45,6 @@ codemirror_files=(
   "codemirror/addon/comment/comment.min.js"
   "codemirror/theme/material-darker.min.css"
   "codemirror/LICENSE"
-)
-
-client_zip_files=(
-  "client-zip/index.js"
-  "client-zip/LICENSE.txt"
 )
 
 # The content hash of a fetched library directory: the SHA-256 of a sorted,
@@ -77,22 +66,6 @@ fetch_file() {
   }
 }
 
-# Populates $1 (a temporary directory) with pdf.js: the two .min.mjs files
-# and LICENSE out of the pdfjs-dist npm tarball.
-fetch_pdfjs() {
-  local tmp=$1 version=$2
-  local tarball="$tmp/pdfjs-dist.tgz"
-  fetch_file pdfjs "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-${version}.tgz" "$tarball"
-  local path
-  for path in "${pdfjs_files[@]}"; do
-    path=${path#pdfjs/}
-    [[ "$path" == "LICENSE" ]] && continue
-    tar xzf "$tarball" -C "$tmp" --strip-components=2 "package/build/$path"
-  done
-  tar xzf "$tarball" -C "$tmp" --strip-components=1 package/LICENSE
-  rm -f "$tarball"
-}
-
 # Populates $1 (a temporary directory) with CodeMirror 5: the nine .min
 # paths from cdnjs, plus LICENSE out of the codemirror npm tarball.
 fetch_codemirror() {
@@ -106,16 +79,6 @@ fetch_codemirror() {
   local tarball="$tmp/codemirror.tgz"
   fetch_file codemirror "https://registry.npmjs.org/codemirror/-/codemirror-${version}.tgz" "$tarball"
   tar xzf "$tarball" -C "$tmp" --strip-components=1 package/LICENSE
-  rm -f "$tarball"
-}
-
-# Populates $1 (a temporary directory) with client-zip: index.js and
-# LICENSE.txt out of the client-zip npm tarball, unchanged.
-fetch_client_zip() {
-  local tmp=$1 version=$2
-  local tarball="$tmp/client-zip.tgz"
-  fetch_file client-zip "https://registry.npmjs.org/client-zip/-/client-zip-${version}.tgz" "$tarball"
-  tar xzf "$tarball" -C "$tmp" --strip-components=1 package/index.js package/LICENSE.txt
   rm -f "$tarball"
 }
 
@@ -153,6 +116,4 @@ fetch_lib() {
   echo "fetched $lib $version"
 }
 
-fetch_lib pdfjs "$PDFJS_VERSION" "$PDFJS_SHA256" fetch_pdfjs
 fetch_lib codemirror "$CODEMIRROR_VERSION" "$CODEMIRROR_SHA256" fetch_codemirror
-fetch_lib client-zip "$CLIENT_ZIP_VERSION" "$CLIENT_ZIP_SHA256" fetch_client_zip

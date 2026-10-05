@@ -11,6 +11,7 @@ import { preloadCommonFiles } from "./modules/files.js";
 import { initGithub, openRoute } from "./modules/github.js";
 import { initHeaderMenu } from "./modules/header.js";
 import { initHelp } from "./modules/help.js";
+import { loadRecord, saveText, saveUploads } from "./modules/local-store.js";
 import { initPanes } from "./modules/panes.js";
 import { initPdfView } from "./modules/pdf-view.js";
 import { initPicker } from "./modules/picker.js";
@@ -21,6 +22,11 @@ import { initSubmit } from "./modules/submit.js";
 import { applyTheme, initialTheme, initTheme } from "./modules/theme.js";
 import { initUploads } from "./modules/uploads.js";
 import { initWizard } from "./modules/wizard.js";
+
+// Test hooks, like __lastSaveTarget: the build bundles the modules, so a test
+// cannot import its own copy of them from the page.
+window.__state = state;
+window.__localStore = { loadRecord, saveText, saveUploads };
 
 initTheme();
 initHeaderMenu();

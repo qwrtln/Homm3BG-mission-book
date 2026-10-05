@@ -66,15 +66,15 @@ async function openBlankClash(page, name) {
  * @returns {Promise<string>} state.chosenPath, which must not be null here
  */
 async function chosenPath(page) {
-  return page.evaluate(async () => {
-    const { state } = await import("/web/app/modules/state.js");
+  return page.evaluate(() => {
+    const state = /** @type {AppState} */ (globalThis.__state);
     if (state.chosenPath === null) throw new Error("no scenario is open");
     return state.chosenPath;
   });
 }
 
 /**
- * The local-store record for a path, read through the app's own module, with
+ * The local-store record for a path, read through the app's __localStore hook, with
  * each upload's bytes reduced to a length (Uint8Array does not survive
  * Playwright's serialization as itself).
  *
@@ -84,7 +84,7 @@ async function chosenPath(page) {
  */
 async function readLocalRecord(page, path) {
   return page.evaluate(async (p) => {
-    const { loadRecord } = await import("/web/app/modules/local-store.js");
+    const { loadRecord } = /** @type {NonNullable<Window["__localStore"]>} */ (globalThis.__localStore);
     const record = await loadRecord(p);
     return {
       text: record.text,
@@ -106,7 +106,7 @@ async function readLocalRecord(page, path) {
 async function seedLocalRecord(page, path, fields) {
   await page.evaluate(
     async ([p, f]) => {
-      const { saveText, saveUploads } = await import("/web/app/modules/local-store.js");
+      const { saveText, saveUploads } = /** @type {NonNullable<Window["__localStore"]>} */ (globalThis.__localStore);
       if (f.text !== undefined) await saveText(p, f.text);
       if (f.uploads !== undefined) {
         await saveUploads(
@@ -120,15 +120,15 @@ async function seedLocalRecord(page, path, fields) {
 }
 
 /**
- * Repository paths the uploads dialog has staged, read from the app's own
- * state module.
+ * Repository paths the uploads dialog has staged, read from the app's __state
+ * hook.
  *
  * @param {import("@playwright/test").Page} page
  * @returns {Promise<string[]>}
  */
 async function stagedPaths(page) {
-  return page.evaluate(async () => {
-    const { state } = await import("/web/app/modules/state.js");
+  return page.evaluate(() => {
+    const state = /** @type {AppState} */ (globalThis.__state);
     return [...state.uploadedFiles.keys()].sort();
   });
 }

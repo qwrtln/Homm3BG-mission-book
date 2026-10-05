@@ -19,7 +19,6 @@ import { changedLines } from "../../shared/line-diff.js";
 import { pageArchiveName, pageImageName } from "../../shared/page-images.js";
 import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.js";
 import { uploadsSignature } from "../../shared/unsaved.js";
-import { BusyTexRunner, LuaLatex } from "../../shared/vendor/texlyre-busytex.js";
 import { busytexBase } from "./config.js";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
@@ -35,21 +34,42 @@ import {
 import { requireEditor, state } from "./state.js";
 import { refreshSubmitDialog } from "./submit.js";
 
-// client-zip is imported by URL, when the first PNG export with more than one
+// client-zip is imported lazily, when the first PNG export with more than one
 // page runs, so a session that exports no PNG, or exports only one page,
-// never fetches it.
-const CLIENT_ZIP_URL = new URL("../vendor/client-zip/index.js", import.meta.url).href;
+// never fetches its chunk.
+/** @typedef {typeof import("client-zip")} ClientZipModule */
 
 /** @type {Promise<ClientZipModule> | null} */
 let clientZipReady = null;
 
 /** @returns {Promise<ClientZipModule>} */
 function loadClientZip() {
-  clientZipReady ??= import(CLIENT_ZIP_URL).catch((error) => {
+  clientZipReady ??= import("client-zip").catch((error) => {
     clientZipReady = null; // let the next export try again
     throw error;
   });
   return clientZipReady;
+}
+
+// The engine wrapper stays out of the bundle: it is loaded by URL, resolved
+// against the page like the engine files it fetches, so the deploy's copy and
+// the test stub (which matches this path's suffix) both reach it.
+// The wrapper's types come from its .d.ts, through type-only imports.
+/** @typedef {typeof import("../../shared/vendor/texlyre-busytex.js")} EngineModule */
+/** @typedef {import("../../shared/vendor/texlyre-busytex.js").BusyTexRunner} EngineRunner */
+
+/** @type {Promise<EngineModule> | null} */
+let engineModuleReady = null;
+
+/** @returns {Promise<EngineModule>} */
+function loadEngineModule() {
+  engineModuleReady ??= import(
+    /* @vite-ignore */ new URL("../shared/vendor/texlyre-busytex.js", document.baseURI).href
+  ).catch((error) => {
+    engineModuleReady = null; // let the next start try again
+    throw error;
+  });
+  return engineModuleReady;
 }
 
 // Set while a PNG export runs. A build that ends meanwhile re-enables
@@ -63,6 +83,7 @@ let exporting = false;
  */
 async function startEngine() {
   setStatus("Downloading the engine (first time only, about a minute)…", { spinning: true });
+  const { BusyTexRunner } = await loadEngineModule();
   const base = busytexBase();
   state.runner = new BusyTexRunner({
     busytexBasePath: base,
@@ -104,7 +125,7 @@ export async function ensureEngine() {
  * stops using the CPU, and a fresh engine starts warming for the next Build.
  * The data package is cached by then, so the restart skips the big download.
  *
- * @param {BusyTexRunner} runner the runner the stopped compile was using
+ * @param {EngineRunner} runner the runner the stopped compile was using
  * @returns {void}
  */
 function discardEngine(runner) {
@@ -261,7 +282,8 @@ export async function runBuild() {
     reportPhase("Compiling…", "Compiling (this can take a while the first time)…");
     const started = performance.now();
     // ensureEngine above resolves only once state.runner is set.
-    const runner = /** @type {BusyTexRunner} */ (state.runner);
+    const runner = /** @type {EngineRunner} */ (state.runner);
+    const { LuaLatex } = await loadEngineModule();
     const lualatex = new LuaLatex(runner);
     // Only the engine can end a compile, so a stop from here on kills it.
     const onStop = () => discardEngine(runner);

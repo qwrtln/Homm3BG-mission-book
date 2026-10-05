@@ -21,6 +21,8 @@
   ],
   "exclude": [
     "core",
+    "dist",
+    "node_modules",
     "app/vendor",
     "shared/vendor/*.js",
     "tests"

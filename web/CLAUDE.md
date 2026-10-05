@@ -3,14 +3,71 @@
 Browser app: write a Mission Book scenario in LaTeX, compile it to PDF in the
 browser (BusyTeX/WASM), open a pull request. No local LaTeX toolchain.
 
-Static and unbuilt. `web/index.html` redirects to `web/app/index.html`, which
-loads `web/app/app.js` as an ES module. No bundler, transpiler or framework.
+Built with Vite. `web/index.html` redirects to `web/app/index.html`, which
+loads `web/app/app.js` as an ES module; `npm run build` bundles it into
+`web/dist/`. No framework yet.
 
-## No dependencies in the application
+## Dependencies and build
 
-No `package.json`, no lockfile, no build step — `web/app/` must open off a
-static server with nothing installed. Never add one. The only exception is
-`web/tests/package.json` (Playwright only); never let it reach application code.
+One manifest, `web/package.json`, with its lockfile, holds everything: the
+app's libraries (`pdfjs-dist`, `client-zip`), the tools (Vite, TypeScript,
+Biome) and the tests (Playwright). Node is pinned in `web/.nvmrc` (`engines.node`
+matches). Run `npm ci` in `web/` once; `npx -y` is gone.
+
+| Script | Does |
+| --- | --- |
+| `npm run dev` | Vite dev server at `/web/app/` |
+| `npm run build` | writes `web/dist/`, which the deploy copies to `site/builder/` |
+| `npm run preview` | serves `web/dist/` |
+| `npm run typecheck` | `tsc` over `jsconfig.json`, then `tsconfig.node.json` |
+| `npm run lint` | Biome `check .` |
+| `npm run test:unit` | tier 1 |
+| `npm run test:e2e` | tier 2, against the build |
+
+- Add a browser library with `npm install`, import it, and let the bundler
+  place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
+  the first load. Do not vendor it by hand.
+- `web/vite.config.ts` has three plugins: `out-of-bundle-assets` (dev only,
+  serves the paths below from disk), `copy-codemirror` (copies the fetched
+  CodeMirror 5 files into `dist/`, because they are classic `<script>` tags the
+  bundler leaves alone) and `license-notices` (writes `dist/licenses.json`, the
+  name, version and license text of every npm package in the bundle; the About
+  dialog lists them). A new bundled dependency needs no license edit.
+- `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
+  stays out of `jsconfig.json`: Node's types would leak into browser code
+  (`setTimeout` would return `Timeout`).
+- No hashed-name bookkeeping: file names carry content hashes, so there is no
+  `?v=N` cache-buster. Never add one.
+
+**Why we moved.** The app used to have no manifest and no build, so it opened
+off a static server with nothing installed. Only the maintainer and CI run it
+locally, so zero install is no longer valued, and the rule had costs: each
+library needed a hand-written fetch, a SHA pin, a type shim and a license row;
+no styling or UI library could be adopted. Do not restore the old rule. The
+plan is in `context/changes/web-framework-migration/` (`frame.md`, `plan.md`).
+
+## Out-of-bundle runtime assets
+
+Four things stay out of the bundle, at the `../` URLs relative to the page,
+because the engine's worker resolves paths itself and the files are large:
+
+| URL (from the page) | Deployed at | Why it stays out |
+| --- | --- | --- |
+| `../core/busytex/` | site root `core/` | WASM engine and data package, fetched at deploy time; the worker takes an absolute URL |
+| `../shared/vendor/texlyre-busytex.js` | site root | the engine wrapper, loaded by `import(/* @vite-ignore */ url)` in `modules/build.js`; the tier 2 stub matches the path suffix `/shared/vendor/texlyre-busytex.js` |
+| `../shared/texmf/carried-texmf.bin` | site root | the carried TeX Live bundle |
+| `../repo/` | site root `repo/` | the book's own sources, copied at deploy time |
+
+- `busytexBase()` must stay an absolute URL (`modules/config.js`).
+- The license files in the About dialog (`../LICENSE`, `../LATEX-ENGINE-NOTICE`,
+  the wrapper's `LICENSE`) are static rows read from the site root.
+- Dev: `out-of-bundle-assets` serves `/web/repo/*` from the repository root and
+  `/web/shared/vendor/*`, `/web/shared/texmf/*`, `/web/core/*` from `web/`,
+  with COOP/COEP headers. Tier 2: `tests/driver/static-server.mjs` does the same
+  and serves `/web/app/` from `web/dist/`.
+- Anything else the browser fetches by URL must go on the allow-list in
+  `.github/workflows/publish-docs.yaml`. `shared/*.js` is not on it: shared
+  code is bundled.
 
 ## Layout
 
@@ -20,7 +77,8 @@ static server with nothing installed. Never add one. The only exception is
 | `web/app/modules/` | App concerns, wired by `app.js`; DOM allowed |
 | `web/types/` | Ambient `.d.ts` shared across the app |
 | `web/core/`, `web/app/vendor/` | Fetched and gitignored (`serve.sh` / `fetch-vendor.sh`). Do not edit. |
-| `web/shared/vendor/` | Committed. Do not edit. |
+| `web/shared/vendor/` | Committed, loaded at run time, not bundled. Do not edit. |
+| `web/dist/`, `web/node_modules/` | Generated and gitignored. |
 | `web/oauth-relay/` | Cloudflare Pages function for GitHub OAuth; deployed by `deploy-oauth-relay.yaml` |
 
 - Logic that does not need the DOM goes in `web/shared/`.
@@ -41,11 +99,11 @@ nothing self-registers. Order is load-bearing:
 
 ## Types at boundaries
 
-JSDoc only, checked by `tsc` against `web/jsconfig.json` (`checkJs`, `strict`,
-no `@types/node` — browser code). From the repository root, as CI runs it:
+JSDoc only, checked by `tsc` (TypeScript 7) against `web/jsconfig.json`
+(`checkJs`, `strict`, no `@types/node` — browser code). From `web/`, as CI runs it:
 
 ```sh
-npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
+npm run typecheck
 ```
 
 - Every exported function in `web/shared/` and `web/app/modules/` carries
@@ -58,25 +116,30 @@ npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
 ## Running locally
 
 @web/serve.sh — its header comment holds the URL, the prerequisites and the
-usage.
+usage. It fetches the engine and CodeMirror 5, runs `npm ci` when
+`node_modules/` is missing, then `npm run dev`.
 
-The deploy copies `web/app/` to `site/builder/` (served at `/builder/`) and
-the rest of `web/` through an allow-list to the site root, in
+The deploy builds, copies `web/dist/` to `site/builder/` (served at `/builder/`)
+and the rest of `web/` through an allow-list to the site root, in
 `.github/workflows/publish-docs.yaml`. Tooling like this script stays out of the
 site without an exclude. Anything else the browser must load goes on that list.
+In the built `index.html` keep the `<!-- stats placeholder -->` comment: the
+deploy inlines the analytics script there.
 
 ## Lint and format
 
-Biome, pinned, no install. Config is `web/biome.json`, so run from `web/`:
+Biome, a pinned devDependency. Config is `web/biome.json`, so run from `web/`:
 
 ```sh
-npx -y @biomejs/biome@2.5.14 check .          # lint + format check
-npx -y @biomejs/biome@2.5.14 check --write .  # apply safe fixes
+npm run lint                  # lint + format check
+npx biome check --write .     # apply safe fixes
 ```
 
 - Running from the repository root fails: Biome 2.x treats the invocation
   directory as an implicit root and refuses a nested config. CI uses
   `working-directory: web`.
+- It covers `*.js`, `*.mjs` and `vite.config.ts`. `dist/`, `node_modules/`,
+  `core/`, `app/vendor/` and `shared/vendor/` are excluded.
 - Formatting settings live in @web/biome.json. Indent style is explicit there —
   Biome defaults to tabs, which the root lint rules reject.
 - Two recommended rules are off, both firing on correct code here:
@@ -91,30 +154,37 @@ Two tiers. Read `web/tests/README.md` before writing a test — it holds the
 conventions (file naming, `.mjs`, imports, fixtures, stubs, first-run setup).
 
 ```sh
-node --test "web/tests/unit/**/*.test.mjs"   # tier 1, from the repository root
-cd web/tests && npx playwright test          # tier 2
+npm run test:unit   # tier 1
+npm run test:e2e    # tier 2: builds, then serves web/dist/
 ```
 
-- Keep tier 1's quotes and glob: the directory form fails on Node 22 and 24.
-  Never gate tier 1 behind tier 2.
+- Keep tier 1's quotes and glob in the script: the directory form fails on
+  Node 22 and 24. Never gate tier 1 behind tier 2.
+- Tier 2 runs against the production build, so the page's modules are bundled.
+  A test cannot `import()` an app module from the page: it reads the hooks
+  `window.__state` and `window.__localStore` (installed in `app/app.js`), like
+  `window.__lastSaveTarget`.
 - Never load the LaTeX engine; `web/tests/stubs/` stubs it.
 - **Install the stubs before `page.goto`, never after** — navigate first and the
   real wrapper is already in flight.
 
 CI is `.github/workflows/test-web.yaml`, on pull requests touching `web/**`:
-type-check, lint and format, tier 1, tier 2.
+`npm ci`, then type-check, lint and format, tier 1, tier 2.
 
 ## Vendored versions
 
-`web/vendor.env` is the single source for every vendored or fetched version —
-never hardcode one elsewhere. Not a manifest; nothing installs from it.
-`.github/workflows/publish-docs.yaml` reads it into `$GITHUB_ENV`, so every line
-stays `KEY=value` with no comments.
+npm libraries are pinned by `web/package.json` and `web/package-lock.json`;
+bump one with `npm install <pkg>@<version>`.
 
-`web/fetch-vendor.sh` fetches the browser libraries into `web/app/vendor/`.
-Each library also has a `<LIB>_SHA256` pin in `vendor.env`. To bump one,
-change its version, run `web/fetch-vendor.sh` and copy the actual hash it
-prints into the `_SHA256` line.
+`web/vendor.env` is the single source for what is still fetched or committed
+outside npm: `BUSYTEX_*`, `TEXLYRE_*` and `CODEMIRROR_*` (with its
+`CODEMIRROR_SHA256`). Never hardcode one of these versions elsewhere. Not a
+manifest; nothing installs from it. `.github/workflows/publish-docs.yaml` reads
+it into `$GITHUB_ENV`, so every line stays `KEY=value` with no comments.
+
+`web/fetch-vendor.sh` fetches CodeMirror 5 into `web/app/vendor/codemirror/`.
+To bump it, change its version, run `web/fetch-vendor.sh` and copy the actual
+hash it prints into the `_SHA256` line. The script goes with CodeMirror 5.
 
 ## Editor library — CodeMirror 5, not 6
 
@@ -125,29 +195,29 @@ LaTeX mode: `mode/stex/stex.min.js`.
 - Use the CM5 API: `CodeMirror(element, options)`, `cm.getValue()`,
   `cm.setValue()`, `cm.on("change", ...)`, `cm.setOption()`.
 - Never import `@codemirror/state`, `@codemirror/view`, `EditorState` or
-  `EditorView`. That is CodeMirror 6 — not vendored, uninstallable here.
+  `EditorView`. That is CodeMirror 6 — not installed. The editor moves to it in
+  a later phase of the framework migration.
 - Docs: https://codemirror.net/5/doc/manual.html
 - `fetch-vendor.sh` takes the `.min` files from cdnjs and `LICENSE` from the
   `codemirror` npm tarball.
 
 ## PDF viewer — pdf.js
 
-`web/app/vendor/pdfjs/` is pdf.js (`PDFJS_VERSION`): `pdf.min.mjs`,
-`pdf.worker.min.mjs` and `LICENSE` from the `build/` directory of the
-`pdfjs-dist` npm tarball, fetched by `fetch-vendor.sh`.
-`app/modules/pdf-view.js` is the only module that loads it, by URL at run time;
-`web/types/pdfjs.d.ts` names the part of its API the app calls.
+`pdfjs-dist` (npm, version in `package.json`). `app/modules/pdf-view.js` is the
+only module that loads it, by lazy `import("pdfjs-dist")`, so a session that
+never shows a PDF never fetches it. The worker comes from
+`pdfjs-dist/build/pdf.worker.min.mjs?url` (a Vite asset). Types are the
+package's own.
 
 - A `PDFDocumentProxy` has no `destroy()`. Destroy the loading task instead.
-- Fonts, CMaps and WASM decoders are not vendored. LaTeX embeds its fonts, so
+- Fonts, CMaps and WASM decoders are not shipped. LaTeX embeds its fonts, so
   the book's PDFs do not need them.
 
 ## Zip writer — client-zip
 
-`web/app/vendor/client-zip/` is client-zip (`CLIENT_ZIP_VERSION`): `index.js`
-and `LICENSE.txt`, fetched by `fetch-vendor.sh`. Only the PNG export loads it,
-by URL at run time, so a session that never exports PNGs never fetches it.
-`web/types/client-zip.d.ts` names the part of its API the app calls.
+`client-zip` (npm). Only the PNG export loads it, by lazy `import("client-zip")`
+in `app/modules/build.js`, so a session that never exports PNGs never fetches
+the chunk. Types are the package's own.
 
 ## LaTeX engine (BusyTeX) — do not test, do not touch
 
@@ -161,8 +231,9 @@ by URL at run time, so a session that never exports PNGs never fetches it.
   `texlyre-busytex.d.ts` for the allowed surface, then the wrapper for behavior.
   `BusytexPipeline` takes eleven positional arguments; never call it from
   application code.
-- `web/app/modules/build.js` is the only module importing the wrapper.
-  Everything else goes through `ensureEngine()`.
+- `web/app/modules/build.js` is the only module loading the wrapper, by runtime
+  URL (see "Out-of-bundle runtime assets"). Everything else goes through
+  `ensureEngine()`.
 - `web/app/app.js` calls `ensureEngine()` eagerly on page load, so every
   browser-driven test is affected.
 - No test compiles a real PDF or downloads `texlive-*.data`. Stub it.

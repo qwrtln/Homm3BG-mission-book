@@ -958,28 +958,28 @@ test("Build and Download follow the pick and the build", async ({ app }) => {
 
 /**
  * Repository paths the uploads dialog has staged for the build, read from the
- * app's own state module: the dialog no longer prints them.
+ * app's __state hook: the dialog no longer prints them.
  *
  * @param {import("@playwright/test").Page} page
  * @returns {Promise<string[]>}
  */
 async function stagedPaths(page) {
-  return page.evaluate(async () => {
-    const { state } = await import("/web/app/modules/state.js");
+  return page.evaluate(() => {
+    const state = /** @type {AppState} */ (globalThis.__state);
     return [...state.uploadedFiles.keys()].sort();
   });
 }
 
 /**
- * A staged file's contents as text, read from the app's own state module.
+ * A staged file's contents as text, read from the app's __state hook.
  *
  * @param {import("@playwright/test").Page} page
  * @param {string} path
  * @returns {Promise<string | null>}
  */
 async function stagedText(page, path) {
-  return page.evaluate(async (path) => {
-    const { state } = await import("/web/app/modules/state.js");
+  return page.evaluate((path) => {
+    const state = /** @type {AppState} */ (globalThis.__state);
     const bytes = state.uploadedFiles.get(path);
     return bytes ? new TextDecoder().decode(bytes) : null;
   }, path);

@@ -68,7 +68,7 @@ function moveFocus(menu, step) {
  */
 export function initMenu(toggle, menu) {
   toggle.addEventListener("click", () => {
-    setMenuOpen(toggle, menu, menu.hidden, { focus: menu.hidden ? "first" : "none" });
+    setMenuOpen(toggle, menu, Boolean(menu.hidden), { focus: menu.hidden ? "first" : "none" });
   });
   toggle.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {

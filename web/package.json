@@ -1,0 +1,29 @@
+{
+  "name": "homm3bg-scenario-builder",
+  "private": true,
+  "type": "module",
+  "description": "The Mission Book scenario builder: a browser app that compiles a scenario to PDF and opens a pull request.",
+  "engines": {
+    "node": "26"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit --project jsconfig.json && tsc --noEmit --project tsconfig.node.json",
+    "lint": "biome check .",
+    "test:unit": "node --test \"tests/unit/**/*.test.mjs\"",
+    "test:e2e": "playwright test --config tests/playwright.config.mjs"
+  },
+  "dependencies": {
+    "client-zip": "2.5.1",
+    "pdfjs-dist": "6.4.299"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.4",
+    "typescript": "7.0.2",
+    "vite": "8.3.2"
+  }
+}

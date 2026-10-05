@@ -9,10 +9,11 @@ function emptyMessage() {
   return `No PDF yet. Press Build PDF or ${buildKeyLabel()}.`;
 }
 
-// pdf.js is imported by URL, when the first PDF shows, so a page load that
-// never reaches a PDF never fetches it, and the type checker never reads it.
-const PDFJS_URL = new URL("../vendor/pdfjs/pdf.min.mjs", import.meta.url).href;
-const PDFJS_WORKER_URL = new URL("../vendor/pdfjs/pdf.worker.min.mjs", import.meta.url).href;
+// pdf.js is imported lazily, when the first PDF shows, so a page load that
+// never reaches a PDF never fetches its chunk or its worker.
+/** @typedef {typeof import("pdfjs-dist")} PdfJsModule */
+/** @typedef {import("pdfjs-dist").PDFDocumentLoadingTask} PdfLoadingTask */
+/** @typedef {import("pdfjs-dist").PDFDocumentProxy} PdfDocument */
 
 /** Space around and between pages, in px. Matches .pdf-pages in workspace.css. */
 const PAGE_MARGIN = 12;
@@ -53,10 +54,9 @@ let renderTicket = 0;
 
 /** @returns {Promise<PdfJsModule>} */
 function loadPdfJs() {
-  pdfjsReady ??= import(PDFJS_URL).then(
-    (module) => {
-      const pdfjs = /** @type {PdfJsModule} */ (module);
-      pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_URL;
+  pdfjsReady ??= Promise.all([import("pdfjs-dist"), import("pdfjs-dist/build/pdf.worker.min.mjs?url")]).then(
+    ([pdfjs, worker]) => {
+      pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
       return pdfjs;
     },
     (error) => {

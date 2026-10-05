@@ -2,23 +2,21 @@
 
 ## What deploys
 
-The deploy allow-list in `.github/workflows/publish-docs.yaml` copies only:
+`web/shared/*.js` is bundled into the app by `npm run build`, so it does not
+deploy as separate files. The deploy allow-list in
+`.github/workflows/publish-docs.yaml` copies only the files the browser fetches
+at run time, by URL:
 
-- `shared/*.js`, top level only
 - `shared/texmf/carried-texmf.bin`
 - `shared/vendor/texlyre-busytex.js` and its `LICENSE`
 
-So a module the browser imports is a `.js` file directly in `shared/`. A
-subdirectory, or an `.mjs` extension, keeps a file out of the site: that is how
-`carry-texmf.mjs` and `fetch-missing-texmf.sh` stay local tools. To ship a new
-kind of file, add it to the allow-list.
+A new module the app imports needs no allow-list entry. The `.mjs` extension
+still marks a local tool (`carry-texmf.mjs`, `fetch-missing-texmf.sh`) that
+neither the app nor the site loads. To ship a new kind of runtime file, add it
+to the allow-list.
 
-## github-contrib.js and its cache-buster
+## github-contrib.js
 
-`app/modules/github.js` imports `github-contrib.js?v=N`. `tsc` cannot resolve
-that specifier, so `web/types/module-queries.d.ts` re-declares every export by
-hand under `declare module "*/github-contrib.js?v=N"`.
-
-- A new export here needs a line in `module-queries.d.ts`, or it imports as
-  `any`. `tests/unit/module-queries.test.mjs` catches a missing one.
-- Bump `N` in `github.js` and in the `declare module` pattern together.
+`app/modules/github.js` imports `github-contrib.js` by its plain path, so `tsc`
+resolves its exports directly. There is no cache-buster and no hand-written
+`declare module`: the build hashes the bundle's file name.
