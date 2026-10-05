@@ -4,8 +4,8 @@
 // github.test.mjs, the sign-in itself is a token seeded into localStorage, and
 // api.github.com is stubbed.
 
-import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
-import { categoryOfPath } from "../../shared/scenario-name.js";
+import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
+import { categoryOfPath } from "../../shared/scenario-name.ts";
 import { expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";

@@ -1,4 +1,4 @@
-import { untilAborted } from "../../shared/abort.js";
+import { untilAborted } from "../../shared/abort.ts";
 import {
   auxState,
   builtStatus,
@@ -13,15 +13,15 @@ import {
   newMissingPaths,
   pageCount,
   planScenarioBuild,
-} from "../../shared/build-plan.js";
-import { errorMessage, errorTrace } from "../../shared/errors.js";
-import { changedLines } from "../../shared/line-diff.js";
-import { pageArchiveName, pageImageName } from "../../shared/page-images.js";
-import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.js";
-import { uploadsSignature } from "../../shared/unsaved.js";
-import { busytexBase } from "./config.js";
+} from "../../shared/build-plan.ts";
+import { errorMessage, errorTrace } from "../../shared/errors.ts";
+import { changedLines } from "../../shared/line-diff.ts";
+import { pageArchiveName, pageImageName } from "../../shared/page-images.ts";
+import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.ts";
+import { uploadsSignature } from "../../shared/unsaved.ts";
+import { busytexBase } from "./config.ts";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
-import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.js";
+import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
 import {
   clearErrorLine,
   clearPdf,
@@ -31,7 +31,7 @@ import {
   showPdfLoading,
   showPdfMessage,
 } from "./pdf-view.js";
-import { requireEditor, state } from "./state.js";
+import { requireEditor, state } from "./state.ts";
 import { refreshSubmitDialog } from "./submit.js";
 
 // client-zip is imported lazily, when the first PNG export with more than one
@@ -156,7 +156,7 @@ const sourceByScenario = new Map();
  * @param {string} path the scenario's repository path
  * @param {string | undefined} before its source at the last good build
  * @param {string} after its source now
- * @returns {Promise<Map<number, import("../../shared/synctex.js").PageRect[]>>}
+ * @returns {Promise<Map<number, import("../../shared/synctex.ts").PageRect[]>>}
  */
 async function changeMarks(synctex, path, before, after) {
   if (!synctex || before === undefined) return new Map();

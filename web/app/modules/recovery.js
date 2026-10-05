@@ -1,7 +1,7 @@
-import { assetsSignature, shouldOfferLocalDraft } from "../../shared/unsaved.js";
+import { assetsSignature, shouldOfferLocalDraft } from "../../shared/unsaved.ts";
 import { confirmAction } from "./dom.js";
-import { loadDraft } from "./drafts.js";
-import { loadRecord } from "./local-store.js";
+import { loadDraft } from "./drafts.ts";
+import { loadRecord } from "./local-store.ts";
 
 /** @typedef {import("./local-store.js").StagedAsset} StagedAsset */
 

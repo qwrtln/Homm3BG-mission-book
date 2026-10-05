@@ -1,7 +1,7 @@
-import { refreshUnsavedNote } from "./dirty.js";
+import { refreshUnsavedNote } from "./dirty.ts";
 import { el, sanitizeFilename } from "./dom.js";
-import { saveUploads } from "./local-store.js";
-import { state } from "./state.js";
+import { saveUploads } from "./local-store.ts";
+import { state } from "./state.ts";
 import { showToast } from "./toast.js";
 import {
   createUploadPanel,

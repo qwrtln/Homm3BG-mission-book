@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { assetsSignature, hasUnsavedChanges, shouldOfferLocalDraft, uploadsSignature } from "../../shared/unsaved.js";
+import { assetsSignature, hasUnsavedChanges, shouldOfferLocalDraft, uploadsSignature } from "../../shared/unsaved.ts";
 
 const bytes = (n) => new Uint8Array(n);
 

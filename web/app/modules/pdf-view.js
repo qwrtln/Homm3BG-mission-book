@@ -1,8 +1,8 @@
-import { PNG_DPI } from "../../shared/page-images.js";
-import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.js";
-import { pageHighlights } from "../../shared/synctex.js";
+import { PNG_DPI } from "../../shared/page-images.ts";
+import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.ts";
+import { pageHighlights } from "../../shared/synctex.ts";
 import { buildKeyLabel, el, escapeHtml, setStatus } from "./dom.js";
-import { requireEditor, state } from "./state.js";
+import { requireEditor, state } from "./state.ts";
 
 /** @returns {string} what the PDF pane says with nothing built yet */
 function emptyMessage() {
@@ -186,7 +186,7 @@ function jumpToLine(line) {
  * @param {Blob} blob PDF bytes, tagged application/pdf
  * @param {string} source the editor source the PDF stands for; an edit away
  *   from it makes the PDF stale
- * @param {{dropLastPage?: boolean, path?: string | null, changes?: Map<number, import("../../shared/synctex.js").PageRect[]>, uploads?: string}} [options]
+ * @param {{dropLastPage?: boolean, path?: string | null, changes?: Map<number, import("../../shared/synctex.ts").PageRect[]>, uploads?: string}} [options]
  *   dropLastPage leaves the last page undrawn and uncounted, never the only
  *   one: the published PDF ends on a feedback page an in-browser build does
  *   not make. path is the scenario the PDF shows, which names the download;
@@ -295,7 +295,7 @@ export async function renderPngPages(blob, { dropLastPage = false, onPage } = {}
  * The top and height of every page in the pane's scrolled content.
  *
  * @param {HTMLElement} pages the .pdf-pages container
- * @returns {import("../../shared/pdf-viewport.js").PageBox[]}
+ * @returns {import("../../shared/pdf-viewport.ts").PageBox[]}
  */
 function pageBoxes(pages) {
   return [...pages.querySelectorAll(".pdf-page")].map((page) => {
@@ -370,7 +370,7 @@ async function renderPages() {
  * Marks places on the drawn pages for a moment. The marks share one layer,
  * which fades out and removes itself; a redraw drops it if still showing.
  *
- * @param {Map<number, import("../../shared/synctex.js").PageRect[]>} changes rects in PDF points, by 1-based page
+ * @param {Map<number, import("../../shared/synctex.ts").PageRect[]>} changes rects in PDF points, by 1-based page
  * @returns {void}
  */
 function markChanges(changes) {

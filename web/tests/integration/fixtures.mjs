@@ -3,7 +3,7 @@
 //
 // Isolation model: Playwright gives each test its own BrowserContext and page
 // while sharing one browser process per worker. That is the only safe reset
-// for this app — it initializes once on load and `modules/state.js` holds
+// for this app — it initializes once on load and `modules/state.ts` holds
 // module-level state that nothing short of a navigation clears — and it is
 // also the cheap one, since the browser launch is paid once per worker rather
 // than once per test.

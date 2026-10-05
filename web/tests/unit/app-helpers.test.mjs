@@ -5,8 +5,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../app/modules/dom.js";
-import { storageKey } from "../../app/modules/drafts.js";
+import { storageKey } from "../../app/modules/drafts.ts";
+import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
 
 test("escapeHtml neutralises the three characters that break markup", () => {
   assert.equal(escapeHtml("Tom & Jerry"), "Tom &amp; Jerry");

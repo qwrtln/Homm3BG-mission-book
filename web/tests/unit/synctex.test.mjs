@@ -5,8 +5,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { gzipSync } from "node:zlib";
 
-import { changedLines } from "../../shared/line-diff.js";
-import { gunzipText, inputTag, lineRects, pageHighlights, parseSynctex } from "../../shared/synctex.js";
+import { changedLines } from "../../shared/line-diff.ts";
+import { gunzipText, inputTag, lineRects, pageHighlights, parseSynctex } from "../../shared/synctex.ts";
 
 // 65781.76 scaled points to the PDF point, so these read as whole points.
 const PT = 65781.76;

@@ -1,19 +1,19 @@
-import { withScenarioTitle } from "../../shared/build-plan.js";
-import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.js";
+import { withScenarioTitle } from "../../shared/build-plan.ts";
+import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.ts";
 import { syncCategoryControl } from "./category.js";
-import { TEMPLATES } from "./config.js";
-import { markClean } from "./dirty.js";
+import { TEMPLATES } from "./config.ts";
+import { markClean } from "./dirty.ts";
 import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
-import { flushDraft, saveDraft } from "./drafts.js";
-import { preloadFile } from "./files.js";
+import { flushDraft, saveDraft } from "./drafts.ts";
+import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
-import { clearUploads, saveText, saveUploads } from "./local-store.js";
+import { clearUploads, saveText, saveUploads } from "./local-store.ts";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.js";
-import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
-import { requireEditor, state } from "./state.js";
+import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
+import { requireEditor, state } from "./state.ts";
 import { resetUploads, restoreUploads } from "./uploads.js";
 
 /**

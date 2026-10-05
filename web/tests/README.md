@@ -80,14 +80,15 @@ reaching the real API.
   test, in `web/tests/unit/`.
 - **Extension**: `.mjs`, always, for tests and tools alike.
 - **Imports**: tier 1 imports the application's modules by relative path —
-  `import { pageCount } from "../../shared/build-plan.js";`. No loader, no
-  transform, no import map. Node reads them as ES modules (`web/package.json`
-  has `"type": "module"`).
+  `import { pageCount } from "../../shared/build-plan.ts";`. No loader, no
+  transform, no import map. Node reads `.ts` modules on its native type
+  stripping, and `.js` ones as plain ES modules (`web/package.json` has
+  `"type": "module"`).
 - **App internals in tier 2**: the page is bundled, so a test cannot `import()`
   a module from it. Read `globalThis.__state` and `globalThis.__localStore`
   (installed by `app/app.js`) inside `page.evaluate`.
 - **What belongs in tier 1**: a module Node can import without a DOM. Today that
-  means `web/shared/build-plan.js`, plus helpers in `web/app/modules/` that only
+  means `web/shared/build-plan.ts`, plus helpers in `web/app/modules/` that only
   touch the DOM *inside* a function body, never at import time.
 - **Fixtures**: inline strings for logic tests, so an assertion states exactly
   what it tests. `real-book.test.mjs` is the exception: it reads the

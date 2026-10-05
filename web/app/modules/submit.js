@@ -1,15 +1,15 @@
 // The "Before you open a pull request" dialog: what still stands between the
 // scenario and a pull request, and the contributor's checklist. The rules
-// themselves live in shared/submit-checklist.js; this module only shows them
+// themselves live in shared/submit-checklist.ts; this module only shows them
 // and collects the answer.
 
-import { CHECKLIST_ITEMS, submitBlockers } from "../../shared/submit-checklist.js";
-import { isDirty } from "./dirty.js";
+import { CHECKLIST_ITEMS, submitBlockers } from "../../shared/submit-checklist.ts";
+import { isDirty } from "./dirty.ts";
 import { el } from "./dom.js";
 import { builtFingerprint } from "./pdf-view.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 
-/** @type {Record<import("../../shared/submit-checklist.js").Blocker, string>} */
+/** @type {Record<import("../../shared/submit-checklist.ts").Blocker, string>} */
 const BLOCKER_TEXT = {
   unsaved: "Save your changes",
   unbuilt: "Build the PDF from your saved text",
@@ -19,7 +19,7 @@ const BLOCKER_TEXT = {
 /**
  * The dialog's open request; null while it is closed.
  *
- * @type {{checklist: boolean, answer: import("../../shared/submit-checklist.js").ChecklistItem[] | null} | null}
+ * @type {{checklist: boolean, answer: import("../../shared/submit-checklist.ts").ChecklistItem[] | null} | null}
  */
 let pending = null;
 
@@ -27,7 +27,7 @@ let pending = null;
  * What keeps the open scenario from being submitted right now, read fresh
  * from the app's state every time.
  *
- * @returns {import("../../shared/submit-checklist.js").Blocker[]}
+ * @returns {import("../../shared/submit-checklist.ts").Blocker[]}
  */
 export function currentSubmitBlockers() {
   return submitBlockers({
@@ -64,7 +64,7 @@ function checkboxes() {
   return [...el("submit-checklist").querySelectorAll("input")];
 }
 
-/** @returns {import("../../shared/submit-checklist.js").ChecklistItem[]} the ticked items */
+/** @returns {import("../../shared/submit-checklist.ts").ChecklistItem[]} the ticked items */
 function tickedItems() {
   const ticked = new Set(checkboxes().flatMap((box) => (box.checked ? [box.value] : [])));
   return CHECKLIST_ITEMS.filter((item) => ticked.has(item.id));
@@ -111,7 +111,7 @@ export function refreshSubmitDialog() {
  * box unticked; the ticks are never kept.
  *
  * @param {{checklist: boolean}} options checklist: show the boxes, and require every one ticked
- * @returns {Promise<import("../../shared/submit-checklist.js").ChecklistItem[] | null>}
+ * @returns {Promise<import("../../shared/submit-checklist.ts").ChecklistItem[] | null>}
  *   the ticked items (empty without a checklist) on confirm; null on Cancel or Escape
  */
 export function askToSubmit({ checklist }) {

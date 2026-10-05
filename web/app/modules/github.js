@@ -1,5 +1,5 @@
-import { errorMessage } from "../../shared/errors.js";
-import { clearToken, completeSignIn, getToken, signIn } from "../../shared/github-auth.js";
+import { errorMessage } from "../../shared/errors.ts";
+import { clearToken, completeSignIn, getToken, signIn } from "../../shared/github-auth.ts";
 import {
   deleteWorkBranch,
   discoverGithubContext,
@@ -12,12 +12,12 @@ import {
   saveScenarioToRepo,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
-} from "../../shared/github-contrib.js";
-import { parseRoute, slugToPath } from "../../shared/route.js";
-import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.js";
-import { assetsSignature, uploadsSignature } from "../../shared/unsaved.js";
+} from "../../shared/github-contrib.ts";
+import { parseRoute, slugToPath } from "../../shared/route.ts";
+import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.ts";
+import { assetsSignature, uploadsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "./category.js";
-import { isDirty, markClean } from "./dirty.js";
+import { isDirty, markClean } from "./dirty.ts";
 import {
   basenameNoExt,
   closestTo,
@@ -28,17 +28,17 @@ import {
   readyStatus,
   setStatus,
 } from "./dom.js";
-import { deleteDraft, flushDraft, loadDraft, saveDraft } from "./drafts.js";
-import { loadEntries } from "./entries.js";
-import { preloadFile } from "./files.js";
+import { deleteDraft, flushDraft, loadDraft, saveDraft } from "./drafts.ts";
+import { loadEntries } from "./entries.ts";
+import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
-import { clearUploads, deleteRecord, loadRecord, saveText } from "./local-store.js";
+import { clearUploads, deleteRecord, loadRecord, saveText } from "./local-store.ts";
 import { clearPdf } from "./pdf-view.js";
 import { onEditPick, settleModes } from "./picker.js";
 import { offerLocalDraft } from "./recovery.js";
-import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
-import { requireEditor, state } from "./state.js";
+import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
+import { requireEditor, state } from "./state.ts";
 import { askToSubmit, currentSubmitBlockers, refreshSubmitDialog } from "./submit.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
 import { isParked, openForEdit, returnToParked, showWelcome, showWorkspace } from "./workspace.js";

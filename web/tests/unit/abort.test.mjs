@@ -1,10 +1,10 @@
-// Tier 1 unit tests for web/shared/abort.js, the helper that lets a Stop
+// Tier 1 unit tests for web/shared/abort.ts, the helper that lets a Stop
 // press end a build without waiting on the step it interrupted.
 
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { untilAborted } from "../../shared/abort.js";
+import { untilAborted } from "../../shared/abort.ts";
 
 /** A promise that never settles, standing in for a compile that hangs. */
 const never = () => new Promise(() => {});

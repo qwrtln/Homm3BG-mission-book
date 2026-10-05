@@ -1,10 +1,10 @@
-// Tier 1 check of web/shared/keymap.js: platform detection, labels, key
+// Tier 1 check of web/shared/keymap.ts: platform detection, labels, key
 // matching and table integrity.
 
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { isMacPlatform, keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.js";
+import { isMacPlatform, keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
 
 test("isMacPlatform recognizes macOS and iOS platform strings", () => {
   for (const platform of ["MacIntel", "macOS", "iPhone", "iPad"]) {

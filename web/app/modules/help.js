@@ -1,11 +1,11 @@
-import { keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.js";
+import { keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
 import { el, isMac } from "./dom.js";
 
 /**
  * One keymap row rendered as a table row: its description and every key
  * alternative for the platform, each in its own <kbd>.
  *
- * @param {import("../../shared/keymap.js").ShortcutRow} row
+ * @param {import("../../shared/keymap.ts").ShortcutRow} row
  * @param {boolean} mac
  * @returns {HTMLTableRowElement}
  */
@@ -26,7 +26,7 @@ function renderRow(row, mac) {
 
 /**
  * Wires the menu's Help item and the F1 key to a dialog listing every
- * keyboard shortcut from web/shared/keymap.js, one row per SHORTCUTS entry
+ * keyboard shortcut from web/shared/keymap.ts, one row per SHORTCUTS entry
  * in table order.
  *
  * @returns {void}

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": [
+    "types/**/*.d.ts",
+    "shared/**/*.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "app/**/*.js",
+    "*.ts"
+  ],
+  "exclude": [
+    "core",
+    "dist",
+    "node_modules",
+    "app/vendor",
+    "shared/vendor/*.js",
+    "oauth-relay",
+    "tests",
+    "glyph-usage.ts",
+    "shared/carry-texmf.ts",
+    "vite.config.ts"
+  ]
+}

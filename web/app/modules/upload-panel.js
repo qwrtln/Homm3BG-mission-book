@@ -18,7 +18,7 @@ import {
   normalizeMapCode,
   parsePlayerCounts,
   withExtension,
-} from "../../shared/upload-names.js";
+} from "../../shared/upload-names.ts";
 import { escapeHtml } from "./dom.js";
 
 export const MAX_MAP_FILES = 6;

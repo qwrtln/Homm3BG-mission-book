@@ -1,8 +1,8 @@
 // Tier 2. The Help dialog: the menu item and F1 both open it, listing every
-// SHORTCUTS row from web/shared/keymap.js with its Linux key labels, and
+// SHORTCUTS row from web/shared/keymap.ts with its Linux key labels, and
 // closing it never closes a dialog underneath it.
 
-import { keyLabel, SHORTCUTS } from "../../shared/keymap.js";
+import { keyLabel, SHORTCUTS } from "../../shared/keymap.ts";
 import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "help probe";

@@ -3,7 +3,7 @@
 // overflow menu, the uploads dialog, and the theme toggle. Everything here goes through web/tests/integration/fixtures.mjs,
 // which installs the engine and GitHub stubs before navigating.
 
-import { PNG_DPI } from "../../shared/page-images.js";
+import { PNG_DPI } from "../../shared/page-images.ts";
 import { pngPixel } from "../helpers/png.mjs";
 import { assertValidCrc32, readZipEntries } from "../helpers/zip.mjs";
 import {

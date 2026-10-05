@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { CHECKLIST_ITEMS, pullRequestBody, submitBlockers, submitRequirements } from "../../shared/submit-checklist.js";
+import { CHECKLIST_ITEMS, pullRequestBody, submitBlockers, submitRequirements } from "../../shared/submit-checklist.ts";
 
 // --- the items --------------------------------------------------------------
 

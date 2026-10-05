@@ -3,7 +3,7 @@
 // types/github.d.ts, and the LaTeX engine's in
 // shared/vendor/texlyre-busytex.d.ts.
 
-/** One scenario the search can offer. Built by app/modules/entries.js. */
+/** One scenario the search can offer. Built by app/modules/entries.ts. */
 interface ScenarioEntry {
   /** Repository-relative path of the .tex file, e.g. "clash/astral_run.tex". */
   path: string;
@@ -65,7 +65,7 @@ interface ScenarioPrefetch {
   promise: Promise<{ pdfBlob: Blob | null }> | null;
 }
 
-/** The single shared mutable object in app/modules/state.js. */
+/** The single shared mutable object in app/modules/state.ts. */
 interface AppState {
   entries: ScenarioEntry[];
   chosenPath: string | null;
@@ -88,5 +88,5 @@ interface AppState {
   saveTimer: number | null;
   scenarioPrefetch: ScenarioPrefetch | null;
   /** What "nothing to save" looks like for the open scenario; null when none is open. */
-  clean: import("../shared/unsaved.js").Baseline | null;
+  clean: import("../shared/unsaved.ts").Baseline | null;
 }

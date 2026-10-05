@@ -4,7 +4,7 @@
 // staged. What the generator writes for each answer is tier 1's business
 // (scenario-wizard.test.mjs); here the text is only checked to have arrived.
 
-import { fillScenarioTemplate, WIZARD_TEMPLATE_PATH } from "../../shared/scenario-wizard.js";
+import { fillScenarioTemplate, WIZARD_TEMPLATE_PATH } from "../../shared/scenario-wizard.ts";
 import { expect, test } from "./fixtures.mjs";
 
 const NAME = "Wizard Probe";

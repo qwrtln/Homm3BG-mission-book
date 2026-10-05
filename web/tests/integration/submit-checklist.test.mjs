@@ -4,8 +4,8 @@
 // faked, as in github.test.mjs and member-modes.test.mjs; the sign-in is a
 // token seeded into localStorage.
 
-import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
-import { CHECKLIST_ITEMS, pullRequestBody } from "../../shared/submit-checklist.js";
+import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
+import { CHECKLIST_ITEMS, pullRequestBody } from "../../shared/submit-checklist.ts";
 import { engineCalls, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";

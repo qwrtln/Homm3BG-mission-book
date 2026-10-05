@@ -1,5 +1,5 @@
 import { el } from "./dom.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 
 export const THEME_KEY = "wasm-scenario-builder:theme";
 

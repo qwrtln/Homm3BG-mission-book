@@ -26,7 +26,7 @@ or the deploy allow-list names it.
 
 ## Modules
 
-- Shared mutable state lives in the one `state` object in `modules/state.js`;
+- Shared mutable state lives in the one `state` object in `modules/state.ts`;
   its shape is `AppState` in `web/types/app.d.ts`. Add a field in both.
 - Reach elements through `el("id")`, which throws on a missing id and returns
   a non-null typed element. Reserve `document.querySelector` for class or

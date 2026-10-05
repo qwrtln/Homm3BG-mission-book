@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit --project jsconfig.json && tsc --noEmit --project tsconfig.node.json",
+    "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.node.json",
     "lint": "biome check .",
     "test:unit": "node --test \"tests/unit/**/*.test.mjs\"",
     "test:e2e": "playwright test --config tests/playwright.config.mjs"

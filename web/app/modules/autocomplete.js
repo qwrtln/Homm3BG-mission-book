@@ -1,4 +1,4 @@
-import { GLYPH_MANIFEST_PATH } from "../../shared/build-plan.js";
+import { GLYPH_MANIFEST_PATH } from "../../shared/build-plan.ts";
 import {
   GLYPH_USAGE_PATH,
   glyphCompletions,
@@ -6,11 +6,11 @@ import {
   missingBrace,
   parseGlyphManifest,
   parseGlyphUsage,
-} from "../../shared/glyph-completion.js";
-import { completionContext, imageCompletions } from "../../shared/image-completion.js";
-import { REPO } from "./config.js";
+} from "../../shared/glyph-completion.ts";
+import { completionContext, imageCompletions } from "../../shared/image-completion.ts";
+import { REPO } from "./config.ts";
 import { closestTo, el, escapeHtml } from "./dom.js";
-import { requireEditor, state } from "./state.js";
+import { requireEditor, state } from "./state.ts";
 
 // Suggests what the cursor's argument in the .tex editor can hold, the way an
 // IDE offers completions: uploaded image paths inside an image argument, and

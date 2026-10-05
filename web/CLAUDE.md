@@ -19,7 +19,7 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
 | `npm run dev` | Vite dev server at `/web/app/` |
 | `npm run build` | writes `web/dist/`, which the deploy copies to `site/builder/` |
 | `npm run preview` | serves `web/dist/` |
-| `npm run typecheck` | `tsc` over `jsconfig.json`, then `tsconfig.node.json` |
+| `npm run typecheck` | `tsc` over `tsconfig.json`, then `tsconfig.node.json` |
 | `npm run lint` | Biome `check .` |
 | `npm run test:unit` | tier 1 |
 | `npm run test:e2e` | tier 2, against the build |
@@ -34,8 +34,12 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
   name, version and license text of every npm package in the bundle; the About
   dialog lists them). A new bundled dependency needs no license edit.
 - `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
-  stays out of `jsconfig.json`: Node's types would leak into browser code
-  (`setTimeout` would return `Timeout`).
+  stays out of `tsconfig.json`: Node's types would leak into browser code
+  (`setTimeout` would return `Timeout`). The other Node-only tools —
+  `glyph-usage.ts` at the top level and `shared/carry-texmf.ts` — are checked
+  by `tsconfig.node.json` too, for the same reason: importing `node:fs` or
+  `node:process` anywhere in `tsconfig.json`'s program would pull Node's
+  global augmentations into every browser module in it.
 - No hashed-name bookkeeping: file names carry content hashes, so there is no
   `?v=N` cache-buster. Never add one.
 
@@ -99,19 +103,33 @@ nothing self-registers. Order is load-bearing:
 
 ## Types at boundaries
 
-JSDoc only, checked by `tsc` (TypeScript 7) against `web/jsconfig.json`
-(`checkJs`, `strict`, no `@types/node` — browser code). From `web/`, as CI runs it:
+`web/shared/` and the non-UI modules of `web/app/modules/` are TypeScript,
+checked by `tsc` (TypeScript 7, the `tsgo` binary) against `web/tsconfig.json`
+(`strict`, `allowJs`, `checkJs`, no `@types/node` — browser code). A UI module
+not yet converted stays `.js`, still checked by the same project through
+`checkJs`, and imports a converted module by its `.ts` specifier. From `web/`,
+as CI runs it:
 
 ```sh
 npm run typecheck
 ```
 
-- Every exported function in `web/shared/` and `web/app/modules/` carries
-  `@param {...}` and `@returns {...}`.
-- Declare an injected dependency with `@typedef`, naming every method the
-  injection site calls. Never accept an unnamed object.
+- Tier 1 runs `.ts` modules directly on Node's native type stripping, with no
+  loader flag, so `tsconfig.json` sets `erasableSyntaxOnly` (no `enum`,
+  `namespace` or constructor parameter properties), `verbatimModuleSyntax`
+  (a type-only import spells out `import type`) and
+  `allowImportingTsExtensions` (an import specifier names the real `.ts`
+  file, e.g. `"../../shared/build-plan.ts"`, never a bare `.js` guess).
+- Every exported function in `web/shared/` and `web/app/modules/` carries a
+  typed signature (parameter types and a return type), or a JSDoc comment
+  that documents behavior without repeating the type.
+- Declare an injected dependency as an exported `interface`, naming every
+  method the injection site calls. Never accept an unnamed object.
 - Validate external payloads (GitHub responses, parsed `.tex`) at entry. No
   unchecked shape reaches `web/app/modules/`.
+- A Node-only tool (`web/glyph-usage.ts`, `web/shared/carry-texmf.ts`) imports
+  `process` from `node:process` explicitly rather than using it as a global,
+  since `tsconfig.json` carries no Node globals.
 
 ## Running locally
 
@@ -244,10 +262,10 @@ The app preloads `texlive-basic` only (`DATA_PACKAGE` in
 `web/shared/build-plan.js`). The ~170 files the book needs beyond it ship in
 one bundle, `web/shared/texmf/carried-texmf.bin`, built from
 `web/shared/texmf/carried.txt` — the manifest, which says why each file is
-carried. `web/shared/carry-texmf.mjs` has the full procedure in its header.
+carried. `web/shared/carry-texmf.ts` has the full procedure in its header.
 
 - After bumping `BUSYTEX_ENGINE_VERSION` or editing `carried.txt`, run
-  `node web/shared/carry-texmf.mjs build`. Tier 1 fails until you do.
+  `node web/shared/carry-texmf.ts build`. Tier 1 fails until you do.
 - Review a rebuild through `carried.lock.json`: one line per file with its
   SHA-256. The bundle itself is binary.
 - Check a rebuild on the real engine with

@@ -2,6 +2,7 @@
 // rather than through an import: the vendored CodeMirror build loaded by a
 // plain <script> tag, and the probe hooks app/modules/build.js and
 // app/modules/github.js hang off window for the headless capture drivers.
+// (build.js and github.js are UI modules, converted in a later phase.)
 
 /** A place in a CodeMirror 5 document: zero-based line and column. */
 interface CodeMirrorPosition {
@@ -93,7 +94,7 @@ interface Window {
   /** The app's shared state object. Installed by app/app.js for the integration tests. */
   __state?: AppState;
   /** The local-store functions the integration tests seed and read. Installed by app/app.js. */
-  __localStore?: Pick<typeof import("../app/modules/local-store.js"), "loadRecord" | "saveText" | "saveUploads">;
+  __localStore?: Pick<typeof import("../app/modules/local-store.ts"), "loadRecord" | "saveText" | "saveUploads">;
 }
 
 interface Navigator {

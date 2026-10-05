@@ -1,4 +1,4 @@
-// Tier 1 unit tests for web/app/modules/config.js.
+// Tier 1 unit tests for web/app/modules/config.ts.
 //
 // The module is importable under Node only because busytexBase() reads
 // `document` inside the function instead of at module scope. That is what this
@@ -15,7 +15,7 @@ import {
   publishedPdfUrl,
   REPO,
   TEMPLATES,
-} from "../../app/modules/config.js";
+} from "../../app/modules/config.ts";
 
 test("publishedPdfUrl points at the branch the nightly build publishes to", () => {
   assert.equal(publishedPdfUrl("astral_run"), `${PUBLISHED_PDF_REPO}/en-astral_run-color/astral_run_en.pdf`);

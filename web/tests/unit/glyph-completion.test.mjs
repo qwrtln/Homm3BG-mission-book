@@ -5,7 +5,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 
-import { CORE_GLYPHS } from "../../shared/build-plan.js";
+import { CORE_GLYPHS } from "../../shared/build-plan.ts";
 import {
   countGlyphUses,
   glyphCompletions,
@@ -15,7 +15,7 @@ import {
   parseGlyphManifest,
   parseGlyphUsage,
   plainGlyph,
-} from "../../shared/glyph-completion.js";
+} from "../../shared/glyph-completion.ts";
 import { readRepoFile, repoRoot } from "../helpers/repo.mjs";
 
 /**

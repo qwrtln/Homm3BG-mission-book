@@ -3,8 +3,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { CATEGORY_LABELS } from "../../app/modules/config.js";
-import { DRAFT_GROUP_FILES } from "../../shared/build-plan.js";
+import { CATEGORY_LABELS } from "../../app/modules/config.ts";
+import { DRAFT_GROUP_FILES } from "../../shared/build-plan.ts";
 import {
   categoryOfPath,
   DRAFT_CATEGORIES,
@@ -15,7 +15,7 @@ import {
   validateScenarioName,
   withCategory,
   withScenarioKind,
-} from "../../shared/scenario-name.js";
+} from "../../shared/scenario-name.ts";
 import { readRepoFile } from "../helpers/repo.mjs";
 
 test("a title of letters, digits, spaces, hyphens and apostrophes is valid", () => {

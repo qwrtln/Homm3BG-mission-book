@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { PNG_DPI, pageArchiveName, pageImageName } from "../../shared/page-images.js";
+import { PNG_DPI, pageArchiveName, pageImageName } from "../../shared/page-images.ts";
 
 test("a page's image name is the stem, an underscore and the page number, with no zero padding", () => {
   assert.equal(pageImageName("bloody_grail", 1), "bloody_grail_1.png");

@@ -4,7 +4,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { clampSplit, DEFAULT_SPLIT, parseSplit } from "../../shared/split.js";
+import { clampSplit, DEFAULT_SPLIT, parseSplit } from "../../shared/split.ts";
 
 test("a stored percentage reads back as itself", () => {
   assert.equal(parseSplit("37.5"), 37.5);

@@ -1,13 +1,13 @@
 // The start wizard: a fourth way onto a new scenario, beside resume, copy and
 // blank. It asks one pane of questions at a time, collects the answers into a
-// WizardAnswers object, and hands the text shared/scenario-wizard.js makes
+// WizardAnswers object, and hands the text shared/scenario-wizard.ts makes
 // from them to the workspace. It holds no LaTeX knowledge of its own.
 //
 // Each pane is data (see WizardPane); navigation reads only that interface,
 // so a later pane is one more entry in the list.
 
-import { errorMessage } from "../../shared/errors.js";
-import { validateScenarioName } from "../../shared/scenario-name.js";
+import { errorMessage } from "../../shared/errors.ts";
+import { validateScenarioName } from "../../shared/scenario-name.ts";
 import {
   BUILDINGS,
   fillScenarioTemplate,
@@ -15,15 +15,15 @@ import {
   MAX_PER_PLAYER,
   WIZARD_CATEGORIES,
   WIZARD_TEMPLATE_PATH,
-} from "../../shared/scenario-wizard.js";
-import { CATEGORY_LABELS, REPO } from "./config.js";
+} from "../../shared/scenario-wizard.ts";
+import { CATEGORY_LABELS, REPO } from "./config.ts";
 import { el, escapeHtml, sanitizeFilename } from "./dom.js";
-import { loadDraft } from "./drafts.js";
-import { preloadText } from "./files.js";
+import { loadDraft } from "./drafts.ts";
+import { preloadText } from "./files.ts";
 import { createUploadPanel, MAX_MAP_FILES } from "./upload-panel.js";
 import { commitGeneratedEntry, newScenarioPath } from "./workspace.js";
 
-/** @typedef {import("../../shared/scenario-wizard.js").WizardAnswers} WizardAnswers */
+/** @typedef {import("../../shared/scenario-wizard.ts").WizardAnswers} WizardAnswers */
 
 /**
  * One pane of questions. `read` names every field the pane owns, with
@@ -311,7 +311,7 @@ function badNumber(root) {
 
 /**
  * @param {HTMLElement} group
- * @returns {import("../../shared/scenario-wizard.js").ResourceValues | undefined} undefined when all three are empty
+ * @returns {import("../../shared/scenario-wizard.ts").ResourceValues | undefined} undefined when all three are empty
  */
 function resourceValues(group) {
   /** @param {Resource} resource */
@@ -437,7 +437,7 @@ const poolPane = {
 
 // --- pane 8: map setup -----------------------------------------------------------------
 
-/** @typedef {import("../../shared/scenario-wizard.js").TileCount} TileCount */
+/** @typedef {import("../../shared/scenario-wizard.ts").TileCount} TileCount */
 
 /** @returns {HTMLInputElement[]} the four count fields, in Starting, Far, Near, Center order */
 function mapFields() {
@@ -487,7 +487,7 @@ function usesTiles(count) {
   return typeof count === "object" ? count.perPlayer > 0 : count > 0;
 }
 
-/** @returns {import("../../shared/scenario-wizard.js").MapSetup} the four counts, an empty one as 0 */
+/** @returns {import("../../shared/scenario-wizard.ts").MapSetup} the four counts, an empty one as 0 */
 function mapCounts() {
   const [starting, far, near, center] = mapFields().map((input) => tileCountIn(input) ?? 0);
   return { starting, far, near, center };
@@ -629,7 +629,7 @@ function syncEventRounds() {
   drawEventFields();
 }
 
-/** @returns {import("../../shared/scenario-wizard.js").TimedEvent[]} the selected Rounds that hold text, in order */
+/** @returns {import("../../shared/scenario-wizard.ts").TimedEvent[]} the selected Rounds that hold text, in order */
 function timedEvents() {
   return [...selectedRounds]
     .sort((a, b) => a - b)
@@ -1116,7 +1116,7 @@ const FIRST_COLUMN = new Set(["bronze", "silver", "golden", "citadel"]);
  * @returns {void}
  */
 function drawBuildings() {
-  /** @param {import("../../shared/scenario-wizard.js").Building} building */
+  /** @param {import("../../shared/scenario-wizard.ts").Building} building */
   const box = (building) =>
     `<label class="wizard-check"><input class="check" type="checkbox" value="${escapeHtml(building.key)}">${glyphImage(building.glyph, building.darkGlyph)}<span>${escapeHtml(building.label)}</span></label>`;
   /** @param {boolean} first */

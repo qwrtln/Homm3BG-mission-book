@@ -1,5 +1,8 @@
-import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.js";
-import { state } from "./state.js";
+import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
+import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.ts";
+import { state } from "./state.ts";
+
+export { basenameNoExt, escapeHtml, sanitizeFilename };
 
 /**
  * Whether the browser is running on macOS or iOS, read from the platform the
@@ -100,20 +103,6 @@ export function setStatus(text, { spinning = false, tone = "" } = {}) {
 }
 
 /**
- * Escapes the characters that could break out of an HTML text node or a
- * quoted attribute value.
- *
- * @param {unknown} text anything; stringified first, as call sites pass
- *   element textContent, which is nullable
- * @returns {string}
- */
-export function escapeHtml(text) {
-  /** @type {Record<string, string>} */
-  const replacements = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
-  return String(text).replace(/[&<>"']/g, (c) => replacements[c]);
-}
-
-/**
  * Enters or leaves the building state: the button and the progress bar
  * together. While building, the Build button turns into Stop. The PDF pane
  * stays readable under the bar.
@@ -146,34 +135,6 @@ export function setBuildPhase(text) {
   el("build-phase-text").textContent = text;
   const caption = document.querySelector("#pdf-body .empty-pdf.loading p");
   if (caption) caption.textContent = text;
-}
-
-/**
- * The filename part of a path, without its .tex extension.
- *
- * @param {string} path
- * @returns {string}
- */
-export function basenameNoExt(path) {
-  // split always yields at least one element, so pop never returns undefined.
-  const base = /** @type {string} */ (path.split("/").pop());
-  return base.replace(/\.tex$/, "");
-}
-
-/**
- * Safe .tex basename: lowercase, underscores for anything else, "untitled"
- * if that leaves nothing.
- *
- * @param {string} name
- * @returns {string}
- */
-export function sanitizeFilename(name) {
-  const cleaned = name
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9_-]+/g, "_")
-    .replace(/^_+|_+$/g, "");
-  return cleaned || "untitled";
 }
 
 /**

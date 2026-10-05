@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { completionContext, imageCompletions, macroPath } from "../../shared/image-completion.js";
+import { completionContext, imageCompletions, macroPath } from "../../shared/image-completion.ts";
 
 /**
  * The context at the "|" in `marked`, with the "|" taken out.

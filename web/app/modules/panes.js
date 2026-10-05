@@ -1,6 +1,6 @@
-import { clampSplit, DEFAULT_SPLIT, parseSplit } from "../../shared/split.js";
+import { clampSplit, DEFAULT_SPLIT, parseSplit } from "../../shared/split.ts";
 import { el } from "./dom.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 
 export const SPLIT_KEY = "wasm-scenario-builder:split";
 

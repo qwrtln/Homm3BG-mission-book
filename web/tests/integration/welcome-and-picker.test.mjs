@@ -5,8 +5,8 @@
 // outside-click handlers, the selected row, the Open editor gate, and the
 // hand-off from the welcome screen to the workspace.
 
-import { withScenarioTitle } from "../../shared/build-plan.js";
-import { withScenarioKind } from "../../shared/scenario-name.js";
+import { withScenarioTitle } from "../../shared/build-plan.ts";
+import { withScenarioKind } from "../../shared/scenario-name.ts";
 import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 // config.js's TEMPLATES. These two are the app's own constants, not book

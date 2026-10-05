@@ -1,4 +1,4 @@
-// Tier 1 tests for web/shared/github-contrib.js.
+// Tier 1 tests for web/shared/github-contrib.ts.
 //
 // The module calls GitHub through an injected HttpClient (setHttpClient), so
 // these tests hand it a small recorded fake of the API instead of reaching
@@ -8,7 +8,7 @@
 
 import assert from "node:assert/strict";
 import test, { afterEach } from "node:test";
-import { DRAFT_GROUP_FILES } from "../../shared/build-plan.js";
+import { DRAFT_GROUP_FILES } from "../../shared/build-plan.ts";
 import {
   deleteWorkBranch,
   discoverGithubContext,
@@ -20,7 +20,7 @@ import {
   slugify,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
-} from "../../shared/github-contrib.js";
+} from "../../shared/github-contrib.ts";
 
 const API = "https://api.github.com";
 

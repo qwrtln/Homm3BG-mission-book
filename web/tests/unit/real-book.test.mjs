@@ -13,7 +13,7 @@ import {
   parseScenarioIndex,
   planScenarioBuild,
   scenarioHeading,
-} from "../../shared/build-plan.js";
+} from "../../shared/build-plan.ts";
 import { readRepoFile, repoRoot } from "../helpers/repo.mjs";
 
 function indexFor(groupFiles) {

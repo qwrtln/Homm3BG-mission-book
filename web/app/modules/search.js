@@ -1,72 +1,21 @@
-import { DRAFT_CATEGORIES } from "../../shared/scenario-name.js";
-import { CATEGORY_LABELS, CATEGORY_ORDER } from "./config.js";
+import { DRAFT_CATEGORIES } from "../../shared/scenario-name.ts";
+import { groupedResults as groupedResultsFor, matchScore } from "../../shared/search.ts";
+import { CATEGORY_LABELS, CATEGORY_ORDER } from "./config.ts";
 import { closestTo, el, escapeHtml } from "./dom.js";
 import { blanksAllowed, pickBlank, selectPending } from "./picker.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 
-/**
- * Substring match ranked by position, else letters found in order (ranked
- * after any substring match).
- *
- * @param {string} query what the contributor typed
- * @param {string} text the candidate title
- * @returns {number | null} lower is a better match; null means no match
- */
-export function matchScore(query, text) {
-  const q = query.trim().toLowerCase();
-  if (!q) return 0;
-  const t = text.toLowerCase();
-  const idx = t.indexOf(q);
-  if (idx !== -1) return idx;
-  let qi = 0;
-  let first = -1;
-  let last = -1;
-  for (let i = 0; i < t.length && qi < q.length; i += 1) {
-    if (t[i] === q[qi]) {
-      if (first === -1) first = i;
-      last = i;
-      qi += 1;
-    }
-  }
-  if (qi < q.length) return null;
-  return 1000 + (last - first);
-}
-
-/**
- * @typedef {object} ResultGroup
- * @property {"mission" | "draft"} book
- * @property {string} category
- * @property {{entry: ScenarioEntry, score: number}[]} items
- */
+export { matchScore };
 
 /**
  * Every matching entry, grouped by book and category, each group's items
  * sorted best-match first.
  *
  * @param {string} query
- * @returns {ResultGroup[]}
+ * @returns {import("../../shared/search.ts").ResultGroup[]}
  */
 export function groupedResults(query) {
-  /** @type {Map<string, ResultGroup>} "book|category" -> group */
-  const groups = new Map();
-  for (const entry of state.entries) {
-    const score = matchScore(query, entry.title);
-    if (score === null) continue;
-    const key = `${entry.book}|${entry.category}`;
-    let group = groups.get(key);
-    if (!group) {
-      group = { book: entry.book, category: entry.category, items: [] };
-      groups.set(key, group);
-    }
-    group.items.push({ entry, score });
-  }
-  for (const group of groups.values()) {
-    group.items.sort((a, b) => a.score - b.score || a.entry.title.localeCompare(b.entry.title));
-  }
-  return [...groups.values()].sort((a, b) => {
-    if (a.book !== b.book) return a.book === "mission" ? -1 : 1;
-    return CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category);
-  });
+  return groupedResultsFor(state.entries, query, CATEGORY_ORDER);
 }
 
 /**

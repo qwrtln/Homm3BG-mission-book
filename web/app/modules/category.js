@@ -1,11 +1,11 @@
-import { categoryOfPath, DRAFT_CATEGORIES, withCategory, withScenarioKind } from "../../shared/scenario-name.js";
-import { CATEGORY_LABELS } from "./config.js";
+import { categoryOfPath, DRAFT_CATEGORIES, withCategory, withScenarioKind } from "../../shared/scenario-name.ts";
+import { CATEGORY_LABELS } from "./config.ts";
 import { el } from "./dom.js";
-import { deleteDraft, loadDraft, saveDraft } from "./drafts.js";
+import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
 import { githubSaveState, onSaveStateReset } from "./github-save-state.js";
-import { moveRecord, saveText } from "./local-store.js";
-import { reflectRoute } from "./route.js";
-import { requireEditor, state } from "./state.js";
+import { moveRecord, saveText } from "./local-store.ts";
+import { reflectRoute } from "./route.ts";
+import { requireEditor, state } from "./state.ts";
 
 const LOCKED_TITLE = "The category is fixed once the scenario is saved to GitHub.";
 const OPEN_TITLE = "The category this scenario is filed under in the Draft Scenarios.";

@@ -25,7 +25,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
-import { carriedName, parseDataPackage, texmfKey, unpackFile } from "../../shared/texmf-carry.js";
+import { carriedName, parseDataPackage, texmfKey, unpackFile } from "../../shared/texmf-carry.ts";
 import { startStaticServer } from "../driver/static-server.mjs";
 
 const DEFAULT_JOBS = [
@@ -58,7 +58,7 @@ function fromExtra(name) {
   const path = extraByName.get(name);
   if (!path) return null;
   toCarry.add(/** @type {string} */ (texmfKey(path)));
-  const range = /** @type {import("../../shared/texmf-carry.js").PackedFile} */ (extra.files.get(path));
+  const range = /** @type {import("../../shared/texmf-carry.ts").PackedFile} */ (extra.files.get(path));
   return Buffer.from(unpackFile(extraData, extra.chunks, range)).toString("base64");
 }
 
@@ -81,7 +81,7 @@ try {
   }
   console.log(
     toCarry.size
-      ? `\nAdd to web/shared/texmf/carried.txt, then run carry-texmf.mjs build:\n${[...toCarry]
+      ? `\nAdd to web/shared/texmf/carried.txt, then run carry-texmf.ts build:\n${[...toCarry]
           .sort()
           .map((key) => `texlive-extra ${key}`)
           .join("\n")}`
@@ -101,8 +101,8 @@ process.exit(failed ? 1 : 0);
  */
 async function runJobs(jobs) {
   const { BusyTexRunner, LuaLatex } = await import("/web/shared/vendor/texlyre-busytex.js");
-  const plans = await import("/web/shared/build-plan.js");
-  const files = await import("/web/app/modules/files.js");
+  const plans = await import("/web/shared/build-plan.ts");
+  const files = await import("/web/app/modules/files.ts");
   const base = new URL("../core/busytex", document.baseURI).href;
   const runner = new BusyTexRunner({
     busytexBasePath: base,

@@ -1,9 +1,9 @@
-import { refreshUnsavedNote } from "./dirty.js";
+import { refreshUnsavedNote } from "./dirty.ts";
 import { el } from "./dom.js";
-import { saveDraft, scheduleSave } from "./drafts.js";
-import { saveText } from "./local-store.js";
+import { saveDraft, scheduleSave } from "./drafts.ts";
+import { saveText } from "./local-store.ts";
 import { refreshStaleStatus } from "./pdf-view.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 import { initialTheme } from "./theme.js";
 
 /**

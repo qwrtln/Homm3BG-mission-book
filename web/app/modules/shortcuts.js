@@ -1,7 +1,7 @@
-import { matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.js";
+import { matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
 import { runBuild } from "./build.js";
 import { el, initBuildTitle, isMac } from "./dom.js";
-import { requireEditor } from "./state.js";
+import { requireEditor } from "./state.ts";
 
 /** KeyboardEvent.key values of the modifier keys themselves. */
 const MODIFIER_KEYS = new Set(["Shift", "Control", "Alt", "Meta"]);

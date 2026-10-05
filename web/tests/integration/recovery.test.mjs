@@ -1,8 +1,8 @@
 // Tier 2. Phase 2 of crash recovery: the IndexedDB copy that backs both the
 // editor text and the staged uploads, so a whole-browser crash (not just a
-// tab crash) loses neither. See web/app/modules/local-store.js.
+// tab crash) loses neither. See web/app/modules/local-store.ts.
 
-import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";

@@ -1,5 +1,5 @@
 import { el } from "./dom.js";
-import { state } from "./state.js";
+import { state } from "./state.ts";
 
 const APP_TITLE = "Heroes III: The Board Game – Scenario Builder";
 

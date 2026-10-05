@@ -1,10 +1,10 @@
-import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.js";
-import { errorMessage } from "../../shared/errors.js";
-import { categoryOfPath, validateScenarioName } from "../../shared/scenario-name.js";
-import { CATEGORY_LABELS, publishedPdfUrl, TEMPLATES } from "./config.js";
+import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.ts";
+import { errorMessage } from "../../shared/errors.ts";
+import { categoryOfPath, validateScenarioName } from "../../shared/scenario-name.ts";
+import { CATEGORY_LABELS, publishedPdfUrl, TEMPLATES } from "./config.ts";
 import { basenameNoExt, el } from "./dom.js";
-import { preloadFile, preloadText } from "./files.js";
-import { state } from "./state.js";
+import { preloadFile, preloadText } from "./files.ts";
+import { state } from "./state.ts";
 import { showPicker } from "./wizard.js";
 import { commitEntry } from "./workspace.js";
 

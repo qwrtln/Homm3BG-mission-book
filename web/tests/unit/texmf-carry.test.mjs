@@ -1,5 +1,5 @@
-// Tier 1 tests for web/shared/texmf-carry.js, and for the committed files
-// carry-texmf.mjs builds from it: web/shared/texmf/carried.txt,
+// Tier 1 tests for web/shared/texmf-carry.ts, and for the committed files
+// carry-texmf.ts builds from it: web/shared/texmf/carried.txt,
 // carried.lock.json and carried-texmf.bin. The second half fails when
 // someone bumps the engine or edits carried.txt without rebuilding.
 
@@ -10,7 +10,7 @@ import { join } from "node:path";
 import test from "node:test";
 import { gunzipSync } from "node:zlib";
 
-import { CARRIED_TEXMF_BUNDLE, DATA_PACKAGE } from "../../shared/build-plan.js";
+import { CARRIED_TEXMF_BUNDLE, DATA_PACKAGE } from "../../shared/build-plan.ts";
 import {
   BUNDLE_FORMAT,
   CHUNK_SIZE,
@@ -24,7 +24,7 @@ import {
   texmfKey,
   unpackBundle,
   unpackFile,
-} from "../../shared/texmf-carry.js";
+} from "../../shared/texmf-carry.ts";
 import { readRepoFile, repoRoot } from "../helpers/repo.mjs";
 
 const bytes = (/** @type {string} */ text) => new TextEncoder().encode(text);
@@ -175,7 +175,7 @@ test("the carried bundle was built for the pinned engine", () => {
   assert.equal(
     lock.engine,
     pinned,
-    "vendor.env pins another engine: run web/serve.sh, then node web/shared/carry-texmf.mjs build",
+    "vendor.env pins another engine: run web/serve.sh, then node web/shared/carry-texmf.ts build",
   );
   assert.equal(DATA_PACKAGE, "texlive-basic", "carried.txt was resolved against texlive-basic");
 });
@@ -184,7 +184,7 @@ test("the carried bundle holds exactly what carried.txt lists", () => {
   assert.deepEqual(
     lock.files.map(({ name, source, path }) => ({ name, source, path })),
     manifest,
-    "carried.txt changed since the last build: run node web/shared/carry-texmf.mjs build",
+    "carried.txt changed since the last build: run node web/shared/carry-texmf.ts build",
   );
   assert.deepEqual(
     bundle.map((file) => file.name),

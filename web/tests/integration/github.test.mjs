@@ -7,7 +7,7 @@
 // Seeding that key through page.addInitScript is therefore the whole of the
 // sign-in this file needs. See web/tests/README.md for the stubbing contract.
 
-import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.js";
+import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { chooseFromMenu, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 // The localStorage key github-auth.js persists the token in. It is a private

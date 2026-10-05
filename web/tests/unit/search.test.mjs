@@ -1,20 +1,19 @@
-// Tier 1 unit tests for the search ranking in web/app/modules/search.js.
-//
-// The module touches the DOM only inside renderResults, moveActive and
-// initSearch, never at import time, so Node loads it without a DOM. It became
-// importable once config.js stopped resolving BASE at module scope.
+// Tier 1 unit tests for the search ranking in web/shared/search.ts, which
+// app/modules/search.js renders. The ranking itself is DOM-free, so it lives
+// in shared/ and is tested directly, against an explicit entry list rather
+// than the app's own state.entries.
 
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { groupedResults, matchScore } from "../../app/modules/search.js";
-import { state } from "../../app/modules/state.js";
+import { CATEGORY_ORDER } from "../../app/modules/config.ts";
+import { groupedResults as groupedResultsFor, matchScore } from "../../shared/search.ts";
 
 /**
  * A ScenarioEntry, with the fields the search reads spelled out.
  *
  * @param {"mission" | "draft"} book
- * @param {string} category one of config.js's CATEGORY_ORDER labels
+ * @param {string} category one of config.ts's CATEGORY_ORDER labels
  * @param {string} title
  * @returns {ScenarioEntry}
  */
@@ -23,23 +22,12 @@ function entry(book, category, title) {
 }
 
 /**
- * Runs groupedResults over a fixed entry list, leaving the shared state as it
- * was found. groupedResults reads state.entries rather than taking them as an
- * argument, and this test sets that shared state rather than changing the
- * module's signature: renderResults is its only caller and passes no entries.
- *
  * @param {ScenarioEntry[]} entries
  * @param {string} query
- * @returns {ReturnType<typeof groupedResults>}
+ * @returns {ReturnType<typeof groupedResultsFor>}
  */
 function resultsFor(entries, query) {
-  const previous = state.entries;
-  state.entries = entries;
-  try {
-    return groupedResults(query);
-  } finally {
-    state.entries = previous;
-  }
+  return groupedResultsFor(entries, query, CATEGORY_ORDER);
 }
 
 test("matchScore ranks a substring match by where it starts", () => {
@@ -159,7 +147,7 @@ test("groupedResults orders groups of one book by CATEGORY_ORDER", () => {
   assert.deepEqual(
     groups.map((group) => group.category),
     ["Coop", "Clash", "Campaign", "Alliance"],
-    "config.js's CATEGORY_ORDER, not the order the entries arrived in",
+    "config.ts's CATEGORY_ORDER, not the order the entries arrived in",
   );
 });
 
@@ -169,10 +157,4 @@ test("groupedResults returns every entry for an empty query", () => {
     groups.map((group) => group.items.length),
     [1, 1],
   );
-});
-
-test("groupedResults leaves state.entries as it found it", () => {
-  const before = state.entries;
-  resultsFor([entry("mission", "Clash", "Astral Run")], "astral");
-  assert.equal(state.entries, before);
 });

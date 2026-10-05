@@ -42,7 +42,7 @@ fi
 [[ -d "$web/node_modules" ]] || (cd "$web" && npm ci)
 
 # How often the book uses each glyph, so the editor offers common ones first.
-node "$web/glyph-usage.mjs"
+node "$web/glyph-usage.ts"
 
 echo "Open http://127.0.0.1:$port/web/app/ (Ctrl+C to stop)"
 cd "$web"

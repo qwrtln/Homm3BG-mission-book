@@ -11,7 +11,7 @@ import {
   parsePlayerCounts,
   playerCountSuffix,
   withExtension,
-} from "../../shared/upload-names.js";
+} from "../../shared/upload-names.ts";
 
 test("fileExtension lowercases and keeps the dot", () => {
   assert.equal(fileExtension("Cover.JPG"), ".jpg");

@@ -9,8 +9,8 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 
-import { withScenarioTitle } from "../../shared/build-plan.js";
-import { DRAFT_CATEGORIES, withScenarioKind } from "../../shared/scenario-name.js";
+import { withScenarioTitle } from "../../shared/build-plan.ts";
+import { DRAFT_CATEGORIES, withScenarioKind } from "../../shared/scenario-name.ts";
 import {
   BUILDINGS,
   escapeLatex,
@@ -22,7 +22,7 @@ import {
   TemplateAnchorError,
   WIZARD_CATEGORIES,
   WIZARD_TEMPLATE_PATH,
-} from "../../shared/scenario-wizard.js";
+} from "../../shared/scenario-wizard.ts";
 import { readRepoFile, repoRoot } from "../helpers/repo.mjs";
 
 const template = readRepoFile(WIZARD_TEMPLATE_PATH);

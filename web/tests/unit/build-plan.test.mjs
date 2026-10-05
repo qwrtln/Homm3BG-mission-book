@@ -1,4 +1,4 @@
-// Tier 1 unit tests for web/shared/build-plan.js, the app's only piece of
+// Tier 1 unit tests for web/shared/build-plan.ts, the app's only piece of
 // substantial logic with no DOM and no network in it.
 
 import assert from "node:assert/strict";
@@ -28,7 +28,7 @@ import {
   planScenarioBuild,
   resolveMacroPath,
   scenarioHeading,
-} from "../../shared/build-plan.js";
+} from "../../shared/build-plan.ts";
 
 test("glyphFilesFor asks for the source svg and the precompiled pair", () => {
   assert.deepEqual(glyphFilesFor(["gold"]), [
@@ -363,7 +363,7 @@ test("the path macro table matches metadata.tex's own declarations", () => {
 });
 
 test("withScenarioTitle swaps only the title slot", async () => {
-  const { withScenarioTitle } = await import("../../shared/build-plan.js");
+  const { withScenarioTitle } = await import("../../shared/build-plan.ts");
   assert.equal(
     withScenarioTitle("\\addscenariosection{1}{Clash}{Old Name}{\\images/a.png}\nOld Name", "New $& Name"),
     "\\addscenariosection{1}{Clash}{New $& Name}{\\images/a.png}\nOld Name",
@@ -379,4 +379,16 @@ test("builtStatus: singular for one page, plural otherwise", () => {
   assert.equal(builtStatus(1, 2.5), "Built 1 page in 2.5s.");
   assert.equal(builtStatus(4, 3), "Built 4 pages in 3s.");
   assert.equal(builtStatus(0, 0.4), "Built 0 pages in 0.4s.");
+});
+
+test("build-plan.ts keeps the literal DATA_PACKAGE line the deploy's sed reads", async () => {
+  // publish-docs.yaml extracts DATA_PACKAGE with:
+  //   sed -n 's/^export const DATA_PACKAGE = "\(.*\)";$/\1/p' web/shared/build-plan.ts
+  // A rewrite of this line (a different quote style, a type annotation, a
+  // trailing comment) would make that sed print nothing and fail the deploy.
+  const { readRepoFile } = await import("../helpers/repo.mjs");
+  const source = readRepoFile("web/shared/build-plan.ts");
+  const match = /^export const DATA_PACKAGE = "(.*)";$/m.exec(source);
+  assert.ok(match, "build-plan.ts must have a line matching the deploy's sed regex exactly");
+  assert.equal(match[1], "texlive-basic");
 });
