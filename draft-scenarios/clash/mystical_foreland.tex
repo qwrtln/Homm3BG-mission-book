@@ -154,8 +154,70 @@ Starting in the \nth{10} Round, the following rules apply:
   \item For each extra \textbf{Stack Token}, the Hero gains additional +1~\svg{movement}.
   \item For every \svg{golden} Unit you defeat in a Neutral Combat, gain 5~\svg{gold} and either 2~\svg{building_materials} or 1~\svg{valuables}.
 \end{itemize}
-
 \end{multicols}
+
+\vspace{1em}
+\begin{center}
+  \hommtable[]{17}{
+    \centering
+    \medskip
+    \textbf{Artifact Rolls}\\
+    \bigskip
+
+    \begin{tabularx}{0.95\linewidth}{p{0.18\linewidth}XXX}
+      \darkcell[1.25]{Type}
+        & \darkcell[1.25]{Starting (I)\linebreak Far (II--III)}
+        & \darkcell[1.25]{Near (IV--V)}
+        & \darkcell[1.25]{Center (VI--VII)} \\
+
+      \darkcell[1.55]{Relic}
+        & \lightcell[1.55]{$+1$, $+1$}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $+1$ & $+1$ \\
+              $\phantom{+}0$ & $+1$
+            \end{tabular}}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $+1$ & $+1$ \\
+              $\phantom{+}0$ & $+1$ \\
+              $\phantom{+}0$ & $\phantom{+}0$
+            \end{tabular}} \\
+
+      \darkcell[1.55]{Major}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $\phantom{+}0$ & $+1$ \\
+              $\phantom{+}0$ & $\phantom{+}0$
+            \end{tabular}}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $\phantom{+}0$ & $\phantom{+}0$ \\
+              $-1$ & $+1$
+            \end{tabular}}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $\phantom{+}0$ & $-1$ \\
+              $-1$ & $+1$
+            \end{tabular}} \\
+
+      \darkcell[1.55]{Minor}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $-1$ & $-1$ \\
+              $-1$ & $\phantom{+}0$ \\
+              $-1$ & $+1$
+            \end{tabular}}
+        & \lightcell[1.55]{%
+            \begin{tabular}{r@{,\;\;}l}
+              $-1$ & $-1$ \\
+              $-1$ & $\phantom{+}0$
+            \end{tabular}}
+        & \lightcell[1.55]{$-1$, $-1$}
+    \end{tabularx}
+  }
+\end{center}
+
 \clearpage
 
 \begin{tikzpicture}[remember picture, overlay, shift={(current page.center)}]
