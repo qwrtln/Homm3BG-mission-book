@@ -1,4 +1,4 @@
-// Playwright request interception for tier-2 tests. Installs two independent
+// Playwright request interception for tier-2 tests. Installs three independent
 // stubs on a page:
 //
 //   - installEngineStub:  replaces the vendored BusyTeX wrapper with
@@ -6,6 +6,8 @@
 //     load in a browser test.
 //   - installGithubStub:  replaces api.github.com calls with canned
 //     responses, so no test makes a real network call to GitHub.
+//   - installPublishedPdfStub:  answers the published-PDF CDN with a 404, so
+//     no test downloads a real published PDF.
 //
 // Each stub registers its own page.route(); Playwright dispatches routes in
 // registration order and lets each handler decide whether to fulfill or fall
@@ -89,6 +91,28 @@ export async function installGithubStub(page, routes) {
         status: 599,
         contentType: "text/plain",
         body: diagnostic,
+      });
+    },
+  );
+}
+
+/**
+ * Installs a default for the published-PDF CDN (raw.githubusercontent.com):
+ * every request gets a 404, so a pick opens with no preview and no test
+ * downloads a real published PDF. A test that needs a preview registers its
+ * own page.route() for that host; Playwright runs the newest route first.
+ * @param {import("@playwright/test").Page} page - the page to install the
+ *   stub on.
+ * @returns {Promise<void>} resolves once interception is active.
+ */
+export async function installPublishedPdfStub(page) {
+  await page.route(
+    (url) => url.hostname === "raw.githubusercontent.com",
+    async (route) => {
+      await route.fulfill({
+        status: 404,
+        contentType: "text/plain",
+        body: "No published PDF in tests",
       });
     },
   );

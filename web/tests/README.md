@@ -51,8 +51,8 @@ never gated behind tier 2.
   from the repository root and the rest of `web/` (`shared/`, `core/`) where it
   sits, with the COOP/COEP headers the engine needs. `serve.mjs` is the entry
   point `webServer` runs; `PORT` overrides the default 8322.
-- `stubs/` — `installEngineStub(page)` and `installGithubStub(page, routes)`,
-  both built on `page.route`.
+- `stubs/` — `installEngineStub(page)`, `installGithubStub(page, routes)` and
+  `installPublishedPdfStub(page)`, all built on `page.route`.
 
 ### The engine is stubbed, never loaded
 
@@ -73,6 +73,11 @@ wrapper is already in flight, and a large engine payload starts downloading.
 `installGithubStub` works the same way for `api.github.com`. An unstubbed call
 is fulfilled with a 599 naming the method and URL, so it fails loudly instead of
 reaching the real API.
+
+`installPublishedPdfStub` answers every `raw.githubusercontent.com` request
+(the published-PDF CDN) with a 404, so a pick opens with no preview. A test
+that needs a published PDF registers its own `page.route` for that host;
+Playwright runs the newest route first, so it overrides the default.
 
 ## Conventions
 

@@ -10,7 +10,7 @@
 
 import { test as base, expect } from "@playwright/test";
 
-import { installEngineStub, installGithubStub } from "../stubs/install-stubs.mjs";
+import { installEngineStub, installGithubStub, installPublishedPdfStub } from "../stubs/install-stubs.mjs";
 
 /**
  * @typedef {import("../stubs/install-stubs.mjs").GithubRoute} GithubRoute
@@ -43,6 +43,7 @@ export const test = base.extend({
   app: async ({ page, githubRoutes, pageErrors }, use) => {
     await installEngineStub(page);
     await installGithubStub(page, githubRoutes);
+    await installPublishedPdfStub(page);
     await page.goto("/web/app/");
     await use({ page, errors: pageErrors });
   },
