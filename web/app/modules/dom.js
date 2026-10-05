@@ -196,16 +196,17 @@ export function confirmDelete(message) {
 /**
  * Asks in the page's own modal. Escape and Cancel answer no; Cancel has focus.
  *
- * @param {{title: string, message: string, warning: string, okLabel: string, danger: boolean}} options
+ * @param {{title: string, message: string, warning: string, okLabel: string, cancelLabel?: string, danger: boolean}} options
  * @returns {Promise<boolean>} true only when the confirming button was pressed
  */
-export function confirmAction({ title, message, warning, okLabel, danger }) {
+export function confirmAction({ title, message, warning, okLabel, cancelLabel = "Cancel", danger }) {
   const dialog = el("confirm-dialog");
   el("confirm-title").textContent = title;
   el("confirm-message").textContent = message;
   el("confirm-warning").textContent = warning;
   el("confirm-warning").hidden = warning === "";
   el("confirm-ok").textContent = okLabel;
+  el("confirm-cancel").textContent = cancelLabel;
   el("confirm-ok").classList.toggle("danger", danger);
   return new Promise((resolve) => {
     dialog.addEventListener("close", () => resolve(dialog.returnValue === "confirm"), { once: true });

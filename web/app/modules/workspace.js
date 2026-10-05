@@ -4,14 +4,14 @@ import { syncCategoryControl } from "./category.js";
 import { TEMPLATES } from "./config.js";
 import { markClean } from "./dirty.js";
 import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
-import { flushDraft, loadDraft, saveDraft } from "./drafts.js";
+import { flushDraft, saveDraft } from "./drafts.js";
 import { preloadFile } from "./files.js";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.js";
-import { clearUploads, loadRecord, saveText, saveUploads } from "./local-store.js";
+import { clearUploads, saveText, saveUploads } from "./local-store.js";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.js";
-import { offerLocalDraft } from "./recovery.js";
+import { offerDraftOverCopy, offerLocalDraft } from "./recovery.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.js";
 import { requireEditor, state } from "./state.js";
 import { resetUploads, restoreUploads } from "./uploads.js";
@@ -136,21 +136,29 @@ export async function commitEntry(path, name, category) {
   const fetched = await preloadFile(entry.path);
   const pristineSource = /** @type {string} */ (fetched.content);
 
-  const record = await loadRecord(identity);
-  const draft = record.text ?? loadDraft(identity);
   // The heading names the kind of the category it is filed under, not its source's.
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
-  cm.setValue(draft !== null ? draft : pristine);
-  el("draft-note").hidden = draft === null;
+  const local = await offerDraftOverCopy(identity, name.trim(), entry.title, pristine);
+  cm.setValue(local ? local.text : pristine);
+  el("draft-note").hidden = local === null;
   syncCategoryControl();
   cm.focus();
 
   resetUploads();
-  restoreUploads(record.uploads ?? []);
+  restoreUploads(local ? local.uploads : []);
   clearPdf();
   markClean(pristine); // a restored autosave differs from this, and says so
+  if (local === null) {
+    // A replaced draft is gone from the editor; written at once so a crash
+    // within the next 400 ms cannot bring it back under this key.
+    saveDraft(identity, pristine);
+    await saveText(identity, pristine);
+    await clearUploads(identity);
+  }
 
-  const shown = !template && (await showPrefetchedPdf(path, pristineSource));
+  // The draft may hold another scenario altogether: the published PDF goes
+  // only with a fresh copy.
+  const shown = !template && local === null && (await showPrefetchedPdf(path, pristineSource));
 
   // The published PDF is the entry's own, never the renamed copy in the editor.
   const differs = shown && cm.getValue() !== pristineSource;
