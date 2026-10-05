@@ -2,6 +2,7 @@
 \addscenariosection{1}{Clash/Alliance Scenario}{Mystical Foreland}{\images/pathfinding.png}
 
 \begin{multicols}{2}
+\enlargethispage{\baselineskip}
 
 \textbf{Author:} BoberL
 
@@ -54,20 +55,21 @@ If no player brings the Grail Token to their Town, all players lose the Scenario
 \begin{itemize}
   \item Each player may immediately \svg{reinforce} one \svg{bronze} Unit of their choice for free, or one \svg{silver} Unit of their choice at a cost reduced by 4~\svg{gold}.
 \end{itemize}
-\textbf{\nth{6}, \nth{10}, \nth{14} Rounds:}
+\textbf{\nth{6} Round:}
 \begin{itemize}
   \item Remove all Black Cubes from the map except those on Learning Stones.
 \end{itemize}
 \textbf{\nth{8} Round:}
 \begin{itemize}
-  \item Increase your \svg{gold}, \svg{building_materials} or \svg{valuables} income by 1 Cube.
+  \item Increase your \svg{gold}, \svg{building_materials} or \svg{valuables} income once.
 \end{itemize}
 \textbf{\nth{9} Round:}
 \begin{itemize}
-  \item Draw and resolve an additional Event Card. Drawer rotates clockwise after each, as normal.
+  \item Draw and resolve an additional Event Card. Drawer rotates clockwise after each.
 \end{itemize}
 \textbf{\nth{10} Round:}
 \begin{itemize}
+  \item Repeat the Timed Events of Round 6.
   \item From now on, the \textbf{Custom Combat Rule} applies (see Additional Rules below).
 \end{itemize}
 \textbf{\nth{12} Round:}
@@ -75,7 +77,10 @@ If no player brings the Grail Token to their Town, all players lose the Scenario
   \item Each player may \svg{pay} 5~\svg{gold} to Search~(2) the \svg{artifact}, \svg{skill}, or \svg{spellpower} Deck.
     A player may do this up to 3 times, paying 5~\svg{gold} each time.
 \end{itemize}
-
+\textbf{\nth{14} Round:}
+\begin{itemize}
+  \item Repeat the Timed Events of Round 6.
+\end{itemize}
 \subsection*{\MakeUppercase{Additional Rules}}
 
 \subsubsection*{Setup Changes}
@@ -132,7 +137,7 @@ If no player brings the Grail Token to their Town, all players lose the Scenario
 \subsubsection*{Neutral Unit Recruitment}
 
 \begin{itemize}
-  \item Only if you meet the requirements below, once at any point during your Turn, you may \svg{pay} one of the following to Search~(2) the Neutral Units Deck:
+  \item Only if you meet the requirements below, once at any point during your Turn, you may \svg{pay} one of the following to Search~(2) the Neutral Units Deck (You cannot use Empowered Scouting on this effect):
     \begin{itemize}
       \item \svg{bronze} \textbf{Dwelling}: 3~\svg{gold}, 1~\svg{building_materials} for \svg{bronze}
       \item \svg{silver} \textbf{Dwelling}: 4~\svg{gold}, 2~\svg{building_materials} for \svg{silver}
@@ -181,49 +186,49 @@ Starting in the \nth{10} Round, the following rules apply:
         & \darkcell[1.25]{Center (VI--VII)} \\
 
       \darkcell[1.55]{Relic}
-        & \lightcell[1.55]{$+1$, $+1$}
+        & \lightcell[1.55]{\textbf{+1}, \textbf{+1}}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $+1$ & $+1$ \\
-              $\phantom{+}0$ & $+1$
+              \textbf{+1} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1}
             \end{tabular}}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $+1$ & $+1$ \\
-              $\phantom{+}0$ & $+1$ \\
-              $\phantom{+}0$ & $\phantom{+}0$
+              \textbf{+1} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0}
             \end{tabular}} \\
 
       \darkcell[1.55]{Major}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $\phantom{+}0$ & $+1$ \\
-              $\phantom{+}0$ & $\phantom{+}0$
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0}
             \end{tabular}}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $\phantom{+}0$ & $\phantom{+}0$ \\
-              $-1$ & $+1$
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0} \\
+              \textbf{--1} & \textbf{+1}
             \end{tabular}}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $\phantom{+}0$ & $-1$ \\
-              $-1$ & $+1$
+              \phantom{\textbf{+}}\textbf{0} & \textbf{--1} \\
+              \textbf{--1} & \textbf{+1}
             \end{tabular}} \\
 
       \darkcell[1.55]{Minor}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $-1$ & $-1$ \\
-              $-1$ & $\phantom{+}0$ \\
-              $-1$ & $+1$
+              \textbf{--1} & \textbf{--1} \\
+              \textbf{--1} & \phantom{\textbf{+}}\textbf{0} \\
+              \textbf{--1} & \textbf{+1}
             \end{tabular}}
         & \lightcell[1.55]{%
             \begin{tabular}{r@{,\;\;}l}
-              $-1$ & $-1$ \\
-              $-1$ & $\phantom{+}0$
+              \textbf{--1} & \textbf{--1} \\
+              \textbf{--1} & \phantom{\textbf{+}}\textbf{0}
             \end{tabular}}
-        & \lightcell[1.55]{$-1$, $-1$}
+        & \lightcell[1.55]{\textbf{--1}, \textbf{--1}}
     \end{tabularx}
   }
 \end{center}
