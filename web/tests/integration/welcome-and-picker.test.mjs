@@ -524,3 +524,86 @@ test("the category choice is dimmed until there is a pick", async ({ app }) => {
 
   expect(errors, "the page reported errors while gating the category choice").toEqual([]);
 });
+
+// A copy is keyed by the typed name and game mode, not by the scenario it
+// copies. A second copy under the same name and game mode, from another
+// scenario, meets the first one's local draft: the app asks which one opens,
+// rather than opening the draft over the other scenario's published PDF.
+test.describe("a copy whose name already has a local draft", () => {
+  const NAME = "Draft Clash";
+  const DRAFT_KEY = "wasm-scenario-builder:draft:draft-scenarios/clash/draft_clash.tex";
+  const DRAFT_TEXT = "% the first copy, edited\n";
+
+  /**
+   * Seeds the draft, picks a Clash scenario and opens it under NAME.
+   *
+   * @param {import("@playwright/test").Page} page
+   * @returns {Promise<string>} the picked scenario's path
+   */
+  async function copyOverDraft(page) {
+    await stubPublishedPdf(page);
+    await page.evaluate(([key, text]) => localStorage.setItem(key, text), [DRAFT_KEY, DRAFT_TEXT]);
+    const results = await openScenarioList(page);
+    const clash = results.and(page.locator("[data-path^='clash/']")).first();
+    const path = await clash.getAttribute("data-path");
+    expect(path, "the book has no Clash scenario to copy").toBeTruthy();
+    await clash.click();
+    await page.locator("#scenario-name").fill(NAME);
+    await page.locator("#go").click();
+    await expect(page.locator("#confirm-dialog")).toBeVisible();
+    await expect(page.locator("#confirm-title")).toHaveText("Replace your draft?");
+    return /** @type {string} */ (path);
+  }
+
+  test("Replace opens a fresh copy of the picked scenario, with its published PDF", async ({ app }) => {
+    const { page, errors } = app;
+    const path = await copyOverDraft(page);
+    await expect(page.locator("#confirm-ok")).toHaveText("Replace");
+
+    await page.locator("#confirm-ok").click();
+
+    const expected = withScenarioKind(withScenarioTitle(await repoFile(page, path), NAME), "clash");
+    await expect
+      .poll(() => editorValue(page), { message: "the picked scenario never replaced the draft" })
+      .toBe(expected);
+    await expect(page.locator("#draft-note")).toBeHidden();
+    await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
+    expect(await page.evaluate((key) => localStorage.getItem(key), DRAFT_KEY)).not.toBe(DRAFT_TEXT);
+
+    expect(errors, "the page reported errors while replacing a draft").toEqual([]);
+  });
+
+  test("Keep opens the draft, without the picked scenario's published PDF", async ({ app }) => {
+    const { page, errors } = app;
+    await copyOverDraft(page);
+    await expect(page.locator("#confirm-cancel")).toHaveText("Open my draft");
+
+    await page.locator("#confirm-cancel").click();
+
+    await expect.poll(() => editorValue(page), { message: "the draft never reached the editor" }).toBe(DRAFT_TEXT);
+    await expect(page.locator("#draft-note")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText(/^Ready\./);
+    await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(0);
+
+    expect(errors, "the page reported errors while keeping a draft").toEqual([]);
+  });
+
+  test("an untouched draft opens the copy without asking", async ({ app }) => {
+    const { page, errors } = app;
+    await stubPublishedPdf(page);
+    const results = await openScenarioList(page);
+    const clash = results.and(page.locator("[data-path^='clash/']")).first();
+    const path = /** @type {string} */ (await clash.getAttribute("data-path"));
+    const pristine = withScenarioKind(withScenarioTitle(await repoFile(page, path), NAME), "clash");
+    await page.evaluate(([key, text]) => localStorage.setItem(key, text), [DRAFT_KEY, pristine]);
+    await clash.click();
+    await page.locator("#scenario-name").fill(NAME);
+    await page.locator("#go").click();
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect.poll(() => editorValue(page)).toBe(pristine);
+    await expect(page.locator("#confirm-dialog")).toBeHidden();
+
+    expect(errors, "the page reported errors while reopening an untouched copy").toEqual([]);
+  });
+});

@@ -131,7 +131,12 @@ test.describe("signed in", () => {
       localStorage.setItem("wasm-scenario-builder:draft:draft-scenarios/clash/nav_probe.tex", "% local only\n");
     });
     await page.reload();
-    await startClash(page);
+    await page.locator('[data-category="clash"]').click();
+    await page.locator("#scenario-name").fill("Nav Probe");
+    await page.locator("#go").click();
+    await expect(page.locator("#confirm-title")).toHaveText("Replace your draft?");
+    await page.locator("#confirm-cancel").click();
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
     await expect(page.locator("#unsaved-note")).toBeVisible();
   });
 });
