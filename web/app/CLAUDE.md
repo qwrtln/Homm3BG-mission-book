@@ -91,7 +91,8 @@ or the deploy allow-list names it.
   `pdfjs.ts` (lazy load), `pages.ts` (canvas drawing, change marks, PNG export)
   and `view.ts` (which document the pane shows, redraws, zoom). The pages are
   drawn into a host element React never gives children. The stale-PDF notice
-  derives from `store.editorText` in `initStaleStatus()`.
+  is derived at render: `showsStale()` in `modules/status.ts` compares
+  `editorText` with the PDF's source and `editCount` with `statusEditCount`.
 - A new dialog or region goes in `components/` and is rendered by `App.tsx`.
 
 ## Styles

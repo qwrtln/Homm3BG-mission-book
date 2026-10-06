@@ -7,7 +7,7 @@ import { syncCategoryControl } from "./category.ts";
 import { TEMPLATES } from "./config.ts";
 import { markClean } from "./dirty.ts";
 import { buildKeyLabel, readyStatus, sanitizeFilename } from "./dom.ts";
-import { flushDraft, saveDraft } from "./drafts.ts";
+import { cancelScheduledSave, flushDraft, saveDraft } from "./drafts.ts";
 import { type EditorApi, getEditor, requireEditor } from "./editor-api.ts";
 import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.ts";
@@ -284,8 +284,8 @@ export async function openForEdit(
  * it. Its autosave is flushed now, as a reload drops what the page holds.
  */
 export function showWelcome(): void {
-  const { chosenPath, saveTimer } = store.getState();
-  clearTimeout(saveTimer ?? undefined);
+  const { chosenPath } = store.getState();
+  cancelScheduledSave();
   const editor = getEditor();
   if (chosenPath && editor) void flushDraft(chosenPath, editor.getText());
 

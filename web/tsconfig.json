@@ -25,7 +25,6 @@
     "core",
     "dist",
     "node_modules",
-    "app/vendor",
     "shared/vendor/*.js",
     "oauth-relay",
     "tests",

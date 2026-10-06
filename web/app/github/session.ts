@@ -2,7 +2,7 @@ import { clearToken, signIn } from "../../shared/github-auth.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { isDirty } from "../modules/dirty.ts";
 import { confirmAction } from "../modules/dom.ts";
-import { deleteDraft, flushDraft } from "../modules/drafts.ts";
+import { cancelScheduledSave, deleteDraft, flushDraft } from "../modules/drafts.ts";
 import { getEditor } from "../modules/editor-api.ts";
 import { resetGithubSaveState } from "../modules/github-save-state.ts";
 import { deleteRecord } from "../modules/local-store.ts";
@@ -24,9 +24,9 @@ export async function startSignIn(): Promise<void> {
   }
   // A scenario left behind the welcome screen is not reopened: the member left it.
   const editor = getEditor();
-  const { chosenPath, chosenTitle, saveTimer } = store.getState();
+  const { chosenPath, chosenTitle } = store.getState();
   if (chosenPath && editor && !isParked()) {
-    clearTimeout(saveTimer ?? undefined);
+    cancelScheduledSave();
     // Awaited: the redirect below unloads the page, which can abort an
     // IndexedDB write still in flight.
     await flushDraft(chosenPath, editor.getText());
@@ -53,7 +53,7 @@ export async function handleSignOut(): Promise<void> {
   setResume({ visible: false });
   settleModes(false);
   if (store.getState().workspaceShown || isParked()) {
-    clearTimeout(store.getState().saveTimer ?? undefined);
+    cancelScheduledSave();
     const path = store.getState().chosenPath;
     if (path) deleteDraft(path);
     try {

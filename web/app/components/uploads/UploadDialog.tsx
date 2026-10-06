@@ -15,7 +15,7 @@ export function UploadDialog() {
 
   return (
     <Dialog id="upload-dialog" labelledBy="upload-title" open={open} onClose={() => dialogClosed("upload")}>
-      <div className="flex flex-col gap-3.5 text-[0.82rem]">
+      <div className="flex flex-col gap-3.5 text-small">
         <DialogTitle id="upload-title">Upload images</DialogTitle>
         <UploadPanel
           panel="dialog"

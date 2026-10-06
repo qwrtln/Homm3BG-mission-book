@@ -1,7 +1,7 @@
 // The welcome screen's picker logic: what is picked, and where it is filed.
 // components/welcome/{PickerMain,SearchCombobox,ModeChoice}.tsx render from
-// the store fields this writes; this module holds the behavior the modules
-// not yet migrated (github/*.ts) still call into.
+// the store fields this writes; this module holds the behavior they and the
+// GitHub modules (github/*.ts) call into.
 
 import { collectReferencedAssets, collectReferencedGlyphs, glyphFilesFor } from "../../shared/build-plan.ts";
 import { errorMessage } from "../../shared/errors.ts";
@@ -11,19 +11,6 @@ import { publishedPdfUrl, TEMPLATES } from "./config.ts";
 import { basenameNoExt } from "./dom.ts";
 import { preloadFile, preloadText } from "./files.ts";
 import { showPicker } from "./wizard.ts";
-
-/** Set by the GitHub module, which owns the edit flow. */
-let editHandler: ((path: string, title: string) => void) | null = null;
-
-/** Registers what "Open editor" runs in edit mode. */
-export function onEditPick(handler: (path: string, title: string) => void): void {
-  editHandler = handler;
-}
-
-/** Runs the registered edit handler, if "Open editor" was pressed in edit mode with a pick. */
-export function openEditPick(path: string, title: string): void {
-  editHandler?.(path, title);
-}
 
 /**
  * @param path

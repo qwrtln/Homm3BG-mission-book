@@ -1,3 +1,4 @@
+import { showsStale, staleMessage } from "../../modules/status.ts";
 import { setZoom, stepZoom, zoomLimits } from "../../pdf/view.ts";
 import { useAppStore } from "../../store.ts";
 import { Button } from "../ui/Button.tsx";
@@ -8,6 +9,7 @@ import { Button } from "../ui/Button.tsx";
  */
 export function StatusBar() {
   const status = useAppStore((s) => s.status);
+  const stale = useAppStore(showsStale);
   const showing = useAppStore((s) => s.pdfPane.kind === "pages");
   const pageCount = useAppStore((s) => s.pdfPageCount);
   const zoom = useAppStore((s) => s.pdfZoom);
@@ -16,8 +18,8 @@ export function StatusBar() {
   return (
     <footer className="status-bar" id="status-bar">
       <span className="spinner" id="status-spinner" hidden={!status.spinning} />
-      <span id="status-text" className={status.tone}>
-        {status.text}
+      <span id="status-text" className={stale ? "" : status.tone}>
+        {stale ? staleMessage() : status.text}
       </span>
       <div className="pdf-controls" id="pdf-controls" hidden={!showing}>
         <span className="pdf-page-count" id="pdf-page-count">

@@ -43,7 +43,7 @@ export function Dialog({ id, labelledBy, open, onClose, size = "sm", children }:
       id={id}
       aria-labelledby={labelledBy}
       onClose={(event) => onClose(event.currentTarget.returnValue)}
-      className={`${SIZES[size]} rounded-lg border border-line bg-panel px-6 py-5 text-ink shadow-dialog backdrop:bg-[rgba(1,4,9,0.5)]`}
+      className={`${SIZES[size]} rounded-lg border border-line bg-panel px-6 py-5 text-ink shadow-dialog backdrop:bg-backdrop`}
     >
       <form method="dialog">{children}</form>
     </dialog>

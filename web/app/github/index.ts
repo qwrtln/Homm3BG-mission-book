@@ -3,7 +3,7 @@ import { completeSignIn, getToken } from "../../shared/github-auth.ts";
 import { discoverGithubContext } from "../../shared/github-contrib.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { githubSaveState } from "../modules/github-save-state.ts";
-import { onEditPick, settleModes } from "../modules/picker.ts";
+import { settleModes } from "../modules/picker.ts";
 import { setStatus } from "../modules/status.ts";
 import { setResume } from "../store.ts";
 import {
@@ -15,7 +15,7 @@ import {
   syncGithubHeader,
 } from "./context.ts";
 import { reopenLocalDraft } from "./open-route.ts";
-import { renderResumeDrafts, showResumeSearching, startEdit } from "./resume.ts";
+import { renderResumeDrafts, showResumeSearching } from "./resume.ts";
 
 export { openRoute } from "./open-route.ts";
 
@@ -38,8 +38,6 @@ export function initGithub(): Promise<void> {
     }
     if (pending?.path) reopenLocalDraft(pending.path, pending.title);
   })();
-
-  onEditPick(startEdit);
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 

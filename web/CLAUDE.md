@@ -100,7 +100,7 @@ nothing self-registers. Order is load-bearing:
    with `flushSync`: the `init*()` calls after it find the page's DOM and its
    components' effects. `applyTheme(initialTheme())` comes after the render:
    the menu renders the theme from the store.
-2. Synchronous: stale-PDF status, wizard, uploads, shortcuts.
+2. Synchronous: wizard, uploads, shortcuts.
 3. `initGithub()` and `loadEntries()` return promises. Anything needing both
    waits on `Promise.allSettled([githubReady, entriesReady])` — see `openRoute`.
 4. `ensureEngine()` and `preloadCommonFiles()` fire eagerly, rejections
@@ -164,7 +164,7 @@ npx biome check --write .     # apply safe fixes
   directory as an implicit root and refuses a nested config. CI uses
   `working-directory: web`.
 - It covers `*.js`, `*.ts` and `*.tsx`. `dist/`, `node_modules/`,
-  `core/`, `app/vendor/` and `shared/vendor/` are excluded.
+  `core/` and `shared/vendor/` are excluded.
 - Formatting settings live in @web/biome.json. Indent style is explicit there —
   Biome defaults to tabs, which the root lint rules reject.
 - Two recommended rules are off, both firing on correct code here:

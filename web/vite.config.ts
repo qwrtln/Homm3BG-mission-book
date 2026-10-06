@@ -7,7 +7,7 @@
 // allow-list in publish-docs.yaml puts them at the site root; in development
 // outOfBundleAssets() serves them from disk.
 
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { dirname, extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -59,7 +59,14 @@ function outOfBundleAssets(): Plugin {
     name: "out-of-bundle-assets",
     configureServer(server) {
       server.middlewares.use((req: IncomingMessage, res: ServerResponse, next: () => void) => {
-        const pathname = decodeURIComponent((req.url ?? "/").split("?")[0]);
+        let pathname: string;
+        try {
+          pathname = decodeURIComponent((req.url ?? "/").split("?")[0]);
+        } catch {
+          res.statusCode = 400;
+          res.end("Bad request");
+          return;
+        }
         let root: string;
         let relative: string;
         if (pathname.startsWith(REPO_PREFIX)) {
@@ -73,7 +80,9 @@ function outOfBundleAssets(): Plugin {
           return;
         }
         const file = normalize(join(root, relative));
-        if (!file.startsWith(root + sep) || !existsSync(file)) {
+        // Never the repository's .git, should the dev server be opened to the network (--host).
+        const inside = file.startsWith(root + sep) && !relative.split("/").includes(".git");
+        if (!inside || !statSync(file, { throwIfNoEntry: false })?.isFile()) {
           res.statusCode = 404;
           res.end("Not found");
           return;

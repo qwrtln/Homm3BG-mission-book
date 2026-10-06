@@ -132,12 +132,15 @@ export function showPdfLoading(text: string): void {
 
 /** Empties the PDF pane and the error panel. */
 export function clearPdf(): void {
-  store.setState({ lastPdf: null });
-  store.setState({ pdfSource: null });
-  store.setState({ pdfUploads: null });
-  store.setState({ pdfPath: null });
-  store.setState({ pdfDropsLastPage: false });
-  store.setState({ downloadDisabled: true, buildError: null });
+  store.setState({
+    lastPdf: null,
+    pdfSource: null,
+    pdfUploads: null,
+    pdfPath: null,
+    pdfDropsLastPage: false,
+    downloadDisabled: true,
+    buildError: null,
+  });
   showPlaceholder({ kind: "empty" });
   clearErrorLine();
 }
@@ -193,17 +196,21 @@ export async function showPdf(
     uploads,
   }: { dropLastPage?: boolean; path?: string | null; changes?: Map<number, PageRect[]>; uploads?: string } = {},
 ): Promise<void> {
-  store.setState({ lastPdf: blob });
-  store.setState({ pdfSource: source });
-  store.setState({ pdfUploads: uploads ?? null });
-  store.setState({ pdfPath: path });
-  store.setState({ pdfDropsLastPage: dropLastPage });
-  store.setState({ downloadDisabled: false });
+  store.setState({
+    lastPdf: blob,
+    pdfSource: source,
+    pdfUploads: uploads ?? null,
+    pdfPath: path,
+    pdfDropsLastPage: dropLastPage,
+    downloadDisabled: false,
+  });
   loadTicket += 1;
   const ticket = loadTicket;
+  let task: PdfLoadingTask | null = null;
   try {
-    const { task, ready } = await openDocument(blob);
-    const doc = await ready;
+    const opened = await openDocument(blob);
+    task = opened.task;
+    const doc = await opened.ready;
     if (ticket !== loadTicket) {
       task.destroy();
       return;
@@ -215,6 +222,8 @@ export async function showPdf(
     const drawn = await renderPages();
     if (drawn && changes) markChanges(requirePane().pages, drawnSizes, changes);
   } catch (error) {
+    // A task that never became the shown document has nothing else to free it.
+    if (task && shown?.task !== task) task.destroy();
     if (ticket !== loadTicket) return;
     console.warn("The PDF could not be drawn:", error);
     showPdfMessage("This PDF cannot be shown here. Download it to read it.");

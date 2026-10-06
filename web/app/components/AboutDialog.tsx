@@ -36,7 +36,7 @@ function LicenseRow({
         if (event.currentTarget.open) onOpen?.();
       }}
     >
-      <summary className="flex cursor-pointer list-none items-baseline gap-4 px-1 py-[0.45rem] before:text-muted before:content-['▸'] group-open:before:content-['▾'] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-baseline gap-4 px-1 py-2 before:text-muted before:content-['▸'] group-open:before:content-['▾'] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
         <span className="license-name flex-1">{name}</span>
         <span className="license-kind text-small text-muted">{kind}</span>
       </summary>
@@ -47,7 +47,7 @@ function LicenseRow({
           </Link>
         </p>
       )}
-      <pre className="license-text mb-2.5 max-h-56 overflow-auto rounded-md bg-code-bg px-3 py-2.5 font-mono text-[12px] leading-normal whitespace-pre-wrap">
+      <pre className="license-text mb-2.5 max-h-56 overflow-auto rounded-md bg-code-bg px-3 py-2.5 font-mono text-code leading-normal whitespace-pre-wrap">
         {text}
       </pre>
     </details>
@@ -88,7 +88,7 @@ function Group({
 }) {
   return (
     <fieldset id={wrapperId} className="license-group m-0 mt-3 min-w-0 border-0 p-0" aria-labelledby={id}>
-      <h4 id={id} className="mb-1 text-[0.85rem] font-semibold text-muted">
+      <h4 id={id} className="mb-1 text-small font-semibold text-muted">
         {title}
       </h4>
       {children}

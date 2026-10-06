@@ -3,7 +3,7 @@ import type { PageBox } from "../../shared/pdf-viewport.ts";
 import { type PageRect, pageHighlights } from "../../shared/synctex.ts";
 import { openDocument, type PdfDocument } from "./pdfjs.ts";
 
-/** Space around and between pages, in px. Matches .pdf-pages in workspace.css. */
+/** Space around and between pages, in px. Matches .pdf-pages in styles/app.css. */
 export const PAGE_MARGIN = 12;
 
 /** How far a change mark reaches past the box it marks, in px. */

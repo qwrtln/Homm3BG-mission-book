@@ -40,7 +40,8 @@ const CONTENT_TYPES: Record<string, string> = {
  * @param requestPath - the raw pathname portion of the request URL.
  * @param appRoot - the directory /web/app/ is served from.
  * @returns an absolute filesystem path inside the repository
- *   root or the app root, or null if the resolved path would escape it.
+ *   root or the app root, or null if the resolved path would escape it,
+ *   enters a .git directory, or is not valid percent-encoding.
  */
 function resolveRequestPath(requestPath: string, appRoot: string): string | null {
   let path = requestPath;
@@ -55,7 +56,13 @@ function resolveRequestPath(requestPath: string, appRoot: string): string | null
     path = path.slice("/web/app".length) || "/";
   }
 
-  const decoded = decodeURIComponent(path.split("?")[0].split("#")[0]);
+  let decoded: string;
+  try {
+    decoded = decodeURIComponent(path.split("?")[0].split("#")[0]);
+  } catch {
+    return null;
+  }
+  if (decoded.split("/").includes(".git")) return null;
   const resolved = normalize(join(root, `.${decoded}`));
   if (resolved !== root && !resolved.startsWith(root + sep)) {
     return null;

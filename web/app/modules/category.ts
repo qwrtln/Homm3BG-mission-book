@@ -1,7 +1,7 @@
 import { categoryOfPath, withCategory, withScenarioKind } from "../../shared/scenario-name.ts";
 import { type StoreState, store } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
-import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
+import { cancelScheduledSave, deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
 import { type EditorApi, requireEditor } from "./editor-api.ts";
 import { moveRecord, saveText } from "./local-store.ts";
 import { reflectRoute } from "./route.ts";
@@ -76,7 +76,7 @@ export function moveToCategory(category: string): void {
   }
   // Flushed first: a pending autosave must not land under the old key later.
   const editor = requireEditor();
-  clearTimeout(store.getState().saveTimer ?? undefined);
+  cancelScheduledSave();
   saveDraft(old, editor.getText());
   const next = withCategory(old, category);
   if (loadDraft(next) !== null) {

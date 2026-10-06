@@ -13,8 +13,8 @@ export function Link({ underline = "always", external = false, className = "", .
   return (
     <a
       className={`text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${decoration} ${className}`.trim()}
-      {...(external ? { target: "_blank", rel: "noopener" } : {})}
       {...props}
+      {...(external ? { target: "_blank", rel: "noopener" } : {})}
     />
   );
 }

@@ -49,7 +49,7 @@ export function HelpDialog() {
                   {shortcutKeys(row.id, mac).map((key) => (
                     <kbd
                       key={key}
-                      className="mr-1 mb-1 inline-block rounded-sm border border-line bg-code-bg px-1.5 py-0.5 font-mono text-[12px] leading-snug"
+                      className="mr-1 mb-1 inline-block rounded-sm border border-line bg-code-bg px-1.5 py-0.5 font-mono text-code leading-snug"
                     >
                       {keyLabel(key, mac)}
                     </kbd>

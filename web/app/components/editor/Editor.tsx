@@ -23,13 +23,13 @@ const themeSlot = new Compartment();
 
 /**
  * Autosaves and keeps the unsaved note and the store's `editorText` current,
- * as the text changes: the stale-PDF status derives from it (modules/status.ts).
+ * as the text changes: the stale-PDF status derives from it (`showsStale` in modules/status.ts).
  */
 const onChange = EditorView.updateListener.of((update) => {
   if (!update.docChanged) return;
   scheduleSave();
   refreshUnsavedNote();
-  store.setState({ editorText: update.state.doc.toString() });
+  store.setState((state) => ({ editorText: update.state.doc.toString(), editCount: state.editCount + 1 }));
 });
 
 /** Leaving the editor writes the draft at once, instead of waiting for the autosave. */

@@ -44,6 +44,9 @@ export function flushDraft(path: string, text: string): Promise<void> {
   return saveText(path, text);
 }
 
+/** The pending autosave's timer id, from the DOM's setTimeout. */
+let saveTimer: number | null = null;
+
 /**
  * Debounces an autosave 400 ms out. Deliberately re-reads state when it
  * fires rather than closing over the path, so a save always writes whatever
@@ -51,8 +54,8 @@ export function flushDraft(path: string, text: string): Promise<void> {
  */
 export function scheduleSave(): void {
   if (!store.getState().chosenPath) return;
-  clearTimeout(store.getState().saveTimer ?? undefined);
-  const saveTimer = window.setTimeout(() => {
+  cancelScheduledSave();
+  saveTimer = window.setTimeout(() => {
     // Re-checked here, not just above: 400 ms is long enough for either to
     // have been cleared, and writing a draft under the key "null" is worse
     // than skipping the save.
@@ -64,5 +67,10 @@ export function scheduleSave(): void {
       void saveText(chosenPath, text);
     }
   }, 400);
-  store.setState({ saveTimer });
+}
+
+/** Drops the pending autosave, if any. A caller that must keep the text flushes it itself. */
+export function cancelScheduledSave(): void {
+  clearTimeout(saveTimer ?? undefined);
+  saveTimer = null;
 }

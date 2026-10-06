@@ -1,4 +1,4 @@
-import { type StatusState, store } from "../store.ts";
+import { type StatusState, type StoreState, store } from "../store.ts";
 import { buildButtonWidth } from "./build-button.ts";
 import { buildKeyLabel } from "./dom.ts";
 
@@ -10,7 +10,7 @@ export function setStatus(
   text: string,
   { spinning = false, tone = "" }: Partial<Omit<StatusState, "text">> = {},
 ): void {
-  store.setState({ status: { text, spinning, tone } });
+  store.setState((state) => ({ status: { text, spinning, tone }, statusEditCount: state.editCount }));
 }
 
 /**
@@ -50,17 +50,13 @@ export function staleMessage(): string {
 }
 
 /**
- * Says in the status bar, after every edit, that the shown PDF no longer
- * matches the editor. Silent when no PDF is shown, and while the status bar
- * reports an action still under way (it spins): the next edit says it
- * instead. Derived from the store's `editorText` and the shown PDF's source,
- * so no caller has to ask for it.
+ * Whether the status bar says the shown PDF no longer matches the editor,
+ * in place of the last status: an edit came after that status, and the text
+ * differs from the PDF's source. Never over an action still under way (the
+ * status spins); a status written after the edit wins until the next one.
  */
-export function initStaleStatus(): void {
-  store.subscribe((state, previous) => {
-    if (state.editorText === previous.editorText) return;
-    if (!state.lastPdf || state.pdfSource === null) return;
-    if (state.editorText === state.pdfSource || state.status.spinning) return;
-    setStatus(staleMessage());
-  });
+export function showsStale(state: StoreState): boolean {
+  if (!state.lastPdf || state.pdfSource === null) return false;
+  if (state.status.spinning || state.statusEditCount >= state.editCount) return false;
+  return state.editorText !== state.pdfSource;
 }

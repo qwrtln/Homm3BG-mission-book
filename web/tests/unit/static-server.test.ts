@@ -53,6 +53,16 @@ test("a path that climbs out of the build output is refused", async () => {
   assert.equal(response.status, 403);
 });
 
+test("the repository's .git directory is refused", async () => {
+  const response = await get("/web/repo/.git/config");
+  assert.equal(response.status, 403);
+});
+
+test("a malformed percent-encoding is refused, not a server error", async () => {
+  const response = await get("/web/repo/%E0%A4%A");
+  assert.equal(response.status, 403);
+});
+
 test("the rest of web/ is served where it sits, for the page's ../ URLs", async () => {
   const response = await get("/web/shared/vendor/texlyre-busytex.js");
   assert.equal(response.status, 200);

@@ -119,7 +119,10 @@ function chrome(palette: Palette, dark: boolean): Extension {
         color: "var(--ink)",
         cursor: "pointer",
       },
-      ".cm-tooltip-autocomplete > ul > li[aria-selected]": { backgroundColor: "var(--accent)", color: "#fff" },
+      ".cm-tooltip-autocomplete > ul > li[aria-selected]": {
+        backgroundColor: "var(--accent)",
+        color: "var(--on-emphasis)",
+      },
       ".cm-tooltip-autocomplete .cm-completionLabel": { overflow: "hidden", textOverflow: "ellipsis" },
       ".cm-completionMatchedText": { textDecoration: "none", fontWeight: "700" },
     },

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { DRAFT_CATEGORIES, validateScenarioName } from "../../../shared/scenario-name.ts";
+import { startEdit } from "../../github/resume.ts";
 import { CATEGORY_LABELS } from "../../modules/config.ts";
-import { chooseCategory, isTemplatePath, openEditPick, pickBlank } from "../../modules/picker.ts";
+import { chooseCategory, isTemplatePath, pickBlank } from "../../modules/picker.ts";
 import { commitEntry } from "../../modules/workspace.ts";
 import { useAppStore } from "../../store.ts";
 import { SearchCombobox } from "./SearchCombobox.tsx";
@@ -46,7 +47,7 @@ export function PickerMain() {
 
   function handleGoClick(): void {
     if (editMode) {
-      if (pendingPath) openEditPick(pendingPath, pendingTitle);
+      if (pendingPath) void startEdit(pendingPath, pendingTitle);
       return;
     }
     if (!pendingPath || !validateScenarioName(name).valid) return;

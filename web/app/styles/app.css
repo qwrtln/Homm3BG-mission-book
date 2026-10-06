@@ -61,13 +61,13 @@
   button.primary {
     border-color: var(--btn-primary-bg);
     background: var(--btn-primary-bg);
-    color: #fff;
+    color: var(--on-emphasis);
     font-weight: 600;
   }
   button.primary:hover:not(:disabled) {
     border-color: var(--btn-primary-hover);
     background: var(--btn-primary-hover);
-    color: #fff;
+    color: var(--on-emphasis);
   }
   /* Every disabled button, primary and danger included, in Primer's neutral
      disabled look: grey reads as unavailable, where a faded colour reads as
@@ -107,7 +107,7 @@
     content: "";
     width: 0.6rem;
     height: 0.6rem;
-    background: #fff;
+    background: var(--on-emphasis);
     clip-path: polygon(14% 44%, 0 58%, 38% 96%, 100% 22%, 86% 8%, 38% 68%);
     transform: scale(0);
     transition: transform 80ms;
@@ -627,7 +627,7 @@
   .pdf-page {
     display: block;
     flex: none;
-    background: #fff;
+    background: var(--sheet);
     box-shadow: 0 1px 4px var(--shadow);
   }
   /* What the last build changed, marked over the pages and fading out. Pages
@@ -815,7 +815,7 @@
     height: 1.25rem;
     padding: 1px;
     object-fit: contain;
-    background: #fff;
+    background: var(--sheet);
     border-radius: 3px;
   }
   /* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
@@ -840,8 +840,8 @@
   .confirm-dialog p { margin: 0 0 0.5rem; }
   .confirm-warning { color: var(--bad); font-weight: 600; }
   .confirm-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
-  button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
-  button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }
+  button.danger { border-color: var(--bad); background: var(--bad); color: var(--on-emphasis); }
+  button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: var(--on-emphasis); filter: brightness(0.9); }
 }
 
 @theme inline {
@@ -869,6 +869,9 @@
   --color-error-bg: var(--error-bg);
   --color-code-bg: var(--code-bg);
   --color-shadow: var(--shadow);
+  --color-on-emphasis: var(--on-emphasis);
+  --color-sheet: var(--sheet);
+  --color-backdrop: var(--backdrop);
 }
 
 /* Radius and type scales that replace the raw values the legacy sheets repeat.
@@ -880,6 +883,7 @@
   --radius-lg: 8px; /* dialogs */
 
   --text-*: initial;
+  --text-code: 12px; /* monospace blocks and keys */
   --text-small: 0.85rem;
   --text-ui: 0.88rem;
   --text-body: 0.95rem;

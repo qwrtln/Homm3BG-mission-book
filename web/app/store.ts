@@ -24,8 +24,6 @@ export interface AppState {
   pdfDropsLastPage: boolean;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;
-  /** The pending autosave's timer id, from the DOM's setTimeout. */
-  saveTimer: number | null;
   scenarioPrefetch: ScenarioPrefetch | null;
   /** What "nothing to save" looks like for the open scenario; null when none is open. */
   clean: Baseline | null;
@@ -293,6 +291,10 @@ export interface WorkspaceState {
   pdfPageCount: number;
   /** The editor's text as of its last change, for the stale-PDF notice. */
   editorText: string;
+  /** How many changes the editor has made; counts up on each one. */
+  editCount: number;
+  /** editCount when `status` was last written: a lower value than editCount means an edit came after it. */
+  statusEditCount: number;
   submit: SubmitRequest | null;
 }
 
@@ -344,8 +346,6 @@ export function initialState(): StoreState {
     // build both fetches around them and prefers them outright when a path
     // collides with a real repo file.
     uploadedFiles: new Map(), // path -> Uint8Array
-
-    saveTimer: null,
 
     // {path, controller, promise}
     scenarioPrefetch: null,
@@ -403,6 +403,8 @@ export function initialState(): StoreState {
     pdfZoom: 1,
     pdfPageCount: 0,
     editorText: "",
+    editCount: 0,
+    statusEditCount: 0,
     submit: null,
   };
 }
