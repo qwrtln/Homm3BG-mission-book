@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
-import { isMac } from "../modules/dom.js";
+import { isMac } from "../modules/dom.ts";
 import { dialogClosed, openDialog, useAppStore } from "../store.ts";
 import { Button } from "./ui/Button.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";

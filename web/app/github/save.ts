@@ -10,12 +10,12 @@ import { pullRequestBody, submitRequirements } from "../../shared/submit-checkli
 import { uploadsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "../modules/category.ts";
 import { isDirty, markClean } from "../modules/dirty.ts";
-import { setStatus } from "../modules/dom.js";
 import { requireEditor } from "../modules/editor-api.ts";
-import { githubSaveState } from "../modules/github-save-state.js";
+import { githubSaveState } from "../modules/github-save-state.ts";
 import { clearUploads } from "../modules/local-store.ts";
 import { state } from "../modules/state.ts";
-import { askToSubmit, currentSubmitBlockers, refreshSubmitDialog } from "../modules/submit.js";
+import { setStatus } from "../modules/status.ts";
+import { askToSubmit, currentSubmitBlockers } from "../modules/submit.ts";
 import { store } from "../store.ts";
 import { getGithubContext, githubFailure, setGithubContext } from "./context.ts";
 
@@ -91,8 +91,6 @@ export async function saveToGithub(): Promise<void> {
   } finally {
     githubSaveState.saving = false;
     syncCategoryControl();
-    // A save that was running when the submit dialog opened changes what it must say.
-    refreshSubmitDialog();
   }
 }
 

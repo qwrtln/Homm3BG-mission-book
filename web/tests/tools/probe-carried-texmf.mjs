@@ -94,7 +94,7 @@ try {
 process.exit(failed ? 1 : 0);
 
 /**
- * Runs in the page. Mirrors runBuild in web/app/modules/build.js, without
+ * Runs in the page. Mirrors runBuild in web/app/modules/build.ts, without
  * the UI, and with texlive-extra as a second fetch-on-miss source.
  *
  * @param {string[]} jobs

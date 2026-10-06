@@ -17,13 +17,8 @@ import {
 import { errorMessage, errorTrace } from "../../shared/errors.ts";
 import { changedLines } from "../../shared/line-diff.ts";
 import { pageArchiveName, pageImageName } from "../../shared/page-images.ts";
-import { gunzipText, lineRects, parseSynctex } from "../../shared/synctex.ts";
+import { gunzipText, lineRects, type PageRect, parseSynctex } from "../../shared/synctex.ts";
 import { uploadsSignature } from "../../shared/unsaved.ts";
-import { store } from "../store.ts";
-import { busytexBase } from "./config.ts";
-import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
-import { requireEditor } from "./editor-api.ts";
-import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
 import {
   clearErrorLine,
   clearPdf,
@@ -32,20 +27,23 @@ import {
   showPdf,
   showPdfLoading,
   showPdfMessage,
-} from "./pdf-view.js";
+} from "../pdf/view.ts";
+import { store } from "../store.ts";
+import { busytexBase } from "./config.ts";
+import { basenameNoExt } from "./dom.ts";
+import { requireEditor } from "./editor-api.ts";
+import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
 import { state } from "./state.ts";
-import { refreshSubmitDialog } from "./submit.js";
+import { setBuilding, setBuildPhase, setStatus } from "./status.ts";
 
 // client-zip is imported lazily, when the first PNG export with more than one
 // page runs, so a session that exports no PNG, or exports only one page,
 // never fetches its chunk.
-/** @typedef {typeof import("client-zip")} ClientZipModule */
+type ClientZipModule = typeof import("client-zip");
 
-/** @type {Promise<ClientZipModule> | null} */
-let clientZipReady = null;
+let clientZipReady: Promise<ClientZipModule> | null = null;
 
-/** @returns {Promise<ClientZipModule>} */
-function loadClientZip() {
+function loadClientZip(): Promise<ClientZipModule> {
   clientZipReady ??= import("client-zip").catch((error) => {
     clientZipReady = null; // let the next export try again
     throw error;
@@ -57,14 +55,12 @@ function loadClientZip() {
 // against the page like the engine files it fetches, so the deploy's copy and
 // the test stub (which matches this path's suffix) both reach it.
 // The wrapper's types come from its .d.ts, through type-only imports.
-/** @typedef {typeof import("../../shared/vendor/texlyre-busytex.js")} EngineModule */
-/** @typedef {import("../../shared/vendor/texlyre-busytex.js").BusyTexRunner} EngineRunner */
+type EngineModule = typeof import("../../shared/vendor/texlyre-busytex.js");
+type EngineRunner = import("../../shared/vendor/texlyre-busytex.js").BusyTexRunner;
 
-/** @type {Promise<EngineModule> | null} */
-let engineModuleReady = null;
+let engineModuleReady: Promise<EngineModule> | null = null;
 
-/** @returns {Promise<EngineModule>} */
-function loadEngineModule() {
+function loadEngineModule(): Promise<EngineModule> {
   engineModuleReady ??= import(
     /* @vite-ignore */ new URL("../shared/vendor/texlyre-busytex.js", document.baseURI).href
   ).catch((error) => {
@@ -78,12 +74,8 @@ function loadEngineModule() {
 // Download (showPdf), so the menu alone cannot keep a second export out.
 let exporting = false;
 
-/**
- * Downloads and starts the WASM engine, leaving it on state.runner.
- *
- * @returns {Promise<void>}
- */
-async function startEngine() {
+/** Downloads and starts the WASM engine, leaving it on state.runner. */
+async function startEngine(): Promise<void> {
   setStatus("Downloading the engine (first time only, about a minute)…", { spinning: true });
   const { BusyTexRunner } = await loadEngineModule();
   const base = busytexBase();
@@ -102,16 +94,13 @@ async function startEngine() {
 
 // The engine's ~93 MB data package is the slow part. One shared in-flight
 // promise so a Build pressed before warm-up finishes waits on it instead of starting a second download.
-/** @type {Promise<void> | null} */
-let enginePromise = null;
+let enginePromise: Promise<void> | null = null;
 
 /**
  * Resolves once the engine can compile, starting it on the first call and
  * sharing that one in-flight promise with every later caller.
- *
- * @returns {Promise<void>}
  */
-export async function ensureEngine() {
+export async function ensureEngine(): Promise<void> {
   if (state.runner) return;
   if (!enginePromise) {
     enginePromise = startEngine().catch((error) => {
@@ -127,10 +116,9 @@ export async function ensureEngine() {
  * stops using the CPU, and a fresh engine starts warming for the next Build.
  * The data package is cached by then, so the restart skips the big download.
  *
- * @param {EngineRunner} runner the runner the stopped compile was using
- * @returns {void}
+ * @param runner the runner the stopped compile was using
  */
-function discardEngine(runner) {
+function discardEngine(runner: EngineRunner): void {
   runner.terminate();
   if (state.runner === runner) {
     state.runner = null;
@@ -141,26 +129,28 @@ function discardEngine(runner) {
 
 // Each scenario's aux files from its last good build, by repository path. A
 // rebuild that starts from them usually settles in one TeX pass.
-/** @type {Map<string, StagedFile[]>} */
-const auxByScenario = new Map();
+const auxByScenario = new Map<string, StagedFile[]>();
 
 // Each scenario's source at its last good build, by repository path. The
 // next build marks on its pages what changed since.
-/** @type {Map<string, string>} */
-const sourceByScenario = new Map();
+const sourceByScenario = new Map<string, string>();
 
 /**
  * Where on the new PDF's pages the lines changed since the last build
  * landed, read from the compile's SyncTeX file. Empty when there is nothing
  * to compare against or to read: the marks are a courtesy, never a failure.
  *
- * @param {Uint8Array | null | undefined} synctex the compile's .synctex.gz bytes
- * @param {string} path the scenario's repository path
- * @param {string | undefined} before its source at the last good build
- * @param {string} after its source now
- * @returns {Promise<Map<number, import("../../shared/synctex.ts").PageRect[]>>}
+ * @param synctex the compile's .synctex.gz bytes
+ * @param path the scenario's repository path
+ * @param before its source at the last good build
+ * @param after its source now
  */
-async function changeMarks(synctex, path, before, after) {
+async function changeMarks(
+  synctex: Uint8Array | null | undefined,
+  path: string,
+  before: string | undefined,
+  after: string,
+): Promise<Map<number, PageRect[]>> {
   if (!synctex || before === undefined) return new Map();
   const lines = changedLines(before, after);
   if (lines.size === 0) return new Map();
@@ -176,26 +166,22 @@ async function changeMarks(synctex, path, before, after) {
  * Reports a build step twice: short on the PDF pane, where the reader looks,
  * and in full in the status bar.
  *
- * @param {string} short
- * @param {string} [full] the status bar's wording, when it differs
- * @returns {void}
+ * @param short
+ * @param full the status bar's wording, when it differs
  */
-function reportPhase(short, full = short) {
+function reportPhase(short: string, full: string = short): void {
   setBuildPhase(short);
   setStatus(full, { spinning: true });
 }
 
 // The running build's controller; null when no build runs.
-/** @type {AbortController | null} */
-let buildController = null;
+let buildController: AbortController | null = null;
 
 /**
  * Stops the running build, if any. The build ends at once with the PDF pane
  * as it was before Build was pressed.
- *
- * @returns {void}
  */
-export function stopBuild() {
+export function stopBuild(): void {
   buildController?.abort();
 }
 
@@ -203,10 +189,8 @@ export function stopBuild() {
  * Compiles whatever is in the editor, staging every file the plan asks for
  * and retrying around files the engine finds missing. stopBuild() ends it
  * early.
- *
- * @returns {Promise<void>}
  */
-export async function runBuild() {
+export async function runBuild(): Promise<void> {
   if (state.building || !state.chosenPath) return;
   const chosenPath = state.chosenPath;
   const editor = requireEditor();
@@ -214,7 +198,7 @@ export async function runBuild() {
   const { signal } = controller;
   buildController = controller;
   setBuilding(true);
-  el("error-panel").hidden = true;
+  store.setState({ buildError: null });
   clearErrorLine();
   // The last PDF stays readable while this builds; with none, the pane says why it waits.
   // The status bar keeps the engine download's own wording until the first step.
@@ -239,10 +223,8 @@ export async function runBuild() {
 
     // A path->content map, not an array: an upload must win over a same-path
     // repo fetch, and reach the engine even if collectReferencedAssets missed it.
-    /** @type {Map<string, StagedFile>} */
-    const staged = new Map();
-    /** @type {string[]} */
-    const notFound = [];
+    const staged = new Map<string, StagedFile>();
+    const notFound: string[] = [];
     const totalFiles = plan.repoFiles.length + 1; // + the carried TeX Live bundle
     let loadedFiles = 0;
     const reportFileProgress = () => reportPhase(`Loading files… ${loadedFiles}/${totalFiles}`);
@@ -284,17 +266,15 @@ export async function runBuild() {
     reportPhase("Compiling…", "Compiling (this can take a while the first time)…");
     const started = performance.now();
     // ensureEngine above resolves only once state.runner is set.
-    const runner = /** @type {EngineRunner} */ (state.runner);
+    const runner = state.runner as EngineRunner;
     const { LuaLatex } = await loadEngineModule();
     const lualatex = new LuaLatex(runner);
     // Only the engine can end a compile, so a stop from here on kills it.
     const onStop = () => discardEngine(runner);
     signal.addEventListener("abort", onStop, { once: true });
 
-    /** @type {import("../../shared/vendor/texlyre-busytex.js").CompileResult} */
-    let result;
-    /** @type {Set<string>} */
-    const tried = new Set();
+    let result: import("../../shared/vendor/texlyre-busytex.js").CompileResult;
+    const tried = new Set<string>();
     let aux = auxByScenario.get(chosenPath) ?? [];
     let fetchRounds = 0;
     let passes = 0;
@@ -354,8 +334,7 @@ export async function runBuild() {
 
     const pages = pageCount(result.log);
     const roundedSeconds = Number(seconds.toFixed(1));
-    /** @type {BuildRecord} */
-    const record = {
+    const record: BuildRecord = {
       ok: Boolean(result.success && result.pdf),
       bytes: result.pdf ? result.pdf.length : 0,
       pages,
@@ -371,11 +350,10 @@ export async function runBuild() {
       const changes = await changeMarks(result.synctex, chosenPath, sourceByScenario.get(chosenPath), source);
       sourceByScenario.set(chosenPath, source);
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
-      await showPdf(
-        new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (result.pdf)], { type: "application/pdf" }),
-        source,
-        { changes, uploads: uploadsSignature(uploads) },
-      );
+      await showPdf(new Blob([result.pdf as Uint8Array<ArrayBuffer>], { type: "application/pdf" }), source, {
+        changes,
+        uploads: uploadsSignature(uploads),
+      });
       setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
     } else {
       // A last good PDF stays on screen, and downloadable, above the error.
@@ -397,8 +375,6 @@ export async function runBuild() {
   } finally {
     buildController = null;
     setBuilding(false);
-    // A build that was running when the submit dialog opened changes what it must say.
-    refreshSubmitDialog();
   }
 }
 
@@ -406,11 +382,10 @@ export async function runBuild() {
  * Saves a blob to disk through a temporary, clicked `<a download>`. The
  * object URL is revoked right after the click starts the save.
  *
- * @param {Blob} blob
- * @param {string} name
- * @returns {void}
+ * @param blob
+ * @param name
  */
-function saveBlob(blob, name) {
+function saveBlob(blob: Blob, name: string): void {
   const link = document.createElement("a");
   const url = URL.createObjectURL(blob);
   link.href = url;
@@ -427,12 +402,11 @@ function saveBlob(blob, name) {
  * disabled for the run, and is re-enabled afterwards only if a PDF is still
  * shown — a build or a scenario switch during the export may have cleared it.
  *
- * @param {Blob} blob captured up front, so a later build cannot change what this run exports
- * @param {string} stem the download's base name, without extension
- * @param {boolean} dropLastPage whether to exclude the shown PDF's last page
- * @returns {Promise<void>}
+ * @param blob captured up front, so a later build cannot change what this run exports
+ * @param stem the download's base name, without extension
+ * @param dropLastPage whether to exclude the shown PDF's last page
  */
-async function exportPng(blob, stem, dropLastPage) {
+async function exportPng(blob: Blob, stem: string, dropLastPage: boolean): Promise<void> {
   exporting = true;
   store.setState({ downloadDisabled: true });
   try {
@@ -440,10 +414,10 @@ async function exportPng(blob, stem, dropLastPage) {
       dropLastPage,
       onPage: (page, total) => setStatus(`Rendering page ${page} of ${total}…`, { spinning: true }),
     });
-    let name;
+    let name: string;
     if (pages.length === 1) {
       name = pageImageName(stem, 1);
-      saveBlob(new Blob([/** @type {Uint8Array<ArrayBuffer>} */ (pages[0])], { type: "image/png" }), name);
+      saveBlob(new Blob([pages[0] as Uint8Array<ArrayBuffer>], { type: "image/png" }), name);
     } else {
       const { downloadZip } = await loadClientZip();
       const files = pages.map((bytes, index) => ({ name: pageImageName(stem, index + 1), input: bytes }));
@@ -462,14 +436,14 @@ async function exportPng(blob, stem, dropLastPage) {
   }
 }
 
-/** The Build button's action: Stop while a build runs, Build PDF otherwise. @returns {void} */
-export function toggleBuild() {
+/** The Build button's action: Stop while a build runs, Build PDF otherwise. */
+export function toggleBuild(): void {
   if (state.building) stopBuild();
   else runBuild();
 }
 
-/** Download > PDF: saves the shown PDF. @returns {void} */
-export function downloadPdf() {
+/** Download > PDF: saves the shown PDF. */
+export function downloadPdf(): void {
   // Named after the scenario the PDF shows: a published PDF is the
   // original's, not the renamed copy's.
   const path = state.pdfPath ?? state.chosenPath;
@@ -477,8 +451,8 @@ export function downloadPdf() {
   saveBlob(state.lastPdf, `${basenameNoExt(path)}.pdf`);
 }
 
-/** Download > PNG: saves the shown PDF's pages as PNG. @returns {void} */
-export function downloadPng() {
+/** Download > PNG: saves the shown PDF's pages as PNG. */
+export function downloadPng(): void {
   const path = state.pdfPath ?? state.chosenPath;
   if (exporting || !state.lastPdf || !path) return;
   exportPng(state.lastPdf, basenameNoExt(path), state.pdfDropsLastPage);

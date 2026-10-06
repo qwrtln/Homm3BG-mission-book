@@ -4,7 +4,7 @@
 // vendored, trusted, and deliberately not under test here: no compile ever
 // runs, no WASM loads, no texlive-*.data downloads. This module exists only
 // so that `import { BusyTexRunner, LuaLatex } from ".../texlyre-busytex.js"`
-// in web/app/modules/build.js resolves to something that behaves enough
+// in web/app/modules/build.ts resolves to something that behaves enough
 // like the real thing for the app's own logic to be exercised.
 //
 // Every call this stub receives is recorded on globalThis.__stubEngineCalls

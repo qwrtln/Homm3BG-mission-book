@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { flushSync } from "react-dom";
 import { createRoot, type Root } from "react-dom/client";
-import { el } from "./modules/dom.js";
+import { el } from "./modules/dom.ts";
 
 const roots = new Map<string, Root>();
 

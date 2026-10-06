@@ -1,21 +1,22 @@
 import { withScenarioTitle } from "../../shared/build-plan.ts";
 import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.ts";
+import { clearPdf, showPdf, showPdfLoading } from "../pdf/view.ts";
 import { store } from "../store.ts";
 import { syncCategoryControl } from "./category.ts";
 import { TEMPLATES } from "./config.ts";
 import { markClean } from "./dirty.ts";
-import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
+import { buildKeyLabel, el, readyStatus, sanitizeFilename } from "./dom.ts";
 import { flushDraft, saveDraft } from "./drafts.ts";
 import { type EditorApi, getEditor, requireEditor } from "./editor-api.ts";
 import { preloadFile } from "./files.ts";
-import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
+import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.ts";
 import { setScenarioTitle } from "./header.ts";
 import { clearUploads, saveText, saveUploads } from "./local-store.ts";
-import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.ts";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
 import { state } from "./state.ts";
+import { setStatus } from "./status.ts";
 import { resetUploads, restoreUploads } from "./uploads.ts";
 
 /**

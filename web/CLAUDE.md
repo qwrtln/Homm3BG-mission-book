@@ -58,7 +58,7 @@ because the engine's worker resolves paths itself and the files are large:
 | URL (from the page) | Deployed at | Why it stays out |
 | --- | --- | --- |
 | `../core/busytex/` | site root `core/` | WASM engine and data package, fetched at deploy time; the worker takes an absolute URL |
-| `../shared/vendor/texlyre-busytex.js` | site root | the engine wrapper, loaded by `import(/* @vite-ignore */ url)` in `modules/build.js`; the tier 2 stub matches the path suffix `/shared/vendor/texlyre-busytex.js` |
+| `../shared/vendor/texlyre-busytex.js` | site root | the engine wrapper, loaded by `import(/* @vite-ignore */ url)` in `modules/build.ts`; the tier 2 stub matches the path suffix `/shared/vendor/texlyre-busytex.js` |
 | `../shared/texmf/carried-texmf.bin` | site root | the carried TeX Live bundle |
 | `../repo/` | site root `repo/` | the book's own sources, copied at deploy time |
 
@@ -236,7 +236,7 @@ mounts and held in a ref.
 
 ## PDF viewer — pdf.js
 
-`pdfjs-dist` (npm, version in `package.json`). `app/modules/pdf-view.js` is the
+`pdfjs-dist` (npm, version in `package.json`). `app/pdf/pdfjs.ts` is the
 only module that loads it, by lazy `import("pdfjs-dist")`, so a session that
 never shows a PDF never fetches it. The worker comes from
 `pdfjs-dist/build/pdf.worker.min.mjs?url` (a Vite asset). Types are the
@@ -249,7 +249,7 @@ package's own.
 ## Zip writer — client-zip
 
 `client-zip` (npm). Only the PNG export loads it, by lazy `import("client-zip")`
-in `app/modules/build.js`, so a session that never exports PNGs never fetches
+in `app/modules/build.ts`, so a session that never exports PNGs never fetches
 the chunk. Types are the package's own.
 
 ## LaTeX engine (BusyTeX) — do not test, do not touch
@@ -264,7 +264,7 @@ the chunk. Types are the package's own.
   `texlyre-busytex.d.ts` for the allowed surface, then the wrapper for behavior.
   `BusytexPipeline` takes eleven positional arguments; never call it from
   application code.
-- `web/app/modules/build.js` is the only module loading the wrapper, by runtime
+- `web/app/modules/build.ts` is the only module loading the wrapper, by runtime
   URL (see "Out-of-bundle runtime assets"). Everything else goes through
   `ensureEngine()`.
 - `web/app/main.tsx` calls `ensureEngine()` eagerly on page load, so every

@@ -10,7 +10,7 @@ or the deploy allow-list names it.
 
 - Every `id` in `index.html` has an entry in `web/types/dom-ids.d.ts`, typed as
   the element the markup produces. Add, rename or remove both together.
-  `el()` in `modules/dom.js` is keyed on that map; `tests/unit/dom-ids.test.mjs`
+  `el()` in `modules/dom.ts` is keyed on that map; `tests/unit/dom-ids.test.mjs`
   fails when the two drift.
 - Keep the `<!-- stats placeholder -->` comment in `<head>`. The deploy
   `grep -q`s for it in the built `index.html` and inlines the analytics script
@@ -33,7 +33,7 @@ or the deploy allow-list names it.
   `initialState()`.
 - A React component reads it with `useAppStore((s) => s.field)`. A
   module not yet migrated reads and writes through the `state` facade in
-  `modules/state.ts` and `githubSaveState` in `modules/github-save-state.js`,
+  `modules/state.ts` and `githubSaveState` in `modules/github-save-state.ts`,
   which proxy to `store.getState()` / `store.setState()`. A change made inside
   a field (`map.set(...)`) does not notify subscribers; assign a new value.
   `store.subscribe` replaces a single-slot listener.
@@ -75,6 +75,16 @@ or the deploy allow-list names it.
   or valid. `components/uploads/` renders one `UploadPanel` in the Upload images
   dialog and in the wizard's panes, from `store.uploadPanels`; its actions stage
   files at once, in `modules/upload-panel.ts`.
+- `components/workspace/` renders the workspace region, mounted into `#workspace`
+  (which stays in `index.html`: the modules show and hide it): `Panes.tsx` (the
+  divider, `SPLIT_KEY`), `PdfView.tsx`, `ErrorPanel.tsx`, `StatusBar.tsx` and
+  `SubmitDialog.tsx`. The status bar, the build's step, the error panel, the
+  pane's content and its zoom render from the store; `modules/status.ts`,
+  `modules/build.ts` and `pdf/view.ts` write them. `pdf/` holds the pdf.js side:
+  `pdfjs.ts` (lazy load), `pages.ts` (canvas drawing, change marks, PNG export)
+  and `view.ts` (which document the pane shows, redraws, zoom). The pages are
+  drawn into a host element React never gives children. The stale-PDF notice
+  derives from `store.editorText` in `initStaleStatus()`.
 - A new dialog or region goes in `components/` and mounts through
   `mountRegion`. Delete its static markup and old module in the same change.
 
@@ -112,8 +122,8 @@ page. Reuse the primitive:
 | Drop-down | `<Select>` in `components/ui/Select.tsx` |
 | Menu | `<MenuList>`, `<MenuItem>` and `useMenu()` in `components/ui/Menu.tsx` and `useMenu.ts`: the ARIA menu behavior |
 | Dialog | `<Dialog>` in `components/ui/Dialog.tsx`, a native `<dialog>` |
-| Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.js`, shown by `ConfirmDialog` |
-| Notice | `showToast()` in `modules/toast.ts`, or `setStatus()` in `modules/dom.js` |
+| Confirmation | `confirmAction()` / `confirmDelete()` in `modules/dom.ts`, shown by `ConfirmDialog` |
+| Notice | `showToast()` in `modules/toast.ts`, or `setStatus()` in `modules/status.ts` |
 
 - Markup in `index.html` not yet migrated still uses the legacy classes
   (`button.primary`, `input.check`); they move to the

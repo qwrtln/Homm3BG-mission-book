@@ -6,11 +6,10 @@ import { Compartment, EditorSelection, EditorState, Transaction } from "@codemir
 import { drawSelection, EditorView, keymap, lineNumbers } from "@codemirror/view";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { refreshUnsavedNote } from "../../modules/dirty.ts";
-import { isMac } from "../../modules/dom.js";
+import { isMac } from "../../modules/dom.ts";
 import { saveDraft, scheduleSave } from "../../modules/drafts.ts";
 import { type EditorProbe, setEditor } from "../../modules/editor-api.ts";
 import { saveText } from "../../modules/local-store.ts";
-import { refreshStaleStatus } from "../../modules/pdf-view.js";
 import { editorKeys } from "../../modules/shortcuts.ts";
 import { state } from "../../modules/state.ts";
 import { store, useAppStore } from "../../store.ts";
@@ -24,14 +23,14 @@ const INDENT = "  ";
 const themeSlot = new Compartment();
 
 /**
- * Autosaves and keeps the unsaved note and the stale-PDF status current, as
- * the text changes: through the store, not through anything the editor owns.
+ * Autosaves and keeps the unsaved note and the store's `editorText` current,
+ * as the text changes: the stale-PDF status derives from it (modules/status.ts).
  */
 const onChange = EditorView.updateListener.of((update) => {
   if (!update.docChanged) return;
   scheduleSave();
   refreshUnsavedNote();
-  refreshStaleStatus();
+  store.setState({ editorText: update.state.doc.toString() });
 });
 
 /** Leaving the editor writes the draft at once, instead of waiting for the autosave. */

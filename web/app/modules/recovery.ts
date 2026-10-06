@@ -1,5 +1,5 @@
 import { assetsSignature, shouldOfferLocalDraft } from "../../shared/unsaved.ts";
-import { confirmAction } from "./dom.js";
+import { confirmAction } from "./dom.ts";
 import { loadDraft } from "./drafts.ts";
 import { loadRecord, type StagedAsset } from "./local-store.ts";
 

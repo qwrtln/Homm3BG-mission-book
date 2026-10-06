@@ -1,6 +1,4 @@
-import { store } from "../store.ts";
-
-/** @typedef {import("../store.ts").SaveState} SaveState */
+import { type SaveState, store } from "../store.ts";
 
 /**
  * The save fields of the store, as the old modules read and write them:
@@ -8,11 +6,9 @@ import { store } from "../store.ts";
  * carries, and whether a save is on its way. The fields are documented on
  * SaveState in app/store.ts. A mutation inside one (`edit.startOver = false`)
  * does not notify subscribers; assign a new value to do so.
- *
- * @type {SaveState}
  */
-export const githubSaveState = new Proxy(/** @type {SaveState} */ ({}), {
-  get: (_target, key) => store.getState()[/** @type {keyof SaveState} */ (key)],
+export const githubSaveState: SaveState = new Proxy({} as SaveState, {
+  get: (_target, key) => store.getState()[key as keyof SaveState],
   set: (_target, key, value) => {
     store.setState({ [key]: value });
     return true;
@@ -23,10 +19,8 @@ export const githubSaveState = new Proxy(/** @type {SaveState} */ ({}), {
  * On sign-out or picking a different scenario: neither carries over the
  * previous branch/PR/button state. Subscribers of the store (the header)
  * see the cleared fields.
- *
- * @returns {void}
  */
-export function resetGithubSaveState() {
+export function resetGithubSaveState(): void {
   store.setState({ lastSaveTarget: null, edit: null, committedUploads: new Set(), openPrVisible: false, prUrl: null });
 }
 
@@ -36,10 +30,7 @@ export function resetGithubSaveState() {
  * Signed out, the sign-in button stands where Save would, so with a scenario
  * open it says that signing in is how to save. The header renders all of this
  * from the store.
- *
- * @param {boolean} visible
- * @returns {void}
  */
-export function setSaveControlsVisible(visible) {
+export function setSaveControlsVisible(visible: boolean): void {
   store.setState({ scenarioHeaderVisible: visible });
 }

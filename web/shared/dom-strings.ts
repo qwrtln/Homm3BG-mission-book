@@ -1,5 +1,5 @@
 // Pure string helpers used by the DOM-touching modules in app/modules/, kept
-// here so tier 1 can test them without a DOM. app/modules/dom.js re-exports
+// here so tier 1 can test them without a DOM. app/modules/dom.ts re-exports
 // these for its existing callers.
 
 /**

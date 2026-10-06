@@ -1,5 +1,5 @@
 // File names for the PNG export: one image per shown PDF page, zipped when
-// there is more than one. Kept here, not in app/modules/pdf-view.js, so tier
+// there is more than one. Kept here, not in app/pdf/view.ts, so tier
 // 1 can test the naming rule without a DOM.
 
 /** The scale a PNG export renders at: PNG_DPI / 72 against PDF points. */

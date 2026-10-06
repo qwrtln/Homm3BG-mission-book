@@ -8,7 +8,7 @@ import { errorMessage } from "../../shared/errors.ts";
 import { categoryOfPath } from "../../shared/scenario-name.ts";
 import { store } from "../store.ts";
 import { publishedPdfUrl, TEMPLATES } from "./config.ts";
-import { basenameNoExt, el } from "./dom.js";
+import { basenameNoExt, el } from "./dom.ts";
 import { preloadFile, preloadText } from "./files.ts";
 import { state } from "./state.ts";
 import { showPicker } from "./wizard.ts";

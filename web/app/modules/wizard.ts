@@ -48,7 +48,7 @@ import {
 } from "../../shared/wizard-fields.ts";
 import { initialWizard, store, type UploadPanelState, type WizardState } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
-import { el, sanitizeFilename } from "./dom.js";
+import { el, sanitizeFilename } from "./dom.ts";
 import { loadDraft } from "./drafts.ts";
 import { preloadText } from "./files.ts";
 import {

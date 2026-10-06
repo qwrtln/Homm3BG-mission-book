@@ -1,10 +1,10 @@
 import { clearToken, signIn } from "../../shared/github-auth.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { isDirty } from "../modules/dirty.ts";
-import { confirmAction, el } from "../modules/dom.js";
+import { confirmAction, el } from "../modules/dom.ts";
 import { deleteDraft, flushDraft } from "../modules/drafts.ts";
 import { getEditor } from "../modules/editor-api.ts";
-import { resetGithubSaveState } from "../modules/github-save-state.js";
+import { resetGithubSaveState } from "../modules/github-save-state.ts";
 import { deleteRecord } from "../modules/local-store.ts";
 import { settleModes } from "../modules/picker.ts";
 import { state } from "../modules/state.ts";

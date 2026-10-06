@@ -1,3 +1,3 @@
 // Vite's ambient types: the `?url` import of the pdf.js worker in
-// app/modules/pdf-view.js.
+// app/pdf/view.ts.
 /// <reference types="vite/client" />

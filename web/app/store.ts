@@ -1,6 +1,7 @@
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
 import type { WizardAnswers } from "../shared/scenario-wizard.ts";
+import type { ChecklistItem } from "../shared/submit-checklist.ts";
 import type { Baseline } from "../shared/unsaved.ts";
 import type { BusyTexRunner } from "../shared/vendor/texlyre-busytex.js";
 import { initialWizardFields, type WizardFields } from "../shared/wizard-fields.ts";
@@ -215,7 +216,56 @@ export interface WizardUiState {
   uploadPanels: Record<UploadPanelId, UploadPanelState>;
 }
 
-export type StoreState = AppState & SaveState & UiState & PickerState & WizardUiState;
+/** What the status bar says: its text, whether the spinner turns beside it, and the tone it is coloured in. */
+export interface StatusState {
+  text: string;
+  spinning: boolean;
+  tone: "" | "ok" | "bad";
+}
+
+/** What the PDF pane shows: a centred message, the loading spinner with its caption, or the drawn pages. */
+export type PdfPaneContent =
+  | { kind: "empty" }
+  | { kind: "message"; text: string }
+  | { kind: "loading"; text: string }
+  | { kind: "pages" };
+
+/** The failed build's first error, as the error panel shows it. `id` is new for every error, so the log folds shut again. */
+export interface BuildErrorState {
+  id: number;
+  firstError: string | null;
+  /** The scenario line behind firstError, 1-based; null when there is none. */
+  errorLine: number | null;
+  log: string;
+}
+
+/** An open "Before you open a pull request" dialog: whether it asks for the checklist, and the promise's resolver. */
+export interface SubmitRequest {
+  checklist: boolean;
+  resolve: (ticked: ChecklistItem[] | null) => void;
+}
+
+/**
+ * What the workspace region renders from: the status bar, the build's step,
+ * the PDF pane and its zoom, the error panel and the submit dialog.
+ * `modules/status.ts`, `modules/build.ts` and `pdf/view.ts` write it.
+ */
+export interface WorkspaceState {
+  status: StatusState;
+  /** The build's current step, short; shown over the pages while a build runs. */
+  buildPhase: string;
+  buildError: BuildErrorState | null;
+  pdfPane: PdfPaneContent;
+  /** Share of the fit-to-width size the pages draw at. Kept across rebuilds and scenarios. */
+  pdfZoom: number;
+  /** How many pages the pane draws. */
+  pdfPageCount: number;
+  /** The editor's text as of its last change, for the stale-PDF notice. */
+  editorText: string;
+  submit: SubmitRequest | null;
+}
+
+export type StoreState = AppState & SaveState & UiState & PickerState & WizardUiState & WorkspaceState;
 
 /** A panel with nothing staged. */
 export function initialUploadPanel(): UploadPanelState {
@@ -308,6 +358,15 @@ export function initialState(): StoreState {
 
     wizard: initialWizard(),
     uploadPanels: { dialog: initialUploadPanel(), wizard: initialUploadPanel() },
+
+    status: { text: "Ready.", spinning: false, tone: "" },
+    buildPhase: "",
+    buildError: null,
+    pdfPane: { kind: "empty" },
+    pdfZoom: 1,
+    pdfPageCount: 0,
+    editorText: "",
+    submit: null,
   };
 }
 

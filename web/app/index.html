@@ -62,78 +62,11 @@
     </div>
   </section>
 
-  <!-- styles/workspace.css -->
-  <div id="workspace" hidden>
-    <main id="workspace-main">
-      <section class="pane" id="editor-pane" aria-label="Source">
-        <div class="editor-wrap">
-          <!-- React region: components/editor/Editor mounts here (mount.tsx). -->
-          <div id="editor-region"></div>
-        </div>
-      </section>
-
-      <div class="pane-divider" id="pane-divider" role="separator" tabindex="0"
-           aria-orientation="vertical" aria-controls="editor-pane"
-           aria-label="Resize the source and PDF panes"
-           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
-           title="Drag to resize. Double-click to reset."></div>
-
-      <section class="pane" id="pdf-pane" aria-label="PDF">
-        <div class="pdf-pane-body-wrap" id="pdf-wrap">
-          <div class="build-progress" id="build-progress" role="progressbar" aria-label="Building the PDF" hidden></div>
-          <!-- The build's current step, short, where the reader is looking. The status
-               bar carries the full text, so screen readers skip this copy. -->
-          <div class="build-phase" id="build-phase" aria-hidden="true" hidden>
-            <span class="spinner"></span>
-            <span id="build-phase-text"></span>
-          </div>
-          <div class="pdf-pane-body" id="pdf-body">
-            <div class="empty-pdf" id="pdf-empty">No PDF yet. Press Build PDF.</div>
-          </div>
-        </div>
-        <div class="error-panel" id="error-panel" hidden>
-          <div class="first-error" id="first-error"></div>
-          <details class="full-log" id="full-log-details">
-            <summary>Show the full log</summary>
-            <pre id="full-log"></pre>
-          </details>
-        </div>
-      </section>
-    </main>
-
-    <!-- One bar under both panes: the status on the left, the shown PDF's
-         page count and zoom on the right (pdf-view.js). -->
-    <footer class="status-bar" id="status-bar">
-      <span class="spinner" id="status-spinner" hidden></span>
-      <span id="status-text">Ready.</span>
-      <div class="pdf-controls" id="pdf-controls" hidden>
-        <span class="pdf-page-count" id="pdf-page-count"></span>
-        <div class="pdf-zoom-controls" role="toolbar" aria-label="Zoom">
-          <button type="button" class="pdf-zoom" id="pdf-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
-          <button type="button" class="pdf-zoom-level" id="pdf-zoom-level" title="Fit to width">Fit</button>
-          <button type="button" class="pdf-zoom" id="pdf-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <!-- React region: components/workspace/Workspace mounts here (mount.tsx): the panes, the PDF view and the status bar. styles/workspace.css. -->
+  <div id="workspace" hidden></div>
 </div>
 
-<!-- styles/dialog.css; submit.js draws the checkboxes from shared/submit-checklist.ts -->
-<dialog id="submit-dialog" class="confirm-dialog submit-dialog" aria-labelledby="submit-title">
-  <form method="dialog">
-    <h2 id="submit-title">Before you open a pull request</h2>
-    <ul id="submit-blockers" class="submit-blockers" hidden></ul>
-    <fieldset id="submit-checklist" class="submit-checklist">
-      <legend>Tick each one to confirm it.</legend>
-    </fieldset>
-    <div class="confirm-actions">
-      <button id="submit-cancel" type="button">Cancel</button>
-      <button id="submit-confirm" class="primary" type="button" disabled>Open pull request</button>
-    </div>
-  </form>
-</dialog>
-
-<!-- React region: components/{About,Help,Feedback,Confirm}Dialog, uploads/UploadDialog and Toaster mount here (mount.tsx). -->
+<!-- React region: components/{About,Help,Feedback,Confirm}Dialog, uploads/UploadDialog, workspace/SubmitDialog and Toaster mount here (mount.tsx). -->
 <div id="overlays"></div>
 
 <script type="module" src="main.tsx"></script>

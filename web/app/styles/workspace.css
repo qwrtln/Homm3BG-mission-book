@@ -9,12 +9,12 @@ main {
   background: var(--line);
 }
 .pane {
-  min-width: 20rem; /* MIN_PANE_REM in modules/panes.js */
+  min-width: 20rem; /* MIN_PANE_REM in components/workspace/Panes.tsx */
   display: flex;
   flex-direction: column;
   background: var(--panel);
 }
-/* --split is the source pane's share in percent, set by modules/panes.js. */
+/* --split is the source pane's share in percent, set by components/workspace/Panes.tsx. */
 #editor-pane { flex: 0 1 calc((100% - var(--divider)) * var(--split, 50) / 100); }
 #pdf-pane { flex: 1 1 0; }
 .pane-divider {
@@ -59,8 +59,8 @@ main.resizing { cursor: col-resize; user-select: none; }
   min-height: 0;
   overflow: auto;
 }
-.pdf-pane-body:has(> .pdf-pages) { background: var(--pdf-bg); }
-/* 12px margins: PAGE_MARGIN in modules/pdf-view.js. */
+.pdf-pane-body:has(.pdf-pages) { background: var(--pdf-bg); }
+/* 12px margins: PAGE_MARGIN in pdf/pages.ts. */
 .pdf-pages {
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ main.resizing { cursor: col-resize; user-select: none; }
 /* What the last build changed, marked over the pages and fading out. Pages
    are white in either theme, so the colour is fixed. The marks are opaque
    and the layer holding them carries the transparency, so overlapping marks
-   read as one shape of one shade. pdf-view.js removes the layer when its
+   read as one shape of one shade. pdf/pages.ts removes the layer when its
    animation ends. */
 .pdf-changes {
   position: absolute;
@@ -175,7 +175,7 @@ main.resizing { cursor: col-resize; user-select: none; }
   gap: 0.6rem;
   flex-wrap: wrap;
 }
-/* Page count and zoom (pdf-view.js), pushed right. Hidden until a PDF shows. */
+/* Page count and zoom (components/workspace/StatusBar.tsx), pushed right. Hidden until a PDF shows. */
 .pdf-controls {
   margin-left: auto;
   display: flex;
@@ -185,12 +185,6 @@ main.resizing { cursor: col-resize; user-select: none; }
 .pdf-controls[hidden] { display: none; }
 .pdf-page-count { color: var(--muted); font-variant-numeric: tabular-nums; }
 .pdf-zoom-controls { display: flex; gap: 0.25rem; }
-.pdf-zoom-controls button {
-  min-width: 2rem;
-  padding: 0.15rem 0.45rem;
-  font-variant-numeric: tabular-nums;
-}
-.pdf-zoom-controls .pdf-zoom-level { min-width: 3.75rem; }
 .spinner {
   width: 0.9rem;
   height: 0.9rem;

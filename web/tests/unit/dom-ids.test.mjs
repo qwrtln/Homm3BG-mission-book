@@ -1,6 +1,6 @@
 // Tier 1 check that web/types/dom-ids.d.ts still describes web/app/index.html.
 //
-// el() in web/app/modules/dom.js returns a non-nullable element typed from
+// el() in web/app/modules/dom.ts returns a non-nullable element typed from
 // that map, so the map going out of step with the markup is the one way that
 // type can be wrong. Nothing in the type checker can see it; this can.
 

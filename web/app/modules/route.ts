@@ -1,5 +1,5 @@
 import { buildRoute, pathToSlug } from "../../shared/route.ts";
-import { githubSaveState } from "./github-save-state.js";
+import { githubSaveState } from "./github-save-state.ts";
 import { state } from "./state.ts";
 
 /**

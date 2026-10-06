@@ -2,9 +2,10 @@ import { errorMessage } from "../../shared/errors.ts";
 import { completeSignIn, getToken } from "../../shared/github-auth.ts";
 import { discoverGithubContext } from "../../shared/github-contrib.ts";
 import { parseRoute } from "../../shared/route.ts";
-import { el, setStatus } from "../modules/dom.js";
-import { githubSaveState } from "../modules/github-save-state.js";
+import { el } from "../modules/dom.ts";
+import { githubSaveState } from "../modules/github-save-state.ts";
 import { onEditPick, settleModes } from "../modules/picker.ts";
+import { setStatus } from "../modules/status.ts";
 import {
   dropRevokedToken,
   getGithubContext,

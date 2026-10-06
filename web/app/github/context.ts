@@ -1,8 +1,8 @@
 import { errorMessage } from "../../shared/errors.ts";
 import { clearToken, getToken } from "../../shared/github-auth.ts";
 import { GithubApiError } from "../../shared/github-contrib.ts";
-import { el } from "../modules/dom.js";
-import { setSaveControlsVisible } from "../modules/github-save-state.js";
+import { el } from "../modules/dom.ts";
+import { setSaveControlsVisible } from "../modules/github-save-state.ts";
 import { settleModes } from "../modules/picker.ts";
 import { store } from "../store.ts";
 

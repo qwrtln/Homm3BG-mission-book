@@ -1,7 +1,6 @@
 import { errorMessage } from "../shared/errors.ts";
 import { AboutDialog } from "./components/AboutDialog.tsx";
 import { ConfirmDialog } from "./components/ConfirmDialog.tsx";
-import { Editor } from "./components/editor/Editor.tsx";
 import { FeedbackDialog } from "./components/FeedbackDialog.tsx";
 import { HelpDialog } from "./components/HelpDialog.tsx";
 import { Header } from "./components/header/Header.tsx";
@@ -11,18 +10,17 @@ import { ModeChoice } from "./components/welcome/ModeChoice.tsx";
 import { PickerMain } from "./components/welcome/PickerMain.tsx";
 import { StartChoice } from "./components/wizard/StartChoice.tsx";
 import { Wizard } from "./components/wizard/Wizard.tsx";
+import { SubmitDialog } from "./components/workspace/SubmitDialog.tsx";
+import { Workspace } from "./components/workspace/Workspace.tsx";
 import { initGithub, openRoute } from "./github/index.ts";
-import { ensureEngine } from "./modules/build.js";
+import { ensureEngine } from "./modules/build.ts";
 import { initCategory } from "./modules/category.ts";
-import { setStatus } from "./modules/dom.js";
 import { loadEntries } from "./modules/entries.ts";
 import { preloadCommonFiles } from "./modules/files.ts";
 import { loadRecord, saveText, saveUploads } from "./modules/local-store.ts";
-import { initPanes } from "./modules/panes.js";
-import { initPdfView } from "./modules/pdf-view.js";
 import { initShortcuts } from "./modules/shortcuts.ts";
 import { state } from "./modules/state.ts";
-import { initSubmit } from "./modules/submit.js";
+import { initStaleStatus, setStatus } from "./modules/status.ts";
 import { applyTheme, initialTheme } from "./modules/theme.ts";
 import { initUploads } from "./modules/uploads.ts";
 import { initWizard } from "./modules/wizard.ts";
@@ -44,6 +42,7 @@ mountRegion(
     <FeedbackDialog />
     <UploadDialog />
     <ConfirmDialog />
+    <SubmitDialog />
     <Toaster />
   </>,
 );
@@ -51,14 +50,12 @@ mountRegion("welcome-mode", <ModeChoice />);
 mountRegion("welcome-start", <StartChoice />);
 mountRegion("welcome-pick", <PickerMain />);
 mountRegion("welcome-wizard", <Wizard />);
-mountRegion("editor-region", <Editor />);
-initPanes();
-initPdfView();
+mountRegion("workspace", <Workspace />);
+initStaleStatus();
 applyTheme(initialTheme());
 initWizard();
 initUploads();
 initShortcuts();
-initSubmit();
 const githubReady = initGithub();
 
 const entriesReady = loadEntries()
