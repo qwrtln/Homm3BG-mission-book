@@ -10,7 +10,7 @@ import { loadRecord } from "../modules/local-store.ts";
 import { clearPdf } from "../modules/pdf-view.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "../modules/route.ts";
 import { requireEditor, state } from "../modules/state.ts";
-import { resetUploads, restoreUploads } from "../modules/uploads.js";
+import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
 import { getGithubContext, ROUTE_KEY } from "./context.ts";

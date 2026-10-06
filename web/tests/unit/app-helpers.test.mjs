@@ -7,6 +7,7 @@ import test from "node:test";
 
 import { storageKey } from "../../app/modules/drafts.ts";
 import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
+import { sanitizeUploadName } from "../../shared/upload-names.ts";
 
 test("escapeHtml neutralises the three characters that break markup", () => {
   assert.equal(escapeHtml("Tom & Jerry"), "Tom &amp; Jerry");
@@ -34,8 +35,7 @@ test("storageKey namespaces a draft by its repository path", () => {
   assert.notEqual(storageKey("clash/x.tex"), storageKey("coops/x.tex"), "two books never share one draft");
 });
 
-test("sanitizeUploadName makes an upload name safe for git paths and TeX", async () => {
-  const { sanitizeUploadName } = await import("../../app/modules/uploads.js");
+test("sanitizeUploadName makes an upload name safe for git paths and TeX", () => {
   assert.equal(sanitizeUploadName("my cover pic.png"), "my_cover_pic.png");
   assert.equal(sanitizeUploadName("  a  b (1)#.JPG "), "a_b_1.JPG");
   assert.equal(sanitizeUploadName("map{1}%.png"), "map1.png");

@@ -1,8 +1,6 @@
-/* The Upload images dialog (styles/dialog.css draws the dialog itself). The
-   header's own controls are components/header/. */
+/* The upload panel's fields: components/uploads/UploadPanel.tsx draws them in
+   the Upload images dialog and in the wizard's panes. */
 
-.upload-dialog form { display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.82rem; }
-.upload-dialog .confirm-actions { margin-top: 0; }
 .upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
 /* A drop zone (the popover's own fields, and the wizard's header and maps
    fields) while a dragged file is over it. */

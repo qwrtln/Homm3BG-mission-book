@@ -15,7 +15,7 @@ import { prefetchScenario } from "./picker.ts";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
 import { requireEditor, state } from "./state.ts";
-import { resetUploads, restoreUploads } from "./uploads.js";
+import { resetUploads, restoreUploads } from "./uploads.ts";
 
 /**
  * Whether the welcome screen shows over a scenario left open behind it: its

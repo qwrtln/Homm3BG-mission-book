@@ -65,25 +65,8 @@
 .wizard-preview { display: block; margin-top: 0.6rem; max-width: 12rem; max-height: 8rem; border: 1px solid var(--line); border-radius: 4px; }
 .wizard-preview[hidden] { display: none; }
 
-/* The game mode: the same joined buttons as the picker's category choice. */
+/* The game mode and the tile pool's Yes/No are RadioGroups (components/ui/RadioGroup.tsx). */
 .wizard-choice { margin: 0 0 1.1rem; padding: 0; border: 0; min-width: 0; }
-.wizard-radios { display: inline-flex; }
-.wizard-radios label {
-  position: relative;
-  margin-left: -1px;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--ink);
-  font-size: 0.88rem;
-  cursor: pointer;
-}
-.wizard-radios label:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
-.wizard-radios label:last-child { border-radius: 0 4px 4px 0; }
-.wizard-radios input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
-.wizard-radios label:hover { z-index: 1; border-color: var(--accent); color: var(--accent); }
-.wizard-radios label:has(input:focus-visible) { z-index: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
-.wizard-radios label:has(input:checked) { z-index: 2; border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
 /* Round and player buttons: the #mode-choice segmented control, wrapping on narrow screens. */
 .wizard-segmented { flex-wrap: wrap; row-gap: 0.3rem; }
@@ -116,7 +99,6 @@ html[data-theme="dark"] .wizard-glyph:has(+ .wizard-glyph.dark) { display: none;
 /* Town buildings: the Dwellings and the Citadel in one column, the rest in the other. */
 .wizard-checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.45rem 1rem; }
 .wizard-check-column { display: flex; flex-direction: column; gap: 0.45rem; }
-.wizard-check { display: flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; cursor: pointer; }
 .wizard-counts { display: flex; flex-direction: column; gap: 0.45rem; margin: 0 0 1.1rem; }
 .wizard-counts[hidden] { display: none; }
 .wizard-count { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; flex-wrap: wrap; }

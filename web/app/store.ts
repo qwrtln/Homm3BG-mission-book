@@ -1,7 +1,9 @@
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
+import type { WizardAnswers } from "../shared/scenario-wizard.ts";
 import type { Baseline } from "../shared/unsaved.ts";
 import type { BusyTexRunner } from "../shared/vendor/texlyre-busytex.js";
+import { initialWizardFields, type WizardFields } from "../shared/wizard-fields.ts";
 
 /** The app's shared fields, read and written by the modules through the `state` facade in modules/state.ts. */
 export interface AppState {
@@ -51,8 +53,8 @@ export interface SaveState {
   saving: boolean;
 }
 
-/** The dialogs the header menu opens. */
-export type DialogName = "about" | "help" | "feedback";
+/** The dialogs the header opens. */
+export type DialogName = "about" | "help" | "feedback" | "upload";
 
 /** What a confirmation asks, as confirmAction() takes it. */
 export interface ConfirmOptions {
@@ -142,7 +144,105 @@ export interface PickerState {
   entriesError: string | null;
 }
 
-export type StoreState = AppState & SaveState & UiState & PickerState;
+/** The two places that draw an upload panel: the header's dialog, and the start wizard's panes. */
+export type UploadPanelId = "dialog" | "wizard";
+
+/**
+ * One file a contributor added from their own machine, before and after it
+ * is staged at a repository path.
+ */
+export interface PendingUpload {
+  bytes: Uint8Array;
+  /** The filename as chosen on their machine. */
+  originalName: string;
+  /** Where the build sees it; null until staged. */
+  path: string | null;
+  /** Object URL of the bytes, for the thumbnail; revoked with the upload. */
+  preview: string;
+}
+
+/**
+ * A map layout: its image, the player counts it is for, and the map editor's
+ * optional save string, which travels as a .map file under the same name.
+ */
+export interface MapUpload extends PendingUpload {
+  /** The player counts ticked, ascending. */
+  counts: number[];
+  /** The name the contributor typed, or null to derive it from the counts. */
+  customName: string | null;
+  /** What the rename box shows while it has focus; null shows the staged name. */
+  renameText: string | null;
+  mapCode: string;
+  mapFilePath: string | null;
+}
+
+/** What a field's status line says: its hint, or why the last pick was refused. Anything but the hint reads as a problem. */
+export type UploadStatus = { kind: "hint" } | { kind: "text"; text: string } | { kind: "mapCode" };
+
+/** One panel's header image and map layouts, as `components/uploads/` draws them. */
+export interface UploadPanelState {
+  header: PendingUpload | null;
+  /** The header's rename box. */
+  headerName: string;
+  /** What the rename box was last filled with from the scenario's name. */
+  headerAutoName: string;
+  headerStatus: UploadStatus;
+  maps: MapUpload[];
+  mapsStatus: UploadStatus;
+}
+
+/**
+ * The start wizard: where it is, and what it holds. `components/wizard/*`
+ * render from it; `modules/wizard.ts` writes it.
+ */
+export interface WizardState {
+  /** Whether the wizard shows in place of the copy-or-blank picker. */
+  open: boolean;
+  /** Whether the panes hold a run that switching away keeps for later. */
+  started: boolean;
+  current: number;
+  /** The furthest pane shown in this run; the panes past it hold only their defaults. */
+  furthest: number;
+  creating: boolean;
+  /** Why the last attempt to make the scenario failed. */
+  error: string | null;
+  /** What the passed panes answered; a skipped pane has no fields here. */
+  answers: Partial<WizardAnswers>;
+  fields: WizardFields;
+}
+
+export interface WizardUiState {
+  wizard: WizardState;
+  uploadPanels: Record<UploadPanelId, UploadPanelState>;
+}
+
+export type StoreState = AppState & SaveState & UiState & PickerState & WizardUiState;
+
+/** A panel with nothing staged. */
+export function initialUploadPanel(): UploadPanelState {
+  return {
+    header: null,
+    headerName: "",
+    headerAutoName: "",
+    headerStatus: { kind: "hint" },
+    maps: [],
+    mapsStatus: { kind: "hint" },
+  };
+}
+
+/** A wizard nobody has opened. */
+export function initialWizard(): WizardState {
+  return {
+    open: false,
+    started: false,
+    current: 0,
+    furthest: 0,
+    creating: false,
+    error: null,
+    answers: {},
+    fields: initialWizardFields(),
+  };
+}
 
 /** The state a fresh page starts from. */
 export function initialState(): StoreState {
@@ -195,7 +295,7 @@ export function initialState(): StoreState {
     prUrl: null,
     openingPr: false,
 
-    dialogs: { about: false, help: false, feedback: false },
+    dialogs: { about: false, help: false, feedback: false, upload: false },
     confirm: null,
     toast: null,
 
@@ -207,6 +307,9 @@ export function initialState(): StoreState {
     pickerBusy: false,
     pickerError: null,
     entriesError: null,
+
+    wizard: initialWizard(),
+    uploadPanels: { dialog: initialUploadPanel(), wizard: initialUploadPanel() },
   };
 }
 

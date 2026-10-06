@@ -22,7 +22,7 @@ import { clearPdf } from "../modules/pdf-view.js";
 import { offerLocalDraft } from "../modules/recovery.ts";
 import { reflectRoute } from "../modules/route.ts";
 import { requireEditor, state } from "../modules/state.ts";
-import { resetUploads, restoreUploads } from "../modules/uploads.js";
+import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
 import { dropRevokedToken, getGithubContext, githubFailure, SIGN_IN_EXPIRED, setGithubContext } from "./context.ts";

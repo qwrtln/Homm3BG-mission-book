@@ -5,8 +5,11 @@ import { FeedbackDialog } from "./components/FeedbackDialog.tsx";
 import { HelpDialog } from "./components/HelpDialog.tsx";
 import { Header } from "./components/header/Header.tsx";
 import { Toaster } from "./components/Toaster.tsx";
+import { UploadDialog } from "./components/uploads/UploadDialog.tsx";
 import { ModeChoice } from "./components/welcome/ModeChoice.tsx";
 import { PickerMain } from "./components/welcome/PickerMain.tsx";
+import { StartChoice } from "./components/wizard/StartChoice.tsx";
+import { Wizard } from "./components/wizard/Wizard.tsx";
 import { initGithub, openRoute } from "./github/index.ts";
 import { initAutocomplete } from "./modules/autocomplete.js";
 import { ensureEngine } from "./modules/build.js";
@@ -22,8 +25,8 @@ import { initShortcuts } from "./modules/shortcuts.js";
 import { state } from "./modules/state.ts";
 import { initSubmit } from "./modules/submit.js";
 import { applyTheme, initialTheme } from "./modules/theme.ts";
-import { initUploads } from "./modules/uploads.js";
-import { initWizard } from "./modules/wizard.js";
+import { initUploads } from "./modules/uploads.ts";
+import { initWizard } from "./modules/wizard.ts";
 import { mountRegion } from "./mount.tsx";
 import { store } from "./store.ts";
 
@@ -40,12 +43,15 @@ mountRegion(
     <AboutDialog />
     <HelpDialog />
     <FeedbackDialog />
+    <UploadDialog />
     <ConfirmDialog />
     <Toaster />
   </>,
 );
 mountRegion("welcome-mode", <ModeChoice />);
+mountRegion("welcome-start", <StartChoice />);
 mountRegion("welcome-pick", <PickerMain />);
+mountRegion("welcome-wizard", <Wizard />);
 initEditor();
 initPanes();
 initPdfView();

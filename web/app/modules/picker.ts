@@ -11,7 +11,7 @@ import { publishedPdfUrl, TEMPLATES } from "./config.ts";
 import { basenameNoExt, el } from "./dom.js";
 import { preloadFile, preloadText } from "./files.ts";
 import { state } from "./state.ts";
-import { showPicker } from "./wizard.js";
+import { showPicker } from "./wizard.ts";
 
 /** Set by the GitHub module, which owns the edit flow. */
 let editHandler: ((path: string, title: string) => void) | null = null;
@@ -51,10 +51,8 @@ export function blanksAllowed(): boolean {
 export function setPickerMode(mode: "new" | "edit"): void {
   const { pendingPath } = store.getState();
   store.setState({ pickerMode: mode, pickerError: null });
-  // start-choice stays outside components/welcome/ (wizard.js reads it too), so its
-  // visibility is still set directly, like the wizard's own hidden toggle.
-  el("start-choice").hidden = mode === "edit";
-  // The wizard only starts new scenarios, so edit mode has no use for it.
+  // The wizard only starts new scenarios, so edit mode has no use for it: the
+  // start choice (components/wizard/StartChoice.tsx) hides itself from pickerMode.
   if (mode === "edit") showPicker();
   el("edit-branch-prompt").hidden = true;
   // A blank template picked in new mode is not something an edit can open.

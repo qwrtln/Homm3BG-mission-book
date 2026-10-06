@@ -15,6 +15,31 @@ export const MAP_FILE_EXTENSION = ".map";
 
 export const MAX_PLAYERS = 6;
 
+/** How many map layouts one scenario can stage. */
+export const MAX_MAP_FILES = 6;
+
+/** Where a staged header image (and any other image) lands in the repository. */
+export const IMAGES_DIR = "assets/images/";
+/** Where a staged map layout lands. */
+export const MAPS_DIR = "assets/maps/";
+/** Where a layout's map editor save file lands. */
+export const MAP_FILES_DIR = "assets/map-files/";
+
+/**
+ * Repository-safe form of an uploaded file's name: spaces become
+ * underscores and anything TeX or a URL would trip on is dropped. The
+ * extension survives; a name that empties out falls back to "image".
+ */
+export function sanitizeUploadName(name: string): string {
+  const cleaned = name
+    .trim()
+    .replace(/\s+/g, "_")
+    .replace(/[^\w.-]/g, "")
+    .replace(/_{2,}/g, "_")
+    .replace(/^[._-]+/, "");
+  return cleaned || "image";
+}
+
 /**
  * Lowercased extension of a file name, dot included; "" when it has none.
  */

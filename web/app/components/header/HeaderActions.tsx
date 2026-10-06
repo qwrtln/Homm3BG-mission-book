@@ -1,6 +1,6 @@
 import { downloadPdf, downloadPng, toggleBuild } from "../../modules/build.js";
 import { registerBuildButton } from "../../modules/build-button.ts";
-import { openUploadDialog } from "../../modules/uploads.js";
+import { openUploadDialog } from "../../modules/uploads.ts";
 import { useAppStore } from "../../store.ts";
 import { Button } from "../ui/Button.tsx";
 import { MenuItem, MenuList } from "../ui/Menu.tsx";

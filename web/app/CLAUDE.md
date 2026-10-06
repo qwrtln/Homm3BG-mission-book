@@ -64,6 +64,12 @@ or the deploy allow-list names it.
   functions in `github/` (sign in, save, open PR) and `modules/`, which write
   the store; the components render from it.
 - A component keeps the ids, `data-testid`s and accessible names tier 2 uses.
+- `components/wizard/` renders the start wizard from `store.wizard`; every pane
+  stays in the page (the shown one aside is `hidden`), so each keeps its ids.
+  `modules/wizard.ts` holds its actions and the rules for a pane being answered
+  or valid. `components/uploads/` renders one `UploadPanel` in the Upload images
+  dialog and in the wizard's panes, from `store.uploadPanels`; its actions stage
+  files at once, in `modules/upload-panel.ts`.
 - A new dialog or region goes in `components/` and mounts through
   `mountRegion`. Delete its static markup and old module in the same change.
 
@@ -105,7 +111,7 @@ page. Reuse the primitive:
 | Notice | `showToast()` in `modules/toast.ts`, or `setStatus()` in `modules/dom.js` |
 
 - Markup in `index.html` not yet migrated still uses the legacy classes
-  (`button.primary`, `input.check`, `.wizard-radios`); they move to the
+  (`button.primary`, `input.check`); they move to the
   primitives with their region.
 - A control with no primitive here gets one first, built from the theme. Check
   it in light and dark mode before it ships.
