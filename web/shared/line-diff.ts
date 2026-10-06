@@ -71,3 +71,29 @@ export function changedLines(before: string, after: string): Set<number> {
   if (i < oldCount) mark(start + j);
   return changed;
 }
+
+/**
+ * Where a line of the built text is in the text now: a line in the shared
+ * prefix keeps its number, one in the shared suffix shifts by the change in
+ * line count, and one in the edited middle goes to the middle's first line.
+ *
+ * @param line 1-based, in `before`
+ * @returns 1-based, in `after`, within its line count
+ */
+export function mapLine(before: string, after: string, line: number): number {
+  if (before === after) return line;
+  const old = before.split("\n");
+  const now = after.split("\n");
+  let start = 0;
+  while (start < old.length && start < now.length && old[start] === now[start]) start += 1;
+  let oldEnd = old.length;
+  let nowEnd = now.length;
+  while (oldEnd > start && nowEnd > start && old[oldEnd - 1] === now[nowEnd - 1]) {
+    oldEnd -= 1;
+    nowEnd -= 1;
+  }
+  let mapped = line;
+  if (line > oldEnd) mapped = line + (now.length - old.length);
+  else if (line > start) mapped = start + 1;
+  return Math.min(Math.max(mapped, 1), now.length);
+}

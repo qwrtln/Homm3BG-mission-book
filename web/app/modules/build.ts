@@ -17,7 +17,7 @@ import {
 import { errorMessage, errorTrace } from "../../shared/errors.ts";
 import { changedLines } from "../../shared/line-diff.ts";
 import { pageArchiveName, pageImageName } from "../../shared/page-images.ts";
-import { gunzipText, lineRects, type PageRect, parseSynctex } from "../../shared/synctex.ts";
+import { gunzipText, lineRects, type PageRect, parseSynctex, type Synctex } from "../../shared/synctex.ts";
 import { uploadsSignature } from "../../shared/unsaved.ts";
 import {
   clearErrorLine,
@@ -136,30 +136,41 @@ const auxByScenario = new Map<string, StagedFile[]>();
 const sourceByScenario = new Map<string, string>();
 
 /**
- * Where on the new PDF's pages the lines changed since the last build
- * landed, read from the compile's SyncTeX file. Empty when there is nothing
- * to compare against or to read: the marks are a courtesy, never a failure.
+ * Reads the compile's SyncTeX file, once, for the change marks and for the
+ * PDF pane's double-click. Null when there is none or it cannot be read: both
+ * uses are a courtesy, never a failure.
  *
- * @param synctex the compile's .synctex.gz bytes
+ * @param bytes the compile's .synctex.gz bytes
+ */
+async function readSynctex(bytes: Uint8Array | null | undefined): Promise<Synctex | null> {
+  if (!bytes) return null;
+  try {
+    return parseSynctex(await gunzipText(bytes));
+  } catch (error) {
+    console.warn("The SyncTeX file could not be read:", error);
+    return null;
+  }
+}
+
+/**
+ * Where on the new PDF's pages the lines changed since the last build
+ * landed. Empty when there is nothing to compare against or to read.
+ *
+ * @param synctex the compile's parsed SyncTeX file
  * @param path the scenario's repository path
  * @param before its source at the last good build
  * @param after its source now
  */
-async function changeMarks(
-  synctex: Uint8Array | null | undefined,
+function changeMarks(
+  synctex: Synctex | null,
   path: string,
   before: string | undefined,
   after: string,
-): Promise<Map<number, PageRect[]>> {
+): Map<number, PageRect[]> {
   if (!synctex || before === undefined) return new Map();
   const lines = changedLines(before, after);
   if (lines.size === 0) return new Map();
-  try {
-    return lineRects(parseSynctex(await gunzipText(synctex)), path, lines);
-  } catch (error) {
-    console.warn("The SyncTeX file could not be read:", error);
-    return new Map();
-  }
+  return lineRects(synctex, path, lines);
 }
 
 /**
@@ -347,11 +358,13 @@ export async function runBuild(): Promise<void> {
     };
 
     if (record.ok) {
-      const changes = await changeMarks(result.synctex, chosenPath, sourceByScenario.get(chosenPath), source);
+      const synctex = await readSynctex(result.synctex);
+      const changes = changeMarks(synctex, chosenPath, sourceByScenario.get(chosenPath), source);
       sourceByScenario.set(chosenPath, source);
       // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
       await showPdf(new Blob([result.pdf as Uint8Array<ArrayBuffer>], { type: "application/pdf" }), source, {
         changes,
+        synctex,
         uploads: uploadsSignature(uploads),
       });
       setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });

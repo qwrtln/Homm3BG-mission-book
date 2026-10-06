@@ -590,6 +590,12 @@
     #editor-pane, #pdf-pane { flex: 1 1 50%; }
     .pane-divider { display: none; }
   }
+  /* The line a jump from the PDF lands on: held, then faded. components/editor/theme.ts
+     sets --flash and the animation; flash-line.ts removes the line's mark. */
+  @keyframes editor-flash-fade {
+    0%, 50% { background-color: var(--flash); }
+    to { background-color: transparent; }
+  }
   .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
   .editor-wrap #editor-region,
   .editor-wrap .editor-host,
@@ -616,7 +622,9 @@
   }
   .pdf-pane-body:has(.pdf-pages) { background: var(--pdf-bg); }
   /* 12px margins: PAGE_MARGIN in pdf/pages.ts. */
+  /* A double-click on a page jumps the editor; it must not select around the canvases. */
   .pdf-pages {
+    user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;

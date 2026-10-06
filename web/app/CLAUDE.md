@@ -88,7 +88,8 @@ or the deploy allow-list names it.
   `SubmitDialog.tsx`. The status bar, the build's step, the error panel, the
   pane's content and its zoom render from the store; `modules/status.ts`,
   `modules/build.ts` and `pdf/view.ts` write them. `pdf/` holds the pdf.js side:
-  `pdfjs.ts` (lazy load), `pages.ts` (canvas drawing, change marks, PNG export)
+  `pdfjs.ts` (lazy load), `pages.ts` (canvas drawing, change marks, PNG export),
+  `page-text.ts` (a page's text runs, for the double-click jump)
   and `view.ts` (which document the pane shows, redraws, zoom). The pages are
   drawn into a host element React never gives children. The stale-PDF notice
   is derived at render: `showsStale()` in `modules/status.ts` compares

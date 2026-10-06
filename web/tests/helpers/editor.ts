@@ -97,6 +97,11 @@ export function undoInEditor(page: Page): Promise<void> {
   return page.evaluate(() => window.__editor?.undo());
 }
 
+/** @returns the 1-based lines carrying the flash of a jump from the PDF */
+export function flashedLines(page: Page): Promise<number[]> {
+  return page.evaluate(() => window.__editor?.flashedLines() ?? []);
+}
+
 /** @returns the 1-based lines carrying the failed build's mark */
 export function markedLines(page: Page): Promise<number[]> {
   return page.evaluate(() => window.__editor?.markedLines() ?? []);

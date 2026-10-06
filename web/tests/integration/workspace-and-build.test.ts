@@ -12,7 +12,9 @@ import {
   editorHasFocus,
   editorLine,
   editorLineCount,
+  flashedLines,
   focusEditor,
+  insertInEditor,
   markedLines,
   setEditorSelection,
   setEditorText,
@@ -764,6 +766,104 @@ test("a rebuild briefly marks on the pages where the edited lines landed", async
   await expect(marks).toHaveCount(0);
 
   expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
+});
+
+/**
+ * Double-clicks a spot on a drawn page, given in PDF points from its top-left.
+ *
+ * @param page
+ * @param index 0-based page
+ * @param point in points; the stub's pages are STUB_PAGE_WIDTH_PT wide
+ */
+async function doubleClickPdf(page: Page, index: number, point: { x: number; y: number }): Promise<void> {
+  const canvas = PAGES(page).nth(index);
+  const box = await canvas.boundingBox();
+  if (box === null) throw new Error(`page ${index + 1} is not drawn`);
+  const ratio = box.width / STUB_PAGE_WIDTH_PT;
+  await canvas.dblclick({ position: { x: point.x * ratio, y: point.y * ratio } });
+}
+
+test("a double-click on a PDF page moves the editor to its source line, through edits since the build", async ({
+  app,
+}) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  // Inside page 2's box, which stands for line 2 (cursor line 1, 0-based).
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 1 });
+  await expect.poll(() => flashedLines(page)).toEqual([2]);
+  // The flash goes away on its own, and the cursor stays.
+  await expect.poll(() => flashedLines(page)).toEqual([]);
+  expect(await editorCursor(page)).toMatchObject({ line: 1 });
+
+  // A line inserted above, with no rebuild: the same spot is line 3 now.
+  await setEditorSelection(page, { line: 0, ch: 0 });
+  await insertInEditor(page, 0, "% inserted\n");
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 2 });
+  await expect.poll(() => flashedLines(page)).toEqual([3]);
+
+  // Outside every box: the nearest text on that page, still line 3.
+  await setEditorSelection(page, { line: 0, ch: 0 });
+  await doubleClickPdf(page, 1, { x: 250, y: 400 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 2 });
+
+  expect(appErrors(errors), "the page reported errors around the double-clicks").toEqual([]);
+});
+
+test("at a stacked width a double-click on a PDF page brings the editor into view", async ({ app }) => {
+  const { page, errors } = app;
+  // Narrow from the start: the pane fits its pages to the width it had when they were drawn.
+  await page.setViewportSize({ width: 600, height: 800 });
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  await page.locator("#pdf-pane").scrollIntoViewIfNeeded();
+  await expect(page.locator("#editor-pane")).not.toBeInViewport({ ratio: 1 });
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 1 });
+  await expect(page.locator("#editor-pane")).toBeInViewport({ ratio: 1 });
+
+  expect(appErrors(errors), "the page reported errors around the double-click").toEqual([]);
+});
+
+test("a double-click on the published PDF leaves the editor alone", async ({ app }) => {
+  const { page, errors } = app;
+  // One blank page, as pdf.js draws with no fonts: the stand-in published PDF.
+  const blankPdf = [
+    "%PDF-1.4",
+    "1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj",
+    "2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj",
+    "3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>endobj",
+    "trailer<</Root 1 0 R>>",
+    "%%EOF",
+    "",
+  ].join("\n");
+  await page.route(
+    (url) => url.hostname === "raw.githubusercontent.com",
+    (route: Route) => route.fulfill({ status: 200, contentType: "application/pdf", body: blankPdf }),
+  );
+  const results = await openScenarioList(page);
+  await results.first().click();
+  await page.locator("#scenario-name").fill(SCENARIO_NAME);
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(PAGES(page)).toHaveCount(1);
+
+  await setEditorSelection(page, { line: 2, ch: 0 });
+  await PAGES(page).first().dblclick();
+  expect(await editorCursor(page)).toMatchObject({ line: 2 });
+  expect(await flashedLines(page)).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the double-click").toEqual([]);
 });
 
 test("a failed build keeps the last good PDF above the error", async ({ app }) => {

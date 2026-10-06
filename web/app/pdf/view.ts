@@ -4,11 +4,14 @@
 // (a message, the loading spinner, the pages) and the zoom live in the store.
 
 import { flushSync } from "react-dom";
+import { mapLine } from "../../shared/line-diff.ts";
 import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../shared/pdf-viewport.ts";
-import type { PageRect } from "../../shared/synctex.ts";
+import { sourceLine, type TextRun } from "../../shared/source-match.ts";
+import { type PageRect, type Synctex, sourceAt } from "../../shared/synctex.ts";
 import { buildKeyLabel } from "../modules/dom.ts";
 import { getEditor, requireEditor } from "../modules/editor-api.ts";
 import { type BuildErrorState, type PdfPaneContent, store, type WorkspaceState } from "../store.ts";
+import { pageText } from "./page-text.ts";
 import { drawPages, markChanges, PAGE_MARGIN, type PageSize, pageBoxes } from "./pages.ts";
 import { openDocument, type PdfDocument, type PdfLoadingTask } from "./pdfjs.ts";
 
@@ -28,9 +31,19 @@ let pane: PaneElements | null = null;
 /**
  * The document the pane shows, or is about to show, with the task that
  * loaded it: destroying the task is what frees the document, and the number
- * of its pages the pane draws. Null for a placeholder.
+ * of its pages the pane draws. Its SyncTeX, and the text of each page a
+ * double-click has read, go with it. Null for a placeholder.
  */
-let shown: { task: PdfLoadingTask; doc: PdfDocument; pageCount: number } | null = null;
+let shown: {
+  task: PdfLoadingTask;
+  doc: PdfDocument;
+  pageCount: number;
+  /** The source and scenario the document was built from, for the double-click. */
+  source: string;
+  path: string | null;
+  synctex: Synctex | null;
+  text: Map<number, Promise<TextRun[]>>;
+} | null = null;
 
 /** The pane width the shown pages were fitted to; 0 when drawn while hidden. */
 let drawnWidth = 0;
@@ -97,13 +110,72 @@ export function attachPdfPane(body: HTMLElement, pages: HTMLElement): () => void
     settle = window.setTimeout(redraw, drawnWidth === 0 ? 0 : RESIZE_SETTLE_MS);
   });
   observer.observe(body);
+  pages.addEventListener("dblclick", jumpFromPage);
 
   return () => {
     observer.disconnect();
     body.removeEventListener("scroll", onScroll);
+    pages.removeEventListener("dblclick", jumpFromPage);
     clearTimeout(settle);
     pane = null;
   };
+}
+
+/**
+ * A double-click on a page moves the editor to the source line behind that
+ * spot and flashes it. Silent when the shown PDF has no SyncTeX (the published
+ * one), is not the open scenario's, or the spot maps to no line.
+ *
+ * SyncTeX tags a multi-line macro argument (an italic blurb, a table) with its
+ * last line, so the words under the point, read from the page's text, narrow
+ * the line down, or, with no words to match, the point's row and column in a
+ * table. A page whose text cannot be read keeps SyncTeX's line.
+ */
+async function jumpFromPage(event: MouseEvent): Promise<void> {
+  const current = shown;
+  const target = event.target;
+  if (!current?.synctex || !(target instanceof HTMLElement) || !target.classList.contains("pdf-page")) return;
+  // The document's own source and path, not the store's: a newer build sets
+  // those before its document replaces this one.
+  const { synctex, source, path } = current;
+  if (path === null || path !== store.getState().chosenPath || !getEditor()) return;
+  const index = [...requirePane().pages.querySelectorAll(".pdf-page")].indexOf(target);
+  const size = drawnSizes[index];
+  if (!size) return;
+
+  const rect = target.getBoundingClientRect();
+  const point = {
+    x: ((event.clientX - rect.left) * size.width) / rect.width,
+    y: ((event.clientY - rect.top) * size.height) / rect.height,
+  };
+  const built = sourceAt(synctex, path, index + 1, point, size);
+  if (built === null) return;
+
+  let refined = built;
+  try {
+    let text = current.text.get(index + 1);
+    if (!text) {
+      text = pageText(current.doc, index + 1);
+      current.text.set(index + 1, text);
+    }
+    refined = sourceLine(source, built, await text, point);
+  } catch (error) {
+    current.text.delete(index + 1);
+    console.warn("The page's text could not be read:", error);
+  }
+  // Another document or scenario may have come while reading.
+  const editor = getEditor();
+  if (shown !== current || path !== store.getState().chosenPath || !editor) return;
+  const line = mapLine(source, editor.getText(), refined);
+  editor.revealLine(line);
+  editor.flashLine(line);
+
+  // Stacked panes: the editor may be off screen. Side by side, it never is.
+  const editorPane = document.querySelector("#editor-pane");
+  if (!editorPane) return;
+  const box = editorPane.getBoundingClientRect();
+  const visible = box.top >= 0 && box.left >= 0 && box.bottom <= window.innerHeight && box.right <= window.innerWidth;
+  if (!visible) editorPane.scrollIntoView({ block: "nearest" });
 }
 
 /** Drops the shown document and whatever render or load is in flight. */
@@ -184,7 +256,8 @@ export function jumpToLine(line: number): void {
  *   names the download; it defaults to the one in the editor. changes are the
  *   places, by 1-based page, to mark briefly once the pages are drawn. uploads
  *   is the uploadsSignature an in-app build compiled with; a published PDF
- *   has none
+ *   has none. synctex is the build's parsed SyncTeX, which a double-click on a
+ *   page reads to find the source line; a published PDF has none
  */
 export async function showPdf(
   blob: Blob,
@@ -194,7 +267,14 @@ export async function showPdf(
     path = store.getState().chosenPath,
     changes,
     uploads,
-  }: { dropLastPage?: boolean; path?: string | null; changes?: Map<number, PageRect[]>; uploads?: string } = {},
+    synctex = null,
+  }: {
+    dropLastPage?: boolean;
+    path?: string | null;
+    changes?: Map<number, PageRect[]>;
+    uploads?: string;
+    synctex?: Synctex | null;
+  } = {},
 ): Promise<void> {
   store.setState({
     lastPdf: blob,
@@ -218,7 +298,7 @@ export async function showPdf(
     // The old pages are already drawn, so the old document can go now.
     shown?.task.destroy();
     const pageCount = dropLastPage ? Math.max(doc.numPages - 1, 1) : doc.numPages;
-    shown = { task, doc, pageCount };
+    shown = { task, doc, pageCount, source, path, synctex, text: new Map() };
     const drawn = await renderPages();
     if (drawn && changes) markChanges(requirePane().pages, drawnSizes, changes);
   } catch (error) {

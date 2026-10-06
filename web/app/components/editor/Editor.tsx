@@ -14,6 +14,7 @@ import { editorKeys } from "../../modules/shortcuts.ts";
 import { store, useAppStore } from "../../store.ts";
 import { completions } from "./completions.ts";
 import { errorLineMark, markedLines, markLine } from "./error-line.ts";
+import { flashedLines, flashLine, flashLineMark } from "./flash-line.ts";
 import { editorTheme } from "./theme.ts";
 
 const INDENT = "  ";
@@ -60,6 +61,7 @@ function extensions(dark: boolean) {
     editorKeys(isMac()),
     keymap.of([...standardKeymap, ...historyKeymap]),
     errorLineMark(),
+    flashLineMark(),
     themeSlot.of(editorTheme(dark)),
     EditorView.contentAttributes.of({ spellcheck: "false", "aria-label": "Scenario source" }),
     onChange,
@@ -96,6 +98,7 @@ function probeOf(view: EditorView): EditorProbe {
     },
     replaceRange: (from, to, insert) => view.dispatch({ changes: { from, to, insert }, userEvent: "input.replace" }),
     markErrorLine: (line) => markLine(view, line),
+    flashLine: (line) => flashLine(view, line),
 
     hasFocus: () => view.hasFocus,
     lineCount: () => view.state.doc.lines,
@@ -109,6 +112,7 @@ function probeOf(view: EditorView): EditorProbe {
     },
     getSelection: () => view.state.sliceDoc(view.state.selection.main.from, view.state.selection.main.to),
     markedLines: () => markedLines(view),
+    flashedLines: () => flashedLines(view),
     undo: () => void undo(view),
   };
 }
