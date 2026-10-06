@@ -84,6 +84,8 @@ interface GithubContext {
   username: string;
   isMember: boolean;
   fork: GithubRepo | null;
+  /** The upstream repository's default branch, kept so a compare link needs no fetch. */
+  base: string;
   drafts: ResumableDraft[];
 }
 

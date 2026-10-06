@@ -1,7 +1,6 @@
 import { openPullRequest, saveToGithub } from "../../github/save.ts";
-import { startSignIn } from "../../github/session.ts";
 import { returnToParked } from "../../modules/workspace.ts";
-import { useAppStore } from "../../store.ts";
+import { openDialog, useAppStore } from "../../store.ts";
 import { Button, buttonClasses } from "../ui/Button.tsx";
 import { GitPullRequestIcon, LinkExternalIcon, MarkGithubIcon, PencilIcon, UploadIcon } from "./icons.tsx";
 import { LABEL, NARROW, SEGMENT } from "./narrow.ts";
@@ -89,7 +88,13 @@ export function GithubControls() {
 
   if (signedIn) return <GithubStatus />;
   return (
-    <Button id="github-signin" variant="withIcon" size="compact" className={NARROW} onClick={() => void startSignIn()}>
+    <Button
+      id="github-signin"
+      variant="withIcon"
+      size="compact"
+      className={NARROW}
+      onClick={() => openDialog("signin")}
+    >
       <MarkGithubIcon />
       <span className={LABEL}>{scenarioOpen ? "Sign in to save" : "Sign in with GitHub"}</span>
     </Button>

@@ -876,6 +876,7 @@
   --color-pdf-bg: var(--pdf-bg);
   --color-error-bg: var(--error-bg);
   --color-code-bg: var(--code-bg);
+  --color-inline-code-bg: var(--inline-code-bg);
   --color-shadow: var(--shadow);
   --color-on-emphasis: var(--on-emphasis);
   --color-sheet: var(--sheet);

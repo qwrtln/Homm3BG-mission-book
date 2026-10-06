@@ -1,4 +1,4 @@
-import { getToken } from "../../shared/github-auth.ts";
+import { getSignInMethod, getToken } from "../../shared/github-auth.ts";
 import {
   deleteWorkBranch,
   discoverGithubContext,
@@ -27,7 +27,13 @@ import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.ts";
 import { clearPdf } from "../pdf/view.ts";
 import { setResume, store } from "../store.ts";
-import { dropRevokedToken, getGithubContext, githubFailure, SIGN_IN_EXPIRED, setGithubContext } from "./context.ts";
+import {
+  dropRevokedToken,
+  getGithubContext,
+  githubFailure,
+  setGithubContext,
+  signInExpiredMessage,
+} from "./context.ts";
 import { checkExistingPullRequest } from "./save.ts";
 
 /** Shows the resume list from the signed-in user's own branches. */
@@ -197,12 +203,13 @@ export async function refreshWelcomeData(): Promise<void> {
   const entries = loadEntries().catch(() => {});
   const token = getToken();
   if (token) {
+    const method = getSignInMethod();
     try {
       setGithubContext(await discoverGithubContext(token));
       renderResumeDrafts();
     } catch (error) {
       // A revoked sign-in is not "known": drop it. Anything else keeps what is on screen.
-      if (dropRevokedToken(error)) setStatus(SIGN_IN_EXPIRED, { tone: "bad" });
+      if (dropRevokedToken(error)) setStatus(signInExpiredMessage(method), { tone: "bad" });
     }
   }
   await entries;

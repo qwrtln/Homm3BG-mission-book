@@ -52,7 +52,7 @@ export interface SaveState {
 }
 
 /** The dialogs the header opens. */
-export type DialogName = "about" | "help" | "feedback" | "upload";
+export type DialogName = "about" | "help" | "feedback" | "upload" | "signin" | "token";
 
 /** What a confirmation asks, as confirmAction() takes it. */
 export interface ConfirmOptions {
@@ -374,7 +374,7 @@ export function initialState(): StoreState {
     prUrl: null,
     openingPr: false,
 
-    dialogs: { about: false, help: false, feedback: false, upload: false },
+    dialogs: { about: false, help: false, feedback: false, upload: false, signin: false, token: false },
     confirm: null,
     toast: null,
 

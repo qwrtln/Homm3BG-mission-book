@@ -1,9 +1,11 @@
 import { flushSync } from "react-dom";
-import { getToken } from "../../shared/github-auth.ts";
+import { getSignInMethod, getToken } from "../../shared/github-auth.ts";
 import {
+  compareUrl,
   discoverGithubContext,
   ensurePullRequest,
   findPullRequest,
+  pullRequestTitle,
   saveScenarioToRepo,
 } from "../../shared/github-contrib.ts";
 import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.ts";
@@ -35,6 +37,40 @@ export async function checkExistingPullRequest(): Promise<void> {
   } catch {
     /* best-effort: leave "Open PR" showing */
   }
+}
+
+/** Removes the return-from-GitHub recheck, when one is armed. */
+let disarmRecheck: (() => void) | null = null;
+
+/**
+ * After the compare page opens: each time the document becomes visible again,
+ * look for the pull request the user may have opened there. Stops once one is
+ * found, on sign-out, or when the save target is no longer the armed branch.
+ */
+function armRecheck(armed: SaveTarget): void {
+  disarmRecheck?.();
+  const stop = (): void => {
+    document.removeEventListener("visibilitychange", onVisible);
+    if (disarmRecheck === stop) disarmRecheck = null;
+  };
+  const onVisible = (): void => {
+    if (document.visibilityState !== "visible") return;
+    const current = githubSaveState.lastSaveTarget;
+    if (!getToken() || !current || current.owner !== armed.owner || current.branch !== armed.branch) {
+      stop();
+      return;
+    }
+    void checkExistingPullRequest().then(() => {
+      if (store.getState().prUrl !== null) stop();
+    });
+  };
+  disarmRecheck = stop;
+  document.addEventListener("visibilitychange", onVisible);
+}
+
+/** Drops the return-from-GitHub recheck, when one is armed. */
+export function stopPullRequestRecheck(): void {
+  disarmRecheck?.();
 }
 
 /** Save: pushes the open scenario to its branch. Opening a PR is a separate action, below. */
@@ -109,6 +145,27 @@ export async function openPullRequest(): Promise<void> {
     const items = await askToSubmit({ checklist });
     if (items === null) return;
     body = pullRequestBody(items);
+  }
+  if (getSignInMethod() === "token") {
+    // Straight from the click: no await since the dialog, so the popup keeps
+    // its user activation. "noopener" makes window.open return null, so a
+    // null result says nothing about a blocked popup.
+    const base = getGithubContext()?.base;
+    if (!base) {
+      setStatus("GitHub is still loading. Try again in a moment.", { tone: "bad" });
+      return;
+    }
+    const url = compareUrl({
+      base,
+      owner: target.owner,
+      branch: target.branch,
+      title: pullRequestTitle(mode, store.getState().chosenTitle),
+      body,
+    });
+    window.open(url, "_blank", "noopener");
+    setStatus("Finish the pull request on GitHub.");
+    armRecheck(target);
+    return;
   }
   store.setState({ openingPr: true });
   setStatus("Opening PR…", { spinning: true });

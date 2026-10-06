@@ -1,6 +1,7 @@
 import { errorMessage } from "../../shared/errors.ts";
-import { clearToken, getToken } from "../../shared/github-auth.ts";
+import { clearToken, getSignInMethod, getToken } from "../../shared/github-auth.ts";
 import { GithubApiError } from "../../shared/github-contrib.ts";
+import { signInExpiredMessage, tokenSaveFailureMessage } from "../../shared/sign-in-messages.ts";
 import { setSaveControlsVisible } from "../modules/github-save-state.ts";
 import { settleModes } from "../modules/picker.ts";
 import { setResume, store } from "../store.ts";
@@ -11,7 +12,7 @@ export const REOPEN_KEY = "wasm-scenario-builder:pending-reopen";
 // The inline pre-paint script in app/index.html reads this literal too: rename both together.
 export const ROUTE_KEY = "wasm-scenario-builder:pending-route";
 
-export const SIGN_IN_EXPIRED = "Your GitHub sign-in has expired. Sign in again.";
+export { signInExpiredMessage };
 
 /** What the account lookup found once the member signed in; null while signed out or before it answers. */
 let githubContext: GithubContext | null = null;
@@ -54,6 +55,10 @@ export function dropRevokedToken(error: unknown): boolean {
  * @param prefix leads the message for a failure that is not GitHub's
  */
 export function githubFailure(error: unknown, prefix: string): string {
-  if (dropRevokedToken(error)) return SIGN_IN_EXPIRED;
+  const method = getSignInMethod();
+  if (dropRevokedToken(error)) return signInExpiredMessage(method);
+  const owner = githubContext?.fork?.owner.login ?? githubContext?.username ?? "your-account";
+  const saveMessage = tokenSaveFailureMessage(error, method, owner);
+  if (saveMessage) return saveMessage;
   return error instanceof GithubApiError ? error.message : `${prefix}: ${errorMessage(error)}`;
 }
