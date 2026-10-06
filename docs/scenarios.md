@@ -1,6 +1,10 @@
 # How to write scenarios
 
-The easiest way to start is to copy one of the existing scenarios (be it clash or coop) and edit it.
+The fastest way to write a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=docs&utm_medium=referral).
+It runs in your browser, compiles the PDF for you, and opens the pull request.
+The guidelines below apply to it too.
+
+If you work locally, the easiest way to start is to copy one of the existing scenarios (be it clash or coop) and edit it.
 However, there is a set of predefined [**templates**](https://github.com/qwrtln/Homm3BG-mission-book/tree/main/templates) you can use as a fresh start.
 
 

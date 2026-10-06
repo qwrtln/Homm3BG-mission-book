@@ -20,8 +20,6 @@ jobs:
             language_name: English
           - language: pl
             language_name: Polski
-          - language: cs
-            language_name: Cestina
     steps:
       - name: Set up repository
         uses: actions/checkout@v6
@@ -151,8 +149,6 @@ jobs:
             language_name: English
           - language: pl
             language_name: Polski
-          - language: cs
-            language_name: Cestina
 
     steps:
       - name: Set up repository
