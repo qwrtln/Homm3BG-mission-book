@@ -41,7 +41,7 @@ export function SearchCombobox() {
 
   // A pick made anywhere (a row here, a blank button here or in scratch-row)
   // shows its title in the box and closes the dropdown, exactly like picking
-  // used to set el("search").value and hide el("search-results") directly.
+  // used to set the search box value and hide its results directly.
   useEffect(() => {
     setQuery(pendingTitle);
     setListOpen(false);

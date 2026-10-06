@@ -1,6 +1,6 @@
+import { store } from "../store.ts";
 import { getEditor } from "./editor-api.ts";
 import { saveText } from "./local-store.ts";
-import { state } from "./state.ts";
 
 /** @returns the localStorage key holding that path's autosaved draft */
 export function storageKey(path: string): string {
@@ -50,17 +50,19 @@ export function flushDraft(path: string, text: string): Promise<void> {
  * is open at that moment.
  */
 export function scheduleSave(): void {
-  if (!state.chosenPath) return;
-  clearTimeout(state.saveTimer ?? undefined);
-  state.saveTimer = setTimeout(() => {
+  if (!store.getState().chosenPath) return;
+  clearTimeout(store.getState().saveTimer ?? undefined);
+  const saveTimer = window.setTimeout(() => {
     // Re-checked here, not just above: 400 ms is long enough for either to
     // have been cleared, and writing a draft under the key "null" is worse
     // than skipping the save.
     const editor = getEditor();
-    if (state.chosenPath && editor) {
+    const { chosenPath } = store.getState();
+    if (chosenPath && editor) {
       const text = editor.getText();
-      saveDraft(state.chosenPath, text);
-      void saveText(state.chosenPath, text);
+      saveDraft(chosenPath, text);
+      void saveText(chosenPath, text);
     }
   }, 400);
+  store.setState({ saveTimer });
 }

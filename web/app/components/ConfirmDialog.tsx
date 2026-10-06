@@ -7,7 +7,7 @@ import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
 const IDLE: ConfirmOptions = { title: "", message: "", warning: "", okLabel: "OK", danger: false };
 
 /**
- * The page's own confirmation, behind confirmAction() in modules/dom.js.
+ * The page's own confirmation, behind confirmAction() in modules/dom.ts.
  * Escape and Cancel answer no; Cancel has focus, the safe default.
  */
 export function ConfirmDialog() {

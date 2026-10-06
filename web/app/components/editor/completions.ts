@@ -21,7 +21,7 @@ import {
 } from "../../../shared/glyph-completion.ts";
 import { completionContext, imageCompletions } from "../../../shared/image-completion.ts";
 import { REPO } from "../../modules/config.ts";
-import { state as appState } from "../../modules/state.ts";
+import { store } from "../../store.ts";
 
 // Suggests what the cursor's argument in the .tex editor can hold, the way an
 // IDE offers completions: uploaded image paths inside an image argument, and
@@ -121,7 +121,7 @@ async function offerAt(context: CompletionContext): Promise<CompletionResult | n
   const image = completionContext(line.text, ch);
   if (image) {
     const typed = image.typed.toLowerCase();
-    const options = imageCompletions(appState.uploadedFiles.keys(), image).map((path) => {
+    const options = imageCompletions(store.getState().uploadedFiles.keys(), image).map((path) => {
       const at = typed ? path.toLowerCase().indexOf(typed) : -1;
       return suggestion(path, path, {
         marked: at < 0 ? [] : Array.from(typed, (_, i) => at + i),

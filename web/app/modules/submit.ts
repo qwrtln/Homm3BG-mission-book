@@ -7,7 +7,6 @@ import { type Blocker, type ChecklistItem, submitBlockers } from "../../shared/s
 import { builtFingerprint } from "../pdf/view.ts";
 import { store } from "../store.ts";
 import { isDirty } from "./dirty.ts";
-import { state } from "./state.ts";
 
 /** What each unmet condition says in the dialog. */
 export const BLOCKER_TEXT: Record<Blocker, string> = {
@@ -23,8 +22,8 @@ export const BLOCKER_TEXT: Record<Blocker, string> = {
 export function currentSubmitBlockers(): Blocker[] {
   return submitBlockers({
     dirty: isDirty(),
-    building: state.building,
-    clean: state.clean,
+    building: store.getState().building,
+    clean: store.getState().clean,
     built: builtFingerprint(),
   });
 }

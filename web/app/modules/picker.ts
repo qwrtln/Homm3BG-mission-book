@@ -8,9 +8,8 @@ import { errorMessage } from "../../shared/errors.ts";
 import { categoryOfPath } from "../../shared/scenario-name.ts";
 import { store } from "../store.ts";
 import { publishedPdfUrl, TEMPLATES } from "./config.ts";
-import { basenameNoExt, el } from "./dom.ts";
+import { basenameNoExt } from "./dom.ts";
 import { preloadFile, preloadText } from "./files.ts";
-import { state } from "./state.ts";
 import { showPicker } from "./wizard.ts";
 
 /** Set by the GitHub module, which owns the edit flow. */
@@ -54,7 +53,7 @@ export function setPickerMode(mode: "new" | "edit"): void {
   // The wizard only starts new scenarios, so edit mode has no use for it: the
   // start choice (components/wizard/StartChoice.tsx) hides itself from pickerMode.
   if (mode === "edit") showPicker();
-  el("edit-branch-prompt").hidden = true;
+  store.setState({ editBranch: null });
   // A blank template picked in new mode is not something an edit can open.
   if (mode === "edit" && pendingPath && isTemplatePath(pendingPath)) {
     store.setState({ pendingPath: null, pendingTitle: "", chosenCategory: null });
@@ -117,12 +116,13 @@ export function chooseCategory(category: string): void {
 // per prefetch); nothing already finished is discarded, since preloadFile
 // only writes to the cache once its own fetch has completed.
 export function startScenarioPrefetch(path: string): void {
-  if (state.scenarioPrefetch) {
-    if (state.scenarioPrefetch.path === path) return; // already running (or done) for this exact pick
-    state.scenarioPrefetch.controller.abort();
+  const running = store.getState().scenarioPrefetch;
+  if (running) {
+    if (running.path === path) return; // already running (or done) for this exact pick
+    running.controller.abort();
   }
   const controller = new AbortController();
-  state.scenarioPrefetch = { path, controller, promise: prefetchScenario(path, controller.signal) };
+  store.setState({ scenarioPrefetch: { path, controller, promise: prefetchScenario(path, controller.signal) } });
 }
 
 /**

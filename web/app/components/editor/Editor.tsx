@@ -11,7 +11,6 @@ import { saveDraft, scheduleSave } from "../../modules/drafts.ts";
 import { type EditorProbe, setEditor } from "../../modules/editor-api.ts";
 import { saveText } from "../../modules/local-store.ts";
 import { editorKeys } from "../../modules/shortcuts.ts";
-import { state } from "../../modules/state.ts";
 import { store, useAppStore } from "../../store.ts";
 import { completions } from "./completions.ts";
 import { errorLineMark, markedLines, markLine } from "./error-line.ts";
@@ -36,10 +35,11 @@ const onChange = EditorView.updateListener.of((update) => {
 /** Leaving the editor writes the draft at once, instead of waiting for the autosave. */
 const saveOnBlur = EditorView.domEventHandlers({
   blur(_event, view) {
-    if (state.chosenPath) {
+    const { chosenPath } = store.getState();
+    if (chosenPath) {
       const text = view.state.doc.toString();
-      saveDraft(state.chosenPath, text);
-      void saveText(state.chosenPath, text);
+      saveDraft(chosenPath, text);
+      void saveText(chosenPath, text);
     }
     return false;
   },

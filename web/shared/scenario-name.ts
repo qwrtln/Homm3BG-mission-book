@@ -51,7 +51,7 @@ const DRAFT_ROOT = "draft-scenarios";
 /**
  * The categories a new scenario can be filed under, as draft-scenarios/
  * subdirectory names, in the order the welcome screen lists them. A test
- * keeps this in step with DRAFT_GROUP_FILES in build-plan.js.
+ * keeps this in step with DRAFT_GROUP_FILES in build-plan.ts.
  */
 export const DRAFT_CATEGORIES: readonly string[] = Object.freeze(["clash", "coops", "alliances", "campaigns"]);
 

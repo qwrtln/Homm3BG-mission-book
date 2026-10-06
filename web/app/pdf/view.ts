@@ -8,7 +8,6 @@ import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../share
 import type { PageRect } from "../../shared/synctex.ts";
 import { buildKeyLabel } from "../modules/dom.ts";
 import { getEditor, requireEditor } from "../modules/editor-api.ts";
-import { state } from "../modules/state.ts";
 import { type BuildErrorState, type PdfPaneContent, store, type WorkspaceState } from "../store.ts";
 import { drawPages, markChanges, PAGE_MARGIN, type PageSize, pageBoxes } from "./pages.ts";
 import { openDocument, type PdfDocument, type PdfLoadingTask } from "./pdfjs.ts";
@@ -133,11 +132,11 @@ export function showPdfLoading(text: string): void {
 
 /** Empties the PDF pane and the error panel. */
 export function clearPdf(): void {
-  state.lastPdf = null;
-  state.pdfSource = null;
-  state.pdfUploads = null;
-  state.pdfPath = null;
-  state.pdfDropsLastPage = false;
+  store.setState({ lastPdf: null });
+  store.setState({ pdfSource: null });
+  store.setState({ pdfUploads: null });
+  store.setState({ pdfPath: null });
+  store.setState({ pdfDropsLastPage: false });
   store.setState({ downloadDisabled: true, buildError: null });
   showPlaceholder({ kind: "empty" });
   clearErrorLine();
@@ -150,8 +149,9 @@ export function clearPdf(): void {
  */
 export function builtFingerprint(): { text: string; uploads: string } | null {
   // An empty text or an empty uploads signature (no uploads) is still set.
-  if (!state.lastPdf || state.pdfSource === null || state.pdfUploads === null) return null;
-  return { text: state.pdfSource, uploads: state.pdfUploads };
+  const { lastPdf, pdfSource, pdfUploads } = store.getState();
+  if (!lastPdf || pdfSource === null || pdfUploads === null) return null;
+  return { text: pdfSource, uploads: pdfUploads };
 }
 
 /** Removes the failed build's line mark, if any. */
@@ -188,16 +188,16 @@ export async function showPdf(
   source: string,
   {
     dropLastPage = false,
-    path = state.chosenPath,
+    path = store.getState().chosenPath,
     changes,
     uploads,
   }: { dropLastPage?: boolean; path?: string | null; changes?: Map<number, PageRect[]>; uploads?: string } = {},
 ): Promise<void> {
-  state.lastPdf = blob;
-  state.pdfSource = source;
-  state.pdfUploads = uploads ?? null;
-  state.pdfPath = path;
-  state.pdfDropsLastPage = dropLastPage;
+  store.setState({ lastPdf: blob });
+  store.setState({ pdfSource: source });
+  store.setState({ pdfUploads: uploads ?? null });
+  store.setState({ pdfPath: path });
+  store.setState({ pdfDropsLastPage: dropLastPage });
   store.setState({ downloadDisabled: false });
   loadTicket += 1;
   const ticket = loadTicket;

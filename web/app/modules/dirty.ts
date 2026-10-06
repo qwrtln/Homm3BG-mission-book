@@ -1,7 +1,6 @@
 import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.ts";
 import { store } from "../store.ts";
 import { getEditor } from "./editor-api.ts";
-import { state } from "./state.ts";
 
 /**
  * Records what "nothing to save" looks like: the source as it was opened or
@@ -11,20 +10,22 @@ import { state } from "./state.ts";
  * @param uploads a signature taken earlier, for a save that took time
  */
 export function markClean(text?: string | null, uploads?: string): void {
-  state.clean = {
+  const clean = {
     text: text === undefined ? (getEditor()?.getText() ?? "") : text,
-    uploads: uploads ?? uploadsSignature(state.uploadedFiles),
+    uploads: uploads ?? uploadsSignature(store.getState().uploadedFiles),
   };
+  store.setState({ clean });
   refreshUnsavedNote();
 }
 
 /** @returns true when a scenario is open and differs from its last clean state */
 export function isDirty(): boolean {
   const editor = getEditor();
-  if (!state.chosenPath || !editor || !state.clean) return false;
-  return hasUnsavedChanges(state.clean, {
+  const { chosenPath, clean, uploadedFiles } = store.getState();
+  if (!chosenPath || !editor || !clean) return false;
+  return hasUnsavedChanges(clean, {
     text: editor.getText(),
-    uploads: uploadsSignature(state.uploadedFiles),
+    uploads: uploadsSignature(uploadedFiles),
   });
 }
 
@@ -43,6 +44,6 @@ export function refreshUnsavedNote(): void {
 
 /** Forgets the clean state, when no scenario is open any more. */
 export function clearClean(): void {
-  state.clean = null;
+  store.setState({ clean: null });
   refreshUnsavedNote();
 }

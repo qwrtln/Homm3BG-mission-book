@@ -1,15 +1,16 @@
 import { buildRoute, pathToSlug } from "../../shared/route.ts";
+import { store } from "../store.ts";
 import { githubSaveState } from "./github-save-state.ts";
-import { state } from "./state.ts";
 
 /**
  * Puts the open scenario's address in the URL, without adding a history entry.
- * Call once state.chosenPath and githubSaveState.edit are settled.
+ * Call once the store's chosenPath and githubSaveState.edit are settled.
  */
 export function reflectRoute(): void {
-  if (!state.chosenPath) return;
+  const { chosenPath } = store.getState();
+  if (!chosenPath) return;
   const kind = githubSaveState.edit ? "updates" : "drafts";
-  history.replaceState(null, "", buildRoute(kind, pathToSlug(kind, state.chosenPath)));
+  history.replaceState(null, "", buildRoute(kind, pathToSlug(kind, chosenPath)));
 }
 
 /** Removes the scenario address from the URL: nothing matched it. */

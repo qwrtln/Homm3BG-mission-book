@@ -1,6 +1,6 @@
 // TEST STUB — never shipped. Served to the browser only by tier-2 tests, in
 // place of web/shared/vendor/texlyre-busytex.js, via CDP request
-// interception (see web/tests/stubs/install-stubs.mjs). The real engine is
+// interception (see web/tests/stubs/install-stubs.ts). The real engine is
 // vendored, trusted, and deliberately not under test here: no compile ever
 // runs, no WASM loads, no texlive-*.data downloads. This module exists only
 // so that `import { BusyTexRunner, LuaLatex } from ".../texlyre-busytex.js"`
@@ -17,7 +17,7 @@
 //
 // A test that needs a particular result (a failed build, a given log) sets
 // globalThis.__stubCompileResult to a function; every compile then answers
-// with what it returns for the options build.js passed.
+// with what it returns for the options build.ts passed.
 //
 // The stub leaves no files behind unless a test sets
 // globalThis.__stubProjectFiles; readProjectFiles() then returns it.
@@ -94,7 +94,7 @@ function fakePdfBytes() {
 globalThis.__stubPdfBytes = Array.from(fakePdfBytes());
 
 /**
- * Console-only stand-in for the real module's Logger. build.js never talks
+ * Console-only stand-in for the real module's Logger. build.ts never talks
  * to this directly, but it is a named export the app could import.
  */
 class Logger {
@@ -127,14 +127,14 @@ class Logger {
 }
 
 /**
- * Stub replacement for BusyTexRunner. Implements exactly what build.js
+ * Stub replacement for BusyTexRunner. Implements exactly what build.ts
  * touches (constructor, initialize) plus the handful of methods the real
  * class exposes that a compile tool (LuaLatex) may call on it, so any
  * incidental call still resolves instead of throwing "not a function".
  */
 class BusyTexRunner {
   /**
-   * @param {object} [config] - same shape build.js passes the real runner:
+   * @param {object} [config] - same shape build.ts passes the real runner:
    *   { busytexBasePath, preloadDataPackages, verbose }. Never read for
    *   anything but recording — no network, no worker, no WASM is touched.
    */
@@ -166,7 +166,7 @@ class BusyTexRunner {
   }
 
   /**
-   * Not called directly by build.js (it goes through LuaLatex.compile
+   * Not called directly by build.ts (it goes through LuaLatex.compile
    * instead), but implemented for parity in case a tool delegates to it.
    * @param {unknown[]} files - staged files, ignored.
    * @param {string} mainTexPath - ignored.
@@ -227,11 +227,11 @@ class BusyTexRunner {
 
 /**
  * Shared fake-compile behaviour for the three compile-tool stand-ins
- * (LuaLatex, PdfLatex, XeLatex). build.js only ever constructs LuaLatex, but
+ * (LuaLatex, PdfLatex, XeLatex). build.ts only ever constructs LuaLatex, but
  * the other two are named exports of the real module.
  * @param {BusyTexRunner} runner - the stub runner passed to the constructor.
  * @param {string} label - dotted-call prefix, e.g. "LuaLatex".
- * @param {object} options - the options object build.js passes to compile():
+ * @param {object} options - the options object build.ts passes to compile():
  *   { input, additionalFiles, verbose }.
  * @returns {Promise<{success: boolean, pdf: Uint8Array, synctex: null,
  *   log: string, exitCode: number, logs: unknown[]}>} a deterministic fake
@@ -255,13 +255,13 @@ async function stubToolCompile(runner, label, options) {
 }
 
 /**
- * Stub replacement for LuaLatex — the only compile tool build.js
+ * Stub replacement for LuaLatex — the only compile tool build.ts
  * constructs (`new LuaLatex(state.runner)`), then calls
  * `.compile({ input, additionalFiles, verbose })` on.
  */
 class LuaLatex {
   /**
-   * @param {BusyTexRunner} runner - the stub runner build.js already
+   * @param {BusyTexRunner} runner - the stub runner build.ts already
    *   constructed and initialized.
    */
   constructor(runner) {
@@ -271,7 +271,7 @@ class LuaLatex {
 
   /**
    * @param {{input: string, additionalFiles?: unknown[], verbose?: string,
-   *   mainTexPath?: string}} options - same options build.js passes the
+   *   mainTexPath?: string}} options - same options build.ts passes the
    *   real LuaLatex.
    * @returns {Promise<{success: boolean, pdf: Uint8Array, synctex: null,
    *   log: string, exitCode: number, logs: unknown[]}>} a deterministic fake
@@ -282,7 +282,7 @@ class LuaLatex {
   }
 }
 
-/** Stub replacement for PdfLatex. Never touched by build.js; kept for export parity. */
+/** Stub replacement for PdfLatex. Never touched by build.ts; kept for export parity. */
 class PdfLatex {
   /** @param {BusyTexRunner} runner - the stub runner. */
   constructor(runner) {
@@ -301,7 +301,7 @@ class PdfLatex {
   }
 }
 
-/** Stub replacement for XeLatex. Never touched by build.js; kept for export parity. */
+/** Stub replacement for XeLatex. Never touched by build.ts; kept for export parity. */
 class XeLatex {
   /** @param {BusyTexRunner} runner - the stub runner. */
   constructor(runner) {

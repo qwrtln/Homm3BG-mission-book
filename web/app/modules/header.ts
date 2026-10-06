@@ -1,4 +1,4 @@
-import { state } from "./state.ts";
+import { store } from "../store.ts";
 
 const APP_TITLE = "Heroes III: The Board Game – Scenario Builder";
 
@@ -8,6 +8,6 @@ const APP_TITLE = "Heroes III: The Board Game – Scenario Builder";
  * the app's name.
  */
 export function setScenarioTitle(title: string): void {
-  state.chosenTitle = title;
+  store.setState({ chosenTitle: title });
   document.title = title ? `${title} – Heroes III: The Board Game` : APP_TITLE;
 }

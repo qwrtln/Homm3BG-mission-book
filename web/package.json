@@ -10,10 +10,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.node.json",
+    "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.node.json && tsc --noEmit --project tests/tsconfig.json",
     "lint": "biome check .",
-    "test:unit": "node --test \"tests/unit/**/*.test.mjs\"",
-    "test:e2e": "playwright test --config tests/playwright.config.mjs"
+    "test:unit": "node --test \"tests/unit/**/*.test.ts\"",
+    "test:e2e": "playwright test --config tests/playwright.config.ts"
   },
   "dependencies": {
     "@codemirror/autocomplete": "6.20.3",

@@ -5,8 +5,8 @@ browser (BusyTeX/WASM), open a pull request. No local LaTeX toolchain.
 
 Built with Vite. `web/index.html` redirects to `web/app/index.html`, which
 loads `web/app/main.tsx` as an ES module; `npm run build` bundles it into
-`web/dist/`. React, Zustand and Tailwind are in, region by region (see
-`web/app/CLAUDE.md`); the rest is still plain modules.
+`web/dist/`. The UI is React (one root, `App.tsx`), the shared state is Zustand
+and the styling is Tailwind; see `web/app/CLAUDE.md`. All source is TypeScript.
 
 ## Dependencies and build
 
@@ -20,7 +20,7 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
 | `npm run dev` | Vite dev server at `/web/app/` |
 | `npm run build` | writes `web/dist/`, which the deploy copies to `site/builder/` |
 | `npm run preview` | serves `web/dist/` |
-| `npm run typecheck` | `tsc` over `tsconfig.json`, then `tsconfig.node.json` |
+| `npm run typecheck` | `tsc` over `tsconfig.json`, `tsconfig.node.json`, then `tests/tsconfig.json` |
 | `npm run lint` | Biome `check .` |
 | `npm run test:unit` | tier 1 |
 | `npm run test:e2e` | tier 2, against the build |
@@ -62,15 +62,15 @@ because the engine's worker resolves paths itself and the files are large:
 | `../shared/texmf/carried-texmf.bin` | site root | the carried TeX Live bundle |
 | `../repo/` | site root `repo/` | the book's own sources, copied at deploy time |
 
-- `busytexBase()` must stay an absolute URL (`modules/config.js`).
+- `busytexBase()` must stay an absolute URL (`modules/config.ts`).
 - The license files in the About dialog (`../LICENSE`, `../LATEX-ENGINE-NOTICE`,
   the wrapper's `LICENSE`) are static rows read from the site root.
 - Dev: `out-of-bundle-assets` serves `/web/repo/*` from the repository root and
   `/web/shared/vendor/*`, `/web/shared/texmf/*`, `/web/core/*` from `web/`,
-  with COOP/COEP headers. Tier 2: `tests/driver/static-server.mjs` does the same
+  with COOP/COEP headers. Tier 2: `tests/driver/static-server.ts` does the same
   and serves `/web/app/` from `web/dist/`.
 - Anything else the browser fetches by URL must go on the allow-list in
-  `.github/workflows/publish-docs.yaml`. `shared/*.js` is not on it: shared
+  `.github/workflows/publish-docs.yaml`. `shared/*.ts` is not on it: shared
   code is bundled.
 
 ## Layout
@@ -81,6 +81,7 @@ because the engine's worker resolves paths itself and the files are large:
 | `web/app/modules/` | App concerns, wired by `main.tsx`; DOM allowed |
 | `web/app/github/` | The GitHub flow (sign-in, save, pull request, resume, `openRoute`); writes the store, wired by `initGithub()` |
 | `web/types/` | Ambient `.d.ts` shared across the app |
+| `web/tests/` | Both test tiers, in TypeScript; see `web/tests/README.md` |
 | `web/core/` | Fetched and gitignored (`serve.sh`). Do not edit. |
 | `web/shared/vendor/` | Committed, loaded at run time, not bundled. Do not edit. |
 | `web/dist/`, `web/node_modules/` | Generated and gitignored. |
@@ -95,9 +96,11 @@ because the engine's worker resolves paths itself and the files are large:
 `web/app/main.tsx` is the only wiring point. A module exports `init<Name>()`;
 nothing self-registers. Order is load-bearing:
 
-1. The `header` mount (and `initCategory()`) before `applyTheme(initialTheme())`: the
-   menu renders the theme from the store.
-2. Synchronous: the editor mount, picker, uploads, build.
+1. `initCategory()`, then the one React render of `<App/>`, made synchronous
+   with `flushSync`: the `init*()` calls after it find the page's DOM and its
+   components' effects. `applyTheme(initialTheme())` comes after the render:
+   the menu renders the theme from the store.
+2. Synchronous: stale-PDF status, wizard, uploads, shortcuts.
 3. `initGithub()` and `loadEntries()` return promises. Anything needing both
    waits on `Promise.allSettled([githubReady, entriesReady])` — see `openRoute`.
 4. `ensureEngine()` and `preloadCommonFiles()` fire eagerly, rejections
@@ -105,26 +108,28 @@ nothing self-registers. Order is load-bearing:
 
 ## Types at boundaries
 
-`web/shared/` and the non-UI modules of `web/app/modules/` are TypeScript,
-checked by `tsc` (TypeScript 7, the `tsgo` binary) against `web/tsconfig.json`
-(`strict`, `allowJs`, `checkJs`, no `@types/node` — browser code). A UI module
-not yet converted stays `.js`, still checked by the same project through
-`checkJs`, and imports a converted module by its `.ts` specifier. From `web/`,
-as CI runs it:
+All of `web/` is TypeScript, checked by `tsc` (TypeScript 7, the `tsgo` binary)
+in three projects: `web/tsconfig.json` (`strict`, browser code, no
+`@types/node`), `tsconfig.node.json` (the Node-only tools) and
+`tests/tsconfig.json` (the tests: Node and DOM types, extends the first).
+From `web/`, as CI runs it:
 
 ```sh
 npm run typecheck
 ```
 
-- Tier 1 runs `.ts` modules directly on Node's native type stripping, with no
+- Tier 1 runs `.ts` modules and tests directly on Node's native type stripping, with no
   loader flag, so `tsconfig.json` sets `erasableSyntaxOnly` (no `enum`,
   `namespace` or constructor parameter properties), `verbatimModuleSyntax`
   (a type-only import spells out `import type`) and
   `allowImportingTsExtensions` (an import specifier names the real `.ts`
   file, e.g. `"../../shared/build-plan.ts"`, never a bare `.js` guess).
+- `tests/globals.d.ts` declares the test-only globals the page-side tests use
+  (`__stubEngineCalls` and the rest); `types/globals.d.ts` declares the app's
+  own probe hooks.
 - Every exported function in `web/shared/` and `web/app/modules/` carries a
-  typed signature (parameter types and a return type), or a JSDoc comment
-  that documents behavior without repeating the type.
+  typed signature (parameter types and a return type). A doc comment says what
+  it does, without repeating the type.
 - Declare an injected dependency as an exported `interface`, naming every
   method the injection site calls. Never accept an unnamed object.
 - Validate external payloads (GitHub responses, parsed `.tex`) at entry. No
@@ -158,20 +163,20 @@ npx biome check --write .     # apply safe fixes
 - Running from the repository root fails: Biome 2.x treats the invocation
   directory as an implicit root and refuses a nested config. CI uses
   `working-directory: web`.
-- It covers `*.js`, `*.mjs`, `*.ts` and `*.tsx`. `dist/`, `node_modules/`,
+- It covers `*.js`, `*.ts` and `*.tsx`. `dist/`, `node_modules/`,
   `core/`, `app/vendor/` and `shared/vendor/` are excluded.
 - Formatting settings live in @web/biome.json. Indent style is explicit there —
   Biome defaults to tabs, which the root lint rules reject.
 - Two recommended rules are off, both firing on correct code here:
   `suspicious/noAssignInExpressions` (the `while ((m = re.exec(s)))` loop in
-  `shared/build-plan.js`) and `suspicious/useIterableCallbackReturn` (concise
+  `shared/build-plan.ts`) and `suspicious/useIterableCallbackReturn` (concise
   arrow bodies in `forEach`).
 - CSS and HTML are out of scope deliberately.
 
 ## Tests
 
 Two tiers. Read `web/tests/README.md` before writing a test — it holds the
-conventions (file naming, `.mjs`, imports, fixtures, stubs, first-run setup).
+conventions (file naming, `.ts`, imports, fixtures, stubs, first-run setup).
 
 ```sh
 npm run test:unit   # tier 1
@@ -182,8 +187,8 @@ npm run test:e2e    # tier 2: builds, then serves web/dist/
   Node 22 and 24. Never gate tier 1 behind tier 2.
 - Tier 2 runs against the production build, so the page's modules are bundled.
   A test cannot `import()` an app module from the page: it reads the hooks
-  `window.__state` and `window.__localStore` (installed in `app/main.tsx`), like
-  `window.__lastSaveTarget`.
+  `window.__state` (a getter for `store.getState()`) and `window.__localStore`
+  (installed in `app/main.tsx`), like `window.__lastSaveTarget`.
 - Never load the LaTeX engine; `web/tests/stubs/` stubs it.
 - **Install the stubs before `page.goto`, never after** — navigate first and the
   real wrapper is already in flight.
@@ -215,7 +220,7 @@ mounts and held in a ref.
   `setText`, `focus`, `revealLine`, `replaceRange`, `markErrorLine`). Never
   import `@codemirror/*` outside `components/editor/` and `modules/shortcuts.ts`.
 - Tier 2 reads it through `window.__editor` (an `EditorProbe`: the same API plus
-  cursor, selection and line reads) and `tests/helpers/editor.mjs`. A test never
+  cursor, selection and line reads) and `tests/helpers/editor.ts`. A test never
   touches `.cm-*` markup to read the text: CodeMirror draws only the lines in
   view.
 - Look: `components/editor/theme.ts`, a light and a dark `EditorView.theme` plus
@@ -274,7 +279,7 @@ the chunk. Types are the package's own.
 ### Carried TeX Live files
 
 The app preloads `texlive-basic` only (`DATA_PACKAGE` in
-`web/shared/build-plan.js`). The ~170 files the book needs beyond it ship in
+`web/shared/build-plan.ts`). The ~170 files the book needs beyond it ship in
 one bundle, `web/shared/texmf/carried-texmf.bin`, built from
 `web/shared/texmf/carried.txt` — the manifest, which says why each file is
 carried. `web/shared/carry-texmf.ts` has the full procedure in its header.
@@ -284,5 +289,5 @@ carried. `web/shared/carry-texmf.ts` has the full procedure in its header.
 - Review a rebuild through `carried.lock.json`: one line per file with its
   SHA-256. The bundle itself is binary.
 - Check a rebuild on the real engine with
-  `node web/tests/tools/probe-carried-texmf.mjs`. It prints any `carried.txt`
+  `node web/tests/tools/probe-carried-texmf.ts`. It prints any `carried.txt`
   lines still missing. It is a hand-run tool, not a test.

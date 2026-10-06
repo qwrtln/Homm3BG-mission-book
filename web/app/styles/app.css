@@ -1,27 +1,848 @@
-/* The stylesheet entry: Tailwind's theme and utilities, over the legacy
-   sheets until each region that uses one migrates to components.
+/* The stylesheet entry: Tailwind's theme and utilities, plus the component
+   rules of the page's regions, one section per region below.
 
-   Tailwind's preflight is not imported: it would restyle every legacy
-   region. Instead the legacy sheets sit in one `legacy` layer, in the order
-   the page used to link them, and the utilities layer comes after it, so a utility on a migrated component
-   beats a legacy rule. Delete a sheet's import here when its last region
-   migrates. Colors are not defined here: tokens.css stays the single
-   source, light and dark, and @theme maps each one to a utility name. */
+   Tailwind's preflight is not imported: the base section does the reset.
+   The rules sit in one `components` layer, in the order the page used to
+   link its sheets, and the utilities layer comes after it, so a utility on
+   a component beats a rule here. Colors are not defined here: tokens.css
+   stays the single source, light and dark, and @theme maps each one to a
+   utility name. */
 
-@layer theme, legacy, utilities;
+@layer theme, components, utilities;
 
 @import "tailwindcss/theme.css" layer(theme);
-@import "./tokens.css" layer(legacy);
-@import "./base.css" layer(legacy);
-@import "./welcome.css" layer(legacy);
-@import "./wizard.css" layer(legacy);
-@import "./upload-dialog.css" layer(legacy);
-@import "./workspace.css" layer(legacy);
-@import "./dialog.css" layer(legacy);
+@import "./tokens.css" layer(components);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* Dark mode is the data-theme attribute modules/theme.js sets, never a media query. */
+/* Dark mode is the data-theme attribute modules/theme.ts sets, never a media query. */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer components {
+  /* --- Base ---------------------------------------------------------------
+     Reset, page shell, and the generic button/header rules every other
+     section builds on. Depends on tokens.css. */
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    padding: 0;
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+  }
+  /* React's root: its children lay out as the body's flex items. */
+  #root { display: contents; }
+  header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+  }
+  button.with-icon, a.with-icon { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
+  .with-icon[hidden] { display: none; }
+  .octicon { flex: none; vertical-align: text-bottom; }
+  button {
+    font: inherit;
+    font-size: 0.88rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  button.icon { padding: 0.5rem 0.6rem; font-size: 1rem; line-height: 1; }
+  button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  button.primary {
+    border-color: var(--btn-primary-bg);
+    background: var(--btn-primary-bg);
+    color: #fff;
+    font-weight: 600;
+  }
+  button.primary:hover:not(:disabled) {
+    border-color: var(--btn-primary-hover);
+    background: var(--btn-primary-hover);
+    color: #fff;
+  }
+  /* Every disabled button, primary and danger included, in Primer's neutral
+     disabled look: grey reads as unavailable, where a faded colour reads as
+     merely faint. The :is() lifts it over button.danger in the dialogs section. */
+  button:disabled,
+  button:is(.primary, .danger):disabled {
+    border-color: var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    cursor: default;
+  }
+  button.link {
+    border: none;
+    background: none;
+    padding: 0.2rem 0.3rem;
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  /* Primer's checkbox: a small rounded box that fills with the accent and a white tick.
+     Put .check on the <input type="checkbox">, inside its <label>. */
+  input.check {
+    appearance: none;
+    flex: none;
+    display: grid;
+    place-content: center;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+    background: var(--panel);
+    cursor: pointer;
+    transition: background-color 80ms, border-color 80ms;
+  }
+  input.check::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #fff;
+    clip-path: polygon(14% 44%, 0 58%, 38% 96%, 100% 22%, 86% 8%, 38% 68%);
+    transform: scale(0);
+    transition: transform 80ms;
+  }
+  input.check:checked { border-color: var(--accent); background: var(--accent); }
+  input.check:checked::before { transform: scale(1); }
+  label:hover > input.check:not(:checked, :disabled) { border-color: var(--accent); }
+  input.check:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  input.check:disabled { cursor: not-allowed; }
+
+  /* Top-level layout: the row below the header that holds either the welcome
+     screen or the workspace. */
+  .content { flex: 1 1 auto; display: flex; min-height: 0; }
+
+  /* --- Welcome screen -------------------------------------------------- */
+
+  .welcome[hidden], #workspace[hidden] { display: none; }
+  /* An address that names a scenario: the loading screen stands in for the welcome screen until it is known which one to show. */
+  .route-loading { display: none; flex: 1 1 auto; align-items: center; justify-content: center; gap: 0.8rem; color: var(--muted); }
+  .route-pending .route-loading { display: flex; }
+  .route-pending #welcome { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .welcome { transition: opacity 0.22s ease, transform 0.22s ease; }
+    .welcome.leaving { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    #workspace.entering { animation: workspace-in 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes workspace-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+  /* Top-aligned: centring left a band of blank space above a short picker. */
+  .welcome {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(2rem, 6vh, 4rem) 1.25rem 2rem;
+    overflow: auto;
+  }
+  /* One column, top to bottom: every heading shares its left edge. */
+  .welcome-inner { max-width: 36rem; width: 100%; }
+  /* The greeting opens the screen, divided from the work below it by a rule. */
+  .welcome-intro {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .welcome-intro p { margin: 0 0 0.6rem; line-height: 1.5; }
+  .welcome-intro p:last-child { margin-bottom: 0; }
+  .welcome-intro a { color: var(--accent); }
+  .welcome-intro a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* The resume list sits above the picker, divided from it by a rule. */
+  .welcome-top:has(.resume-drafts:not([hidden])) {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .welcome-top .resume-drafts { margin-bottom: 0; }
+  .edit-branch-prompt { margin-top: 1.75rem; }
+  .mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
+  /* A control group that is on screen but out of reach: the name step before a
+     pick, and the new-scenario controls in edit mode. */
+  .dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .name-step, .scratch-row { transition: opacity 0.2s, filter 0.2s; }
+  }
+  /* The member's mode choice changes what search is for, so it comes first. */
+  .mode-choice { margin-bottom: 1.5rem; }
+  .mode-label { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+  .resume-drafts[hidden] { display: none; }
+  .resume-drafts { margin-bottom: 1.5rem; }
+  .combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
+  .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
+  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+  .name-step { margin-top: 2rem; }
+  .go-row { margin-top: 1rem; }
+  .welcome-picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .combobox { position: relative; }
+  #search {
+    width: 100%;
+    font: inherit;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+  }
+  #search:focus { border-color: var(--accent); }
+  .combobox-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    max-height: 22rem;
+    overflow: auto;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: 0 8px 20px var(--shadow);
+    z-index: 10;
+  }
+  .combobox-group-label {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+  }
+  .resume-row { display: flex; align-items: stretch; }
+  .resume-row .combobox-item { flex: 1; min-width: 0; }
+  .resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
+  .resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
+  .combobox-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.9rem;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .combobox-item:hover, .combobox-item.active { background: var(--line); }
+  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+  .combobox-blanks { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .combobox-blank {
+    text-align: left;
+    padding: 0.5rem 0.9rem;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--accent);
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .combobox-blank:hover, .combobox-blank:focus-visible { background: var(--line); }
+  /* The blank templates: one quiet line of links, secondary to search. */
+  .scratch-row { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; }
+  .blank-links button.link { padding: 0.1rem 0.15rem; font-size: inherit; }
+  .blank-links button.link:hover:not(:disabled) { color: var(--ink); }
+  .blank-links button.link[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration-thickness: 2px; }
+  /* The member's mode choice: one row of joined buttons. */
+  .segmented { display: inline-flex; }
+  .segmented button { border-radius: 0; margin-left: -1px; padding: 0.35rem 0.75rem; }
+  .segmented button:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
+  .segmented button:last-child { border-radius: 0 4px 4px 0; }
+  .segmented button:hover, .segmented button:focus-visible { position: relative; z-index: 1; }
+  .segmented button[aria-pressed="true"] {
+    position: relative;
+    z-index: 2;
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  /* Where the new scenario is filed: a radio group dressed as the same joined
+     buttons. The radios stay in the tab order, hidden behind their labels. */
+  #name-slide .category-choice { margin: 1.25rem 0 0; padding: 0; border: 0; min-width: 0; }
+  #name-slide .category-choice legend { margin: 0 0 0.5rem; padding: 0; color: var(--muted); font-size: 0.85rem; }
+  #name-slide .category-choice label {
+    position: relative;
+    margin-left: -1px;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  #name-slide .category-choice label:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
+  #name-slide .category-choice label:last-child { border-radius: 0 4px 4px 0; }
+  #name-slide .category-choice input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+  #name-slide .category-choice label:hover { z-index: 1; border-color: var(--accent); color: var(--accent); }
+  #name-slide .category-choice label:has(input:focus-visible) { z-index: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
+  #name-slide .category-choice label:has(input:checked) {
+    z-index: 2;
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  #name-slide .category-hint { margin: 0.5rem 0 0; min-height: 1.2em; }
+  .name-field { max-width: 24rem; }
+  #scenario-name {
+    width: 100%;
+    font: inherit;
+    font-size: 0.92rem;
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+  }
+  #scenario-name:focus { border-color: var(--accent); }
+  #scenario-name[aria-invalid="true"] { border-color: var(--bad); }
+  .name-error[hidden] { display: none; }
+  .name-error { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--bad); text-align: left; }
+  .go-hint { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
+  #go { white-space: nowrap; }
+
+  /* --- Start wizard ------------------------------------------------------- */
+
+  /* The start choice: two equal cards, copy or blank beside the wizard. */
+  .start-choice { margin-bottom: 1.75rem; }
+  .start-choice[hidden] { display: none; }
+  .start-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.75rem; }
+  .start-options button {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--panel);
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .start-options button strong { font-size: 1rem; }
+  .start-options button span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+  .start-options button:hover { border-color: var(--accent); }
+  .start-options button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  .start-options button[aria-pressed="true"] strong { color: var(--accent); }
+
+  /* While the wizard shows, the copy-or-blank steps and the resume list make way for it. */
+  .wizard[hidden], .wizard-pane[hidden] { display: none; }
+  .welcome.wizard-open :is(.pick-step, .name-step, .go-row, .resume-drafts) { display: none; }
+  .welcome.wizard-open .welcome-top { margin: 0; padding: 0; border: 0; }
+
+  .wizard-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+  .wizard-step { margin: 0; color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+  .wizard-pane h3, .wizard-pane legend.wizard-heading { margin: 0 0 0.3rem; padding: 0; color: var(--ink); font-size: 1.05rem; font-weight: 700; }
+  .wizard-pane h3 label { font: inherit; color: inherit; }
+  .wizard-pane :is(.wizard-field, .wizard-choice) + h3 { margin-top: 1.6rem; }
+  .wizard-pane a { color: var(--accent); }
+  .wizard-pane h3 .optional { color: var(--muted); font-size: 0.85rem; font-weight: 400; }
+  .wizard-field { margin: 0 0 1.1rem; }
+  .wizard-field > label, .wizard-label, .wizard-choice legend {
+    display: block;
+    margin: 0 0 0.4rem;
+    padding: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .wizard .optional { font-weight: normal; opacity: 0.85; }
+
+  .wizard input[type="text"], .wizard textarea {
+    width: 100%;
+    max-width: 24rem;
+    font: inherit;
+    font-size: 0.92rem;
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+  }
+  .wizard textarea { max-width: none; resize: vertical; line-height: 1.45; }
+  .wizard input[type="text"]:focus, .wizard textarea:focus { border-color: var(--accent); }
+  .wizard input[aria-invalid="true"] { border-color: var(--bad); }
+  .wizard-status { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.8rem; }
+  .wizard-status.bad { color: var(--bad); }
+  .wizard-preview { display: block; margin-top: 0.6rem; max-width: 12rem; max-height: 8rem; border: 1px solid var(--line); border-radius: 4px; }
+  .wizard-preview[hidden] { display: none; }
+
+  /* The game mode and the tile pool's Yes/No are RadioGroups (components/ui/RadioGroup.tsx). */
+  .wizard-choice { margin: 0 0 1.1rem; padding: 0; border: 0; min-width: 0; }
+
+  /* Round and player buttons: the #mode-choice segmented control, wrapping on narrow screens. */
+  .wizard-segmented { flex-wrap: wrap; row-gap: 0.3rem; }
+  .wizard-segmented button { min-width: 2.4rem; padding: 0.35rem 0.5rem; }
+  .wizard-segmented button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Setup panes: selects, number fields and checkboxes, each beside its glyph. */
+  .wizard select, .wizard input[type="number"] {
+    font: inherit;
+    font-size: 0.92rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    border-radius: 4px;
+    outline: none;
+  }
+  .wizard select { min-width: 4.5rem; }
+  .wizard input[type="number"] { width: 4.5rem; }
+  .wizard select:focus, .wizard input[type="number"]:focus { border-color: var(--accent); }
+  .wizard input[type="number"]:invalid { border-color: var(--bad); }
+  .wizard-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; }
+  .wizard-resource { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .wizard-glyph { flex: none; width: 1.6rem; height: 1.6rem; object-fit: contain; }
+  .wizard-glyph-inline { display: inline; width: 1.1rem; height: 1.1rem; vertical-align: text-bottom; }
+  /* The dark theme draws a glyph's yellow variant, where it has one. */
+  .wizard-glyph.dark { display: none; }
+  html[data-theme="dark"] .wizard-glyph.dark { display: block; }
+  html[data-theme="dark"] .wizard-glyph:has(+ .wizard-glyph.dark) { display: none; }
+  /* Town buildings: the Dwellings and the Citadel in one column, the rest in the other. */
+  .wizard-checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.45rem 1rem; }
+  .wizard-check-column { display: flex; flex-direction: column; gap: 0.45rem; }
+  .wizard-counts { display: flex; flex-direction: column; gap: 0.45rem; margin: 0 0 1.1rem; }
+  .wizard-counts[hidden] { display: none; }
+  .wizard-count { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; flex-wrap: wrap; }
+  .wizard-count > label { min-width: 9rem; }
+
+  /* Pane 8's per-tile mode toggle: Fixed count, or a multiple of the players. */
+  .wizard-tile-mode { flex-wrap: nowrap; }
+  .wizard-tile-mode button { min-width: 3.4rem; padding: 0.3rem 0.5rem; font-size: 0.82rem; }
+  .wizard-tile-mode button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Primer's number stepper: − field +, joined, in place of the browser's spinner. */
+  .wizard-stepper { display: inline-flex; align-items: stretch; }
+  .wizard-stepper button {
+    min-width: 2rem;
+    padding: 0 0.6rem;
+    border-radius: 0;
+    background: var(--paper);
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .wizard-stepper button:first-child { border-radius: 4px 0 0 4px; }
+  .wizard-stepper button:last-child { border-radius: 0 4px 4px 0; }
+  .wizard .wizard-stepper input[type] {
+    width: 3.25rem;
+    max-width: none;
+    margin: 0 -1px;
+    padding: 0.4rem 0.3rem;
+    border-radius: 0;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+  .wizard-stepper :is(button, input):is(:hover, :focus, :focus-visible), .wizard-stepper input:invalid, .wizard-stepper input[aria-invalid="true"] { position: relative; z-index: 1; }
+  .wizard-stepper button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; z-index: 2; }
+  .wizard-stepper input[type="number"] { appearance: textfield; -moz-appearance: textfield; }
+  .wizard-stepper input[type="number"]::-webkit-inner-spin-button,
+  .wizard-stepper input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; appearance: none; margin: 0; }
+
+  .wizard-hint { margin: 0.4rem 0 0; min-height: 1.2em; color: var(--muted); font-size: 0.85rem; }
+  .wizard-nav { display: flex; justify-content: flex-end; align-items: center; gap: 0.75rem; margin-top: 0.8rem; }
+  .wizard-nav-end { display: inline-flex; gap: 0.5rem; }
+  .wizard-nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  #wizard-next { white-space: nowrap; min-width: 7rem; }
+
+  /* Timed events: a Round picker (like #mode-choice), a field per selected Round. */
+  .wizard-events { display: flex; flex-direction: column; gap: 0.5rem; margin: 0 0 1.1rem; }
+  .wizard-event { display: grid; grid-template-columns: 7.5rem 1fr; align-items: start; gap: 0.75rem; }
+  .wizard-event textarea { min-height: 2.6rem; }
+
+  /* Inspiration chips: draggable onto a Round's field, or clickable to insert into it. */
+  .wizard-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 0.4rem; }
+  .wizard-chip {
+    padding: 0.35rem 0.7rem;
+    border: 1px dashed var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--ink);
+    font-size: 0.82rem;
+    cursor: grab;
+  }
+  .wizard-chip:hover { border-color: var(--accent); }
+  .wizard-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wizard-chip:active { cursor: grabbing; }
+
+  /* Additional rules: one field per rule, + under the last one. */
+  .wizard-rules .wizard-field { margin-bottom: 0.6rem; }
+  .wizard-rules-add { min-width: 2.4rem; font-size: 1rem; }
+  .wizard-rules-add[hidden], .wizard-rules-limit[hidden] { display: none; }
+  .wizard-rules-add:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wizard-rules-limit { margin-top: 0.4rem; }
+
+  /* Pane 1's header field and pane 12's maps field: the popover's own cards
+     (.upload-card, .upload-rename-list — the upload dialog section), plus a
+     highlight while a file is dragged over the drop zone. */
+  .wizard-upload { position: relative; }
+  .wizard-upload button[id$="-add"] { margin-top: 0.3rem; }
+
+  /* --- Upload fields ------------------------------------------------------
+     The upload panel's fields: components/uploads/UploadPanel.tsx draws them in
+     the Upload images dialog and in the wizard's panes. */
+
+  .upload-field { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  /* A drop zone (the popover's own fields, and the wizard's header and maps
+     fields) while a dragged file is over it. */
+  .drop-target { outline: 2px dashed var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .upload-field label { font-weight: 600; }
+  .upload-field input[type="file"] { font: inherit; font-size: 0.8rem; max-width: 100%; }
+  .upload-status { color: var(--muted); }
+  .upload-status code { font-size: 0.78rem; }
+  .upload-status a { color: var(--accent); }
+  .upload-status a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .upload-status.bad { color: var(--bad); }
+  input.upload-rename, input.upload-mapfile-input {
+    font: inherit;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    width: 100%;
+  }
+  .upload-rename-list[hidden] { display: none; }
+  .upload-rename-list { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+  /* A staged image: its fields on the left, its thumbnail on the right. */
+  .upload-card[hidden] { display: none; }
+  .upload-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    background: var(--paper);
+  }
+  .upload-card-body { display: flex; flex-direction: column; gap: 0.4rem; flex: 1 1 auto; min-width: 0; }
+  .upload-card-head { display: flex; align-items: center; gap: 0.5rem; }
+  .upload-card-title { font-weight: 600; }
+  .upload-card-head .orig-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .upload-card .orig-name { color: var(--muted); font-size: 0.76rem; }
+  .upload-preview {
+    flex: 0 0 auto;
+    width: 5.5rem;
+    height: 5.5rem;
+    object-fit: contain;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--panel);
+  }
+  .upload-players { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; border: 0; padding: 0; margin: 0; }
+  .upload-players legend { float: left; padding: 0; margin-right: 0.2rem; color: var(--muted); }
+  .upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
+  .upload-field label.upload-mapfile { display: flex; flex-direction: column; gap: 0.2rem; font-weight: normal; color: var(--muted); }
+  .upload-mapfile .optional { font-size: 0.76rem; }
+  input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
+  button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }
+
+  /* --- Workspace --------------------------------------------------------- */
+
+  #workspace { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  main {
+    --divider: 5px;
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 0;
+    background: var(--line);
+  }
+  .pane {
+    min-width: 20rem; /* MIN_PANE_REM in components/workspace/Panes.tsx */
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+  }
+  /* --split is the source pane's share in percent, set by components/workspace/Panes.tsx. */
+  #editor-pane { flex: 0 1 calc((100% - var(--divider)) * var(--split, 50) / 100); }
+  #pdf-pane { flex: 1 1 0; }
+  .pane-divider {
+    flex: 0 0 var(--divider);
+    cursor: col-resize;
+    touch-action: none;
+    /* A 1px rule like the other borders, on a grab area wide enough to hit. */
+    background: linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat var(--panel);
+  }
+  .pane-divider:hover,
+  .pane-divider:focus-visible,
+  main.resizing .pane-divider { background: var(--accent); outline: none; }
+  /* A drag would select text. */
+  main.resizing { cursor: col-resize; user-select: none; }
+  @media (max-width: 850px) {
+    main { flex-direction: column; overflow-y: auto; gap: 1px; }
+    .pane { min-width: 0; min-height: 24rem; }
+    #editor-pane, #pdf-pane { flex: 1 1 50%; }
+    .pane-divider { display: none; }
+  }
+  .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+  .editor-wrap #editor-region,
+  .editor-wrap .editor-host,
+  .editor-wrap .cm-editor {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+  .pdf-pane-body-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  /* position: relative makes this the offsetParent the scroll anchor measures pages against. */
+  .pdf-pane-body {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: auto;
+  }
+  .pdf-pane-body:has(.pdf-pages) { background: var(--pdf-bg); }
+  /* 12px margins: PAGE_MARGIN in pdf/pages.ts. */
+  .pdf-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    min-width: max-content;
+  }
+  .pdf-page {
+    display: block;
+    flex: none;
+    background: #fff;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  /* What the last build changed, marked over the pages and fading out. Pages
+     are white in either theme, so the colour is fixed. The marks are opaque
+     and the layer holding them carries the transparency, so overlapping marks
+     read as one shape of one shade. pdf/pages.ts removes the layer when its
+     animation ends. */
+  .pdf-changes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    animation: pdf-change-fade 1.8s ease-in forwards;
+  }
+  .pdf-change {
+    position: absolute;
+    background: rgb(255, 200, 0);
+  }
+  @keyframes pdf-change-fade {
+    0%, 50% { opacity: 0.4; }
+    to { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    /* Shown whole, then gone, with no fade between. */
+    .pdf-changes { animation-timing-function: steps(1, end); }
+  }
+  /* A build in progress: a thin bar on the pane's top edge, leaving the PDF under it readable. */
+  .build-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .build-progress[hidden] { display: none; }
+  .build-progress::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35%;
+    background: var(--accent);
+    animation: build-progress 1.2s ease-in-out infinite;
+  }
+  @keyframes build-progress {
+    from { left: -35%; }
+    to { left: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .build-progress::before { width: 100%; left: 0; animation: none; opacity: 0.6; }
+  }
+  /* The build's current step, over the top of the pages and clear of their middle.
+     An empty pane says it under its own spinner instead. */
+  .build-phase {
+    position: absolute;
+    top: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: calc(100% - 2rem);
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    box-shadow: 0 2px 8px var(--shadow);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .build-phase[hidden],
+  .pdf-pane-body-wrap:has(.empty-pdf.loading) .build-phase { display: none; }
+  #build-phase-text { overflow: hidden; text-overflow: ellipsis; }
+  .build-phase .spinner { flex: none; }
+  .spinner.big { width: 2rem; height: 2rem; border-width: 3px; }
+  .empty-pdf {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    padding: 2rem;
+    text-align: center;
+  }
+  .empty-pdf.loading { flex-direction: column; gap: 0.8rem; }
+  /* The footer under both panes, so the two end on one line. */
+  .status-bar {
+    flex: 0 0 auto;
+    padding: 0.4rem 1rem;
+    border-top: 1px solid var(--line);
+    background: var(--panel);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  /* Page count and zoom (components/workspace/StatusBar.tsx), pushed right. Hidden until a PDF shows. */
+  .pdf-controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .pdf-controls[hidden] { display: none; }
+  .pdf-page-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .pdf-zoom-controls { display: flex; gap: 0.25rem; }
+  .spinner {
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 2px solid var(--line);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+  }
+  .spinner[hidden] { display: none; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .ok { color: var(--ok); }
+  .bad { color: var(--bad); }
+  .error-panel {
+    margin: 1rem;
+    border: 1px solid var(--bad);
+    background: var(--error-bg);
+    padding: 0.85rem 1rem;
+    border-radius: 3px;
+  }
+  .error-panel .first-error {
+    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
+    color: var(--bad);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  /* A first error with a scenario line: the whole message jumps the editor there. */
+  .error-panel button.error-jump {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    white-space: inherit;
+    cursor: pointer;
+  }
+  .error-panel button.error-jump:hover:not(:disabled) { color: inherit; text-decoration: underline; }
+  .error-panel button.error-jump:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .error-jump-line {
+    display: inline-block;
+    margin-right: 0.6rem;
+    padding: 0 0.4rem;
+    border: 1px solid var(--bad);
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  details.full-log summary {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+  details.full-log pre {
+    font: 12px/1.5 ui-monospace, monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    padding: 0.7rem;
+    max-height: 20rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    margin: 0.5rem 0 0;
+  }
+
+  /* --- Glyph pictures in the editor's suggestion list (components/editor/completions.ts) --- */
+
+  /* Glyphs are drawn for the book's light pages, some in black: a light chip keeps them visible in the dark theme. */
+  .autocomplete-icon {
+    flex: none;
+    width: 1.5rem;
+    height: 1.25rem;
+    padding: 1px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 3px;
+  }
+  /* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
+  .autocomplete-icon.dark { display: none; }
+  html[data-theme="dark"] .autocomplete-icon.dark { display: block; background: none; }
+  html[data-theme="dark"] .autocomplete-icon:has(+ .autocomplete-icon.dark) { display: none; }
+
+  /* --- The page's own dialogs (upload). The confirm, About, Help and
+         Feedback dialogs and the toast are components: components/ui/Dialog.tsx. --- */
+
+  .confirm-dialog {
+    max-width: min(26rem, calc(100vw - 2rem));
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--ink);
+    box-shadow: 0 8px 32px var(--shadow);
+  }
+  .confirm-dialog::backdrop { background: rgba(1, 4, 9, 0.5); }
+  .confirm-dialog h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+  .confirm-dialog p { margin: 0 0 0.5rem; }
+  .confirm-warning { color: var(--bad); font-weight: 600; }
+  .confirm-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
+  button.danger { border-color: var(--bad); background: var(--bad); color: #fff; }
+  button.danger:hover:not(:disabled) { border-color: var(--bad); background: var(--bad); color: #fff; filter: brightness(0.9); }
+}
 
 @theme inline {
   --color-ink: var(--ink);

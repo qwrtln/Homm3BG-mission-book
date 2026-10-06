@@ -1,14 +1,14 @@
 import { clearToken, signIn } from "../../shared/github-auth.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { isDirty } from "../modules/dirty.ts";
-import { confirmAction, el } from "../modules/dom.ts";
+import { confirmAction } from "../modules/dom.ts";
 import { deleteDraft, flushDraft } from "../modules/drafts.ts";
 import { getEditor } from "../modules/editor-api.ts";
 import { resetGithubSaveState } from "../modules/github-save-state.ts";
 import { deleteRecord } from "../modules/local-store.ts";
 import { settleModes } from "../modules/picker.ts";
-import { state } from "../modules/state.ts";
 import { isParked, showWelcome } from "../modules/workspace.ts";
+import { setResume, store } from "../store.ts";
 import { REOPEN_KEY, ROUTE_KEY, setGithubContext, syncGithubHeader } from "./context.ts";
 import { refreshWelcomeData } from "./resume.ts";
 
@@ -24,13 +24,14 @@ export async function startSignIn(): Promise<void> {
   }
   // A scenario left behind the welcome screen is not reopened: the member left it.
   const editor = getEditor();
-  if (state.chosenPath && editor && !isParked()) {
-    clearTimeout(state.saveTimer ?? undefined);
+  const { chosenPath, chosenTitle, saveTimer } = store.getState();
+  if (chosenPath && editor && !isParked()) {
+    clearTimeout(saveTimer ?? undefined);
     // Awaited: the redirect below unloads the page, which can abort an
     // IndexedDB write still in flight.
-    await flushDraft(state.chosenPath, editor.getText());
+    await flushDraft(chosenPath, editor.getText());
     try {
-      localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
+      localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: chosenPath, title: chosenTitle }));
     } catch {
       /* private mode, blocked storage: sign-in still proceeds */
     }
@@ -49,11 +50,11 @@ export async function handleSignOut(): Promise<void> {
   clearToken();
   setGithubContext(null);
   resetGithubSaveState();
-  el("resume-drafts").hidden = true;
+  setResume({ visible: false });
   settleModes(false);
-  if (!el("workspace").hidden || isParked()) {
-    clearTimeout(state.saveTimer ?? undefined);
-    const path = state.chosenPath;
+  if (store.getState().workspaceShown || isParked()) {
+    clearTimeout(store.getState().saveTimer ?? undefined);
+    const path = store.getState().chosenPath;
     if (path) deleteDraft(path);
     try {
       localStorage.removeItem(REOPEN_KEY);
@@ -72,7 +73,7 @@ export async function leaveWorkspace(): Promise<void> {
   if (isDirty()) {
     const leave = await confirmAction({
       title: "Leave with unsaved changes?",
-      message: `"${state.chosenTitle}" has changes that are not saved. A copy stays in this browser's autosave.`,
+      message: `"${store.getState().chosenTitle}" has changes that are not saved. A copy stays in this browser's autosave.`,
       warning: "",
       okLabel: "Leave",
       danger: false,

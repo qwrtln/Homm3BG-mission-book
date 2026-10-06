@@ -48,7 +48,7 @@ import {
 } from "../../shared/wizard-fields.ts";
 import { initialWizard, store, type UploadPanelState, type WizardState } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
-import { el, sanitizeFilename } from "./dom.ts";
+import { sanitizeFilename } from "./dom.ts";
 import { loadDraft } from "./drafts.ts";
 import { preloadText } from "./files.ts";
 import {
@@ -375,7 +375,7 @@ function holdsAnswers(): boolean {
 function guardUnload(event: BeforeUnloadEvent): void {
   // Switching back to copy or blank keeps the answers, so the guard holds
   // for the whole welcome screen, not just while the wizard shows.
-  if (el("welcome").hidden || !holdsAnswers()) return;
+  if (store.getState().workspaceShown || !holdsAnswers()) return;
   event.preventDefault();
   event.returnValue = ""; // older Chromium needs it set to show the prompt
 }
@@ -591,13 +591,12 @@ function resetPanes(): void {
 
 /**
  * Shows the wizard or the copy-or-blank picker, whichever the start choice
- * names. The wizard shows in place of the copy-or-blank steps (styles/wizard.css,
- * keyed on the welcome screen's `wizard-open` class), so a pending edit-branch
- * question makes way for it too.
+ * names. The wizard shows in place of the copy-or-blank steps (the welcome
+ * screen's `wizard-open` class follows `wizard.open`), so a pending
+ * edit-branch question makes way for it too.
  */
 function setStartChoice(wizardOn: boolean): void {
-  el("welcome").classList.toggle("wizard-open", wizardOn);
-  if (wizardOn) el("edit-branch-prompt").hidden = true;
+  if (wizardOn) store.setState({ editBranch: null });
   setWizard({ open: wizardOn });
 }
 
@@ -623,7 +622,6 @@ export function showPicker(): void {
 /** Ends the run after the scenario is made, dropping every answer. */
 function closeWizard(): void {
   window.removeEventListener("beforeunload", guardUnload);
-  el("welcome").classList.remove("wizard-open");
   resetUploadPanel("wizard");
   store.setState({ wizard: initialWizard() });
 }

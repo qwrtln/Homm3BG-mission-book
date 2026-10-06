@@ -9,7 +9,6 @@ import { resetGithubSaveState } from "../modules/github-save-state.ts";
 import { setScenarioTitle } from "../modules/header.ts";
 import { loadRecord } from "../modules/local-store.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "../modules/route.ts";
-import { state } from "../modules/state.ts";
 import { setStatus } from "../modules/status.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { showWorkspace } from "../modules/workspace.ts";
@@ -34,7 +33,7 @@ export async function reopenLocalDraft(path: string, title?: string): Promise<bo
   store.setState({ actionsVisible: true });
   resetGithubSaveState();
 
-  state.chosenPath = path;
+  store.setState({ chosenPath: path });
   setScenarioTitle(title || basenameNoExt(path));
   syncCategoryControl();
   reflectRoute();
@@ -63,7 +62,7 @@ export async function openRoute(): Promise<void> {
 }
 
 async function resolveRoute(): Promise<void> {
-  if (state.chosenPath) return; // a sign-in reopen already opened something
+  if (store.getState().chosenPath) return; // a sign-in reopen already opened something
   try {
     const kept = localStorage.getItem(ROUTE_KEY);
     localStorage.removeItem(ROUTE_KEY);
@@ -86,19 +85,19 @@ async function resolveRoute(): Promise<void> {
     const branch = remote.find((d) => d.kind === "new");
     if (branch) {
       await openResumableDraft(branch);
-      if (state.chosenPath) return;
+      if (store.getState().chosenPath) return;
     }
     if (await reopenLocalDraft(path)) return;
   } else if (context?.isMember) {
     const branch = remote.find((d) => d.kind === "edit");
     if (branch) {
       await openResumableDraft(branch);
-      if (state.chosenPath) return;
+      if (store.getState().chosenPath) return;
     }
-    const entry = state.entries.find((e) => e.path === path);
+    const entry = store.getState().entries.find((e) => e.path === path);
     if (entry) {
       await startEdit(entry.path, entry.title);
-      if (state.chosenPath) return;
+      if (store.getState().chosenPath) return;
     }
   }
   clearRoute();

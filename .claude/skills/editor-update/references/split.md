@@ -14,7 +14,7 @@ fall back to `mktemp -d` if none). It holds:
 - the design decisions you made: new exports and their JSDoc signatures,
   new DOM ids, new routes, data shapes crossing module boundaries;
 - the slices, each with an **exclusive file list**. A file belongs to
-  exactly one slice. Shared seams (`web/app/app.js` wiring, `web/types/*.d.ts`,
+  exactly one slice. Shared seams (`web/app/main.tsx` wiring, `web/app/App.tsx`, `web/types/*.d.ts`,
   `web/app/index.html`) usually stay with you — you do them after slices
   land, so no subagent edits them.
 
@@ -48,7 +48,7 @@ from other slices — they may not exist yet; code against the signature>
 - the type-check and Biome commands in
   .claude/skills/editor-update/scripts/verify.sh pass for your files
   (run Biome from web/ on your files only);
-- your own tests pass: (from web/) node --test <file> / npx playwright test --config tests/playwright.config.mjs <file>;
+- your own tests pass: (from web/) node --test <file> / npx playwright test --config tests/playwright.config.ts <file>;
 - you wrote a short report to <scratchpad>/report-<slice>.md: files changed,
   decisions not in the brief, anything left undone. Then stop.
 
@@ -93,7 +93,7 @@ When every slice is done:
 1. Read each `report-<slice>.md` and review the diff of its files. You are
    accountable for subagent code — read it, don't trust the report.
 2. Check with `git status` that each slice changed only its own files.
-3. Do the shared seams you kept: wiring in `app.js`, types, HTML.
+3. Do the shared seams you kept: wiring in `main.tsx` and `App.tsx`, types, HTML.
 4. Fix mismatches yourself, or send a follow-up with `herdr agent prompt`
    to the same agent if the fix is large and within its files.
 5. Close the panes you created once you no longer need them.

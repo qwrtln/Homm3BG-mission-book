@@ -6,7 +6,7 @@ import type { Baseline } from "../shared/unsaved.ts";
 import type { BusyTexRunner } from "../shared/vendor/texlyre-busytex.js";
 import { initialWizardFields, type WizardFields } from "../shared/wizard-fields.ts";
 
-/** The app's shared fields, read and written by the modules through the `state` facade in modules/state.ts. */
+/** The app's shared fields, read and written by the modules with `store.getState()` and `store.setState()`. */
 export interface AppState {
   entries: ScenarioEntry[];
   chosenPath: string | null;
@@ -123,7 +123,7 @@ export interface UiState extends HeaderState {
 /**
  * The welcome screen's picker: what to search for, what is picked, and where
  * it is filed. `components/welcome/*` render from it; `modules/picker.ts`
- * writes it for the modules not yet migrated (github/resume.ts's edit flow).
+ * writes it (and github/resume.ts's edit flow).
  */
 export interface PickerState {
   /** Whether the signed-in contributor can edit existing scenarios, not only add new ones. */
@@ -142,6 +142,37 @@ export interface PickerState {
   pickerError: string | null;
   /** Set when the scenario list failed to load; shown in the search dropdown. */
   entriesError: string | null;
+}
+
+/** The resume block on the welcome screen: the signed-in contributor's own unfinished branches. */
+export interface ResumeState {
+  visible: boolean;
+  /** Whether the lookup is running: the block shows its spinner instead of its hint. */
+  searching: boolean;
+  drafts: ResumableDraft[];
+}
+
+/** The question asked when an edit branch of the picked scenario already exists, with what each answer does. */
+export interface EditBranchPrompt {
+  onContinue: () => void;
+  onStartOver: () => void;
+}
+
+/**
+ * Which view of the page shows: the welcome screen or the workspace, and the
+ * welcome screen's own parts. `components/App.tsx` and `components/welcome/*`
+ * render from it; `modules/workspace.ts` and `github/*` write it.
+ */
+export interface ViewState {
+  /** Whether the workspace shows in place of the welcome screen. */
+  workspaceShown: boolean;
+  /** True for the moment the welcome screen fades out before the workspace comes in. */
+  welcomeLeaving: boolean;
+  /** Counts the workspace's entrances; each one replays its animation. */
+  workspaceEntrance: number;
+  resume: ResumeState;
+  /** The pending edit-branch question; null when none is asked. */
+  editBranch: EditBranchPrompt | null;
 }
 
 /** The two places that draw an upload panel: the header's dialog, and the start wizard's panes. */
@@ -265,7 +296,7 @@ export interface WorkspaceState {
   submit: SubmitRequest | null;
 }
 
-export type StoreState = AppState & SaveState & UiState & PickerState & WizardUiState & WorkspaceState;
+export type StoreState = AppState & SaveState & UiState & PickerState & ViewState & WizardUiState & WorkspaceState;
 
 /** A panel with nothing staged. */
 export function initialUploadPanel(): UploadPanelState {
@@ -356,6 +387,12 @@ export function initialState(): StoreState {
     pickerError: null,
     entriesError: null,
 
+    workspaceShown: false,
+    welcomeLeaving: false,
+    workspaceEntrance: 0,
+    resume: { visible: false, searching: false, drafts: [] },
+    editBranch: null,
+
     wizard: initialWizard(),
     uploadPanels: { dialog: initialUploadPanel(), wizard: initialUploadPanel() },
 
@@ -376,6 +413,11 @@ export const store = createStore<StoreState>(() => initialState());
 /** The store as a hook: `useAppStore((s) => s.chosenPath)` re-renders only when that field changes. */
 export function useAppStore<T>(selector: (state: StoreState) => T): T {
   return useStore(store, selector);
+}
+
+/** Updates the resume block, keeping the fields not named. */
+export function setResume(patch: Partial<ResumeState>): void {
+  store.setState((state) => ({ resume: { ...state.resume, ...patch } }));
 }
 
 /** Opens one of the menu's dialogs. */

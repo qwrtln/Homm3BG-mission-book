@@ -1,3 +1,4 @@
+import { flushSync } from "react-dom";
 import { withScenarioTitle } from "../../shared/build-plan.ts";
 import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.ts";
 import { clearPdf, showPdf, showPdfLoading } from "../pdf/view.ts";
@@ -5,7 +6,7 @@ import { store } from "../store.ts";
 import { syncCategoryControl } from "./category.ts";
 import { TEMPLATES } from "./config.ts";
 import { markClean } from "./dirty.ts";
-import { buildKeyLabel, el, readyStatus, sanitizeFilename } from "./dom.ts";
+import { buildKeyLabel, readyStatus, sanitizeFilename } from "./dom.ts";
 import { flushDraft, saveDraft } from "./drafts.ts";
 import { type EditorApi, getEditor, requireEditor } from "./editor-api.ts";
 import { preloadFile } from "./files.ts";
@@ -15,7 +16,6 @@ import { clearUploads, saveText, saveUploads } from "./local-store.ts";
 import { prefetchScenario } from "./picker.ts";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
-import { state } from "./state.ts";
 import { setStatus } from "./status.ts";
 import { resetUploads, restoreUploads } from "./uploads.ts";
 
@@ -38,28 +38,25 @@ export function isParked(): boolean {
 export function showWorkspace(): Promise<void> {
   store.setState({ parked: false });
   return new Promise((resolve) => {
-    const welcome = el("welcome");
-    const workspace = el("workspace");
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      welcome.hidden = true;
-      workspace.hidden = false;
+    // Synchronous renders: the welcome screen is hidden and the workspace is in the page when resolve() runs.
+    const enter = (): void => {
+      flushSync(() =>
+        store.setState((state) => ({
+          workspaceShown: true,
+          welcomeLeaving: false,
+          workspaceEntrance: state.workspaceEntrance + 1,
+        })),
+      );
       setSaveControlsVisible(true);
       endRouteLoading();
       resolve();
+    };
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      enter();
       return;
     }
-    welcome.classList.add("leaving");
-    setTimeout(() => {
-      welcome.hidden = true;
-      welcome.classList.remove("leaving");
-      workspace.hidden = false;
-      setSaveControlsVisible(true);
-      endRouteLoading();
-      workspace.classList.remove("entering");
-      void workspace.offsetWidth; // force reflow, so repeat visits replay the animation
-      workspace.classList.add("entering");
-      resolve();
-    }, 220);
+    store.setState({ welcomeLeaving: true });
+    setTimeout(enter, 220);
   });
 }
 
@@ -83,7 +80,7 @@ async function openNewScenario(name: string, category: string): Promise<{ editor
   const identity = newScenarioPath(name, category);
 
   resetGithubSaveState();
-  state.chosenPath = identity;
+  store.setState({ chosenPath: identity });
   // Always the typed name: a save must never stay tied to the entry it started from.
   setScenarioTitle(name.trim());
   syncCategoryControl();
@@ -120,7 +117,7 @@ export async function commitEntry(path: string, name: string, category: string):
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
   const entry: ScenarioEntry | TemplateEntry | undefined = template
     ? { path: template.path, title: template.title, isTemplate: true }
-    : state.entries.find((e) => e.path === path);
+    : store.getState().entries.find((e) => e.path === path);
   if (!entry) return;
 
   const { editor, identity } = await openNewScenario(name, category);
@@ -210,10 +207,8 @@ export async function commitGeneratedEntry(
 async function showPrefetchedPdf(path: string, source: string): Promise<boolean> {
   setStatus("Finishing this scenario's downloads…", { spinning: true });
   showPdfLoading("Finishing this scenario's downloads…");
-  const prefetch =
-    state.scenarioPrefetch && state.scenarioPrefetch.path === path
-      ? state.scenarioPrefetch
-      : { path, controller: new AbortController(), promise: null };
+  const stored = store.getState().scenarioPrefetch;
+  const prefetch = stored && stored.path === path ? stored : { path, controller: new AbortController(), promise: null };
   const promise = prefetch.promise ?? prefetchScenario(path, prefetch.controller.signal);
   prefetch.promise = promise;
   const { pdfBlob } = await promise;
@@ -254,7 +249,7 @@ export async function openForEdit(
 
   resetGithubSaveState();
   githubSaveState.edit = edit;
-  state.chosenPath = path;
+  store.setState({ chosenPath: path });
   setScenarioTitle(title);
   syncCategoryControl();
   reflectRoute();
@@ -289,19 +284,20 @@ export async function openForEdit(
  * it. Its autosave is flushed now, as a reload drops what the page holds.
  */
 export function showWelcome(): void {
-  clearTimeout(state.saveTimer ?? undefined);
+  const { chosenPath, saveTimer } = store.getState();
+  clearTimeout(saveTimer ?? undefined);
   const editor = getEditor();
-  if (state.chosenPath && editor) void flushDraft(state.chosenPath, editor.getText());
+  if (chosenPath && editor) void flushDraft(chosenPath, editor.getText());
 
   clearRoute();
-  store.setState({ parked: state.chosenPath !== null, actionsVisible: false });
+  store.setState({
+    parked: chosenPath !== null,
+    actionsVisible: false,
+    editBranch: null,
+    workspaceShown: false,
+    welcomeLeaving: false,
+  });
   setSaveControlsVisible(false);
-  el("edit-branch-prompt").hidden = true;
-
-  el("workspace").hidden = true;
-  const welcome = el("welcome");
-  welcome.hidden = false;
-  welcome.classList.remove("leaving");
 }
 
 /**

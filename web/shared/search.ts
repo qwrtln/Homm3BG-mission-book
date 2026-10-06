@@ -41,7 +41,7 @@ export interface ResultGroup {
  * sorted best-match first.
  *
  * @param entries every scenario the search can offer
- * @param categoryOrder display order for a book's categories (config.js's CATEGORY_ORDER)
+ * @param categoryOrder display order for a book's categories (config.ts's CATEGORY_ORDER)
  */
 export function groupedResults(
   entries: ScenarioEntry[],

@@ -5,7 +5,6 @@ import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
 import { type EditorApi, requireEditor } from "./editor-api.ts";
 import { moveRecord, saveText } from "./local-store.ts";
 import { reflectRoute } from "./route.ts";
-import { state } from "./state.ts";
 
 export const LOCKED_TITLE = "The category is fixed once the scenario is saved to GitHub.";
 export const OPEN_TITLE = "The category this scenario is filed under in the Draft Scenarios.";
@@ -27,8 +26,8 @@ export function categoryLocked(
 /**
  * Lets the header's category control follow the open scenario: it ends the
  * hold a new scenario starts with and clears the last refusal's note. The
- * select itself renders from state.chosenPath and the save fields. Call it
- * after every change to state.chosenPath or the save fields.
+ * select itself renders from store.getState().chosenPath and the save fields. Call it
+ * after every change to store.getState().chosenPath or the save fields.
  */
 export function syncCategoryControl(): void {
   const { categoryHold, categoryNote } = store.getState();
@@ -70,14 +69,14 @@ function refuseMove(message: string): void {
  * @param category one of DRAFT_CATEGORIES
  */
 export function moveToCategory(category: string): void {
-  const old = state.chosenPath;
+  const old = store.getState().chosenPath;
   if (!old || categoryLocked(store.getState()) || categoryOfPath(old) === category) {
     syncCategoryControl();
     return;
   }
   // Flushed first: a pending autosave must not land under the old key later.
   const editor = requireEditor();
-  clearTimeout(state.saveTimer ?? undefined);
+  clearTimeout(store.getState().saveTimer ?? undefined);
   saveDraft(old, editor.getText());
   const next = withCategory(old, category);
   if (loadDraft(next) !== null) {
@@ -103,7 +102,7 @@ export function moveToCategory(category: string): void {
   // Best effort, not awaited: the IndexedDB copy is a second line of
   // defense, not the source of truth the move's own checks run against.
   void moveRecord(old, next).then(() => saveText(next, moved));
-  state.chosenPath = next;
+  store.setState({ chosenPath: next });
   if (moved !== text) replaceChangedPart(editor, text, moved);
   syncCategoryControl();
   reflectRoute();

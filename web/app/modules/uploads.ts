@@ -2,7 +2,6 @@ import { sanitizeFilename } from "../../shared/dom-strings.ts";
 import { openDialog, store } from "../store.ts";
 import { refreshUnsavedNote } from "./dirty.ts";
 import { saveUploads } from "./local-store.ts";
-import { state } from "./state.ts";
 import { showToast } from "./toast.ts";
 import { configureUploadPanel, resetUploadPanel, restoreUploadPanel } from "./upload-panel.ts";
 
@@ -40,9 +39,10 @@ export function restoreUploads(files: { path: string; bytes: Uint8Array }[]): vo
  */
 function persistStagedUploads(): void {
   refreshUnsavedNote();
-  if (restoring || !state.chosenPath) return;
-  const assets = [...state.uploadedFiles].map(([path, bytes]) => ({ path, bytes }));
-  void saveUploads(state.chosenPath, assets);
+  const { chosenPath, uploadedFiles } = store.getState();
+  if (restoring || !chosenPath) return;
+  const assets = [...uploadedFiles].map(([path, bytes]) => ({ path, bytes }));
+  void saveUploads(chosenPath, assets);
 }
 
 /** The header's "Upload images" button: opens the uploads dialog. */
@@ -53,7 +53,7 @@ export function openUploadDialog(): void {
 /** Tells the uploads dialog's panel how to name its files and what to do when they change. */
 export function initUploads(): void {
   configureUploadPanel("dialog", {
-    slug: () => sanitizeFilename(state.chosenTitle),
+    slug: () => sanitizeFilename(store.getState().chosenTitle),
     onChange: persistStagedUploads,
     notify: showToast,
   });

@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
     "noEmit": true,
     "strict": true,
     "target": "ES2022",
@@ -21,7 +19,6 @@
     "shared/**/*.ts",
     "app/**/*.ts",
     "app/**/*.tsx",
-    "app/**/*.js",
     "*.ts"
   ],
   "exclude": [

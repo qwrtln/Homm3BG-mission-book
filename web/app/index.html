@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heroes III: The Board Game – Scenario Builder</title>
-<link rel="stylesheet" href="styles/app.css">
 <!-- stats placeholder -->
 </head>
 <body>
@@ -17,57 +16,7 @@
   } catch (e) { /* blocked storage: the welcome screen shows */ }
 </script>
 
-<!-- The header bar is styled by styles/base.css; components/header/ renders what is in it. -->
-<header id="header"></header>
-
-<!-- styles/base.css owns .content; styles/welcome.css owns .route-loading and everything under #welcome. -->
-<div class="content">
-  <div class="route-loading" id="route-loading" role="status" aria-label="Opening your scenario">
-    <span class="spinner big"></span>
-  </div>
-
-  <section class="welcome" id="welcome">
-    <div class="welcome-inner">
-      <div class="welcome-intro">
-        <h2>Welcome to the Scenario Builder</h2>
-        <p>Want to build a nicely styled PDF scenario for the Heroes of Might &amp; Magic III board game? You've come to the right place. You can do it right here, in your web browser, without installing any software.</p>
-        <p>Every scenario you build here is styled after the <a href="https://github.com/qwrtln/Homm3BG-mission-book#heroes-of-might--magic-iii-the-board-gamefan-made-mission-book" target="_blank" rel="noopener">Fan-Made Mission Book</a>, a community collection of scenarios for the game. If you're new here, we highly recommend checking it out first.</p>
-      </div>
-      <div class="welcome-top">
-        <div class="resume-drafts" id="resume-drafts" hidden>
-          <h2>Resume your work</h2>
-          <p class="hint" id="resume-loading" hidden><span class="spinner"></span> Looking for work to resume…</p>
-          <p class="hint" id="resume-hint">Branches of yours with unfinished edits.</p>
-          <div class="combobox-list resume-list" id="resume-list"></div>
-        </div>
-      </div>
-      <div class="welcome-picker" id="welcome-picker">
-        <!-- components/welcome/ModeChoice.tsx -->
-        <div id="welcome-mode"></div>
-        <!-- components/wizard/StartChoice.tsx -->
-        <div id="welcome-start"></div>
-        <!-- components/welcome/PickerMain.tsx (and SearchCombobox.tsx) -->
-        <div id="welcome-pick"></div>
-        <!-- components/wizard/Wizard.tsx; styles/wizard.css; modules/wizard.ts drives the panes, one shown at a time. -->
-        <div id="welcome-wizard"></div>
-      </div>
-      <div class="edit-branch-prompt" id="edit-branch-prompt" hidden>
-        <h2>You already have an edit of this scenario in progress</h2>
-        <p class="hint">Continue from where you left off, or start over from the current Mission Book copy. Starting over replaces your earlier edit the moment you save.</p>
-        <div class="scratch-row">
-          <button id="edit-continue" class="primary" type="button">Continue my edit</button>
-          <button id="edit-start-over" type="button">Start over from main</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- React region: components/workspace/Workspace mounts here (mount.tsx): the panes, the PDF view and the status bar. styles/workspace.css. -->
-  <div id="workspace" hidden></div>
-</div>
-
-<!-- React region: components/{About,Help,Feedback,Confirm}Dialog, uploads/UploadDialog, workspace/SubmitDialog and Toaster mount here (mount.tsx). -->
-<div id="overlays"></div>
+<div id="root"></div>
 
 <script type="module" src="main.tsx"></script>
 </body>

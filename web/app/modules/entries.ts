@@ -5,9 +5,9 @@ import {
   parseScenarioIndex,
   scenarioHeading,
 } from "../../shared/build-plan.ts";
+import { store } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
 import { fetchRepoFile } from "./files.ts";
-import { state } from "./state.ts";
 
 /**
  * Reads one book's group files and turns every scenario they list into an
@@ -39,11 +39,11 @@ export async function loadGroup(groupFiles: GroupFile[], book: "mission" | "draf
   );
 }
 
-/** Loads both books into state.entries, mission first. */
+/** Loads both books into store.getState().entries, mission first. */
 export async function loadEntries(): Promise<void> {
   const [mission, draft] = await Promise.all([
     loadGroup(GROUP_FILES, "mission"),
     loadGroup(DRAFT_GROUP_FILES, "draft"),
   ]);
-  state.entries = [...mission, ...draft];
+  store.setState({ entries: [...mission, ...draft] });
 }

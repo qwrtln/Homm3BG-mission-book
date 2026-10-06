@@ -1,10 +1,9 @@
 import { errorMessage } from "../../shared/errors.ts";
 import { clearToken, getToken } from "../../shared/github-auth.ts";
 import { GithubApiError } from "../../shared/github-contrib.ts";
-import { el } from "../modules/dom.ts";
 import { setSaveControlsVisible } from "../modules/github-save-state.ts";
 import { settleModes } from "../modules/picker.ts";
-import { store } from "../store.ts";
+import { setResume, store } from "../store.ts";
 
 // Sign-in is a full-page redirect, dropping chosenPath and the autosave debounce. Flush and remember what was open.
 export const REOPEN_KEY = "wasm-scenario-builder:pending-reopen";
@@ -28,7 +27,7 @@ export function setGithubContext(context: GithubContext | null): void {
 /** Tells the header whether a token is held (sign-in button, or save controls and Sign out), and whether a scenario is open. */
 export function syncGithubHeader(): void {
   store.setState({ signedIn: Boolean(getToken()) });
-  setSaveControlsVisible(!el("workspace").hidden);
+  setSaveControlsVisible(store.getState().workspaceShown);
 }
 
 /**
@@ -43,7 +42,7 @@ export function dropRevokedToken(error: unknown): boolean {
   if (!(error instanceof GithubApiError && error.status === 401)) return false;
   clearToken();
   githubContext = null;
-  el("resume-drafts").hidden = true;
+  setResume({ visible: false });
   settleModes(false);
   syncGithubHeader();
   return true;

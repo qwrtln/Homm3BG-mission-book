@@ -34,34 +34,6 @@ export function initBuildTitle(mac: boolean): void {
 }
 
 /**
- * One element by id, typed from the id itself: `el("workspace")` is an
- * HTMLDivElement, `el("welcome")` an HTMLElement. The mapping lives in
- * web/types/dom-ids.d.ts, so a mistyped id fails the type check.
- *
- * The result is not nullable, because a missing element throws here instead
- * of returning null. tests/unit/dom-ids.test.mjs checks the map against
- * app/index.html, so drift between the two is caught there rather than as an
- * undefined property access further on.
- */
-export function el<K extends keyof ElementIdMap>(id: K): ElementIdMap[K] {
-  const element = document.getElementById(id);
-  if (element === null) throw new Error(`app/index.html has no element with id "${id}".`);
-  return element as ElementIdMap[K];
-}
-
-/**
- * The nearest ancestor of an event's target matching `selector`, for
- * delegated handlers. Null when the event did not start on an element, or
- * when nothing up the tree matches.
- */
-export function closestTo(event: Event, selector: string): HTMLElement | null {
-  const { target } = event;
-  if (!(target instanceof Element)) return null;
-  const match = target.closest(selector);
-  return match instanceof HTMLElement ? match : null;
-}
-
-/**
  * Asks the contributor to confirm a destructive action in the page's own
  * modal. Escape, the backdrop-less Cancel button and closing all answer no.
  *

@@ -127,7 +127,7 @@ function chrome(palette: Palette, dark: boolean): Extension {
   );
 }
 
-/** The colors of the tokens the LaTeX mode names, as the old CodeMirror 5 theme gave them. */
+/** The colors of the tokens the LaTeX mode names, as the editor's previous theme gave them. */
 function tokens(palette: Palette): Extension {
   return syntaxHighlighting(
     HighlightStyle.define([

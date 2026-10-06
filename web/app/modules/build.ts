@@ -33,7 +33,6 @@ import { busytexBase } from "./config.ts";
 import { basenameNoExt } from "./dom.ts";
 import { requireEditor } from "./editor-api.ts";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
-import { state } from "./state.ts";
 import { setBuilding, setBuildPhase, setStatus } from "./status.ts";
 
 // client-zip is imported lazily, when the first PNG export with more than one
@@ -74,20 +73,21 @@ function loadEngineModule(): Promise<EngineModule> {
 // Download (showPdf), so the menu alone cannot keep a second export out.
 let exporting = false;
 
-/** Downloads and starts the WASM engine, leaving it on state.runner. */
+/** Downloads and starts the WASM engine, leaving it in the store's `runner`. */
 async function startEngine(): Promise<void> {
   setStatus("Downloading the engine (first time only, about a minute)…", { spinning: true });
   const { BusyTexRunner } = await loadEngineModule();
   const base = busytexBase();
-  state.runner = new BusyTexRunner({
+  const runner = new BusyTexRunner({
     busytexBasePath: base,
     preloadDataPackages: [`${base}/${DATA_PACKAGE}.js`],
     verbose: false,
   });
+  store.setState({ runner });
   try {
-    await state.runner.initialize(true);
+    await runner.initialize(true);
   } catch (error) {
-    state.runner = null;
+    store.setState({ runner: null });
     throw error;
   }
 }
@@ -101,7 +101,7 @@ let enginePromise: Promise<void> | null = null;
  * sharing that one in-flight promise with every later caller.
  */
 export async function ensureEngine(): Promise<void> {
-  if (state.runner) return;
+  if (store.getState().runner) return;
   if (!enginePromise) {
     enginePromise = startEngine().catch((error) => {
       enginePromise = null; // let a later call retry instead of staying stuck
@@ -120,8 +120,8 @@ export async function ensureEngine(): Promise<void> {
  */
 function discardEngine(runner: EngineRunner): void {
   runner.terminate();
-  if (state.runner === runner) {
-    state.runner = null;
+  if (store.getState().runner === runner) {
+    store.setState({ runner: null });
     enginePromise = null;
   }
   ensureEngine().catch(() => {}); // errors surface at the next Build, as on page load
@@ -191,8 +191,8 @@ export function stopBuild(): void {
  * early.
  */
 export async function runBuild(): Promise<void> {
-  if (state.building || !state.chosenPath) return;
-  const chosenPath = state.chosenPath;
+  const { building, chosenPath } = store.getState();
+  if (building || !chosenPath) return;
   const editor = requireEditor();
   const controller = new AbortController();
   const { signal } = controller;
@@ -202,8 +202,8 @@ export async function runBuild(): Promise<void> {
   clearErrorLine();
   // The last PDF stays readable while this builds; with none, the pane says why it waits.
   // The status bar keeps the engine download's own wording until the first step.
-  const firstPhase = state.runner ? "Preparing files…" : "Waiting for the engine…";
-  if (!state.lastPdf) showPdfLoading(firstPhase);
+  const firstPhase = store.getState().runner ? "Preparing files…" : "Waiting for the engine…";
+  if (!store.getState().lastPdf) showPdfLoading(firstPhase);
   setBuildPhase(firstPhase);
   try {
     // A stop here leaves the engine warming: page load started it, not this build.
@@ -213,7 +213,7 @@ export async function runBuild(): Promise<void> {
     // One snapshot of text and uploads: an upload changed mid-build must not
     // reach this compile, or the PDF would not match the proof it records.
     const source = editor.getText();
-    const uploads = new Map(state.uploadedFiles);
+    const uploads = new Map(store.getState().uploadedFiles);
     const metadata = await untilAborted(preloadText("metadata.tex"), signal);
 
     const plan = planScenarioBuild({
@@ -265,8 +265,8 @@ export async function runBuild(): Promise<void> {
 
     reportPhase("Compiling…", "Compiling (this can take a while the first time)…");
     const started = performance.now();
-    // ensureEngine above resolves only once state.runner is set.
-    const runner = state.runner as EngineRunner;
+    // ensureEngine above resolves only once the store's runner is set.
+    const runner = store.getState().runner as EngineRunner;
     const { LuaLatex } = await loadEngineModule();
     const lualatex = new LuaLatex(runner);
     // Only the engine can end a compile, so a stop from here on kills it.
@@ -357,18 +357,18 @@ export async function runBuild(): Promise<void> {
       setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
     } else {
       // A last good PDF stays on screen, and downloadable, above the error.
-      if (!state.lastPdf) showPdfMessage("The build failed. See the error below.");
+      if (!store.getState().lastPdf) showPdfMessage("The build failed. See the error below.");
       showError(record);
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
     if (signal.aborted) {
       // A stop is not a failure: the pane goes back to what it showed before.
-      if (!state.lastPdf) clearPdf();
+      if (!store.getState().lastPdf) clearPdf();
       setStatus("Build stopped.");
       return;
     }
-    if (!state.lastPdf) showPdfMessage("The build failed. See the error below.");
+    if (!store.getState().lastPdf) showPdfMessage("The build failed. See the error below.");
     const trace = errorTrace(error);
     showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
     setStatus("Build failed.", { tone: "bad" });
@@ -432,13 +432,13 @@ async function exportPng(blob: Blob, stem: string, dropLastPage: boolean): Promi
     setStatus(`The PNG export failed: ${errorMessage(error)}`, { tone: "bad" });
   } finally {
     exporting = false;
-    store.setState({ downloadDisabled: !state.lastPdf });
+    store.setState({ downloadDisabled: !store.getState().lastPdf });
   }
 }
 
 /** The Build button's action: Stop while a build runs, Build PDF otherwise. */
 export function toggleBuild(): void {
-  if (state.building) stopBuild();
+  if (store.getState().building) stopBuild();
   else runBuild();
 }
 
@@ -446,14 +446,16 @@ export function toggleBuild(): void {
 export function downloadPdf(): void {
   // Named after the scenario the PDF shows: a published PDF is the
   // original's, not the renamed copy's.
-  const path = state.pdfPath ?? state.chosenPath;
-  if (!state.lastPdf || !path) return;
-  saveBlob(state.lastPdf, `${basenameNoExt(path)}.pdf`);
+  const { lastPdf, pdfPath, chosenPath } = store.getState();
+  const path = pdfPath ?? chosenPath;
+  if (!lastPdf || !path) return;
+  saveBlob(lastPdf, `${basenameNoExt(path)}.pdf`);
 }
 
 /** Download > PNG: saves the shown PDF's pages as PNG. */
 export function downloadPng(): void {
-  const path = state.pdfPath ?? state.chosenPath;
-  if (exporting || !state.lastPdf || !path) return;
-  exportPng(state.lastPdf, basenameNoExt(path), state.pdfDropsLastPage);
+  const { lastPdf, pdfPath, chosenPath, pdfDropsLastPage } = store.getState();
+  const path = pdfPath ?? chosenPath;
+  if (exporting || !lastPdf || !path) return;
+  exportPng(lastPdf, basenameNoExt(path), pdfDropsLastPage);
 }

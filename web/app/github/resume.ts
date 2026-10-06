@@ -11,7 +11,8 @@ import {
 import { assetsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "../modules/category.ts";
 import { markClean } from "../modules/dirty.ts";
-import { basenameNoExt, closestTo, confirmDelete, el, escapeHtml, readyStatus } from "../modules/dom.ts";
+import { basenameNoExt, confirmDelete, readyStatus } from "../modules/dom.ts";
+import { draftLabel } from "../modules/draft-labels.ts";
 import { saveDraft } from "../modules/drafts.ts";
 import { requireEditor } from "../modules/editor-api.ts";
 import { loadEntries } from "../modules/entries.ts";
@@ -21,83 +22,28 @@ import { setScenarioTitle } from "../modules/header.ts";
 import { clearUploads, saveText } from "../modules/local-store.ts";
 import { offerLocalDraft } from "../modules/recovery.ts";
 import { reflectRoute } from "../modules/route.ts";
-import { state } from "../modules/state.ts";
 import { setStatus } from "../modules/status.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.ts";
 import { clearPdf } from "../pdf/view.ts";
-import { store } from "../store.ts";
+import { setResume, store } from "../store.ts";
 import { dropRevokedToken, getGithubContext, githubFailure, SIGN_IN_EXPIRED, setGithubContext } from "./context.ts";
 import { checkExistingPullRequest } from "./save.ts";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  clash: "Clash",
-  coops: "Cooperative",
-  campaigns: "Campaign",
-  alliances: "Alliance",
-};
-
-/** "draft-scenarios/clash/kyrre_link.tex" -> "Clash: Kyrre Link". */
-function draftLabel(texPath: string): string {
-  const dir = texPath.split("/").slice(-2, -1)[0] ?? "";
-  const title = basenameNoExt(texPath)
-    .replace(/[-_]+/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-  const category = CATEGORY_LABELS[dir];
-  return category ? `${category}: ${title}` : title;
-}
-
-/** "3 hours ago", "yesterday", ...; empty when the date is missing or invalid. */
-function timeAgo(iso: string | undefined): string {
-  const then = iso ? Date.parse(iso) : Number.NaN;
-  if (Number.isNaN(then)) return "";
-  const seconds = Math.min(0, Math.round((then - Date.now()) / 1000));
-  const units: [Intl.RelativeTimeFormatUnit, number][] = [
-    ["year", 31536000],
-    ["month", 2592000],
-    ["day", 86400],
-    ["hour", 3600],
-    ["minute", 60],
-  ];
-  const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-  for (const [unit, size] of units) {
-    if (-seconds >= size) return formatter.format(Math.round(seconds / size), unit);
-  }
-  return "just now";
-}
-
-/** Draws the resume list from the signed-in user's own branches. */
+/** Shows the resume list from the signed-in user's own branches. */
 export function renderResumeDrafts(): void {
   const drafts = getGithubContext()?.drafts || [];
-  const list = el("resume-list");
-  el("resume-loading").hidden = true;
-  el("resume-hint").hidden = false;
-  el("resume-drafts").hidden = drafts.length === 0;
-  if (drafts.length === 0) return;
-  list.innerHTML = drafts
-    .map((d, i) => {
-      const ago = timeAgo(d.lastEdit);
-      const detail = ago ? `${d.branch}, last edit ${ago}` : d.branch;
-      const kind = d.kind === "edit" ? "editing in place" : "new draft";
-      const label = draftLabel(d.texPath);
-      return (
-        `<div class="resume-row">` +
-        `<button type="button" class="combobox-item" data-draft-index="${i}">${escapeHtml(label)} <span class="hint">(${escapeHtml(kind)}; ${escapeHtml(detail)})</span></button>` +
-        `<button type="button" class="resume-delete" data-delete-index="${i}" aria-label="Delete ${escapeHtml(label)}" title="Delete this work in progress"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></button>` +
-        `</div>`
-      );
-    })
-    .join("");
+  setResume({ visible: drafts.length > 0, searching: false, drafts });
 }
 
 /**
  * Asks, then deletes a work-in-progress branch and drops it from the list.
  * Cancelling the dialog changes nothing.
  */
-async function deleteResumableDraft(draft: ResumableDraft | undefined): Promise<void> {
+export async function deleteResumableDraft(draft: ResumableDraft): Promise<void> {
   const token = getToken();
   const context = getGithubContext();
-  if (!draft || !token || !context) return;
+  if (!token || !context) return;
   const label = draftLabel(draft.texPath);
   if (!(await confirmDelete(`"${label}" will be deleted.`))) return;
 
@@ -121,10 +67,7 @@ async function deleteResumableDraft(draft: ResumableDraft | undefined): Promise<
 
 /** Shows the resume block in its searching state. */
 export function showResumeSearching(): void {
-  el("resume-list").innerHTML = "";
-  el("resume-hint").hidden = true;
-  el("resume-loading").hidden = false;
-  el("resume-drafts").hidden = false;
+  setResume({ visible: true, searching: true, drafts: [] });
 }
 
 function reportEditError(error: unknown): void {
@@ -140,13 +83,12 @@ export async function startEdit(path: string, title: string): Promise<void> {
   const token = getToken();
   const context = getGithubContext();
   if (!token || !context?.isMember) return;
-  el("edit-branch-prompt").hidden = true;
-  store.setState({ pickerBusy: true });
+  store.setState({ editBranch: null, pickerBusy: true });
   try {
     const branch = await findEditBranch(token, { username: context.username, texPath: path });
 
     const open = async (startOver: boolean): Promise<void> => {
-      el("edit-branch-prompt").hidden = true;
+      store.setState({ editBranch: null });
       const source =
         branch && !startOver
           ? await getRepoFile(token, UPSTREAM_OWNER, UPSTREAM_REPO, path, branch)
@@ -165,9 +107,12 @@ export async function startEdit(path: string, title: string): Promise<void> {
       await open(false);
       return;
     }
-    el("edit-branch-prompt").hidden = false;
-    el("edit-continue").onclick = () => open(false).catch(reportEditError);
-    el("edit-start-over").onclick = () => open(true).catch(reportEditError);
+    store.setState({
+      editBranch: {
+        onContinue: () => open(false).catch(reportEditError),
+        onStartOver: () => open(true).catch(reportEditError),
+      },
+    });
   } catch (error) {
     reportEditError(error);
   } finally {
@@ -207,7 +152,7 @@ export async function openResumableDraft(draft: ResumableDraft): Promise<void> {
     resetGithubSaveState();
     githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
 
-    state.chosenPath = draft.texPath;
+    store.setState({ chosenPath: draft.texPath });
     const title = basenameNoExt(draft.texPath)
       .replace(/[-_]+/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase());
@@ -263,24 +208,16 @@ export async function refreshWelcomeData(): Promise<void> {
   await entries;
 }
 
-/** Wires the resume list: a row opens its branch, its delete button removes it. */
-export function initResumeList(): void {
-  el("resume-list").addEventListener("click", async (event) => {
-    const context = getGithubContext();
-    const deleteButton = closestTo(event, "[data-delete-index]");
-    if (deleteButton && context) {
-      await deleteResumableDraft(context.drafts[Number(deleteButton.dataset.deleteIndex)]);
-      return;
-    }
-    const button = closestTo(event, "[data-draft-index]");
-    if (!button || !context) return;
-    const draft = context.drafts[Number(button.dataset.draftIndex)];
-    if (!draft) return;
-    // The scenario just left: its open copy is newer than the branch, and has its PDF.
-    if (isParked() && draft.texPath === state.chosenPath && (draft.kind === "edit") === Boolean(githubSaveState.edit)) {
-      await returnToParked();
-      return;
-    }
-    await openResumableDraft(draft);
-  });
+/** A resume row was clicked: returns to the open scenario when it is that branch, otherwise opens the branch. */
+export async function resumeDraft(draft: ResumableDraft): Promise<void> {
+  // The scenario just left: its open copy is newer than the branch, and has its PDF.
+  if (
+    isParked() &&
+    draft.texPath === store.getState().chosenPath &&
+    (draft.kind === "edit") === Boolean(githubSaveState.edit)
+  ) {
+    await returnToParked();
+    return;
+  }
+  await openResumableDraft(draft);
 }

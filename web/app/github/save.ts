@@ -13,7 +13,6 @@ import { isDirty, markClean } from "../modules/dirty.ts";
 import { requireEditor } from "../modules/editor-api.ts";
 import { githubSaveState } from "../modules/github-save-state.ts";
 import { clearUploads } from "../modules/local-store.ts";
-import { state } from "../modules/state.ts";
 import { setStatus } from "../modules/status.ts";
 import { askToSubmit, currentSubmitBlockers } from "../modules/submit.ts";
 import { store } from "../store.ts";
@@ -40,7 +39,8 @@ export async function checkExistingPullRequest(): Promise<void> {
 
 /** Save: pushes the open scenario to its branch. Opening a PR is a separate action, below. */
 export async function saveToGithub(): Promise<void> {
-  if (!state.chosenPath) return;
+  const texPath = store.getState().chosenPath;
+  if (!texPath) return;
   const token = getToken();
   if (!token) return;
   if (githubSaveState.lastSaveTarget && !isDirty()) {
@@ -61,13 +61,14 @@ export async function saveToGithub(): Promise<void> {
       setGithubContext(context);
     }
     const savedText = requireEditor().getText();
-    const savedUploads = uploadsSignature(state.uploadedFiles);
-    const savedPaths = new Set(state.uploadedFiles.keys());
+    const { uploadedFiles, chosenTitle } = store.getState();
+    const savedUploads = uploadsSignature(uploadedFiles);
+    const savedPaths = new Set(uploadedFiles.keys());
     const saved = await saveScenarioToRepo(token, {
-      scenarioName: state.chosenTitle,
-      texPath: state.chosenPath,
+      scenarioName: chosenTitle,
+      texPath,
       texContent: savedText,
-      uploadedFiles: state.uploadedFiles,
+      uploadedFiles,
       removedUploads: [...githubSaveState.committedUploads],
       context,
       branch: githubSaveState.lastSaveTarget?.branch,
@@ -83,7 +84,7 @@ export async function saveToGithub(): Promise<void> {
     // The staged uploads are committed now, same as the branch's own: no
     // local opinion is left to offer on a later reload. The text draft
     // stays, unaffected by a save (unchanged non-goal).
-    await clearUploads(state.chosenPath);
+    await clearUploads(texPath);
     store.setState({ openPrVisible: true });
     setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
   } catch (error) {
@@ -114,7 +115,7 @@ export async function openPullRequest(): Promise<void> {
   try {
     const pr = await ensurePullRequest(token, {
       ...target,
-      scenarioName: state.chosenTitle,
+      scenarioName: store.getState().chosenTitle,
       mode,
       body,
     });

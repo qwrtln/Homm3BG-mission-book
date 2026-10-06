@@ -2,10 +2,10 @@ import { errorMessage } from "../../shared/errors.ts";
 import { completeSignIn, getToken } from "../../shared/github-auth.ts";
 import { discoverGithubContext } from "../../shared/github-contrib.ts";
 import { parseRoute } from "../../shared/route.ts";
-import { el } from "../modules/dom.ts";
 import { githubSaveState } from "../modules/github-save-state.ts";
 import { onEditPick, settleModes } from "../modules/picker.ts";
 import { setStatus } from "../modules/status.ts";
+import { setResume } from "../store.ts";
 import {
   dropRevokedToken,
   getGithubContext,
@@ -15,7 +15,7 @@ import {
   syncGithubHeader,
 } from "./context.ts";
 import { reopenLocalDraft } from "./open-route.ts";
-import { initResumeList, renderResumeDrafts, showResumeSearching, startEdit } from "./resume.ts";
+import { renderResumeDrafts, showResumeSearching, startEdit } from "./resume.ts";
 
 export { openRoute } from "./open-route.ts";
 
@@ -43,8 +43,6 @@ export function initGithub(): Promise<void> {
 
   window.__lastSaveTarget = () => githubSaveState.lastSaveTarget;
 
-  initResumeList();
-
   // Before the account lookup finishes, not after: a signed-in user must not see "Sign in" while it runs.
   syncGithubHeader();
   if (getToken()) {
@@ -71,9 +69,7 @@ export function initGithub(): Promise<void> {
     .finally(() => {
       const context = getGithubContext();
       // Whatever happened, the searching state must not outlive the search.
-      el("resume-loading").hidden = true;
-      el("resume-hint").hidden = false;
-      el("resume-drafts").hidden = !context || context.drafts.length === 0;
+      setResume({ searching: false, visible: Boolean(context && context.drafts.length > 0) });
       // Whatever happened, the picker must not stay held back by the search.
       settleModes(Boolean(context?.isMember));
       syncGithubHeader();

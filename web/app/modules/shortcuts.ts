@@ -3,8 +3,9 @@ import { openSearchPanel } from "@codemirror/search";
 import { countColumn, EditorSelection, type Extension, Prec } from "@codemirror/state";
 import { EditorView, type KeyBinding, keymap } from "@codemirror/view";
 import { matchesKey, SHORTCUTS, shortcutKeys, toEditorKey } from "../../shared/keymap.ts";
+import { store } from "../store.ts";
 import { runBuild } from "./build.ts";
-import { el, initBuildTitle, isMac } from "./dom.ts";
+import { initBuildTitle, isMac } from "./dom.ts";
 
 /** KeyboardEvent.key values of the modifier keys themselves. */
 const MODIFIER_KEYS = new Set(["Shift", "Control", "Alt", "Meta"]);
@@ -137,7 +138,7 @@ export function initShortcuts(): void {
     if (event.defaultPrevented) return;
     if (!shortcutKeys("build", mac).some((key) => matchesKey(event, key))) return;
     // Hidden workspace: the welcome screen. Let the browser keep Ctrl+S.
-    if (el("workspace").hidden) return;
+    if (!store.getState().workspaceShown) return;
     event.preventDefault();
     if (document.querySelector("dialog:modal")) return;
     runBuild();
