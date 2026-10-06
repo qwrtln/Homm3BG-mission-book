@@ -113,6 +113,16 @@ test("the Upload images dialog has no horizontal page scroll", async ({ app }) =
   await expectNoHorizontalScroll(page);
 });
 
+test("the sign-in and token dialogs have no horizontal page scroll", async ({ app }) => {
+  const { page } = app;
+  await page.locator("#github-signin").click();
+  await expect(page.locator("#signin-dialog")).toBeVisible();
+  await expectNoHorizontalScroll(page);
+  await page.locator("#signin-token").click();
+  await expect(page.locator("#token-dialog")).toBeVisible();
+  await expectNoHorizontalScroll(page);
+});
+
 test("going workspace -> welcome -> workspace leaves no horizontal page scroll", async ({ app }) => {
   const { page } = app;
   await openLongScenario(page);

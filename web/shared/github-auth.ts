@@ -5,14 +5,50 @@ const CLIENT_ID = "Ov23liJjzuIkBg8C249t";
 const RELAY_URL = "https://mission-book-oauth-relay.pages.dev/api/callback";
 const SCOPE = "public_repo";
 const TOKEN_KEY = "github_token";
+const METHOD_KEY = "wasm-scenario-builder:sign-in-method";
+
+/** How the stored token was obtained: GitHub's OAuth redirect, or a token the user pasted. */
+export type SignInMethod = "oauth" | "token";
 
 /** @returns the stored token, or null when signed out */
 export function getToken(): string | null {
   return localStorage.getItem(TOKEN_KEY);
 }
 
+/** Stores a token together with how it was obtained. */
+export function storeToken(token: string, method: SignInMethod): void {
+  localStorage.setItem(TOKEN_KEY, token);
+  localStorage.setItem(METHOD_KEY, method);
+}
+
+/** @returns how the stored token was obtained; a missing key reads as "oauth", so older sign-ins keep working */
+export function getSignInMethod(): SignInMethod {
+  return localStorage.getItem(METHOD_KEY) === "token" ? "token" : "oauth";
+}
+
 export function clearToken(): void {
   localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem(METHOD_KEY);
+}
+
+/**
+ * Asks GitHub to revoke a token for good. The endpoint refuses an
+ * authenticated request, so the token travels only in the body. GitHub
+ * answers 202 and revokes shortly after, then emails the owner.
+ *
+ * @returns true when GitHub accepted the request
+ */
+export async function revokeToken(token: string): Promise<boolean> {
+  try {
+    const response = await fetch("https://api.github.com/credentials/revoke", {
+      method: "POST",
+      headers: { accept: "application/vnd.github+json", "content-type": "application/json" },
+      body: JSON.stringify({ credentials: [token] }),
+    });
+    return response.status === 202;
+  } catch {
+    return false;
+  }
 }
 
 /** @returns this page's URL with query and fragment stripped */
@@ -64,7 +100,7 @@ export async function completeSignIn(): Promise<string | null> {
     if (!data.access_token) {
       throw new Error(data.error_description || data.error || "GitHub sign-in failed.");
     }
-    localStorage.setItem(TOKEN_KEY, data.access_token);
+    storeToken(data.access_token, "oauth");
     return data.access_token;
   } catch (error) {
     if (stored) return stored;

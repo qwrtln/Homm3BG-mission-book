@@ -4,7 +4,9 @@ import { ConfirmDialog } from "./components/ConfirmDialog.tsx";
 import { FeedbackDialog } from "./components/FeedbackDialog.tsx";
 import { HelpDialog } from "./components/HelpDialog.tsx";
 import { Header } from "./components/header/Header.tsx";
+import { SignInDialog } from "./components/SignInDialog.tsx";
 import { Toaster } from "./components/Toaster.tsx";
+import { TokenDialog } from "./components/TokenDialog.tsx";
 import { UploadDialog } from "./components/uploads/UploadDialog.tsx";
 import { RouteLoading } from "./components/welcome/RouteLoading.tsx";
 import { Welcome } from "./components/welcome/Welcome.tsx";
@@ -52,6 +54,8 @@ export function App() {
         <UploadDialog />
         <ConfirmDialog />
         <SubmitDialog />
+        <SignInDialog />
+        <TokenDialog />
         <Toaster />
       </div>
     </>

@@ -1,5 +1,5 @@
 import { errorMessage } from "../../shared/errors.ts";
-import { completeSignIn, getToken } from "../../shared/github-auth.ts";
+import { completeSignIn, getSignInMethod, getToken } from "../../shared/github-auth.ts";
 import { discoverGithubContext } from "../../shared/github-contrib.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { githubSaveState } from "../modules/github-save-state.ts";
@@ -10,8 +10,8 @@ import {
   dropRevokedToken,
   getGithubContext,
   REOPEN_KEY,
-  SIGN_IN_EXPIRED,
   setGithubContext,
+  signInExpiredMessage,
   syncGithubHeader,
 } from "./context.ts";
 import { reopenLocalDraft } from "./open-route.ts";
@@ -55,8 +55,9 @@ export function initGithub(): Promise<void> {
         setGithubContext(await discoverGithubContext(token));
         renderResumeDrafts();
       } catch (error) {
+        const method = getSignInMethod();
         const message = dropRevokedToken(error)
-          ? SIGN_IN_EXPIRED
+          ? signInExpiredMessage(method)
           : `Could not read your GitHub account: ${errorMessage(error)}`;
         setStatus(message, { tone: "bad" });
       }

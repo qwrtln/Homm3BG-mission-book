@@ -296,7 +296,74 @@ export async function discoverGithubContext(token: string): Promise<GithubContex
   // changes nothing at run time and lets the checker narrow each to a string.
   const drafts =
     owner && repo ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
-  return { username, isMember, fork, drafts };
+  return { username, isMember, fork, base: upstream.default_branch, drafts };
+}
+
+/** A sha no commit can have, so the permission probe's ref creation can never succeed. */
+const PROBE_SHA = "0".repeat(40);
+
+/**
+ * Whether the token can write to the repository the app will push to.
+ * GitHub has no endpoint that lists a token's permissions, so this tries to
+ * create a ref from an unresolvable sha: that creates nothing, and the answer
+ * is in the status. 403 is a refusal and 422 a pass (the permission held and
+ * the sha was rejected). Any other status, or a network error, passes: the
+ * save-time message covers a missing permission.
+ */
+async function probeWriteAccess(token: string, owner: string, repo: string): Promise<void> {
+  let status: number;
+  try {
+    const response = await api(`/repos/${owner}/${repo}/git/refs`, token, {
+      method: "POST",
+      body: JSON.stringify({ ref: "refs/heads/scenario-editor/permission-probe", sha: PROBE_SHA }),
+    });
+    status = response.status;
+  } catch {
+    return;
+  }
+  if (status === 403) {
+    throw new GithubApiError(
+      `This token cannot write to ${owner}/${repo}. Give it \`Contents: Read and write\` on that repository.`,
+      { status: 403 },
+    );
+  }
+}
+
+/**
+ * Decides at paste time whether a token can be used, with a specific reason
+ * when it cannot.
+ *
+ * @param token as pasted; surrounding whitespace is trimmed
+ * @returns the account's context, found with the trimmed token
+ * @throws GithubApiError with a user-facing message
+ */
+export async function validateTokenContext(token: string): Promise<GithubContext> {
+  const trimmed = token.trim();
+  if (!trimmed) throw new GithubApiError("Paste a GitHub token first.");
+
+  let context: GithubContext;
+  try {
+    context = await discoverGithubContext(trimmed);
+  } catch (error) {
+    if (error instanceof GithubApiError && error.status === 401) {
+      throw new GithubApiError("The token was not accepted by GitHub. Check that you copied all of it.", {
+        status: 401,
+      });
+    }
+    throw error;
+  }
+
+  if (!context.isMember && !context.fork) {
+    throw new GithubApiError(
+      `This token cannot see a fork named \`${UPSTREAM_REPO}\` in your account. Fork the repository, then give the token access to that fork.`,
+    );
+  }
+  const target =
+    context.isMember || !context.fork
+      ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
+      : { owner: context.fork.owner.login, repo: context.fork.name };
+  await probeWriteAccess(trimmed, target.owner, target.repo);
+  return context;
 }
 
 /**
@@ -772,6 +839,36 @@ export async function findPullRequest(
   return existing[0] ?? null;
 }
 
+/** The pull request title: one rule for the API path and the compare page. */
+export function pullRequestTitle(mode: "new" | "edit", scenarioName: string): string {
+  return mode === "edit" ? `Update ${scenarioName}` : `New scenario: ${scenarioName}`;
+}
+
+/**
+ * The github.com compare page that opens a pull request with its title and
+ * body filled in, for a token that may not create one through the API.
+ *
+ * The head is always "owner:branch". github.com accepts it for a fork and
+ * for a branch of the upstream repository itself, so a member needs no form
+ * of its own.
+ */
+export function compareUrl({
+  base,
+  owner,
+  branch,
+  title,
+  body,
+}: {
+  base: string;
+  owner: string;
+  branch: string;
+  title: string;
+  body: string;
+}): string {
+  const range = `${encodeURIComponent(base)}...${encodeURIComponent(owner)}:${encodeURIComponent(branch)}`;
+  return `https://github.com/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/compare/${range}?quick_pull=1&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+
 /**
  * Opens a pull request for a saved branch, or returns the one already open
  * for it.
@@ -807,7 +904,7 @@ export async function ensurePullRequest(
   return apiJson(`/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/pulls`, token, parsePullRequest, {
     method: "POST",
     body: JSON.stringify({
-      title: mode === "edit" ? `Update ${scenarioName}` : `New scenario: ${scenarioName}`,
+      title: pullRequestTitle(mode, scenarioName),
       head,
       base,
       body,

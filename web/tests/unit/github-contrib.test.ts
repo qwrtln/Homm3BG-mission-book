@@ -10,17 +10,22 @@ import assert from "node:assert/strict";
 import test, { afterEach } from "node:test";
 import { DRAFT_GROUP_FILES } from "../../shared/build-plan.ts";
 import {
+  compareUrl,
   deleteWorkBranch,
   discoverGithubContext,
   ensurePullRequest,
   findEditBranch,
+  GithubApiError,
   getRepoFile,
+  pullRequestTitle,
   saveScenarioToRepo,
   setHttpClient,
   slugify,
   UPSTREAM_OWNER,
   UPSTREAM_REPO,
+  validateTokenContext,
 } from "../../shared/github-contrib.ts";
+import { signInExpiredMessage, tokenSaveFailureMessage } from "../../shared/sign-in-messages.ts";
 
 const API = "https://api.github.com";
 
@@ -95,6 +100,10 @@ interface GithubFakeOptions {
   branchTexFiles?: Record<string, string[]>;
   /** open pull requests */
   pulls?: PullRequest[];
+  /** status for a ref creation from the all-zero sha (the write probe); 422 when unset */
+  probeStatus?: number;
+  /** answer every call 401, as for a revoked token */
+  unauthorized?: boolean;
 }
 
 interface GithubFake {
@@ -185,6 +194,8 @@ function createGithubFake(options: GithubFakeOptions = {}): GithubFake {
     const [path, query = ""] = url.slice(API.length).split("?");
     calls.push({ method, path, query, body });
 
+    if (options.unauthorized) return json({ message: "Bad credentials" }, 401);
+
     let match: RegExpMatchArray | null;
 
     if (method === "GET" && path === "/user") return json({ login: userLogin });
@@ -217,6 +228,7 @@ function createGithubFake(options: GithubFakeOptions = {}): GithubFake {
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/git\/refs$/) && method === "POST") {
+      if (/^0+$/.test(body.sha)) return json({ message: "probe" }, options.probeStatus ?? 422);
       const branch = String(body.ref).replace("refs/heads/", "");
       branches.set(branch, body.sha);
       branchFiles.set(branch, new Map(base));
@@ -349,6 +361,7 @@ function context(overrides: Partial<GithubContext> = {}): GithubContext {
     username: "octocat",
     isMember: false,
     fork: { name: UPSTREAM_REPO, owner: { login: "octocat" }, default_branch: "main" },
+    base: "main",
     drafts: [],
     ...overrides,
   };
@@ -988,4 +1001,196 @@ test("deleteWorkBranch refuses a branch the app did not create", async () => {
 test("deleteWorkBranch treats an already-missing branch as deleted", async () => {
   setHttpClient(createGithubFake().client);
   await deleteWorkBranch("token", { owner: "octocat", repo: UPSTREAM_REPO, branch: "scenario-editor/octocat/gone" });
+});
+
+// --- token validation ------------------------------------------------------
+
+function probeCalls(fake: GithubFake): RecordedCall[] {
+  return fake.calls.filter((call) => call.method === "POST" && call.path.endsWith("/git/refs"));
+}
+
+async function refusal(promise: Promise<unknown>): Promise<GithubApiError> {
+  try {
+    await promise;
+  } catch (error) {
+    assert.ok(error instanceof GithubApiError, "expected a GithubApiError");
+    return error;
+  }
+  assert.fail("expected the token to be refused");
+}
+
+test("a member's token is accepted", async () => {
+  setHttpClient(createGithubFake({ push: true }).client);
+
+  const result = await validateTokenContext("t");
+
+  assert.equal(result.isMember, true);
+});
+
+test("a non-member's token is accepted when it sees a fork", async () => {
+  setHttpClient(createGithubFake({ push: false, forkExists: true }).client);
+
+  const result = await validateTokenContext("t");
+
+  assert.equal(result.isMember, false);
+  assert.equal(result.fork?.owner.login, "octocat");
+});
+
+test("a non-member's token without a fork is refused with the fork message", async () => {
+  setHttpClient(createGithubFake({ push: false, forkExists: false }).client);
+
+  const error = await refusal(validateTokenContext("t"));
+
+  assert.match(error.message, /cannot see a fork named `Homm3BG-mission-book` in your account/);
+  assert.match(error.message, /Fork the repository/);
+});
+
+test("a 401 from GitHub is refused as not accepted", async () => {
+  setHttpClient(createGithubFake({ unauthorized: true }).client);
+
+  const error = await refusal(validateTokenContext("t"));
+
+  assert.match(error.message, /The token was not accepted by GitHub/);
+});
+
+test("blank input is refused without a network call", async () => {
+  const fake = createGithubFake({ push: true });
+  setHttpClient(fake.client);
+
+  await refusal(validateTokenContext(""));
+  await refusal(validateTokenContext("  \n\t "));
+
+  assert.equal(fake.calls.length, 0);
+});
+
+test("a pasted token is trimmed before it is used", async () => {
+  let authorization = "";
+  const fake = createGithubFake({ push: true });
+  setHttpClient({
+    fetch: (url, options) => {
+      authorization = String(new Headers(options?.headers).get("Authorization"));
+      return fake.client.fetch(url, options);
+    },
+  });
+
+  await validateTokenContext("  ghp_abc \n");
+
+  assert.equal(authorization, "Bearer ghp_abc");
+});
+
+test("the context carries the upstream default branch as base", async () => {
+  setHttpClient(createGithubFake({ push: true, defaultBranch: "develop" }).client);
+
+  assert.equal((await discoverGithubContext("t")).base, "develop");
+});
+
+test("a 403 on the write probe refuses the token", async () => {
+  setHttpClient(createGithubFake({ push: true, probeStatus: 403 }).client);
+
+  const error = await refusal(validateTokenContext("t"));
+
+  assert.equal(
+    error.message,
+    `This token cannot write to ${UPSTREAM_OWNER}/${UPSTREAM_REPO}. Give it \`Contents: Read and write\` on that repository.`,
+  );
+});
+
+test("a 422 on the write probe accepts the token", async () => {
+  setHttpClient(createGithubFake({ push: true, probeStatus: 422 }).client);
+
+  await validateTokenContext("t");
+});
+
+test("a 500 on the write probe accepts the token", async () => {
+  setHttpClient(createGithubFake({ push: true, probeStatus: 500 }).client);
+
+  await validateTokenContext("t");
+});
+
+test("the write probe creates nothing and aims at upstream for a member", async () => {
+  const fake = createGithubFake({ push: true });
+  setHttpClient(fake.client);
+
+  await validateTokenContext("t");
+
+  const probes = probeCalls(fake);
+  assert.equal(probes.length, 1);
+  assert.equal(probes[0].path, `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/git/refs`);
+  assert.equal(probes[0].body.ref, "refs/heads/scenario-editor/permission-probe");
+  assert.match(probes[0].body.sha, /^0{40}$/);
+  assert.equal(fake.hasBranch("scenario-editor/permission-probe"), false);
+});
+
+test("the write probe aims at the fork for a non-member", async () => {
+  const fake = createGithubFake({ push: false, forkExists: true });
+  setHttpClient(fake.client);
+
+  await validateTokenContext("t");
+
+  assert.equal(probeCalls(fake)[0].path, `/repos/octocat/${UPSTREAM_REPO}/git/refs`);
+});
+
+// --- sign-in-method messages -----------------------------------------------
+
+test("a 403 on save under a token maps to the save-time message", () => {
+  const message = tokenSaveFailureMessage(new GithubApiError("nope", { status: 403 }), "token", "octocat");
+
+  assert.equal(
+    message,
+    "Your token cannot write to your fork. Give it Contents: Read and write on octocat/Homm3BG-mission-book, or sign in with a new token.",
+  );
+});
+
+test("a 403 on save under OAuth keeps GitHub's own message", () => {
+  assert.equal(tokenSaveFailureMessage(new GithubApiError("nope", { status: 403 }), "oauth", "octocat"), null);
+});
+
+test("a token user's other failures keep their own message", () => {
+  assert.equal(tokenSaveFailureMessage(new GithubApiError("nope", { status: 500 }), "token", "octocat"), null);
+});
+
+test("the expiry message depends on the sign-in method", () => {
+  assert.equal(signInExpiredMessage("oauth"), "Your GitHub sign-in has expired. Sign in again.");
+  assert.equal(
+    signInExpiredMessage("token"),
+    "Your GitHub token has expired or was revoked. Sign in with a new token.",
+  );
+});
+
+// --- compare page ----------------------------------------------------------
+
+test("compareUrl for a fork head names the fork's owner", () => {
+  const url = compareUrl({ base: "main", owner: "octocat", branch: "scenario-x", title: "T", body: "B" });
+
+  assert.equal(
+    url,
+    `https://github.com/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/compare/main...octocat:scenario-x?quick_pull=1&title=T&body=B`,
+  );
+});
+
+test("compareUrl for a member head names the upstream owner", () => {
+  const url = compareUrl({ base: "main", owner: UPSTREAM_OWNER, branch: "scenario-x", title: "T", body: "B" });
+
+  assert.ok(url.includes(`/compare/main...${UPSTREAM_OWNER}:scenario-x?`));
+});
+
+test("compareUrl encodes newlines and # in the body, and sets no label, milestone, assignee or project", () => {
+  const url = compareUrl({
+    base: "main",
+    owner: "octocat",
+    branch: "b",
+    title: "New scenario: A & B",
+    body: "line one\n- [x] item #1",
+  });
+  const params = new URL(url).searchParams;
+
+  assert.ok(url.includes("body=line%20one%0A-%20%5Bx%5D%20item%20%231"));
+  assert.equal(params.get("body"), "line one\n- [x] item #1");
+  assert.equal(params.get("title"), "New scenario: A & B");
+  for (const key of ["labels", "milestone", "assignees", "projects"]) assert.equal(params.has(key), false);
+});
+
+test("the pull request title says new or update by mode", () => {
+  assert.equal(pullRequestTitle("new", "Dragon Pass"), "New scenario: Dragon Pass");
+  assert.equal(pullRequestTitle("edit", "Dragon Pass"), "Update Dragon Pass");
 });

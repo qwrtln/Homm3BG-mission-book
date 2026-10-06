@@ -219,6 +219,7 @@ test("the sign-in round trip reopens at the moved path", async ({ app }) => {
     route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>GitHub</title>" }),
   );
   await page.locator("#github-signin").click();
+  await page.locator("#signin-oauth").click();
   await page.waitForURL(/github\.com/);
   await page.goto("/web/app/");
 

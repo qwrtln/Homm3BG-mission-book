@@ -1,4 +1,5 @@
-import { handleSignOut } from "../../github/session.ts";
+import { getSignInMethod } from "../../../shared/github-auth.ts";
+import { handleSignOut, handleSignOutAndRevoke } from "../../github/session.ts";
 import { toggleTheme } from "../../modules/theme.ts";
 import { openDialog, useAppStore } from "../../store.ts";
 import { Button } from "../ui/Button.tsx";
@@ -6,7 +7,7 @@ import { MenuItem, MenuList, MenuSeparator } from "../ui/Menu.tsx";
 import { useMenu } from "../ui/useMenu.ts";
 import { CheckIcon, CommentIcon, InfoIcon, KebabIcon, MoonIcon, QuestionIcon, SignOutIcon } from "./icons.tsx";
 
-/** The header's "More actions" menu: the theme toggle, Help, About, Send feedback, and Sign out once signed in. */
+/** The header's "More actions" menu: the theme toggle, Help, About, Send feedback, and Sign out once signed in (plus revoke, under a pasted token). */
 export function OverflowMenu() {
   const dark = useAppStore((s) => s.theme === "dark");
   const signedIn = useAppStore((s) => s.signedIn);
@@ -51,6 +52,12 @@ export function OverflowMenu() {
               <SignOutIcon />
               Sign out
             </MenuItem>
+            {getSignInMethod() === "token" && (
+              <MenuItem id="github-signout-revoke" onClick={() => void handleSignOutAndRevoke()}>
+                <SignOutIcon />
+                Sign out and revoke token
+              </MenuItem>
+            )}
           </>
         )}
       </MenuList>
