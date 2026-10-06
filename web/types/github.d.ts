@@ -1,10 +1,10 @@
-// The GitHub REST payload fields shared/github-contrib.js actually reads.
+// The GitHub REST payload fields shared/github-contrib.ts actually reads.
 // Deliberately partial: these describe what the code touches, not the whole
 // API. Adding a field here is cheap; guessing at one the code never reads is
 // noise.
 //
 // Nothing here is asserted onto a payload. Each shape has a parser in
-// shared/github-contrib.js that checks it field by field at the point of
+// shared/github-contrib.ts that checks it field by field at the point of
 // entry, so a shape that has drifted fails there rather than travelling on as
 // an undefined.
 

@@ -39,24 +39,32 @@ jobs:
       - run: pip install mkdocs-material
       - run: mkdocs build --site-dir site
 
-      - name: Fetch browser libraries
-        run: bash web/fetch-vendor.sh
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: web/.nvmrc
+          cache: npm
+          cache-dependency-path: web/package-lock.json
 
-      # The app is served at /builder/: web/app/ becomes site/builder/. It
-      # finds shared/, core/, repo/ and the LICENSE files one level up, so
-      # those land at the site root, next to the MkDocs output.
+      - name: Build the app
+        working-directory: web
+        run: npm ci && npm run build
+
+      # The app is served at /builder/: web/dist/, the build of web/app/,
+      # becomes site/builder/. It finds core/, repo/, the engine wrapper, the
+      # carried texmf bundle and the LICENSE files one level up, so those land
+      # at the site root, next to the MkDocs output. The rest of web/shared/
+      # is code the build already bundled, so it stays out.
       # An allow-list: only what the browser loads is deployed. Tests, types,
       # configs and scripts under web/ stay out, including any added later.
       # web/index.html stays out too: at the site root it would replace the
       # MkDocs home page. The LICENSE files ship with the code they cover.
       - name: Copy the app into the site
         run: |
-          rsync -a web/app/ site/builder/
+          rsync -a web/dist/ site/builder/
           rsync -a \
             --include='/LICENSE' \
             --include='/LATEX-ENGINE-NOTICE' \
             --include='/shared/' \
-            --include='/shared/*.js' \
             --include='/shared/texmf/' \
             --include='/shared/texmf/carried-texmf.bin' \
             --include='/shared/vendor/' \
@@ -125,7 +133,7 @@ jobs:
       # Generated, not committed: how often the book uses each glyph, so the
       # editor's \svg{} suggestions offer common glyphs first.
       - name: Count glyph uses for the editor
-        run: node web/glyph-usage.mjs site/repo/assets/glyphs-inkscape/glyph-usage.json
+        run: node web/glyph-usage.ts site/repo/assets/glyphs-inkscape/glyph-usage.json
 
       - name: Restore the BusyTeX engine payload
         id: engine-cache
@@ -142,12 +150,12 @@ jobs:
           curl -fsSL "$url" | tar xz -C site/core/busytex --strip-components=1
 
       # The app preloads one data package (DATA_PACKAGE in
-      # web/shared/build-plan.js) and the book never runs biber, so the other
+      # web/shared/build-plan.ts) and the book never runs biber, so the other
       # packages would only eat into the 1 GB site limit.
       - name: Keep only the engine files the app loads
         working-directory: site/core/busytex
         run: |
-          package=$(sed -n 's/^export const DATA_PACKAGE = "\(.*\)";$/\1/p' "$GITHUB_WORKSPACE/web/shared/build-plan.js")
+          package=$(sed -n 's/^export const DATA_PACKAGE = "\(.*\)";$/\1/p' "$GITHUB_WORKSPACE/web/shared/build-plan.ts")
           [[ -n "$package" && -f "$package.data" ]] || { echo "No data package named by DATA_PACKAGE: '$package'" >&2; exit 1; }
           find . -maxdepth 1 -type f ! \( \
             -name busytex.js -o -name busytex.wasm -o -name busytex_pipeline.js \

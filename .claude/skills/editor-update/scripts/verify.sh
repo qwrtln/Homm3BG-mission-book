@@ -50,19 +50,19 @@ gate() {
 }
 
 if [[ "${1:-}" == "--fix" ]]; then
-  (cd web && npx -y @biomejs/biome@2.5.14 check --write .)
+  (cd web && npx biome check --write .)
 fi
 
-gate "Type-check" npx -y -p typescript@5.9.2 tsc --noEmit --project web/jsconfig.json
-gate "Lint and format" bash -c 'cd web && npx -y @biomejs/biome@2.5.14 check .'
-gate "Unit tests" node --test "web/tests/unit/**/*.test.mjs"
-
-if [[ ! -d web/tests/node_modules/@playwright ]]; then
-  echo "Installing Playwright into web/tests (first run only)…"
-  npm ci --prefix web/tests >/dev/null || failed+=("Playwright install")
-  (cd web/tests && npx playwright install chromium) || failed+=("Chromium install")
+if [[ ! -d web/node_modules/@playwright ]]; then
+  echo "Installing the web/ dependencies (first run only)…"
+  (cd web && npm ci) || failed+=("npm ci")
+  (cd web && npx playwright install chromium) || failed+=("Chromium install")
 fi
-gate "Integration tests" bash -c 'cd web/tests && npx playwright test'
+
+gate "Type-check" npm --prefix web run typecheck
+gate "Lint and format" npm --prefix web run lint
+gate "Unit tests" npm --prefix web run test:unit
+gate "Integration tests" npm --prefix web run test:e2e
 gate "Repository lint" lint_files
 
 echo
