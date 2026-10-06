@@ -1,0 +1,47 @@
+LaTeX engine: third-party notices
+=================================
+
+The scenario builder compiles LaTeX in the browser with a WebAssembly build
+of TeX Live. The deploy fetches it into web/core/busytex/ from a release of
+TeXlyre/texlyre-busytex; it is not stored in this repository. The release
+number is BUSYTEX_ENGINE_VERSION in web/vendor.env.
+The versions and source links below come from versions.txt in that release;
+update them when BUSYTEX_ENGINE_VERSION changes.
+
+The same terms cover web/shared/texmf/carried-texmf.bin, which holds TeX Live
+files taken from that release.
+
+
+BusyTeX engine build (busytex.js, busytex.wasm, busytex_*.js)
+-------------------------------------------------------------
+Built by TeXlyre/texlyre-busytex-build, licensed under the GNU Affero General
+Public License v3.0. Source: https://github.com/TeXlyre/texlyre-busytex-build
+
+Based on BusyTeX, whose code and scripts are under the MIT License.
+Source: https://github.com/busytex/busytex
+
+The upstream BusyTeX notice applies here too: the MIT License covers only
+the build scripts. The compiled binaries link TeX Live code, so the licenses
+of TeX Live and its dependencies apply to them.
+
+
+TeX Live (busytex.wasm, texlive-*.data, carried-texmf.bin)
+----------------------------------------------------------
+TeX Live 2026. Each program and package keeps its own free-software license,
+mostly the LaTeX Project Public License (LPPL) and the GNU General Public
+License (GPL); fonts are often under the SIL Open Font License. The
+conditions for the distribution as a whole are in LICENSE.TL and LICENSE.CTAN
+at the root of TeX Live.
+
+Source: https://github.com/TeX-Live/texlive-source/archive/refs/heads/tags/texlive-2026.0.tar.gz
+Packages: https://mirror.ctan.org/systems/texlive/Images/texlive2026.iso
+Licenses: https://tug.org/texlive/copying.html
+
+
+Linked libraries (in busytex.wasm)
+----------------------------------
+- Expat 2.5.0, MIT License.
+  Source: https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz
+- Fontconfig 2.13.96, MIT-style license.
+  Source: https://github.com/TeXlyre/texlyre-busytex-build/releases/download/fontconfig-2.13.96/fontconfig-2.13.96.tar.gz
+

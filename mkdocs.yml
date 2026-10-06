@@ -31,7 +31,8 @@ theme:
 repo_url: https://github.com/qwrtln/Homm3BG-mission-book
 repo_name: Fan-Made Mission Book
 nav:
-  - Local Setup: index.md
+  - Getting Started: index.md
+  - Scenario Builder: https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=docs&utm_medium=referral
   - Writing Scenarios: scenarios.md
   - Translations: translations.md
   - Using Scripts: scripts.md

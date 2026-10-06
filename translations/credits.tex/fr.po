@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2025-11-15 10:18+0000\n"
+"POT-Creation-Date: 2026-09-30 12:02+0000\n"
 "PO-Revision-Date: 2025-11-14 18:09+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,25 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.8\n"
 
-#. type: multicols
+#. type: multicols*
 #: coops/sentinels.tex:5 coops/titans_stronghold.tex:5
-#: coops/emerald_island.tex:5 coops/close_to_enemies.tex:5
-#: coops/stand_united.tex:5 clash/bloody_grail.tex:5 clash/force_of_will.tex:5
-#: clash/the_hunt.tex:5 clash/dragoncurse_castle.tex:5
-#: clash/the_fractured_kingdoms.tex:5 clash/trial_by_combat.tex:5
-#: campaigns/inferno_devilish_plan.tex:6
-#: campaigns/inferno_devilish_plan.tex:202
-#: campaigns/inferno_steadwicks_fall.tex:5
-#: campaigns/inferno_deal_with_the_devil.tex:5
-#: campaigns/castle_greek_gift.tex:6 campaigns/castle_greek_gift.tex:85
-#: campaigns/castle_greek_gift.tex:138 campaigns/castle_sicilian_dragon.tex:5
+#: coops/emerald_island.tex:5 coops/wandering_dragons.tex:5
+#: coops/close_to_enemies.tex:5 coops/stand_united.tex:5
+#: coops/the_ambushed_accord.tex:5 clash/bloody_grail.tex:5
+#: clash/trial_by_combat.tex:5 clash/astral_run.tex:5 clash/chain_link.tex:5
+#: clash/force_of_will.tex:5 clash/the_fractured_kingdoms.tex:5
+#: clash/arcane_artillery.tex:5 clash/dragoncurse_castle.tex:5
+#: clash/the_hunt.tex:5 campaigns/castle_greek_gift.tex:6
+#: campaigns/castle_greek_gift.tex:86 campaigns/castle_greek_gift.tex:139
+#: campaigns/castle_sicilian_dragon.tex:5
 #: campaigns/castle_sicilian_dragon.tex:144
 #: campaigns/castle_two_knights_defense.tex:5
 #: campaigns/castle_two_knights_defense.tex:91
-#: campaigns/castle_two_knights_defense.tex:129 sections/credits.tex:10
+#: campaigns/castle_two_knights_defense.tex:129
+#: campaigns/inferno_devilish_plan.tex:6
+#: campaigns/inferno_devilish_plan.tex:204
+#: campaigns/inferno_steadwicks_fall.tex:5
+#: campaigns/inferno_deal_with_the_devil.tex:5 sections/credits.tex:10
 #: sections/random_scenario.tex:5 sections/random_scenario.tex:275
-#: sections/recommendations.tex:71 sections/recommendations.tex:126
-#: sections/what_to_play.tex:5
+#: sections/introduction.tex:5
 #, no-wrap
 msgid ""
 "{2}\n"
@@ -45,10 +47,11 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/sentinels.tex:142 coops/stand_united.tex:87
-#: clash/dragoncurse_castle.tex:85 campaigns/inferno_devilish_plan.tex:224
-#: campaigns/castle_greek_gift.tex:120 campaigns/castle_greek_gift.tex:271
-#: sections/credits.tex:28 sections/random_scenario.tex:296
+#: coops/sentinels.tex:142 coops/stand_united.tex:87 clash/astral_run.tex:98
+#: clash/force_of_will.tex:46 clash/dragoncurse_castle.tex:85
+#: campaigns/castle_greek_gift.tex:121 campaigns/castle_greek_gift.tex:272
+#: campaigns/inferno_devilish_plan.tex:226 sections/credits.tex:30
+#: sections/random_scenario.tex:296
 #, no-wrap
 msgid ""
 "\\columnbreak\n"
@@ -57,12 +60,13 @@ msgstr ""
 "\\columnbreak\n"
 "\n"
 
-#. type: multicols
+#. type: multicols*
 #: coops/sentinels.tex:144 coops/titans_stronghold.tex:110
 #: coops/titans_stronghold.tex:116 coops/stand_united.tex:94
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
-#: campaigns/inferno_devilish_plan.tex:204 sections/credits.tex:30
-#: sections/credits.tex:34 sections/random_scenario.tex:306
+#: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:32
+#: sections/credits.tex:36 sections/random_scenario.tex:306
+#: sections/introduction.tex:95 sections/introduction.tex:101
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -82,8 +86,8 @@ msgid "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
 msgstr "\\iftoggle{printable}{\\vspace{-\\baselineskip}}{}"
 
 #. type: center
-#: sections/credits.tex:8 sections/intro_and_toc.tex:16
-#: sections/intro_and_toc.tex:21
+#: sections/credits.tex:8 sections/intro_and_toc.tex:17
+#: sections/intro_and_toc.tex:23
 msgid "\\bigbreak"
 msgstr "\\bigbreak"
 
@@ -111,9 +115,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:17
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
+#| "\n"
 msgid ""
-"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
+"\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen, Hubert Baranowski. % no-check-caps\n"
 "\n"
 msgstr ""
 "\\textbf{Contribution au scénarios en \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
@@ -131,9 +138,15 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:24
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
+#| "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
+#| "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
+#| "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
+#| "\n"
 msgid ""
-"\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
+"\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/homm3boardgame/}{Scenario Map Editor}.\n"
 "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
 "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
@@ -147,6 +160,19 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:26
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Faction:} Inferno\n"
+#| "\n"
+msgid ""
+"\\textbf{Cover art}: Iana Vengerova\n"
+"\n"
+msgstr ""
+"\\textbf{Faction :} Hadès\n"
+"\n"
+
+#. type: multicols*
+#: sections/credits.tex:28
 #, no-wrap
 msgid ""
 "\\textbf{Artwork borrowed from the official release was made by}: Tomasz Badalski, Yoann Boissonnet, Shen Fei, Viviane Tybusch Souza, Iana Vengerova, Bartosz Winkler\n"
@@ -156,7 +182,7 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/credits.tex:32
+#: sections/credits.tex:34
 #, no-wrap
 msgid ""
 "{\\tikz[transparency group]\\node[opacity=0.2]{\\includegraphics[width=1.3\\linewidth]{\\art/genie.png}};}\n"
