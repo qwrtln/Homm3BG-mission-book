@@ -118,7 +118,31 @@ export interface UiState extends HeaderState {
   toast: ToastNotice | null;
 }
 
-export type StoreState = AppState & SaveState & UiState;
+/**
+ * The welcome screen's picker: what to search for, what is picked, and where
+ * it is filed. `components/welcome/*` render from it; `modules/picker.ts`
+ * writes it for the modules not yet migrated (github/resume.ts's edit flow).
+ */
+export interface PickerState {
+  /** Whether the signed-in contributor can edit existing scenarios, not only add new ones. */
+  isMember: boolean;
+  /** "new" starts a fresh scenario; "edit" changes one in place (members only). */
+  pickerMode: "new" | "edit";
+  /** The current pick's repository path — a real entry or a blank template; null until something is picked. */
+  pendingPath: string | null;
+  /** What the picked row showed, mirrored into the search box. */
+  pendingTitle: string;
+  /** Where a new scenario is filed; null until chosen. */
+  chosenCategory: string | null;
+  /** True while opening an edit pick disables "Open editor". */
+  pickerBusy: boolean;
+  /** An error from opening an edit pick, shown in go-hint until the next pick or mode change. */
+  pickerError: string | null;
+  /** Set when the scenario list failed to load; shown in the search dropdown. */
+  entriesError: string | null;
+}
+
+export type StoreState = AppState & SaveState & UiState & PickerState;
 
 /** The state a fresh page starts from. */
 export function initialState(): StoreState {
@@ -174,6 +198,15 @@ export function initialState(): StoreState {
     dialogs: { about: false, help: false, feedback: false },
     confirm: null,
     toast: null,
+
+    isMember: false,
+    pickerMode: "new",
+    pendingPath: null,
+    pendingTitle: "",
+    chosenCategory: null,
+    pickerBusy: false,
+    pickerError: null,
+    entriesError: null,
   };
 }
 

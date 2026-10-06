@@ -3,7 +3,7 @@ import { clearToken, getToken } from "../../shared/github-auth.ts";
 import { GithubApiError } from "../../shared/github-contrib.ts";
 import { el } from "../modules/dom.js";
 import { setSaveControlsVisible } from "../modules/github-save-state.js";
-import { settleModes } from "../modules/picker.js";
+import { settleModes } from "../modules/picker.ts";
 import { store } from "../store.ts";
 
 // Sign-in is a full-page redirect, dropping chosenPath and the autosave debounce. Flush and remember what was open.

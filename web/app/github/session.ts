@@ -5,9 +5,9 @@ import { confirmAction, el } from "../modules/dom.js";
 import { deleteDraft, flushDraft } from "../modules/drafts.ts";
 import { resetGithubSaveState } from "../modules/github-save-state.js";
 import { deleteRecord } from "../modules/local-store.ts";
-import { settleModes } from "../modules/picker.js";
+import { settleModes } from "../modules/picker.ts";
 import { state } from "../modules/state.ts";
-import { isParked, showWelcome } from "../modules/workspace.js";
+import { isParked, showWelcome } from "../modules/workspace.ts";
 import { REOPEN_KEY, ROUTE_KEY, setGithubContext, syncGithubHeader } from "./context.ts";
 import { refreshWelcomeData } from "./resume.ts";
 

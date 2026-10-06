@@ -4,7 +4,7 @@ import { discoverGithubContext } from "../../shared/github-contrib.ts";
 import { parseRoute } from "../../shared/route.ts";
 import { el, setStatus } from "../modules/dom.js";
 import { githubSaveState } from "../modules/github-save-state.js";
-import { onEditPick, settleModes } from "../modules/picker.js";
+import { onEditPick, settleModes } from "../modules/picker.ts";
 import {
   dropRevokedToken,
   getGithubContext,

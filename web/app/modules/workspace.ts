@@ -11,8 +11,8 @@ import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from ".
 import { setScenarioTitle } from "./header.ts";
 import { clearUploads, saveText, saveUploads } from "./local-store.ts";
 import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
-import { prefetchScenario } from "./picker.js";
-import { offerDraftOverCopy, offerLocalDraft } from "./recovery.js";
+import { prefetchScenario } from "./picker.ts";
+import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
 import { requireEditor, state } from "./state.ts";
 import { resetUploads, restoreUploads } from "./uploads.js";
@@ -22,9 +22,9 @@ import { resetUploads, restoreUploads } from "./uploads.js";
  * editor, uploads, save target and PDF all kept for "Back to editing". The
  * header renders its "Back to editing" button from the same store field.
  *
- * @returns {boolean} true while a scenario waits behind the welcome screen
+ * @returns true while a scenario waits behind the welcome screen
  */
-export function isParked() {
+export function isParked(): boolean {
   return store.getState().parked;
 }
 
@@ -32,10 +32,8 @@ export function isParked() {
  * Swaps the welcome screen for the workspace, resolving once the transition
  * has finished so a caller can measure the editor afterwards. Whatever the
  * caller opens next replaces the scenario left behind the welcome screen.
- *
- * @returns {Promise<void>}
  */
-export function showWorkspace() {
+export function showWorkspace(): Promise<void> {
   store.setState({ parked: false });
   return new Promise((resolve) => {
     const welcome = el("welcome");
@@ -69,11 +67,10 @@ export function showWorkspace() {
  * category, the title, the category control and the route set. The editor
  * still holds whatever it held before; the caller puts the text in.
  *
- * @param {string} name what the contributor typed
- * @param {string} category draft-scenarios subdir the new scenario lands in
- * @returns {Promise<{cm: CodeMirrorEditor, identity: string}>}
+ * @param name what the contributor typed
+ * @param category draft-scenarios subdir the new scenario lands in
  */
-async function openNewScenario(name, category) {
+async function openNewScenario(name: string, category: string): Promise<{ cm: CodeMirrorEditor; identity: string }> {
   const cm = requireEditor();
 
   await showWorkspace();
@@ -100,11 +97,11 @@ async function openNewScenario(name, category) {
 /**
  * The repository path a new scenario with this name is filed at.
  *
- * @param {string} name what the contributor typed
- * @param {string} category one of DRAFT_CATEGORIES
- * @returns {string} "draft-scenarios/<category>/<file>.tex"
+ * @param name what the contributor typed
+ * @param category one of DRAFT_CATEGORIES
+ * @returns "draft-scenarios/<category>/<file>.tex"
  */
-export function newScenarioPath(name, category) {
+export function newScenarioPath(name: string, category: string): string {
   return `${newScenarioDir(category)}/${sanitizeFilename(name)}.tex`;
 }
 
@@ -114,15 +111,13 @@ export function newScenarioPath(name, category) {
  * `name` is mandatory: it becomes the .tex file's identity (include path,
  * autosave key, download filename), replacing the entry's own name.
  *
- * @param {string} path the picked entry's repository path
- * @param {string} name what the contributor typed
- * @param {string} category draft-scenarios subdir the new scenario lands in
- * @returns {Promise<void>}
+ * @param path the picked entry's repository path
+ * @param name what the contributor typed
+ * @param category draft-scenarios subdir the new scenario lands in
  */
-export async function commitEntry(path, name, category) {
+export async function commitEntry(path: string, name: string, category: string): Promise<void> {
   const template = Object.values(TEMPLATES).find((t) => t.path === path);
-  /** @type {ScenarioEntry | TemplateEntry | undefined} */
-  const entry = template
+  const entry: ScenarioEntry | TemplateEntry | undefined = template
     ? { path: template.path, title: template.title, isTemplate: true }
     : state.entries.find((e) => e.path === path);
   if (!entry) return;
@@ -131,7 +126,7 @@ export async function commitEntry(path, name, category) {
   setStatus("Loading…");
 
   const fetched = await preloadFile(entry.path);
-  const pristineSource = /** @type {string} */ (fetched.content);
+  const pristineSource = fetched.content as string;
 
   // The heading names the kind of the category it is filed under, not its source's.
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
@@ -172,13 +167,17 @@ export async function commitEntry(path, name, category) {
  * once and counts as unsaved work; the files the wizard collected are staged
  * through the upload popover, which then lists them.
  *
- * @param {string} name what the contributor typed
- * @param {string} category draft-scenarios subdir the new scenario lands in
- * @param {string} source the scenario's complete .tex text
- * @param {{path: string, bytes: Uint8Array}[]} uploads files to stage, at the paths the text references
- * @returns {Promise<void>}
+ * @param name what the contributor typed
+ * @param category draft-scenarios subdir the new scenario lands in
+ * @param source the scenario's complete .tex text
+ * @param uploads files to stage, at the paths the text references
  */
-export async function commitGeneratedEntry(name, category, source, uploads) {
+export async function commitGeneratedEntry(
+  name: string,
+  category: string,
+  source: string,
+  uploads: { path: string; bytes: Uint8Array }[],
+): Promise<void> {
   const { cm, identity } = await openNewScenario(name, category);
   cm.setValue(source);
   store.setState({ draftNote: false });
@@ -203,12 +202,11 @@ export async function commitGeneratedEntry(name, category, source, uploads) {
  * fallback (starting one fresh here) is only for a real pick this session
  * somehow never called selectPending for.
  *
- * @param {string} path
- * @param {string} source the text the published PDF was built from, before
- *   any rename or edit
- * @returns {Promise<boolean>} whether a published PDF is shown
+ * @param path
+ * @param source the text the published PDF was built from, before any rename or edit
+ * @returns whether a published PDF is shown
  */
-async function showPrefetchedPdf(path, source) {
+async function showPrefetchedPdf(path: string, source: string): Promise<boolean> {
   setStatus("Finishing this scenario's downloads…", { spinning: true });
   showPdfLoading("Finishing this scenario's downloads…");
   const prefetch =
@@ -237,13 +235,17 @@ async function showPrefetchedPdf(path, source) {
  * would replace that copy, so edits left over from a crash or an earlier
  * session are never silently lost.
  *
- * @param {string} path the scenario's repository path
- * @param {string} title
- * @param {string} source the text to put in the editor
- * @param {{startOver: boolean}} edit what the save must do about an existing edit branch
- * @returns {Promise<void>}
+ * @param path the scenario's repository path
+ * @param title
+ * @param source the text to put in the editor
+ * @param edit what the save must do about an existing edit branch
  */
-export async function openForEdit(path, title, source, edit) {
+export async function openForEdit(
+  path: string,
+  title: string,
+  source: string,
+  edit: { startOver: boolean },
+): Promise<void> {
   const cm = requireEditor();
 
   await showWorkspace();
@@ -285,10 +287,8 @@ export async function openForEdit(path, title, source, edit) {
  * Leaves the workspace for the welcome screen. The scenario stays open behind
  * it, untouched, until another one is opened: "Back to editing" returns to
  * it. Its autosave is flushed now, as a reload drops what the page holds.
- *
- * @returns {void}
  */
-export function showWelcome() {
+export function showWelcome(): void {
   clearTimeout(state.saveTimer ?? undefined);
   if (state.chosenPath && state.cm) void flushDraft(state.chosenPath, state.cm.getValue());
 
@@ -306,10 +306,8 @@ export function showWelcome() {
 /**
  * Returns to the scenario left behind the welcome screen, as it was: the
  * editor, its uploads, its save target and its PDF.
- *
- * @returns {Promise<void>}
  */
-export async function returnToParked() {
+export async function returnToParked(): Promise<void> {
   if (!isParked()) return;
   const cm = requireEditor();
   await showWorkspace();

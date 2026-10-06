@@ -1,6 +1,6 @@
 import { openPullRequest, saveToGithub } from "../../github/save.ts";
 import { startSignIn } from "../../github/session.ts";
-import { returnToParked } from "../../modules/workspace.js";
+import { returnToParked } from "../../modules/workspace.ts";
 import { useAppStore } from "../../store.ts";
 import { Button, buttonClasses } from "../ui/Button.tsx";
 import { GitPullRequestIcon, LinkExternalIcon, MarkGithubIcon, PencilIcon, UploadIcon } from "./icons.tsx";

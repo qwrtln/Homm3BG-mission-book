@@ -19,7 +19,7 @@
 @import "./base.css" layer(legacy);
 @import "./welcome.css" layer(legacy);
 @import "./wizard.css" layer(legacy);
-@import "./header-actions.css" layer(legacy);
+@import "./upload-dialog.css" layer(legacy);
 @import "./workspace.css" layer(legacy);
 @import "./dialog.css" layer(legacy);
 @import "tailwindcss/utilities.css" layer(utilities);

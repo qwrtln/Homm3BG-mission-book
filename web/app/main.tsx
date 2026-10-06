@@ -5,19 +5,19 @@ import { FeedbackDialog } from "./components/FeedbackDialog.tsx";
 import { HelpDialog } from "./components/HelpDialog.tsx";
 import { Header } from "./components/header/Header.tsx";
 import { Toaster } from "./components/Toaster.tsx";
+import { ModeChoice } from "./components/welcome/ModeChoice.tsx";
+import { PickerMain } from "./components/welcome/PickerMain.tsx";
 import { initGithub, openRoute } from "./github/index.ts";
 import { initAutocomplete } from "./modules/autocomplete.js";
 import { ensureEngine } from "./modules/build.js";
 import { initCategory } from "./modules/category.ts";
-import { el, escapeHtml, setStatus } from "./modules/dom.js";
+import { setStatus } from "./modules/dom.js";
 import { initEditor } from "./modules/editor.js";
 import { loadEntries } from "./modules/entries.ts";
 import { preloadCommonFiles } from "./modules/files.ts";
 import { loadRecord, saveText, saveUploads } from "./modules/local-store.ts";
 import { initPanes } from "./modules/panes.js";
 import { initPdfView } from "./modules/pdf-view.js";
-import { initPicker } from "./modules/picker.js";
-import { initSearch } from "./modules/search.js";
 import { initShortcuts } from "./modules/shortcuts.js";
 import { state } from "./modules/state.ts";
 import { initSubmit } from "./modules/submit.js";
@@ -25,6 +25,7 @@ import { applyTheme, initialTheme } from "./modules/theme.ts";
 import { initUploads } from "./modules/uploads.js";
 import { initWizard } from "./modules/wizard.js";
 import { mountRegion } from "./mount.tsx";
+import { store } from "./store.ts";
 
 // Test hooks, like __lastSaveTarget: the build bundles the modules, so a test
 // cannot import its own copy of them from the page.
@@ -43,13 +44,13 @@ mountRegion(
     <Toaster />
   </>,
 );
+mountRegion("welcome-mode", <ModeChoice />);
+mountRegion("welcome-pick", <PickerMain />);
 initEditor();
 initPanes();
 initPdfView();
 initAutocomplete();
 applyTheme(initialTheme());
-initSearch();
-initPicker();
 initWizard();
 initUploads();
 initShortcuts();
@@ -61,9 +62,7 @@ const entriesReady = loadEntries()
     if (!state.entries.length) setStatus("No scenarios found.", { tone: "bad" });
   })
   .catch((error) => {
-    el("search-results").innerHTML =
-      `<div class="combobox-empty">Could not read the scenario list: ${escapeHtml(errorMessage(error))}</div>`;
-    el("search-results").hidden = false;
+    store.setState({ entriesError: errorMessage(error) });
   });
 
 // The address may name a scenario; open it once both the entries and GitHub are known.

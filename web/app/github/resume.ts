@@ -19,11 +19,11 @@ import { githubSaveState, resetGithubSaveState } from "../modules/github-save-st
 import { setScenarioTitle } from "../modules/header.ts";
 import { clearUploads, saveText } from "../modules/local-store.ts";
 import { clearPdf } from "../modules/pdf-view.js";
-import { offerLocalDraft } from "../modules/recovery.js";
+import { offerLocalDraft } from "../modules/recovery.ts";
 import { reflectRoute } from "../modules/route.ts";
 import { requireEditor, state } from "../modules/state.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.js";
-import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.js";
+import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
 import { dropRevokedToken, getGithubContext, githubFailure, SIGN_IN_EXPIRED, setGithubContext } from "./context.ts";
 import { checkExistingPullRequest } from "./save.ts";
@@ -126,7 +126,7 @@ export function showResumeSearching(): void {
 }
 
 function reportEditError(error: unknown): void {
-  el("go-hint").textContent = githubFailure(error, "Could not open that scenario");
+  store.setState({ pickerError: githubFailure(error, "Could not open that scenario") });
 }
 
 /**
@@ -139,7 +139,7 @@ export async function startEdit(path: string, title: string): Promise<void> {
   const context = getGithubContext();
   if (!token || !context?.isMember) return;
   el("edit-branch-prompt").hidden = true;
-  el("go").disabled = true;
+  store.setState({ pickerBusy: true });
   try {
     const branch = await findEditBranch(token, { username: context.username, texPath: path });
 
@@ -169,7 +169,7 @@ export async function startEdit(path: string, title: string): Promise<void> {
   } catch (error) {
     reportEditError(error);
   } finally {
-    el("go").disabled = false;
+    store.setState({ pickerBusy: false });
   }
 }
 

@@ -21,7 +21,7 @@ import { el, escapeHtml, sanitizeFilename } from "./dom.js";
 import { loadDraft } from "./drafts.ts";
 import { preloadText } from "./files.ts";
 import { createUploadPanel, MAX_MAP_FILES } from "./upload-panel.js";
-import { commitGeneratedEntry, newScenarioPath } from "./workspace.js";
+import { commitGeneratedEntry, newScenarioPath } from "./workspace.ts";
 
 /** @typedef {import("../../shared/scenario-wizard.ts").WizardAnswers} WizardAnswers */
 

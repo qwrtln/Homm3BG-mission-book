@@ -1,6 +1,6 @@
 // The welcome screen's search ranking: substring match ranked by position,
 // falling back to letters found in order. Kept free of the DOM so tier 1 can
-// test the ranking directly; app/modules/search.js renders it.
+// test the ranking directly; app/components/welcome/SearchCombobox.tsx renders it.
 
 /**
  * Substring match ranked by position, else letters found in order (ranked

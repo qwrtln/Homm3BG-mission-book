@@ -188,7 +188,7 @@ html[data-theme="dark"] .wizard-glyph:has(+ .wizard-glyph.dark) { display: none;
 .wizard-rules-limit { margin-top: 0.4rem; }
 
 /* Pane 1's header field and pane 12's maps field: the popover's own cards
-   (.upload-card, .upload-rename-list — styles/header-actions.css), plus a
+   (.upload-card, .upload-rename-list — styles/upload-dialog.css), plus a
    highlight while a file is dragged over the drop zone. */
 .wizard-upload { position: relative; }
 .wizard-upload button[id$="-add"] { margin-top: 0.3rem; }

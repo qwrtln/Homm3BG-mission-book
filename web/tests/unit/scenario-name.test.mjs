@@ -3,7 +3,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { CATEGORY_LABELS } from "../../app/modules/config.ts";
 import { DRAFT_GROUP_FILES } from "../../shared/build-plan.ts";
 import {
   categoryOfPath,
@@ -64,14 +63,18 @@ test("the draft categories are exactly the draft book's group directories", () =
 });
 
 test("the welcome screen offers the draft categories, in order, under their labels", () => {
-  const html = readRepoFile("web/app/index.html");
-  const radios = [...html.matchAll(/<input type="radio" name="category" value="([^"]+)"><span>([^<]+)<\/span>/g)].map(
-    (match) => [match[1], match[2]],
+  // The category radios are JSX now (components/welcome/PickerMain.tsx), rendered
+  // by mapping DRAFT_CATEGORIES and reading CATEGORY_LABELS, rather than typed out
+  // by hand — so there is no literal markup left to regex for each category and
+  // label. This checks that the mapping itself is still there, order and all.
+  const tsx = readRepoFile("web/app/components/welcome/PickerMain.tsx");
+  assert.match(
+    tsx,
+    /DRAFT_CATEGORIES\.map\(\(category\) => /,
+    "the category radios are not driven by DRAFT_CATEGORIES, in order",
   );
-  assert.deepEqual(
-    radios,
-    DRAFT_CATEGORIES.map((category) => [category, CATEGORY_LABELS[category]]),
-  );
+  assert.match(tsx, /value=\{category\}/, "a radio's value is not the mapped category");
+  assert.match(tsx, /CATEGORY_LABELS\[category\]/, "a radio's label is not read from CATEGORY_LABELS");
 });
 
 test("a published or draft scenario's path names its category", () => {

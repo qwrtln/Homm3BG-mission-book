@@ -11,7 +11,7 @@ import { clearPdf } from "../modules/pdf-view.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "../modules/route.ts";
 import { requireEditor, state } from "../modules/state.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.js";
-import { showWorkspace } from "../modules/workspace.js";
+import { showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
 import { getGithubContext, ROUTE_KEY } from "./context.ts";
 import { openResumableDraft, startEdit } from "./resume.ts";
