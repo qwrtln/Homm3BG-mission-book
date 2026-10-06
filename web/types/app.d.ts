@@ -1,9 +1,9 @@
 // Shapes the app passes between its own modules. These are the contracts
-// app/modules/* agree on; the GitHub API's own payload shapes live in
+// app/modules/* agree on (the shared state itself, AppState, is in app/store.ts); the GitHub API's own payload shapes live in
 // types/github.d.ts, and the LaTeX engine's in
 // shared/vendor/texlyre-busytex.d.ts.
 
-/** One scenario the search can offer. Built by app/modules/entries.js. */
+/** One scenario the search can offer. Built by app/modules/entries.ts. */
 interface ScenarioEntry {
   /** Repository-relative path of the .tex file, e.g. "clash/astral_run.tex". */
   path: string;
@@ -63,30 +63,4 @@ interface ScenarioPrefetch {
   path: string;
   controller: AbortController;
   promise: Promise<{ pdfBlob: Blob | null }> | null;
-}
-
-/** The single shared mutable object in app/modules/state.js. */
-interface AppState {
-  entries: ScenarioEntry[];
-  chosenPath: string | null;
-  chosenTitle: string;
-  building: boolean;
-  runner: import("../shared/vendor/texlyre-busytex.js").BusyTexRunner | null;
-  lastPdf: Blob | null;
-  /** The editor source lastPdf was made from; null when no PDF is shown. */
-  pdfSource: string | null;
-  /** The uploadsSignature of the in-app build lastPdf came from; null for a published PDF or none. */
-  pdfUploads: string | null;
-  /** Repository path of the scenario lastPdf shows; names its download. */
-  pdfPath: string | null;
-  /** Whether the pane drops lastPdf's last page (a published PDF's feedback page). */
-  pdfDropsLastPage: boolean;
-  cm: CodeMirrorEditor | null;
-  /** Repository path -> the bytes a contributor added from their own machine. */
-  uploadedFiles: Map<string, Uint8Array>;
-  /** The pending autosave's timer id, from the DOM's setTimeout. */
-  saveTimer: number | null;
-  scenarioPrefetch: ScenarioPrefetch | null;
-  /** What "nothing to save" looks like for the open scenario; null when none is open. */
-  clean: import("../shared/unsaved.js").Baseline | null;
 }

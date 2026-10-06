@@ -1,0 +1,378 @@
+// Tier 2. Moving between the welcome screen and the editor: the Back button,
+// the unsaved-changes note and prompt, the loading screen for an address, and
+// the welcome screen's data surviving a round trip.
+
+import type { Page } from "@playwright/test";
+import { editorText, insertInEditor, undoInEditor } from "../helpers/editor.ts";
+import { EMPTY_PDF_TEXT, expect, type GithubRoute, READY_STATUS, test } from "./fixtures.ts";
+
+const LOGIN = "octotester";
+const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
+
+function routes(list: GithubRoute[]): [GithubRoute[], { scope: "test"; option: true }] {
+  return [list, { scope: "test", option: true }];
+}
+
+async function startClash(page: Page, name = "Nav Probe"): Promise<void> {
+  await page.locator('[data-category="clash"]').click();
+  await page.locator("#scenario-name").fill(name);
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  // The workspace shows before the template's source arrives; typing earlier
+  // is overwritten when it lands.
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+}
+
+async function typeInEditor(page: Page, text: string): Promise<void> {
+  await insertInEditor(page, 0, text);
+}
+
+test("the welcome screen greets first and links to the Mission Book", async ({ app }) => {
+  const { page } = app;
+  const intro = page.locator(".welcome-intro");
+  await expect(intro.locator("h2")).toHaveText("Welcome to the Scenario Builder");
+  const link = intro.getByRole("link", { name: "Fan-Made Mission Book" });
+  await expect(link).toHaveAttribute(
+    "href",
+    "https://github.com/qwrtln/Homm3BG-mission-book#heroes-of-might--magic-iii-the-board-gamefan-made-mission-book",
+  );
+  await expect(link).toHaveAttribute("target", "_blank");
+  // The greeting comes before the picker in reading order.
+  const introFirst = await page.evaluate(() => {
+    const introEl = document.querySelector(".welcome-intro") as Element;
+    const pick = document.getElementById("pick-heading") as Element;
+    return Boolean(introEl.compareDocumentPosition(pick) & Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  expect(introFirst).toBe(true);
+});
+
+test("Back is only on the editor screen, and returns to welcome", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator("#back-to-welcome")).toBeHidden();
+  await startClash(page);
+  await expect(page.locator("#back-to-welcome")).toBeVisible();
+
+  await page.locator("#back-to-welcome").click();
+
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#workspace")).toBeHidden();
+  await expect(page.locator("#back-to-welcome")).toBeHidden();
+  expect(new URL(page.url()).hash).toBe("");
+});
+
+test("an untouched scenario leaves without asking, and shows no unsaved note", async ({ app }) => {
+  const { page } = app;
+  await startClash(page);
+  await expect(page.locator("#unsaved-note")).toBeHidden();
+
+  await page.locator("#back-to-welcome").click();
+
+  await expect(page.locator("#confirm-dialog")).toBeHidden();
+  await expect(page.locator("#welcome")).toBeVisible();
+});
+
+// The "● Unsaved changes" note is only shown signed in: signed out, there is
+// no pull request to lose the changes to, only the browser's own autosave
+// (already covered by leaveWorkspace's confirm dialog below), so the note
+// would just be noise. See dirty.ts's refreshUnsavedNote.
+test.describe("signed in", () => {
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", body: { login: LOGIN } },
+      {
+        method: "GET",
+        path: REPO_PATH,
+        body: {
+          name: "Homm3BG-mission-book",
+          owner: { login: "qwrtln" },
+          default_branch: "main",
+          permissions: { push: true },
+        },
+      },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
+    ]),
+  });
+
+  test("editing shows the unsaved note; Back asks, Cancel stays, Leave goes", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await startClash(page);
+    await typeInEditor(page, "% edit\n");
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+
+    await page.locator("#back-to-welcome").click();
+    await expect(page.locator("#confirm-dialog")).toBeVisible();
+    await expect(page.locator("#confirm-title")).toHaveText("Leave with unsaved changes?");
+    await page.locator("#confirm-cancel").click();
+    await expect(page.locator("#workspace")).toBeVisible();
+
+    await page.locator("#back-to-welcome").click();
+    await page.locator("#confirm-ok").click();
+    await expect(page.locator("#welcome")).toBeVisible();
+  });
+
+  test("undoing the edit clears the unsaved note", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await startClash(page);
+    await typeInEditor(page, "% edit\n");
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+    await undoInEditor(page);
+    await expect(page.locator("#unsaved-note")).toBeHidden();
+  });
+
+  test("a restored autosave counts as unsaved", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => {
+      localStorage.setItem("github_token", "t");
+      localStorage.setItem("wasm-scenario-builder:draft:draft-scenarios/clash/nav_probe.tex", "% local only\n");
+    });
+    await page.reload();
+    await page.locator('[data-category="clash"]').click();
+    await page.locator("#scenario-name").fill("Nav Probe");
+    await page.locator("#go").click();
+    await expect(page.locator("#confirm-title")).toHaveText("Replace your draft?");
+    await page.locator("#confirm-cancel").click();
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+  });
+});
+
+test("the same scenario can be opened again after going back", async ({ app }) => {
+  const { page } = app;
+  await startClash(page);
+  await typeInEditor(page, "% keep me\n");
+  await page.locator("#back-to-welcome").click();
+  await page.locator("#confirm-ok").click();
+
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  const value = await editorText(page);
+  expect(value).toContain("% keep me");
+});
+
+let releaseUser: () => void = () => {};
+const userHeld = new Promise<void>((resolve) => {
+  releaseUser = resolve;
+});
+
+test.describe("an address opened while GitHub is slow", () => {
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", body: { login: LOGIN }, hold: userHeld },
+      {
+        method: "GET",
+        path: REPO_PATH,
+        body: {
+          name: "Homm3BG-mission-book",
+          owner: { login: "qwrtln" },
+          default_branch: "main",
+          permissions: { push: true },
+        },
+      },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+      },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa("% from branch\n") },
+      },
+    ]),
+  });
+
+  test("shows a loading screen, never the welcome screen, then the editor", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.goto("/web/app/#/drafts/clash/half_written");
+    const reload = page.reload();
+
+    await expect(page.locator("#route-loading")).toBeVisible();
+    await expect(page.locator("#welcome")).toBeHidden();
+
+    releaseUser();
+    await reload;
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#route-loading")).toBeHidden();
+    await expect(page.locator("#welcome")).toBeHidden();
+  });
+});
+
+test("an address that matches nothing ends on welcome, with no loading screen left", async ({ app }) => {
+  const { page } = app;
+  await page.goto("/web/app/#/drafts/clash/nope");
+  await page.reload();
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#route-loading")).toBeHidden();
+});
+
+test("the plain address shows welcome at once, with no loading screen", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#route-loading")).toBeHidden();
+});
+
+test.describe("going back to a welcome screen that already has data", () => {
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", body: { login: LOGIN } },
+      {
+        method: "GET",
+        path: REPO_PATH,
+        body: {
+          name: "Homm3BG-mission-book",
+          owner: { login: "qwrtln" },
+          default_branch: "main",
+          permissions: { push: true },
+        },
+      },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+      },
+    ]),
+  });
+
+  test("shows the resume list instantly, without a loading state, and refreshes quietly", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+
+    await startClash(page);
+    const refreshed = page.waitForRequest((r) => new URL(r.url()).pathname === "/user");
+    await page.locator("#back-to-welcome").click();
+
+    // At once: the list is already there, and the searching line never comes back.
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+    await expect(page.locator("#resume-loading")).toBeHidden();
+    await refreshed; // ...and the data was still fetched again in the background
+    await expect(page.locator("#resume-loading")).toBeHidden();
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+  });
+});
+
+async function buildPdf(page: Page): Promise<void> {
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+}
+
+test("Back to editing returns to the scenario just left, with its built PDF", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator("#back-to-editing")).toBeHidden();
+  await startClash(page);
+  await typeInEditor(page, "% keep me\n");
+  await buildPdf(page);
+  await page.locator("#back-to-welcome").click();
+  await page.locator("#confirm-ok").click();
+
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Nav Probe”");
+
+  await page.locator("#back-to-editing").click();
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-title")).toHaveText("Nav Probe");
+  await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+  await expect(page.locator("#download")).toBeEnabled();
+  await expect(page.locator("#build")).toBeEnabled();
+  expect(new URL(page.url()).hash).toBe("#/drafts/clash/nav_probe");
+  const value = await editorText(page);
+  expect(value).toContain("% keep me");
+});
+
+test("Back to editing keeps the PDF's pages and scroll place, with no redraw", async ({ app }) => {
+  const { page } = app;
+  await startClash(page);
+  await buildPdf(page);
+  const body = page.locator("#pdf-body");
+  await body.evaluate((pane) => {
+    pane.scrollTop = pane.scrollHeight / 2;
+    (pane.querySelector("canvas.pdf-page") as HTMLElement).dataset.probe = "kept";
+  });
+  const place = await body.evaluate((pane) => pane.scrollTop);
+  expect(place).toBeGreaterThan(0);
+
+  await page.locator("#back-to-welcome").click();
+  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await page.waitForTimeout(400); // longer than the pane's resize settle
+  await page.locator("#back-to-editing").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await page.waitForTimeout(400);
+
+  await expect(page.locator('#pdf-body canvas.pdf-page[data-probe="kept"]')).toHaveCount(1);
+  expect(await body.evaluate((pane) => pane.scrollTop)).toBe(place);
+});
+
+test("opening another scenario replaces the one Back to editing returns to", async ({ app }) => {
+  const { page } = app;
+  await startClash(page, "First One");
+  await page.locator("#back-to-welcome").click();
+  await startClash(page, "Second One");
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
+  await page.locator("#back-to-welcome").click();
+
+  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Second One”");
+});
+
+test.describe("resuming the branch just left", () => {
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", body: { login: LOGIN } },
+      {
+        method: "GET",
+        path: REPO_PATH,
+        body: {
+          name: "Homm3BG-mission-book",
+          owner: { login: "qwrtln" },
+          default_branch: "main",
+          permissions: { push: true },
+        },
+      },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: "draft-scenarios/clash/half_written.tex", sha: "s", status: "added" }] },
+      },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa("% from branch\n") },
+      },
+      { method: "GET", path: /\/pulls/, body: [] },
+    ]),
+  });
+
+  test("picking it again from Resume your work keeps its built PDF", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+    await buildPdf(page);
+
+    await page.locator("#back-to-welcome").click();
+    await expect(page.locator("#back-to-editing")).toBeVisible();
+    const fetched: string[] = [];
+    page.on("request", (request) => {
+      if (request.url().includes("/contents/")) fetched.push(request.url());
+    });
+    await page.locator("#resume-list .combobox-item").first().click();
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
+    await expect(page.locator("#download")).toBeEnabled();
+    expect(fetched, "the branch was fetched again instead of returning to the open copy").toEqual([]);
+  });
+});

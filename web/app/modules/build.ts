@@ -1,0 +1,461 @@
+import { untilAborted } from "../../shared/abort.ts";
+import {
+  auxState,
+  builtStatus,
+  DATA_PACKAGE,
+  errorInAuxState,
+  errorLine,
+  firstError,
+  MAX_FETCH_ON_MISS_ATTEMPTS,
+  MAX_TEX_PASSES,
+  missingFiles,
+  needsRerun,
+  newMissingPaths,
+  pageCount,
+  planScenarioBuild,
+} from "../../shared/build-plan.ts";
+import { errorMessage, errorTrace } from "../../shared/errors.ts";
+import { changedLines } from "../../shared/line-diff.ts";
+import { pageArchiveName, pageImageName } from "../../shared/page-images.ts";
+import { gunzipText, lineRects, type PageRect, parseSynctex } from "../../shared/synctex.ts";
+import { uploadsSignature } from "../../shared/unsaved.ts";
+import {
+  clearErrorLine,
+  clearPdf,
+  renderPngPages,
+  showError,
+  showPdf,
+  showPdfLoading,
+  showPdfMessage,
+} from "../pdf/view.ts";
+import { store } from "../store.ts";
+import { busytexBase } from "./config.ts";
+import { basenameNoExt } from "./dom.ts";
+import { requireEditor } from "./editor-api.ts";
+import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
+import { setBuilding, setBuildPhase, setStatus } from "./status.ts";
+
+// client-zip is imported lazily, when the first PNG export with more than one
+// page runs, so a session that exports no PNG, or exports only one page,
+// never fetches its chunk.
+type ClientZipModule = typeof import("client-zip");
+
+let clientZipReady: Promise<ClientZipModule> | null = null;
+
+function loadClientZip(): Promise<ClientZipModule> {
+  clientZipReady ??= import("client-zip").catch((error) => {
+    clientZipReady = null; // let the next export try again
+    throw error;
+  });
+  return clientZipReady;
+}
+
+// The engine wrapper stays out of the bundle: it is loaded by URL, resolved
+// against the page like the engine files it fetches, so the deploy's copy and
+// the test stub (which matches this path's suffix) both reach it.
+// The wrapper's types come from its .d.ts, through type-only imports.
+type EngineModule = typeof import("../../shared/vendor/texlyre-busytex.js");
+type EngineRunner = import("../../shared/vendor/texlyre-busytex.js").BusyTexRunner;
+
+let engineModuleReady: Promise<EngineModule> | null = null;
+
+function loadEngineModule(): Promise<EngineModule> {
+  engineModuleReady ??= import(
+    /* @vite-ignore */ new URL("../shared/vendor/texlyre-busytex.js", document.baseURI).href
+  ).catch((error) => {
+    engineModuleReady = null; // let the next start try again
+    throw error;
+  });
+  return engineModuleReady;
+}
+
+// Set while a PNG export runs. A build that ends meanwhile re-enables
+// Download (showPdf), so the menu alone cannot keep a second export out.
+let exporting = false;
+
+/** Downloads and starts the WASM engine, leaving it in the store's `runner`. */
+async function startEngine(): Promise<void> {
+  setStatus("Downloading the engine (first time only, about a minute)…", { spinning: true });
+  const { BusyTexRunner } = await loadEngineModule();
+  const base = busytexBase();
+  const runner = new BusyTexRunner({
+    busytexBasePath: base,
+    preloadDataPackages: [`${base}/${DATA_PACKAGE}.js`],
+    verbose: false,
+  });
+  store.setState({ runner });
+  try {
+    await runner.initialize(true);
+  } catch (error) {
+    store.setState({ runner: null });
+    throw error;
+  }
+}
+
+// The engine's ~93 MB data package is the slow part. One shared in-flight
+// promise so a Build pressed before warm-up finishes waits on it instead of starting a second download.
+let enginePromise: Promise<void> | null = null;
+
+/**
+ * Resolves once the engine can compile, starting it on the first call and
+ * sharing that one in-flight promise with every later caller.
+ */
+export async function ensureEngine(): Promise<void> {
+  if (store.getState().runner) return;
+  if (!enginePromise) {
+    enginePromise = startEngine().catch((error) => {
+      enginePromise = null; // let a later call retry instead of staying stuck
+      throw error;
+    });
+  }
+  await enginePromise;
+}
+
+/**
+ * Throws the engine away mid-compile: the worker is killed, so the compile
+ * stops using the CPU, and a fresh engine starts warming for the next Build.
+ * The data package is cached by then, so the restart skips the big download.
+ *
+ * @param runner the runner the stopped compile was using
+ */
+function discardEngine(runner: EngineRunner): void {
+  runner.terminate();
+  if (store.getState().runner === runner) {
+    store.setState({ runner: null });
+    enginePromise = null;
+  }
+  ensureEngine().catch(() => {}); // errors surface at the next Build, as on page load
+}
+
+// Each scenario's aux files from its last good build, by repository path. A
+// rebuild that starts from them usually settles in one TeX pass.
+const auxByScenario = new Map<string, StagedFile[]>();
+
+// Each scenario's source at its last good build, by repository path. The
+// next build marks on its pages what changed since.
+const sourceByScenario = new Map<string, string>();
+
+/**
+ * Where on the new PDF's pages the lines changed since the last build
+ * landed, read from the compile's SyncTeX file. Empty when there is nothing
+ * to compare against or to read: the marks are a courtesy, never a failure.
+ *
+ * @param synctex the compile's .synctex.gz bytes
+ * @param path the scenario's repository path
+ * @param before its source at the last good build
+ * @param after its source now
+ */
+async function changeMarks(
+  synctex: Uint8Array | null | undefined,
+  path: string,
+  before: string | undefined,
+  after: string,
+): Promise<Map<number, PageRect[]>> {
+  if (!synctex || before === undefined) return new Map();
+  const lines = changedLines(before, after);
+  if (lines.size === 0) return new Map();
+  try {
+    return lineRects(parseSynctex(await gunzipText(synctex)), path, lines);
+  } catch (error) {
+    console.warn("The SyncTeX file could not be read:", error);
+    return new Map();
+  }
+}
+
+/**
+ * Reports a build step twice: short on the PDF pane, where the reader looks,
+ * and in full in the status bar.
+ *
+ * @param short
+ * @param full the status bar's wording, when it differs
+ */
+function reportPhase(short: string, full: string = short): void {
+  setBuildPhase(short);
+  setStatus(full, { spinning: true });
+}
+
+// The running build's controller; null when no build runs.
+let buildController: AbortController | null = null;
+
+/**
+ * Stops the running build, if any. The build ends at once with the PDF pane
+ * as it was before Build was pressed.
+ */
+export function stopBuild(): void {
+  buildController?.abort();
+}
+
+/**
+ * Compiles whatever is in the editor, staging every file the plan asks for
+ * and retrying around files the engine finds missing. stopBuild() ends it
+ * early.
+ */
+export async function runBuild(): Promise<void> {
+  const { building, chosenPath } = store.getState();
+  if (building || !chosenPath) return;
+  const editor = requireEditor();
+  const controller = new AbortController();
+  const { signal } = controller;
+  buildController = controller;
+  setBuilding(true);
+  store.setState({ buildError: null });
+  clearErrorLine();
+  // The last PDF stays readable while this builds; with none, the pane says why it waits.
+  // The status bar keeps the engine download's own wording until the first step.
+  const firstPhase = store.getState().runner ? "Preparing files…" : "Waiting for the engine…";
+  if (!store.getState().lastPdf) showPdfLoading(firstPhase);
+  setBuildPhase(firstPhase);
+  try {
+    // A stop here leaves the engine warming: page load started it, not this build.
+    await untilAborted(ensureEngine(), signal);
+
+    reportPhase("Preparing files…");
+    // One snapshot of text and uploads: an upload changed mid-build must not
+    // reach this compile, or the PDF would not match the proof it records.
+    const source = editor.getText();
+    const uploads = new Map(store.getState().uploadedFiles);
+    const metadata = await untilAborted(preloadText("metadata.tex"), signal);
+
+    const plan = planScenarioBuild({
+      metadata,
+      scenario: { path: chosenPath, source },
+    });
+
+    // A path->content map, not an array: an upload must win over a same-path
+    // repo fetch, and reach the engine even if collectReferencedAssets missed it.
+    const staged = new Map<string, StagedFile>();
+    const notFound: string[] = [];
+    const totalFiles = plan.repoFiles.length + 1; // + the carried TeX Live bundle
+    let loadedFiles = 0;
+    const reportFileProgress = () => reportPhase(`Loading files… ${loadedFiles}/${totalFiles}`);
+    reportFileProgress();
+    for (const path of plan.repoFiles) {
+      // Use the editor's text for the scenario itself, not a re-fetch of the pristine copy.
+      const uploaded = uploads.get(path);
+      if (path === chosenPath) {
+        staged.set(path, { path, content: source });
+      } else if (uploaded) {
+        staged.set(path, { path, content: uploaded });
+      } else {
+        try {
+          staged.set(path, await preloadFile(path));
+        } catch {
+          notFound.push(path);
+        }
+      }
+      signal.throwIfAborted();
+      loadedFiles += 1;
+      reportFileProgress();
+    }
+    try {
+      for (const file of await untilAborted(loadCarriedTexmf(), signal)) staged.set(file.path, file);
+    } catch (error) {
+      if (signal.aborted) throw error;
+      notFound.push(`texmf/${plan.carriedBundle}`);
+    }
+    loadedFiles += 1;
+    reportFileProgress();
+    for (const [path, content] of Object.entries(plan.generated)) {
+      staged.set(path, { path, content });
+    }
+    for (const [path, content] of uploads) {
+      if (!staged.has(path)) staged.set(path, { path, content });
+    }
+    const additionalFiles = [...staged.values()];
+
+    reportPhase("Compiling…", "Compiling (this can take a while the first time)…");
+    const started = performance.now();
+    // ensureEngine above resolves only once the store's runner is set.
+    const runner = store.getState().runner as EngineRunner;
+    const { LuaLatex } = await loadEngineModule();
+    const lualatex = new LuaLatex(runner);
+    // Only the engine can end a compile, so a stop from here on kills it.
+    const onStop = () => discardEngine(runner);
+    signal.addEventListener("abort", onStop, { once: true });
+
+    let result: import("../../shared/vendor/texlyre-busytex.js").CompileResult;
+    const tried = new Set<string>();
+    let aux = auxByScenario.get(chosenPath) ?? [];
+    let fetchRounds = 0;
+    let passes = 0;
+    let retriedClean = false;
+    // One TeX pass per compile: the engine's own rerun loop always ran four.
+    for (;;) {
+      try {
+        result = await untilAborted(
+          lualatex.compile({
+            input: plan.input,
+            additionalFiles: [...additionalFiles, ...aux],
+            rerun: false,
+            verbose: "silent",
+          }),
+          signal,
+        );
+      } catch (error) {
+        if (signal.aborted) throw error;
+        result = { success: false, log: String(error), exitCode: -1 };
+      }
+      const toFetch = fetchRounds < MAX_FETCH_ON_MISS_ATTEMPTS ? newMissingPaths(missingFiles(result.log), tried) : [];
+      let landed = 0;
+      for (const path of toFetch) {
+        tried.add(path);
+        try {
+          additionalFiles.push(await fetchRepoFile(path));
+          landed += 1;
+        } catch {
+          // genuine miss: not in the repository, left for firstError to report
+        }
+        signal.throwIfAborted();
+      }
+      if (landed) {
+        fetchRounds += 1;
+        const more = `${landed} more ${landed === 1 ? "file" : "files"}`;
+        reportPhase(`Retrying with ${more}…`, `Retrying with ${more} fetched on demand…`);
+        continue;
+      }
+      if (result.success) {
+        aux = auxState(await untilAborted(runner.readProjectFiles(), signal));
+        passes += 1;
+        if (passes >= MAX_TEX_PASSES || !needsRerun(result.log)) break;
+        reportPhase("Updating references…", "Compiling again to update references…");
+        continue;
+      }
+      // Stale state from an earlier build can break a sound source: drop it and try once more.
+      if (aux.length && !retriedClean && errorInAuxState(result.log)) {
+        aux = [];
+        retriedClean = true;
+        continue;
+      }
+      break;
+    }
+    if (result.success) auxByScenario.set(chosenPath, aux);
+    else auxByScenario.delete(chosenPath);
+    const seconds = (performance.now() - started) / 1000;
+
+    const pages = pageCount(result.log);
+    const roundedSeconds = Number(seconds.toFixed(1));
+    const record: BuildRecord = {
+      ok: Boolean(result.success && result.pdf),
+      bytes: result.pdf ? result.pdf.length : 0,
+      pages,
+      seconds: roundedSeconds,
+      notFound,
+      missing: missingFiles(result.log),
+      firstError: firstError(result.log),
+      errorLine: errorLine(result.log, chosenPath, source.split("\n").length),
+      log: result.log || "",
+    };
+
+    if (record.ok) {
+      const changes = await changeMarks(result.synctex, chosenPath, sourceByScenario.get(chosenPath), source);
+      sourceByScenario.set(chosenPath, source);
+      // record.ok is Boolean(result.success && result.pdf), so pdf is set here.
+      await showPdf(new Blob([result.pdf as Uint8Array<ArrayBuffer>], { type: "application/pdf" }), source, {
+        changes,
+        uploads: uploadsSignature(uploads),
+      });
+      setStatus(builtStatus(pages, roundedSeconds), { tone: "ok" });
+    } else {
+      // A last good PDF stays on screen, and downloadable, above the error.
+      if (!store.getState().lastPdf) showPdfMessage("The build failed. See the error below.");
+      showError(record);
+      setStatus("Build failed.", { tone: "bad" });
+    }
+  } catch (error) {
+    if (signal.aborted) {
+      // A stop is not a failure: the pane goes back to what it showed before.
+      if (!store.getState().lastPdf) clearPdf();
+      setStatus("Build stopped.");
+      return;
+    }
+    if (!store.getState().lastPdf) showPdfMessage("The build failed. See the error below.");
+    const trace = errorTrace(error);
+    showError({ firstError: `Unexpected error: ${errorMessage(error)}`, log: trace });
+    setStatus("Build failed.", { tone: "bad" });
+  } finally {
+    buildController = null;
+    setBuilding(false);
+  }
+}
+
+/**
+ * Saves a blob to disk through a temporary, clicked `<a download>`. The
+ * object URL is revoked right after the click starts the save.
+ *
+ * @param blob
+ * @param name
+ */
+function saveBlob(blob: Blob, name: string): void {
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  link.href = url;
+  link.download = name;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+/**
+ * Renders the shown PDF to PNG and saves the pages: one PNG file when there
+ * is only one page, a zip of them when there are more. Download stays
+ * disabled for the run, and is re-enabled afterwards only if a PDF is still
+ * shown — a build or a scenario switch during the export may have cleared it.
+ *
+ * @param blob captured up front, so a later build cannot change what this run exports
+ * @param stem the download's base name, without extension
+ * @param dropLastPage whether to exclude the shown PDF's last page
+ */
+async function exportPng(blob: Blob, stem: string, dropLastPage: boolean): Promise<void> {
+  exporting = true;
+  store.setState({ downloadDisabled: true });
+  try {
+    const pages = await renderPngPages(blob, {
+      dropLastPage,
+      onPage: (page, total) => setStatus(`Rendering page ${page} of ${total}…`, { spinning: true }),
+    });
+    let name: string;
+    if (pages.length === 1) {
+      name = pageImageName(stem, 1);
+      saveBlob(new Blob([pages[0] as Uint8Array<ArrayBuffer>], { type: "image/png" }), name);
+    } else {
+      const { downloadZip } = await loadClientZip();
+      const files = pages.map((bytes, index) => ({ name: pageImageName(stem, index + 1), input: bytes }));
+      const zipBlob = await downloadZip(files).blob();
+      name = pageArchiveName(stem);
+      const typed = zipBlob.type === "application/zip" ? zipBlob : new Blob([zipBlob], { type: "application/zip" });
+      saveBlob(typed, name);
+    }
+    setStatus(`Saved ${name}.`, { tone: "ok" });
+  } catch (error) {
+    console.error("The PNG export failed:", error);
+    setStatus(`The PNG export failed: ${errorMessage(error)}`, { tone: "bad" });
+  } finally {
+    exporting = false;
+    store.setState({ downloadDisabled: !store.getState().lastPdf });
+  }
+}
+
+/** The Build button's action: Stop while a build runs, Build PDF otherwise. */
+export function toggleBuild(): void {
+  if (store.getState().building) stopBuild();
+  else runBuild();
+}
+
+/** Download > PDF: saves the shown PDF. */
+export function downloadPdf(): void {
+  // Named after the scenario the PDF shows: a published PDF is the
+  // original's, not the renamed copy's.
+  const { lastPdf, pdfPath, chosenPath } = store.getState();
+  const path = pdfPath ?? chosenPath;
+  if (!lastPdf || !path) return;
+  saveBlob(lastPdf, `${basenameNoExt(path)}.pdf`);
+}
+
+/** Download > PNG: saves the shown PDF's pages as PNG. */
+export function downloadPng(): void {
+  const { lastPdf, pdfPath, chosenPath, pdfDropsLastPage } = store.getState();
+  const path = pdfPath ?? chosenPath;
+  if (exporting || !lastPdf || !path) return;
+  exportPng(lastPdf, basenameNoExt(path), pdfDropsLastPage);
+}
