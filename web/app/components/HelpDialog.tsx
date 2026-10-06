@@ -60,6 +60,10 @@ export function HelpDialog() {
           </tbody>
         </table>
       </section>
+      <section>
+        <h3 className="mt-5 mb-1 text-body font-bold">PDF preview</h3>
+        <p>Double-click a spot on a page to move the editor to its source line.</p>
+      </section>
       <DialogActions>
         <Button id="help-close" type="submit" value="close">
           Close

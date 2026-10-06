@@ -2,6 +2,7 @@ import { HighlightStyle, syntaxHighlighting } from "@codemirror/language";
 import type { Extension } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { tags } from "@lezer/highlight";
+import { FLASH_LINE_CLASS } from "./flash-line.ts";
 
 /** The GitHub colors of one theme, for the editor's chrome and for the tokens stex finds. */
 interface Palette {
@@ -21,6 +22,8 @@ interface Palette {
   string: string;
   errorInk: string;
   errorBackground: string;
+  /** the line a jump from the PDF lands on */
+  flash: string;
 }
 
 const LIGHT: Palette = {
@@ -37,6 +40,7 @@ const LIGHT: Palette = {
   string: "#0a3069",
   errorInk: "#f6f8fa",
   errorBackground: "#82071e",
+  flash: "rgba(255, 200, 0, .5)",
 };
 
 const DARK: Palette = {
@@ -53,6 +57,7 @@ const DARK: Palette = {
   string: "#a5d6ff",
   errorInk: "#f0f6fc",
   errorBackground: "#8e1519",
+  flash: "rgba(187, 128, 9, .5)",
 };
 
 const MONO = 'ui-monospace, "Liberation Mono", monospace';
@@ -78,6 +83,16 @@ function chrome(palette: Palette, dark: boolean): Extension {
         borderRight: `1px solid ${palette.gutterLine}`,
       },
       ".build-error-line": { backgroundColor: "var(--error-bg)" },
+      // The fade is the editor-flash-fade keyframes in styles/app.css, which read --flash.
+      [`.${FLASH_LINE_CLASS}`]: {
+        "--flash": palette.flash,
+        backgroundColor: "var(--flash)",
+        animation: "editor-flash-fade 1.8s ease-in forwards",
+      },
+      "@media (prefers-reduced-motion: reduce)": {
+        // Shown whole, then gone, with no fade between.
+        [`.${FLASH_LINE_CLASS}`]: { animationTimingFunction: "steps(1, end)" },
+      },
 
       ".cm-panels": { backgroundColor: "var(--panel)", color: "var(--ink)" },
       ".cm-panels-top": { borderBottom: "1px solid var(--line)" },

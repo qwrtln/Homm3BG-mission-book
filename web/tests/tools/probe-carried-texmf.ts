@@ -20,10 +20,17 @@
 // With no arguments it builds one scenario of each category, one draft, and
 // one Russian scenario. Prefix a path with "ru:" to build it in Russian.
 // Exits non-zero if any build fails or needed a file carried.txt lacks.
+//
+// With --save-synctex <dir> it also writes each job's unzipped SyncTeX text to
+// <dir>/<job basename>.synctex, to see how the engine records a page's content:
+//
+//   node web/tests/tools/probe-carried-texmf.ts --save-synctex /tmp/synctex clash/bloody_grail.tex
 
-import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { stripTypeScriptTypes } from "node:module";
+import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { gunzipSync } from "node:zlib";
 import { chromium } from "playwright";
 import type * as Files from "../../app/modules/files.ts";
 import type * as Plans from "../../shared/build-plan.ts";
@@ -39,6 +46,7 @@ const DEFAULT_JOBS = [
   "ru:clash/translated/ru/astral_run.tex",
 ];
 
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 const engine = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "core", "busytex");
 const extra = parseDataPackage(readFileSync(join(engine, "texlive-extra.js"), "utf8"));
 const extraData = new Uint8Array(readFileSync(join(engine, "texlive-extra.data")));
@@ -64,18 +72,40 @@ function fromExtra(name: string): string | null {
   return Buffer.from(unpackFile(extraData, extra.chunks, range)).toString("base64");
 }
 
-const jobs = process.argv.slice(2).length ? process.argv.slice(2) : DEFAULT_JOBS;
+const args = process.argv.slice(2);
+let synctexDir: string | null = null;
+const flag = args.indexOf("--save-synctex");
+if (flag !== -1) {
+  synctexDir = args[flag + 1] ?? null;
+  if (!synctexDir) throw new Error("--save-synctex needs a directory");
+  args.splice(flag, 2);
+  mkdirSync(synctexDir, { recursive: true });
+}
+const jobs = args.length ? args : DEFAULT_JOBS;
 const server = await startStaticServer();
 const browser = await chromium.launch();
 let failed = false;
 try {
   const page = await browser.newPage();
   await page.exposeFunction("fromExtra", fromExtra);
+  // The page imports shared/ and app/modules/ sources as they are; a browser
+  // cannot run TypeScript, so strip the types the way Node does.
+  await page.route("**/*.ts", async (route) => {
+    const path = new URL(route.request().url()).pathname;
+    const source = readFileSync(join(repoRoot, path), "utf8");
+    await route.fulfill({ contentType: "text/javascript", body: stripTypeScriptTypes(source) });
+  });
   // Any page under web/app/ will do: the modules resolve their relative URLs
   // (../repo, ../shared/texmf, ../core/busytex) against it.
   await page.goto(`${server.origin}/web/app/app.js`);
   const results = await page.evaluate(runJobs, jobs);
   for (const r of results) {
+    if (synctexDir && r.synctex) {
+      writeFileSync(
+        join(synctexDir, `${basename(r.job, ".tex")}.synctex`),
+        gunzipSync(Buffer.from(r.synctex, "base64")),
+      );
+    }
     failed ||= !r.ok || r.carried.length > 0;
     const extras = r.carried.length ? `; missed ${r.carried.join(" ")}` : "";
     console.log(`${r.ok && !r.carried.length ? "ok  " : "FAIL"} ${r.job}: ${r.pages} pages, ${r.seconds}s${extras}`);
@@ -173,6 +203,7 @@ async function runJobs(jobs: string[]) {
     }
     results.push({
       job,
+      synctex: result?.synctex ? btoa(String.fromCharCode(...result.synctex)) : null,
       ok: Boolean(result?.success && result.pdf),
       pages: plans.pageCount(result?.log ?? ""),
       seconds: Number(((performance.now() - started) / 1000).toFixed(1)),

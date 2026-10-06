@@ -15,6 +15,8 @@ export interface EditorApi {
   replaceRange(from: number, to: number, insert: string): void;
   /** Marks a line as the failed build's, or clears the mark with null. The mark follows its line through edits. */
   markErrorLine(line: number | null): void;
+  /** Highlights a line for a moment, clamped to the text. A new flash replaces the one showing; the failed build's mark is untouched. */
+  flashLine(line: number): void;
 }
 
 /** The editor as tier 2 reads it, on `window.__editor`. Lines and columns are 0-based here. */
@@ -28,6 +30,8 @@ export interface EditorProbe extends EditorApi {
   getSelection(): string;
   /** The 1-based lines carrying the failed build's mark. */
   markedLines(): number[];
+  /** The 1-based lines carrying the jump flash. */
+  flashedLines(): number[];
   undo(): void;
 }
 
