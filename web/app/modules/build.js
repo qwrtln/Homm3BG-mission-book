@@ -22,6 +22,7 @@ import { uploadsSignature } from "../../shared/unsaved.ts";
 import { store } from "../store.ts";
 import { busytexBase } from "./config.ts";
 import { basenameNoExt, el, setBuilding, setBuildPhase, setStatus } from "./dom.js";
+import { requireEditor } from "./editor-api.ts";
 import { fetchRepoFile, loadCarriedTexmf, preloadFile, preloadText } from "./files.ts";
 import {
   clearErrorLine,
@@ -32,7 +33,7 @@ import {
   showPdfLoading,
   showPdfMessage,
 } from "./pdf-view.js";
-import { requireEditor, state } from "./state.ts";
+import { state } from "./state.ts";
 import { refreshSubmitDialog } from "./submit.js";
 
 // client-zip is imported lazily, when the first PNG export with more than one
@@ -208,7 +209,7 @@ export function stopBuild() {
 export async function runBuild() {
   if (state.building || !state.chosenPath) return;
   const chosenPath = state.chosenPath;
-  const cm = requireEditor();
+  const editor = requireEditor();
   const controller = new AbortController();
   const { signal } = controller;
   buildController = controller;
@@ -227,7 +228,7 @@ export async function runBuild() {
     reportPhase("Preparing files…");
     // One snapshot of text and uploads: an upload changed mid-build must not
     // reach this compile, or the PDF would not match the proof it records.
-    const source = cm.getValue();
+    const source = editor.getText();
     const uploads = new Map(state.uploadedFiles);
     const metadata = await untilAborted(preloadText("metadata.tex"), signal);
 

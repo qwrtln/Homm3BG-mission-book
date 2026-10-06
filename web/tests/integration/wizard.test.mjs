@@ -5,25 +5,12 @@
 // (scenario-wizard.test.mjs); here the text is only checked to have arrived.
 
 import { fillScenarioTemplate, WIZARD_TEMPLATE_PATH } from "../../shared/scenario-wizard.ts";
+import { editorText } from "../helpers/editor.mjs";
 import { expect, test } from "./fixtures.mjs";
 
 const NAME = "Wizard Probe";
 const SLUG = "wizard_probe";
 const MAP_EDITOR = "https://zedero.github.io/homm3boardgame/";
-
-/**
- * The editor's text, read off the CodeMirror instance: it renders only the
- * lines in view.
- *
- * @param {import("@playwright/test").Page} page
- * @returns {Promise<string>}
- */
-async function editorValue(page) {
-  return page.evaluate(() => {
-    const wrapper = /** @type {any} */ (document.querySelector(".CodeMirror"));
-    return wrapper ? wrapper.CodeMirror.getValue() : "";
-  });
-}
 
 /**
  * One repository file, through the static server's /web/repo/ alias.
@@ -319,8 +306,8 @@ test("creating after panes 1-3 opens the editor at #/drafts/<category>/<file> wi
     income: { gold: 10, building_materials: 0, valuables: 0 },
     resources: { gold: 10, building_materials: 0, valuables: 0 },
   });
-  await expect.poll(() => editorValue(page), { message: "the generated text never reached the editor" }).toBe(expected);
-  const text = await editorValue(page);
+  await expect.poll(() => editorText(page), { message: "the generated text never reached the editor" }).toBe(expected);
+  const text = await editorText(page);
   expect(text).toContain(String.raw`\addscenariosection{1}{Alliance Scenario}{Wizard Probe}`);
   expect(text).toContain(String.raw`\textbf{Author:} Tier Two`);
   expect(text).toContain("\\textit{A ``grim'' tale. Of 50\\% luck \\& \\#1 heroes.}");
@@ -357,7 +344,7 @@ test("the header image appears in the upload popover and the generated title ima
   await runSetup(page);
 
   await expect
-    .poll(() => editorValue(page))
+    .poll(() => editorText(page))
     .toContain(String.raw`\addscenariosection{1}{Clash Scenario}{Wizard Probe}{\images/${SLUG}.png}`);
 
   await page.locator("#upload-open").click();
@@ -382,12 +369,12 @@ test("a reload after creating reopens the generated text from the local draft", 
   await runSetup(page);
 
   await expect(page).toHaveURL(new RegExp(`#/drafts/coops/${SLUG}$`));
-  await expect.poll(() => editorValue(page)).toContain(String.raw`\textit{Reload probe.}`);
-  const generated = await editorValue(page);
+  await expect.poll(() => editorText(page)).toContain(String.raw`\textit{Reload probe.}`);
+  const generated = await editorText(page);
 
   await page.reload();
   await expect(page.locator("#workspace")).toBeVisible();
-  await expect.poll(() => editorValue(page), { message: "the reload lost the generated text" }).toBe(generated);
+  await expect.poll(() => editorText(page), { message: "the reload lost the generated text" }).toBe(generated);
 
   expect(errors, "the page reported errors while reopening the generated text").toEqual([]);
 });
@@ -475,7 +462,7 @@ test("income and resources write both lines with glyphs, and income offers no em
 
   // Answered above, so runSetup leaves it as it is.
   await runSetup(page, { resources: async () => {} });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(
     String.raw`\textbf{Starting Resources:} 20 \svg{gold}, 6 \svg{building_materials}, 1 \svg{valuables}`,
   );
@@ -497,7 +484,7 @@ test("the starting resources fields are prefilled 10/0/0 and answered by default
   await expect(next).toHaveClass(/\bprimary\b/);
 
   await runSetup(page, { resources: async () => {} });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(String.raw`\textbf{Starting Resources:} 10 \svg{gold}`);
 
   expect(errors, "the page reported errors on the prefilled resources pane").toEqual([]);
@@ -532,7 +519,7 @@ test("the prefilled starting units pass \\svg{bronze} through", async ({ app }) 
       await expect(page.locator("#wizard-next")).toHaveText("Next");
     },
   });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(
     [
       String.raw`\textbf{Starting Units:}`,
@@ -584,7 +571,7 @@ test("no buildings ticked writes None; ticked buildings follow the fixed order w
       await expect(page.locator("#wizard-next")).toBeEnabled();
     },
   });
-  expect(await editorValue(page)).toContain(String.raw`\textbf{Town Buildings:} None`);
+  expect(await editorText(page)).toContain(String.raw`\textbf{Town Buildings:} None`);
 
   await backToWelcome(page);
   await reachSetup(page, { name: "Wizard Probe Two" });
@@ -597,7 +584,7 @@ test("no buildings ticked writes None; ticked buildings follow the fixed order w
       await page.getByLabel("Bronze Dwelling").check();
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     String.raw`\textbf{Town Buildings:} \svg{bronze}~Dwelling, \svg{golden}~Dwelling, Citadel`,
   );
 
@@ -617,7 +604,7 @@ test("tile pool No removes the line; Yes with 2 Far writes the random Far senten
       await expect(page.locator("#wizard-pool-counts")).toBeHidden();
     },
   });
-  const without = await editorValue(page);
+  const without = await editorText(page);
   expect(without).not.toContain("Map Tile Pool");
   expect(without).not.toContain("Additional Bonus");
   expect(without).toContain("\\textbf{Town Buildings:} None\n\n\\subsection*{\\MakeUppercase{Map Setup}}");
@@ -640,7 +627,7 @@ test("tile pool No removes the line; Yes with 2 Far writes the random Far senten
       await expect(next).toHaveText("Next");
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     "\\textbf{Map Tile Pool:} Each player takes 2 random Far (II--III) Map Tiles\n",
   );
 
@@ -662,7 +649,7 @@ test("map setup writes one item per non-zero tile type", async ({ app }) => {
       await expect(page.getByLabel("Center (VI–VII)", { exact: true })).toHaveValue("1");
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     [
       "Take the following Map Tiles and arrange them as shown in the Scenario map layout:",
       String.raw`\begin{itemize}`,
@@ -738,7 +725,7 @@ test("map setup accepts a fixed count or a multiple of the players, and explains
       await page.locator("#wizard-map-center").fill("1");
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     [
       "Take the following Map Tiles and arrange them as shown in the Scenario map layout ($P$ stands for the number of players):",
       String.raw`\begin{itemize}`,
@@ -769,8 +756,8 @@ test("skipping panes 5 and 8 leaves their template text unchanged, skipping pane
     income: { gold: 10, building_materials: 0, valuables: 0 },
     resources: { gold: 10, building_materials: 0, valuables: 0 },
   });
-  await expect.poll(() => editorValue(page)).toBe(expected);
-  const text = await editorValue(page);
+  await expect.poll(() => editorText(page)).toBe(expected);
+  const text = await editorText(page);
   expect(text).toContain(String.raw`\textbf{Starting Resources:} 10 \svg{gold}`);
   expect(text).toContain(
     String.raw`\textbf{Starting Income:} 10 \svg{gold}, 0 \svg{building_materials}, 0 \svg{valuables}`,
@@ -804,7 +791,7 @@ test("victory and defeat bodies replace the placeholders; an empty one keeps ...
       await expect(next).toHaveClass(/\bprimary\b/);
     },
   });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(
     "\\subsection*{\\MakeUppercase{Victory Conditions}}\nHold the ``Obelisk'' for 2 Rounds.\n\nOr take 100\\% of the Towns.\n",
   );
@@ -864,7 +851,7 @@ test("timed events list Rounds 2 to the chosen length, and only picked Rounds ar
       await expect(events(4)).toHaveCount(0);
     },
   });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(
     [
       String.raw`\subsection*{\MakeUppercase{Timed Events}}`,
@@ -921,7 +908,7 @@ test("lowering the length drops Timed Events rounds above it, together with thei
   await moveTo(page, "maps");
   await page.locator("#wizard-next").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain("\\textbf{\\nth{3} Round:}\n\\begin{itemize}\n  \\item Kept\n\\end{itemize}");
   expect(text).not.toContain("Dropped");
 
@@ -1036,7 +1023,7 @@ test("additional rules start at three fields, grow to eight, then show the limit
       await expect(next).toHaveText("Next");
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     [
       String.raw`\subsection*{\MakeUppercase{Additional Rules}}`,
       "",
@@ -1095,7 +1082,7 @@ test("rule chips fill the next empty rule field on click, or the field they are 
       await expect(page.locator("#wizard-next")).toHaveText("Next");
     },
   });
-  expect(await editorValue(page)).toContain(
+  expect(await editorText(page)).toContain(
     String.raw`    \item \textbf{Obelisk:} Roll 1 \svg{resource} or \svg{treasure}.`,
   );
 
@@ -1149,8 +1136,8 @@ test("uploaded maps appear in the wizard, the popover, and as captioned \\includ
       { path: `assets/maps/${SLUG}_3-4p.png`, counts: [3, 4] },
     ],
   });
-  await expect.poll(() => editorValue(page)).toBe(expected);
-  const text = await editorValue(page);
+  await expect.poll(() => editorText(page)).toBe(expected);
+  const text = await editorText(page);
   expect(
     text.endsWith(
       [
@@ -1279,8 +1266,8 @@ test("a full run through all twelve panes produces a file with no answered place
     rules: ["No Spells"],
     maps: [{ path: `assets/maps/${SLUG}_2p.png`, counts: [2] }],
   });
-  await expect.poll(() => editorValue(page)).toBe(expected);
-  const text = await editorValue(page);
+  await expect.poll(() => editorText(page)).toBe(expected);
+  const text = await editorText(page);
   expect(text, "an answered placeholder is left").not.toContain("...");
   for (const placeholder of [
     "X \\svg{gold}",
@@ -1389,7 +1376,7 @@ test("map captions: a layout for every player count gets the Scenario layout cap
       await page.locator("#wizard-maps").setInputFiles([fakeFile("whole_map.png"), fakeFile("split_2-3p.png")]);
     },
   });
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain(
     [
       String.raw`  \includegraphics[width=0.6\paperwidth]{\maps/${SLUG}.png}`,

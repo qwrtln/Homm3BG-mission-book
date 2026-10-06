@@ -4,6 +4,18 @@
 // which installs the engine and GitHub stubs before navigating.
 
 import { PNG_DPI } from "../../shared/page-images.ts";
+import {
+  appendToEditorLine,
+  completionList,
+  editorCursor,
+  editorHasFocus,
+  editorLine,
+  editorLineCount,
+  focusEditor,
+  markedLines,
+  setEditorSelection,
+  setEditorText,
+} from "../helpers/editor.mjs";
 import { pngPixel } from "../helpers/png.mjs";
 import { assertValidCrc32, readZipEntries } from "../helpers/zip.mjs";
 import {
@@ -724,10 +736,7 @@ test("a rebuild briefly marks on the pages where the edited lines landed", async
   await expect(page.locator("#status-text")).toHaveText(/^Built /);
   await expect(marks).toHaveCount(0);
 
-  await page.evaluate(() => {
-    const cm = document.querySelector(".CodeMirror").CodeMirror;
-    cm.replaceRange(" % edited", { line: 1, ch: cm.getLine(1).length });
-  });
+  await appendToEditorLine(page, 1, " % edited");
   await page.locator("#build").click();
   await expect(page.locator("#status-text")).toHaveText(/^Built /);
   await expect(marks).toHaveCount(1);
@@ -870,20 +879,18 @@ async function failCompiles(page, error) {
 
 /**
  * The editor's cursor line, 1-based, and every line carrying the build-error
- * mark, read from CodeMirror 5's own instance on its wrapper element.
+ * mark.
  *
  * @param {import("@playwright/test").Page} page
  * @returns {Promise<{cursor: number, focused: boolean, lineCount: number, marked: number[]}>}
  */
 async function editorState(page) {
-  return page.evaluate(() => {
-    const cm = document.querySelector(".CodeMirror").CodeMirror;
-    const marked = [];
-    cm.eachLine((handle) => {
-      if (/\bbuild-error-line\b/.test(handle.bgClass || "")) marked.push(cm.getLineNumber(handle) + 1);
-    });
-    return { cursor: cm.getCursor().line + 1, focused: cm.hasFocus(), lineCount: cm.lineCount(), marked };
-  });
+  return {
+    cursor: (await editorCursor(page)).line + 1,
+    focused: await editorHasFocus(page),
+    lineCount: await editorLineCount(page),
+    marked: await markedLines(page),
+  };
 }
 
 test("a build error in the scenario jumps the editor to its line", async ({ app }) => {
@@ -904,8 +911,8 @@ test("a build error in the scenario jumps the editor to its line", async ({ app 
   const after = await editorState(page);
   expect(after.cursor).toBe(lineCount);
   expect(after.focused).toBe(true);
-  // CodeMirror renders only the lines in view, so the mark showing means it scrolled there.
-  await expect(page.locator(".CodeMirror .build-error-line")).toBeInViewport();
+  // The editor renders only the lines in view, so the mark showing means it scrolled there.
+  await expect(page.locator(".build-error-line")).toBeInViewport();
 
   // The next build clears the mark.
   await page.evaluate(() => {
@@ -1199,25 +1206,12 @@ test("map images add up across picks, skip the map-editor file, and can be remov
  * @returns {Promise<void>}
  */
 async function setEditor(page, marked) {
-  await page.evaluate((marked) => {
-    const cm = /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror;
-    const at = marked.indexOf("|");
-    cm.setValue(marked.replace("|", ""));
-    cm.focus();
-    cm.setCursor(cm.posFromIndex(at));
-  }, marked);
-}
-
-/**
- * @param {import("@playwright/test").Page} page
- * @param {number} line
- * @returns {Promise<string>}
- */
-async function editorLine(page, line) {
-  return page.evaluate(
-    (line) => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getLine(line),
-    line,
-  );
+  const at = marked.indexOf("|");
+  await setEditorText(page, marked.replace("|", ""));
+  await focusEditor(page);
+  // The text up to the marker, to find its line and column.
+  const before = marked.slice(0, at).split("\n");
+  await setEditorSelection(page, { line: before.length - 1, ch: before[before.length - 1].length });
 }
 
 test("the editor suggests uploaded image paths, by keyboard and by mouse", async ({ app }) => {
@@ -1231,7 +1225,7 @@ test("the editor suggests uploaded image paths, by keyboard and by mouse", async
   await rows.nth(1).getByRole("checkbox", { name: "4", exact: true }).check();
   await page.locator("#upload-done").click();
 
-  const list = page.locator("#editor-autocomplete");
+  const list = completionList(page);
   const options = list.getByRole("option");
   const header = "\\addscenariosection{1}{Clash Scenario}{Probe}";
   const graphics = "\\includegraphics[width=\\linewidth]";
@@ -1278,7 +1272,7 @@ test("the editor suggests uploaded image paths, by keyboard and by mouse", async
   await options.nth(1).click();
   await expect(list).toBeHidden();
   expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/${SLUG}_4p.png}`);
-  await expect(page.locator(".CodeMirror textarea")).toBeFocused();
+  await expect.poll(() => editorHasFocus(page)).toBe(true);
 
   // Deleting inside an argument opens the list too, after a short pause,
   // with no character typed: the path left over is what it narrows by.
@@ -1308,14 +1302,13 @@ test("the editor suggests glyph names with their pictures after \\svg", async ({
   await enterWorkspace(page);
   expect(usageRequests, "the catalog loads on the first \\svg, not on page load").toBe(0);
 
-  const list = page.locator("#editor-autocomplete");
+  const list = completionList(page);
   const options = list.getByRole("option");
 
   // Typing \svg{go opens the list. A prefix match beats a more used
   // substring match, and every row shows the glyph's picture.
   await setEditor(page, "Gain |");
   await page.keyboard.type("\\svg{go");
-  await expect(list).toHaveAttribute("aria-label", "Glyphs");
   await expect(options.first()).toHaveText("gold");
   await expect(options.first().locator("img")).toHaveAttribute("src", "../repo/assets/glyphs/gold.svg");
   await expect(options.filter({ hasText: "ongoing" })).toHaveCount(1);
@@ -1340,7 +1333,7 @@ test("the editor suggests glyph names with their pictures after \\svg", async ({
   await expect(options).toHaveText(["morale_positive"]);
   await options.first().click();
   expect(await editorLine(page, 0)).toBe("Gain \\svg{morale_positive}");
-  await expect(page.locator(".CodeMirror textarea")).toBeFocused();
+  await expect.poll(() => editorHasFocus(page)).toBe(true);
 
   // Right after \svg, Tab picks and writes the braces.
   await setEditor(page, "Gain |");
@@ -1395,8 +1388,8 @@ test("the theme toggle flips the theme and the choice survives a reload", async 
   await expect(html).toHaveAttribute("data-theme", after);
   // "Dark mode" is a checkbox item: checked exactly when the theme is dark.
   await expect(toggle).toHaveAttribute("aria-checked", String(after === "dark"));
-  // CodeMirror is themed along with the document.
-  await expect(page.locator(".CodeMirror")).toHaveClass(after === "dark" ? /cm-s-github-dark/ : /cm-s-github-light/);
+  // The editor is themed along with the document.
+  await expect(page.locator(".cm-editor")).toHaveClass(after === "dark" ? /cm-github-dark/ : /cm-github-light/);
 
   expect(await page.evaluate((key) => localStorage.getItem(key), THEME_KEY)).toBe(after);
 

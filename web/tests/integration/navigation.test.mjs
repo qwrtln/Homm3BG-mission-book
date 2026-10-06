@@ -2,6 +2,7 @@
 // the unsaved-changes note and prompt, the loading screen for an address, and
 // the welcome screen's data surviving a round trip.
 
+import { editorText, insertInEditor, undoInEditor } from "../helpers/editor.mjs";
 import { EMPTY_PDF_TEXT, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";
@@ -20,9 +21,7 @@ async function startClash(page, name = "Nav Probe") {
 
 /** @param {import("@playwright/test").Page} page @param {string} text */
 async function typeInEditor(page, text) {
-  await page.evaluate((t) => {
-    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.replaceRange(t, { line: 0, ch: 0 });
-  }, text);
+  await insertInEditor(page, 0, text);
 }
 
 test("the welcome screen greets first and links to the Mission Book", async ({ app }) => {
@@ -120,7 +119,7 @@ test.describe("signed in", () => {
     await startClash(page);
     await typeInEditor(page, "% edit\n");
     await expect(page.locator("#unsaved-note")).toBeVisible();
-    await page.evaluate(() => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.undo());
+    await undoInEditor(page);
     await expect(page.locator("#unsaved-note")).toBeHidden();
   });
 
@@ -150,9 +149,7 @@ test("the same scenario can be opened again after going back", async ({ app }) =
 
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
-  const value = await page.evaluate(() =>
-    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-  );
+  const value = await editorText(page);
   expect(value).toContain("% keep me");
 });
 
@@ -297,9 +294,7 @@ test("Back to editing returns to the scenario just left, with its built PDF", as
   await expect(page.locator("#download")).toBeEnabled();
   await expect(page.locator("#build")).toBeEnabled();
   expect(new URL(page.url()).hash).toBe("#/drafts/clash/nav_probe");
-  const value = await page.evaluate(() =>
-    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-  );
+  const value = await editorText(page);
   expect(value).toContain("% keep me");
 });
 

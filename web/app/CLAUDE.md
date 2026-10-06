@@ -45,7 +45,8 @@ or the deploy allow-list names it.
   structural selectors. A component renders its own ids; they are not in
   `index.html` or `dom-ids.d.ts`, so a component never reads them through `el()`.
 - Tests reach `state` and the local store through `window.__state` and
-  `window.__localStore`, installed at the top of `main.tsx` (typed in
+  `window.__localStore`, installed at the top of `main.tsx`, and the editor
+  through `window.__editor`, installed by the editor on mount (all typed in
   `web/types/globals.d.ts`). Keep them in step with what the tests read.
 - `localStorage` keys carry the `wasm-scenario-builder:` prefix. The one
   exception, `github_token` in `web/shared/github-auth.js`, stays as it is:
@@ -64,6 +65,10 @@ or the deploy allow-list names it.
   functions in `github/` (sign in, save, open PR) and `modules/`, which write
   the store; the components render from it.
 - A component keeps the ids, `data-testid`s and accessible names tier 2 uses.
+- `components/editor/` is the source editor: `Editor.tsx` (one CodeMirror 6 view
+  in a ref), `theme.ts`, `completions.ts` and `error-line.ts`. Other code reaches
+  it through `modules/editor-api.ts`, never the view (see "Editor library" in
+  `web/CLAUDE.md`).
 - `components/wizard/` renders the start wizard from `store.wizard`; every pane
   stays in the page (the shown one aside is `hidden`), so each keeps its ids.
   `modules/wizard.ts` holds its actions and the rules for a pane being answered
@@ -77,8 +82,8 @@ or the deploy allow-list names it.
 
 - `styles/app.css` is the one stylesheet `index.html` links. It imports
   Tailwind's theme and utilities (no preflight, which would restyle the
-  legacy regions) and puts the legacy sheets and CodeMirror 5's in a `legacy`
-  layer, which the utilities layer beats. Delete a sheet's import there when
+  legacy regions) and puts the legacy sheets in a `legacy` layer, which the
+  utilities layer beats. Delete a sheet's import there when
   its last region migrates.
 - Colors come from custom properties in `styles/tokens.css` (GitHub Primer
   values). A new color goes in `tokens.css`, once under `:root` and once under

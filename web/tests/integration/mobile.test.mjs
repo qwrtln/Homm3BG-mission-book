@@ -12,7 +12,7 @@
 // width for horizontal page overflow, plus one navigation round trip
 // (workspace -> welcome -> workspace) found by manual testing to leave the
 // page much wider than the viewport. Overflow inside a pane that scrolls on
-// purpose (CodeMirror, the PDF canvas) does not count; only the page's own
+// purpose (the editor, the PDF canvas) does not count; only the page's own
 // scrollWidth against its innerWidth does.
 
 import { devices } from "@playwright/test";
@@ -29,7 +29,7 @@ test("lays out at the emulated device width, not the desktop default", async ({ 
 
 /**
  * Asserts the page itself never scrolls sideways, with a 1px tolerance.
- * Overflow inside an element that scrolls on purpose (CodeMirror, the PDF
+ * Overflow inside an element that scrolls on purpose (the editor, the PDF
  * canvas) does not count: this only compares the document's own scrollWidth
  * against the viewport.
  *

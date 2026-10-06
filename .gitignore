@@ -28,7 +28,6 @@ sections/translated
 
 # Web editor
 assets/glyphs-inkscape/glyph-usage.json
-/web/app/vendor/
 /web/dist/
 .wrangler/
 node_modules/

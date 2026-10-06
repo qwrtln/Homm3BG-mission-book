@@ -1,5 +1,5 @@
-// The single source for every keyboard shortcut: its CodeMirror 5 key names
-// per platform, its scope and its display label. Handlers, the Help dialog
+// The single source for every keyboard shortcut: its key names per platform
+// (Ctrl, Alt, Shift and Cmd joined with "-"), its scope and its display label. Handlers, the Help dialog
 // and the build hints all derive their keys and labels from this table, so
 // they cannot drift apart.
 //
@@ -11,14 +11,15 @@ export interface ShortcutRow {
   id: string;
   /** shown in the Help dialog */
   description: string;
-  /** "app" keys work anywhere in the workspace; "editor" keys are bound inside CodeMirror only */
+  /** "app" keys work anywhere in the workspace; "editor" keys are bound inside the editor only */
   scope: "app" | "editor";
   /**
-   * CodeMirror 5 key-name alternatives for the shortcut. A space inside one
-   * entry is a sequence ("Esc Tab"), not a chord.
+   * Key-name alternatives for the shortcut, e.g. "Shift-Cmd-K". A space inside
+   * one entry is a sequence ("Esc Tab"), not a chord. toEditorKey() turns
+   * an entry into the name CodeMirror's keymap takes.
    */
   keys: { mac: string[]; other: string[] };
-  /** the CodeMirror command or app action name */
+  /** the editor command or app action name modules/shortcuts.ts maps to a handler */
   command?: string;
 }
 
@@ -117,10 +118,10 @@ const MAC_KEY_SYMBOLS: Readonly<Record<string, string>> = Object.freeze({
 const MODIFIER_ORDER = Object.freeze(["Ctrl", "Alt", "Shift", "Cmd"]);
 
 /**
- * The display label for one CodeMirror key-name entry (no spaces: a single
- * chord, not a sequence).
+ * The display label for one key-name entry (no spaces: a single chord, not a
+ * sequence).
  *
- * @param key a CodeMirror 5 key name, e.g. "Shift-Cmd-K"
+ * @param key a key name, e.g. "Shift-Cmd-K"
  * @param mac true to render macOS symbols, false for "Ctrl+Alt+Shift+Key"
  */
 function chordLabel(key: string, mac: boolean): string {
@@ -141,7 +142,7 @@ function chordLabel(key: string, mac: boolean): string {
  * Display text for one key entry from a ShortcutRow's keys list. A space
  * inside the entry is a sequence, joined with ", then ".
  *
- * @param key a CodeMirror 5 key-name entry, chord or sequence
+ * @param key a key-name entry, chord or sequence
  * @param mac true to render macOS symbols
  */
 export function keyLabel(key: string, mac: boolean): string {
@@ -164,11 +165,11 @@ export function shortcutKeys(id: string, mac: boolean): string[] {
 }
 
 /**
- * Whether a DOM KeyboardEvent-shaped object is exactly one CodeMirror key
- * name (a single chord, not a sequence), with exact modifiers. Letters
- * compare case-insensitively.
+ * Whether a DOM KeyboardEvent-shaped object is exactly one key name (a single
+ * chord, not a sequence), with exact modifiers. Letters compare
+ * case-insensitively.
  *
- * @param key a CodeMirror 5 key name, e.g. "Shift-Cmd-K"
+ * @param key a key name, e.g. "Shift-Cmd-K"
  */
 export function matchesKey(
   event: { key: string; ctrlKey: boolean; metaKey: boolean; altKey: boolean; shiftKey: boolean },
@@ -190,4 +191,18 @@ export function matchesKey(
     return event.key.toLowerCase() === mainKey.toLowerCase();
   }
   return event.key === mainKey;
+}
+
+/**
+ * One key-name entry as CodeMirror's keymap spells it. The modifier names
+ * already agree ("Cmd" is Meta there). A letter is lowercase, as it is with
+ * Shift held, and "Esc" is "Escape".
+ *
+ * @param key a single chord, e.g. "Shift-Cmd-K"
+ */
+export function toEditorKey(key: string): string {
+  const parts = key.split("-");
+  const mainKey = parts[parts.length - 1];
+  const named = mainKey === "Esc" ? "Escape" : mainKey.length === 1 ? mainKey.toLowerCase() : mainKey;
+  return [...parts.slice(0, -1), named].join("-");
 }

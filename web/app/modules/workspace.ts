@@ -6,6 +6,7 @@ import { TEMPLATES } from "./config.ts";
 import { markClean } from "./dirty.ts";
 import { buildKeyLabel, el, readyStatus, sanitizeFilename, setStatus } from "./dom.js";
 import { flushDraft, saveDraft } from "./drafts.ts";
+import { type EditorApi, getEditor, requireEditor } from "./editor-api.ts";
 import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.js";
 import { setScenarioTitle } from "./header.ts";
@@ -14,7 +15,7 @@ import { clearPdf, showPdf, showPdfLoading } from "./pdf-view.js";
 import { prefetchScenario } from "./picker.ts";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
-import { requireEditor, state } from "./state.ts";
+import { state } from "./state.ts";
 import { resetUploads, restoreUploads } from "./uploads.ts";
 
 /**
@@ -70,11 +71,10 @@ export function showWorkspace(): Promise<void> {
  * @param name what the contributor typed
  * @param category draft-scenarios subdir the new scenario lands in
  */
-async function openNewScenario(name: string, category: string): Promise<{ cm: CodeMirrorEditor; identity: string }> {
-  const cm = requireEditor();
+async function openNewScenario(name: string, category: string): Promise<{ editor: EditorApi; identity: string }> {
+  const editor = requireEditor();
 
   await showWorkspace();
-  cm.refresh(); // CodeMirror mismeasures while its host was display:none
   store.setState({ actionsVisible: true });
 
   // Keep the .tex extension: TeX's \input only appends one if missing, so a
@@ -91,7 +91,7 @@ async function openNewScenario(name: string, category: string): Promise<{ cm: Co
   store.setState({ categoryHold: true });
   reflectRoute();
   store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
-  return { cm, identity };
+  return { editor, identity };
 }
 
 /**
@@ -122,7 +122,7 @@ export async function commitEntry(path: string, name: string, category: string):
     : state.entries.find((e) => e.path === path);
   if (!entry) return;
 
-  const { cm, identity } = await openNewScenario(name, category);
+  const { editor, identity } = await openNewScenario(name, category);
   setStatus("Loading…");
 
   const fetched = await preloadFile(entry.path);
@@ -131,10 +131,10 @@ export async function commitEntry(path: string, name: string, category: string):
   // The heading names the kind of the category it is filed under, not its source's.
   const pristine = withScenarioKind(withScenarioTitle(pristineSource, name.trim()), category);
   const local = await offerDraftOverCopy(identity, name.trim(), entry.title, pristine);
-  cm.setValue(local ? local.text : pristine);
+  editor.setText(local ? local.text : pristine);
   store.setState({ draftNote: local !== null });
   syncCategoryControl();
-  cm.focus();
+  editor.focus();
 
   resetUploads();
   restoreUploads(local ? local.uploads : []);
@@ -153,7 +153,7 @@ export async function commitEntry(path: string, name: string, category: string):
   const shown = !template && local === null && (await showPrefetchedPdf(path, pristineSource));
 
   // The published PDF is the entry's own, never the renamed copy in the editor.
-  const differs = shown && cm.getValue() !== pristineSource;
+  const differs = shown && editor.getText() !== pristineSource;
   setStatus(
     differs
       ? `Published PDF of ${entry.title}. Press Build PDF or ${buildKeyLabel()} to see your changes.`
@@ -178,11 +178,11 @@ export async function commitGeneratedEntry(
   source: string,
   uploads: { path: string; bytes: Uint8Array }[],
 ): Promise<void> {
-  const { cm, identity } = await openNewScenario(name, category);
-  cm.setValue(source);
+  const { editor, identity } = await openNewScenario(name, category);
+  editor.setText(source);
   store.setState({ draftNote: false });
   syncCategoryControl();
-  cm.focus();
+  editor.focus();
 
   // In this order: resetUploads() would wipe anything staged before it, and
   // the clean state must see the staged files.
@@ -246,10 +246,9 @@ export async function openForEdit(
   source: string,
   edit: { startOver: boolean },
 ): Promise<void> {
-  const cm = requireEditor();
+  const editor = requireEditor();
 
   await showWorkspace();
-  cm.refresh();
   store.setState({ actionsVisible: true });
 
   resetGithubSaveState();
@@ -261,9 +260,9 @@ export async function openForEdit(
   store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
 
   const local = await offerLocalDraft(path, title, source);
-  cm.setValue(local ? local.text : source);
+  editor.setText(local ? local.text : source);
   store.setState({ draftNote: local !== null });
-  cm.focus();
+  editor.focus();
 
   resetUploads();
   restoreUploads(local ? local.uploads : []);
@@ -290,7 +289,8 @@ export async function openForEdit(
  */
 export function showWelcome(): void {
   clearTimeout(state.saveTimer ?? undefined);
-  if (state.chosenPath && state.cm) void flushDraft(state.chosenPath, state.cm.getValue());
+  const editor = getEditor();
+  if (state.chosenPath && editor) void flushDraft(state.chosenPath, editor.getText());
 
   clearRoute();
   store.setState({ parked: state.chosenPath !== null, actionsVisible: false });
@@ -309,11 +309,10 @@ export function showWelcome(): void {
  */
 export async function returnToParked(): Promise<void> {
   if (!isParked()) return;
-  const cm = requireEditor();
+  const editor = requireEditor();
   await showWorkspace();
-  cm.refresh(); // CodeMirror mismeasures while its host was display:none
   store.setState({ actionsVisible: true });
   syncCategoryControl();
   reflectRoute();
-  cm.focus();
+  editor.focus();
 }

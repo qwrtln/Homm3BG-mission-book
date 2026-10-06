@@ -36,7 +36,7 @@ npm ci                             # in web/
 npx playwright install chromium    # Playwright's own browser build
 ```
 
-The Playwright `webServer` fetches CodeMirror 5, runs `npm run build` and then
+The Playwright `webServer` runs `npm run build` and then
 serves `web/dist/`, so the tests run against the production output. Tier 1 is
 never gated behind tier 2.
 
@@ -51,6 +51,11 @@ never gated behind tier 2.
   from the repository root and the rest of `web/` (`shared/`, `core/`) where it
   sits, with the COOP/COEP headers the engine needs. `serve.mjs` is the entry
   point `webServer` runs; `PORT` overrides the default 8322.
+- `helpers/editor.mjs` — `editorText(page)`, `setEditorText(page, text)`,
+  `editorCursor(page)` and the rest of the reads and writes a test needs on the
+  source editor, built on `window.__editor`. A test never reaches into the
+  editor's own markup for its text: only the lines in view are drawn. The
+  suggestion list is `completionList(page)`, the find bar `searchPanel(page)`.
 - `stubs/` — `installEngineStub(page)`, `installGithubStub(page, routes)` and
   `installPublishedPdfStub(page)`, all built on `page.route`.
 

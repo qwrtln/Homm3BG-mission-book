@@ -1,5 +1,6 @@
 import { hasUnsavedChanges, uploadsSignature } from "../../shared/unsaved.ts";
 import { store } from "../store.ts";
+import { getEditor } from "./editor-api.ts";
 import { state } from "./state.ts";
 
 /**
@@ -11,7 +12,7 @@ import { state } from "./state.ts";
  */
 export function markClean(text?: string | null, uploads?: string): void {
   state.clean = {
-    text: text === undefined ? (state.cm ? state.cm.getValue() : "") : text,
+    text: text === undefined ? (getEditor()?.getText() ?? "") : text,
     uploads: uploads ?? uploadsSignature(state.uploadedFiles),
   };
   refreshUnsavedNote();
@@ -19,9 +20,10 @@ export function markClean(text?: string | null, uploads?: string): void {
 
 /** @returns true when a scenario is open and differs from its last clean state */
 export function isDirty(): boolean {
-  if (!state.chosenPath || !state.cm || !state.clean) return false;
+  const editor = getEditor();
+  if (!state.chosenPath || !editor || !state.clean) return false;
   return hasUnsavedChanges(state.clean, {
-    text: state.cm.getValue(),
+    text: editor.getText(),
     uploads: uploadsSignature(state.uploadedFiles),
   });
 }

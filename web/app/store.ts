@@ -21,7 +21,6 @@ export interface AppState {
   pdfPath: string | null;
   /** Whether the pane drops lastPdf's last page (a published PDF's feedback page). */
   pdfDropsLastPage: boolean;
-  cm: CodeMirrorEditor | null;
   /** Repository path -> the bytes a contributor added from their own machine. */
   uploadedFiles: Map<string, Uint8Array>;
   /** The pending autosave's timer id, from the DOM's setTimeout. */
@@ -257,7 +256,6 @@ export function initialState(): StoreState {
     pdfUploads: null, // the uploadsSignature of the in-app build lastPdf came from
     pdfPath: null, // the scenario lastPdf shows, which names its download
     pdfDropsLastPage: false, // whether the pane drops lastPdf's last page
-    cm: null, // CodeMirror instance, created once over #editor
 
     // Files a contributor added from their own machine, not the repository: a
     // new header image or new map art the scenario does not have committed

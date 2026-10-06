@@ -13,13 +13,3 @@ export const state: AppState = new Proxy({} as AppState, {
     return true;
   },
 });
-
-/**
- * The editor instance, for the paths that cannot run before initEditor has
- * made it. Throws rather than returning null, so no caller has to assert a
- * shape the type system cannot see.
- */
-export function requireEditor(): CodeMirrorEditor {
-  if (state.cm === null) throw new Error("The editor is not ready yet.");
-  return state.cm;
-}

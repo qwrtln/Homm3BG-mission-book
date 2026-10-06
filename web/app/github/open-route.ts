@@ -4,12 +4,13 @@ import { syncCategoryControl } from "../modules/category.ts";
 import { markClean } from "../modules/dirty.ts";
 import { basenameNoExt, readyStatus, setStatus } from "../modules/dom.js";
 import { loadDraft } from "../modules/drafts.ts";
+import { requireEditor } from "../modules/editor-api.ts";
 import { resetGithubSaveState } from "../modules/github-save-state.js";
 import { setScenarioTitle } from "../modules/header.ts";
 import { loadRecord } from "../modules/local-store.ts";
 import { clearPdf } from "../modules/pdf-view.js";
 import { clearRoute, endRouteLoading, reflectRoute } from "../modules/route.ts";
-import { requireEditor, state } from "../modules/state.ts";
+import { state } from "../modules/state.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
@@ -27,9 +28,8 @@ export async function reopenLocalDraft(path: string, title?: string): Promise<bo
   const content = record.text ?? loadDraft(path);
   if (content === null) return false;
 
-  const cm = requireEditor();
+  const editor = requireEditor();
   await showWorkspace();
-  cm.refresh();
   store.setState({ actionsVisible: true });
   resetGithubSaveState();
 
@@ -38,7 +38,7 @@ export async function reopenLocalDraft(path: string, title?: string): Promise<bo
   syncCategoryControl();
   reflectRoute();
   store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
-  cm.setValue(content);
+  editor.setText(content);
   store.setState({ draftNote: true });
   resetUploads();
   restoreUploads(record.uploads ?? []);

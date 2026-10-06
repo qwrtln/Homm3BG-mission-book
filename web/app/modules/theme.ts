@@ -1,18 +1,16 @@
 import { store } from "../store.ts";
-import { state } from "./state.ts";
 
 export const THEME_KEY = "wasm-scenario-builder:theme";
 
 export type Theme = "dark" | "light";
 
 /**
- * Applies a theme to the document, the editor and the store (which the
- * menu's "Dark mode" checkbox renders from), and remembers it.
+ * Applies a theme to the document and the store (which the menu's "Dark mode"
+ * checkbox and the editor render from), and remembers it.
  */
 export function applyTheme(theme: Theme): void {
   document.documentElement.setAttribute("data-theme", theme);
   store.setState({ theme });
-  if (state.cm) state.cm.setOption("theme", theme === "dark" ? "github-dark" : "github-light");
   try {
     localStorage.setItem(THEME_KEY, theme);
   } catch {

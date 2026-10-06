@@ -1,10 +1,9 @@
 // Playwright configuration for the tier-2 integration suite. Chromium only,
 // headless by default, backed by the repository's own dependency-free static
 // server (driver/serve.mjs -> driver/static-server.mjs) rather than any
-// Playwright-managed web server implementation. The webServer command fetches
-// CodeMirror 5 (fetch-vendor.sh) and builds the app before serving, since a
-// fresh clone or CI checkout has neither web/app/vendor/ nor web/dist/, and
-// the tests run against the production output.
+// Playwright-managed web server implementation. The webServer command builds
+// the app before serving, since a fresh clone or CI checkout has no web/dist/,
+// and the tests run against the production output.
 
 import { defineConfig, devices } from "@playwright/test";
 
@@ -36,7 +35,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "bash fetch-vendor.sh && npm run build && node tests/driver/serve.mjs",
+    command: "npm run build && node tests/driver/serve.mjs",
     cwd: "..",
     url: `${BASE_URL}/web/app/`,
     reuseExistingServer: !process.env.CI,

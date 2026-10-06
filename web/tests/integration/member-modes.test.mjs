@@ -6,6 +6,7 @@
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { categoryOfPath } from "../../shared/scenario-name.ts";
+import { editorBox } from "../helpers/editor.mjs";
 import { expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
@@ -342,7 +343,7 @@ test.describe("editing in place", () => {
       await page.locator("#edit-continue").click();
 
       await expect(page.locator("#workspace")).toBeVisible();
-      await expect(page.locator(".CodeMirror")).toContainText("the copy on the earlier edit branch");
+      await expect(editorBox(page)).toContainText("the copy on the earlier edit branch");
     });
 
     test("asks, and Start over opens main's copy and force-resets the branch only on the first save", async ({
@@ -357,7 +358,7 @@ test.describe("editing in place", () => {
       await page.locator("#edit-start-over").click();
 
       await expect(page.locator("#workspace")).toBeVisible();
-      await expect(page.locator(".CodeMirror")).not.toContainText("the copy on the earlier edit branch");
+      await expect(editorBox(page)).not.toContainText("the copy on the earlier edit branch");
       expect(
         seen.filter((r) => r.method !== "GET"),
         "starting over changed the branch before any save",
@@ -369,7 +370,7 @@ test.describe("editing in place", () => {
 
       // A second save builds on the first: only the first one resets. A
       // save with nothing changed since is a no-op, so make an edit first.
-      await page.locator(".CodeMirror").click();
+      await editorBox(page).click();
       await page.keyboard.type("x");
       seen.length = 0;
       await page.locator("#github-save").click();

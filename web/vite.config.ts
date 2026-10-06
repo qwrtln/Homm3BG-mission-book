@@ -7,7 +7,7 @@
 // allow-list in publish-docs.yaml puts them at the site root; in development
 // outOfBundleAssets() serves them from disk.
 
-import { cpSync, existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { dirname, extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -86,26 +86,6 @@ function outOfBundleAssets(): Plugin {
   };
 }
 
-/**
- * Copies the fetched CodeMirror 5 files into the build. index.html loads them
- * as classic <script> tags, which the bundler leaves alone, and the About
- * dialog loads its LICENSE by URL. Goes with CodeMirror 5.
- */
-function copyCodemirror(): Plugin {
-  return {
-    name: "copy-codemirror",
-    apply: "build",
-    closeBundle() {
-      const from = join(WEB, "app", "vendor", "codemirror");
-      if (!existsSync(from)) throw new Error("web/app/vendor/codemirror is missing: run web/fetch-vendor.sh");
-      cpSync(from, join(WEB, "dist", "vendor", "codemirror"), {
-        recursive: true,
-        filter: (path) => !path.endsWith(".version"),
-      });
-    },
-  };
-}
-
 interface Notice {
   name: string;
   version: string;
@@ -176,7 +156,7 @@ export default defineConfig(({ command }) => ({
   // The dev server mounts the page where the tests and serve.sh expect it. The
   // build uses relative URLs, so the same files work under /builder/.
   base: command === "serve" ? "/web/app/" : "./",
-  plugins: [react(), tailwindcss(), outOfBundleAssets(), copyCodemirror(), licenseNotices()],
+  plugins: [react(), tailwindcss(), outOfBundleAssets(), licenseNotices()],
   server: {
     headers: ISOLATION_HEADERS,
   },

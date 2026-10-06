@@ -28,12 +28,11 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
 - Add a browser library with `npm install`, import it, and let the bundler
   place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
   the first load. Do not vendor it by hand.
-- `web/vite.config.ts` has five plugins, `react` and `tailwindcss` plus three of its own: `out-of-bundle-assets` (dev only,
-  serves the paths below from disk), `copy-codemirror` (copies the fetched
-  CodeMirror 5 files into `dist/`, because they are classic `<script>` tags the
-  bundler leaves alone) and `license-notices` (writes `dist/licenses.json`, the
-  name, version and license text of every npm package in the bundle; the About
-  dialog lists them). A new bundled dependency needs no license edit.
+- `web/vite.config.ts` has four plugins, `react` and `tailwindcss` plus two of its own: `out-of-bundle-assets` (dev only,
+  serves the paths below from disk) and `license-notices` (writes
+  `dist/licenses.json`, the name, version and license text of every npm package
+  in the bundle; the About dialog lists them). A new bundled dependency needs no
+  license edit.
 - `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
   stays out of `tsconfig.json`: Node's types would leak into browser code
   (`setTimeout` would return `Timeout`). The other Node-only tools —
@@ -82,7 +81,7 @@ because the engine's worker resolves paths itself and the files are large:
 | `web/app/modules/` | App concerns, wired by `main.tsx`; DOM allowed |
 | `web/app/github/` | The GitHub flow (sign-in, save, pull request, resume, `openRoute`); writes the store, wired by `initGithub()` |
 | `web/types/` | Ambient `.d.ts` shared across the app |
-| `web/core/`, `web/app/vendor/` | Fetched and gitignored (`serve.sh` / `fetch-vendor.sh`). Do not edit. |
+| `web/core/` | Fetched and gitignored (`serve.sh`). Do not edit. |
 | `web/shared/vendor/` | Committed, loaded at run time, not bundled. Do not edit. |
 | `web/dist/`, `web/node_modules/` | Generated and gitignored. |
 | `web/oauth-relay/` | Cloudflare Pages function for GitHub OAuth; deployed by `deploy-oauth-relay.yaml` |
@@ -98,7 +97,7 @@ nothing self-registers. Order is load-bearing:
 
 1. The `header` mount (and `initCategory()`) before `applyTheme(initialTheme())`: the
    menu renders the theme from the store.
-2. Synchronous: editor, search, picker, uploads, build.
+2. Synchronous: the editor mount, picker, uploads, build.
 3. `initGithub()` and `loadEntries()` return promises. Anything needing both
    waits on `Promise.allSettled([githubReady, entriesReady])` — see `openRoute`.
 4. `ensureEngine()` and `preloadCommonFiles()` fire eagerly, rejections
@@ -137,8 +136,8 @@ npm run typecheck
 ## Running locally
 
 @web/serve.sh — its header comment holds the URL, the prerequisites and the
-usage. It fetches the engine and CodeMirror 5, runs `npm ci` when
-`node_modules/` is missing, then `npm run dev`.
+usage. It fetches the engine, runs `npm ci` when `node_modules/` is missing,
+then `npm run dev`.
 
 The deploy builds, copies `web/dist/` to `site/builder/` (served at `/builder/`)
 and the rest of `web/` through an allow-list to the site root, in
@@ -198,29 +197,42 @@ npm libraries are pinned by `web/package.json` and `web/package-lock.json`;
 bump one with `npm install <pkg>@<version>`.
 
 `web/vendor.env` is the single source for what is still fetched or committed
-outside npm: `BUSYTEX_*`, `TEXLYRE_*` and `CODEMIRROR_*` (with its
-`CODEMIRROR_SHA256`). Never hardcode one of these versions elsewhere. Not a
-manifest; nothing installs from it. `.github/workflows/publish-docs.yaml` reads
-it into `$GITHUB_ENV`, so every line stays `KEY=value` with no comments.
+outside npm: `BUSYTEX_*` and `TEXLYRE_*`. Never hardcode one of these versions
+elsewhere. Not a manifest; nothing installs from it.
+`.github/workflows/publish-docs.yaml` reads it into `$GITHUB_ENV`, so every line
+stays `KEY=value` with no comments.
 
-`web/fetch-vendor.sh` fetches CodeMirror 5 into `web/app/vendor/codemirror/`.
-To bump it, change its version, run `web/fetch-vendor.sh` and copy the actual
-hash it prints into the `_SHA256` line. The script goes with CodeMirror 5.
+## Editor library — CodeMirror 6
 
-## Editor library — CodeMirror 5, not 6
+`@codemirror/{state,view,language,commands,search,autocomplete}` and
+`@codemirror/legacy-modes` (npm), plus `@lezer/highlight` for the token tags.
+LaTeX is the `stex` mode, through `StreamLanguage`. The editor is
+`components/editor/Editor.tsx`: one `EditorView`, made when the component
+mounts and held in a ref.
 
-`web/app/vendor/codemirror/` is CodeMirror 5 (`CODEMIRROR_VERSION`), loaded by
-`web/app/index.html` as classic `<script>` tags defining a global `CodeMirror`.
-LaTeX mode: `mode/stex/stex.min.js`.
-
-- Use the CM5 API: `CodeMirror(element, options)`, `cm.getValue()`,
-  `cm.setValue()`, `cm.on("change", ...)`, `cm.setOption()`.
-- Never import `@codemirror/state`, `@codemirror/view`, `EditorState` or
-  `EditorView`. That is CodeMirror 6 — not installed. The editor moves to it in
-  a later phase of the framework migration.
-- Docs: https://codemirror.net/5/doc/manual.html
-- `fetch-vendor.sh` takes the `.min` files from cdnjs and `LICENSE` from the
-  `codemirror` npm tarball.
+- The rest of the app reaches it only through `modules/editor-api.ts`:
+  `getEditor()` / `requireEditor()` return an `EditorApi` (`getText`,
+  `setText`, `focus`, `revealLine`, `replaceRange`, `markErrorLine`). Never
+  import `@codemirror/*` outside `components/editor/` and `modules/shortcuts.ts`.
+- Tier 2 reads it through `window.__editor` (an `EditorProbe`: the same API plus
+  cursor, selection and line reads) and `tests/helpers/editor.mjs`. A test never
+  touches `.cm-*` markup to read the text: CodeMirror draws only the lines in
+  view.
+- Look: `components/editor/theme.ts`, a light and a dark `EditorView.theme` plus
+  a `HighlightStyle`, swapped through a `Compartment` when `store.theme`
+  changes. The find bar and the suggestion list use the app's custom
+  properties, so they follow the theme attribute on their own.
+- Keys: `shared/keymap.ts` stays the one table, which the Help dialog also
+  reads. `modules/shortcuts.ts` maps each editor row to a command and
+  `toEditorKey()` spells its key for CodeMirror. Do not add a binding in
+  `Editor.tsx` that the table lacks. The editor takes no `defaultKeymap`: it
+  binds Ctrl-Enter to a blank line, which would swallow the build key.
+- Suggestions: `components/editor/completions.ts` hands the ranked lists from
+  `shared/glyph-completion.ts` and `shared/image-completion.ts` to
+  `@codemirror/autocomplete`. Keep `filter: false`: the order is `shared/`'s.
+  `interactionDelay` stays 0, or Enter pressed within 75 ms of the list opening
+  inserts a newline instead of picking.
+- Docs: https://codemirror.net/docs/
 
 ## PDF viewer — pdf.js
 

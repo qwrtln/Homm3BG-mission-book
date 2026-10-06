@@ -16,6 +16,14 @@
     "test:e2e": "playwright test --config tests/playwright.config.mjs"
   },
   "dependencies": {
+    "@codemirror/autocomplete": "6.20.3",
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/language": "6.12.4",
+    "@codemirror/legacy-modes": "6.5.4",
+    "@codemirror/search": "6.7.2",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.13",
+    "@lezer/highlight": "1.2.5",
     "client-zip": "2.5.1",
     "pdfjs-dist": "6.4.299",
     "react": "19.3.0",

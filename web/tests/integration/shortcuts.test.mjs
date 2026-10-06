@@ -4,6 +4,7 @@
 // sites (the Build button's title, the empty and stale PDF texts, the Ready
 // status) name it.
 
+import { editorBox } from "../helpers/editor.mjs";
 import { chooseFromMenu, EMPTY_PDF_TEXT, engineCalls, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "shortcut probe";
@@ -85,7 +86,7 @@ test.describe("Ctrl/Cmd+Enter and Ctrl/Cmd+S build from the workspace", () => {
   test("Ctrl+Enter with focus in the editor starts exactly one compile", async ({ app }) => {
     const { page } = app;
     await openWorkspace(page);
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
 
     await page.keyboard.press("Control+Enter");
     await expect(page.locator("#status-text")).toHaveText(/^Built /);
@@ -235,7 +236,7 @@ test.describe("the build key is named where a contributor looks for it", () => {
     await page.locator("#build").click();
     await expect(page.locator("#status-text")).toHaveText(/^Built /);
 
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
     await page.keyboard.type("x");
     await expect(page.locator("#status-text")).toHaveText(
       "Source changed since last build. Press Ctrl+Enter to rebuild.",

@@ -2,6 +2,7 @@
 // address that matches nothing is dropped, and opening a scenario writes its
 // address. Signed out, so only local autosaves can match.
 
+import { editorText, setEditorText } from "../helpers/editor.mjs";
 import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const DRAFT_PATH = "draft-scenarios/clash/route_probe.tex";
@@ -20,9 +21,7 @@ test("a drafts address reopens the local autosave", async ({ app }) => {
 
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#welcome")).toBeHidden();
-  const value = await page.evaluate(() =>
-    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-  );
+  const value = await editorText(page);
   expect(value).toBe(DRAFT_TEXT);
   expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
 });
@@ -86,14 +85,6 @@ async function openBlankClash(page) {
 
 /**
  * @param {import("@playwright/test").Page} page
- * @returns {Promise<string>} the editor's text
- */
-function editorValue(page) {
-  return page.evaluate(() => /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue());
-}
-
-/**
- * @param {import("@playwright/test").Page} page
  * @param {string} path
  * @returns {Promise<string | null>} the autosave stored for that path
  */
@@ -110,12 +101,12 @@ test("changing the category before saving moves the autosave and the address", a
   const category = page.locator("#scenario-category");
   await expect(category).toHaveValue("clash");
   await expect(category).toBeEnabled();
-  expect(await editorValue(page)).toContain("{Clash Scenario}");
+  expect(await editorText(page)).toContain("{Clash Scenario}");
 
   await category.selectOption("coops");
 
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
-  const text = await editorValue(page);
+  const text = await editorText(page);
   // The standard heading kind follows the category.
   expect(text).toContain("{Cooperative Scenario}");
   expect(text).not.toContain("{Clash Scenario}");
@@ -126,22 +117,19 @@ test("changing the category before saving moves the autosave and the address", a
   await page.reload();
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#scenario-category")).toHaveValue("coops");
-  expect(await editorValue(page)).toBe(text);
+  expect(await editorText(page)).toBe(text);
   expect(new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
 });
 
 test("a hand-written heading kind survives a category change", async ({ app }) => {
   const { page } = app;
   await openBlankClash(page);
-  await page.evaluate(() => {
-    const cm = /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror;
-    cm.setValue(cm.getValue().replace("{Clash Scenario}", "{Clash/Alliance Scenario}"));
-  });
+  await setEditorText(page, (await editorText(page)).replace("{Clash Scenario}", "{Clash/Alliance Scenario}"));
 
   await page.locator("#scenario-category").selectOption("coops");
 
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/coops/route_probe");
-  const text = await editorValue(page);
+  const text = await editorText(page);
   expect(text).toContain("{Clash/Alliance Scenario}");
   expect(await storedDraft(page, COOPS_PATH)).toBe(text);
 });
@@ -154,7 +142,7 @@ test("a category change is refused when a local draft already sits there", async
     [COOPS_PATH, theirs],
   );
   await openBlankClash(page);
-  const mine = await editorValue(page);
+  const mine = await editorText(page);
 
   await page.locator("#scenario-category").selectOption("coops");
 
@@ -163,7 +151,7 @@ test("a category change is refused when a local draft already sits there", async
   await expect(page.locator("#category-note")).toHaveText(
     "You already have a local draft with this name under Coop. Rename it or open that draft instead.",
   );
-  expect(await editorValue(page)).toBe(mine);
+  expect(await editorText(page)).toBe(mine);
   expect(await storedDraft(page, COOPS_PATH)).toBe(theirs);
   expect(await storedDraft(page, CLASH_PATH)).toBe(mine);
   expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
@@ -197,7 +185,7 @@ test("the category cannot move until the new scenario's text is in the editor", 
 test("a category change is refused when the storage cannot take the moved copy", async ({ app }) => {
   const { page } = app;
   await openBlankClash(page);
-  const mine = await editorValue(page);
+  const mine = await editorText(page);
   // A full storage, for the new key only: the flush under the old key still lands.
   await page.evaluate((path) => {
     const setItem = Storage.prototype.setItem;
@@ -213,7 +201,7 @@ test("a category change is refused when the storage cannot take the moved copy",
   await expect(page.locator("#category-note")).toHaveText(
     "Could not move the scenario: this browser's storage is full.",
   );
-  expect(await editorValue(page)).toBe(mine);
+  expect(await editorText(page)).toBe(mine);
   expect(await storedDraft(page, CLASH_PATH)).toBe(mine);
   expect(await storedDraft(page, COOPS_PATH)).toBeNull();
   expect(new URL(page.url()).hash).toBe("#/drafts/clash/route_probe");
@@ -224,7 +212,7 @@ test("the sign-in round trip reopens at the moved path", async ({ app }) => {
   await openBlankClash(page);
   await page.locator("#scenario-category").selectOption("campaigns");
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/campaigns/route_probe");
-  const text = await editorValue(page);
+  const text = await editorText(page);
 
   // GitHub itself is never reached: its authorize page answers blank, and the
   // way back is a plain load of the app, as a sign-in that was abandoned.
@@ -237,7 +225,7 @@ test("the sign-in round trip reopens at the moved path", async ({ app }) => {
 
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#scenario-category")).toHaveValue("campaigns");
-  expect(await editorValue(page)).toBe(text);
+  expect(await editorText(page)).toBe(text);
   await expect.poll(() => new URL(page.url()).hash).toBe("#/drafts/campaigns/route_probe");
 });
 
@@ -282,9 +270,7 @@ test.describe("signed in with a branch on GitHub", () => {
 
     await expect(page.locator("#workspace")).toBeVisible();
     await expect(page.locator("#github-signin")).toBeHidden();
-    const value = await page.evaluate(() =>
-      /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-    );
+    const value = await editorText(page);
     expect(value).toBe("% from branch\n");
     // The branch names the category now: it shows, read-only.
     await expect(page.locator("#scenario-category")).toHaveValue("clash");
@@ -349,7 +335,7 @@ test.describe("a differing local draft is offered before a remote branch replace
     await page.locator("#confirm-cancel").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
-    expect(await editorValue(page)).toBe(LOCAL_TEXT);
+    expect(await editorText(page)).toBe(LOCAL_TEXT);
     await expect(page.locator("#draft-note")).toBeVisible();
     await expect(page.locator("#unsaved-note")).toBeVisible();
   });
@@ -362,7 +348,7 @@ test.describe("a differing local draft is offered before a remote branch replace
     await page.locator("#confirm-ok").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
-    expect(await editorValue(page)).toBe(BRANCH_TEXT);
+    expect(await editorText(page)).toBe(BRANCH_TEXT);
     await expect.poll(() => storedDraft(page, BRANCH_PATH)).toBe(BRANCH_TEXT);
   });
 
@@ -378,7 +364,7 @@ test.describe("a differing local draft is offered before a remote branch replace
 
     await expect(page.locator("#workspace")).toBeVisible();
     await expect(page.locator("#confirm-dialog")).toBeHidden();
-    expect(await editorValue(page)).toBe(BRANCH_TEXT);
+    expect(await editorText(page)).toBe(BRANCH_TEXT);
   });
 });
 
@@ -424,7 +410,7 @@ test.describe("a differing local draft is offered before an edit replaces it", (
     await page.keyboard.press("Escape");
 
     await expect(page.locator("#workspace")).toBeVisible();
-    expect(await editorValue(page)).toBe(LOCAL_TEXT);
+    expect(await editorText(page)).toBe(LOCAL_TEXT);
   });
 
   test("a Mission Book edit pick with a differing local draft asks before replacing it", async ({ app }) => {

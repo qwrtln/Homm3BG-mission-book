@@ -10,14 +10,6 @@ export interface StaticLicense {
 /** The About dialog's license groups. A bundled npm package needs no row: the build lists it in licenses.json. */
 export const LICENSE_GROUPS = {
   app: [{ src: "../LICENSE", name: "Scenario builder", kind: "AGPL-3.0" }],
-  editor: [
-    {
-      src: "vendor/codemirror/LICENSE",
-      name: "CodeMirror 5",
-      kind: "MIT",
-      home: { href: "https://codemirror.net/5/", label: "codemirror.net" },
-    },
-  ],
   engine: [
     {
       src: "../shared/vendor/texlyre-busytex.LICENSE",

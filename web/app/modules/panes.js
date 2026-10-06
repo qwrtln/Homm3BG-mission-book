@@ -1,6 +1,5 @@
 import { clampSplit, DEFAULT_SPLIT, parseSplit } from "../../shared/split.ts";
 import { el } from "./dom.js";
-import { state } from "./state.ts";
 
 export const SPLIT_KEY = "wasm-scenario-builder:split";
 
@@ -37,7 +36,7 @@ function saveSplit(percent) {
 
 /**
  * Clamps a wanted split to the workspace's current width, then applies it to
- * the panes and the divider's ARIA value, and lets CodeMirror re-measure.
+ * the panes and the divider's ARIA value.
  *
  * @param {number} percent the wanted share of the source pane
  * @returns {number} the share actually applied
@@ -50,7 +49,6 @@ function setSplit(percent) {
   const applied = clampSplit(percent, shared, minPx);
   main.style.setProperty("--split", String(applied));
   divider.setAttribute("aria-valuenow", String(Math.round(applied)));
-  if (state.cm) state.cm.refresh();
   return applied;
 }
 

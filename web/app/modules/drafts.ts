@@ -1,3 +1,4 @@
+import { getEditor } from "./editor-api.ts";
 import { saveText } from "./local-store.ts";
 import { state } from "./state.ts";
 
@@ -55,8 +56,9 @@ export function scheduleSave(): void {
     // Re-checked here, not just above: 400 ms is long enough for either to
     // have been cleared, and writing a draft under the key "null" is worse
     // than skipping the save.
-    if (state.chosenPath && state.cm) {
-      const text = state.cm.getValue();
+    const editor = getEditor();
+    if (state.chosenPath && editor) {
+      const text = editor.getText();
       saveDraft(state.chosenPath, text);
       void saveText(state.chosenPath, text);
     }

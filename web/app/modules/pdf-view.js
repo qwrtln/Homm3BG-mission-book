@@ -3,7 +3,8 @@ import { anchorScrollTop, scrollAnchor, ZOOM_STEPS, zoomStep } from "../../share
 import { pageHighlights } from "../../shared/synctex.ts";
 import { store } from "../store.ts";
 import { buildKeyLabel, el, escapeHtml, setStatus } from "./dom.js";
-import { requireEditor, state } from "./state.ts";
+import { getEditor, requireEditor } from "./editor-api.ts";
+import { state } from "./state.ts";
 
 /** @returns {string} what the PDF pane says with nothing built yet */
 function emptyMessage() {
@@ -143,23 +144,16 @@ export function staleMessage() {
  * @returns {void}
  */
 export function refreshStaleStatus() {
-  if (!state.lastPdf || state.pdfSource === null || !state.cm) return;
-  if (state.cm.getValue() === state.pdfSource) return;
+  const editor = getEditor();
+  if (!state.lastPdf || state.pdfSource === null || !editor) return;
+  if (editor.getText() === state.pdfSource) return;
   if (!el("status-spinner").hidden) return;
   setStatus(staleMessage());
 }
 
-const ERROR_LINE_CLASS = "build-error-line";
-
-// The editor line the last failed build marked; it stays marked until the
-// next build. A handle, not a number, so it follows the line through edits.
-/** @type {CodeMirrorLineHandle | null} */
-let markedLine = null;
-
 /** Removes the failed build's line mark, if any. @returns {void} */
 export function clearErrorLine() {
-  if (markedLine && state.cm) state.cm.removeLineClass(markedLine, "background", ERROR_LINE_CLASS);
-  markedLine = null;
+  getEditor()?.markErrorLine(null);
 }
 
 /**
@@ -169,11 +163,7 @@ export function clearErrorLine() {
  * @returns {void}
  */
 function jumpToLine(line) {
-  const cm = requireEditor();
-  const pos = { line: line - 1, ch: 0 };
-  cm.focus();
-  cm.setCursor(pos);
-  cm.scrollIntoView(pos, 80);
+  requireEditor().revealLine(line);
 }
 
 /**
@@ -502,7 +492,8 @@ export function showError(record) {
     button.append(where, text);
     button.addEventListener("click", () => jumpToLine(line));
     target.replaceChildren(button);
-    markedLine = requireEditor().addLineClass(line - 1, "background", ERROR_LINE_CLASS);
+    // The mark stays until the next build, and follows its line through edits.
+    requireEditor().markErrorLine(line);
   }
   el("full-log").textContent = record.log || "";
   el("full-log-details").open = false;

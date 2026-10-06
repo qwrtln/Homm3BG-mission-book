@@ -2,9 +2,10 @@ import { categoryOfPath, withCategory, withScenarioKind } from "../../shared/sce
 import { type StoreState, store } from "../store.ts";
 import { CATEGORY_LABELS } from "./config.ts";
 import { deleteDraft, loadDraft, saveDraft } from "./drafts.ts";
+import { type EditorApi, requireEditor } from "./editor-api.ts";
 import { moveRecord, saveText } from "./local-store.ts";
 import { reflectRoute } from "./route.ts";
-import { requireEditor, state } from "./state.ts";
+import { state } from "./state.ts";
 
 export const LOCKED_TITLE = "The category is fixed once the scenario is saved to GitHub.";
 export const OPEN_TITLE = "The category this scenario is filed under in the Draft Scenarios.";
@@ -41,7 +42,7 @@ export function syncCategoryControl(): void {
  * @param before the editor's current text
  * @param after the text it should hold
  */
-function replaceChangedPart(cm: CodeMirrorEditor, before: string, after: string): void {
+function replaceChangedPart(editor: EditorApi, before: string, after: string): void {
   let start = 0;
   while (start < before.length && start < after.length && before[start] === after[start]) start++;
   let endBefore = before.length;
@@ -50,7 +51,7 @@ function replaceChangedPart(cm: CodeMirrorEditor, before: string, after: string)
     endBefore--;
     endAfter--;
   }
-  cm.replaceRange(after.slice(start, endAfter), cm.posFromIndex(start), cm.posFromIndex(endBefore), "+category");
+  editor.replaceRange(start, endBefore, after.slice(start, endAfter));
 }
 
 /** Leaves the scenario where it is, and says why the move did not happen. */
@@ -75,9 +76,9 @@ export function moveToCategory(category: string): void {
     return;
   }
   // Flushed first: a pending autosave must not land under the old key later.
-  const cm = requireEditor();
+  const editor = requireEditor();
   clearTimeout(state.saveTimer ?? undefined);
-  saveDraft(old, cm.getValue());
+  saveDraft(old, editor.getText());
   const next = withCategory(old, category);
   if (loadDraft(next) !== null) {
     refuseMove(
@@ -86,7 +87,7 @@ export function moveToCategory(category: string): void {
     return;
   }
 
-  const text = cm.getValue();
+  const text = editor.getText();
   const moved = withScenarioKind(text, category);
   // Written under the new key before the old one goes, so no step loses it.
   saveDraft(next, moved);
@@ -103,7 +104,7 @@ export function moveToCategory(category: string): void {
   // defense, not the source of truth the move's own checks run against.
   void moveRecord(old, next).then(() => saveText(next, moved));
   state.chosenPath = next;
-  if (moved !== text) replaceChangedPart(cm, text, moved);
+  if (moved !== text) replaceChangedPart(editor, text, moved);
   syncCategoryControl();
   reflectRoute();
 }

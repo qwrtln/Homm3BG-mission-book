@@ -4,7 +4,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { isMacPlatform, keyLabel, matchesKey, SHORTCUTS, shortcutKeys } from "../../shared/keymap.ts";
+import { isMacPlatform, keyLabel, matchesKey, SHORTCUTS, shortcutKeys, toEditorKey } from "../../shared/keymap.ts";
 
 test("isMacPlatform recognizes macOS and iOS platform strings", () => {
   for (const platform of ["MacIntel", "macOS", "iPhone", "iPad"]) {
@@ -131,4 +131,12 @@ test("no two rows in the same scope share a key on one platform", () => {
       }
     }
   }
+});
+
+test("toEditorKey spells every editor key the way the editor's keymap does", () => {
+  assert.equal(toEditorKey("Ctrl-/"), "Ctrl-/");
+  assert.equal(toEditorKey("Shift-Ctrl-K"), "Shift-Ctrl-k");
+  assert.equal(toEditorKey("Alt-Cmd-F"), "Alt-Cmd-f");
+  assert.equal(toEditorKey("Shift-Tab"), "Shift-Tab");
+  assert.equal(toEditorKey("Esc"), "Escape");
 });

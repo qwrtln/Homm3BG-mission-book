@@ -11,9 +11,10 @@ import { uploadsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "../modules/category.ts";
 import { isDirty, markClean } from "../modules/dirty.ts";
 import { setStatus } from "../modules/dom.js";
+import { requireEditor } from "../modules/editor-api.ts";
 import { githubSaveState } from "../modules/github-save-state.js";
 import { clearUploads } from "../modules/local-store.ts";
-import { requireEditor, state } from "../modules/state.ts";
+import { state } from "../modules/state.ts";
 import { askToSubmit, currentSubmitBlockers, refreshSubmitDialog } from "../modules/submit.js";
 import { store } from "../store.ts";
 import { getGithubContext, githubFailure, setGithubContext } from "./context.ts";
@@ -59,7 +60,7 @@ export async function saveToGithub(): Promise<void> {
       context = await discoverGithubContext(token);
       setGithubContext(context);
     }
-    const savedText = requireEditor().getValue();
+    const savedText = requireEditor().getText();
     const savedUploads = uploadsSignature(state.uploadedFiles);
     const savedPaths = new Set(state.uploadedFiles.keys());
     const saved = await saveScenarioToRepo(token, {

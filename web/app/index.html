@@ -67,7 +67,8 @@
     <main id="workspace-main">
       <section class="pane" id="editor-pane" aria-label="Source">
         <div class="editor-wrap">
-          <textarea id="editor" spellcheck="false"></textarea>
+          <!-- React region: components/editor/Editor mounts here (mount.tsx). -->
+          <div id="editor-region"></div>
         </div>
       </section>
 
@@ -132,18 +133,9 @@
   </form>
 </dialog>
 
-<!-- styles/workspace.css. The suggestions under the .tex editor's cursor: image paths and glyph names. -->
-<ul id="editor-autocomplete" class="autocomplete-list" role="listbox" aria-label="Suggestions" hidden></ul>
-
 <!-- React region: components/{About,Help,Feedback,Confirm}Dialog, uploads/UploadDialog and Toaster mount here (mount.tsx). -->
 <div id="overlays"></div>
 
-<script src="vendor/codemirror/codemirror.min.js"></script>
-<script src="vendor/codemirror/mode/stex/stex.min.js"></script>
-<script src="vendor/codemirror/addon/search/searchcursor.min.js"></script>
-<script src="vendor/codemirror/addon/dialog/dialog.min.js"></script>
-<script src="vendor/codemirror/addon/search/search.min.js"></script>
-<script src="vendor/codemirror/addon/comment/comment.min.js"></script>
 <script type="module" src="main.tsx"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 
 import { withScenarioTitle } from "../../shared/build-plan.ts";
 import { withScenarioKind } from "../../shared/scenario-name.ts";
+import { editorText } from "../helpers/editor.mjs";
 import { expect, openScenarioList, test } from "./fixtures.mjs";
 
 // config.js's TEMPLATES. These two are the app's own constants, not book
@@ -57,21 +58,6 @@ async function stubPublishedPdf(page) {
  */
 async function titlesOf(results) {
   return (await results.allTextContents()).map((text) => text.trim());
-}
-
-/**
- * The editor's text, read off the CodeMirror instance rather than the DOM:
- * CodeMirror only renders the lines in view, so the visible text is not the
- * document. CodeMirror 5 hangs the instance on its own wrapper element.
- *
- * @param {import("@playwright/test").Page} page
- * @returns {Promise<string>}
- */
-async function editorValue(page) {
-  return page.evaluate(() => {
-    const wrapper = /** @type {any} */ (document.querySelector(".CodeMirror"));
-    return wrapper ? wrapper.CodeMirror.getValue() : "";
-  });
 }
 
 /**
@@ -288,7 +274,7 @@ test("Open editor leaves the welcome screen and loads the picked scenario's sour
   // Only its title slot changes: the typed name replaces the entry's own.
   const expected = withScenarioTitle(await repoFile(page, firstPath), "welcome picker test");
   await expect
-    .poll(() => editorValue(page), { message: "the picked scenario's source never reached the editor" })
+    .poll(() => editorText(page), { message: "the picked scenario's source never reached the editor" })
     .toBe(expected);
   // Nothing was autosaved for this identity, so the draft note stays hidden.
   await expect(page.locator("#draft-note")).toBeHidden();
@@ -335,7 +321,7 @@ test("the blank-scenario links pick a template, and Open editor loads that templ
   const blankExpected = withScenarioKind(withScenarioTitle(blankSource, "blank test"), "clash");
   expect(blankExpected).toContain("{Clash Scenario}{blank test}");
   await expect
-    .poll(() => editorValue(page), { message: "the blank template never reached the editor" })
+    .poll(() => editorText(page), { message: "the blank template never reached the editor" })
     .toBe(blankExpected);
   // A template is not a scenario: it has no published PDF to prefetch, so
   // nothing here needed the CDN stubbed.
@@ -464,7 +450,7 @@ test("copying a scenario preselects its category, and a switch files the copy el
   await expect(page).toHaveURL(/#\/drafts\/coops\/[^/]+$/);
   // The heading names the kind it is filed under, not the Clash it came from.
   await expect
-    .poll(() => editorValue(page), { message: "the copy's heading never named its new kind" })
+    .poll(() => editorText(page), { message: "the copy's heading never named its new kind" })
     .toMatch(/\\addscenariosection\{1\}\{Cooperative Scenario\}\{Filed Elsewhere\}/);
 
   expect(errors, "the page reported errors while filing a copy elsewhere").toEqual([]);
@@ -495,7 +481,7 @@ test("a blank pick follows the category, swapping to the campaign template and b
   await expect(page.locator("#workspace")).toBeVisible();
   const expected = withScenarioTitle(await repoFile(page, TEMPLATE_CAMPAIGN_PATH), "Blank Campaign Test");
   await expect
-    .poll(() => editorValue(page), { message: "the campaign template never reached the editor" })
+    .poll(() => editorText(page), { message: "the campaign template never reached the editor" })
     .toBe(expected);
   await expect(page).toHaveURL(/#\/drafts\/campaigns\/[^/]+$/);
 
@@ -564,7 +550,7 @@ test.describe("a copy whose name already has a local draft", () => {
 
     const expected = withScenarioKind(withScenarioTitle(await repoFile(page, path), NAME), "clash");
     await expect
-      .poll(() => editorValue(page), { message: "the picked scenario never replaced the draft" })
+      .poll(() => editorText(page), { message: "the picked scenario never replaced the draft" })
       .toBe(expected);
     await expect(page.locator("#draft-note")).toBeHidden();
     await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(1);
@@ -580,7 +566,7 @@ test.describe("a copy whose name already has a local draft", () => {
 
     await page.locator("#confirm-cancel").click();
 
-    await expect.poll(() => editorValue(page), { message: "the draft never reached the editor" }).toBe(DRAFT_TEXT);
+    await expect.poll(() => editorText(page), { message: "the draft never reached the editor" }).toBe(DRAFT_TEXT);
     await expect(page.locator("#draft-note")).toBeVisible();
     await expect(page.locator("#status-text")).toHaveText(/^Ready\./);
     await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(0);
@@ -601,7 +587,7 @@ test.describe("a copy whose name already has a local draft", () => {
     await page.locator("#go").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
-    await expect.poll(() => editorValue(page)).toBe(pristine);
+    await expect.poll(() => editorText(page)).toBe(pristine);
     await expect(page.locator("#confirm-dialog")).toBeHidden();
 
     expect(errors, "the page reported errors while reopening an untouched copy").toEqual([]);

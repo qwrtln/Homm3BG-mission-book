@@ -13,7 +13,7 @@ interface ElementIdMap {
   "build-phase": HTMLDivElement;
   "build-phase-text": HTMLSpanElement;
   "route-loading": HTMLDivElement;
-  editor: HTMLTextAreaElement;
+  "editor-region": HTMLDivElement;
   "editor-pane": HTMLElement;
   "workspace-main": HTMLElement;
   "error-panel": HTMLDivElement;
@@ -43,7 +43,6 @@ interface ElementIdMap {
   "resume-hint": HTMLParagraphElement;
   "resume-list": HTMLDivElement;
   "resume-loading": HTMLParagraphElement;
-  "editor-autocomplete": HTMLUListElement;
   "status-bar": HTMLElement;
   "status-spinner": HTMLSpanElement;
   "status-text": HTMLSpanElement;

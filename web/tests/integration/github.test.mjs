@@ -8,6 +8,7 @@
 // sign-in this file needs. See web/tests/README.md for the stubbing contract.
 
 import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
+import { editorBox, editorText } from "../helpers/editor.mjs";
 import { chooseFromMenu, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 // The localStorage key github-auth.js persists the token in. It is a private
@@ -464,7 +465,7 @@ test.describe("saving a resumed draft", () => {
 
     // A resumed draft with no edits has nothing to push; make one so this
     // save actually goes out.
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
     await page.keyboard.type("x");
 
     const requests = recordGithubRequests(page);
@@ -568,7 +569,7 @@ test.describe("signing out mid-edit", () => {
     await page.locator("#go").click();
     await expect(page.locator("#workspace")).toBeVisible();
     // Typing schedules an autosave; wait for it to land.
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
     await page.keyboard.type("x");
     await expect
       .poll(() => page.evaluate(() => Object.keys(localStorage).filter((k) => k.includes(":draft:")).length))
@@ -589,9 +590,7 @@ test("a template pick puts the typed name into \\addscenariosection", async ({ a
   await page.locator("#go").click();
   await expect(page.locator("#workspace")).toBeVisible();
   // Polled: the workspace shows before the template text lands in the editor.
-  await expect
-    .poll(() => page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue()))
-    .toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
+  await expect.poll(() => editorText(page)).toMatch(/\\addscenariosection\{1\}\{[^}]*\}\{Kyrre Link\}/);
 });
 
 test.describe("looking for work to resume", () => {

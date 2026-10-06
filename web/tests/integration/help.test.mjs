@@ -3,6 +3,7 @@
 // closing it never closes a dialog underneath it.
 
 import { keyLabel, SHORTCUTS } from "../../shared/keymap.ts";
+import { editorBox } from "../helpers/editor.mjs";
 import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "help probe";
@@ -48,10 +49,10 @@ test("F1 opens Help from the welcome screen", async ({ app }) => {
   expect(errors).toEqual([]);
 });
 
-test("F1 opens Help from inside CodeMirror", async ({ app }) => {
+test("F1 opens Help from inside the editor", async ({ app }) => {
   const { page } = app;
   await openWorkspace(page);
-  await page.locator(".CodeMirror").click();
+  await editorBox(page).click();
 
   await page.keyboard.press("F1");
   await expect(helpDialog(page)).toBeVisible();

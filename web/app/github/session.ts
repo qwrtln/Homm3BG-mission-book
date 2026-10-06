@@ -3,6 +3,7 @@ import { parseRoute } from "../../shared/route.ts";
 import { isDirty } from "../modules/dirty.ts";
 import { confirmAction, el } from "../modules/dom.js";
 import { deleteDraft, flushDraft } from "../modules/drafts.ts";
+import { getEditor } from "../modules/editor-api.ts";
 import { resetGithubSaveState } from "../modules/github-save-state.js";
 import { deleteRecord } from "../modules/local-store.ts";
 import { settleModes } from "../modules/picker.ts";
@@ -22,11 +23,12 @@ export async function startSignIn(): Promise<void> {
     /* blocked storage: sign-in still proceeds */
   }
   // A scenario left behind the welcome screen is not reopened: the member left it.
-  if (state.chosenPath && state.cm && !isParked()) {
+  const editor = getEditor();
+  if (state.chosenPath && editor && !isParked()) {
     clearTimeout(state.saveTimer ?? undefined);
     // Awaited: the redirect below unloads the page, which can abort an
     // IndexedDB write still in flight.
-    await flushDraft(state.chosenPath, state.cm.getValue());
+    await flushDraft(state.chosenPath, editor.getText());
     try {
       localStorage.setItem(REOPEN_KEY, JSON.stringify({ path: state.chosenPath, title: state.chosenTitle }));
     } catch {

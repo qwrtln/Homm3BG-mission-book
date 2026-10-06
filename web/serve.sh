@@ -3,13 +3,12 @@
 #
 # Fetches the BusyTeX engine into web/core/busytex/ on the first run, the same
 # release the deploy fetches (BUSYTEX_ENGINE_VERSION in web/vendor.env), and
-# again whenever that version changes. Also runs fetch-vendor.sh, which fetches
-# CodeMirror 5 into web/app/vendor/ the same way, and npm ci when
-# node_modules/ is missing. Then runs the Vite dev server (npm run dev): it
-# sends the COOP/COEP headers the engine needs and serves /web/repo/ from the
-# repository root and the engine files from web/. Before that, counts the
-# book's glyph uses into assets/glyphs-inkscape/glyph-usage.json (gitignored)
-# for the editor's \svg{} suggestions.
+# again whenever that version changes. Also runs npm ci when node_modules/ is
+# missing. Then runs the Vite dev server (npm run dev): it sends the COOP/COEP
+# headers the engine needs and serves /web/repo/ from the repository root and
+# the engine files from web/. Before that, counts the book's glyph uses into
+# assets/glyphs-inkscape/glyph-usage.json (gitignored) for the editor's
+# \svg{} suggestions.
 #
 # Needs curl, tar, git, and Node and npm (the version in web/.nvmrc).
 #
@@ -36,8 +35,6 @@ if [[ "$(cat "$stamp" 2>/dev/null)" != "$BUSYTEX_ENGINE_VERSION" ]]; then
   curl -fL --progress-bar "$url" | tar xz -C "$engine" --strip-components=1
   echo "$BUSYTEX_ENGINE_VERSION" > "$stamp"
 fi
-
-"$web/fetch-vendor.sh"
 
 [[ -d "$web/node_modules" ]] || (cd "$web" && npm ci)
 

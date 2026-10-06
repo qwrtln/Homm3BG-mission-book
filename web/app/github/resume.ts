@@ -13,6 +13,7 @@ import { syncCategoryControl } from "../modules/category.ts";
 import { markClean } from "../modules/dirty.ts";
 import { basenameNoExt, closestTo, confirmDelete, el, escapeHtml, readyStatus, setStatus } from "../modules/dom.js";
 import { saveDraft } from "../modules/drafts.ts";
+import { requireEditor } from "../modules/editor-api.ts";
 import { loadEntries } from "../modules/entries.ts";
 import { preloadFile } from "../modules/files.ts";
 import { githubSaveState, resetGithubSaveState } from "../modules/github-save-state.js";
@@ -21,7 +22,7 @@ import { clearUploads, saveText } from "../modules/local-store.ts";
 import { clearPdf } from "../modules/pdf-view.js";
 import { offerLocalDraft } from "../modules/recovery.ts";
 import { reflectRoute } from "../modules/route.ts";
-import { requireEditor, state } from "../modules/state.ts";
+import { state } from "../modules/state.ts";
 import { resetUploads, restoreUploads } from "../modules/uploads.ts";
 import { isParked, openForEdit, returnToParked, showWorkspace } from "../modules/workspace.ts";
 import { store } from "../store.ts";
@@ -188,7 +189,7 @@ export async function openResumableDraft(draft: ResumableDraft): Promise<void> {
       ? { owner: UPSTREAM_OWNER, repo: UPSTREAM_REPO }
       : { owner: fork.owner.login, repo: fork.name };
 
-  const cm = requireEditor();
+  const editor = requireEditor();
 
   setStatus("Loading your draft…", { spinning: true });
   try {
@@ -201,7 +202,6 @@ export async function openResumableDraft(draft: ResumableDraft): Promise<void> {
     if (content == null) throw new Error(`"${draft.texPath}" is no longer on that branch.`);
 
     await showWorkspace();
-    cm.refresh();
     store.setState({ actionsVisible: true });
     resetGithubSaveState();
     githubSaveState.edit = draft.kind === "edit" ? { startOver: false } : null;
@@ -215,7 +215,7 @@ export async function openResumableDraft(draft: ResumableDraft): Promise<void> {
     store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
 
     const local = await offerLocalDraft(draft.texPath, title, content, assets);
-    cm.setValue(local ? local.text : content);
+    editor.setText(local ? local.text : content);
     store.setState({ draftNote: local !== null });
     resetUploads();
     restoreUploads(local ? local.uploads : assets);

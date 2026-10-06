@@ -1,7 +1,19 @@
-// Tier 2. The editor-scope shortcuts bound through CodeMirror's extraKeys:
-// toggle comment, find, replace, delete line, indent/outdent with spaces
-// only, and the Esc-then-Tab escape out of the keyboard trap.
+// Tier 2. The editor-scope shortcuts bound in the editor's keymap: toggle
+// comment, find, replace, delete line, indent/outdent with spaces only, and
+// the Esc-then-Tab escape out of the keyboard trap.
 
+import {
+  completionList,
+  editorCursor,
+  editorHasFocus,
+  editorLine,
+  editorSelection,
+  editorText,
+  focusEditor,
+  searchPanel,
+  setEditorSelection,
+  setEditorText,
+} from "../helpers/editor.mjs";
 import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "editor keys probe";
@@ -21,36 +33,16 @@ async function openWorkspace(page) {
 }
 
 /**
- * Replaces the editor's whole source and focuses it. The cursor lands where
- * CodeMirror's own setValue leaves it; callers that care set it explicitly.
+ * Replaces the editor's whole source and focuses it. The cursor lands at the
+ * start; callers that care set it explicitly.
  *
  * @param {import("@playwright/test").Page} page
  * @param {string} text
  * @returns {Promise<void>}
  */
 async function setEditorValue(page, text) {
-  await page.evaluate((text) => {
-    const cm = document.querySelector(".CodeMirror").CodeMirror;
-    cm.setValue(text);
-    cm.focus();
-  }, text);
-}
-
-/**
- * @param {import("@playwright/test").Page} page
- * @returns {Promise<string>}
- */
-async function editorValue(page) {
-  return page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getValue());
-}
-
-/**
- * @param {import("@playwright/test").Page} page
- * @param {number} line
- * @returns {Promise<string>}
- */
-async function editorLine(page, line) {
-  return page.evaluate((line) => document.querySelector(".CodeMirror").CodeMirror.getLine(line), line);
+  await setEditorText(page, text);
+  await focusEditor(page);
 }
 
 /**
@@ -60,10 +52,7 @@ async function editorLine(page, line) {
  * @returns {Promise<void>}
  */
 async function setCursor(page, line, ch) {
-  await page.evaluate(({ line, ch }) => document.querySelector(".CodeMirror").CodeMirror.setCursor({ line, ch }), {
-    line,
-    ch,
-  });
+  await setEditorSelection(page, { line, ch });
 }
 
 /**
@@ -75,13 +64,8 @@ async function setCursor(page, line, ch) {
  * @returns {Promise<void>}
  */
 async function selectLines(page, from, to) {
-  await page.evaluate(
-    ({ from, to }) => {
-      const cm = document.querySelector(".CodeMirror").CodeMirror;
-      cm.setSelection({ line: from, ch: 0 }, { line: to, ch: cm.getLine(to).length });
-    },
-    { from, to },
-  );
+  const end = (await editorLine(page, to)).length;
+  await setEditorSelection(page, { line: from, ch: 0 }, { line: to, ch: end });
 }
 
 test("Ctrl+/ toggles a % comment on the selected lines, round trip", async ({ app }) => {
@@ -97,7 +81,7 @@ test("Ctrl+/ toggles a % comment on the selected lines, round trip", async ({ ap
   expect(await editorLine(page, 2)).toBe("% three");
 
   await page.keyboard.press("Control+/");
-  expect(await editorValue(page)).toBe(original);
+  expect(await editorText(page)).toBe(original);
 });
 
 test("Ctrl+F opens the search dialog and finds a line below the viewport", async ({ app }) => {
@@ -109,15 +93,14 @@ test("Ctrl+F opens the search dialog and finds a line below the viewport", async
   await setCursor(page, 0, 0);
 
   await page.keyboard.press("Control+F");
-  const dialog = page.locator(".CodeMirror-dialog");
-  await expect(dialog).toBeVisible();
-  await dialog.locator("input").fill("NEEDLE_TARGET");
-  await dialog.locator("input").press("Enter");
+  const panel = searchPanel(page);
+  await expect(panel).toBeVisible();
+  // Typed, not filled: the find bar reads its field on key-up.
+  await panel.locator("input[name=search]").pressSequentially("NEEDLE_TARGET");
+  await panel.locator("input[name=search]").press("Enter");
 
-  const cursor = await page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getCursor());
-  expect(cursor.line).toBe(targetLine);
-  const selected = await page.evaluate(() => document.querySelector(".CodeMirror").CodeMirror.getSelection());
-  expect(selected).toBe("NEEDLE_TARGET");
+  expect((await editorCursor(page)).line).toBe(targetLine);
+  expect(await editorSelection(page)).toBe("NEEDLE_TARGET");
 });
 
 test("Ctrl+H opens the replace dialog and replacing a term changes the source", async ({ app }) => {
@@ -127,18 +110,15 @@ test("Ctrl+H opens the replace dialog and replacing a term changes the source", 
   await setCursor(page, 0, 0);
 
   await page.keyboard.press("Control+H");
-  const searchDialog = page.locator(".CodeMirror-dialog");
-  await expect(searchDialog).toBeVisible();
-  await searchDialog.locator("input").fill("foo");
-  await searchDialog.locator("input").press("Enter");
+  const panel = searchPanel(page);
+  await expect(panel).toBeVisible();
+  // The cursor starts in the replace field.
+  await expect(panel.locator("input[name=replace]")).toBeFocused();
+  await panel.locator("input[name=search]").fill("foo");
+  await panel.locator("input[name=replace]").fill("qux");
 
-  const withDialog = page.locator(".CodeMirror-dialog");
-  await expect(withDialog).toBeVisible();
-  await withDialog.locator("input").fill("qux");
-  await withDialog.locator("input").press("Enter");
-
-  await page.locator(".CodeMirror-dialog").getByRole("button", { name: "All" }).click();
-  expect(await editorValue(page)).toBe("qux bar");
+  await panel.getByRole("button", { name: "replace all" }).click();
+  expect(await editorText(page)).toBe("qux bar");
 });
 
 test("Ctrl+Shift+K removes the cursor's line", async ({ app }) => {
@@ -148,7 +128,7 @@ test("Ctrl+Shift+K removes the cursor's line", async ({ app }) => {
   await setCursor(page, 1, 0);
 
   await page.keyboard.press("Control+Shift+K");
-  expect(await editorValue(page)).toBe("one\nthree");
+  expect(await editorText(page)).toBe("one\nthree");
 });
 
 test("Tab with no selection inserts two spaces, not a tab character", async ({ app }) => {
@@ -159,7 +139,7 @@ test("Tab with no selection inserts two spaces, not a tab character", async ({ a
 
   await page.keyboard.press("Tab");
   expect(await editorLine(page, 0)).toBe("  ");
-  expect(await editorValue(page)).not.toContain("\t");
+  expect(await editorText(page)).not.toContain("\t");
 });
 
 test("Tab over a selection indents each line; Shift+Tab outdents it back", async ({ app }) => {
@@ -169,11 +149,11 @@ test("Tab over a selection indents each line; Shift+Tab outdents it back", async
   await selectLines(page, 0, 2);
 
   await page.keyboard.press("Tab");
-  expect(await editorValue(page)).toBe("  a\n  b\n  c");
+  expect(await editorText(page)).toBe("  a\n  b\n  c");
 
   await selectLines(page, 0, 2);
   await page.keyboard.press("Shift+Tab");
-  expect(await editorValue(page)).toBe("a\nb\nc");
+  expect(await editorText(page)).toBe("a\nb\nc");
 });
 
 test("Esc then Tab leaves the editor and does not change the source", async ({ app }) => {
@@ -186,8 +166,8 @@ test("Esc then Tab leaves the editor and does not change the source", async ({ a
   await page.keyboard.press("Escape");
   await page.keyboard.press("Tab");
 
-  await expect(page.locator(".CodeMirror textarea")).not.toBeFocused();
-  expect(await editorValue(page)).toBe(original);
+  await expect.poll(() => editorHasFocus(page)).toBe(false);
+  expect(await editorText(page)).toBe(original);
 });
 
 test("Esc then Shift+Tab leaves the editor and does not outdent", async ({ app }) => {
@@ -201,8 +181,8 @@ test("Esc then Shift+Tab leaves the editor and does not outdent", async ({ app }
   await page.keyboard.press("Escape");
   await page.keyboard.press("Shift+Tab");
 
-  await expect(page.locator(".CodeMirror textarea")).not.toBeFocused();
-  expect(await editorValue(page)).toBe(original);
+  await expect.poll(() => editorHasFocus(page)).toBe(false);
+  expect(await editorText(page)).toBe(original);
 });
 
 test("Esc, then a letter, then Tab indents as usual", async ({ app }) => {
@@ -216,7 +196,7 @@ test("Esc, then a letter, then Tab indents as usual", async ({ app }) => {
   await page.keyboard.press("Tab");
 
   expect(await editorLine(page, 0)).toBe("xy  ");
-  await expect(page.locator(".CodeMirror textarea")).toBeFocused();
+  await expect.poll(() => editorHasFocus(page)).toBe(true);
 });
 
 test("with the completion list open, Tab still picks the completion", async ({ app }) => {
@@ -225,7 +205,7 @@ test("with the completion list open, Tab still picks the completion", async ({ a
   await setEditorValue(page, "Gain ");
   await setCursor(page, 0, 5);
 
-  const list = page.locator("#editor-autocomplete");
+  const list = completionList(page);
   const options = list.getByRole("option");
   await page.keyboard.type("\\svg{go");
   await expect(options.first()).toBeVisible();

@@ -36,26 +36,13 @@ main.resizing { cursor: col-resize; user-select: none; }
   .pane-divider { display: none; }
 }
 .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
-.editor-wrap .CodeMirror {
+.editor-wrap #editor-region,
+.editor-wrap .editor-host,
+.editor-wrap .cm-editor {
   position: absolute;
   inset: 0;
   height: 100%;
-  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
 }
-/* addon/dialog/dialog.css's search and replace bar, restyled to Primer tokens. */
-.CodeMirror-dialog {
-  background: var(--panel);
-  color: var(--ink);
-  font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
-}
-.CodeMirror-dialog-top { border-bottom: 1px solid var(--line); }
-.CodeMirror-dialog-bottom { border-top: 1px solid var(--line); }
-.CodeMirror-dialog input {
-  background: var(--panel);
-  color: var(--ink);
-}
-/* The find bar nests its input in the label with no space; replace has one. */
-.CodeMirror-search-label > input { margin-left: 1ch; }
 .pdf-pane-body-wrap {
   position: relative;
   flex: 1 1 auto;
@@ -253,7 +240,6 @@ main.resizing { cursor: col-resize; user-select: none; }
   border-radius: 3px;
   font-weight: 600;
 }
-.CodeMirror .build-error-line { background: var(--error-bg); }
 details.full-log summary {
   cursor: pointer;
   color: var(--muted);
@@ -271,38 +257,9 @@ details.full-log pre {
   margin: 0.5rem 0 0;
 }
 
-/* --- Image-path and glyph suggestions under the editor's cursor (autocomplete.js) --- */
+/* --- Glyph pictures in the editor's suggestion list (components/editor/completions.ts) --- */
 
-.autocomplete-list[hidden] { display: none; }
-.autocomplete-list {
-  position: fixed;
-  z-index: 20;
-  min-width: 14rem;
-  max-width: min(32rem, calc(100vw - 1rem));
-  max-height: 14rem;
-  overflow: auto;
-  margin: 0;
-  padding: 0.2rem 0;
-  list-style: none;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  box-shadow: 0 8px 20px var(--shadow);
-}
-.autocomplete-item {
-  padding: 0.25rem 0.7rem;
-  font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-}
-.autocomplete-item.active { background: var(--accent); color: #fff; }
-.autocomplete-item mark { background: none; color: inherit; font-weight: 700; }
 /* Glyphs are drawn for the book's light pages, some in black: a light chip keeps them visible in the dark theme. */
-.autocomplete-item:has(.autocomplete-icon) { display: flex; align-items: center; gap: 0.5rem; }
-.autocomplete-item:has(.autocomplete-icon) span { overflow: hidden; text-overflow: ellipsis; }
 .autocomplete-icon {
   flex: none;
   width: 1.5rem;

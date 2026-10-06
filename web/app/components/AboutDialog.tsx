@@ -154,11 +154,6 @@ export function AboutDialog() {
           <StaticLicenseRow key={license.src} license={license} />
         ))}
       </Group>
-      <Group id="license-group-editor" title="Editor and viewer">
-        {LICENSE_GROUPS.editor.map((license) => (
-          <StaticLicenseRow key={license.src} license={license} />
-        ))}
-      </Group>
       {notices.length > 0 && (
         <Group id="license-group-bundled" wrapperId="license-bundled" title="Bundled libraries">
           {notices.map((notice) => (

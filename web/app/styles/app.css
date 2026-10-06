@@ -2,9 +2,8 @@
    sheets until each region that uses one migrates to components.
 
    Tailwind's preflight is not imported: it would restyle every legacy
-   region. Instead the legacy sheets (and the CodeMirror 5 ones) sit in one
-   `legacy` layer, in the order the page used to link them, and the
-   utilities layer comes after it, so a utility on a migrated component
+   region. Instead the legacy sheets sit in one `legacy` layer, in the order
+   the page used to link them, and the utilities layer comes after it, so a utility on a migrated component
    beats a legacy rule. Delete a sheet's import here when its last region
    migrates. Colors are not defined here: tokens.css stays the single
    source, light and dark, and @theme maps each one to a utility name. */
@@ -12,9 +11,6 @@
 @layer theme, legacy, utilities;
 
 @import "tailwindcss/theme.css" layer(theme);
-@import "../vendor/codemirror/codemirror.min.css" layer(legacy);
-@import "../vendor/codemirror/addon/dialog/dialog.min.css" layer(legacy);
-@import "../codemirror-github-theme.css" layer(legacy);
 @import "./tokens.css" layer(legacy);
 @import "./base.css" layer(legacy);
 @import "./welcome.css" layer(legacy);

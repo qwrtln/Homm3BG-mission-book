@@ -45,9 +45,6 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
 
-      - name: Fetch browser libraries
-        run: bash web/fetch-vendor.sh
-
       - name: Build the app
         working-directory: web
         run: npm ci && npm run build

@@ -6,10 +6,7 @@
 // serves the whole repository, so a file left off the allow-list in
 // publish-docs.yaml would pass tier 2 and 404 on the live site. Packages in
 // the bundle need no row: vite.config.ts writes their notices to licenses.json
-// and the dialog reads them. CodeMirror 5 lives under app/vendor/, which
-// web/fetch-vendor.sh fetches and vite.config.ts copies into the build; tier 1
-// runs offline, before any fetch, so its license is not yet on disk and is
-// recognized by name instead.
+// and the dialog reads them.
 
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
@@ -23,18 +20,6 @@ function licensePaths() {
   const source = readRepoFile("web/app/components/licenses.ts");
   const sources = [...source.matchAll(/\bsrc: "([^"]+)"/g)].map((match) => match[1]);
   return sources.map((src) => posix.normalize(posix.join("app", src)));
-}
-
-/**
- * The web/-relative paths web/fetch-vendor.sh writes under app/vendor/, read
- * from its literal "<lib>/<path>" destination strings.
- *
- * @returns {Set<string>}
- */
-function fetchedVendorPaths() {
-  const script = readRepoFile("web/fetch-vendor.sh");
-  const destinations = [...script.matchAll(/"(codemirror\/[^"]+)"/g)].map((match) => match[1]);
-  return new Set(destinations.map((dest) => posix.join("app", "vendor", dest)));
 }
 
 /**
@@ -61,25 +46,12 @@ function includes(pattern, path) {
 }
 
 test("the About dialog lists at least one static license per group", () => {
-  assert.ok(licensePaths().length >= 4, "found fewer license rows than the dialog has");
+  assert.ok(licensePaths().length >= 3, "found fewer license rows than the dialog has");
 });
 
 for (const path of licensePaths()) {
   test(`${path} exists and the deploy ships it`, () => {
     assert.ok(!path.startsWith(".."), `${path} points outside web/`);
-    if (path.startsWith("app/")) {
-      // Inside the page's own directory: the build puts it there.
-      assert.ok(
-        existsSync(join(repoRoot, "web", path)) || fetchedVendorPaths().has(path),
-        `web/${path} does not exist and fetch-vendor.sh does not fetch it`,
-      );
-      assert.match(
-        readRepoFile("web/vite.config.ts"),
-        /join\(WEB, "app", "vendor", "codemirror"\)/,
-        "vite.config.ts does not copy the fetched CodeMirror files into the build",
-      );
-      return;
-    }
     assert.ok(existsSync(join(repoRoot, "web", path)), `web/${path} does not exist`);
     assert.ok(
       deployIncludes().some((pattern) => includes(pattern, path)),

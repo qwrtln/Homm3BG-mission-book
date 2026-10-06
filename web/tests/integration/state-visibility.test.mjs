@@ -2,6 +2,7 @@
 // the editor has moved on from, disabled buttons look unavailable in both
 // themes, and the signed-out header says what signing in is for.
 
+import { editorBox } from "../helpers/editor.mjs";
 import { expect, OPENED_STATUS, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const SCENARIO_NAME = "tier two probe";
@@ -71,7 +72,7 @@ async function openFirstScenario(page) {
  * @returns {Promise<void>}
  */
 async function editOnce(page) {
-  await page.locator(".CodeMirror").click();
+  await editorBox(page).click();
   await page.keyboard.type("x");
 }
 
@@ -176,7 +177,7 @@ test("an edit with no PDF shown says nothing about staleness", async ({ app }) =
   await expect(page.locator("#pdf-empty")).toBeVisible();
 
   await editOnce(page);
-  await expect(page.locator(".CodeMirror")).toContainText("x");
+  await expect(editorBox(page)).toContainText("x");
   await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
 });
 

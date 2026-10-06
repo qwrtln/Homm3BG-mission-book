@@ -6,6 +6,7 @@
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { CHECKLIST_ITEMS, pullRequestBody } from "../../shared/submit-checklist.ts";
+import { editorBox } from "../helpers/editor.mjs";
 import { engineCalls, expect, openScenarioList, READY_STATUS, test } from "./fixtures.mjs";
 
 const TOKEN_KEY = "github_token";
@@ -141,7 +142,7 @@ async function build(page) {
  * @returns {Promise<void>}
  */
 async function edit(page) {
-  await page.locator(".CodeMirror").click();
+  await editorBox(page).click();
   await page.keyboard.type("x");
   await expect(page.locator("#unsaved-note")).toBeVisible();
 }

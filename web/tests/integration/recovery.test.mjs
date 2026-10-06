@@ -3,6 +3,7 @@
 // tab crash) loses neither. See web/app/modules/local-store.ts.
 
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
+import { editorBox, editorText } from "../helpers/editor.mjs";
 import { expect, READY_STATUS, test } from "./fixtures.mjs";
 
 const LOGIN = "octotester";
@@ -146,11 +147,9 @@ test("typing updates the IndexedDB text record within about a second", async ({ 
   await openBlankClash(page, "Recovery Probe");
   const path = await chosenPath(page);
 
-  await page.locator(".CodeMirror").click();
+  await editorBox(page).click();
   await page.keyboard.type("% typed for crash recovery\n");
-  const typed = await page.evaluate(() =>
-    /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-  );
+  const typed = await editorText(page);
 
   await expect.poll(async () => (await readLocalRecord(page, path)).text, { timeout: 1500 }).toBe(typed);
 });
@@ -198,20 +197,16 @@ test.describe("category move carries the stored record to the new path", () => {
     await page.locator("#upload-header").setInputFiles(fakeImage("header.png"));
     await expect(page.locator("#upload-header-card")).toBeVisible();
     await page.locator("#upload-done").click();
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
     await page.keyboard.type("% moving\n");
-    const text = await page.evaluate(() =>
-      /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-    );
+    const text = await editorText(page);
     await expect.poll(async () => (await readLocalRecord(page, old)).text).toBe(text);
 
     await page.locator("#scenario-category").selectOption("coops");
     const next = old.replace("/clash/", "/coops/");
     // The standard heading kind follows the category, so the moved text
     // is not byte-for-byte the pre-move text.
-    const moved = await page.evaluate(() =>
-      /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-    );
+    const moved = await editorText(page);
 
     await expect.poll(async () => (await readLocalRecord(page, next)).text).toBe(moved);
     await expect.poll(async () => (await readLocalRecord(page, next)).uploads?.length ?? 0).toBe(1);
@@ -303,9 +298,7 @@ test.describe("a successful GitHub save", () => {
     await page.locator("#upload-done").click();
     await expect.poll(async () => (await readLocalRecord(page, path)).uploads?.length ?? 0).toBe(1);
 
-    const text = await page.evaluate(() =>
-      /** @type {any} */ (document.querySelector(".CodeMirror")).CodeMirror.getValue(),
-    );
+    const text = await editorText(page);
     await page.locator("#github-save").click();
     await expect(page.locator("#status-text")).toContainText("Saved to");
 
@@ -327,7 +320,7 @@ test.describe("signing out", () => {
     await page.locator("#upload-header").setInputFiles(fakeImage("header.png"));
     await expect(page.locator("#upload-header-card")).toBeVisible();
     await page.locator("#upload-done").click();
-    await page.locator(".CodeMirror").click();
+    await editorBox(page).click();
     await page.keyboard.type("x");
     await expect.poll(async () => (await readLocalRecord(page, path)).uploads?.length ?? 0).toBe(1);
 
