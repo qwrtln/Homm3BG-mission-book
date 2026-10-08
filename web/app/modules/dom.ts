@@ -1,6 +1,6 @@
 import { basenameNoExt, escapeHtml, sanitizeFilename } from "../../shared/dom-strings.ts";
 import { isMacPlatform, keyLabel, shortcutKeys } from "../../shared/keymap.ts";
-import { type ConfirmOptions, requestConfirm, store } from "../store.ts";
+import { type ConfirmChoice, type ConfirmOptions, requestChoice, requestConfirm, store } from "../store.ts";
 
 export { basenameNoExt, escapeHtml, sanitizeFilename };
 
@@ -58,4 +58,14 @@ export function confirmDelete(message: string): Promise<boolean> {
  */
 export function confirmAction(options: ConfirmOptions): Promise<boolean> {
   return requestConfirm(options);
+}
+
+/**
+ * Asks in the page's own modal with up to three buttons: set `altLabel` for the
+ * middle one. Escape and Cancel answer "cancel"; Cancel has focus.
+ *
+ * @returns the button that was pressed
+ */
+export function chooseAction(options: ConfirmOptions): Promise<ConfirmChoice> {
+  return requestChoice(options);
 }

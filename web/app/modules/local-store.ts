@@ -39,9 +39,23 @@ export interface LocalRecord {
   text: string | null;
   /** the staged upload set; null = no local opinion, an empty array = "every upload was removed" */
   uploads: StagedAsset[] | null;
+  /** git blob SHA of the GitHub or Mission Book text the local copy is based on; null = unknown */
+  baseSha: string | null;
+  /** ISO time of the last text write; null = unknown */
+  updatedAt: string | null;
 }
 
-const NO_RECORD: LocalRecord = { text: null, uploads: null };
+const NO_RECORD: LocalRecord = { text: null, uploads: null, baseSha: null, updatedAt: null };
+
+function toRecord(value: Partial<LocalRecord> | undefined): LocalRecord {
+  if (!value) return NO_RECORD;
+  return {
+    text: value.text ?? null,
+    uploads: value.uploads ?? null,
+    baseSha: value.baseSha ?? null,
+    updatedAt: value.updatedAt ?? null,
+  };
+}
 
 /**
  * Reads the stored record for a scenario path.
@@ -55,13 +69,57 @@ export async function loadRecord(path: string): Promise<LocalRecord> {
     return await new Promise((resolve, reject) => {
       const request = db.transaction(STORE_NAME, "readonly").objectStore(STORE_NAME).get(path);
       request.onsuccess = () => {
-        const value = request.result;
-        resolve(value ? { text: value.text ?? null, uploads: value.uploads ?? null } : NO_RECORD);
+        resolve(toRecord(request.result));
       };
       request.onerror = () => reject(request.error);
     });
   } catch {
     return NO_RECORD;
+  }
+}
+
+export interface RecordSummary {
+  path: string;
+  text: string | null;
+  baseSha: string | null;
+  updatedAt: string | null;
+  /** true when the record holds a staged upload set */
+  staged: boolean;
+}
+
+/**
+ * Reads a summary of every stored record, for the welcome screen's list.
+ * Walks a cursor, so only one record's upload bytes are held at a time.
+ *
+ * @returns `[]` when nothing is stored, or storage is blocked or unavailable
+ */
+export async function listRecords(): Promise<RecordSummary[]> {
+  try {
+    const db = await openDb();
+    return await new Promise((resolve, reject) => {
+      const summaries: RecordSummary[] = [];
+      const request = db.transaction(STORE_NAME, "readonly").objectStore(STORE_NAME).openCursor();
+      request.onsuccess = () => {
+        const cursor = request.result;
+        if (!cursor) {
+          resolve(summaries);
+          return;
+        }
+        const value = cursor.value as Partial<LocalRecord> & { path: string };
+        const record = toRecord(value);
+        summaries.push({
+          path: value.path,
+          text: record.text,
+          baseSha: record.baseSha,
+          updatedAt: record.updatedAt,
+          staged: record.uploads !== null,
+        });
+        cursor.continue();
+      };
+      request.onerror = () => reject(request.error);
+    });
+  } catch {
+    return [];
   }
 }
 
@@ -72,8 +130,11 @@ export async function loadRecord(path: string): Promise<LocalRecord> {
  * "strict"): a relaxed flush is an acceptable trade against blocking the
  * caller, since this copy is a second line of defense, not the source of
  * truth.
+ *
+ * @param edit false for a write that is not the contributor's edit, which
+ *   never moves the last-edit time
  */
-async function mergeWrite(path: string, patch: Partial<LocalRecord>): Promise<void> {
+async function mergeWrite(path: string, patch: Partial<LocalRecord>, edit = true): Promise<void> {
   try {
     const db = await openDb();
     await new Promise<void>((resolve, reject) => {
@@ -81,8 +142,13 @@ async function mergeWrite(path: string, patch: Partial<LocalRecord>): Promise<vo
       const store = tx.objectStore(STORE_NAME);
       const getRequest = store.get(path);
       getRequest.onsuccess = () => {
-        const existing = getRequest.result ?? { path, text: null, uploads: null };
-        store.put({ ...existing, ...patch, path });
+        const existing = getRequest.result ?? { path, ...NO_RECORD };
+        // Only an edit that changes the text moves the stamp. An open, a blur
+        // or a flush rewrites the same text, and uploads and the baseline say
+        // nothing about when the text changed.
+        const edited = edit && "text" in patch && patch.text !== existing.text;
+        const stamp = edited ? { updatedAt: new Date().toISOString() } : {};
+        store.put({ ...existing, ...patch, ...stamp, path });
       };
       tx.oncomplete = () => resolve();
       tx.onerror = () => reject(tx.error);
@@ -93,8 +159,25 @@ async function mergeWrite(path: string, patch: Partial<LocalRecord>): Promise<vo
   }
 }
 
-export function saveText(path: string, text: string): Promise<void> {
-  return mergeWrite(path, { text });
+/**
+ * @param baseSha when given, written with the text in the same transaction;
+ *   omitted, the stored baseline stays
+ */
+export function saveText(path: string, text: string, baseSha?: string | null): Promise<void> {
+  return mergeWrite(path, baseSha === undefined ? { text } : { text, baseSha });
+}
+
+/**
+ * Writes the text a scenario opened with, and its baseline, without moving
+ * the last-edit time: opening is not an edit.
+ */
+export function saveOpenedText(path: string, text: string, baseSha: string): Promise<void> {
+  return mergeWrite(path, { text, baseSha }, false);
+}
+
+/** Records which text the local copy is based on, leaving the text itself alone. */
+export function setBaseSha(path: string, sha: string | null): Promise<void> {
+  return mergeWrite(path, { baseSha: sha });
 }
 
 /**

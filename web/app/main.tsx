@@ -7,7 +7,7 @@ import { ensureEngine } from "./modules/build.ts";
 import { initCategory } from "./modules/category.ts";
 import { loadEntries } from "./modules/entries.ts";
 import { preloadCommonFiles } from "./modules/files.ts";
-import { loadRecord, saveText, saveUploads } from "./modules/local-store.ts";
+import { listRecords, loadRecord, saveText, saveUploads, setBaseSha } from "./modules/local-store.ts";
 import { initShortcuts } from "./modules/shortcuts.ts";
 import { setStatus } from "./modules/status.ts";
 import { applyTheme, initialTheme } from "./modules/theme.ts";
@@ -19,7 +19,7 @@ import "./styles/app.css";
 // Test hooks, like __lastSaveTarget: the build bundles the modules, so a test
 // cannot import its own copy of them from the page.
 Object.defineProperty(window, "__state", { get: () => store.getState() });
-window.__localStore = { loadRecord, saveText, saveUploads };
+window.__localStore = { listRecords, loadRecord, saveText, saveUploads, setBaseSha };
 
 initCategory();
 // Synchronous, so the page's DOM and the effects of its components exist when the init*() calls below run.

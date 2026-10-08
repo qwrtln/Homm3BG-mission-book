@@ -1,5 +1,6 @@
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
+import type { WelcomeEntry } from "../shared/local-drafts.ts";
 import type { WizardAnswers } from "../shared/scenario-wizard.ts";
 import type { ChecklistItem } from "../shared/submit-checklist.ts";
 import type { Baseline } from "../shared/unsaved.ts";
@@ -61,13 +62,18 @@ export interface ConfirmOptions {
   warning: string;
   okLabel: string;
   cancelLabel?: string;
+  /** a third button, between Cancel and the confirming one; absent, the dialog has two */
+  altLabel?: string;
   danger: boolean;
 }
+
+/** Which button answered a confirmation. Escape and closing answer "cancel". */
+export type ConfirmChoice = "confirm" | "alt" | "cancel";
 
 /** A pending confirmation: its question, and the promise's resolver. */
 export interface ConfirmRequest {
   options: ConfirmOptions;
-  resolve: (confirmed: boolean) => void;
+  resolve: (choice: ConfirmChoice) => void;
 }
 
 /** One notice. `id` changes with every notice, so showing the same text twice restarts the timer. */
@@ -142,12 +148,12 @@ export interface PickerState {
   entriesError: string | null;
 }
 
-/** The resume block on the welcome screen: the signed-in contributor's own unfinished branches. */
+/** The resume block on the welcome screen: unfinished scenarios, on GitHub and in this browser. */
 export interface ResumeState {
   visible: boolean;
   /** Whether the lookup is running: the block shows its spinner instead of its hint. */
   searching: boolean;
-  drafts: ResumableDraft[];
+  entries: WelcomeEntry[];
 }
 
 /** The question asked when an edit branch of the picked scenario already exists, with what each answer does. */
@@ -390,7 +396,7 @@ export function initialState(): StoreState {
     workspaceShown: false,
     welcomeLeaving: false,
     workspaceEntrance: 0,
-    resume: { visible: false, searching: false, drafts: [] },
+    resume: { visible: false, searching: false, entries: [] },
     editBranch: null,
 
     wizard: initialWizard(),
@@ -434,21 +440,30 @@ export function dialogClosed(name: DialogName): void {
 
 /**
  * Asks in the page's own modal. A second question while one is open answers
- * the first with no.
+ * the first with "cancel".
  *
- * @returns true only when the confirming button was pressed
+ * @returns the button that was pressed
  */
-export function requestConfirm(options: ConfirmOptions): Promise<boolean> {
-  store.getState().confirm?.resolve(false);
+export function requestChoice(options: ConfirmOptions): Promise<ConfirmChoice> {
+  store.getState().confirm?.resolve("cancel");
   return new Promise((resolve) => {
     store.setState({ confirm: { options, resolve } });
   });
 }
 
+/**
+ * Asks in the page's own modal, with the two buttons.
+ *
+ * @returns true only when the confirming button was pressed
+ */
+export async function requestConfirm(options: ConfirmOptions): Promise<boolean> {
+  return (await requestChoice(options)) === "confirm";
+}
+
 /** Answers the open confirmation and removes it. */
-export function answerConfirm(confirmed: boolean): void {
+export function answerConfirm(choice: ConfirmChoice): void {
   const { confirm } = store.getState();
   if (confirm === null) return;
   store.setState({ confirm: null });
-  confirm.resolve(confirmed);
+  confirm.resolve(choice);
 }

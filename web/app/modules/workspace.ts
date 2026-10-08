@@ -1,5 +1,6 @@
 import { flushSync } from "react-dom";
 import { withScenarioTitle } from "../../shared/build-plan.ts";
+import { gitBlobSha } from "../../shared/local-drafts.ts";
 import { newScenarioDir, withScenarioKind } from "../../shared/scenario-name.ts";
 import { clearPdf, showPdf, showPdfLoading } from "../pdf/view.ts";
 import { store } from "../store.ts";
@@ -12,7 +13,7 @@ import { type EditorApi, getEditor, requireEditor } from "./editor-api.ts";
 import { preloadFile } from "./files.ts";
 import { githubSaveState, resetGithubSaveState, setSaveControlsVisible } from "./github-save-state.ts";
 import { setScenarioTitle } from "./header.ts";
-import { clearUploads, saveText, saveUploads } from "./local-store.ts";
+import { clearUploads, saveOpenedText, saveText, saveUploads } from "./local-store.ts";
 import { prefetchScenario } from "./picker.ts";
 import { offerDraftOverCopy, offerLocalDraft } from "./recovery.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "./route.ts";
@@ -142,7 +143,7 @@ export async function commitEntry(path: string, name: string, category: string):
     // A replaced draft is gone from the editor; written at once so a crash
     // within the next 400 ms cannot bring it back under this key.
     saveDraft(identity, pristine);
-    await saveText(identity, pristine);
+    await saveOpenedText(identity, pristine, await gitBlobSha(pristine));
     await clearUploads(identity);
   }
 
@@ -235,14 +236,22 @@ async function showPrefetchedPdf(path: string, source: string): Promise<boolean>
  * @param title
  * @param source the text to put in the editor
  * @param edit what the save must do about an existing edit branch
+ * @returns false when the contributor cancelled: nothing opened, the welcome screen stays
  */
 export async function openForEdit(
   path: string,
   title: string,
   source: string,
   edit: { startOver: boolean },
-): Promise<void> {
+): Promise<boolean> {
   const editor = requireEditor();
+
+  const sourceSha = await gitBlobSha(source);
+  const local = await offerLocalDraft(path, title, source, sourceSha);
+  if (local.choice === "cancel") {
+    clearRoute();
+    return false;
+  }
 
   await showWorkspace();
   store.setState({ actionsVisible: true });
@@ -255,27 +264,28 @@ export async function openForEdit(
   reflectRoute();
   store.setState({ buildDisabled: false, downloadDisabled: true }); // Build, or Stop mid-build: both apply
 
-  const local = await offerLocalDraft(path, title, source);
-  editor.setText(local ? local.text : source);
-  store.setState({ draftNote: local !== null });
+  const keepLocal = local.choice === "local";
+  editor.setText(keepLocal ? local.text : source);
+  store.setState({ draftNote: keepLocal });
   editor.focus();
 
   resetUploads();
-  restoreUploads(local ? local.uploads : []);
+  restoreUploads(keepLocal ? local.uploads : []);
   clearPdf();
-  if (local !== null) {
+  if (keepLocal) {
     markClean(source, "");
   } else {
     // Gone from the editor; written at once so a crash within the next 400
     // ms cannot leave the old local text under this key.
     saveDraft(path, source);
-    await saveText(path, source);
+    await saveOpenedText(path, source, sourceSha);
     await clearUploads(path);
     markClean();
   }
 
   await showPrefetchedPdf(path, source);
   setStatus(readyStatus());
+  return true;
 }
 
 /**

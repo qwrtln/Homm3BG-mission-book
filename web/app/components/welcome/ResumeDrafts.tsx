@@ -1,6 +1,8 @@
-import { deleteResumableDraft, resumeDraft } from "../../github/resume.ts";
-import { draftLabel, timeAgo } from "../../modules/draft-labels.ts";
+import type { EntryState, WelcomeEntry } from "../../../shared/local-drafts.ts";
+import { deleteResumeEntry, resumeEntry } from "../../github/resume.ts";
+import { draftLabel, draftParts, timeAgo } from "../../modules/draft-labels.ts";
 import { useAppStore } from "../../store.ts";
+import { DeviceDesktopIcon, DeviceMobileIcon, MarkGithubIcon } from "../header/icons.tsx";
 
 /** The row's delete button icon (Primer's trash octicon). */
 function TrashIcon() {
@@ -11,27 +13,76 @@ function TrashIcon() {
   );
 }
 
-/** One branch of the member's own: a button that opens it, and one that deletes it. */
-function ResumeRow({ draft }: { draft: ResumableDraft }) {
-  const ago = timeAgo(draft.lastEdit);
-  const detail = ago ? `${draft.branch}, last edit ${ago}` : draft.branch;
-  const kind = draft.kind === "edit" ? "editing in place" : "new draft";
-  const label = draftLabel(draft.texPath);
+/** Whether this device is a phone or tablet, by its pointer: a touch screen draws the phone. */
+function onTouchDevice(): boolean {
+  return typeof matchMedia === "function" && matchMedia("(pointer: coarse)").matches;
+}
+
+/** The states that ask for the contributor's attention, and how each reads. */
+const ATTENTION_LABELS: Partial<Record<EntryState, string>> = {
+  unsaved: "Unsaved changes in this browser",
+  conflict: "Changed on GitHub and here",
+};
+
+/**
+ * One scenario of the contributor's: a button that opens it, and one that
+ * deletes it. The button reads the name, then where the text lives, whether
+ * it edits a Mission Book scenario, and its age, then any state that needs
+ * attention.
+ */
+function ResumeRow({ entry }: { entry: WelcomeEntry }) {
+  const { path, remote, local } = entry;
+  // A new scenario is the usual case and goes unsaid; an edit of a published one is named.
+  const kind = path.startsWith("draft-scenarios/") ? null : "Mission Book edit";
+  const ago = timeAgo(remote ? remote.lastEdit : (local?.updatedAt ?? undefined));
+  const label = draftLabel(path);
+  const { title, mode } = draftParts(path);
+  const attention = ATTENTION_LABELS[entry.state];
 
   return (
     <div className="resume-row">
-      <button type="button" className="combobox-item" onClick={() => void resumeDraft(draft)}>
-        {label}{" "}
-        <span className="hint">
-          ({kind}; {detail})
+      <button
+        type="button"
+        className="combobox-item"
+        title={remote ? `Branch ${remote.branch}` : undefined}
+        onClick={() => void resumeEntry(entry)}
+      >
+        <span className="resume-name">
+          {title}
+          {mode && (
+            <>
+              {" "}
+              <span className="resume-mode">{mode}</span>
+            </>
+          )}
         </span>
+        <span className="resume-meta">
+          {remote ? (
+            <span className="resume-where on-github">
+              <MarkGithubIcon />
+              On GitHub
+            </span>
+          ) : (
+            <span className="resume-where">
+              {onTouchDevice() ? (
+                <DeviceMobileIcon className="device-mobile" />
+              ) : (
+                <DeviceDesktopIcon className="device-desktop" />
+              )}
+              Local draft
+            </span>
+          )}
+          {kind && ` · ${kind}`}
+          {ago && ` · last edit ${ago}`}
+        </span>
+        {attention && <span className="resume-state attention">{attention}</span>}
       </button>
       <button
         type="button"
         className="resume-delete"
         aria-label={`Delete ${label}`}
         title="Delete this work in progress"
-        onClick={() => void deleteResumableDraft(draft)}
+        onClick={() => void deleteResumeEntry(entry)}
       >
         <TrashIcon />
       </button>
@@ -39,9 +90,14 @@ function ResumeRow({ draft }: { draft: ResumableDraft }) {
   );
 }
 
-/** "Resume your work": the signed-in contributor's branches with unfinished edits, from the store. */
+/** "Resume your work": the contributor's unfinished scenarios, on GitHub and in this browser, from the store. */
 export function ResumeDrafts() {
-  const { visible, searching, drafts } = useAppStore((s) => s.resume);
+  const { visible, searching, entries } = useAppStore((s) => s.resume);
+  // A branch names its row; two branches can share a path. A row with no
+  // branch is the only one for its path.
+  const rows = entries.map((entry) => (
+    <ResumeRow key={entry.remote ? `branch:${entry.remote.branch}` : `path:${entry.path}`} entry={entry} />
+  ));
 
   return (
     <div className="resume-drafts" id="resume-drafts" hidden={!visible}>
@@ -50,12 +106,10 @@ export function ResumeDrafts() {
         <span className="spinner" /> Looking for work to resume…
       </p>
       <p className="hint" id="resume-hint" hidden={searching}>
-        Branches of yours with unfinished edits.
+        Your unfinished scenarios, on GitHub and in this browser.
       </p>
       <div className="combobox-list resume-list" id="resume-list">
-        {drafts.map((draft) => (
-          <ResumeRow key={draft.branch} draft={draft} />
-        ))}
+        {rows}
       </div>
     </div>
   );

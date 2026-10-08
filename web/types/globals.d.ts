@@ -9,7 +9,10 @@ interface Window {
   /** The source editor, with the reads tier 2 needs. Installed by the editor on mount. */
   __editor?: import("../app/modules/editor-api.ts").EditorProbe;
   /** The local-store functions the integration tests seed and read. Installed by app/main.tsx. */
-  __localStore?: Pick<typeof import("../app/modules/local-store.ts"), "loadRecord" | "saveText" | "saveUploads">;
+  __localStore?: Pick<
+    typeof import("../app/modules/local-store.ts"),
+    "listRecords" | "loadRecord" | "saveText" | "saveUploads" | "setBaseSha"
+  >;
 }
 
 interface Navigator {

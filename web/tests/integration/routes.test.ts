@@ -283,6 +283,7 @@ test.describe("a differing local draft is offered before a remote branch replace
   const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
   const BRANCH_PATH = "draft-scenarios/clash/half_written.tex";
   const BRANCH_TEXT = "% from branch\n";
+  const BRANCH_SHA = "2b7bd37cd0574a3067d8725a80f1184364bd434d"; // git blob SHA of BRANCH_TEXT
   const LOCAL_TEXT = "% local crash recovery\n";
 
   test.use({
@@ -303,7 +304,7 @@ test.describe("a differing local draft is offered before a remote branch replace
         {
           method: "GET",
           path: /\/compare\//,
-          body: { files: [{ filename: BRANCH_PATH, sha: "s", status: "added" }] },
+          body: { files: [{ filename: BRANCH_PATH, sha: BRANCH_SHA, status: "added" }] },
         },
         {
           method: "GET",
@@ -325,13 +326,15 @@ test.describe("a differing local draft is offered before a remote branch replace
     await page.reload();
   }
 
-  test("the dialog shows; Cancel keeps the local text, with the Local draft and Unsaved notes", async ({ app }) => {
+  test("the dialog shows; this browser's version keeps the local text, with the Local draft and Unsaved notes", async ({
+    app,
+  }) => {
     const { page } = app;
     await seedAndOpen(page);
 
     await expect(page.locator("#confirm-dialog")).toBeVisible();
-    await expect(page.locator("#confirm-title")).toHaveText("Discard unsaved edits in this browser?");
-    await page.locator("#confirm-cancel").click();
+    await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
+    await page.locator("#confirm-alt").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
     expect(await editorText(page)).toBe(LOCAL_TEXT);
@@ -394,7 +397,9 @@ test.describe("a differing local draft is offered before an edit replaces it", (
     ],
   });
 
-  test("an updates address reload with a differing local draft asks; Escape keeps the local text", async ({ app }) => {
+  test("an updates address reload with a differing local draft asks; this browser's version keeps the local text", async ({
+    app,
+  }) => {
     const { page } = app;
     await page.evaluate(
       ([path, text]) => localStorage.setItem(`wasm-scenario-builder:draft:${path}`, text),
@@ -405,8 +410,8 @@ test.describe("a differing local draft is offered before an edit replaces it", (
     await page.reload();
 
     await expect(page.locator("#confirm-dialog")).toBeVisible();
-    await expect(page.locator("#confirm-title")).toHaveText("Discard unsaved edits in this browser?");
-    await page.keyboard.press("Escape");
+    await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
+    await page.locator("#confirm-alt").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
     expect(await editorText(page)).toBe(LOCAL_TEXT);
@@ -429,7 +434,7 @@ test.describe("a differing local draft is offered before an edit replaces it", (
     await page.locator("#go").click();
 
     await expect(page.locator("#confirm-dialog")).toBeVisible();
-    await expect(page.locator("#confirm-title")).toHaveText("Discard unsaved edits in this browser?");
+    await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
   });
 });
 

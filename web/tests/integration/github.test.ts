@@ -10,6 +10,7 @@
 import type { Page } from "@playwright/test";
 import { slugify, UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { editorBox, editorText } from "../helpers/editor.ts";
+import { blobSha } from "../helpers/local-store.ts";
 import { chooseFromMenu, expect, type GithubRoute, openScenarioList, READY_STATUS, test } from "./fixtures.ts";
 
 // The localStorage key github-auth.ts persists the token in. It is a private
@@ -194,8 +195,9 @@ test.describe("the resume-drafts list", () => {
     await expect(page.locator("#resume-drafts")).toBeVisible();
     const entries = page.locator("#resume-list .combobox-item");
     await expect(entries).toHaveCount(1);
-    await expect(entries.first()).toContainText("Clash: Half Written");
-    await expect(entries.first()).toContainText(BRANCH);
+    await expect(entries.first()).toContainText("Half Written Clash");
+    await expect(entries.first()).toHaveAttribute("title", `Branch ${BRANCH}`);
+    await expect(entries.first()).toContainText("On GitHub");
     await expect(entries.first()).toContainText("last edit 3 hours ago");
 
     expect(errors, "the page reported errors while listing drafts").toEqual([]);
@@ -361,6 +363,27 @@ test.describe("saving a scenario", () => {
     });
     // No page-errors assertion here: the routes deliberately 404 the group
     // file, and Chromium logs every 404 as a console error.
+  });
+
+  test("a save records the saved text as the local copy's baseline", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await openBlankClash(page);
+    // An edit, so the saved text differs from the template the open recorded as the baseline.
+    await page.locator(".cm-content").click();
+    await page.keyboard.type("% edited before saving");
+
+    await page.locator("#github-save").click();
+    await expect(page.locator("#github-open-pr")).toBeVisible();
+
+    const saved = await editorText(page);
+    const expected = blobSha(saved);
+    const baseSha = await page.evaluate(async () => {
+      const path = window.__state?.chosenPath;
+      if (!path || !globalThis.__localStore) throw new Error("no open scenario or no __localStore hook");
+      return (await globalThis.__localStore.loadRecord(path)).baseSha;
+    });
+    expect(baseSha, "the local copy does not know which text GitHub now holds").toBe(expected);
   });
 
   test("a save commits under the chosen category and then locks it", async ({ app }) => {

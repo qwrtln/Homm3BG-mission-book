@@ -1,37 +1,71 @@
+import { decideOpen, gitBlobSha, type LocalSnapshot } from "../../shared/local-drafts.ts";
 import { assetsSignature, shouldOfferLocalDraft } from "../../shared/unsaved.ts";
-import { confirmAction } from "./dom.ts";
+import { chooseAction, confirmAction } from "./dom.ts";
 import { loadDraft } from "./drafts.ts";
-import { loadRecord, type StagedAsset } from "./local-store.ts";
+import { loadRecord, type StagedAsset, setBaseSha } from "./local-store.ts";
+
+/** How an open goes on, once the local copy is weighed against what was loaded. */
+export type LocalOffer =
+  | { choice: "loaded" }
+  | { choice: "local"; text: string; uploads: StagedAsset[] }
+  | { choice: "cancel" };
 
 /**
- * Offers the local copy — text and staged uploads — when it differs from
- * what is about to open. Every open path that loads text from somewhere
- * other than the local draft calls this before putting that text in the
- * editor, so a crash-recovered copy is never silently lost nor silently
- * hidden.
+ * Weighs the local copy — text and staged uploads — against what is about to
+ * open, by the baseline the copy was made from. A copy edited on top of the
+ * loaded text opens with no question; an untouched stale one is replaced
+ * silently; only when both sides changed does the contributor choose. Every
+ * open path that loads text from somewhere other than the local draft calls
+ * this before showing the workspace, so Cancel leaves the welcome screen as
+ * it was.
+ *
+ * Choosing the local copy from the dialog rebases it on the loaded text, so
+ * it reads as unsaved rather than as a conflict afterwards.
  *
  * @param path the scenario's repository path, the local copy's key
  * @param title shown in the dialog message
  * @param loadedText the text that is about to open, if nothing is kept
+ * @param loadedSha git blob SHA of the loaded text, as GitHub or the Mission Book holds it
  * @param loadedAssets the uploads that come with loadedText; empty for a pristine open
- * @returns the local copy to open and keep, or null to open loadedText/loadedAssets as-is
+ * @returns "loaded" to open loadedText/loadedAssets as-is, "local" with the copy to open and keep, "cancel" to open nothing
  */
 export async function offerLocalDraft(
   path: string,
   title: string,
   loadedText: string,
+  loadedSha: string,
   loadedAssets: StagedAsset[] = [],
-): Promise<{ text: string; uploads: StagedAsset[] } | null> {
-  const local = await differingLocalCopy(path, loadedText, loadedAssets);
-  if (local === null) return null;
-  const discard = await confirmAction({
-    title: "Discard unsaved edits in this browser?",
-    message: `"${title}" has edits in this browser that were never saved to GitHub.`,
+): Promise<LocalOffer> {
+  const record = await loadRecord(path);
+  const text = record.text ?? loadDraft(path);
+  const snapshot: LocalSnapshot = {
+    path,
+    textSha: text === null ? null : await gitBlobSha(text),
+    baseSha: record.baseSha,
+    staged: record.uploads !== null,
+    updatedAt: record.updatedAt,
+  };
+  const decision = decideOpen(snapshot, loadedSha);
+  if (decision === "loaded") return { choice: "loaded" };
+
+  const copy = { text: text ?? loadedText, uploads: record.uploads ?? loadedAssets };
+  if (decision === "local") return { choice: "local", ...copy };
+
+  const legacy = record.baseSha === null;
+  const answer = await chooseAction({
+    title: "This scenario changed on GitHub and in this browser",
+    message: legacy
+      ? `"${title}" has edits in this browser that differ from the GitHub version. Opening one version replaces the other on the next save.`
+      : `"${title}" was changed on GitHub, and it has edits in this browser that were never saved. Opening one version replaces the other on the next save.`,
     warning: "",
-    okLabel: "Discard",
+    okLabel: "Open GitHub version",
+    altLabel: "Open this browser's version",
     danger: true,
   });
-  return discard ? null : local;
+  if (answer === "cancel") return { choice: "cancel" };
+  if (answer === "confirm") return { choice: "loaded" };
+  await setBaseSha(path, loadedSha);
+  return { choice: "local", ...copy };
 }
 
 /**

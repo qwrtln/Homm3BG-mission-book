@@ -5,7 +5,7 @@ import { markClean } from "../modules/dirty.ts";
 import { basenameNoExt, readyStatus } from "../modules/dom.ts";
 import { loadDraft } from "../modules/drafts.ts";
 import { requireEditor } from "../modules/editor-api.ts";
-import { resetGithubSaveState } from "../modules/github-save-state.ts";
+import { githubSaveState, resetGithubSaveState } from "../modules/github-save-state.ts";
 import { setScenarioTitle } from "../modules/header.ts";
 import { loadRecord } from "../modules/local-store.ts";
 import { clearRoute, endRouteLoading, reflectRoute } from "../modules/route.ts";
@@ -18,8 +18,11 @@ import { getGithubContext, ROUTE_KEY } from "./context.ts";
 import { openResumableDraft, startEdit } from "./resume.ts";
 
 /**
- * Reopens what was being edited before a sign-in redirect. From localStorage
- * only, no server fetch: for a scenario never yet saved anywhere but here.
+ * Reopens the local copy of a scenario: what was being edited before a sign-in
+ * redirect, a route with no GitHub answer, a row of the welcome list. Reads
+ * the IndexedDB record first and the localStorage draft after it, with no
+ * server fetch. A Mission Book path reopens as an edit, a draft path as a
+ * new scenario.
  *
  * @returns false when there is nothing stored for it
  */
@@ -32,6 +35,7 @@ export async function reopenLocalDraft(path: string, title?: string): Promise<bo
   await showWorkspace();
   store.setState({ actionsVisible: true });
   resetGithubSaveState();
+  githubSaveState.edit = path.startsWith("draft-scenarios/") ? null : { startOver: false };
 
   store.setState({ chosenPath: path });
   setScenarioTitle(title || basenameNoExt(path));
@@ -76,29 +80,34 @@ async function resolveRoute(): Promise<void> {
     return;
   }
   const context = getGithubContext();
-  // Signed in but the account lookup failed: the address may still be valid, so keep it.
-  if (getToken() && !context) return;
   const path = slugToPath(route.kind, route.slug);
+  // Signed in but the account lookup failed: the address may still be valid, so keep it.
+  if (getToken() && !context) {
+    await reopenLocalDraft(path);
+    return;
+  }
   const remote = (context?.drafts ?? []).filter((d) => d.texPath === path);
 
   if (route.kind === "drafts") {
     const branch = remote.find((d) => d.kind === "new");
     if (branch) {
-      await openResumableDraft(branch);
-      if (store.getState().chosenPath) return;
+      const outcome = await openResumableDraft(branch);
+      if (outcome === "cancelled" || store.getState().chosenPath) return; // a cancel has cleared the address
     }
     if (await reopenLocalDraft(path)) return;
   } else if (context?.isMember) {
     const branch = remote.find((d) => d.kind === "edit");
     if (branch) {
-      await openResumableDraft(branch);
-      if (store.getState().chosenPath) return;
+      const outcome = await openResumableDraft(branch);
+      if (outcome === "cancelled" || store.getState().chosenPath) return;
     }
     const entry = store.getState().entries.find((e) => e.path === path);
     if (entry) {
       await startEdit(entry.path, entry.title);
       if (store.getState().chosenPath) return;
     }
+  } else if (await reopenLocalDraft(path)) {
+    return; // signed out, or no member: the local copy is all there is
   }
   clearRoute();
 }

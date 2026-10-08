@@ -17,6 +17,7 @@
 
 import { devices, type Page } from "@playwright/test";
 
+import { seedLocalRecord } from "../helpers/local-store.ts";
 import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.ts";
 
 test.use({ ...devices["Pixel 7"] });
@@ -62,6 +63,19 @@ async function openLongScenario(
 test("the welcome screen has no horizontal page scroll", async ({ app }) => {
   const { page } = app;
   await expect(page.locator("#welcome")).toBeVisible();
+  await expectNoHorizontalScroll(page);
+});
+
+test("the resume list has no horizontal page scroll, and a local draft shows the phone", async ({ app }) => {
+  const { page } = app;
+  await seedLocalRecord(page, "draft-scenarios/coops/the_unbearably_long_siege_of_the_crimson_citadel_at_dawn.tex", {
+    text: "% edited on a phone\n",
+  });
+  await page.reload();
+
+  await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+  await expect(page.locator("#resume-list .resume-where .device-mobile")).toHaveCount(1);
+  await expect(page.locator("#resume-list .resume-where .device-desktop")).toHaveCount(0);
   await expectNoHorizontalScroll(page);
 });
 
