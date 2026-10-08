@@ -144,6 +144,10 @@ npm run typecheck
 usage. It fetches the engine, runs `npm ci` when `node_modules/` is missing,
 then `npm run dev`.
 
+- Serve it from a secure context: https or `localhost`. On plain http
+  (a LAN IP) `crypto.subtle` is missing and the draft hashing in
+  `shared/local-drafts.ts` throws.
+
 The deploy builds, copies `web/dist/` to `site/builder/` (served at `/builder/`)
 and the rest of `web/` through an allow-list to the site root, in
 `.github/workflows/publish-docs.yaml`. Tooling like this script stays out of the

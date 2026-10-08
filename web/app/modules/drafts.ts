@@ -2,9 +2,25 @@ import { store } from "../store.ts";
 import { getEditor } from "./editor-api.ts";
 import { saveText } from "./local-store.ts";
 
+const DRAFT_PREFIX = "wasm-scenario-builder:draft:";
+
 /** @returns the localStorage key holding that path's autosaved draft */
 export function storageKey(path: string): string {
-  return `wasm-scenario-builder:draft:${path}`;
+  return `${DRAFT_PREFIX}${path}`;
+}
+
+/** @returns the scenario path of every autosaved draft; empty when storage is blocked */
+export function listDraftPaths(): string[] {
+  try {
+    const paths: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key?.startsWith(DRAFT_PREFIX)) paths.push(key.slice(DRAFT_PREFIX.length));
+    }
+    return paths;
+  } catch {
+    return [];
+  }
 }
 
 /** @returns null when there is no draft, or storage is blocked */

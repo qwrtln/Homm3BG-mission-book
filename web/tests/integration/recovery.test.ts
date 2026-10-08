@@ -5,6 +5,7 @@
 import type { Page } from "@playwright/test";
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { editorBox, editorText } from "../helpers/editor.ts";
+import { seedLocalRecord } from "../helpers/local-store.ts";
 import { expect, type GithubRoute, READY_STATUS, test } from "./fixtures.ts";
 
 const LOGIN = "octotester";
@@ -93,35 +94,6 @@ async function readLocalRecord(
       uploads: record.uploads ? record.uploads.map((u) => ({ path: u.path, length: u.bytes.byteLength })) : null,
     };
   }, path);
-}
-
-/**
- * Seeds a local-store record directly, bypassing the UI — for seeding a
- * stored upload set before a reload, the way routes.test.ts seeds
- * localStorage drafts.
- *
- * @param page
- * @param path
- * @param fields
- */
-async function seedLocalRecord(
-  page: Page,
-  path: string,
-  fields: { text?: string; uploads?: { path: string; length: number }[] },
-): Promise<void> {
-  await page.evaluate(
-    async ([p, f]: [string, typeof fields]) => {
-      const { saveText, saveUploads } = globalThis.__localStore!;
-      if (f.text !== undefined) await saveText(p, f.text);
-      if (f.uploads !== undefined) {
-        await saveUploads(
-          p,
-          f.uploads.map((u) => ({ path: u.path, bytes: new Uint8Array(u.length) })),
-        );
-      }
-    },
-    [path, fields] as [string, typeof fields],
-  );
 }
 
 /**
@@ -241,7 +213,7 @@ test.describe("a stored upload set offered against a branch's own assets", () =>
     ]),
   });
 
-  test("the dialog shows when the stored set differs; Cancel restores it", async ({ app }) => {
+  test("the dialog shows when the stored set differs; this browser's version restores it", async ({ app }) => {
     const { page } = app;
     await seedLocalRecord(page, BRANCH_PATH, { text: BRANCH_TEXT, uploads: [{ path: ASSET_PATH, length: 11 }] });
     await page.evaluate(() => localStorage.setItem("github_token", "t"));
@@ -249,8 +221,8 @@ test.describe("a stored upload set offered against a branch's own assets", () =>
     await page.reload();
 
     await expect(page.locator("#confirm-dialog")).toBeVisible();
-    await expect(page.locator("#confirm-title")).toHaveText("Discard unsaved edits in this browser?");
-    await page.locator("#confirm-cancel").click();
+    await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
+    await page.locator("#confirm-alt").click();
 
     await expect(page.locator("#workspace")).toBeVisible();
     await expect.poll(() => stagedPaths(page)).toEqual([ASSET_PATH]);
@@ -264,7 +236,7 @@ test.describe("a stored upload set offered against a branch's own assets", () =>
     await page.reload();
 
     await expect(page.locator("#confirm-dialog")).toBeVisible();
-    await expect(page.locator("#confirm-title")).toHaveText("Discard unsaved edits in this browser?");
+    await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
   });
 });
 
@@ -329,5 +301,140 @@ test.describe("signing out", () => {
 
     await expect(page.locator("#welcome")).toBeVisible();
     await expect.poll(() => readLocalRecord(page, path)).toEqual({ text: null, uploads: null });
+  });
+});
+
+test.describe("opening a branch weighs the local copy by its baseline", () => {
+  const BRANCH_PATH = "draft-scenarios/clash/half_written.tex";
+  const ADDRESS = "/web/app/?iss=https%3A%2F%2Fgithub.com%2Flogin%2Foauth#/drafts/clash/half_written";
+  const BRANCH_TEXT = "% from branch\n";
+  const BRANCH_SHA = "2b7bd37cd0574a3067d8725a80f1184364bd434d"; // git blob SHA of BRANCH_TEXT
+  const OLD_TEXT = "% an older branch\n";
+  const OLD_SHA = "8f5cfb128895d948c99ce889446b9d5c2a1e2d47"; // git blob SHA of OLD_TEXT
+  const LOCAL_TEXT = "% local edit\n";
+
+  test.use({
+    githubRoutes: routes([
+      ...MEMBER_ROUTES,
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [{ name: `scenario-editor/${LOGIN}/half-written` }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: { files: [{ filename: BRANCH_PATH, sha: BRANCH_SHA, status: "added" }] },
+      },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa(BRANCH_TEXT) },
+      },
+    ]),
+  });
+
+  async function openWithRecord(
+    page: Page,
+    fields: { text?: string; baseSha?: string; uploads?: { path: string; length: number }[] },
+  ): Promise<void> {
+    await seedLocalRecord(page, BRANCH_PATH, fields);
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.goto(ADDRESS);
+    await page.reload();
+  }
+
+  async function readBaseSha(page: Page): Promise<string | null> {
+    return page.evaluate(async (p) => (await globalThis.__localStore!.loadRecord(p)).baseSha, BRANCH_PATH);
+  }
+
+  test("a local edit on the current branch opens with no question", async ({ app }) => {
+    const { page } = app;
+    await openWithRecord(page, { text: LOCAL_TEXT, baseSha: BRANCH_SHA });
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#confirm-dialog")).toBeHidden();
+    expect(await editorText(page)).toBe(LOCAL_TEXT);
+    await expect(page.locator("#draft-note")).toBeVisible();
+    expect(await readBaseSha(page)).toBe(BRANCH_SHA);
+  });
+
+  test("an untouched stale copy is replaced by the branch with no question", async ({ app }) => {
+    const { page } = app;
+    await openWithRecord(page, { text: OLD_TEXT, baseSha: OLD_SHA });
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#confirm-dialog")).toBeHidden();
+    expect(await editorText(page)).toBe(BRANCH_TEXT);
+    await expect.poll(() => readBaseSha(page)).toBe(BRANCH_SHA);
+    await expect.poll(async () => (await readLocalRecord(page, BRANCH_PATH)).text).toBe(BRANCH_TEXT);
+  });
+
+  test.describe("a local edit and a moved branch", () => {
+    test("the dialog has three buttons", async ({ app }) => {
+      const { page } = app;
+      await openWithRecord(page, { text: LOCAL_TEXT, baseSha: OLD_SHA });
+
+      await expect(page.locator("#confirm-title")).toHaveText("This scenario changed on GitHub and in this browser");
+      await expect(page.locator("#confirm-message")).toContainText("changed on GitHub");
+      await expect(page.locator("#confirm-ok")).toHaveText("Open GitHub version");
+      await expect(page.locator("#confirm-alt")).toHaveText("Open this browser's version");
+      await expect(page.locator("#confirm-cancel")).toHaveText("Cancel");
+      await expect(page.locator("#workspace")).toBeHidden();
+    });
+
+    test("Open GitHub version opens the branch and drops the local edit", async ({ app }) => {
+      const { page } = app;
+      await openWithRecord(page, { text: LOCAL_TEXT, baseSha: OLD_SHA });
+      await page.locator("#confirm-ok").click();
+
+      await expect(page.locator("#workspace")).toBeVisible();
+      expect(await editorText(page)).toBe(BRANCH_TEXT);
+      await expect.poll(() => readBaseSha(page)).toBe(BRANCH_SHA);
+      await expect.poll(async () => (await readLocalRecord(page, BRANCH_PATH)).text).toBe(BRANCH_TEXT);
+    });
+
+    test("Open this browser's version opens the local edit, rebased on the branch", async ({ app }) => {
+      const { page } = app;
+      await openWithRecord(page, { text: LOCAL_TEXT, baseSha: OLD_SHA });
+      await page.locator("#confirm-alt").click();
+
+      await expect(page.locator("#workspace")).toBeVisible();
+      expect(await editorText(page)).toBe(LOCAL_TEXT);
+      await expect(page.locator("#draft-note")).toBeVisible();
+      expect(await readBaseSha(page)).toBe(BRANCH_SHA);
+    });
+
+    test("Cancel opens nothing, keeps the local copy and clears the address", async ({ app }) => {
+      const { page } = app;
+      await openWithRecord(page, { text: LOCAL_TEXT, baseSha: OLD_SHA });
+      await page.locator("#confirm-cancel").click();
+
+      await expect(page.locator("#welcome")).toBeVisible();
+      await expect(page.locator("#workspace")).toBeHidden();
+      await expect.poll(() => new URL(page.url()).hash).toBe("");
+      expect((await readLocalRecord(page, BRANCH_PATH)).text).toBe(LOCAL_TEXT);
+      expect(await readBaseSha(page)).toBe(OLD_SHA);
+    });
+  });
+
+  test("a legacy record that differs asks, without claiming GitHub changed", async ({ app }) => {
+    const { page } = app;
+    await openWithRecord(page, { text: LOCAL_TEXT });
+
+    await expect(page.locator("#confirm-dialog")).toBeVisible();
+    await expect(page.locator("#confirm-alt")).toHaveText("Open this browser's version");
+    await expect(page.locator("#confirm-message")).not.toContainText("was changed on GitHub");
+  });
+});
+
+test.describe("an updates address with no GitHub answer", () => {
+  test("signed out, a local copy opens in edit mode", async ({ app }) => {
+    const { page } = app;
+    const path = "clash/arcane_artillery.tex";
+    await seedLocalRecord(page, path, { text: "% local edit of a Mission Book scenario\n" });
+    await page.goto("/web/app/#/updates/clash/arcane_artillery");
+    await page.reload();
+
+    await expect(page.locator("#workspace")).toBeVisible();
+    expect(await editorText(page)).toBe("% local edit of a Mission Book scenario\n");
+    expect(await page.evaluate(() => window.__state!.edit)).toEqual({ startOver: false });
+    expect(new URL(page.url()).hash).toBe("#/updates/clash/arcane_artillery");
   });
 });

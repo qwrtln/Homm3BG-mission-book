@@ -294,9 +294,18 @@ export async function discoverGithubContext(token: string): Promise<GithubContex
   const repo = isMember ? UPSTREAM_REPO : fork ? fork.name : null;
   // `owner` and `repo` are always set together or both null; testing both
   // changes nothing at run time and lets the checker narrow each to a string.
-  const drafts =
-    owner && repo ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch }) : [];
-  return { username, isMember, fork, base: upstream.default_branch, drafts };
+  const found =
+    owner && repo
+      ? await findResumableDrafts(token, { owner, repo, username, base: upstream.default_branch })
+      : { drafts: [], complete: true };
+  return {
+    username,
+    isMember,
+    fork,
+    base: upstream.default_branch,
+    drafts: found.drafts,
+    draftsComplete: found.complete,
+  };
 }
 
 /** A sha no commit can have, so the permission probe's ref creation can never succeed. */
@@ -366,19 +375,26 @@ export async function validateTokenContext(token: string): Promise<GithubContext
   return context;
 }
 
+/** GitHub's page size for the branch list; a full page may hide more branches. */
+const BRANCH_PAGE_SIZE = 100;
+
 /**
  * This user's own scenario-editor/<username>/* branches, paired with the
  * .tex file each touches, found by diffing against the default branch.
+ *
+ * `complete` is false when a compare failed or the branch page was full, so
+ * a draft may be missing from the list.
  */
 async function findResumableDrafts(
   token: string,
   { owner, repo, username, base }: { owner: string; repo: string; username: string; base: string },
-): Promise<ResumableDraft[]> {
+): Promise<{ drafts: ResumableDraft[]; complete: boolean }> {
   const prefix = `scenario-editor/${username}/`;
   const branches = await apiJson(`/repos/${owner}/${repo}/branches?per_page=100`, token, parseBranches);
   const own = branches.filter((b) => b.name.startsWith(prefix));
 
   const drafts: ResumableDraft[] = [];
+  let complete = branches.length < BRANCH_PAGE_SIZE;
   for (const b of own) {
     try {
       const compare = await apiJson(
@@ -395,13 +411,21 @@ async function findResumableDrafts(
         .map((f) => ({ path: f.filename, sha: f.sha }));
       if (texFile) {
         const kind = b.name.startsWith(`${prefix}updates/`) ? "edit" : "new";
-        drafts.push({ branch: b.name, kind, texPath: texFile.filename, assets, lastEdit: compare.lastCommitDate });
+        drafts.push({
+          branch: b.name,
+          kind,
+          texPath: texFile.filename,
+          texSha: texFile.sha,
+          assets,
+          lastEdit: compare.lastCommitDate,
+        });
       }
     } catch {
       // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
+      complete = false;
     }
   }
-  return drafts;
+  return { drafts, complete };
 }
 
 /** @param base64 base64 text, newlines and all */

@@ -98,6 +98,8 @@ interface GithubFakeOptions {
   branchNames?: string[];
   /** branch -> .tex paths its compare against the default branch lists */
   branchTexFiles?: Record<string, string[]>;
+  /** branches whose compare answers 500 */
+  failingCompares?: string[];
   /** open pull requests */
   pulls?: PullRequest[];
   /** status for a ref creation from the all-zero sha (the write probe); 422 when unset */
@@ -311,8 +313,9 @@ function createGithubFake(options: GithubFakeOptions = {}): GithubFake {
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/compare\//) && method === "GET") {
       const branch = decodeURIComponent(path.split("...").pop() ?? "");
+      if (options.failingCompares?.includes(branch)) return json({ message: "boom" }, 500);
       const listed = options.branchTexFiles?.[branch] || [];
-      return json({ files: listed.map((filename) => ({ filename, sha: "sha", status: "modified" })) });
+      return json({ files: listed.map((filename) => ({ filename, sha: `sha-of-${filename}`, status: "modified" })) });
     }
 
     if (path.match(/^\/repos\/[^/]+\/[^/]+\/pulls$/) && method === "GET") {
@@ -363,6 +366,7 @@ function context(overrides: Partial<GithubContext> = {}): GithubContext {
     fork: { name: UPSTREAM_REPO, owner: { login: "octocat" }, default_branch: "main" },
     base: "main",
     drafts: [],
+    draftsComplete: true,
     ...overrides,
   };
 }
@@ -746,6 +750,52 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
       ["draft-scenarios/clash/valley.tex", "new"],
     ],
   );
+});
+
+test("a resumable draft keeps the .tex blob sha from the compare", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchNames: ["scenario-editor/octocat/valley"],
+    branchTexFiles: { "scenario-editor/octocat/valley": ["draft-scenarios/clash/valley.tex"] },
+  });
+  setHttpClient(fake.client);
+
+  const { drafts, draftsComplete } = await discoverGithubContext("t");
+
+  assert.equal(drafts[0].texSha, "sha-of-draft-scenarios/clash/valley.tex");
+  assert.equal(draftsComplete, true);
+});
+
+test("the draft lookup is incomplete when a compare fails", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchNames: ["scenario-editor/octocat/valley", "scenario-editor/octocat/castle"],
+    branchTexFiles: {
+      "scenario-editor/octocat/valley": ["draft-scenarios/clash/valley.tex"],
+      "scenario-editor/octocat/castle": ["draft-scenarios/clash/castle.tex"],
+    },
+    failingCompares: ["scenario-editor/octocat/castle"],
+  });
+  setHttpClient(fake.client);
+
+  const { drafts, draftsComplete } = await discoverGithubContext("t");
+
+  assert.deepEqual(
+    drafts.map((draft) => draft.texPath),
+    ["draft-scenarios/clash/valley.tex"],
+  );
+  assert.equal(draftsComplete, false);
+});
+
+test("the draft lookup is incomplete when the branch page is full", async () => {
+  // the default branch fills the 100th slot
+  const names = Array.from({ length: 99 }, (_, i) => `feature/b${i}`);
+  const fake = createGithubFake({ push: true, branchNames: names });
+  setHttpClient(fake.client);
+
+  const { draftsComplete } = await discoverGithubContext("t");
+
+  assert.equal(draftsComplete, false);
 });
 
 test("a resumable draft carries its header, map images and map-editor files, and nothing else", async () => {

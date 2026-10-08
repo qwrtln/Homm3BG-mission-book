@@ -77,6 +77,22 @@ export function MarkGithubIcon({ className }: IconProps) {
   );
 }
 
+export function DeviceDesktopIcon({ className }: IconProps) {
+  return (
+    <Octicon className={className}>
+      <path d="M14.25 1c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 14.25 12h-3.727c.099 1.041.52 1.872 1.292 2.531a.75.75 0 0 1-.488 1.319H4.673a.75.75 0 0 1-.488-1.32c.77-.657 1.193-1.484 1.292-2.53H1.75A1.75 1.75 0 0 1 0 10.25v-7.5C0 1.784.784 1 1.75 1ZM1.75 2.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25ZM9.018 12H6.982a5.72 5.72 0 0 1-.765 2.5h3.566a5.72 5.72 0 0 1-.765-2.5Z" />
+    </Octicon>
+  );
+}
+
+export function DeviceMobileIcon({ className }: IconProps) {
+  return (
+    <Octicon className={className}>
+      <path d="M3.75 0h8.5C13.216 0 14 .784 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V1.75C2 .784 2.784 0 3.75 0ZM3.5 1.75v12.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM8 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+    </Octicon>
+  );
+}
+
 export function UploadIcon({ className }: IconProps) {
   return (
     <Octicon className={className}>

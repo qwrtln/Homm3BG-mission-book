@@ -1,4 +1,4 @@
-import { basenameNoExt } from "./dom.ts";
+import { basenameNoExt } from "../../shared/dom-strings.ts";
 
 const CATEGORY_LABELS: Record<string, string> = {
   clash: "Clash",
@@ -7,14 +7,19 @@ const CATEGORY_LABELS: Record<string, string> = {
   alliances: "Alliance",
 };
 
-/** "draft-scenarios/clash/kyrre_link.tex" -> "Clash: Kyrre Link". */
-export function draftLabel(texPath: string): string {
+/** "draft-scenarios/clash/kyrre_link.tex" -> {title: "Kyrre Link", mode: "Clash"}; mode is null outside a known category. */
+export function draftParts(texPath: string): { title: string; mode: string | null } {
   const dir = texPath.split("/").slice(-2, -1)[0] ?? "";
   const title = basenameNoExt(texPath)
     .replace(/[-_]+/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
-  const category = CATEGORY_LABELS[dir];
-  return category ? `${category}: ${title}` : title;
+  return { title, mode: CATEGORY_LABELS[dir] ?? null };
+}
+
+/** "draft-scenarios/clash/kyrre_link.tex" -> "Kyrre Link (Clash)": the name first, then the mode. */
+export function draftLabel(texPath: string): string {
+  const { title, mode } = draftParts(texPath);
+  return mode ? `${title} (${mode})` : title;
 }
 
 /** "3 hours ago", "yesterday", ...; empty when the date is missing or invalid. */

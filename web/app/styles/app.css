@@ -220,8 +220,23 @@
   }
   .resume-row { display: flex; align-items: stretch; }
   .resume-row .combobox-item { flex: 1; min-width: 0; }
+  .resume-name { display: block; }
+  /* Primer's Label: a pill outlined in a half-strength muted line, so it still shows on a hovered row's --line background. */
+  .resume-mode {
+    display: inline-block; margin-left: 0.4rem; padding: 0 0.45rem; vertical-align: 0.1em;
+    border: 1px solid color-mix(in srgb, var(--muted) 50%, transparent); border-radius: 2em;
+    font-size: 0.75rem; font-weight: 500; line-height: 1.5; color: var(--muted);
+  }
+  .resume-meta, .resume-state { display: block; font-size: 0.78rem; color: var(--muted); }
+  .resume-where { display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 600; }
+  .resume-where.on-github { color: var(--ok); }
+  .resume-where .octicon { width: 0.9rem; height: 0.9rem; }
+  .resume-state { font-weight: 600; }
+  .resume-state.attention { color: var(--warn); }
   .resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
   .resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
+  /* Pointing at a row's name lights the whole row, the bin's cell too; the bin itself stays as it is. */
+  .resume-row:has(> .combobox-item:hover) { background: var(--line); }
   .combobox-item {
     display: block;
     width: 100%;

@@ -15,7 +15,7 @@ import {
   syncGithubHeader,
 } from "./context.ts";
 import { reopenLocalDraft } from "./open-route.ts";
-import { renderResumeDrafts, showResumeSearching } from "./resume.ts";
+import { renderResumeList, showResumeSearching } from "./resume.ts";
 
 export { openRoute } from "./open-route.ts";
 
@@ -43,6 +43,8 @@ export function initGithub(): Promise<void> {
 
   // Before the account lookup finishes, not after: a signed-in user must not see "Sign in" while it runs.
   syncGithubHeader();
+  // Local copies first: they need neither the network nor the account lookup.
+  void renderResumeList();
   if (getToken()) {
     showResumeSearching();
     if (parseRoute(location.hash)) setStatus("Opening your scenario…", { spinning: true });
@@ -53,7 +55,6 @@ export function initGithub(): Promise<void> {
       showResumeSearching();
       try {
         setGithubContext(await discoverGithubContext(token));
-        renderResumeDrafts();
       } catch (error) {
         const method = getSignInMethod();
         const message = dropRevokedToken(error)
@@ -65,12 +66,14 @@ export function initGithub(): Promise<void> {
     .catch((error) => {
       setStatus(`GitHub sign-in failed: ${errorMessage(error)}`, { tone: "bad" });
     })
-    .finally(() => {
+    .finally(async () => {
       const context = getGithubContext();
       // Whatever happened, the searching state must not outlive the search.
-      setResume({ searching: false, visible: Boolean(context && context.drafts.length > 0) });
+      // renderResumeList below decides whether the block stays visible.
+      setResume({ searching: false });
       // Whatever happened, the picker must not stay held back by the search.
       settleModes(Boolean(context?.isMember));
       syncGithubHeader();
+      await renderResumeList();
     });
 }

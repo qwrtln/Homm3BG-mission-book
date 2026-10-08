@@ -8,13 +8,14 @@ import {
   pullRequestTitle,
   saveScenarioToRepo,
 } from "../../shared/github-contrib.ts";
+import { gitBlobSha } from "../../shared/local-drafts.ts";
 import { pullRequestBody, submitRequirements } from "../../shared/submit-checklist.ts";
 import { uploadsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "../modules/category.ts";
 import { isDirty, markClean } from "../modules/dirty.ts";
 import { requireEditor } from "../modules/editor-api.ts";
 import { githubSaveState } from "../modules/github-save-state.ts";
-import { clearUploads } from "../modules/local-store.ts";
+import { clearUploads, setBaseSha } from "../modules/local-store.ts";
 import { setStatus } from "../modules/status.ts";
 import { askToSubmit, currentSubmitBlockers } from "../modules/submit.ts";
 import { store } from "../store.ts";
@@ -121,6 +122,12 @@ export async function saveToGithub(): Promise<void> {
     // local opinion is left to offer on a later reload. The text draft
     // stays, unaffected by a save (unchanged non-goal).
     await clearUploads(texPath);
+    // The local copy now matches what the branch holds.
+    try {
+      await setBaseSha(texPath, await gitBlobSha(savedText));
+    } catch {
+      /* the save landed; a missing baseline only leaves the entry reading "unsaved" */
+    }
     store.setState({ openPrVisible: true });
     setStatus(`Saved to ${saved.owner}/${saved.repo}@${saved.branch}.`, { tone: "ok" });
   } catch (error) {

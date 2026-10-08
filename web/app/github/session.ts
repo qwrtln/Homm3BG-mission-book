@@ -12,7 +12,7 @@ import { showToast } from "../modules/toast.ts";
 import { isParked, showWelcome } from "../modules/workspace.ts";
 import { setResume, store } from "../store.ts";
 import { REOPEN_KEY, ROUTE_KEY, setGithubContext, syncGithubHeader } from "./context.ts";
-import { refreshWelcomeData, renderResumeDrafts } from "./resume.ts";
+import { refreshWelcomeData, renderResumeList } from "./resume.ts";
 import { stopPullRequestRecheck } from "./save.ts";
 
 /**
@@ -53,8 +53,8 @@ export async function signInWithToken(raw: string): Promise<void> {
   const context = await validateTokenContext(raw);
   storeToken(raw.trim(), "token");
   setGithubContext(context);
-  renderResumeDrafts();
-  setResume({ searching: false, visible: context.drafts.length > 0 });
+  setResume({ searching: false });
+  await renderResumeList();
   settleModes(context.isMember);
   syncGithubHeader();
 }
@@ -71,7 +71,6 @@ export async function handleSignOut(): Promise<void> {
   stopPullRequestRecheck();
   setGithubContext(null);
   resetGithubSaveState();
-  setResume({ visible: false });
   settleModes(false);
   if (store.getState().workspaceShown || isParked()) {
     cancelScheduledSave();
@@ -87,6 +86,7 @@ export async function handleSignOut(): Promise<void> {
     return;
   }
   syncGithubHeader();
+  await renderResumeList();
 }
 
 /**

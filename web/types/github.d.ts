@@ -74,6 +74,8 @@ interface ResumableDraft {
   /** "edit" for a member's in-place edit of an existing scenario, "new" for a draft of a new one. */
   kind: "edit" | "new";
   texPath: string;
+  /** Git blob SHA of the .tex on the branch, from the compare. */
+  texSha: string;
   assets: { path: string; sha: string }[];
   /** ISO date of the newest commit on the branch; absent if unknown. */
   lastEdit?: string;
@@ -87,6 +89,8 @@ interface GithubContext {
   /** The upstream repository's default branch, kept so a compare link needs no fetch. */
   base: string;
   drafts: ResumableDraft[];
+  /** False when a branch compare failed or the branch list may have been cut off at 100. */
+  draftsComplete: boolean;
 }
 
 /** A file heading for a commit: repository text, or uploaded bytes. */
