@@ -8,46 +8,45 @@ hooks:
         - type: command
           command: >-
             jq -e '(.tool_input.file_path // "") | endswith(".tex")' >/dev/null &&
-            echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"review-scenario: approving this Edit posts the PR comment"}}'
+            echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"review-scenario: approve the fix; posting the comment is asked separately"}}'
             || true
 ---
 
 # Review a scenario
 
-Report the findings as `file:line — problem — fix`. Group them by the sections below. After the report, offer to post the findings as PR review comments with `gh`.
+Report the findings in the format under Output. After the report, offer to post them as PR review comments (see Mode).
 
 ## Mode
 
-Post every finding as a PR review comment with the `gh` binary, one at a time, each only after the user approves it. Never fix the file for the author. Local edits have one purpose. They render a colored diff for the user.
+Post each finding as a PR review comment with `gh`, one at a time. The author fixes their own file. A local edit exists only to render a colored diff for the user.
 
-The `hooks` block in the frontmatter forces a permission prompt on every `.tex` Edit, even in auto mode. That prompt is the approval of the user.
+Before the first edit, check out the PR branch, or fetch its head commit, so the local file matches the PR. A diff against any other copy means nothing.
 
-Before any local edit, check out the branch of the PR, or fetch its head commit. The local file must match the content of the PR. An edit to an unrelated local copy renders a meaningless diff.
+The `hooks` block in the frontmatter forces a permission prompt on every `.tex` Edit, even in auto mode. That prompt approves the fix only. The comment body gets its own approval in step 2.
 
-Walk through the findings one at a time. Put each finding in one message, in this order. The blockquote in step 2 is the content the user approves, not a preamble to the Edit. Write it in full before every Edit call, whatever output style is active, terse or caveman included:
+Walk the findings one at a time. Each finding takes three steps:
 
-1. Words for the user, not for the PR. Write one or two sentences. Most findings need nothing here, so skip this part.
-2. The complete GitHub comment body, as one blockquote. Put the prose and the suggestion block together. If the change deletes or moves lines, write one or two sentences above the suggestion block that say why. The reviewer cannot judge the change without them. If you name another scenario as precedent, quote that scenario here.
-3. An Edit against the real file, last, because the diff then renders in color. Never edit a copy in the scratchpad directory, because such an edit renders no diff.
+1. **Fix.** Optionally write one or two sentences for the user. Then Edit the real file in the PR checkout, so the diff renders in color; a scratchpad copy renders no diff. End the message with the Edit call, because a rejection discards any text after it. If the user rejects the Edit:
+   - "Next", or a reason to drop the finding: skip to the next finding.
+   - A different fix: make a new Edit with that fix.
+2. **Body.** Call `AskUserQuestion`. The dialog hides message text, so the body lives in the option `preview` fields:
+   - "With comment body": the full body, the prose and then the suggestion block.
+   - "Suggestion only": the suggestion block alone.
+   - "Skip": post nothing.
 
-Build the blockquote like this. Prefix every line with `> `. Write a blank line inside the body as `>` alone. Quote the ` ```suggestion ` fence too, so the line reads `> ```suggestion `. Start the blockquote with a `> **Comment body:**` line.
+   Write the prose like this. When the change deletes or moves lines, say why in one or two sentences above the suggestion block; the reader cannot judge the change without them. When you name another scenario as precedent, quote its line.
 
-The blockquote separates the two readers. Every word for the user stays outside it. Every word for the PR stays inside it. The text inside is the comment. Never hold back a second version of the prose for post time.
+   If the user answers with notes instead of an option, for example new wording, build the new body and ask again with it in a new preview.
+3. **Post.** Post the chosen preview text as `body`, character for character, escaped for JSON. Any added, dropped, or reworded word is a defect, better wording and typo fixes included; send those back through step 2 as a new preview. The step is done when `gh api` returns the comment's `html_url`.
 
-An Edit the user approved at the permission prompt is a yes. Post the comment only after that yes. Post at once, then move to the next finding. Never ask "yes or no" after an approved Edit, because the approval already answered it. If the user rejects the Edit, skip the finding. If the user asks for a different fix, show that fix instead. Never put text after the Edit call, because a rejection discards everything in that message.
+   ```sh
+   gh pr view <n> --json headRefOid -q .headRefOid   # commit_id
+   gh api repos/<owner>/<repo>/pulls/<n>/comments --input <json>
+   ```
 
-The posted `body` is the blockquote text from step 2, character for character. Strip the `> ` prefixes and the `**Comment body:**` line. Escape the rest for JSON and change nothing else. Any added, dropped, or reworded sentence is a defect. This rule covers better wording too. To use better wording, show the comment again and get a new approval.
+   JSON fields: `commit_id`, `path`, `line`, `side: RIGHT`, `body`. For a suggestion that spans several lines, also set `start_line` and `start_side: RIGHT`.
 
-After the last finding, offer to revert every local edit (`git checkout -- <file>`). Do not commit and do not push.
-
-Post with:
-
-```sh
-gh pr view <n> --json headRefOid -q .headRefOid   # commit_id
-gh api repos/<owner>/<repo>/pulls/<n>/comments --input <json>
-```
-
-JSON body fields: `commit_id`, `path`, `line`, `side: RIGHT`, `body`.
+After the last finding, offer to revert every local edit with `git checkout -- <file>`. Leave commits and pushes to the author.
 
 ## 1. Language and grammar
 
