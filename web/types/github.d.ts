@@ -1,10 +1,10 @@
-// The GitHub REST payload fields shared/github-contrib.js actually reads.
+// The GitHub REST payload fields shared/github-contrib.ts actually reads.
 // Deliberately partial: these describe what the code touches, not the whole
 // API. Adding a field here is cheap; guessing at one the code never reads is
 // noise.
 //
 // Nothing here is asserted onto a payload. Each shape has a parser in
-// shared/github-contrib.js that checks it field by field at the point of
+// shared/github-contrib.ts that checks it field by field at the point of
 // entry, so a shape that has drifted fails there rather than travelling on as
 // an undefined.
 
@@ -74,6 +74,8 @@ interface ResumableDraft {
   /** "edit" for a member's in-place edit of an existing scenario, "new" for a draft of a new one. */
   kind: "edit" | "new";
   texPath: string;
+  /** Git blob SHA of the .tex on the branch, from the compare. */
+  texSha: string;
   assets: { path: string; sha: string }[];
   /** ISO date of the newest commit on the branch; absent if unknown. */
   lastEdit?: string;
@@ -84,7 +86,11 @@ interface GithubContext {
   username: string;
   isMember: boolean;
   fork: GithubRepo | null;
+  /** The upstream repository's default branch, kept so a compare link needs no fetch. */
+  base: string;
   drafts: ResumableDraft[];
+  /** False when a branch compare failed or the branch list may have been cut off at 100. */
+  draftsComplete: boolean;
 }
 
 /** A file heading for a commit: repository text, or uploaded bytes. */

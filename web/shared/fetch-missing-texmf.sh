@@ -13,7 +13,7 @@
 #   ccicons the Creative Commons icon font, pulled in by doclicense
 #
 # The files land in texmf/ctan/, listed as "ctan" lines in texmf/carried.txt.
-# Run carry-texmf.mjs build afterwards: it packs them into the bundle the app
+# Run carry-texmf.ts build afterwards: it packs them into the bundle the app
 # fetches, with the files copied out of texlive-extra.
 
 set -euo pipefail

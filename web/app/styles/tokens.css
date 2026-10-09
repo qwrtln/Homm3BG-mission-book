@@ -27,7 +27,14 @@
   --pdf-bg: #d1d9e0;
   --error-bg: #ffebe9;
   --code-bg: #f6f8fa;
+  --inline-code-bg: #818b981f;
   --shadow: rgba(31, 35, 40, 0.15);
+  /* The same in both themes, so html[data-theme="dark"] does not repeat them:
+     text on a solid accent, primary or danger fill; the white sheet a PDF page
+     and a glyph preview sit on; the dimmed page behind a modal dialog. */
+  --on-emphasis: #ffffff;
+  --sheet: #ffffff;
+  --backdrop: rgba(1, 4, 9, 0.5);
 }
 html[data-theme="dark"] {
   --ink: #e6edf3;
@@ -53,5 +60,6 @@ html[data-theme="dark"] {
   --pdf-bg: #30363d;
   --error-bg: #3c1618;
   --code-bg: #161b22;
+  --inline-code-bg: #656c7633;
   --shadow: rgba(1, 4, 9, 0.6);
 }
