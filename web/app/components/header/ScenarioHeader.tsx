@@ -1,4 +1,4 @@
-import { categoryOfPath, DRAFT_CATEGORIES } from "../../../shared/scenario-name.ts";
+import { categoryOfPath, DRAFT_CATEGORIES, scenarioTitle } from "../../../shared/scenario-name.ts";
 import { leaveWorkspace } from "../../github/session.ts";
 import { categoryLocked, LOCKED_TITLE, moveToCategory, OPEN_TITLE } from "../../modules/category.ts";
 import { CATEGORY_LABELS } from "../../modules/config.ts";
@@ -7,9 +7,18 @@ import { Button } from "../ui/Button.tsx";
 import { Select } from "../ui/Select.tsx";
 import { ArrowLeftIcon } from "./icons.tsx";
 
+// The last parse: the selector runs on every store update, the text changes less often.
+let parsed: { text: string; title: string | null } = { text: "", title: null };
+
+function titleOf(text: string): string | null {
+  if (text !== parsed.text) parsed = { text, title: scenarioTitle(text) };
+  return parsed.title;
+}
+
 /** The header's left side while a scenario is open: the way back, its name, its category and its notes. */
 export function ScenarioHeader() {
-  const title = useAppStore((s) => s.chosenTitle);
+  // The heading in the text names the scenario as the book prints it; the name it was opened under stands in.
+  const title = useAppStore((s) => titleOf(s.editorText) ?? s.chosenTitle);
   const category = useAppStore((s) => (s.chosenPath && categoryOfPath(s.chosenPath)) ?? "");
   const locked = useAppStore((s) => categoryLocked(s));
   const note = useAppStore((s) => s.categoryNote);

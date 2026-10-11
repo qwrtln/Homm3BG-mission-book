@@ -7,7 +7,7 @@ import type { Page } from "@playwright/test";
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { editorText } from "../helpers/editor.ts";
 import { blobSha, seedLocalRecord } from "../helpers/local-store.ts";
-import { expect, type GithubRoute, test } from "./fixtures.ts";
+import { expect, type GithubRoute, OPEN_ROW, openCreate, test } from "./fixtures.ts";
 
 const LOGIN = "octotester";
 const TOKEN_KEY = "github_token";
@@ -135,6 +135,26 @@ test.describe("signed out", () => {
     expect(errors, "the page reported errors while listing local drafts").toEqual([]);
   });
 
+  test("the list stays while the wizard is open, and opening it does not scroll", async ({ app }) => {
+    const { page, errors } = app;
+    await seedLocalRecord(page, OTHER_PATH, { text: LOCAL_TEXT, baseSha: blobSha(BRANCH_TEXT) });
+    await page.reload();
+
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await openCreate(page);
+    const card = page.locator("#start-wizard");
+    const cardTop = async (): Promise<number | undefined> => (await card.boundingBox())?.y;
+    const before = await cardTop();
+    await card.click();
+    await expect(page.locator("#wizard")).toBeVisible();
+    await expect(page.locator("#wizard-category input").first()).toBeFocused();
+    expect(await cardTop(), "opening the wizard moved the start card").toBe(before);
+    await expect(page.locator("#search")).toBeHidden();
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+    expect(errors, "the page reported errors with the wizard open over a resume list").toEqual([]);
+  });
+
   test("an untouched record is not listed", async ({ app }) => {
     const { page } = app;
     await seedLocalRecord(page, OTHER_PATH, { text: BRANCH_TEXT, baseSha: blobSha(BRANCH_TEXT) });
@@ -177,10 +197,10 @@ test.describe("signed out", () => {
     await page.locator("#back-to-welcome").click();
     await page.locator("#confirm-ok").click(); // never saved to GitHub, so leaving asks
     await expect(page.locator("#workspace")).toBeHidden();
-    await expect(page.locator("#back-to-editing")).toBeVisible();
+    await expect(page.locator(OPEN_ROW)).toBeVisible();
     expect(await updatedAt(page, OTHER_PATH), "an open with no edit moved the last-edit time").toBe(seeded);
 
-    await page.locator("#back-to-editing").click();
+    await page.locator(OPEN_ROW).click();
     await page.locator(".cm-content").click();
     await page.keyboard.type("x");
     await page.locator("#back-to-welcome").click();
@@ -213,13 +233,13 @@ test.describe("signed out", () => {
     await expect(page.locator("#workspace")).toBeVisible();
     await page.locator("#back-to-welcome").click();
     await page.locator("#confirm-ok").click(); // never saved to GitHub, so leaving asks
-    await expect(page.locator("#back-to-editing")).toBeVisible();
+    await expect(page.locator(OPEN_ROW)).toBeVisible();
 
     await page.locator("#resume-list .resume-delete").click();
     await page.locator("#confirm-ok").click();
 
     await expect(page.locator("#resume-drafts")).toBeHidden();
-    await expect(page.locator("#back-to-editing")).toBeHidden();
+    expect(await page.evaluate(() => window.__state?.parked)).toBe(false);
     // Past the 400 ms autosave: nothing writes the deleted text back.
     await page.waitForTimeout(600);
     expect(await storedFor(page, OTHER_PATH)).toEqual({ record: null, draft: null });

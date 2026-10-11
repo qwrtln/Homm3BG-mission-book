@@ -82,6 +82,18 @@ test("a legacy local-only record always shows", () => {
   assert.deepEqual(states(classifyEntries([same], [], "complete")), [["a.tex", "local-only"]]);
 });
 
+test("the scenario left open shows even when untouched, ahead of newer rows", () => {
+  const local = [
+    snap({ path: "newer.tex", updatedAt: "2026-03-01T00:00:00Z" }),
+    snap({ path: "open.tex", textSha: "B" }),
+    snap({ path: "other.tex", textSha: "B" }),
+  ];
+  assert.deepEqual(states(classifyEntries(local, [], "complete", "open.tex")), [
+    ["open.tex", "local-only"],
+    ["newer.tex", "local-only"],
+  ]);
+});
+
 test("a record holding nothing is hidden", () => {
   assert.deepEqual(classifyEntries([snap({ textSha: null, baseSha: null })], [], "complete"), []);
 });

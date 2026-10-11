@@ -157,8 +157,6 @@
   }
   .welcome-intro p { margin: 0 0 0.6rem; line-height: 1.5; }
   .welcome-intro p:last-child { margin-bottom: 0; }
-  .welcome-intro a { color: var(--accent); }
-  .welcome-intro a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   /* The resume list sits above the picker, divided from it by a rule. */
   .welcome-top:has(.resume-drafts:not([hidden])) {
     margin-bottom: 1.75rem;
@@ -167,36 +165,23 @@
   }
   .welcome-top .resume-drafts { margin-bottom: 0; }
   .edit-branch-prompt { margin-top: 1.75rem; }
-  .mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
+  .edit-branch-prompt[hidden] { display: none; }
   /* A control group that is on screen but out of reach: the name step before a
      pick, and the new-scenario controls in edit mode. */
   .dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; }
   @media (prefers-reduced-motion: no-preference) {
     .name-step, .scratch-row { transition: opacity 0.2s, filter 0.2s; }
   }
-  /* The member's mode choice changes what search is for, so it comes first. */
-  .mode-choice { margin-bottom: 1.5rem; }
-  .mode-label { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+  .mode-label { margin: 0 0 0.5rem; color: var(--muted); }
   .resume-drafts[hidden] { display: none; }
   .resume-drafts { margin-bottom: 1.5rem; }
   .combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
-  .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
-  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+  .welcome-inner h2 { margin: 0 0 0.3rem; }
+  /* The wizard panes' hints carry no size utility, so the sheet gives them the small step. */
+  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: var(--text-small); }
   .name-step { margin-top: 2rem; }
   .go-row { margin-top: 1rem; }
-  .welcome-picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .combobox { position: relative; }
-  #search {
-    width: 100%;
-    font: inherit;
-    padding: 0.65rem 0.85rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    border-radius: 4px;
-    outline: none;
-  }
-  #search:focus { border-color: var(--accent); }
   .combobox-list {
     position: absolute;
     top: calc(100% + 4px);
@@ -206,13 +191,12 @@
     overflow: auto;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     box-shadow: 0 8px 20px var(--shadow);
     z-index: 10;
   }
   .combobox-group-label {
     padding: 0.4rem 0.75rem;
-    font-size: 0.72rem;
     color: var(--muted);
     background: var(--paper);
     position: sticky;
@@ -225,14 +209,15 @@
   .resume-mode {
     display: inline-block; margin-left: 0.4rem; padding: 0 0.45rem; vertical-align: 0.1em;
     border: 1px solid color-mix(in srgb, var(--muted) 50%, transparent); border-radius: 2em;
-    font-size: 0.75rem; font-weight: 500; line-height: 1.5; color: var(--muted);
+    font-weight: 500; line-height: 1.5; color: var(--muted);
   }
-  .resume-meta, .resume-state { display: block; font-size: 0.78rem; color: var(--muted); }
+  .resume-meta, .resume-state { display: block; color: var(--muted); }
   .resume-where { display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 600; }
   .resume-where.on-github { color: var(--ok); }
   .resume-where .octicon { width: 0.9rem; height: 0.9rem; }
   .resume-state { font-weight: 600; }
   .resume-state.attention { color: var(--warn); }
+  .resume-state.open { color: var(--accent); }
   .resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
   .resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
   /* Pointing at a row's name lights the whole row, the bin's cell too; the bin itself stays as it is. */
@@ -247,11 +232,10 @@
     background: none;
     color: var(--ink);
     font: inherit;
-    font-size: 0.92rem;
     cursor: pointer;
   }
   .combobox-item:hover, .combobox-item.active { background: var(--line); }
-  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); }
   .combobox-blanks { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
   .combobox-blank {
     text-align: left;
@@ -261,20 +245,16 @@
     background: none;
     color: var(--accent);
     font: inherit;
-    font-size: 0.92rem;
     cursor: pointer;
   }
   .combobox-blank:hover, .combobox-blank:focus-visible { background: var(--line); }
   /* The blank templates: one quiet line of links, secondary to search. */
-  .scratch-row { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; }
-  .blank-links button.link { padding: 0.1rem 0.15rem; font-size: inherit; }
-  .blank-links button.link:hover:not(:disabled) { color: var(--ink); }
-  .blank-links button.link[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration-thickness: 2px; }
+  .scratch-row { margin: 0.6rem 0 0; color: var(--muted); }
   /* The member's mode choice: one row of joined buttons. */
   .segmented { display: inline-flex; }
   .segmented button { border-radius: 0; margin-left: -1px; padding: 0.35rem 0.75rem; }
-  .segmented button:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
-  .segmented button:last-child { border-radius: 0 4px 4px 0; }
+  .segmented button:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); margin-left: 0; }
+  .segmented button:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
   .segmented button:hover, .segmented button:focus-visible { position: relative; z-index: 1; }
   .segmented button[aria-pressed="true"] {
     position: relative;
@@ -286,77 +266,21 @@
   /* Where the new scenario is filed: a radio group dressed as the same joined
      buttons. The radios stay in the tab order, hidden behind their labels. */
   #name-slide .category-choice { margin: 1.25rem 0 0; padding: 0; border: 0; min-width: 0; }
-  #name-slide .category-choice legend { margin: 0 0 0.5rem; padding: 0; color: var(--muted); font-size: 0.85rem; }
-  #name-slide .category-choice label {
-    position: relative;
-    margin-left: -1px;
-    padding: 0.35rem 0.75rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    font-size: 0.88rem;
-    cursor: pointer;
-  }
-  #name-slide .category-choice label:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
-  #name-slide .category-choice label:last-child { border-radius: 0 4px 4px 0; }
-  #name-slide .category-choice input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
-  #name-slide .category-choice label:hover { z-index: 1; border-color: var(--accent); color: var(--accent); }
-  #name-slide .category-choice label:has(input:focus-visible) { z-index: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
-  #name-slide .category-choice label:has(input:checked) {
-    z-index: 2;
-    border-color: var(--accent);
-    color: var(--accent);
-    font-weight: 600;
-  }
   #name-slide .category-hint { margin: 0.5rem 0 0; min-height: 1.2em; }
   .name-field { max-width: 24rem; }
-  #scenario-name {
-    width: 100%;
-    font: inherit;
-    font-size: 0.92rem;
-    padding: 0.65rem 0.7rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    border-radius: 4px;
-    outline: none;
-  }
-  #scenario-name:focus { border-color: var(--accent); }
-  #scenario-name[aria-invalid="true"] { border-color: var(--bad); }
   .name-error[hidden] { display: none; }
-  .name-error { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--bad); text-align: left; }
-  .go-hint { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
+  .name-error { margin: 0.5rem 0 0; color: var(--bad); text-align: left; }
+  .go-hint { margin: 0.6rem 0 0; color: var(--muted); min-height: 1.2em; }
   #go { white-space: nowrap; }
 
   /* --- Start wizard ------------------------------------------------------- */
 
-  /* The start choice: two equal cards, copy or blank beside the wizard. */
+  /* The start choice: equal cards, copy, the wizard and, for members, edit. */
   .start-choice { margin-bottom: 1.75rem; }
-  .start-choice[hidden] { display: none; }
-  .start-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.75rem; }
-  .start-options button {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: var(--panel);
-    color: var(--ink);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-  }
-  .start-options button strong { font-size: 1rem; }
-  .start-options button span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
-  .start-options button:hover { border-color: var(--accent); }
-  .start-options button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-  .start-options button[aria-pressed="true"] strong { color: var(--accent); }
 
-  /* While the wizard shows, the copy-or-blank steps and the resume list make way for it. */
+  /* While the wizard shows, the copy-or-blank steps make way for it. The resume list stays. */
   .wizard[hidden], .wizard-pane[hidden] { display: none; }
-  .welcome.wizard-open :is(.pick-step, .name-step, .go-row, .resume-drafts) { display: none; }
-  .welcome.wizard-open .welcome-top { margin: 0; padding: 0; border: 0; }
+  .welcome.wizard-open :is(.pick-step, .name-step, .go-row) { display: none; }
 
   .wizard-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
   .wizard-step { margin: 0; color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
@@ -398,7 +322,7 @@
   /* The game mode and the tile pool's Yes/No are RadioGroups (components/ui/RadioGroup.tsx). */
   .wizard-choice { margin: 0 0 1.1rem; padding: 0; border: 0; min-width: 0; }
 
-  /* Round and player buttons: the #mode-choice segmented control, wrapping on narrow screens. */
+  /* Round and player buttons: a segmented control, wrapping on narrow screens. */
   .wizard-segmented { flex-wrap: wrap; row-gap: 0.3rem; }
   .wizard-segmented button { min-width: 2.4rem; padding: 0.35rem 0.5rem; }
   .wizard-segmented button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -472,7 +396,7 @@
   .wizard-nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   #wizard-next { white-space: nowrap; min-width: 7rem; }
 
-  /* Timed events: a Round picker (like #mode-choice), a field per selected Round. */
+  /* Timed events: a Round picker (a segmented control), a field per selected Round. */
   .wizard-events { display: flex; flex-direction: column; gap: 0.5rem; margin: 0 0 1.1rem; }
   .wizard-event { display: grid; grid-template-columns: 7.5rem 1fr; align-items: start; gap: 0.75rem; }
   .wizard-event textarea { min-height: 2.6rem; }
@@ -567,6 +491,7 @@
   input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
   button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }
+  button.upload-remove:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   /* --- Workspace --------------------------------------------------------- */
 
@@ -883,6 +808,7 @@
   --color-danger-hover-border: var(--btn-danger-hover-border);
   --color-danger-active-bg: var(--btn-danger-active-bg);
   --color-ok: var(--ok);
+  --color-done: var(--done);
   --color-bad: var(--bad);
   --color-warn: var(--warn);
   --color-attention-bg: var(--attention-bg);
@@ -912,6 +838,7 @@
   --text-ui: 0.88rem;
   --text-body: 0.95rem;
   --text-heading: 1.1rem;
+  --text-title: 1.3rem; /* page titles */
   --text-icon: 1rem;
 
   --shadow-dialog: 0 8px 32px var(--shadow);

@@ -116,3 +116,17 @@ export async function chooseFromMenu(page: Page, id: string): Promise<void> {
   await expect(page.locator("#header-menu")).toBeVisible();
   await page.locator(`#${id}`).click();
 }
+
+/** The resume row of the scenario left open behind the welcome screen: the way back to it. */
+export const OPEN_ROW = "#resume-list [data-open] .combobox-item";
+
+/**
+ * Gets to the create section. A returning author, with drafts to resume, sees
+ * it behind the "New project" button; a first visit already shows it.
+ */
+export async function openCreate(page: Page): Promise<void> {
+  const button = page.locator("#new-project");
+  if (!(await button.isVisible())) return;
+  await button.click();
+  await expect(page.locator("#welcome-picker")).toBeVisible();
+}

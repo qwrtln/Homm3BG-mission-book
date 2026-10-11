@@ -605,6 +605,7 @@ function setStartChoice(wizardOn: boolean): void {
  * pane with its answers; otherwise the wizard starts at its first pane.
  */
 export function openWizard(): void {
+  store.setState({ createOpen: true });
   if (store.getState().wizard.open) return;
   if (!store.getState().wizard.started) {
     resetPanes();

@@ -18,7 +18,7 @@
 import { devices, type Page } from "@playwright/test";
 
 import { seedLocalRecord } from "../helpers/local-store.ts";
-import { chooseFromMenu, expect, READY_STATUS, test } from "./fixtures.ts";
+import { chooseFromMenu, expect, OPEN_ROW, READY_STATUS, test } from "./fixtures.ts";
 
 test.use({ ...devices["Pixel 7"] });
 
@@ -146,9 +146,9 @@ test("going workspace -> welcome -> workspace leaves no horizontal page scroll",
 
   await page.locator("#back-to-welcome").click();
   await expect(page.locator("#welcome")).toBeVisible();
-  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await expect(page.locator(OPEN_ROW)).toBeVisible();
 
-  await page.locator("#back-to-editing").click();
+  await page.locator(OPEN_ROW).click();
   await expect(page.locator("#workspace")).toBeVisible();
 
   await expectNoHorizontalScroll(page);
