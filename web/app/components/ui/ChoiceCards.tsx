@@ -30,7 +30,7 @@ export function ChoiceCards({ labelledBy, options }: ChoiceCardsProps) {
           hidden={option.hidden}
           aria-pressed={option.pressed}
           onClick={option.onSelect}
-          className={`cursor-pointer rounded-md border bg-panel p-4 text-left text-ink hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${option.pressed ? "border-accent" : "border-line"}`}
+          className={`cursor-pointer rounded-md border bg-panel p-4 text-left text-ink hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${option.pressed ? "border-accent ring-1 ring-accent ring-inset" : "border-line"}`}
         >
           <span
             className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-body font-semibold ${option.pressed ? "text-accent" : "text-ink"}`}

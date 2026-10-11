@@ -275,9 +275,8 @@
 
   /* --- Start wizard ------------------------------------------------------- */
 
-  /* The start choice: two equal cards, copy or blank beside the wizard. */
+  /* The start choice: equal cards, copy, the wizard and, for members, edit. */
   .start-choice { margin-bottom: 1.75rem; }
-  .start-choice[hidden] { display: none; }
 
   /* While the wizard shows, the copy-or-blank steps make way for it. The resume list stays. */
   .wizard[hidden], .wizard-pane[hidden] { display: none; }

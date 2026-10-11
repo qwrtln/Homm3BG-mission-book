@@ -77,7 +77,7 @@ export function PickerMain() {
             <Button
               id="scratch-clash"
               variant="link"
-              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
+              className="hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="clash"
               aria-pressed={activeBlank === "clash"}
               onClick={() => pickBlank("clash")}
@@ -88,7 +88,7 @@ export function PickerMain() {
             <Button
               id="scratch-coop"
               variant="link"
-              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
+              className="hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="coops"
               aria-pressed={activeBlank === "coops"}
               onClick={() => pickBlank("coops")}
@@ -99,7 +99,7 @@ export function PickerMain() {
             <Button
               id="scratch-alliance"
               variant="link"
-              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
+              className="hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="alliances"
               aria-pressed={activeBlank === "alliances"}
               onClick={() => pickBlank("alliances")}
@@ -110,7 +110,7 @@ export function PickerMain() {
             <Button
               id="scratch-campaign"
               variant="link"
-              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
+              className="hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="campaigns"
               aria-pressed={activeBlank === "campaigns"}
               onClick={() => pickBlank("campaigns")}

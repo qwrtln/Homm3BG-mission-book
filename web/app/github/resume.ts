@@ -257,6 +257,8 @@ export async function openResumableDraft(draft: ResumableDraft): Promise<"opened
  */
 export async function refreshWelcomeData(): Promise<void> {
   const entries = loadEntries().catch(() => {});
+  // The parked scenario's row needs no network: draw the local list first.
+  await renderResumeList();
   const token = getToken();
   if (token) {
     const method = getSignInMethod();
