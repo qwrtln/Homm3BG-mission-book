@@ -23,7 +23,7 @@ Please fill in the [⭐ **feedback form**](https://docs.google.com/forms/d/e/1FA
 It will help us improve them.
 
 > [!TIP]
-> **Have a scenario of your own?** Write it in the [🧙 **Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+> **Have a scenario of your own?** Write it in the [🧙 **Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme).
 > It runs in your browser: fill in your scenario, see the PDF right away, and send it to us as a pull request.
 > You don't need to install LaTeX or know git.
 
@@ -315,6 +315,11 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
+            <td>🤝 The Valley of Wild Magic (1-7)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_valley_of_wild_magic-color/the_valley_of_wild_magic_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_valley_of_wild_magic-mono/the_valley_of_wild_magic_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
@@ -368,6 +373,11 @@ Number of players (P) in the brackets.
             <td>⚔️ Mystical Foreland (4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-color/mystical_foreland_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-mono/mystical_foreland_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
+            <td>⚔️ Controlled Chaos (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-color/controlled_chaos_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-mono/controlled_chaos_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
@@ -745,7 +755,7 @@ This repository serves as a means to version the scenarios and for the community
 
 ### 💪 Contributing
 
-The easiest way to add a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/).
+The easiest way to add a scenario is the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme).
 It works in your browser and opens the pull request for you.
 
 If you prefer to work on your own computer, we have compiled some documents to help you get started.
@@ -769,7 +779,7 @@ Your language is missing? Let us know on [our Discord server](https://discord.gg
 
 #### 🗺️ Scenarios
 
-Write your scenario in the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) and send it to the Draft Scenarios from there.
+Write your scenario in the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=github.com&utm_medium=referral&utm_content=readme) and send it to the Draft Scenarios from there.
 If you know your way around LaTeX and git, you can also open a pull request yourself.
 Questions? Reach out to us on [our Discord server](https://discord.gg/nMbawQkj9R).
 

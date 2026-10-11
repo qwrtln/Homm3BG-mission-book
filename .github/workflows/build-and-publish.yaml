@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'web/**'
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.claude/**'
+      - '**.md'
+      - '.github/workflows/test-web.yaml'
+      - '.github/workflows/deploy-oauth-relay.yaml'
+      - '.github/workflows/publish-docs.yaml'
   pull_request:
     branches: [main]
 

@@ -9,7 +9,7 @@ Pick the first one that fits you.
 
 ## 1. Scenario Builder
 
-Open the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/) in your browser.
+Open the [**Scenario Builder**](https://qwrtln.github.io/Homm3BG-mission-book/builder/?utm_source=docs&utm_medium=referral) in your browser.
 It lets you:
 
 - start a new scenario from a guided setup, or edit an existing one,

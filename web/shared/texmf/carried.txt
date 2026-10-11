@@ -1,5 +1,5 @@
 # TeX Live files the scenario builder carries, because texlive-basic, the
-# data package the app preloads, lacks them. carry-texmf.mjs builds
+# data package the app preloads, lacks them. carry-texmf.ts builds
 # carried-texmf.bin and carried.lock.json from this list; see its header.
 #
 # One "<source> <path>" per line:
