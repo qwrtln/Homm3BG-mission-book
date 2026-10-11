@@ -592,6 +592,132 @@ test.describe("saving a resumed draft after removing an upload", () => {
   });
 });
 
+test.describe("discarding local changes", () => {
+  const BRANCH = `scenario-editor/${LOGIN}/half-written`;
+  const TEX_PATH = "draft-scenarios/clash/half_written.tex";
+  const BRANCH_TEXT = "% draft\n";
+  const ASSET_PATH = "assets/images/half_written.png";
+  const ASSET_BYTES = "the branch's image";
+
+  test.use({
+    githubRoutes: routes([
+      ...MEMBER_ROUTES.filter((route) => !route.path.endsWith("/branches")),
+      { method: "GET", path: `/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/branches`, body: [{ name: BRANCH }] },
+      {
+        method: "GET",
+        path: /\/compare\//,
+        body: {
+          files: [
+            { filename: TEX_PATH, sha: blobSha(BRANCH_TEXT), status: "added" },
+            { filename: ASSET_PATH, sha: "asset-sha", status: "added" },
+          ],
+        },
+      },
+      {
+        method: "GET",
+        path: /\/contents\/draft-scenarios\/clash\/half_written\.tex/,
+        body: { content: btoa(BRANCH_TEXT) },
+      },
+      { method: "GET", path: /\/git\/blobs\//, body: { content: btoa(ASSET_BYTES) } },
+      { method: "GET", path: /\/contents\//, status: 404, body: { message: "Not Found" } },
+      { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+    ]),
+  });
+
+  async function openAndEdit(page: Page): Promise<void> {
+    await signInAs(page);
+    await page.locator("#resume-list .combobox-item").first().click();
+    await expect(page.locator("#workspace")).toBeVisible();
+    await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+    await page.locator("#header-menu-toggle").click();
+    await expect(page.locator("#discard-local")).toHaveCount(0);
+    await page.keyboard.press("Escape");
+    await editorBox(page).click();
+    await page.keyboard.type("x");
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+  }
+
+  async function openDiscard(page: Page): Promise<void> {
+    await chooseFromMenu(page, "discard-local");
+    await expect(page.locator("#confirm-dialog")).toBeVisible();
+  }
+
+  test("the menu item appears only once there are edits", async ({ app }) => {
+    const { page } = app;
+    await openAndEdit(page);
+    await page.locator("#header-menu-toggle").click();
+    await expect(page.locator("#discard-local")).toBeVisible();
+  });
+
+  test("Discard waits for the checkbox, which starts unticked each time", async ({ app }) => {
+    const { page } = app;
+    await openAndEdit(page);
+    await openDiscard(page);
+    await expect(page.locator("#confirm-ok")).toBeDisabled();
+    await page.locator("#confirm-acknowledge").check();
+    await expect(page.locator("#confirm-ok")).toBeEnabled();
+    await page.locator("#confirm-cancel").click();
+    await openDiscard(page);
+    await expect(page.locator("#confirm-acknowledge")).not.toBeChecked();
+    await expect(page.locator("#confirm-ok")).toBeDisabled();
+  });
+
+  test("Cancel keeps the edits", async ({ app }) => {
+    const { page } = app;
+    await openAndEdit(page);
+    const edited = await editorText(page);
+    await openDiscard(page);
+    await page.locator("#confirm-cancel").click();
+    expect(await editorText(page)).toBe(edited);
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+  });
+
+  test("confirming restores the branch text, its images and its stored baseline", async ({ app }) => {
+    const { page } = app;
+    await openAndEdit(page);
+    // A local image too, so the reset has staged uploads to throw away.
+    await page.locator("#upload-open").click();
+    await page
+      .locator("#upload-header")
+      .setInputFiles({ name: "local.png", mimeType: "image/png", buffer: Buffer.from("a local image") });
+    await page.keyboard.press("Escape");
+    await openDiscard(page);
+    await page.locator("#confirm-acknowledge").check();
+    await page.locator("#confirm-ok").click();
+
+    await expect(page.locator("#unsaved-note")).toBeHidden();
+    expect(await editorText(page)).toBe(BRANCH_TEXT);
+    const staged = await page.evaluate(() =>
+      [...globalThis.__state!.uploadedFiles].map(([path, bytes]) => [path, new TextDecoder().decode(bytes)]),
+    );
+    expect(staged).toEqual([[ASSET_PATH, ASSET_BYTES]]);
+    const record = await page.evaluate(async (p) => {
+      const { baseSha, text, uploads } = await globalThis.__localStore!.loadRecord(p);
+      return { baseSha, text, uploads };
+    }, TEX_PATH);
+    expect(record.text).toBe(BRANCH_TEXT);
+    expect(record.baseSha).toBe(blobSha(BRANCH_TEXT));
+    expect(record.uploads).toBeNull();
+  });
+
+  test("a failing fetch keeps the edits and says why", async ({ app }) => {
+    const { page } = app;
+    await openAndEdit(page);
+    const edited = await editorText(page);
+    await page.route(/\/compare\//, (route) =>
+      route.fulfill({ status: 500, contentType: "application/json", body: JSON.stringify({ message: "boom" }) }),
+    );
+    await openDiscard(page);
+    await page.locator("#confirm-acknowledge").check();
+    await page.locator("#confirm-ok").click();
+
+    await expect(page.locator("#status-text")).toContainText("500");
+    await expect(page.locator("#status-text")).toHaveClass(/bad/);
+    expect(await editorText(page)).toBe(edited);
+    await expect(page.locator("#unsaved-note")).toBeVisible();
+  });
+});
+
 test.describe("signing out mid-edit", () => {
   test.use({ githubRoutes: routes(MEMBER_ROUTES) });
 

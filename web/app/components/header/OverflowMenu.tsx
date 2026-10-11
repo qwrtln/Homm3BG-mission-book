@@ -1,16 +1,27 @@
 import { getSignInMethod } from "../../../shared/github-auth.ts";
+import { discardLocalChanges } from "../../github/discard.ts";
 import { handleSignOut, handleSignOutAndRevoke } from "../../github/session.ts";
 import { toggleTheme } from "../../modules/theme.ts";
 import { openDialog, useAppStore } from "../../store.ts";
 import { Button } from "../ui/Button.tsx";
 import { MenuItem, MenuList, MenuSeparator } from "../ui/Menu.tsx";
 import { useMenu } from "../ui/useMenu.ts";
-import { CheckIcon, CommentIcon, InfoIcon, KebabIcon, MoonIcon, QuestionIcon, SignOutIcon } from "./icons.tsx";
+import {
+  CheckIcon,
+  CommentIcon,
+  InfoIcon,
+  KebabIcon,
+  MoonIcon,
+  QuestionIcon,
+  SignOutIcon,
+  UndoIcon,
+} from "./icons.tsx";
 
 /** The header's "More actions" menu: the theme toggle, Help, About, Send feedback, and Sign out once signed in (plus revoke, under a pasted token). */
 export function OverflowMenu() {
   const dark = useAppStore((s) => s.theme === "dark");
   const signedIn = useAppStore((s) => s.signedIn);
+  const canDiscard = useAppStore((s) => s.scenarioHeaderVisible && s.signedIn && s.lastSaveTarget !== null && s.dirty);
   const menu = useMenu();
 
   return (
@@ -47,6 +58,12 @@ export function OverflowMenu() {
         </MenuItem>
         {signedIn && (
           <>
+            {canDiscard && (
+              <MenuItem id="discard-local" onClick={() => void discardLocalChanges()}>
+                <UndoIcon />
+                Discard local changes
+              </MenuItem>
+            )}
             <MenuSeparator id="header-menu-separator" />
             <MenuItem id="github-signout" onClick={() => void handleSignOut()}>
               <SignOutIcon />
