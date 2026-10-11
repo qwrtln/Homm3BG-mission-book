@@ -102,9 +102,16 @@ A caveat about the mode or the player count, such as Alliance-only or FFA-only, 
 - The difficulty table must list every tier, including a tier that changes nothing, for example "Normal: no changes". A missing tier reads as ambiguous.
 - Text drawn into a map image, for example a letter that labels a Tile, cannot be translated. Add the labels with a `tikzpicture` overlay instead.
 
+## 6. Registration
+
+Check two entries the PR usually lacks. Add them locally after the last finding; the user commits them.
+
+- `README.md` Draft Scenarios table: a row in `main.tex` `\input` order, modeled on its neighbors.
+- `.github/scripts/scenario-authors.json`: the exact `\addscenariosection` title, appended to the author's key. Infer the key from the author's other scenarios, then confirm it with `AskUserQuestion` (the user can pick Other).
+
 ## Output
 
-List the findings as `file:line — problem — suggested fix`, in the order of sections 1 to 5. Skip formatting nits that do not change the meaning. Collect the typography hits of section 5 into one comment that lists every line, instead of one comment per line. If you compare the finding to the pattern of another scenario, name that scenario and quote the line. Every fix must be copy-pasteable.
+List the findings as `file:line — problem — suggested fix`, in the order of sections 1 to 6. Skip formatting nits that do not change the meaning. Collect the typography hits of section 5 into one comment that lists every line, instead of one comment per line. If you compare the finding to the pattern of another scenario, name that scenario and quote the line. Every fix must be copy-pasteable.
 
 ## Cross-references to other scenarios
 
