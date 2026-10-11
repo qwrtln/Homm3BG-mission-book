@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { answerConfirm, type ConfirmChoice, type ConfirmOptions, useAppStore } from "../store.ts";
 import { Button } from "./ui/Button.tsx";
+import { Checkbox } from "./ui/Checkbox.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
 
 /** What the dialog says while it is closed, so it never renders empty. */
@@ -18,7 +19,19 @@ function toChoice(returnValue: string): ConfirmChoice {
 export function ConfirmDialog() {
   const request = useAppStore((state) => state.confirm);
   const cancel = useRef<HTMLButtonElement>(null);
-  const { title, message, warning, okLabel, cancelLabel = "Cancel", altLabel, danger } = request?.options ?? IDLE;
+  const {
+    title,
+    message,
+    warning,
+    okLabel,
+    cancelLabel = "Cancel",
+    altLabel,
+    acknowledge,
+    danger,
+  } = request?.options ?? IDLE;
+  // Keyed on the request object, so the tick never carries over to the next one.
+  const [ticked, setTicked] = useState<{ request: unknown; value: boolean }>({ request: null, value: false });
+  const acknowledged = ticked.request === request && ticked.value;
 
   useEffect(() => {
     if (request !== null) cancel.current?.focus();
@@ -38,6 +51,16 @@ export function ConfirmDialog() {
       <p id="confirm-warning" className="mb-2 font-semibold text-bad" hidden={warning === ""}>
         {warning}
       </p>
+      {acknowledge !== undefined && (
+        <div className="mb-2">
+          <Checkbox
+            id="confirm-acknowledge"
+            label={acknowledge}
+            checked={acknowledged}
+            onChange={(event) => setTicked({ request, value: event.target.checked })}
+          />
+        </div>
+      )}
       <DialogActions>
         <Button ref={cancel} id="confirm-cancel" type="submit" value="cancel">
           {cancelLabel}
@@ -47,7 +70,13 @@ export function ConfirmDialog() {
             {altLabel}
           </Button>
         )}
-        <Button id="confirm-ok" variant={danger ? "danger" : undefined} type="submit" value="confirm">
+        <Button
+          id="confirm-ok"
+          variant={danger ? "danger" : undefined}
+          type="submit"
+          value="confirm"
+          disabled={acknowledge !== undefined && !acknowledged}
+        >
           {okLabel}
         </Button>
       </DialogActions>

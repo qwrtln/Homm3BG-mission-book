@@ -165,3 +165,11 @@ export function SignOutIcon({ className }: IconProps) {
     </Octicon>
   );
 }
+
+export function UndoIcon({ className }: IconProps) {
+  return (
+    <Octicon className={className}>
+      <path d="M1.22 6.28a.749.749 0 0 1 0-1.06l3.5-3.5a.749.749 0 1 1 1.06 1.06L3.56 5h7.19a4.5 4.5 0 0 1 0 9H8.5a.75.75 0 0 1 0-1.5h2.25a3 3 0 0 0 0-6H3.56l2.22 2.22a.749.749 0 1 1-1.06 1.06Z" />
+    </Octicon>
+  );
+}

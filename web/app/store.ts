@@ -64,6 +64,8 @@ export interface ConfirmOptions {
   cancelLabel?: string;
   /** a third button, between Cancel and the confirming one; absent, the dialog has two */
   altLabel?: string;
+  /** a checkbox label; present, the confirming button stays disabled until it is ticked */
+  acknowledge?: string;
   danger: boolean;
 }
 

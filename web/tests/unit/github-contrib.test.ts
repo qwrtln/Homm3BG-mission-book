@@ -14,6 +14,7 @@ import {
   deleteWorkBranch,
   discoverGithubContext,
   ensurePullRequest,
+  findBranchDraft,
   findEditBranch,
   GithubApiError,
   getRepoFile,
@@ -750,6 +751,65 @@ test("a resumable draft says whether it is an in-place edit or a new draft, by i
       ["draft-scenarios/clash/valley.tex", "new"],
     ],
   );
+});
+
+test("findBranchDraft answers one branch's draft with its asset list", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchTexFiles: {
+      "scenario-editor/octocat/valley": ["draft-scenarios/clash/valley.tex", "assets/images/valley.png", "README.md"],
+    },
+  });
+  setHttpClient(fake.client);
+
+  const draft = await findBranchDraft("t", {
+    owner: UPSTREAM_OWNER,
+    repo: UPSTREAM_REPO,
+    base: "main",
+    branch: "scenario-editor/octocat/valley",
+    username: "octocat",
+  });
+
+  assert.equal(draft?.texPath, "draft-scenarios/clash/valley.tex");
+  assert.equal(draft?.kind, "new");
+  assert.deepEqual(
+    draft?.assets.map((asset) => asset.path),
+    ["assets/images/valley.png"],
+  );
+});
+
+test("findBranchDraft answers null for a branch that touches no .tex file", async () => {
+  const fake = createGithubFake({
+    push: true,
+    branchTexFiles: { "scenario-editor/octocat/valley": ["README.md"] },
+  });
+  setHttpClient(fake.client);
+
+  const draft = await findBranchDraft("t", {
+    owner: UPSTREAM_OWNER,
+    repo: UPSTREAM_REPO,
+    base: "main",
+    branch: "scenario-editor/octocat/valley",
+    username: "octocat",
+  });
+
+  assert.equal(draft, null);
+});
+
+test("findBranchDraft calls a branch under updates/ an in-place edit", async () => {
+  const branch = "scenario-editor/octocat/updates/secret-bomb-stash";
+  const fake = createGithubFake({ push: true, branchTexFiles: { [branch]: ["clash/secret_bomb_stash.tex"] } });
+  setHttpClient(fake.client);
+
+  const draft = await findBranchDraft("t", {
+    owner: UPSTREAM_OWNER,
+    repo: UPSTREAM_REPO,
+    base: "main",
+    branch,
+    username: "octocat",
+  });
+
+  assert.equal(draft?.kind, "edit");
 });
 
 test("a resumable draft keeps the .tex blob sha from the compare", async () => {
