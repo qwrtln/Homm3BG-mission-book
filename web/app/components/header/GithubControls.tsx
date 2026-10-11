@@ -1,30 +1,8 @@
 import { openPullRequest, saveToGithub } from "../../github/save.ts";
-import { returnToParked } from "../../modules/workspace.ts";
 import { openDialog, useAppStore } from "../../store.ts";
 import { Button, buttonClasses } from "../ui/Button.tsx";
-import { GitPullRequestIcon, LinkExternalIcon, MarkGithubIcon, PencilIcon, UploadIcon } from "./icons.tsx";
+import { GitPullRequestIcon, LinkExternalIcon, MarkGithubIcon, UploadIcon } from "./icons.tsx";
 import { LABEL, NARROW, SEGMENT } from "./narrow.ts";
-
-/** The way back to a scenario left open behind the welcome screen: Primer's attention colors, louder than a plain button, quieter than the green primary. */
-export function BackToEditing() {
-  const title = useAppStore((s) => `Back to editing “${s.chosenTitle}”`);
-
-  return (
-    <Button
-      id="back-to-editing"
-      variant="attention"
-      size="compact"
-      iconed
-      className={NARROW}
-      title={title}
-      aria-label={title}
-      onClick={() => void returnToParked()}
-    >
-      <PencilIcon />
-      <span className={LABEL}>Back to editing</span>
-    </Button>
-  );
-}
 
 /** Save and Open PR as one group, then the link that swaps in once a pull request exists. */
 function GithubStatus() {

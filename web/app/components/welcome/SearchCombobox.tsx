@@ -4,6 +4,7 @@ import { groupedResults as groupedResultsFor, type ResultGroup } from "../../../
 import { CATEGORY_LABELS, CATEGORY_ORDER } from "../../modules/config.ts";
 import { pickBlank, selectPending } from "../../modules/picker.ts";
 import { type AppState, useAppStore } from "../../store.ts";
+import { TextInput } from "../ui/TextInput.tsx";
 
 /** Every matching entry, grouped by book and category, each group's items sorted best-match first. */
 function groupedResults(entries: AppState["entries"], query: string): ResultGroup[] {
@@ -109,8 +110,7 @@ export function SearchCombobox() {
 
   return (
     <div className="combobox">
-      <input
-        type="text"
+      <TextInput
         id="search"
         aria-labelledby="pick-heading"
         placeholder="Type a scenario name…"
@@ -126,17 +126,17 @@ export function SearchCombobox() {
       />
       <div className="combobox-list" id="search-results" ref={listRef} hidden={!listOpen && entriesError === null}>
         {entriesError ? (
-          <div className="combobox-empty">Could not read the scenario list: {entriesError}</div>
+          <div className="combobox-empty text-small">Could not read the scenario list: {entriesError}</div>
         ) : groups.length === 0 ? (
           <>
-            <div className="combobox-empty">No scenario matches.</div>
+            <div className="combobox-empty text-small">No scenario matches.</div>
             {blanksAllowed && (
               <div className="combobox-blanks">
                 {DRAFT_CATEGORIES.map((category) => (
                   <button
                     key={category}
                     type="button"
-                    className="combobox-blank"
+                    className="combobox-blank text-body"
                     data-blank={category}
                     onClick={() => pickBlank(category)}
                   >
@@ -155,14 +155,14 @@ export function SearchCombobox() {
             }
             return (
               <div key={`${group.book}|${group.category}`}>
-                <div className="combobox-group-label">
+                <div className="combobox-group-label text-small">
                   {group.book === "mission" ? "Mission Book" : "Draft Book"}: {group.category}
                 </div>
                 {group.items.map(({ entry }, index) => (
                   <button
                     key={entry.path}
                     type="button"
-                    className={`combobox-item${offset + index === activeItem ? " active" : ""}`}
+                    className={`combobox-item text-body focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent${offset + index === activeItem ? " active" : ""}`}
                     data-path={entry.path}
                     // mousedown, not click: fires before the input's blur hides the list.
                     onMouseDown={() => pick(entry.path, entry.title)}

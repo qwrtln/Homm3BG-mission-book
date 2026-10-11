@@ -92,7 +92,7 @@ export interface HeaderState {
   scenarioHeaderVisible: boolean;
   /** Whether Build, Download and Upload images show: a scenario is open and its workspace is up. */
   actionsVisible: boolean;
-  /** Whether a scenario waits behind the welcome screen, so "Back to editing" shows. */
+  /** Whether a scenario waits behind the welcome screen, so its resume row reads "Currently editing". */
   parked: boolean;
   buildDisabled: boolean;
   /** The idle Build button's title, naming the build key for this platform. Empty until initBuildTitle() runs. */
@@ -175,6 +175,8 @@ export interface ViewState {
   /** Counts the workspace's entrances; each one replays its animation. */
   workspaceEntrance: number;
   resume: ResumeState;
+  /** Whether the author opened the create section; once true it never hides again. */
+  createOpen: boolean;
   /** The pending edit-branch question; null when none is asked. */
   editBranch: EditBranchPrompt | null;
 }
@@ -397,6 +399,7 @@ export function initialState(): StoreState {
     welcomeLeaving: false,
     workspaceEntrance: 0,
     resume: { visible: false, searching: false, entries: [] },
+    createOpen: false,
     editBranch: null,
 
     wizard: initialWizard(),

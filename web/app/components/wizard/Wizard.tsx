@@ -41,18 +41,25 @@ export function Wizard() {
 
   // A shown pane takes focus: its first field, or else its first button (a
   // stepper's − button comes before its field, so fields are looked for first).
+  // Opening the wizard does not scroll: the author stays where they clicked the
+  // start card. A later pane scrolls its field into view.
+  const wasOpen = useRef(false);
   // biome-ignore lint/correctness/useExhaustiveDependencies: `current` is no input of the effect, but a new pane means new fields to focus
   useEffect(() => {
+    const opening = open && !wasOpen.current;
+    wasOpen.current = open;
     if (!open) return;
     const root = panes.current?.querySelector<HTMLElement>(".wizard-pane:not([hidden])");
     const first = root?.querySelector<HTMLElement>("input, select, textarea") ?? root?.querySelector("button");
-    first?.focus();
+    first?.focus({ preventScroll: opening });
   }, [open, current]);
 
   return (
     <section className="wizard" id="wizard" aria-labelledby="wizard-title" hidden={!open}>
       <div className="wizard-head">
-        <h2 id="wizard-title">Set up a new scenario</h2>
+        <h2 id="wizard-title" className="text-title">
+          Set up a new scenario
+        </h2>
         <p className="wizard-step" id="wizard-step" aria-live="polite">
           {nav.step}
         </p>

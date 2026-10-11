@@ -18,6 +18,8 @@
   --btn-danger-hover-border: #1f232826;
   --btn-danger-active-bg: #a40e26;
   --ok: #1a7f37;
+  /* Primer's done.fg: a role tag, such as "Members only". */
+  --done: #8250df;
   --bad: #cf222e;
   --warn: #9a6700;
   /* Primer's attention-subtle and attention-muted: a banner's fill and border. */
@@ -52,6 +54,7 @@ html[data-theme="dark"] {
   --btn-danger-hover-border: #ffffff26;
   --btn-danger-active-bg: #da3633;
   --ok: #3fb950;
+  --done: #a371f7;
   --bad: #f85149;
   --warn: #d29922;
   --attention-bg: #bb800926;

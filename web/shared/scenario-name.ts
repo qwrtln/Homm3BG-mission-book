@@ -125,3 +125,87 @@ export function withCategory(path: string, category: string): string {
   }
   return `${newScenarioDir(category)}/${parts[2]}`;
 }
+
+/** Combining marks for LaTeX's accent commands, e.g. \v{n} -> "ň", \r{u} -> "ů". */
+const ACCENTS: Readonly<Record<string, string>> = Object.freeze({
+  "'": "\u0301",
+  "`": "\u0300",
+  "^": "\u0302",
+  '"': "\u0308",
+  "~": "\u0303",
+  "=": "\u0304",
+  ".": "\u0307",
+  u: "\u0306",
+  v: "\u030c",
+  H: "\u030b",
+  r: "\u030a",
+  c: "\u0327",
+  k: "\u0328",
+});
+
+/**
+ * Reads the brace group that opens at `start`, nested groups and escaped
+ * braces included.
+ *
+ * @returns the text between the braces and the index just past the closing
+ *   one, or null when no complete group opens there
+ */
+function braceGroup(source: string, start: number): { content: string; end: number } | null {
+  if (source[start] !== "{") return null;
+  let depth = 0;
+  for (let i = start; i < source.length; i++) {
+    const char = source[i];
+    if (char === "\\") {
+      i++;
+      continue;
+    }
+    if (char === "{") depth++;
+    if (char === "}" && --depth === 0) return { content: source.slice(start + 1, i), end: i + 1 };
+  }
+  return null;
+}
+
+/** Turns a short run of LaTeX, such as a heading's argument, into the plain text it prints. */
+function latexToText(latex: string): string {
+  return latex
+    .replace(/(^|[^\\])%.*$/gm, "$1")
+    .replace(/\$-\$|---?/g, (dash) => (dash === "---" ? "\u2014" : "\u2013"))
+    .replace(
+      /\\([`'^"~=.])\s*(?:\{(\p{L})\}|(\p{L}))/gu,
+      (_, accent, braced, bare) => `${braced ?? bare}${ACCENTS[accent]}`,
+    )
+    .replace(
+      /\\([uvHrck])(?:\s*\{(\p{L})\}|\s+(\p{L}))/gu,
+      (_, accent, braced, bare) => `${braced ?? bare}${ACCENTS[accent]}`,
+    )
+    .replace(/\\\\|\\newline\b|~/g, " ")
+    .replace(/\\([&%_#$])/g, "$1")
+    .replace(/\\[a-zA-Z]+\*?/g, "")
+    .replace(/[{}$]/g, "")
+    .replace(/\s+/g, " ")
+    .normalize("NFC")
+    .trim();
+}
+
+/**
+ * The title a scenario's heading prints: the third argument of its first
+ * \addscenariosection that is not commented out, as plain text.
+ *
+ * @param source one .tex file's text
+ * @returns the title, or null when the source has no readable heading or its
+ *   title is empty
+ */
+export function scenarioTitle(source: string): string | null {
+  const heading = /^[^%\n]*?\\addscenariosection\s*(?:\[[^\]]*\])?/m.exec(source);
+  if (!heading) return null;
+  let at = heading.index + heading[0].length;
+  let title = "";
+  for (let argument = 0; argument < 3; argument++) {
+    while (/\s/.test(source[at] ?? "")) at++;
+    const group = braceGroup(source, at);
+    if (!group) return null;
+    title = group.content;
+    at = group.end;
+  }
+  return latexToText(title) || null;
+}

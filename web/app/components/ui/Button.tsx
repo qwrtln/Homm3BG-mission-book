@@ -19,7 +19,7 @@ const VARIANTS: Record<ButtonVariant | "default", string> = {
   link: "border-transparent bg-transparent text-accent underline disabled:border-transparent disabled:bg-transparent",
   withIcon: `${NEUTRAL} ${ICONED}`,
   icon: `${NEUTRAL} text-icon leading-none`,
-  danger: "border-bad bg-bad text-white hover:enabled:brightness-90",
+  danger: "border-bad bg-bad font-semibold text-white hover:enabled:brightness-90",
   attention:
     "border-attention-border bg-attention-bg text-warn hover:enabled:border-warn hover:enabled:bg-attention-hover-bg",
   /** The Build button mid-build: Primer's danger button, red on a quiet fill until hovered. */

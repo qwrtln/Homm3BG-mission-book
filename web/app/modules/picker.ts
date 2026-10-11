@@ -1,5 +1,5 @@
 // The welcome screen's picker logic: what is picked, and where it is filed.
-// components/welcome/{PickerMain,SearchCombobox,ModeChoice}.tsx render from
+// components/welcome/{PickerMain,SearchCombobox}.tsx render from
 // the store fields this writes; this module holds the behavior they and the
 // GitHub modules (github/*.ts) call into.
 
@@ -28,6 +28,11 @@ export function blanksAllowed(): boolean {
   return store.getState().pickerMode === "new";
 }
 
+/** Reveals the create section for a returning author. It stays open for the session. */
+export function openCreate(): void {
+  store.setState({ createOpen: true });
+}
+
 /**
  * Switches between adding a new scenario and editing an existing one. Edit
  * mode has no name step and no blank templates: the scenario keeps its own
@@ -37,8 +42,9 @@ export function blanksAllowed(): boolean {
 export function setPickerMode(mode: "new" | "edit"): void {
   const { pendingPath } = store.getState();
   store.setState({ pickerMode: mode, pickerError: null });
-  // The wizard only starts new scenarios, so edit mode has no use for it: the
-  // start choice (components/wizard/StartChoice.tsx) hides itself from pickerMode.
+  if (mode === "edit") store.setState({ createOpen: true });
+  // The wizard only starts new scenarios, so edit mode has no use for it: show
+  // the picker. The start choice (components/wizard/StartChoice.tsx) stays on screen.
   if (mode === "edit") showPicker();
   store.setState({ editBranch: null });
   // A blank template picked in new mode is not something an edit can open.
@@ -69,6 +75,7 @@ export function selectPending(path: string, title: string, category: string | nu
     pendingTitle: title,
     chosenCategory: category ?? categoryOfPath(path),
     pickerError: null,
+    createOpen: true,
   });
   // A template has no pictures and no published branch to fetch.
   if (!isTemplatePath(path)) startScenarioPrefetch(path);

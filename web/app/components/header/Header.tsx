@@ -1,5 +1,5 @@
 import { useAppStore } from "../../store.ts";
-import { BackToEditing, GithubControls } from "./GithubControls.tsx";
+import { GithubControls } from "./GithubControls.tsx";
 import { HeaderActions } from "./HeaderActions.tsx";
 import { OverflowMenu } from "./OverflowMenu.tsx";
 import { ScenarioHeader } from "./ScenarioHeader.tsx";
@@ -16,18 +16,16 @@ function AppTitles() {
 
 /**
  * The page header, from the store: the app's name or the open scenario with
- * its notes, Build/Download/Upload, the way back to a parked scenario, the
- * GitHub controls and the overflow menu.
+ * its notes, Build/Download/Upload, the GitHub controls and the overflow
+ * menu.
  */
 export function Header() {
   const scenarioOpen = useAppStore((s) => s.scenarioHeaderVisible);
-  const parked = useAppStore((s) => s.parked);
 
   return (
     <>
       {scenarioOpen ? <ScenarioHeader /> : <AppTitles />}
       <HeaderActions />
-      {parked && <BackToEditing />}
       <GithubControls />
       <OverflowMenu />
     </>

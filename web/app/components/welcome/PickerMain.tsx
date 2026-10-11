@@ -5,6 +5,9 @@ import { CATEGORY_LABELS } from "../../modules/config.ts";
 import { chooseCategory, isTemplatePath, pickBlank } from "../../modules/picker.ts";
 import { commitEntry } from "../../modules/workspace.ts";
 import { useAppStore } from "../../store.ts";
+import { Button } from "../ui/Button.tsx";
+import { RadioGroup } from "../ui/RadioGroup.tsx";
+import { TextInput } from "../ui/TextInput.tsx";
 import { SearchCombobox } from "./SearchCombobox.tsx";
 
 /**
@@ -58,60 +61,62 @@ export function PickerMain() {
   return (
     <>
       <div className="pick-step">
-        <h2 id="pick-heading">{editMode ? "Pick the scenario to edit" : "Start from an existing scenario"}</h2>
-        <p className="hint" id="pick-hint">
+        <h3 id="pick-heading" className="text-heading">
+          {editMode ? "Pick the scenario to edit" : "Start from an existing scenario"}
+        </h3>
+        <p className="hint text-small" id="pick-hint">
           {editMode
             ? "Your changes go into this scenario itself. Search the Mission Book and the Draft Scenarios by name."
             : "Your new scenario starts as a copy of it. Search the Mission Book and the Draft Scenarios by name."}
         </p>
         <SearchCombobox />
-        <p className={`scratch-row${editMode ? " dimmed" : ""}`} id="scratch-row" inert={editMode}>
+        <p className={`scratch-row text-small${editMode ? " dimmed" : ""}`} id="scratch-row" inert={editMode}>
           <span id="scratch-label">No close match? Start blank:</span>
           {/* biome-ignore lint/a11y/useSemanticElements: a <fieldset> would add a default border and padding the .blank-links CSS does not expect */}
           <span className="blank-links" role="group" aria-labelledby="scratch-label">
-            <button
+            <Button
               id="scratch-clash"
-              className="link"
-              type="button"
+              variant="link"
+              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="clash"
               aria-pressed={activeBlank === "clash"}
               onClick={() => pickBlank("clash")}
             >
               Clash
-            </button>{" "}
+            </Button>{" "}
             <span aria-hidden="true">·</span>
-            <button
+            <Button
               id="scratch-coop"
-              className="link"
-              type="button"
+              variant="link"
+              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="coops"
               aria-pressed={activeBlank === "coops"}
               onClick={() => pickBlank("coops")}
             >
               Coop
-            </button>{" "}
+            </Button>{" "}
             <span aria-hidden="true">·</span>
-            <button
+            <Button
               id="scratch-alliance"
-              className="link"
-              type="button"
+              variant="link"
+              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="alliances"
               aria-pressed={activeBlank === "alliances"}
               onClick={() => pickBlank("alliances")}
             >
               Alliance
-            </button>{" "}
+            </Button>{" "}
             <span aria-hidden="true">·</span>
-            <button
+            <Button
               id="scratch-campaign"
-              className="link"
-              type="button"
+              variant="link"
+              className="text-small hover:enabled:text-ink aria-pressed:font-semibold aria-pressed:text-ink aria-pressed:decoration-2"
               data-category="campaigns"
               aria-pressed={activeBlank === "campaigns"}
               onClick={() => pickBlank("campaigns")}
             >
               Campaign
-            </button>
+            </Button>
           </span>
         </p>
       </div>
@@ -120,11 +125,12 @@ export function PickerMain() {
         id="name-slide"
         inert={editMode || !pendingPath}
       >
-        <h2 id="name-heading">Name your new scenario</h2>
-        <p className="hint">Used for the file name and the download.</p>
+        <h3 id="name-heading" className="text-heading">
+          Name your new scenario
+        </h3>
+        <p className="hint text-small">Used for the file name and the download.</p>
         <div className="name-field">
-          <input
-            type="text"
+          <TextInput
             id="scenario-name"
             aria-labelledby="name-heading"
             placeholder="Your new scenario's name"
@@ -134,36 +140,29 @@ export function PickerMain() {
             aria-invalid={showNameError ? "true" : "false"}
             onChange={(event) => setName(event.target.value)}
           />
-          <p className="name-error" id="name-error" role="alert" hidden={!showNameError}>
+          <p className="name-error text-small" id="name-error" role="alert" hidden={!showNameError}>
             {showNameError ? check.message : ""}
           </p>
         </div>
         <fieldset className="category-choice" id="category-choice" aria-describedby="category-hint">
-          <legend>Game mode</legend>
-          <span className="segmented">
-            {DRAFT_CATEGORIES.map((category) => (
-              <label key={category}>
-                <input
-                  type="radio"
-                  name="category"
-                  value={category}
-                  checked={chosenCategory === category}
-                  onChange={() => chooseCategory(category)}
-                />
-                <span>{CATEGORY_LABELS[category]}</span>
-              </label>
-            ))}
-          </span>
-          <p className="hint category-hint" id="category-hint">
+          <legend className="mb-2 p-0 text-small text-muted">Game mode</legend>
+          <RadioGroup
+            label="Game mode"
+            name="category"
+            options={DRAFT_CATEGORIES.map((category) => ({ value: category, label: CATEGORY_LABELS[category] }))}
+            value={chosenCategory ?? ""}
+            onChange={chooseCategory}
+          />
+          <p className="hint category-hint text-small" id="category-hint">
             {chosenCategory ? `Filed in the Draft Scenarios under ${CATEGORY_LABELS[chosenCategory]}.` : ""}
           </p>
         </fieldset>
       </div>
       <div className="go-row">
-        <button id="go" className="primary" type="button" disabled={disabled} onClick={handleGoClick}>
+        <Button variant="primary" id="go" disabled={disabled} onClick={handleGoClick}>
           Open editor
-        </button>
-        <p className="go-hint" id="go-hint" role="status">
+        </Button>
+        <p className="go-hint text-small" id="go-hint" role="status">
           {hint}
         </p>
       </div>

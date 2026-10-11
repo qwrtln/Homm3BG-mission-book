@@ -46,7 +46,7 @@ export function BasicsPane({ hidden }: PaneProps) {
           aria-invalid={showProblem ? "true" : "false"}
           onChange={(event) => setName(event.target.value)}
         />
-        <p className="name-error" id="wizard-name-error" role="alert" hidden={!showProblem}>
+        <p className="name-error text-small" id="wizard-name-error" role="alert" hidden={!showProblem}>
           {showProblem ? problem : ""}
         </p>
       </div>

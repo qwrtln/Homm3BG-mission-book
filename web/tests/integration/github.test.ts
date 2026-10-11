@@ -674,7 +674,7 @@ test.describe("opening the app already signed in", () => {
     await page.goto("/web/app/?code=stale-code");
 
     await expect(page.locator("#github-status")).not.toHaveAttribute("hidden");
-    await expect(page.locator("#mode-choice")).toBeVisible();
+    await expect(page.locator("#start-edit")).toBeVisible();
     await expect(page.locator("#status-text")).not.toContainText("sign-in failed");
     expect(new URL(page.url()).search).toBe("");
   });

@@ -13,7 +13,7 @@ import { assetsSignature } from "../../shared/unsaved.ts";
 import { syncCategoryControl } from "../modules/category.ts";
 import { markClean } from "../modules/dirty.ts";
 import { basenameNoExt, confirmDelete, readyStatus } from "../modules/dom.ts";
-import { draftLabel } from "../modules/draft-labels.ts";
+import { entryLabel } from "../modules/draft-labels.ts";
 import { deleteDraft, saveDraft } from "../modules/drafts.ts";
 import { requireEditor } from "../modules/editor-api.ts";
 import { loadEntries } from "../modules/entries.ts";
@@ -52,7 +52,8 @@ export async function renderResumeList(): Promise<void> {
   if (ticket !== renderTicket) return;
   const context = getGithubContext();
   const knowledge: BranchKnowledge = !getToken() ? "signed-out" : !context?.draftsComplete ? "unknown" : "complete";
-  const entries = classifyEntries(local, context?.drafts ?? [], knowledge);
+  const openPath = isParked() ? store.getState().chosenPath : null;
+  const entries = classifyEntries(local, context?.drafts ?? [], knowledge, openPath);
   setResume({ entries, visible: entries.length > 0 || store.getState().resume.searching });
 }
 
@@ -67,7 +68,7 @@ function isParkedPath(path: string): boolean {
  * sign-in. Cancelling the dialog changes nothing.
  */
 export async function deleteResumeEntry(entry: WelcomeEntry): Promise<void> {
-  const label = draftLabel(entry.path);
+  const label = entryLabel(entry);
   const draft = entry.remote;
   if (draft) {
     const token = getToken();

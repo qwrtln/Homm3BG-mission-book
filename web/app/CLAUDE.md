@@ -62,7 +62,8 @@ or the deploy allow-list names it.
 ## Components
 
 - `components/ui/` holds the primitives (`Button`, `Checkbox`, `RadioGroup`,
-  `Dialog`, `Link`, `Toast`): generic, no store, no app text.
+  `Dialog`, `Link`, `Toast`, `ChoiceCards`, `TextInput`, `Disclosure`):
+  generic, no store, no app text.
 - `components/` holds one file per dialog (`AboutDialog.tsx`, `Toaster.tsx`),
   which reads the store and composes primitives. A region with several parts has
   a folder: `components/header/` renders the page header and
@@ -113,7 +114,7 @@ or the deploy allow-list names it.
   `modules/theme.ts`: Tailwind's `dark:` variant follows it. Never use a
   `prefers-color-scheme` query.
 - Radius, type and shadow come from the `@theme` scales in `app.css`
-  (`rounded-sm|md|lg`, `text-small|ui|body|heading`). No raw px or rem
+  (`rounded-sm|md|lg`, `text-small|ui|body|heading|title`). No raw px or rem
   in a component when a scale step fits.
 - Tailwind orders utilities by property, not by class order: two classes
   for one property on one element conflict. Pick one per variant.
@@ -129,6 +130,9 @@ page. Reuse the primitive:
 | Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `withIcon`, `icon`, `danger`, `attention`, `stop`, or none; `size="compact"` is the header row, `iconed` lays an icon and label out on one line |
 | Checkbox | `<Checkbox label=...>` in `components/ui/Checkbox.tsx` |
 | Radio group | `<RadioGroup>` in `components/ui/RadioGroup.tsx`: joined buttons over hidden radios |
+| Choice cards | `<ChoiceCards>` in `components/ui/ChoiceCards.tsx`: equal `aria-pressed` cards with a title and a description |
+| Text field | `<TextInput>` in `components/ui/TextInput.tsx`: one-line input, `aria-invalid` shows the error border |
+| Disclosure | `<Disclosure>` in `components/ui/Disclosure.tsx`: a native `<details>` with a chevron, controlled by `open` |
 | Hyperlink | `<Link>` in `components/ui/Link.tsx`: accent color, visible focus ring, `external` for a new tab |
 | Drop-down | `<Select>` in `components/ui/Select.tsx` |
 | Menu | `<MenuList>`, `<MenuItem>` and `useMenu()` in `components/ui/Menu.tsx` and `useMenu.ts`: the ARIA menu behavior |

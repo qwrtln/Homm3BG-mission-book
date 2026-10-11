@@ -1,4 +1,5 @@
 import { basenameNoExt } from "../../shared/dom-strings.ts";
+import type { WelcomeEntry } from "../../shared/local-drafts.ts";
 
 const CATEGORY_LABELS: Record<string, string> = {
   clash: "Clash",
@@ -16,9 +17,18 @@ export function draftParts(texPath: string): { title: string; mode: string | nul
   return { title, mode: CATEGORY_LABELS[dir] ?? null };
 }
 
-/** "draft-scenarios/clash/kyrre_link.tex" -> "Kyrre Link (Clash)": the name first, then the mode. */
-export function draftLabel(texPath: string): string {
-  const { title, mode } = draftParts(texPath);
+/**
+ * A resume row's name and mode: the title the local copy's heading prints,
+ * else the name its path gives. A branch with no local copy has only its path.
+ */
+export function entryParts(entry: WelcomeEntry): { title: string; mode: string | null } {
+  const parts = draftParts(entry.path);
+  return { title: entry.local?.title ?? parts.title, mode: parts.mode };
+}
+
+/** A resume row's name, then its mode in brackets, as dialogs and labels say it. */
+export function entryLabel(entry: WelcomeEntry): string {
+  const { title, mode } = entryParts(entry);
   return mode ? `${title} (${mode})` : title;
 }
 

@@ -1,6 +1,6 @@
 import type { EntryState, WelcomeEntry } from "../../../shared/local-drafts.ts";
 import { deleteResumeEntry, resumeEntry } from "../../github/resume.ts";
-import { draftLabel, draftParts, timeAgo } from "../../modules/draft-labels.ts";
+import { entryLabel, entryParts, timeAgo } from "../../modules/draft-labels.ts";
 import { useAppStore } from "../../store.ts";
 import { DeviceDesktopIcon, DeviceMobileIcon, MarkGithubIcon } from "../header/icons.tsx";
 
@@ -27,7 +27,8 @@ const ATTENTION_LABELS: Partial<Record<EntryState, string>> = {
 /**
  * One scenario of the contributor's: a button that opens it, and one that
  * deletes it. The button reads the name, then where the text lives, whether
- * it edits a Mission Book scenario, and its age, then any state that needs
+ * it edits a Mission Book scenario, and its age, then whether it is the
+ * scenario left open behind the welcome screen and any state that needs
  * attention.
  */
 function ResumeRow({ entry }: { entry: WelcomeEntry }) {
@@ -35,28 +36,30 @@ function ResumeRow({ entry }: { entry: WelcomeEntry }) {
   // A new scenario is the usual case and goes unsaid; an edit of a published one is named.
   const kind = path.startsWith("draft-scenarios/") ? null : "Mission Book edit";
   const ago = timeAgo(remote ? remote.lastEdit : (local?.updatedAt ?? undefined));
-  const label = draftLabel(path);
-  const { title, mode } = draftParts(path);
+  const label = entryLabel(entry);
+  const { title, mode } = entryParts(entry);
   const attention = ATTENTION_LABELS[entry.state];
+  // The scenario left open behind the welcome screen: its row is the way back, with its PDF kept.
+  const open = useAppStore((s) => s.parked && s.chosenPath === path);
 
   return (
-    <div className="resume-row">
+    <div className="resume-row" data-open={open || undefined}>
       <button
         type="button"
-        className="combobox-item"
+        className="combobox-item text-body focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
         title={remote ? `Branch ${remote.branch}` : undefined}
         onClick={() => void resumeEntry(entry)}
       >
-        <span className="resume-name">
+        <span className="resume-name text-body">
           {title}
           {mode && (
             <>
               {" "}
-              <span className="resume-mode">{mode}</span>
+              <span className="resume-mode text-small">{mode}</span>
             </>
           )}
         </span>
-        <span className="resume-meta">
+        <span className="resume-meta text-small">
           {remote ? (
             <span className="resume-where on-github">
               <MarkGithubIcon />
@@ -75,7 +78,8 @@ function ResumeRow({ entry }: { entry: WelcomeEntry }) {
           {kind && ` · ${kind}`}
           {ago && ` · last edit ${ago}`}
         </span>
-        {attention && <span className="resume-state attention">{attention}</span>}
+        {open && <span className="resume-state open text-small">Currently editing</span>}
+        {attention && <span className="resume-state attention text-small">{attention}</span>}
       </button>
       <button
         type="button"
@@ -101,11 +105,11 @@ export function ResumeDrafts() {
 
   return (
     <div className="resume-drafts" id="resume-drafts" hidden={!visible}>
-      <h2>Resume your work</h2>
-      <p className="hint" id="resume-loading" hidden={!searching}>
+      <h2 className="text-title">Resume your work</h2>
+      <p className="hint text-small" id="resume-loading" hidden={!searching}>
         <span className="spinner" /> Looking for work to resume…
       </p>
-      <p className="hint" id="resume-hint" hidden={searching}>
+      <p className="hint text-small" id="resume-hint" hidden={searching}>
         Your unfinished scenarios, on GitHub and in this browser.
       </p>
       <div className="combobox-list resume-list" id="resume-list">

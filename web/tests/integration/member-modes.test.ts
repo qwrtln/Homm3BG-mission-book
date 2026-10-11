@@ -9,7 +9,7 @@ import type { Page } from "@playwright/test";
 import { UPSTREAM_OWNER, UPSTREAM_REPO } from "../../shared/github-contrib.ts";
 import { categoryOfPath } from "../../shared/scenario-name.ts";
 import { editorBox } from "../helpers/editor.ts";
-import { expect, type GithubRoute, openScenarioList, READY_STATUS, test } from "./fixtures.ts";
+import { expect, type GithubRoute, openCreate, openScenarioList, READY_STATUS, test } from "./fixtures.ts";
 
 interface RecordedRequest {
   method: string;
@@ -69,37 +69,38 @@ function recordGithubRequests(page: Page): RecordedRequest[] {
   return seen;
 }
 
-test("signed out, there is no mode choice and the picker is there", async ({ app }) => {
+test("signed out, there is no edit card and the picker is there", async ({ app }) => {
   const { page } = app;
   await expect(page.locator("#welcome-picker")).toBeVisible();
-  await expect(page.locator("#mode-choice")).toBeHidden();
+  await expect(page.locator("#start-edit")).toBeHidden();
 });
 
 test.describe("signed in, but not a member", () => {
   test.use({ githubRoutes: routes(identityRoutes({ push: false })) });
 
-  test("gets no mode choice, and the picker is there once membership is known", async ({ app }) => {
+  test("gets two start cards and no edit card, and the picker is there once membership is known", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
     await expect(page.locator("#welcome-picker")).toBeVisible();
-    await expect(page.locator("#mode-choice")).toBeHidden();
+    await expect(page.locator("#start-edit")).toBeHidden();
+    await expect(page.locator("#start-choice button:visible")).toHaveCount(2);
   });
 });
 
 test.describe("signed in as a member", () => {
   test.use({ githubRoutes: routes(identityRoutes({ push: true })) });
 
-  test("is told they are a member, and still has the picker as it always was", async ({ app }) => {
+  test("gets three start cards, and still has the picker as it always was", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
-    const choice = page.locator("#mode-choice");
-    await expect(choice).toBeVisible();
-    await expect(choice).toContainText("project member");
-    await expect(page.locator("#mode-edit")).toHaveText("Edit existing");
-    await expect(page.locator("#mode-new")).toHaveText("Add new");
-    await expect(page.locator("#mode-new")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#start-edit")).toBeVisible();
+    await expect(page.locator("#start-choice button:visible")).toHaveCount(3);
+    await expect(page.locator("#start-edit")).toContainText("Edit an existing scenario");
+    await expect(page.locator("#start-edit")).toContainText("Members only");
+    await expect(page.locator("#start-copy")).toContainText("Copy an existing scenario");
+    await expect(page.locator("#start-copy")).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator("#welcome-picker")).toBeVisible();
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
     // The name step waits for a pick, as it does for everyone.
@@ -113,7 +114,7 @@ test.describe("signed in as a member", () => {
     const { page } = app;
     await signInAs(page);
 
-    await page.locator("#mode-edit").click();
+    await page.locator("#start-edit").click();
 
     for (const id of ["#name-slide", "#scratch-row"]) {
       await expect(page.locator(id)).toBeVisible();
@@ -121,8 +122,8 @@ test.describe("signed in as a member", () => {
       await expect(page.locator(id)).toHaveClass(/dimmed/);
     }
     await expect(page.locator("#go")).toBeDisabled();
-    // The wizard only starts new scenarios.
-    await expect(page.locator("#start-choice")).toBeHidden();
+    await expect(page.locator("#start-edit")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#start-copy")).toHaveAttribute("aria-pressed", "false");
     // The step-1 copy says the pick is edited in place, not copied.
     await expect(page.locator("#pick-heading")).toHaveText("Pick the scenario to edit");
 
@@ -140,28 +141,25 @@ test.describe("signed in as a member", () => {
     await expect(page.locator("#name-slide")).toHaveAttribute("inert", "");
   });
 
-  test("the mode toggle comes before the search box in Tab order", async ({ app }) => {
+  test("the start cards come before the search box in Tab order", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
 
-    await page.locator("#mode-edit").focus();
-    await page.keyboard.press("Tab");
-    await expect(page.locator("#mode-new")).toBeFocused();
-    // The start choice follows, in new mode.
-    await page.keyboard.press("Tab");
-    await expect(page.locator("#start-copy")).toBeFocused();
+    await page.locator("#start-copy").focus();
     await page.keyboard.press("Tab");
     await expect(page.locator("#start-wizard")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#start-edit")).toBeFocused();
     await page.keyboard.press("Tab");
     await expect(page.locator("#search")).toBeFocused();
   });
 
-  test("Add new gives the name pane and the templates back", async ({ app }) => {
+  test("Copy an existing scenario gives the name pane and the templates back", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
-    await page.locator("#mode-edit").click();
+    await page.locator("#start-edit").click();
 
-    await page.locator("#mode-new").click();
+    await page.locator("#start-copy").click();
 
     await expect(page.locator("#pick-heading")).toHaveText("Start from an existing scenario");
     await expect(page.locator("#scratch-row")).not.toHaveAttribute("inert", "");
@@ -171,6 +169,19 @@ test.describe("signed in as a member", () => {
     await expect(page.locator("#name-slide")).not.toHaveAttribute("inert", "");
   });
 
+  test("choosing the wizard from edit mode returns to new mode", async ({ app }) => {
+    const { page } = app;
+    await signInAs(page);
+    await page.locator("#start-edit").click();
+    await expect(page.locator("#start-edit")).toHaveAttribute("aria-pressed", "true");
+
+    await page.locator("#start-wizard").click();
+
+    await expect(page.locator("#start-wizard")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#start-edit")).toHaveAttribute("aria-pressed", "false");
+    expect(await page.evaluate(() => window.__state?.pickerMode)).toBe("new");
+  });
+
   test("a blank template picked before switching to Edit existing is dropped", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
@@ -178,7 +189,7 @@ test.describe("signed in as a member", () => {
     await page.locator("#scenario-name").fill("Some Name");
     await expect(page.locator("#go")).toBeEnabled();
 
-    await page.locator("#mode-edit").click();
+    await page.locator("#start-edit").click();
 
     await expect(page.locator("#go")).toBeDisabled();
     await expect(page.locator("#scratch-clash")).toHaveAttribute("aria-pressed", "false");
@@ -204,14 +215,15 @@ test.describe("a member with work to resume", () => {
 
     await expect(page.locator("#resume-drafts")).toBeVisible();
     await expect(page.locator("#resume-drafts h2")).toHaveText("Resume your work");
+    await openCreate(page);
     const resume = await page.locator("#resume-drafts").boundingBox();
     const top = await page.locator(".welcome-top").boundingBox();
     expect(resume && top && Math.abs(resume.width - top.width) < 2, "resume list is not full width").toBe(true);
-    const banner = await page.locator("#mode-choice").boundingBox();
+    const banner = await page.locator("#start-choice").boundingBox();
     const pick = await page.locator(".pick-step").boundingBox();
     expect(
       banner && pick && banner.y + banner.height <= pick.y && Math.abs(banner.x - pick.x) < 2,
-      "the mode choice is not above the search, on the same left edge",
+      "the start choice is not above the search, on the same left edge",
     ).toBe(true);
   });
 });
@@ -234,7 +246,7 @@ test.describe("editing in place", () => {
    */
   async function pickFirstScenario(page: Page): Promise<string> {
     await signInAs(page);
-    await page.locator("#mode-edit").click();
+    await page.locator("#start-edit").click();
     const results = await openScenarioList(page);
     const path = (await results.first().getAttribute("data-path")) as string;
     await results.first().dispatchEvent("mousedown");

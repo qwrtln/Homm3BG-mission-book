@@ -6,7 +6,7 @@
 
 import type { Page } from "@playwright/test";
 import { editorBox } from "../helpers/editor.ts";
-import { chooseFromMenu, EMPTY_PDF_TEXT, engineCalls, expect, READY_STATUS, test } from "./fixtures.ts";
+import { chooseFromMenu, EMPTY_PDF_TEXT, engineCalls, expect, OPEN_ROW, READY_STATUS, test } from "./fixtures.ts";
 
 const SCENARIO_NAME = "shortcut probe";
 
@@ -23,12 +23,12 @@ async function openWorkspace(page: Page): Promise<void> {
 
 /**
  * Leaves the workspace for the welcome screen, parking the open scenario
- * behind "Back to editing".
+ * behind its resume row.
  */
 async function parkScenario(page: Page): Promise<void> {
   await page.locator("#back-to-welcome").click();
   await expect(page.locator("#workspace")).toBeHidden();
-  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await expect(page.locator(OPEN_ROW)).toBeVisible();
 }
 
 /**
