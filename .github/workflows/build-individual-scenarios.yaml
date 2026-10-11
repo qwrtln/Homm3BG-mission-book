@@ -18,7 +18,8 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 1
   IMAGEMAGICK_URL: https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-22/ImageMagick-7.1.2-22-gcc-x86_64.AppImage
-  EXCLUDE_LIST: title_page\|back_cover\|recommendations\|credits\|what_to_play\|notes\|feedback_page\|intro_and_toc\|language_metadata
+  MIN_TRANSLATION_PERCENT: 88
+  EXCLUDE_LIST: title_page\|back_cover\|competitive_play\|credits\|introduction\|notes\|feedback_page\|intro_and_toc\|language_metadata
 
 jobs:
   find_scenarios:
@@ -33,6 +34,26 @@ jobs:
         id: find_scenarios
         run: |
           SCENARIOS=$(find ${{ inputs.scenario_type }} -type f -name "*tex" -not -regex ".*main.*" -exec basename -s .tex {} \; | grep -v "${{ env.EXCLUDE_LIST }}" || true)
+
+          if [[ "${{ inputs.language }}" != "en" ]]; then
+            # Same image as qwrtln/po4a-action, run directly to capture the per-file statistics
+            PO4A_OUTPUT=$(docker run --rm -v "$GITHUB_WORKSPACE:/github/workspace" -w /github/workspace \
+              ghcr.io/qwrtln/po4a-action:0.74-1.3 \
+              po4a.cfg "--no-update" "${{ inputs.language }}")
+            TRANSLATED=$(echo "$PO4A_OUTPUT" | awk \
+              -v prefix="${{ inputs.scenario_type }}/translated/${{ inputs.language }}/" \
+              -v min="${{ env.MIN_TRANSLATION_PERCENT }}" '
+                index($1, prefix) == 1 && $3 ~ /%$/ && $4 == "translated" {
+                  name = substr($1, length(prefix) + 1)
+                  sub(/\.tex$/, "", name)
+                  pct = $3
+                  sub(/%$/, "", pct)
+                  if (pct + 0 >= min) print name
+                  else print "Skipping " name " (" $3 " translated)" > "/dev/stderr"
+                }')
+            SCENARIOS=$(grep -Fxf <(echo "$TRANSLATED") <<< "$SCENARIOS" || true)
+          fi
+
           echo "scenarios=$(echo "$SCENARIOS" | jq -R -s -c 'split("\n") | map(select(length > 0))')" >> $GITHUB_OUTPUT
 
   build_scenarios:

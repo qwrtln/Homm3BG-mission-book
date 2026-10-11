@@ -1,0 +1,47 @@
+name: Deploy OAuth relay
+
+# Publishes web/oauth-relay/ to the Cloudflare Pages project that exchanges
+# GitHub OAuth codes for the scenario builder. GITHUB_CLIENT_ID and
+# GITHUB_CLIENT_SECRET live in the Pages project settings, not here; a deploy
+# leaves them untouched.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'web/oauth-relay/**'
+      - '.github/workflows/deploy-oauth-relay.yaml'
+  push:
+    branches: [main]
+    paths:
+      - 'web/oauth-relay/**'
+      - '.github/workflows/deploy-oauth-relay.yaml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-oauth-relay-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: ${{ github.event_name == 'pull_request' && 'Build' || 'Deploy' }}
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Compile the function
+        working-directory: web/oauth-relay
+        run: npx -y wrangler@4.132.0 pages functions build --outdir="$RUNNER_TEMP/oauth-relay"
+
+      - name: Deploy to Cloudflare Pages
+        if: github.event_name != 'pull_request'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4.132.0'
+          workingDirectory: web/oauth-relay
+          command: pages deploy . --project-name=mission-book-oauth-relay --branch=main

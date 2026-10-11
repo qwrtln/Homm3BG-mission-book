@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heroes III: The Board Game – Scenario Builder</title>
+<!-- stats placeholder -->
+</head>
+<body>
+<script>
+  // Before first paint: an address that names a scenario shows a loading screen, never the welcome screen.
+  try {
+    var pendingRoute = /^#\/(drafts|updates)\//.test(location.hash)
+      || (/[?&]code=/.test(location.search) && localStorage.getItem("wasm-scenario-builder:pending-route"));
+    if (pendingRoute) document.documentElement.classList.add("route-pending");
+  } catch (e) { /* blocked storage: the welcome screen shows */ }
+</script>
+
+<div id="root"></div>
+
+<script type="module" src="main.tsx"></script>
+</body>
+</html>

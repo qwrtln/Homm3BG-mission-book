@@ -1,0 +1,380 @@
+# Czech translations for Homm package
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Homm package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Homm 3BG-mission-book\n"
+"POT-Creation-Date: 2026-09-30 17:31+0000\n"
+"PO-Revision-Date: 2025-05-04 14:05+0000\n"
+"Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
+"mission-book/sections/recommendations/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: sections/competitive_play.tex:3
+#, fuzzy
+#| msgid "\\addsection{Recommendations}{\\art/haste.png}"
+msgid "\\addsection{Competitive Play}{\\art/haste.png}"
+msgstr "\\addsection{Doporučení}{\\art/haste.png}"
+
+#. type: Plain text
+#: sections/competitive_play.tex:5
+msgid "\\iftoggle{printable}{}{\\bigbreak}"
+msgstr "\\iftoggle{printable}{}{\\bigbreak}"
+
+#. type: multicols*
+#: sections/competitive_play.tex:11
+#, fuzzy, no-wrap
+#| msgid ""
+#| "{2}\n"
+#| "We've compiled some custom rules and best practices to enhance your gaming experience.\n"
+#| "Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+#| "Enjoy!\n"
+#| "\n"
+msgid ""
+"{2}\n"
+"We've compiled some custom rules and best practices for fair competitive play.\n"
+"They are intended for Clash Scenarios, where they reduce randomness and the luck factor.\n"
+"Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
+"Enjoy!\n"
+"\n"
+msgstr ""
+"{2}\n"
+"Dali jsme dohromady některá vlastní pravidla a osvědčené postupy, které zlepší váš herní zážitek.\n"
+"Mějte na paměti, že se jedná pouze o \\textbf{názory autorů} této knihy.\n"
+"Ať se líbí!\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:13
+#, no-wrap
+msgid ""
+"\\subsection*{Magic Arrows}\n"
+"\n"
+msgstr ""
+"\\subsection*{Magické Šípy}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:16
+#, no-wrap
+msgid ""
+"Except for the Magic Arrow, each Spell appears exactly twice in the Spell Deck.\n"
+"After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
+"\n"
+msgstr ""
+"Kromě Magického Šípu se každé Kouzlo v Balíčku Kouzel objevuje přesně dvakrát.\n"
+"Po přípravě Úvodních M\\&M Balíčků všech hráčů se doporučuje odstranit Magické Šípy z Balíčku Kouzel, dokud nezůstanou více než dva.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Guaranteed Settlement}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\textit{(Optional)} Guaranteed Settlement}\n"
+"\n"
+msgstr ""
+"\\subsection*{Garantovaná Osada}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:20
+#, no-wrap
+msgid ""
+"When distributing Far Tiles (II--III) between players, each player's pool of Map Tiles must include one Settlement.\n"
+"\n"
+msgstr ""
+"Při rozdělování Vzdálených Dílků (II--III) mezi hráče musí každý hráč mít jeden dílek s Osadou.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:22
+#, no-wrap
+msgid ""
+"\\subsection*{\\textit{(Optional)} War Machines as Artifacts}\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:24
+#, no-wrap
+msgid ""
+"Before the match, shuffle one Card of each War Machine into the Artifact Deck (or the Major Artifact Deck, if you split it as in Tournament Mode).\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:26
+#, no-wrap
+msgid ""
+"\\subsection*{Round One Mulligan}\n"
+"\n"
+msgstr ""
+"\\subsection*{Druhá Šance v Prvním Kole}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:28
+#, no-wrap
+msgid ""
+"At the start of your turn in the \\nth{1} Round, you may once reshuffle your hand back into your M\\&M Deck and draw a new starting hand.\n"
+"\n"
+msgstr ""
+
+#. type: multicols*
+#: sections/competitive_play.tex:30
+#, no-wrap
+msgid ""
+"\\subsection*{Trading Post}\n"
+"\n"
+msgstr ""
+"\\subsection*{Tržiště}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:32
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+#| "\n"
+msgid ""
+"Although rules as written state that you can remove only one Card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
+"\n"
+msgstr ""
+"I když pravidla říkají, že při Navštívení Tržiště můžete odstranit pouze jednu Kartu z ruky, doporučuje se povolit odstranění libovolného počtu karet.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:34
+#, no-wrap
+msgid ""
+"\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
+"\n"
+msgstr ""
+"\\subsection*{Souboj Úrovně V--VII na Těžkou$+$\\\\Obtížnost}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:37
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+#| "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
+#| "\n"
+msgid ""
+"Treat Level V--VII Combats as one difficulty step lower when playing on Hard or Impossible.\n"
+"For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
+"\n"
+msgstr ""
+"Souboje úrovně V--VII budou mít o 1 nižší obtížnost při hře na Těžkou nebo Nemožnou obtížnost.\n"
+"Například Souboj Úrovně VII na Těžkou obtížnost bude proti 2 × \\svg{azure} Neutrálním Jednotkám.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:39
+#, no-wrap
+msgid ""
+"\\subsection*{Victory Points}\n"
+"\n"
+msgstr ""
+"\\subsection*{Vítězné Body}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:46
+#, no-wrap
+msgid ""
+"When playing with the optional Victory Points from the Tournament book, the following rules apply (unless overruled by the Scenario):\n"
+"\\begin{itemize}\n"
+"  \\item Faction Towns grant 1 VP.\n"
+"  \\item Possessing the Grail at the end of the match grants 3 VPs. If the Grail was transported to that player's Faction Town, it grants 5 VPs instead.\n"
+"  \\item Capturing a Dragon Utopia grants 3 VPs.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"Při hře s volitelnými Vítěznými Body (VB) z Knihy Turnajů platí následující pravidla (pokud nejsou nahrazena těmi ve scénáři):\n"
+"\\begin{itemize}\n"
+"  \\item Frakční Města poskytují 1 VB.\n"
+"  \\item Držení Grálu na konci hry poskytuje 3 VB. Pokud byl Grál přemístěn do Frakčního Města hráče, poskytuje 5 VB.\n"
+"  \\item Obsazená Dračí Utopie poskytuje 3 VB.\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:48
+#, no-wrap
+msgid ""
+"\\subsection*{Combat with Neutral Units}\n"
+"\n"
+msgstr ""
+"\\subsection*{Souboj s Neutrálními Jednotkami}\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:50
+#, fuzzy, no-wrap
+#| msgid ""
+#| "During Combat with Neutral Units in clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the battle Board, the player positioning the Neutral Units must do the same.\n"
+#| "\n"
+msgid ""
+"During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
+"\n"
+msgstr ""
+"Pokud se během Souboje s Neutrálními Jednotkami ve Scénářích Střet hráč rozhodne umístit své Jednotky pouze na jednu polovinu (levou nebo pravou) Desky Bojiště, hráč umisťující Neutrální Jednotky musí udělat totéž.\n"
+"\n"
+
+#. type: multicols*
+#: sections/competitive_play.tex:54
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Placing Neutral Units far apart only makes the other player waste MPs, which slows the game down.\n"
+#| "The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
+#| "See examples that follow.\n"
+#| "\n"
+msgid ""
+"Placing Neutral Units far apart only makes the other player waste \\svg{movement}, which slows the game down.\n"
+"The exception to this rule is when there are three Neutral \\svg{unit_ground} or \\svg{unit_flying} Units to position, as all of them must go to the front line.\n"
+"See examples that follow.\n"
+"\n"
+msgstr ""
+"Umístění Neutrálních Jednotek daleko od sebe jen přinutí druhého hráče plýtvat BP, což zpomaluje hru.\n"
+"Výjimkou z tohoto pravidla je, když je třeba umístit tři Neutrální \\svg{unit_ground} nebo \\svg{unit_flying} Jednotky, protože všechny musí jít do přední linie.\n"
+"Viz následující příklady.\n"
+"\n"
+
+#. type: figure*
+#: sections/competitive_play.tex:73
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[!h]\n"
+#| "  \\mbox{}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+#| "    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+#| "    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
+#| "      The Peasants must also start the Combat on the left side.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\mbox{}"
+msgid ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Not allowed: the Necropolis Units are on the left half, so the Peasants must start there too.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}\n"
+"\n"
+msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
+"    \\caption[good protected]{\\textit{Neutrální Jednotky jsou správně umístěny.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
+"    \\caption[bad protected]{\\textit{Toto rozestavení není povoleno, protože hráč Nekropole umístil své Jednotky na levou polovinu Desky Bojiště.\n"
+"      Sedláci musí také začít Souboj na levé straně.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+
+#. type: figure*
+#: sections/competitive_play.tex:75
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\vspace*{\\fill}\n"
+#| "\n"
+msgid ""
+"  \\vspace{0.5em}\n"
+"\n"
+msgstr ""
+"\\vspace*{\\fill}\n"
+"\n"
+
+#. type: figure*
+#: sections/competitive_play.tex:92
+#, fuzzy, no-wrap
+#| msgid ""
+#| "[!h]\n"
+#| "  \\mbox{}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+#| "    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
+#| "    \\centering\n"
+#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+#| "    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
+#| "  \\end{minipage}\n"
+#| "  \\hfill\n"
+#| "  \\mbox{}"
+msgid ""
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"
+msgstr ""
+"[!h]\n"
+"  \\mbox{}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Výjimka:} Tři ne-\\svg{unit_ranged} Jednotky musí být umístěny v přední linii.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"    \\centering\n"
+"    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
+"    \\caption[ranged protected]{\\textit{Kanci musí obsadit jedno ze zelených Polí.}}\n"
+"  \\end{minipage}\n"
+"  \\hfill\n"
+"  \\mbox{}"

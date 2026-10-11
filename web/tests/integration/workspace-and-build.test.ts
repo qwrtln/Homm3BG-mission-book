@@ -1,0 +1,1603 @@
+// Tier 2. The workspace the picker hands off to: the build path against the
+// stub engine, the Build/Download state machine, the header bar and its
+// overflow menu, the uploads dialog, and the theme toggle. Everything here goes through web/tests/integration/fixtures.ts,
+// which installs the engine and GitHub stubs before navigating.
+
+import type { Locator, Page, Route } from "@playwright/test";
+import { PNG_DPI } from "../../shared/page-images.ts";
+import {
+  appendToEditorLine,
+  completionList,
+  editorCursor,
+  editorHasFocus,
+  editorLine,
+  editorLineCount,
+  flashedLines,
+  focusEditor,
+  insertInEditor,
+  markedLines,
+  setEditorSelection,
+  setEditorText,
+} from "../helpers/editor.ts";
+import { pngPixel } from "../helpers/png.ts";
+import { assertValidCrc32, readZipEntries } from "../helpers/zip.ts";
+import {
+  chooseFromMenu,
+  EMPTY_PDF_TEXT,
+  engineCalls,
+  expect,
+  type GithubRoute,
+  openScenarioList,
+  READY_STATUS,
+  test,
+} from "./fixtures.ts";
+
+// The stub engine's PDF pages (tests/stubs/texlyre-busytex-stub.js), in
+// points: the PNG export's pages must come out at PNG_DPI / 72 of this.
+const STUB_PAGE_WIDTH_PT = 297;
+const STUB_PAGE_HEIGHT_PT = 420;
+
+/**
+ * The red channel the stub fills page `index` (0-based) with: its content
+ * stream sets `rg` to 0.2 + 0.3 * index.
+ *
+ * @param index
+ * @returns 0 to 255
+ */
+function stubPageRed(index: number): number {
+  return Math.round((0.2 + 0.3 * index) * 255);
+}
+
+// Long enough to pass scenario-name.ts's MIN_SCENARIO_NAME_LENGTH, and not a real scenario
+// name: commitEntry uses it as the file's own identity, never the entry's.
+const SCENARIO_NAME = "tier two probe";
+
+// Chromium logs a console error for a request Playwright's interception
+// blocked. Only the block below can produce this exact text — neither the app
+// nor the static server can — so it is the one line dropped before a test
+// asserts the page stayed clean.
+const BLOCKED_BY_TEST = "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector";
+
+/**
+ * Blocks the published-PDF prefetch.
+ *
+ * picker.ts prefetches https://raw.githubusercontent.com/... for every real
+ * entry, and that host is outside installGithubStub's api.github.com match.
+ * Left alone, a test would reach the real network and depend on whether that
+ * scenario's branch happens to carry a PDF — which is what decides whether
+ * the PDF pane starts empty. A blocked fetch is the "no published PDF" case
+ * the app already handles: prefetchScenario catches it and returns null,
+ * commitEntry calls clearPdf(), and the pane keeps its empty state.
+ *
+ * @param page
+ */
+async function blockPublishedPdf(page: Page): Promise<void> {
+  await page.route(
+    (url) => url.hostname === "raw.githubusercontent.com",
+    (route: Route) => route.abort("blockedbyclient"),
+  );
+}
+
+/**
+ * The page errors the app itself is responsible for.
+ *
+ * @param errors every console error and page error seen so far
+ */
+function appErrors(errors: string[]): string[] {
+  return errors.filter((message) => message !== BLOCKED_BY_TEST);
+}
+
+/**
+ * Walks the welcome screen into the workspace: pick the first offered
+ * scenario, name it, press "Let's go!".
+ *
+ * Never asserts *which* scenario — it reads the row the app rendered and
+ * carries that title forward, so writing a new scenario cannot break this.
+ *
+ * @param page
+ */
+async function enterWorkspace(page: Page): Promise<string> {
+  await blockPublishedPdf(page);
+
+  const results = await openScenarioList(page);
+  const first = results.first();
+  const title = ((await first.textContent()) as string).trim();
+  // click() dispatches a real mousedown, which is what SearchCombobox.tsx listens for.
+  await first.click();
+  await expect(page.locator("#search")).toHaveValue(title);
+
+  await page.locator("#scenario-name").fill(SCENARIO_NAME);
+  await expect(page.locator("#go")).toBeEnabled();
+  await page.locator("#go").click();
+
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#header-actions")).toBeVisible();
+  // commitEntry writes this last, after the prefetch it awaits has settled,
+  // so it is the one point at which the workspace is fully settled.
+  await expect(page.locator("#status-text")).toHaveText(READY_STATUS);
+  return title;
+}
+
+/**
+ * Starts recording #build's disabled flag, label and stop styling, and
+ * #build-progress's hidden flag, every time any of them changes.
+ *
+ * A build against the stub engine finishes in milliseconds, so polling for
+ * the mid-build state is a race. Recording the transitions and asserting over
+ * the record afterwards is not.
+ *
+ * @param page
+ */
+async function recordBuildStates(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    const build = document.getElementById("build") as HTMLButtonElement;
+    const progress = document.getElementById("build-progress") as HTMLElement;
+    const seen: BuildStateSnapshot[] = [];
+    globalThis.__buildStates = seen;
+    const snapshot = () =>
+      seen.push({
+        disabled: build.disabled,
+        label: build.textContent,
+        stop: build.classList.contains("stop"),
+        progressShown: !progress.hidden,
+      });
+    snapshot();
+    new MutationObserver(snapshot).observe(document.body, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ["class", "disabled", "hidden"],
+    });
+  });
+}
+
+/**
+ * @param page
+ */
+async function buildStates(page: Page): Promise<BuildStateSnapshot[]> {
+  return page.evaluate(() => globalThis.__buildStates || []);
+}
+
+/**
+ * The drawn pages in the PDF pane.
+ *
+ * @param page
+ */
+function PAGES(page: Page): Locator {
+  return page.locator("#pdf-body canvas.pdf-page");
+}
+
+test("a build drives the stub engine and fills the PDF pane", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+
+  const build = page.locator("#build");
+  const download = page.locator("#download");
+  await expect(build).toBeEnabled();
+  await expect(download).toBeDisabled();
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
+
+  await recordBuildStates(page);
+  await build.click();
+
+  // pageCount() finds no "Output written on" line in the stub's log, so the
+  // count is 0; the status line is still the app's own success wording.
+  await expect(page.locator("#status-text")).toHaveText(/^Built 0 pages in \d+(\.\d+)?s\.$/);
+
+  const calls = await engineCalls(page);
+  const compile = calls.find((call) => call.method === "LuaLatex.compile");
+  const compileArgs = compile?.args[0] as StubCompileOptions;
+  expect(
+    compile,
+    `the app never asked the engine to compile; recorded calls: ${JSON.stringify(calls.map((c) => c.method))}`,
+  ).toBeTruthy();
+  // What build.ts passes: the plan's entry point, plus every staged file.
+  expect(typeof compileArgs.input).toBe("string");
+  expect(compileArgs.additionalFiles.length).toBeGreaterThan(0);
+
+  // The pane replaced its placeholder with the pages pdf.js drew: the stub's PDF has three.
+  await expect(page.locator("#pdf-empty")).toHaveCount(0);
+  await expect(PAGES(page)).toHaveCount(3);
+  await expect(PAGES(page).first()).toBeVisible();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("Fit");
+  await expect(page.locator("#error-panel")).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("a build preloads texlive-basic and stages the carried TeX Live files from one bundle", async ({ app }) => {
+  const { page, errors } = app;
+  const texmfRequests: string[] = [];
+  page.on("request", (request) => {
+    if (request.url().includes("/shared/texmf/")) texmfRequests.push(new URL(request.url()).pathname);
+  });
+  await enterWorkspace(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  const { packages, staged } = await page.evaluate(() => {
+    const calls = globalThis.__stubEngineCalls || [];
+    const runner = calls.find((call) => call.method === "BusyTexRunner.constructor");
+    const compile = calls.find((call) => call.method === "LuaLatex.compile");
+    return {
+      packages: (runner?.args[0] as { preloadDataPackages?: string[] } | undefined)?.preloadDataPackages ?? [],
+      staged: ((compile?.args[0] as StubCompileOptions | undefined)?.additionalFiles ?? []).map((file) => file.path),
+    };
+  });
+  expect(packages).toHaveLength(1);
+  expect(packages[0]).toMatch(/\/core\/busytex\/texlive-basic\.js$/);
+  // Flat, by basename: one from each source carried.txt names, and binaries too.
+  expect(staged).toEqual(expect.arrayContaining(["tcolorbox.sty", "pgfcore.code.tex", "nth.sty", "ccicons.pfb"]));
+  // Page load and the build share one fetch of the bundle, and nothing else under texmf/.
+  expect(texmfRequests).toEqual(["/web/shared/texmf/carried-texmf.bin"]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("Build turns into an enabled Stop with the progress bar up while a build runs", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+
+  await recordBuildStates(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  const states = await buildStates(page);
+  expect(
+    states.some((s) => !s.disabled && s.label === "Stop" && s.stop && s.progressShown),
+    `#build never became an enabled Stop with the progress bar up; recorded: ${JSON.stringify(states)}`,
+  ).toBe(true);
+  // And it came back: setBuilding(false) runs in runBuild's finally.
+  expect(states[states.length - 1]).toEqual({ disabled: false, label: "Build PDF", stop: false, progressShown: false });
+  await expect(page.locator("#build-progress")).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
+ * Makes every stub compile hang until a stop ends it. See
+ * texlyre-busytex-stub.js.
+ *
+ * @param page
+ */
+async function holdCompiles(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = new Promise(() => {});
+  });
+}
+
+/**
+ * Lets stub compiles answer at once again.
+ *
+ * @param page
+ */
+async function releaseCompiles(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = null;
+  });
+}
+
+/**
+ * The recorded engine calls with the given method name.
+ *
+ * @param page
+ * @param method
+ */
+async function callsTo(page: Page, method: string): Promise<StubEngineCall[]> {
+  return (await engineCalls(page)).filter((call) => call.method === method);
+}
+
+/**
+ * Which octicon #build shows before its label, and its width.
+ *
+ * @param page
+ * @returns glyph is "play", "stop" or ""
+ */
+async function buildLook(page: Page): Promise<{ glyph: string; width: number }> {
+  return page.locator("#build").evaluate((button) => {
+    const shown = (selector: string) => {
+      const icon = button.querySelector(selector);
+      return icon !== null && getComputedStyle(icon).display !== "none";
+    };
+    return {
+      glyph: shown(".build-icon") ? "play" : shown(".stop-icon") ? "stop" : "",
+      width: button.getBoundingClientRect().width,
+    };
+  });
+}
+
+/**
+ * A colour token, resolved the way the browser resolves it, so the theme
+ * does not matter.
+ *
+ * @param page
+ * @param token a custom property, e.g. "--btn-danger-bg"
+ */
+async function tokenColour(page: Page, token: string): Promise<string> {
+  return page.evaluate((name) => {
+    const probe = document.createElement("span");
+    probe.style.color = `var(${name})`;
+    document.body.append(probe);
+    const colour = getComputedStyle(probe).color;
+    probe.remove();
+    return colour;
+  }, token);
+}
+
+test("Stop ends a hanging compile and kills the engine", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  const build = page.locator("#build");
+  // Widen the label past any fixed width a stylesheet might guess, as CI's
+  // fonts once did: the width must be measured, not assumed.
+  await page.addStyleTag({ content: "#build { letter-spacing: 0.37px; }" });
+  const idle = await buildLook(page);
+  expect(idle.glyph).toBe("play");
+
+  await holdCompiles(page);
+  await build.click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(1);
+
+  // Mid-compile: the button is a red, clickable Stop.
+  await expect(build).toHaveText("Stop");
+  await expect(build).toHaveClass(/\bstop\b/);
+  await expect(build).toBeEnabled();
+  // Primer's danger button, whatever the theme: neutral at rest, red text,
+  // solid red under the pointer. The click left the pointer on it, so move off first.
+  await page.mouse.move(0, 0);
+  await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-bg"));
+  await expect(build).toHaveCSS("color", await tokenColour(page, "--btn-danger-fg"));
+  await build.hover();
+  await expect(build).toHaveCSS("background-color", await tokenColour(page, "--btn-danger-hover-bg"));
+  await expect(page.locator("#build-progress")).toBeVisible();
+  // With no PDF yet to keep readable, the empty pane shows a spinner, captioned
+  // with the build's current step; the label for over a PDF stays out of its way.
+  await expect(page.locator("#pdf-body .spinner.big")).toBeVisible();
+  await expect(page.locator("#pdf-body .empty-pdf.loading p")).toHaveText("Compiling…");
+  await expect(page.locator("#build-phase")).toBeHidden();
+  const busy = await buildLook(page);
+  expect(busy.glyph).toBe("stop");
+  // The label swap must not move the buttons beside it under the pointer.
+  expect(busy.width).toBe(idle.width);
+  // The pinned width is wider than "Stop" needs: the icon and label stay centred in it.
+  const margins = await build.evaluate((button) => {
+    const outer = button.getBoundingClientRect();
+    const shown = [...button.children].filter((child) => getComputedStyle(child).display !== "none");
+    const boxes = shown.map((child) => child.getBoundingClientRect());
+    return {
+      left: Math.min(...boxes.map((box) => box.left)) - outer.left,
+      right: outer.right - Math.max(...boxes.map((box) => box.right)),
+    };
+  });
+  expect(Math.abs(margins.left - margins.right), `Stop sits off centre: ${JSON.stringify(margins)}`).toBeLessThan(2);
+
+  await build.click();
+
+  await expect(page.locator("#status-text")).toHaveText("Build stopped.");
+  await expect(build).toHaveText("Build PDF");
+  await expect(build).not.toHaveClass(/\bstop\b/);
+  await expect(build).toBeEnabled();
+  await expect(page.locator("#build-progress")).toBeHidden();
+  await expect(page.locator("#error-panel")).toBeHidden();
+  // A stop is not a failure: the pane keeps what it showed before the build.
+  await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
+  await expect(page.locator("#download")).toBeDisabled();
+
+  // The worker is the only way to end a compile, so it was killed, and a
+  // fresh engine started warming for the next Build.
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(1);
+  await expect.poll(async () => (await callsTo(page, "BusyTexRunner.initialize")).length).toBe(2);
+
+  expect(appErrors(errors), "the page reported errors around the stop").toEqual([]);
+});
+
+test("a build after a stop compiles on the fresh engine", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  const build = page.locator("#build");
+
+  await holdCompiles(page);
+  await build.click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(1);
+  await build.click();
+  await expect(page.locator("#status-text")).toHaveText("Build stopped.");
+
+  await releaseCompiles(page);
+  await build.click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+  await expect(page.locator("#download")).toBeEnabled();
+
+  // The second compile ran on the runner built after the stop, not the dead one.
+  const constructed = await callsTo(page, "LuaLatex.constructor");
+  expect(constructed).toHaveLength(2);
+  expect(await callsTo(page, "BusyTexRunner.constructor")).toHaveLength(2);
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(1);
+
+  expect(appErrors(errors), "the page reported errors across stop and rebuild").toEqual([]);
+});
+
+test("a finished build leaves the engine running", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  expect(await callsTo(page, "BusyTexRunner.terminate")).toHaveLength(0);
+  expect(await callsTo(page, "BusyTexRunner.constructor")).toHaveLength(1);
+
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
+ * Makes the stub engine leave a main.aux behind after every compile, and
+ * answer each compile through `answer`, which learns whether that compile
+ * was handed a main.aux.
+ *
+ * @param page
+ * @param mode
+ */
+async function engineWithAux(page: Page, mode: "rerun-until-aux" | "always-rerun" | "aux-breaks"): Promise<void> {
+  await page.evaluate((mode: string) => {
+    globalThis.__stubProjectFiles = [
+      { path: "main.aux", content: "\\relax" },
+      { path: "main.pdf", content: "%PDF" },
+      { path: "main.log", content: "log" },
+    ];
+    const rerun = "LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.";
+    globalThis.__stubCompileResult = (options) => {
+      const hasAux = options.additionalFiles.some((file) => file.path === "main.aux");
+      const ok = (log: string) => ({
+        success: true,
+        pdf: Uint8Array.from(globalThis.__stubPdfBytes),
+        log,
+        exitCode: 0,
+      });
+      if (mode === "always-rerun") return ok(rerun);
+      if (mode === "aux-breaks") {
+        if (!hasAux) return ok("settled");
+        return { success: false, log: "(./main_en.tex (./main.aux\n! Undefined control sequence.", exitCode: 1 };
+      }
+      return ok(hasAux ? "settled" : rerun);
+    };
+  }, mode);
+}
+
+/**
+ * What each LuaLatex.compile call so far was handed: its rerun flag and
+ * whether a main.aux was among its files.
+ *
+ * @param page
+ */
+async function compiles(page: Page): Promise<{ rerun: unknown; aux: boolean }[]> {
+  return (await callsTo(page, "LuaLatex.compile")).map((call) => ({
+    rerun: (call.args[0] as { rerun?: unknown }).rerun,
+    aux: (call.args[0] as StubCompileOptions).additionalFiles.some((file) => file.path === "main.aux"),
+  }));
+}
+
+test("a first build runs a second pass when TeX asks, and a rebuild starts from its aux files", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "rerun-until-aux");
+
+  await buildFirstPdf(page);
+  // The engine's own rerun loop stays off: the app runs each pass itself.
+  expect(await compiles(page)).toEqual([
+    { rerun: false, aux: false },
+    { rerun: false, aux: true },
+  ]);
+  const staged = ((await callsTo(page, "LuaLatex.compile"))[1].args[0] as StubCompileOptions).additionalFiles.map(
+    (file) => file.path,
+  );
+  expect(staged).not.toContain("main.pdf");
+  expect(staged).not.toContain("main.log");
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  expect((await compiles(page)).slice(2), "a rebuild with settled aux files takes one pass").toEqual([
+    { rerun: false, aux: true },
+  ]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("a build stops rerunning after three passes", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "always-rerun");
+
+  await buildFirstPdf(page);
+  expect(await compiles(page)).toHaveLength(3);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+test("aux files that break a rebuild are dropped and the build runs clean", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await engineWithAux(page, "rerun-until-aux");
+  await buildFirstPdf(page);
+  await engineWithAux(page, "aux-breaks");
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#error-panel")).toBeHidden();
+  expect((await compiles(page)).slice(2)).toEqual([
+    { rerun: false, aux: true },
+    { rerun: false, aux: false },
+  ]);
+  expect(appErrors(errors), "the page reported errors while building").toEqual([]);
+});
+
+/**
+ * Makes every stub compile wait until releaseHeldCompiles() lets it finish.
+ *
+ * @param page
+ */
+async function holdCompilesUntilReleased(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = new Promise<void>((resolve) => {
+      globalThis.__releaseCompileHold = resolve;
+    });
+  });
+}
+
+/**
+ * Lets the compiles holdCompilesUntilReleased() held finish, and the next
+ * ones answer at once.
+ *
+ * @param page
+ */
+async function releaseHeldCompiles(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    globalThis.__stubCompileHold = null;
+    globalThis.__releaseCompileHold?.();
+  });
+}
+
+/**
+ * Builds once and waits for the stub's pages to be drawn.
+ *
+ * @param page
+ */
+async function buildFirstPdf(page: Page): Promise<void> {
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+}
+
+test("the last PDF stays readable and scrollable while the next one builds", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  await holdCompilesUntilReleased(page);
+  await page.locator("#build").click();
+  await expect.poll(async () => (await callsTo(page, "LuaLatex.compile")).length).toBe(2);
+  await expect(page.locator("#build-progress")).toBeVisible();
+  // The step shows on the PDF pane, where the reader looks, not only in the status bar.
+  await expect(page.locator("#build-phase")).toBeVisible();
+  await expect(page.locator("#build-phase")).toHaveText("Compiling…");
+  const phaseBox = await page.locator("#build-phase").boundingBox();
+  const paneBox = await page.locator("#pdf-pane").boundingBox();
+  if (!phaseBox || !paneBox) throw new Error("the build step label or the PDF pane has no box");
+  expect(phaseBox.x).toBeGreaterThanOrEqual(paneBox.x);
+  expect(phaseBox.x + phaseBox.width).toBeLessThanOrEqual(paneBox.x + paneBox.width);
+  expect(phaseBox.y - paneBox.y, "the build step label sits away from the pane's top").toBeLessThan(40);
+
+  // Nothing sits over the pages: the element under their centre is the page itself.
+  const first = PAGES(page).first();
+  await expect(first).toBeVisible();
+  const hit = await first.evaluate((canvas) => {
+    const box = canvas.getBoundingClientRect();
+    return document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2) === canvas;
+  });
+  expect(hit, "an element covers the PDF during the build").toBe(true);
+  // The pages are not dimmed either.
+  await expect(page.locator("#pdf-body")).toHaveCSS("filter", "none");
+  await expect(page.locator("#pdf-body")).toHaveCSS("opacity", "1");
+  // And the wheel still scrolls them.
+  await first.hover();
+  await page.mouse.wheel(0, 200);
+  await expect.poll(() => page.locator("#pdf-body").evaluate((body) => body.scrollTop)).toBeGreaterThan(0);
+
+  await releaseHeldCompiles(page);
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#build-progress")).toBeHidden();
+  await expect(page.locator("#build-phase")).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while rebuilding").toEqual([]);
+});
+
+test("a rebuild keeps the page and the zoom the reader was at", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  const body = page.locator("#pdf-body");
+  const fitWidth = await PAGES(page)
+    .first()
+    .evaluate((canvas) => canvas.getBoundingClientRect().width);
+  await page.locator("#pdf-zoom-in").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("125%");
+  await expect
+    .poll(() =>
+      PAGES(page)
+        .first()
+        .evaluate((canvas) => canvas.getBoundingClientRect().width),
+    )
+    .toBeCloseTo(fitWidth * 1.25, -1);
+
+  // A third of the way down page 2, measured from the pane's top edge.
+  await body.evaluate((pane) => {
+    const second = pane.querySelectorAll("canvas.pdf-page")[1] as HTMLElement;
+    pane.scrollTop = second.offsetTop + second.offsetHeight / 3;
+  });
+  // Page 2's top relative to the pane's top edge.
+  const secondPageTop = (): Promise<number> =>
+    body.evaluate(
+      (pane) =>
+        pane.querySelectorAll("canvas.pdf-page")[1].getBoundingClientRect().top - pane.getBoundingClientRect().top,
+    );
+  const before = await secondPageTop();
+  expect(before).toBeLessThan(0);
+
+  // Mark the pages drawn now, to see the rebuild replace them.
+  await PAGES(page).evaluateAll((canvases) => {
+    for (const canvas of canvases) canvas.dataset.old = "";
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator("#pdf-body canvas[data-old]")).toHaveCount(0);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("125%");
+  expect(
+    await PAGES(page)
+      .first()
+      .evaluate((canvas) => canvas.getBoundingClientRect().width),
+  ).toBeCloseTo(fitWidth * 1.25, -1);
+  expect(Math.abs((await secondPageTop()) - before)).toBeLessThan(2);
+
+  // "Fit to width" puts the zoom back, and zoom out stops at its last step.
+  await page.locator("#pdf-zoom-level").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("Fit");
+  for (let i = 0; i < 3; i += 1) await page.locator("#pdf-zoom-out").click();
+  await expect(page.locator("#pdf-zoom-level")).toHaveText("50%");
+  await expect(page.locator("#pdf-zoom-out")).toBeDisabled();
+
+  expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
+});
+
+/**
+ * Makes every compile answer with a SyncTeX file, gzipped as the engine
+ * sends it. It puts one box on page 2 for the scenario's line 2, and one on
+ * page 1 for its line 1: 200pt by 12pt, 40pt from the left and 102pt down.
+ *
+ * @param page
+ */
+async function compileWithSynctex(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    globalThis.__stubCompileResult = async (options) => {
+      const structure = options.additionalFiles.find((file) => file.path === "structure.tex");
+      const scenario = /\\include\{([^}]+)\}/.exec(structure?.content as string)?.[1];
+      const sp = (points: number) => Math.round(points * 65781.76);
+      const sheet = (number: number, line: number) => [
+        `{${number}`,
+        `(1,9:${sp(40)},${sp(112)}:${sp(200)},${sp(10)},${sp(2)}`,
+        `x1,${line}:${sp(40)},${sp(112)}`,
+        ")",
+        `}${number}`,
+      ];
+      const text = [
+        "SyncTeX Version:1",
+        `Input:1:/home/web_user/project_dir/./${scenario}`,
+        "Magnification:1000",
+        "Unit:1",
+        "X Offset:0",
+        "Y Offset:0",
+        "Content:",
+        ...sheet(1, 1),
+        ...sheet(2, 2),
+        "Postamble:",
+      ].join("\n");
+      const gzipped = new Blob([text]).stream().pipeThrough(new CompressionStream("gzip"));
+      return {
+        success: true,
+        pdf: Uint8Array.from(globalThis.__stubPdfBytes),
+        synctex: new Uint8Array(await new Response(gzipped).arrayBuffer()),
+        log: "settled",
+        exitCode: 0,
+      };
+    };
+  });
+}
+
+test("a rebuild briefly marks on the pages where the edited lines landed", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  const marks = page.locator("#pdf-body .pdf-change");
+
+  // The first build has nothing to compare against.
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(marks).toHaveCount(0);
+
+  await appendToEditorLine(page, 1, " % edited");
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(marks).toHaveCount(1);
+
+  // Over page 2's box, 2px wider each way; the stub's pages are 297pt wide.
+  const placed = await page.evaluate(() => {
+    const canvas = document.querySelectorAll("#pdf-body canvas.pdf-page")[1].getBoundingClientRect();
+    const mark = (document.querySelector("#pdf-body .pdf-change") as HTMLElement).getBoundingClientRect();
+    const ratio = canvas.width / 297;
+    return {
+      left: mark.left - canvas.left - (40 * ratio - 2),
+      top: mark.top - canvas.top - (102 * ratio - 2),
+      width: mark.width - (200 * ratio + 4),
+      height: mark.height - (12 * ratio + 4),
+    };
+  });
+  for (const [side, off] of Object.entries(placed)) expect(Math.abs(off), side).toBeLessThan(1);
+
+  // One shape: opaque marks with no frame, in one layer that alone is see-through,
+  // so where marks overlap the shade stays the same.
+  const look = await page.evaluate(() => {
+    const mark = document.querySelector("#pdf-body .pdf-change") as HTMLElement;
+    const layer = mark.parentElement as HTMLElement;
+    const style = getComputedStyle(mark);
+    return {
+      background: style.backgroundColor,
+      shadow: style.boxShadow,
+      border: style.borderTopWidth,
+      opacity: style.opacity,
+      layer: layer.className,
+      layerOpacity: Number(getComputedStyle(layer).opacity),
+    };
+  });
+  expect(look).toMatchObject({ background: "rgb(255, 200, 0)", shadow: "none", border: "0px", opacity: "1" });
+  expect(look.layer).toBe("pdf-changes");
+  expect(look.layerOpacity).toBeGreaterThan(0);
+  expect(look.layerOpacity).toBeLessThan(1);
+
+  // The mark fades and goes.
+  await expect(marks).toHaveCount(0);
+
+  expect(appErrors(errors), "the page reported errors around the rebuild").toEqual([]);
+});
+
+/**
+ * Double-clicks a spot on a drawn page, given in PDF points from its top-left.
+ *
+ * @param page
+ * @param index 0-based page
+ * @param point in points; the stub's pages are STUB_PAGE_WIDTH_PT wide
+ */
+async function doubleClickPdf(page: Page, index: number, point: { x: number; y: number }): Promise<void> {
+  const canvas = PAGES(page).nth(index);
+  const box = await canvas.boundingBox();
+  if (box === null) throw new Error(`page ${index + 1} is not drawn`);
+  const ratio = box.width / STUB_PAGE_WIDTH_PT;
+  await canvas.dblclick({ position: { x: point.x * ratio, y: point.y * ratio } });
+}
+
+test("a double-click on a PDF page moves the editor to its source line, through edits since the build", async ({
+  app,
+}) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  // Inside page 2's box, which stands for line 2 (cursor line 1, 0-based).
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 1 });
+  await expect.poll(() => flashedLines(page)).toEqual([2]);
+  // The flash goes away on its own, and the cursor stays.
+  await expect.poll(() => flashedLines(page)).toEqual([]);
+  expect(await editorCursor(page)).toMatchObject({ line: 1 });
+
+  // A line inserted above, with no rebuild: the same spot is line 3 now.
+  await setEditorSelection(page, { line: 0, ch: 0 });
+  await insertInEditor(page, 0, "% inserted\n");
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 2 });
+  await expect.poll(() => flashedLines(page)).toEqual([3]);
+
+  // Outside every box: the nearest text on that page, still line 3.
+  await setEditorSelection(page, { line: 0, ch: 0 });
+  await doubleClickPdf(page, 1, { x: 250, y: 400 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 2 });
+
+  expect(appErrors(errors), "the page reported errors around the double-clicks").toEqual([]);
+});
+
+test("at a stacked width a double-click on a PDF page brings the editor into view", async ({ app }) => {
+  const { page, errors } = app;
+  // Narrow from the start: the pane fits its pages to the width it had when they were drawn.
+  await page.setViewportSize({ width: 600, height: 800 });
+  await enterWorkspace(page);
+  await compileWithSynctex(page);
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(PAGES(page)).toHaveCount(3);
+
+  await page.locator("#pdf-pane").scrollIntoViewIfNeeded();
+  await expect(page.locator("#editor-pane")).not.toBeInViewport({ ratio: 1 });
+  await doubleClickPdf(page, 1, { x: 100, y: 108 });
+  await expect.poll(() => editorCursor(page)).toMatchObject({ line: 1 });
+  await expect(page.locator("#editor-pane")).toBeInViewport({ ratio: 1 });
+
+  expect(appErrors(errors), "the page reported errors around the double-click").toEqual([]);
+});
+
+test("a double-click on the published PDF leaves the editor alone", async ({ app }) => {
+  const { page, errors } = app;
+  // One blank page, as pdf.js draws with no fonts: the stand-in published PDF.
+  const blankPdf = [
+    "%PDF-1.4",
+    "1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj",
+    "2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj",
+    "3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>endobj",
+    "trailer<</Root 1 0 R>>",
+    "%%EOF",
+    "",
+  ].join("\n");
+  await page.route(
+    (url) => url.hostname === "raw.githubusercontent.com",
+    (route: Route) => route.fulfill({ status: 200, contentType: "application/pdf", body: blankPdf }),
+  );
+  const results = await openScenarioList(page);
+  await results.first().click();
+  await page.locator("#scenario-name").fill(SCENARIO_NAME);
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(PAGES(page)).toHaveCount(1);
+
+  await setEditorSelection(page, { line: 2, ch: 0 });
+  await PAGES(page).first().dblclick();
+  expect(await editorCursor(page)).toMatchObject({ line: 2 });
+  expect(await flashedLines(page)).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the double-click").toEqual([]);
+});
+
+test("a failed build keeps the last good PDF above the error", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  await failCompiles(page, { line: 3, inside: "macros" });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  await expect(page.locator("#error-panel")).toBeVisible();
+  await expect(PAGES(page)).toHaveCount(3);
+  await expect(PAGES(page).first()).toBeVisible();
+  await expect(page.locator("#download")).toBeEnabled();
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
+test("Download saves the PDF's own bytes", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  await page.locator("#download").click();
+  const [download] = await Promise.all([page.waitForEvent("download"), page.locator("#download-pdf").click()]);
+  expect(download.suggestedFilename()).toMatch(/\.pdf$/);
+  const saved = await download.createReadStream();
+  const chunks: Buffer[] = [];
+  for await (const chunk of saved) chunks.push(chunk);
+  const expected = await page.evaluate(() => globalThis.__stubPdfBytes);
+  expect([...Buffer.concat(chunks)]).toEqual(expected);
+
+  expect(appErrors(errors), "the page reported errors around the download").toEqual([]);
+});
+
+test("Download → PNG saves a zip of the three pages", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await buildFirstPdf(page);
+
+  // The PDF download names the zip's stem the same way: capture it from there.
+  await page.locator("#download").click();
+  const [pdfDownload] = await Promise.all([page.waitForEvent("download"), page.locator("#download-pdf").click()]);
+  const stem = pdfDownload.suggestedFilename().replace(/\.pdf$/, "");
+
+  await page.locator("#download").click();
+  const [pngDownload] = await Promise.all([page.waitForEvent("download"), page.locator("#download-png").click()]);
+  expect(pngDownload.suggestedFilename()).toBe(`${stem}.zip`);
+
+  const stream = await pngDownload.createReadStream();
+  const chunks: Buffer[] = [];
+  for await (const chunk of stream) chunks.push(chunk);
+  const entries = readZipEntries(Buffer.concat(chunks));
+
+  expect(entries.map((entry) => entry.name)).toEqual([`${stem}_1.png`, `${stem}_2.png`, `${stem}_3.png`]);
+  assertValidCrc32(entries);
+  const expectedWidth = Math.floor((STUB_PAGE_WIDTH_PT * PNG_DPI) / 72);
+  const expectedHeight = Math.floor((STUB_PAGE_HEIGHT_PT * PNG_DPI) / 72);
+  entries.forEach((entry, index) => {
+    const bytes = Buffer.from(entry.data);
+    expect([...bytes.subarray(0, 4)]).toEqual([0x89, 0x50, 0x4e, 0x47]);
+    expect(bytes.readUInt32BE(16)).toBe(expectedWidth);
+    expect(bytes.readUInt32BE(20)).toBe(expectedHeight);
+    // Each stub page fills its middle with its own red, so a page saved under
+    // another page's name shows here.
+    const [red] = pngPixel(entry.data, Math.floor(expectedWidth / 2), Math.floor(expectedHeight / 2));
+    expect(Math.abs(red - stubPageRed(index)), `${entry.name} is not page ${index + 1}`).toBeLessThanOrEqual(2);
+  });
+
+  expect(appErrors(errors), "the page reported errors around the PNG export").toEqual([]);
+});
+
+/**
+ * Makes every stub compile fail with a LuaLaTeX-style log whose one error
+ * sits on `line` of whichever file `inside` names: "scenario" is the file the
+ * build staged from the editor, read back from the generated structure.tex.
+ *
+ * @param page
+ * @param error
+ */
+async function failCompiles(page: Page, error: { line: number; inside: "scenario" | "macros" }): Promise<void> {
+  await page.evaluate(({ line, inside }: { line: number; inside: string }) => {
+    globalThis.__stubCompileResult = (options) => {
+      const structure = options.additionalFiles.find((file) => file.path === "structure.tex");
+      const scenario = /\\include\{([^}]+)\}/.exec(structure?.content as string)?.[1];
+      const opened = inside === "scenario" ? `(./${scenario}` : `(./${scenario} (./sections/macros.tex`;
+      return {
+        success: false,
+        pdf: null,
+        synctex: null,
+        log: ["(./main_en.tex (./structure.tex", opened, "! Undefined control sequence.", `l.${line} \\foo`].join("\n"),
+        exitCode: 1,
+        logs: [],
+      };
+    };
+  }, error);
+}
+
+/**
+ * The editor's cursor line, 1-based, and every line carrying the build-error
+ * mark.
+ *
+ * @param page
+ */
+async function editorState(
+  page: Page,
+): Promise<{ cursor: number; focused: boolean; lineCount: number; marked: number[] }> {
+  return {
+    cursor: (await editorCursor(page)).line + 1,
+    focused: await editorHasFocus(page),
+    lineCount: await editorLineCount(page),
+    marked: await markedLines(page),
+  };
+}
+
+test("a build error in the scenario jumps the editor to its line", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  // The last line: far enough down that the jump has to scroll.
+  const { lineCount } = await editorState(page);
+  expect(lineCount, "the picked scenario is too short to test a jump").toBeGreaterThan(5);
+  await failCompiles(page, { line: lineCount, inside: "scenario" });
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  const jump = page.locator("#first-error button.error-jump");
+  await expect(jump).toHaveText(`Line ${lineCount}! Undefined control sequence.`);
+  expect((await editorState(page)).marked).toEqual([lineCount]);
+
+  await jump.click();
+  const after = await editorState(page);
+  expect(after.cursor).toBe(lineCount);
+  expect(after.focused).toBe(true);
+  // The editor renders only the lines in view, so the mark showing means it scrolled there.
+  await expect(page.locator(".build-error-line")).toBeInViewport();
+
+  // The next build clears the mark.
+  await page.evaluate(() => {
+    delete globalThis.__stubCompileResult;
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  expect((await editorState(page)).marked).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
+test("a build error outside the scenario offers no jump", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await failCompiles(page, { line: 3, inside: "macros" });
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  await expect(page.locator("#first-error")).toHaveText("! Undefined control sequence.");
+  await expect(page.locator("#first-error button")).toHaveCount(0);
+  expect((await editorState(page)).marked).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
+test("Build and Download follow the pick and the build", async ({ app }) => {
+  const { page, errors } = app;
+
+  // Before a pick the whole action group is hidden, and both buttons carry
+  // index.html's own disabled attribute.
+  await expect(page.locator("#header-actions")).toBeHidden();
+  await expect(page.locator("#build")).toBeDisabled();
+  await expect(page.locator("#download")).toBeDisabled();
+
+  await enterWorkspace(page);
+
+  // A pick enables Build only. Download waits for bytes to download.
+  await expect(page.locator("#build")).toBeEnabled();
+  await expect(page.locator("#download")).toBeDisabled();
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+
+  await expect(page.locator("#build")).toBeEnabled();
+  await expect(page.locator("#download")).toBeEnabled();
+
+  expect(appErrors(errors), "the page reported errors across the build").toEqual([]);
+});
+
+/**
+ * Repository paths the uploads dialog has staged for the build, read from the
+ * app's __state hook: the dialog no longer prints them.
+ *
+ * @param page
+ */
+async function stagedPaths(page: Page): Promise<string[]> {
+  return page.evaluate(() => {
+    const state = globalThis.__state as NonNullable<typeof globalThis.__state>;
+    return [...state.uploadedFiles.keys()].sort();
+  });
+}
+
+/**
+ * A staged file's contents as text, read from the app's __state hook.
+ *
+ * @param page
+ * @param path
+ */
+async function stagedText(page: Page, path: string): Promise<string | null> {
+  return page.evaluate((path: string) => {
+    const state = globalThis.__state as NonNullable<typeof globalThis.__state>;
+    const bytes = state.uploadedFiles.get(path);
+    return bytes ? new TextDecoder().decode(bytes) : null;
+  }, path);
+}
+
+// A map editor save string, in the shape of the files in assets/map-files/.
+const MAP_CODE = "eJy10z1LhDEMAOD/0vkNpGmbNrc1bQMuLo7i4MeBB+IL54mD+N89pcMhjnd0CAkZHpL09tPt1w==";
+
+/**
+ * An in-memory file: nothing is added to the repository, and the bytes never
+ * leave the browser — uploads.ts stages them in the virtual filesystem the
+ * build compiles from.
+ *
+ * @param name
+ * @param mimeType
+ */
+function fakeFile(name: string, mimeType = "image/png"): { name: string; mimeType: string; buffer: Buffer } {
+  return { name, mimeType, buffer: Buffer.from("not really an image, and never decoded") };
+}
+
+// SCENARIO_NAME's file-safe form, which the dialog names uploads after.
+const SLUG = "tier_two_probe";
+
+test("the uploads dialog opens from the header, closes, and names the header after the scenario", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+
+  const dialog = page.locator("#upload-dialog");
+  const open = page.locator("#upload-open");
+  await expect(dialog).toBeHidden();
+
+  await open.click();
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
+
+  await open.click();
+  await expect(dialog).toBeVisible();
+
+  // The status never shows where in the repository a file goes.
+  await expect(page.locator("#upload-header-status")).not.toContainText("assets/");
+  await expect(page.locator("#upload-maps-status")).not.toContainText("assets/");
+
+  // The header card appears carrying the scenario's name and the file's own
+  // extension, whatever the file was called, with a thumbnail of the image
+  // and a toast confirming the upload.
+  const headerCard = page.locator("#upload-header-card");
+  const headerRename = page.locator("#upload-header-name");
+  await expect(headerCard).toBeHidden();
+  await expect(page.locator("#upload-header-add")).toHaveText("+ Add header image");
+  await page.locator("#upload-header").setInputFiles(fakeFile("probe-header.png"));
+  await expect(headerCard).toBeVisible();
+  await expect(headerCard).toContainText("probe-header.png");
+  await expect(headerRename).toHaveValue(`${SLUG}.png`);
+  await expect(page.locator("#upload-header-preview")).toHaveAttribute("src", /^blob:/);
+  await expect(page.locator("#toast")).toBeVisible();
+  await expect(page.locator("#toast")).toHaveText(`Header image uploaded as ${SLUG}.png.`);
+  await expect(page.locator("#upload-header-add")).toHaveText("Replace header image");
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.png`]);
+
+  // Retyping the target name re-stages it; a name with spaces or TeX-hostile
+  // characters is normalized, and the box shows the result once left.
+  await headerRename.fill("my cover (1) pic");
+  await headerRename.blur();
+  await expect(headerRename).toHaveValue("my_cover_1_pic.png");
+  expect(await stagedPaths(page)).toEqual(["assets/images/my_cover_1_pic.png"]);
+
+  // A JPG keeps its extension; anything LaTeX cannot include is refused and
+  // the staged header stays.
+  await page.locator("#upload-header").setInputFiles(fakeFile("Photo.JPG", "image/jpeg"));
+  await expect(headerRename).toHaveValue(`${SLUG}.jpg`);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
+  await page.locator("#upload-header").setInputFiles(fakeFile("art.webp", "image/webp"));
+  await expect(page.locator("#upload-header-status")).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
+
+  // Done closes it and hands focus back to the button that opened it; the
+  // staged files survive that.
+  await page.locator("#upload-done").click();
+  await expect(dialog).toBeHidden();
+  await expect(open).toBeFocused();
+  await open.click();
+  await expect(headerRename).toHaveValue(`${SLUG}.jpg`);
+  expect(await stagedPaths(page)).toEqual([`assets/images/${SLUG}.jpg`]);
+
+  // The card's remove button unstages the header and puts the add button back.
+  await page.getByRole("button", { name: "Remove header image" }).click();
+  await expect(headerCard).toBeHidden();
+  await expect(page.locator("#upload-header-add")).toHaveText("+ Add header image");
+  expect(await stagedPaths(page)).toEqual([]);
+
+  expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+test("map layouts are named after the scenario and the player counts ticked for each", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+
+  const status = page.locator("#upload-maps-status");
+  const maps = page.locator("#upload-maps");
+
+  // Only PNG is accepted; one bad file stages none of the selection.
+  await maps.setInputFiles([fakeFile("a.png"), fakeFile("b.jpg", "image/jpeg")]);
+  await expect(status).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([]);
+
+  // One layout: the scenario's plain name.
+  await maps.setInputFiles([fakeFile("export.png")]);
+  const rows = page.locator("#upload-maps-names .upload-map");
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first().locator(".upload-rename")).toHaveValue(`${SLUG}.png`);
+  await expect(rows.first().locator(".upload-preview")).toHaveAttribute("src", /^blob:/);
+  await expect(page.locator("#toast")).toHaveText("Map image export.png uploaded.");
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}.png`]);
+
+  // Two layouts share a name until their player counts are ticked.
+  await rows
+    .first()
+    .getByRole("button", { name: /remove/i })
+    .click();
+  await expect(rows).toHaveCount(0);
+  await maps.setInputFiles([fakeFile("small.png"), fakeFile("big.png")]);
+  await expect(rows).toHaveCount(2);
+  await expect(page.locator("#toast")).toHaveText("2 map images uploaded.");
+  await expect(status).toHaveClass(/bad/);
+  const small = rows.nth(0);
+  const big = rows.nth(1);
+  await small.getByRole("checkbox", { name: "2", exact: true }).check();
+  await small.getByRole("checkbox", { name: "3", exact: true }).check();
+  await big.getByRole("checkbox", { name: "4", exact: true }).check();
+  await expect(small.locator(".upload-rename")).toHaveValue(`${SLUG}_2-3p.png`);
+  await expect(big.locator(".upload-rename")).toHaveValue(`${SLUG}_4p.png`);
+  await expect(status).not.toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2-3p.png`, `assets/maps/${SLUG}_4p.png`]);
+
+  // The map editor's save string is optional, and travels as a one-line
+  // .map file under its layout's name.
+  await big.locator(".upload-mapfile-input").fill(MAP_CODE);
+  expect(await stagedPaths(page)).toEqual([
+    `assets/map-files/${SLUG}_4p.map`,
+    `assets/maps/${SLUG}_2-3p.png`,
+    `assets/maps/${SLUG}_4p.png`,
+  ]);
+  expect(await stagedText(page, `assets/map-files/${SLUG}_4p.map`)).toBe(`${MAP_CODE}\n`);
+
+  // A typed name sticks, even when the counts change afterwards, and the
+  // map-editor file follows it.
+  await big.locator(".upload-rename").fill(`${SLUG}_short`);
+  await big.getByRole("checkbox", { name: "5", exact: true }).check();
+  await expect(big.locator(".upload-rename")).toHaveValue(`${SLUG}_short.png`);
+  expect(await stagedPaths(page)).toEqual([
+    `assets/map-files/${SLUG}_short.map`,
+    `assets/maps/${SLUG}_2-3p.png`,
+    `assets/maps/${SLUG}_short.png`,
+  ]);
+
+  expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+test("map images add up across picks, skip the map-editor file, and can be removed", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+
+  const maps = page.locator("#upload-maps");
+  const rows = page.locator("#upload-maps-names .upload-map");
+
+  // A second pick adds to the first, with no map-editor file on either.
+  await maps.setInputFiles([fakeFile("two.png")]);
+  await expect(rows).toHaveCount(1);
+  await rows.first().getByRole("checkbox", { name: "2", exact: true }).check();
+  await maps.setInputFiles([fakeFile("three.png")]);
+  await expect(rows).toHaveCount(2);
+  await rows.nth(1).getByRole("checkbox", { name: "3", exact: true }).check();
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+
+  // The save string is pasted into a text box, joined back into one line,
+  // and unstaged by emptying the box. Anything that is not base64 is flagged
+  // and staged as no map file at all.
+  const second = rows.nth(1);
+  const mapCode = second.getByRole("textbox", { name: "Map editor string for layout 2" });
+  await mapCode.fill(`  ${MAP_CODE.slice(0, 20)}\n${MAP_CODE.slice(20)}  `);
+  await mapCode.blur();
+  await expect(mapCode).toHaveValue(MAP_CODE);
+  expect(await stagedText(page, `assets/map-files/${SLUG}_3p.map`)).toBe(`${MAP_CODE}\n`);
+  await mapCode.fill("<not a save string>");
+  await expect(mapCode).toHaveAttribute("aria-invalid", "true");
+  await expect(page.locator("#upload-maps-status")).toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+  await mapCode.fill("");
+  await expect(mapCode).not.toHaveAttribute("aria-invalid", "true");
+  await expect(page.locator("#upload-maps-status")).not.toHaveClass(/bad/);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_2p.png`, `assets/maps/${SLUG}_3p.png`]);
+
+  // The add button says there is already a layout.
+  await expect(page.locator("#upload-maps-add")).toHaveText("+ Add another map image");
+
+  // Removing a layout unstages it and keeps the other as it was.
+  await rows
+    .first()
+    .getByRole("button", { name: /remove/i })
+    .click();
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first().locator(".upload-rename")).toHaveValue(`${SLUG}_3p.png`);
+  expect(await stagedPaths(page)).toEqual([`assets/maps/${SLUG}_3p.png`]);
+
+  expect(appErrors(errors), "the page reported errors while uploading").toEqual([]);
+});
+
+/**
+ * Puts text in the editor and the cursor after the first "|" in it.
+ *
+ * @param page
+ * @param marked
+ */
+async function setEditor(page: Page, marked: string): Promise<void> {
+  const at = marked.indexOf("|");
+  await setEditorText(page, marked.replace("|", ""));
+  await focusEditor(page);
+  // The text up to the marker, to find its line and column.
+  const before = marked.slice(0, at).split("\n");
+  await setEditorSelection(page, { line: before.length - 1, ch: before[before.length - 1].length });
+}
+
+test("the editor suggests uploaded image paths, by keyboard and by mouse", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  await page.locator("#upload-open").click();
+  await page.locator("#upload-header").setInputFiles(fakeFile("cover.png"));
+  await page.locator("#upload-maps").setInputFiles([fakeFile("small.png"), fakeFile("big.png")]);
+  const rows = page.locator("#upload-maps-names .upload-map");
+  await rows.nth(0).getByRole("checkbox", { name: "2", exact: true }).check();
+  await rows.nth(1).getByRole("checkbox", { name: "4", exact: true }).check();
+  await page.locator("#upload-done").click();
+
+  const list = completionList(page);
+  const options = list.getByRole("option");
+  const header = "\\addscenariosection{1}{Clash Scenario}{Probe}";
+  const graphics = "\\includegraphics[width=\\linewidth]";
+
+  // Ctrl-Space in the header's image argument offers the header image only;
+  // Enter writes it in.
+  await setEditor(page, `${header}{|}\n${graphics}{}\n`);
+  await expect(list).toBeHidden();
+  await page.keyboard.press("Control+Space");
+  await expect(options).toHaveText([`\\images/${SLUG}.png`]);
+  await page.keyboard.press("Enter");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${header}{\\images/${SLUG}.png}`);
+
+  // Typing inside \includegraphics opens the list by itself, narrowed to what
+  // was typed. Arrows move the highlight and wrap; Escape closes it.
+  await setEditor(page, `${graphics}{|}`);
+  await page.keyboard.type("\\maps/");
+  await expect(options).toHaveText([`\\maps/${SLUG}_2p.png`, `\\maps/${SLUG}_4p.png`]);
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowDown");
+  await expect(options.nth(1)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowDown");
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("ArrowUp");
+  await expect(options.nth(1)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("Escape");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/}`);
+
+  // Typing on narrows the list; the Tab key picks as Enter does.
+  await page.keyboard.type("tier_two_probe_4");
+  await expect(options).toHaveText([`\\maps/${SLUG}_4p.png`]);
+  await page.keyboard.press("Tab");
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/${SLUG}_4p.png}`);
+
+  // A click picks too, replacing the whole path the cursor was in, and
+  // leaves the editor focused.
+  await setEditor(page, `${graphics}{\\maps/|old.png}`);
+  await page.keyboard.press("Control+Space");
+  await expect(options).toHaveCount(2);
+  await options.nth(0).hover();
+  await expect(options.nth(0)).toHaveAttribute("aria-selected", "true");
+  await options.nth(1).click();
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe(`${graphics}{\\maps/${SLUG}_4p.png}`);
+  await expect.poll(() => editorHasFocus(page)).toBe(true);
+
+  // Deleting inside an argument opens the list too, after a short pause,
+  // with no character typed: the path left over is what it narrows by.
+  await setEditor(page, `${header}{\\images/old|.png}`);
+  for (let i = 0; i < 3; i++) await page.keyboard.press("Backspace");
+  await expect(options).toHaveText([`\\images/${SLUG}.png`]);
+  await page.keyboard.press("Enter");
+  expect(await editorLine(page, 0)).toBe(`${header}{\\images/${SLUG}.png}`);
+
+  // Outside an image argument, Ctrl-Space offers nothing.
+  await setEditor(page, "Plain text|");
+  await page.keyboard.press("Control+Space");
+  await expect(list).toBeHidden();
+
+  expect(appErrors(errors), "the page reported errors while completing").toEqual([]);
+});
+
+test("the editor suggests glyph names with their pictures after \\svg", async ({ app }) => {
+  const { page, errors } = app;
+  // The use counts are generated, never committed: stub them so the order
+  // does not hang on whether web/glyph-usage.ts has run here.
+  let usageRequests = 0;
+  await page.route("**/web/repo/assets/glyphs-inkscape/glyph-usage.json", (route) => {
+    usageRequests += 1;
+    return route.fulfill({ json: { ongoing: 99, "attack-yellow": 5, "3_gold": 2 } });
+  });
+  await enterWorkspace(page);
+  expect(usageRequests, "the catalog loads on the first \\svg, not on page load").toBe(0);
+
+  const list = completionList(page);
+  const options = list.getByRole("option");
+
+  // Typing \svg{go opens the list. A prefix match beats a more used
+  // substring match, and every row shows the glyph's picture.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg{go");
+  await expect(options.first()).toHaveText("gold");
+  await expect(options.first().locator("img")).toHaveAttribute("src", "../repo/assets/glyphs/gold.svg");
+  await expect(options.filter({ hasText: "ongoing" })).toHaveCount(1);
+  // Enter writes the name and closes the brace.
+  await page.keyboard.press("Enter");
+  await expect(list).toBeHidden();
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{gold}");
+
+  // With nothing typed, the most used glyph leads; colored uses count for
+  // the plain glyph, and -mono and colored variants are never offered. A
+  // variant with no plain glyph, such as arrows_gray, is offered as itself.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg");
+  await expect(options.first()).toHaveText("ongoing");
+  await expect(options.nth(1)).toHaveText("attack");
+  const offered = await options.allTextContents();
+  expect(offered.filter((name) => /(-mono|-yellow|-red)$/.test(name) || name === "arrow_right_gray")).toEqual([]);
+  // Letters in order narrow it too, and a click picks, braces included.
+  await page.keyboard.press("Escape");
+  await setEditor(page, "Gain \\svg{|");
+  await page.keyboard.type("mrlp");
+  await expect(options).toHaveText(["morale_positive"]);
+  await options.first().click();
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{morale_positive}");
+  await expect.poll(() => editorHasFocus(page)).toBe(true);
+
+  // Right after \svg, Tab picks and writes the braces.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svg");
+  await expect(options.first()).toHaveText("ongoing");
+  await page.keyboard.press("Tab");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{ongoing}");
+
+  // Typing the name straight after \svg, with no brace, writes the braces
+  // around it and narrows on; Enter picks inside them.
+  await setEditor(page, "Gain |");
+  await page.keyboard.type("\\svggo");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{go}");
+  await expect(options.first()).toHaveText("gold");
+  await page.keyboard.press("Enter");
+  expect(await editorLine(page, 0)).toBe("Gain \\svg{gold}");
+
+  // One Ctrl-Z takes the braces back out, for a command that only starts
+  // with \svg.
+  await setEditor(page, "|");
+  await page.keyboard.type("\\svgs");
+  expect(await editorLine(page, 0)).toBe("\\svg{s}");
+  await page.keyboard.press("Control+z");
+  expect(await editorLine(page, 0)).toBe("\\svgs");
+
+  // The dark theme draws a glyph's yellow variant, where it has one.
+  await setEditor(page, "Gain \\svg{|");
+  await page.keyboard.type("attack");
+  const attack = options.filter({ hasText: /^attack$/ });
+  await page.evaluate(() => document.documentElement.setAttribute("data-theme", "light"));
+  await expect(attack.locator("img:visible")).toHaveAttribute("src", "../repo/assets/glyphs/attack.svg");
+  await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+  await expect(attack.locator("img:visible")).toHaveAttribute("src", "../repo/assets/glyphs/attack-yellow.svg");
+
+  expect(appErrors(errors), "the page reported errors while completing glyphs").toEqual([]);
+});
+
+test("the theme toggle flips the theme and the choice survives a reload", async ({ app }) => {
+  const { page, errors } = app;
+
+  // theme.ts's own key. Read the starting theme rather than assuming one:
+  // initialTheme() falls back to the system preference when nothing is saved.
+  const THEME_KEY = "wasm-scenario-builder:theme";
+  const html = page.locator("html");
+  const before = await html.getAttribute("data-theme");
+  expect(["dark", "light"]).toContain(before);
+  const after = before === "dark" ? "light" : "dark";
+
+  const toggle = page.locator("#theme-toggle");
+  await expect(toggle).toHaveAttribute("aria-checked", String(before === "dark"));
+  await chooseFromMenu(page, "theme-toggle");
+  await expect(html).toHaveAttribute("data-theme", after);
+  // "Dark mode" is a checkbox item: checked exactly when the theme is dark.
+  await expect(toggle).toHaveAttribute("aria-checked", String(after === "dark"));
+  // The editor is themed along with the document.
+  await expect(page.locator(".cm-editor")).toHaveClass(after === "dark" ? /cm-github-dark/ : /cm-github-light/);
+
+  expect(await page.evaluate((key) => localStorage.getItem(key), THEME_KEY)).toBe(after);
+
+  await page.reload();
+  await expect(html).toHaveAttribute("data-theme", after);
+  await expect(toggle).toHaveAttribute("aria-checked", String(after === "dark"));
+
+  expect(appErrors(errors), "the page reported errors around the theme toggle").toEqual([]);
+});
+
+/**
+ * Playwright reads a bare array given to test.use() as a [value, options]
+ * tuple and keeps only its first element, so a route list is wrapped.
+ */
+function routes(list: GithubRoute[]): GithubRoute[] {
+  return [list, { option: true }] as unknown as GithubRoute[];
+}
+
+test.describe("signed in", () => {
+  const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
+  test.use({
+    githubRoutes: routes([
+      { method: "GET", path: "/user", body: { login: "octotester" } },
+      {
+        method: "GET",
+        path: REPO_PATH,
+        body: {
+          name: "Homm3BG-mission-book",
+          owner: { login: "qwrtln" },
+          default_branch: "main",
+          permissions: { push: true },
+        },
+      },
+      { method: "GET", path: `${REPO_PATH}/branches`, body: [] },
+    ]),
+  });
+
+  test("the overflow menu works from the keyboard", async ({ app }) => {
+    const { page, errors } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+    await enterWorkspace(page);
+
+    const toggle = page.locator("#header-menu-toggle");
+    const menu = page.locator("#header-menu");
+    await toggle.focus();
+    await page.keyboard.press("Enter");
+    await expect(menu).toBeVisible();
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    // Signed in: Dark mode, Help, About, Send feedback, then Sign out. Arrows move and wrap.
+    await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#help-open")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#about-open")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#feedback-open")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#github-signout")).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.locator("#theme-toggle")).toBeFocused();
+    await page.keyboard.press("ArrowUp");
+    await expect(page.locator("#github-signout")).toBeFocused();
+
+    // Escape closes and returns focus to the button.
+    await page.keyboard.press("Escape");
+    await expect(menu).toBeHidden();
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await expect(toggle).toBeFocused();
+
+    // A click outside closes it too.
+    await toggle.click();
+    await expect(menu).toBeVisible();
+    await page.locator("#status-bar").click();
+    await expect(menu).toBeHidden();
+
+    expect(appErrors(errors), "the page reported errors in the menu").toEqual([]);
+  });
+});
+
+test("the header names the open scenario, and follows a different one", async ({ app }) => {
+  const { page, errors } = app;
+  await expect(page.locator("#header-titles")).toBeVisible();
+  await expect(page.locator("#header-scenario")).toBeHidden();
+
+  await enterWorkspace(page);
+  await expect(page.locator("#scenario-title")).toHaveText(SCENARIO_NAME);
+  // The app title is for the welcome screen only.
+  await expect(page.locator("#header-titles")).toBeHidden();
+
+  await page.locator("#back-to-welcome").click();
+  await expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#header-titles")).toBeVisible();
+
+  await page.locator("#scratch-coop").click();
+  await page.locator("#scenario-name").fill("Another Probe");
+  await page.locator("#go").click();
+  await expect(page.locator("#workspace")).toBeVisible();
+  await expect(page.locator("#scenario-title")).toHaveText("Another Probe");
+
+  expect(appErrors(errors), "the page reported errors while switching scenarios").toEqual([]);
+});
+
+test.describe("at 1024×700", () => {
+  test.use({ viewport: { width: 1024, height: 700 } });
+
+  test("the workspace header is one row", async ({ app }) => {
+    const { page, errors } = app;
+    await enterWorkspace(page);
+
+    // Every shown control's vertical centre is on one line, give or take the
+    // pixel that differing heights round to.
+    const centres = await page.evaluate(() =>
+      [...document.querySelectorAll("header button, header a, #scenario-title")]
+        .filter((node) => node instanceof HTMLElement && node.offsetParent !== null && !node.closest("[role=menu]"))
+        .map((node) => {
+          const box = node.getBoundingClientRect();
+          return box.top + box.height / 2;
+        }),
+    );
+    expect(centres.length).toBeGreaterThan(3);
+    const spread = Math.max(...centres) - Math.min(...centres);
+    expect(spread, `header controls sit at centres ${JSON.stringify(centres)}`).toBeLessThan(4);
+    const header = await page.locator("header").boundingBox();
+    expect(header?.height).toBeLessThan(60);
+
+    expect(appErrors(errors), "the page reported errors at 1024px").toEqual([]);
+  });
+});

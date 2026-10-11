@@ -1,0 +1,10 @@
+// CLI entry point so Playwright's webServer can start the static server over
+// the build output. See static-server.ts for the server itself; this file
+// only wires it to a port and keeps the process alive.
+
+import { startStaticServer } from "./static-server.ts";
+
+const port = Number(process.env.PORT) || 8322;
+
+const server = await startStaticServer({ port });
+console.log(`static server listening on ${server.origin}`);
