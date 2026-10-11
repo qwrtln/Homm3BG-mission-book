@@ -370,6 +370,11 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-mono/mystical_foreland_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
+            <td>⚔️ Controlled Chaos (2-6)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-color/controlled_chaos_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-mono/controlled_chaos_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>🍻⚔️ Gold Rush (1, 2, or 4)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-color/gold_rush_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-gold_rush-mono/gold_rush_en_mono.pdf"><em>click</em></a></td>
