@@ -315,6 +315,11 @@ Number of players (P) in the brackets.
             <td align="center">🖨️ <em>mono</em></td>
         </tr>
         <tr>
+            <td>🤝 The Valley of Wild Magic (1-7)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_valley_of_wild_magic-color/the_valley_of_wild_magic_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-the_valley_of_wild_magic-mono/the_valley_of_wild_magic_en_mono.pdf"><em>click</em></a></td>
+        </tr>
+        <tr>
             <td>⚔️ Secret Bomb Stash (2-4 or 6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-color/secret_bomb_stash_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-secret_bomb_stash-mono/secret_bomb_stash_en_mono.pdf"><em>click</em></a></td>
