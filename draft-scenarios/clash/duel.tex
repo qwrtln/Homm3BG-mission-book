@@ -1,7 +1,9 @@
 % !TeX spellcheck = en_US
 \addscenariosection{1}{Clash Scenario}{Duel}{\images/duel.png}
 
-\begin{multicols*}{2}
+\enlargethispage{\baselineskip}
+
+\begin{multicols}{2}
 
 \textbf{Author:} BoberL
 
@@ -9,7 +11,9 @@
 
 \subsection*{\MakeUppercase{Scenario Length}}
 
-8 Rounds
+8, 10 or 12 Rounds
+
+\textit{Scenario length is based on Map Generator Size (S, M or L)}
 
 \subsection*{\MakeUppercase{Player Setup}}
 
@@ -26,13 +30,13 @@
 
 \textbf{Town Buildings:} \svg{bronze}~Dwelling, Citadel
 
-\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile. This Tile serves as the \textbf{Bunker}. (See more in \textbf{Setup Changes})
+\textbf{Map Tile Pool:} Far (II--III) Map Tile. This Tile serves as the \textbf{Bunker}.
 
 \subsection*{\MakeUppercase{Map Setup}}
 
-Take the Map Tiles according to the generated layout.
+Take the Map Tiles according to the generated layout. Choose your available expansions and desired map size in the settings.
 
-\textbf{MAP GENERATOR QR CODE HERE}
+\textbf{https://zedero.github.io/homm3boardgame/ QR code here}
 
 \columnbreak
 
@@ -42,19 +46,14 @@ Take the Map Tiles according to the generated layout.
 your Faction Town, OR
   \item Eliminate all opponents.
 \end{itemize}
-If neither condition is met, the Players immidiately start the final Combat at the end of Round 8.
+If neither condition is met, immidiately start the final Combat at the end of the last Round.
 
 \subsection*{\MakeUppercase{Timed Events}}
 
-\textbf{\nth{3} Round:}
+\textbf{\nth{3}, \nth{7}, \nth{11} Rounds:}
 \begin{itemize}
   \item Remove all Black Cubes from the map
   \item Each hero gains 1 \svg{movement}.
-\end{itemize}
-
-\textbf{\nth{6} Round:}
-\begin{itemize}
-  \item Repeat the Timed Events of Round 3.
 \end{itemize}
 
 \subsection*{\MakeUppercase{Additional Rules}}
@@ -62,22 +61,25 @@ If neither condition is met, the Players immidiately start the final Combat at t
 \subsubsection*{Setup Changes}
 \begin{itemize}
   \item This scenario cannot be played on Easy Difficulty.
-  \item Generate the map using the QR code (or link) above. Reroll the map generation if a Center (VI-VII) Tile is placed next to a Starting (I) Tile.
-  \item Before each playthrough of this Scenario, players must \textbf{Trade} according to the following steps:
+  \item Reroll the map generation if a Center (VI-VII) and Starting (I) Tiles are adjacent.
+  \item Split the \svg{artifact} Deck by rarity into 3 separate Decks: \textbf{Relic}, \textbf{Major}, and \textbf{Minor}.
+  \item Split the \svg{spellpower} Deck by strength into 2 separate Decks: \textbf{Basic}, \textbf{Expert}.
+  \item Before the game, players must \textbf{Trade} according to the following steps:
   \begin{itemize}
     \item Establish which Player starts the \textbf{Trade} by throwing 2 Attack Dice. That player starts all following actions:
-    \item Choose 2 Factions randomly. Players may reroll the result once each. Players may \svg{pay} 1~\svg{gold} to their the opponent, to do this again.
-    \item Players may reroll the map generation once each. Players may \svg{pay} 2~\svg{gold} to their the opponent, to do this again.
-    \item \textbf{Bidding 1:} The winner gets to choose one of the Factions. The loser gets the other one.
+    \item Choose 2 Factions randomly. Players may reroll the result for free, once each. Players may \svg{pay} their opponent 1~\svg{gold}, to do this again, once.
+    \item Players may reroll the map generation for free, once each. Players may \svg{pay} their opponent 2~\svg{gold}, to do this again, once.
+    \item \textbf{Bidding 1:} The winner gets to their starting Faction from the two.
     \item \textbf{Bidding 2:} The winner gets to choose their starting position.
     \item \textbf{Bidding 3:} The winner gets to choose whether they move first or second during Rounds.
     \item Both Players draw the \textbf{Starting Units}. The other Player may \svg{pay} 2~\svg{gold} to have their opponent redo the \textbf{Search} action.
   \end{itemize}
-  \item You may rotate the Starting (I) Tile before the game starts.
-  \item \textbf{The Bunker} serves as a lower Difficulty Tile. It must be placed next to the Starting (I) Tile and is uncovered at the start of the game.
+  \item You may rotate the Starting (I) Tile before the game begins.
+  \item \textbf{The Bunker} serves as a lower Difficulty Tile. Place it next to the Starting (I) Tile and uncover it.
+  \item Fights in \textbf{The Bunker} cannot give more than 1 \svg{experience}.
   \item Ending a turn in \textbf{The Bunker} grants 1 extra \svg{movement} for the next Round.
 \end{itemize}
-\columnbreak
+
 
 \subsubsection*{Break Rules}
 \begin{itemize}
@@ -89,10 +91,70 @@ If neither condition is met, the Players immidiately start the final Combat at t
   \item If the Player fails to defeat the \textbf{Guard}, they stay at their spot and doesn't uncover the Tile they tried to Break into.
 \end{itemize}
 
-\end{multicols*}
+\subsubsection*{Gameplay Changes}
 
-% Uncomment and link a map image
-% \vspace{3em}
-% \begin{center}
-%   \includegraphics[width=0.6\paperwidth]{\_assets/maps/your_map.png}
-% \end{center}
+\begin{itemize}
+  \item When you Search the \svg{artifact} Deck, roll 2 Attack Dice to determine which \svg{artifact} Deck to draw from.
+  \item You may only gain Expert \svg{spellpower} if any of your Heroes is standing on Near (IV-V) and Center (VI-VII) Tiles.
+\end{itemize}
+\end{multicols}
+\begin{center}
+  \hommtable[]{19}{
+    \centering
+    \medskip
+    \textbf{Artifact Rolls}\\
+    \bigskip
+
+    \begin{tabularx}{0.95\linewidth}{p{0.18\linewidth}XXX}
+      \darkcell[1.25]{Type}
+        & \darkcell[1.25]{Starting (I)\linebreak Far (II--III)}
+        & \darkcell[1.25]{Near (IV--V)}
+        & \darkcell[1.25]{Center (VI--VII)} \\
+
+      \darkcell[1.8]{Relic}
+        & \lightcell[1.8]{\textbf{+1}, \textbf{+1}}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \textbf{+1} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1}
+            \end{tabular}}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \textbf{+1} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0}
+            \end{tabular}} \\
+
+      \darkcell[1.8]{Major}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \phantom{\textbf{+}}\textbf{0} & \textbf{+1} \\
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0}
+            \end{tabular}}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \phantom{\textbf{+}}\textbf{0} & \phantom{\textbf{+}}\textbf{0} \\
+              \textbf{--1} & \textbf{+1}
+            \end{tabular}}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \phantom{\textbf{+}}\textbf{0} & \textbf{--1} \\
+              \textbf{--1} & \textbf{+1}
+            \end{tabular}} \\
+
+      \darkcell[1.8]{Minor}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \textbf{--1} & \textbf{--1} \\
+              \textbf{--1} & \phantom{\textbf{+}}\textbf{0} \\
+              \textbf{--1} & \textbf{+1} \\
+            \end{tabular}}
+        & \lightcell[1.8]{%
+            \begin{tabular}{r@{,\;\;}l}
+              \textbf{--1} & \textbf{--1} \\
+              \textbf{--1} & \phantom{\textbf{+}}\textbf{0}
+            \end{tabular}}
+        & \lightcell[1.8]{\textbf{--1}, \textbf{--1}}
+    \end{tabularx}
+  }
+\end{center}
