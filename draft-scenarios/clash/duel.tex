@@ -1,8 +1,6 @@
 % !TeX spellcheck = en_US
 \addscenariosection{1}{Clash Scenario}{Duel}{\images/duel.png}
 
-\enlargethispage{\baselineskip}
-
 \begin{multicols}{2}
 
 \textbf{Author:} BoberL
@@ -30,7 +28,7 @@
 
 \textbf{Town Buildings:} \svg{bronze}~Dwelling, Citadel
 
-\textbf{Map Tile Pool:} Far (II--III) Map Tile. This Tile serves as the \textbf{Bunker}.
+\textbf{Map Tile Pool:} Far (II--III) Map Tile. This Tile serves as \textbf{the Bunker}.
 
 \subsection*{\MakeUppercase{Map Setup}}
 
@@ -42,53 +40,75 @@ Take the Map Tiles according to the generated layout. Choose your available expa
 
 \subsection*{\MakeUppercase{Victory Conditions}}
 \begin{itemize}
-  \item Obtain the Grail Token and bring it to
-your Faction Town, OR
   \item Eliminate all opponents.
 \end{itemize}
-If neither condition is met, immidiately start the final Combat at the end of the last Round.
+If the condition isn't met, immidiately start the final Combat at the end of the last Round.
 
 \subsection*{\MakeUppercase{Timed Events}}
 
-\textbf{\nth{3}, \nth{7}, \nth{11} Rounds:}
+\textbf{\nth{4} Round:}
 \begin{itemize}
   \item Remove all Black Cubes from the map
   \item Each hero gains 1 \svg{movement}.
 \end{itemize}
 
+\textbf{\nth{7} Round:}
+\begin{itemize}
+  \item Repeat the Events from Round 4.
+\end{itemize}
+
+\textbf{\nth{11} Round:}
+\begin{itemize}
+  \item Repeat the Events from Round 4.
+\end{itemize}
 \subsection*{\MakeUppercase{Additional Rules}}
 
 \subsubsection*{Setup Changes}
 \begin{itemize}
+  \item This scenario requires Players to \textbf{Trade} to establish the game setup. This is explained in the rules below.
   \item This scenario cannot be played on Easy Difficulty.
   \item Reroll the map generation if a Center (VI-VII) and Starting (I) Tiles are adjacent.
   \item Split the \svg{artifact} Deck by rarity into 3 separate Decks: \textbf{Relic}, \textbf{Major}, and \textbf{Minor}.
   \item Split the \svg{spellpower} Deck by strength into 2 separate Decks: \textbf{Basic}, \textbf{Expert}.
-  \item Before the game, players must \textbf{Trade} according to the following steps:
-  \begin{itemize}
-    \item Establish which Player starts the \textbf{Trade} by throwing 2 Attack Dice. That player starts all following actions:
-    \item Choose 2 Factions randomly. Players may reroll the result for free, once each. Players may \svg{pay} their opponent 1~\svg{gold}, to do this again, once.
-    \item Players may reroll the map generation for free, once each. Players may \svg{pay} their opponent 2~\svg{gold}, to do this again, once.
-    \item \textbf{Bidding 1:} The winner gets to their starting Faction from the two.
-    \item \textbf{Bidding 2:} The winner gets to choose their starting position.
-    \item \textbf{Bidding 3:} The winner gets to choose whether they move first or second during Rounds.
-    \item Both Players draw the \textbf{Starting Units}. The other Player may \svg{pay} 2~\svg{gold} to have their opponent redo the \textbf{Search} action.
-  \end{itemize}
-  \item You may rotate the Starting (I) Tile before the game begins.
-  \item \textbf{The Bunker} serves as a lower Difficulty Tile. Place it next to the Starting (I) Tile and uncover it.
-  \item Fights in \textbf{The Bunker} cannot give more than 1 \svg{experience}.
-  \item Ending a turn in \textbf{The Bunker} grants 1 extra \svg{movement} for the next Round.
 \end{itemize}
 
+\columnbreak
+
+\subsubsection*{Trade Rules}
+Before the game, players must \textbf{Trade} according to the following steps. Establish which Player starts the \textbf{Trade} by throwing 2 Attack Dice each. The player with a higher sum starts all the following actions:
+\begin{itemize}
+  \item Each Player may remove a Faction of their choice from the pool once.
+  \item Choose 2 Factions randomly. Players may reroll the result for free, once each. Players may \svg{pay} their opponent 1~\svg{gold}, to do this again, once.
+  \item \textbf{Bidding 1:} The winner gets to their starting Faction from the 2.
+  \item \textbf{Bidding 2:} The winner gets to choose their starting position.
+  \item \textbf{Bidding 3:} The winner gets to choose whether they move first or second during Rounds.
+  \item Both Players draw the \textbf{Starting Units}. The other Player may \svg{pay} 2~\svg{gold} to have their opponent redo the \textbf{Search} action.
+\end{itemize}
+After completing the \textbf{Trade}, at the end of Round 1, Players decide if they want to \textbf{Keep} or \textbf{Reset} the current setup. The Player whose turn goes first, must state their intentions first.
+\begin{itemize}
+  \item \textbf{Keep}: The Player states intention to keep the current map setup. If both Players \textbf{Keep}, the game goes on as normal.
+  \item \textbf{Reset}: The Player decides to reset the current map generation. Do not \textbf{Trade} again if this happens. This action can be done only once each by \svg{pay} 2~\svg{gold} to the opponent.
+\end{itemize}
+
+\vspace*{\fill}
+\columnbreak
+
+\subsubsection*{Bunker Rules}
+\begin{itemize}
+  \item Fights on \textbf{The Bunker} tile are one difficulty lower. Place it next to the Starting (I) Tile and uncover it.
+  \item Fights in \textbf{The Bunker} cannot give more than 1 \svg{experience}.
+  \item Ending a turn in \textbf{The Bunker} grants 1 extra \svg{movement} for the next Round.
+  \item You may only enter and exit \textbf{The Bunker} through the Starting (I) Tile.
+\end{itemize}
 
 \subsubsection*{Break Rules}
 \begin{itemize}
-  \item When attempting to uncover their first Near (IV-V) or Center (VI-VII) Tile, before viewing the Tile's contents, the Player begins Combat against the \textbf{Guard}. % maybe there's a better way to phrase that
+  \item A Player begins Combat against the \textbf{Guard} when attempting to uncover a Near (IV-V) or Center (VI-VII) Tile for the first time.
   \begin{itemize}
-    \item \textbf The {Guard} is a Tier IV army with one Neutral \svg{silver} Unit being replaced with a \svg{golden} Unit.
+    \item \textbf{The Guard} is a Tier IV army with one Neutral \svg{silver} Unit being replaced with a \svg{golden} Unit.
     \item After defeating the \textbf{Guard}, gain 2 \svg{experience}.
   \end{itemize}
-  \item If the Player fails to defeat the \textbf{Guard}, they stay at their spot and doesn't uncover the Tile they tried to Break into.
+  \item A Player that fails to defeat the \textbf{Guard} ends their turn at the spot they tried to Break from and doesn't uncover the Tile.
 \end{itemize}
 
 \subsubsection*{Gameplay Changes}
@@ -96,13 +116,50 @@ If neither condition is met, immidiately start the final Combat at the end of th
 \begin{itemize}
   \item When you Search the \svg{artifact} Deck, roll 2 Attack Dice to determine which \svg{artifact} Deck to draw from.
   \item You may only gain Expert \svg{spellpower} if any of your Heroes is standing on Near (IV-V) and Center (VI-VII) Tiles.
+  \item Field Rewards vary depending on Difficulty according to the table below.
+  \item \textbf{Upgrade:} When performing \textbf{Search} actions from Field Rewards, you may turn any attack Die of your choice to +1.
+  \item After defeating a Random Town Tile, Players may \textbf{Recruit} and \textbf{Reinforce} Units fought. Increase \svg{gold}, \svg{building_materials} or \svg{valuables} income accordingly.
+  \item The Grail serves as a \svg{permanent} Card that doesn't count into the limit.
 \end{itemize}
+
 \end{multicols}
+
 \begin{center}
   \hommtable[]{19}{
     \centering
     \medskip
-    \textbf{Artifact Rolls}\\
+    \textbf{Field Rewards according to Difficulty}\\
+    \bigskip
+
+    \begin{tabularx}{0.9\linewidth}{p{0.18\linewidth}XXX}
+      \darkcell[1.25]{Difficulty}
+        & \darkcell[1.25]{Normal}
+        & \darkcell[1.25]{Hard}
+        & \darkcell[1.25]{Impossible} \\
+
+      \darkcell[2.3]{Grail}
+        & \lightcell[2.3]{Increase \svg{hand} Limit by 2.}
+        & \lightcell[2.3]{Increase \svg{hand} Limit by 2. A Unit of your choice gains \textbf{permanent} +1 \svg{attack}.}
+        & \lightcell[2.3]{Increase \svg{hand} Limit by 3. 2 Units of your choice gain \textbf{permanent} +1 \svg{attack}.} \\
+        
+      \darkcell[1.8]{Dragon Utopia}
+        & \lightcell[1.8]{15~\svg{gold}, Search~(3) \svg{artifact} 2 times. \textbf{Upgrade} once.}
+        & \lightcell[1.8]{20~\svg{gold}, Search~(3) \svg{artifact} 3 times. \textbf{Upgrade} twice.}
+        & \lightcell[1.8]{25~\svg{gold}, Search~(3) \svg{artifact} 4 times. \textbf{Upgrade} thrice.} \\
+
+      \darkcell[1.4]{Random Town}
+        & \lightcell[1.4]{8~\svg{gold}. Increase income by 1.}
+        & \lightcell[1.4]{12~\svg{gold}. Increase income by 2.}
+        & \lightcell[1.4]{16~\svg{gold}. Increase income by 3.} \\
+    \end{tabularx}
+  }
+\end{center}
+
+\begin{center}
+  \hommtable[]{19}{
+    \centering
+    \medskip
+    \textbf{Artifacts according to Attack Dice Rolls}\\
     \bigskip
 
     \begin{tabularx}{0.95\linewidth}{p{0.18\linewidth}XXX}
