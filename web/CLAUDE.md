@@ -29,10 +29,12 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
   place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
   the first load. Do not vendor it by hand.
 - `web/vite.config.ts` has four plugins, `react` and `tailwindcss` plus two of its own: `out-of-bundle-assets` (dev only,
-  serves the paths below from disk) and `license-notices` (writes
-  `dist/licenses.json`, the name, version and license text of every npm package
-  in the bundle; the About dialog lists them). A new bundled dependency needs no
-  license edit.
+  serves the paths below from disk) and `license-notices`. It lists every npm
+  package in the bundle: the name, version and license go into the bundle
+  through `virtual:bundled-packages` (typed in `types/bundled-packages.d.ts`),
+  so the About dialog shows the list at once; the license texts go to
+  `dist/licenses.json`, which the dialog fetches when a row first opens. The
+  dev server lists none. A new bundled dependency needs no license edit.
 - `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
   stays out of `tsconfig.json`: Node's types would leak into browser code
   (`setTimeout` would return `Timeout`). The other Node-only tools —
