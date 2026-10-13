@@ -102,6 +102,21 @@ test("at 800px every label collapses, and each stays the accessible name", async
   await expectOneRow(page);
 });
 
+test("on a wide screen the header keeps the name, category and Upload images, and the menu has no copy of it", async ({
+  app,
+}) => {
+  const { page } = app;
+  await page.setViewportSize({ width: 800, height: 800 });
+  await openLongScenario(page);
+  for (const id of ["scenario-title", "scenario-category", "upload-open"]) {
+    await expect(page.locator(`#${id}`)).toBeVisible();
+  }
+  await page.locator("#header-menu-toggle").click();
+  await expect(page.locator("#header-menu")).toBeVisible();
+  await expect(page.locator("#upload-open-menu")).toBeHidden();
+  await expect(page.locator("#github-open-pr-menu")).toHaveCount(0);
+});
+
 test("Build and Download come first, then Upload images", async ({ app }) => {
   const { page } = app;
   await page.setViewportSize({ width: 1024, height: 800 });

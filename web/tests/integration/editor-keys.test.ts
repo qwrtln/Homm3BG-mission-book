@@ -1,7 +1,8 @@
 // Tier 2. The editor-scope shortcuts bound in the editor's keymap: toggle
 // comment, find, replace, go to line, select next occurrence, delete line,
 // indent/outdent with spaces only, and the Esc-then-Tab escape out of the
-// keyboard trap. Also the bracket pairing as the contributor types.
+// keyboard trap. Also the bracket pairing as the contributor types, and the
+// marks on the brace beside the cursor and its pair.
 
 import type { Page } from "@playwright/test";
 import {
@@ -166,6 +167,28 @@ test("typing a quote or a dollar inserts it alone", async ({ app }) => {
 
   await page.keyboard.type("'\"`$");
   expect(await editorText(page)).toBe("'\"`$");
+});
+
+test("the cursor beside a brace marks it and its pair; an unpaired brace is marked as such", async ({ app }) => {
+  const { page } = app;
+  await openWorkspace(page);
+  const matching = page.locator(".cm-matchingBracket");
+  const nonmatching = page.locator(".cm-nonmatchingBracket");
+
+  await setEditorValue(page, "\\textbf{bold}");
+  await setCursor(page, 0, 7);
+  await expect(matching).toHaveCount(2);
+  await expect(matching).toHaveText(["{", "}"]);
+  await expect(nonmatching).toHaveCount(0);
+
+  await setCursor(page, 0, 2);
+  await expect(matching).toHaveCount(0);
+
+  await setEditorValue(page, "\\textbf{bold");
+  await setCursor(page, 0, 7);
+  await expect(nonmatching).toHaveCount(1);
+  await expect(nonmatching).toHaveText("{");
+  await expect(matching).toHaveCount(0);
 });
 
 test("Ctrl+Shift+K removes the cursor's line", async ({ app }) => {
