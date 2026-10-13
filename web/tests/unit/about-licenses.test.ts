@@ -5,8 +5,8 @@
 // page, which the deploy serves as site/builder/. The integration server
 // serves the whole repository, so a file left off the allow-list in
 // publish-docs.yaml would pass tier 2 and 404 on the live site. Packages in
-// the bundle need no row: vite.config.ts writes their notices to licenses.json
-// and the dialog reads them.
+// the bundle need no row: vite.config.ts puts their list into the bundle and
+// their license texts into licenses.json, and the dialog reads both.
 
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
@@ -61,5 +61,8 @@ test("the build emits the notices the About dialog reads", () => {
   const config = readRepoFile("web/vite.config.ts");
   assert.match(config, /const NOTICES_FILE = "licenses\.json"/);
   assert.match(config, /emitFile\(\{[^}]*fileName: NOTICES_FILE/s, "vite.config.ts does not emit the notices file");
-  assert.match(readRepoFile("web/app/components/AboutDialog.tsx"), /new URL\("licenses\.json"/);
+  assert.match(config, /const PACKAGES_MODULE = "virtual:bundled-packages"/);
+  const dialog = readRepoFile("web/app/components/AboutDialog.tsx");
+  assert.match(dialog, /new URL\("licenses\.json"/);
+  assert.match(dialog, /from "virtual:bundled-packages"/);
 });

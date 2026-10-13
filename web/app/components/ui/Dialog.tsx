@@ -13,8 +13,10 @@ export interface DialogProps {
   /** The id of the element that names the dialog; usually its DialogTitle. */
   labelledBy: string;
   open: boolean;
-  /** Runs when the dialog closes, however it closed: Escape, a submit button, or `open` going false. */
+  /** Runs when the dialog closes, however it closed: Escape, a submit button, a backdrop click or `open` going false. */
   onClose: (returnValue: string) => void;
+  /** Whether a click on the backdrop, outside the dialog's box, closes it. */
+  closeOnBackdrop?: boolean;
   size?: DialogSize;
   children: ReactNode;
 }
@@ -25,7 +27,7 @@ export interface DialogProps {
  * Its content sits in a method="dialog" form: a submit button closes it and
  * becomes its returnValue.
  */
-export function Dialog({ id, labelledBy, open, onClose, size = "sm", children }: DialogProps) {
+export function Dialog({ id, labelledBy, open, onClose, closeOnBackdrop = false, size = "sm", children }: DialogProps) {
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -38,11 +40,24 @@ export function Dialog({ id, labelledBy, open, onClose, size = "sm", children }:
   }, [open]);
 
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: the backdrop click's keyboard twin is Escape, which the browser handles
     <dialog
       ref={ref}
       id={id}
       aria-labelledby={labelledBy}
       onClose={(event) => onClose(event.currentTarget.returnValue)}
+      onClick={(event) => {
+        // A backdrop click targets the <dialog> itself, as does one on its own padding: the box tells them apart.
+        const dialog = event.currentTarget;
+        if (!closeOnBackdrop || event.target !== dialog) return;
+        const box = dialog.getBoundingClientRect();
+        const inside =
+          event.clientX >= box.left &&
+          event.clientX <= box.right &&
+          event.clientY >= box.top &&
+          event.clientY <= box.bottom;
+        if (!inside) dialog.close();
+      }}
       className={`${SIZES[size]} rounded-lg border border-line bg-panel px-6 py-5 text-ink shadow-dialog backdrop:bg-backdrop`}
     >
       <form method="dialog">{children}</form>
