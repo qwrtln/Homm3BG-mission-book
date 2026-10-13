@@ -31,12 +31,28 @@
   --code-bg: #f6f8fa;
   --inline-code-bg: #818b981f;
   --shadow: rgba(31, 35, 40, 0.15);
+  /* The editor's palette: Primer prettylights, the values the editor's earlier
+     theme (components/editor/theme.ts) used. The editor's page and text colours
+     are --panel and --ink; its gutter rule is --line. */
+  --syntax-comment: #6e7781;
+  --syntax-command: #8250df;
+  --syntax-keyword: #cf222e;
+  --syntax-constant: #0550ae;
+  --syntax-variable: #953800;
+  --syntax-string: #0a3069;
+  --syntax-invalid-fg: #f6f8fa;
+  --syntax-invalid-bg: #82071e;
+  --selection: rgba(84, 174, 255, 0.25);
+  --gutter-ink: #8c959f;
+  --line-flash: rgba(255, 200, 0, 0.5);
   /* The same in both themes, so html[data-theme="dark"] does not repeat them:
      text on a solid accent, primary or danger fill; the white sheet a PDF page
      and a glyph preview sit on; the dimmed page behind a modal dialog. */
   --on-emphasis: #ffffff;
   --sheet: #ffffff;
   --backdrop: rgba(1, 4, 9, 0.5);
+  /* Marks a change on the white PDF sheet. */
+  --change-mark: rgb(255, 200, 0);
 }
 html[data-theme="dark"] {
   --ink: #e6edf3;
@@ -65,4 +81,15 @@ html[data-theme="dark"] {
   --code-bg: #161b22;
   --inline-code-bg: #656c7633;
   --shadow: rgba(1, 4, 9, 0.6);
+  --syntax-comment: #8b949e;
+  --syntax-command: #d2a8ff;
+  --syntax-keyword: #ff7b72;
+  --syntax-constant: #79c0ff;
+  --syntax-variable: #ffa657;
+  --syntax-string: #a5d6ff;
+  --syntax-invalid-fg: #f0f6fc;
+  --syntax-invalid-bg: #8e1519;
+  --selection: rgba(56, 139, 253, 0.35);
+  --gutter-ink: #6e7681;
+  --line-flash: rgba(187, 128, 9, 0.5);
 }

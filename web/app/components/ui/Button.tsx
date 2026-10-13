@@ -1,11 +1,13 @@
 import type { ComponentProps } from "react";
 
-export type ButtonVariant = "primary" | "link" | "withIcon" | "icon" | "danger" | "attention" | "stop";
+export type ButtonVariant = "primary" | "link" | "withIcon" | "icon" | "danger" | "attention" | "stop" | "plain";
 export type ButtonSize = "default" | "compact";
 
 /** Every variant spells out its own colors: Tailwind orders utilities by property, not by class order, so a shared color would fight a variant's. */
 const BASE =
-  "cursor-pointer rounded-sm border text-ui focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "cursor-pointer rounded-sm border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+/** The type step of every variant but `plain`, whose size comes from the caller. */
+const TEXT_UI = "text-ui";
 const NEUTRAL = "border-line bg-panel text-ink hover:enabled:border-accent hover:enabled:text-accent";
 /** Primer's disabled look: grey reads as unavailable, where a faded colour reads as merely faint. */
 const DISABLED = "disabled:cursor-default disabled:border-line disabled:bg-paper disabled:text-muted";
@@ -24,6 +26,9 @@ const VARIANTS: Record<ButtonVariant | "default", string> = {
     "border-attention-border bg-attention-bg text-warn hover:enabled:border-warn hover:enabled:bg-attention-hover-bg",
   /** The Build button mid-build: Primer's danger button, red on a quiet fill until hovered. */
   stop: "border-danger-border bg-danger-bg font-semibold text-danger-fg hover:enabled:border-danger-hover-border hover:enabled:bg-danger-hover-bg hover:enabled:text-white active:enabled:bg-danger-active-bg",
+  /** A block of text that acts as a link: no border or fill, the inherited colour, underlined on hover. Font, size and layout come from the caller. */
+  plain:
+    "border-transparent bg-transparent text-inherit hover:enabled:underline disabled:border-transparent disabled:bg-transparent",
 };
 
 /** Padding by variant: the default row, and the compact one the header uses. */
@@ -36,6 +41,7 @@ const PADDING: Record<ButtonVariant | "default", Record<ButtonSize, string>> = {
   danger: { default: "px-4 py-2", compact: "min-h-8 px-3 py-1" },
   attention: { default: "px-4 py-2", compact: "min-h-8 px-3 py-1" },
   stop: { default: "px-4 py-2", compact: "min-h-8 px-3 py-1" },
+  plain: { default: "p-0", compact: "p-0" },
 };
 
 export interface ButtonLook {
@@ -49,7 +55,7 @@ export interface ButtonLook {
 /** The classes of a button's look, for an element that is not a <button> but must look like one, such as a link. */
 export function buttonClasses({ variant, size = "default", iconed = false }: ButtonLook = {}): string {
   const key = variant ?? "default";
-  return `${BASE} ${VARIANTS[key]} ${PADDING[key][size]} ${iconed && key !== "withIcon" ? ICONED : ""} ${DISABLED}`
+  return `${BASE} ${key === "plain" ? "" : TEXT_UI} ${VARIANTS[key]} ${PADDING[key][size]} ${iconed && key !== "withIcon" ? ICONED : ""} ${DISABLED}`
     .replace(/\s+/g, " ")
     .trim();
 }

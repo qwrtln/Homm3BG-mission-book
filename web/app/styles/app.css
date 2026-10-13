@@ -488,7 +488,7 @@
   .upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
   .upload-field label.upload-mapfile { display: flex; flex-direction: column; gap: 0.2rem; font-weight: normal; color: var(--muted); }
   .upload-mapfile .optional { font-size: 0.76rem; }
-  input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  input.upload-mapfile-input { font-family: var(--font-mono); }
   input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
   button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }
   button.upload-remove:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -531,9 +531,9 @@
     .pane-divider { display: none; }
   }
   /* The line a jump from the PDF lands on: held, then faded. components/editor/theme.ts
-     sets --flash and the animation; flash-line.ts removes the line's mark. */
+     sets the animation and the line rule reads --line-flash; flash-line.ts removes the line's mark. */
   @keyframes editor-flash-fade {
-    0%, 50% { background-color: var(--flash); }
+    0%, 50% { background-color: var(--line-flash); }
     to { background-color: transparent; }
   }
   .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
@@ -592,7 +592,7 @@
   }
   .pdf-change {
     position: absolute;
-    background: rgb(255, 200, 0);
+    background: var(--change-mark);
   }
   @keyframes pdf-change-fade {
     0%, 50% { opacity: 0.4; }
@@ -648,7 +648,7 @@
     border-radius: 999px;
     background: var(--panel);
     box-shadow: 0 2px 8px var(--shadow);
-    font-size: 0.85rem;
+    font-size: var(--text-small);
     white-space: nowrap;
   }
   .build-phase[hidden],
@@ -662,6 +662,7 @@
     align-items: center;
     justify-content: center;
     color: var(--muted);
+    font-size: var(--text-body);
     padding: 2rem;
     text-align: center;
   }
@@ -672,7 +673,7 @@
     padding: 0.4rem 1rem;
     border-top: 1px solid var(--line);
     background: var(--panel);
-    font-size: 0.85rem;
+    font-size: var(--text-small);
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -706,52 +707,7 @@
     border: 1px solid var(--bad);
     background: var(--error-bg);
     padding: 0.85rem 1rem;
-    border-radius: 3px;
-  }
-  .error-panel .first-error {
-    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
-    color: var(--bad);
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  /* A first error with a scenario line: the whole message jumps the editor there. */
-  .error-panel button.error-jump {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: none;
-    font: inherit;
-    color: inherit;
-    text-align: left;
-    white-space: inherit;
-    cursor: pointer;
-  }
-  .error-panel button.error-jump:hover:not(:disabled) { color: inherit; text-decoration: underline; }
-  .error-panel button.error-jump:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .error-jump-line {
-    display: inline-block;
-    margin-right: 0.6rem;
-    padding: 0 0.4rem;
-    border: 1px solid var(--bad);
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  details.full-log summary {
-    cursor: pointer;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 0.6rem;
-  }
-  details.full-log pre {
-    font: 12px/1.5 ui-monospace, monospace;
-    background: var(--code-bg);
-    border: 1px solid var(--line);
-    padding: 0.7rem;
-    max-height: 20rem;
-    overflow: auto;
-    white-space: pre-wrap;
-    margin: 0.5rem 0 0;
+    border-radius: var(--radius-md);
   }
 
   /* --- Glyph pictures in the editor's suggestion list (components/editor/completions.ts) --- */
@@ -764,7 +720,7 @@
     padding: 1px;
     object-fit: contain;
     background: var(--sheet);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
   }
   /* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
   .autocomplete-icon.dark { display: none; }
@@ -822,13 +778,25 @@
   --color-on-emphasis: var(--on-emphasis);
   --color-sheet: var(--sheet);
   --color-backdrop: var(--backdrop);
+  --color-syntax-comment: var(--syntax-comment);
+  --color-syntax-command: var(--syntax-command);
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-constant: var(--syntax-constant);
+  --color-syntax-variable: var(--syntax-variable);
+  --color-syntax-string: var(--syntax-string);
+  --color-syntax-invalid-fg: var(--syntax-invalid-fg);
+  --color-syntax-invalid-bg: var(--syntax-invalid-bg);
+  --color-selection: var(--selection);
+  --color-gutter-ink: var(--gutter-ink);
+  --color-line-flash: var(--line-flash);
+  --color-change-mark: var(--change-mark);
 }
 
 /* Radius and type scales that replace the raw values the legacy sheets repeat.
    Spacing keeps Tailwind's 0.25rem step. */
 @theme {
   --radius-*: initial;
-  --radius-sm: 4px; /* controls, keys */
+  /* --radius-sm is in the static block below. */
   --radius-md: 6px; /* notices, code blocks */
   --radius-lg: 8px; /* dialogs */
 
@@ -843,4 +811,12 @@
 
   --shadow-dialog: 0 8px 32px var(--shadow);
   --shadow-toast: 0 8px 24px var(--shadow);
+}
+
+/* Static: components/editor/theme.ts reads these three from TypeScript, so
+   Tailwind emits them whether or not a class uses them. */
+@theme static {
+  --radius-sm: 4px; /* controls, keys */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --text-editor: 13px; /* editing surfaces */
 }

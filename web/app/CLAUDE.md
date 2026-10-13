@@ -116,6 +116,12 @@ or the deploy allow-list names it.
 - Radius, type and shadow come from the `@theme` scales in `app.css`
   (`rounded-sm|md|lg`, `text-small|ui|body|heading|title`). No raw px or rem
   in a component when a scale step fits.
+- The editor's colours are the `--syntax-*`, `--selection`, `--gutter-ink` and
+  `--line-flash` tokens. Code text is `font-mono` at `text-editor` (editing) or
+  `text-code` (blocks).
+- `workspace-states.test.ts` (tier 2; `CAPTURE_WORKSPACE=<dir>` also writes PNGs
+  there, `=1` to `test-results/workspace-states/`, which the next run empties)
+  and `workspace-literals.test.ts` (tier 1) guard the workspace view.
 - Tailwind orders utilities by property, not by class order: two classes
   for one property on one element conflict. Pick one per variant.
 
@@ -127,7 +133,7 @@ page. Reuse the primitive:
 
 | Control | Use |
 | --- | --- |
-| Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `withIcon`, `icon`, `danger`, `attention`, `stop`, or none; `size="compact"` is the header row, `iconed` lays an icon and label out on one line |
+| Button | `<Button variant=...>` in `components/ui/Button.tsx`: `primary`, `link`, `plain` (a block of text that acts as a button; layout and font from the caller), `withIcon`, `icon`, `danger`, `attention`, `stop`, or none; `size="compact"` is the header row, `iconed` lays an icon and label out on one line |
 | Checkbox | `<Checkbox label=...>` in `components/ui/Checkbox.tsx` |
 | Radio group | `<RadioGroup>` in `components/ui/RadioGroup.tsx`: joined buttons over hidden radios |
 | Choice cards | `<ChoiceCards>` in `components/ui/ChoiceCards.tsx`: equal `aria-pressed` cards with a title and a description |

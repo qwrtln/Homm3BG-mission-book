@@ -227,10 +227,12 @@ mounts and held in a ref.
   cursor, selection and line reads) and `tests/helpers/editor.ts`. A test never
   touches `.cm-*` markup to read the text: CodeMirror draws only the lines in
   view.
-- Look: `components/editor/theme.ts`, a light and a dark `EditorView.theme` plus
-  a `HighlightStyle`, swapped through a `Compartment` when `store.theme`
-  changes. The find bar and the suggestion list use the app's custom
-  properties, so they follow the theme attribute on their own.
+- Look: `components/editor/theme.ts` reads only custom properties: `--syntax-*`,
+  `--selection`, `--gutter-ink`, `--line-flash` and the app tokens, so the
+  `data-theme` attribute restyles the editor. A new colour goes in
+  `styles/tokens.css`. The `Compartment` swaps the whole `editorTheme(dark)`.
+  Its two values differ only in the `{dark}` flag, which CodeMirror's `&dark`
+  base rules need, and the `cm-github-*` class, which tier 2 reads.
 - Keys: `shared/keymap.ts` stays the one table, which the Help dialog also
   reads. `modules/shortcuts.ts` maps each editor row to a command and
   `toEditorKey()` spells its key for CodeMirror. Do not add a binding in

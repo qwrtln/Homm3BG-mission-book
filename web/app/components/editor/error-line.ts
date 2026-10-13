@@ -1,5 +1,5 @@
-import { type Extension, StateEffect, StateField } from "@codemirror/state";
-import { Decoration, type DecorationSet, EditorView } from "@codemirror/view";
+import { type Extension, type Range, RangeSet, StateEffect, StateField } from "@codemirror/state";
+import { Decoration, type DecorationSet, EditorView, GutterMarker, gutterLineClass } from "@codemirror/view";
 
 /** The class of the line a failed build points at; theme.ts colors it. */
 export const ERROR_LINE_CLASS = "build-error-line";
@@ -23,9 +23,25 @@ const errorLine = StateField.define<DecorationSet>({
   provide: (field) => EditorView.decorations.from(field),
 });
 
-/** @returns the state field holding the failed build's line mark */
+/** The gutter's own class on the marked line; theme.ts gives it a bar and a bold number. */
+const ERROR_GUTTER_CLASS = "build-error-gutter";
+
+const errorGutter = new (class extends GutterMarker {
+  elementClass = ERROR_GUTTER_CLASS;
+})();
+
+/** @returns the state field holding the failed build's line mark, and the gutter cue on that line */
 export function errorLineMark(): Extension {
-  return errorLine;
+  return [
+    errorLine,
+    gutterLineClass.compute([errorLine], (state) => {
+      const marks: Range<GutterMarker>[] = [];
+      state.field(errorLine).between(0, state.doc.length, (from) => {
+        marks.push(errorGutter.range(from));
+      });
+      return RangeSet.of(marks);
+    }),
+  ];
 }
 
 /**
