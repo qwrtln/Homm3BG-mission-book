@@ -13,8 +13,11 @@ export interface EditorApi {
   revealLine(line: number): void;
   /** Replaces the text between two offsets, as an edit the contributor can undo. */
   replaceRange(from: number, to: number, insert: string): void;
-  /** Marks a line as the failed build's, or clears the mark with null. The mark follows its line through edits. */
-  markErrorLine(line: number | null): void;
+  /**
+   * Marks the failed build's line and underlines its columns with the message,
+   * or clears both with null. Both follow their text through edits.
+   */
+  markError(error: EditorError | null): void;
   /** Highlights a line for a moment, clamped to the text. A new flash replaces the one showing; the failed build's mark is untouched. */
   flashLine(line: number): void;
 }
@@ -33,6 +36,14 @@ export interface EditorProbe extends EditorApi {
   /** The 1-based lines carrying the jump flash. */
   flashedLines(): number[];
   undo(): void;
+}
+
+/** A failed build's place in the source: a 1-based line, 0-based columns within it (`to` exclusive), and the first error. */
+export interface EditorError {
+  line: number;
+  from: number;
+  to: number;
+  message: string;
 }
 
 let current: EditorProbe | null = null;

@@ -14,11 +14,16 @@
 // page much wider than the viewport. Overflow inside a pane that scrolls on
 // purpose (the editor, the PDF canvas) does not count; only the page's own
 // scrollWidth against its innerWidth does.
+//
+// At this width the workspace header drops the scenario name and the category
+// select, and Upload images moves from the header into the overflow menu.
+// Signed in, Open PR moves there too, and the unsaved changes show as a dot
+// on Save rather than as a note beside the name.
 
 import { devices, type Page } from "@playwright/test";
-
+import { editorBox } from "../helpers/editor.ts";
 import { seedLocalRecord } from "../helpers/local-store.ts";
-import { chooseFromMenu, expect, OPEN_ROW, READY_STATUS, test } from "./fixtures.ts";
+import { chooseFromMenu, expect, type GithubRoute, OPEN_ROW, READY_STATUS, test } from "./fixtures.ts";
 
 test.use({ ...devices["Pixel 7"] });
 
@@ -122,9 +127,35 @@ test("the About dialog has no horizontal page scroll", async ({ app }) => {
 test("the Upload images dialog has no horizontal page scroll", async ({ app }) => {
   const { page } = app;
   await openLongScenario(page);
-  await page.locator("#upload-open").click();
+  await chooseFromMenu(page, "upload-open-menu");
   await expect(page.locator("#upload-dialog")).toBeVisible();
   await expectNoHorizontalScroll(page);
+});
+
+test("the workspace header hides the scenario name and category, and Upload images moves into the menu", async ({
+  app,
+}) => {
+  const { page } = app;
+  await openLongScenario(page);
+
+  await expect(page.locator("#scenario-title")).toBeHidden();
+  await expect(page.locator("#scenario-category")).toBeHidden();
+  await expect(page.locator("#upload-open")).toBeHidden();
+  await expect(page.locator("#back-to-welcome")).toBeVisible();
+
+  await page.locator("#header-menu-toggle").click();
+  const item = page.locator("#upload-open-menu");
+  await expect(item).toBeVisible();
+  await expect(item).toHaveAccessibleName("Upload images");
+  await item.click();
+  await expect(page.locator("#upload-dialog")).toBeVisible();
+});
+
+test("the menu offers no Upload images before a scenario is open", async ({ app }) => {
+  const { page } = app;
+  await page.locator("#header-menu-toggle").click();
+  await expect(page.locator("#header-menu")).toBeVisible();
+  await expect(page.locator("#upload-open-menu")).toHaveCount(0);
 });
 
 test("the sign-in and token dialogs have no horizontal page scroll", async ({ app }) => {
@@ -152,4 +183,70 @@ test("going workspace -> welcome -> workspace leaves no horizontal page scroll",
   await expect(page.locator("#workspace")).toBeVisible();
 
   await expectNoHorizontalScroll(page);
+});
+
+/** A contributor with a fork, and a save to it that succeeds. */
+const SIGNED_IN_ROUTES: GithubRoute[] = [
+  { method: "GET", path: "/user", body: { login: "octotester" } },
+  {
+    method: "GET",
+    path: "/repos/qwrtln/Homm3BG-mission-book",
+    body: {
+      name: "Homm3BG-mission-book",
+      owner: { login: "qwrtln" },
+      default_branch: "main",
+      permissions: { push: false },
+    },
+  },
+  {
+    method: "GET",
+    path: "/repos/octotester/Homm3BG-mission-book",
+    body: { name: "Homm3BG-mission-book", owner: { login: "octotester" }, default_branch: "main" },
+  },
+  { method: "GET", path: /\/branches(\?|$)/, body: [] },
+  { method: "GET", path: /\/contents\//, status: 404, body: { message: "Not Found" } },
+  { method: "GET", path: /\/git\/ref\/heads\//, body: { object: { sha: "base-sha" } } },
+  { method: "GET", path: /\/git\/commits\//, body: { sha: "base-sha", tree: { sha: "base-tree-sha" } } },
+  { method: "POST", path: /\/git\/blobs$/, body: { sha: "blob-sha" } },
+  { method: "POST", path: /\/git\/trees$/, body: { sha: "new-tree-sha" } },
+  { method: "POST", path: /\/git\/commits$/, body: { sha: "new-commit-sha", tree: { sha: "new-tree-sha" } } },
+  { method: "POST", path: /\/git\/refs$/, body: { ref: "refs/heads/x" } },
+  { method: "PATCH", path: /\/git\/refs\/heads\//, body: { ref: "refs/heads/x" } },
+  { method: "GET", path: /\/pulls\?/, body: [] },
+];
+
+test.describe("signed in", () => {
+  // A bare array given to test.use() reads as a [value, options] tuple, so the list is wrapped.
+  // Playwright's typings model the options as { scope }; `option` is what it reads at runtime (see github.test.ts).
+  test.use({ githubRoutes: [SIGNED_IN_ROUTES, { option: true } as unknown as { scope: "test" }] });
+
+  test("saved then edited: the dot sits on Save, Open PR is in the menu, and nothing overlaps Build", async ({
+    app,
+  }) => {
+    const { page } = app;
+    await page.addInitScript(() => localStorage.setItem("github_token", "gh-tier2-token"));
+    await page.reload();
+    await openLongScenario(page);
+
+    await page.locator("#github-save").click();
+    await expect(page.locator("#status-text")).toContainText("Saved to ");
+    await expect(page.locator("#unsaved-note")).toHaveCount(0);
+    await expect(page.locator("#github-open-pr")).toBeHidden();
+
+    await editorBox(page).click();
+    await page.keyboard.type("x");
+    const dot = page.locator("#github-save #unsaved-note");
+    await expect(dot).toBeVisible();
+    await expect(page.locator("#github-save")).toHaveAccessibleName("Save");
+    await expect(page.locator("#github-save")).toHaveAccessibleDescription("Unsaved changes");
+
+    const left = await page.locator("#header-scenario").boundingBox();
+    const build = await page.locator("#build").boundingBox();
+    expect(left && build && left.x + left.width).toBeLessThanOrEqual(build?.x ?? 0);
+    await expectNoHorizontalScroll(page);
+
+    await page.locator("#header-menu-toggle").click();
+    await expect(page.locator("#github-open-pr-menu")).toBeVisible();
+    await expect(page.locator("#github-open-pr-menu")).toHaveAccessibleName("Open PR");
+  });
 });

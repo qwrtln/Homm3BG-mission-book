@@ -16,9 +16,11 @@ export function useMenu() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  /** The items a contributor can reach now: hidden ones are skipped. */
+  /** The items a contributor can reach now: hidden ones, by attribute or by a width-dependent class, are skipped. */
   const items = (): HTMLElement[] =>
-    [...(menuRef.current?.querySelectorAll<HTMLElement>(ITEM_SELECTOR) ?? [])].filter((item) => !item.hidden);
+    [...(menuRef.current?.querySelectorAll<HTMLElement>(ITEM_SELECTOR) ?? [])].filter(
+      (item) => item.getClientRects().length > 0,
+    );
 
   // Flushed before focusing: an item cannot take focus while its list is still hidden.
   const setMenuOpen = (next: boolean, focus: FocusTarget = "none") => {

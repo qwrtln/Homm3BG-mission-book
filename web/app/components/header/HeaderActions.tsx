@@ -6,7 +6,7 @@ import { Button } from "../ui/Button.tsx";
 import { MenuItem, MenuList } from "../ui/Menu.tsx";
 import { useMenu } from "../ui/useMenu.ts";
 import { DownloadIcon, ImageIcon, PlayIcon, StopIcon } from "./icons.tsx";
-import { LABEL, NARROW, SEGMENT } from "./narrow.ts";
+import { LABEL, NARROW, PHONE_HIDDEN, SEGMENT } from "./narrow.ts";
 
 /** Build, which turns into Stop while a build runs. */
 function BuildButton() {
@@ -71,7 +71,8 @@ function DownloadMenu() {
 /**
  * Build and Download as one group, then Upload images. Shown once a
  * scenario's workspace is up; before that the group stays in the page,
- * hidden, with Build and Download disabled.
+ * hidden, with Build and Download disabled. At phone width Upload images
+ * moves into the overflow menu.
  */
 export function HeaderActions() {
   const visible = useAppStore((s) => s.actionsVisible);
@@ -82,7 +83,13 @@ export function HeaderActions() {
         <BuildButton />
         <DownloadMenu />
       </span>
-      <Button id="upload-open" variant="withIcon" size="compact" className={NARROW} onClick={openUploadDialog}>
+      <Button
+        id="upload-open"
+        variant="withIcon"
+        size="compact"
+        className={`${NARROW} ${PHONE_HIDDEN}`}
+        onClick={openUploadDialog}
+      >
         <ImageIcon />
         <span className={LABEL}>Upload images</span>
       </Button>

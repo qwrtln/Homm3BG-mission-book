@@ -1,7 +1,9 @@
 import { getSignInMethod } from "../../../shared/github-auth.ts";
 import { discardLocalChanges } from "../../github/discard.ts";
+import { openPullRequest } from "../../github/save.ts";
 import { handleSignOut, handleSignOutAndRevoke } from "../../github/session.ts";
 import { toggleTheme } from "../../modules/theme.ts";
+import { openUploadDialog } from "../../modules/uploads.ts";
 import { openDialog, useAppStore } from "../../store.ts";
 import { Button } from "../ui/Button.tsx";
 import { MenuItem, MenuList, MenuSeparator } from "../ui/Menu.tsx";
@@ -9,6 +11,8 @@ import { useMenu } from "../ui/useMenu.ts";
 import {
   CheckIcon,
   CommentIcon,
+  GitPullRequestIcon,
+  ImageIcon,
   InfoIcon,
   KebabIcon,
   MoonIcon,
@@ -16,11 +20,15 @@ import {
   SignOutIcon,
   UndoIcon,
 } from "./icons.tsx";
+import { PHONE_ONLY } from "./narrow.ts";
 
-/** The header's "More actions" menu: the theme toggle, Help, About, Send feedback, and Sign out once signed in (plus revoke, under a pasted token). */
+/** The header's "More actions" menu: at phone width Upload images while a workspace is up and Open PR once saved, the theme toggle, Help, About, Send feedback, and Sign out once signed in (plus revoke, under a pasted token). */
 export function OverflowMenu() {
   const dark = useAppStore((s) => s.theme === "dark");
   const signedIn = useAppStore((s) => s.signedIn);
+  const actionsVisible = useAppStore((s) => s.actionsVisible);
+  const canOpenPr = useAppStore((s) => s.signedIn && s.scenarioHeaderVisible && s.openPrVisible);
+  const openingPr = useAppStore((s) => s.openingPr);
   const canDiscard = useAppStore((s) => s.scenarioHeaderVisible && s.signedIn && s.lastSaveTarget !== null && s.dirty);
   const menu = useMenu();
 
@@ -39,6 +47,23 @@ export function OverflowMenu() {
         <KebabIcon />
       </Button>
       <MenuList id="header-menu" label="More actions" open={menu.open} {...menu.menuProps}>
+        {actionsVisible && (
+          <MenuItem id="upload-open-menu" className={PHONE_ONLY} onClick={openUploadDialog}>
+            <ImageIcon />
+            Upload images
+          </MenuItem>
+        )}
+        {canOpenPr && (
+          <MenuItem
+            id="github-open-pr-menu"
+            className={PHONE_ONLY}
+            disabled={openingPr}
+            onClick={() => void openPullRequest()}
+          >
+            <GitPullRequestIcon />
+            Open PR
+          </MenuItem>
+        )}
         <MenuItem id="theme-toggle" role="menuitemcheckbox" aria-checked={dark} onClick={toggleTheme}>
           <MoonIcon />
           Dark mode

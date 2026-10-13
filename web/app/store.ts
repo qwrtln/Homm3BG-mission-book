@@ -1,5 +1,6 @@
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
+import type { ErrorSpot } from "../shared/build-plan.ts";
 import type { WelcomeEntry } from "../shared/local-drafts.ts";
 import type { WizardAnswers } from "../shared/scenario-wizard.ts";
 import type { ChecklistItem } from "../shared/submit-checklist.ts";
@@ -273,8 +274,8 @@ export type PdfPaneContent =
 export interface BuildErrorState {
   id: number;
   firstError: string | null;
-  /** The scenario line behind firstError, 1-based; null when there is none. */
-  errorLine: number | null;
+  /** The scenario spot behind firstError; null when there is none. */
+  errorSpot: ErrorSpot | null;
   log: string;
 }
 

@@ -4,7 +4,7 @@ import {
   builtStatus,
   DATA_PACKAGE,
   errorInAuxState,
-  errorLine,
+  errorSpot,
   firstError,
   MAX_FETCH_ON_MISS_ATTEMPTS,
   MAX_TEX_PASSES,
@@ -353,7 +353,7 @@ export async function runBuild(): Promise<void> {
       notFound,
       missing: missingFiles(result.log),
       firstError: firstError(result.log),
-      errorLine: errorLine(result.log, chosenPath, source.split("\n").length),
+      errorSpot: errorSpot(result.log, chosenPath, source),
       log: result.log || "",
     };
 
@@ -371,7 +371,7 @@ export async function runBuild(): Promise<void> {
     } else {
       // A last good PDF stays on screen, and downloadable, above the error.
       if (!store.getState().lastPdf) showPdfMessage("The build failed. See the error below.");
-      showError(record);
+      showError(record, source);
       setStatus("Build failed.", { tone: "bad" });
     }
   } catch (error) {
