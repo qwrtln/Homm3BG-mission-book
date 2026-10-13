@@ -915,6 +915,37 @@ test("a build error in the scenario jumps the editor to its line", async ({ app 
   expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
 });
 
+test("a build error shows as a diagnostic: hover message, F8, cleared by the next build", async ({ app }) => {
+  const { page, errors } = app;
+  await enterWorkspace(page);
+  // The stub log's context is `l.3 \foo`: put that token at the end of line 3.
+  await appendToEditorLine(page, 2, " \\foo");
+  await failCompiles(page, { line: 3, inside: "scenario" });
+
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText("Build failed.");
+  await expect(page.locator(".cm-lintRange-error")).toHaveText("\\foo");
+
+  await page.locator(".cm-lint-marker-error").hover();
+  await expect(page.locator(".cm-tooltip-lint")).toHaveText("! Undefined control sequence.");
+
+  await setEditorSelection(page, { line: 0, ch: 0 });
+  await focusEditor(page);
+  await page.keyboard.press("F8");
+  expect((await editorState(page)).cursor).toBe(3);
+
+  // The next build clears the diagnostic.
+  await page.evaluate(() => {
+    delete globalThis.__stubCompileResult;
+  });
+  await page.locator("#build").click();
+  await expect(page.locator("#status-text")).toHaveText(/^Built /);
+  await expect(page.locator(".cm-lintRange-error")).toHaveCount(0);
+  await expect(page.locator(".cm-lint-marker-error")).toHaveCount(0);
+
+  expect(appErrors(errors), "the page reported errors around the failed build").toEqual([]);
+});
+
 test("a build error outside the scenario offers no jump", async ({ app }) => {
   const { page, errors } = app;
   await enterWorkspace(page);

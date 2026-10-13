@@ -789,6 +789,10 @@
   --color-selection: var(--selection);
   --color-gutter-ink: var(--gutter-ink);
   --color-line-flash: var(--line-flash);
+  --color-active-line: var(--active-line);
+  --color-bracket-match: var(--bracket-match);
+  --color-bracket-mismatch: var(--bracket-mismatch);
+  --color-selection-match: var(--selection-match);
   --color-change-mark: var(--change-mark);
 }
 

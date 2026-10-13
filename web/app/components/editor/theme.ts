@@ -5,7 +5,8 @@ import { tags } from "@lezer/highlight";
 import { FLASH_LINE_CLASS } from "./flash-line.ts";
 
 /**
- * The editor's chrome: page colors, gutter, cursor, selection, the find bar
+ * The editor's chrome: page colors, gutter, cursor, selection, the line and
+ * bracket cues, the build error's diagnostic, the find bar, the go-to-line box
  * and the completion list. Every color is a custom property from tokens.css,
  * which follows the theme attribute by itself.
  */
@@ -40,12 +41,30 @@ function chrome(dark: boolean): Extension {
         color: "var(--gutter-ink)",
         borderRight: "1px solid var(--line)",
       },
+      // Before the error tint and the flash: on the cursor's line, those win.
+      ".cm-activeLine": { backgroundColor: "var(--active-line)" },
+      ".cm-activeLineGutter": { backgroundColor: "var(--active-line)" },
+      "&.cm-focused .cm-matchingBracket": { backgroundColor: "var(--bracket-match)" },
+      "&.cm-focused .cm-nonmatchingBracket": { backgroundColor: "var(--bracket-mismatch)" },
+      ".cm-selectionMatch": { backgroundColor: "var(--selection-match)" },
       ".build-error-line": { backgroundColor: "var(--error-bg)" },
-      // The tint is not the only cue: a bold number and a bar on the gutter's left edge.
-      ".cm-gutterElement.build-error-gutter": {
-        color: "var(--bad)",
-        fontWeight: "700",
-        boxShadow: "inset 3px 0 0 var(--bad)",
+      // The tint is not the only cue: a wavy underline under the failing token and a dot
+      // in the lint gutter. Lint draws both as SVG data URIs with literal colours, which
+      // cannot read a token, so CSS draws them instead.
+      ".cm-lintRange-error": {
+        backgroundImage: "none",
+        textDecoration: "underline wavy var(--bad)",
+        textDecorationSkipInk: "none",
+        textUnderlineOffset: "3px",
+      },
+      ".cm-gutter-lint": { width: "1.2em" },
+      ".cm-lint-marker-error": {
+        content: "normal",
+        width: "0.7em",
+        height: "0.7em",
+        margin: "0.15em",
+        borderRadius: "50%",
+        backgroundColor: "var(--bad)",
       },
       // The fade is the editor-flash-fade keyframes in styles/app.css, which read --line-flash.
       [`.${FLASH_LINE_CLASS}`]: {
@@ -59,15 +78,17 @@ function chrome(dark: boolean): Extension {
 
       ".cm-panels": { backgroundColor: "var(--panel)", color: "var(--ink)" },
       ".cm-panels-top": { borderBottom: "1px solid var(--line)" },
-      ".cm-search": { font: "var(--text-editor)/1.5 var(--font-mono)" },
-      ".cm-search input, .cm-search button": { font: "inherit" },
-      ".cm-search .cm-textfield": {
+      ".cm-panels-bottom": { borderTop: "1px solid var(--line)" },
+      // The find bar and the go-to-line box (a .cm-dialog panel) look alike.
+      ".cm-search, .cm-goto-line": { font: "var(--text-editor)/1.5 var(--font-mono)" },
+      ".cm-search input, .cm-search button, .cm-goto-line input, .cm-goto-line button": { font: "inherit" },
+      ".cm-search .cm-textfield, .cm-goto-line .cm-textfield": {
         backgroundColor: "var(--panel)",
         color: "var(--ink)",
         border: "1px solid var(--line)",
         borderRadius: "var(--radius-sm)",
       },
-      ".cm-search .cm-button": {
+      ".cm-search .cm-button, .cm-goto-line .cm-button": {
         backgroundImage: "none",
         backgroundColor: "var(--paper)",
         color: "var(--ink)",
@@ -75,7 +96,7 @@ function chrome(dark: boolean): Extension {
         borderRadius: "var(--radius-sm)",
         cursor: "pointer",
       },
-      ".cm-search label": { color: "var(--muted)" },
+      ".cm-search label, .cm-goto-line label": { color: "var(--muted)" },
       ".cm-searchMatch": { backgroundColor: "var(--selection)" },
       ".cm-searchMatch-selected": { backgroundColor: "var(--selection)", outline: "1px solid var(--syntax-constant)" },
 
@@ -86,6 +107,9 @@ function chrome(dark: boolean): Extension {
         borderRadius: "var(--radius-sm)",
         boxShadow: "0 8px 20px var(--shadow)",
       },
+      ".cm-tooltip-lint": { maxWidth: "min(36rem, calc(100vw - 1rem))" },
+      ".cm-diagnostic": { fontFamily: "var(--font-mono)", fontSize: "var(--text-editor)" },
+      ".cm-diagnostic-error": { borderLeft: "4px solid var(--bad)" },
       ".cm-tooltip.cm-tooltip-autocomplete": { minWidth: "14rem", maxWidth: "min(32rem, calc(100vw - 1rem))" },
       ".cm-tooltip-autocomplete > ul": {
         fontFamily: "var(--font-mono)",

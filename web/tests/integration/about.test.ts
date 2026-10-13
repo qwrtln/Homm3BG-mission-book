@@ -13,6 +13,7 @@ const LICENSES = {
   "@codemirror/commands": "Permission is hereby granted",
   "@codemirror/language": "Permission is hereby granted",
   "@codemirror/legacy-modes": "Permission is hereby granted",
+  "@codemirror/lint": "Permission is hereby granted",
   "@codemirror/search": "Permission is hereby granted",
   "@codemirror/state": "Permission is hereby granted",
   "@codemirror/view": "Permission is hereby granted",

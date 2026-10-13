@@ -1,5 +1,7 @@
-import { type Extension, type Range, RangeSet, StateEffect, StateField } from "@codemirror/state";
-import { Decoration, type DecorationSet, EditorView, GutterMarker, gutterLineClass } from "@codemirror/view";
+import { lintGutter, setDiagnostics } from "@codemirror/lint";
+import { type Extension, StateEffect, StateField } from "@codemirror/state";
+import { Decoration, type DecorationSet, EditorView } from "@codemirror/view";
+import type { EditorError } from "../../modules/editor-api.ts";
 
 /** The class of the line a failed build points at; theme.ts colors it. */
 export const ERROR_LINE_CLASS = "build-error-line";
@@ -23,35 +25,31 @@ const errorLine = StateField.define<DecorationSet>({
   provide: (field) => EditorView.decorations.from(field),
 });
 
-/** The gutter's own class on the marked line; theme.ts gives it a bar and a bold number. */
-const ERROR_GUTTER_CLASS = "build-error-gutter";
-
-const errorGutter = new (class extends GutterMarker {
-  elementClass = ERROR_GUTTER_CLASS;
-})();
-
-/** @returns the state field holding the failed build's line mark, and the gutter cue on that line */
+/** @returns the state field holding the failed build's line mark, and the lint gutter its diagnostic shows in */
 export function errorLineMark(): Extension {
-  return [
-    errorLine,
-    gutterLineClass.compute([errorLine], (state) => {
-      const marks: Range<GutterMarker>[] = [];
-      state.field(errorLine).between(0, state.doc.length, (from) => {
-        marks.push(errorGutter.range(from));
-      });
-      return RangeSet.of(marks);
-    }),
-  ];
+  return [errorLine, lintGutter()];
 }
 
 /**
- * Marks a line as the failed build's, or clears the mark.
+ * Marks the failed build's line and sets one error diagnostic over its
+ * columns, or clears both. The diagnostic, like the line mark, follows its
+ * text through edits.
  *
- * @param line 1-based, as TeX counts; null clears
+ * @param error the spot, clamped to the text; null clears
  */
-export function markLine(view: EditorView, line: number | null): void {
-  const at = line === null ? null : view.state.doc.line(Math.min(Math.max(line, 1), view.state.doc.lines)).from;
-  view.dispatch({ effects: setErrorLine.of(at) });
+export function markLine(view: EditorView, error: EditorError | null): void {
+  const { state } = view;
+  if (error === null) {
+    view.dispatch(setDiagnostics(state, []), { effects: setErrorLine.of(null) });
+    return;
+  }
+  const line = state.doc.line(Math.min(Math.max(error.line, 1), state.doc.lines));
+  const column = (at: number): number => line.from + Math.min(Math.max(at, 0), line.length);
+  const from = column(error.from);
+  const to = Math.max(from, column(error.to));
+  view.dispatch(setDiagnostics(state, [{ from, to, severity: "error", message: error.message }]), {
+    effects: setErrorLine.of(line.from),
+  });
 }
 
 /** @returns the 1-based lines carrying the mark */

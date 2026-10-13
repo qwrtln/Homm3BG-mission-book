@@ -213,7 +213,7 @@ stays `KEY=value` with no comments.
 
 ## Editor library — CodeMirror 6
 
-`@codemirror/{state,view,language,commands,search,autocomplete}` and
+`@codemirror/{state,view,language,commands,search,autocomplete,lint}` and
 `@codemirror/legacy-modes` (npm), plus `@lezer/highlight` for the token tags.
 LaTeX is the `stex` mode, through `StreamLanguage`. The editor is
 `components/editor/Editor.tsx`: one `EditorView`, made when the component
@@ -221,7 +221,7 @@ mounts and held in a ref.
 
 - The rest of the app reaches it only through `modules/editor-api.ts`:
   `getEditor()` / `requireEditor()` return an `EditorApi` (`getText`,
-  `setText`, `focus`, `revealLine`, `replaceRange`, `markErrorLine`). Never
+  `setText`, `focus`, `revealLine`, `replaceRange`, `markError`). Never
   import `@codemirror/*` outside `components/editor/` and `modules/shortcuts.ts`.
 - Tier 2 reads it through `window.__editor` (an `EditorProbe`: the same API plus
   cursor, selection and line reads) and `tests/helpers/editor.ts`. A test never
@@ -238,6 +238,12 @@ mounts and held in a ref.
   `toEditorKey()` spells its key for CodeMirror. Do not add a binding in
   `Editor.tsx` that the table lacks. The editor takes no `defaultKeymap`: it
   binds Ctrl-Enter to a blank line, which would swallow the build key.
+- Aids: `closeBrackets`, `bracketMatching`, `highlightActiveLine` (and its
+  gutter twin) and `highlightSelectionMatches`, each restyled on a token in
+  `theme.ts`. `closeBrackets` pairs only `{`, `[` and `(`, set through the
+  `stex` language data in `Editor.tsx`. Never add quotes or `$`: LaTeX quotes
+  are `` and '', and a paired `$` gets in the way. No `closeBracketsKeymap`:
+  Backspace would need a Help row.
 - Suggestions: `components/editor/completions.ts` hands the ranked lists from
   `shared/glyph-completion.ts` and `shared/image-completion.ts` to
   `@codemirror/autocomplete`. Keep `filter: false`: the order is `shared/`'s.

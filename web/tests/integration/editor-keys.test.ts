@@ -1,6 +1,7 @@
 // Tier 2. The editor-scope shortcuts bound in the editor's keymap: toggle
-// comment, find, replace, delete line, indent/outdent with spaces only, and
-// the Esc-then-Tab escape out of the keyboard trap.
+// comment, find, replace, go to line, select next occurrence, delete line,
+// indent/outdent with spaces only, and the Esc-then-Tab escape out of the
+// keyboard trap. Also the bracket pairing as the contributor types.
 
 import type { Page } from "@playwright/test";
 import {
@@ -107,6 +108,64 @@ test("Ctrl+H opens the replace dialog and replacing a term changes the source", 
 
   await panel.getByRole("button", { name: "replace all" }).click();
   expect(await editorText(page)).toBe("qux bar");
+});
+
+test("Ctrl+G moves the cursor to the line typed in the go-to-line box", async ({ app }) => {
+  const { page } = app;
+  await openWorkspace(page);
+  await setEditorValue(page, "one\ntwo\nthree\nfour");
+  await setCursor(page, 0, 0);
+
+  await page.keyboard.press("Control+G");
+  const field = page.locator(".cm-goto-line input[name=line]");
+  await expect(field).toBeFocused();
+  await field.fill("3");
+  await field.press("Enter");
+
+  await expect.poll(() => editorCursor(page)).toEqual({ line: 2, ch: 0 });
+  await expect(page.locator(".cm-goto-line")).toHaveCount(0);
+});
+
+test("Ctrl+D adds the next occurrence of the selected word to the selection", async ({ app }) => {
+  const { page } = app;
+  await openWorkspace(page);
+  await setEditorValue(page, "foo bar\nbaz foo");
+  await setEditorSelection(page, { line: 0, ch: 0 }, { line: 0, ch: 3 });
+
+  await page.keyboard.press("Control+D");
+  // The first occurrence stays the main selection; typing replaces both at once.
+  await page.keyboard.type("qux");
+  expect(await editorText(page)).toBe("qux bar\nbaz qux");
+});
+
+test("typing an opening brace inserts its pair; typing the closer steps over it", async ({ app }) => {
+  const { page } = app;
+  await openWorkspace(page);
+  await setEditorValue(page, "");
+
+  for (const [open, close] of [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+  ]) {
+    await setEditorText(page, "");
+    await page.keyboard.type(open);
+    expect(await editorText(page)).toBe(`${open}${close}`);
+    expect(await editorCursor(page)).toEqual({ line: 0, ch: 1 });
+
+    await page.keyboard.type(close);
+    expect(await editorText(page)).toBe(`${open}${close}`);
+    expect(await editorCursor(page)).toEqual({ line: 0, ch: 2 });
+  }
+});
+
+test("typing a quote or a dollar inserts it alone", async ({ app }) => {
+  const { page } = app;
+  await openWorkspace(page);
+  await setEditorValue(page, "");
+
+  await page.keyboard.type("'\"`$");
+  expect(await editorText(page)).toBe("'\"`$");
 });
 
 test("Ctrl+Shift+K removes the cursor's line", async ({ app }) => {

@@ -11,7 +11,7 @@
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Page } from "@playwright/test";
-import { editorBox, focusEditor, markedLines } from "../helpers/editor.ts";
+import { appendToEditorLine, editorBox, focusEditor, markedLines } from "../helpers/editor.ts";
 import { EMPTY_PDF_TEXT, expect, test } from "./fixtures.ts";
 import { appErrors, enterWorkspace, failCompiles } from "./workspace.ts";
 
@@ -69,13 +69,24 @@ const STATES: Record<string, State> = {
   },
   default: buildPdf,
   "error-line": async (page) => {
+    // The stub log's context is `l.3 \foo`: put that token at the end of line 3.
+    await appendToEditorLine(page, 2, " \\foo");
     await buildFailing(page, "scenario");
     await expect(page.locator("#first-error button.error-jump")).toHaveText(/^Line 3! /);
     expect(await markedLines(page)).toEqual([3]);
-    // The cue is not the colour alone: the marked line's gutter element carries the class.
-    const gutter = page.locator(".cm-gutterElement.build-error-gutter");
-    await expect(gutter).toHaveCount(1);
-    await expect(gutter).toHaveText("3");
+    // The cue is not the colour alone: a squiggle under the token and a marker in the lint gutter.
+    await expect(page.locator(".cm-lintRange-error")).toHaveText("\\foo");
+    const marker = page.locator(".cm-lint-marker-error");
+    await expect(marker).toHaveCount(1);
+    const number = page.locator(".cm-lineNumbers .cm-gutterElement", { hasText: /^3$/ });
+    const [markerBox, numberBox] = await Promise.all([marker.boundingBox(), number.boundingBox()]);
+    expect(markerBox, "the lint marker is not drawn").not.toBeNull();
+    expect(numberBox, "line 3's number is not drawn").not.toBeNull();
+    if (markerBox && numberBox) {
+      const middle = markerBox.y + markerBox.height / 2;
+      expect(middle, "the lint marker is not on line 3's row").toBeGreaterThan(numberBox.y);
+      expect(middle, "the lint marker is not on line 3's row").toBeLessThan(numberBox.y + numberBox.height);
+    }
   },
   "error-no-line": async (page) => {
     await buildFailing(page, "macros");

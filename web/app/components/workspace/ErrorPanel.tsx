@@ -25,7 +25,7 @@ function FullLog({ log }: { log: string | undefined }) {
  */
 export function ErrorPanel() {
   const error = useAppStore((s) => s.buildError);
-  const line = error?.errorLine ?? null;
+  const line = error?.errorSpot?.line ?? null;
 
   return (
     <div className="error-panel" id="error-panel" hidden={error === null}>
