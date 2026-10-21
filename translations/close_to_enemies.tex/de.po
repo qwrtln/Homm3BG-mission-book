@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"POT-Creation-Date: 2026-10-21 22:02+0000\n"
 "PO-Revision-Date: 2025-07-30 12:41+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -91,7 +91,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:60
 #: coops/stand_united.tex:52 campaigns/castle_greek_gift.tex:73
 #: campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
@@ -108,7 +108,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:66
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:127
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
@@ -122,7 +122,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
-#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: coops/close_to_enemies.tex:102 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/arcane_artillery.tex:79
 #: clash/the_hunt.tex:69 campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:194
@@ -332,7 +332,7 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:72
+#: coops/close_to_enemies.tex:64
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -346,7 +346,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:79
+#: coops/close_to_enemies.tex:71
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -362,7 +362,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:108
+#: coops/close_to_enemies.tex:100
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
@@ -426,7 +426,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:116
+#: coops/close_to_enemies.tex:108
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
@@ -444,7 +444,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:131
+#: coops/close_to_enemies.tex:121
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Enemy clan waves}}\n"
@@ -459,8 +459,6 @@ msgid ""
 "  \\item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.\n"
 "  \\item Gain one \\svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.\n"
 "\\end{itemize}\n"
-"\\vspace*{\\fill}\n"
-"\\columnbreak\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Gegnerische Wellen}}\n"
@@ -478,7 +476,7 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:141
+#: coops/close_to_enemies.tex:129
 #, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Settlements Defenders}}\n"
@@ -488,7 +486,6 @@ msgid ""
 "  \\item The combat does not cost \\svg{movement}.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
-"\\columnbreak\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Siedlungsverteidiger}}\n"
@@ -500,28 +497,17 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
-#. type: multicols
-#: coops/close_to_enemies.tex:148
-#, no-wrap
+#. type: figure
+#: coops/close_to_enemies.tex:137
+#
 msgid ""
-"\\vspace*{\\fill}\n"
-"\\begin{center}\n"
-"  \\includegraphics[width=\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
-"  \\captionof{figure}{\\textbf{1-PLAYER SCENARIO | EXAMPLE }}\n"
-"\\end{center}\n"
-"\\vspace*{\\fill}\n"
-"\n"
-msgstr ""
-"\\vspace*{\\fill}\n"
-"\\begin{center}\n"
-"  \\includegraphics[width=0.8\\linewidth]{\\maps/close_to_enemies_p1.png}\n"
-"  \\captionof{figure}{\\textbf{1-SPIELER-SZENARIO | BEISPIEL}}\n"
-"\\end{center}\n"
-"\\vspace*{\\fill}\n"
-"\n"
+"[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/"
+"close_to_enemies_p1.png} \\captionof{figure}{\\textbf{1-PLAYER SCENARIO | "
+"EXAMPLE }}"
+msgstr "[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/close_to_enemies_p1.png} \\captionof{figure}{\\textbf{1-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:156
+#: coops/close_to_enemies.tex:143
 msgid ""
 "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
 "close_to_enemies_p2.png} \\captionof{figure}{\\textbf{2-PLAYER SCENARIO | "
@@ -532,7 +518,7 @@ msgstr ""
 "BEISPIEL}}"
 
 #. type: table*
-#: coops/close_to_enemies.tex:195
+#: coops/close_to_enemies.tex:182
 #, no-wrap
 msgid ""
 "[b!]\n"
@@ -613,17 +599,17 @@ msgstr ""
 "  }"
 
 #. type: figure
-#: coops/close_to_enemies.tex:205
+#: coops/close_to_enemies.tex:192
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{3-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:212
+#: coops/close_to_enemies.tex:199
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
 msgstr "\\captionof{figure}{\\textbf{4-SPIELER-SZENARIO | BEISPIEL}}"
 
 #. type: tikzpicture
-#: coops/close_to_enemies.tex:232
+#: coops/close_to_enemies.tex:219
 #, no-wrap
 msgid ""
 "[overlay]\n"
@@ -637,7 +623,7 @@ msgstr ""
 "  };"
 
 #. type: figure
-#: coops/close_to_enemies.tex:232
+#: coops/close_to_enemies.tex:219
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p5.png} \\captionof{figure}{\\textbf{5-PLAYER SCENARIO | "
@@ -648,7 +634,7 @@ msgstr ""
 "BEISPIEL}}"
 
 #. type: figure
-#: coops/close_to_enemies.tex:232
+#: coops/close_to_enemies.tex:219
 msgid ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
 "close_to_enemies_p6.png} \\captionof{figure}{\\textbf{6-PLAYER SCENARIO | "
