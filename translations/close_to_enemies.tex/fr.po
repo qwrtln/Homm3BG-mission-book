@@ -339,48 +339,6 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Préparation du Héros IA}}\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:62
-#, no-wrap
-msgid ""
-"Prepare an AI Deck for Settlement defenders.\n"
-"\n"
-msgstr ""
-"Préparez un Deck IA pour les Défenseurs des Enclaves.\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:64
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
-"\n"
-msgstr ""
-"\\textbf{Deck Défenseurs d'Enclave:} 1 × Carte Attaque, 1 × Carte Défense, 1 × Carte Sort\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:66
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
-"\n"
-msgstr ""
-"\\textbf{Deck de Sort Défenseurs d'Enclave:}\\\\1~×~Flèche Magique\n"
-"\n"
-
-#. type: multicols
 #: coops/close_to_enemies.tex:72
 #, no-wrap
 msgid ""
@@ -537,7 +495,6 @@ msgid ""
 "  \\item The strength of Settlement Defenders is determined by the \\textit{Enemy Clan Armies} table (last row).\n"
 "  \\item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.\n"
 "  \\item The combat does not cost \\svg{movement}.\n"
-"  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"
@@ -548,7 +505,6 @@ msgstr ""
 "  \\item La force des Défenseurs d'Enclave est déterminé par le tableau \\textit{Armée des Clans Ennemis} (dernière ligne).\n"
 "  \\item Après avoir pioché l'armée ennemie, un Joueur peut défausser une Unité ennemie et en piocher une autre de même Rang.\n"
 "  \\item Le combat ne coûtent pas de \\svg{movement}.\n"
-"  \\item Dans ces combats, vous devez utiliser les Cartes IA.\n"
 "  \\item Après victoire, gagnez 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"

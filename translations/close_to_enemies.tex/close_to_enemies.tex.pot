@@ -275,40 +275,6 @@ msgid ""
 msgstr ""
 
 #. type: multicols
-#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/close_to_enemies.tex:62
-#, no-wrap
-msgid ""
-"Prepare an AI Deck for Settlement defenders.\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/close_to_enemies.tex:64
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
-"\n"
-msgstr ""
-
-#. type: multicols
-#: coops/close_to_enemies.tex:66
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
-"\n"
-msgstr ""
-
-#. type: multicols
 #: coops/close_to_enemies.tex:72
 #, no-wrap
 msgid ""
@@ -406,7 +372,6 @@ msgid ""
 "  \\item The strength of Settlement Defenders is determined by the \\textit{Enemy Clan Armies} table (last row).\n"
 "  \\item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.\n"
 "  \\item The combat does not cost \\svg{movement}.\n"
-"  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"

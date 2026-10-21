@@ -332,48 +332,6 @@ msgstr ""
 "\\end{itemize}\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Botvorbereitung}}\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:62
-#, no-wrap
-msgid ""
-"Prepare an AI Deck for Settlement defenders.\n"
-"\n"
-msgstr ""
-"Bereitet Bot-Stapel für die Verteidiger der Siedlung vor.\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:64
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
-"\n"
-msgstr ""
-"\\textbf{Bot-Stapel der Verteidiger:} 1 × Angriff, 1 × Verteidigung, 1 × Zauberkraft\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:66
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
-"\n"
-msgstr ""
-"\\textbf{Bot-Zauberstapel der Verteidiger:}\\\\1~×~Magischer Pfeil\n"
-"\n"
-
-#. type: multicols
 #: coops/close_to_enemies.tex:72
 #, no-wrap
 msgid ""
@@ -528,7 +486,6 @@ msgid ""
 "  \\item The strength of Settlement Defenders is determined by the \\textit{Enemy Clan Armies} table (last row).\n"
 "  \\item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.\n"
 "  \\item The combat does not cost \\svg{movement}.\n"
-"  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"
@@ -539,7 +496,6 @@ msgstr ""
 "  \\item Die Stärke der Verteidiger wird von der \\textit{Gegnerische Clanarmeen}-Tabelle bestimmt (letzte Zeile).\n"
 "  \\item Nach der Vorbereitung der gegnerischen Armee darf ein Spieler eine gegnerische Einheitenkarte abwerfen und eine neue Einheit derselben Stufe ziehen.\n"
 "  \\item Dieser Kampf kostet keine \\svg{movement}.\n"
-"  \\item In diesem Kampf werden die Bot-Stapel verwendet.\n"
 "  \\item Erhaltet 2 \\svg{experience} nach einem Sieg.\n"
 "\\end{itemize}\n"
 "\n"

@@ -337,48 +337,6 @@ msgstr ""
 "\n"
 
 #. type: multicols
-#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Przygotowanie AI}}\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:62
-#, no-wrap
-msgid ""
-"Prepare an AI Deck for Settlement defenders.\n"
-"\n"
-msgstr ""
-"Przygotuj Talię AI dla Obrońców Osad.\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:64
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card\n"
-"\n"
-msgstr ""
-"\\textbf{Talia Obrońców Osad:} 1 × Karta Mocy, 1 × Karta Obrony, 1 × Karta Magii\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:66
-#, no-wrap
-msgid ""
-"\\textbf{Settlement defenders Spell Deck:}\\\\1~×~Magic Arrow\n"
-"\n"
-msgstr ""
-"\\textbf{Talia Zaklęć Obrońców Osad:}\\\\1~×~Magiczna Strzała\n"
-"\n"
-
-#. type: multicols
 #: coops/close_to_enemies.tex:72
 #, no-wrap
 msgid ""
@@ -535,7 +493,6 @@ msgid ""
 "  \\item The strength of Settlement Defenders is determined by the \\textit{Enemy Clan Armies} table (last row).\n"
 "  \\item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.\n"
 "  \\item The combat does not cost \\svg{movement}.\n"
-"  \\item In these combats, you must use AI Cards.\n"
 "  \\item After winning a combat, gain 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"
@@ -546,7 +503,6 @@ msgstr ""
 "  \\item Siła Obrońców Osad jest określana przez tabelę \\textit{Armii Wrogich Klanów} (ostatni wiersz).\n"
 "  \\item Po wylosowaniu armii gracz może odrzucić jedną kartę wrogiej Jednostki i dobrać nową Jednostkę tego samego Poziomu.\n"
 "  \\item Walka nie kosztuje \\svg{movement}.\n"
-"  \\item W tych walkach musisz używać Kart AI.\n"
 "  \\item Po wygraniu walki zdobywasz 2 \\svg{experience}.\n"
 "\\end{itemize}\n"
 "\\columnbreak\n"
