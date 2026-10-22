@@ -133,8 +133,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Chain Link}{\\images/"
 "shackles_of_war.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{Maillon de la Chaîne}{\\images/"
-"shackles_of_war.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Maillon de la Chaîne}"
+"{\\images/shackles_of_war.png}"
 
 #. type: multicols*
 #: clash/chain_link.tex:9
