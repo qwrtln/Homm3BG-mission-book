@@ -156,8 +156,8 @@ msgid ""
 "\\addscenariosection{1}{Clash/Alliance Scenario}{Astral Run}{\\images/"
 "astral.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement/Alliance}{Course Astrale}{\\images/"
-"astral.png}"
+"\\addscenariosection{1}{Scénario Affrontement/Alliance}{Course Astrale}"
+"{\\images/astral.png}"
 
 #. type: multicols*
 #: clash/astral_run.tex:9
