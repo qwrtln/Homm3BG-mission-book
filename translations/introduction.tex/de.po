@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-09-30 15:22+0000\n"
+"POT-Creation-Date: 2026-10-22 13:25+0000\n"
 "PO-Revision-Date: 2025-06-24 15:03+0200\n"
 "Last-Translator: Andreas Beck <a-beck@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -53,7 +53,7 @@ msgstr ""
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:32
 #: sections/credits.tex:36 sections/random_scenario.tex:306
-#: sections/introduction.tex:95 sections/introduction.tex:101
+#: sections/introduction.tex:95 sections/introduction.tex:106
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -330,20 +330,16 @@ msgid ""
 msgstr ""
 
 #. type: multicols*
-#: sections/introduction.tex:99
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=0.55\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#: sections/introduction.tex:104
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
-"  \\hfill\\transparent{0.2}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/hourglass.png}}\n"
+"  \\iftoggle{printable}{%\n"
+"    \\qrcode[nolink,height=3cm]{https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf}\\\\[0.5em]\n"
+"    Scan to open the \\textbf{Draft Scenarios} booklet.%\n"
+"  }{%\n"
+"    \\hfill\\transparent{0.2}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/hourglass.png}}%\n"
+"  }\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
-"\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.45\\linewidth, keepaspectratio]{\\art/prayer.png}}\n"
-"\\end{center}\n"
-"\n"
