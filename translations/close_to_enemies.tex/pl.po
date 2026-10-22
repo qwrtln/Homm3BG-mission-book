@@ -502,14 +502,17 @@ msgstr ""
 "\\end{itemize}\n"
 "\n"
 
+#
 #. type: figure
 #: coops/close_to_enemies.tex:137
-#
 msgid ""
 "[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/"
 "close_to_enemies_p1.png} \\captionof{figure}{\\textbf{1-PLAYER SCENARIO | "
 "EXAMPLE }}"
-msgstr "[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/close_to_enemies_p1.png} \\captionof{figure}{\\footnotesize\\textbf{SCENARIUSZ 1-OSOBOWY | PRZYKŁAD }}"
+msgstr ""
+"[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/"
+"close_to_enemies_p1.png} \\captionof{figure}"
+"{\\footnotesize\\textbf{SCENARIUSZ 1-OSOBOWY | PRZYKŁAD }}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:143
