@@ -83,30 +83,61 @@ msgstr ""
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 2 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 3 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 4 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 5 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 5 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 5 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 6 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 6 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 6 JOUEURS}}"
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -196,8 +227,8 @@ msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Arcane Artillery}{\\images/"
 "precision.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{Artillerie Arcanique}{\\images/"
-"precision.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Artillerie Arcanique}"
+"{\\images/precision.png}"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:9

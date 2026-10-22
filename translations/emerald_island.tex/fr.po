@@ -190,20 +190,41 @@ msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 1 JOUEUR}}"
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 
 #.  !TeX spellcheck = en_US
 #. type: Plain text
