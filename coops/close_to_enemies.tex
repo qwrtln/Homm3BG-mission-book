@@ -56,14 +56,6 @@ Each pair of same-colored Cubes indicates a Starting (I) Map Tile and its corres
   \end{itemize}
 \end{itemize}
 
-\subsection*{\MakeUppercase{AI Hero Setup}}
-
-Prepare an AI Deck for Settlement defenders.
-
-\textbf{Settlement defenders Deck:} 1 × Attack Card, 1 × Defense Card, 1 × Spell Card
-
-\textbf{Settlement defenders Spell Deck:}\\1~×~Magic Arrow
-
 \subsection*{\MakeUppercase{Victory Conditions}}
 
 \begin{itemize}
@@ -94,12 +86,12 @@ Prepare an AI Deck for Settlement defenders.
 \textbf{\nth{4} Round:}
 \begin{itemize}
   \item The second wave of Enemy Clan armies attacks all Towns (see section below).
-  \item After defending their Town, each player may Search (3) the \textit{Artifact Deck}.
+  \item After defending their Town, each player may either Search (3) the \textit{Artifact Deck} or gain 5~\svg{gold}.
 \end{itemize}
 \textbf{\nth{6} Round:}
 \begin{itemize}
   \item The third wave of Enemy Clan armies attacks all Towns (see section below).
-  \item After defending their Town, each player may Search (3) the \textit{Artifact Deck}.
+  \item After defending their Town, each player may either Search (3) the \textit{Artifact Deck} or gain 5~\svg{gold}.
 \end{itemize}
 \textbf{\nth{7} Round:}
 \begin{itemize}
@@ -117,8 +109,8 @@ Prepare an AI Deck for Settlement defenders.
 \subsection*{\MakeUppercase{Enemy clan waves}}
 \begin{itemize}
   \item Unconquered enemy Settlements will send clan armies to attack your Town!
-  \item A battle occurs at the start of each player's turn.
-  \item Before combat, you may use your Building, Spell Book, and Population Tokens, as well as Might and Magic Cards. However, you cannot move your Hero.
+  \item A battle occurs at the start of each player's turn, after they discard and draw Cards.
+  \item Before combat, you may perform Town Actions and play Might and Magic Cards. However, you cannot move your Hero.
   \item Each player must defend their own Town.
   \item If you have a Citadel, the \textit{Arrow Tower} attack is reduced. The attacks for first/second/third wave become 2/3/4 \svg{attack}.
   \item This combat does not cost \svg{movement}.
@@ -126,27 +118,22 @@ Prepare an AI Deck for Settlement defenders.
   \item If your main Hero is in an allied Town (not Settlement) when a Clan attacks another allied Town without a main Hero present, you may help defend using your Might and Magic Cards. The allied Hero will use their Units, and you can help them by playing Cards from your hand during combat.
   \item Gain one \svg{experience} when successfully defending your Town, regardless of whether your main Hero participated.
 \end{itemize}
-\vspace*{\fill}
-\columnbreak
 
 \subsection*{\MakeUppercase{Settlements Defenders}}
 \begin{itemize}
   \item The strength of Settlement Defenders is determined by the \textit{Enemy Clan Armies} table (last row).
   \item After drawing an enemy army, a Player may discard one enemy Unit Card and draw a new Unit of the same Tier.
   \item The combat does not cost \svg{movement}.
-  \item In these combats, you must use AI Cards.
   \item After winning a combat, gain 2 \svg{experience}.
 \end{itemize}
-\columnbreak
-
-\vspace*{\fill}
-\begin{center}
-  \includegraphics[width=\linewidth]{\maps/close_to_enemies_p1.png}
-  \captionof{figure}{\textbf{1-PLAYER SCENARIO | EXAMPLE }}
-\end{center}
-\vspace*{\fill}
 
 \end{multicols}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{\maps/close_to_enemies_p1.png}
+  \captionof{figure}{\textbf{1-PLAYER SCENARIO | EXAMPLE }}
+\end{figure}
 
 \begin{figure}[h!]
   \centering
@@ -188,7 +175,7 @@ Prepare an AI Deck for Settlement defenders.
         & \lightcell[1.2]{\svg[12]{bronze}\svg[12]{silver}\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}}
         & \lightcell[1.2]{\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
         & \lightcell[1.2]{\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}}
-        & \lightcell[1.2]{\svg[12]{silver}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{azure}} \\
+        & \lightcell[1.2]{\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}\svg[12]{golden}} \\
     \end{tabularx}
   }
 \end{table*}
