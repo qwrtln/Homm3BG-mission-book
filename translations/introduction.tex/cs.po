@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-10-22 13:25+0000\n"
+"POT-Creation-Date: 2026-09-30 15:22+0000\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -53,7 +53,7 @@ msgstr ""
 #: clash/bloody_grail.tex:120 clash/bloody_grail.tex:126
 #: campaigns/inferno_devilish_plan.tex:206 sections/credits.tex:32
 #: sections/credits.tex:36 sections/random_scenario.tex:306
-#: sections/introduction.tex:95 sections/introduction.tex:106
+#: sections/introduction.tex:95 sections/introduction.tex:101
 #, no-wrap
 msgid ""
 "\\vspace*{\\fill}\n"
@@ -349,16 +349,20 @@ msgstr ""
 "\n"
 
 #. type: multicols*
-#: sections/introduction.tex:104
-#, no-wrap
+#: sections/introduction.tex:99
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{center}\n"
+#| "  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+#| "\\end{center}\n"
+#| "\n"
 msgid ""
 "\\begin{center}\n"
-"  \\iftoggle{printable}{%\n"
-"    \\qrcode[nolink,height=3cm]{https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/drafts/drafts.pdf}\\\\[0.5em]\n"
-"    Scan to open the \\textbf{Draft Scenarios} booklet.%\n"
-"  }{%\n"
-"    \\hfill\\transparent{0.2}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/hourglass.png}}%\n"
-"  }\n"
+"  \\hfill\\transparent{0.2}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/hourglass.png}}\n"
 "\\end{center}\n"
 "\n"
 msgstr ""
+"\\begin{center}\n"
+"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"\\end{center}\n"
+"\n"
