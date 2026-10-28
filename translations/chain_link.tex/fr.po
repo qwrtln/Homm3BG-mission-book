@@ -156,7 +156,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
-"12 Manches\n"
+"12 manches\n"
 "\n"
 
 #. type: multicols*
