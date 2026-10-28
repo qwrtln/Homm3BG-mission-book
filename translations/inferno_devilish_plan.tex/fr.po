@@ -246,7 +246,7 @@ msgid ""
 "Campaign $-$ Dungeons and Devils}{1. A Devilish Plan}{\\images/firewall.png}"
 msgstr ""
 "\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
-"{} {} {}Dungeons and Devils} \\addscenariosection[subsection]{1}{Campagne "
+"{} {} {}Donjons et Diables} \\addscenariosection[subsection]{1}{Campagne "
 "Hadès $-$ Donjons et Diables}{1. Un Plan Diabolique}{\\images/firewall.png}"
 
 #. type: multicols
