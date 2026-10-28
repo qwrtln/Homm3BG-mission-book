@@ -667,7 +667,7 @@ msgstr ""
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 msgid "\\captionof{figure}{\\textbf{1-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 1 JOUEUR}}"
+msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 1 JOUEUR}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
