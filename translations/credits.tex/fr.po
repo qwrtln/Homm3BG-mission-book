@@ -115,15 +115,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/credits.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Contributing scenarios in \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen, Hubert Baranowski. % no-check-caps\n"
 "\n"
 msgstr ""
-"\\textbf{Contribution au scénarios en \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen.  % no-check-caps\n"
+"\\textbf{Contribution aux scénarios en \\LaTeX{}:} Andrzej Wiącek, Tomáš Zeman, Xavier Borelly, Justus Törmälehto, Saveliy Ivanov, Tyson Heckert, Adam Obuchowicz, Vojtěch Růžička, Christian Jakobsen, Hubert Baranowski. % no-check-caps\n"
 "\n"
 
 #. type: multicols*
@@ -133,18 +130,12 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
-"\\textbf{Traduction Française:} Nicolas Matoub\n"
+"\\textbf{Traduction Française:} Nicolas Matoub, \\mbox{Nohud}\n"
 "\n"
 
 #. type: multicols*
 #: sections/credits.tex:24
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Scenario Map Editor}.\n"
-#| "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
-#| "Jon Van Caneghem and everyone involved with the development of the original video game.\n"
-#| "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Special thanks}: Patrick Kersten for \\href{https://zedero.github.io/homm3boardgame/}{Scenario Map Editor}.\n"
 "Everyone from Archon Studio, for producing the game and answering our incessant queries about rules and other topics.\n"
@@ -152,23 +143,20 @@ msgid ""
 "Everyone who has supported the project with suggestions, corrections, image resources, and words of encouragement either on Discord or BoardGameGeek.\n"
 "\n"
 msgstr ""
-"\\textbf{Remerciement}: Patrick Kersten pour \\href{https://zedero.github.io/HoMM3BoardgameScenarioEditor/}{Editeur de Carte de Scénario}.\n"
+"\\textbf{Remerciements}: Patrick Kersten pour \\href{https://zedero.github.io/homm3boardgame/}{l'éditeur de cartes de scénario}.\n"
 "Archon Studio, pour la production du jeu et les réponses à nos requêtes incessantes sur les règles et d'autres sujets.\n"
-"Jon Van Caneghem and tous ceux impliqués dans le développement du jeu vidéo original.\n"
-"Tous ceux qui ont soutenu le projet par leurs suggestions, correction, ressources graphiques et mot d'encouragement sur Discord ou BoardGameGeek.\n"
+"Jon Van Caneghem et tous ceux impliqués dans le développement du jeu vidéo original.\n"
+"Tous ceux qui ont soutenu le projet par leurs suggestions, corrections, ressources graphiques et mots d'encouragement sur Discord ou BoardGameGeek.\n"
 "\n"
 
 #. type: multicols*
 #: sections/credits.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Faction:} Inferno\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Cover art}: Iana Vengerova\n"
 "\n"
 msgstr ""
-"\\textbf{Faction :} Hadès\n"
+"\\textbf{Illustration de couverture}: Iana Vengerova\n"
 "\n"
 
 #. type: multicols*
