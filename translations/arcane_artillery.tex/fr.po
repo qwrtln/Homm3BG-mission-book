@@ -83,30 +83,61 @@ msgstr ""
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{2-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 2 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 3 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 coops/emerald_island.tex:121
 #: clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 4 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{5-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 5 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 5 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 5 JOUEURS}}"
 
 #. type: minipage
 #: coops/titans_stronghold.tex:237 clash/arcane_artillery.tex:159
+#, fuzzy
 msgid "\\captionof{figure}{\\textbf{6-PLAYER SCENARIO}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO POUR 6 JOUEURS}}"
+msgstr ""
+"#-#-#-#-#  fr.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCÉNARIO POUR 6 JOUEURS}}\n"
+"#-#-#-#-#  fr.po (Homm 3BG-mission-book)  #-#-#-#-#\n"
+"\\captionof{figure}{\\textbf{SCENARIO POUR 6 JOUEURS}}"
 
 #. type: multicols*
 #: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
@@ -158,13 +189,14 @@ msgstr ""
 
 #. type: multicols
 #: clash/chain_link.tex:12 clash/arcane_artillery.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "12 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"12 manches\n"
 "\n"
 
 #. type: multicols*
@@ -191,28 +223,21 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/arcane_artillery.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{Force of Will}{\\images/"
-#| "berserk.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Arcane Artillery}{\\images/"
 "precision.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{Force de Volonté}{\\images/"
-"berserk.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Artillerie Arcanique}"
+"{\\images/precision.png}"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:9
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1279029213839626313}{Archon Studios Discord}\n"
 "\n"
 msgstr ""
-"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1237891632448278618}{Archon Studios Discord}\n"
+"\\textbf{Source:} \\href{https://discord.com/channels/740870068178649108/1279029213839626313}{Archon Studios Discord}\n"
 "\n"
 
 #. type: multicols
@@ -223,33 +248,25 @@ msgid ""
 "Some pieces of arcane artillery are scattered around the ruins, they can help us kill the dragons resting in them.}\n"
 "\n"
 msgstr ""
+"\\textit{Les anciennes ruines regorgent de magie et de technologie arcaniques, nous devons en prendre le contrôle avant nos ennemis.\n"
+"Quelques pièces d'artillerie arcanique sont éparpillées dans les ruines, elles peuvent nous aider à tuer les dragons qui y reposent.}\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 or 3\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2--6 Player FFA or 2vs2, 2vs2vs2, 3vs3 Alliance\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\\textbf{Nombre de Joueurs :} 2 ou 3\n"
+"\\textbf{Nombre de Joueurs :} 2--6 en chacun pour soi, ou Alliance 2c2, 2c2c2, 3c3\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:28
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A ``Pack'' of chosen \\svg{bronze} Units\n"
-#| "  \\item A ``Few'' chosen \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Units:}\n"
 "\\begin{itemize}\n"
@@ -258,24 +275,21 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de Départ :}\n"
+"\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
-"  \\item «Groupe» d'unités \\svg{bronze} choisies\n"
 "  \\item «Quelques» unités \\svg{bronze} choisies\n"
+"  \\item «Groupe» d'unités \\svg{bronze} choisies\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Map Tile Pool:} Each player takes 2 random Far (II--III) Map Tiles, one of which must contain a Settlement\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Map Tile Pool:} Each player takes 1 random Far (II--III) Map Tile, it must contain a Settlement\n"
 "\n"
 msgstr ""
-"\\textbf{Réserve de Tuiles:} Chaque Joueur prend au hasard 2 Tuiles Lointaines (II--III), une doit contenir une Enclave\n"
+"\\textbf{Réserve de tuiles:} Chaque Joueur prend au hasard 1 tuile Lointaine (II--III), elle doit contenir une Enclave\n"
 "\n"
 
 #. type: multicols
@@ -287,19 +301,14 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item En mode Alliance, alternez le placement des tuiles de Départ afin que les alliés ne commencent pas côte à côte.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:46
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 2-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 2 × Starting (I) Map Tile\n"
-#| "  \\item 2 × Near (IV--V) Map Tile\n"
-#| "  \\item 4 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 2-player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -311,25 +320,15 @@ msgid ""
 msgstr ""
 "\\textbf{Scénario pour 2 Joueurs:}\n"
 "\\begin{itemize}\n"
-"  \\item 2 × Tuiles de Départ (I)\n"
-"  \\item 2 × Tuiles Proches (IV--V)\n"
-"  \\item 4 × Tuiles Lointaines (II--III)\n"
-"  \\item 1 × Tuiles Centre (VI--VII), avec une Case Terres Désolées\n"
+"  \\item 2 × tuiles de Départ (I)\n"
+"  \\item 4 × tuiles Proches (IV--V) avec un Obélisque (à défaut, Huttes de Sorcière comme Obélisques)\n"
+"  \\item 1 × tuile Centrale (VI--VII) avec les Terres Désolées\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{For a 3-player Scenario:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item 3 × Starting (I) Map Tile\n"
-#| "  \\item 3 × Near (IV--V) Map Tile\n"
-#| "  \\item 6 × Far (II--III) Map Tile\n"
-#| "  \\item 1 × Center (VI--VII) Map Tile, which must contain the Dragon Utopia Field\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{For a 3-6 player Scenario:}\n"
 "\\begin{itemize}\n"
@@ -339,45 +338,36 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Scénario pour 3 Joueurs:}\n"
+"\\textbf{Scénario pour 3 à 6 Joueurs:}\n"
 "\\begin{itemize}\n"
-"  \\item 3 × Tuiles de Départ (I)\n"
-"  \\item 3 × Tuiles Proches (IV--V)\n"
-"  \\item 6 × Tuiles Lointaines (II--III)\n"
-"  \\item 1 × Tuiles Centre (VI--VII), avec une Case Terres Désolées\n"
+"  \\item J × tuiles de Départ (I)\n"
+"  \\item 6 × tuiles Proches (IV--V) avec un Obélisque (à défaut, Huttes de Sorcière comme Obélisques)\n"
+"  \\item 1 × tuile Centrale (VI--VII) avec les Terres Désolées\n"
 "\\end{itemize}\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "Slay the Dragon Boss with your Main Hero.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "First player to flag Dragon Utopia wins the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
-"Tuer le Boss Dragon avec votre Héros Principal.\n"
+"Le premier Joueur à revendiquer les Terres Désolées remporte le scénario.\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:59
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "At the end of the \\nth{12} Round, if the Dragon Utopia is not flagged by any player, all players lose the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
-"À la fin de la Manche 12, s'il n'y a pas de gagnant, chaque Joueur perd le Scénario.\n"
+"À la fin de la manche 12, si les Terres Désolées n'ont été revendiquées par aucun Joueur, tous les Joueurs perdent le scénario.\n"
 "\n"
 
 #. type: multicols
@@ -406,16 +396,17 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\textbf{Manche 1 :}\n"
+"\\begin{itemize}\n"
+"  \\item Le premier Joueur gagne un jeton \\svg{morale_negative} (Nécropole : $-1$ à la taille de la main \\svg{hand} ce tour).\n"
+"  \\item Le deuxième Joueur gagne $+1$~\\svg{movement}.\n"
+"  \\item Tous les autres Joueurs gagnent $+1$~\\svg{movement} et un jeton \\svg{morale_positive} (Nécropole : $+1$ à la taille de la main \\svg{hand} ce tour).\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:77
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{4} and \\nth{8} Rounds:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item Remove all Black Cubes from every Water Wheel and Windmill on the map.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{\\nth{6} Round:}\n"
 "\\begin{itemize}\n"
@@ -423,9 +414,9 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Manches 4 et 8 :}\n"
+"\\textbf{Manche 6 :}\n"
 "\\begin{itemize}\n"
-"  \\item Retirez tous les Cubes Noirs des Moulins à Eau, Moulins à Vent et Jardins Mystiques sur le Plateau.\n"
+"  \\item Retirez tous les cubes noirs de chaque tuile.\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -444,28 +435,30 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item Les Héros ne peuvent pas entrer dans les tuiles de Départ des autres.\n"
+"  \\item Pas de carte Diplomatie pour éviter le Combat sur la case Terres Désolées.\n"
+"  \\item Les Pointes Arcaniques sont des cubes qu'aucune faction de Joueur n'utilise.\n"
+"  \\item Chaque Obélisque ne peut être revendiqué que par un seul Joueur à la fois.\n"
+"  \\item Visiter un Obélisque pour la première fois donne une Pointe Arcanique au visiteur.\n"
+"  \\item Au début de son tour, un Joueur gagne autant de Pointes Arcaniques que d'Obélisques contrôlés.\n"
+"  \\item \\textit{En Mode Alliance, ajoutez une Unité d'Or au combat des Terres Désolées par allié supplémentaire (+1 en équipe de 2, +2 en équipe de 3).}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:93
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\vspace*{\\fill}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\vspace{3em}\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\n"
+"\\vspace{3em}\n"
 "\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:97
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{center}\n"
-#| "  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
-#| "\\end{center}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{center}\n"
 "  \\transparent{0.3}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/magic_arrow.png}}\n"
@@ -473,7 +466,7 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{center}\n"
-"  \\transparent{0.2}{\\includegraphics[width=0.5\\linewidth, keepaspectratio]{\\art/bless.png}}\n"
+"  \\transparent{0.3}{\\includegraphics[width=0.9\\linewidth, keepaspectratio]{\\art/magic_arrow.png}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -485,6 +478,9 @@ msgid ""
 "\\medskip\n"
 "\n"
 msgstr ""
+"\\textbf{Les Joueurs peuvent dépenser des Pointes Arcaniques en Combat pour lancer :}\n"
+"\\medskip\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:109
@@ -500,18 +496,24 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"\\hommtablemulticol[]{16}{\n"
+"  \\begin{tabularx}{\\linewidth}{p{0.24\\linewidth}p{0.66\\linewidth}}\n"
+"    \\multicolumn{2}{p{\\dimexpr0.90\\linewidth+2\\tabcolsep\\relax}}{\\darkcell{\\raisebox{-.2\\height}{} \\textbf{Artillerie Arcanique}}} \\\\\n"
+"    \\darkcell[1.8]{1 Pointe} & \\lightcell[1.8]{\\svg{activation-yellow} Inflige 1 \\svg{damage-yellow} à l'Unité ciblée.} \\\\\n"
+"    \\darkcell[1.8]{2 Pointes} & \\lightcell[1.8]{\\svg{ongoing-yellow} Comme ci-dessus, et \\mbox{réduit} la \\svg{defense-yellow} de l'Unité de 1 \\mbox{jusqu'à} la fin du Combat.} \\\\\n"
+"    \\darkcell[1.8]{3 Pointes} & \\lightcell[1.8]{\\svg{ongoing-yellow} Comme ci-dessus, et capacité spéciale annulée jusqu'à la fin du Combat.} \\\\\n"
+"  \\end{tabularx}\n"
+"}\n"
+"\n"
 
 #. type: multicols
 #: clash/arcane_artillery.tex:111
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Additional Bonus:} None\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Additionally:}\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus Additionnel :} Aucun\n"
+"\\textbf{De plus :}\n"
 "\n"
 
 #. type: multicols
@@ -528,15 +530,19 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\begin{itemize}\n"
+"  \\item L'Artillerie Arcanique compte comme un Sort de chaque école de magie de \\svg{empower} 0.\n"
+"  \\item Elle ne compte pas dans votre limite de Sorts par manche de Combat.\n"
+"  \\item Elle ignore les Capacités Spéciales des Unités.\n"
+"  \\item Elle peut être lancée lors du combat d'un adversaire \\textbf{pendant l'activation de l'Unité neutre}.\n"
+"  \\item Chaque Joueur ne peut en lancer qu'\\textbf{une par manche de Combat}.\n"
+"  \\item \\textit{En Mode Alliance, les alliés peuvent la lancer pendant l'activation d'une Unité alliée.}\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: tikzpicture
 #: clash/arcane_artillery.tex:130
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[remember picture, overlay]\n"
-#| "  \\node(bg)[anchor=center, opacity=0.07] at (current page.center) {\n"
-#| "    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
-#| "  };"
+#, no-wrap
 msgid ""
 "[remember picture, overlay]\n"
 "  \\node(bg)[anchor=center, opacity=0.07, yshift=3em] at (current page.center) {\n"
@@ -544,6 +550,6 @@ msgid ""
 "  };"
 msgstr ""
 "[remember picture, overlay]\n"
-"  \\node(bg)[anchor=center, opacity=0.07] at (current page.center) {\n"
-"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/hellstorm_helmet.png}\n"
+"  \\node(bg)[anchor=center, opacity=0.07, yshift=3em] at (current page.center) {\n"
+"    \\includegraphics[width=\\paperwidth, keepaspectratio]{\\art/astrologers.png}\n"
 "  };"
