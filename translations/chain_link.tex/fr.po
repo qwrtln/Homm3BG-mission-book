@@ -129,15 +129,12 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: clash/chain_link.tex:3
-#, fuzzy
-#| msgid ""
-#| "\\addscenariosection{1}{Clash Scenario}{The Hunt}{\\images/slayer.png}"
 msgid ""
 "\\addscenariosection{1}{Clash Scenario}{Chain Link}{\\images/"
 "shackles_of_war.png}"
 msgstr ""
-"\\addscenariosection{1}{Scénario Affrontement}{La Chasse}{\\images/"
-"slayer.png}"
+"\\addscenariosection{1}{Scénario Affrontement}{Maillon de la Chaîne}"
+"{\\images/shackles_of_war.png}"
 
 #. type: multicols*
 #: clash/chain_link.tex:9
@@ -146,57 +143,46 @@ msgid ""
 "\\textit{Power struggle at the border escalates. This trade route is incredibly important as a supply line, and you cannot allow it to fall into enemy hands.}\n"
 "\n"
 msgstr ""
+"\\textit{La lutte de pouvoir à la frontière s'intensifie. Cette route commerciale, ligne d'approvisionnement vitale, ne doit pas tomber aux mains de l'ennemi.}\n"
+"\n"
 
 #. type: multicols
 #: clash/chain_link.tex:12 clash/arcane_artillery.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "12 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"12 manches\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:15
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
-#| "\\textbf{Player Count:} 2 -- 4\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Player Setup}}\n"
 "\\textbf{Player Count:} 2\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Préparation des Joueurs}}\n"
-"\\textbf{Nombre de Joueurs :} 2 -- 4\n"
+"\\textbf{Nombre de Joueurs :} 2\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:17
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de Départ :} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:26
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{Starting Units:}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
-#| "  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
@@ -204,7 +190,6 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Unités de Départ :}\n"
 "\\begin{itemize}\n"
 "  \\item «Groupe» d'unités \\svg{bronze} les moins chères\n"
 "  \\item «Quelques» unités \\svg{bronze} les plus chères\n"
@@ -213,15 +198,7 @@ msgstr ""
 
 #. type: multicols*
 #: clash/chain_link.tex:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\begin{itemize}\n"
-#| "  \\item P × Starting (I) Map Tile\n"
-#| "  \\item 2P × Far (II--III) Map Tile\n"
-#| "  \\item 2P × Near (IV--V) Map Tile\n"
-#| "  \\item (P + 1) × Center (VI--VII) Map Tile\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\begin{itemize}\n"
 "  \\item 2 × Starting (I) Map Tiles\n"
@@ -232,10 +209,10 @@ msgid ""
 "\n"
 msgstr ""
 "\\begin{itemize}\n"
-"  \\item J × Tuiles de Départ (I)\n"
-"  \\item 2J × Tuiles Lointaines (II--III)\n"
-"  \\item 2J × Tuiles Proches (IV--V)\n"
-"  \\item (J + 1) × Tuiles Centrales (VI--VII)\n"
+"  \\item 2 × tuiles de Départ (I)\n"
+"  \\item 4 × tuiles Lointaines (II--III), dont 2 avec une Enclave\n"
+"  \\item 4 × tuiles Proches (IV--V) : 2 avec un Obélisque, 2 avec une Enclave\n"
+"  \\item 1 × tuile Centrale (VI--VII) avec un Graal\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -246,48 +223,36 @@ msgid ""
 "Place Far and Near Tiles symmetrically, so that Obelisks and Settlements aren't adjacent.\n"
 "\n"
 msgstr ""
+"Placez les tuiles Lointaines et Proches symétriquement : Obélisques et Enclaves ne doivent pas être adjacents.\n"
+"\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
-#| "Slay the Dragon Boss with your Main Hero.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
 "Take control of the enemy Town.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Victoire}}\n"
-"Tuer le Boss Dragon avec votre Héros Principal.\n"
+"Prendre le contrôle de la Ville ennemie.\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:47
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-#| "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
 "At end of Round 12 the game ends in a draw.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Conditions de Défaite}}\n"
-"À la fin de la Manche 12, s'il n'y a pas de gagnant, chaque Joueur perd le Scénario.\n"
+"Fin de la manche 12 : match nul.\n"
 "\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
-#| "\\begin{itemize}\n"
-#| "  \\item The second player gains 1 \\svg{movement}.\n"
-#| "\\end{itemize}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\\textbf{\\nth{2}, \\nth{6}, and \\nth{10} Round:}\n"
@@ -296,9 +261,10 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
-"\\textbf{Manches 5 et 9 (Scénario 2 Joueurs uniquement) :}\n"
+"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\\textbf{Manches 2, 6 et 10 :}\n"
 "\\begin{itemize}\n"
-"  \\item Le Joueur 2 gagne 1 \\svg{movement}.\n"
+"  \\item Le deuxième Joueur gagne 1~\\svg{movement}\n"
 "\\end{itemize}\n"
 "\n"
 
@@ -321,6 +287,20 @@ msgid ""
 "\\end{itemize}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\MakeUppercase{Règles Additionnelles}}\n"
+"\\begin{itemize}\n"
+"  \\item Au début de chaque manche de Ressources, gagnez en plus 1~\\svg{valuables} ou 2~\\svg{building_materials}.\n"
+"  \\item Défendre votre Ville est gratuit ; vous pouvez utiliser des cartes durant le siège.\n"
+"  \\item Dès le Niveau V du Héros principal, tous vos Héros gagnent +1~\\svg{movement} par Tour.\n"
+"  \\item En visitant un Obélisque, choisissez :\n"
+"    \\begin{itemize}\n"
+"      \\item Retirez une carte de votre main\n"
+"      \\item Gagnez \\svg{morale_positive}\n"
+"      \\item Gagnez 1~\\svg{movement}\n"
+"    \\end{itemize}\n"
+"  \\item Après un combat gagné sur la case Graal, recrutez gratuitement une Unité vaincue.\n"
+"\\end{itemize}\n"
+"\n"
 
 #. type: multicols*
 #: clash/chain_link.tex:81
@@ -340,3 +320,16 @@ msgid ""
 "    \\end{relcoords}\n"
 "\\end{tikzpicture}"
 msgstr ""
+"\\begin{tikzpicture}[overlay]\n"
+"  \\node (map) at (4, -3.5) [inner sep=0] {\\includegraphics[width=1.1\\linewidth]{\\maps/chain_link.png}};\n"
+"    \\begin{relcoords}{map}\n"
+"      {\n"
+"        \\iftoggle{noartbackground}{\\def\\mapcolor{white}\\def\\opacity{0.5}}{\\def\\mapcolor{deepskyblue}\\def\\opacity{0.3}}\n"
+"        \\color{\\mapcolor}\n"
+"        \\draw (0.345, 0.62) node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obélisque}};\n"
+"        \\draw (0.73, 0.80)   node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Enclave}};\n"
+"        \\draw (0.27, 0.20)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Enclave}};\n"
+"        \\draw (0.65, 0.38)  node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Obélisque}};\n"
+"      }\n"
+"    \\end{relcoords}\n"
+"\\end{tikzpicture}"
