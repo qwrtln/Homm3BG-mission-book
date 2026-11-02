@@ -505,7 +505,7 @@ msgid ""
 "close_to_enemies_p1.png} \\captionof{figure}{\\textbf{1-PLAYER SCENARIO | "
 "EXAMPLE }}"
 msgstr ""
-"[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/"
+"[h!] \\centering \\includegraphics[width=0.4\\linewidth]{\\maps/"
 "close_to_enemies_p1.png} \\captionof{figure}{\\textbf{1-SPIELER-SZENARIO | "
 "BEISPIEL}}"
 
