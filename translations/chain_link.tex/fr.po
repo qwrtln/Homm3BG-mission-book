@@ -223,7 +223,7 @@ msgid ""
 "Place Far and Near Tiles symmetrically, so that Obelisks and Settlements aren't adjacent.\n"
 "\n"
 msgstr ""
-"Placez les tuiles Lointaines et Proches symétriquement : Obélisques et Enclaves ne doivent pas être adjacents.\n"
+"Placez les tuiles Lointaines et Proches symétriquement, sans Obélisques ni Enclaves adjacents.\n"
 "\n"
 
 #. type: multicols*
