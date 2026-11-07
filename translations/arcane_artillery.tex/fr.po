@@ -158,13 +158,14 @@ msgstr ""
 
 #. type: multicols
 #: clash/chain_link.tex:12 clash/arcane_artillery.tex:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\\subsection*{\\MakeUppercase{Scenario Length}}\n"
 "12 Rounds\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
+"12 manches\n"
 "\n"
 
 #. type: multicols*
