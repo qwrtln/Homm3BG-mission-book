@@ -72,6 +72,38 @@ English is the only source. `po4a.cfg` maps each `.tex` file to
 - Adding a `.tex` file to the book means adding its `po4a.cfg` entry too;
   `check-po4a-entries.yaml` fails the pull request otherwise.
 
+### Translating
+
+- Edit only `translations/<file>.tex/<lang>.po` of the target language. The
+  `.tex` files, the `.pot` and other languages' `.po` stay untouched, even
+  for a layout fix; an English source change belongs in a separate pull
+  request, which the user opens.
+- Terminology comes from the language's glossary,
+  `https://raw.githubusercontent.com/Heegu-sama/Homm3BG/main/glossaries/<lang>.md`;
+  read it before translating. Done means every string you wrote matches it. A
+  term it lacks follows that language's existing `.po` files.
+- When a scenario's translation becomes complete, its `README.md` row gets
+  links in place of that language's `-` cells, copied from the other rows.
+
+### Pull requests
+
+A pull request that changes a scenario's pages carries comparison
+screenshots. Build the scenario (`./run.sh tools/build.sh [<lang>] -s
+<scenario>`), then run the comparison for its kind of change:
+
+- **Scenario update** — `./run.sh tools/compare_pages.sh -s <scenario> -g`:
+  published version against yours, changes highlighted. Description: a few
+  lines on what changed and why, then the screenshots.
+- **New or complete translation** — `./run.sh tools/compare_pages.sh en -s
+  <scenario>`: English against the translation, no highlighting. Title
+  `[<LANG>] <Scenario name>`, e.g. `[FR] Wandering Dragons`. Description: the
+  screenshots alone.
+- **Partial translation change** — `./run.sh tools/compare_pages.sh <lang> -s
+  <scenario> -g`. Title and description as for a complete translation.
+
+Images land in `screenshots/`, and the agent cannot upload them: after
+creating the pull request, tell the user to drag them into its description.
+
 ## Repository-wide lint rules
 
 `.github/workflows/lint-files.yaml` runs on every pull request and fails on:
