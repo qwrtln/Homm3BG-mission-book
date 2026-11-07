@@ -480,8 +480,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-wandering_dragons-mono/wandering_dragons_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-wandering_dragons-color/wandering_dragons_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-wandering_dragons-mono/wandering_dragons_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -519,8 +519,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-the_ambushed_accord-mono/the_ambushed_accord_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_ambushed_accord-color/the_ambushed_accord_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-the_ambushed_accord-mono/the_ambushed_accord_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -558,8 +558,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-astral_run-mono/astral_run_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-astral_run-color/astral_run_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-astral_run-mono/astral_run_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
@@ -571,8 +571,8 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/pl-chain_link-mono/chain_link_pl_mono.pdf"><em>klik</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-chain_link-color/chain_link_fr.pdf">clic</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-chain_link-mono/chain_link_fr_mono.pdf"><em>clic</em></a></td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>

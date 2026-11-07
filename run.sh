@@ -15,7 +15,7 @@ show_help() {
     echo ""
     echo "Example: $0 tools/build.sh pl"
     echo "Example: $0 tools/build.sh -s \"search\""
-    echo "Example: $0 tools/compare_pages.sh -l en -r 5-9"
+    echo "Example: $0 tools/compare_pages.sh en -r 5-9"
     exit 1
 }
 
