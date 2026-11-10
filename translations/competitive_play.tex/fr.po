@@ -20,10 +20,8 @@ msgstr ""
 #.  !TeX spellcheck = en_US
 #. type: Plain text
 #: sections/competitive_play.tex:3
-#, fuzzy
-#| msgid "\\addsection{Recommendations}{\\art/haste.png}"
 msgid "\\addsection{Competitive Play}{\\art/haste.png}"
-msgstr "\\addsection{Recommandations}{\\art/haste.png}"
+msgstr "\\addsection{Jeu Compétitif}{\\art/haste.png}"
 
 #. type: Plain text
 #: sections/competitive_play.tex:5
@@ -32,13 +30,7 @@ msgstr "\\iftoggle{printable}{}{\\bigbreak}"
 
 #. type: multicols*
 #: sections/competitive_play.tex:11
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{2}\n"
-#| "We've compiled some custom rules and best practices to enhance your gaming experience.\n"
-#| "Keep in mind that these are just the \\textbf{opinions of the authors} of this book.\n"
-#| "Enjoy!\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "{2}\n"
 "We've compiled some custom rules and best practices for fair competitive play.\n"
@@ -48,9 +40,10 @@ msgid ""
 "\n"
 msgstr ""
 "{2}\n"
-"Nous avons compilé certaines règles maison et des bonnes pratiques pour améliorer votre expérience de jeu.\n"
+"Nous avons compilé quelques règles maison et bonnes pratiques pour un jeu compétitif équitable.\n"
+"Elles sont destinées aux scénarios Affrontement, où elles réduisent le hasard et la part de chance.\n"
 "Gardez à l'esprit que ce ne sont que les \\textbf{opinions des auteurs} de ce livre.\n"
-"Amusez vous bien!\n"
+"Amusez-vous bien !\n"
 "\n"
 
 #. type: multicols*
@@ -71,21 +64,18 @@ msgid ""
 "After players prepare their starting M\\&M Decks, it is recommended to remove Magic Arrows from the Spell Deck until no more than two remain.\n"
 "\n"
 msgstr ""
-"À l'exception de Flèche Magique, chaque sort est en double dans le Deck Sort.\n"
-"Après la préparation du Deck de Départ M\\&M des joueurs, il est recommandé de retirer les Flèches Magiques du Deck Sort pour n'en laisser que deux.\n"
+"Hors Flèche magique, chaque sort est en double dans le deck Sort.\n"
+"Une fois les decks de Départ M\\&M préparés, il est recommandé de retirer des Flèches magiques du deck Sort jusqu'à n'en laisser que deux.\n"
 "\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\subsection*{Guaranteed Settlement}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "\\subsection*{\\textit{(Optional)} Guaranteed Settlement}\n"
 "\n"
 msgstr ""
-"\\subsection*{Enclave Garantie}\n"
+"\\subsection*{\\textit{(Optionnel)} Enclave Garantie}\n"
 "\n"
 
 #. type: multicols*
@@ -105,6 +95,8 @@ msgid ""
 "\\subsection*{\\textit{(Optional)} War Machines as Artifacts}\n"
 "\n"
 msgstr ""
+"\\subsection*{\\textit{(Optionnel)} Machines de Guerre en Artéfacts}\n"
+"\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:24
@@ -113,6 +105,8 @@ msgid ""
 "Before the match, shuffle one Card of each War Machine into the Artifact Deck (or the Major Artifact Deck, if you split it as in Tournament Mode).\n"
 "\n"
 msgstr ""
+"Avant la partie, mélangez une carte de chaque machine de guerre dans le deck Artéfact (ou Artéfact Majeur, s'il est divisé comme en Mode Tournoi).\n"
+"\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:26
@@ -131,6 +125,8 @@ msgid ""
 "At the start of your turn in the \\nth{1} Round, you may once reshuffle your hand back into your M\\&M Deck and draw a new starting hand.\n"
 "\n"
 msgstr ""
+"Au début de votre tour de la manche 1, vous pouvez remélanger une fois votre main dans votre deck M\\&M et piocher une nouvelle main.\n"
+"\n"
 
 #. type: multicols*
 #: sections/competitive_play.tex:30
@@ -144,15 +140,12 @@ msgstr ""
 
 #. type: multicols*
 #: sections/competitive_play.tex:32
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Although rules as written state that you can remove only one Card from your hand while Visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "Although rules as written state that you can remove only one Card from your hand while visiting a Trading Post, it is recommended to allow removing as many as you like.\n"
 "\n"
 msgstr ""
-"Bien que les règles indiquent que vous pouvez retirer une seule Carte de votre main en Visitant un Comptoir, il est recommandé de permettre d'en retirer autant que l'on veut.\n"
+"Les règles n'autorisent qu'une carte retirée de la main en visitant un Comptoir ; il est recommandé d'en autoriser autant que souhaité.\n"
 "\n"
 
 #. type: multicols*
@@ -162,7 +155,7 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
-"\\subsection*{Combat Rang V--VII Combat en Difficulté$+$\\\\Difficile}\n"
+"\\subsection*{Combat de Rang V--VII en Difficulté\\\\Difficile$+$}\n"
 "\n"
 
 #. type: multicols*
@@ -173,8 +166,8 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
-"Les Combats de Rang V--VII sont considérés comme un Rang de moins en Difficile ou Impossible.\n"
-"Par exemple, un Combat de Rang VII en Difficile serait contre 2 × Unités Neutres \\svg{azure}.\n"
+"Traitez les Combats de Rang V--VII comme s'ils étaient d'un cran de difficulté en dessous lorsque vous jouez en Difficile ou Impossible.\n"
+"Par exemple, un Combat de Rang VII en Difficile affrontera 2 × Unités neutres \\svg{azure}.\n"
 "\n"
 
 #. type: multicols*
@@ -243,25 +236,7 @@ msgstr ""
 
 #. type: figure*
 #: sections/competitive_play.tex:73
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[!h]\n"
-#| "  \\mbox{}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
-#| "    \\caption[good protected]{\\textit{Neutral Units are positioned correctly.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
-#| "    \\caption[bad protected]{\\textit{This deployment is not allowed because the Necropolis player placed their Units on the left half of the Combat Board.\n"
-#| "      The Peasants must also start the Combat on the left side.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\mbox{}"
+#, no-wrap
 msgid ""
 "[!h]\n"
 "  \\mbox{}\n"
@@ -284,54 +259,34 @@ msgstr ""
 "[!h]\n"
 "  \\mbox{}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_good.png}\n"
-"    \\caption[good protected]{\\textit{Unités Neutres positionnées correctement.}}\n"
+"    \\caption[good protected]{\\textit{Unités neutres positionnées correctement.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_bad.png}\n"
-"    \\caption[bad protected]{\\textit{Ce placement n'est pas bon car le joueur Nécropole a placé ses Unités sur la moitié gauche du Plateau de Combat.\n"
-"      Les Paysans doivent aussi commencer à gauche.}}\n"
+"    \\caption[bad protected]{\\textit{Interdit : les Unités Nécropole sont sur la moitié gauche, les Paysans doivent donc aussi commencer à gauche.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\mbox{}"
+"  \\mbox{}\n"
+"\n"
 
 #. type: figure*
 #: sections/competitive_play.tex:75
-#, fuzzy, no-wrap
-#| msgid ""
-#| "\\vspace*{\\fill}\n"
-#| "\n"
+#, no-wrap
 msgid ""
 "  \\vspace{0.5em}\n"
 "\n"
 msgstr ""
-"\\vspace*{\\fill}\n"
+"  \\vspace{0.5em}\n"
 "\n"
 
 #. type: figure*
 #: sections/competitive_play.tex:92
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[!h]\n"
-#| "  \\mbox{}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
-#| "    \\caption[exception protected]{\\textit{\\textbf{Exception:} Three non-\\svg{unit_ranged} Units must be positioned on the front line.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\begin{minipage}[t]{0.44\\textwidth}\n"
-#| "    \\centering\n"
-#| "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
-#| "    \\caption[ranged protected]{\\textit{The Boars must occupy one of the green Fields.}}\n"
-#| "  \\end{minipage}\n"
-#| "  \\hfill\n"
-#| "  \\mbox{}"
+#, no-wrap
 msgid ""
 "  \\mbox{}\n"
 "  \\hfill\n"
@@ -349,16 +304,15 @@ msgid ""
 "  \\hfill\n"
 "  \\mbox{}"
 msgstr ""
-"[!h]\n"
 "  \\mbox{}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_exception.png}\n"
-"    \\caption[exception protected]{\\textit{\\textbf{Exception:} Trois Unités non-\\svg{unit_ranged} doivent être en ligne de front.}}\n"
+"    \\caption[exception protected]{\\textit{\\textbf{Exception :} Trois Unités non-\\svg{unit_ranged} doivent être en ligne de front.}}\n"
 "  \\end{minipage}\n"
 "  \\hfill\n"
-"  \\begin{minipage}[t]{0.44\\textwidth}\n"
+"  \\begin{minipage}[t]{0.36\\textwidth}\n"
 "    \\centering\n"
 "    \\includegraphics[width=\\linewidth]{\\examples/battle_ranged_bad.png}\n"
 "    \\caption[ranged protected]{\\textit{Les Sangliers doivent occuper une des Cases vertes.}}\n"
