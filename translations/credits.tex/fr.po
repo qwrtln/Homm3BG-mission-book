@@ -130,7 +130,7 @@ msgid ""
 "\\phantom{Translators placeholder}\n"
 "\n"
 msgstr ""
-"\\textbf{Traduction Française:} Nicolas Matoub, \\mbox{Arnaud} ``Nohud'' AMEDEO\n"
+"\\textbf{Traduction Française:} Nicolas Matoub, \\mbox{Arnaud Amedeo}\n"
 "\n"
 
 #. type: multicols*
