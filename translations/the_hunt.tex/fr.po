@@ -417,7 +417,7 @@ msgid ""
 "{\\footnotesize\\centering\\textbf{\\MakeUppercase{2-PLAYER SCENARIO}}\\par}\n"
 "\n"
 msgstr ""
-"{\\footnotesize\\centering\\textbf{\\MakeUppercase{SCENARIO 2-JOUEURS}}\\par}\n"
+"{\\footnotesize\\centering\\textbf{\\MakeUppercase{SCÉNARIO POUR 2 JOUEURS}}\\par}\n"
 "\n"
 
 #. type: multicols*
@@ -434,7 +434,7 @@ msgstr ""
 "\\begin{tikzpicture}[overlay, anchor=north]\n"
 "  \\centering\n"
 "  \\node at (0, 0) {\\includegraphics[width=\\textwidth, height=0.48\\textheight, keepaspectratio]{\\maps/the-hunt-3.png}};\n"
-"  \\node at (0, -12) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 3-JOUEURS}}}};\n"
+"  \\node at (0, -12) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNARIO POUR 3 JOUEURS}}}};\n"
 "\\end{tikzpicture}\n"
 "\n"
 
