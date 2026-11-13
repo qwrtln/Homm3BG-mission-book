@@ -144,7 +144,7 @@ msgid ""
 "Campaign $-$ The Queen's Gambit}{1. Greek Gift}{\\images/catherine.png}"
 msgstr ""
 "\\phantomsection\\addcontentsline{toc}{section}{\\protect\\numberline{} {} "
-"{} {} {}The Queen's Gambit} \\addscenariosection[subsection]{1}{Campagne "
+"{} {} {}Gambit de la Reine} \\addscenariosection[subsection]{1}{Campagne "
 "Château $-$ Gambit de la Reine}{1. Cadeau Grec}{\\images/catherine.png}"
 
 #. type: multicols*

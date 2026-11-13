@@ -513,8 +513,8 @@ msgid ""
 "EXAMPLE }}"
 msgstr ""
 "[h!] \\centering \\includegraphics[width=0.5\\linewidth]{\\maps/"
-"close_to_enemies_p1.png} \\captionof{figure}{\\textbf{SCENARIO 1-JOUEUR | "
-"EXEMPLE }}"
+"close_to_enemies_p1.png} \\captionof{figure}{\\textbf{SCÉNARIO POUR 1 JOUEUR "
+"| EXEMPLE }}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:143
@@ -524,8 +524,8 @@ msgid ""
 "EXAMPLE }}"
 msgstr ""
 "[h!] \\centering \\includegraphics[width=0.75\\linewidth]{\\maps/"
-"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCENARIO 2-JOUEURS | "
-"EXEMPLE }}"
+"close_to_enemies_p2.png} \\captionof{figure}{\\textbf{SCÉNARIO POUR 2 "
+"JOUEURS | EXEMPLE }}"
 
 #. type: table*
 #: coops/close_to_enemies.tex:182
@@ -611,12 +611,12 @@ msgstr ""
 #. type: figure
 #: coops/close_to_enemies.tex:192
 msgid "\\captionof{figure}{\\textbf{3-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO 3-JOUEURS | EXEMPLE}}"
+msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 3 JOUEURS | EXEMPLE}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:199
 msgid "\\captionof{figure}{\\textbf{4-PLAYER SCENARIO | EXAMPLE}}"
-msgstr "\\captionof{figure}{\\textbf{SCENARIO 4-JOUEURS | EXEMPLE}}"
+msgstr "\\captionof{figure}{\\textbf{SCÉNARIO POUR 4 JOUEURS | EXEMPLE}}"
 
 #. type: tikzpicture
 #: coops/close_to_enemies.tex:219
@@ -640,8 +640,8 @@ msgid ""
 "EXAMPLE}}"
 msgstr ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
-"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCENARIO 5-JOUEURS | "
-"EXEMPLE}}"
+"close_to_enemies_p5.png} \\captionof{figure}{\\textbf{SCÉNARIO POUR 5 "
+"JOUEURS | EXEMPLE}}"
 
 #. type: figure
 #: coops/close_to_enemies.tex:219
@@ -651,5 +651,5 @@ msgid ""
 "EXAMPLE}}"
 msgstr ""
 "[!h] \\centering \\includegraphics[width=0.75\\paperwidth]{\\maps/"
-"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCENARIO 6-JOUEURS | "
-"EXEMPLE}}"
+"close_to_enemies_p6.png} \\captionof{figure}{\\textbf{SCÉNARIO POUR 6 "
+"JOUEURS | EXEMPLE}}"
