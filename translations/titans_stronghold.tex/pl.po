@@ -82,10 +82,10 @@ msgstr ""
 #: clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Początkowy Przychód:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -253,10 +253,10 @@ msgstr ""
 #: coops/titans_stronghold.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 30~\\svg{gold}, 8~\\svg{building_materials}, 2~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 30~\\svg{gold}, 8~\\svg{building_materials}, 2~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -475,7 +475,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
-"  \\item Combat in the Titans' Stronghold now costs 1 \\svg{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
+"  \\item Combat in the Titans' Stronghold now costs 1~\\svg{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
 "    \\item Attack other Heroes.\n"
@@ -490,7 +490,7 @@ msgstr ""
 "    Wszystkie Jednostki Neutralne pokonane podczas Walki w Twierdzy Tytanów są zwracane do odpowiednich Talii Jednostek Neutralnych, a nie do Talii Twierdzy Tytanów.\n"
 "    Wszystkie Jednostki Neutralne, które przetrwały Walkę w Twierdzy Tytanów, są ponownie tasowane do Talii Twierdzy Tytanów.\n"
 "    Jeśli w tej Talii brakuje Kart Jednostek, należy dobrać tyle Kart Jednostek, ile jest dostępnych, i umieścić je na planszy Walki.\n"
-"  \\item Walka w Twierdzy Tytanów teraz kosztuje 1 \\svg{movement} za przedłużenie na każdą Rundę Walki, tak jak Walka przeciwko Jednostkom poziomu innego niż błękitny.\n"
+"  \\item Walka w Twierdzy Tytanów teraz kosztuje 1~\\svg{movement} za przedłużenie na każdą Rundę Walki, tak jak Walka przeciwko Jednostkom poziomu innego niż błękitny.\n"
 "  \\item Dodatkowo żaden gracz nie może:\n"
 "  \\begin{itemize}\n"
 "    \\item Atakować innych Bohaterów.\n"

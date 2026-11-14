@@ -72,3 +72,45 @@ jobs:
             echo "Some words are not capitalized correctly. Please fix them."
             exit 1
           fi
+
+      - name: Check hard spaces before glyphs
+        if: always()
+        run: |
+          ERRORS=0
+          for file in $(git grep -Il '' | grep tex$ | grep -v metadata)
+          do
+            if grep -v "% no-check-hard-space$" $file | grep -q -P '\d \\svg(\[[^]]*\])?\{'; then
+              grep -nHP --color=always '\d \\svg(\[[^]]*\])?\{' $file
+              ERRORS=1
+            fi
+          done
+
+          if [[ $ERRORS == 1 ]]; then
+            echo "---"
+            echo "A number is followed by a plain space and a glyph, see the output above."
+            echo "Replace the space with a hard space, e.g. 2~\svg{gold}, so LaTeX does not break the line between them."
+            exit 1
+          fi
+
+      - name: Check Roman numeral ranges
+        if: always()
+        run: |
+          ERRORS=0
+          for file in $(git grep -Il '' | grep tex$ | grep -v metadata)
+          do
+            if grep -q -P '\([IVX]+-[IVX]+\)' $file; then
+              grep -nHP --color=always '\([IVX]+-[IVX]+\)' $file
+              ERRORS=1
+            fi
+          done
+
+          if [[ $ERRORS == 1 ]]; then
+            echo "---"
+            echo "A Roman numeral range uses a hyphen, see the output above."
+            echo "Use an en-dash instead, e.g. (IV--V)."
+            exit 1
+          fi
+
+      - name: Check scenario registration
+        if: always()
+        run: python3 .github/scripts/check-scenario-registration.py
