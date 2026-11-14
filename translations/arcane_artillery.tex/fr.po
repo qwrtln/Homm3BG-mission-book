@@ -173,20 +173,20 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:27
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 15~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 15~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: clash/the_fractured_kingdoms.tex:17 clash/arcane_artillery.tex:20
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 6~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de Départ :} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 10~\\svg{gold}, 6~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -458,7 +458,7 @@ msgid ""
 "\\hommtablemulticol[]{16}{\n"
 "  \\begin{tabularx}{\\linewidth}{p{0.24\\linewidth}p{0.66\\linewidth}}\n"
 "    \\multicolumn{2}{p{\\dimexpr0.90\\linewidth+2\\tabcolsep\\relax}}{\\darkcell{\\raisebox{-.2\\height}{} \\textbf{Arcane Artillery}}} \\\\\n"
-"    \\darkcell[1.8]{1 Spike} & \\lightcell[1.8]{\\svg{activation-yellow} Deal 1 \\svg{damage-yellow} to the target Unit.} \\\\\n"
+"    \\darkcell[1.8]{1 Spike} & \\lightcell[1.8]{\\svg{activation-yellow} Deal 1~\\svg{damage-yellow} to the target Unit.} \\\\\n"
 "    \\darkcell[1.8]{2 Spikes} & \\lightcell[1.8]{\\svg{ongoing-yellow} As above, plus \\mbox{reduce} the Unit's \\svg{defense-yellow} by 1 \\mbox{until} the end of Combat.} \\\\\n"
 "    \\darkcell[1.8]{3 Spikes} & \\lightcell[1.8]{\\svg{ongoing-yellow} As above, plus the Unit has its special ability negated until the end of Combat.} \\\\\n"
 "  \\end{tabularx}\n"
@@ -468,7 +468,7 @@ msgstr ""
 "\\hommtablemulticol[]{16}{\n"
 "  \\begin{tabularx}{\\linewidth}{p{0.24\\linewidth}p{0.66\\linewidth}}\n"
 "    \\multicolumn{2}{p{\\dimexpr0.90\\linewidth+2\\tabcolsep\\relax}}{\\darkcell{\\raisebox{-.2\\height}{} \\textbf{Artillerie Arcanique}}} \\\\\n"
-"    \\darkcell[1.8]{1 Pointe} & \\lightcell[1.8]{\\svg{activation-yellow} Inflige 1 \\svg{damage-yellow} à l'Unité ciblée.} \\\\\n"
+"    \\darkcell[1.8]{1 Pointe} & \\lightcell[1.8]{\\svg{activation-yellow} Inflige 1~\\svg{damage-yellow} à l'Unité ciblée.} \\\\\n"
 "    \\darkcell[1.8]{2 Pointes} & \\lightcell[1.8]{\\svg{ongoing-yellow} Comme ci-dessus, et \\mbox{réduit} la \\svg{defense-yellow} de l'Unité de 1 \\mbox{jusqu'à} la fin du Combat.} \\\\\n"
 "    \\darkcell[1.8]{3 Pointes} & \\lightcell[1.8]{\\svg{ongoing-yellow} Comme ci-dessus, et capacité spéciale annulée jusqu'à la fin du Combat.} \\\\\n"
 "  \\end{tabularx}\n"

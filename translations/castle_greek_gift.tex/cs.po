@@ -130,10 +130,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Úvodní Příjem:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -242,10 +242,10 @@ msgstr ""
 #: campaigns/castle_greek_gift.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 10 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 10~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*

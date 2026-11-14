@@ -43,7 +43,7 @@ from typing import Optional
 import cv2
 import numpy as np
 
-import fitz  # PyMuPDF
+import pymupdf
 
 
 # ============================================================
@@ -226,7 +226,7 @@ def _merge_bboxes(spans):
 
 def extract_pdf_objects(path: str, pagenum:int):
     """Extract paragraph/block-level text plus vector/image objects from a PDF."""
-    doc = fitz.open(path)
+    doc = pymupdf.open(path)
     pages = []
 
     for page_index, page in enumerate(doc):
@@ -291,8 +291,8 @@ def extract_pdf_objects(path: str, pagenum:int):
                     font=dominant.get("font", ""),
                     size=float(dominant.get("size", 0)),
                     color=(
-                        fitz.sRGB_to_rgb(dominant.get("color", 0))
-                        if hasattr(fitz, "sRGB_to_rgb") else ()
+                        pymupdf.sRGB_to_rgb(dominant.get("color", 0))
+                        if hasattr(pymupdf, "sRGB_to_rgb") else ()
                     ),
                     spans=tuple(spans),
                 )
@@ -577,12 +577,12 @@ def spread(spans):
 
 def render_pdf_structural_diff(after_pdf, structural_changes, kind, fname, pagenum):
     """Render the AFTER PDF with structural changes highlighted."""
-    doc = fitz.open(after_pdf)
+    doc = pymupdf.open(after_pdf)
     rendered = []
 
     for page_no, page in enumerate(doc):
       if page_no + 1 == pagenum:
-        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False)
+        pix = page.get_pixmap(matrix=pymupdf.Matrix(2, 2), alpha=False)
         image = np.frombuffer(pix.samples, dtype=np.uint8).reshape(
             pix.height, pix.width, pix.n
         )

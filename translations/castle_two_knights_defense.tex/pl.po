@@ -105,10 +105,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Początkowy Przychód:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -374,10 +374,10 @@ msgstr ""
 #: campaigns/castle_two_knights_defense.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} The resources you ended Scenario 2 with, plus 10 \\svg{gold}\n"
+"\\textbf{Starting Resources:} The resources you ended Scenario 2 with, plus 10~\\svg{gold}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} Te, z którymi zakończyłeś poprzedni Scenariusz plus 10 \\svg{gold}\n"
+"\\textbf{Zasoby Początkowe:} Te, z którymi zakończyłeś poprzedni Scenariusz plus 10~\\svg{gold}\n"
 "\n"
 
 #. type: multicols*

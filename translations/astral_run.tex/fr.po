@@ -49,10 +49,10 @@ msgstr ""
 #: coops/sentinels.tex:24 clash/astral_run.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de départ :} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -133,10 +133,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -352,7 +352,7 @@ msgid ""
 "  \\item \\textbf{Obelisk:} Guarded by Level VI Neutral Units. Search (4) \\svg[8]{skill}, \\svg{spellpower} or \\svg{artifact}. \\\\ \\textbf{First to Flag:} Gain Empowered Ability Token.\n"
 "  \\item Each \\textbf{blocked Field} adjacent to an Obelisk is a two-way Astral Gate, which only becomes active after that Obelisk has been visited.\n"
 "  \\item \\textbf{Astral Gate:} Cannot be entered from a different Map Tile. When a Hero enters an Astral Gate, they are teleported to the Astral Gate on the Near Tile directly opposite the Center Tile. If that Tile is undiscovered, that player immediately discovers it.\n"
-"  \\item Gain 1 \\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
+"  \\item Gain 1~\\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -363,7 +363,7 @@ msgstr ""
 "  \\item \\textbf{Obélisque :} Gardé par des Unités neutres de Rang VI. Fouillez (4) \\svg[8]{skill}, \\svg{spellpower} ou \\svg{artifact}. \\\\ \\textbf{Premier à Revendiquer :} Gagnez un jeton Compétence renforcée.\n"
 "  \\item Chaque \\textbf{case bloquée} adjacente à un Obélisque est une Porte Astrale à double sens, qui ne devient active qu'une fois cet Obélisque visité.\n"
 "  \\item \\textbf{Porte Astrale :} On ne peut pas y entrer depuis une autre tuile. Lorsqu'un Héros entre dans une Porte Astrale, il est téléporté vers la Porte Astrale de la tuile Proche directement opposée à la tuile Centrale. Si cette tuile n'est pas découverte, ce Joueur la découvre immédiatement.\n"
-"  \\item Gagnez 1 \\svg{experience} après un Combat contre un Héros principal ennemi, sauf si l'un des Joueurs se rend ou bat en retraite.\n"
+"  \\item Gagnez 1~\\svg{experience} après un Combat contre un Héros principal ennemi, sauf si l'un des Joueurs se rend ou bat en retraite.\n"
 "\\end{itemize}\n"
 "\n"
 

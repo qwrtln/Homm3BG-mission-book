@@ -87,10 +87,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Początkowy Przychód:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -187,10 +187,10 @@ msgstr ""
 #: clash/the_fractured_kingdoms.tex:17 clash/arcane_artillery.tex:20
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 6~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 10 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 10~\\svg{gold}, 6~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -290,7 +290,7 @@ msgstr ""
 msgid ""
 "\\begin{itemize}\n"
 "  \\item Each \\svg[12]{movement_token_green} in the map layout is a one-way monolith.\n"
-"    Any Hero on the Field an \\svg[12]{movement_token_green} points away from can pay 1 \\svg{movement} to go to the Field that \\svg[12]{movement_token_green} is pointing to.\n"
+"    Any Hero on the Field an \\svg[12]{movement_token_green} points away from can pay 1~\\svg{movement} to go to the Field that \\svg[12]{movement_token_green} is pointing to.\n"
 "  \\item You can defend your Town with your Hero if you have your Main Hero on your Starting (I) Map Tile.\n"
 "\\end{itemize}\n"
 "\n"

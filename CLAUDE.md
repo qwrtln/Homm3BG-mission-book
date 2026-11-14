@@ -113,6 +113,15 @@ creating the pull request, tell the user to drag them into its description.
 - In `.tex` files, an uncapitalized book term: Card, Cube, Deck, Faction,
   Field, Grail, Hero, Level, Round, Scenario, Tile, Unit. Append
   `% no-check-caps` to exempt a line.
+- In `.tex` files, a plain space between a number and a glyph: write
+  `2~\svg{gold}`, not `2 \svg{gold}`. Append `% no-check-hard-space` to
+  exempt a line. A `.po` string that copies such a source line keeps the `~`
+  too, or po4a marks it fuzzy.
+- In `.tex` files, a Roman numeral range with a hyphen: write `(IV--V)`, not
+  `(IV-V)`.
+- A scenario (a file with `\addscenariosection`) missing its `README.md` row
+  (a link containing `en-<file name>-color/`) or, outside campaigns, its exact
+  title in `.github/scripts/scenario-authors.json`.
 
 ## Subagents
 

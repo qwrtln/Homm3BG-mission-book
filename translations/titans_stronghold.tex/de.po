@@ -80,10 +80,10 @@ msgstr "\\subsection*{\\MakeUppercase{Spielervorbereitung}}\n"
 #: clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Starteinkommen:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starteinkommen:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -251,10 +251,10 @@ msgstr ""
 #: coops/titans_stronghold.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 30~\\svg{gold}, 8~\\svg{building_materials}, 2~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Startressourcen:} 30 \\svg{gold}, 8 \\svg{building_materials}, 2 \\svg{valuables}\n"
+"\\textbf{Startressourcen:} 30~\\svg{gold}, 8~\\svg{building_materials}, 2~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -464,7 +464,7 @@ msgid ""
 "  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
 "\n"
 msgstr ""
-"  \\item Wenn ein Spieler einen Obelisken besucht, würfelt dieser 1 \\svg{treasure} und 1 \\svg{resource} und handelt 1 davon ab.\n"
+"  \\item Wenn ein Spieler einen Obelisken besucht, würfelt dieser 1~\\svg{treasure} und 1~\\svg{resource} und handelt 1 davon ab.\n"
 "  \\item Wenn alle VI--VII-Gebiete (außer der Festung der Titanen) eingenommen wurden, zieht zufällig eine Anzahl neutrale Einheiten-Karten (siehe nächste Seite), um einen separaten neutrale Einheiten-Stapel für die Festung der Titanen zu erhalten (das Deck der Festung der Titanen wird manchmal zweigeteilt, da manche Szenarien sonst mit Karten bestimmter Erweiterungen nicht möglich sind).\n"
 "\n"
 
@@ -473,7 +473,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "  \\item Any time a Hero enters the Titans' Stronghold, they draw 5 Cards from the Titans' Stronghold Deck instead of from the Neutral Unit Card Decks. The Units are placed on the Combat Board (see page 29, ``Neutral Unit Setup'' in the Core Rulebook). Players attempt to defeat the Units they find in the Titans' Stronghold. Any Neutral Units defeated during Combat in the Titans' Stronghold are returned to their respective Neutral Unit Decks instead of the Titans' Stronghold Deck. Any Neutral Units surviving Combat in the Titans' Stronghold are shuffled back into the Titans' Stronghold Deck. If there are not enough Unit Cards in this Deck, draw as many Unit Cards as are available and place them on the Combat Board.\n"
-"  \\item Combat in the Titans' Stronghold now costs 1 \\svg{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
+"  \\item Combat in the Titans' Stronghold now costs 1~\\svg{movement} to extend per Combat Round, just like Combat against non-Azure tier Units.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
 "    \\item Attack other Heroes.\n"
@@ -483,7 +483,7 @@ msgid ""
 "\n"
 msgstr ""
 "  \\item Wenn ein Held die Festung der Titanen betritt, zieht ihr 5 Karten vom Stapel der Festung der Titanen anstatt von den neutrale Einheiten-Stapeln. Die Einheiten werden auf dem Kampf-Spielplan platziert (siehe Seite 29 in der Anleitung). Die Spieler versuchen, die Einheiten zu besiegen, die sie in der Festung der Titanen finden. Alle neutralen Einheiten, die während des Kampfes besiegt werden, werden zurück in die neutrale Einheiten-Stapel gelegt. Alle neutralen Einheiten, die den Kampf überleben, werden in das Deck der Festung der Titanen gemischt. Sollten nicht genügend Karten in diesem Deck vorhanden sein, zieht so viele Karten wie möglich und platziert sie auf dem Kampf-Spielplan.\n"
-"  \\item Es kostet in der Festung 1 \\svg{movement}, um einen Kampf um eine Kampfrunde zu verlängern, genau wie bei Kämpfen gegen nicht-Azur-Einheiten.\n"
+"  \\item Es kostet in der Festung 1~\\svg{movement}, um einen Kampf um eine Kampfrunde zu verlängern, genau wie bei Kämpfen gegen nicht-Azur-Einheiten.\n"
 "  \\item Zusätzlich kann kein Spieler:\n"
 "  \\begin{itemize}\n"
 "    \\item Andere Helden angreifen.\n"

@@ -130,7 +130,7 @@ msgstr ""
 #: clash/trial_by_combat.tex:17 clash/force_of_will.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 15~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgstr ""
 #: clash/dragoncurse_castle.tex:27
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 15 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 15~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgstr ""
 msgid ""
 "\\textbf{\\nth{5} and \\nth{9} Rounds (2-player Scenario only):}\n"
 "\\begin{itemize}\n"
-"  \\item The second player gains 1 \\svg{movement}.\n"
+"  \\item The second player gains 1~\\svg{movement}.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -278,7 +278,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "\\begin{itemize}\n"
-"  \\item When a player Visits an Obelisk, they roll 2 \\svg{treasure} and choose one to resolve.\n"
+"  \\item When a player Visits an Obelisk, they roll 2~\\svg{treasure} and choose one to resolve.\n"
 "  \\item A player may not use the Diplomacy Card to skip Combat on the Dragon Utopia Field.\n"
 "  \\columnbreak\n"
 "  \\item When a Hero moves to the Dragon Utopia Field, they must fight, depending on chosen difficulty, the following number of Neutral Units:\n"
