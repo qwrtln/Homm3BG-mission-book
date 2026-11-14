@@ -14,7 +14,7 @@ import {
   collectReferencedGlyphs,
   DRAFT_GROUP_FILES,
   errorInAuxState,
-  errorLine,
+  errorSpot,
   firstError,
   GROUP_FILES,
   glyphFilesFor,
@@ -183,7 +183,26 @@ const LOG_HEAD = [
   "(./metadata.tex) (./main_en.aux) (./structure.tex",
 ];
 
-test("errorLine reads l.<n> when the scenario is the file TeX was reading", () => {
+/**
+ * A scenario source of `count` lines, each "text N", with the given lines
+ * (1-based) replaced.
+ */
+function sourceOf(count: number, lines: Record<number, string> = {}): string {
+  return Array.from({ length: count }, (_, i) => lines[i + 1] ?? `text ${i + 1}`).join("\n");
+}
+
+/** A log whose first error is TeX's usual `!` line plus `l.N <context>`, with the scenario open. */
+function contextLog(line: number, context: string): string {
+  return [
+    ...LOG_HEAD,
+    "(./clash/x.tex",
+    "! Undefined control sequence.",
+    `l.${line} ${context}`,
+    "         {bar}",
+  ].join("\n");
+}
+
+test("errorSpot reads l.<n> when the scenario is the file TeX was reading", () => {
   const log = [
     ...LOG_HEAD,
     "(./clash/x.tex (/texlive/texmf-dist/tex/latex/lm/t1lmr.fd)",
@@ -192,18 +211,52 @@ test("errorLine reads l.<n> when the scenario is the file TeX was reading", () =
     "         {bar}",
     "The control sequence at the end of the top line",
   ].join("\n");
-  assert.equal(errorLine(log, "clash/x.tex", 40), 12);
-  assert.equal(errorLine(log, "./clash/x.tex", 40), 12);
+  const source = sourceOf(40, { 12: "  \\foo{bar}" });
+  assert.deepEqual(errorSpot(log, "clash/x.tex", source), { line: 12, from: 2, to: 6 });
+  assert.deepEqual(errorSpot(log, "./clash/x.tex", source), { line: 12, from: 2, to: 6 });
 });
 
-test("errorLine gives no line for an error in a file the user cannot edit", () => {
+test("errorSpot marks the last token before the error point", () => {
+  // A control symbol.
+  const symbol = sourceOf(5, { 3: "a \\# b" });
+  assert.deepEqual(errorSpot(contextLog(3, "a \\#"), "clash/x.tex", symbol), { line: 3, from: 2, to: 4 });
+  // No control sequence there: the last run of non-spaces.
+  const plain = sourceOf(5, { 3: "one two} three" });
+  assert.deepEqual(errorSpot(contextLog(3, "one two}"), "clash/x.tex", plain), { line: 3, from: 4, to: 8 });
+  // The first place the printed text ends, as TeX stops at the first error.
+  const twice = sourceOf(5, { 3: "\\foo and \\foo" });
+  assert.deepEqual(errorSpot(contextLog(3, "\\foo"), "clash/x.tex", twice), { line: 3, from: 0, to: 4 });
+});
+
+test("errorSpot finds the token when TeX cut the context short with ...", () => {
+  const long = `${"word ".repeat(20)}\\undefinedthing{x}`;
+  const source = sourceOf(5, { 4: long });
+  const from = long.indexOf("\\undefinedthing");
+  assert.deepEqual(errorSpot(contextLog(4, "...word word \\undefinedthing"), "clash/x.tex", source), {
+    line: 4,
+    from,
+    to: from + "\\undefinedthing".length,
+  });
+  // A cut context that fits twice: the error point is unknown, so the whole line.
+  const twice = sourceOf(5, { 3: " \\foo and \\foo " });
+  assert.deepEqual(errorSpot(contextLog(3, "...\\foo"), "clash/x.tex", twice), { line: 3, from: 1, to: 14 });
+});
+
+test("errorSpot marks the whole trimmed line when the context does not match the source", () => {
+  const source = sourceOf(5, { 3: "  \\bar{baz}  " });
+  assert.deepEqual(errorSpot(contextLog(3, "\\foo"), "clash/x.tex", source), { line: 3, from: 2, to: 11 });
+  // Nothing printed after l.N: the error point is the start of the line.
+  assert.deepEqual(errorSpot(contextLog(3, ""), "clash/x.tex", source), { line: 3, from: 2, to: 11 });
+});
+
+test("errorSpot gives no spot for an error in a file the user cannot edit", () => {
   const inMacros = [
     ...LOG_HEAD,
     "(./clash/x.tex (./sections/macros.tex",
     "! Missing $ inserted.",
     "l.3 \\newcommand",
   ].join("\n");
-  assert.equal(errorLine(inMacros, "clash/x.tex", 40), null);
+  assert.equal(errorSpot(inMacros, "clash/x.tex", sourceOf(40)), null);
 
   // The scenario has closed; the error is in main_en.tex after it.
   const afterScenario = [
@@ -212,10 +265,10 @@ test("errorLine gives no line for an error in a file the user cannot edit", () =
     "! LaTeX Error: \\begin{document} ended by \\end{foo}.",
     "l.40 \\end{foo}",
   ].join("\n");
-  assert.equal(errorLine(afterScenario, "clash/x.tex", 100), null);
+  assert.equal(errorSpot(afterScenario, "clash/x.tex", sourceOf(100)), null);
 });
 
-test("errorLine follows only the first error, the one the panel shows", () => {
+test("errorSpot follows only the first error, the one the panel shows", () => {
   const log = [
     ...LOG_HEAD,
     "(./clash/x.tex (./sections/macros.tex",
@@ -225,26 +278,26 @@ test("errorLine follows only the first error, the one the panel shows", () => {
     "! Undefined control sequence.",
     "l.12 \\foo",
   ].join("\n");
-  assert.equal(errorLine(log, "clash/x.tex", 40), null);
+  assert.equal(errorSpot(log, "clash/x.tex", sourceOf(40)), null);
 });
 
-test("errorLine needs a line number inside the document", () => {
+test("errorSpot needs a line number inside the document", () => {
   const withLine = (n: number) =>
     [...LOG_HEAD, "(./clash/x.tex", "! Undefined control sequence.", `l.${n} \\foo`].join("\n");
-  assert.equal(errorLine(withLine(12), "clash/x.tex", 12), 12);
-  assert.equal(errorLine(withLine(13), "clash/x.tex", 12), null);
-  assert.equal(errorLine(withLine(0), "clash/x.tex", 12), null);
+  assert.equal(errorSpot(withLine(12), "clash/x.tex", sourceOf(12))?.line, 12);
+  assert.equal(errorSpot(withLine(13), "clash/x.tex", sourceOf(12)), null);
+  assert.equal(errorSpot(withLine(0), "clash/x.tex", sourceOf(12)), null);
 
   const noLine = [...LOG_HEAD, "(./clash/x.tex", "! Emergency stop.", "*** (job aborted, no legal \\end found)"].join(
     "\n",
   );
-  assert.equal(errorLine(noLine, "clash/x.tex", 40), null);
-  assert.equal(errorLine("nothing wrong here", "clash/x.tex", 40), null);
-  assert.equal(errorLine("", "clash/x.tex", 40), null);
-  assert.equal(errorLine(null, "clash/x.tex", 40), null);
+  assert.equal(errorSpot(noLine, "clash/x.tex", sourceOf(40)), null);
+  assert.equal(errorSpot("nothing wrong here", "clash/x.tex", sourceOf(40)), null);
+  assert.equal(errorSpot("", "clash/x.tex", sourceOf(40)), null);
+  assert.equal(errorSpot(null, "clash/x.tex", sourceOf(40)), null);
 });
 
-test("errorLine rejoins a file path TeX wrapped at 79 characters", () => {
+test("errorSpot rejoins a file path TeX wrapped at 79 characters", () => {
   const path = "campaigns/the_queens_gambit/a_rather_long_scenario_file_name_for_wrapping.tex";
   const opened = `(./structure.tex (./${path}`;
   const cut = 79;
@@ -256,12 +309,104 @@ test("errorLine rejoins a file path TeX wrapped at 79 characters", () => {
     "! Undefined control sequence.",
     "l.7 \\foo",
   ].join("\n");
-  assert.equal(errorLine(log, path, 40), 7);
+  assert.equal(errorSpot(log, path, sourceOf(40))?.line, 7);
 });
 
-test("errorLine reads the file:line: form too", () => {
-  assert.equal(errorLine("./clash/x.tex:7: Undefined control sequence.", "clash/x.tex", 40), 7);
-  assert.equal(errorLine("./sections/macros.tex:7: Undefined control sequence.", "clash/x.tex", 40), null);
+test("errorSpot reads the file:line: form too, marking the whole trimmed line", () => {
+  const source = sourceOf(40, { 7: "    \\foo{bar} " });
+  assert.deepEqual(errorSpot("./clash/x.tex:7: Undefined control sequence.", "clash/x.tex", source), {
+    line: 7,
+    from: 4,
+    to: 13,
+  });
+  assert.equal(errorSpot("./sections/macros.tex:7: Undefined control sequence.", "clash/x.tex", source), null);
+});
+
+/** A log whose first error is a runaway argument of `\name`, printed as `runaway`. */
+function runawayLog(name: string, runaway: string): string {
+  return [
+    ...LOG_HEAD,
+    "(./clash/x.tex)",
+    "Runaway argument?",
+    runaway,
+    `! File ended while scanning use of \\${name} .`,
+    "<inserted text> ",
+    "                \\par ",
+    // The scenario has closed: this is the \include line in structure.tex.
+    "l.1 \\include{clash/x.tex}",
+  ].join("\n");
+}
+
+test("errorSpot finds the runaway \\textbf in a real engine log", () => {
+  const log = [
+    "(./mt-cmr.cfg) (./structure.tex (./draft-scenarios/clash/kyrre_link.tex)",
+    "Runaway argument?",
+    "{Player Count: 23 \\par \\textbf {Starting Resources:} 20 \\svg {gold}, \\ETC.",
+    "! File ended while scanning use of \\textbf .",
+    "<inserted text> ",
+    "                \\par ",
+    "l.1 \\include{draft-scenarios/clash/kyrre_link.tex}",
+  ].join("\n");
+  const source = [
+    "\\subsection*{\\MakeUppercase{Player Setup}}",
+    "\\textbf{Player Count: 23",
+    "",
+    "\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}",
+  ].join("\n");
+  assert.deepEqual(errorSpot(log, "draft-scenarios/clash/kyrre_link.tex", source), { line: 2, from: 0, to: 7 });
+});
+
+test("errorSpot finds the unclosed \\textbf of a runaway argument", () => {
+  const source = ["\\section{Setup}", "", "Players \\textbf{take turns and", "  never stop", ""].join("\n");
+  const log = runawayLog("textbf", "{take turns and never stop \\par ");
+  assert.deepEqual(errorSpot(log, "clash/x.tex", source), { line: 3, from: 8, to: 15 });
+});
+
+test("errorSpot gives no spot when the runaway text is in the source twice, or not at all", () => {
+  const twice = ["\\textbf{same", "words}", "\\textbf{same words"].join("\n");
+  assert.equal(errorSpot(runawayLog("textbf", "{same words \\par "), "clash/x.tex", twice), null);
+  const absent = "\\textbf{other words";
+  assert.equal(errorSpot(runawayLog("textbf", "{same words \\par "), "clash/x.tex", absent), null);
+});
+
+test("errorSpot matches runaway text cut at \\par or \\ETC. across a line break", () => {
+  const source = ["Intro.", "\\textit{one", "two", "", "three"].join("\n");
+  assert.deepEqual(errorSpot(runawayLog("textit", "{one two \\par three"), "clash/x.tex", source), {
+    line: 2,
+    from: 0,
+    to: 7,
+  });
+  assert.deepEqual(errorSpot(runawayLog("textit", "{one two\\ETC."), "clash/x.tex", source), {
+    line: 2,
+    from: 0,
+    to: 7,
+  });
+});
+
+test("errorSpot matches a control word TeX printed with a space after it", () => {
+  const source = ["Gain \\textbf{\\svg{gold} and more"].join("\n");
+  assert.deepEqual(errorSpot(runawayLog("textbf", "{\\svg {gold} and more\\ETC."), "clash/x.tex", source), {
+    line: 1,
+    from: 5,
+    to: 12,
+  });
+});
+
+test("errorSpot takes the last \\X before the brace, and the brace's line when there is none", () => {
+  // The unclosed argument is the macro's second.
+  const second = ["\\twoargs{first}", "{second and on"].join("\n");
+  assert.deepEqual(errorSpot(runawayLog("twoargs", "{second and on \\par "), "clash/x.tex", second), {
+    line: 1,
+    from: 0,
+    to: 8,
+  });
+  // TeX named an internal macro the source never spells.
+  const internal = ["text", "  \\mymacro{dangling words  "].join("\n");
+  assert.deepEqual(errorSpot(runawayLog("@internal", "{dangling words \\par "), "clash/x.tex", internal), {
+    line: 2,
+    from: 2,
+    to: 25,
+  });
 });
 
 test("pageCount takes the last Output-written line, not the first", () => {

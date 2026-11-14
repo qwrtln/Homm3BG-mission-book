@@ -3,8 +3,8 @@
 // the welcome screen's data surviving a round trip.
 
 import type { Page } from "@playwright/test";
-import { editorText, insertInEditor, undoInEditor } from "../helpers/editor.ts";
-import { EMPTY_PDF_TEXT, expect, type GithubRoute, READY_STATUS, test } from "./fixtures.ts";
+import { editorText, insertInEditor, setEditorText, undoInEditor } from "../helpers/editor.ts";
+import { EMPTY_PDF_TEXT, expect, type GithubRoute, OPEN_ROW, openCreate, READY_STATUS, test } from "./fixtures.ts";
 
 const LOGIN = "octotester";
 const REPO_PATH = "/repos/qwrtln/Homm3BG-mission-book";
@@ -31,6 +31,7 @@ test("the welcome screen greets first and links to the Mission Book", async ({ a
   const { page } = app;
   const intro = page.locator(".welcome-intro");
   await expect(intro.locator("h2")).toHaveText("Welcome to the Scenario Builder");
+  await expect(intro).toHaveJSProperty("open", true);
   const link = intro.getByRole("link", { name: "Fan-Made Mission Book" });
   await expect(link).toHaveAttribute(
     "href",
@@ -44,6 +45,50 @@ test("the welcome screen greets first and links to the Mission Book", async ({ a
     return Boolean(introEl.compareDocumentPosition(pick) & Node.DOCUMENT_POSITION_FOLLOWING);
   });
   expect(introFirst).toBe(true);
+});
+
+test("a first visit shows the open intro and the create section, with no New project button", async ({ app }) => {
+  const { page } = app;
+  await expect(page.locator(".welcome-intro")).toHaveJSProperty("open", true);
+  await expect(page.locator("#welcome-picker")).toBeVisible();
+  await expect(page.locator("#new-project")).toBeHidden();
+});
+
+test("with a local draft the intro is closed, and New project reveals the create section", async ({ app }) => {
+  const { page } = app;
+  await page.evaluate(() =>
+    localStorage.setItem("wasm-scenario-builder:draft:draft-scenarios/clash/nav_probe.tex", "% local only\n"),
+  );
+  await page.reload();
+
+  await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+  await expect(page.locator(".welcome-intro")).toHaveJSProperty("open", false);
+  await expect(page.locator("#welcome-picker")).toBeHidden();
+  await page.locator("#new-project").click();
+  await expect(page.locator("#welcome-picker")).toBeVisible();
+  await expect(page.locator("#new-heading")).toBeFocused();
+  await expect(page.locator("#new-project")).toBeHidden();
+
+  // The create section stays once opened, even with the last resume row gone.
+  await page.locator(".resume-delete").click();
+  await page.locator("#confirm-ok").click();
+  await expect(page.locator("#resume-drafts")).toBeHidden();
+  await expect(page.locator("#welcome-picker")).toBeVisible();
+});
+
+test.describe("signed in with nothing to resume", () => {
+  test.use({ githubRoutes: routes([{ method: "GET", path: /\/user$/, body: { login: "tester" } }]) });
+
+  test("ends in the first-visit layout", async ({ app }) => {
+    const { page } = app;
+    await page.evaluate(() => localStorage.setItem("github_token", "t"));
+    await page.reload();
+
+    await expect(page.locator("#resume-loading")).toBeHidden();
+    await expect(page.locator(".welcome-intro")).toHaveJSProperty("open", true);
+    await expect(page.locator("#welcome-picker")).toBeVisible();
+    await expect(page.locator("#new-project")).toBeHidden();
+  });
 });
 
 test("Back is only on the editor screen, and returns to welcome", async ({ app }) => {
@@ -130,6 +175,8 @@ test.describe("signed in", () => {
       localStorage.setItem("wasm-scenario-builder:draft:draft-scenarios/clash/nav_probe.tex", "% local only\n");
     });
     await page.reload();
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await openCreate(page);
     await page.locator('[data-category="clash"]').click();
     await page.locator("#scenario-name").fill("Nav Probe");
     await page.locator("#go").click();
@@ -246,17 +293,35 @@ test.describe("going back to a welcome screen that already has data", () => {
     await page.reload();
     await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
 
+    await openCreate(page);
     await startClash(page);
     const refreshed = page.waitForRequest((r) => new URL(r.url()).pathname === "/user");
     await page.locator("#back-to-welcome").click();
 
     // At once: the list is already there, and the searching line never comes back.
-    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+    const branchRow = page.locator("#resume-list .combobox-item", { hasText: "Half Written" });
+    await expect(branchRow).toBeVisible();
     await expect(page.locator("#resume-loading")).toBeHidden();
     await refreshed; // ...and the data was still fetched again in the background
     await expect(page.locator("#resume-loading")).toBeHidden();
-    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(1);
+    // The scenario just left joins the list, first, as the way back to it.
+    await expect(page.locator("#resume-list .combobox-item")).toHaveCount(2);
+    await expect(page.locator("#resume-list .combobox-item").first()).toContainText("Currently editing");
+    await expect(branchRow).toBeVisible();
   });
+});
+
+test("the header and the resume row name the scenario by its heading's title", async ({ app }) => {
+  const { page } = app;
+  await startClash(page);
+  const source = await editorText(page);
+  await setEditorText(page, source.replace(/(\\addscenariosection\{[^}]*\}\{[^}]*\}\{)[^}]*/, "$1Renamed V\\r{u}le"));
+
+  await expect(page.locator("#scenario-title")).toHaveText("Renamed Vůle");
+  await page.locator("#back-to-welcome").click();
+  await page.locator("#confirm-ok").click();
+  await expect(page.locator(OPEN_ROW).locator(".resume-name")).toContainText("Renamed Vůle");
+  await expect(page.locator("#resume-list .resume-delete")).toHaveAccessibleName("Delete Renamed Vůle (Clash)");
 });
 
 async function buildPdf(page: Page): Promise<void> {
@@ -265,9 +330,9 @@ async function buildPdf(page: Page): Promise<void> {
   await expect(page.locator("#pdf-body canvas.pdf-page")).toHaveCount(3);
 }
 
-test("Back to editing returns to the scenario just left, with its built PDF", async ({ app }) => {
+test("the open resume row returns to the scenario just left, with its built PDF", async ({ app }) => {
   const { page } = app;
-  await expect(page.locator("#back-to-editing")).toBeHidden();
+  await expect(page.locator(OPEN_ROW)).toBeHidden();
   await startClash(page);
   await typeInEditor(page, "% keep me\n");
   await buildPdf(page);
@@ -275,10 +340,11 @@ test("Back to editing returns to the scenario just left, with its built PDF", as
   await page.locator("#confirm-ok").click();
 
   await expect(page.locator("#welcome")).toBeVisible();
-  await expect(page.locator("#back-to-editing")).toBeVisible();
-  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Nav Probe”");
+  await expect(page.locator(OPEN_ROW)).toBeVisible();
+  await expect(page.locator(OPEN_ROW)).toContainText("Nav Probe");
+  await expect(page.locator(OPEN_ROW)).toContainText("Currently editing");
 
-  await page.locator("#back-to-editing").click();
+  await page.locator(OPEN_ROW).click();
 
   await expect(page.locator("#workspace")).toBeVisible();
   await expect(page.locator("#scenario-title")).toHaveText("Nav Probe");
@@ -290,7 +356,7 @@ test("Back to editing returns to the scenario just left, with its built PDF", as
   expect(value).toContain("% keep me");
 });
 
-test("Back to editing keeps the PDF's pages and scroll place, with no redraw", async ({ app }) => {
+test("the open resume row keeps the PDF's pages and scroll place, with no redraw", async ({ app }) => {
   const { page } = app;
   await startClash(page);
   await buildPdf(page);
@@ -303,9 +369,9 @@ test("Back to editing keeps the PDF's pages and scroll place, with no redraw", a
   expect(place).toBeGreaterThan(0);
 
   await page.locator("#back-to-welcome").click();
-  await expect(page.locator("#back-to-editing")).toBeVisible();
+  await expect(page.locator(OPEN_ROW)).toBeVisible();
   await page.waitForTimeout(400); // longer than the pane's resize settle
-  await page.locator("#back-to-editing").click();
+  await page.locator(OPEN_ROW).click();
   await expect(page.locator("#workspace")).toBeVisible();
   await page.waitForTimeout(400);
 
@@ -313,7 +379,7 @@ test("Back to editing keeps the PDF's pages and scroll place, with no redraw", a
   expect(await body.evaluate((pane) => pane.scrollTop)).toBe(place);
 });
 
-test("opening another scenario replaces the one Back to editing returns to", async ({ app }) => {
+test("opening another scenario moves the open tag to its resume row", async ({ app }) => {
   const { page } = app;
   await startClash(page, "First One");
   await page.locator("#back-to-welcome").click();
@@ -321,7 +387,8 @@ test("opening another scenario replaces the one Back to editing returns to", asy
   await expect(page.locator("#pdf-empty")).toHaveText(EMPTY_PDF_TEXT);
   await page.locator("#back-to-welcome").click();
 
-  await expect(page.locator("#back-to-editing")).toHaveAccessibleName("Back to editing “Second One”");
+  await expect(page.locator(OPEN_ROW)).toHaveCount(1);
+  await expect(page.locator(OPEN_ROW)).toContainText("Second One");
 });
 
 test.describe("resuming the branch just left", () => {
@@ -363,7 +430,7 @@ test.describe("resuming the branch just left", () => {
     await buildPdf(page);
 
     await page.locator("#back-to-welcome").click();
-    await expect(page.locator("#back-to-editing")).toBeVisible();
+    await expect(page.locator(OPEN_ROW)).toBeVisible();
     const fetched: string[] = [];
     page.on("request", (request) => {
       if (request.url().includes("/contents/")) fetched.push(request.url());

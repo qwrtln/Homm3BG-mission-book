@@ -38,7 +38,7 @@ msgstr "\\def\\coopspath{coops/translated/fr}"
 #. type: Plain text
 #: sections/language_metadata.tex:8
 msgid "\\def\\coopstitle{Cooperative Scenarios}"
-msgstr "\\def\\coopstitle{Scénarios Coopératif}"
+msgstr "\\def\\coopstitle{Scénarios Coopératifs}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:10
@@ -48,7 +48,7 @@ msgstr "\\def\\clashpath{clash/translated/fr}"
 #. type: Plain text
 #: sections/language_metadata.tex:12
 msgid "\\def\\clashtitle{Clash Scenarios}"
-msgstr "\\def\\clashtitle{Scénario d'affrontement}"
+msgstr "\\def\\clashtitle{Scénarios d'Affrontement}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:14
@@ -58,21 +58,17 @@ msgstr "\\def\\campaignspath{campaigns/translated/fr}"
 #. type: Plain text
 #: sections/language_metadata.tex:16
 msgid "\\def\\campaignstitle{Campaigns}"
-msgstr "\\def\\campaignstitle{Campagne}"
+msgstr "\\def\\campaignstitle{Campagnes}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:18
-#, fuzzy
-#| msgid "\\def\\clashpath{clash}"
 msgid "\\def\\alliancespath{alliances}"
-msgstr "\\def\\clashpath{clash/translated/fr}"
+msgstr "\\def\\alliancespath{alliances/translated/fr}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:20
-#, fuzzy
-#| msgid "\\def\\clashtitle{Clash Scenarios}"
 msgid "\\def\\alliancestitle{Alliances}"
-msgstr "\\def\\clashtitle{Scénario d'affrontement}"
+msgstr "\\def\\alliancestitle{Alliances}"
 
 #. type: Plain text
 #: sections/language_metadata.tex:22

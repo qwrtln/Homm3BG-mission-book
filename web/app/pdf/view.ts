@@ -229,9 +229,9 @@ export function builtFingerprint(): { text: string; uploads: string } | null {
   return { text: pdfSource, uploads: pdfUploads };
 }
 
-/** Removes the failed build's line mark, if any. */
+/** Removes the failed build's line mark and its diagnostic, if any. */
 export function clearErrorLine(): void {
-  getEditor()?.markErrorLine(null);
+  getEditor()?.markError(null);
 }
 
 /** Puts the editor's cursor on a line and scrolls it into view, 1-based as TeX counts. */
@@ -377,18 +377,26 @@ export function zoomLimits(zoom: number): { min: boolean; max: boolean } {
 }
 
 /**
- * Shows the build's first error. With an errorLine it is a button that
- * jumps the editor there, and that line stays marked until the next build.
+ * Shows the build's first error. With an errorSpot it is a button that
+ * jumps the editor there, and that line stays marked, its token underlined
+ * with the message, until the next build.
+ *
+ * @param source the text the build compiled; the editor is marked only while it still holds that text
  */
-export function showError(record: Pick<BuildRecord, "firstError" | "errorLine" | "log">): void {
+export function showError(record: Pick<BuildRecord, "firstError" | "errorSpot" | "log">, source?: string): void {
   clearErrorLine();
+  const firstError = record.firstError || "The build failed, but no specific LaTeX error line was found in the log.";
   const error: BuildErrorState = {
     id: (errorSeq += 1),
-    firstError: record.firstError || "The build failed, but no specific LaTeX error line was found in the log.",
-    errorLine: record.errorLine ?? null,
+    firstError,
+    errorSpot: record.errorSpot ?? null,
     log: record.log || "",
   };
   store.setState({ buildError: error });
   // The mark stays until the next build, and follows its line through edits.
-  if (error.errorLine !== null) requireEditor().markErrorLine(error.errorLine);
+  // An edit during the build moved the text under the spot: no mark then.
+  if (error.errorSpot === null) return;
+  const editor = requireEditor();
+  if (source === undefined || editor.getText() === source)
+    editor.markError({ ...error.errorSpot, message: firstError });
 }

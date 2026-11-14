@@ -157,8 +157,6 @@
   }
   .welcome-intro p { margin: 0 0 0.6rem; line-height: 1.5; }
   .welcome-intro p:last-child { margin-bottom: 0; }
-  .welcome-intro a { color: var(--accent); }
-  .welcome-intro a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   /* The resume list sits above the picker, divided from it by a rule. */
   .welcome-top:has(.resume-drafts:not([hidden])) {
     margin-bottom: 1.75rem;
@@ -167,36 +165,23 @@
   }
   .welcome-top .resume-drafts { margin-bottom: 0; }
   .edit-branch-prompt { margin-top: 1.75rem; }
-  .mode-choice[hidden], .edit-branch-prompt[hidden] { display: none; }
+  .edit-branch-prompt[hidden] { display: none; }
   /* A control group that is on screen but out of reach: the name step before a
      pick, and the new-scenario controls in edit mode. */
   .dimmed { opacity: 0.4; filter: grayscale(1); pointer-events: none; }
   @media (prefers-reduced-motion: no-preference) {
     .name-step, .scratch-row { transition: opacity 0.2s, filter 0.2s; }
   }
-  /* The member's mode choice changes what search is for, so it comes first. */
-  .mode-choice { margin-bottom: 1.5rem; }
-  .mode-label { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+  .mode-label { margin: 0 0 0.5rem; color: var(--muted); }
   .resume-drafts[hidden] { display: none; }
   .resume-drafts { margin-bottom: 1.5rem; }
   .combobox-list.resume-list { position: static; max-height: none; box-shadow: none; }
-  .welcome-inner h2 { margin: 0 0 0.3rem; font-size: 1.3rem; }
-  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.9rem; }
+  .welcome-inner h2 { margin: 0 0 0.3rem; }
+  /* The wizard panes' hints carry no size utility, so the sheet gives them the small step. */
+  .welcome-inner .hint { margin: 0 0 1.1rem; color: var(--muted); font-size: var(--text-small); }
   .name-step { margin-top: 2rem; }
   .go-row { margin-top: 1rem; }
-  .welcome-picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .combobox { position: relative; }
-  #search {
-    width: 100%;
-    font: inherit;
-    padding: 0.65rem 0.85rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    border-radius: 4px;
-    outline: none;
-  }
-  #search:focus { border-color: var(--accent); }
   .combobox-list {
     position: absolute;
     top: calc(100% + 4px);
@@ -206,13 +191,12 @@
     overflow: auto;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     box-shadow: 0 8px 20px var(--shadow);
     z-index: 10;
   }
   .combobox-group-label {
     padding: 0.4rem 0.75rem;
-    font-size: 0.72rem;
     color: var(--muted);
     background: var(--paper);
     position: sticky;
@@ -225,14 +209,15 @@
   .resume-mode {
     display: inline-block; margin-left: 0.4rem; padding: 0 0.45rem; vertical-align: 0.1em;
     border: 1px solid color-mix(in srgb, var(--muted) 50%, transparent); border-radius: 2em;
-    font-size: 0.75rem; font-weight: 500; line-height: 1.5; color: var(--muted);
+    font-weight: 500; line-height: 1.5; color: var(--muted);
   }
-  .resume-meta, .resume-state { display: block; font-size: 0.78rem; color: var(--muted); }
+  .resume-meta, .resume-state { display: block; color: var(--muted); }
   .resume-where { display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 600; }
   .resume-where.on-github { color: var(--ok); }
   .resume-where .octicon { width: 0.9rem; height: 0.9rem; }
   .resume-state { font-weight: 600; }
   .resume-state.attention { color: var(--warn); }
+  .resume-state.open { color: var(--accent); }
   .resume-delete { border: 0; background: transparent; cursor: pointer; padding: 0 0.75rem; display: inline-flex; align-items: center; }
   .resume-delete:hover, .resume-delete:focus-visible { background: var(--line); }
   /* Pointing at a row's name lights the whole row, the bin's cell too; the bin itself stays as it is. */
@@ -247,11 +232,10 @@
     background: none;
     color: var(--ink);
     font: inherit;
-    font-size: 0.92rem;
     cursor: pointer;
   }
   .combobox-item:hover, .combobox-item.active { background: var(--line); }
-  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; }
+  .combobox-empty { padding: 0.6rem 0.9rem; color: var(--muted); }
   .combobox-blanks { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
   .combobox-blank {
     text-align: left;
@@ -261,20 +245,16 @@
     background: none;
     color: var(--accent);
     font: inherit;
-    font-size: 0.92rem;
     cursor: pointer;
   }
   .combobox-blank:hover, .combobox-blank:focus-visible { background: var(--line); }
   /* The blank templates: one quiet line of links, secondary to search. */
-  .scratch-row { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; }
-  .blank-links button.link { padding: 0.1rem 0.15rem; font-size: inherit; }
-  .blank-links button.link:hover:not(:disabled) { color: var(--ink); }
-  .blank-links button.link[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration-thickness: 2px; }
+  .scratch-row { margin: 0.6rem 0 0; color: var(--muted); }
   /* The member's mode choice: one row of joined buttons. */
   .segmented { display: inline-flex; }
   .segmented button { border-radius: 0; margin-left: -1px; padding: 0.35rem 0.75rem; }
-  .segmented button:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
-  .segmented button:last-child { border-radius: 0 4px 4px 0; }
+  .segmented button:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); margin-left: 0; }
+  .segmented button:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
   .segmented button:hover, .segmented button:focus-visible { position: relative; z-index: 1; }
   .segmented button[aria-pressed="true"] {
     position: relative;
@@ -286,77 +266,21 @@
   /* Where the new scenario is filed: a radio group dressed as the same joined
      buttons. The radios stay in the tab order, hidden behind their labels. */
   #name-slide .category-choice { margin: 1.25rem 0 0; padding: 0; border: 0; min-width: 0; }
-  #name-slide .category-choice legend { margin: 0 0 0.5rem; padding: 0; color: var(--muted); font-size: 0.85rem; }
-  #name-slide .category-choice label {
-    position: relative;
-    margin-left: -1px;
-    padding: 0.35rem 0.75rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    font-size: 0.88rem;
-    cursor: pointer;
-  }
-  #name-slide .category-choice label:first-child { border-radius: 4px 0 0 4px; margin-left: 0; }
-  #name-slide .category-choice label:last-child { border-radius: 0 4px 4px 0; }
-  #name-slide .category-choice input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
-  #name-slide .category-choice label:hover { z-index: 1; border-color: var(--accent); color: var(--accent); }
-  #name-slide .category-choice label:has(input:focus-visible) { z-index: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
-  #name-slide .category-choice label:has(input:checked) {
-    z-index: 2;
-    border-color: var(--accent);
-    color: var(--accent);
-    font-weight: 600;
-  }
   #name-slide .category-hint { margin: 0.5rem 0 0; min-height: 1.2em; }
   .name-field { max-width: 24rem; }
-  #scenario-name {
-    width: 100%;
-    font: inherit;
-    font-size: 0.92rem;
-    padding: 0.65rem 0.7rem;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    color: var(--ink);
-    border-radius: 4px;
-    outline: none;
-  }
-  #scenario-name:focus { border-color: var(--accent); }
-  #scenario-name[aria-invalid="true"] { border-color: var(--bad); }
   .name-error[hidden] { display: none; }
-  .name-error { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--bad); text-align: left; }
-  .go-hint { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
+  .name-error { margin: 0.5rem 0 0; color: var(--bad); text-align: left; }
+  .go-hint { margin: 0.6rem 0 0; color: var(--muted); min-height: 1.2em; }
   #go { white-space: nowrap; }
 
   /* --- Start wizard ------------------------------------------------------- */
 
-  /* The start choice: two equal cards, copy or blank beside the wizard. */
+  /* The start choice: equal cards, copy, the wizard and, for members, edit. */
   .start-choice { margin-bottom: 1.75rem; }
-  .start-choice[hidden] { display: none; }
-  .start-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.75rem; }
-  .start-options button {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: var(--panel);
-    color: var(--ink);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-  }
-  .start-options button strong { font-size: 1rem; }
-  .start-options button span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
-  .start-options button:hover { border-color: var(--accent); }
-  .start-options button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-  .start-options button[aria-pressed="true"] strong { color: var(--accent); }
 
-  /* While the wizard shows, the copy-or-blank steps and the resume list make way for it. */
+  /* While the wizard shows, the copy-or-blank steps make way for it. The resume list stays. */
   .wizard[hidden], .wizard-pane[hidden] { display: none; }
-  .welcome.wizard-open :is(.pick-step, .name-step, .go-row, .resume-drafts) { display: none; }
-  .welcome.wizard-open .welcome-top { margin: 0; padding: 0; border: 0; }
+  .welcome.wizard-open :is(.pick-step, .name-step, .go-row) { display: none; }
 
   .wizard-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
   .wizard-step { margin: 0; color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
@@ -398,7 +322,7 @@
   /* The game mode and the tile pool's Yes/No are RadioGroups (components/ui/RadioGroup.tsx). */
   .wizard-choice { margin: 0 0 1.1rem; padding: 0; border: 0; min-width: 0; }
 
-  /* Round and player buttons: the #mode-choice segmented control, wrapping on narrow screens. */
+  /* Round and player buttons: a segmented control, wrapping on narrow screens. */
   .wizard-segmented { flex-wrap: wrap; row-gap: 0.3rem; }
   .wizard-segmented button { min-width: 2.4rem; padding: 0.35rem 0.5rem; }
   .wizard-segmented button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -472,7 +396,7 @@
   .wizard-nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   #wizard-next { white-space: nowrap; min-width: 7rem; }
 
-  /* Timed events: a Round picker (like #mode-choice), a field per selected Round. */
+  /* Timed events: a Round picker (a segmented control), a field per selected Round. */
   .wizard-events { display: flex; flex-direction: column; gap: 0.5rem; margin: 0 0 1.1rem; }
   .wizard-event { display: grid; grid-template-columns: 7.5rem 1fr; align-items: start; gap: 0.75rem; }
   .wizard-event textarea { min-height: 2.6rem; }
@@ -564,9 +488,10 @@
   .upload-players label { display: inline-flex; align-items: center; gap: 0.2rem; }
   .upload-field label.upload-mapfile { display: flex; flex-direction: column; gap: 0.2rem; font-weight: normal; color: var(--muted); }
   .upload-mapfile .optional { font-size: 0.76rem; }
-  input.upload-mapfile-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  input.upload-mapfile-input { font-family: var(--font-mono); }
   input.upload-mapfile-input[aria-invalid="true"] { border-color: var(--bad); }
   button.upload-remove { padding: 0 0.45rem; line-height: 1.4; }
+  button.upload-remove:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   /* --- Workspace --------------------------------------------------------- */
 
@@ -606,9 +531,9 @@
     .pane-divider { display: none; }
   }
   /* The line a jump from the PDF lands on: held, then faded. components/editor/theme.ts
-     sets --flash and the animation; flash-line.ts removes the line's mark. */
+     sets the animation and the line rule reads --line-flash; flash-line.ts removes the line's mark. */
   @keyframes editor-flash-fade {
-    0%, 50% { background-color: var(--flash); }
+    0%, 50% { background-color: var(--line-flash); }
     to { background-color: transparent; }
   }
   .editor-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
@@ -667,7 +592,7 @@
   }
   .pdf-change {
     position: absolute;
-    background: rgb(255, 200, 0);
+    background: var(--change-mark);
   }
   @keyframes pdf-change-fade {
     0%, 50% { opacity: 0.4; }
@@ -723,7 +648,7 @@
     border-radius: 999px;
     background: var(--panel);
     box-shadow: 0 2px 8px var(--shadow);
-    font-size: 0.85rem;
+    font-size: var(--text-small);
     white-space: nowrap;
   }
   .build-phase[hidden],
@@ -737,6 +662,7 @@
     align-items: center;
     justify-content: center;
     color: var(--muted);
+    font-size: var(--text-body);
     padding: 2rem;
     text-align: center;
   }
@@ -747,7 +673,7 @@
     padding: 0.4rem 1rem;
     border-top: 1px solid var(--line);
     background: var(--panel);
-    font-size: 0.85rem;
+    font-size: var(--text-small);
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -781,52 +707,7 @@
     border: 1px solid var(--bad);
     background: var(--error-bg);
     padding: 0.85rem 1rem;
-    border-radius: 3px;
-  }
-  .error-panel .first-error {
-    font: 13px/1.5 ui-monospace, "Liberation Mono", monospace;
-    color: var(--bad);
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  /* A first error with a scenario line: the whole message jumps the editor there. */
-  .error-panel button.error-jump {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: none;
-    font: inherit;
-    color: inherit;
-    text-align: left;
-    white-space: inherit;
-    cursor: pointer;
-  }
-  .error-panel button.error-jump:hover:not(:disabled) { color: inherit; text-decoration: underline; }
-  .error-panel button.error-jump:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .error-jump-line {
-    display: inline-block;
-    margin-right: 0.6rem;
-    padding: 0 0.4rem;
-    border: 1px solid var(--bad);
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  details.full-log summary {
-    cursor: pointer;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 0.6rem;
-  }
-  details.full-log pre {
-    font: 12px/1.5 ui-monospace, monospace;
-    background: var(--code-bg);
-    border: 1px solid var(--line);
-    padding: 0.7rem;
-    max-height: 20rem;
-    overflow: auto;
-    white-space: pre-wrap;
-    margin: 0.5rem 0 0;
+    border-radius: var(--radius-md);
   }
 
   /* --- Glyph pictures in the editor's suggestion list (components/editor/completions.ts) --- */
@@ -839,7 +720,7 @@
     padding: 1px;
     object-fit: contain;
     background: var(--sheet);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
   }
   /* The dark theme draws a glyph's yellow variant, where it has one, with no chip. */
   .autocomplete-icon.dark { display: none; }
@@ -883,6 +764,7 @@
   --color-danger-hover-border: var(--btn-danger-hover-border);
   --color-danger-active-bg: var(--btn-danger-active-bg);
   --color-ok: var(--ok);
+  --color-done: var(--done);
   --color-bad: var(--bad);
   --color-warn: var(--warn);
   --color-attention-bg: var(--attention-bg);
@@ -896,13 +778,29 @@
   --color-on-emphasis: var(--on-emphasis);
   --color-sheet: var(--sheet);
   --color-backdrop: var(--backdrop);
+  --color-syntax-comment: var(--syntax-comment);
+  --color-syntax-command: var(--syntax-command);
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-constant: var(--syntax-constant);
+  --color-syntax-variable: var(--syntax-variable);
+  --color-syntax-string: var(--syntax-string);
+  --color-syntax-invalid-fg: var(--syntax-invalid-fg);
+  --color-syntax-invalid-bg: var(--syntax-invalid-bg);
+  --color-selection: var(--selection);
+  --color-gutter-ink: var(--gutter-ink);
+  --color-line-flash: var(--line-flash);
+  --color-active-line: var(--active-line);
+  --color-bracket-match: var(--bracket-match);
+  --color-bracket-mismatch: var(--bracket-mismatch);
+  --color-selection-match: var(--selection-match);
+  --color-change-mark: var(--change-mark);
 }
 
 /* Radius and type scales that replace the raw values the legacy sheets repeat.
    Spacing keeps Tailwind's 0.25rem step. */
 @theme {
   --radius-*: initial;
-  --radius-sm: 4px; /* controls, keys */
+  /* --radius-sm is in the static block below. */
   --radius-md: 6px; /* notices, code blocks */
   --radius-lg: 8px; /* dialogs */
 
@@ -912,8 +810,17 @@
   --text-ui: 0.88rem;
   --text-body: 0.95rem;
   --text-heading: 1.1rem;
+  --text-title: 1.3rem; /* page titles */
   --text-icon: 1rem;
 
   --shadow-dialog: 0 8px 32px var(--shadow);
   --shadow-toast: 0 8px 24px var(--shadow);
+}
+
+/* Static: components/editor/theme.ts reads these three from TypeScript, so
+   Tailwind emits them whether or not a class uses them. */
+@theme static {
+  --radius-sm: 4px; /* controls, keys */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --text-editor: 13px; /* editing surfaces */
 }

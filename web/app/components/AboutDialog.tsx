@@ -1,19 +1,10 @@
-import { type ReactNode, type SyntheticEvent, useEffect, useState } from "react";
+import bundledPackages, { type BundledPackage } from "virtual:bundled-packages";
+import { type ReactNode, type SyntheticEvent, useState } from "react";
 import { dialogClosed, useAppStore } from "../store.ts";
 import { LICENSE_GROUPS, type StaticLicense } from "./licenses.ts";
 import { Button } from "./ui/Button.tsx";
 import { Dialog, DialogActions, DialogTitle } from "./ui/Dialog.tsx";
 import { Link } from "./ui/Link.tsx";
-
-/** One npm package in the bundle, as the build writes it to licenses.json (vite.config.ts). */
-interface Notice {
-  name: string;
-  version: string;
-  /** The SPDX identifier, or a pointer to the text. */
-  license: string;
-  homepage: string;
-  text: string;
-}
 
 /** A readable row: a name and kind, and the license text under it. */
 function LicenseRow({
@@ -96,36 +87,51 @@ function Group({
   );
 }
 
-/**
- * The npm packages in the bundle, from the notices file the build writes next
- * to the page. Tries again at the next opening of the dialog when the file
- * cannot be read (the dev server has none).
- */
-function useBundledNotices(open: boolean): Notice[] {
-  const [notices, setNotices] = useState<Notice[]>([]);
+/** The bundled packages' license texts by name, from the file the build writes next to the page. */
+let bundledTexts: Promise<Record<string, string>> | null = null;
+
+/** Fetches licenses.json once; a failed fetch is tried again at the next call. */
+function loadBundledTexts(): Promise<Record<string, string>> {
+  bundledTexts ??= (async () => {
+    const response = await fetch(new URL("licenses.json", document.baseURI));
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return (await response.json()) as Record<string, string>;
+  })();
+  bundledTexts.catch(() => {
+    bundledTexts = null;
+  });
+  return bundledTexts;
+}
+
+/** A row for an npm package in the bundle; its text loads the first time the row opens. */
+function BundledLicenseRow({ pkg }: { pkg: BundledPackage }) {
+  const [text, setText] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const fallback = `See ${pkg.homepage || "the package"} for its license.`;
 
-  useEffect(() => {
-    if (!open || loaded) return;
-    let cancelled = false;
-    (async () => {
-      try {
-        const response = await fetch(new URL("licenses.json", document.baseURI));
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const list = (await response.json()) as Notice[];
-        if (cancelled) return;
-        setNotices(list);
-        setLoaded(true);
-      } catch (error) {
-        console.warn("The bundled libraries' licenses could not be listed:", error);
+  async function load(): Promise<void> {
+    if (loaded) return;
+    try {
+      setText((await loadBundledTexts())[pkg.name] || fallback);
+      setLoaded(true);
+    } catch {
+      setText(`Could not load this license. ${fallback}`);
+    }
+  }
+
+  return (
+    <LicenseRow
+      name={pkg.name}
+      kind={`${pkg.license} · ${pkg.version}`}
+      home={
+        /^https?:\/\//.test(pkg.homepage)
+          ? { href: pkg.homepage, label: pkg.homepage.replace(/^https?:\/\//, "") }
+          : undefined
       }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [open, loaded]);
-
-  return notices;
+      text={text}
+      onOpen={load}
+    />
+  );
 }
 
 /**
@@ -134,10 +140,16 @@ function useBundledNotices(open: boolean): Notice[] {
  */
 export function AboutDialog() {
   const open = useAppStore((state) => state.dialogs.about);
-  const notices = useBundledNotices(open);
 
   return (
-    <Dialog id="about-dialog" labelledBy="about-title" size="lg" open={open} onClose={() => dialogClosed("about")}>
+    <Dialog
+      id="about-dialog"
+      labelledBy="about-title"
+      size="lg"
+      open={open}
+      onClose={() => dialogClosed("about")}
+      closeOnBackdrop
+    >
       <DialogTitle id="about-title">About the scenario builder</DialogTitle>
       <p className="mb-2">
         The scenario builder is free software under the GNU Affero General Public License v3.0. You can read, copy and
@@ -154,28 +166,18 @@ export function AboutDialog() {
           <StaticLicenseRow key={license.src} license={license} />
         ))}
       </Group>
-      {notices.length > 0 && (
-        <Group id="license-group-bundled" wrapperId="license-bundled" title="Bundled libraries">
-          {notices.map((notice) => (
-            <LicenseRow
-              key={notice.name}
-              name={notice.name}
-              kind={`${notice.license} · ${notice.version}`}
-              home={
-                /^https?:\/\//.test(notice.homepage)
-                  ? { href: notice.homepage, label: notice.homepage.replace(/^https?:\/\//, "") }
-                  : undefined
-              }
-              text={notice.text || `See ${notice.homepage || "the package"} for its license.`}
-            />
-          ))}
-        </Group>
-      )}
       <Group id="license-group-engine" title="LaTeX engine">
         {LICENSE_GROUPS.engine.map((license) => (
           <StaticLicenseRow key={license.src} license={license} />
         ))}
       </Group>
+      {bundledPackages.length > 0 && (
+        <Group id="license-group-bundled" wrapperId="license-bundled" title="Bundled libraries">
+          {bundledPackages.map((pkg) => (
+            <BundledLicenseRow key={pkg.name} pkg={pkg} />
+          ))}
+        </Group>
+      )}
       <DialogActions>
         <Button id="about-close" type="submit" value="close">
           Close

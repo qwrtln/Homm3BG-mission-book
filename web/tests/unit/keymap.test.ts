@@ -41,6 +41,9 @@ test("keyLabel covers every row on both platforms", () => {
     "toggle-comment": { mac: ["⌘/"], other: ["Ctrl+/"] },
     find: { mac: ["⌘F"], other: ["Ctrl+F"] },
     replace: { mac: ["⌥⌘F"], other: ["Ctrl+H"] },
+    "go-to-line": { mac: ["⌃G"], other: ["Ctrl+G"] },
+    "select-next": { mac: ["⌘D"], other: ["Ctrl+D"] },
+    "next-error": { mac: ["F8"], other: ["F8"] },
     "delete-line": { mac: ["⇧⌘K"], other: ["Ctrl+Shift+K"] },
     indent: { mac: ["Tab"], other: ["Tab"] },
     outdent: { mac: ["⇧Tab"], other: ["Shift+Tab"] },
@@ -136,6 +139,8 @@ test("no two rows in the same scope share a key on one platform", () => {
 test("toEditorKey spells every editor key the way the editor's keymap does", () => {
   assert.equal(toEditorKey("Ctrl-/"), "Ctrl-/");
   assert.equal(toEditorKey("Shift-Ctrl-K"), "Shift-Ctrl-k");
+  assert.equal(toEditorKey("Ctrl-G"), "Ctrl-g");
+  assert.equal(toEditorKey("Cmd-D"), "Cmd-d");
   assert.equal(toEditorKey("Alt-Cmd-F"), "Alt-Cmd-f");
   assert.equal(toEditorKey("Shift-Tab"), "Shift-Tab");
   assert.equal(toEditorKey("Esc"), "Escape");

@@ -29,10 +29,12 @@ matches). Run `npm ci` in `web/` once; `npx -y` is gone.
   place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
   the first load. Do not vendor it by hand.
 - `web/vite.config.ts` has four plugins, `react` and `tailwindcss` plus two of its own: `out-of-bundle-assets` (dev only,
-  serves the paths below from disk) and `license-notices` (writes
-  `dist/licenses.json`, the name, version and license text of every npm package
-  in the bundle; the About dialog lists them). A new bundled dependency needs no
-  license edit.
+  serves the paths below from disk) and `license-notices`. It lists every npm
+  package in the bundle: the name, version and license go into the bundle
+  through `virtual:bundled-packages` (typed in `types/bundled-packages.d.ts`),
+  so the About dialog shows the list at once; the license texts go to
+  `dist/licenses.json`, which the dialog fetches when a row first opens. The
+  dev server lists none. A new bundled dependency needs no license edit.
 - `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
   stays out of `tsconfig.json`: Node's types would leak into browser code
   (`setTimeout` would return `Timeout`). The other Node-only tools —
@@ -213,7 +215,7 @@ stays `KEY=value` with no comments.
 
 ## Editor library — CodeMirror 6
 
-`@codemirror/{state,view,language,commands,search,autocomplete}` and
+`@codemirror/{state,view,language,commands,search,autocomplete,lint}` and
 `@codemirror/legacy-modes` (npm), plus `@lezer/highlight` for the token tags.
 LaTeX is the `stex` mode, through `StreamLanguage`. The editor is
 `components/editor/Editor.tsx`: one `EditorView`, made when the component
@@ -221,21 +223,29 @@ mounts and held in a ref.
 
 - The rest of the app reaches it only through `modules/editor-api.ts`:
   `getEditor()` / `requireEditor()` return an `EditorApi` (`getText`,
-  `setText`, `focus`, `revealLine`, `replaceRange`, `markErrorLine`). Never
+  `setText`, `focus`, `revealLine`, `replaceRange`, `markError`). Never
   import `@codemirror/*` outside `components/editor/` and `modules/shortcuts.ts`.
 - Tier 2 reads it through `window.__editor` (an `EditorProbe`: the same API plus
   cursor, selection and line reads) and `tests/helpers/editor.ts`. A test never
   touches `.cm-*` markup to read the text: CodeMirror draws only the lines in
   view.
-- Look: `components/editor/theme.ts`, a light and a dark `EditorView.theme` plus
-  a `HighlightStyle`, swapped through a `Compartment` when `store.theme`
-  changes. The find bar and the suggestion list use the app's custom
-  properties, so they follow the theme attribute on their own.
+- Look: `components/editor/theme.ts` reads only custom properties: `--syntax-*`,
+  `--selection`, `--gutter-ink`, `--line-flash` and the app tokens, so the
+  `data-theme` attribute restyles the editor. A new colour goes in
+  `styles/tokens.css`. The `Compartment` swaps the whole `editorTheme(dark)`.
+  Its two values differ only in the `{dark}` flag, which CodeMirror's `&dark`
+  base rules need, and the `cm-github-*` class, which tier 2 reads.
 - Keys: `shared/keymap.ts` stays the one table, which the Help dialog also
   reads. `modules/shortcuts.ts` maps each editor row to a command and
   `toEditorKey()` spells its key for CodeMirror. Do not add a binding in
   `Editor.tsx` that the table lacks. The editor takes no `defaultKeymap`: it
   binds Ctrl-Enter to a blank line, which would swallow the build key.
+- Aids: `closeBrackets`, `bracketMatching`, `highlightActiveLine` (and its
+  gutter twin) and `highlightSelectionMatches`, each restyled on a token in
+  `theme.ts`. `closeBrackets` pairs only `{`, `[` and `(`, set through the
+  `stex` language data in `Editor.tsx`. Never add quotes or `$`: LaTeX quotes
+  are `` and '', and a paired `$` gets in the way. No `closeBracketsKeymap`:
+  Backspace would need a Help row.
 - Suggestions: `components/editor/completions.ts` hands the ranked lists from
   `shared/glyph-completion.ts` and `shared/image-completion.ts` to
   `@codemirror/autocomplete`. Keep `filter: false`: the order is `shared/`'s.

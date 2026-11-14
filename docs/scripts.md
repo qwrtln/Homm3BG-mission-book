@@ -98,27 +98,30 @@ Visually compares pages between your local PDF build and a reference version fro
 **Dependencies:**
 
 - [cURL](https://curl.se/) for downloading reference files
-- [Poppler Utils](https://poppler.freedesktop.org/) (pdftoppm) for PDF to image conversion
+- [Poppler Utils](https://poppler.freedesktop.org/) (pdftoppm, pdfinfo) for PDF to image conversion
 - [ImageMagick](https://imagemagick.org/) (montage) for creating comparison images
+- [Python](https://www.python.org/) and [uv](https://docs.astral.sh/uv/) (optional) for `--highlight`; uv installs the Python packages it needs.
 
 **Usage:**
 ```bash
-tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
+tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) [-r <range> | -a] [OPTIONS]
 ```
 
 **Mandatory Arguments (choose one):**
 
 - `<language>`: Specify the language for comparison (e.g., `pl`, `fr`, defaults to `en` if unspecified)
-- `-d, --drafts`: Compare draft scenarios (mutually exclusive with `-l`)
+- `-d, --drafts`: Compare draft scenarios (mutually exclusive with a non-English `<language>` and `-s`)
 
-**Required:**
+**Required, except with `--scenario` or `--all`:**
 
-- `-r, --range <range>`: Page range to compare (e.g., `1`, `1,3-5`, `1-5`)
+- `-r, --range <range>`: Page range to compare (e.g., `1`, `1,3-5`, `1-5`). With `--scenario` and no range, every page both files have is compared, so a feedback page missing from your local build is skipped.
+- `-a, --all`: Compare every page both files have instead of a page range (mutually exclusive with `-r`)
 
 **Optional:**
 
 - `-s, --scenario <SEARCH>`: Compare against a single scenario.
 - `-m, --mono`: Use monochrome version for baseline comparison
+- `-g, --highlight`: Mark changed areas: added text in green on your build (right), removed text in red on the baseline (left)
 
 **Examples:**
 
@@ -131,6 +134,15 @@ tools/compare_pages.sh -d -r 1-10 --single-page
 
 # Compare pages 1-2 of the Wandering Dragons scenario
 tools/compare_pages.sh -s wandering -r 1-2
+
+# Same, with the changed areas highlighted
+tools/compare_pages.sh -s wandering -r 1-2 --highlight
+
+# Compare every page of the Wandering Dragons scenario
+tools/compare_pages.sh -s wandering
+
+# Compare every page of the French book, with the changed areas highlighted
+tools/compare_pages.sh fr --all --highlight
 ```
 
 It is a good practice to attach a screenshot of the comparison to the pull request, while updating scenarios.
@@ -169,6 +181,7 @@ Optimizes PDF files for distribution by significantly reducing file size while m
 **Dependencies:**
 
 - [Ghostscript](https://www.ghostscript.com/) for PDF processing
+- [Python](https://www.python.org/) with [pikepdf](https://pikepdf.readthedocs.io/) to repair the text of the "ffi" and "ffl" ligatures, which Ghostscript breaks. The container ships pikepdf; elsewhere [uv](https://docs.astral.sh/uv/) installs it.
 
 **Usage:**
 ```bash
@@ -184,6 +197,7 @@ tools/optimize.sh [language] [options]
 - `-d, --drafts`: Optimize draft scenarios PDF instead of language PDF
 - `--cmyk`: Convert colors to CMYK color space for professional printing
 - `-f FILE`: Use arbitrary PDF file
+- `--bypass-repair`: Skip the ligature repair and keep Ghostscript's output as is
 
 **Examples:**
 

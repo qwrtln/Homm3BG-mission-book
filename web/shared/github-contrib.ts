@@ -379,6 +379,44 @@ export async function validateTokenContext(token: string): Promise<GithubContext
 const BRANCH_PAGE_SIZE = 100;
 
 /**
+ * One work branch's draft, read by diffing it against the default branch.
+ *
+ * @returns null when the branch touches no scenario .tex file
+ * @throws GithubApiError when the compare fails
+ */
+export async function findBranchDraft(
+  token: string,
+  {
+    owner,
+    repo,
+    base,
+    branch,
+    username,
+  }: { owner: string; repo: string; base: string; branch: string; username: string },
+): Promise<ResumableDraft | null> {
+  const prefix = `scenario-editor/${username}/`;
+  const compare = await apiJson(
+    `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(branch)}`,
+    token,
+    parseCompare,
+  );
+  const files = (compare.files || []).filter((f) => f.status !== "removed");
+  const texFile = files.find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
+  if (!texFile) return null;
+  const assets = files
+    .filter((f) => ["assets/images/", "assets/maps/", "assets/map-files/"].some((dir) => f.filename.startsWith(dir)))
+    .map((f) => ({ path: f.filename, sha: f.sha }));
+  return {
+    branch,
+    kind: branch.startsWith(`${prefix}updates/`) ? "edit" : "new",
+    texPath: texFile.filename,
+    texSha: texFile.sha,
+    assets,
+    lastEdit: compare.lastCommitDate,
+  };
+}
+
+/**
  * This user's own scenario-editor/<username>/* branches, paired with the
  * .tex file each touches, found by diffing against the default branch.
  *
@@ -397,29 +435,8 @@ async function findResumableDrafts(
   let complete = branches.length < BRANCH_PAGE_SIZE;
   for (const b of own) {
     try {
-      const compare = await apiJson(
-        `/repos/${owner}/${repo}/compare/${encodeURIComponent(base)}...${encodeURIComponent(b.name)}`,
-        token,
-        parseCompare,
-      );
-      const files = (compare.files || []).filter((f) => f.status !== "removed");
-      const texFile = files.find((f) => f.filename.endsWith(".tex") && !f.filename.endsWith("/main.tex"));
-      const assets = files
-        .filter((f) =>
-          ["assets/images/", "assets/maps/", "assets/map-files/"].some((dir) => f.filename.startsWith(dir)),
-        )
-        .map((f) => ({ path: f.filename, sha: f.sha }));
-      if (texFile) {
-        const kind = b.name.startsWith(`${prefix}updates/`) ? "edit" : "new";
-        drafts.push({
-          branch: b.name,
-          kind,
-          texPath: texFile.filename,
-          texSha: texFile.sha,
-          assets,
-          lastEdit: compare.lastCommitDate,
-        });
-      }
+      const draft = await findBranchDraft(token, { owner, repo, base, branch: b.name, username });
+      if (draft) drafts.push(draft);
     } catch {
       // One bad branch (deleted mid-compare, etc.) shouldn't drop the rest.
       complete = false;

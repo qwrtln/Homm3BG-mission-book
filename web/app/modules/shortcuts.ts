@@ -1,5 +1,6 @@
 import { deleteLine, indentLess, indentMore, simplifySelection, toggleComment } from "@codemirror/commands";
-import { openSearchPanel } from "@codemirror/search";
+import { nextDiagnostic } from "@codemirror/lint";
+import { gotoLine, openSearchPanel, selectNextOccurrence } from "@codemirror/search";
 import { countColumn, EditorSelection, type Extension, Prec } from "@codemirror/state";
 import { EditorView, type KeyBinding, keymap } from "@codemirror/view";
 import { matchesKey, SHORTCUTS, shortcutKeys, toEditorKey } from "../../shared/keymap.ts";
@@ -54,6 +55,12 @@ function editorCommand(id: string): Command {
       return openSearchPanel;
     case "replace":
       return openReplace;
+    case "go-to-line":
+      return gotoLine;
+    case "select-next":
+      return selectNextOccurrence;
+    case "next-error":
+      return nextDiagnostic;
     case "delete-line":
       return deleteLine;
     case "indent":
@@ -68,8 +75,8 @@ function editorCommand(id: string): Command {
 
 /**
  * The editor-scope keys, as CodeMirror extensions: comment, find, replace,
- * delete line, indent/outdent, and the Escape-then-Tab escape out of the
- * keyboard trap.
+ * go to line, select next occurrence, go to the build error, delete line,
+ * indent/outdent, and the Escape-then-Tab escape out of the keyboard trap.
  *
  * Escape itself is not a SHORTCUTS entry (leave-editor's keys are the two-key
  * sequences that follow it): it collapses the selection and arms a one-shot

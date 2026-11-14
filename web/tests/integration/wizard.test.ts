@@ -160,7 +160,6 @@ test("the start choice switches between copy or blank and the wizard", async ({ 
   await expect(page.locator("#start-copy")).toHaveAttribute("aria-pressed", "false");
   await expect(page.locator("#search")).toBeHidden();
   await expect(page.locator("#go")).toBeHidden();
-  await expect(page.locator("#resume-drafts")).toBeHidden();
   await expect(page.locator("#wizard-pane-basics")).toBeVisible();
   await expect(page.locator("#wizard-pane-lore")).toBeHidden();
   await expect(page.locator("#wizard-step")).toHaveText(/^Step 1 of \d+$/);

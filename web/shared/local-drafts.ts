@@ -13,6 +13,8 @@ export interface LocalSnapshot {
   staged: boolean;
   /** ISO time of the last text write; null when unknown */
   updatedAt: string | null;
+  /** the title the text's heading prints; null or absent when it has none */
+  title?: string | null;
 }
 
 export type EntryState = "synced" | "unsaved" | "conflict" | "local-only" | "local-unknown";
@@ -91,17 +93,21 @@ function classifyPair(local: LocalSnapshot, remote: ResumableDraft): EntryState 
 
 /**
  * Merges the local copies and the GitHub branches by scenario path and gives
- * each a state. Entries that hold nothing worth resuming are dropped. Two
- * branches on one path: the newest pairs with the local copy, the other stands
- * alone.
+ * each a state. Entries that hold nothing worth resuming are dropped, except
+ * the scenario left open behind the welcome screen: its row is the way back to
+ * it. Two branches on one path: the newest pairs with the local copy, the
+ * other stands alone.
  *
- * @returns newest first by the later of the local write and the branch's last
- *   edit; entries with no date last, then by path
+ * @param openPath the scenario left open behind the welcome screen, or null
+ * @returns the open scenario's entries first, then newest first by the later
+ *   of the local write and the branch's last edit; entries with no date last,
+ *   then by path
  */
 export function classifyEntries(
   local: LocalSnapshot[],
   remote: ResumableDraft[],
   knowledge: BranchKnowledge,
+  openPath: string | null = null,
 ): WelcomeEntry[] {
   const localByPath = new Map(local.map((snapshot) => [snapshot.path, snapshot]));
   const entries: WelcomeEntry[] = [];
@@ -119,11 +125,16 @@ export function classifyEntries(
   }
   for (const snapshot of local) {
     if (paired.has(snapshot.path)) continue;
-    const state = classifyLocalOnly(snapshot, knowledge);
+    const state =
+      classifyLocalOnly(snapshot, knowledge) ??
+      (snapshot.path === openPath ? (knowledge === "unknown" ? "local-unknown" : "local-only") : null);
     if (state) entries.push({ path: snapshot.path, state, local: snapshot });
   }
 
   return entries.sort((a, b) => {
+    const oa = a.path === openPath;
+    const ob = b.path === openPath;
+    if (oa !== ob) return oa ? -1 : 1;
     const ta = entryTime(a);
     const tb = entryTime(b);
     if (ta !== tb) return tb > ta ? 1 : -1;

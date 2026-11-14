@@ -1,5 +1,6 @@
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
+import type { ErrorSpot } from "../shared/build-plan.ts";
 import type { WelcomeEntry } from "../shared/local-drafts.ts";
 import type { WizardAnswers } from "../shared/scenario-wizard.ts";
 import type { ChecklistItem } from "../shared/submit-checklist.ts";
@@ -64,6 +65,8 @@ export interface ConfirmOptions {
   cancelLabel?: string;
   /** a third button, between Cancel and the confirming one; absent, the dialog has two */
   altLabel?: string;
+  /** a checkbox label; present, the confirming button stays disabled until it is ticked */
+  acknowledge?: string;
   danger: boolean;
 }
 
@@ -92,7 +95,7 @@ export interface HeaderState {
   scenarioHeaderVisible: boolean;
   /** Whether Build, Download and Upload images show: a scenario is open and its workspace is up. */
   actionsVisible: boolean;
-  /** Whether a scenario waits behind the welcome screen, so "Back to editing" shows. */
+  /** Whether a scenario waits behind the welcome screen, so its resume row reads "Currently editing". */
   parked: boolean;
   buildDisabled: boolean;
   /** The idle Build button's title, naming the build key for this platform. Empty until initBuildTitle() runs. */
@@ -175,6 +178,8 @@ export interface ViewState {
   /** Counts the workspace's entrances; each one replays its animation. */
   workspaceEntrance: number;
   resume: ResumeState;
+  /** Whether the author opened the create section; once true it never hides again. */
+  createOpen: boolean;
   /** The pending edit-branch question; null when none is asked. */
   editBranch: EditBranchPrompt | null;
 }
@@ -269,8 +274,8 @@ export type PdfPaneContent =
 export interface BuildErrorState {
   id: number;
   firstError: string | null;
-  /** The scenario line behind firstError, 1-based; null when there is none. */
-  errorLine: number | null;
+  /** The scenario spot behind firstError; null when there is none. */
+  errorSpot: ErrorSpot | null;
   log: string;
 }
 
@@ -397,6 +402,7 @@ export function initialState(): StoreState {
     welcomeLeaving: false,
     workspaceEntrance: 0,
     resume: { visible: false, searching: false, entries: [] },
+    createOpen: false,
     editBranch: null,
 
     wizard: initialWizard(),

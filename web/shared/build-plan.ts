@@ -347,26 +347,133 @@ function openFiles(lines: string[]): string[] {
   return stack;
 }
 
+/** Where in the scenario the log's first error is: a 1-based line and a column range within it. */
+export interface ErrorSpot {
+  line: number;
+  /** 0-based column where the range starts */
+  from: number;
+  /** 0-based column where the range ends, exclusive */
+  to: number;
+}
+
+/** The whole line, without its leading and trailing spaces. */
+function wholeLine(line: number, text: string): ErrorSpot {
+  const from = text.length - text.trimStart().length;
+  return { line, from, to: Math.max(from, text.trimEnd().length) };
+}
+
 /**
- * The scenario line behind the log's first error, the one firstError shows,
- * so the panel can jump to it. Null unless TeX was reading the scenario
- * itself: an error in the book's shared files names a line the user cannot
- * edit here.
+ * The spot of an `l.N` error. TeX prints the line up to the error point after
+ * `l.N `, cut short at the start with `...` when it is long. Where that text
+ * ends the source line is the error point; the range is the last token before
+ * it: a control sequence, else the last run of non-spaces. A cut context that
+ * fits more than one place gives the whole line.
+ *
+ * @param context what the log printed after `l.N `
+ * @param text the source line
+ */
+function contextSpot(line: number, context: string, text: string): ErrorSpot {
+  const printed = context.replace(/^\.\.\./, "");
+  if (!printed.trim()) return wholeLine(line, text);
+  const cut = printed.length < context.length;
+  let end = -1;
+  for (let at = printed.length; at <= text.length; at++) {
+    if (!text.slice(0, at).endsWith(printed)) continue;
+    // A cut context is only the line's end: two places it fits leave the point unknown.
+    if (end >= 0) return wholeLine(line, text);
+    end = at;
+    if (!cut) break;
+  }
+  if (end < 0) return wholeLine(line, text);
+  const before = text.slice(0, end);
+  const token = /\\(?:[A-Za-z]+|.)$/.exec(before) ?? /\S+(?=\s*$)/.exec(before);
+  return token ? { line, from: token.index, to: token.index + token[0].length } : wholeLine(line, text);
+}
+
+/** `text` as a regular expression that matches it literally. */
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
+ * The spot of a "File ended while scanning use of \X" error. The scenario has
+ * closed by then, so its `l.N` is the line that included the scenario, in
+ * structure.tex. The log prints the unclosed argument after `Runaway
+ * argument?`, from its opening brace. That text is searched for in the
+ * source; only a single match is trusted.
+ *
+ * @param lines the log's lines
+ * @param index the first error's line in it
+ */
+function runawaySpot(lines: string[], index: number, source: string): ErrorSpot | null {
+  const ended = /^! File ended while scanning use of \\(.+?)\s*\.$/.exec(lines[index]);
+  if (!ended) return null;
+  const runaway = lines.slice(0, index).lastIndexOf("Runaway argument?");
+  if (runaway < 0 || runaway + 1 >= index) return null;
+  // Where TeX stopped printing: a blank line (\par), or its length limit.
+  const printed = lines[runaway + 1]
+    .split(/\\par(?![A-Za-z])|\\ETC\./)[0]
+    .replace(/\s+/g, " ")
+    .trim();
+  const body = printed.startsWith("{") ? printed.slice(1) : printed;
+  if (!body.trim()) return null;
+  // Any run of spaces matches any run, a line break included. TeX prints a
+  // space after every control word, which the source need not have.
+  const pattern = body
+    .split(/(\s+)/)
+    .map((part, i, parts) => {
+      if (!/^\s+$/.test(part)) return escapeRegExp(part);
+      return /\\[A-Za-z]+$/.test(parts[i - 1] ?? "") ? "\\s*" : "\\s+";
+    })
+    .join("");
+  const matches = [...source.matchAll(new RegExp(`\\{${pattern}`, "g"))];
+  if (matches.length !== 1) return null;
+  const brace = matches[0].index;
+
+  const lineAt = (offset: number) => {
+    const start = source.lastIndexOf("\n", offset - 1) + 1;
+    const end = source.indexOf("\n", offset);
+    return {
+      line: source.slice(0, start).split("\n").length,
+      start,
+      text: source.slice(start, end < 0 ? source.length : end),
+    };
+  };
+  // The argument may be the macro's second, so the last \X before the brace.
+  const name = ended[1].trim();
+  const macro = [...source.slice(0, brace).matchAll(new RegExp(`\\\\${escapeRegExp(name)}(?![A-Za-z])`, "g"))].at(-1);
+  if (!macro) {
+    const at = lineAt(brace);
+    return wholeLine(at.line, at.text);
+  }
+  const at = lineAt(macro.index);
+  const from = macro.index - at.start;
+  return { line: at.line, from, to: from + macro[0].length };
+}
+
+/**
+ * The scenario spot behind the log's first error, the one firstError shows,
+ * so the panel can jump to it and the editor can mark it. Null unless TeX was
+ * reading the scenario itself: an error in the book's shared files names a
+ * line the user cannot edit here.
  *
  * @param scenarioPath repository path of the scenario, e.g. "clash/x.tex"
- * @param lineCount lines in the editor; a line past the end is no line
- * @returns a 1-based line number, or null
+ * @param source the scenario's text, as built
+ * @returns the line and the columns to mark, or null
  */
-export function errorLine(log: string | null | undefined, scenarioPath: string, lineCount: number): number | null {
+export function errorSpot(log: string | null | undefined, scenarioPath: string, source: string): ErrorSpot | null {
   if (!log) return null;
   const lines = log.split("\n");
   const index = lines.findIndex((line) => /^!/.test(line) || /^.+:\d+: /.test(line));
   if (index < 0) return null;
+  const sourceLines = source.split("\n");
   const bare = (path: string) => path.replace(/^\.\//, "");
   const target = bare(scenarioPath);
 
   let file: string | null = null;
   let line: number | null = null;
+  let context: string | null = null;
+  if (/^! File ended while scanning use of /.test(lines[index])) return runawaySpot(lines, index, source);
   const located = /^(.+):(\d+): /.exec(lines[index]);
   if (located) {
     file = located[1];
@@ -375,15 +482,18 @@ export function errorLine(log: string | null | undefined, scenarioPath: string, 
     file = openFiles(lines.slice(0, index)).at(-1) ?? null;
     for (const next of lines.slice(index + 1)) {
       if (/^!/.test(next)) break;
-      const at = /^l\.(\d+)(?: |$)/.exec(next);
+      const at = /^l\.(\d+)(?: (.*)|$)/.exec(next);
       if (at) {
         line = Number(at[1]);
+        context = at[2] ?? "";
         break;
       }
     }
   }
   if (file === null || line === null || bare(file) !== target) return null;
-  return line >= 1 && line <= lineCount ? line : null;
+  if (line < 1 || line > sourceLines.length) return null;
+  const text = sourceLines[line - 1];
+  return context === null ? wholeLine(line, text) : contextSpot(line, context, text);
 }
 
 // The files one TeX pass writes for the next to read: cross-references, PDF

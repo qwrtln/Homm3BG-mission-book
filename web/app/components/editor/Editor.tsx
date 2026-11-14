@@ -1,9 +1,17 @@
+import { closeBrackets } from "@codemirror/autocomplete";
 import { history, historyKeymap, standardKeymap, undo } from "@codemirror/commands";
-import { indentUnit, StreamLanguage } from "@codemirror/language";
+import { bracketMatching, indentUnit, StreamLanguage } from "@codemirror/language";
 import { stex } from "@codemirror/legacy-modes/mode/stex";
-import { search } from "@codemirror/search";
+import { highlightSelectionMatches, search } from "@codemirror/search";
 import { Compartment, EditorSelection, EditorState, Transaction } from "@codemirror/state";
-import { drawSelection, EditorView, keymap, lineNumbers } from "@codemirror/view";
+import {
+  drawSelection,
+  EditorView,
+  highlightActiveLine,
+  highlightActiveLineGutter,
+  keymap,
+  lineNumbers,
+} from "@codemirror/view";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { refreshUnsavedNote } from "../../modules/dirty.ts";
 import { isMac } from "../../modules/dom.ts";
@@ -18,6 +26,15 @@ import { flashedLines, flashLine, flashLineMark } from "./flash-line.ts";
 import { editorTheme } from "./theme.ts";
 
 const INDENT = "  ";
+
+/**
+ * LaTeX through the `stex` mode. closeBrackets pairs only these: LaTeX quotes
+ * are `` and '', and a paired `'` or `$` would be in the way.
+ */
+const latex = StreamLanguage.define({
+  ...stex,
+  languageData: { ...stex.languageData, closeBrackets: { brackets: ["{", "[", "("] } },
+});
 
 /** Swaps the editor's look when the app's theme changes. */
 const themeSlot = new Compartment();
@@ -50,13 +67,20 @@ const saveOnBlur = EditorView.domEventHandlers({
 function extensions(dark: boolean) {
   return [
     lineNumbers(),
+    highlightActiveLineGutter(),
     history(),
     drawSelection(),
+    highlightActiveLine(),
     EditorView.lineWrapping,
+    // Select next occurrence adds a range; with one range allowed, it would fold back into the main one.
+    EditorState.allowMultipleSelections.of(true),
     EditorState.tabSize.of(INDENT.length),
     indentUnit.of(INDENT),
-    StreamLanguage.define(stex),
+    latex,
+    closeBrackets(),
+    bracketMatching(),
     search({ top: true }),
+    highlightSelectionMatches(),
     completions(),
     editorKeys(isMac()),
     keymap.of([...standardKeymap, ...historyKeymap]),
@@ -97,7 +121,7 @@ function probeOf(view: EditorView): EditorProbe {
       });
     },
     replaceRange: (from, to, insert) => view.dispatch({ changes: { from, to, insert }, userEvent: "input.replace" }),
-    markErrorLine: (line) => markLine(view, line),
+    markError: (error) => markLine(view, error),
     flashLine: (line) => flashLine(view, line),
 
     hasFocus: () => view.hasFocus,

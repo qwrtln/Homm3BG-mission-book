@@ -1,6 +1,8 @@
 // Tier 1 check of the welcome screen's name rule.
 
 import assert from "node:assert/strict";
+import { readdirSync } from "node:fs";
+import { join } from "node:path";
 import test from "node:test";
 
 import { DRAFT_GROUP_FILES } from "../../shared/build-plan.ts";
@@ -11,11 +13,12 @@ import {
   MIN_SCENARIO_NAME_LENGTH,
   newScenarioDir,
   SCENARIO_KINDS,
+  scenarioTitle,
   validateScenarioName,
   withCategory,
   withScenarioKind,
 } from "../../shared/scenario-name.ts";
-import { readRepoFile } from "../helpers/repo.ts";
+import { readRepoFile, repoRoot } from "../helpers/repo.ts";
 
 test("a title of letters, digits, spaces, hyphens and apostrophes is valid", () => {
   for (const name of ["The Queen's Gambit", "Bloody Grail 2", "Half-Way House", "Zażółć gęślą jaźń"]) {
@@ -63,7 +66,7 @@ test("the draft categories are exactly the draft book's group directories", () =
 });
 
 test("the welcome screen offers the draft categories, in order, under their labels", () => {
-  // The category radios are JSX now (components/welcome/PickerMain.tsx), rendered
+  // The category radios are a RadioGroup (components/welcome/PickerMain.tsx), fed
   // by mapping DRAFT_CATEGORIES and reading CATEGORY_LABELS, rather than typed out
   // by hand — so there is no literal markup left to regex for each category and
   // label. This checks that the mapping itself is still there, order and all.
@@ -73,7 +76,7 @@ test("the welcome screen offers the draft categories, in order, under their labe
     /DRAFT_CATEGORIES\.map\(\(category\) => /,
     "the category radios are not driven by DRAFT_CATEGORIES, in order",
   );
-  assert.match(tsx, /value=\{category\}/, "a radio's value is not the mapped category");
+  assert.match(tsx, /value: category\b/, "a radio's value is not the mapped category");
   assert.match(tsx, /CATEGORY_LABELS\[category\]/, "a radio's label is not read from CATEGORY_LABELS");
 });
 
@@ -129,4 +132,42 @@ test("a hand-written kind, a campaign heading and a move into campaigns keep the
   const clash = "\\addscenariosection{1}{Clash Scenario}{Chain Link}{x}";
   assert.equal(withScenarioKind(clash, "campaigns"), clash);
   assert.equal(withScenarioKind("no heading here", "clash"), "no heading here");
+});
+
+test("scenarioTitle reads the heading's third argument", () => {
+  const source =
+    "% !TeX spellcheck = en_US\n\\addscenariosection{1}{Alliance Scenario}{Wur}{\\images/shackles_of_war.png}\n";
+  assert.equal(scenarioTitle(source), "Wur");
+});
+
+test("scenarioTitle skips the optional argument and a commented-out heading", () => {
+  const source = "% \\addscenariosection{1}{Old}{Gone}{x}\n\\addscenariosection[subsection]{1}{Kind}{Kept}{x}";
+  assert.equal(scenarioTitle(source), "Kept");
+});
+
+test("scenarioTitle prints accents, dashes and line breaks as text", () => {
+  assert.equal(scenarioTitle("\\addscenariosection{1}{K}{S\\'{i}la V\\r{u}le}{x}"), "Síla Vůle");
+  assert.equal(
+    scenarioTitle("\\addscenariosection{1}{K}{Kampa\\v{n} Hradu $-$ Dámský\n  Gambit}{x}"),
+    "Kampaň Hradu – Dámský Gambit",
+  );
+  assert.equal(scenarioTitle("\\addscenariosection{1}{K}{Fire \\& {\\textit{Ice}}}{x}"), "Fire & Ice");
+});
+
+test("scenarioTitle is null with no heading, an unfinished one or an empty title", () => {
+  assert.equal(scenarioTitle("\\section{Rules}"), null);
+  assert.equal(scenarioTitle("\\addscenariosection{1}{K}{Unfinished"), null);
+  assert.equal(scenarioTitle("\\addscenariosection{1}{K}{ }{x}"), null);
+});
+
+test("scenarioTitle reads a plain title from every scenario in the book", () => {
+  for (const dir of ["clash", "coops", "campaigns"]) {
+    for (const file of readdirSync(join(repoRoot, dir)).filter(
+      (name) => name.endsWith(".tex") && name !== "main.tex",
+    )) {
+      const title = scenarioTitle(readRepoFile(`${dir}/${file}`));
+      if (title === null) continue; // a campaign part file may carry no heading of its own
+      assert.doesNotMatch(title, /[\\{}$~%]/, `${dir}/${file}: ${title}`);
+    }
+  }
 });

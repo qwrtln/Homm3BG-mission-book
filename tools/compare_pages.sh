@@ -7,18 +7,24 @@ output_dir="screenshots"
 
 help() {
   echo "
-    Usage: ./tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) -r <range> [OPTIONS]
+    Usage: ./tools/compare_pages.sh (<language> | -d | -s|--scenario SEARCH) [-r <range>] [OPTIONS]
 
     Mandatory Arguments:
       <language>                    Specify the language for comparison (${valid_languages[*]}). Defaults to en.
-      -d, --drafts                  Compare draft scenarios (mutually exclusive with -l and -s).
+      -d, --drafts                  Compare draft scenarios (mutually exclusive with a non-English <language> and -s).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
+                                    Optional with '--scenario' or '--all': without it, every page both files have is compared.
+    -a, --all                     Compare every page both files have instead of a page range
+                                    (mutually exclusive with -r).
 
     Optional Arguments:
       -s, --scenario                Compare against a single scenario.
       -p, --printable               Compares your build against 'printable' build.
       -m, --mono                    Uses monochrome version of files for baseline comparison.
                                     Only affects GitHub downloads, not local files.
+      -g, --highlight               Mark the changed areas: added text in green on your build (right),
+                                    removed text in red on the baseline (left).
+                                    Off by default, the pages are left as they are.
 
     Examples:
       ./tools/compare_pages.sh en -r 1
@@ -31,8 +37,18 @@ help() {
           - It will use 'main_en-mono.pdf' from the repository as baseline because '--mono' was specified.
             It would use 'main_en.pdf' if this parameter was omitted.
 
+      ./tools/compare_pages.sh fr --all --highlight
+          - This will compare every page of the French book with changed areas highlighted.
+
       ./tools/compare_pages.sh -d -r 1-3 --mono
           - This will download 'drafts-mono.pdf' from GitHub for comparison.
+
+      ./tools/compare_pages.sh -s wandering -r 1-2 --highlight
+          - This will compare the Wandering Dragons scenario with changed areas highlighted.
+
+      ./tools/compare_pages.sh -s wandering
+          - This will compare every page of the Wandering Dragons scenario. If one file has more pages
+            (e.g. your local build has no feedback page), the extra pages are skipped.
   "
 
   exit 2
@@ -297,6 +313,8 @@ DRAFTS=0
 MONOCHROME=0
 SCENARIO_SEARCH=""
 SCENARIO_NAME=""
+HIGHLIGHT=0
+ALL=0
 
 while [[ "$1" != "" ]]; do
   case $1 in
@@ -314,12 +332,18 @@ while [[ "$1" != "" ]]; do
       shift
       if [[ $# -lt 1 ]]; then
         echo "Error: --scenario requires a string argument" >&2
-        usage
+        help
       fi
       SCENARIO_SEARCH="$1"
       ;;
     -m | --mono )
       MONOCHROME=1
+      ;;
+    -g | --highlight )
+      HIGHLIGHT=1
+      ;;
+    -a | --all )
+      ALL=1
       ;;
     * )
       help
@@ -329,13 +353,18 @@ while [[ "$1" != "" ]]; do
 done
 
 # Check that we have either language or draft but not both
-if [[ "$DRAFTS" -eq 1 && ("$LANGUAGE" != "en" || -n "$scenario") ]]; then
+if [[ "$DRAFTS" -eq 1 && ("$LANGUAGE" != "en" || -n "$SCENARIO_SEARCH") ]]; then
   echo "Error: -d/--drafts is mutually exclusive with non-English and -s/--scenario options."
   help
 fi
 
-if [[ -z "$RANGE" ]]; then
-  echo "Error: You must specify a page range with -r/--range option."
+if [[ "$ALL" -eq 1 && -n "$RANGE" ]]; then
+  echo "Error: -a/--all is mutually exclusive with -r/--range."
+  help
+fi
+
+if [[ -z "$RANGE" && -z "$SCENARIO_SEARCH" && "$ALL" -eq 0 ]]; then
+  echo "Error: You must specify a page range with -r/--range option, or compare all pages with -a/--all."
   help
 fi
 
@@ -356,6 +385,14 @@ if [[ "$DRAFTS" -eq 1 ]]; then
   fi
 fi
 
+# The container ships the Python packages for highlighting; elsewhere uv installs them.
+python_runner=(python3)
+if [[ "$HIGHLIGHT" -eq 1 && -z "$HOMM3BG_CONTAINER" ]]; then
+  uv venv --allow-existing
+  uv pip install pymupdf opencv-python numpy
+  python_runner=(uv run)
+fi
+
 base_file=""
 echo "Checking if there is the base file for comparison..."
 if [[ "$SCENARIO_NAME" != "" ]]; then
@@ -367,18 +404,53 @@ fi
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf -- "$tmp_dir"' EXIT
 
+if [[ "$DRAFTS" -eq 1 ]]; then
+  own_file="draft-scenarios/drafts.pdf"
+elif [[ "$SCENARIO_NAME" != "" ]]; then
+  own_file="${SCENARIO_NAME}.pdf"
+else
+  own_file="main_${LANGUAGE}.pdf"
+fi
+
+# A baseline that was never published downloads as GitHub's 404 page. Drop it, so the next run tries again.
+if ! pdfinfo "$base_file" &>/dev/null; then
+  echo "Error: the baseline '${base_file}' is not a readable PDF. Is this version published?" >&2
+  rm -f "$base_file"
+  exit 1
+fi
+if ! pdfinfo "$own_file" &>/dev/null; then
+  echo "Error: '${own_file}' is not a readable PDF. Build it first." >&2
+  exit 1
+fi
+
+# Without a range (a scenario or --all), the files are compared page by page as far as the shorter one goes.
+if [[ -z "$RANGE" ]]; then
+  base_pages=$(pdfinfo "$base_file" 2>/dev/null | awk '/^Pages:/ {print $2}')
+  own_pages=$(pdfinfo "$own_file" 2>/dev/null | awk '/^Pages:/ {print $2}')
+  last_page=$(( base_pages < own_pages ? base_pages : own_pages ))
+  if [[ "$base_pages" -ne "$own_pages" ]]; then
+    echo "Note: base file has ${base_pages} pages, ${own_file} has ${own_pages}. Comparing the first ${last_page}."
+  fi
+  RANGE="1-${last_page}"
+fi
+
 readarray -t pages < <(parse_pages "$RANGE")
 
-for page in "${pages[@]}"; do
-  echo "Making images of ${base_file} and $([ "$DRAFTS" -eq 1 ] && echo "drafts.pdf" || [ "$SCENARIO_NAME" != "" ] && echo "${SCENARIO_NAME}.pdf" || echo "main_${LANGUAGE}.pdf") for page ${page}..."
-  pdftoppm "${base_file}" "${tmp_dir}/aa-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+# A whole book is hundreds of pages; cap the parallel jobs at the CPU count.
+max_jobs=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
 
-  if [[ "$DRAFTS" -eq 1 ]]; then
-    pdftoppm "draft-scenarios/drafts.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
-  elif [[ "$SCENARIO_NAME" != "" ]]; then
-    pdftoppm "${SCENARIO_NAME}.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+for page in "${pages[@]}"; do
+  while (( $(jobs -rp | wc -l) >= max_jobs )); do
+    wait -n
+  done
+  echo "Making images of ${base_file} and ${own_file} for page ${page}..."
+  if [[ "$HIGHLIGHT" -eq 1 ]]; then
+    "${python_runner[@]}" tools/pdf_screenshot_diff.py "${base_file}" "${own_file}" \
+      --output-dir "${tmp_dir}" --before-page "${page}" --after-page "${page}" \
+      --force-output &
   else
-    pdftoppm "main_${LANGUAGE}.pdf" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+    pdftoppm "${base_file}" "${tmp_dir}/aa-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
+    pdftoppm "${own_file}" "${tmp_dir}/bb-$(printf %02d "$page")" -f "${page}" -l "${page}" -png -progress -singlefile &
   fi
 done
 
@@ -388,11 +460,26 @@ if [[ "$SCENARIO_NAME" != "" ]]; then
   identifier="$SCENARIO_NAME"
 fi
 for page in "${pages[@]}"; do
+  while (( $(jobs -rp | wc -l) >= max_jobs )); do
+    wait -n
+  done
+  # pdf_screenshot_diff.py names its images by the plain page number, pdftoppm by the zero-padded one.
+  if [[ "$HIGHLIGHT" -eq 1 ]]; then
+    image_suffix="$((10#$page))"
+  else
+    image_suffix="$(printf %02d "$page")"
+  fi
+  aa_file="${tmp_dir}/aa-${image_suffix}.png"
+  bb_file="${tmp_dir}/bb-${image_suffix}.png"
+
+  if [[ ! -f "$aa_file" || ! -f "$bb_file" ]]; then
+    echo "Could not find generated images for page ${page}."
+    continue
+  fi
+
   echo "Combining pages $(printf %02d "$page")..."
-  echo "${tmp_dir}"/*"$(printf %02d "$page")".png
-  echo "${tmp_dir}/${identifier}-$(printf %02d "$page").png"
-  magick montage "${tmp_dir}"/*"$(printf %02d "$page")".png -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
-  rm "${tmp_dir}/aa-$(printf %02d "$page").png" "${tmp_dir}/bb-$(printf %02d "$page").png" &
+  magick montage "$aa_file" "$bb_file" -tile 2x1 -geometry +0+0 "${tmp_dir}/${identifier}-$(printf %02d "$page").png" && \
+  rm "$aa_file" "$bb_file" &
 done
 wait
 

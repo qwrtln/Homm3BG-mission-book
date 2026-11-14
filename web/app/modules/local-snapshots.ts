@@ -1,4 +1,5 @@
 import { gitBlobSha, type LocalSnapshot } from "../../shared/local-drafts.ts";
+import { scenarioTitle } from "../../shared/scenario-name.ts";
 import { listDraftPaths, loadDraft } from "./drafts.ts";
 import { listRecords } from "./local-store.ts";
 
@@ -21,6 +22,7 @@ export async function listLocalSnapshots(): Promise<LocalSnapshot[]> {
       baseSha: record.baseSha,
       staged: record.staged,
       updatedAt: record.updatedAt,
+      title: record.text === null ? null : scenarioTitle(record.text),
     }),
   );
   const fromDrafts = listDraftPaths()
@@ -28,7 +30,14 @@ export async function listLocalSnapshots(): Promise<LocalSnapshot[]> {
     .map(async (path): Promise<LocalSnapshot | null> => {
       const text = loadDraft(path);
       if (text === null) return null;
-      return { path, textSha: await gitBlobSha(text), baseSha: null, staged: false, updatedAt: null };
+      return {
+        path,
+        textSha: await gitBlobSha(text),
+        baseSha: null,
+        staged: false,
+        updatedAt: null,
+        title: scenarioTitle(text),
+      };
     });
 
   const snapshots = await Promise.all([...fromRecords, ...fromDrafts]);

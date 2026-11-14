@@ -61,6 +61,27 @@ export const SHORTCUTS: readonly ShortcutRow[] = Object.freeze([
     command: "replace",
   }),
   Object.freeze({
+    id: "go-to-line",
+    description: "Go to line",
+    scope: "editor",
+    keys: Object.freeze({ mac: ["Ctrl-G"], other: ["Ctrl-G"] }),
+    command: "gotoLine",
+  }),
+  Object.freeze({
+    id: "select-next",
+    description: "Select next occurrence",
+    scope: "editor",
+    keys: Object.freeze({ mac: ["Cmd-D"], other: ["Ctrl-D"] }),
+    command: "selectNextOccurrence",
+  }),
+  Object.freeze({
+    id: "next-error",
+    description: "Go to the build error",
+    scope: "editor",
+    keys: Object.freeze({ mac: ["F8"], other: ["F8"] }),
+    command: "nextDiagnostic",
+  }),
+  Object.freeze({
     id: "delete-line",
     description: "Delete line",
     scope: "editor",

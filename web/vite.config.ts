@@ -47,7 +47,7 @@ const ISOLATION_HEADERS: Record<string, string> = {
   "Cross-Origin-Embedder-Policy": "require-corp",
 };
 
-/** The name of the third-party notices file, next to index.html. */
+/** The name of the file holding the bundled packages' license texts, next to index.html. */
 const NOTICES_FILE = "licenses.json";
 
 /**
@@ -95,15 +95,21 @@ function outOfBundleAssets(): Plugin {
   };
 }
 
-interface Notice {
+/** One npm package in the bundle, as the About dialog lists it. */
+interface BundledPackage {
   name: string;
   version: string;
   license: string;
   homepage: string;
-  text: string;
 }
 
 const LICENSE_FILE = /^(licen[sc]e|copying)(\.(md|txt))?$/i;
+
+/** The module the About dialog imports its list of bundled packages from. */
+const PACKAGES_MODULE = "virtual:bundled-packages";
+
+/** Stands in for the list in the virtual module until renderChunk knows every chunk. */
+const PACKAGES_PLACEHOLDER = "__BUNDLED_PACKAGES__";
 
 /** A repository field as a web address: "git+ssh://git@host/x.git" becomes "https://host/x". */
 function webAddress(repository: string | undefined): string {
@@ -123,39 +129,73 @@ function packageDir(id: string): string | null {
   return join(id.slice(0, at + marker.length), ...parts.slice(0, depth));
 }
 
+/** The directory of every npm package with a module in one of the chunks, sorted by package name. */
+function packageDirs(moduleIds: Iterable<string>): string[] {
+  const dirs = new Set<string>();
+  for (const id of moduleIds) {
+    const dir = id.startsWith("\0") ? null : packageDir(id.split("?")[0]);
+    if (dir) dirs.add(dir);
+  }
+  const named = [...dirs].map((dir) => ({
+    dir,
+    name: JSON.parse(readFileSync(join(dir, "package.json"), "utf8")).name,
+  }));
+  return named.sort((a, b) => a.name.localeCompare(b.name)).map((entry) => entry.dir);
+}
+
+/** The list entry for one package directory. */
+function bundledPackage(dir: string): BundledPackage {
+  const manifest = JSON.parse(readFileSync(join(dir, "package.json"), "utf8"));
+  const repository = typeof manifest.repository === "string" ? manifest.repository : manifest.repository?.url;
+  return {
+    name: manifest.name,
+    version: manifest.version,
+    license: typeof manifest.license === "string" ? manifest.license : "See license text",
+    homepage: manifest.homepage ?? webAddress(repository),
+  };
+}
+
+/** The license text in one package directory, or "" when it ships none. */
+function licenseText(dir: string): string {
+  const file = readdirSync(dir).find((name) => LICENSE_FILE.test(name));
+  return file ? readFileSync(join(dir, file), "utf8") : "";
+}
+
 /**
- * Emits licenses.json next to index.html: the name, version, license and
- * license text of every npm package that reached the bundle. The About dialog
- * lists them, so a dependency added later shows up with no edit.
+ * Lists every npm package that reached the bundle, so a dependency added
+ * later shows up in the About dialog with no edit. The list itself goes into
+ * the bundle, through virtual:bundled-packages, so the dialog shows it at
+ * once. The license texts go to licenses.json next to index.html, keyed by
+ * package name, which the dialog fetches when a row first opens. The dev
+ * server lists nothing.
  */
 function licenseNotices(): Plugin {
+  const resolved = `\0${PACKAGES_MODULE}`;
+  let build = false;
   return {
     name: "license-notices",
-    apply: "build",
+    configResolved(config) {
+      build = config.command === "build";
+    },
+    resolveId(id) {
+      return id === PACKAGES_MODULE ? resolved : null;
+    },
+    load(id) {
+      if (id !== resolved) return null;
+      return `export default ${build ? PACKAGES_PLACEHOLDER : "[]"};`;
+    },
+    renderChunk(code, _chunk, _options, meta) {
+      if (!code.includes(PACKAGES_PLACEHOLDER)) return null;
+      const ids = Object.values(meta.chunks).flatMap((chunk) => Object.keys(chunk.modules));
+      const list = packageDirs(ids).map(bundledPackage);
+      return code.replace(PACKAGES_PLACEHOLDER, () => JSON.stringify(list));
+    },
     generateBundle(_options, bundle) {
-      const dirs = new Set<string>();
-      for (const chunk of Object.values(bundle)) {
-        if (chunk.type !== "chunk") continue;
-        for (const id of Object.keys(chunk.modules)) {
-          const dir = id.startsWith("\0") ? null : packageDir(id.split("?")[0]);
-          if (dir) dirs.add(dir);
-        }
-      }
-      const notices: Notice[] = [];
-      for (const dir of dirs) {
-        const manifest = JSON.parse(readFileSync(join(dir, "package.json"), "utf8"));
-        const file = readdirSync(dir).find((name) => LICENSE_FILE.test(name));
-        const repository = typeof manifest.repository === "string" ? manifest.repository : manifest.repository?.url;
-        notices.push({
-          name: manifest.name,
-          version: manifest.version,
-          license: typeof manifest.license === "string" ? manifest.license : "See license text",
-          homepage: manifest.homepage ?? webAddress(repository),
-          text: file ? readFileSync(join(dir, file), "utf8") : "",
-        });
-      }
-      notices.sort((a, b) => a.name.localeCompare(b.name));
-      this.emitFile({ type: "asset", fileName: NOTICES_FILE, source: `${JSON.stringify(notices, null, 2)}\n` });
+      if (!build) return;
+      const ids = Object.values(bundle).flatMap((chunk) => (chunk.type === "chunk" ? Object.keys(chunk.modules) : []));
+      const texts: Record<string, string> = {};
+      for (const dir of packageDirs(ids)) texts[bundledPackage(dir).name] = licenseText(dir);
+      this.emitFile({ type: "asset", fileName: NOTICES_FILE, source: `${JSON.stringify(texts, null, 2)}\n` });
     },
   };
 }

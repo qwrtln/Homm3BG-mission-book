@@ -4,89 +4,71 @@ import { EditorView } from "@codemirror/view";
 import { tags } from "@lezer/highlight";
 import { FLASH_LINE_CLASS } from "./flash-line.ts";
 
-/** The GitHub colors of one theme, for the editor's chrome and for the tokens stex finds. */
-interface Palette {
-  background: string;
-  ink: string;
-  gutterInk: string;
-  gutterLine: string;
-  selection: string;
-  comment: string;
-  /** \commands and builtins */
-  command: string;
-  keyword: string;
-  /** numbers, atoms, definitions, attributes, meta */
-  constant: string;
-  /** variables and types */
-  variable: string;
-  string: string;
-  errorInk: string;
-  errorBackground: string;
-  /** the line a jump from the PDF lands on */
-  flash: string;
-}
-
-const LIGHT: Palette = {
-  background: "#fff",
-  ink: "#1f2328",
-  gutterInk: "#8c959f",
-  gutterLine: "#d1d9e0",
-  selection: "rgba(84, 174, 255, .25)",
-  comment: "#6e7781",
-  command: "#8250df",
-  keyword: "#cf222e",
-  constant: "#0550ae",
-  variable: "#953800",
-  string: "#0a3069",
-  errorInk: "#f6f8fa",
-  errorBackground: "#82071e",
-  flash: "rgba(255, 200, 0, .5)",
-};
-
-const DARK: Palette = {
-  background: "#0d1117",
-  ink: "#c9d1d9",
-  gutterInk: "#6e7681",
-  gutterLine: "#30363d",
-  selection: "rgba(56, 139, 253, .35)",
-  comment: "#8b949e",
-  command: "#d2a8ff",
-  keyword: "#ff7b72",
-  constant: "#79c0ff",
-  variable: "#ffa657",
-  string: "#a5d6ff",
-  errorInk: "#f0f6fc",
-  errorBackground: "#8e1519",
-  flash: "rgba(187, 128, 9, .5)",
-};
-
-const MONO = 'ui-monospace, "Liberation Mono", monospace';
-
 /**
- * The editor's chrome: page colors, gutter, cursor, selection, the find bar
- * and the completion list. The bars and the list draw from the app's own
- * custom properties, which follow the theme attribute by themselves.
+ * The editor's chrome: page colors, gutter, cursor, selection, the line and
+ * bracket cues, the build error's diagnostic, the find bar, the go-to-line box
+ * and the completion list. Every color is a custom property from tokens.css,
+ * which follows the theme attribute by itself.
  */
-function chrome(palette: Palette, dark: boolean): Extension {
+function chrome(dark: boolean): Extension {
   return EditorView.theme(
     {
-      "&": { height: "100%", backgroundColor: palette.background, color: palette.ink, font: `13px/1.5 ${MONO}` },
-      "&.cm-focused": { outline: "none" },
-      ".cm-scroller": { fontFamily: "inherit", lineHeight: "inherit" },
-      ".cm-content": { caretColor: palette.ink },
-      ".cm-cursor, .cm-dropCursor": { borderLeftColor: palette.ink },
-      "&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, ::selection":
-        { background: palette.selection },
-      ".cm-gutters": {
-        backgroundColor: palette.background,
-        color: palette.gutterInk,
-        borderRight: `1px solid ${palette.gutterLine}`,
+      "&": {
+        height: "100%",
+        backgroundColor: "var(--panel)",
+        color: "var(--ink)",
+        font: "var(--text-editor)/1.5 var(--font-mono)",
       },
+      // A click and a key both show the ring, as TextInput does. It is an overlay, not an
+      // outline: the sticky gutter (z-index 200) and panels (300) would paint over an inset
+      // outline. Inside the editor, so the pane does not clip it; below tooltips (500).
+      "&.cm-focused": { outline: "none" },
+      "&.cm-focused::after": {
+        content: '""',
+        position: "absolute",
+        inset: "0",
+        border: "2px solid var(--accent)",
+        pointerEvents: "none",
+        zIndex: "400",
+      },
+      ".cm-scroller": { fontFamily: "inherit", lineHeight: "inherit" },
+      ".cm-content": { caretColor: "var(--ink)" },
+      ".cm-cursor, .cm-dropCursor": { borderLeftColor: "var(--ink)" },
+      "&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, ::selection":
+        { background: "var(--selection)" },
+      ".cm-gutters": {
+        backgroundColor: "var(--panel)",
+        color: "var(--gutter-ink)",
+        borderRight: "1px solid var(--line)",
+      },
+      // Before the error tint and the flash: on the cursor's line, those win.
+      ".cm-activeLine": { backgroundColor: "var(--active-line)" },
+      ".cm-activeLineGutter": { backgroundColor: "var(--active-line)" },
+      "&.cm-focused .cm-matchingBracket": { backgroundColor: "var(--bracket-match)" },
+      "&.cm-focused .cm-nonmatchingBracket": { backgroundColor: "var(--bracket-mismatch)" },
+      ".cm-selectionMatch": { backgroundColor: "var(--selection-match)" },
       ".build-error-line": { backgroundColor: "var(--error-bg)" },
-      // The fade is the editor-flash-fade keyframes in styles/app.css, which read --flash.
+      // The tint is not the only cue: a wavy underline under the failing token and a dot
+      // in the lint gutter. Lint draws both as SVG data URIs with literal colours, which
+      // cannot read a token, so CSS draws them instead.
+      ".cm-lintRange-error": {
+        backgroundImage: "none",
+        textDecoration: "underline wavy var(--bad)",
+        textDecorationSkipInk: "none",
+        textUnderlineOffset: "3px",
+      },
+      ".cm-gutter-lint": { width: "1.2em" },
+      ".cm-lint-marker-error": {
+        content: "normal",
+        width: "0.7em",
+        height: "0.7em",
+        margin: "0.15em",
+        borderRadius: "50%",
+        backgroundColor: "var(--bad)",
+      },
+      // The fade is the editor-flash-fade keyframes in styles/app.css, which read --line-flash.
       [`.${FLASH_LINE_CLASS}`]: {
-        "--flash": palette.flash,
-        backgroundColor: "var(--flash)",
+        backgroundColor: "var(--line-flash)",
         animation: "editor-flash-fade 1.8s ease-in forwards",
       },
       "@media (prefers-reduced-motion: reduce)": {
@@ -96,35 +78,44 @@ function chrome(palette: Palette, dark: boolean): Extension {
 
       ".cm-panels": { backgroundColor: "var(--panel)", color: "var(--ink)" },
       ".cm-panels-top": { borderBottom: "1px solid var(--line)" },
-      ".cm-search": { font: `13px/1.5 ${MONO}` },
-      ".cm-search input, .cm-search button": { font: "inherit" },
-      ".cm-search .cm-textfield": {
+      ".cm-panels-bottom": { borderTop: "1px solid var(--line)" },
+      // The find bar and the go-to-line box (a .cm-dialog panel) look alike.
+      ".cm-search, .cm-goto-line": { font: "var(--text-editor)/1.5 var(--font-mono)" },
+      ".cm-search input, .cm-search button, .cm-goto-line input, .cm-goto-line button": { font: "inherit" },
+      ".cm-search .cm-textfield, .cm-goto-line .cm-textfield": {
         backgroundColor: "var(--panel)",
         color: "var(--ink)",
         border: "1px solid var(--line)",
-        borderRadius: "4px",
+        borderRadius: "var(--radius-sm)",
       },
-      ".cm-search .cm-button": {
+      ".cm-search .cm-button, .cm-goto-line .cm-button": {
         backgroundImage: "none",
         backgroundColor: "var(--paper)",
         color: "var(--ink)",
         border: "1px solid var(--line)",
-        borderRadius: "4px",
+        borderRadius: "var(--radius-sm)",
         cursor: "pointer",
       },
-      ".cm-search label": { color: "var(--muted)" },
-      ".cm-searchMatch": { backgroundColor: palette.selection },
-      ".cm-searchMatch-selected": { backgroundColor: palette.selection, outline: `1px solid ${palette.constant}` },
+      ".cm-search label, .cm-goto-line label": { color: "var(--muted)" },
+      ".cm-searchMatch": { backgroundColor: "var(--selection)" },
+      ".cm-searchMatch-selected": { backgroundColor: "var(--selection)", outline: "1px solid var(--syntax-constant)" },
 
       ".cm-tooltip": {
         backgroundColor: "var(--panel)",
         color: "var(--ink)",
         border: "1px solid var(--line)",
-        borderRadius: "4px",
+        borderRadius: "var(--radius-sm)",
         boxShadow: "0 8px 20px var(--shadow)",
       },
+      ".cm-tooltip-lint": { maxWidth: "min(36rem, calc(100vw - 1rem))" },
+      ".cm-diagnostic": { fontFamily: "var(--font-mono)", fontSize: "var(--text-editor)" },
+      ".cm-diagnostic-error": { borderLeft: "4px solid var(--bad)" },
       ".cm-tooltip.cm-tooltip-autocomplete": { minWidth: "14rem", maxWidth: "min(32rem, calc(100vw - 1rem))" },
-      ".cm-tooltip-autocomplete > ul": { fontFamily: MONO, fontSize: "12.5px", maxHeight: "14rem" },
+      ".cm-tooltip-autocomplete > ul": {
+        fontFamily: "var(--font-mono)",
+        fontSize: "var(--text-editor)",
+        maxHeight: "14rem",
+      },
       ".cm-tooltip-autocomplete > ul > li": {
         display: "flex",
         alignItems: "center",
@@ -145,13 +136,13 @@ function chrome(palette: Palette, dark: boolean): Extension {
   );
 }
 
-/** The colors of the tokens the LaTeX mode names, as the editor's previous theme gave them. */
-function tokens(palette: Palette): Extension {
+/** The colors of the tokens the LaTeX mode names, from the syntax tokens. */
+function tokens(): Extension {
   return syntaxHighlighting(
     HighlightStyle.define([
-      { tag: tags.comment, color: palette.comment },
-      { tag: [tags.tagName, tags.standard(tags.variableName)], color: palette.command },
-      { tag: tags.keyword, color: palette.keyword },
+      { tag: tags.comment, color: "var(--syntax-comment)" },
+      { tag: [tags.tagName, tags.standard(tags.variableName)], color: "var(--syntax-command)" },
+      { tag: tags.keyword, color: "var(--syntax-keyword)" },
       {
         tag: [
           tags.atom,
@@ -161,12 +152,12 @@ function tokens(palette: Palette): Extension {
           tags.propertyName,
           tags.meta,
         ],
-        color: palette.constant,
+        color: "var(--syntax-constant)",
       },
-      { tag: [tags.variableName, tags.special(tags.variableName), tags.typeName], color: palette.variable },
-      { tag: [tags.string, tags.special(tags.string)], color: palette.string },
-      { tag: tags.bracket, color: palette.ink },
-      { tag: tags.invalid, color: palette.errorInk, backgroundColor: palette.errorBackground },
+      { tag: [tags.variableName, tags.special(tags.variableName), tags.typeName], color: "var(--syntax-variable)" },
+      { tag: [tags.string, tags.special(tags.string)], color: "var(--syntax-string)" },
+      { tag: tags.bracket, color: "var(--ink)" },
+      { tag: tags.invalid, color: "var(--syntax-invalid-fg)", backgroundColor: "var(--syntax-invalid-bg)" },
     ]),
   );
 }
@@ -177,10 +168,9 @@ function tokens(palette: Palette): Extension {
  * which the tests read.
  */
 export function editorTheme(dark: boolean): Extension {
-  const palette = dark ? DARK : LIGHT;
   return [
-    chrome(palette, dark),
-    tokens(palette),
+    chrome(dark),
+    tokens(),
     EditorView.editorAttributes.of({ class: dark ? "cm-github-dark" : "cm-github-light" }),
   ];
 }

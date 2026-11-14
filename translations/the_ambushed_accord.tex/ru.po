@@ -88,7 +88,7 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -161,13 +161,13 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:21
 #, fuzzy, no-wrap
 #| msgid ""
-#| "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+#| "\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 #| "\n"
 msgid ""
-"\\textbf{Starting Resources:} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 2~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Стартовые ресурсы:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Стартовые ресурсы:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols

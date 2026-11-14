@@ -382,7 +382,7 @@ test.describe("a member editing a scenario in place", () => {
   test("dirty and unbuilt: no dialog, and the pull request opens", async ({ app }) => {
     const { page } = app;
     await signInAs(page);
-    await page.locator("#mode-edit").click();
+    await page.locator("#start-edit").click();
     const results = await openScenarioList(page);
     await results.first().dispatchEvent("mousedown");
     await page.locator("#go").click();

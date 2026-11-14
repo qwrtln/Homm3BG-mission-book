@@ -256,10 +256,10 @@ msgstr ""
 #: coops/stand_united.tex:21
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 6~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de Départ :} 6 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 6~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -271,10 +271,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -449,7 +449,7 @@ msgid ""
 msgstr ""
 "\\begin{center}\n"
 "  \\includegraphics[width=0.7\\linewidth]{\\maps/stand_united_2p.png}\n"
-"  \\captionof{figure}{\\footnotesize\\textbf{SCENARIO 2-JOUEURS}}\n"
+"  \\captionof{figure}{\\footnotesize\\textbf{SCÉNARIO POUR 2 JOUEURS}}\n"
 "\\end{center}\n"
 "\n"
 
@@ -472,7 +472,7 @@ msgstr ""
 "  };\n"
 "  \\centering\n"
 "  \\node at (13.5, 3.0) {\\includegraphics[scale=0.3]{\\maps/stand_united_3p.png}};\n"
-"  \\node at (13.5, -1.2) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 3-JOUEURS}}}};\n"
+"  \\node at (13.5, -1.2) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNARIO POUR 3 JOUEURS}}}};\n"
 "\n"
 
 #. type: tikzpicture
@@ -483,4 +483,4 @@ msgid ""
 "  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{4-PLAYER SCENARIO}}}};"
 msgstr ""
 "  \\node at (5, -4) {\\includegraphics[scale=0.3]{\\maps/stand_united_4p.png}};\n"
-"  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{SCENARIO 4-JOUEURS}}}};"
+"  \\node at (5, -8.3) {\\footnotesize{\\textbf{\\MakeUppercase{SCÉNARIO POUR 4 JOUEURS}}}};"

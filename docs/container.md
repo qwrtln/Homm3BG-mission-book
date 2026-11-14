@@ -33,7 +33,7 @@ Build the Czech version:
 
 Compare specific pages in English:
 ```bash
-./run.sh tools/compare_pages.sh -l en -r 5-9
+./run.sh tools/compare_pages.sh en -r 5-9
 ```
 
 ## Usage without the wrapper script

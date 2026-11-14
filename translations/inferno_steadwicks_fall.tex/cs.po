@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"POT-Creation-Date: 2026-10-22 07:41+0000\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -93,7 +93,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:52 coops/titans_stronghold.tex:59
-#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:68
+#: coops/emerald_island.tex:45 coops/close_to_enemies.tex:60
 #: coops/stand_united.tex:52 campaigns/castle_greek_gift.tex:73
 #: campaigns/castle_sicilian_dragon.tex:81
 #: campaigns/castle_two_knights_defense.tex:77
@@ -110,7 +110,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:56 coops/titans_stronghold.tex:63
-#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:74
+#: coops/emerald_island.tex:49 coops/close_to_enemies.tex:66
 #: coops/stand_united.tex:56 campaigns/inferno_devilish_plan.tex:127
 #: campaigns/inferno_steadwicks_fall.tex:137
 #: campaigns/inferno_deal_with_the_devil.tex:87
@@ -143,7 +143,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
-#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: coops/close_to_enemies.tex:102 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/arcane_artillery.tex:79
 #: clash/the_hunt.tex:69 campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:194
@@ -176,22 +176,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Počáteční Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
-"\n"
-
-#. type: multicols
-#: coops/close_to_enemies.tex:60 campaigns/inferno_devilish_plan.tex:50
-#: campaigns/inferno_steadwicks_fall.tex:48
-#: campaigns/inferno_deal_with_the_devil.tex:46
-#, no-wrap
-msgid ""
-"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
-"\n"
-msgstr ""
-"\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
+"\\textbf{Počáteční Příjem:} 10~\\svg{gold}, 2~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -228,6 +216,18 @@ msgid ""
 "\n"
 msgstr ""
 "\\textbf{Hrdina Frakce:} Libovolný\n"
+"\n"
+
+#. type: multicols
+#: campaigns/inferno_devilish_plan.tex:50
+#: campaigns/inferno_steadwicks_fall.tex:48
+#: campaigns/inferno_deal_with_the_devil.tex:46
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{AI Hero Setup}}\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Příprava AI Hrdiny}}\n"
 "\n"
 
 #. type: multicols
@@ -315,10 +315,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:26
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 15 \\svg{gold}, 1 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 15~\\svg{gold}, 1~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 15 \\svg{gold}, 1 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 15~\\svg{gold}, 1~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -618,7 +618,7 @@ msgstr ""
 msgid ""
 "You lose if any of the following occur:\n"
 "\\begin{itemize}\n"
-"  \\item You lose one Combat encounter with your Main Hero (Surrendering costs 10 \\svg{gold}, and does not count as a defeat).\n"
+"  \\item You lose one Combat encounter with your Main Hero (Surrendering costs 10~\\svg{gold}, and does not count as a defeat).\n"
 "  \\item You lose your Faction Town on the S6 Map Tile.\n"
 "  \\item You run out of time -- you have time till the end of Round 16.\n"
 "\\end{itemize}\n"
@@ -626,7 +626,7 @@ msgid ""
 msgstr ""
 "Scénář prohrajete nastane-li libovolná událost z:\n"
 "\\begin{itemize}\n"
-"  \\item Prohrajete Souboj se svým Hlavním Hrdinou (Kapitulace stojí  10 \\svg{gold} a nepočítá se jako porážka).\n"
+"  \\item Prohrajete Souboj se svým Hlavním Hrdinou (Kapitulace stojí  10~\\svg{gold} a nepočítá se jako porážka).\n"
 "  \\item Ztratíte kontrolu nad svým Frakčním Městem na Dílku Mapy S6.\n"
 "  \\item Dojde vám čas -- misi musíte splnit do konce 16. Kola.\n"
 "\\end{itemize}\n"
@@ -793,8 +793,8 @@ msgid ""
 "      attack the player's Main Hero (not Secondary).\n"
 "    \\item The borders on the Castle Starting Map Tile S3 cannot be crossed by any means until\n"
 "      all Enemy Settlements (F3, F10, \\#F1) have been defeated.\n"
-"    \\item Gain 2 \\svg{valuables} every time you defeat Enemy Charging Heroes.\n"
-"    \\item Obelisks give you 1 \\svg{valuables} and function as a ``Castle Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
+"    \\item Gain 2~\\svg{valuables} every time you defeat Enemy Charging Heroes.\n"
+"    \\item Obelisks give you 1~\\svg{valuables} and function as a ``Castle Gate'' location (only if you have the ``Castle Gate'' built in your Town).\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -809,8 +809,8 @@ msgstr ""
 "      na Hlavního Hrdinu hráče (ne Sekundárního).\n"
 "    \\item Hranice na Startovním Dílku Mapy Hrad S3 nelze překročit žádným způsobem, dokud\n"
 "      všechny Nepřátelské Osady (F3, F10, \\#F1) nebudou poraženy.\n"
-"    \\item Porážka Nepřátelských Hrdinů poskytuje 2 \\svg{valuables}.\n"
-"    \\item Obelisky vám dávají 1 \\svg{valuables} a fungují jako lokace \\uv{Hradní Brána} (pouze pokud ji máte postavenou ve svém Městě).\n"
+"    \\item Porážka Nepřátelských Hrdinů poskytuje 2~\\svg{valuables}.\n"
+"    \\item Obelisky vám dávají 1~\\svg{valuables} a fungují jako lokace \\uv{Hradní Brána} (pouze pokud ji máte postavenou ve svém Městě).\n"
 "\\end{itemize}\n"
 "\n"
 

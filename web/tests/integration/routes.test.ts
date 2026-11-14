@@ -5,7 +5,7 @@
 import type { Page } from "@playwright/test";
 
 import { editorText, setEditorText } from "../helpers/editor.ts";
-import { expect, READY_STATUS, test } from "./fixtures.ts";
+import { expect, openCreate, READY_STATUS, test } from "./fixtures.ts";
 
 // The fixture options Playwright reads a [value, options] tuple's second element as.
 const FIXTURE_OPTION = { scope: "test", option: true } as const;
@@ -426,7 +426,9 @@ test.describe("a differing local draft is offered before an edit replaces it", (
     await page.evaluate(() => localStorage.setItem("github_token", "t"));
     await page.reload();
 
-    await page.locator("#mode-edit").click();
+    await expect(page.locator("#resume-drafts")).toBeVisible();
+    await openCreate(page);
+    await page.locator("#start-edit").click();
     await page.locator("#search").fill("Arcane Artillery");
     const results = page.locator("#search-results .combobox-item");
     await expect(results.first()).toBeVisible();

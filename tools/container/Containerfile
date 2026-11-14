@@ -69,7 +69,7 @@ RUN <<EOF
 
   UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 \
     sh -c "$(curl -fsSL https://astral.sh/uv/install.sh)"
-  uv pip install --system --break-system-packages --no-cache pymupdf
+  uv pip install --system --break-system-packages --no-cache pymupdf pikepdf
   rm -rf /root/.local/share/uv /root/.cache/uv
 
   mkdir -p /tmp/install-tl

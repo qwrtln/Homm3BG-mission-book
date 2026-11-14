@@ -22,8 +22,8 @@ import { resetUploads, restoreUploads } from "./uploads.ts";
 
 /**
  * Whether the welcome screen shows over a scenario left open behind it: its
- * editor, uploads, save target and PDF all kept for "Back to editing". The
- * header renders its "Back to editing" button from the same store field.
+ * editor, uploads, save target and PDF all kept. Its resume row reads
+ * "Currently editing" from the same store field, and clicking it returns here.
  *
  * @returns true while a scenario waits behind the welcome screen
  */
@@ -290,7 +290,7 @@ export async function openForEdit(
 
 /**
  * Leaves the workspace for the welcome screen. The scenario stays open behind
- * it, untouched, until another one is opened: "Back to editing" returns to
+ * it, untouched, until another one is opened: its resume row returns to
  * it. Its autosave is flushed now, as a reload drops what the page holds.
  */
 export function showWelcome(): void {

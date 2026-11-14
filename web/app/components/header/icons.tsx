@@ -61,14 +61,6 @@ export function ImageIcon({ className }: IconProps) {
   );
 }
 
-export function PencilIcon({ className }: IconProps) {
-  return (
-    <Octicon className={className}>
-      <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z" />
-    </Octicon>
-  );
-}
-
 export function MarkGithubIcon({ className }: IconProps) {
   return (
     <Octicon className={className}>
@@ -93,11 +85,13 @@ export function DeviceMobileIcon({ className }: IconProps) {
   );
 }
 
-export function UploadIcon({ className }: IconProps) {
+export function FloppyIcon({ className }: IconProps) {
   return (
     <Octicon className={className}>
-      <path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z" />
-      <path d="M11.78 4.72a.749.749 0 1 1-1.06 1.06L8.75 3.811V9.5a.75.75 0 0 1-1.5 0V3.811L5.28 5.78a.749.749 0 1 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0z" />
+      <path
+        fillRule="evenodd"
+        d="M2.75 1h8.69c.464 0 .909.184 1.237.513l1.81 1.81c.329.328.513.773.513 1.237v8.69A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75C1 1.784 1.784 1 2.75 1Zm0 1.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.75V9.75C3.5 8.784 4.284 8 5.25 8h5.5c.966 0 1.75.784 1.75 1.75v3.75h.75a.25.25 0 0 0 .25-.25V4.56a.25.25 0 0 0-.073-.177l-1.81-1.81a.25.25 0 0 0-.177-.073H11v2.25A1.75 1.75 0 0 1 9.25 6.5h-3.5A1.75 1.75 0 0 1 4 4.75V2.5Zm2.75 0v2.25c0 .138.112.25.25.25h3.5a.25.25 0 0 0 .25-.25V2.5ZM5 13.5h6V9.75a.25.25 0 0 0-.25-.25h-5.5a.25.25 0 0 0-.25.25Z"
+      />
     </Octicon>
   );
 }
@@ -170,6 +164,14 @@ export function SignOutIcon({ className }: IconProps) {
   return (
     <Octicon className={className}>
       <path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z" />
+    </Octicon>
+  );
+}
+
+export function UndoIcon({ className }: IconProps) {
+  return (
+    <Octicon className={className}>
+      <path d="M1.22 6.28a.749.749 0 0 1 0-1.06l3.5-3.5a.749.749 0 1 1 1.06 1.06L3.56 5h7.19a4.5 4.5 0 0 1 0 9H8.5a.75.75 0 0 1 0-1.5h2.25a3 3 0 0 0 0-6H3.56l2.22 2.22a.749.749 0 1 1-1.06 1.06Z" />
     </Octicon>
   );
 }
