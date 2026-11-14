@@ -53,7 +53,7 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
-        uses: qwrtln/optimize-pdf@v10.07
+        uses: qwrtln/optimize-pdf@v10.08
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
@@ -191,7 +191,7 @@ jobs:
           root_file: main_${{ matrix.language }}.tex
 
       - name: Optimize PDF
-        uses: qwrtln/optimize-pdf@v10.07
+        uses: qwrtln/optimize-pdf@v10.08
         with:
           file-name: main_${{ matrix.language }}.pdf
           quality-level: prepress
