@@ -13,7 +13,9 @@ help() {
       <language>                    Specify the language for comparison (${valid_languages[*]}). Defaults to en.
       -d, --drafts                  Compare draft scenarios (mutually exclusive with a non-English <language> and -s).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
-                                    Optional with '--scenario': without it, every page both files have is compared.
+                                    Optional with '--scenario' or '--all': without it, every page both files have is compared.
+    -a, --all                     Compare every page both files have instead of a page range
+                                    (mutually exclusive with -r).
 
     Optional Arguments:
       -s, --scenario                Compare against a single scenario.
@@ -34,6 +36,9 @@ help() {
           - This will produce files 'en-01.png, en-05.png, en-06.png, en-07.png and en-30.png'.
           - It will use 'main_en-mono.pdf' from the repository as baseline because '--mono' was specified.
             It would use 'main_en.pdf' if this parameter was omitted.
+
+      ./tools/compare_pages.sh fr --all --highlight
+          - This will compare every page of the French book with changed areas highlighted.
 
       ./tools/compare_pages.sh -d -r 1-3 --mono
           - This will download 'drafts-mono.pdf' from GitHub for comparison.
@@ -309,6 +314,7 @@ MONOCHROME=0
 SCENARIO_SEARCH=""
 SCENARIO_NAME=""
 HIGHLIGHT=0
+ALL=0
 
 while [[ "$1" != "" ]]; do
   case $1 in
@@ -336,6 +342,9 @@ while [[ "$1" != "" ]]; do
     -g | --highlight )
       HIGHLIGHT=1
       ;;
+    -a | --all )
+      ALL=1
+      ;;
     * )
       help
       ;;
@@ -349,8 +358,13 @@ if [[ "$DRAFTS" -eq 1 && ("$LANGUAGE" != "en" || -n "$SCENARIO_SEARCH") ]]; then
   help
 fi
 
-if [[ -z "$RANGE" && -z "$SCENARIO_SEARCH" ]]; then
-  echo "Error: You must specify a page range with -r/--range option."
+if [[ "$ALL" -eq 1 && -n "$RANGE" ]]; then
+  echo "Error: -a/--all is mutually exclusive with -r/--range."
+  help
+fi
+
+if [[ -z "$RANGE" && -z "$SCENARIO_SEARCH" && "$ALL" -eq 0 ]]; then
+  echo "Error: You must specify a page range with -r/--range option, or compare all pages with -a/--all."
   help
 fi
 
@@ -409,7 +423,7 @@ if ! pdfinfo "$own_file" &>/dev/null; then
   exit 1
 fi
 
-# Without a range, a scenario is compared page by page as far as the shorter file goes.
+# Without a range (a scenario or --all), the files are compared page by page as far as the shorter one goes.
 if [[ -z "$RANGE" ]]; then
   base_pages=$(pdfinfo "$base_file" 2>/dev/null | awk '/^Pages:/ {print $2}')
   own_pages=$(pdfinfo "$own_file" 2>/dev/null | awk '/^Pages:/ {print $2}')
@@ -422,7 +436,13 @@ fi
 
 readarray -t pages < <(parse_pages "$RANGE")
 
+# A whole book is hundreds of pages; cap the parallel jobs at the CPU count.
+max_jobs=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
+
 for page in "${pages[@]}"; do
+  while (( $(jobs -rp | wc -l) >= max_jobs )); do
+    wait -n
+  done
   echo "Making images of ${base_file} and ${own_file} for page ${page}..."
   if [[ "$HIGHLIGHT" -eq 1 ]]; then
     "${python_runner[@]}" tools/pdf_screenshot_diff.py "${base_file}" "${own_file}" \
@@ -440,6 +460,9 @@ if [[ "$SCENARIO_NAME" != "" ]]; then
   identifier="$SCENARIO_NAME"
 fi
 for page in "${pages[@]}"; do
+  while (( $(jobs -rp | wc -l) >= max_jobs )); do
+    wait -n
+  done
   # pdf_screenshot_diff.py names its images by the plain page number, pdftoppm by the zero-padded one.
   if [[ "$HIGHLIGHT" -eq 1 ]]; then
     image_suffix="$((10#$page))"

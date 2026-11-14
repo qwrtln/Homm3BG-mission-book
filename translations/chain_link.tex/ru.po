@@ -117,7 +117,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -172,13 +172,13 @@ msgstr ""
 #: clash/chain_link.tex:17
 #, fuzzy, no-wrap
 #| msgid ""
-#| "\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+#| "\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 #| "\n"
 msgid ""
-"\\textbf{Starting Resources:} 20 \\svg{gold}, 6 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 20~\\svg{gold}, 6~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Стартовые ресурсы:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Стартовые ресурсы:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*

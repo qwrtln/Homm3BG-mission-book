@@ -92,10 +92,10 @@ msgstr ""
 #: campaigns/inferno_steadwicks_fall.tex:28
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 2 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 2~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #.  !TeX spellcheck = en_US
@@ -160,10 +160,10 @@ msgstr ""
 #: coops/the_ambushed_accord.tex:21
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 2~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de Départ :} 2 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de Départ :} 2~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols

@@ -265,20 +265,20 @@ msgstr ""
 #: coops/emerald_island.tex:22
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 5~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Ressources de départ :} 5 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Ressources de départ :} 5~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
 #: coops/emerald_island.tex:24
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*

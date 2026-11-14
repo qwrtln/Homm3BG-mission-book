@@ -219,7 +219,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:30
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 15 \\svg{gold}, 3 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 15~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -330,7 +330,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item Add a ``Slayer'' Spell to your hand\n"
 "  \\item Add the ``Armor of Wonder'' Artifact to your hand\n"
-"  \\item Reinforce Magogs and gain 1 \\svg{valuables}\n"
+"  \\item Reinforce Magogs and gain 1~\\svg{valuables}\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

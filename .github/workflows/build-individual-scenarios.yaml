@@ -221,7 +221,7 @@ jobs:
 
       - name: Optimize PDF
         if: steps.cache-pdf.outputs.cache-hit != 'true'
-        uses: qwrtln/optimize-pdf@v10.07
+        uses: qwrtln/optimize-pdf@v10.08
         with:
           file-name: main_${{ inputs.language }}.pdf
           quality-level: prepress

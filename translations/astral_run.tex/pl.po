@@ -50,10 +50,10 @@ msgstr ""
 #: coops/sentinels.tex:24 clash/astral_run.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Zasoby Początkowe:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Zasoby Początkowe:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -134,10 +134,10 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Początkowy Przychód:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Początkowy Przychód:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -353,7 +353,7 @@ msgid ""
 "  \\item \\textbf{Obelisk:} Guarded by Level VI Neutral Units. Search (4) \\svg[8]{skill}, \\svg{spellpower} or \\svg{artifact}. \\\\ \\textbf{First to Flag:} Gain Empowered Ability Token.\n"
 "  \\item Each \\textbf{blocked Field} adjacent to an Obelisk is a two-way Astral Gate, which only becomes active after that Obelisk has been visited.\n"
 "  \\item \\textbf{Astral Gate:} Cannot be entered from a different Map Tile. When a Hero enters an Astral Gate, they are teleported to the Astral Gate on the Near Tile directly opposite the Center Tile. If that Tile is undiscovered, that player immediately discovers it.\n"
-"  \\item Gain 1 \\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
+"  \\item Gain 1~\\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
@@ -364,7 +364,7 @@ msgstr ""
 "  \\item \\textbf{Obelisk:} Strzeżony przez Jednostki Neutralne Poziomu VI. Przeszukaj (4) \\svg[8]{skill}, \\svg{spellpower} albo \\svg{artifact}. \\textbf{Pierwszy flagujący:} Zyskaj Żeton Ulepszonej Zdolności.\n"
 "  \\item Każde \\textbf{zablokowane Pole} sąsiadujące z Obeliskiem to dwukierunkowe Wrota Astralne, która stają się aktywne dopiero po odwiedzeniu tego Obelisku.\n"
 "  \\item \\textbf{Wrota Astralne:} Nie można do nich wejść z innego Kafelka Mapy. Po wejściu przenieś Bohatera do Wrót Astralnych na Bliskim Kafelku bezpośrednio naprzeciwko Centralnego Kafelka. Jeśli ten Kafelek nie został odkryty, gracz odkrywa go natychmiast.\n"
-"  \\item Zyskaj 1 \\svg{experience} po Walce z Bohaterem Głównym przeciwnika, chyba że jeden z graczy podda się lub wycofa.\n"
+"  \\item Zyskaj 1~\\svg{experience} po Walce z Bohaterem Głównym przeciwnika, chyba że jeden z graczy podda się lub wycofa.\n"
 "\\end{itemize}\n"
 "\n"
 

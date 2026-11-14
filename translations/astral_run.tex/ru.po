@@ -50,10 +50,10 @@ msgstr ""
 #: coops/sentinels.tex:24 clash/astral_run.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Стартовые ресурсы:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Стартовые ресурсы:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols
@@ -130,7 +130,7 @@ msgstr ""
 #: campaigns/inferno_deal_with_the_devil.tex:32
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 0 \\svg{building_materials}, 0 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
 "\n"
 msgstr ""
 
@@ -331,7 +331,7 @@ msgid ""
 "  \\item \\textbf{Obelisk:} Guarded by Level VI Neutral Units. Search (4) \\svg[8]{skill}, \\svg{spellpower} or \\svg{artifact}. \\\\ \\textbf{First to Flag:} Gain Empowered Ability Token.\n"
 "  \\item Each \\textbf{blocked Field} adjacent to an Obelisk is a two-way Astral Gate, which only becomes active after that Obelisk has been visited.\n"
 "  \\item \\textbf{Astral Gate:} Cannot be entered from a different Map Tile. When a Hero enters an Astral Gate, they are teleported to the Astral Gate on the Near Tile directly opposite the Center Tile. If that Tile is undiscovered, that player immediately discovers it.\n"
-"  \\item Gain 1 \\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
+"  \\item Gain 1~\\svg{experience} after a Combat against an enemy Main Hero, unless one of the players surrenders or retreats.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""

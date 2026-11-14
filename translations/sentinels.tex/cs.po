@@ -146,10 +146,10 @@ msgstr ""
 #: coops/sentinels.tex:24 clash/astral_run.tex:17
 #, no-wrap
 msgid ""
-"\\textbf{Starting Resources:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Suroviny:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Úvodní Suroviny:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -158,10 +158,10 @@ msgstr ""
 #: clash/the_hunt.tex:23
 #, no-wrap
 msgid ""
-"\\textbf{Starting Income:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Úvodní Příjem:} 10 \\svg{gold}, 2 \\svg{building_materials}, 1 \\svg{valuables}\n"
+"\\textbf{Úvodní Příjem:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -439,7 +439,7 @@ msgid ""
 "\\begin{itemize}\n"
 "  \\item Ignore all yellow borders on Starting Tiles.\n"
 "  \\item Players can trade resources when one of the active player's Heroes Visits a trading post or stands on a Field adjacent to an allied Hero.\n"
-"  \\item The Hero who defeats an enemy army gains 2 \\svg{experience}.\n"
+"  \\item The Hero who defeats an enemy army gains 2~\\svg{experience}.\n"
 "    The victorious player rolls two Treasure Dice and resolves one of them.\n"
 "  \\item Additionally, no player can:\n"
 "  \\begin{itemize}\n"
@@ -452,7 +452,7 @@ msgstr ""
 "\\begin{itemize}\n"
 "  \\item Ignorujte všechny žluté hranice na Startovních Dílcích.\n"
 "  \\item Hráči mohou obchodovat se surovinami, když jeden z Hrdinů aktivního hráče navštíví Tržiště nebo stojí na Poli sousedícím se spojeneckým Hrdinou.\n"
-"  \\item Hrdina, který porazí nepřátelskou armádu, získá 2 \\svg{experience}.\n"
+"  \\item Hrdina, který porazí nepřátelskou armádu, získá 2~\\svg{experience}.\n"
 "    Vítězný hráč hodí dvěma Kostkami Pokladu a vyřeší jednu z nich.\n"
 "  \\item Navíc žádný hráč nemůže:\n"
 "  \\begin{itemize}\n"
@@ -518,7 +518,7 @@ msgstr ""
 #: coops/sentinels.tex:121
 #, no-wrap
 msgid ""
-"  \\item Enemy armies have 3 \\svg{movement} per Round.\n"
+"  \\item Enemy armies have 3~\\svg{movement} per Round.\n"
 "  \\item Enemy armies move at the end of every Round, starting with the Round they spawned.\n"
 "  \\item Enemy armies move as described in the rulebook (p.\\,33), but instead of capturing, they destroy everything in their path.\n"
 "    Place Black Cubes on any Field they pass through, treating those Fields as empty from that point on.\n"
