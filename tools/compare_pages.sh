@@ -14,7 +14,7 @@ help() {
       -d, --drafts                  Compare draft scenarios (mutually exclusive with a non-English <language> and -s).
       -r, --range <range>           Provide comma-separated list of pages or range of pages you want to compare.
                                     Optional with '--scenario' or '--all': without it, every page both files have is compared.
-    -a, --all                     Compare every page both files have instead of a page range
+      -a, --all                     Compare every page both files have instead of a page range
                                     (mutually exclusive with -r).
 
     Optional Arguments:
