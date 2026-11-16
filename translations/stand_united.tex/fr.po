@@ -342,7 +342,7 @@ msgid ""
 "\\textbf{Enemy Spells:} 1 × Fireball, 1 × Lightning Bolt, 1 × Weakness, 1 × Curse\n"
 "\n"
 msgstr ""
-"\\textbf{Sorts Ennemis:} 1 × Boule de Feu, 1 × Eclair, 1 × Faiblesse, 1 × Malédiction\n"
+"\\textbf{Sorts Ennemis:} 1 × Boule de Feu, 1 × Éclair, 1 × Faiblesse, 1 × Malédiction\n"
 "\n"
 
 #. type: multicols

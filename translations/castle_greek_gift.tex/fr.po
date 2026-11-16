@@ -294,7 +294,7 @@ msgid ""
 "\\textbf{Enemy Army:} A ``Pack'' of Skeletons, a ``Pack'' of Zombies, a ``Few'' Dread Knights, a ``Few'' Ghost Dragons\n"
 "\n"
 msgstr ""
-"\\textbf{Armée Ennemie:} «Groupe» de Squelettes, «Groupe» de Zombies, «Quelques» Chevaliers de l'Effroi, «Quelques» Dragons Fantomes\n"
+"\\textbf{Armée Ennemie:} «Groupe» de Squelettes, «Groupe» de Zombies, «Quelques» Chevaliers de l'Effroi, «Quelques» Dragons Fantômes\n"
 "\n"
 
 #. type: multicols*

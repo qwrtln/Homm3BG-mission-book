@@ -208,7 +208,7 @@ msgid ""
 "\\textbf{Additional Bonus:} Search (2) the Artifact Deck\n"
 "\n"
 msgstr ""
-"\\textbf{Bonus Additionnel :} Fouillez (2) le Deck Artéfact\n"
+"\\textbf{Bonus Additionnel :} Fouillez (2) le Deck Artefact\n"
 "\n"
 
 #. type: multicols*

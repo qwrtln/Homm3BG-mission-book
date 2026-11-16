@@ -467,7 +467,7 @@ msgid ""
 "  \\item When all VII Fields (excluding the Titans' Stronghold) are flagged, randomly draw and shuffle the specified number (see the next page) of Neutral Unit Cards from each of their corresponding Decks to create a separate Deck of Neutral Units for the Titans' Stronghold (the Deck of the Titans' Stronghold is sometimes split in two because certain Scenarios are otherwise impossible to implement with the Cards from certain expansions).\n"
 "\n"
 msgstr ""
-"  \\item A chaque fois qu'un joueur explore un obélisque, il lance un dé de ressource et 1 dé de trésor, et choisit 1 résultat.\n"
+"  \\item À chaque fois qu'un joueur explore un obélisque, il lance un dé de ressource et 1 dé de trésor, et choisit 1 résultat.\n"
 "  \\item Quand toutes les cases VII (à l'exception de la Forteresse des Titans) sont revendiquées, piochez au hasard le nombre spécifié (voir page suivante) d'unités neutres de chaque pile correspondante afin de former un deck d'unités distinctes utilisé pour les combats dans la Forteresse des Titans (Le deck de la Forteresse des Titans est parfois coupé en deux paquets, le deuxième est à composer après avoir fini le premier sinon certaines configurations seraient impossible à implémenter en fonction des extensions possédées).\n"
 "\n"
 

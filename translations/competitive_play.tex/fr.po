@@ -95,7 +95,7 @@ msgid ""
 "\\subsection*{\\textit{(Optional)} War Machines as Artifacts}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\textit{(Optionnel)} Machines de Guerre en Artéfacts}\n"
+"\\subsection*{\\textit{(Optionnel)} Machines de Guerre en Artefacts}\n"
 "\n"
 
 #. type: multicols*
@@ -105,7 +105,7 @@ msgid ""
 "Before the match, shuffle one Card of each War Machine into the Artifact Deck (or the Major Artifact Deck, if you split it as in Tournament Mode).\n"
 "\n"
 msgstr ""
-"Avant la partie, mélangez une carte de chaque machine de guerre dans le deck Artéfact (ou Artéfact Majeur, s'il est divisé comme en Mode Tournoi).\n"
+"Avant la partie, mélangez une carte de chaque machine de guerre dans le deck Artefact (ou Artefact Majeur, s'il est divisé comme en Mode Tournoi).\n"
 "\n"
 
 #. type: multicols*
@@ -217,7 +217,7 @@ msgid ""
 "During Combat with Neutral Units in Clash Scenarios, if a player decides to deploy their Units only on one half (left or right) of the Combat Board, the player positioning the Neutral Units must do the same.\n"
 "\n"
 msgstr ""
-"Durant un Combat avec des Unités Neutres en Scénarios Affrontement, si le joueurs décide de déployer ses Unités d'un seul côté (gauche ou droite) du Plateau de Combat, le joueurs déployant les Unités Neutres doit faire pareil.\n"
+"Durant un Combat avec des Unités Neutres en Scénarios Affrontement, si le joueur décide de déployer ses Unités d'un seul côté (gauche ou droite) du Plateau de Combat, le joueur déployant les Unités Neutres doit faire pareil.\n"
 "\n"
 
 #. type: multicols*
