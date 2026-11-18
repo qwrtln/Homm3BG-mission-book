@@ -131,7 +131,7 @@ msgstr ""
 "\\textit{La guerre s'éternisait. Armées brisées, terres brûlées, espoir presque éteint. Enfin, les seigneurs rivaux acceptèrent d'oublier leurs griefs et de forger un Accord, paix fragile née du désespoir.\\\\\n"
 "Des messagers chevauchèrent sous des bannières blanches, des serments furent jurés, et le fracas de l'acier céda la place à un silence inquiet. Pourtant, la paix a ses ennemis.\\\\\n"
 "Alors que les armées alliées se réunissaient dans la vallée de la Croix de Laren, l'aube se leva au son des cors, non d'accueil mais de guerre.\\\\\n"
-"Surgies de la brume, des armées ennemies frappèrent. L'Accord était trahi.\\\\Encerclés et en infériorité, votre alliance joue son sort. Restez unis — ou tombez seuls.}  % no-check-caps\n"
+"Surgies de la brume, des armées ennemies frappèrent. L'Accord était trahi.\\\\Encerclée et en infériorité, votre alliance joue son sort. Restez unis — ou tombez seuls.}  % no-check-caps\n"
 "\n"
 
 #. type: multicols

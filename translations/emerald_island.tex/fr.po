@@ -236,8 +236,8 @@ msgid ""
 "\n"
 msgstr ""
 "\\textit{Lord Markham a décidé d'organiser une chasse au trésor et vous et vos amis serez de la partie.\n"
-"  Mais dépêchez vous! D'autres équipes sont aussi en chemin, et une équipe est même proche de la fin!\n"
-"  Et surtout prenez garde, un créature qu'on pense être un dragon rôde sur l'île!}\n"
+"  Mais dépêchez-vous ! D'autres équipes sont aussi en chemin, et une équipe est même proche de la fin!\n"
+"  Et surtout prenez garde, une créature qu'on pense être un dragon rôde sur l'île!}\n"
 "\\subsection*{\\MakeUppercase{Durée du Scénario}}\n"
 "\n"
 
@@ -278,7 +278,7 @@ msgid ""
 "\\textbf{Starting Income:} 10~\\svg{gold}, 0~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 msgstr ""
-"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
+"\\textbf{Revenus de Départ :} 10~\\svg{gold}, 0~\\svg{building_materials}, 1~\\svg{valuables}\n"
 "\n"
 
 #. type: multicols*
@@ -328,7 +328,7 @@ msgid ""
 "Flag all Mines and Settlements. (Don't forget the Building Materials Mine in Tile I. Each Tile II--III contains one Mine or Settlement with a Level III fight.)\n"
 "\n"
 msgstr ""
-"Revendiquez chaque Mines et Enclaves. (Ne pas oublier la Mine de la Tuile I. Chaque Tuile II--III contient une Mine ou une Enclave avec un combat de niveau III.)\n"
+"Revendiquez toutes les Mines et Enclaves. (Ne pas oublier la Mine de la Tuile I. Chaque Tuile II--III contient une Mine ou une Enclave avec un combat de niveau III.)\n"
 "\n"
 
 #. type: multicols
@@ -416,7 +416,7 @@ msgid ""
 "    \\item When in another player's Town, you may Recruit or Reinforce their Units, either for them or for yourself. You need the other player's permission for it. Corresponding Dwellings or Citadel must be built to do so.\n"
 "\n"
 msgstr ""
-"    \\item Dans une Ville alliée, vous pouvez Recruter ou Améliorer leurs Unités, soit pour l'allié, soit pour vous; Vous devez avoir l'accord de l'allié. La Demeure ou la Citadelle doivent être construite.\n"
+"    \\item Dans une Ville alliée, vous pouvez Recruter ou Améliorer leurs Unités, soit pour l'allié, soit pour vous; vous devez avoir l'accord de l'allié. La Demeure ou la Citadelle doit être construite.\n"
 "\n"
 
 #. type: multicols
