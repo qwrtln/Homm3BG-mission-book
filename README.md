@@ -370,11 +370,6 @@ Number of players (P) in the brackets.
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-rise_from_exile-mono/rise_from_exile_en_mono.pdf"><em>click</em></a></td>
         </tr>
         <tr>
-            <td>⚔️ Mystical Foreland (4)</td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-color/mystical_foreland_en.pdf">click</a></td>
-            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-mono/mystical_foreland_en_mono.pdf"><em>click</em></a></td>
-        </tr>
-        <tr>
             <td>⚔️ Controlled Chaos (2-6)</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-color/controlled_chaos_en.pdf">click</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-controlled_chaos-mono/controlled_chaos_en_mono.pdf"><em>click</em></a></td>
@@ -612,6 +607,19 @@ Number of players (P) in the brackets.
             <td align="center">-</td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-arcane_artillery-color/arcane_artillery_fr.pdf">clic</a></td>
             <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/fr-arcane_artillery-mono/arcane_artillery_fr_mono.pdf"><em>clic</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+        </tr>
+        <tr>
+            <td>⚔️ Mystical Foreland (4)</td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-color/mystical_foreland_en.pdf">click</a></td>
+            <td align="center"><a href="https://raw.githubusercontent.com/qwrtln/Homm3BG-mission-book-build-artifacts/en-mystical_foreland-mono/mystical_foreland_en_mono.pdf"><em>click</em></a></td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
+            <td align="center">-</td>
             <td align="center">-</td>
             <td align="center">-</td>
         </tr>
