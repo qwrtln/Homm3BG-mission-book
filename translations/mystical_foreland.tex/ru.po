@@ -1,0 +1,564 @@
+# Russian translations for PACKAGE package
+# Copyright (C) 2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2026-11-19 20:36+0000\n"
+"PO-Revision-Date: 2026-11-19 20:36+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type: multicols*
+#: coops/emerald_island.tex:32 coops/close_to_enemies.tex:33
+#: coops/stand_united.tex:31 clash/bloody_grail.tex:29 clash/astral_run.tex:28
+#: clash/chain_link.tex:28 clash/force_of_will.tex:31
+#: clash/the_fractured_kingdoms.tex:26 clash/arcane_artillery.tex:30
+#: clash/mystical_foreland.tex:31 clash/dragoncurse_castle.tex:34
+#, fuzzy, no-wrap
+msgid ""
+"\\textbf{Town Buildings:} \\svg{bronze} Dwelling\n"
+"\n"
+msgstr ""
+"\\textbf{Городские постройки:} \\svg{bronze} Жилища, Цитадель\n"
+"\n"
+
+#. type: multicols
+#: coops/wandering_dragons.tex:25 coops/the_ambushed_accord.tex:25
+#: clash/astral_run.tex:21 clash/chain_link.tex:21
+#: clash/mystical_foreland.tex:24 campaigns/inferno_devilish_plan.tex:34
+#: campaigns/inferno_steadwicks_fall.tex:30
+#: campaigns/inferno_deal_with_the_devil.tex:34
+#, no-wrap
+msgid ""
+"\\textbf{Starting Units:}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/bloody_grail.tex:34 clash/force_of_will.tex:36
+#: clash/the_fractured_kingdoms.tex:29 clash/arcane_artillery.tex:35
+#: clash/mystical_foreland.tex:34
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Map Setup}}\n"
+"Take the following Map Tiles and arrange them as shown in the Scenario map layout:\n"
+"\n"
+msgstr ""
+
+#.  !TeX spellcheck = en_US
+#. type: Plain text
+#: clash/mystical_foreland.tex:3
+#, fuzzy
+#| msgid ""
+#| "\\addscenariosection{1}{Cooperative Scenario}{Sentinels}{\\images/"
+#| "sentinel.png}"
+msgid ""
+"\\addscenariosection{1}{Clash/Alliance Scenario}{Mystical Foreland}{\\images/"
+"pathfinding.png}"
+msgstr ""
+"\\addscenariosection{1}{Кооперативный сценарий}{Стражи}{\\images/"
+"sentinel.png}"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:6
+#, no-wrap
+msgid ""
+"{2}\n"
+"\\enlargethispage{\\baselineskip}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:8
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Author:} silence70011\n"
+#| "\n"
+msgid ""
+"\\textbf{Author:} BoberL\n"
+"\n"
+msgstr ""
+"\\textbf{Автор:} silence70011\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:12
+#, no-wrap
+msgid ""
+"\\textit{Colonization of the unseen lands went well, until your scouts brought news of unknown horse trails by the nearby lake.\n"
+"You are not the only one looking for the Mystical Foreland.\n"
+"Double the nightguard and move out at dawn.}  % no-check-caps\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:15
+#, fuzzy, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Scenario Length}}\n"
+"16 Rounds\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Длительность сценария}}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Player Setup}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Player Setup}}\n"
+"\\textbf{Player Count:} 4\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Подготовка игроков}}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:20
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Resources:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Resources:} 14~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Стартовые ресурсы:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:22
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Income:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
+#| "\n"
+msgid ""
+"\\textbf{Starting Income:} 15~\\svg{gold}, 0~\\svg{building_materials}, 0~\\svg{valuables}\n"
+"\n"
+msgstr ""
+"\\textbf{Стартовый доход:} 10~\\svg{gold}, 2~\\svg{building_materials}, 1~\\svg{valuables}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:29
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\textbf{Starting Units:}\n"
+#| "\\begin{itemize}\n"
+#| "  \\item A ``Pack'' of the cheapest \\svg{bronze} Units\n"
+#| "  \\item A ``Few'' of the most expensive \\svg{bronze} Units\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Search~(2) the \\svg{bronze} Neutral Deck\n"
+"  \\item A ``Few'' chosen \\svg{bronze} Units\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\textbf{Стартовые отряды:}\n"
+"\\begin{itemize}\n"
+"  \\item «pack» самых дешёвых \\svg{bronze} отрядов\n"
+"  \\item «few» самых дорогих \\svg{bronze} отрядов\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:41
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item 2 × Starting (I) Map Tile\n"
+#| "  \\item 4 × Far (II--III) Map Tile\n"
+#| "  \\item 4 × Near (IV--V) Map Tile with the Obelisk Field\n"
+#| "\\end{itemize}\n"
+#| "\n"
+msgid ""
+"\\begin{itemize}\n"
+"  \\item 4 × Starting (I) Map Tiles\n"
+"  \\item 8 × Far (II--III) Map Tiles\n"
+"  \\item 14 × Near (IV--V) Map Tiles (6 Land, 6 Sea, 2 Subterranean). These Tiles should not contain any Obelisks.\n"
+"  \\item 3 × Center (VI--VII) Map Tiles (1 Grail, 1 Sea, 1 Subterranean)\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+"\\begin{itemize}\n"
+"  \\item 2 × Стартовый (I) фрагмент карты\n"
+"  \\item 4 × Дальний  (II--III) фрагмент карты\n"
+"  \\item 4 × Ближний (IV--V) фрагмент карты с полем Обелиска\n"
+"\\end{itemize}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:43
+#, no-wrap
+msgid ""
+"Green-tinted Tiles in the Scenario map layout contain \\textbf{Creature Banks}.\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:49
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Victory Conditions}}\n"
+"\\begin{itemize}\n"
+"  \\item Obtain the Grail Token and bring it to your Faction Town, OR\n"
+"  \\item Eliminate all opponents.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:52
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+#| "\n"
+msgid ""
+"\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+"If no player brings the Grail Token to their Town, all players lose the Scenario.\n"
+"\n"
+msgstr ""
+"\\subsection*{\\MakeUppercase{Условия поражения}}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:86
+#, no-wrap
+msgid ""
+"\\subsection*{\\MakeUppercase{Timed Events}}\n"
+"\\textbf{\\nth{4} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Each player may immediately \\svg{reinforce} one \\svg{bronze} Unit of their choice for free, or one \\svg{silver} Unit of their choice at a cost reduced by 4~\\svg{gold}.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{6} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Remove all Black Cubes from the map except those on Learning Stones.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{8} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Increase your \\svg{gold}, \\svg{building_materials} or \\svg{valuables} income once.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{9} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Draw and resolve an additional Event Card.\n"
+"    Drawer rotates clockwise after each.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{10} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Round 6.\n"
+"  \\item From now on, the \\textbf{Custom Combat Rule} applies (see Additional Rules below).\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{12} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Each player may \\svg{pay} 5~\\svg{gold} to Search~(2) the \\svg{artifact}, \\svg{skill}, or \\svg{spellpower} Deck.\n"
+"    A player may do this up to 3 times, paying 5~\\svg{gold} each time.\n"
+"\\end{itemize}\n"
+"\\textbf{\\nth{14} Round:}\n"
+"\\begin{itemize}\n"
+"  \\item Repeat the Timed Events of Round 6.\n"
+"\\end{itemize}\n"
+"\\subsection*{\\MakeUppercase{Additional Rules}}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:88
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Campaign}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Setup Changes}\n"
+"\n"
+msgstr ""
+"\\subsection*{Кампания}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:102
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Before the game, remove the \\textbf{Diplomacy} and \\textbf{Pathfinding} Abilities, the \\textbf{Den of Thieves}, \\textbf{Mercenary Camp}, and \\textbf{Prison} Events, and the \\textbf{Ambassador's Sash} and \\textbf{Diplomat's Ring} Artifacts.\n"
+"  \\item Before the game, split the \\svg{artifact} Deck by rarity into 3 separate Decks: \\textbf{Relic}, \\textbf{Major}, and \\textbf{Minor}.\n"
+"  \\item Level VII Neutral Combats cannot be skipped.\n"
+"  \\item If you defeat an enemy Hero, gain 1~\\svg{experience} and Search~(2) the Ability or \\svg{artifact} Deck.\n"
+"  \\item Depending on the difficulty, players can choose their starting bonus:\n"
+"  \\begin{itemize}\n"
+"    \\item \\textbf{Easy}: Roll 2~\\svg{resource} or 2~\\svg{treasure} and gain both bonuses \\textbf{OR} Search~(4) any \\svg{artifact} Deck.\n"
+"    \\item \\textbf{Normal}: Roll 2~\\svg{resource} or 2~\\svg{treasure} and gain one chosen bonus \\textbf{OR} Search~(3) the \\textbf{Major} or \\textbf{Minor} \\svg{artifact} Deck.\n"
+"    \\item \\textbf{Hard}: Roll 2~\\svg{resource} and gain one chosen bonus \\textbf{OR} Search~(2) the \\textbf{Major} or \\textbf{Minor} \\svg{artifact} Deck.\n"
+"    \\item \\textbf{Impossible}: Roll 1~\\svg{resource} and gain its bonus \\textbf{OR} Search~(2) the \\textbf{Minor} \\svg{artifact} Deck.\n"
+"  \\end{itemize}\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:104
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{General Recommendations}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Gameplay Rule Adjustments}\n"
+"\n"
+msgstr ""
+"\\subsection*{Общие рекомендации}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:111
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item When you Search the \\svg{artifact} Deck, roll 2 Attack Dice to determine which \\svg{artifact} Deck to draw from.\n"
+"    The result depends on the Tile your Hero stands on, as shown in the table below.\n"
+"  \\item If playing Alliance mode, the team that's being attacked may \\svg{pay} 10~\\svg{gold} to move either Player to the defending town and allow them to use their Deck.\n"
+"  \\item Stepping on a Sanctuary Tile lets you Search(2) your Deck.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:113
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Campaign}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Map Constraints}\n"
+"\n"
+msgstr ""
+"\\subsection*{Кампания}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:120
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item A Hero may not cross a \\textbf{Red Border}, drawn as a red line between two Tiles in the Scenario map layout, by any means.\n"
+"  \\item The Grail Tile and the two Sea Tiles adjacent to it are also Subterranean, as marked in the Scenario map layout.\n"
+"  \\item Entering or leaving a Sea Tile costs only an extra 1~\\svg{movement}.\n"
+"  \\item If playing Alliance mode, alternate starting Tile placement such that allies do not start adjacent to each other.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:122
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Trading Post}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Grail Rules}\n"
+"\n"
+msgstr ""
+"\\subsection*{Рынок}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:138
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item To conquer the Grail (VII), players fight the \\textbf{Grail Army} instead of the regular Neutral army.\n"
+"    It contains the regular Neutral Units plus an extra 1~\\svg{azure} Unit and 1~\\svg{golden} Unit.\n"
+"    Enemy Units get a permanent \\textbf{Stack Token} according to the difficulty:\n"
+"    \\begin{itemize}\n"
+"      \\item \\textbf{Easy}: 1~\\textbf{Stack Token} placed on any \\svg{golden} Unit.\n"
+"      \\item \\textbf{Normal}: 1~\\textbf{Stack Token} placed on any \\svg{azure} Unit.\n"
+"      \\item \\textbf{Hard}: 2~\\textbf{Stack Tokens} placed on 1~\\svg{golden} Unit and 1~\\svg{azure} Unit.\n"
+"      \\item \\textbf{Impossible}: 2~\\textbf{Stack Tokens} placed on any \\svg{azure} Units.\n"
+"    \\end{itemize}\n"
+"  \\item A player who is defeated in Combat or surrenders drops the Grail Token on the Field where the Hero was defeated or surrendered.\n"
+"  \\item A player holding the Grail gains extra 1~\\svg{movement} every Turn.\n"
+"  \\item A player holding the Grail Token has their \\svg{hand} Limit increased by 2.\n"
+"  \\item If a Hero holding the Grail Token uses Angel Wings to fly over impassable Tiles, Dimension Door, Fly or Town Portal, the Grail Token is placed on the Field the Hero occupied before the move.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:140
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{General Recommendations}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Neutral Unit Recruitment}\n"
+"\n"
+msgstr ""
+"\\subsection*{Общие рекомендации}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:153
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Once during your Turn, you may \\svg{pay} one of the following costs to Search~(2) the Neutral Units Deck.\n"
+"    Each option requires the Town Buildings listed before it.\n"
+"    You cannot use Empowered Scouting for this Search.\n"
+"    \\begin{itemize}\n"
+"      \\item \\svg{bronze} \\textbf{Dwelling}: 3~\\svg{gold}, 1~\\svg{building_materials} for \\svg{bronze}\n"
+"      \\item \\svg{silver} \\textbf{Dwelling}: 4~\\svg{gold}, 2~\\svg{building_materials} for \\svg{silver}\n"
+"      \\item \\svg{golden} \\textbf{Dwelling}: 6~\\svg{gold}, 3~\\svg{building_materials}, 1~\\svg{valuables} for \\svg{golden}\n"
+"      \\item \\svg{golden} \\textbf{Dwelling}, \\textbf{Citadel}: 8~\\svg{gold}, 4~\\svg{building_materials}, 2~\\svg{valuables} for \\svg{azure}\n"
+"    \\end{itemize}\n"
+"    You may then choose one of the Units and \\svg{pay} its full cost to recruit it.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:155
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Recommendations}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Field Rewards}\n"
+"\n"
+msgstr ""
+"\\subsection*{Рекомендации}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:164
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item \\textbf{Temple of the Sea}: 15~\\svg{gold}.\n"
+"    Search~(3) the \\svg{artifact} Deck \\textbf{twice}.\n"
+"    You may remove 2 Statistic Cards from your Deck or Discard Pile and take their Empowered counterparts into your hand in their stead. \\columnbreak\n"
+"  \\item \\textbf{Level VII Town:} You may \\svg{recruit} and \\svg{reinforce} one of the Units from the defending Town for half its cost, excluding \\svg{valuables} (rounded down). \\textit{Example: After defeating a Castle Army, you may now \\svg{recruit} and \\svg{reinforce} Archangels for 25~\\svg{gold} and 3~\\svg{valuables}.}\n"
+"  \\item \\textbf{Cyclops Stockpile}: 10~\\svg{building_materials}, 5~\\svg{valuables}. Your Units gain a permanent +1~\\svg{attack} and +1~\\svg{initiative}, including Units you Recruit later.\n"
+"  \\item Stepping on a Sanctuary Tile lets you Search~(2) your Deck.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:167
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{Cooperative Mode}\n"
+#| "\n"
+msgid ""
+"\\subsubsection*{Custom Combat Rule}\n"
+"\n"
+msgstr ""
+"\\subsection*{Кооператив}\n"
+"\n"
+
+#. type: multicols
+#: clash/mystical_foreland.tex:169
+#, no-wrap
+msgid ""
+"Starting in the \\nth{10} Round, the following rules apply:\n"
+"\n"
+msgstr ""
+
+#. type: multicols
+#: clash/mystical_foreland.tex:175
+#, no-wrap
+msgid ""
+"\\begin{itemize}\n"
+"  \\item Place one extra \\textbf{Stack Token} on each enemy Neutral \\svg{golden} Unit. Do not place it in Combat against the \\textbf{Grail Army} or another player.\n"
+"  \\item For each extra \\textbf{Stack Token}, the Hero gains additional +1~\\svg{movement}.\n"
+"  \\item For every \\svg{golden} Unit you defeat in a Neutral Combat, gain 5~\\svg{gold} and either 2~\\svg{building_materials} or 1~\\svg{valuables}.\n"
+"\\end{itemize}\n"
+"\n"
+msgstr ""
+
+#. type: center
+#: clash/mystical_foreland.tex:240
+msgid ""
+"\\hommtable[]{19}{ \\centering \\medskip \\textbf{Artifact Rolls}\\\\ "
+"\\bigskip \\begin{tabularx}{0.95\\linewidth}{p{0.18\\linewidth}XXX} "
+"\\darkcell[1.25]{Type} & \\darkcell[1.25]{Starting (I)\\linebreak Far (II--"
+"III)} & \\darkcell[1.25]{Near (IV--V)} & \\darkcell[1.25]{Center (VI--VII)} "
+"\\\\ \\darkcell[1.8]{Relic} & \\lightcell[1.8]{\\textbf{+1}, \\textbf{+1}} & "
+"\\lightcell[1.8]{\\begin{tabular}{r@{,\\;\\;}l} \\textbf{+1} & \\textbf{+1} "
+"\\\\ \\phantom{\\textbf{+}}\\textbf{0} & \\textbf{+1} \\end{tabular}} & "
+"\\lightcell[1.8]{\\begin{tabular}{r@{,\\;\\;}l} \\textbf{+1} & \\textbf{+1} "
+"\\\\ \\phantom{\\textbf{+}}\\textbf{0} & \\textbf{+1} \\\\ "
+"\\phantom{\\textbf{+}}\\textbf{0} & \\phantom{\\textbf{+}}\\textbf{0} "
+"\\end{tabular}} \\\\ \\darkcell[1.8]{Major} & \\lightcell[1.8]"
+"{\\begin{tabular}{r@{,\\;\\;}l} \\phantom{\\textbf{+}}\\textbf{0} & "
+"\\textbf{+1} \\\\ \\phantom{\\textbf{+}}\\textbf{0} & \\phantom{\\textbf{+}}"
+"\\textbf{0} \\end{tabular}} & \\lightcell[1.8]{\\begin{tabular}{r@{,\\;\\;}"
+"l} \\phantom{\\textbf{+}}\\textbf{0} & \\phantom{\\textbf{+}}\\textbf{0} \\"
+"\\ \\textbf{--1} & \\textbf{+1} \\end{tabular}} & \\lightcell[1.8]"
+"{\\begin{tabular}{r@{,\\;\\;}l} \\phantom{\\textbf{+}}\\textbf{0} & "
+"\\textbf{--1} \\\\ \\textbf{--1} & \\textbf{+1} \\end{tabular}} \\\\ "
+"\\darkcell[1.8]{Minor} & \\lightcell[1.8]{\\begin{tabular}{r@{,\\;\\;}l} "
+"\\textbf{--1} & \\textbf{--1} \\\\ \\textbf{--1} & \\phantom{\\textbf{+}}"
+"\\textbf{0} \\\\ \\textbf{--1} & \\textbf{+1} \\\\ \\end{tabular}} & "
+"\\lightcell[1.8]{\\begin{tabular}{r@{,\\;\\;}l} \\textbf{--1} & "
+"\\textbf{--1} \\\\ \\textbf{--1} & \\phantom{\\textbf{+}}\\textbf{0} "
+"\\end{tabular}} & \\lightcell[1.8]{\\textbf{--1}, \\textbf{--1}} "
+"\\end{tabularx} }"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/mystical_foreland.tex:258
+#, no-wrap
+msgid ""
+"[remember picture, overlay, shift={(current page.center)}]\n"
+"  \\node(bg)[opacity=0.1] at (0, 0) {\n"
+"    \\includegraphics[width=1.1\\paperwidth, keepaspectratio]{\\art/implosion.png}\n"
+"  };\n"
+"  \\node (map) at (0, 0) {\n"
+"    \\includegraphics[scale=0.35]{\\maps/mystical_foreland.png}\n"
+"  };\n"
+"  {\n"
+"    \\iftoggle{noartbackground}{\\def\\mapcolor{white}\\def\\opacity{0.5}}{\\def\\mapcolor{deepskyblue}\\def\\opacity{0.3}}\n"
+"    \\color{\\mapcolor}\n"
+"    \\draw (6.44, 2.0) node [fill=black, fill opacity=\\opacity, text opacity=1, inner sep=2pt] {\\footnotesize\\textbf{Grail}};\n"
+"  }\n"
+"  \\node(subter) at (5.8, 6.6) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Subterranean}}}}};\n"
+"  \\node at (5.8, 6.1) {\\large{{\\textbf{\\textcolor{darkcandyapplered}{Tiles}}}}};\n"
+"  \\coordinate (subterstart) at (6.4, 5.6);\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/mystical_foreland.tex:262
+#, no-wrap
+msgid ""
+"  \\draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=250, in=30] (5, 3.3);\n"
+"  \\draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=270, in=90] (6.4, 2.5);\n"
+"  \\draw[-Triangle, line width=2.5pt, darkcandyapplered] (subterstart) to[out=300, in=60] (7.9, 0.6) to[out=240, in=0] (6, -0.2);\n"
+"\n"
+msgstr ""
+
+#. type: tikzpicture
+#: clash/mystical_foreland.tex:269
+#, no-wrap
+msgid ""
+"  \\node at ($(map.south) + (0, -1.2)$) {\n"
+"    \\begin{minipage}{0.6\\paperwidth}\n"
+"      \\centering\n"
+"      \\captionof{figure}{\\textbf{SCENARIO MAP LAYOUT}}\n"
+"    \\end{minipage}\n"
+"  };\n"
+"\n"
+msgstr ""
