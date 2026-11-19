@@ -155,7 +155,7 @@ msgid ""
 "\\subsection*{Tier V--VII Combat on Hard$+$\\\\Difficulty}\n"
 "\n"
 msgstr ""
-"\\subsection*{Combat de Rang V--VII en Difficulté\\\\Difficile$+$}\n"
+"\\subsection*{Combat de Niveau V--VII en Difficulté\\\\Difficile$+$}\n"
 "\n"
 
 #. type: multicols*
@@ -166,8 +166,8 @@ msgid ""
 "For example, a Level VII Combat on Hard will be against 2 × \\svg{azure} Neutral Units.\n"
 "\n"
 msgstr ""
-"Traitez les Combats de Rang V--VII comme s'ils étaient d'un cran de difficulté en dessous lorsque vous jouez en Difficile ou Impossible.\n"
-"Par exemple, un Combat de Rang VII en Difficile affrontera 2 × Unités neutres \\svg{azure}.\n"
+"Traitez les Combats de Niveau V--VII comme s'ils étaient d'un cran de difficulté en dessous lorsque vous jouez en Difficile ou Impossible.\n"
+"Par exemple, un Combat de Niveau VII en Difficile affrontera 2 × Unités neutres \\svg{azure}.\n"
 "\n"
 
 #. type: multicols*

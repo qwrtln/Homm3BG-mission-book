@@ -345,7 +345,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
 "\n"
 
 #. type: multicols
@@ -394,7 +394,7 @@ msgid ""
 msgstr ""
 "\\textbf{Manche 9 :}\n"
 "\\begin{itemize}\n"
-"  \\item Répéter les évènements de la Manche 6.\n"
+"  \\item Répéter les événements de la Manche 6.\n"
 "\\end{itemize}\n"
 "\n"
 

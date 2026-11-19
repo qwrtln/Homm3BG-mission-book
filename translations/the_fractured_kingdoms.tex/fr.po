@@ -62,7 +62,7 @@ msgid ""
 "\\subsection*{\\MakeUppercase{Timed Events}}\n"
 "\n"
 msgstr ""
-"\\subsection*{\\MakeUppercase{Évènements programmés}}\n"
+"\\subsection*{\\MakeUppercase{Événements programmés}}\n"
 "\n"
 
 #. type: multicols*
@@ -226,7 +226,7 @@ msgstr ""
 "  \\item 5 × Tuiles de Départ (I); \\textbf{orientez-les} pour que les \\textbf{Cases Bloquées} correspondent au schéma du Scénario\n"
 "  \\item 10 × Tuiles Proches (IV--V)\n"
 "  \\item 10 × Tuiles Lointaines (II--III)\n"
-"  \\item 5 × Tuiles Centre (VI--VII)\n"
+"  \\item 5 × Tuiles Centrales (VI--VII)\n"
 "\\end{itemize}\n"
 "\n"
 

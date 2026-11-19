@@ -205,8 +205,8 @@ msgstr ""
 "Dans \\pagelink{Sentinelles}{Sentinelles}, pour deux joueurs, des armées ennemies apparaissent sur des Obélisques aléatoires et avancent chaque manche en détruisant chaque case traversée.\n"
 "Dans \\pagelink{Fronts Unis}{Fronts Unis}, les joueurs bâtissent une armée commune utilisable en Combat, et chacun doit vaincre les Terres Désolées.\n"
 "Dans \\pagelink{Dragons Errants}{Dragons Errants}, une armée de dragons erre sur la carte : vous devez la vaincre.\n"
-"Dans \\pagelink{L'Accord Piégé}{L'Accord Piégé}, les joueurs affrontent tour à tour des embuscades de plus en plus fortes, partagent leurs Ressources pour révéler la tuile Centrale, et chacun doit vaincre son Armée Neutre de Rang VII.\n"
-"Dans \\pagelink{La Forteresse des Titans}{La Forteresse des Titans}, pour \\textbf{jusqu'à 6 joueurs}, revendiquez chaque case de Rang VII pour débloquer une forteresse de Titans, puis vainquez sa garnison en plusieurs assauts lors d'une bataille finale épique.\n"
+"Dans \\pagelink{L'Accord Piégé}{L'Accord Piégé}, les joueurs affrontent tour à tour des embuscades de plus en plus fortes, partagent leurs Ressources pour révéler la tuile Centrale, et chacun doit vaincre son Armée Neutre de Niveau VII.\n"
+"Dans \\pagelink{La Forteresse des Titans}{La Forteresse des Titans}, pour \\textbf{jusqu'à 6 joueurs}, revendiquez chaque case de Niveau VII pour débloquer une forteresse de Titans, puis vainquez sa garnison en plusieurs assauts lors d'une bataille finale épique.\n"
 "\n"
 
 #. type: multicols*
