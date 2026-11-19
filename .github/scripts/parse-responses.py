@@ -50,6 +50,10 @@ def horizontal_line(length=200):
     return f"~~{' ' * length}~~"
 
 
+def feedback_section(title, text):
+    return f"\n### {title}:\n{text.strip()}\n"
+
+
 def format_form_response(response, scenario_author_mapping):
     messages = []
     messages.append(
@@ -86,26 +90,19 @@ def format_form_response(response, scenario_author_mapping):
 
     if response.What_did_you_like_the_most:
         messages.append(
-            textwrap.dedent(f"""
-            ### ✅ What worked well:
-            {response.What_did_you_like_the_most}
-            """)
+            feedback_section("✅ What worked well", response.What_did_you_like_the_most)
         )
 
     if response.What_could_be_improved:
         messages.append(
-            textwrap.dedent(f"""
-            ### 🤔 What could be improved:
-            {response.What_could_be_improved}
-            """)
+            feedback_section(
+                "🤔 What could be improved", response.What_could_be_improved
+            )
         )
 
     if response.Other_suggestions:
         messages.append(
-            textwrap.dedent(f"""
-            ### 💡 Other suggestions:
-            {response.Other_suggestions}
-            """)
+            feedback_section("💡 Other suggestions", response.Other_suggestions)
         )
 
     messages.append(
