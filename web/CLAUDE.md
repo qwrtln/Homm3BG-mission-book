@@ -8,72 +8,58 @@ loads `web/app/main.tsx` as an ES module; `npm run build` bundles it into
 `web/dist/`. The UI is React (one root, `App.tsx`), the shared state is Zustand
 and the styling is Tailwind; see `web/app/CLAUDE.md`. All source is TypeScript.
 
-## Dependencies and build
+## LaTeX engine (BusyTeX) — do not test, do not touch
 
-One manifest, `web/package.json`, with its lockfile, holds everything: the
-app's libraries (`pdfjs-dist`, `client-zip`), the tools (Vite, TypeScript,
-Biome) and the tests (Playwright). Node is pinned in `web/.nvmrc` (`engines.node`
-matches). Run `npm ci` in `web/` once; `npx -y` is gone.
+- Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.
+- WASM build in `web/core/busytex/`, wrapper in
+  `web/shared/vendor/texlyre-busytex.js`. Both trusted. The wrapper stays
+  committed: no published file matches it.
+- `web/core/` is gitignored, fetched at deploy time — a fresh clone has no
+  engine.
+- No upstream documentation exists. Do not infer the API: read
+  `texlyre-busytex.d.ts` for the allowed surface, then the wrapper for behavior.
+  `BusytexPipeline` takes eleven positional arguments; never call it from
+  application code.
+- `web/app/modules/build.ts` is the only module loading the wrapper, by runtime
+  URL (see "Out-of-bundle runtime assets"). Everything else goes through
+  `ensureEngine()`.
+- `web/app/main.tsx` calls `ensureEngine()` eagerly on page load, so every
+  browser-driven test is affected.
+- No test compiles a real PDF or downloads `texlive-*.data`. Stub it.
 
-| Script | Does |
-| --- | --- |
-| `npm run dev` | Vite dev server at `/web/app/` |
-| `npm run build` | writes `web/dist/`, which the deploy copies to `site/builder/` |
-| `npm run preview` | serves `web/dist/` |
-| `npm run typecheck` | `tsc` over `tsconfig.json`, `tsconfig.node.json`, then `tests/tsconfig.json` |
-| `npm run lint` | Biome `check .` |
-| `npm run test:unit` | tier 1 |
-| `npm run test:e2e` | tier 2, against the build |
+### Carried TeX Live files
 
-- Add a browser library with `npm install`, import it, and let the bundler
-  place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
-  the first load. Do not vendor it by hand.
-- `web/vite.config.ts` has four plugins, `react` and `tailwindcss` plus two of its own: `out-of-bundle-assets` (dev only,
-  serves the paths below from disk) and `license-notices`. It lists every npm
-  package in the bundle: the name, version and license go into the bundle
-  through `virtual:bundled-packages` (typed in `types/bundled-packages.d.ts`),
-  so the About dialog shows the list at once; the license texts go to
-  `dist/licenses.json`, which the dialog fetches when a row first opens. The
-  dev server lists none. A new bundled dependency needs no license edit.
-- `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
-  stays out of `tsconfig.json`: Node's types would leak into browser code
-  (`setTimeout` would return `Timeout`). The other Node-only tools —
-  `glyph-usage.ts` at the top level and `shared/carry-texmf.ts` — are checked
-  by `tsconfig.node.json` too, for the same reason: importing `node:fs` or
-  `node:process` anywhere in `tsconfig.json`'s program would pull Node's
-  global augmentations into every browser module in it.
-- No hashed-name bookkeeping: file names carry content hashes, so there is no
-  `?v=N` cache-buster. Never add one.
+The app preloads `texlive-basic` only (`DATA_PACKAGE` in
+`web/shared/build-plan.ts`). The ~170 files the book needs beyond it ship in
+one bundle, `web/shared/texmf/carried-texmf.bin`, built from
+`web/shared/texmf/carried.txt` — the manifest, which says why each file is
+carried. `web/shared/carry-texmf.ts` has the full procedure in its header.
 
-**Why we moved.** The app used to have no manifest and no build, so it opened
-off a static server with nothing installed. Only the maintainer and CI run it
-locally, so zero install is no longer valued, and the rule had costs: each
-library needed a hand-written fetch, a SHA pin, a type shim and a license row;
-no styling or UI library could be adopted. Do not restore the old rule. The
-plan is in `context/changes/web-framework-migration/` (`frame.md`, `plan.md`).
+- After bumping `BUSYTEX_ENGINE_VERSION` or editing `carried.txt`, run
+  `node web/shared/carry-texmf.ts build`. Tier 1 fails until you do.
+- Review a rebuild through `carried.lock.json`: one line per file with its
+  SHA-256. The bundle itself is binary.
+- Check a rebuild on the real engine with
+  `node web/tests/tools/probe-carried-texmf.ts`. It prints any `carried.txt`
+  lines still missing. It is a hand-run tool, not a test.
 
-## Out-of-bundle runtime assets
+## Tests
 
-Four things stay out of the bundle, at the `../` URLs relative to the page,
-because the engine's worker resolves paths itself and the files are large:
+Two tiers. Read `web/tests/README.md` before writing a test — it holds the
+conventions (file naming, `.ts`, imports, fixtures, stubs, first-run setup).
 
-| URL (from the page) | Deployed at | Why it stays out |
-| --- | --- | --- |
-| `../core/busytex/` | site root `core/` | WASM engine and data package, fetched at deploy time; the worker takes an absolute URL |
-| `../shared/vendor/texlyre-busytex.js` | site root | the engine wrapper, loaded by `import(/* @vite-ignore */ url)` in `modules/build.ts`; the tier 2 stub matches the path suffix `/shared/vendor/texlyre-busytex.js` |
-| `../shared/texmf/carried-texmf.bin` | site root | the carried TeX Live bundle |
-| `../repo/` | site root `repo/` | the book's own sources, copied at deploy time |
+- Keep tier 1's quotes and glob in the script: the directory form fails on
+  Node 22 and 24. Never gate tier 1 behind tier 2.
+- Tier 2 runs against the production build, so the page's modules are bundled.
+  A test cannot `import()` an app module from the page: it reads the hooks
+  `window.__state` (a getter for `store.getState()`) and `window.__localStore`
+  (installed in `app/main.tsx`), like `window.__lastSaveTarget`.
+- Never load the LaTeX engine; `web/tests/stubs/` stubs it.
+- **Install the stubs before `page.goto`, never after** — navigate first and the
+  real wrapper is already in flight.
 
-- `busytexBase()` must stay an absolute URL (`modules/config.ts`).
-- The license files in the About dialog (`../LICENSE`, `../LATEX-ENGINE-NOTICE`,
-  the wrapper's `LICENSE`) are static rows read from the site root.
-- Dev: `out-of-bundle-assets` serves `/web/repo/*` from the repository root and
-  `/web/shared/vendor/*`, `/web/shared/texmf/*`, `/web/core/*` from `web/`,
-  with COOP/COEP headers. Tier 2: `tests/driver/static-server.ts` does the same
-  and serves `/web/app/` from `web/dist/`.
-- Anything else the browser fetches by URL must go on the allow-list in
-  `.github/workflows/publish-docs.yaml`. `shared/*.ts` is not on it: shared
-  code is bundled.
+CI is `.github/workflows/test-web.yaml`, on pull requests touching `web/**`:
+`npm ci`, then type-check, lint and format, tier 1, tier 2.
 
 ## Layout
 
@@ -114,11 +100,7 @@ All of `web/` is TypeScript, checked by `tsc` (TypeScript 7, the `tsgo` binary)
 in three projects: `web/tsconfig.json` (`strict`, browser code, no
 `@types/node`), `tsconfig.node.json` (the Node-only tools) and
 `tests/tsconfig.json` (the tests: Node and DOM types, extends the first).
-From `web/`, as CI runs it:
-
-```sh
-npm run typecheck
-```
+CI runs `npm run typecheck` from `web/`.
 
 - Tier 1 runs `.ts` modules and tests directly on Node's native type stripping, with no
   loader flag, so `tsconfig.json` sets `erasableSyntaxOnly` (no `enum`,
@@ -140,6 +122,81 @@ npm run typecheck
   `process` from `node:process` explicitly rather than using it as a global,
   since `tsconfig.json` carries no Node globals.
 
+## Dependencies and build
+
+One manifest, `web/package.json`, with its lockfile, holds everything: the
+app's libraries (`pdfjs-dist`, `client-zip`), the tools (Vite, TypeScript,
+Biome) and the tests (Playwright). Node is pinned in `web/.nvmrc` (`engines.node`
+matches). Run `npm ci` in `web/` once.
+
+Scripts are in @web/package.json. `npm run dev` serves `/web/app/`;
+`npm run build` writes `web/dist/`; `npm run test:e2e` (tier 2) builds first,
+then tests `web/dist/`.
+
+- Add a browser library with `npm install`, import it, and let the bundler
+  place it. Lazy `import()` keeps a rarely used one (pdf.js, client-zip) out of
+  the first load. Do not vendor it by hand.
+- `web/vite.config.ts` has four plugins, `react` and `tailwindcss` plus two of its own: `out-of-bundle-assets` (dev only,
+  serves the paths below from disk) and `license-notices`. It lists every npm
+  package in the bundle: the name, version and license go into the bundle
+  through `virtual:bundled-packages` (typed in `types/bundled-packages.d.ts`),
+  so the About dialog shows the list at once; the license texts go to
+  `dist/licenses.json`, which the dialog fetches when a row first opens. The
+  dev server lists none. A new bundled dependency needs no license edit.
+- `vite.config.ts` is checked by `tsconfig.node.json`, with `@types/node`. That
+  stays out of `tsconfig.json`: Node's types would leak into browser code
+  (`setTimeout` would return `Timeout`). The other Node-only tools —
+  `glyph-usage.ts` at the top level and `shared/carry-texmf.ts` — are checked
+  by `tsconfig.node.json` too, for the same reason: importing `node:fs` or
+  `node:process` anywhere in `tsconfig.json`'s program would pull Node's
+  global augmentations into every browser module in it.
+
+**Why we moved.** The app used to have no manifest and no build, so it opened
+off a static server with nothing installed. Only the maintainer and CI run it
+locally, so zero install is no longer valued, and the rule had costs: each
+library needed a hand-written fetch, a SHA pin, a type shim and a license row;
+no styling or UI library could be adopted. Do not restore the old rule. The
+plan is in `context/changes/web-framework-migration/` (`frame.md`, `plan.md`).
+
+## Out-of-bundle runtime assets
+
+Four things stay out of the bundle, at the `../` URLs relative to the page,
+because the engine's worker resolves paths itself and the files are large:
+
+| URL (from the page) | Deployed at | Why it stays out |
+| --- | --- | --- |
+| `../core/busytex/` | site root `core/` | WASM engine and data package, fetched at deploy time; the worker takes an absolute URL |
+| `../shared/vendor/texlyre-busytex.js` | site root | the engine wrapper, loaded by `import(/* @vite-ignore */ url)` in `modules/build.ts`; the tier 2 stub matches the path suffix `/shared/vendor/texlyre-busytex.js` |
+| `../shared/texmf/carried-texmf.bin` | site root | the carried TeX Live bundle |
+| `../repo/` | site root `repo/` | the book's own sources, copied at deploy time |
+
+- `busytexBase()` must stay an absolute URL (`modules/config.ts`).
+- The license files in the About dialog (`../LICENSE`, `../LATEX-ENGINE-NOTICE`,
+  the wrapper's `LICENSE`) are static rows read from the site root.
+- Dev: `out-of-bundle-assets` serves `/web/repo/*` from the repository root and
+  `/web/shared/vendor/*`, `/web/shared/texmf/*`, `/web/core/*` from `web/`,
+  with COOP/COEP headers. Tier 2: `tests/driver/static-server.ts` does the same
+  and serves `/web/app/` from `web/dist/`.
+- Anything else the browser fetches by URL must go on the allow-list in
+  `.github/workflows/publish-docs.yaml`. `shared/*.ts` is not on it: shared
+  code is bundled.
+
+## Lint and format
+
+Biome, a pinned devDependency. Run from `web/`: `npm run lint` checks,
+`npx biome check --write .` applies safe fixes.
+
+- Running from the repository root fails: Biome 2.x treats the invocation
+  directory as an implicit root and refuses a nested config. CI uses
+  `working-directory: web`.
+- Formatting settings live in @web/biome.json. Indent style is explicit there —
+  Biome defaults to tabs, which the root lint rules reject.
+- Two recommended rules are off, both firing on correct code here:
+  `suspicious/noAssignInExpressions` (the `while ((m = re.exec(s)))` loop in
+  `shared/build-plan.ts`) and `suspicious/useIterableCallbackReturn` (concise
+  arrow bodies in `forEach`).
+- CSS and HTML are out of scope deliberately.
+
 ## Running locally
 
 @web/serve.sh — its header comment holds the URL, the prerequisites and the
@@ -154,53 +211,6 @@ The deploy builds, copies `web/dist/` to `site/builder/` (served at `/builder/`)
 and the rest of `web/` through an allow-list to the site root, in
 `.github/workflows/publish-docs.yaml`. Tooling like this script stays out of the
 site without an exclude. Anything else the browser must load goes on that list.
-In the built `index.html` keep the `<!-- stats placeholder -->` comment: the
-deploy inlines the analytics script there.
-
-## Lint and format
-
-Biome, a pinned devDependency. Config is `web/biome.json`, so run from `web/`:
-
-```sh
-npm run lint                  # lint + format check
-npx biome check --write .     # apply safe fixes
-```
-
-- Running from the repository root fails: Biome 2.x treats the invocation
-  directory as an implicit root and refuses a nested config. CI uses
-  `working-directory: web`.
-- It covers `*.js`, `*.ts` and `*.tsx`. `dist/`, `node_modules/`,
-  `core/` and `shared/vendor/` are excluded.
-- Formatting settings live in @web/biome.json. Indent style is explicit there —
-  Biome defaults to tabs, which the root lint rules reject.
-- Two recommended rules are off, both firing on correct code here:
-  `suspicious/noAssignInExpressions` (the `while ((m = re.exec(s)))` loop in
-  `shared/build-plan.ts`) and `suspicious/useIterableCallbackReturn` (concise
-  arrow bodies in `forEach`).
-- CSS and HTML are out of scope deliberately.
-
-## Tests
-
-Two tiers. Read `web/tests/README.md` before writing a test — it holds the
-conventions (file naming, `.ts`, imports, fixtures, stubs, first-run setup).
-
-```sh
-npm run test:unit   # tier 1
-npm run test:e2e    # tier 2: builds, then serves web/dist/
-```
-
-- Keep tier 1's quotes and glob in the script: the directory form fails on
-  Node 22 and 24. Never gate tier 1 behind tier 2.
-- Tier 2 runs against the production build, so the page's modules are bundled.
-  A test cannot `import()` an app module from the page: it reads the hooks
-  `window.__state` (a getter for `store.getState()`) and `window.__localStore`
-  (installed in `app/main.tsx`), like `window.__lastSaveTarget`.
-- Never load the LaTeX engine; `web/tests/stubs/` stubs it.
-- **Install the stubs before `page.goto`, never after** — navigate first and the
-  real wrapper is already in flight.
-
-CI is `.github/workflows/test-web.yaml`, on pull requests touching `web/**`:
-`npm ci`, then type-check, lint and format, tier 1, tier 2.
 
 ## Vendored versions
 
@@ -258,8 +268,7 @@ mounts and held in a ref.
 `pdfjs-dist` (npm, version in `package.json`). `app/pdf/pdfjs.ts` is the
 only module that loads it, by lazy `import("pdfjs-dist")`, so a session that
 never shows a PDF never fetches it. The worker comes from
-`pdfjs-dist/build/pdf.worker.min.mjs?url` (a Vite asset). Types are the
-package's own.
+`pdfjs-dist/build/pdf.worker.min.mjs?url` (a Vite asset).
 
 - A `PDFDocumentProxy` has no `destroy()`. Destroy the loading task instead.
 - Fonts, CMaps and WASM decoders are not shipped. LaTeX embeds its fonts, so
@@ -269,39 +278,4 @@ package's own.
 
 `client-zip` (npm). Only the PNG export loads it, by lazy `import("client-zip")`
 in `app/modules/build.ts`, so a session that never exports PNGs never fetches
-the chunk. Types are the package's own.
-
-## LaTeX engine (BusyTeX) — do not test, do not touch
-
-- Release `assets-v<BUSYTEX_ENGINE_VERSION>` of `TeXlyre/texlyre-busytex`.
-- WASM build in `web/core/busytex/`, wrapper in
-  `web/shared/vendor/texlyre-busytex.js`. Both trusted. The wrapper stays
-  committed: no published file matches it.
-- `web/core/` is gitignored, fetched at deploy time — a fresh clone has no
-  engine.
-- No upstream documentation exists. Do not infer the API: read
-  `texlyre-busytex.d.ts` for the allowed surface, then the wrapper for behavior.
-  `BusytexPipeline` takes eleven positional arguments; never call it from
-  application code.
-- `web/app/modules/build.ts` is the only module loading the wrapper, by runtime
-  URL (see "Out-of-bundle runtime assets"). Everything else goes through
-  `ensureEngine()`.
-- `web/app/main.tsx` calls `ensureEngine()` eagerly on page load, so every
-  browser-driven test is affected.
-- No test compiles a real PDF or downloads `texlive-*.data`. Stub it.
-
-### Carried TeX Live files
-
-The app preloads `texlive-basic` only (`DATA_PACKAGE` in
-`web/shared/build-plan.ts`). The ~170 files the book needs beyond it ship in
-one bundle, `web/shared/texmf/carried-texmf.bin`, built from
-`web/shared/texmf/carried.txt` — the manifest, which says why each file is
-carried. `web/shared/carry-texmf.ts` has the full procedure in its header.
-
-- After bumping `BUSYTEX_ENGINE_VERSION` or editing `carried.txt`, run
-  `node web/shared/carry-texmf.ts build`. Tier 1 fails until you do.
-- Review a rebuild through `carried.lock.json`: one line per file with its
-  SHA-256. The bundle itself is binary.
-- Check a rebuild on the real engine with
-  `node web/tests/tools/probe-carried-texmf.ts`. It prints any `carried.txt`
-  lines still missing. It is a hand-run tool, not a test.
+the chunk.

@@ -1,8 +1,6 @@
 # web/app/ — page, components, modules, styles
 
-`web/app/` is the Vite root. `npm run build` bundles it into `web/dist/`, which
-deploys as `site/builder/`, served at `/builder/`
-(`.github/workflows/publish-docs.yaml`). A file Vite does not reach (a classic
+`web/app/` is the Vite root. A file Vite does not reach (a classic
 `<script>`, a runtime `fetch`) does not ship unless `vite.config.ts` copies it
 or the deploy allow-list names it.
 
@@ -74,9 +72,8 @@ or the deploy allow-list names it.
   the store; the components render from it.
 - A component keeps the ids, `data-testid`s and accessible names tier 2 uses.
 - `components/editor/` is the source editor: `Editor.tsx` (one CodeMirror 6 view
-  in a ref), `theme.ts`, `completions.ts` and `error-line.ts`. Other code reaches
-  it through `modules/editor-api.ts`, never the view (see "Editor library" in
-  `web/CLAUDE.md`).
+  in a ref), `theme.ts`, `completions.ts` and `error-line.ts`. Access rules are
+  in "Editor library" in `web/CLAUDE.md`.
 - `components/wizard/` renders the start wizard from `store.wizard`; every pane
   stays in the page (the shown one aside is `hidden`), so each keeps its ids.
   `modules/wizard.ts` holds its actions and the rules for a pane being answered

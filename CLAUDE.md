@@ -1,7 +1,8 @@
 # Homm3BG Mission Book
 
 Two projects share this repository. They share no tooling, no language and no
-build. Work on one at a time.
+build. A change touches either the book (repository root) or `web/`, not
+both; only the repository-wide lint rules span the two.
 
 1. **The Mission Book** — a fan-made LaTeX book of scenarios for *Heroes of
    Might & Magic III: The Board Game*, built at the repository root. This file
@@ -108,8 +109,7 @@ creating the pull request, tell the user to drag them into its description.
 
 `.github/workflows/lint-files.yaml` runs on every pull request and fails on:
 
-- Whitespace @.editorconfig already fixes: a tab character, a missing final
-  newline, trailing whitespace. Applies to every tracked file.
+- Whitespace that breaks @.editorconfig, in any tracked file.
 - In `.tex` files, an uncapitalized book term: Card, Cube, Deck, Faction,
   Field, Grail, Hero, Level, Round, Scenario, Tile, Unit. Append
   `% no-check-caps` to exempt a line.
