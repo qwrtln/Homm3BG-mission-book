@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-10-22 07:41+0000\n"
+"POT-Creation-Date: 2026-11-26 10:49+0000\n"
 "PO-Revision-Date: 2025-03-29 17:21+0000\n"
 "Last-Translator: Vojtěch Růžička <kelghor@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -500,12 +500,19 @@ msgstr ""
 
 #. type: multicols
 #: campaigns/inferno_deal_with_the_devil.tex:95
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\begin{itemize}\n"
+#| "  \\item You lose one Combat encounter with your Main Hero.\n"
+#| "    Surrender is not an option.\n"
+#| "  \\item Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.\n"
+#| "\\end{itemize}\n"
+#| "\n"
 msgid ""
 "\\begin{itemize}\n"
 "  \\item You lose one Combat encounter with your Main Hero.\n"
 "    Surrender is not an option.\n"
-"  \\item Clan Kreelah fails to defend Klessive against the Enemy Charging Heros attempting to rescue your captive King Roland.\n"
+"  \\item Clan Kreelah fails to defend Kleesive against the Enemy Charging Heros attempting to rescue your captive King Roland.\n"
 "\\end{itemize}\n"
 "\n"
 msgstr ""
