@@ -388,7 +388,7 @@ msgid ""
 "Refer to the \\pagelink{Steadwick's Fall AI}{table below the map layout} for detailed information about Units and AI Decks.\n"
 "\n"
 msgstr ""
-"Se Référer à la \\pagelink{Steadwick's Fall AI}{Table sous le schéma du Plateau} pour des informations détaillées sur les Unités et les Decks I.A..\n"
+"Se Référer à la \\pagelink{Steadwick's Fall AI}{Table sous le schéma du Plateau} pour des informations détaillées sur les Unités et les Decks I.A.\n"
 "\n"
 
 #. type: multicols
