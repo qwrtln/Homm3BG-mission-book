@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Homm 3BG-mission-book\n"
-"POT-Creation-Date: 2026-09-30 11:56+0000\n"
+"POT-Creation-Date: 2026-11-26 11:43+0000\n"
 "PO-Revision-Date: 2025-05-04 14:05+0000\n"
 "Last-Translator: Jakub Klus <jakub.klus@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/homm3bg-fan-made-"
@@ -68,7 +68,7 @@ msgstr ""
 
 #. type: multicols
 #: coops/sentinels.tex:85 coops/emerald_island.tex:60
-#: coops/close_to_enemies.tex:110 coops/stand_united.tex:74
+#: coops/close_to_enemies.tex:102 coops/stand_united.tex:74
 #: clash/force_of_will.tex:74 clash/arcane_artillery.tex:79
 #: clash/the_hunt.tex:69 campaigns/inferno_devilish_plan.tex:176
 #: campaigns/inferno_steadwicks_fall.tex:194
@@ -306,10 +306,14 @@ msgstr ""
 
 #. type: multicols*
 #: clash/force_of_will.tex:60
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
+#| "At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
+#| "\n"
 msgid ""
 "\\subsection*{\\MakeUppercase{Defeat Conditions}}\n"
-"At the end of the \\nth{12} Round, if there is no winner, all players lose the Scenario.\n"
+"At the end of the \\nth{10} Round, if there is no winner, all players lose the Scenario.\n"
 "\n"
 msgstr ""
 "\\subsection*{\\MakeUppercase{Podmínky Porážky}}\n"
